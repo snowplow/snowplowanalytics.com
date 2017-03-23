@@ -1,0 +1,5 @@
+vagrant ssh
+cd /vagrant
+bundle exec jekyll serve
+
+You will now be able to view the website on localhost:4001 (on the host)
