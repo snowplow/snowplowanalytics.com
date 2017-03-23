@@ -1,0 +1,509 @@
+section
+{
+	padding-top:120px;
+	padding-bottom:120px;
+	position: relative;
+
+	@media (max-width: $screen-md-min)
+	{
+		padding-top:90px;
+		padding-bottom:90px;
+	}
+
+	@media (max-width: $screen-sm-min)
+	{
+		padding-top:70px;
+		padding-bottom:70px;
+	}
+
+	@media (max-width: 490px)
+	{
+		padding-top:40px;
+		padding-bottom:40px;
+	}
+}
+
+.no-gutter
+{
+	padding-right:0;
+	padding-left:0;
+}
+
+.no-gutter-left
+{
+	padding-left:0;
+}
+
+.no-gutter-right
+{
+	padding-right:0;
+	padding-left:0;
+}
+
+.no-gutter-vertical
+{
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.no-gutter-top
+{
+	padding-top:0;
+}
+
+.no-gutter-bottom
+{
+	padding-bottom:0;
+}
+
+.height-auto
+{
+	height:auto!important;
+	min-height:0!important;
+	max-height:99999px!important;
+}
+
+
+/*
+ * DISPLAY
+ */
+
+.block
+{
+	display:block;
+}
+
+.inline-block
+{
+	display:inline-block;
+}
+
+.inline
+{
+	display:inline;
+}
+
+
+/*
+ * CONTROL WIDTH
+ */
+
+@mixin max-width ( $value:100% )
+{
+	max-width:$value;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.max-width-100 { @include max-width (); };
+.max-width-90 { @include max-width ( 90% ); }
+.max-width-80 { @include max-width ( 80% ); }
+.max-width-70 { @include max-width ( 70% ); }
+.max-width-60 { @include max-width ( 60% ); }
+.max-width-50 { @include max-width ( 50% ); }
+.max-width-40 { @include max-width ( 40% ); }
+.max-width-30 { @include max-width ( 30% ); }
+.max-width-20 { @include max-width ( 20% ); }
+.max-width-10 { @include max-width ( 10% ); }
+
+@media (max-width: $screen-md-min)
+{
+	.md-max-width-100 { @include max-width (); };
+	.md-max-width-90 { @include max-width ( 90% ); }
+	.md-max-width-80 { @include max-width ( 80% ); }
+	.md-max-width-70 { @include max-width ( 70% ); }
+	.md-max-width-60 { @include max-width ( 60% ); }
+	.md-max-width-50 { @include max-width ( 50% ); }
+	.md-max-width-40 { @include max-width ( 40% ); }
+	.md-max-width-30 { @include max-width ( 30% ); }
+	.md-max-width-20 { @include max-width ( 20% ); }
+	.md-max-width-10 { @include max-width ( 10% ); }
+}
+
+@media (max-width: $screen-sm-min)
+{
+	.sm-max-width-100 { @include max-width (); };
+	.sm-max-width-90 { @include max-width ( 90% ); }
+	.sm-max-width-80 { @include max-width ( 80% ); }
+	.sm-max-width-70 { @include max-width ( 70% ); }
+	.sm-max-width-60 { @include max-width ( 60% ); }
+	.sm-max-width-50 { @include max-width ( 50% ); }
+	.sm-max-width-40 { @include max-width ( 40% ); }
+	.sm-max-width-30 { @include max-width ( 30% ); }
+	.sm-max-width-20 { @include max-width ( 20% ); }
+	.sm-max-width-10 { @include max-width ( 10% ); }
+}
+
+@media (max-width: $screen-xs-max)
+{
+	.xs-max-width-100 { @include max-width (); };
+	.xs-max-width-90 { @include max-width ( 90% ); }
+	.xs-max-width-80 { @include max-width ( 80% ); }
+	.xs-max-width-70 { @include max-width ( 70% ); }
+	.xs-max-width-60 { @include max-width ( 60% ); }
+	.xs-max-width-50 { @include max-width ( 50% ); }
+	.xs-max-width-40 { @include max-width ( 40% ); }
+	.xs-max-width-30 { @include max-width ( 30% ); }
+	.xs-max-width-20 { @include max-width ( 20% ); }
+	.xs-max-width-10 { @include max-width ( 10% ); }
+}
+
+
+
+/*
+ * GROUP ELEMETNS AND PROVIDE SOME SAFE HEIGHT
+*/
+
+.group
+{
+	padding:100px 0px;
+}
+
+
+/*
+	MARGIN
+*/
+
+.no-margin
+{
+	margin:0;
+}
+
+.no-margin-top
+{
+	margin-top:0;
+}
+
+.no-margin-right
+{
+	margin-right:0;
+}
+
+.no-margin-bottom
+{
+	margin-bottom:0;
+}
+
+.no-margin-left
+{
+	margin-left:0;
+}
+
+
+
+
+/*
+ * INLINE CSS PADDING CLASS
+ */
+
+@mixin pad ( $value:60px )
+{
+	padding-top:$value;
+	padding-bottom:$value;
+
+	&:not(.no-gutter)
+	{
+		padding-left:$value;
+		padding-right:$value;
+	}
+}
+
+.pad    { @include pad(); }
+.pad-0  { @include pad(0); }
+.pad-5  { @include pad(5px); }
+.pad-10 { @include pad(10px); }
+.pad-15 { @include pad(15px); }
+.pad-20 { @include pad(20px); }
+.pad-25 { @include pad(25px); }
+.pad-30 { @include pad(30px); }
+.pad-35 { @include pad(35px); }
+.pad-40 { @include pad(40px); }
+.pad-45 { @include pad(45px); }
+.pad-50 { @include pad(50px); }
+.pad-55 { @include pad(55px); }
+.pad-60 { @include pad(60px); }
+.pad-65 { @include pad(65px); }
+.pad-70 { @include pad(70px); }
+.pad-75 { @include pad(75px); }
+.pad-80 { @include pad(80px); }
+.pad-85 { @include pad(85px); }
+.pad-90 { @include pad(90px); }
+.pad-95 { @include pad(95px); }
+.pad-100{ @include pad(100px); }
+
+.no-padding        { padding:0; }
+.no-padding-top    { padding-top:0; }
+.no-padding-bottom { padding-bottom:0; }
+.no-padding-left   { padding-left:0; }
+.no-padding-right  { padding-right:0; }
+
+
+@media (max-width: $screen-md-min)
+{
+	.md-pad    { @include pad(30px); }
+	.md-pad-0  { @include pad(0); }
+	.md-pad-5  { @include pad(5px); }
+	.md-pad-10 { @include pad(10px); }
+	.md-pad-15 { @include pad(15px); }
+	.md-pad-20 { @include pad(20px); }
+	.md-pad-25 { @include pad(25px); }
+	.md-pad-30 { @include pad(30px); }
+	.md-pad-35 { @include pad(35px); }
+	.md-pad-40 { @include pad(40px); }
+	.md-pad-45 { @include pad(45px); }
+	.md-pad-50 { @include pad(50px); }
+	.md-pad-55 { @include pad(55px); }
+	.md-pad-60 { @include pad(60px); }
+	.md-pad-65 { @include pad(65px); }
+	.md-pad-70 { @include pad(70px); }
+	.md-pad-75 { @include pad(75px); }
+	.md-pad-80 { @include pad(80px); }
+	.md-pad-85 { @include pad(85px); }
+	.md-pad-90 { @include pad(90px); }
+	.md-pad-95 { @include pad(95px); }
+	.md-pad-100{ @include pad(100px); }
+}
+
+@media (max-width: $screen-sm-min)
+{
+	.sm-pad    { @include pad(15px); }
+	.sm-pad-0  { @include pad(0); }
+	.sm-pad-5  { @include pad(5px); }
+	.sm-pad-10 { @include pad(10px); }
+	.sm-pad-15 { @include pad(15px); }
+	.sm-pad-20 { @include pad(20px); }
+	.sm-pad-25 { @include pad(25px); }
+	.sm-pad-30 { @include pad(30px); }
+	.sm-pad-35 { @include pad(35px); }
+	.sm-pad-40 { @include pad(40px); }
+	.sm-pad-45 { @include pad(45px); }
+	.sm-pad-50 { @include pad(50px); }
+	.sm-pad-55 { @include pad(55px); }
+	.sm-pad-60 { @include pad(60px); }
+	.sm-pad-65 { @include pad(65px); }
+	.sm-pad-70 { @include pad(70px); }
+	.sm-pad-75 { @include pad(75px); }
+	.sm-pad-80 { @include pad(80px); }
+	.sm-pad-85 { @include pad(85px); }
+	.sm-pad-90 { @include pad(90px); }
+	.sm-pad-95 { @include pad(95px); }
+	.sm-pad-100{ @include pad(100px); }
+}
+
+@media (max-width: $screen-xs-max)
+{
+	.xs-pad    { @include pad(15px); }
+	.xs-pad-0  { @include pad(0); }
+	.xs-pad-5  { @include pad(5px); }
+	.xs-pad-10 { @include pad(10px); }
+	.xs-pad-15 { @include pad(15px); }
+	.xs-pad-20 { @include pad(20px); }
+	.xs-pad-25 { @include pad(25px); }
+	.xs-pad-30 { @include pad(30px); }
+	.xs-pad-35 { @include pad(35px); }
+	.xs-pad-40 { @include pad(40px); }
+	.xs-pad-45 { @include pad(45px); }
+	.xs-pad-50 { @include pad(50px); }
+	.xs-pad-55 { @include pad(55px); }
+	.xs-pad-60 { @include pad(60px); }
+	.xs-pad-65 { @include pad(65px); }
+	.xs-pad-70 { @include pad(70px); }
+	.xs-pad-75 { @include pad(75px); }
+	.xs-pad-80 { @include pad(80px); }
+	.xs-pad-85 { @include pad(85px); }
+	.xs-pad-90 { @include pad(90px); }
+	.xs-pad-95 { @include pad(95px); }
+	.xs-pad-100{ @include pad(100px); }
+}
+
+
+
+
+
+/*
+ * INLINE CSS VERTICAL SPACER
+ */
+
+
+@mixin spacer-top ( $value:10px )
+{
+	margin-top:$value;
+}
+
+@mixin spacer-bottom ( $value:10px )
+{
+	margin-bottom:$value;
+}
+
+@mixin spacer ( $value:10px )
+{
+	@include spacer-top($value);
+	@include spacer-bottom($value);
+}
+
+.spacer    { @include spacer(); }
+.spacer-0  { @include spacer(0); }
+.spacer-10 { @include spacer(10px); }
+.spacer-20 { @include spacer(20px); }
+.spacer-30 { @include spacer(30px); }
+.spacer-40 { @include spacer(40px); }
+.spacer-50 { @include spacer(50px); }
+.spacer-60 { @include spacer(60px); }
+.spacer-70 { @include spacer(70px); }
+.spacer-80 { @include spacer(80px); }
+.spacer-90 { @include spacer(90px); }
+.spacer-100{ @include spacer(100px); }
+
+.spacer-top    { @include spacer-top(); }
+.spacer-top-0  { @include spacer-top(0); }
+.spacer-top-10 { @include spacer-top(10px); }
+.spacer-top-20 { @include spacer-top(20px); }
+.spacer-top-30 { @include spacer-top(30px); }
+.spacer-top-40 { @include spacer-top(40px); }
+.spacer-top-50 { @include spacer-top(50px); }
+.spacer-top-60 { @include spacer-top(60px); }
+.spacer-top-70 { @include spacer-top(70px); }
+.spacer-top-80 { @include spacer-top(80px); }
+.spacer-top-90 { @include spacer-top(90px); }
+.spacer-top-100{ @include spacer-top(100px); }
+
+.spacer-bottom    { @include spacer-bottom(); }
+.spacer-bottom-0  { @include spacer-bottom(0); }
+.spacer-bottom-10 { @include spacer-bottom(10px); }
+.spacer-bottom-20 { @include spacer-bottom(20px); }
+.spacer-bottom-30 { @include spacer-bottom(30px); }
+.spacer-bottom-40 { @include spacer-bottom(40px); }
+.spacer-bottom-50 { @include spacer-bottom(50px); }
+.spacer-bottom-60 { @include spacer-bottom(60px); }
+.spacer-bottom-70 { @include spacer-bottom(70px); }
+.spacer-bottom-80 { @include spacer-bottom(80px); }
+.spacer-bottom-90 { @include spacer-bottom(90px); }
+.spacer-bottom-100{ @include spacer-bottom(100px); }
+
+
+
+@media (max-width: $screen-md-min)
+{
+	.md-spacer    { @include spacer(); }
+	.md-spacer-0  { @include spacer(0); }
+	.md-spacer-10 { @include spacer(10px); }
+	.md-spacer-20 { @include spacer(20px); }
+	.md-spacer-30 { @include spacer(30px); }
+	.md-spacer-40 { @include spacer(40px); }
+	.md-spacer-50 { @include spacer(50px); }
+	.md-spacer-60 { @include spacer(60px); }
+	.md-spacer-70 { @include spacer(70px); }
+	.md-spacer-80 { @include spacer(80px); }
+	.md-spacer-90 { @include spacer(90px); }
+	.md-spacer-100{ @include spacer(100px); }
+
+	.md-spacer-top    { @include spacer-top(); }
+	.md-spacer-top-0  { @include spacer-top(0); }
+	.md-spacer-top-10 { @include spacer-top(10px); }
+	.md-spacer-top-20 { @include spacer-top(20px); }
+	.md-spacer-top-30 { @include spacer-top(30px); }
+	.md-spacer-top-40 { @include spacer-top(40px); }
+	.md-spacer-top-50 { @include spacer-top(50px); }
+	.md-spacer-top-60 { @include spacer-top(60px); }
+	.md-spacer-top-70 { @include spacer-top(70px); }
+	.md-spacer-top-80 { @include spacer-top(80px); }
+	.md-spacer-top-90 { @include spacer-top(90px); }
+	.md-spacer-top-100{ @include spacer-top(100px); }
+
+	.md-spacer-bottom    { @include spacer-bottom(); }
+	.md-spacer-bottom-0  { @include spacer-bottom(0); }
+	.md-spacer-bottom-10 { @include spacer-bottom(10px); }
+	.md-spacer-bottom-20 { @include spacer-bottom(20px); }
+	.md-spacer-bottom-30 { @include spacer-bottom(30px); }
+	.md-spacer-bottom-40 { @include spacer-bottom(40px); }
+	.md-spacer-bottom-50 { @include spacer-bottom(50px); }
+	.md-spacer-bottom-60 { @include spacer-bottom(60px); }
+	.md-spacer-bottom-70 { @include spacer-bottom(70px); }
+	.md-spacer-bottom-80 { @include spacer-bottom(80px); }
+	.md-spacer-bottom-90 { @include spacer-bottom(90px); }
+	.md-spacer-bottom-100{ @include spacer-bottom(100px); }
+}
+
+@media (max-width: $screen-sm-min)
+{
+	.sm-spacer    { @include spacer(); }
+	.sm-spacer-0  { @include spacer(0); }
+	.sm-spacer-10 { @include spacer(10px); }
+	.sm-spacer-20 { @include spacer(20px); }
+	.sm-spacer-30 { @include spacer(30px); }
+	.sm-spacer-40 { @include spacer(40px); }
+	.sm-spacer-50 { @include spacer(50px); }
+	.sm-spacer-60 { @include spacer(60px); }
+	.sm-spacer-70 { @include spacer(70px); }
+	.sm-spacer-80 { @include spacer(80px); }
+	.sm-spacer-90 { @include spacer(90px); }
+	.sm-spacer-100{ @include spacer(100px); }
+
+	.sm-spacer-top    { @include spacer-top(); }
+	.sm-spacer-top-0  { @include spacer-top(0); }
+	.sm-spacer-top-10 { @include spacer-top(10px); }
+	.sm-spacer-top-20 { @include spacer-top(20px); }
+	.sm-spacer-top-30 { @include spacer-top(30px); }
+	.sm-spacer-top-40 { @include spacer-top(40px); }
+	.sm-spacer-top-50 { @include spacer-top(50px); }
+	.sm-spacer-top-60 { @include spacer-top(60px); }
+	.sm-spacer-top-70 { @include spacer-top(70px); }
+	.sm-spacer-top-80 { @include spacer-top(80px); }
+	.sm-spacer-top-90 { @include spacer-top(90px); }
+	.sm-spacer-top-100{ @include spacer-top(100px); }
+
+	.sm-spacer-bottom    { @include spacer-bottom(); }
+	.sm-spacer-bottom-0  { @include spacer-bottom(0); }
+	.sm-spacer-bottom-10 { @include spacer-bottom(10px); }
+	.sm-spacer-bottom-20 { @include spacer-bottom(20px); }
+	.sm-spacer-bottom-30 { @include spacer-bottom(30px); }
+	.sm-spacer-bottom-40 { @include spacer-bottom(40px); }
+	.sm-spacer-bottom-50 { @include spacer-bottom(50px); }
+	.sm-spacer-bottom-60 { @include spacer-bottom(60px); }
+	.sm-spacer-bottom-70 { @include spacer-bottom(70px); }
+	.sm-spacer-bottom-80 { @include spacer-bottom(80px); }
+	.sm-spacer-bottom-90 { @include spacer-bottom(90px); }
+	.sm-spacer-bottom-100{ @include spacer-bottom(100px); }
+}
+
+@media (max-width: $screen-xs-max)
+{
+	.xs-spacer    { @include spacer(); }
+	.xs-spacer-0  { @include spacer(0); }
+	.xs-spacer-10 { @include spacer(10px); }
+	.xs-spacer-20 { @include spacer(20px); }
+	.xs-spacer-30 { @include spacer(30px); }
+	.xs-spacer-40 { @include spacer(40px); }
+	.xs-spacer-50 { @include spacer(50px); }
+	.xs-spacer-60 { @include spacer(60px); }
+	.xs-spacer-70 { @include spacer(70px); }
+	.xs-spacer-80 { @include spacer(80px); }
+	.xs-spacer-90 { @include spacer(90px); }
+	.xs-spacer-100{ @include spacer(100px); }
+
+	.xs-spacer-top    { @include spacer-top(); }
+	.xs-spacer-top-0  { @include spacer-top(0); }
+	.xs-spacer-top-10 { @include spacer-top(10px); }
+	.xs-spacer-top-20 { @include spacer-top(20px); }
+	.xs-spacer-top-30 { @include spacer-top(30px); }
+	.xs-spacer-top-40 { @include spacer-top(40px); }
+	.xs-spacer-top-50 { @include spacer-top(50px); }
+	.xs-spacer-top-60 { @include spacer-top(60px); }
+	.xs-spacer-top-70 { @include spacer-top(70px); }
+	.xs-spacer-top-80 { @include spacer-top(80px); }
+	.xs-spacer-top-90 { @include spacer-top(90px); }
+	.xs-spacer-top-100{ @include spacer-top(100px); }
+
+	.xs-spacer-bottom    { @include spacer-bottom(); }
+	.xs-spacer-bottom-0  { @include spacer-bottom(0); }
+	.xs-spacer-bottom-10 { @include spacer-bottom(10px); }
+	.xs-spacer-bottom-20 { @include spacer-bottom(20px); }
+	.xs-spacer-bottom-30 { @include spacer-bottom(30px); }
+	.xs-spacer-bottom-40 { @include spacer-bottom(40px); }
+	.xs-spacer-bottom-50 { @include spacer-bottom(50px); }
+	.xs-spacer-bottom-60 { @include spacer-bottom(60px); }
+	.xs-spacer-bottom-70 { @include spacer-bottom(70px); }
+	.xs-spacer-bottom-80 { @include spacer-bottom(80px); }
+	.xs-spacer-bottom-90 { @include spacer-bottom(90px); }
+	.xs-spacer-bottom-100{ @include spacer-bottom(100px); }
+}

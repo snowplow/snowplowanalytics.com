@@ -1,0 +1,80 @@
+        <footer id="contacts">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="brand col-md-4 col-sm-12">
+                        <a class="brand-logo" href="#">
+                            <i class="i-logo-type"></i>
+                            <small>Digital Analytics Technology</small>
+                        </a>
+                        <form action="" method="">
+                            <div class="input-group newsletter">
+                                <input type="email" class="form-control" placeholder="Get our latest updates">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Subscribe</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="links col-md-8 col-sm-12">
+                        <div class="cfx">
+                            <div class="col">
+                                <h6><a href="/company">Company</a></h6>
+                                <ul>
+                                    <li><a href="/company/contact-us">Contact us</a></li>
+                                    <li><a href="/company/partners">Partners</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6><a href="/products">Products</a></h6>
+                                <ul>
+                                    <li class="active"><a href="/products/snowplow-insights">Insights</a></li>
+                                    <li><a href="/products/snowplow-react">React <sup>BETA</sup></a></li>
+                                    <li><a href="/products/snowplow-open-source">Open Source</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6><a href="/cases">Cases</a></h6>
+                                <ul>
+                                    <li><a href="/cases/gaming">Gaming</a></li>
+                                    <li><a href="/cases/publishing">Publishing</a></li>
+                                    <li><a href="/cases/ad-tech">Ad tech</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6><a href="/services">Services</a></h6>
+                                <ul>
+                                    <li><a href="/services/data-analytics">Data Analytics</a></li>
+                                    <li><a href="/services/data-engineering">Data Engineering</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6><a href="/resources">Resources</a></h6>
+                                <ul>
+                                    <li><a href="/resources/community">Community</a></li>
+                                    <li><a href="/resources/documentation">Documentation</a></li>
+                                    <li><a href="/resoures/blog">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info cfx">
+                    <div class="credits col-sm-8 col-xs-12">
+                        <small><b>© 2017 Snowplow</b> <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a></small>
+                    </div>
+                    <div class="social col-sm-4 col-xs-12">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+
+		<script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js"></script>
+        {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
+    </body>
+</html>
