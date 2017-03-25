@@ -5,6 +5,7 @@
 {% include_relative vendors/_concat/bootstrap.min.js %}
 {% include_relative vendors/_concat/bootstrap-select.min.js %}
 {% include_relative vendors/_concat/slick.min.js %}
+{% include_relative vendors/_concat/masonry.pkgd.min.js %}
 
 
 /*!
@@ -102,7 +103,7 @@ if (!window.location.origin) {
 
 		/*
 		 * Check document for any sliders
-		*/
+		 */
 
 		var maps = $('.map');
 		if (maps.length>0)
@@ -194,8 +195,8 @@ if (!window.location.origin) {
 			}
 
 			/*
-			 * Window SCROLLING
-			 * For performance whise we could apply css pointer-events:none to body
+			 * Window SCROLLING. For performance whise we could apply
+			 * css pointer-events:none to body.
 			 */
 
 			if (!body.is('.scrolling'))
