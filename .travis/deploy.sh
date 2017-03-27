@@ -28,7 +28,11 @@ function sync_site_contents {
     local __s3_bucket=$1
     local __max_age=$2
 
-    s3cmd sync --delete-removed -P -M -r ${BUILD_DIRECTORY} s3://${__s3_bucket}/ --add-header="Cache-Control:max-age=${__max_age}"
+    s3cmd sync --delete-removed -P -M -r ${BUILD_DIRECTORY} s3://${__s3_bucket}/ \
+      --add-header="Cache-Control:max-age=${__max_age}" \
+      --default-mime-type="text/html; charset=utf-8" \
+      --guess-mime-type \
+      --no-mime-magic
 }
 
 # -----------------------------------------------------------------------------
