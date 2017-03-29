@@ -16,48 +16,48 @@
             <div class="collapse navbar-collapse" id="main-menu">
 
                 <ul class="nav navbar-nav" id="menu-center">
-                    <li class="dropdown">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
                         <a href="/company" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Company <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/company/contact-us">Contact us</a></li>
-                            <li><a href="/company/partners">Partners</a></li>
+                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="/company/contact-us">Contact us</a></li>
+                            <li{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="/company/partners">Partners</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="products" %}">
                         <a href="/products" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Products <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="/products/snowplow-insights">Snowplow Insights</a></li>
-                            <li><a href="/products/snowplow-react">Snowplow React<sup>BETA</sup></a></li>
-                            <li><a href="/products/snowplow-open-source">Open Source</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="/products/snowplow-insights">Snowplow Insights</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="/products/snowplow-react">Snowplow React<sup>BETA</sup></a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="/products/snowplow-open-source">Open Source</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="cases" %}">
                         <a href="/cases" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cases <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/cases/gaming">Gaming</a></li>
-                            <li><a href="/cases/publishing">Publishing</a></li>
-                            <li><a href="/cases/ad-tech">Ad Tech</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-gaming" tag="" %}><a href="/cases/gaming">Gaming</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-publishing" tag="" %}><a href="/cases/publishing">Publishing</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-ad-tech" tag="" %}><a href="/cases/ad-tech">Ad Tech</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
                         <a href="/services" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/services/data-analytics">Data Analytics</a></li>
-                            <li><a href="/services/data-engineering">Data Engineering</a></li>
+                            <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="/services/data-analytics">Data Analytics</a></li>
+                            <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="/services/data-engineering">Data Engineering</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
                         <a href="/resources" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/resources/community">Community</a></li>
-                            <li><a href="/resources/documentation">Documentation</a></li>
-                            <li><a href="/resoures/blog">Blog</a></li>
+                            <li{% include fn/menuClassActive.fn s="community" tag="" %}><a href="/resources/community">Community</a></li>
+                            <li{% include fn/menuClassActive.fn s="documentation" tag="" %}><a href="/resources/documentation">Documentation</a></li>
+                            <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="/resoures/blog">Blog</a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/get-started" class="btn btn-primary call-to-action">Request a Demo</a></li>
+                    <li{% include fn/menuClassActive.fn s="snowplow-insights" %}><a href="/get-started" class="btn btn-primary call-to-action">Request a Demo</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

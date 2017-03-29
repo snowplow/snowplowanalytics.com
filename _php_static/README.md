@@ -1,2 +1,0 @@
-# snowplow
-Snowplow static website
