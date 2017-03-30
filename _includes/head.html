@@ -20,18 +20,24 @@
         <meta name="msapplication-config" content="{{ BASE_PATH }}/assets/img/common/favicon/browserconfig.xml">
         <meta name="theme-color" content="#5b009b">
         
-        <title>Snowplow – The event data pipeline</title>
+        {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – The event data pipeline</title>{% endif %}
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="{% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}{% else %}{{ site.author.name }}{% endif %}">
 
-        <meta name="author" content="Snowplow Analytics">
         <meta property="og:site_name" content="Snowplow">
-        <meta property="og:title" content="Your digital nervous system">
-        <meta property="og:image" content="http://snowplowanalytics.com/{{ BASE_PATH }}/assets/img/design/logo.png">
-        <meta property="og:url" content="http://snowplowanalytics.com/">
-        <meta property="og:type" content="website">
-        
-        <meta name="twitter:well" content="summary">
-        <meta name="twitter:title" content="Your digital nervous system – Snowplow">
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %}">
+        <meta property="og:image" content="{% if page.image %}{{ BASE_PATH }}/assets/img/{{ page.image }}{% else %}{{ BASE_PATH }}/assets/img/snowplow-logo.jpg{% endif %}">
+        <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+        <meta property="og:type" content="{% if page.author %}article{% else %}website{% endif %}">
+        {% if page.author %}<meta property="og:article:author" content="{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}">{% endif %}
+        {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+
+        <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+        <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %} – Snowplow">
         <meta name="twitter:site" content="@snowplowdata">
+        {% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}{% endif %}{% endfor %}{% endif %}
+        {% if page.description %}<meta name="twitter:description" content="{{page.description}}">{% endif %}
+        {% if page.image %}<meta name="twitter:image" content="{{ page.image }}">{% endif %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +50,11 @@
         {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+        <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+        <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+        {% include scripts/google-tag-manager.js %}
     </head>
 
     <body class="{{ page.class }}">
