@@ -3,8 +3,9 @@ header
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 9999; // .bring-to-front is 999
+	z-index: 9999; /* .bring-to-front is 999*/
 	position: fixed;
+	max-height: 100%;
 	padding: 15px 70px;
 	transition:background .3s;
 
