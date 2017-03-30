@@ -31,6 +31,13 @@
                             <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="/products/snowplow-open-source">Open Source</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
+                        <a href="/services" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="/services/data-analytics">Data Analytics</a></li>
+                            <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="/services/data-engineering">Data Engineering</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="customers" %}">
                         <a href="/customers" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -39,12 +46,8 @@
                             <li{% include fn/menuClassActive.fn s="snowplow-ad-tech" tag="" %}><a href="/cases/ad-tech">Ad Tech</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
-                        <a href="/services" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="/services/data-analytics">Data Analytics</a></li>
-                            <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="/services/data-engineering">Data Engineering</a></li>
-                        </ul>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="partners" %}">
+                        <a href="/company/partners">Partners</a>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
                         <a href="/resources" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
