@@ -38,6 +38,18 @@ main
 {
 	margin:0 auto;
 	max-width:1300px;
+
+	>.container
+	{
+		margin-top:150px;
+		margin-bottom: 150px;
+
+		>.content
+		{
+			max-width: 768px;
+			margin:0 auto;
+		}
+	}
 }
 
 
