@@ -18,7 +18,8 @@
 
 	h1, .h1, h2, .h2
 	{
-		font-size: 86px;
+		/*font-size: 86px;*/
+		font-size: 60px;
 	}
 
 	h3, .h3
@@ -47,6 +48,11 @@
 	@media (max-width: $screen-xs-max)
 	{
 		padding-top: 170px;
+
+		h1, .h1, h2, .h2
+		{
+			font-size: 40px;
+		}
 	}
 
 
