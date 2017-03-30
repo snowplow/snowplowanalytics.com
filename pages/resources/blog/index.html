@@ -1,34 +1,32 @@
 ---
-group: blog
 layout: blog
+group: blog
 title: Latest news
 description: Latest news from the Snowplow team
 permalink: /resources/blog/
 
 ---
 
-<div class="container spacer-100">
 
-    <!--
-        RECENT 15 POST
-    -->
-    <div class="col-md-9">
-        {% for post in site.posts limit:15 %}
-        <div class="post">
-            <h2 class="h3"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <div class="datebox">{{ post.date | date_to_long_string }}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{% for author in site.data.authors %}{% if author.name == post.author %}<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
-            <div class="content">{{ post.content | strip_html | truncatewords:75 }}</div>
-            <div class="continue">
-                <a href="{{ post.url }}">Continue reading</a>
-            </div>
+<!--
+    RECENT 15 POST
+-->
+<div class="col-md-9">
+    {% for post in site.posts limit:15 %}
+    <div class="post">
+        <h2 class="h3"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="datebox">{{ post.date | date_to_long_string }}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{% for author in site.data.authors %}{% if author.name == post.author %}<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+        <div class="content">{{ post.content | strip_html | truncatewords:75 }}</div>
+        <div class="continue">
+            <a href="{{ post.url }}">Continue reading</a>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 
-    <!--
-        SIDEBAR
-    -->
-    <div class="col-md-3">
-        <div data-spy="affix" data-offset-top="197">{% include blog/sidebar.html %}</div>
-    </div>
+<!--
+    SIDEBAR
+-->
+<div class="col-md-3">
+    <div data-spy="affix" data-offset-top="0">{% include blog/sidebar.html %}</div>
 </div>
