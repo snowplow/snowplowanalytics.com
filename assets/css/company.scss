@@ -87,6 +87,14 @@
 			padding-left:60px;
 			padding-right:60px;
 		}
+
+		@media (max-width: $screen-sm-max)
+		{
+			small
+			{
+				padding:0;
+			}
+		}
 	}
 
 
@@ -260,6 +268,24 @@
 					background:$white;
 					border-color:transparent;
 				}
+			}
+		}
+
+		@media (max-width: $screen-md-max)
+		{
+			text-align: left;
+
+			.col
+			{
+				width:33.333333%;
+			}
+		}
+
+		@media (max-width: $screen-xs-max)
+		{
+			.col
+			{
+				width:50%;
 			}
 		}
 	}

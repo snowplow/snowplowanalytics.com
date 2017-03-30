@@ -75,11 +75,13 @@
 
 	@media (max-width: $screen-sm-max)
 	{
+		padding-top:150px;
 		padding-bottom: 60px;
 	}
 
 	@media (max-width: $screen-xs-max)
 	{
+		padding-top:110px;
 		padding-bottom: 60px;
 	}
 }
