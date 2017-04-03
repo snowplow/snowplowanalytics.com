@@ -6,7 +6,6 @@ header
 	z-index: 9999; /* .bring-to-front is 999*/
 	position: fixed;
 	max-height: 100%;
-	padding: 15px 70px;
 	transition:background .3s;
 
 	.container-fluid
@@ -14,15 +13,31 @@ header
 		padding:0;
 	}
 
-	.navbar > .container .navbar-brand,
-	.navbar > .container-fluid .navbar-brand
+	.navbar-top
+	{
+		padding:15px 0;
+
+		.navbar-brand
+		{
+			height:40px;
+    		padding: 20px 0;
+		}
+	}
+
+	.navbar-brand,
+	.navbar-default .navbar-brand
 	{
 		margin: 0;
 		color: $white;
 		line-height: 0;
-		padding: 27px 0;
+		padding: 23px 0;
 		overflow: hidden;
 		transition: all .3s;
+
+		&.navbar-brand-top
+		{
+			color:$gray-base;
+		}
 
 		i
 		{
@@ -41,7 +56,7 @@ header
 			left:0;
 			right:0;
 			border:0;
-			top:65px;
+			top:70px;
 			opacity:0;
 			display:block;
 			border-radius:0;
@@ -49,10 +64,10 @@ header
 			visibility: hidden;
 			text-align: center;
 			background: $white;
-		    padding: 25px 0 0 0;
+		    padding: 10px 0 0 0;
 		    transform:translateY(-30px);
 
-			&:before
+/*			&:before
 			{
 				content: '';
 				display: block;
@@ -64,7 +79,7 @@ header
 				content: '';
 				display: block;
 				border-bottom: 1px solid #f5f5f5;
-			}
+			}*/
 
 			>li
 			{
@@ -129,16 +144,21 @@ header
 				{
 					color: $white;
 					line-height: .7em;
+					position: relative;
 
 					&:after
 					{
-						width:0;
+						left:1px;
+						right:1px;
 						content:'';
+						bottom: 7px;
 						height: 1px;
 						display: block;
-						margin-top: 7px;
-						background-color: $white;
+						position: absolute;
+						transform: scale(0,1);
 						transition: all .4s;
+						background-color: $white;
+						transform-origin: 0 0;
 					}
 
 					i
@@ -154,7 +174,7 @@ header
 					{
 						&:after
 						{
-							width: 100%;
+							transform:scale(1,1);
 						}
 					}
 				}
@@ -184,18 +204,14 @@ header
 		background: $white;
 		transition:background .3s;
 
+		.navbar-brand
+		{
+			color: $gray-base;
+		}
+
 		.navbar,
 		.navbar-default
 		{
-			> .container,
-			> .container-fluid
-			{
-				.navbar-brand
-				{
-					color: $gray-base;
-				}
-			}
-
 			.navbar-nav
 			{
 				>li
@@ -223,7 +239,7 @@ header
 						{
 							&:after
 							{
-								width:100%;
+								transform:scale(1,1);
 								background-color: $brand-primary;
 							}
 						}

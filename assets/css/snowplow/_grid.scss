@@ -238,6 +238,33 @@ section
 .no-padding-right  { padding-right:0; }
 
 
+@media (max-width: $screen-lg-min)
+{
+	.lg-pad    { @include pad(30px); }
+	.lg-pad-0  { @include pad(0); }
+	.lg-pad-5  { @include pad(5px); }
+	.lg-pad-10 { @include pad(10px); }
+	.lg-pad-15 { @include pad(15px); }
+	.lg-pad-20 { @include pad(20px); }
+	.lg-pad-25 { @include pad(25px); }
+	.lg-pad-30 { @include pad(30px); }
+	.lg-pad-35 { @include pad(35px); }
+	.lg-pad-40 { @include pad(40px); }
+	.lg-pad-45 { @include pad(45px); }
+	.lg-pad-50 { @include pad(50px); }
+	.lg-pad-55 { @include pad(55px); }
+	.lg-pad-60 { @include pad(60px); }
+	.lg-pad-65 { @include pad(65px); }
+	.lg-pad-70 { @include pad(70px); }
+	.lg-pad-75 { @include pad(75px); }
+	.lg-pad-80 { @include pad(80px); }
+	.lg-pad-85 { @include pad(85px); }
+	.lg-pad-90 { @include pad(90px); }
+	.lg-pad-95 { @include pad(95px); }
+	.lg-pad-100{ @include pad(100px); }
+}
+
+
 @media (max-width: $screen-md-min)
 {
 	.md-pad    { @include pad(30px); }
