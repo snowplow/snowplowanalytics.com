@@ -3,7 +3,7 @@ header
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 9999; /* .bring-to-front is 999*/
+	z-index: 9999; /* .bring-to-front is 999 */
 	position: fixed;
 	max-height: 100%;
 	transition:background .3s;
@@ -15,28 +15,30 @@ header
 
 	.navbar-top
 	{
-		padding:15px 0;
+		padding:2px 0;
+	}
 
-		.navbar-brand
-		{
-			height:40px;
-    		padding: 20px 0;
-		}
+	.navbar-bottom
+	{
+		padding-top:12px;
+		padding-bottom:12px;
 	}
 
 	.navbar-brand,
 	.navbar-default .navbar-brand
 	{
 		margin: 0;
+		height:50px;
 		color: $white;
 		line-height: 0;
+
 		padding: 23px 0;
 		overflow: hidden;
 		transition: all .3s;
 
 		&.navbar-brand-top
 		{
-			color:$gray-base;
+			color:$white;
 		}
 
 		i
@@ -48,6 +50,27 @@ header
 
 	#menu-center
 	{
+	}
+
+	.navbar,
+	.navbar-default
+	{
+		position: static;
+
+		.nav
+		{
+			font-size: 0;
+			white-space: nowrap;
+
+			>li
+			{
+				position: static;
+			}
+		}
+
+		.navbar-nav
+		{
+
 		float:none;
 		display: inline-block;
 
@@ -56,7 +79,7 @@ header
 			left:0;
 			right:0;
 			border:0;
-			top:70px;
+			top:59px;
 			opacity:0;
 			display:block;
 			border-radius:0;
@@ -64,8 +87,8 @@ header
 			visibility: hidden;
 			text-align: center;
 			background: $white;
-		    padding: 10px 0 0 0;
-		    transform:translateY(-30px);
+		    padding: 0 0 0 0;
+		    /*transform:translateY(-30px);*/
 
 /*			&:before
 			{
@@ -117,29 +140,16 @@ header
 				{
 					opacity:1;
 					visibility: visible;
-		    		transform:translateY(0);
+		    		/*transform:translateY(0);*/
 				}
 			}
 		}
-	}
 
-	.navbar,
-	.navbar-default
-	{
-		position: static;
-
-		.nav
-		{
 			>li
 			{
-				position: static;
-			}
-		}
+				float:none;
+				display:inline-block;
 
-		.navbar-nav
-		{
-			>li
-			{
 				>a:not(.btn)
 				{
 					color: $white;
@@ -153,7 +163,7 @@ header
 						left:1px;
 						right:1px;
 						content:'';
-						bottom: 7px;
+						bottom: 0;
 						height: 1px;
 						display: block;
 						position: absolute;
@@ -197,8 +207,6 @@ header
 		}
 	}
 
-
-
 	body.scrolled &,
 	body.header-white &,
 	&:hover
@@ -206,14 +214,15 @@ header
 		background: $white;
 		transition:background .3s;
 
-		.navbar-brand
-		{
-			color: $gray-base;
-		}
-
 		.navbar,
 		.navbar-default
 		{
+
+			.navbar-brand:not(.navbar-brand-top)
+			{
+				color: $gray-base;
+			}
+
 			.navbar-nav
 			{
 				>li
@@ -247,6 +256,171 @@ header
 						}
 					}
 				}
+			}
+		}
+	}
+
+
+	@media (min-width: 768px)
+	{
+		.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+		    margin-left:0;
+		}
+	}
+
+
+
+	@media (max-width: $screen-lg-max)
+	{
+		background: $white;
+		transition:background .3s;
+
+		.navbar,
+		.navbar-default
+		{
+			.navbar-brand
+			{
+				color: $gray-base;
+			}
+
+			.navbar-nav
+			{
+				float:right;
+
+				>li
+				{
+					>a:not(.btn)
+					{
+						color: $gray-base;
+
+						.dropdown-menu
+						{
+							> li
+							{
+								> a
+								{
+									color: $gray-base;
+								}
+							}
+						}
+					}
+
+					&:hover,
+					&.active
+					{
+						> a
+						{
+							&:after
+							{
+								transform:scale(1,1);
+								background-color: $brand-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+	@media (max-width: $screen-sm-max)
+	{
+		.navbar,
+		.navbar-default
+		{
+			.navbar-brand
+			{
+				margin-left: 15px;
+			}
+
+			.navbar-bottom
+			{
+				.navbar-header
+				{
+					margin:0;
+				}
+			}
+
+			.navbar-default,
+			.navbar-nav
+			{
+				margin:0;
+				float:none;
+				display: block;
+				white-space: normal;
+
+				.call-to-action
+				{
+					margin-top: 30px;
+					margin-bottom:50px;
+				}
+
+				>li
+				{
+
+					& + li
+					{
+						margin-top:40px;
+					}
+
+					display: block;
+
+					>a:not(.btn)
+					{
+						font-size: 20px;
+						display: inline-block;
+
+						.fa
+						{
+							display:none;
+						}
+
+						.dropdown-menu
+						{
+							> li
+							{
+								> a
+								{
+								}
+							}
+						}
+					}
+
+					&:hover,
+					&.active
+					{
+						> a
+						{
+							&:after
+							{
+							}
+						}
+					}
+				}
+
+				.dropdown-menu
+				{
+					float: none;
+					opacity: 1;
+					display: block;
+					position: static;
+					text-align: center;
+					visibility: visible;
+
+					li
+					{
+						display:block;
+					}
+				}
+			}
+
+			.navbar-collapse
+			{
+				max-height: calc(100vh - 75px);
+				overflow-y: auto;
 			}
 		}
 	}

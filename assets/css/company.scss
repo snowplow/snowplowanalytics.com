@@ -273,7 +273,10 @@
 
 		@media (max-width: $screen-md-max)
 		{
-			text-align: left;
+			.clearfont
+			{
+				text-align: left;
+			}
 
 			.col
 			{

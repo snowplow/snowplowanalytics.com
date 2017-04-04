@@ -101,7 +101,20 @@ input[type=submit],
 	}
 
 	&.btn-outline {
-		@include btn-outline($brand-primary);
+	    color: inherit;
+	    border:1px solid $white;
+	    background-color: transparent;
+
+		&:hover,
+		&:focus
+		{
+			color:$brand-primary;
+			background-color:$white; 
+		}
+	}
+
+	&.btn-outline-white {
+		@include btn-outline($white);
 	}
 
 	&.btn-outline-primary {
