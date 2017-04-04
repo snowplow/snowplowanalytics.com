@@ -269,7 +269,23 @@ header
 	}
 
 
-	@media (min-width: $screen-sm-min) and (max-width: $screen-md-max)
+	@media (min-width: $screen-sm-min) and (max-width: $screen-lg-max)
+	{
+		.navbar,
+		.navbar-default
+		{
+			.navbar-nav
+			{
+				.dropdown-menu
+				{
+					top:113px;
+				}
+			}
+		}
+	}
+
+
+	@media (min-width: $screen-md-min) and (max-width: $screen-lg-max)
 	{
 		.navbar,
 		.navbar-default
@@ -340,59 +356,28 @@ header
 
 
 
-
-
-	@media (max-width: $screen-sm-max)
+	@media (max-width: $screen-lg-max)
 	{
+		background: $white;
+		transition:background .3s;
+
 		.navbar,
 		.navbar-default
 		{
 			.navbar-brand
 			{
-				margin-left: 15px;
+				color: $gray-base;
 			}
 
-			.navbar-bottom
-			{
-				.navbar-header
-				{
-					margin:0;
-				}
-			}
-
-			.navbar-default,
 			.navbar-nav
 			{
-				margin:0;
-				float:none;
-				display: block;
-				white-space: normal;
-
-				.call-to-action
-				{
-					margin-top: 30px;
-					margin-bottom:50px;
-				}
+				float:right;
 
 				>li
 				{
-
-					& + li
-					{
-						margin-top:40px;
-					}
-
-					display: block;
-
 					>a:not(.btn)
 					{
-						font-size: 20px;
-						display: inline-block;
-
-						.fa
-						{
-							display:none;
-						}
+						color: $gray-base;
 
 						.dropdown-menu
 						{
@@ -400,6 +385,7 @@ header
 							{
 								> a
 								{
+									color: $gray-base;
 								}
 							}
 						}
@@ -412,32 +398,24 @@ header
 						{
 							&:after
 							{
+								transform:scale(1,1);
+								background-color: $brand-primary;
 							}
 						}
 					}
 				}
-
-				.dropdown-menu
-				{
-					float: none;
-					opacity: 1;
-					display: block;
-					position: static;
-					text-align: center;
-					visibility: visible;
-
-					li
-					{
-						display:block;
-					}
-				}
-			}
-
-			.navbar-collapse
-			{
-				max-height: calc(100vh - 75px);
-				overflow-y: auto;
 			}
 		}
+	}
+
+
+
+
+
+
+
+	@media (max-height: $screen-xs-min)
+	{
+		position:absolute;
 	}
 }
