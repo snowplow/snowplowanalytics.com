@@ -261,10 +261,26 @@ header
 	}
 
 
-	@media (min-width: 768px)
+	@media (min-width: $screen-sm-min)
 	{
 		.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
 		    margin-left:0;
+		}
+	}
+
+
+	@media (min-width: $screen-sm-min) and (max-width: $screen-md-max)
+	{
+		.navbar,
+		.navbar-default
+		{
+			.navbar-nav
+			{
+				.dropdown-menu
+				{
+					top:106px;
+				}
+			}
 		}
 	}
 
