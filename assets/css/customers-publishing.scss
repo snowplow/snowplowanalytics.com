@@ -1,0 +1,38 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * CUSTOMERS CASE - PUBLISHING
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "snowplow/_variables";
+
+/*
+ * STYLES
+ */
+
+ body.publishing
+ {
+ 	.jumbotron
+	{
+		padding-bottom:120px;
+
+		.call-to-action
+		{
+			margin-top: -345px;
+		}
+	}	
+ }
+
