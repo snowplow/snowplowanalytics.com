@@ -30,13 +30,15 @@
  		h1
  		{
 			font-size: 90px;
+			font-size: 5.3vw;
 			letter-spacing: 0;
 
 			i
 			{
 				font-size: 490px;
+				font-size: 30vw;
 				vertical-align: middle;
-				line-height: 0;
+				line-height: 0.15em;
 				margin: 0;
 				padding: 0;
 				margin-top: -13px;
@@ -79,5 +81,26 @@
 		{
 			margin-top: -345px;
 		}
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+	 	.hero
+	 	{
+	 		h1
+	 		{
+				font-size: 14.3vw;
+
+				i
+				{
+	    			font-size: 60vw;
+					display: block;
+				}
+	 		}
+
+			h2, h3
+			{
+			}
+	 	}
 	}
  }
