@@ -1,0 +1,74 @@
+/*
+ * CONFIGURATION
+ */
+
+@import "../snowplow/_variables";
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * BLOG FILE
+ */
+
+/*
+ * STYLES
+ */
+
+body.blog
+{
+	article
+	{
+		& + article
+		{
+			margin-top:80px;
+		}
+
+		h2
+		{
+			margin-bottom: 0;
+		}
+
+		.content
+		{
+			margin-top: 30px;
+		}
+
+		.continue
+		{
+			margin-top: 15px;
+			font-size: 14px;
+		}
+	}
+
+	.datebox
+	{
+		font-size:14px;
+	}
+
+	aside
+	{
+		ul
+		{
+			margin:0;
+			padding:0;
+			font-size: 14px;
+			list-style: none;
+		}
+
+		.categories
+		{
+			margin-top:30px;
+			margin-bottom:20px;
+		}
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+
+	}
+}
