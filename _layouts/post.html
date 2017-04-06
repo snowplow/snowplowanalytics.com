@@ -1,6 +1,27 @@
 ---
-layout: blog
-class: post header-white
+class: blog header-white
 ---
+{% include head.html %}
 
-{{ content }}
+        <main>
+            {% include header.html %}
+
+			<div class="container">
+				<section class="col-md-9">
+				    <article>
+				        <h1 class="h3"><a href="{{ post.url }}">{{ title }}</a></h1>
+				        <div class="datebox">{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+				        <div class="content">{{ content }}</div>
+				    </article>
+				</section>
+
+				<!--
+				    SIDEBAR
+				-->
+				<aside class="col-md-3">
+				    <div data-spy="affix" data-offset-top="0" data-offset-bottom="410">{% include blog/sidebar.html %}</div>
+				</aside>
+            </div>
+        </main>
+
+		{% include footer.html %}
