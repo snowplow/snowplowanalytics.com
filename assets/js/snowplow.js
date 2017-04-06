@@ -151,6 +151,40 @@ if (!window.location.origin) {
 
 
 
+		/*
+		 * WINDOW HASH AND SCROLL TO ANCHORS
+		 */
+
+		$('a[href^="#"]').on ('click', function (e)
+		{
+			var hash = this.hash;
+			if (hash)
+			{
+				var target = $(hash);
+				if (target.length>0)
+				{
+					e.preventDefault ();
+					$("html, body").animate({ scrollTop: target.offset().top }, 1000);
+				}
+			}
+		});
+
+		if(window.location.hash != '')
+		{
+        	var hash = window.location.hash;
+        	window.location.hash = '';
+
+			var target = $(hash);
+			if (target.length>0)
+			{
+				$("html, body").animate({ scrollTop: target.offset().top }, 1000, function (){
+					window.location.hash = hash;
+				});
+			}
+    	}
+
+
+
 
 
 		/*
