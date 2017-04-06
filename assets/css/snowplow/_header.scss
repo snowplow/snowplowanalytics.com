@@ -217,10 +217,16 @@ header
 		.navbar,
 		.navbar-default
 		{
+			border-bottom: 1px solid rgba($gray-lighter, .4);
 
 			.navbar-brand:not(.navbar-brand-top)
 			{
 				color: $gray-base;
+			}
+
+			.dropdown-menu
+			{
+				border-bottom: 1px solid rgba($gray-lighter, .4);
 			}
 
 			.navbar-nav
@@ -357,11 +363,6 @@ header
 
 
 
-
-
-
-
-
 	@media (max-width: $screen-sm-max)
 	{
 		.navbar,
@@ -392,6 +393,11 @@ header
 				{
 					margin-top: 30px;
 					margin-bottom:50px;
+				}
+
+				.dropdown-menu
+				{
+					border: 0!important;
 				}
 
 				>li
