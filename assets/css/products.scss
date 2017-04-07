@@ -32,6 +32,12 @@
  	{
  		z-index:0;
 
+		@media screen and (min-width:$screen-md-max)
+		{
+			padding-top:200px;
+			padding-bottom:40px;
+		}
+
  		.abs
  		{
  			top:50%;
