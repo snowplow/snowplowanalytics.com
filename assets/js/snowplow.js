@@ -186,6 +186,16 @@ if (!window.location.origin) {
 
 
 
+    	/*
+    	 * MUTED LINKS
+    	 */
+    	$('a.mute-link').on ('click mouseup', function (e) {
+    		e.preventDefault ();
+    		e.stopPropagation ();
+    	})
+
+
+
 
 		/*
 		 * WINDOW composition
