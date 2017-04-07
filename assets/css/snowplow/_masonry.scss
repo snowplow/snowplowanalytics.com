@@ -33,5 +33,10 @@
 		{
 			max-width: calc(100% - 20px);
 		}
+
+		@media (max-width: $screen-xs-max)
+		{
+			padding:30px;
+		}
 	}
 }
