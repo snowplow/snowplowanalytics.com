@@ -31,6 +31,7 @@ footer
 		}
 	}
 
+
 	a
 	{
 		color:$white;
@@ -54,9 +55,35 @@ footer
 		}
 	}
 
+
+	.brand-about
+	{
+		font-size: 14px;
+		padding-top:25px;
+		padding-bottom:20px;
+
+		p
+		{
+			margin:0;
+			line-height: 1em;
+
+			& + p
+			{
+				margin-top: 10px;
+			}
+		}
+
+		a
+		{
+			color:#ab6be7;
+			font-size: 15px;
+		}
+	}
+
+
 	.newsletter
 	{
-		margin: 60px auto 0;
+		margin: 0 auto;
 		max-width: 400px;
 
 		input
@@ -84,13 +111,13 @@ footer
 
 		}
 
-		.col
+/*		.col
 		{
 			float: left;
 			width: 100%;
 			max-width: 20%;
 			padding: 0 0 0 15px;
-		}
+		}*/
 
 /*		.col-md-3
 		{
@@ -194,11 +221,11 @@ footer
 		    margin-left:auto;
 		    margin-right:auto;
 
-			.col
+/*			.col
 			{
 				margin-bottom:40px;
 				max-width:33.333333%;
-			}
+			}*/
 		}
 
 		.newsletter
@@ -226,7 +253,7 @@ footer
 	}
 
 
-	@media (max-width: 490px)
+	@media (max-width: 415px)
 	{
 		.brand
 		{
@@ -234,7 +261,7 @@ footer
 
 		.links
 		{
-			.col
+/*			.col
 			{
 				max-width: 100%;
 				padding: 0;
@@ -242,7 +269,7 @@ footer
 				text-align: center;
 				margin-left: auto;
 				margin-right: auto;
-			}
+			}*/
 		}
 
 		.info
