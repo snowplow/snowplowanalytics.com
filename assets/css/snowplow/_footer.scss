@@ -42,7 +42,7 @@ footer
 		&:hover,
 		&:focus
 		{
-			color: $brand-info;
+			color: $brand-primary-brighter;
 			text-decoration: none;
 		}
 	}
@@ -51,7 +51,7 @@ footer
 	{
 		a
 		{
-			color:$gray;
+			color:$brand-primary-brighter;
 		}
 	}
 
@@ -75,7 +75,7 @@ footer
 
 		a
 		{
-			color:#ab6be7;
+			color:$brand-primary-brighter;
 			font-size: 15px;
 		}
 	}
@@ -105,6 +105,8 @@ footer
 	{
 		margin-top: 80px;
 		padding-right:0;
+
+		
 
 		.row
 		{
