@@ -63,7 +63,19 @@
 		
 		h5
 		{
-			padding: 14px 0;
+			color:$white;
+			padding: 0 0 14px;
+		}
+
+		p
+		{
+			font-size: 18px;
+			line-height: 1em;
+
+			&:last-child
+			{
+				margin-bottom: 0;
+			}
 		}
 
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#50a3fc+0,28d1b1+100 */
