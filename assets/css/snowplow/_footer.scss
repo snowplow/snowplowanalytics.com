@@ -83,7 +83,7 @@ footer
 
 	.newsletter
 	{
-		margin: 0 auto;
+		margin: 0;
 		max-width: 400px;
 
 		input
@@ -206,6 +206,11 @@ footer
 		.brand
 		{
 			text-align:center;
+		}
+
+		.newsletter
+		{
+			margin: 0 auto;
 		}
 	}
 
