@@ -16,6 +16,13 @@ header
 	.navbar-top
 	{
 		padding:2px 0;
+
+		.btn
+		{
+			border: 0;
+			padding-top: 9px;
+			padding-bottom: 9px;
+		}
 	}
 
 	.navbar-bottom
@@ -280,6 +287,21 @@ header
 		.navbar,
 		.navbar-default
 		{
+
+			.navbar-top
+			{
+				.navbar-brand
+				{
+					height: 28px;
+					padding: 13px 0;
+
+					i
+					{
+						font-size: 110px;
+					}
+				}
+			}
+
 			.navbar-nav
 			{
 				.dropdown-menu
