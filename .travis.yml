@@ -13,13 +13,13 @@ script:
 
 deploy:
   - provider: script
-    script: ./.travis/deploy.sh next.snowplowanalytics.com 0
+    script: ./.travis/deploy.sh next.snowplowanalytics.com 0 false
     skip_cleanup: true
     on:
       branch: develop
 
   - provider: script
-    script: ./.travis/deploy.sh snowplowanalytics.com 21600
+    script: ./.travis/deploy.sh snowplowanalytics.com 21600 true
     skip_cleanup: true
     on:
       branch: master
