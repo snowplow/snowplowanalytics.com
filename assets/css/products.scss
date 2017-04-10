@@ -79,13 +79,18 @@
 
 		.col
 		{
-			padding-bottom: 60px;
-			padding-top: 60px;
-
 			&:first-child + .col
 			{
 				border-left:1px solid $gray-lighter;
 				border-right:1px solid $gray-lighter;
+
+                @media (max-width: $screen-sm-max)
+                {
+                    border-left:0;
+                    border-right:0;
+                    border-top:1px solid $gray-lighter;
+                    border-bottom:1px solid $gray-lighter;
+                }
 			}
 
 			img
