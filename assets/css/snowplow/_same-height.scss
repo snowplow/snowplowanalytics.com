@@ -1,0 +1,33 @@
+.same-height
+{
+	display: table;
+
+	.col
+	{
+		width:50%;
+		height: 100%;
+		position:relative;
+		display: table-cell;
+		padding-bottom: 230px;
+
+		.btn:last-child
+		{
+			left:50%;
+			bottom:80px;
+			position:absolute;
+			transform:translateX(-50%); 
+		}
+	}
+
+	@media screen and (max-width:$screen-sm-max)
+	{
+		display:block;
+
+		.col
+		{
+			width:100%;
+			float:none;
+			display:block;
+		}
+	}
+}
