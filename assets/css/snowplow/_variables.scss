@@ -1,7 +1,6 @@
 /*
  * GRID
 */
-
 $screen-xs-min: 425px; /* large mobile */
 $screen-xs-max: 426px;
 
@@ -15,7 +14,6 @@ $screen-lg-min: 1299px;
 /*
  * COLORS
 */
-
 $black:         black;
 $white:         white;
 
@@ -39,7 +37,6 @@ $brand-light:   #b978f8;
 /*
  * COMPONENTS
  */
-
 $padding-base-vertical: 12px;
 $padding-base-horizontal: 16px;
 $padding-large-vertical: 15px;
@@ -63,5 +60,32 @@ $caret-width-large: 5px;
 /*
  * TYPO
  */
-
 $font-size-base: 18px;
+
+
+
+
+/*
+ * IMAGES
+ */
+@mixin img-grayscale ()
+{
+	img
+	{
+		transition: all .3s;
+		border: 1px solid $gray-light;
+	    filter: url('img-filters.svg#grayscale'); /* Firefox 3.5+ */
+	    filter: gray; /* IE6-9 */
+	    -webkit-filter: grayscale(1); /* Webkit Nightlies, Google Chrome Canary and Microsoft Edge*/
+	}
+
+	&:hover,
+	&:focus
+	{
+		img
+		{
+	    	filter: none; /* Applies to FF + IE */
+	    	-webkit-filter: grayscale(0);
+		}
+	}
+}

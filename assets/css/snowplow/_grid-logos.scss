@@ -5,22 +5,7 @@
 		width:20%;
 		display:inline-block;
 
-		img
-		{
-			transition: all .3s;
-			border: 1px solid $gray-light;
-		}
-
-
-		&:hover,
-		&:focus
-		{
-			img
-			{
-				background:$white;
-				border-color:transparent;
-			}
-		}
+		@include img-grayscale;
 	}
 
 	@media (max-width: $screen-md-max)
