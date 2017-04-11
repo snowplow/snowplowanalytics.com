@@ -9,7 +9,7 @@ class: blog header-white
 			<div class="container">
 				<section class="col-md-9">
 				    <article>
-				        <h1 class="h3">{{ title }}</h1>
+				        <h1 class="h3">{{ page.title }}</h1>
 				        <div class="datebox">{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
 				        <div class="content">{{ content }}</div>
 				    </article>
