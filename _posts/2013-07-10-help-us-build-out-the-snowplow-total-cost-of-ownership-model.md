@@ -31,7 +31,7 @@ In the rest of this post, we provide simple instructions for pulling the relevan
 
 Simply execute the following SQL statement in Redshift
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT
 to_char(collector_tstamp, 'YYYY-MM-DD') AS "Day",
 count(*) AS "Number of events"

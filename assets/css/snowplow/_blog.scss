@@ -98,6 +98,9 @@ body.blog
 
 	@media (max-width: $screen-md-max)
 	{
-
+		h1:first-child
+		{
+			font-size: 35px;
+		}
 	}
 }
