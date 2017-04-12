@@ -4,8 +4,18 @@
 	{
 		width:20%;
 		display:inline-block;
+		position: relative;
 
 		@include img-grayscale;
+
+		&:hover,
+		&:focus
+		{
+			img
+			{
+				background:white;
+			}
+		}
 	}
 
 	@media (max-width: $screen-md-max)
