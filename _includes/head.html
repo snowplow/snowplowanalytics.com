@@ -9,6 +9,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        {% include gtm/google-tag-manager-script.js %}
+
         <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/assets/img/common/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/common/favicon/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/common/favicon/favicon-16x16.png" sizes="16x16">
@@ -19,7 +21,7 @@
         <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/common/favicon/mstile-144x144.png">
         <meta name="msapplication-config" content="{{ BASE_PATH }}/assets/img/common/favicon/browserconfig.xml">
         <meta name="theme-color" content="#5b009b">
-        
+
         {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – The event data pipeline</title>{% endif %}
         <meta name="description" content="{{ page.description }}">
         <meta name="author" content="{% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}{% else %}{{ site.author.name }}{% endif %}">
@@ -54,7 +56,8 @@
         <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
         <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
-        {% include scripts/google-tag-manager.js %}
     </head>
 
     <body class="{{ page.class }}">
+
+        {% include gtm/google-tag-manager-noscript.js %}
