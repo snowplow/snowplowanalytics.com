@@ -41,19 +41,20 @@
 		}
 	}
 
-/*	&.header
+	&.header
 	{
 		height: 90vh;
 		min-height: 810px;
 
 		.text-block
 		{
-			top:50%;
-			left:60px;
-			transform:translateY(-50%);
+			left:0;
+			right:0;
+			top:33.333333%;
+			transform:translateY(-33.333333%);
 			position: absolute;
 		}
-	}*/
+	}
 
 	@media (max-width: $screen-sm-max)
 	{
