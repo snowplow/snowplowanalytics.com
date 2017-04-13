@@ -11,16 +11,14 @@
 
         {% include gtm/google-tag-manager-script.js %}
 
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/assets/img/common/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/common/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/common/favicon/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="{{ BASE_PATH }}/assets/img/common/favicon/manifest.json">
-        <link rel="mask-icon" href="{{ BASE_PATH }}/assets/img/common/favicon/safari-pinned-tab.svg" color="#5b009b">
-        <link rel="shortcut icon" href="{{ BASE_PATH }}/assets/img/common/favicon/favicon.ico">
-        <meta name="msapplication-TileColor" content="#5b009b">
-        <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/common/favicon/mstile-144x144.png">
-        <meta name="msapplication-config" content="{{ BASE_PATH }}/assets/img/common/favicon/browserconfig.xml">
-        <meta name="theme-color" content="#5b009b">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="{{ BASE_PATH }}/assets/img/favicon/manifest.json">
+        <link rel="mask-icon" href="{{ BASE_PATH }}/assets/img/favicon/safari-pinned-tab.svg" color="#5b0098">
+        <meta name="msapplication-TileColor" content="#5b0098">
+        <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/favicon/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
 
         {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – The event data pipeline</title>{% endif %}
         <meta name="description" content="{{ page.description }}">
