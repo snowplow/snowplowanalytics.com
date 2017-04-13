@@ -203,15 +203,15 @@ if (!window.location.origin) {
 		 * WINDOW composition
 		 */
 
-		 $('.window').each (function ()
-		 {
-		 	var th = $(this);
-		 	var src = th.find ('.box-image img');
-		 	if (src.length>0)
-		 		src = src.attr ('src'); // WE PICK UP THE FIRST ONE
-		 	if (src)
-		 		th.css ('background-image', 'url('+src+')' );
-		 });
+		 // $('.window').each (function ()
+		 // {
+		 // 	var th = $(this);
+		 // 	var src = th.find ('.box-image img');
+		 // 	if (src.length>0)
+		 // 		src = src.attr ('src'); // WE PICK UP THE FIRST ONE
+		 // 	if (src)
+		 // 		th.css ('background-image', 'url('+src+')' );
+		 // });
 
 
 

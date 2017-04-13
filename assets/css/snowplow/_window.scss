@@ -1,10 +1,10 @@
 .window
 {
 	padding:0;
-	height:100vh;
+/*	height:100vh;
 	overflow:hidden;
 	min-height:600px;
-	max-height:1220px;
+	max-height:1220px;*/
 	position:relative;
 
 	.box-text
@@ -38,5 +38,17 @@
 
 	.box-image
 	{
+	}
+
+	@media screen and (max-width: $screen-md-max)
+	{
+/*		height:auto;
+		min-height:0;
+		max-height:100%;*/
+		
+		.box-text
+		{
+			position: static;
+		}
 	}
 }
