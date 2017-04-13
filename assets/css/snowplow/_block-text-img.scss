@@ -1,0 +1,62 @@
+/*
+ * CONFIGURATION
+ */
+
+@import "../snowplow/_variables";
+
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * GLOBAL BLOCK TEXT IMAGE
+ */
+
+/*
+ * STYLES
+ */
+.block-text-img
+{
+	position: relative;
+
+
+	@media screen and (max-width: $screen-md-min)
+	{
+		.block-img
+		{
+			background:none;
+			background-image:none!important;
+		}
+	}
+
+
+	@media screen and (min-width: $screen-md-max)
+	{
+		.block-img
+		{
+			top:0;
+			left:0;
+			right:50%;
+			bottom: 0;
+			position: absolute;
+			background-position: center center;
+			background-repeat:no-repeat;
+			background-size: cover; 
+
+			img
+			{
+				display: none;
+			}
+		}
+
+		.block-text + .block-img
+		{
+			left:50%;
+			right:0;
+		}
+	}
+}

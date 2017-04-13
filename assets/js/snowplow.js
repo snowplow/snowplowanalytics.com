@@ -216,6 +216,23 @@ if (!window.location.origin) {
 
 
 
+		/*
+		 * BLOCK TEXT IMG
+		 */
+
+		 $('.block-text-img').each (function ()
+		 {
+		 	var th = $(this);
+		 	var blockImg = th.find ('.block-img');
+		 	var tagImg = th.find ('.block-img img');
+		 	if (blockImg.length>0 && tagImg.length>0){
+		 		blockImg.css ('background-image', 'url('+tagImg.attr ('src')+')' );
+		 	}
+		 });
+
+
+
+
 		 /*
 		  * Remove drag of images
 		  */
