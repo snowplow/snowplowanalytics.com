@@ -275,8 +275,9 @@ if (!window.location.origin) {
 				body.removeClass ('scrolling');
 				slick.each (function ()
 				{
-					if ( isElementInViewport(this) && this.autoplay )
-						$(this).slick('slickPlay');
+					var th = $(this);
+					if ( isElementInViewport(this) && th.slick('slickGetOption', 'autoplay') )
+						th.slick('slickPlay');
 				});
 			}, 1000);
 
