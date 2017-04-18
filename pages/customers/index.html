@@ -23,7 +23,7 @@ assets:
     <div class="box-image">
         <img src="{{ BASE_PATH }}/assets/img/common/hero-8.jpg" width="1440" height="1220" class="adapt" alt="">
     </div>
-    <div class="box-text bg-primary-lighter pad-100">
+    <div class="box-text bg-primary-lighter pad-100 md-pad-40">
         <h2>Our customers are diverse.</h2>
         <p>From publishing companies to retailers, jobs boards to broadcasters, dating sites to mobile-only banking providers, limousine services to consumer goods manufacturers, automotive dealerships to games companies, airports to luxury brands, travel companies to serviced office providers, there are not many sectors without a Snowplow user. We have active and growing communities in London, New York, Sydney, Amsterdam, Sao Paolo, Berlin, San Francisco, Tel Aviv and Dubai.</p>
         <p>Our customers have a lot in common, though. They are smart. They love data. And they want to use data to differentiate.</p>
@@ -36,7 +36,7 @@ assets:
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 no-gutter">
+            <div class="col-md-6 no-gutter text-md-center text-sm-center text-xs-center">
                 <img src="{{ BASE_PATH }}/assets/img/common/hero-9.jpg" class="img-circle" width="493" height="493" class="" alt="">
             </div>
             <div class="col-md-6 spacer-top-100">
@@ -66,16 +66,16 @@ assets:
 <section class="bg-primary-lighter">
 
     <div class="container spacer-bottom-80">
-        <div class="col-md-6">
+        <div class="col-md-6 pull-right col-md-12">
+            <img src="{{ BASE_PATH }}/assets/img/common/hero-10.jpg" width="720" height="600" class="" alt="">
+        </div>
+        <div class="col-md-6 pull-left">
             <div class="text-left pad-30">
                 <h5 class="text-uppercase">Retail</h5>
                 <h2>Simply Business</h2>
                 <p>Simply Business use event data to disrupt the business insurance market.</p>
-                <a href="/customers/simplybusiness/" class="btn btn-outline-primary spacer-top-40">Explore Case Study</a>
+                <a href="/customers/simply-business/" class="btn btn-outline-primary spacer-top-40">Explore Case Study</a>
             </div>
-        </div>
-        <div class="col-md-6">
-            <img src="{{ BASE_PATH }}/assets/img/common/hero-10.jpg" width="720" height="600" class="" alt="">
         </div>
     </div>
 
@@ -98,14 +98,8 @@ assets:
 
 
 <section class="no-margin no-padding">
-    <div class="container well call-to-action">
-        <div class="col col-md-9 no-gutter">
-            <h4 class="text-uppercase no-margin">Don’t hesitate to get in touch.</h4>
-            <p class="no-margin">We’d be happy to learn more about your organization, answer any questions you have, and demo or discuss Snowplow in more detail.</p>
-        </div>
-        <div class="col col-md-3 no-gutter text-right">
-            <a href="#" class="btn btn-primary">Request a Demo</a>
-        </div>
+    <div class="container pad-t-40">
+        {% include request-demo.html %}
     </div>
 </section>
 

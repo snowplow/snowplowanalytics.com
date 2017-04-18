@@ -33,6 +33,28 @@
 		letter-spacing: 0;
 	}
 
+	.text-block
+	{
+		.parag
+		{
+			line-height: 1.3em;
+		}
+	}
+
+	&.header
+	{
+		height: 90vh;
+		min-height: 810px;
+
+		.text-block
+		{
+			left:0;
+			right:0;
+			top:33.333333%;
+			transform:translateY(-33.333333%);
+			position: absolute;
+		}
+	}
 
 	@media (max-width: $screen-sm-max)
 	{

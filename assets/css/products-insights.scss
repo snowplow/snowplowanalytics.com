@@ -81,6 +81,11 @@
 		{
 			margin-top: -345px;
 		}
+
+
+		@media screen and (max-width:$screen-md-max)
+		{
+		}
 	}
 
 	@media (max-width: $screen-md-max)
@@ -102,6 +107,17 @@
 			{
 			}
 	 	}
+
+	 	
+		.jumbotron
+		{
+			padding-top:40px;
+
+			.call-to-action
+			{
+				margin-top: 0;
+			}
+		}
 	}
  }
 
