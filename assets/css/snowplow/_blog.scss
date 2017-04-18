@@ -82,6 +82,12 @@ body.blog
 			padding:0;
 			font-size: 14px;
 			list-style: none;
+
+			li
+			{
+				line-height: 1;
+				padding: 10px 0;
+			}
 		}
 
 		.categories
