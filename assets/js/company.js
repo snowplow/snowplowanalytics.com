@@ -20,7 +20,9 @@
 
 		function hideBio ()
 		{
-			bioClone.detach ().remove ();
+			if (bioClone && bioClone.length>0)
+				bioClone.detach ().remove ();
+
 			sep.height(0).detach ().empty ();
 			teamGrid.removeClass ('active');
 			teamItems.removeClass ('active');
@@ -29,9 +31,6 @@
 
 		function showBio (el, bio, after)
 		{
-
-			console.log ( el );
-
 			bioClone = bio.clone();
 			sep.empty ().append(bioClone).height(0);
 
@@ -41,7 +40,7 @@
 				sep.insertAfter (el);
 
 			sep
-			.height( bio.outerHeight() )
+			.height( bioClone.outerHeight() )
 			.find('.i-close').on ('click', function (e)
 			{
 				e.preventDefault ();
@@ -62,18 +61,17 @@
 			teamItems.removeClass ('active');
 
 			var th = $(this);
+				th.addClass ('active');
 			var bio = th.find ('.bio');
 			var rowPos = th.position().top;
 			var nextItems = th.nextAll();
 			var totalNextItems = nextItems.length;
 
-			if (totalNextItems.length==0)
+			if (totalNextItems==0)
 				showBio (th, bio, true);
 			else
 				nextItems.each (function (i)
 				{
-					console.log ((i, i+1, totalNextItems);
-
 					var item = $(this);
 					if (item.position().top > rowPos) // BREAK POINT
 					{
@@ -84,8 +82,6 @@
 					if (i+1==totalNextItems) // LAST ELEMENT
 						showBio (item, bio, true);
 				});
-
-			th.addClass ('active');
 
 			// SCROLL TO FOCUS IN VIEW
 			$('html, body').stop().animate({
