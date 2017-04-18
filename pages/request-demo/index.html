@@ -6,6 +6,7 @@ permalink: /request-demo/
 class: request-demo
 assets:
   css: assets/css/request-demo.css
+  js: assets/js/request-demo.js
 ---
 
 <section class="hero no-gutter-vertical">
@@ -15,47 +16,64 @@ assets:
         <h4>We empower analysts, engineers, product managers, marketers, <br class="visible-lg" />operations and other specialists to use digital event data <br class="visible-lg" />to do transformative things with this data.</h4>
     </div>
     <div class="container spacer-top-50">
-        <form class="col-md-8 col-md-push-2 well no-border">
+        <form class="col-md-8 col-md-push-2 well no-border" id="requestTrial">
+            <div class="hidden">
+                <input type="text" class="request-trial-input" id="inputWebsite" maxlength="255">
+            </div>
             <div class="clearfix no-gutter">
-                <div class="form-group col-md-6">
-                    <label class="control-label" for="form-name">First Name</label>
-                    <input type="text" class="form-control" id="form-name" aria-describedby="name" placeholder="Your first name">
+                <div class="form-group col-md-6" id="groupFirstName">
+                    <div id="controlsFirstName">
+                        <label class="control-label" for="inputFirstName">First Name</label>
+                        <input type="text" class="form-control" id="inputFirstName" aria-describedby="first-name" placeholder="Your first name" maxlength="40" required>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label" for="form-company">Company</label>
-                    <input type="text" class="form-control" id="form-company" aria-describedby="company" placeholder="Your company">
-                </div>
-            </div>
-            <div class="clearfix no-gutter spacer-top-30">
-                <div class="form-group col-md-6 has-error has-feedback">
-                    <label class="control-label" for="form-email">Email</label>
-                    <input type="email" class="form-control" id="form-email" aria-describedby="email" placeholder="Your email">
-                    <span class="help-inline">Please correct the error</span>
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label" for="form-phone">Phone</label>
-                    <input type="tel" class="form-control" id="form-phone" aria-describedby="phone" placeholder="Your phone number">
+                <div class="form-group col-md-6" id="groupLastName">
+                    <div id="controlsLastName">
+                        <label class="control-label" for="inputLastName">Last Name</label>
+                        <input type="text" class="form-control" id="inputLastName" aria-describedby="last-name" placeholder="Your last name" maxlength="40" required>
+                    </div>
                 </div>
             </div>
             <div class="clearfix no-gutter spacer-top-30">
+                <div class="form-group col-md-6" id="groupEmail">
+                    <div id="controlsEmail">
+                        <label class="control-label" for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="Your email" maxlength="80" required>
+                    </div>
+                </div>
+                <div class="form-group col-md-6" id="groupPhone">
+                    <div id="controlsPhone">
+                        <label class="control-label" for="inputPhone">Phone</label>
+                        <input type="tel" class="form-control" id="inputPhone" aria-describedby="phone" placeholder="Your phone number" maxlength="20">
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix no-gutter spacer-top-30">
+                <div class="form-group col-md-12" id="groupCompany">
+                    <div id="controlsCompany">
+                        <label class="control-label" for="inputCompany">Company</label>
+                        <input type="text" class="form-control" id="inputCompany" aria-describedby="company" placeholder="Your company" maxlength="40" required>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix no-gutter spacer-top-30" id="groupLeadSource">
                 <p>Please check the products you are interested in</p>
                 <div class="form-check">
                     <div class="form-group col-sm-6">
-                        <div class="form-check-label">
-                            <input type="checkbox" class="form-check-input" id="form-product-insights" checked="">
-                            <label class="control-label" for="form-product-insights">Snowplow Insights</label>
-                            <span class="help-inline">Please correct the error</span>
+                        <div class="form-check-label" id="controlsLeadInsights">
+                            <input type="checkbox" class="form-check-input" id="inputLeadInsights" checked="">
+                            <label class="control-label" for="inputLeadInsights">Snowplow Insights</label>
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
-                        <div class="form-check-label">
-                            <input type="checkbox" class="form-check-input" id="form-product-beta">
-                            <label class="control-label" for="form-product-beta">Snowplow React <sup>BETA</sup></label>
+                        <div class="form-check-label" id="controlsLeadReact">
+                            <input type="checkbox" class="form-check-input" id="inputLeadReact">
+                            <label class="control-label" for="inputLeadReact">Snowplow React <sup>BETA</sup></label>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary spacer-top-30">Request a Demo</button>
+            <button type="submit" id="submitRequestTrial" class="btn btn-primary spacer-top-30">Request a Demo</button>
         </form>
     </div>
 </section>
