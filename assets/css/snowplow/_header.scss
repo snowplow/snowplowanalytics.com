@@ -313,6 +313,34 @@ header
 	}
 
 
+	@media (min-width: $screen-sm-max) and (max-width: $screen-md-min)
+	{
+		.navbar,
+		.navbar-default
+		{
+			.navbar-nav
+			{
+				width: 100%;
+				line-height: 0;
+				text-align: justify;
+				white-space: normal;
+
+				&:after
+				{
+					width: 100%;
+					content: ".";
+					visibility: hidden;
+					display: inline-block;
+				}
+				.dropdown-menu
+				{
+					top:91px;
+				}
+			}
+		}
+	}
+
+
 	@media (min-width: $screen-md-min) and (max-width: $screen-lg-max)
 	{
 		.navbar,
