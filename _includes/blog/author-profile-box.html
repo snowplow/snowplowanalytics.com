@@ -1,0 +1,8 @@
+<div class="author-profile-box">			    
+{% for author in site.data.authors %}
+	{% if author.name == page.author %}
+	<div class="box-header">{{ author.full_name }}</div>
+	<div class="box-text"><img src="{{ author.avatar }}">{{ author.spiel }}</div>
+	{% endif %}
+{% endfor %}
+</div>
