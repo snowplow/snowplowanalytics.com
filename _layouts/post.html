@@ -7,7 +7,7 @@ class: blog header-white
             {% include header.html %}
 
 			<div class="container">
-				<section class="col-md-9">
+				<section class="col-md-8">
 				    <article>
 				        <h1 class="h2">{{ page.title }}</h1>
 				        <div class="datebox">{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
@@ -18,7 +18,7 @@ class: blog header-white
 				<!--
 				    SIDEBAR
 				-->
-				<aside class="col-md-3">
+				<aside class="col-md-3 col-md-offset-1">
 				    <div data-spy="affix" data-offset-top="0" data-offset-bottom="410">{% include blog/sidebar.html %}</div>
 				</aside>
             </div>

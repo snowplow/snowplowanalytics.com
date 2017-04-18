@@ -1,0 +1,38 @@
+{% include head.html %}
+
+        <main>
+            {% include header.html %}
+
+			<div class="container">
+				<section class="col-md-8 pad-t-0">
+				    <div>			    
+					{% for author in site.data.authors %}
+						{% if author.name == page.author %}
+						<div class="box-header">{{ author.full_name }}</div>
+						<div class="box-text"><img src="{{ author.avatar }}">{{ author.spiel }}</div>
+						{% endif %}
+					{% endfor %}
+				    </div>
+
+					<div class="posts">
+						{% for post in site.posts %}
+						{% if post.author == page.author %}
+					    <article>
+					        <h4 class="no-margin-bottom spacer-top-50"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+					        <small class="datebox">{{ post.date | date_to_long_string }}</small>
+					    </article>
+						{% endif %}
+      					{% endfor %}
+				    </div>
+				</section>
+
+				<!--
+				    SIDEBAR
+				-->
+				<aside class="col-md-3 col-md-offset-1">
+				    <div data-spy="affix" data-offset-top="0" data-offset-bottom="410">{% include blog/sidebar.html %}</div>
+				</aside>
+            </div>
+        </main>
+
+		{% include footer.html %}
