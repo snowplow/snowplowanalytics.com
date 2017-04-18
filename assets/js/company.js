@@ -14,30 +14,39 @@
 		var teamItems = teamGrid.find('.item');
 		var sep = $('<div class="sep col-xs-12 no-gutter"></div>');
 			sep.height(0);
-		var scrollingTimeOut;
+		var header = $('header');
+		var teamTimeOut, scrollingTimeOut, bioClone;
 
+
+		function hideBio ()
+		{
+			bioClone.detach ().remove ();
+			sep.height(0).detach ().empty ();
+			teamGrid.removeClass ('active');
+			teamItems.removeClass ('active');
+		}
 
 
 		function showBio (el, bio, after)
 		{
-			sep
-			.empty ()
-			.append (bio.clone())
-			.height(0);
-			
+
+			console.log ( el );
+
+			bioClone = bio.clone();
+			sep.empty ().append(bioClone).height(0);
+
 			if (!after)
 				sep.insertBefore (el);
 			else
 				sep.insertAfter (el);
-			
-			sep.height(bio.outerHeight())
+
+			sep
+			.height( bio.outerHeight() )
 			.find('.i-close').on ('click', function (e)
 			{
 				e.preventDefault ();
 				e.stopPropagation ();
-				sep.height(0).detach ().empty ();
-				teamGrid.removeClass ('active');
-				teamItems.removeClass ('active');
+				hideBio ();
 			});
 
 			sep.css('transform', 'perspective( 2000px ) rotateX(0)');
@@ -46,7 +55,9 @@
 
 		teamItems.on ('click', function (e)
 		{
+			clearTimeout (teamTimeOut);
 			e.preventDefault ();
+
 			teamGrid.addClass ('active');
 			teamItems.removeClass ('active');
 
@@ -61,18 +72,40 @@
 			else
 				nextItems.each (function (i)
 				{
-					if ($(this).position().top > rowPos) // BREAK POINT
+					console.log ((i, i+1, totalNextItems);
+
+					var item = $(this);
+					if (item.position().top > rowPos) // BREAK POINT
 					{
 						showBio (nextItems[i], bio);
 						return false;
 					}
 
 					if (i+1==totalNextItems) // LAST ELEMENT
-						showBio ($(this), bio, true);
+						showBio (item, bio, true);
 				});
 
-			// ACTIVATE
 			th.addClass ('active');
+
+			// SCROLL TO FOCUS IN VIEW
+			$('html, body').stop().animate({
+				scrollTop: th.offset().top - header.height()
+			});
+		});
+
+		$(window).on ('resize.company', function ()
+		{
+			var active = teamItems.filter ('.active');
+			hideBio ();
+
+			teamTimeOut = setTimeout (function (){
+				if (active.length>0)
+					active.trigger ('click');
+			}, 750);
+		});
+
+		$(window).on ('touchstart.company mousewheel.company', function (){
+			$('html, body').stop();
 		});
 	});
 
