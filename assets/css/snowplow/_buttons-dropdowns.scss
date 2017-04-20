@@ -180,6 +180,16 @@ input[type=submit],
 
 			}
 		 }
+
+		.dropdown-toggle
+		{
+			 .filter-option
+			{
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				padding-right: 20px;
+			}
+		}
 	}
 
 	>.dropdown-toggle

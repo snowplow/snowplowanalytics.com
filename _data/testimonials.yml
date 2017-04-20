@@ -1,0 +1,8 @@
+eric:
+  name: eric
+  full_name: Eric Pantera
+  company: Viadeo
+  company_link: http://viadeo.com
+  position: VP of Engineering
+  content: Snowplow has been a game-changer here at Viadeo, handling 10 million events per day. Today at Viadeo, every single engineer and product manager is able to setup a rich metrics dashboard in a few minutes.
+  picture:  /assets/img/testimonials/eric-pantera.jpg
