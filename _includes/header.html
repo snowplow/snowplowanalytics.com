@@ -24,7 +24,11 @@
 
                 <ul class="nav navbar-nav" id="menu-center">
                     <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
-                        <a href="/company">Company</a>
+                        <a href="/company">Company <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="/company/contact-us">Contact Us</a></li>
+                            <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="/company/careers">Careers</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="products" %}">
                         <a href="/products" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Products <i class="fa fa-angle-down"></i></a>
