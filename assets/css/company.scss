@@ -104,7 +104,7 @@
 			max-width: 940px;
 			position: relative;
 
-			&:hover,
+/*			&:hover,
 			&.active
 			{
 				.item
@@ -114,12 +114,14 @@
 						opacity: .4;
 					}
 				}
-			}
+			}*/
 
 			.item
 			{
 				position:static;
 				transition: all .4s;
+
+				@include img-grayscale;
 
 				&:after
 				{
@@ -152,7 +154,8 @@
 
 					img
 					{
-						opacity:1;
+				    	filter: none; /* Applies to FF + IE */
+				    	-webkit-filter: grayscale(0);
 					}	
 				}
 
