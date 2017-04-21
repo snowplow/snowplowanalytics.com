@@ -143,7 +143,9 @@
 
 				img
 				{
+					border:0;
 					transition: opacity .4s;
+					transition:all .3s;
 				}
 
 				&:hover,
