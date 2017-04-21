@@ -131,4 +131,11 @@ body.blog
 		height:auto;
 		max-width: 100px;
 	}
+
+	@media screen and (min-width:$screen-sm-max) {
+		.text
+		{
+			padding-left:30px;
+		}
+	}
 }
