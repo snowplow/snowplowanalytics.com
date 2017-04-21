@@ -39,6 +39,11 @@ main
 	margin:0 auto;
 	max-width:1300px;
 
+	body.full-frame &
+	{
+		max-width: 100%;
+	}
+
 	>.container
 	{
 		margin-top:150px;
