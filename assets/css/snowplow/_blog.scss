@@ -110,3 +110,25 @@ body.blog
 		}
 	}
 }
+
+
+
+.author-profile-box
+{
+	.image,
+	.text
+	{
+		display:inline-block;
+	}
+
+	.title
+	{
+		color:$brand-primary;
+	}
+
+	img
+	{
+		height:auto;
+		max-width: 100px;
+	}
+}
