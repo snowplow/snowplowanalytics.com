@@ -31,7 +31,7 @@ Historically, Snowplow's EmrEtlRunner and StorageLoader apps have moved whole fo
 1. They are time-consuming
 2. They are network-intensive
 3. They are error-prone - a failure to move a file will cause the job to fail and require manual intervention
-4. They only support one use-case at a time - you can't have two distinct jobs moving the same files at the same time 
+4. They only support one use-case at a time - you can't have two distinct jobs moving the same files at the same time
 
 Although Snowplow continues to use file moves (for now), it is better to use a run manifest for your own data processing jobs on Snowplow data. The idea of a manifest comes from the old naval term:
 
@@ -73,7 +73,7 @@ Then we list all Snowplow runs in a particular S3 path, and then process (with t
 `RunManifests` class, then, is a simple API wrapper to DynamoDB, which lets you:
 
 * `create` a DynamoDB table for manifests
-* `add` a Snowplow run to the table 
+* `add` a Snowplow run to the table
 * check if table `contains` a given run ID
 
 <h2 id="documentation">3. Documentation</h2>
@@ -112,7 +112,7 @@ And if there's another Snowplow Analytics SDK you'd like us to prioritize creati
 [boto3]: https://boto3.readthedocs.io/en/latest/
 [dynamodb]: https://aws.amazon.com/dynamodb/
 
-[event-data-modeling]: http://snowplowanalytics.com/blog/2016/03/16/introduction-to-event-data-modeling/
+[event-data-modeling]: /blog/2016/03/16/introduction-to-event-data-modeling/
 
 [spark]: http://spark.apache.org/
 [lambda]: https://aws.amazon.com/lambda/

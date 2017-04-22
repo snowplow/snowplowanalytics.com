@@ -67,7 +67,7 @@ There are two major steps in our job:
 <h2><a name="detailed-setup">3. Detailed setup</a></h2>
 </div>
 
-In this tutorial, we'll walk through the process of getting up and running with GCP Pub/Sub and Dataflow. You will need [git][git-install], [Vagrant][vagrant-install] and [VirtualBox][virtualbox-install] installed locally. 
+In this tutorial, we'll walk through the process of getting up and running with GCP Pub/Sub and Dataflow. You will need [git][git-install], [Vagrant][vagrant-install] and [VirtualBox][virtualbox-install] installed locally.
 
 <h3>Step 1: Build the project</h3>
 
@@ -239,7 +239,7 @@ Our next step is to put together a [Request for Comments][snowplow-rfcs] on our 
 [dataflow]: https://cloud.google.com/dataflow/
 [pubsub]: https://cloud.google.com/pubsub/
 [bigtable]: https://cloud.google.com/bigtable/
-[snowplow]: http://snowplowanalytics.com
+[snowplow]: /
 [pubsubmodel]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [gcp]: https://cloud.google.com/
 [gcp-get-started]: https://github.com/snowplow/snowplow/wiki/GCP:-Getting-Started

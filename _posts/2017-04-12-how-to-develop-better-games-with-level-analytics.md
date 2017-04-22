@@ -102,7 +102,7 @@ Again, all of the above can be easily explored using the Snowplow pipeline, and 
 ## Conclusion
 These examples are just some quick summaries of what we can see from a cursory examination of summary statistics enabled by the Snowplow pipeline. The actual findings are specific to CodeCombat and as such an illustration of how a dashboard can help you improve your game.
 With Snowplow, you maintain ownership and control of your own data and can analyse it flexibly. So your analytics would be specific to your game, and in whatever level of abstraction or detail you need to gain insight into your product.
-If you are curious as to what that might mean for your product, or just would like to know more about what we do, please don’t hesitate to [request a demo](http://snowplowanalytics.com/trial/) or [contact us](http://snowplowanalytics.com/contact/).
+If you are curious as to what that might mean for your product, or just would like to know more about what we do, please don’t hesitate to [request a demo](/trial/) or [contact us](/contact/).
 
 
 

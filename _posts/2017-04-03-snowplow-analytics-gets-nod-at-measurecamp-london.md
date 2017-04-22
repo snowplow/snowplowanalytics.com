@@ -25,7 +25,7 @@ Snowplow was nominated to the list by [Jordan Peck](https://twitter.com/jordanpe
 
 Thanks Jordan. We appreciate that!
 
-If you're curious to know what Jordan was on about or keen to get onboard and start using data as a competitive tool, check out our [Product](http://snowplowanalytics.com/product/) page and get in touch to discuss a [trial](http://snowplowanalytics.com/trial/).
+If you're curious to know what Jordan was on about or keen to get onboard and start using data as a competitive tool, check out our [Product](/product/) page and get in touch to discuss a [trial](/trial/).
 
 You can find the full list from Jorrin and Ton's session [here](https://docs.google.com/spreadsheets/d/18-krMKn-gLmBj_id8BummS8Xfo45E_Phr6U3tFQBvp8/pubhtml?gid=0&single=true).
 

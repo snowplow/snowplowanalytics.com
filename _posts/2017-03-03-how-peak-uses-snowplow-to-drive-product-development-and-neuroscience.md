@@ -49,7 +49,7 @@ Sophisticated normalization of scores helps compare your progress to your friend
 Peak loads the data into Amazon Redshift where it is modelled. The data team build predictive models on the data using R. The data is then socialized throughout the business via dashboards in Mode Analytics. All data loading, storage and modelling is compliant with EU regulations on data security and data privacy.
 
 
-If you would like to know more about how Snowplow might help you, [visit our website](http://snowplowanalytics.com/) or [get in touch](http://snowplowanalytics.com/contact/).
+If you would like to know more about how Snowplow might help you, [visit our website](/) or [get in touch](/contact/).
 
 
 [Sign up to our mailing list](http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d) and stay up-to- date with our new releases and other news.
