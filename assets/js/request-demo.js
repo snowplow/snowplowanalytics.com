@@ -24,14 +24,33 @@ $(function() {
 		var firstName = document.getElementById("inputFirstName").value;
 		var lastName = document.getElementById("inputLastName").value;
 		var email = document.getElementById("inputEmail").value;
+    var phone = document.getElementById("inputPhone").value;
 		var company = document.getElementById("inputCompany").value;
+    var insights;
+    var react;
+
+    if(document.getElementById('inputLeadInsights').checked) {
+      insights = true
+    } else {
+      insights = false
+    };
+
+    if(document.getElementById('inputLeadReact').checked) {
+      react = true
+    } else {
+      react = false
+    };
+
+    // create context JSON. This is the variable that we push to the dataLayer
 
 		var submission = {
-			leadSource: leadSource,
 			firstName: firstName,
 			lastName: lastName,
 			email: email,
-			company: company
+      phone: phone,
+			company: company,
+      insights: insights,
+      react: react
 		};
 
 		// validate inputs
@@ -66,14 +85,22 @@ $(function() {
 			return false;
 		}
 
-		if (leadSource == "") {
+		// if (leadSource == "") {
+		//	$('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
+		//	$('#controlsLeadSource').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadSoure element
+		//	return false;
+		// } This is pre-set so it can never be null
+
+    if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
 			$('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
-			$('#controlsLeadSource').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadSoure element
+			$('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
 			return false;
 		}
 
-		dataLayer.push({ // submit form to datalayer
-			'event': 'submit_trial_form',
+  // submit form to dataLayer
+
+		dataLayer.push({
+			'event': 'demo_request',
 			'submission': submission
 		});
 
@@ -91,7 +118,7 @@ $(function() {
 
 			var elementRetURL = document.createElement("input");
     	elementRetURL.name = "retURL";
-			elementRetURL.value = "http://snowplowanalytics.com/trial/thanks/";
+			elementRetURL.value = "http://snowplowanalytics.com/request-demo/thanks"; // WHAT DOES THIS NEED TO BE CHANGED TO???
 			elementRetURL.setAttribute("type", "hidden");
     	form.appendChild(elementRetURL);
 
@@ -103,8 +130,8 @@ $(function() {
 
 			snowplow(function () { // add duid
 
-				var snplow2 = this.snplow2;
-				var domainUserId = snplow2.getDomainUserId();
+				var snplow5 = this.snplow5; // changed from snplow2 2017-04
+				var domainUserId = snplow5.getDomainUserId();
 
 				var elementDUID = document.createElement("input");
 	    	elementDUID.name = "00N2400000HRtrl";
@@ -114,12 +141,13 @@ $(function() {
 
 			})
 
-			document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 			document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
 			document.getElementById("inputFirstName").setAttribute("name","first_name");
 			document.getElementById("inputLastName").setAttribute("name","last_name");
 			document.getElementById("inputEmail").setAttribute("name","email");
 			document.getElementById("inputCompany").setAttribute("name","company");
+      document.getElementById("inputPhone").setAttribute("name", "phone");
+      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 
 	    form.method = "POST";
 	    form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
