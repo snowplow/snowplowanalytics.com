@@ -24,14 +24,20 @@ $(function() {
 		var firstName = document.getElementById("inputFirstName").value;
 		var lastName = document.getElementById("inputLastName").value;
 		var email = document.getElementById("inputEmail").value;
+    var phone = document.getElementById("inputPhone").value;
 		var company = document.getElementById("inputCompany").value;
+    var subject = document.getElementById("inputSubject").value;
 		var message = document.getElementById("inputMessage").value;
 
+    // create context JSON. This is the variable that we push to the dataLayer
+
 		var submission = {
-			firstName: firstName,
+      firstName: firstName,
 			lastName: lastName,
 			email: email,
+      phone: phone,
 			company: company,
+      subject: subject,
 			message: message
 		};
 
@@ -75,8 +81,10 @@ $(function() {
 			return false;
 		}
 
-		dataLayer.push({ // submit form to datalayer
-			'event': 'submit_contact_us',
+    // submit form to datalayer
+
+		dataLayer.push({
+			'event': 'contact',
 			'submission': submission
 		});
 
@@ -94,7 +102,7 @@ $(function() {
 
 			var elementRetURL = document.createElement("input");
     	elementRetURL.name = "retURL";
-			elementRetURL.value = "http://snowplowanalytics.com/contact/thanks/";
+			elementRetURL.value = "http://snowplowanalytics.com/contact/thanks/"; // WHAT DOES THIS NEED TO BE CHANGED TO???
 			elementRetURL.setAttribute("type", "hidden");
     	form.appendChild(elementRetURL);
 
@@ -106,8 +114,8 @@ $(function() {
 
 			snowplow(function () { // add duid
 
-				var snplow2 = this.snplow2;
-				var domainUserId = snplow2.getDomainUserId();
+				var snplow5 = this.snplow5; // changed from snplow2 2017-04
+				var domainUserId = snplow5.getDomainUserId();
 
 				var elementDUID = document.createElement("input");
 	    	elementDUID.name = "00N2400000HRtrl";
