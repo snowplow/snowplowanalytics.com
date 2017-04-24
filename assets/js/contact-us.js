@@ -102,7 +102,7 @@ $(function() {
 
 			var elementRetURL = document.createElement("input");
     	elementRetURL.name = "retURL";
-			elementRetURL.value = "company/contact-us/thank-you/";
+			elementRetURL.value = "https://next.snowplowanalytics.com/company/contact-us/thank-you";
 			elementRetURL.setAttribute("type", "hidden");
     	form.appendChild(elementRetURL);
 
