@@ -26,6 +26,11 @@ body.blog
 		padding:0;
 	}
 
+	img, iframe
+	{
+		max-width: 100%!important;
+	}
+
 	section
 	{
 		padding-top:0;
