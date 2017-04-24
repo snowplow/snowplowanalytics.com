@@ -4,7 +4,7 @@
                     <div class="brand col-md-5 col-sm-12">
                         <a class="brand-logo" href="/"><i class="i-logo-type-claim"></i></a>
                         <div class="brand-about sm-spacer-top-40">
-                            <p>Learn more <a href="/company">about us</a> or <a href="/company/contact-us">contact us</a> for more information.</p>
+                            <p>Learn more <a href="{{ BASE_PATH }}/company">about us</a> or <a href="{{ BASE_PATH }}/company/contact-us">contact us</a> for more information.</p>
                             <p>Subscribe our newsletter to get our latest updates.</p>
                         </div>
                         <form action="//snowplowanalytics.us11.list-manage.com/subscribe/post?u=10bb4a6f31d5f19e0d0b54476&amp;id=bb28c7d30d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -19,33 +19,33 @@
                     <div class="links col-md-7 col-sm-12">
                         <div class="cfx">
                             <div class="col col-xs-6 col-sm-3">
-                                <h6{% include fn/menuClassActive.fn s="products" tag="" %}><a href="/products">Products</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="products" tag="" %}><a href="{{ BASE_PATH }}/products">Products</a></h6>
                                 <ul>
-                                    <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="/products/snowplow-insights">Snowplow Insights</a></li>
-                                    <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="/products/snowplow-react">Snowplow React</a></li>
-                                    <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="/products/snowplow-open-source">Open Source</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-react">Snowplow React</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-open-source">Open Source</a></li>
                                 </ul>
                             </div>
                             <div class="col col-xs-6 col-sm-3">
-                                <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="/customers">Customers</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Customers</a></h6>
                                 <ul>
-                                    <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="/customers/justwatch">JustWatch</a></li>
-                                    <li{% include fn/menuClassActive.fn s="simply-business" tag="" %}><a href="/customers/simply-business">Simply Business</a></li>
-                                    <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="/customers/trusted-by">Trusted By</a></li>
+                                    <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="{{ BASE_PATH }}/customers/justwatch">JustWatch</a></li>
+                                    <li{% include fn/menuClassActive.fn s="simply-business" tag="" %}><a href="{{ BASE_PATH }}/customers/simply-business">Simply Business</a></li>
+                                    <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="{{ BASE_PATH }}/customers/trusted-by">Trusted By</a></li>
                                 </ul>
                             </div>
                             <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
-                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="/services" class="no-interact">Services</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
                                 <ul>
-                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="/services/#data-analytics">Data Analytics</a></li>
-                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="/services/#data-engineering">Data Engineering</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
                                 </ul>
                             </div>
                             <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
-                                <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="/resources">Resources</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="{{ BASE_PATH }}/resources">Resources</a></h6>
                                 <ul>
                                     <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Community</a></li>
-                                    <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="/resources/blog">Blog</a></li>
+                                    <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="info cfx">
                     <div class="credits col-sm-8 col-xs-12">
-                        <small><b>© 2017 Snowplow</b> <a href="/privacy-policy">Privacy Policy</a> <a href="/terms-of-service">Terms of Service</a></small>
+                        <small><b>© 2017 Snowplow</b> <a href="{{ BASE_PATH }}/privacy-policy">Privacy Policy</a> <a href="{{ BASE_PATH }}/terms-of-service">Terms of Service</a></small>
                     </div>
                     <div class="social col-sm-4 col-xs-12">
                         <ul>
