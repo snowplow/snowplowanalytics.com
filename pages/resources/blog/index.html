@@ -22,11 +22,14 @@ class: blog header-white
         </div>
     </article>
     {% endfor %}
+    <div class="spacer-top-100">
+        <a href="{{ BASE_PATH }}/resources/blog/archive/" class="btn btn-primary">View all posts</a>
+    </div>
 </section>
 
 <!--
     SIDEBAR
 -->
 <aside class="col-md-3">
-    <div data-spy="affix" data-offset-top="0" data-offset-bottom="500">{% include blog/sidebar.html %}</div>
+    <div>{% include blog/sidebar.html %}</div>
 </aside>

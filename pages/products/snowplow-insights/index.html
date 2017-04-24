@@ -43,9 +43,9 @@ assets:
                         </div>
                         <div class="col-lg-4 col-md-4 text-right">
                             <select class="form-control selectpicker" id="form-download" title="Select document">
-                                <option value="doc_1">Packaged Analytics Solutions like GA360 and Adobe</option>
-                                <option value="doc_2">SaaS Data Warehousing providers like Segment</option>
-                                <option value="doc_3">Build-it-yourself digital analytics stacks</option>
+                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
+                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
+                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Build_Your-Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
                             </select>
                         </div>
                     </div>
@@ -59,17 +59,20 @@ assets:
                 <h3>Digital data collection is hard.</h3>
                 <h5 class="spacer-bottom-70">In order to do data collection right, we need to understand what makes doing it well so hard.</h5>
                 <div class="container">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 pad-l-30 pad-r-30">
                         <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Product_Icon_Insights-MultiPlatform.svg" class="pad-b-30" width="80%" />
-                        <small><b>Multiple platforms and channels. </b><br class="visible-lg" />To understand your users, you need to identify and track them across all the platforms and channels you engage with them, consolidate that data and build a single customer view.</small>
+                        <h4>Multiple platforms</h4>
+                        <small>To understand your users, you need to identify and track them across all the platforms and channels you engage with them, consolidate that data and build a single customer view.</small>
                     </div>
-                    <div class="col-sm-4 xs-pad-t-70">
+                    <div class="col-sm-4 xs-pad-t-70 pad-l-30 pad-r-30">
                         <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Product_Icon_Insights-DigitalEngagement.svg" class="pad-b-30"  width="80%" />
-                        <small><b>Digital engagement varies widely. </b><br class="visible-lg" />Users don't engage with email, dating services or an banking apps in the same way. So we should not expect the data from each to look alike, or even be structured alike.</small>
+                        <h4>Engagement varies widely</h4>
+                        <small>Users don't engage with email, dating services or banking apps in the same way. So we should not expect the data from each to look alike, or even be structured alike.</small>
                     </div>
-                    <div class="col-sm-4 xs-pad-t-70">
+                    <div class="col-sm-4 xs-pad-t-70 pad-l-30 pad-r-30">
                         <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Product_Icon_Insights-Evolve.svg" class="pad-b-30"  width="80%" />
-                        <small><b>Data collection needs to constantly evolve. </b><br class="visible-lg" />Digital products and services are constantly evolving, and as they do, data collection to evolve with it. As we bulid understanding, the questions we ask of data are constantly evolving, and with it, so must our data collection.</small>
+                        <h4>Constantly evolving</h4>
+                        <small>Digital products and services are constantly evolving, and as they do, data collection needs to evolve with it. As we build understanding, the questions we ask of data are constantly evolving, and with it, so must our data collection.</small>
                     </div>
                 </div>
             </section>
@@ -177,7 +180,7 @@ assets:
 
 
 
-            <section class="jumbotron theme-light no-vertical-gutter height-auto" style="background-image:url({{ BASE_PATH }}/assets/img/common/hero-5.jpg)">
+            <section class="jumbotron theme-light no-vertical-gutter height-auto" style="background-image:url({{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_JustWatch_Hero.jpg)">
                 <div class="container">
 
                     {% include request-demo.html %}
@@ -193,13 +196,4 @@ assets:
 
 
 
-            <section>
-                <div class="container">
-                    <div class="col-md-8 col-md-offset-2 user-quote">
-                        <img src="{{ BASE_PATH }}/assets/img/common/dummy-face.jpg" width="200" height="200">
-                        <q>Snowplow has been a game-changer here at Viadeo, handling 10 million events per day. Today at Viadeo, every single engineer and product manager is able to setup a rich metrics dashboard in a few minutes.</q></p>
-                        <cite><small>Eric Pantera, VP of Engineering</small></cite>
-                        <h5>Viadeo</h5>
-                    </div>
-                </div>
-            </section>
+            {% include testimonials.html id="simon" %}

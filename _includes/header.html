@@ -1,9 +1,9 @@
 <header>
     <nav class="navbar navbar-default">
         <div class="navbar-top visible-sm visible-md bg-primary">
-            <div class="container no-gutter">
+            <div class="container">
                 <a class="navbar-brand navbar-brand-top visible-sm" href="/"><i class="i-logo-type"></i></a>
-                <div class="nav navbar-nav navbar-right">
+                <div class="navbar-right">
                     <a href="/request-demo/" class="btn btn-xs btn-outline">Request a Demo</a>
                 </div>
             </div>
@@ -24,7 +24,11 @@
 
                 <ul class="nav navbar-nav" id="menu-center">
                     <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
-                        <a href="/company">Company</a>
+                        <a href="/company">Company <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="/company/contact-us">Contact Us</a></li>
+                            <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="/company/careers">Careers</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="products" %}">
                         <a href="/products" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Products <i class="fa fa-angle-down"></i></a>
@@ -48,7 +52,7 @@
                     <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
                         <a href="/resources" class="dropdown-toggle disabled mute-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Community</a></li>
+                            <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
                             <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="/resources/blog">Blog</a></li>
                         </ul>
                     </li>

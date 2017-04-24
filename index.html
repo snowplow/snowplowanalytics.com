@@ -9,7 +9,7 @@ class: home
             <div>
                 <h1>Take control of your data</h1>
                 <h5 class="parag">Empower your team to use data to differentiate.</h5>
-                <a href="#" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Explore our Case Studies</a>
+                <a href="/products/snowplow-insights/" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Learn more about Snowplow Insights</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@ class: home
             <div>
                 <h2>Understand your users <br class="visible-md visible-lg"/>better than your <br class="visible-md visible-lg"/>competitors</h2>
                 <h5 class="parag">Build a complete picture of your customers interactions with you across <br class="visible-md visible-lg"/>all platforms and channels. Act on that insight to deliver a differentiated <br class="visible-md visible-lg"/>service.</h5>
-                <a href="#" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Explore our Case Studies</a>
+                <a href="/products/snowplow-react/" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Learn more about Snowplow React</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@ class: home
             <div>
                 <h2>Ask any question</h2>
                 <h5 class="parag">Ask the questions that matter to <i>your</i> business. Not the <br class="visible-md visible-lg"/>questions that everyone else is asking and answering. <br class="visible-md visible-lg"/>Differentiate with data.</h5>
-                <a href="#" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Explore our Case Studies</a>
+                <a href="/customers/" class="btn btn-primary spacer-top-50 xs-spacer-top-30">Explore our Case Studies</a>
             </div>
         </div>
     </div>
@@ -38,18 +38,18 @@ class: home
     <div class="container text-center well-sm no-border trusties grid-logos grayscale-img">
         <h5>Trusted by</h5>
         <div class="clearfont spacer-40">
-            <a href="https://www.treatwell.com" class="col"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Treatwell.png" width="390" height="150"></a>
-            <a href="http://www.peak.net" class="col"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Peak.png" width="390" height="150"></a>
-            <a href="http://www.99designs.com" class="col"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_99d.png" width="390" height="150"></a>
-            <a href="https://www.weebly.com" class="col"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Weebly.png" width="390" height="150"></a>
-            <a href="https://www.number26.eu" class="col"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Number26.png" width="390" height="150"></a>
+            <a href="https://www.treatwell.com" class="col" target="_blank"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Treatwell.png" width="390" height="150"></a>
+            <a href="http://www.peak.net" class="col" target="_blank"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Peak.png" width="390" height="150"></a>
+            <a href="http://www.99designs.com" class="col" target="_blank"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_99d.png" width="390" height="150"></a>
+            <a href="https://www.weebly.com" class="col" target="_blank"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Weebly.png" width="390" height="150"></a>
+            <a href="https://www.number26.eu" class="col" target="_blank"><img class="adapt img-rounded" src="{{ BASE_PATH }}/assets/img/common/trusted/Snowplow_Website-Images_Users_Number26.png" width="390" height="150"></a>
         </div>
         <a href="/customers/trusted-by/">See all</a>
     </div>
     <div class="container text-center spacer-top-30 xs-spacer-top-0 theme-light">
         <h3>Enabling smart people <br class="visible-lg" />to differentiate with data</h3>
         <small class="text-uppercase">Clever use of data is what marks the winners from the rest</small>
-        <a href="#" class="btn btn-primary spacer-60 xs-spacer-30">Explore our Case Studies</a>
+        <a href="/customers/" class="btn btn-primary spacer-60 xs-spacer-30">Explore our Case Studies</a>
     </div>
 </section>
 
@@ -98,16 +98,8 @@ class: home
     </div>
 </section>
 
-<section class="container-fluid">
-    <div class="container">
-        <div class="col-md-8 col-md-offset-2 user-quote">
-            <img src="{{ BASE_PATH }}/assets/img/common/dummy-face.jpg" width="200" height="200">
-            <q>Snowplow has been a game-changer here at Viadeo, handling 10 million events per day. Today at Viadeo, every single engineer and product manager is able to setup a rich metrics dashboard in a few minutes.</q></p>
-            <cite><small>Eric Pantera, VP of Engineering</small></cite>
-            <h5>Viadeo</h5>
-        </div>
-    </div>
-</section>
+{% include testimonials.html id="eric" %}
+
 
 <section class="container-fluid bg-primary-lighter">
     <div class="container">
@@ -152,7 +144,7 @@ class: home
             <div class="half col-md-6 col-sm-12">
                 <h3>Community</h3>
                 <small class="text-uppercase text-muted spacer-30">Engage with our global community of data sophisticated users.</small>
-                <a href="http://discourse.snowplowanalytics.com/" class="btn btn-outline-primary">Learn More</a>
+                <a href="http://discourse.snowplowanalytics.com/" class="btn btn-outline-primary" target="_blank">Learn More</a>
             </div>
             <div class="half col-md-6 col-sm-12">
                 <h3>Blog</h3>

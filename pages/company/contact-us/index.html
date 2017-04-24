@@ -1,14 +1,16 @@
 ---
 layout: default
 group: company
-subgroup: contact-us 
+subgroup: contact-us
 title: Snowplow - Contact Us
-description: 
+description:
 permalink: company/contact-us/
 class: contact-us, header-white
 assets:
   css: assets/css/company-contact-us.css
   js: assets/js/contact-us.js
+redirect_from:
+  - /contact/
 ---
 
 <section class="spacer-top-100">
@@ -67,13 +69,12 @@ assets:
                 <div class="form-group col-md-12" id="controlsSubject">
                     <label class="control-label" for="form-subject">Subject</label>
                     <select class="form-control selectpicker" id="inputSubject" title="Choose a subject">
-                        <option value="1">Subject one</option>
-                        <option value="2">Subject two</option>
-                        <option value="3">Subject three</option>
-                        <optgroup label="Group">
-                            <option value="3.1">Subject three - one</option>
-                            <option value="3.2">Subject three - two</option>
-                            <option value="3.3">Subject three - three</option>
+                        <option value="1">What can I do with Snowplow</option>
+                        <option value="2">Professional services</option>
+                        <option value="3">Pricing</option>
+                        <option value="4">Partnering with Snowplow</option>
+                        <option value="5">Support</option>
+                        <option value="6">Other</option>
                         </optgroup>
                     </select>
                 </div>
@@ -88,7 +89,7 @@ assets:
 
             <div class="clearfix spacer-top-30">
                 <div class="form-group col-md-12">
-                    <button type="submit" id="submitContactUs" class="btn btn-primary spacer-top-30">Request a Demo</button>
+                    <button type="submit" id="submitContactUs" class="btn btn-primary spacer-top-30">Send</button>
                 </div>
             </div>
         </form>
