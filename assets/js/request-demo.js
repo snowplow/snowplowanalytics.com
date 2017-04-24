@@ -118,7 +118,7 @@ $(function() {
 
 			var elementRetURL = document.createElement("input");
     	elementRetURL.name = "retURL";
-			elementRetURL.value = "http://snowplowanalytics.com/request-demo/thanks"; // WHAT DOES THIS NEED TO BE CHANGED TO???
+			elementRetURL.value = "request-demo/thank-you/";
 			elementRetURL.setAttribute("type", "hidden");
     	form.appendChild(elementRetURL);
 
