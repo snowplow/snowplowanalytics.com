@@ -42,7 +42,7 @@ assets:
                             <p class="spacer-top-10 md-spacer-top-0">Download Comparison Whitepaper Snowplow VS</p>
                         </div>
                         <div class="col-lg-4 col-md-4 text-right">
-                            <select class="form-control selectpicker" id="form-download" title="Select document">
+                            <select class="form-control selectpicker" id="form-download" title="Select document" onChange="window.open(this.value, '_blank');">
                                 <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
                                 <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
                                 <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Build_Your-Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
