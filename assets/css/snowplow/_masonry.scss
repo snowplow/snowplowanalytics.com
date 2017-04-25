@@ -1,0 +1,42 @@
+.grid
+{
+	.grid-item
+	{
+		width:100%;
+		padding:60px;
+		margin-bottom:10px;
+		max-width: calc(33.333333% - 20px);
+		border:1px solid #f5f9ff;
+
+		h5
+		{
+			margin:0;
+		}
+
+		&.grid-fill-light
+		{
+			background:#f5f9ff;
+		}
+
+		&.grid-fill-dark
+		{
+			background:#e0e6ef;
+			border-color:#e0e6ef;
+		}
+
+		@media (max-width: 1299px)
+		{
+			max-width: calc(50% - 20px);
+		}
+
+		@media (max-width: $screen-sm-max)
+		{
+			max-width: calc(100% - 20px);
+		}
+
+		@media (max-width: $screen-xs-max)
+		{
+			padding:30px;
+		}
+	}
+}

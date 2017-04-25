@@ -1,0 +1,36 @@
+---
+class: blog header-white
+---
+{% include head.html %}
+
+        <main>
+            {% include header.html %}
+
+			<div class="container">
+				<section class="col-md-8">
+				    <article>
+				        <h1 class="h2">{{ page.title }}</h1>
+				        <div class="datebox">{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+				        <div class="content">{{ content }}</div>
+				    </article>
+
+					<div class="spacer-top-50">
+						<div class="spacer-bottom-20">
+							<h5>Thoughts or questions? Come join us in our <a href="http://discourse.snowplowanalytics.com" target="_blank">Discourse forum</a>!</h5>
+						</div>
+						<div class="spacer-top-50">
+							{% include blog/author-profile-box.html %}
+						</div>
+					</div>
+				</section>
+
+				<!--
+				    SIDEBAR
+				-->
+				<aside class="col-md-3 col-md-offset-1">
+				    <div>{% include blog/sidebar.html %}</div>
+				</aside>
+            </div>
+        </main>
+
+		{% include footer.html %}

@@ -1,0 +1,146 @@
+/*
+ * CONFIGURATION
+ */
+
+@import "../snowplow/_variables";
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * BLOG FILE
+ */
+
+/*
+ * STYLES
+ */
+
+body.blog
+{
+	main > .container
+	{
+		padding:0;
+	}
+
+	img, iframe
+	{
+		max-width: 100%!important;
+	}
+
+	section
+	{
+		padding-top:0;
+	}
+
+	h1:not(:first-child),
+	.h1:not(:first-child),
+	h2:not(:first-child),
+	.h2:not(:first-child),
+	h3:not(:first-child),
+	.h3:not(:first-child),
+	h4:not(:first-child),
+	.h4:not(:first-child)
+	{
+		margin:80px 0 50px;
+	}
+
+	article
+	{
+		max-width:$screen-sm-max;
+
+		& + article
+		{
+			margin-top:80px;
+		}
+
+		h2
+		{
+			margin: 0;
+		}
+
+		.content
+		{
+			margin-top: 30px;
+		}
+
+		.continue
+		{
+			margin-top: 15px;
+			font-size: 14px;
+		}
+	}
+
+	.datebox
+	{
+		font-size:14px;
+	}
+
+	aside
+	{
+		ul
+		{
+			margin:0;
+			padding:0;
+			font-size: 14px;
+			list-style: none;
+
+			li
+			{
+				line-height: 1;
+				padding: 10px 0;
+			}
+		}
+
+		.categories
+		{
+			margin-top:30px;
+			margin-bottom:20px;
+		}
+
+		.header
+		{
+	    	margin-bottom: 20px;
+	    }
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+		h1:first-child
+		{
+			font-size: 35px;
+		}
+	}
+}
+
+
+
+.author-profile-box
+{
+	.image,
+	.text
+	{
+		display:inline-block;
+	}
+
+	.title
+	{
+		color:$brand-primary;
+	}
+
+	img
+	{
+		height:auto;
+		max-width: 100px;
+	}
+
+	@media screen and (min-width:$screen-sm-max) {
+		.text
+		{
+			padding-left:30px;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        {% include gtm/google-tag-manager-script.js %}
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="{{ BASE_PATH }}/assets/img/favicon/manifest.json">
+        <link rel="mask-icon" href="{{ BASE_PATH }}/assets/img/favicon/safari-pinned-tab.svg" color="#5b0098">
+        <meta name="msapplication-TileColor" content="#5b0098">
+        <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/favicon/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – The event data pipeline</title>{% endif %}
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="{% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}{% else %}{{ site.author.name }}{% endif %}">
+
+        <meta property="og:site_name" content="Snowplow">
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %}">
+        <meta property="og:image" content="{% if page.image %}{{ BASE_PATH }}/assets/img/{{ page.image }}{% else %}{{ BASE_PATH }}/assets/img/snowplow-logo.jpg{% endif %}">
+        <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+        <meta property="og:type" content="{% if page.author %}article{% else %}website{% endif %}">
+        {% if page.author %}<meta property="og:article:author" content="{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}">{% endif %}
+        {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+
+        <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+        <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %} – Snowplow">
+        <meta name="twitter:site" content="@snowplowdata">
+        {% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}{% endif %}{% endfor %}{% endif %}
+        {% if page.description %}<meta name="twitter:description" content="{{page.description}}">{% endif %}
+        {% if page.image %}<meta name="twitter:image" content="{{ page.image }}">{% endif %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
+        {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+        <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+        <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    </head>
+
+    <body class="{{ page.class }}">
+
+        {% include gtm/google-tag-manager-noscript.js %}

@@ -1,0 +1,109 @@
+.jumbotron
+{
+	margin:0;
+	border-radius:0;
+	position:relative;
+	padding-top: 250px;
+	padding-bottom: 360px;
+	padding-left:0!important;
+	padding-right:0!important;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+
+/*	.text
+	{
+		max-width:50%;
+	}*/
+
+	h1, .h1, h2, .h2
+	{
+		/*font-size: 86px;*/
+		font-size: 60px;
+	}
+
+	h3, .h3
+	{
+		font-size: 48px;
+		font-weight: 500;
+	}
+
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+	{
+		letter-spacing: 0;
+	}
+
+	.text-block
+	{
+		.parag
+		{
+			line-height: 1.3em;
+		}
+	}
+
+	&.header
+	{
+		height: 90vh;
+		min-height: 810px;
+
+		.text-block
+		{
+			left:0;
+			right:0;
+			top:33.333333%;
+			transform:translateY(-33.333333%);
+			position: absolute;
+		}
+	}
+
+	@media (max-width: $screen-sm-max)
+	{
+		padding-top: 220px;
+
+		h1, .h1, h2, .h2
+		{
+			font-size: 50px;
+		}
+	}
+
+
+	@media (max-width: $screen-xs-max)
+	{
+		padding-top: 170px;
+
+		h1, .h1, h2, .h2
+		{
+			font-size: 40px;
+		}
+	}
+
+
+	@media (max-height: 568px)
+	{
+		padding-top: 90px;
+		padding-bottom:280px;
+	}
+}
+
+.hero
+{
+	border-radius:0;
+	position:relative;
+	padding-top: 250px;
+	padding-bottom: 180px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+
+	@media (max-width: $screen-sm-max)
+	{
+		padding-top:150px;
+		padding-bottom: 60px;
+	}
+
+	@media (max-width: $screen-xs-max)
+	{
+		padding-top:110px;
+		padding-bottom: 60px;
+	}
+}

@@ -1,0 +1,43 @@
+.side-by-side
+{
+	.text-block
+	{
+		padding-top:65px;
+		padding-bottom:65px;
+	}
+
+	&.same-height
+	{
+		display: flex;
+
+		.col
+		{
+			flex:1;
+			width:50%;
+			float: left;
+			height: 100%;
+			position:relative;
+    		padding-bottom: 230px;
+
+			.btn:last-child
+			{
+				left:50%;
+				bottom:80px;
+				position:absolute;
+				transform:translateX(-50%); 
+			}
+		}
+
+		@media screen and (max-width:$screen-sm-max)
+		{
+			display:block;
+
+			.col
+			{
+				width:100%;
+				float:none;
+				display:block;
+			}
+		}
+	}
+}

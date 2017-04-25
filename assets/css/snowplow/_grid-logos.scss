@@ -1,0 +1,41 @@
+.grid-logos
+{
+	.col
+	{
+		width:20%;
+		display:inline-block;
+		position: relative;
+
+		@include img-grayscale;
+
+		&:hover,
+		&:focus
+		{
+			img
+			{
+				background:white;
+			}
+		}
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+		.clearfont
+		{
+			text-align: left;
+		}
+
+		.col
+		{
+			width:33.333333%;
+		}
+	}
+
+	@media (max-width: $screen-xs-max)
+	{
+		.col
+		{
+			width:50%;
+		}
+	}
+}

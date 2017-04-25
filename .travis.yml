@@ -5,35 +5,24 @@ rvm:
 
 install:
   - pip install --user awscli
+  - pip install --user s3cmd
 
 script:
   - bundle install
   - bundle exec jekyll build
 
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    region: "eu-west-1"
-    bucket: next.snowplowanalytics.com
-    local-dir: _site
-    cache_control: "max-age=0"
+  - provider: script
+    script: ./.travis/deploy.sh next.snowplowanalytics.com 0 false
     skip_cleanup: true
     on:
       branch: develop
-    dot_match: true
 
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    region: "eu-west-1"
-    bucket: snowplowanalytics.com
-    local-dir: _site
-    cache_control: "max-age=21600"
+  - provider: script
+    script: ./.travis/deploy.sh snowplowanalytics.com 21600 true
     skip_cleanup: true
     on:
       branch: master
-    dot_match: true
 
 after_deploy:
   - aws configure set preview.cloudfront true

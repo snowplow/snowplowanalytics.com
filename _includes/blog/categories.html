@@ -1,0 +1,21 @@
+<section class="col-md-9">
+    {% for post in site.posts %}
+    {% if post.category == page.category %}
+    <article>
+        <h2 class="h3"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="datebox">{{ post.date | date_to_long_string }}{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+        <div class="content">{{ post.content | strip_html | truncatewords:75 }}</div>
+        <div class="continue">
+            <a href="{{ post.url }}">Continue reading</a>
+        </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+</section>
+
+<!--
+    SIDEBAR
+-->
+<aside class="col-md-3">
+    <div>{% include blog/sidebar.html %}</div>
+</aside>

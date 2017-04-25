@@ -1,0 +1,200 @@
+html, body
+{
+	background-color: $white;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body
+{
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.5em;
+	letter-spacing: 0.04em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&.scrolling
+	{
+		user-select:none;
+		/*pointer-events:none;*/
+		-webkit-overflow-scrolling: touch;
+	}
+
+	&.freeze
+	{
+		main
+		{
+			height:100vh;
+			overflow:hidden;
+		}
+	}
+}
+
+main
+{
+	margin:0 auto;
+	max-width:1300px;
+
+	body.full-frame &
+	{
+		max-width: 100%;
+	}
+
+	>.container
+	{
+		margin-top:150px;
+		margin-bottom: 150px;
+
+		>.content
+		{
+			max-width: 768px;
+			margin:0 auto;
+		}
+	}
+}
+
+
+
+
+img
+{
+	height: auto;
+	max-width: 100%;
+	user-select: none;
+
+	&.adapt
+	{
+		width: 100%;
+		display: block;
+		/*max-height: 100%;*/
+	}
+}
+
+
+/*
+ * CLEAR FONT
+ * When we need to clear all font size and spacing
+ */
+
+.clearfont
+{
+	font-size: 0;
+	line-height: 0;
+	text-indent: 0;
+	letter-spacing: 0;
+}
+
+
+
+
+@mixin cfx
+{
+	&:before,
+	&:after {
+	  content: "";
+	  display: table;
+	} 
+
+	&:after {
+	  clear: both;
+	}
+
+	zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.cfx
+{
+	@include cfx;
+}
+
+
+
+
+
+/*
+ * BORDER-RADIUS
+ */
+
+.border-radius-base
+{
+	border-radius: $border-radius-base;
+}
+
+.border-radius-large
+{
+	border-radius: $border-radius-large;
+}
+
+.border-radius-small
+{
+	border-radius: $border-radius-small;
+}
+
+.no-border
+{
+	border-color:transparent!important; /* ITS AN OVERRIDE */
+}
+
+
+
+
+
+.side-by-side
+{
+	overflow: hidden;
+
+	> .container
+	{
+		background-image: -webkit-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
+		background-image: -o-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
+		background-image: linear-gradient(to right, $brand-success, $brand-success 50%, $brand-info 50%);
+	  	background-repeat: no-repeat;
+	}
+}
+
+
+
+
+
+
+/*
+ * Arrange in z order
+ */
+
+.bring-to-front
+{
+	z-index:999;
+}
+
+.send-to-back
+{
+	z-index:0;
+}
+
+
+
+
+
+
+/*
+ * Images
+ */
+
+img:not(.allow-interact)
+{
+	pointer-events:none;
+	user-select:none;
+}
+
+a
+{
+	img
+	{
+		pointer-events:auto;
+		user-select:all;
+	}
+}

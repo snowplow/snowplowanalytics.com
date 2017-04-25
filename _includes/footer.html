@@ -1,0 +1,73 @@
+        <footer id="contacts">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="brand col-md-5 col-sm-12">
+                        <a class="brand-logo" href="/"><i class="i-logo-type-claim"></i></a>
+                        <div class="brand-about sm-spacer-top-40">
+                            <p>Learn more <a href="{{ BASE_PATH }}/company">about us</a> or <a href="{{ BASE_PATH }}/company/contact-us">contact us</a> for more information.</p>
+                            <p>Subscribe our newsletter to get our latest updates.</p>
+                        </div>
+                        <form action="//snowplowanalytics.us11.list-manage.com/subscribe/post?u=10bb4a6f31d5f19e0d0b54476&amp;id=bb28c7d30d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                            <div class="input-group newsletter">
+                                <input type="email" class="form-control" id="mce-EMAIL" name="EMAIL" placeholder="Insert your email" required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="links col-md-7 col-sm-12">
+                        <div class="cfx">
+                            <div class="col col-xs-6 col-sm-3">
+                                <h6{% include fn/menuClassActive.fn s="products" tag="" %}><a href="{{ BASE_PATH }}/products">Products</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-react">Snowplow React</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-open-source">Open Source</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-xs-6 col-sm-3">
+                                <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Customers</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="{{ BASE_PATH }}/customers/justwatch">JustWatch</a></li>
+                                    <li{% include fn/menuClassActive.fn s="simply-business" tag="" %}><a href="{{ BASE_PATH }}/customers/simply-business">Simply Business</a></li>
+                                    <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="{{ BASE_PATH }}/customers/trusted-by">Trusted By</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
+                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
+                                <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="{{ BASE_PATH }}/resources">Resources</a></h6>
+                                <ul>
+                                    <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Community</a></li>
+                                    <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info cfx">
+                    <div class="credits col-sm-8 col-xs-12">
+                        <small><b>© 2017 Snowplow</b> <a href="{{ BASE_PATH }}/privacy-policy">Privacy Policy</a> <a href="{{ BASE_PATH }}/terms-of-service">Terms of Service</a></small>
+                    </div>
+                    <div class="social col-sm-4 col-xs-12">
+                        <ul>
+                            <!-- <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li> -->
+                            <li><a href="https://twitter.com/snowplowdata" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://github.com/snowplow" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company-beta/3177331/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+
+		<script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js"></script>
+        {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
+    </body>
+</html>

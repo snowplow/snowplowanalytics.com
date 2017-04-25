@@ -1,0 +1,11 @@
+{% assign test = site.data.testimonials[include.id] %}
+<section>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 user-quote">
+            <img src="{{ test.picture }}" width="200" height="200">
+            <q>{{ test.content }}</q>
+            <cite><small>{{ test.full_name }}, {{ test.position }}</small></cite>
+            <h5><a href="{{ test.company_link }}" target="_blank">{{ test.company }}</a></h5>
+        </div>
+    </div>
+</section>

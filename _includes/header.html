@@ -1,0 +1,67 @@
+<header>
+    <nav class="navbar navbar-default">
+        <div class="navbar-top visible-sm visible-md bg-primary">
+            <div class="container">
+                <a class="navbar-brand navbar-brand-top visible-sm" href="/"><i class="i-logo-type"></i></a>
+                <div class="navbar-right">
+                    <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-xs btn-outline">Request a Demo</a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-bottom container text-center">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-sm" href="/"><i class="i-logo-type"></i></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-menu">
+
+                <ul class="nav navbar-nav" id="menu-center">
+                    <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
+                        <a href="{{ BASE_PATH }}/company">Company <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="{{ BASE_PATH }}/company/contact-us">Contact Us</a></li>
+                            <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="{{ BASE_PATH }}/company/careers">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="products" %}">
+                        <a href="{{ BASE_PATH }}/products" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Products <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-react">Snowplow React<sup>BETA</sup></a></li>
+                            <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-open-source">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
+                        <a href="{{ BASE_PATH }}/services">Services</a>
+                    </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="customers" %}">
+                        <a href="{{ BASE_PATH }}/customers" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="{{ BASE_PATH }}/customers/justwatch">JustWatch</a></li>
+                            <li{% include fn/menuClassActive.fn s="simply-business" tag="" %}><a href="{{ BASE_PATH }}/customers/simply-business">Simply Business</a></li>
+                            <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="{{ BASE_PATH }}/customers/trusted-by">Trusted By</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
+                        <a href="{{ BASE_PATH }}/resources" class="dropdown-toggle disabled mute-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
+                            <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-sm hidden-md">
+                    <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-primary call-to-action">Request a Demo</a>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>

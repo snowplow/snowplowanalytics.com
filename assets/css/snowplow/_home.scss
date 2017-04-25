@@ -1,0 +1,145 @@
+/*
+ * CONFIGURATION
+ */
+
+@import "../snowplow/_variables";
+
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * HOME FILE
+ */
+
+/*
+ * STYLES
+ */
+
+ body.home
+ {
+ 	.hero
+ 	{
+ 		padding-top:0;
+
+		.trusties
+		{
+			top: -150px;
+			position: relative;
+
+			img
+			{
+				border:0;
+			}
+		}
+ 	}
+
+ 	.products
+ 	{
+
+ 	}
+
+	.resources
+	{
+		.well-lg
+		{
+			padding-left:0;
+			padding-right:0;
+			position:relative;
+
+			&:after
+			{
+				top:0;
+				left:50%;
+				bottom:0;
+				height:100%;
+				content:'';
+				display:block;
+				position:absolute;
+				border-left: 1px solid $gray-lighter;
+			}
+		}
+	}
+
+	
+	@media (max-width: $screen-md-max)
+	{
+	 	.products
+	 	{
+	 		.side-by-side
+	 		{
+	 			img
+	 			{
+					width: 100%;
+	 				/*max-width:400px;*/
+	 			}
+	 		}
+	 	}
+
+		.resources
+		{
+			.well-lg
+			{
+				padding:60px 0;
+
+				&:after
+				{
+					content:none;
+				}
+
+				.half
+				{
+					&:last-of-type
+					{
+						padding:0;
+
+						&:before
+						{
+							content:'';
+							width:100%;
+							display:block;
+							margin:50px auto;
+							border-top: 1px solid $gray-lighter;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	
+	@media (max-width: $screen-sm-min)
+	{
+	 	.products
+	 	{
+	 		.side-by-side
+	 		{
+	 		}
+	 	}
+
+		.resources
+		{
+			.well-lg
+			{
+				&:after
+				{
+				}
+
+				.half
+				{
+					&:last-of-type
+					{
+
+						&:before
+						{
+						}
+					}
+				}
+			}
+		}
+	}
+ }
