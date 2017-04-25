@@ -7,10 +7,6 @@
 
 This repo contains the source code and content for the [Snowplow](https://snowplowanalytics.com) website. The site is built with [Jekyll](https://github.com/mojombo/jekyll) and published to Amazon S3 where it is then served by CloudFront.
 
-|  **[Contributors Guide][contributors-guide]**    |
-|:------------------------------------------------:|
-|  [![i3][contributors-image]][contributors-guide] |
-
 ## Quickstart
 
 Assuming git, **[Vagrant][vagrant-install]** and **[VirtualBox][virtualbox-install]** installed:
@@ -33,9 +29,6 @@ All content is Copyright © 2012-2017 Snowplow Analytics Ltd and not to be reuse
 [travis]: https://travis-ci.org/snowplow/snowplowanalytics.com
 [travis-image-master]: https://travis-ci.org/snowplow/snowplowanalytics.com.svg?branch=master
 [travis-image-develop]: https://travis-ci.org/snowplow/snowplowanalytics.com.svg?branch=develop
-
-[contributors-guide]: https://github.com/snowplow/snowplowanalytics.com/wiki/Guide-for-contributors
-[contributors-image]: http://sauna-github-static.s3-website-us-east-1.amazonaws.com/developer.svg
 
 [vagrant-install]: http://docs.vagrantup.com/v2/installation/index.html
 [virtualbox-install]: https://www.virtualbox.org/wiki/Downloads
