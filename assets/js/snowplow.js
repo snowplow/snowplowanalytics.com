@@ -72,6 +72,8 @@ if (!window.location.origin) {
 			var th = $(this);
 			var fade = th.attr ('data-slick-fade') == '1';
 			var dots = th.attr ('data-slick-dots') != '0';
+			var speed = th.attr ('data-slick-speed') || 800;
+			var autoplaySpeed = th.attr ('data-slick-autoplay-speed') || 12000;
 			var selector = th.attr ('data-slick-selector');
 			var arrows = th.attr ('data-slick-arrows') != '0';
 			var infinite = th.attr ('data-slick-infinite') != '0';
@@ -84,8 +86,9 @@ if (!window.location.origin) {
 				controls = null;
 
 			th.slick ({
-				fade: fade,
 				dots: dots,
+				fade: fade,
+				speed: speed,
 				arrow: arrows,
 				slide: selector,
 				autoplay: autoplay,
@@ -94,6 +97,7 @@ if (!window.location.origin) {
 				appendDots: controls,
 				appendArrows: controls,
 				slidesToShow: slidesToShow,
+				autoplaySpeed : autoplaySpeed,
 				slidesToScroll: slidesToScroll,
 				adaptiveHeight: adaptiveHeight,
 				prevArrow: '<button type="button" data-role="none" aria-label="Previous" role="button" class="slick-prev slick-arrow"><i class="i-arrow-left"></i></button>',

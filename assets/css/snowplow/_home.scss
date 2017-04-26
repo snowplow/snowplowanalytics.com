@@ -22,6 +22,40 @@
 
  body.home
  {
+ 	.jumbotron
+ 	{
+		&.slick-slide
+		{
+			.text-block
+			{
+				.title {
+					opacity: 0;
+					transition:opacity .5s, transform .8s;
+					transform:translateX(10px);
+				}
+
+				.parag {
+					opacity: 0;
+					transition:opacity .5s .2s, transform 1s;
+					transform:translateX(10px);
+				}
+
+				.btn {
+					opacity: 0;
+					transition:opacity .5s .2s, transform 1.2s;
+					transform:translateY(10px);
+				}
+			}
+
+			&.slick-active
+			{
+				.text-block {
+					.title, .parag, .btn { opacity:1; transform:translateX(0) translateY(0); }
+				}
+			}
+		}
+ 	}
+
  	.hero
  	{
  		padding-top:0;

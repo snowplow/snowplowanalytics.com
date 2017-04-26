@@ -45,10 +45,20 @@
 				display: inline-block;
 			}
 
+			@media (min-width:$screen-lg-max)
+			{
+				font-size:90px;
+
+				i
+				{
+					font-size: 490px;
+				}
+			}
+
 			span {
-			font-size: 18px;
-			color: white;	
-		}
+				font-size: 18px;
+				color: white;	
+			}
  		}
 
 		h2, h3

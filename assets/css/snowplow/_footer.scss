@@ -42,7 +42,7 @@ footer
 		&:hover,
 		&:focus
 		{
-			color: $brand-primary-brighter;
+			color: $brand-primary;
 			text-decoration: none;
 		}
 	}
@@ -75,7 +75,7 @@ footer
 
 		a
 		{
-			color:$brand-primary-brighter;
+			color:$brand-primary;
 			font-size: 15px;
 		}
 	}
