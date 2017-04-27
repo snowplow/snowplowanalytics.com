@@ -19,6 +19,11 @@
  	box-shadow:none;
 
 
+	@-moz-document url-prefix() {
+		padding: 18px 16px 16px;
+	}
+
+
 
 	&[class*="form-outline-"]
 	{
