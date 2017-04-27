@@ -122,6 +122,8 @@ Here, the `run_emr` task sent to PyInvoke takes three positional arguments:
 
 You can also add one extra argument: `--since`, which specifies timespan of events you want to load to duplicate storage. Date is specified with `YYYY-MM-dd` format.
 
+Note, that Event Manifest Populator works only with events produced with Snowplow versions equal or higher than [R73 Cuban Macaw][r73-cuban-macaw-release] as event's TSV format was changed.
+
 You can find more about usage of Event Manifest Populator and its interface at its dedicated [wiki page][event-manifest-populator].
 
 <h3 id="dedupe-roadmap">2.6 What's coming next for deduplication</h3>
@@ -225,6 +227,7 @@ If you have any questions or run into any problems, please [raise an issue] [iss
 
 [r76-changeable-hawk-eagle-release]: http://snowplowanalytics.com/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/
 [r86-petra-release]: http://snowplowanalytics.com/blog/2016/12/20/snowplow-r86-petra-released/
+[r73-cuban-macaw-release]: https://snowplowanalytics.com/blog/2015/12/04/snowplow-r73-cuban-macaw-released/
 [dupes-blog-post]: http://snowplowanalytics.com/blog/2015/08/19/dealing-with-duplicate-event-ids/
 [dupes-discourse-thread]: http://discourse.snowplowanalytics.com/t/de-deduplicating-events-in-hadoop-and-redshift-tutorial/248
 
