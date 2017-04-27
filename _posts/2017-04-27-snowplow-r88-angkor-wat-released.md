@@ -64,7 +64,7 @@ To start deduplicating events across batches you need to provide EmrEtlRunner a 
 
 Here is an example configuration:
 
-{% highlight "json" %}
+{% highlight json %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-0",
     "data": {
