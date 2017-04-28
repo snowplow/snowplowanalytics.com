@@ -15,3 +15,12 @@ simon:
   position: Head of Data, Analytics and CRM
   content: We use Snowplow at the heart of our data programme combining online behaviour and offline profile data. It drives the behavioural signals for our custom recommendations engine, trending and API and editorial reporting systems. Building these in any other platform would have been a pain, but with Snowplow, it’s just SQL.
   picture:  /assets/img/testimonials/simon-rumble.jpg
+
+martin:
+  name: Martin
+  full_name: Martin Johansson
+  company: Hipper
+  company_link: https://www.hipper.com
+  position: Managing Director
+  content: Snowplow is the next generation web analytics for data driven organisations. At Hipper.com we could no longer extract incremental value from canned aggregated reports that you get from run of the mill SaaS web analytics solutions. Snowplow enables us to take ownership of granular visitor behavioural data, which yields significant actionable insights and optimisation possibilities around the visitor’s journey.
+  picture:  /assets/img/testimonials/martin-johansson.jpg
