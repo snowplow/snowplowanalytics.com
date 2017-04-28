@@ -180,7 +180,7 @@ For a complete example, see our [sample `config.yml` template][emretlrunner-conf
 
 **Please be aware that enabling this will have a potentially high cost and performance impact on your Snowplow batch pipeline.** 
 
-If you want to start to deuplicate events across batches you need to add a new [`dynamodb_config` target][duplicate_storage_config] to your newly created `targets` directory.
+If you want to start to deuplicate events across batches you need to add a new [dynamodb_config target][duplicate_storage_config] to your newly created `targets` directory.
 
 Optionally, before first run of Shred job with cross-batch deduplication, you may want to run [Event Manifest Populator](#dedupe-cold-start) to back-fill the DynamoDB table.
 
