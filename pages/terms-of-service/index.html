@@ -802,3 +802,89 @@ either party in accordance with this Agreement (such period, the “    <strong>
     in connection with it are governed by English law and subject to the
     exclusive jurisdiction of the English courts.
 </p>
+
+<h2>Exhibit A</h2>
+<h3>Snowplow Insights product description</h3>
+<p>&nbsp;</p>
+<h4>Snowplow Insights is a data collection platform</h4>
+<p>
+  <ul>
+  <li>You as a user decide what &lsquo;events&rsquo; you want to track, across different platforms and channels, in your business.
+  <ul>
+  <li>Platforms and channels include things like your website, mobile apps, other apps (e.g. PC, TV, console) or marketing channels (e.g. ad network, email).</li>
+  <li>Events can be very broadly defined. Examples:
+  <ul>
+  <li>page views,</li>
+  <li>link clicks, button presses,</li>
+  <li>screen swipes</li>
+  <li>product views,</li>
+  <li>product shares,</li>
+  <li>product add product to basket,</li>
+  <li>video plays,</li>
+  <li>video pauses,</li>
+  <li>form submits</li>
+  <li>fraud check start.</li>
+  </ul>
+</li>
+<li>You instrument tracking in your website, app(s), servers and devices, using:
+<ul>
+<li>Snowplow Trackers, are library of SDKs.</li>
+<li>Snowplow third party integrations.</li>
+</ul>
+</li>
+<li>Snowplow Insights then surfaces that data. The data can be surfaced in the following locations:
+<ul>
+<li>Amazon Redshift</li>
+<li>Amazon S3</li>
+<li>Amazon Kinesis</li>
+<li>Elasticsearch</li>
+</ul>
+</li>
+<li>Data is surfaced in S3, Kinesis and Elasticsearch in near-real time for Snowplow Insights Real-Time customers.</li>
+<li>Data is surfaced in Redshift every few hours for Snowplow Batch customers. (The exact frequency depend on configuration parameters and data volumes.)</li>
+</ul>
+</li>
+</ul>
+
+<h4>Snowplow Insights: software, hosted services and support components</h4>
+<h5>Software</h5>
+<p>This is made up of:</p>
+<ul>
+<li>The <a href="https://github.com/snowplow/snowplow">Snowplow open source platform</a></li>
+<li>The <a href="https://github.com/snowplow/iglu">Iglu</a> open source machine readable schema registry (https</li>
+<li>Potentially one or more open source data visualization tools</li>
+<li>Proprietary software to monitor and scale the Snowplow open source platform</li>
+</ul>
+<p>&nbsp;</p>
+<h5>Hosted services</h5>
+<ul>
+<li>Setup services</li>
+<li>Upgrade services</li>
+<li>Monitoring and alerting services</li>
+</ul>
+<p>&nbsp;</p>
+<h5>Support</h5>
+<p>As a Snowplow Insights customer, you have access to the Snowplow team via our support system on snowplow.zendesk.com. You can use it to ask questions directly related to setting up and configuring Snowplow Insights. This includes:</p>
+<p>&nbsp;</p>
+<ul>
+<li>Setting up Snowplow tracking.
+<ul>
+<li>Installing and configuring Snowplow trackers.</li>
+<li>Installing and configuring third party integrations.</li>
+</ul>
+</li>
+<li>Setting up and configuring enrichments.</li>
+<li>Setting up and configuring storage targets (where data should be surfaced).</li>
+</ul>
+<p>&nbsp;</p>
+<p>In addition, Snowplow Insights may contact the Snowplow team to assist with trouble shooting the following issues where they might relate directly to Snowplow Insights:</p>
+<p>&nbsp;</p>
+<ul>
+<li>Data collection issues</li>
+<li>Data processing issues</li>
+</ul>
+<h6>Notes on the scope of support provided</h6>
+<p>Successfully integrating Snowplow trackers in your applications and servers, or third party integrations, has dependencies on those your applications and servers and third party services. Support provided by Snowplow is limited to issues originating in Snowplow technology. Issues originating in your applications and servers or third party services (where the Snowplow tracking is setup) are not covered by the Snowplow support team.</p>
+<p>&nbsp;</p>
+<p>Similarly, where data collected, processed and by Snowplow Insight is consumed in applications developed by you or applications and services purchased by you from third parties, Snowplow support is limited to issues originating in the Snowplow software or services.</p>
+<p>When the Snowplow support team works with you to debug data collection and processing issues, those issues may originate outside of Snowplow software and services. (E.g. they may relate to an incorrectly configured third party tag management solution or a lapsed subscription with a third-party data provider.) Resolving issues originated outside of Snowplow software or services is not in scope for the support provided as part of the Snowplow Insights service.</p>
