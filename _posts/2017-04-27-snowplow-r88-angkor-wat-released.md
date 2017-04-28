@@ -104,7 +104,7 @@ from your enriched event archive.
 Event Manifest Populator can be started on EMR with a PyInvoke script provided by us. To run it, you'll need to download script itself and install `boto2`:
 
 {% highlight bash %}
-$ wget https://raw.githubusercontent.com/snowplow/snowplow/release/r88-angkor-wat/5-data-modeling/event-manifest-populator/run.py
+$ wget https://raw.githubusercontent.com/snowplow/snowplow/master/5-data-modeling/event-manifest-populator/run.py
 $ pip install boto
 {% endhighlight %}
 
