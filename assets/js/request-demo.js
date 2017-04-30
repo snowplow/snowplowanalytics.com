@@ -18,8 +18,6 @@ $(function() {
     $('.help-inline').hide();
     $('.request-trial-group').removeClass("error");
 
-    // fetch inputs for Snowplow
-
     var leadSource = document.getElementById("inputLeadSource").value;
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
@@ -28,18 +26,6 @@ $(function() {
     var company = document.getElementById("inputCompany").value;
     var insights = document.getElementById('inputLeadInsights').checked ? true : false;
     var react = document.getElementById('inputLeadReact').checked ? true : false;
-
-    // create context JSON. This is the variable that we push to the dataLayer
-
-    var submission = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-      company: company,
-      insights: insights,
-      react: react
-    };
 
     // validate inputs
 
@@ -79,10 +65,22 @@ $(function() {
       return false;
     }
 
+    // push to GTM
+
     dataLayer.push({
       'event': 'demo_request',
-      'submission': submission
+      'submission': {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        company: company,
+        insights: insights,
+        react: react
+      }
     });
+
+    // submit to SF
 
     if (leadSource == "Request Demo") {
 
@@ -106,14 +104,11 @@ $(function() {
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
 
-      snowplow(function () { // add duid
-
-        var snplow5 = this.snplow5;
-        var domainUserId = snplow5.getDomainUserId();
+      snowplow(function () {
 
         var elementDUID = document.createElement("input");
         elementDUID.name = "00N2400000HRtrl";
-        elementDUID.value = domainUserId;
+        elementDUID.value = this.snplow5.getDomainUserId();
         elementDUID.setAttribute("type", "hidden");
         form.appendChild(elementDUID);
 
@@ -130,8 +125,6 @@ $(function() {
       form.method = "POST";
       form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
       form.submit();
-
-      // do not reload page
 
     }
 
