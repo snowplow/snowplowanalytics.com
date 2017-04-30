@@ -24,33 +24,33 @@ $(function() {
 		var firstName = document.getElementById("inputFirstName").value;
 		var lastName = document.getElementById("inputLastName").value;
 		var email = document.getElementById("inputEmail").value;
-    var phone = document.getElementById("inputPhone").value;
+		var phone = document.getElementById("inputPhone").value;
 		var company = document.getElementById("inputCompany").value;
-    var insights;
-    var react;
+		var insights;
+		var react;
 
-    if(document.getElementById('inputLeadInsights').checked) {
-      insights = true
-    } else {
-      insights = false
-    };
+		if(document.getElementById('inputLeadInsights').checked) {
+			insights = true
+		} else {
+			insights = false
+		};
 
-    if(document.getElementById('inputLeadReact').checked) {
-      react = true
-    } else {
-      react = false
-    };
+		if(document.getElementById('inputLeadReact').checked) {
+			react = true
+		} else {
+			react = false
+		};
 
-    // create context JSON. This is the variable that we push to the dataLayer
+		// create context JSON. This is the variable that we push to the dataLayer
 
 		var submission = {
 			firstName: firstName,
 			lastName: lastName,
 			email: email,
-      phone: phone,
+			phone: phone,
 			company: company,
-      insights: insights,
-      react: react
+			insights: insights,
+			react: react
 		};
 
 		// validate inputs
@@ -91,13 +91,13 @@ $(function() {
 		//	return false;
 		// } This is pre-set so it can never be null
 
-    if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
+		if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
 			$('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
 			$('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
 			return false;
 		}
 
-  // submit form to dataLayer
+	// submit form to dataLayer
 
 		dataLayer.push({
 			'event': 'demo_request',
@@ -111,22 +111,22 @@ $(function() {
 		var form = document.getElementById("requestTrial");
 
 			var elementOID = document.createElement("input");
-    	elementOID.name = "oid";
+			elementOID.name = "oid";
 			elementOID.value = "00D24000000bPI5";
 			elementOID.setAttribute("type", "hidden");
-    	form.appendChild(elementOID);
+			form.appendChild(elementOID);
 
 			var elementRetURL = document.createElement("input");
-    	elementRetURL.name = "retURL";
+			elementRetURL.name = "retURL";
 			elementRetURL.value = "https://snowplowanalytics.com/request-demo/thank-you";
 			elementRetURL.setAttribute("type", "hidden");
-    	form.appendChild(elementRetURL);
+			form.appendChild(elementRetURL);
 
 			var elementSC1 = document.createElement("input");
-    	elementSC1.name = "00N2400000HS40P";
+			elementSC1.name = "00N2400000HS40P";
 			elementSC1.value = 42;
 			elementSC1.setAttribute("type", "hidden");
-    	form.appendChild(elementSC1);
+			form.appendChild(elementSC1);
 
 			snowplow(function () { // add duid
 
@@ -134,10 +134,10 @@ $(function() {
 				var domainUserId = snplow5.getDomainUserId();
 
 				var elementDUID = document.createElement("input");
-	    	elementDUID.name = "00N2400000HRtrl";
+				elementDUID.name = "00N2400000HRtrl";
 				elementDUID.value = domainUserId;
 				elementDUID.setAttribute("type", "hidden");
-	    	form.appendChild(elementDUID);
+				form.appendChild(elementDUID);
 
 			})
 
@@ -146,11 +146,11 @@ $(function() {
 			document.getElementById("inputLastName").setAttribute("name","last_name");
 			document.getElementById("inputEmail").setAttribute("name","email");
 			document.getElementById("inputCompany").setAttribute("name","company");
-      document.getElementById("inputPhone").setAttribute("name", "phone");
-      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
+			document.getElementById("inputPhone").setAttribute("name", "phone");
+			document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 
-	    form.method = "POST";
-	    form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+			form.method = "POST";
+			form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
 			form.submit();
 
 		// do not reload page
@@ -160,4 +160,5 @@ $(function() {
 		return false;
 
 	});
+
 });

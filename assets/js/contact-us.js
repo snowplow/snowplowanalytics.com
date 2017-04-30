@@ -24,20 +24,20 @@ $(function() {
 		var firstName = document.getElementById("inputFirstName").value;
 		var lastName = document.getElementById("inputLastName").value;
 		var email = document.getElementById("inputEmail").value;
-    var phone = document.getElementById("inputPhone").value;
+		var phone = document.getElementById("inputPhone").value;
 		var company = document.getElementById("inputCompany").value;
-    var subject = document.getElementById("inputSubject").value;
+		var subject = document.getElementById("inputSubject").value;
 		var message = document.getElementById("inputMessage").value;
 
-    // create context JSON. This is the variable that we push to the dataLayer
+		// create context JSON. This is the variable that we push to the dataLayer
 
 		var submission = {
-      firstName: firstName,
+			firstName: firstName,
 			lastName: lastName,
 			email: email,
-      phone: phone,
+			phone: phone,
 			company: company,
-      subject: subject,
+			subject: subject,
 			message: message
 		};
 
@@ -81,7 +81,7 @@ $(function() {
 			return false;
 		}
 
-    // submit form to datalayer
+		// submit form to datalayer
 
 		dataLayer.push({
 			'event': 'contact',
@@ -95,22 +95,22 @@ $(function() {
 			var form = document.getElementById("contactUs");
 
 			var elementOID = document.createElement("input");
-    	elementOID.name = "oid";
+			elementOID.name = "oid";
 			elementOID.value = "00D24000000bPI5";
 			elementOID.setAttribute("type", "hidden");
-    	form.appendChild(elementOID);
+			form.appendChild(elementOID);
 
 			var elementRetURL = document.createElement("input");
-    	elementRetURL.name = "retURL";
+			elementRetURL.name = "retURL";
 			elementRetURL.value = "https://snowplowanalytics.com/company/contact-us/thank-you";
 			elementRetURL.setAttribute("type", "hidden");
-    	form.appendChild(elementRetURL);
+			form.appendChild(elementRetURL);
 
 			var elementSC1 = document.createElement("input");
-    	elementSC1.name = "00N2400000HS40P";
+			elementSC1.name = "00N2400000HS40P";
 			elementSC1.value = 42;
 			elementSC1.setAttribute("type", "hidden");
-    	form.appendChild(elementSC1);
+			form.appendChild(elementSC1);
 
 			snowplow(function () { // add duid
 
@@ -118,10 +118,10 @@ $(function() {
 				var domainUserId = snplow5.getDomainUserId();
 
 				var elementDUID = document.createElement("input");
-	    	elementDUID.name = "00N2400000HRtrl";
+				elementDUID.name = "00N2400000HRtrl";
 				elementDUID.value = domainUserId;
 				elementDUID.setAttribute("type", "hidden");
-	    	form.appendChild(elementDUID);
+				form.appendChild(elementDUID);
 
 			})
 
@@ -133,8 +133,8 @@ $(function() {
 			document.getElementById("inputCompany").setAttribute("name","company");
 			document.getElementById("inputMessage").setAttribute("name","00N2400000HU7tD");
 
-	    form.method = "POST";
-	    form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+			form.method = "POST";
+			form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
 			form.submit();
 
 		}
@@ -144,4 +144,5 @@ $(function() {
 		return false;
 
 	});
+
 });
