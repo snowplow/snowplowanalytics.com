@@ -6,7 +6,7 @@ $(function() {
   $('.help-inline').hide();
   $('.request-trial-group').removeClass("error");
 
-  function isEmail(email) { // http://stackoverflow.com/questions/2507030/email-validation-using-jquery
+  function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
   }
@@ -73,26 +73,18 @@ $(function() {
       return false;
     }
 
-    // if (leadSource == "") {
-    //  $('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
-    //  $('#controlsLeadSource').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadSoure element
-    //  return false;
-    // } This is pre-set so it can never be null
-
     if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
       $('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
       $('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
       return false;
     }
 
-  // submit form to dataLayer
-
     dataLayer.push({
       'event': 'demo_request',
       'submission': submission
     });
 
-    if (leadSource != "") {
+    if (leadSource == "Request Demo") {
 
       var form = document.getElementById("requestTrial");
 
