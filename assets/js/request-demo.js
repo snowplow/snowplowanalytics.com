@@ -26,20 +26,8 @@ $(function() {
 		var email = document.getElementById("inputEmail").value;
 		var phone = document.getElementById("inputPhone").value;
 		var company = document.getElementById("inputCompany").value;
-		var insights;
-		var react;
-
-		if(document.getElementById('inputLeadInsights').checked) {
-			insights = true
-		} else {
-			insights = false
-		};
-
-		if(document.getElementById('inputLeadReact').checked) {
-			react = true
-		} else {
-			react = false
-		};
+		var insights = document.getElementById('inputLeadInsights').checked ? true : false;
+		var react = document.getElementById('inputLeadReact').checked ? true : false;
 
 		// create context JSON. This is the variable that we push to the dataLayer
 
@@ -106,9 +94,7 @@ $(function() {
 
 		if (leadSource != "") {
 
-		// add various inputs
-
-		var form = document.getElementById("requestTrial");
+			var form = document.getElementById("requestTrial");
 
 			var elementOID = document.createElement("input");
 			elementOID.name = "oid";
@@ -118,7 +104,7 @@ $(function() {
 
 			var elementRetURL = document.createElement("input");
 			elementRetURL.name = "retURL";
-			elementRetURL.value = "https://snowplowanalytics.com/request-demo/thank-you";
+			elementRetURL.value = "https://snowplowanalytics.com/request-demo/thanks";
 			elementRetURL.setAttribute("type", "hidden");
 			form.appendChild(elementRetURL);
 
@@ -130,7 +116,7 @@ $(function() {
 
 			snowplow(function () { // add duid
 
-				var snplow5 = this.snplow5; // changed from snplow2 2017-04
+				var snplow5 = this.snplow5;
 				var domainUserId = snplow5.getDomainUserId();
 
 				var elementDUID = document.createElement("input");
@@ -153,7 +139,7 @@ $(function() {
 			form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
 			form.submit();
 
-		// do not reload page
+			// do not reload page
 
 		}
 
