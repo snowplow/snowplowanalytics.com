@@ -19,6 +19,7 @@ $(function() {
     $('.request-trial-group').removeClass("error");
 
     var leadSource = document.getElementById("inputLeadSource").value;
+    var leadSourceWebsite = document.getElementById("inputLeadSourceWebsite").value;
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail").value;
@@ -82,7 +83,7 @@ $(function() {
 
     // submit to SF
 
-    if (leadSource == "Request Demo") {
+    if (leadSource == "Website" && leadSourceWebsite == "Request Demo Form") {
 
       var form = document.getElementById("requestTrial");
 
@@ -114,13 +115,14 @@ $(function() {
 
       })
 
+      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
+      document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
       document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
       document.getElementById("inputFirstName").setAttribute("name","first_name");
       document.getElementById("inputLastName").setAttribute("name","last_name");
       document.getElementById("inputEmail").setAttribute("name","email");
       document.getElementById("inputCompany").setAttribute("name","company");
       document.getElementById("inputPhone").setAttribute("name", "phone");
-      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 
       form.method = "POST";
       form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";

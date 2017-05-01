@@ -21,6 +21,7 @@ $(function() {
     // fetch inputs for Snowplow
 
     var leadSource = document.getElementById("inputLeadSource").value;
+    var leadSourceWebsite = document.getElementById("inputLeadSourceWebsite").value;
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail").value;
@@ -42,8 +43,6 @@ $(function() {
     };
 
     // validate inputs
-
-    if (leadSource != "Contact Form") { return false; } // do not submit form
 
     if (firstName == "") {
       $('#groupFirstName').addClass("error"); // add class 'error' to #groupFirstName
@@ -88,7 +87,7 @@ $(function() {
       'submission': submission
     });
 
-    if (leadSource == "Contact Form") {
+    if (leadSource == "Website" && leadSourceWebsite == "Contact Form") {
 
       // add various inputs
 
@@ -112,20 +111,18 @@ $(function() {
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
 
-      snowplow(function () { // add duid
-
-        var snplow5 = this.snplow5; // changed from snplow2 2017-04
-        var domainUserId = snplow5.getDomainUserId();
+      snowplow(function () {
 
         var elementDUID = document.createElement("input");
         elementDUID.name = "00N2400000HRtrl";
-        elementDUID.value = domainUserId;
+        elementDUID.value = this.snplow5.getDomainUserId();
         elementDUID.setAttribute("type", "hidden");
         form.appendChild(elementDUID);
 
       })
 
       document.getElementById("inputLeadSource").setAttribute("name","lead_source");
+      document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
       document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
       document.getElementById("inputFirstName").setAttribute("name","first_name");
       document.getElementById("inputLastName").setAttribute("name","last_name");
