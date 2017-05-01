@@ -105,12 +105,6 @@ $(function() {
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
 
-      var elementLSW = document.createElement("input");
-      elementLSW.name = "00N2400000JSExF";
-      elementLSW.value = leadSourceWebsite;
-      elementLSW.setAttribute("type", "hidden");
-      form.appendChild(elementLSW);
-
       snowplow(function () {
 
         var elementDUID = document.createElement("input");
@@ -121,13 +115,14 @@ $(function() {
 
       })
 
+      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
+      document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
       document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
       document.getElementById("inputFirstName").setAttribute("name","first_name");
       document.getElementById("inputLastName").setAttribute("name","last_name");
       document.getElementById("inputEmail").setAttribute("name","email");
       document.getElementById("inputCompany").setAttribute("name","company");
       document.getElementById("inputPhone").setAttribute("name", "phone");
-      document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 
       form.method = "POST";
       form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
