@@ -114,9 +114,9 @@ $(function() {
       form.appendChild(elementSC1);
 
       var elementLSW = document.createElement("input");
-      elementSC1.name = "00N2400000JSExF";
-      elementSC1.value = leadSourceWebsite;
-      elementSC1.setAttribute("type", "hidden");
+      elementLSW.name = "00N2400000JSExF";
+      elementLSW.value = leadSourceWebsite;
+      elementLSW.setAttribute("type", "hidden");
       form.appendChild(elementLSW);
 
       snowplow(function () { // add duid
