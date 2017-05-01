@@ -21,6 +21,7 @@ $(function() {
     // fetch inputs for Snowplow
 
     var leadSource = document.getElementById("inputLeadSource").value;
+    var leadSourceWebsite = document.getElementById("inputLeadSourceWebsite").value;
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail").value;
@@ -88,7 +89,7 @@ $(function() {
       'submission': submission
     });
 
-    if (leadSource == "Contact Form") {
+    if (leadSource == "Website" && leadSourceWebsite == "Contact Form") {
 
       // add various inputs
 
@@ -111,6 +112,12 @@ $(function() {
       elementSC1.value = 42;
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
+
+      var elementLSW = document.createElement("input");
+      elementSC1.name = "00N2400000JSExF";
+      elementSC1.value = leadSourceWebsite;
+      elementSC1.setAttribute("type", "hidden");
+      form.appendChild(elementLSW);
 
       snowplow(function () { // add duid
 

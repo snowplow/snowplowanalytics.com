@@ -19,6 +19,7 @@ $(function() {
     $('.request-trial-group').removeClass("error");
 
     var leadSource = document.getElementById("inputLeadSource").value;
+    var leadSourceWebsite = document.getElementById("inputLeadSourceWebsite").value;
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail").value;
@@ -82,7 +83,7 @@ $(function() {
 
     // submit to SF
 
-    if (leadSource == "Request Demo") {
+    if (leadSource == "Website" && leadSourceWebsite == "Request Demo Form") {
 
       var form = document.getElementById("requestTrial");
 
@@ -103,6 +104,12 @@ $(function() {
       elementSC1.value = 42;
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
+
+      var elementLSW = document.createElement("input");
+      elementSC1.name = "00N2400000JSExF";
+      elementSC1.value = leadSourceWebsite;
+      elementSC1.setAttribute("type", "hidden");
+      form.appendChild(elementLSW);
 
       snowplow(function () {
 
