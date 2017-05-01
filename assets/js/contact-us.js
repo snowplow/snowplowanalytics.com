@@ -44,8 +44,6 @@ $(function() {
 
     // validate inputs
 
-    if (leadSource != "Contact Form") { return false; } // do not submit form
-
     if (firstName == "") {
       $('#groupFirstName').addClass("error"); // add class 'error' to #groupFirstName
       $('#controlsFirstName').append('<div class="help-inline">Please enter a first name.</div>'); // add this div after the #controlsFirstName element
