@@ -24,3 +24,21 @@ martin:
   position: Managing Director
   content: Snowplow is the next generation web analytics for data driven organisations. At Hipper.com we could no longer extract incremental value from canned aggregated reports that you get from run of the mill SaaS web analytics solutions. Snowplow enables us to take ownership of granular visitor behavioural data, which yields significant actionable insights and optimisation possibilities around the visitor’s journey.
   picture:  /assets/img/testimonials/martin-johansson.jpg
+
+rob:
+  name: Rob
+  full_name: Rob Kingson
+  company: MintMetrics.IO
+  company_link: https://mintmetrics.io/
+  position: Director
+  content: We're avid fans of Snowplow Analytics. It allows us to track large-scale experiments whilst enabling us to answer business questions no one else can answer. We love it and our clients reap the rewards.
+  picture:  /assets/img/testimonials/robert-kingston.jpg
+
+dejan:
+  name: Dejan
+  full_name: Dejan Petelin
+  company: Gousto
+  company_link: https://www.gousto.co.uk/
+  position: Head of Data Science
+  content: Snowplow plays an integral part of our data infrastructure, allowing us to collect very granular data on our customers’ interactions. Besides collecting interaction events from our website, mobile apps and emails, we also use Snowplow as a unified log collecting backend events, which completes a single customer view.
+  picture:  /assets/img/testimonials/dejan-petelin.jpg
