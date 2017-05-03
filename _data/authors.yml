@@ -177,3 +177,10 @@
   avatar: /assets/img/team/nicholas.jpg
   spiel: |
       <a href="/blog/authors/nicholas/">Nicholas</a> is a software engineer at Snowplow. You can find him on <a href="https://github.com/ungn">GitHub</a> and <a href="https://www.linkedin.com/in/nicholasung">LinkedIn</a>.
+
+- name: Bernardo
+  full_name: Bernardo Srulzon
+  url: /blog/authors/bernardo/
+  avatar: /assets/img/team/bernardo-srulzon.jpg
+  spiel: |
+      <a href="/blog/authors/bernardo/">Bernardo</a> Bernardo is the Business Intelligence lead at <a href="https://www.getninjas.com.br/">Getninajs</a> and a Snowplow enthusiast since 2015. You can find him on <a href="https://www.linkedin.com/in/bernardosrulzon/">LinkedIn</a>.
