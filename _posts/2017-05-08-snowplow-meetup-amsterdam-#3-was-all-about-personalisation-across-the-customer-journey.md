@@ -19,15 +19,16 @@ It was great to connect with the Amsterdam community of analytics practitioners,
 
 Thanks to our speakers, everybody attending and [ImpactHub](http://amsterdam.impacthub.net/) for hosting the event!
 
-*	[De Bijenkorf on creating the ultimate personalized omnichannel shopping experience](/blog/2017/05/08/2017-05-08-snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#debijenkorf)
-*	[Snowplow: empowering smart people to differentiate with data](/blog/2017/05/08/2017-05-08-snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#snowplow)
-*	[Greenhouse Group and optimising your campaign across the whole customer journey](/blog/2017/05/08/2017-05-08-snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#greenhousegroup)
+*	[De Bijenkorf on creating the ultimate personalized omnichannel shopping experience](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#debijenkorf)
+*	[Snowplow: empowering smart people to differentiate with data](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#snowplow)
+*	[Greenhouse Group and optimising your campaign across the whole customer journey](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#greenhousegroup)
 
 <h2 id="debijenkorf">De Bijenkorf on creating the ultimate personalized omnichannel shopping experience</h2>
 
 Niels Reijmer (Data Analyst) and Tim Nooren (Data Engineer) at [de Bijenkorf](https://www.debijenkorf.nl/) talked about how they used Snowplow Analytics with their online and offline data to get a centralised customer view and how they used this in personalising their newsletter, online marketing and their website. De Bijenkorf is a high-end department store focused on fashion with physical stores and an e-commerce website.
 
 They touched on how they set up the full near-real time processing stack of Snowplow Analytics in AWS. Niels then spoke about how they use Snowplow to combine store information and other data to:
+
 * Identify users and track their behaviour
 * Define user segments based on user behaviour
 * Create a predictive model and run more effective marketing campaigns based on user behaviour and segmentation
