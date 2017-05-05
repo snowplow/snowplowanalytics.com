@@ -38,6 +38,8 @@ You can see the video of their presentation here:
 
 <iframe width="595" height="485" src="https://www.youtube.com/embed/omtVz--q7dM" frameborder="0" allowfullscreen></iframe>
 
+<!--more-->
+
 And their slides:
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/xuUYiVAZlgWf8c" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/de-bijenkorf-presentation-for-snowplow-amsterdam-meetup-3" title="de bijenkorf presentation for Snowplow Amsterdam Meetup #3" target="_blank">de bijenkorf presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
