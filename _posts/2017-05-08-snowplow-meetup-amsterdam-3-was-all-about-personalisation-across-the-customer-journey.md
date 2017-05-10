@@ -19,9 +19,9 @@ It was great to connect with the Amsterdam community of analytics practitioners,
 
 Thanks to our speakers, everybody attending and [ImpactHub](http://amsterdam.impacthub.net/) for hosting the event!
 
-*	[De Bijenkorf on creating the ultimate personalized omnichannel shopping experience](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#debijenkorf)
-*	[Snowplow: empowering smart people to differentiate with data](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#snowplow)
-*	[Greenhouse Group and optimising your campaign across the whole customer journey](/blog/2017/05/08/snowplow-meetup-amsterdam-#3-was-all-about-personalisation-across-the-customer-journey/#greenhousegroup)
+*	[De Bijenkorf on creating the ultimate personalized omnichannel shopping experience](/blog/2017/05/08/snowplow-meetup-amsterdam-3-was-all-about-personalisation-across-the-customer-journey/#debijenkorf)
+*	[Snowplow: empowering smart people to differentiate with data](/blog/2017/05/08/snowplow-meetup-amsterdam-3-was-all-about-personalisation-across-the-customer-journey/#snowplow)
+*	[Greenhouse Group and optimising your campaign across the whole customer journey](/blog/2017/05/08/snowplow-meetup-amsterdam-3-was-all-about-personalisation-across-the-customer-journey/#greenhousegroup)
 
 <h2 id="debijenkorf">De Bijenkorf on creating the ultimate personalized omnichannel shopping experience</h2>
 
@@ -34,15 +34,12 @@ They touched on how they set up the full near-real time processing stack of Snow
 * Create a predictive model and run more effective marketing campaigns based on user behaviour and segmentation
 * Analyse and optimise conversion rates based on user preferences and interest in promotions
 
-You can see the video of their presentation here:
-
-<iframe width="595" height="485" src="https://www.youtube.com/embed/omtVz--q7dM" frameborder="0" allowfullscreen></iframe>
-
-<!--more-->
-
-And their slides:
+Here are their slides:
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/xuUYiVAZlgWf8c" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/de-bijenkorf-presentation-for-snowplow-amsterdam-meetup-3" title="de bijenkorf presentation for Snowplow Amsterdam Meetup #3" target="_blank">de bijenkorf presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+
+
+<!--more-->
 
 
 <h2 id="snowplow">Snowplow: empowering smart people to differentiate with data</h2>
@@ -64,7 +61,11 @@ Ruben Mak, Team Lead Data Science at [Greenhouse Group](http://www.greenhousegro
 
 He also mentioned Eneco, one of the Netherlands’ largest energy providers, as an example of how they optimise their marketing communications across the customer journey.
 
-Here are the slides of his presentation:
+You can see the video of his presentation here:
+
+<iframe width="595" height="485" src="https://www.youtube.com/embed/sDzR8KkZPyU" frameborder="0" allowfullscreen></iframe>
+
+And his slides:
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/hAYRBrf2GDwDvK" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/greenhouse-group-presentation-for-snowplow-amsterdam-meetup-3" title="Greenhouse Group presentation for Snowplow Amsterdam Meetup #3" target="_blank">Greenhouse Group presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
