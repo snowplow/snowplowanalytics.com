@@ -5,7 +5,6 @@ title-short: An introduction to event data modeling
 tags: [data modeling, event data, sql]
 author: Yali
 category: Data Modeling
-redirect_from: "/blog/2016/03/16/introduction-to-event-data-modeling/"
 ---
 
 Data modeling is an essential step in the Snowplow data pipeline. We find that those companies that are most successful at using Snowplow data are those that actively develop their event data models: progressively pushing more and more Snowplow data throughout their organizations so that marketers, product managers, merchandising and editorial teams can use the data to inform and drive decision making.
@@ -42,14 +41,14 @@ Let's pick out the different elements packed into the above definition:
 
 <h3 id="business-logic">a. Business logic</h3>
 
-The event stream that Snowplow delivers is an *unopinionated* data sets. When we record a page view event, for example, we aim to record it as faithfully as possible: 
+The event stream that Snowplow delivers is an *unopinionated* data sets. When we record a page view event, for example, we aim to record it as faithfully as possible:
 
-1. What was the URL that was viewed? 
-2. What was the title? 
-3. Is there any metadata about the page contents that we can capture? 
-4. What was the cookie ID of the user that loaded the web page? 
-5. On what browser was the user? 
-6. On what device? 
+1. What was the URL that was viewed?
+2. What was the title?
+3. Is there any metadata about the page contents that we can capture?
+4. What was the cookie ID of the user that loaded the web page?
+5. On what browser was the user?
+6. On what device?
 7. On what operating system?
 
 All of the above data points would be recorded with the event. None of the above data points are contentious: there is nothing that would happen in the future that would change the values that we'd assign those dimensions. For clarity, we call this data 'atomic' data. It is event-level and it is unopinionated.
@@ -140,7 +139,7 @@ In the example above we have modeled an event stream that describes all the micr
 
 * Information about the viewer (notably the user ID). This means we can easily compare consumption patterns between different user types.
 * Information about the video (notably the video ID). This means we can easily compare consumption patterns by different video types.
-* Information summarizing the user-video interaction i.e. has the user completed the video, has the user shared the video? 
+* Information summarizing the user-video interaction i.e. has the user completed the video, has the user shared the video?
 
 This summary table is much easier to consume that the event-strema on the left: we can perform simple group by and aggregations functions on it to e.g. compare viewing figures or engagement rates by user types and video types.
 
@@ -172,13 +171,13 @@ Again, note how the modeled data should be easy to work with: we can easily:
 
 It is *very* common in digital analytics to group sequences of events up into 'sessions' and then aggregate data by session. Typical aggregations will include data on:
 
-1. How the user was acquired. 
+1. How the user was acquired.
 2. Where the session started (e.g. the 'landing page').
 3. How long the session lasted.
 4. What was the session worth. (Did a transaction occur? How much ad revenue was made? Were any conversion events recorded?)
 5. What was the user trying to accomplish in the session.
 
-Sessions are meant to represent continuous streams of user activity. In web, it is common to define a session as ending when a period of 30 minutes passes and no event takes place. 
+Sessions are meant to represent continuous streams of user activity. In web, it is common to define a session as ending when a period of 30 minutes passes and no event takes place.
 
 At Snowplow we are not big fans of the 'session' concept: often the definition of what constitutes a session is opaque, and even when it is clearly defined, it often does not correspond to a meaningful unit of work from a user's experience: a definition based on a 30 minute timeout made sense in the late 1990s when users would interact with one website at a time, but makes much less sense in a multi-screen, multi-tab world, where users might be engaged with several tasks simultaneously.
 
@@ -203,21 +202,21 @@ In all the above examples we were combining series of events that occur for indi
 3. Sessions
 4. Complete user journeys
 
-Often however, we are particularly interested in specific classes of events and want to understand the impact that one class of events has on the likelihood of another class of event later on in a user's journey, regardless of what other events have happened in between. 
+Often however, we are particularly interested in specific classes of events and want to understand the impact that one class of events has on the likelihood of another class of event later on in a user's journey, regardless of what other events have happened in between.
 
 A common example of this type of analysis is attribution modeling. There is a large set of attribution models that are fed with data that describes:
 
 1. What marketing channels a user has interacted with (first class of events, early on in a user's journey), with
 2. Whether or not a user subsequently converted (second class of events, that occur later on in a user's journey.)
 
-This type of data modeling is illustrated below: 
+This type of data modeling is illustrated below:
 
 ![Modeling attribution data][modeling-attribution-data]
 
 There are a number of ways we can model attribution data. Many approaches require data in the format shown above: where we aggregate a continuous stream of user activity from a first marketing touch forwards, including any details about any subsequent marketing touches and conversion events. Once the data has been aggregated as above, it is generally straightforward to:
 
 1. **'Measure' the impact of an marketing channel on the likelihood that a user converts**. (E.g. by comparing conversion rates for users who've only interacted with ad `abc` with those who have interacted with ad `def` to see what the incremental impact of interacting with `def` is on the conversion rate.)
-2. **Apply an attribution model** (i.e. credit the different marketing touches upstream of a conversion with the value of the downstream conversion) and perform analysis to 
+2. **Apply an attribution model** (i.e. credit the different marketing touches upstream of a conversion with the value of the downstream conversion) and perform analysis to
 
 <h2 id="characteristics-of-modeled-data">4. Characteristics of modeled data</h2>
 

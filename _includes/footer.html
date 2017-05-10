@@ -5,7 +5,8 @@
                         <a class="brand-logo" href="/"><i class="i-logo-type-claim"></i></a>
                         <div class="brand-about sm-spacer-top-40">
                             <p>Learn more <a href="{{ BASE_PATH }}/company">about us</a> or <a href="{{ BASE_PATH }}/company/contact-us">contact us</a> for more information.</p>
-                            <p>Subscribe our newsletter to get our latest updates.</p>
+                            <p>Want to be part of our team? Visit our <a href="{{ BASE_PATH }}/company/careers/">Careers</a> page.
+                            <p>Subscribe our newsletter to get our latest updates:</p>
                         </div>
                         <form action="//snowplowanalytics.us11.list-manage.com/subscribe/post?u=10bb4a6f31d5f19e0d0b54476&amp;id=bb28c7d30d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                             <div class="input-group newsletter">
@@ -22,8 +23,15 @@
                                 <h6{% include fn/menuClassActive.fn s="products" tag="" %}><a href="{{ BASE_PATH }}/products">Products</a></h6>
                                 <ul>
                                     <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
-                                    <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-react">Snowplow React</a></li>
+                                    <li{% include fn/menuClassActive.fn s="snowplow-react" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-react">Snowplow React<sup>BETA</sup></a></li>
                                     <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-open-source">Open Source</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
+                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
                                 </ul>
                             </div>
                             <div class="col col-xs-6 col-sm-3">
@@ -35,16 +43,9 @@
                                 </ul>
                             </div>
                             <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
-                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="#" class="mute-link">Resources</a></h6>
                                 <ul>
-                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
-                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
-                                </ul>
-                            </div>
-                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
-                                <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="{{ BASE_PATH }}/resources">Resources</a></h6>
-                                <ul>
-                                    <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Community</a></li>
+                                    <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
                                     <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
                                 </ul>
                             </div>

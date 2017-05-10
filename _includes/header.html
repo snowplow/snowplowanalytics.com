@@ -39,7 +39,11 @@
                         </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
-                        <a href="{{ BASE_PATH }}/services">Services</a>
+                        <a href="{{ BASE_PATH }}/services" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
+                            <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="customers" %}">
                         <a href="{{ BASE_PATH }}/customers" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers <i class="fa fa-angle-down"></i></a>
