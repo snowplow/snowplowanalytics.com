@@ -129,7 +129,7 @@ storage.
 
 For a complete example, see our [sample `config.yml` template][config-yml].
 
-<h2 id="feedbac">6. Request for feedback</h2>
+<h2 id="feedback">6. Request for feedback</h2>
 
 Because this is the greatest change in the batch pipeline in recent memory,
 we would really appreciate any feedback regarding performance (be it improvement
@@ -165,7 +165,7 @@ If you have any questions or run into any problems, please
 [13scoobie]: https://github.com/13scoobie
 [rgabo]: https://github.com/rgabo
 
-[rfc]: http://discourse.snowplowanalytics.com/t/migrating-the-snowplow-batch-jobs-from-scalding-to-spark/492/18
+[rfc]: http://discourse.snowplowanalytics.com/t/migrating-the-snowplow-batch-jobs-from-scalding-to-spark/492
 [scalding]: https://github.com/twitter/scalding
 [spark]: http://spark.apache.org
 
@@ -179,7 +179,7 @@ If you have any questions or run into any problems, please
 [3044]: https://github.com/snowplow/snowplow/issues/3044
 
 [app-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r89_plain_of_jars.zip
-[config-yml]: github.com/snowplow/snowplow/blob/master/3-enrich/emr-etl-runner/config/config.yml.sample
+[config-yml]: https://github.com/snowplow/snowplow/blob/master/3-enrich/emr-etl-runner/config/config.yml.sample
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
