@@ -1,10 +1,10 @@
 <div class="author-profile-box clearfix">			    
 {% for author in site.data.authors %}
 	{% if author.name == page.author %}
-	<div class="image col-md-2">
+	<div class="image col-md-2 col-xs-5">
 		<img src="{{ author.avatar }}" class="img-circle img-responsive">
 	</div>
-	<div class="text col-md-10">
+	<div class="text col-md-10 md-pad-t-20 sm-pad-t-20 xs-pad-t-20">
 		<h3 class="title no-margin">{{ author.full_name }}</h3>
 		{{ author.spiel }}
 	</div>
