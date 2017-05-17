@@ -11,6 +11,19 @@
 		display: table-cell;
 	}
 
+	&.col-count-12 .col { width:8.33333333%; }
+	&.col-count-11 .col { width:9.09090909%; }
+	&.col-count-10 .col { width:10%; }
+	&.col-count-9 .col { width:12.5%; }
+	&.col-count-8 .col { width:12.5%; }
+	&.col-count-7 .col { width:14.2857142%; }
+	&.col-count-6 .col { width:16.6666666%; }
+	&.col-count-5 .col { width:20%; }
+	&.col-count-4 .col { width:25%; }
+	&.col-count-3 .col { width:33.333333%; }
+	&.col-count-2 .col { width:50%; }
+	&.col-count-1 .col { width:100%; }
+
 	.at-bottom,
 	.at-bottom-left,
 	.at-bottom-right
@@ -110,6 +123,7 @@
 
 			.col
 			{
+				width:auto;
 				display: block;
 			}
 
@@ -131,6 +145,7 @@
 
 			.col
 			{
+				width:auto;
 				display: block;
 			}
 
@@ -152,6 +167,7 @@
 
 			.col
 			{
+				width:auto;
 				display: block;
 			}
 
@@ -173,6 +189,7 @@
 
 			.col
 			{
+				width:auto;
 				display: block;
 			}
 
