@@ -134,23 +134,41 @@ body.blog
 	.image,
 	.text
 	{
+		padding:0;
 		display:inline-block;
+	}
+
+
+	.image
+	{
+		max-width: 100px;
 	}
 
 	.title
 	{
 		color:$brand-primary;
+		margin-bottom:12px;
+		font-weight: 400;
 	}
 
 	img
 	{
 		height:auto;
-		max-width: 100px;
+		width:100%;
+	}
+
+	.text
+	{
+		font-size: 14px;
+		color:$gray-dark;
+		line-height: 1em;
+		margin-top: 20px;
 	}
 
 	@media screen and (min-width:$screen-sm-max) {
 		.text
 		{
+			margin-top: 0;
 			padding-left:30px;
 		}
 	}
