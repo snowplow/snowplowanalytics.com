@@ -15,21 +15,21 @@ well as adding new integrations for Parrable and OptimizelyX.
 Read on below the fold for:
 
 1. [State storage strategy](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#storage-strategy)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#storage-strategy)
 2. [Opt-out cookie](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#opt-out)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#opt-out)
 3. [Better form tracking for passwords](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#passwords)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#passwords)
 4. [New OptimizelyX and Parrable contexts](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#contexts)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#contexts)
 5. [Extracting valuable metadata from the tracker](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#get-data)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#get-data)
 6. [Improved page activity handling](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#page-activity)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#page-activity)
 7. [Upgrading](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#upgrade)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#upgrade)
 8. [Documentation and help](
-/blog/2017/05/20/snowplow-javascript-tracker-2.8.0-released/#doc)
+/blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released/#doc)
 
 <!--more-->
 
