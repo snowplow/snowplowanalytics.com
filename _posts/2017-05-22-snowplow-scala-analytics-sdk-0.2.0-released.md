@@ -48,7 +48,7 @@ The run manifest functionality resides in the new `com.snowplowanalytics.snowplo
 
 Here's a short usage example:
 
-{% highlight scala }
+{% highlight scala %}
 import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsyncClientBuilder
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain
