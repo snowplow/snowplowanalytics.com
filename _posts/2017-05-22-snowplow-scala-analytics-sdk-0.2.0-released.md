@@ -48,7 +48,7 @@ The run manifest functionality resides in the new `com.snowplowanalytics.snowplo
 
 Here's a short usage example:
 
-{% highlight "scala" }
+{% highlight scala }
 import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsyncClientBuilder
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain
@@ -95,7 +95,7 @@ This approach is taken inside Snowplow pipeline and serves us quite well there, 
 To solve this we replaced `Validation` with `Either` - isomorphic data type from Scala standard library.
 This is the only breaking change in this release and you still can filter RDD with only successfully converted JSONs in a familiar way:
 
-{% highlight "scala" %}
+{% highlight scala %}
 val events = input
   .map(line => EventTransformer.transform(line))
   .filter(_.isRight)
