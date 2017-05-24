@@ -137,6 +137,7 @@ And if there's another Snowplow Analytics SDK that you'd like us to prioritize c
 
 [dynamodb]: https://aws.amazon.com/dynamodb/
 [glacier]: https://aws.amazon.com/glacier/
+[flink]: https://flink.apache.org/
 
 [event-data-modeling]: /blog/2016/03/16/introduction-to-event-data-modeling/
 [python-sdk-post]: https://snowplowanalytics.com/blog/2017/04/11/snowplow-python-analytics-sdk-0.2.0-released/
@@ -150,5 +151,6 @@ And if there's another Snowplow Analytics SDK that you'd like us to prioritize c
 [scalding]: https://github.com/twitter/scalding
 [scalaz]: https://github.com/scalaz/scalaz
 
+[issues]: https://github.com/snowplow/snowplow-scala-analytics-sdk/issues
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
 [discourse]: http://discourse.snowplowanalytics.com/
