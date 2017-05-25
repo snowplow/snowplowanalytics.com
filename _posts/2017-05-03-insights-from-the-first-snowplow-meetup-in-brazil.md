@@ -23,8 +23,8 @@ It was a huge pleasure to host the first Brazilian meetup at the GetNinjas offic
 The evening started with networking - we had participants from very interesting startups, with different data and product challenges. Then, we gathered for three presentations:
 
 1. Alex Dean, presenting Snowplow and its roadmap
-2. Bernardo Srulzon, presenting the GetNinjas case
-3. Murilo Capanema, presenting the Creditas case
+2. Bernardo Srulzon, presenting the [GetNinjas](https://www.getninjas.com.br/) case
+3. Murilo Capanema, presenting the [Creditas](https://www.creditas.com.br/) case
 
 <!--more-->
 
