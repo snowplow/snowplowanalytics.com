@@ -8,7 +8,7 @@ category: Releases
 ---
 
 We are pleased to announce [version 0.3.0][release-030] of Dataflow Runner, our cloud-agnostic tool
-to create clusters and run jobflows. This release is centered around usability improvements.
+to create clusters and run jobflows. This release is centered around new features and usability improvements.
 
 In this post, we will cover:
 
@@ -23,9 +23,11 @@ In this post, we will cover:
 
 <h2 id="locks">1. Preventing overlapping job runs through locks</h2>
 
-This release introduces a mechanism to prevent two jobs from running at the same time. It involves
-acquiring a lock before starting the job and releasing it once a job is done (whether it ran
-successfully or failed). Two strategies have been made available: local and distributed.
+This release introduces a mechanism to prevent two jobs from running at the same time. This is great if you have for example an ETL process which needs to run as a singleton, or you have multiple jobs which each need exclusive access to the same database.
+
+With this feature, Dataflow Runner will acquire a lock before starting the job, and release the lock once a job is done (whether it ran successfully or failed). Two strategies have been made available: local and distributed.
+
+**TODO: UPDATE THIS FOLLOWING lock / softLock DISTINCTION**
 
 <h3 id="local-lock">1.1 Local lock</h3>
 
@@ -55,8 +57,8 @@ fails with:
 FATA[0000] Locked by other process
 {% endhighlight %}
 
-Note that, the lock is only characterized by its name. As a result, we can setup locks across job
-names and/or cluster ids.
+Note that the lock is only characterized by its name. As a result, we can setup locks across job
+names and/or cluster IDs.
 
 In a lock context, the lock will be materialized by a file at the specified path.
 
@@ -75,7 +77,7 @@ Anoter strategy is to leverage [Consul][consul] to enforce a distributed lock:
 That way, anyone using `myLockName` as a lock and this Consul server will have to respect the lock.
 
 In a distributed context, the lock will be materialized by a key-value pair in Consul, the key being
-the specified path.
+at the specified path.
 
 <h2 id="tags">2. Tagging playbooks</h2>
 
@@ -109,8 +111,8 @@ As an example, we could have the following `playbook.json` file:
     ],
     "tags": [
       {
-        "key": "s3 dist cp",
-        "value": "combine months"
+        "key": "environment",
+        "value": "production"
       }
     ]
   }
@@ -228,7 +230,7 @@ Another couple of changes have been made to improve usability regarding missing 
 
 <h3 id="unset-var">4.1 Short-circuit execution on unset template variable</h3>
 
-Prior to 0.3.0, if we forgot to specify a template variable, `<no value>` would be templated.
+Prior to 0.3.0, if we forgot to specify a template variable, the string `<no value>` would be filled into the template.
 
 For example, launching an EMR cluster with the following `cluster.json` configuration:
 
@@ -289,7 +291,7 @@ As we stated in [the previous release's blogpost](/blog/2017/03/31/dataflow-runn
 we are committed to supporting other clouds such as Azure HDInsight (see [issue #22][issue-22]) and
 Google Cloud Dataproc.
 
-In the shorter term, we've also started a discussion around finding ways to react to step failures;
+In the shorter term, we have also started a discussion around finding ways to react to step failures;
 this is the only remaining feature for Dataflow Runner to reach feature parity with EmrEtlRunner
 (see [issue #15][issue-15]).
 
