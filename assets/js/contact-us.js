@@ -131,7 +131,7 @@ $(function() {
       document.getElementById("inputMessage").setAttribute("name","00N2400000HU7tD");
 
       form.method = "POST";
-      form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+      form.action = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
       form.submit();
 
     }
