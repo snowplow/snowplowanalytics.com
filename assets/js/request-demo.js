@@ -125,7 +125,7 @@ $(function() {
       document.getElementById("inputPhone").setAttribute("name", "phone");
 
       form.method = "POST";
-      form.action = "https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+      form.action = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
       form.submit();
 
     }
