@@ -8,7 +8,8 @@ category: Releases
 ---
 
 We are pleased to announce [version 0.3.0][release-030] of Dataflow Runner, our cloud-agnostic tool
-to create clusters and run jobflows. This release is centered around new features and usability improvements.
+to create clusters and run jobflows. This release is centered around new features and usability
+improvements.
 
 In this post, we will cover:
 
@@ -23,11 +24,20 @@ In this post, we will cover:
 
 <h2 id="locks">1. Preventing overlapping job runs through locks</h2>
 
-This release introduces a mechanism to prevent two jobs from running at the same time. This is great if you have for example an ETL process which needs to run as a singleton, or you have multiple jobs which each need exclusive access to the same database.
+This release introduces a mechanism to prevent two jobs from running at the same time. This is great
+if you have for example an ETL process which needs to run as a singleton, or you have multiple jobs
+which each need exclusive access to the same database.
 
-With this feature, Dataflow Runner will acquire a lock before starting the job, and release the lock once a job is done (whether it ran successfully or failed). Two strategies have been made available: local and distributed.
+With this feature, Dataflow Runner will acquire a lock before starting the job. Its release will
+happen when:
 
-**TODO: UPDATE THIS FOLLOWING lock / softLock DISTINCTION**
+- the job is done with the `--softLock` flag
+- the job has succeeded with the `--lock` flag
+
+As the above implies, if a job were to fail and the `--lock` flag was used, manual cleaning of the
+lock will be required.
+
+Two strategies for storing the lock have been made available: local and distributed.
 
 <h3 id="local-lock">1.1 Local lock</h3>
 
@@ -40,7 +50,7 @@ You can leverage a local lock when launching your playbook with `./dataflow-runn
   --lock         path/to/lock
 {% endhighlight %}
 
-This prevents anyone on this machine from running another playbook using `myLockName` as lock.
+This prevents anyone on this machine from running another playbook using `path/to/lock` as lock.
 
 For example, launching the following while the steps above are running:
 
@@ -54,13 +64,13 @@ For example, launching the following while the steps above are running:
 fails with:
 
 {% highlight bash %}
-FATA[0000] Locked by other process
+WARN[0000] Locked already held
 {% endhighlight %}
 
 Note that the lock is only characterized by its name. As a result, we can setup locks across job
 names and/or cluster IDs.
 
-In a lock context, the lock will be materialized by a file at the specified path.
+In a local context, the lock will be materialized by a file at the specified path.
 
 <h3 id="distributed-lock">1.2 Distributed lock</h3>
 
@@ -74,7 +84,7 @@ Anoter strategy is to leverage [Consul][consul] to enforce a distributed lock:
   --consul       127.0.0.1:8500
 {% endhighlight %}
 
-That way, anyone using `myLockName` as a lock and this Consul server will have to respect the lock.
+That way, anyone using `path/to/lock` as lock and this Consul server will have to respect the lock.
 
 In a distributed context, the lock will be materialized by a key-value pair in Consul, the key being
 at the specified path.
