@@ -44,7 +44,7 @@
   full_name: Ben Fradet
   github: BenFradet
   url: /blog/authors/ben/
-  avatar: http://www.gravatar.com/avatar/1db05766b6148f890cdbe1a339764d81.png?size=120
+  avatar: /assets/img/team/ben.jpg
   spiel: |
       <a href="/blog/authors/ben/">Ben</a> is a data engineer at Snowplow. You can find him on <a href="https://github.com/BenFradet">GitHub</a>, <a href="https://twitter.com/fradetben">Twitter</a> and <a href="http://ie.linkedin.com/in/benfradet">LinkedIn</a>.
 
