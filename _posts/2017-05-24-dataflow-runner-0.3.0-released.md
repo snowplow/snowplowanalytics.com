@@ -2,7 +2,7 @@
 layout: post
 title: "Dataflow Runner 0.3.0 released"
 title-short: Dataflow Runner 0.3.0
-tags: [snowplow, golang, orchestration, emr]
+tags: [snowplow, golang, orchestration, emr, hadoop]
 author: Ben
 category: Releases
 ---
@@ -25,14 +25,14 @@ In this post, we will cover:
 <h2 id="locks">1. Preventing overlapping job runs through locks</h2>
 
 This release introduces a mechanism to prevent two jobs from running at the same time. This is great
-if you have for example an ETL process which needs to run as a singleton, or you have multiple jobs
-which each need exclusive access to the same database.
+if you have for example an ETL process that needs to run as a singleton, or you have multiple jobs
+that each need exclusive access to the same database.
 
 With this feature, Dataflow Runner will acquire a lock before starting the job. Its release will
 happen when:
 
-- the job is done with the `--softLock` flag
-- the job has succeeded with the `--lock` flag
+- the job has terminated (whether successfully or with failure) with the `--softLock` flag
+- the job has succeeded with the `--lock` flag ("hard lock")
 
 As the above implies, if a job were to fail and the `--lock` flag was used, manual cleaning of the
 lock will be required.
@@ -47,10 +47,10 @@ You can leverage a local lock when launching your playbook with `./dataflow-runn
 ./dataflow-runner run            \
   --emr-playbook playbook.json   \
   --emr-cluster  j-21V4W2CSLYUCU \
-  --lock         path/to/lock
+  --lock         /path/to/lock
 {% endhighlight %}
 
-This prevents anyone on this machine from running another playbook using `path/to/lock` as lock.
+This prevents anyone on this machine from running another playbook using `/path/to/lock` as lock.
 
 For example, launching the following while the steps above are running:
 
@@ -58,7 +58,7 @@ For example, launching the following while the steps above are running:
 ./dataflow-runner run           \
   --emr-playbook playbook.json  \
   --emr-cluster  j-KJC0LSX73BSF \
-  --lock         path/to/lock
+  --lock         /path/to/lock
 {% endhighlight %}
 
 fails with:
@@ -67,8 +67,7 @@ fails with:
 WARN[0000] Locked already held
 {% endhighlight %}
 
-Note that the lock is only characterized by its name. As a result, we can setup locks across job
-names and/or cluster IDs.
+You can set the lock name as appropriate to setup locks across different playbooks, job names and/or cluster IDs.
 
 In a local context, the lock will be materialized by a file at the specified path.
 
@@ -129,11 +128,11 @@ As an example, we could have the following `playbook.json` file:
 }
 {% endhighlight %}
 
-However, unlike cluster configuration tags which actually tag the EMR cluster, playbook tags don't
+However, unlike the cluster configuration tags which actually tag the EMR cluster, playbook tags don't
 have any effect in EMR.
 
 Note that, compared with version 0.2.0 of Dataflow Runner, the playbook schema version has
-changed to 1-0-1. 1-0-1 being fully backward compatible, if you do not wish to use the tags
+changed to 1-0-1. 1-0-1 is fully backward compatible, so if you do not wish to use the tags
 introduced in this release you do not have to change anything.
 
 The up-to-date playbook schema can be found on [GitHub][avro-schema].
@@ -154,7 +153,7 @@ As an example, if we have the following in our `cluster.json`:
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
-    "name": "dataflow-runner {% raw %}{{timeWithFormat 1495622024 "Mon Jan _2 15:04:05 2006"}}{% endraw %}",
+    "name": "dataflow-runner {% raw %}{{timeWithFormat "1495622024" "Mon Jan _2 15:04:05 2006"}}{% endraw %}",
     // omitted for brevity
   }
 }
@@ -236,11 +235,11 @@ results in:
 
 <h2 id="updates">4. Other updates</h2>
 
-Another couple of changes have been made to improve usability regarding missing template variables.
+Some changes have been made to improve usability regarding missing template variables:
 
 <h3 id="unset-var">4.1 Short-circuit execution on unset template variable</h3>
 
-Prior to 0.3.0, if we forgot to specify a template variable, the string `<no value>` would be filled into the template.
+Prior to 0.3.0, if you forgot to specify a template variable, then the string `<no value>` would be filled into the template.
 
 For example, launching an EMR cluster with the following `cluster.json` configuration:
 
@@ -264,7 +263,7 @@ with:
 
 would have resulted in an EMR cluster named: `snowplow - <no value>`.
 
-With 0.3.0, forgetting a template variable won't be tolerated and the following error will be
+With 0.3.0, forgetting a template variable is not allowed, and the following error will be
 generated:
 
 {% highlight bash %}
@@ -297,13 +296,9 @@ FATA[0000] template: cluster.json: executing "cluster.json" at <systemEnv "CLUST
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-As we stated in [the previous release's blogpost](/blog/2017/03/31/dataflow-runner-0.2.0-released#roadmap),
+As we stated in [the blog post for the previous release][release-020-post],
 we are committed to supporting other clouds such as Azure HDInsight (see [issue #22][issue-22]) and
 Google Cloud Dataproc.
-
-In the shorter term, we have also started a discussion around finding ways to react to step failures;
-this is the only remaining feature for Dataflow Runner to reach feature parity with EmrEtlRunner
-(see [issue #15][issue-15]).
 
 If you have other features in mind, feel free to log an issue in
 [the GitHub repository][df-runner-issues].
@@ -314,6 +309,7 @@ You can check out the [repository][df-runner-repo] if you'd like to get involved
 preparatory work getting other cloud providers integrated would be much appreciated.
 
 [release-030]: https://github.com/snowplow/dataflow-runner/releases/tag/0.3.0
+[release-020-post]: /blog/2017/03/31/dataflow-runner-0.2.0-released#roadmap
 
 [consul]: https://www.consul.io
 [avro-schema]: http://iglucentral.com/schemas/com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1
