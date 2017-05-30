@@ -109,14 +109,16 @@ a few modifications to our configuration YAML:
 aws:
   emr:
     jobflow:
-      job_name: Snowplow ETL
+      job_name: Snowplow ETL          # MOVED
+      master_instance_type: m1.medium # AS BEFORE
+      ...
 enrich:
   versions:
-    spark_enrich: 1.9.0
+    spark_enrich: 1.9.0               # RENAMED
 storage:
   versions:
-    rdb_shredder: 0.12.0
-    hadoop_elasticsearch: 0.1.0
+    rdb_shredder: 0.12.0              # MOVED AND RENAMED
+    hadoop_elasticsearch: 0.1.0       # MOVED
 {% endhighlight %}
 
 Note that the job name is now part of the jobflow, it didn't make sense to still
