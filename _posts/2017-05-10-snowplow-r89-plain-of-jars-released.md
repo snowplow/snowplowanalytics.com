@@ -115,7 +115,7 @@ enrich:
     spark_enrich: 1.9.0
 storage:
   versions:
-    relational_database_shredder: 0.12.0
+    rdb_shredder: 0.12.0
     hadoop_elasticsearch: 0.1.0
 {% endhighlight %}
 
