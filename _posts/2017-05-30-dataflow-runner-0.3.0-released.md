@@ -13,12 +13,12 @@ improvements.
 
 In this post, we will cover:
 
-1. [Preventing overlapping job runs through locks](/blog/2017/05/24/dataflow-runner-0.3.0-released#locks)
-2. [Tagging playbooks](/blog/2017/05/24/dataflow-runner-0.3.0-released#tags)
-3. [New template functions](/blog/2017/05/24/dataflow-runner-0.3.0-released#templates)
-4. [Other updates](/blog/2017/05/24/dataflow-runner-0.3.0-released#updates)
-5. [Roadmap](/blog/2017/05/24/dataflow-runner-0.3.0-released#roadmap)
-6. [Contributing](/blog/2017/05/24/dataflow-runner-0.3.0-released#contributing)
+1. [Preventing overlapping job runs through locks](/blog/2017/05/30/dataflow-runner-0.3.0-released#locks)
+2. [Tagging playbooks](/blog/2017/05/30/dataflow-runner-0.3.0-released#tags)
+3. [New template functions](/blog/2017/05/30/dataflow-runner-0.3.0-released#templates)
+4. [Other updates](/blog/2017/05/30/dataflow-runner-0.3.0-released#updates)
+5. [Roadmap](/blog/2017/05/30/dataflow-runner-0.3.0-released#roadmap)
+6. [Contributing](/blog/2017/05/30/dataflow-runner-0.3.0-released#contributing)
 
 <!--more-->
 
@@ -64,12 +64,15 @@ For example, launching the following while the steps above are running:
 fails with:
 
 {% highlight bash %}
-WARN[0000] Locked already held
+WARN[0000] lock already held at path/to/lock
 {% endhighlight %}
 
-You can set the lock name as appropriate to setup locks across different playbooks, job names and/or cluster IDs.
+You can set the lock name as appropriate to setup locks across different playbooks, job names and/or
+cluster IDs.
 
-In a local context, the lock will be materialized by a file at the specified path.
+In a local context, the lock will be materialized by a file at the specified path which can be
+relative or absolute. In case of a relative path, it will be relative to your current working
+directory.
 
 <h3 id="distributed-lock">1.2 Distributed lock</h3>
 
