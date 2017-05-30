@@ -47,10 +47,10 @@ You can leverage a local lock when launching your playbook with `./dataflow-runn
 ./dataflow-runner run            \
   --emr-playbook playbook.json   \
   --emr-cluster  j-21V4W2CSLYUCU \
-  --lock         /path/to/lock
+  --lock         path/to/lock
 {% endhighlight %}
 
-This prevents anyone on this machine from running another playbook using `/path/to/lock` as lock.
+This prevents anyone on this machine from running another playbook using `path/to/lock` as lock.
 
 For example, launching the following while the steps above are running:
 
@@ -58,7 +58,7 @@ For example, launching the following while the steps above are running:
 ./dataflow-runner run           \
   --emr-playbook playbook.json  \
   --emr-cluster  j-KJC0LSX73BSF \
-  --lock         /path/to/lock
+  --lock         path/to/lock
 {% endhighlight %}
 
 fails with:
