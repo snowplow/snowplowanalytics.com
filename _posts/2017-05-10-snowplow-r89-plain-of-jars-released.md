@@ -108,6 +108,8 @@ a few modifications to our configuration YAML:
 {% highlight yaml %}
 aws:
   emr:
+    ami_version: 5.5.0                # WAS 4.5.0
+    ...
     jobflow:
       job_name: Snowplow ETL          # MOVED
       master_instance_type: m1.medium # AS BEFORE
@@ -115,6 +117,7 @@ aws:
 enrich:
   versions:
     spark_enrich: 1.9.0               # RENAMED
+    ...
 storage:
   versions:
     rdb_shredder: 0.12.0              # MOVED AND RENAMED
