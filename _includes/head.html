@@ -20,7 +20,7 @@
         <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/favicon/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-        {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – The event data pipeline</title>{% endif %}
+        {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – differentiate with data</title>{% endif %}
         <meta name="description" content="{{ page.description }}">
         <meta name="author" content="{% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}{% else %}{{ site.author.name }}{% endif %}">
 
