@@ -55,4 +55,4 @@ Click [here](http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f3
 
 
 [picture-of-stewart]: /assets/img/blog/2017/01/stewart-duncan-simply-business.jpg "Stewart Duncan, Director of Data Science at Simply Business"
-[simply-business-user-story]: /assets/pdf/simply-business-case-study_v3.pdf
+[simply-business-user-story]: /assets/pdf/Snowplow-Case-Study-Simply_Business.pdf
