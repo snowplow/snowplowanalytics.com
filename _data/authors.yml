@@ -184,3 +184,10 @@
   avatar: /assets/img/team/bernardo.jpg
   spiel: |
       <a href="/blog/authors/bernardo/">Bernardo</a> Bernardo is the Business Intelligence lead at <a href="https://www.getninjas.com.br/">Getninajs</a> and a Snowplow enthusiast since 2015. You can find him on <a href="https://www.linkedin.com/in/bernardosrulzon/">LinkedIn</a>.
+
+- name: Devesh
+  full_name: Devesh Shetty
+  url: /blog/authors/devesh/
+  avatar: /assets/img/team/devesh.jpg
+  spiel: |
+      <a href="/blog/authors/devesh/">Devesh</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/devesh-shetty">GitHub</a>, <a href="https://twitter.com/dPrecator">Twitter</a>, <a href="https://www.linkedin.com/in/devesh-shetty/">LinkedIn</a> and on <a href="https://www.quora.com/profile/Devesh-Shetty">Quora</a>.
