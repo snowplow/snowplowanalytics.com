@@ -95,13 +95,13 @@ catch (SnowplowEventTransformationException sete)
 
 If there are any problems in the input TSV (such as unparseable JSON fields or numeric fields), the `transform` method will throw a `SnowplowEventTransformationException`. This exception contains a list of error messages - one for every problematic field in the input.
 
-For more information, check out the [.NET Analytics SDK wiki page][sdk-docs].
+For more information, please check out the [.NET Analytics SDK wiki page][sdk-docs].
 
 <h2 id="help">5. Getting help</h2>
 
 If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
 
-And if there's another Snowplow Analytics SDK you'd like us to prioritize creating, please let us know on the [forums][discourse]!
+And if there's another Snowplow Analytics SDK you'd like us to prioritize creating, please let us know on our [Discourse][discourse]!
 
 [sdk-repo]: https://github.com/snowplow/snowplow-dotnet-analytics-sdk
 [sdk-usage-img]: /assets/img/blog/2017/06/dotnet-analytics-sdk-usage.png
