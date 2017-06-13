@@ -7,29 +7,31 @@ author: Devesh
 category: Releases
 ---
 
-Following in the footsteps of the [Snowplow Scala Analytics SDK] [scala-sdk-post] and [Snowplow Python Analytics SDK] [python-sdk-post], we are happy to announce the release of the [Snowplow .NET Analytics SDK] [sdk-repo]! This library makes your Snowplow enriched events easier to work with [Azure Data Lake Analytics] [azure-data-lake-analytics], [Azure Functions] [azure-functions], [AWS Lambda] [lambda], [Microsoft Orleans] [microsoft-orleans] and other .NET-compatible data processing frameworks.
+Following in the footsteps of the [Snowplow Scala Analytics SDK][scala-sdk-post] and [Snowplow Python Analytics SDK][python-sdk-post], we are happy to announce the release of the [Snowplow .NET Analytics SDK][sdk-repo].
 
-Some good use cases for the SDK include:
+This SDK makes your Snowplow enriched events easier to work with from [Azure Data Lake Analytics][azure-data-lake-analytics], [Azure Functions][azure-functions], [AWS Lambda][lambda], [Microsoft Orleans][microsoft-orleans] and other .NET-compatible data processing frameworks.
 
-1. Performing [event data modeling] [event-data-modeling] in [Azure Data Lake Analytics] [azure-data-lake-analytics]
-2. Developing machine learning models on your event data using Azure Data Lake Analytics
-3. Performing analytics-on-write in Azure Functions as part of our Event Hubs real-time pipeline:
+This SDK has been developed as a first step towards our RFC, [Porting Snowplow to Microsoft Azure][azure-rfc]. Over time, we expect this SDK will be used for tasks such as:
 
-![sdk-usage-img] [sdk-usage-img]
+1. Performing [event data modeling][event-data-modeling] in Azure Data Lake Analytics
+2. Performing analytics-on-write in Azure Functions as part of an [Event Hubs][event-hubs]-based real-time pipeline
+3. Writing real-time decisioning engines on Snowplow event streams in Microsoft Orleans:
+
+![sdk-usage-img][sdk-usage-img]
 
 Read on below the jump for:
 
-1. [Overview](/blog/2017/06/12/snowplow-dotnet-analytics-sdk-0.1.0-released#overview)
-2. [The JSON Event Transformer](/blog/2017/06/12/snowplow-dotnet-analytics-sdk-0.1.0-released#json-event-transformer)
-3. [Installation](/blog/2017/06/12/snowplow-dotnet-analytics-sdk-0.1.0-released#installation)
-4. [Usage](/blog/2017/06/12/snowplow-dotnet-analytics-sdk-0.1.0-released#usage)
-5. [Getting help](/blog/2017/06/12/snowplow-dotnet-analytics-sdk-0.1.0-released#help)
+1. [Overview](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#overview)
+2. [The JSON Event Transformer](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#json-event-transformer)
+3. [Installation](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#installation)
+4. [Usage](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#usage)
+5. [Getting help](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#help)
 
 <!--more-->
 
 <h2 id="overview">1. Overview</h2>
 
-Snowplow's ETL process outputs enriched events in a TSV. This TSV currently has 131 fields, which can make it difficult to work with directly. The Snowplow .NET Analytics SDK currently supports one transformation: turning this TSV into a more tractable JSON.
+Snowplow's enrichment process outputs enriched events in a TSV. This TSV currently has 131 fields, which can make it difficult to work with directly. The Snowplow .NET Analytics SDK currently supports one transformation: turning this TSV into a more tractable JSON.
 
 The transformation algorithm used to do this is the same as the one used in the [Snowplow Scala Analytics SDK][ssas]. Here is an example output JSON:
 
@@ -86,7 +88,7 @@ For example, if an enriched event contained a `com.snowplowanalytics.snowplow/li
 
 <h2 id="installation">3. Installation</h2>
 
-The Snowplow .NET Analytics is published to [NuGet] [nuget], the .NET package manager. To add it to your project, install it in the Visual Studio Package Manager Console:
+The Snowplow .NET Analytics is published to [NuGet][nuget], the .NET package manager. To add it to your project, install it in the Visual Studio Package Manager Console:
 
 {% highlight bash %}
 Install-Package Snowplow.Analytics
@@ -113,13 +115,13 @@ catch (SnowplowEventTransformationException sete)
 
 If there are any problems in the input TSV (such as unparseable JSON fields or numeric fields), the `transform` method will throw a `SnowplowEventTransformationException`. This exception contains a list of error messages - one for every problematic field in the input.
 
-For more information, check out the [.NET Analytics SDK wiki page] [sdk-docs].
+For more information, check out the [.NET Analytics SDK wiki page][sdk-docs].
 
 <h2 id="help">5. Getting help</h2>
 
 If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
 
-And if there's another Snowplow Analytics SDK you'd like us to prioritize creating, please let us know on the [forums] [discourse]!
+And if there's another Snowplow Analytics SDK you'd like us to prioritize creating, please let us know on the [forums][discourse]!
 
 [sdk-repo]: https://github.com/snowplow/snowplow-dotnet-analytics-sdk
 [sdk-usage-img]: /assets/img/blog/2017/06/dotnet-analytics-sdk-usage.png
@@ -131,6 +133,9 @@ And if there's another Snowplow Analytics SDK you'd like us to prioritize creati
 [azure-functions]: https://azure.microsoft.com/en-gb/services/functions/
 [lambda]: https://aws.amazon.com/lambda/
 [microsoft-orleans]: https://dotnet.github.io/orleans/
+[event-hubs]: https://azure.microsoft.com/en-au/services/event-hubs/
+
+[azure-rfc]: http://discourse.snowplowanalytics.com/t/porting-snowplow-to-microsoft-azure/1178
 
 [nuget]: https://www.nuget.org/
 [ssas]: https://github.com/snowplow/snowplow-scala-analytics-sdk
