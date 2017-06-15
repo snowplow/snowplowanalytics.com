@@ -21,11 +21,11 @@ This SDK has been developed as a first step towards our RFC, [Porting Snowplow t
 
 Read on below the jump for:
 
-1. [Overview](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#overview)
-2. [The JSON Event Transformer](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#json-event-transformer)
-3. [Installation](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#installation)
-4. [Usage](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#usage)
-5. [Getting help](/blog/2017/06/14/snowplow-dotnet-analytics-sdk-0.1.0-released#help)
+1. [Overview](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#overview)
+2. [The JSON Event Transformer](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#json-event-transformer)
+3. [Installation](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#installation)
+4. [Usage](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#usage)
+5. [Getting help](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#help)
 
 <!--more-->
 
@@ -74,6 +74,8 @@ The Snowplow .NET Analytics is published to [NuGet][nuget], the .NET package man
 Install-Package Snowplow.Analytics
 {% endhighlight %}
 
+For more information on installation check out the [.NET Analytics SDK setup guide][sdk-setup-guide].
+
 <h2 id="usage">4. Usage</h2>
 
 Use the SDK like this:
@@ -95,7 +97,7 @@ catch (SnowplowEventTransformationException sete)
 
 If there are any problems in the input TSV (such as unparseable JSON fields or numeric fields), the `transform` method will throw a `SnowplowEventTransformationException`. This exception contains a list of error messages - one for every problematic field in the input.
 
-For more information, please check out the [.NET Analytics SDK wiki page][sdk-docs].
+For more information, please check out the [.NET Analytics SDK technical documentation][sdk-tech-docs].
 
 <h2 id="help">5. Getting help</h2>
 
@@ -105,7 +107,8 @@ And if there's another Snowplow Analytics SDK you'd like us to prioritize creati
 
 [sdk-repo]: https://github.com/snowplow/snowplow-dotnet-analytics-sdk
 [sdk-usage-img]: /assets/img/blog/2017/06/dotnet-analytics-sdk-usage.png
-[sdk-docs]: https://github.com/snowplow/snowplow/wiki/.NET-Analytics-SDK
+[sdk-setup-guide]: https://github.com/snowplow/snowplow/wiki/.NET-Analytics-SDK-setup
+[sdk-tech-docs]: https://github.com/snowplow/snowplow/wiki/.NET-Analytics-SDK
 
 [event-data-modeling]: http://snowplowanalytics.com/blog/2016/03/16/introduction-to-event-data-modeling/
 
