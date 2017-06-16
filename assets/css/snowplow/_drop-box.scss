@@ -1,0 +1,51 @@
+/*
+ * BOX WITH DROP
+ */
+
+
+
+.drop-box
+{
+	color:$white;
+	padding:60px;
+	margin:0 auto;
+	max-width: 1220px;
+	text-align:center;
+	background:$brand-success; 
+	border-radius:$border-radius-base;
+
+	h4 {
+		font-size: 21px;
+		margin:0 40px 0 0;
+		display:inline-block;
+		letter-spacing: normal;
+		vertical-align: middle;
+	}
+
+	.bootstrap-select {
+		width:auto!important;
+		background:none;
+
+		.dropdown-toggle {
+			color:white!important;
+			border-color:$white;
+			background:none;
+		}
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+		h4 {
+			margin:0;
+		}
+
+		.bootstrap-select {
+			margin-top:40px;
+		}
+	}
+
+	@media (max-width: $screen-sm-max)
+	{
+		max-width:95%;
+	}
+}
