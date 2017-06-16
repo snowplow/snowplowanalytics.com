@@ -31,34 +31,6 @@ body.blog
 		padding-top:0;
 	}
 
-	h1:not(:first-child),
-	.h1:not(:first-child),
-	h2:not(:first-child),
-	.h2:not(:first-child),
-	h3:not(:first-child),
-	.h3:not(:first-child),
-	h4:not(:first-child),
-	.h4:not(:first-child)
-	{
-		margin:80px 0 50px;
-	}
-
-	.content
-	{
-		font-size: 16px;
-
-		svg, img, iframe
-		{
-			max-width: 100%!important;
-			margin:60px 0!important;
-		}
-
-		iframe
-		{
-			width: 100%!important;
-		}
-	}
-
 	article
 	{
 		max-width:$screen-sm-max;
@@ -66,11 +38,6 @@ body.blog
 		& + article
 		{
 			margin-top:80px;
-		}
-
-		h2
-		{
-			margin: 0;
 		}
 
 		.content
@@ -116,14 +83,6 @@ body.blog
 		{
 	    	margin-bottom: 20px;
 	    }
-	}
-
-	@media (max-width: $screen-md-max)
-	{
-		h1:first-child
-		{
-			font-size: 35px;
-		}
 	}
 }
 
