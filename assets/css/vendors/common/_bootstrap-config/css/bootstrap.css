@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=8848e1b8a22307fc5f17de3d36fb4825)
- * Config saved to config.json and https://gist.github.com/8848e1b8a22307fc5f17de3d36fb4825
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=3661078fedc43b067b73ac2f2bb97807)
+ * Config saved to config.json and https://gist.github.com/3661078fedc43b067b73ac2f2bb97807
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -727,60 +727,6 @@ address {
   margin-bottom: 16px;
   font-style: normal;
   line-height: 1;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-code {
-  padding: 2px 4px;
-  font-size: 90%;
-  color: #c7254e;
-  background-color: #f9f2f4;
-  border-radius: 5px;
-}
-kbd {
-  padding: 2px 4px;
-  font-size: 90%;
-  color: #ffffff;
-  background-color: #333333;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-kbd kbd {
-  padding: 0;
-  font-size: 100%;
-  font-weight: bold;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-pre {
-  display: block;
-  padding: 7.5px;
-  margin: 0 0 8px;
-  font-size: 15px;
-  line-height: 1;
-  word-break: break-all;
-  word-wrap: break-word;
-  color: #323743;
-  background-color: #f5f5f5;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-}
-pre code {
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-  white-space: pre-wrap;
-  background-color: transparent;
-  border-radius: 0;
-}
-.pre-scrollable {
-  max-height: 340px;
-  overflow-y: scroll;
 }
 .container {
   margin-right: auto;
