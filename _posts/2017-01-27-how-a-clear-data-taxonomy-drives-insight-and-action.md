@@ -88,7 +88,7 @@ In our example, we will have four jsonschema files to describe our jewelry produ
 
 <small>file: schemas/com.jewellerystore.iglu/product/jsonschema/1-0-0</small>
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Product schema",
@@ -124,7 +124,7 @@ In our example, we will have four jsonschema files to describe our jewelry produ
     <div role="tabpanel" class="tab-pane" id="necklace">
 
 <small>file: schemas/com.jewellerystore.iglu/necklace/jsonschema/1-0-0</small>
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Necklace schema",
@@ -175,7 +175,7 @@ In our example, we will have four jsonschema files to describe our jewelry produ
 
 
 <small>file: schemas/com.jewellerystore.iglu/stone/jsonschema/1-0-0</small>
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Stone schema",
@@ -220,7 +220,7 @@ In our example, we will have four jsonschema files to describe our jewelry produ
     </div>
     <div role="tabpanel" class="tab-pane" id="metal">
 <small>file: schemas/com.jewellerystore.iglu/metal/jsonschema/1-0-0</small>
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Metal schema",
@@ -259,7 +259,7 @@ In our example, we will have four jsonschema files to describe our jewelry produ
 
 We now create the corresponding jsonpath files and SQL table definitions with [Schema Guru](https://github.com/snowplow/schema-guru).
 
-{% highlight js %}
+{% highlight js linenos %}
 
 $ ./schema-guru-0.6.2 ddl --with-json-paths product.json
 File [./sql/com.jewellerystore/product_schema_1.sql] was written successfully!
@@ -304,7 +304,7 @@ Snowplow Analytics uses [semantic versioning](http://semver.org/), which allows 
 
 Table: <span class="label label-success" style="font-size:80%;/">atomic.com_jewellerystore_product_1</span>
 
-{% highlight sql %}
+{% highlight sql linenos %}
 
 CREATE TABLE IF NOT EXISTS atomic.com_jewellerystore_product_1 (
     "schema_vendor"  VARCHAR(128)     ENCODE RUNLENGTH NOT NULL,
@@ -333,7 +333,7 @@ COMMENT ON TABLE atomic.com_jewellerystore_product_1 IS 'iglu:com.jewellerystore
 
 Table: <span class="label label-success" style="font-size:80%;/">atomic.com_jewellerystore_metal_1</span>
 
-{% highlight sql %}
+{% highlight sql linenos %}
 
 CREATE TABLE IF NOT EXISTS atomic.com_jewellerystore_metal_1 (
     "schema_vendor"  VARCHAR(128)  ENCODE RUNLENGTH NOT NULL,
@@ -366,7 +366,7 @@ Now that we have the schemas and tables ready, we can start capturing events wit
 
 Contexts can be re-used and mixed to describe any object.
 
-{% highlight js %}
+{% highlight js linenos %}
 
 /* ******** */
 /* Pageview */
@@ -428,7 +428,7 @@ As an exercise, look at the context and come up with an original question.
 
 To answer any questions we need a data visualization tool and some data-modelling skills.
 
-  {% highlight sql %}
+  {% highlight sql linenos %}
 SELECT
     DATE_TRUNC('day', collector_tstamp) AS date,
     e.event AS event,

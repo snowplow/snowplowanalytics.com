@@ -52,7 +52,7 @@ This release also includes an emitter callback option. This includes a new proto
 
 To set it up:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 // Import the required protocol into your class header file
 import "RequestCallback.h"
 
@@ -66,7 +66,7 @@ import "RequestCallback.h"
 
 This will allow you to override the `onSuccess` and `onFailure` methods included in the protocol in your paired `.m` file:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 - (void) onSuccess:(NSInteger)successCount {
     // Do something!
 }
@@ -78,7 +78,7 @@ This will allow you to override the `onSuccess` and `onFailure` methods included
 
 To add this callback to your `SnowplowEmitter` object:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SnowplowEmitter *emitter =
     [[SnowplowEmitter alloc] initWithURLRequest:[NSURL URLWithString:url_]
                                      httpMethod:method_
@@ -151,7 +151,7 @@ Other updates include:
 
 To add the Snowplow Objective-C Tracker as a dependency to your own app, add the following into your Podfile:
 
-{% highlight python %}
+{% highlight python linenos %}
 pod 'SnowplowTracker', '~> 0.4'
 {% endhighlight %}
 

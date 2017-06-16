@@ -10,7 +10,9 @@ category: Analytics
 Last night, I presented at a webinar organized by our friends at [Qubole] [qubole] on using big data tools to analyze web analytics data. You can view the slides I presented below:
 
 <div class="slideshare">
-<iframe src="http://www.slideshare.net/slideshow/embed_code/31378326" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"> </iframe>
+<div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/31378326" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">     </iframe>
+</div>
 </div>
 
 On the webinar, I talked through the limitations associated with using traditional web analytics tools like Google Analytics and Adobe SiteCatalyst to do web analytics data, and how using big data technologies, and Snowplow and Qubole in particular, addressed those limitations. My talk was followed by one from Qubole's own Rajat Jain on the Qubole Data Service proposition.

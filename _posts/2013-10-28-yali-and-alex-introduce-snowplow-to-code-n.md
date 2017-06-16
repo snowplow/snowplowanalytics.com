@@ -11,7 +11,9 @@ We were very flattered to be invited by the team at [code_n] [coden] to enter th
 As part of our application process, we put together a short video introducing Snowplow. You can watch the video below.
 
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/p49quiYRsgE" frameborder="0" allowfullscreen="1"> </iframe>
+<div class="iframe-container">
+    <iframe width="420" height="315" src="//www.youtube.com/embed/p49quiYRsgE" frameborder="0" allowfullscreen="1">     </iframe>
+</div>
 
 
 We look forward to finding out if our application has been successful!

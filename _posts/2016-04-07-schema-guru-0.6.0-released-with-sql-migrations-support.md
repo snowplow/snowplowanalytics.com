@@ -61,7 +61,7 @@ From this we can see that Schema Guru generated a list of migration scripts acro
 
 Here is an example migration script, which updates `com.amazon.aws.cloudfront/wd_access_log/jsonschema` from [version 1-0-0] [wd-access-log-1-0-0] directly to [version 1-0-2] [wd-access-log-1-0-0]:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 -- WARNING: only apply this file to your database if the following SQL returns the expected:
 --
 -- SELECT pg_catalog.obj_description(c.oid) FROM pg_catalog.pg_class c WHERE c.relname = 'com_amazon_aws_cloudfront_wd_access_log_1';

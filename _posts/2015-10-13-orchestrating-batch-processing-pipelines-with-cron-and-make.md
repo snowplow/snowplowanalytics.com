@@ -54,7 +54,7 @@ Because the tasks in a Makefile are just shell commands, we can use `make` to or
 
 Here's the Makefile for our job, `example-dag.makefile` with a simple `echo` to represent each task, plus some `sleep`s to make it easier to see what is going on when we run it:
 
-{% highlight makefile %}
+{% highlight makefile linenos %}
 done: send-completed-sns
 
 send-starting-sns:
@@ -145,7 +145,7 @@ Our job will fail if one or more of the steps fails - meaning that a shell comma
 
 Let's simulate a failure with the following `failing-dag.makefile` - note the `exit 1` under the StorageLoader rule:
 
-{% highlight makefile %}
+{% highlight makefile linenos %}
 done: send-completed-sns
 
 send-starting-sns:
@@ -195,7 +195,7 @@ When troubleshooting a job failure, always review the Make error output carefull
 
 With this done, we can now produce a scratch Makefile just for the job resumption, `resume-dag.makefile`:
 
-{% highlight makefile %}
+{% highlight makefile linenos %}
 done: send-completed-sns
 
 snowplow-storage-loader:

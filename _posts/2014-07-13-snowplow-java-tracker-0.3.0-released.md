@@ -26,7 +26,7 @@ You can find more on the new additions futher down in this post:
 
 This is probably the largest part of this release. Previously, users would need to pass in the context as a JSON-formatted string of data which would then be encoded accordingly. We've now removed that option and replaced it with a Map. You can see a comparison of the method signature before and after:
 
-{% highlight java %}
+{% highlight java linenos %}
 // Previous
 public void trackPageView(String page_url, String page_title, String referrer, String context)
 
@@ -42,7 +42,7 @@ You may have noticed in the previous example's method signature that there was a
 
 Here are two cases where we set our own timestamp as well as use the default:
 
-{% highlight java %}
+{% highlight java linenos %}
 trackScreenView("Main View", "pageId", contextMap, 1234567L);
 trackScreenView("Main View", "pageId", contextMap, 0);
 {% endhighlight %}

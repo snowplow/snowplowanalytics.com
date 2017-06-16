@@ -30,22 +30,30 @@ The evening started with networking - we had participants from very interesting 
 
 Alex explained what motivated them to launch Snowplow, the benefits of owning your data pipeline and the product roadmap.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/sIqg4I8BduacrH" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/snowplow-meetup-sao-paulo-1-intro-to-snowplow" title="Snowplow meetup São Paulo #1 - Intro to Snowplow" target="_blank">Snowplow meetup São Paulo #1 - Intro to Snowplow</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/sIqg4I8BduacrH" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/snowplow-meetup-sao-paulo-1-intro-to-snowplow" title="Snowplow meetup São Paulo #1 - Intro to Snowplow" target="_blank">Snowplow meetup São Paulo #1 - Intro to Snowplow</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
 
 I talked about how the data team, data infrastructure and data mindset evolved in GetNinjas. We use data to answer complex business problems, and found in Snowplow a strong ally in providing accurate, highly segmentable data to drive product decisions. It started as a web analytics tool, and gradually evolved to become a data warehouse with events from 10+ different sources, powering a team of 10 analysts with 2 algorithms.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/zGVh166fyxc21K" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/bernardosrulzon/getninjas-snowplow-meetup-1" title="[GetNinjas] Snowplow Meetup #1" target="_blank">[GetNinjas] Snowplow Meetup #1</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/bernardosrulzon">bernardosrulzon</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/zGVh166fyxc21K" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/bernardosrulzon/getninjas-snowplow-meetup-1" title="[GetNinjas] Snowplow Meetup #1" target="_blank">[GetNinjas] Snowplow Meetup #1</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/bernardosrulzon">bernardosrulzon</a></strong> </div>
 
 
 Murilo explained what motivated them to switch from an internal tracking tool to Snowplow. He addressed the issues around migrating data from production databases into Redshift, and presented the data infrastructure they’re building to solve it.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/hD3zycUHY0xHuI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/creditas-presentation-for-snowplow-sao-paulo-meetup-1" title="Creditas presentation for Snowplow Sao Paulo meetup #1" target="_blank">Creditas presentation for Snowplow Sao Paulo meetup #1</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/hD3zycUHY0xHuI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/creditas-presentation-for-snowplow-sao-paulo-meetup-1" title="Creditas presentation for Snowplow Sao Paulo meetup #1" target="_blank">Creditas presentation for Snowplow Sao Paulo meetup #1</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
 
 You can see a video of the meetup here:
 
-<iframe width="595" height="485" src="https://www.youtube.com/embed/L_dYnDNveT0" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="485" src="https://www.youtube.com/embed/L_dYnDNveT0" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 
 Then, we all gathered upstairs for some pizza & beer :) The conversation and networking continued until midnight - a huge success for our first Meetup!

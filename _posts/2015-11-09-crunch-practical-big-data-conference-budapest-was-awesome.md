@@ -25,17 +25,23 @@ Three years ago when we started Snowplow, our focus, and that of the industry as
 
 My talk focused on these issues in the context of providing an overview of event pipelines in general from a data processing perspective. The talk was videoed - you can view it below:
 
-<iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76534135?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+<div class="iframe-container">
+    <iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76534135?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;">    </iframe>
+</div>
 
 I wasn't the only person talking about event data pipelines. Scott Krueger from [Skyscanner][skyscanner] gave an excellent talk on the Unified Log Infrastructure at Skyscanner, where they make extensive use of both Kafka and Samza.
 
 <!--more-->
 
-<iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76539412?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+<div class="iframe-container">
+    <iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76539412?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;">    </iframe>
+</div>
 
 Sergii Khomenko from [StyLight][stylight] gave a great presentation on the different cloud technologies available for building event data pipelines.
 
-<iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76531351?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+<div class="iframe-container">
+    <iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76531351?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;">    </iframe>
+</div>
 
 ## Data reservoirs, lakes, and swamps. And data provenance
 
@@ -54,7 +60,9 @@ Speakers at data conferences tend to focus on technology and analytics. Often, t
 
 It was therefore enormously refreshing to hear Andrea Burbank from [Pinterest][pinterest] give a superb presentation on she'd built a culture of A/B testing at Pinterest: this is essential viewing for anyone working looking to make their companies data driven.
 
-<iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76523152?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+<div class="iframe-container">
+    <iframe width="480" height="270" src="http://www.ustream.tv/embed/recorded/76523152?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;">    </iframe>
+</div>
 
 ## Thank you Prezi and UStream!
 

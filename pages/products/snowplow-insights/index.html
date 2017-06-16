@@ -36,19 +36,13 @@ assets:
                     </div>
                 </div>
 
-                <div class="container lg-spacer-bottom-50">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="col-lg-8 col-lg-offset-0 col-md-6 col-md-offset-1">
-                            <p class="spacer-top-10 md-spacer-top-0">Download Comparison Whitepaper Snowplow VS</p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 text-right">
-                            <select class="form-control selectpicker" id="form-download" title="Select document" onChange="window.open(this.value, '_blank');">
-                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
-                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
-                                <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Build_Your-Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
-                            </select>
-                        </div>
-                    </div>
+                <div class="container drop-box">
+                    <h4 class="text-uppercase spacer-top-10 md-spacer-top-0">Download Comparison Whitepaper Snowplow VS</h4>
+                    <select class="form-control selectpicker" id="form-download" title="Select document" onChange="window.open(this.value, '_blank');">
+                        <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
+                        <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
+                        <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Build_Your-Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
+                    </select>
                 </div>
             </section>
 

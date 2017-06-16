@@ -48,13 +48,13 @@ For more information, see the [setup page][setup].
 
 Require the tracker module like this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 var tracker = require('snowplow-tracker');
 {% endhighlight %}
 
 `tracker` is the function which constructs the tracker instance. This is its signature:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function tracker(endpoint, namespace, appId, encodeBase64);
 {% endhighlight %}
 
@@ -65,13 +65,13 @@ function tracker(endpoint, namespace, appId, encodeBase64);
 
 Create a new tracker instance like this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 var t = tracker('d3rkrsqld9gmqf.cloudfront.net', 'tracker2', 'my-app', false);
 {% endhighlight %}
 
 You can set additional information which will be attached to every event:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 t.setUserId('345723-046778-346346');
 t.setPlatform('web');
 t.setTimezone('Europe/London');
@@ -80,7 +80,7 @@ t.setColorDepth(24);
 
 Send some events:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 // A page view event
 t.trackPageView('http://www.example.com', 'example page', 'http://www.referrer.com');
 

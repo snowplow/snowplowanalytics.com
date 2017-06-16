@@ -28,7 +28,7 @@ There are four reasons logging event data as JSONs has become as popular as it i
 
 Representing an event as a JSON is an extremely simple, easy-to-understand approach. Let's look at an example, a video play event represented as a JSON:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "event_name": "play_video",
     "properties": {
@@ -45,7 +45,7 @@ The JSON is very easy to read and comprehend. Crucially for application develope
 
 Note that there are many ways we could choose to represent a video play event with a JSON. We might want e.g. to use nesting, to capture a richer data set both about the video itself, and about the user who watched it:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "event_name": "play_video",
     "properties": {

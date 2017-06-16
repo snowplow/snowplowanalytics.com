@@ -33,7 +33,7 @@ To enable cross-domain tracking, add this function to the tracker constructor ar
 
 For example, this function would only decorate those links whose destination is "http://acme.de" or whose HTML id is "crossDomainLink":
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   crossDomainLinker: function (linkElement) {
     return (linkElement.href === "http://acme.de" || linkElement.id === "crossDomainLink");
@@ -43,7 +43,7 @@ snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 
 If you want to decorate every link to the domain github.com:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   crossDomainLinker: function (linkElement) {
     return /^https:\/\/github\.com/.test(linkElement.href);
@@ -53,7 +53,7 @@ snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 
 If you want to decorate every link, regardless of its destination:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   crossDomainLinker: function (linkElement) {
     return true;
@@ -63,7 +63,7 @@ snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 
 If new links are added to the page after the tracker is initialized, you can enable decoration for them using the `crossDomainLinker` tracker method:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow('crossDomainLinker', function (linkElement) {
     return (linkElement.href === "http://acme.de" || linkElement.id === "crossDomainLink");
   })
@@ -73,7 +73,7 @@ snowplow('crossDomainLinker', function (linkElement) {
 
 The new `trackTiming` method can be used to track user timing information. This example uses the method to send a `timing` event describing how long it took a map to load:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow(
   'trackTiming',
   'load',            // Category of the timing variable

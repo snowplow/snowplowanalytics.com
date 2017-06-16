@@ -89,7 +89,7 @@ $ ./schema-guru-0.4.0 schema --enum-sets ../favourite_colors.json --enum-sets al
 
 Where `favourite_colors.json` might look like this:
 
-{% highlight json %}
+{% highlight json linenos %}
 ["blue", "indigo", "purple", "violet", "white", "black"]
 {% endhighlight %}
 
@@ -99,7 +99,7 @@ Where `favourite_colors.json` might look like this:
 
 Redshift also has the [COMMENT ON] [comment-on] syntax, although the documentation states that we cannot retrieve these comments with a SQL query. After some research we discovered that in fact table comments can be retrieved like so:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT description FROM pg_description WHERE objoid = 'schema.table'::regclass
 {% endhighlight %}
 

@@ -29,7 +29,7 @@ Often, a JSON Schema might be entirely valid. However, it is not precise enough 
 
 If you have a schema that defines a numeric field e.g.
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an example event",
@@ -82,7 +82,7 @@ TOTAL: 1 errors were encountered
 
 If we now update the schema to include the `minimum` and `maximumg` properties:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an example event",
@@ -152,7 +152,7 @@ COMMENT ON TABLE atomic.com_example_company_example_event_1 IS 'iglu:com.example
 
 The same issue of a JSON Schema field definition under-determining the associated Redshift column type occurs for string fields. If we have the following schema, for example:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an example event",
@@ -192,7 +192,7 @@ TOTAL: 1 errors were encountered
 
 If we update the field definition to include a `maxLength` property:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an example event",

@@ -30,7 +30,7 @@ For steps on **manual installation** refer to our [setup guide][setup-guide].
 
 To use the library you will need to add the following import:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 #import "IGLUClient.h"
 {% endhighlight %}
 
@@ -45,7 +45,7 @@ The client needs two arguments for a successful init; a resolver config and a po
 
 To initialize the client with a local resolver-config from local resources:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 // Utility function found in IGLUUtilities
 NSString * resolverAsString = 
     [IGLUUtilities getStringWithFilePath:@"your_resolver.json" 
@@ -56,14 +56,14 @@ IGLUClient * client = [[IGLUClient alloc] initWithJsonString:resolverAsString an
 
 To initialize the client with a resolver from a URL:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 NSString * resolverUrl = @"https://raw.githubusercontent.com/snowplow/snowplow/master/3-enrich/config/iglu_resolver.json";
 IGLUClient * client = [[IGLUClient alloc] initWithUrlPath:resolverUrl andBundles:nil];
 {% endhighlight %}
 
 Once you have successfully created a client you can start validating JSONs. **Please note** that the client will only accept JSONs that have already been converted to NSDictionary objects.**
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 // Utility function found in IGLUUtilities
 NSDictionary * jsonDictionary = [IGLUUtilities parseToJsonWithString:yourJsonStringHere];
 
@@ -91,7 +91,7 @@ This removes the need of manually and painstakingly validating that your events 
 
 For example imagine you are creating an event named `awesome-event` which you want to track in your application.
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.acme/awesome-event/jsonschema/1-0-0", 
     "data": {
@@ -103,7 +103,7 @@ For example imagine you are creating an event named `awesome-event` which you wa
 
 You then generate the JSON Schema for this event using [Schema Guru][schema-guru]:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
     "description": "Schema for your new awesome event",
@@ -131,7 +131,7 @@ You then generate the JSON Schema for this event using [Schema Guru][schema-guru
 
 You can now use the Iglu Client in your test suite to assert that whenever you make an `awesome-event`, it validates against the schema you have created:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 NSDictionary * awesomeEvent = [ACMEEvent getNewAwesomeEvent];
 XCTAssertTrue([client validateJson:awesomeEvent]);
 {% endhighlight %}

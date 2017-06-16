@@ -21,7 +21,9 @@ I wasn't able to make the event but I'm very lucky that Alex, Idan and Christoph
 
 [Alex][alex] opened the event with an introduction to [Sauna][sauna]: our new decisioning and response platform.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yp0XszZeh58" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yp0XszZeh58" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 You can read more about Sauna [here][sauna] and checkout the repo [here][sauna-repo].
 
@@ -31,7 +33,9 @@ You can read more about Sauna [here][sauna] and checkout the repo [here][sauna-r
 
 Canary has a unique proposition in the home security space with a very distinctive set of analytics requirements. In this talk, Tiernan Kennedy describes some of Canary's unique analytics requirements, before explaining how that led them from Google Analytics to Snowplow, and then how their usage of Snowplow has evolved as Canary has grown.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7zgP8O2rSm8" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7zgP8O2rSm8" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 Ensuring that analytics stacks can evolve with businesses as they evolve is a really important topic and something I believe Snowplow excels at. This is a topic I explored in my [presentation][ys-presentation-tv] at last July's meetup in Tel-Aviv.
 
@@ -39,7 +43,9 @@ Ensuring that analytics stacks can evolve with businesses as they evolve is a re
 
 [Animoto][animoto] enables people to make beautiful videos easily. In this talk, Lincoln Ritter & Stevie Clifton had a frank and open discussion about using Snowplow data to do product analytics and the journey that Animoto has gone through migrating to Snowplow from Google Analytics.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y2RUzReJV4I" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y2RUzReJV4I" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 The Animoto team has been using Snowplow for nearly two years now and it's clear that both Lincoln and Stevie have thought very deeply about how to perform product analytics. Amongst other things, in this talk they explored:
 
@@ -51,7 +57,9 @@ The Animoto team has been using Snowplow for nearly two years now and it's clear
 
 Our own [Christophe Bogaert][christophe] rounded off the event with an interactive discussion about event data modeling. There was a lot of interesting insight from different Snowplow users around the different approaches they've taken.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a_lv-JuVYiI" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/a_lv-JuVYiI" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 If you are interested in learning more about event data modeling there is a wealth of material on our [discourse forum][discourse-event-data-modeling].
 

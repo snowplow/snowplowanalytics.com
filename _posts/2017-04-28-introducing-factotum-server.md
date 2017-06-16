@@ -123,7 +123,7 @@ Assuming that the steps [above](#install) have been followed, you now have Facto
 
 To submit a job, all you need to do is POST the following JSON to `http://localhost:3000/submit`:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "jobName": "echotest",
     "factfilePath": "/<PATH>/echo.factfile",

@@ -69,7 +69,7 @@ We have also implemented a check to see whether or not the device the Tracker is
 
 To enable this checking feature you will need to add the following line to your AndroidManifest file:
 
-{% highlight xml %}
+{% highlight xml linenos %}
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 {% endhighlight %}
 
@@ -79,7 +79,7 @@ As a way of ensuring that custom contexts and unstructured events are formatted 
 
 To create a `SelfDescribingJson` in the Android Tracker and track it as an unstructured event you can follow this code sample:
 
-{% highlight java %}
+{% highlight java linenos %}
 // Create a Map of your data
 Map<String, Object> data = new HashMap<>();
 data.put("levelName", "Barrels o' Fun");
@@ -94,7 +94,7 @@ tracker.trackUnstructuredEvent(json);
 
 This will be transmitted to Snowplow in the following JSON envelope:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.acme/save_game/jsonschema/1-0-0",
     "data": {

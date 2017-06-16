@@ -19,13 +19,17 @@ Dominik Raute and Christoph Hoyer, respectively CTO and CMO at JustWatch, talked
 
 You can watch the video of the presentation below:
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/7kG7U_0t9S4" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/7kG7U_0t9S4" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 <!--more-->
 
 Or look at the slides directly:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/bXhy06tGq7SS8Q" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/data-driven-video-advertising-campaigns-justwatch-snowplow" title="Data driven video advertising campaigns - JustWatch &amp; Snowplow" target="_blank">Data driven video advertising campaigns - JustWatch &amp; Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/bXhy06tGq7SS8Q" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/data-driven-video-advertising-campaigns-justwatch-snowplow" title="Data driven video advertising campaigns - JustWatch &amp; Snowplow" target="_blank">Data driven video advertising campaigns - JustWatch &amp; Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
 
 
 
@@ -37,11 +41,15 @@ Franz Posch, co-founder at Incuda, explained how they use Snowplow data to build
 
 See links to talk video below:
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/AI0bXq3Q_fo" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/AI0bXq3Q_fo" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 These are his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/fBzDxGDzJCyN4S" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-incuda-builds-user-journey-models-with-snwoplow" title="How Incuda builds user journey models with Snowplow" target="_blank">How Incuda builds user journey models with Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/fBzDxGDzJCyN4S" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-incuda-builds-user-journey-models-with-snwoplow" title="How Incuda builds user journey models with Snowplow" target="_blank">How Incuda builds user journey models with Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
 
 
 <h2 id="sauna">Turning insights into action with Sauna</h2>
@@ -50,11 +58,15 @@ Alex Dean, our co-founder, talked about Sauna, our exciting new open-source prod
 
 See links to talk video below:
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/Rgb0pOIlJVI" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/Rgb0pOIlJVI" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 And his slides here:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/EdnaRmToefahNO" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/introducing-sauna-decisioning-and-response-platform-from-snowplow" title="Introducing Sauna - Decisioning and response platform from Snowplow" target="_blank">Introducing Sauna - Decisioning and response platform from Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/EdnaRmToefahNO" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/introducing-sauna-decisioning-and-response-platform-from-snowplow" title="Introducing Sauna - Decisioning and response platform from Snowplow" target="_blank">Introducing Sauna - Decisioning and response platform from Snowplow</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
 
 
 For more information about Sauna, see a blog post about it [here](http://snowplowanalytics.com/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform/).
@@ -66,11 +78,15 @@ Yali Sasson, our co-founder, gave a presentation about the importance of evolvin
 
 See links to talk video below.
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/3LM-FBPFWYo" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/3LM-FBPFWYo" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 And the slides here:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/nVCBy0q6yHDVpR" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-evolve-your-analytics-stack-with-your-business" title="Snowplow - Evolve your analytics stack with your business" target="_blank">Snowplow - Evolve your analytics stack with your business</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/nVCBy0q6yHDVpR" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-evolve-your-analytics-stack-with-your-business" title="Snowplow - Evolve your analytics stack with your business" target="_blank">Snowplow - Evolve your analytics stack with your business</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ggaviani">Giuseppe Gaviani</a></strong> </div>
 
 
 ## Thank you

@@ -28,7 +28,7 @@ On any AWS EC2 instance, you can access [basic information] [ec2-metadata] about
 
 To add EC2 instance metadata to your events, you need to invoke `enableEc2Context` method on your Tracker after its initialization:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val t = Tracker(emitters, "scalatracker", "kinesis-stream-app")
 t.enableEc2Context()
 t.trackUnstructEvent(heartbitEvent)
@@ -40,7 +40,7 @@ Sometimes you may want access to the context directly so that you can decide you
 
 In that case, use the blocking call of `Ec2Metadata.getInstanceContextBlocking` on initialization of your app to get a Self-describing JSON with the context, and then manually pass it to the `track` methods:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val ec2ctx: Option[SelfDescribingJson] = Ec2Metadata.getInstanceContextBlocking
 t.trackUnstructEvent(event, customContexts ++ ec2ctx.toSeq)
 {% endhighlight %}
@@ -51,7 +51,7 @@ The initial release of the Scala Tracker had only a basic `SyncEmitter` and `Asy
 
 Now you can also use `AsyncBatchEmitter` to enque events and send them in batches via `POST` request:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val batchEmitter = AsyncBatchEmitter.creatAndStart(scalaStreamCollector, bufferSize=32)
 val emitter = AsyncEmitter.creatAndStart(cloudfrontCollector)
 val t = Tracker(List(batchEmitter, emitter))
@@ -66,7 +66,7 @@ The Scala Tracker v0.1.0 could track only custom [unstructured events] [unstruct
 
 We have now also implemented `trackPageView` and `trackStructEvent` - which could be useful if for instance you are developing a webapp with the [Play framework] [play]. Here's an example of a Play Action tracking a Snowplow page view:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import com.snowplowanalytics.snowplow.scalatracker._
 import com.snowplowanalytics.snowplow.scalatracker.emitters._
 
@@ -87,7 +87,7 @@ Note that in a real-world project, you may want to use the Play 2.4 dependency i
 
 Here is an example of tracking a [structured event] [structured-events]:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 snowplowTracker.trackStructEvent("add-to-basket", property=Some("pcs"), value=Some(3))
 {% endhighlight %}
 

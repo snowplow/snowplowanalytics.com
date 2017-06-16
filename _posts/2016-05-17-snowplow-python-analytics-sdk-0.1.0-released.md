@@ -32,7 +32,7 @@ Snowplow's ETL process outputs enriched events in a TSV. This TSV currently has 
 
 The transformation algorithm used to do this is the same as the one used in the [Kinesis Elasticsearch Sink][kes] and the [Snowplow Scala Analytics SDK][ssas], with one exception: when a field of the input TSV is empty, we leave that field out of the output JSON entirely rather than using a field with the value `null`. Here is an example output JSON:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "app_id":"demo", "platform":"web","etl_tstamp":"2015-12-01T08:32:35.048Z",
   "collector_tstamp":"2015-12-01T04:00:54.000Z","dvce_tstamp":"2015-12-01T03:57:08.986Z",
@@ -44,7 +44,7 @@ The transformation algorithm used to do this is the same as the one used in the 
 
 There are special rules for how custom contexts and unstructured events are added to the JSON. For example, if an enriched event contained a `com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1` unstructured event, then the final JSON would contain:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   ...
   "unstruct_event_com_snowplowanalytics_snowplow_link_click_1": {
@@ -60,7 +60,7 @@ For more examples and detail on the algorithm used, check out the [Kinesis Elast
 
 The SDK is available on PyPI:
 
-{% highlight python %}
+{% highlight python linenos %}
 pip install snowplow_analytics_sdk
 {% endhighlight %}
 
@@ -68,7 +68,7 @@ pip install snowplow_analytics_sdk
 
 Use the SDK like this:
 
-{% highlight python %}
+{% highlight python linenos %}
 import snowplow_analytics_sdk.event_transformer
 import snowplow_analytics_sdk.snowplow_event_transformation_exception
 

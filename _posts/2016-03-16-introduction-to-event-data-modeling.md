@@ -89,7 +89,7 @@ Sometimes when we analyze event data, we only need to perform simple aggregation
 
 It would be straightforward to perform the aggregation on the atomic data delivered by Snowplow using a query like the following:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 select
 date_trunc('day, derived_tstamp'),
 video_category,

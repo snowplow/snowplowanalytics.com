@@ -95,7 +95,7 @@ deprecated.
 
 As an example, we could get the JavaScript Tracker to use local storage with:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -110,7 +110,7 @@ opt out cookie. If this cookie is set, no tracking will be performed.
 
 You can set this cookie with:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('setOptOutCookie', 'opt-out');
 {% endhighlight %}
 
@@ -121,7 +121,7 @@ where 'opt-out' is the name of your opt-out cookie.
 Previous versions of the JavaScript Tracker tracked changes to password fields
 in forms if you had form tracking enabled via:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow_name_here('enableFormTracking');
 {% endhighlight %}
 
@@ -138,7 +138,7 @@ which will keep track of this identifier.
 
 You can enable this context when initializing the JavaScript Tracker:
 
-{% highlight js %}
+{% highlight js linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -164,7 +164,7 @@ support for the original Optimizely service introduced in [version 2.6.0 of the 
 
 You can enable this context like any other:
 
-{% highlight js %}
+{% highlight js linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -195,7 +195,7 @@ which prevents problems if the tracker hasn't finished loading.
 
 The following examples assume you have configured a tracker in the following way:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 // Configure a tracker instance named cf
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
     appId: 'snowplowExampleApp',
@@ -205,7 +205,7 @@ snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 
 For example, you can retrieve the complete cookie name for the domain cookie like so:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow(function () {
   var cf = this.cf;
   var cookieName = cf.getCookieName('id');
@@ -221,7 +221,7 @@ suffix based on a hash of the cookie domain.
 
 Same goes for the page view ID:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow(function() {
   var cf = this.cf;
   var pageViewId = cf.getPageViewId();
@@ -231,7 +231,7 @@ snowplow(function() {
 
 And the domain session index:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow(function() {
   var cf = this.cf;
   var domainSessionIndex = cf.getDomainSessionIndex();
@@ -250,7 +250,7 @@ a video).
 
 You can trigger the activity handler yourself with:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('updatePageActivity');
 {% endhighlight %}
 

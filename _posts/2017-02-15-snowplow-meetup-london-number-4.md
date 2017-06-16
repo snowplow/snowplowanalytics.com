@@ -26,13 +26,17 @@ Dejan Petelin, head of data science at [Gousto](https://www.gousto.co.uk/), gave
 
 See Dejan’s talk below:
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/XY5CVtlmA0w" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/XY5CVtlmA0w" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 <!--more-->
 
 And his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/DwG417Ckpm6ZjV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-gousto-is-moving-to-the-realtime-pipeline-to-enable-justintime-personalization" title="How Gousto is moving to just-in-time personalization with Snowplow" target="_blank">How Gousto is moving to just-in-time personalization with Snowplow</a> </strong></div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/DwG417Ckpm6ZjV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-gousto-is-moving-to-the-realtime-pipeline-to-enable-justintime-personalization" title="How Gousto is moving to just-in-time personalization with Snowplow" target="_blank">How Gousto is moving to just-in-time personalization with Snowplow</a> </strong></div>
 
 For more information see [Dejan’s blog post about his presentation](https://techbrunch.gousto.co.uk/2017/02/09/snowplow-meetup/).
 
@@ -42,11 +46,15 @@ Bruce Pannaman, data scientist at [Busuu](https://www.busuu.com/en/about), talke
 
 See Bruce’s talk below:
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/wSmTC1JDSyc" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/wSmTC1JDSyc" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 And his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/uJ90nREpzBXFTt" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-at-the-heart-of-busuus-data-analytics-infrastructure" title="Snowplow at the heart of Busuu&#x27;s data &amp; analytics infrastructure" target="_blank">Snowplow at the heart of Busuu&#x27;s data &amp; analytics infrastructure</a> </strong></div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/uJ90nREpzBXFTt" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-at-the-heart-of-busuus-data-analytics-infrastructure" title="Snowplow at the heart of Busuu&#x27;s data &amp; analytics infrastructure" target="_blank">Snowplow at the heart of Busuu&#x27;s data &amp; analytics infrastructure</a> </strong></div>
 
 <h2 id="snowplow">Evolving your analytics stack with your business</h2>
 
@@ -54,11 +62,15 @@ Christophe Bogaert, Data Scientist at Snowplow, talked about how businesses are 
 
 See Christophe’s talk below.
 
-<iframe width="595" height="335" src="https://www.youtube.com/embed/cTBbF3WAUwg" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="335" src="https://www.youtube.com/embed/cTBbF3WAUwg" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 And his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/LJ6wn529NiEpKJ" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-to-evolve-your-analytics-stack-with-your-business-using-snowplow" title="How to evolve your analytics stack with your business using Snowplow" target="_blank">How to evolve your analytics stack with your business using Snowplow</a> </strong></div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/LJ6wn529NiEpKJ" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/how-to-evolve-your-analytics-stack-with-your-business-using-snowplow" title="How to evolve your analytics stack with your business using Snowplow" target="_blank">How to evolve your analytics stack with your business using Snowplow</a> </strong></div>
 
 
 A huge thank you to Dejan Petelin, Bruce Pannaman and Christophe Bogaert for their talks, everyone who took part and CodeNode for hosting the event.

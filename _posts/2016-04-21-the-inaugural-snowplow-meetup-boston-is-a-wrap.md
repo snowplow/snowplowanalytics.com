@@ -15,11 +15,15 @@ We had two early Snowplow adopters talk about what they were doing with Snowplow
 
 <!--more-->
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/qjq8vum7mvZ5OV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/analytics-at-carbonite-presentation-to-snowplow-meetup-boston-april-2016" title="Analytics at Carbonite: presentation to Snowplow Meetup Boston April 2016" target="_blank">Analytics at Carbonite: presentation to Snowplow Meetup Boston April 2016</a> </strong> </strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/qjq8vum7mvZ5OV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/analytics-at-carbonite-presentation-to-snowplow-meetup-boston-april-2016" title="Analytics at Carbonite: presentation to Snowplow Meetup Boston April 2016" target="_blank">Analytics at Carbonite: presentation to Snowplow Meetup Boston April 2016</a> </strong> </strong> </div>
 
 [Ty Wilson][ty-linked] at CustomMade then gave a talk describing how Snowplow data is used at CustomMade to enable A/B testing and user journey analytics. You can view his slides below.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/6QT9uC3MDrBKWo" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/using-snowplow-for-ab-testing-and-user-journey-analysis-at-custommade" title="Using Snowplow for A/B testing and user journey analysis at CustomMade" target="_blank">Using Snowplow for A/B testing and user journey analysis at CustomMade</a> </strong>  </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/6QT9uC3MDrBKWo" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/using-snowplow-for-ab-testing-and-user-journey-analysis-at-custommade" title="Using Snowplow for A/B testing and user journey analysis at CustomMade" target="_blank">Using Snowplow for A/B testing and user journey analysis at CustomMade</a> </strong>  </div>
 
 [Christophe Bogaert][christophe] followed up with an overview of event data modeling and a sneak peak at some of the tooling we're working on at Snowplow to make doing event data modeling easier.
 

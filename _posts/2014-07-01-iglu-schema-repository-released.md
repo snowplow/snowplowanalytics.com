@@ -74,7 +74,7 @@ But as we started to experiment with JSON Schema, it became obvious that JSON Sc
 
 As you've seen, we made the design decision that whenever a developer or analyst wanted to send in any JSON to Snowplow, they should first create a [JSON Schema] [json-schema] for that event. Here is an example JSON Schema for a `video_played` event based on the Mixpanel example above:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for a video_played event",
@@ -108,7 +108,7 @@ As you've seen, we made the design decision that whenever a developer or analyst
 
 We made a further design decision that the JSON sent in to Snowplow should report the exact JSON Schema that could be used to validate it. Rather than embed the JSON Schema inside the JSON, which would be extremely wasteful of space, we came up with a convenient short-hand that looked like this:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
 	"schema": "iglu:com.channel2.vod/video_played/jsonschema/1-0-0",
 	"data":	{

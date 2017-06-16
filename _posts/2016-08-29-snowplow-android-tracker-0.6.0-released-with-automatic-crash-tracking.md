@@ -40,7 +40,7 @@ __Note__: for this feature to work properly it is imperative that the Tracker is
 
 To use this feature add the following builder option to your Tracker setup:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.init(new Tracker.TrackerBuilder(...)
   .applicationCrash(true)
   .build()
@@ -49,7 +49,7 @@ Tracker.init(new Tracker.TrackerBuilder(...)
 
 Once this feature is activated you will see new events similar to the below:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow\\/unstruct_event\\/jsonschema\\/1-0-0",
   "data": {
@@ -91,7 +91,7 @@ __Note__: This feature is only available on API levels 14+ due to the dependency
 
 To use this feature add the following builder option to your Tracker setup:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.init(new Tracker.TrackerBuilder(...)
   .lifecycleEvents(true)
   .build()
@@ -105,7 +105,7 @@ This handler also ties in nicely with our existing Android client sessionization
 
 An app backgrounding event will look like this resembles the following:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/application_background/jsonschema/1-0-0",
   "data": {
@@ -116,7 +116,7 @@ An app backgrounding event will look like this resembles the following:
 
 And a foregrounding lifecycle event like this:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/application_foreground/jsonschema/1-0-0",
   "data": {
@@ -142,7 +142,7 @@ This release brings another refactor: we are now permanently retiring RxJava in 
 
 To add the Tracker to your application now just refer to:
 
-{% highlight java %}
+{% highlight java linenos %}
 compile 'com.snowplowanalytics:snowplow-android-tracker:0.6.0@aar'
 {% endhighlight %}
 
@@ -152,7 +152,7 @@ As the Tracker can only be safely used as a singleton due to its reliance on a s
 
 To create the Tracker:
 
-{% highlight java %}
+{% highlight java linenos %}
 Subject subject = ...;
 Emitter emitter = ...;
 
@@ -164,13 +164,13 @@ Tracker.init(new Tracker.TrackerBuilder(emitter, TRACKER_NAMESPACE, TRACKER_APP_
 
 The tracker can then be accessed from anywhere via:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.instance().{{ TRACKER_METHOD }};
 {% endhighlight %}
 
 It can also be shutdown and reset from anywhere via:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.close();
 {% endhighlight %}
 
@@ -190,7 +190,7 @@ All the tracking methods in the Android Tracker now support sending this timesta
 
 To use the new option:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.instance().track(PageView.builder()
   .pageUrl("pageUrl")
   .pageTitle("pageTitle")
@@ -205,7 +205,7 @@ __Note__: use the true timestamp option sparingly in client environments like An
 
 The Subject class no longer controls the creation of the `mobile_context` and `geolocation_context`.  These are now setup by:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker.init(new Tracker.TrackerBuilder(...)
   .geoLocationContext(true)
   .mobileContext(true)

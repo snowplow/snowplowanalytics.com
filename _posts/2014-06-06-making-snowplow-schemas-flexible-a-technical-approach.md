@@ -16,7 +16,9 @@ Making schemas flexible is not enough however. We need to make it possible for a
 
 The presentation below was given by Alex at the [Budapest Big Data Meetup][bbdm] last night. I thought it would be useful to share with the wider Snowplow community, so you all have a better idea what we plan to launch in the next few weeks, and some of the thinking behind it.
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/35561513" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/yalisassoon/big-data-meetup-budapest-adding-data-schemas-to-snowplow" title="Big data meetup budapest adding data schemas to snowplow" target="_blank">Big data meetup budapest adding data schemas to snowplow</a> </strong> from <strong><a href="http://www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/35561513" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/yalisassoon/big-data-meetup-budapest-adding-data-schemas-to-snowplow" title="Big data meetup budapest adding data schemas to snowplow" target="_blank">Big data meetup budapest adding data schemas to snowplow</a> </strong> from <strong><a href="http://www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div>
 
 <!--more-->
 

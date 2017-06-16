@@ -36,7 +36,7 @@ You can add custom contexts to any of the existing `track...()` methods, and in 
 
 For completeness, here is the full list of updated tracking methods. Note that `contexts` is always the last argument:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 trackPageView(customTitle, contexts)
 trackStructEvent(category, action, label, property, value, contexts)
 trackUnstructEvent(name, properties, contexts)
@@ -50,7 +50,7 @@ A few notes on this:
 * Remember that transactions and their child items are processed as separate Snowplow events. Duplicate your transaction `contexts` argument into your items' `contexts` argument if you need the transaction context available to the transaction item events
 * If you want to add custom context but don't want to set all the prior arguments, just pad out your function call with empty arguments:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 _snaq.push(['trackPageView',
               , // <- Skip the custom page title (get page title automatically instead)
               { page: {
@@ -67,7 +67,7 @@ _snaq.push(['trackPageView',
 
 The `contexts` argument to any `track...()` or `add...()` method is always optional. If set, it must be a JSON taking the form:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 { "context1_name": {
     /* context1 JSON */
   },
@@ -112,7 +112,7 @@ Let's take a retailer and Snowplow user who sells movie memorabilia online, part
 
 Based on the above, our retailer will define two custom contexts. The first describes a given movie poster:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 "movie_poster": {
   "movie_name": xxx,
   "poster_country": xxx,
@@ -122,7 +122,7 @@ Based on the above, our retailer will define two custom contexts. The first desc
 
 And then the second context describes the customer:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 "customer": {
   "p_buy": xxx,
   "segment": xxx
@@ -137,7 +137,7 @@ With her two custom contexts defined, our retailer is now ready to update her Sn
 
 When a visitor arrives on a page advertising a movie poster, our retailer adds this context to the page view event:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 _snaq.push(['trackPageView',
               ,                            // <- No custom page title
               { "movie_poster": {          // <- Context entry
@@ -151,7 +151,7 @@ _snaq.push(['trackPageView',
 
 When the visitor clicks the add to basket button on this poster, the website fires a custom unstructured event to track the add to basket. This time we send the "customer" context as well as the "movie_poster" context:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 _snaq.push(['trackUnstructEvent',
               'add-to-basket',             // <- Event name
               { "button": "img-overlay",   // <- Event properties
@@ -172,7 +172,7 @@ _snaq.push(['trackUnstructEvent',
 
 The visitor seems to be having doubts - they head to the contact page and fill out a form. This time we still track the "customer" context (with a reduced propensity-to-buy score), but it doesn't make sense to record this event against any given "movie_poster", so we don't include that context:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 _snaq.push(['trackStructEvent',
               'comms',                     // <- Category
               'feedback-form',             // <- Action

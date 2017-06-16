@@ -112,7 +112,7 @@ factotum ./echo.factotum
 
 Factfiles are self-describing JSON which declare a series of tasks and their dependencies. For example:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.factotum/factfile/jsonschema/1-0-0",
     "data": {

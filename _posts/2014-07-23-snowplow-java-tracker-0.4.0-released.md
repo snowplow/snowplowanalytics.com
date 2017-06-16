@@ -51,7 +51,7 @@ You can also now choose whether events should be sent asynchronously, using the 
 
 Here you can find an example of all the options available:
 
-{% highlight java %}
+{% highlight java linenos %}
 import com.snowplowanalytics.snowplow.tracker.Emitter;
 import com.snowplowanalytics.snowplow.tracker.Subject;
 import com.snowplowanalytics.snowplow.tracker.Tracker;
@@ -98,7 +98,7 @@ The `Subject` class functions similar to its Python counterpart: an instance of 
 
 Here's an example that shows you how to track more that one user using the `Subject` class:
 
-{% highlight java %}
+{% highlight java linenos %}
 import com.snowplowanalytics.snowplow.tracker.Emitter;
 import com.snowplowanalytics.snowplow.tracker.Subject;
 import com.snowplowanalytics.snowplow.tracker.Tracker;
@@ -143,7 +143,7 @@ public static void main(String[] args) {
 
 It is also possible to set the subject during Tracker initialization:
 
-{% highlight java %}
+{% highlight java linenos %}
 Tracker tracker = new Tracker(emitter, subject, "cf", "CF63A");
 {% endhighlight %}
 
@@ -153,13 +153,13 @@ We've removed the `ContractManager` class and replaced it with Google's Precondi
 
 For example, if were to track a page view without setting the `pageUrl`:
 
-{% highlight java %}
+{% highlight java linenos %}
 tracker.trackPageView("", "My Page", "www.example.com");
 {% endhighlight %}
 
 We would see an exception sent:
 
-{% highlight java %}
+{% highlight java linenos %}
 java.lang.IllegalArgumentException: pageUrl cannot be empty
   at com.google.common.base.Preconditions.checkArgument(Preconditions.java:125)
   at com.snowplowanalytics.snowplow.tracker.Tracker.trackPageView(Tracker.java:114)
@@ -182,7 +182,7 @@ java.lang.IllegalArgumentException: pageUrl cannot be empty
 
 In the `Tracker` class, you've seen the examples from the previous posts where we've changed the `Tracker` constructor. To formally mention the changes, we now provide four options for the `Tracker` constructor:
 
-{% highlight java %}
+{% highlight java linenos %}
 // Defaults encoding to true, without setting a Subject
 public Tracker(Emitter emitter, String namespace, String appId)
 
@@ -204,7 +204,7 @@ Similar to the `Tracker` constructor, we wanted to make it optional for you to s
 
 Each Tracker now has multiple method signatures letting you send a context and/or timestamp depending on your own needs. Here are the method signatures:
 
-{% highlight java %}
+{% highlight java linenos %}
 // Default created timestamp with no context
 public void trackPageView(String pageUrl, String pageTitle, String referrer)
 
@@ -220,7 +220,7 @@ public void trackPageView(String pageUrl, String pageTitle, String referrer, Map
 
 The TransactionItem class also has a method signature for an optional context as well:
 
-{% highlight java %}
+{% highlight java linenos %}
 public TransactionItem (String order_id, String sku, double price, int quantity, String name, String category, String currency);
 {% endhighlight %}
 
