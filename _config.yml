@@ -13,7 +13,9 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "
 # so be sure to set them if your theme uses them.
 #
 title : Snowplow
-tagline: The best event data pipeline.
+tagline: differentiate with data
+description: Snowplow is the event data pipeline. Track all events across all channels. Action the data in real-time.
+image: /assets/img/snowplow-analytics.jpg
 author :
   name : Snowplow Analytics
   email : contact@snowplowanalytics.com

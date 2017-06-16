@@ -20,24 +20,24 @@
         <meta name="msapplication-TileImage" content="{{ BASE_PATH }}/assets/img/favicon/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-        {% if page.title %}<title>{{ page.title }} – {% if page.group == 'blog' %}Blog – {% endif %}Snowplow</title>{% else %}<title>Snowplow – differentiate with data</title>{% endif %}
-        <meta name="description" content="{{ page.description }}">
+        <title>{% include fn/pageTitle.fn %}</title>
+        <meta name="description" content="{% include fn/pageDescription.fn %}">
         <meta name="author" content="{% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}{% else %}{{ site.author.name }}{% endif %}">
 
         <meta property="og:site_name" content="Snowplow">
-        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %}">
-        <meta property="og:image" content="{% if page.image %}{{ BASE_PATH }}/assets/img/{{ page.image }}{% else %}{{ BASE_PATH }}/assets/img/snowplow-logo.jpg{% endif %}">
+        <meta property="og:title" content="{% include fn/pageTitle.fn %}">
+        <meta property="og:image" content="{% include fn/pageImage.fn %}">
         <meta property="og:url" content="{{ page.url | prepend: site.url }}">
         <meta property="og:type" content="{% if page.author %}article{% else %}website{% endif %}">
+        <meta property="og:description" content="{% include fn/pageDescription.fn %}">
         {% if page.author %}<meta property="og:article:author" content="{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.full_name %}{{ author.full_name }}{% endif %}{% endif %}{% endfor %}">{% endif %}
-        {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
 
         <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
-        <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Your digital nervous system{% endif %} – Snowplow">
+        <meta name="twitter:title" content="{% include fn/pageTitle.fn %}">
         <meta name="twitter:site" content="@snowplowdata">
+        <meta name="twitter:description" content="{% include fn/pageDescription.fn %}">
+        <meta name="twitter:image" content="{% include fn/pageImage.fn %}">
         {% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}{% endif %}{% endfor %}{% endif %}
-        {% if page.description %}<meta name="twitter:description" content="{{page.description}}">{% endif %}
-        {% if page.image %}<meta name="twitter:image" content="{{ page.image }}">{% endif %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
