@@ -26,7 +26,9 @@ In this rather excellent presentation, [Carmen] [carmen] showed how you can use 
 
 And then test whether those audience behaved in significantly different ways to validate your segmentation. (For example, comparing bounce rates or conversion rates between segments.) Once validated, the segmentation enables you to apply segment-specific KPI: for example, it is meaningless analysing purchase conversion rates for users who have already bought, and are returning to the site for support-related queries.
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/16581811" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" > </iframe>
+<div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/16581811" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" >     </iframe>
+</div>
 
 <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/carmenmardiros/getting-to-the-people-behind-the-keywords-16581811" title="Getting to the People Behind The Keywords" target="_blank">Getting to the People Behind The Keywords</a> </strong> from <strong><a href="http://www.slideshare.net/carmenmardiros" target="_blank">Carmen Mardiros</a></strong> </div>
 
@@ -43,7 +45,9 @@ In order to report on the above, it is necessary to capture margin data with eve
 
 Passing this commercially sensitive data into Univesal Analytics is not trivial, however. Pushing it through the client-side dataLayer would make it available to any competitor. So instead, Matt passed the data server side into Universal Analytics. Universal Analytics does not have a PHP tracker, but Matt was able to effectively build his own using Google's [Measurement Protocol] [measurement-protocol]. By syncronising the client ID sent by the Javascript tracker with his own server-side tracker, Matt enables Universal Analtyics to stitch together the data generated client and server side. You can see more details in Matt's presentation below:
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/16578670" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" > </iframe>
+<div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/16578670" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" >     </iframe>
+</div>
 
 <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/MattClarke4/measurecamp-improving-e-commerce-tracking-with-universal-analytics" title="Measurecamp - Improving e commerce tracking with universal analytics" target="_blank">Measurecamp - Improving e commerce tracking with universal analytics</a> </strong> from <strong><a href="http://www.slideshare.net/MattClarke4" target="_blank">Matt Clarke</a></strong> </div>
 
@@ -53,7 +57,9 @@ Matt's presentation is a must-read for anyone who wants to push web analytics to
 
 These are the slides I prepared for my session on customer lifetime value:
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/16598692" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" > </iframe>
+<div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/16598692" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" >     </iframe>
+</div>
 
 <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/yalisassoon/customer-lifetime-value-16598692" title="Customer lifetime value" target="_blank">Customer lifetime value</a> </strong> from <strong><a href="http://www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div>
 

@@ -75,7 +75,7 @@ For a more detailed usage guide, please see the [JavaScript script enrichment] [
 
 Here is an example JavaScript script for this enrichment:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 const SECRET_APP_ID = "Joshua";
 
 function process(event) {
@@ -138,14 +138,14 @@ $ bundle install --deployment
 
 You need to update your EmrEtlRunner's `config.yml` file to reflect the new Hadoop 2.4.0 and AMI 3.6.0 support:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 :emr:
   :ami_version: 3.6.0 # WAS 2.4.2
 {% endhighlight %}
 
 And:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
   :versions:
     :hadoop_enrich: 1.0.0 # WAS 0.14.1
 {% endhighlight %}
@@ -158,7 +158,7 @@ You can enable this enrichment by creating a self-describing JSON and adding int
 
 The configuration JSON for the JavaScript example above would be as follows:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow/javascript_script_config/jsonschema/1-0-0",
     "data": {

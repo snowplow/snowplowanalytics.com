@@ -49,7 +49,7 @@ Prior to this release there was no way of accessing these cookies in the Snowplo
 
 The [example configuration JSON] [example-cookie-extractor] for this enrichment is as follows:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow/cookie_extractor_config/jsonschema/1-0-0",
     "data": {
@@ -98,7 +98,7 @@ To upgrade to this release:
 
 You need to update the version of the Enrich jar in your configuration file:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
     hadoop_enrich: 1.2.0 # Version of the Hadoop Enrichment process
 {% endhighlight %}
 

@@ -25,7 +25,7 @@ This alert post will cover the following topics:
 
 To identify whether you were affected by the bug, you can sum the number of events received each hour of the day, and see if there's a significant drop between 1am and 2am UTC. For example, running the following query:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 select
 date_trunc('hour', collector_tstamp),
 count(*)
@@ -43,7 +43,7 @@ Note the regular drop in event volumes between 1am and 2am each day.
 
 The effect can be easier to spot if your plot event volumes by minute:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 select
 date_trunc('minute', collector_tstamp),
 count(*)

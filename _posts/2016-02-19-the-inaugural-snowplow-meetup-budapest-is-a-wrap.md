@@ -10,7 +10,9 @@ Two and a half weeks ag ago the Snowplow team was out in the beautiful city of B
 
 The event was kicked off with an awesome presentation from [Gabor Ratky][gabor], CTO at [Secret Sauce Partners][secret-sauce-partners], one of our earliest adopters. Gabor discussed the journey that the Secret Sauce team had been on, and how they came to Snowplow after trying a number of alternatives including Mixpanel, Kissmetrics and building their own platform. You can view his slides below:
 
-<iframe src="//slides.com/sspinc/snowplow-at-secret-sauce/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe src="//slides.com/sspinc/snowplow-at-secret-sauce/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>    </iframe>
+</div>
 
 Gabor's presentation was followed up by our own [Christophe Bogaert][christophe] on data modeling. You can view his presentation below:
 

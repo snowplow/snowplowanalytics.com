@@ -26,7 +26,7 @@ In the rest of this post we will cover:
 
 This release lets you add a new `client_session` context to each of your Snowplow events, allowing you to easily group events from a single user into a single session. This functionality can be activated by passing in the following builder commands to the Tracker creation step:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SPTracker * tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
   [...]
   [builder setSessionContext:YES];
@@ -63,7 +63,7 @@ You can now also control the size of the Thread Pool used for event sending and 
 
 These options are set during Emitter construction like so:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SPEmitter *emitter = [SPEmitter build:^(id<SPEmitterBuilder> builder) {
         [...]
         [builder setEmitRange:500]; // Default is 150
@@ -77,7 +77,7 @@ Along with the performance changes that the `SPSubject` class brings, it is now 
 
 To create and attach an `SPSubject`:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SPSubject * subject = [[SPSubject alloc] init];
 
 // Or if you would like a platform context...
@@ -106,7 +106,7 @@ The main API Changes revolve around class name changes and the introduction of a
 
 How to create a Tracker & Emitter under the new API with all options:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SPEmitter *emitter = [SPEmitter build:^(id<SPEmitterBuilder> builder) {
   [builder setUrlEndpoint:_url]; // Required
   [builder setBufferOption:SPBufferDefault]; // Optional
@@ -133,7 +133,7 @@ SPTracker * tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
 
 To create a Tracker & Emitter with the bare minimum settings:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 SPEmitter *emitter = [SPEmitter build:^(id<SPEmitterBuilder> builder) {
   [builder setUrlEndpoint:_url]; // Required
 }];
@@ -145,7 +145,7 @@ SPTracker * tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
 
 Those `setXXX` functions can all be called again after the initial construction if you need to update any aspect of these objects.  For example switching to a new emitter:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 [tracker setEmitter:_newEmitter];
 {% endhighlight %}
 
@@ -155,13 +155,13 @@ The demonstration application has been updated to reflect all of the above chang
 
 The application also showcases a new Tracker ability to opt in/out of Tracking on the fly. This new function allows you to instanstly disable all Tracking and Sessionization aspects of the Tracker like so:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 [tracker pauseEventTracking];
 {% endhighlight %}
 
 After this function is called no new events will be built or stored in the local database.  To re-enable event tracking:
 
-{% highlight objective-c %}
+{% highlight objective-c linenos %}
 [tracker resumeEventTracking];
 {% endhighlight %}
 
@@ -193,7 +193,7 @@ Other updates include:
 
 To add the Snowplow Objective-C Tracker as a dependency to your own app, add the following into your Podfile:
 
-{% highlight python %}
+{% highlight python linenos %}
 pod 'SnowplowTracker', '~> 0.5'
 {% endhighlight %}
 

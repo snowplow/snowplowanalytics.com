@@ -29,7 +29,7 @@ In both cases, assuming you are using either the Clojure Collector or the Scala 
 
 The Javascript tracker has been deliberately built to enable you to load it in an ad tag. Specifically, because the tracker supports namespacing, you can ensure that even if the tracker is loaded multiple times on the same page (because there are multiple ad units), tracking of an impression in one ad unit will not interfere with tracking of an ad impression in another ad unit. This can be achieved as illustrated below:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 // Randomly generate tracker namespace to prevent clashes
 var rnd = Math.random().toString(36).substring(2);
 
@@ -72,7 +72,7 @@ Using the Javascript tracker is generally the easiest way to go live with ad imp
 
 Rather than load the entire Javascript in your ad units, you can instead add a GET request for the Snowplow i pixel, and manually compose the request so that it includes all the different data points that are available in the ad server. This means adding an ad tag that looks something like this:
 
-{% highlight html %}
+{% highlight html linenos %}
 <img src="://collector.snplow.com/i?e=se&p=web&tv=no-js-0.1.0&se_ca=ad&se_ac=impression&se_la={{advertiser_id}}&se_pr={{user_id}}">
 {% endhighlight %}
 
@@ -95,7 +95,7 @@ Constructing pixel tags to pass data using unstructured events can be fiddly: th
 
 A simple approach can be to use an [Iglu webhook][iglu-webhook]. This enables you to send data points for your own unstructured event as a set of name values pairs on a querystring directly (rather than composing a self-describing JSON). If we take our standard [ad impression schema][ad-impression-schema], for example:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for an ad impression event",
@@ -143,7 +143,7 @@ A simple approach can be to use an [Iglu webhook][iglu-webhook]. This enables yo
 
 Your pixel tag would then look something like this:
 
-{% highlight html %}
+{% highlight html linenos %}
 <img src="://collector.snplow.com/com.snowplowanalytics.iglu/v1?schema=iglu%3Acom.snowplowanalytics.snowplow%2Fad_impression%2Fjsonschema%2F1-0-0&impressionId={{impressionId}}&zoneId={{zoneId}}&bannerId={{bannerId}}&campaignId={{campaignId}}&advertiserId={{advertiserId}}&targetUrl={{targetUrl}}&costModel=cpm&cost=0.0015">
 {% endhighlight %}
 
@@ -170,7 +170,7 @@ Snowplow supports ad click tracking using redirects in the collector. Ad click t
 
 The example below is a link that will redirect to our Github repo
 
-{% highlight html %}
+{% highlight html linenos %}
 Check us out on <a href="http://collector.snplow.com/r/tp2?u=https%3A%2F%2Fgithub.com%2Fsnowplow">Github</a>
 https%3A%2F%2Fgithub.com%2Fsnowplow
 {% endhighlight %}

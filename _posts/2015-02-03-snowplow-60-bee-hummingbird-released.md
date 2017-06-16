@@ -98,14 +98,14 @@ This release bumps the Hadoop Enrichment process to version **0.12.0**.
 
 In your EmrEtlRunner's `config.yml` file, update your `hadoop_enrich job's version like so:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
   :versions:
     :hadoop_enrich: 0.12.0 # WAS 0.11.0
 {% endhighlight %}
 
 If you want to run the Hadoop Enrichment process against the output of the Kinesis LZO S3 Sink, you will have to change the collector_format field in the configuration file to `thrift`:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 :collector_format: thrift
 {% endhighlight %}
 

@@ -52,20 +52,20 @@ And that's it! You're now ready to start using the tracker.
 
 Require the Tracker module in your Python code like so:
 
-{% highlight python %}
+{% highlight python linenos %}
 from snowplow_tracker.tracker import Tracker
 {% endhighlight %}
 
 You are now ready to initialize a tracker instance:
 
-{% highlight python %}
+{% highlight python linenos %}
 t = Tracker.cloudfront("d3rkrsqld9gmqf") # or...
 t = Tracker.hostname("my-company.c.snplow.com")
 {% endhighlight %}
 
 Now let's send in a couple of events:
 
-{% highlight python %}
+{% highlight python linenos %}
 t.track_struct_event("shop", "add-to-basket", None, "pcs", 2, 1369330909)
 t.track_page_view("www.example.com", "example", "www.referrer.com")
 {% endhighlight %}

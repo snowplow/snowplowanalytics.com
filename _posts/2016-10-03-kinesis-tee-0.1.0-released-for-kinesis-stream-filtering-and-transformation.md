@@ -51,7 +51,7 @@ A common use for Kinesis Tee is mirroring a Kinesis stream to another AWS accoun
 
 In order to use Kinesis Tee as a pass-through (no filter/record changes) to another account, the following configuration can be used:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.kinesistee.config/Configuration/avro/1-0-0",
   "data": {
@@ -80,7 +80,7 @@ If you are a [Snowplow real-time pipeline user](https://github.com/snowplow/snow
 
 Built in to Kinesis Tee is a "Snowplow to nested JSON" transformer. This converts Snowplow enriched events (TSV) into (nested) JSON using the [Snowplow Scala Analytics SDK](http://snowplowanalytics.com/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released/). Here's an example:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.kinesistee.config/Configuration/avro/1-0-0",
   "data": {
@@ -117,7 +117,7 @@ Imagine we have a Kinesis stream consisting of JSON monitoring events emitted by
 
 We want to pass on events indicating that a machine is overheating rapidly to a dedicated Kinesis stream:
 
-{% highlight json %}
+{% highlight json linenos %}
 {
   "schema":"iglu:com.snowplowanalytics.kinesistee.config/Configuration/avro/1-0-0",
   "data":{
@@ -142,7 +142,7 @@ We want to pass on events indicating that a machine is overheating rapidly to a 
 
 The `javascript` field in the above configuration contains a [Base64 encoded](https://en.wikipedia.org/wiki/Base64) JavaScript function. This function must be called `filter`, and in this case decodes to the following:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function filter(record) {
   return (record.temp - record.lastTemp > 10);
 }

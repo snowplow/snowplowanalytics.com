@@ -28,7 +28,7 @@ This blog post will cover the following changes:
 
 Load sp.js using the following script:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async=true>
 
 ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
@@ -41,7 +41,7 @@ n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d1fc8wv8zag
 
 You can replace `"snowplow_name_here"` with any string that would be a valid JavaScript variable name. As can be seen in the examples below, this string becomes the Snowplow function which you will call. The general template for using tracker methods is this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 snowplow_function(tracker_method_name, tracker_method_argument_1, tracker_method_argument_2, ...);
 {% endhighlight %}
 
@@ -53,13 +53,13 @@ New in version 2.0.0 is the ability to have multiple trackers running at once. T
 
 To initialize a new tracker, use the newly-introduced method `newTracker`:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function newTracker(namespace, endpoint, argmap)
 {% endhighlight %}
 
 It constructs a new tracker based on three arguments: the name of the new tracker, the endpoint to which events should be logged, and an "argmap" of optional settings. An example:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('newTracker', 'primary', 'd3rkrsqld9gmqf.cloudfront.net', {
 	cookieName: '_example_cookie_name_',
 	encodeBase64: false,
@@ -79,13 +79,13 @@ This creates two trackers called "primary" and "secondary" logging events to dif
 
 You can specify which tracker or trackers should execute a method by appending their names to the end of the method name, separating the two with a colon. To only have the primary tracker track a page view event:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackPageView:primary');
 {% endhighlight %}
 
 To have more than one tracker execute a method, separate the tracker names with semicolons:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackPageView:primary;secondary');
 {% endhighlight %}
 
@@ -103,13 +103,13 @@ The [JSON Schema for a link click] [link-click-json-schema] is available on Iglu
 
 Here is the method's signature:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function enableLinkClickTracking(criterion, pseudoClicks, context)
 {% endhighlight %}
 
 Use it like this to turn on click tracking for every link:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking');
 {% endhighlight %}
 
@@ -121,13 +121,13 @@ The `criterion` argument lets you fine-tune which links you want to be tracked w
 
 A blacklist is an array of CSS class names for links which should **not** be tracked. For example, the below code will stop link click events firing for links with the class "barred" or "untracked", but will fire link click events for all other links:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking', {'blacklist': ['barred', 'untracked']});
 {% endhighlight %}
 
 If there is only one class name you wish to blacklist, it doesn't have to be in an array:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking', {'blacklist': 'barred'});
 {% endhighlight %}
 
@@ -137,13 +137,13 @@ window.snowplow_name_here('enableLinkClickTracking', {'blacklist': 'barred'});
 
 A whitelist is the opposite of a blacklist. With this option, **only** clicks on links belonging to one of the whitelisted classes will be tracked.
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking', {'whitelist': ['unbarred', 'tracked']});
 {% endhighlight %}
 
 If there is only one class name you wish to whitelist, it doesn't have to be in an array:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking', {'whitelist': 'unbarred'});
 {% endhighlight %}
 
@@ -155,7 +155,7 @@ Finally, if neither of the above options provides finegrained-enough control, yo
 
 The following code will enable click tracking for those and only those links which have an `id` attribute:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function myFilter (linkElement) {
   return typeof linkElement.id !== "undefined";
 }
@@ -167,25 +167,25 @@ The `pseudoClicks` argument can be used to turn on pseudo-click tracking, which 
 
 Use `enableLinkClickTracking like this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('enableLinkClickTracking', 'internal', true);
 {% endhighlight %}
 
 You can also use the `trackLinkClick` method to manually track a single link click:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function trackLinkClick(targetUrl, elementId, elementClasses, elementTarget, context);
 {% endhighlight %}
 
 Use it like this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackLinkClick', 'http://www.example.com', 'first-link', ['link-class'], '_blank');
 {% endhighlight %}
 
 Finally, if you add links to the document after calling `enableLinkClickTracking`, use `refreshLinkClick` tracking to add click tracking to all new links which meet any criterion you have already set up using `enableLinkClickTracking`:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('refreshLinkClickTracking');
 {% endhighlight %}
 
@@ -193,7 +193,7 @@ window.snowplow_name_here('refreshLinkClickTracking');
 
 This release adds three new ad tracking functions: `trackAdImpression`, `trackAdClick`, and `trackAdConversion`. Each of these fires a dedicated unstructured event. Here are their function signatures:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 function trackAdImpression(impressionId, costModel, targetUrl, cost, bannerId, zoneId, advertiserId, campaignId, context)
 
 function trackAdClick(targetUrl, clickId, costModel, cost, targetUrl, bannerId, zoneId, impressionId, advertiserId, campaignId, context)
@@ -221,7 +221,7 @@ Thanks to community member [Ryan Sorensen][rcs]'s contribution, events fired whi
 
 Snowplow unstructured events and custom contexts are now defined using [JSON schema][json-schema], and should be passed to the Tracker using [self-describing JSONs][self-describing-jsons]. Here is an example of the new format for unstructured events:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackUnstructEvent', {
     schema: 'iglu:com.acme_company/viewed_product/jsonschema/2-0-0',
     data: {
@@ -240,7 +240,7 @@ The `data` field contains the actual properties of the event and the `schema` fi
 
 Custom contexts work similarly. Since an event can have multiple contexts attached, the `contexts` argument of each `trackXXX` method must be a array:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackPageView', null , [{
     schema: 'iglu:org.schema/WebPage/jsonschema/1-0-0',
     data: {

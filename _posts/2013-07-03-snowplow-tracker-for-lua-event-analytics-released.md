@@ -11,7 +11,7 @@ We are very pleased to announce the release of our [SnowplowTracker for Lua even
 
 As a lightweight, easily-embeddable scripting language, [Lua] [lua] is available in a huge number of different computing environments and platforms, from [World of Warcraft] [wow] through [OpenResty] [openresty] to [Adobe Lightroom] [lightroom]. And now, the Snowplow Lua Tracker lets you collect event data from these Lua-based applications, Lua web servers/frameworks, or from the Lua scripting layer within your games or apps - here's a taster:
 
-{% highlight lua %}
+{% highlight lua linenos %}
 local t = snowplow.newTrackerForCf( "d3rkrsqld9gmqf" )
 t:setAppId( "my-warcraft-addon" )
 local s, msg = t:trackStructEvent( "shop", "add-to-basket", nil, "armour-vi", 2 )
@@ -46,21 +46,21 @@ Using the SnowplowTracker from Lua is really simple.
 
 First require the library and instantiate a new tracker:
 
-{% highlight lua %}
+{% highlight lua linenos %}
 local snowplow = require( "snowplow" )
 local tracker = snowplow.newTrackerForUri( "snplow.mydomain.com" )
 {% endhighlight %}
 
 You can adjust the default configuration if you like:
 
-{% highlight lua %}
+{% highlight lua linenos %}
 tracker:encodeBase64( false ) -- Default is true
 tracker:platform( "tv" ) -- Default is "pc"
 {% endhighlight %}
 
 Add any additional information about the app, user or device that you know:
 
-{% highlight lua %}
+{% highlight lua linenos %}
 tracker:setUserId( "bob@example.com" )
 tracker:setAppId( "my-lightroom-plugin" )
 tracker:setScreenResolution( 1068, 720 )
@@ -68,7 +68,7 @@ tracker:setScreenResolution( 1068, 720 )
 
 Now you are ready to track your events:
 
-{% highlight lua %}
+{% highlight lua linenos %}
 tracker:trackUnstructEvent( "save-file", { save_id = "4321",
                                            compression = 98,
                                            description = "Backup without layers",

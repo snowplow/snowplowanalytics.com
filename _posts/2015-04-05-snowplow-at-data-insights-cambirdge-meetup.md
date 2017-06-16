@@ -10,7 +10,9 @@ I was very fortunate to be invited to speak at the [Data Insights Cambridge] [me
 
 The slides I presented are below.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/46657244" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/46657244" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">    </iframe>
+</div>
 
 The Data Insights meetup group is fantastic group with members working with data in a diverse set of industries and roles. It made for some very interesting questions and discussions after.
 

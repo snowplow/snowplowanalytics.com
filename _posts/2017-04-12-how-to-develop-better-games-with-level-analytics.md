@@ -18,7 +18,9 @@ Product managers and game designers generally aim to design game levels in such 
 This blog post shows an example of how product managers and game designers can use a well designed dashboard to better understand user behaviour across a game’s levels, design highly playable game levels, A/B test and roll out changes and new features, ultimately optimising the user experience.
 This example is based on a demonstration of the Snowplow platform built for the [CodeCombat](https://codecombat.com/) coding game, which we prepared for the [Game Developers Conference (GDC)](http://www.gdconf.com/) in San Francisco. You can see a video of the demo below.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/2d1PlOixj_E" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/2d1PlOixj_E" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 ## Introducing the Snowplow platform
 Data can be essential to a product manager’s role, but often the tools that are used are not quite fit for purpose. Snowplow Analytics offers a data pipeline management service, using our software to collect, validate, enrich and deduplicate event-level data at source and store it in your data warehouse. This means that your event data arrive at your database fully usable and fit for purpose. This is highly granular data about how your users interact with your product and marketing channels.

@@ -46,7 +46,7 @@ guest$ sbt console
 
 This gives us access to all of the libraries loaded as part of the spark-data-modeling project which we will need in a later step. First we define a [SparkContext](https://spark.apache.org/docs/1.3.1/api/scala/index.html#org.apache.spark.SparkContext). Paste this into your Scala console:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import org.apache.spark.{SparkContext, SparkConf}
 import SparkContext._
 
@@ -60,14 +60,14 @@ val sc = {
 
 We define `inDir` as the path of the directory with all our data files - Spark [supports wildcards](https://spark.apache.org/docs/latest/programming-guide.html#external-datasets). We can now load the data:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val inDir = "/path/to/data/*"
 val input = sc.textFile(inDir)
 {% endhighlight %}
 
 If we had wanted to load data directly from S3, we would only have to change the directory path value:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val inDir = "s3n://snowplow-events/enriched/good/run=*"
 {% endhighlight %}
 
@@ -77,14 +77,14 @@ In this case, you must have the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` 
 
 Let's look at what the data looks like at the moment:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> input.first
 res0: String = "snowplowwebweb2015-05-06 05:02:35.7642015-05-05 09:00:57.0002015-05-05 09:00:57.545page_viewc033a9d1-0873-4cd9-834e-8fc929246c95clojurejs-2.4.3clj-1.0.0-tom-0.2.0hadoop-0.14.1-common-0.13.11893875.41105417220.233.228.52109972135f8460b43ec0a7b414530c468-8c02-4e24-9f0b-1d38728795a1AU-27.0133.0ExetelExetelexetel.com.auhttp://snowplowanalytics.com/analytics/index.htmlThe Snowplow Analytics cookbookhttp://snowplowanalytics.com/httpsnowplowanalytics.com80/analytics/index.htmlhttpsnowplowanalytics.com8/internal{"schema":"iglu:com.snowplowanalytics.snowplow/contexts/jsonschema/1-0-0","data":[{"schema":"iglu:com.google.analytics/cookies/jsonschema/1-0-0","data":{"__utma":"1893875.41105417.1430816298.1430816298.1430816298.1","__...
 {% endhighlight %}
 
 Each data element is a long string of TSVs with some of the values being in JSON. We can tidy this up with the [EventTransformer](https://github.com/snowplow/snowplow/blob/feature/spark-data-modeling/5-data-modeling/spark/src/main/scala/com.snowplowanalytics.snowplow.datamodeling/spark/events/EventTransformer.scala) object:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import com.snowplowanalytics.snowplow.datamodeling.spark.events.EventTransformer
 
 val jsons = input.
@@ -97,7 +97,7 @@ Note that the `EventTransformer` was originally written to convert Snowplow enri
 
 The data now looks like:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> jsons.first
 res1: String = {"geo_location":"-27.0,133.0","app_id":"snowplowweb","platform":"web","etl_tstamp":"2015-05-06T05:02:35.764Z","collector_tstamp":"2015-05-05T09:00:57.000Z","dvce_tstamp":"2015-05-05T09:00:57.545Z","event":"page_view","event_id":"c033a9d1-0873-4cd9-834e-8fc929246c95","txn_id":null,"name_tracker":"clojure","v_tracker":"js-2.4.3","v_collector":"clj-1.0.0-tom-0.2.0","v_etl":"hadoop-0.14.1-common-0.13.1","user_id":"1893875.41105417","user_ipaddress":"220.233.228.52","user_fingerprint":"10997213","domain_userid":"5f8460b43ec0a7b4","domain_sessionidx":1,"network_userid":"4530c468-8c02-4e24-9f0b-1d38728795a1","geo_country":"AU","geo_region":null,"geo_city":null,"geo_zipcode":null,"geo_latitude":-27.0,"geo_longitude":133.0,"geo_region_name":null,"ip_isp":"Exetel","ip_organization"...
 {% endhighlight %}
@@ -108,7 +108,7 @@ A JSON string is returned. We will now load this into a [Spark DataFrame](https:
 
 We create a [SQLContext](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.`SQLContext`):
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import org.apache.spark.sql.SQLContext
 
 val sqlContext = new SQLContext(sc)
@@ -116,7 +116,7 @@ val sqlContext = new SQLContext(sc)
 
 We can load the JSON formatted data into a DataFrame two different ways. Just continuing from the work we did above in the console:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 // this is used to implicitly convert an RDD to a DataFrame
 import sqlContext.implicits._
 
@@ -125,13 +125,13 @@ val df = sqlContext.jsonRDD(jsons)
 
 Alternatively, if we had saved the data to files we could load the data directly into a DataFrame this way:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val df = sqlContext.load("/path/to/saved/json/files/*", "json")
 {% endhighlight %}
 
 Let's look at the data now by returning the schema:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> df.printSchema
 root
  |-- app_id: string (nullable = true)
@@ -179,7 +179,7 @@ To illustrate simple aggregations with Spark, we will:
 
 We will set up a crude function, `toDate`, to get the date out of the `collector_tstamp` column containing the date and time in the ISO 8601 format. We then make a [UDF](https://spark.apache.org/docs/1.3.0/api/scala/index.html#org.apache.spark.sql.UserDefinedFunction) from `toDate` to use it on a Column in the DataFrame. `udf()` takes function objects so we define `toDate` as an anonymous function:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import org.apache.spark.sql.functions.udf
 
 val toDate = (t: String) => t.split("T")(0)
@@ -191,7 +191,7 @@ val dfWithDate = df.withColumn("collector_date", toDateUDF(df.col("collector_tst
 
 We group by the new column and count each event per group:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> dfWithDate.
      |   groupBy ("collector_date").
      |   count.
@@ -210,7 +210,7 @@ The `show()` method on DataFrames is useful to quickly see the results of any op
 
 First we have to get the distinct users per day (or *unique* users per day), to get one row per user per day. Then we repeat as above to group by day and count the users in each group:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> dfWithDate.
      |   select ("domain_userid", "collector_date").
      |   distinct.
@@ -229,7 +229,7 @@ scala> dfWithDate.
 
 It's the same principle as counting the number of users per day. A session is defined as the unique combinations of `domain_userid` and `domain_sessionidx`.
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> dfWithDate.
      |   select ("domain_userid", "domain_sessionidx", "collector_date").
      |   distinct.
@@ -246,7 +246,7 @@ scala> dfWithDate.
 
 **Note:** there also exists the `countDistinct` function which we can use to aggregate over a group, like this:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scaladfWithDate.
      |   groupBy ("collector_date").
      |   agg (countDistinct("domain_userid", "domain_sessionidx")).
@@ -269,7 +269,7 @@ We define a funnel as being made up of three events. In this example, it will be
 
 First we define the urls for our funnel:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val urls = Map(
   "/analytics/index.html" -> "A",
   "/" -> "B",
@@ -279,7 +279,7 @@ val urls = Map(
 
 Next we want to group our events by session and collect the `page_urlpath` of `page_view` events. Unfortunately, aggregations in Spark DataFrames only work with some basic pre-defined functions: `count` which we used above, and a few standard [functions](https://spark.apache.org/docs/1.3.0/api/scala/index.html#org.apache.spark.sql.GroupedData). UDAFs are [not yet supported](https://issues.apache.org/jira/browse/SPARK-3947) in Spark SQL, <a name="dftordd"></a>so we will map the DataFrame to a [RDD](https://spark.apache.org/docs/latest/programming-guide.html#resilient-distributed-datasets-rdds) using the `map` method:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> import org.apache.spark.sql.Row
 import org.apache.spark.sql.Row
 
@@ -298,7 +298,7 @@ Note the triple `===` equality symbol to test equality. The events are ordered b
 
 Next we group by session:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> val eventsBySession = eventsRDD.
      |   groupBy (r => (r(0), r(1)))
 eventsBySession: org.apache.spark.rdd.RDD[((String, String), Iterable[Seq[String]])] = ShuffledRDD[19] at groupBy at <console>:29
@@ -306,7 +306,7 @@ eventsBySession: org.apache.spark.rdd.RDD[((String, String), Iterable[Seq[String
 
 It returns a [PairRDD](https://spark.apache.org/docs/1.3.0/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions) where the key is the session (a tuple with the `domain_userid` and `domain_sessionidx`) and the value is an Iterable of rows corresponding to that session. For example:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> eventsBySession.take(5).foreach(println)
 ((2da6f0d2ad1596b5,1),CompactBuffer(List(2da6f0d2ad1596b5, 1, /blog/2013/11/20/loading-json-data-into-redshift/)))
 ((f7b9661f08acea6e,1),CompactBuffer(List(f7b9661f08acea6e, 1, /analytics/recipes/customer-analytics/customer-lifetime-value.html)))
@@ -321,7 +321,7 @@ Each row still contains the `domain_userid` and `domain_sessionidx` fields which
 
 We do all this in a function so that if our funnel urls change, we can recalculate the funnel field for each session from the `eventsBySession` RDD by passing the new `urls` Map as the `urlToLetter` argument.
 
-{% highlight scala %}
+{% highlight scala linenos %}
 import org.apache.spark.rdd.RDD
 
 def reduceToFunnelLetter (
@@ -336,7 +336,7 @@ def reduceToFunnelLetter (
 
 We apply the `reduceToFunnelLetter` function and get:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> val sessions = reduceToFunnelLetter(eventsBySession, urls)
 sessions: org.apache.spark.rdd.RDD[((String, String), String)] = MapPartitionsRDD[34] at mapValues at <console>:27
 
@@ -357,7 +357,7 @@ So for example, in the first session shown, there was no visit to any of the url
 
 We can convert this PairRDD into a DataFrame if needed:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> case class Session(domain_userid: String, domain_sessionidx: String, funnel: String)
 defined class Session
 
@@ -395,7 +395,7 @@ scala> funnelDF.show
 
 Here Spark inferred the schema using [reflection] [inferring-the-schema-using-reflection] where the case class defines the schema of the table. With the data in a DataFrame, we can now use very terse declarative code to analyse the data further, for example here we look at the longest funnel journeys:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 scala> val toLength = udf((t: String) => t.length: Int)
 toLength: org.apache.spark.sql.UserDefinedFunction = UserDefinedFunction(<function1>,IntegerType)
 
@@ -432,7 +432,7 @@ scala> funnelDF.
 
 There are a number of ways we can build on the computations outlined above. For our funnel analysis, for example, we might want to define funnels where the steps in each funnel are not simply page views and identified by page URL paths - we want the flexibility to build funnels out of any event type, and use any combination of fields in our Snowplow data to identify steps in that funnel. Our code above would need to be more flexible and accept a nested `eventToLetter` mapping of this sort of form:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val eventToLetter = Map(
   Map("event" -> "page_view", "page_urlpath" -> "/") -> "A",
   Map("event" -> "page_view", "page_urlpath" -> "/pricing/index.html") -> "B"

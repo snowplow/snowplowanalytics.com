@@ -35,7 +35,7 @@ And that's it! You're now ready to start using the Tracker.
 
 To setup the Tracker you first need to add the following `using` lines to your Unity Scripts:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 using SnowplowTracker;
 using SnowplowTracker.Emitters;
 using SnowplowTracker.Events;
@@ -43,7 +43,7 @@ using SnowplowTracker.Events;
 
 You can then instantiate and start a new Tracker like so:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 // Create Emitter and Tracker
 AsyncEmitter e1 = new AsyncEmitter ("com.collector.acme");
 Tracker t1 = new Tracker (e1, "Namespace", "AppId");
@@ -54,7 +54,7 @@ t1.StartEventTracking ();
 
 You are now ready to Track events! Now let's send an event:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 t1.Track (new Structured ()
     .SetCategory ("GameScene")
     .SetAction ("Launch")

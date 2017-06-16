@@ -28,7 +28,7 @@ This parameter denotes an event's definitive timestamp where available; if this 
 
 To use it inside Scala Tracker you need to "tag" the optional `timestamp` parameter as `TrueTimestamp`:
 
-{% highlight scala %}
+{% highlight scala linenos %}
 val tracker = new Tracker(emitters, trackerNS, appName)
 val timestamp = Tracker.TrueTimestamp(1459778542000L)
 tracker.trackStructEvent(category, action, timestamp=Some(timestamp))
@@ -46,7 +46,7 @@ As of this release, Snowplow Scala Tracker is available in JCenter and Maven Cen
 
 If in your project, you're using only Scala Tracker among all Snowplow libraries, you can now remove our Maven repository:
 
-{% highlight scala %}
+{% highlight scala linenos %}
   "Snowplow Analytics" at "http://maven.snplow.com/releases/",
 {% endhighlight %}
 

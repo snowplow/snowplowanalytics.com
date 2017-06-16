@@ -46,7 +46,7 @@ These last two already exist in the graph (in the user and page nodes), but sinc
 
 The following SQL query fetches one year's worth of data for our Event nodes.
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT
 	event_id,
 	domain_userid,
@@ -67,7 +67,7 @@ GROUP BY 1,2,3,4,5,6,7
 
 Although this contains all the user IDs and page URLs we're interested in, it's full of duplicates, because we're querying a table full of event-level data. We want to load a deduplicated list of events, users and page URLs into our graph. This will save Neo4J having to check for duplicates when it's adding nodes; avoiding a search against each new node means it'll run much more quickly. To fetch a unique list of users:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT
 	domain_userid
 FROM atomic.events
@@ -80,7 +80,7 @@ GROUP BY 1
 
 and to fetch a unique list of pages:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT
 	CONCAT(page_urlhost, page_urlpath)
 FROM atomic.events
@@ -95,7 +95,7 @@ You could also include any extra information you want to capture about users or 
 
 Once we've run our queries, we can export the results to CSV files for loading into Neo4J. The first CSV we made contains all the data we'll need to create the *verb* and *object* edges. Since there's one of each for every event node in the dataset, we'll have the correct number of rows in that CSV file. So all that remains is to pull the data that represents the *previous* edges. To do this, we can use a window function to identify each event's predecessor by partitioning our data by user ID and session ID:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 SELECT
 *
 FROM (

@@ -60,7 +60,7 @@ As of this release, StorageLoader now populates a manifest table as part of the 
 
 Here are the last 5 loads for one of our internal pipelines:
 
-{% highlight sql %}
+{% highlight sql linenos %}
 snplow=# select * from atomic.manifest order by etl_tstamp desc limit 5;
        etl_tstamp        |       commit_tstamp        | event_count | shredded_cardinality
 -------------------------+----------------------------+-------------+----------------------
@@ -97,7 +97,7 @@ The latest version of the EmrEtlRunner and StorageLoader are available from our 
 
 To make use of the new ability to specify EBS volumes for your EMR cluster's core nodes, update your configuration YAML like so:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
     jobflow:
       master_instance_type: m1.medium
       core_instance_count: 1

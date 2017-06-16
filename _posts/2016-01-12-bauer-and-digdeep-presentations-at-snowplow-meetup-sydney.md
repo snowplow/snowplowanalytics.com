@@ -10,11 +10,15 @@ Last month [Josh] [josh] returned to Sydney, where he organised the second [Snow
 
 Simon Rumble kicked off the event with a detailed presentation (and demo): [Snowplow drives everything we do] [simon-pres]. You can view Simon's presentation below, or the original Google Doc [here] [simon-pres]. Simon described the Snowplow journey that Bauer Australia had gone on, from using it as an experimental tool to using it at the heart of their dashboarding, analytics, trending and recommendation services.
 
-<div class="html"><iframe src="//www.slideshare.net/slideshow/embed_code/key/uKStSR7TLFNyjN" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/snowplow-is-at-the-core-of-everything-we-do" title="Snowplow is at the core of everything we do" target="_blank">Snowplow is at the core of everything we do</a> </strong> from <strong><a href="//www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div></div>
+<div class="html"><div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/uKStSR7TLFNyjN" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/snowplow-is-at-the-core-of-everything-we-do" title="Snowplow is at the core of everything we do" target="_blank">Snowplow is at the core of everything we do</a> </strong> from <strong><a href="//www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div></div>
 
 Narbeh Yousefian followed up with another in depth presentation, this time covering some of the myriad ways the team at Digdeep digital has used Snowplow, including a demo of some interactive geospatial analysis. You can view his slides below:
 
-<div class="html"><iframe src="//slides.com/narbehyousefian-1/deck-sp-meet-up-syd-dec-2015/embed" width="595" height="434" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div class="html"><div class="iframe-container">
+    <iframe src="//slides.com/narbehyousefian-1/deck-sp-meet-up-syd-dec-2015/embed" width="595" height="434" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>    </iframe>
+</div></div>
 
 <!--more-->
 

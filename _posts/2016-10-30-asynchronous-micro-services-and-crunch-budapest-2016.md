@@ -25,7 +25,9 @@ In the course of working at Snowplow and writing my book, I have become convince
 
 At Snowplow we have been historically focused been on analytical workloads - essentially event data pipelines, both batch and real-time. But we have recently detected a wider trend at play: that both analytical *and* transactional workloads seem to be converging on a single dominant architecture, which we can call **asynchronous or event-driven micro-services**:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/GZWLbl5913Jjs3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/alexanderdean/asynchronous-microservices-and-the-unified-log" title="Asynchronous micro-services and the unified log" target="_blank">Asynchronous micro-services and the unified log</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/alexanderdean">Alexander Dean</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/GZWLbl5913Jjs3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/alexanderdean/asynchronous-microservices-and-the-unified-log" title="Asynchronous micro-services and the unified log" target="_blank">Asynchronous micro-services and the unified log</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/alexanderdean">Alexander Dean</a></strong> </div>
 
 In this talk, I started by recapping on the rise of the unified log for analytical workloads, replacing classic data warehousing and hybrid data processing approaches; I explained how at Snowplow we have built a variety of asynchronous micro-services to power our real-time pipeline.
 

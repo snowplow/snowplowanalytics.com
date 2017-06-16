@@ -21,7 +21,9 @@ This time last week we held the inaugural [Snowplow London meetup](http://www.me
 
 Robert Boland, the Lead Data Architect at [Metail](http://metail.com/), gave a fascinating talk on why they use Snowplow and how they use Cascalog today to crunch Snowplow data. You can view the full contents of Rob's presentation below:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/44300457" width="700" height="585" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/RobertBoland1/snowplow-metail-and-cascalog" title="Snowplow, Metail and Cascalog" target="_blank">Snowplow, Metail and Cascalog</a> </strong> from <strong><a href="//www.slideshare.net/RobertBoland1" target="_blank">Robert Boland</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/44300457" width="700" height="585" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/RobertBoland1/snowplow-metail-and-cascalog" title="Snowplow, Metail and Cascalog" target="_blank">Snowplow, Metail and Cascalog</a> </strong> from <strong><a href="//www.slideshare.net/RobertBoland1" target="_blank">Robert Boland</a></strong> </div>
 
 Metail use Cascalog to perform 'data modelling': taking their event-level data and rolling it up to provide a view on entities and events that matter to their business, and on top of which they can drive reporting directly. (Those entities include visitors, sessions, A/B tests, orders, garments and body shapes, for example.)
 
@@ -33,7 +35,9 @@ Rob's talk was very timely - we've been doing a lot of thinking about data model
 
 Stewart Duncan, Director of Data Science at [Simply Business](http://tech.simplybusiness.co.uk/), talked us through the journey that Simply Business had gone through in terms of their data architecture, before diving into an explanation of how they use modelled their Snowplow attribution data using Bayesian networks to perform marketing attribution. This has been very significant for Simply Business, because it enabled them to measure the nurturing impact that a number of channels that operate between first and last touch have in terms of driving conversion. You can view Stewart's slides below, and read his recap of the event on the [Simply Business tech blog](http://tech.simplybusiness.co.uk/).
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/44431324" width="700" height="585" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/lotius/snowplow-meetup-multichannel-attribution-analysis" title="Simply Business and Snowplow - Multichannel Attribution Analysis" target="_blank">Simply Business and Snowplow - Multichannel Attribution Analysis</a> </strong> from <strong><a href="//www.slideshare.net/lotius" target="_blank">Stewart Duncan</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/44431324" width="700" height="585" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/lotius/snowplow-meetup-multichannel-attribution-analysis" title="Simply Business and Snowplow - Multichannel Attribution Analysis" target="_blank">Simply Business and Snowplow - Multichannel Attribution Analysis</a> </strong> from <strong><a href="//www.slideshare.net/lotius" target="_blank">Stewart Duncan</a></strong> </div>
 
 <h2><a name="future">Feedback and future events</a></h2>
 

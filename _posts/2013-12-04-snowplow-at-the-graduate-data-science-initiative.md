@@ -13,7 +13,9 @@ The event was for graduates interested in careers in Data Science careers. It's 
 
 I gave the first talk on how data scientists and big data technolgies, including Snowplow, are fundamentally changing the way that people think about use web analytics data specifically, and digital event data more generally. I went on to describe why we believe event data is such an interesting data set to work with. We'll see if any of the participants are more excited about digital event data as a result. I've embedded my slides below:
 
-<div id="pres"><iframe src="http://www.slideshare.net/slideshow/embed_code/28874690" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"> </iframe></div>
+<div id="pres"><div class="iframe-container">
+    <iframe src="http://www.slideshare.net/slideshow/embed_code/28874690" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">     </iframe>
+</div></div>
 
 
 

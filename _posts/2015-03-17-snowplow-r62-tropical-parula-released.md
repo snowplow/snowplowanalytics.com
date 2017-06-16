@@ -39,7 +39,7 @@ The EmrEtlRunner now has support for adding one or more of your own custom boots
 
 You simply set your custom bootstrap actions in your EmrEtlRunner's `config.yml` as an array:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 :emr:
   ...
   :ec2_key_name: ADD HERE
@@ -87,7 +87,7 @@ Whether or not you use the new bootstrap option, you must update your EmrEtlRunn
 
 In the `:emr:` section of your EmrEtlRunner's `config.yml` file, add in a `:bootstrap:` property like so:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 :emr:
   ...
   :ec2_key_name: ADD HERE

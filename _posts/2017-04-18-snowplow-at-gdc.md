@@ -18,11 +18,17 @@ We at Snowplow were very excited to be invited by [AWS](https://aws.amazon.com/)
 ## Snowplow presentation at GDC
 Alex  Dean, my cofounder, and I were delighted to speak at the AWS Developer Day. You can view our presentation, [“Open Source Game Analytics Powered by AWS”](http://schedule.gdconf.com/session/open-source-game-analytics-powered-by-aws-presented-by-amazon), below.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/6Zmv5LgpjGY" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/6Zmv5LgpjGY" frameborder="0" allowfullscreen></iframe>
+</div>
 
 And the slides by themselves:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/ZjHJsoJ2TQexw" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-open-source-game-analytics-powered-by-aws" title="Snowplow: open source game analytics powered by AWS" target="_blank">Snowplow: open source game analytics powered by AWS</a> </strong> </div>
+<div class="iframe-container">
+	<iframe src="//www.slideshare.net/slideshow/embed_code/key/ZjHJsoJ2TQexw" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+</div>
+
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ggaviani/snowplow-open-source-game-analytics-powered-by-aws" title="Snowplow: open source game analytics powered by AWS" target="_blank">Snowplow: open source game analytics powered by AWS</a> </strong> </div>
 
 <!--more-->
 
@@ -34,7 +40,9 @@ We also got a chance to demo Snowplow at GDC and presented some of the work we'd
 
 Our demo included a 'level analytics' dashboard that the CodeCombat team uses to inform level design and development decisions. You can find out more about this in another blog post we wrote about [How to develop better games with level analytics](http://snowplowanalytics.com/blog/2017/04/12/how-to-develop-better-games-with-level-analytics/). Below you can see a video of that demo.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/2d1PlOixj_E" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/2d1PlOixj_E" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Closing thoughts on our GDC experience
 

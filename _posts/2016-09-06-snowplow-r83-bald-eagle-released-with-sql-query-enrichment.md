@@ -63,7 +63,7 @@ This release also contains further improvements to EmrEtlRunner and StorageLoade
 
 Upgrading is simple - update the `hadoop_enrich` job version in your configuration YAML like so:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 versions:
   hadoop_enrich: 1.8.0        # WAS 1.7.0
   hadoop_shred: 0.9.0         # UNCHANGED

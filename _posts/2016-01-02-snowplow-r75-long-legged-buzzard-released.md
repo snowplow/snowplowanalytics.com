@@ -57,7 +57,7 @@ The latest version of the EmrEtlRunner and StorageLoader are available from our 
 
 In your EmrEtlRunner's `config.yml` file, update your `hadoop_enrich` job's version to 1.5.0, like so:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
   versions:
     hadoop_enrich: 1.5.0 # WAS 1.4.0
 {% endhighlight %}

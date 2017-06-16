@@ -11,7 +11,9 @@ Last month I was very fortunate to speak at the [DA Hub Europe](https://www.digi
 
 For those who haven't been lucky enough to attend this event, it is a brilliant opportunity to discuss, debate with and learn from some of the smartest people in Digital Analytics in Europe.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/D5oR9V5vndgiiv" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/snowplow-at-da-hub-emerging-technology-showcase" title="Snowplow at DA Hub emerging technology showcase" target="_blank">Snowplow at DA Hub emerging technology showcase</a> </strong> from <strong><a href="//www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/D5oR9V5vndgiiv" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/snowplow-at-da-hub-emerging-technology-showcase" title="Snowplow at DA Hub emerging technology showcase" target="_blank">Snowplow at DA Hub emerging technology showcase</a> </strong> from <strong><a href="//www.slideshare.net/yalisassoon" target="_blank">yalisassoon</a></strong> </div>
 
 
 I used the talk as an opportunity to share some of our broader thinking at Snowplow with what has gone wrong with digital analytics, and how we're trying to fix it, by taking a fundamentally different approach, analytically and technically, to analysing digital event data.

@@ -36,7 +36,9 @@ They touched on how they set up the full near-real time processing stack of Snow
 
 Here are their slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/xuUYiVAZlgWf8c" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/de-bijenkorf-presentation-for-snowplow-amsterdam-meetup-3" title="de bijenkorf presentation for Snowplow Amsterdam Meetup #3" target="_blank">de bijenkorf presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/xuUYiVAZlgWf8c" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/de-bijenkorf-presentation-for-snowplow-amsterdam-meetup-3" title="de bijenkorf presentation for Snowplow Amsterdam Meetup #3" target="_blank">de bijenkorf presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
 
 <!--more-->
@@ -48,12 +50,16 @@ Our cofounder Alex Dean gave an introduction to Snowplow and then talked about o
 
 Here is the video of his presentation:
 
-<iframe width="595" height="485" src="https://www.youtube.com/embed/gxpHt6DFOpk" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="485" src="https://www.youtube.com/embed/gxpHt6DFOpk" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 
 And his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/BTaBAqwe6mjDrV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/snowplow-presentation-for-amsterdam-meetup-3" title="Snowplow presentation for Amsterdam Meetup #3" target="_blank">Snowplow presentation for Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/BTaBAqwe6mjDrV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/snowplow-presentation-for-amsterdam-meetup-3" title="Snowplow presentation for Amsterdam Meetup #3" target="_blank">Snowplow presentation for Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
 <h2 id="greenhousegroup">Greenhouse Group and optimising your campaign across the whole customer journey</h2>
 
@@ -63,11 +69,15 @@ He also mentioned Eneco, one of the Netherlands’ largest energy providers, as 
 
 You can see the video of his presentation here:
 
-<iframe width="595" height="485" src="https://www.youtube.com/embed/sDzR8KkZPyU" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container">
+    <iframe width="595" height="485" src="https://www.youtube.com/embed/sDzR8KkZPyU" frameborder="0" allowfullscreen>    </iframe>
+</div>
 
 And his slides:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/hAYRBrf2GDwDvK" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/greenhouse-group-presentation-for-snowplow-amsterdam-meetup-3" title="Greenhouse Group presentation for Snowplow Amsterdam Meetup #3" target="_blank">Greenhouse Group presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
+<div class="iframe-container">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/hAYRBrf2GDwDvK" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
+</div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/snowplowanalytics/greenhouse-group-presentation-for-snowplow-amsterdam-meetup-3" title="Greenhouse Group presentation for Snowplow Amsterdam Meetup #3" target="_blank">Greenhouse Group presentation for Snowplow Amsterdam Meetup #3</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/snowplowanalytics">Snowplow Analytics</a></strong> </div>
 
 
 Browse [our YouTube channel](https://www.youtube.com/channel/UCeLlVPW8RF0zZNmRY2EWqbA/videos) to see the videos of other Meetup presentations too.
