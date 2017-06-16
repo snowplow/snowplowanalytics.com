@@ -54,6 +54,7 @@ if (!window.location.origin) {
 	var winScrollTop = 0;
 	var body = $('body');
 	var scrollingTimeOut = 0;
+	var header = $('header');
 
 
 	/*
@@ -170,7 +171,11 @@ if (!window.location.origin) {
 				if (target.length>0)
 				{
 					e.preventDefault ();
-					$("html, body").animate({ scrollTop: target.offset().top }, 1000);
+					var top = target.offset().top - header.height() - 70;
+					$("html, body").animate({ scrollTop: top }, 1000, function (){
+						window.location.hash = hash;
+						$("html, body").animate({ scrollTop: top },0);
+					});
 				}
 			}
 		});
@@ -183,8 +188,10 @@ if (!window.location.origin) {
 			var target = $(hash);
 			if (target.length>0)
 			{
-				$("html, body").animate({ scrollTop: target.offset().top }, 1000, function (){
+				var top = target.offset().top - header.height() - 70;
+				$("html, body").animate({ scrollTop: top }, 1000, function (){
 					window.location.hash = hash;
+					$("html, body").animate({ scrollTop: top },0);
 				});
 			}
     	}
