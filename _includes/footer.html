@@ -66,10 +66,9 @@
                     </div>
                 </div>
             </div>
-        </footer>        
-
+        </footer>
         {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
         {% if page.layout == 'post' %}<script type="text/javascript" src='{{BASE_PATH}}/assets/js/vendors/prism.js'></script>{% endif %}
-		<script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js"></script>
+
     </body>
 </html>
