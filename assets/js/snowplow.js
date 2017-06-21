@@ -183,7 +183,7 @@ if (!window.location.origin) {
 		if(window.location.hash != '')
 		{
         	var hash = window.location.hash;
-        	window.location.hash = '';
+        	//window.location.hash = '';
 
 			var target = $(hash);
 			if (target.length>0)
