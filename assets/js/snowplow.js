@@ -74,7 +74,7 @@ if (!window.location.origin) {
 		 	acceptText: 'Continue',
 		 	policyButton: true,
 		 	policyText: 'Know more',
-		 	message : '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3>We use cookies on this website to track how our users are browsing and engaging with it. We use that to figure out how good we are at introducing Snowplow to prospective companies and how well we serve existing users with documentation and other supporting material. For more information</div>'
+		 	message : '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3>We use cookies on this website to track how our users are browsing and engaging with it. We use that to figure out how good we are at introducing Snowplow to prospective companies and how well we serve existing users with documentation and other supporting material. For more information click on the Know more button.</div>'
 		 });
 
 	 	var cookie = $('#cookie');
