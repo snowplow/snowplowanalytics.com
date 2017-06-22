@@ -19,12 +19,26 @@
  * STYLES
  */
 
-body.cookie main {
-    margin-top: 100px;
+body.cookie {
 
-    @media (max-width: $screen-sm-min)
-    {
-        margin-top: 350px;
+    main {
+        margin-top: 100px;
+
+        @media (max-width: $screen-sm-min)
+        {
+            margin-top: 260px;
+        }
+    }
+
+    &.blog {
+        main {
+            margin-top: 350px;
+
+            @media (min-width: $screen-sm-min)
+            {
+                margin-top: 320px;
+            }
+        }
     }
 }
 
