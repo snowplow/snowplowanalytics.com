@@ -2,6 +2,7 @@
 ---
 
 {% include_relative vendors/_concat/jquery-3.1.1.min.js %}
+{% include_relative vendors/_concat/jquery.cookiebar.js %}
 {% include_relative vendors/_concat/bootstrap.min.js %}
 {% include_relative vendors/_concat/bootstrap-select.min.js %}
 {% include_relative vendors/_concat/grayscale.functions.js %}
@@ -63,6 +64,30 @@ if (!window.location.origin) {
 
 	$('document').ready (function ()
 	{
+		/**
+		 * Launch Cookie Consent
+		 */
+		 $.cookieBar({
+		 	append: false,
+		 	element: '#cookie',
+		 	acceptButton: true,
+		 	acceptText: 'Continue',
+		 	policyButton: true,
+		 	policyText: 'Know more',
+		 	message : '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3>We use cookies on this website to track how our users are browsing and engaging with it. We use that to figure out how good we are at introducing Snowplow to prospective companies and how well we serve existing users with documentation and other supporting material. For more information click on the Know more button.</div>'
+		 });
+
+	 	var cookie = $('#cookie');
+	 	if (cookie.children().length){
+			 body.addClass ('cookie');
+			 // ON COOKIE ACCEPT REMOVE CONTAINER
+			 $('#cookie .cb-enable').on ('click', function (){
+			 	body.removeClass ('cookie');
+			 });
+	 	}
+
+
+
 		/*
 		 * Check document for any sliders
 		 */

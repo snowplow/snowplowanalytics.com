@@ -1,6 +1,6 @@
 html, body
 {
-	background-color: $white;
+	background: $white;
 	height: 100%;
 	width: 100%;
 	padding: 0;
@@ -196,5 +196,44 @@ a
 	{
 		pointer-events:auto;
 		user-select:all;
+	}
+}
+
+
+
+
+
+/**
+ * Layer arrangement
+ */
+
+.bring-to-top {
+	z-index: 99;
+}
+
+.bring-to-bottom {
+	z-index: 0;
+}
+
+
+
+
+
+/**
+ * OVERLAPING ELEMENT
+ */
+
+.overlap-bellow {
+	z-index: 99;
+	margin-bottom:0;
+	transform:translateY(50%);
+
+	@media screen and (max-width:$screen-md-min) {
+		transform:translateY(25%);
+	}
+
+	@media screen and (max-width:$screen-sm-min) {
+		transform:none;
+		margin-bottom:20px;
 	}
 }
