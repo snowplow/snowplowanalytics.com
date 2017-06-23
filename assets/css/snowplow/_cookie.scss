@@ -28,6 +28,16 @@ body.cookie {
         {
             margin-top: 260px;
         }
+
+        @media (min-width: $screen-sm-max)
+        {
+            margin-top: 200px;
+        }
+
+        @media (min-width: $screen-md-max)
+        {
+            margin-top: 140px;
+        }
     }
 
     &.blog {
