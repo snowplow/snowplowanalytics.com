@@ -25,7 +25,7 @@ $(function() {
     var email = document.getElementById("inputEmail").value;
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
-    var insights = document.getElementById('inputLeadInsights').checked;
+    var insights = document.getElementById('inputLeadInsights').checked ? true : false;
     var react = document.getElementById('inputLeadReact').checked ? true : false;
 
     // validate inputs
