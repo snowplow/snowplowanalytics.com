@@ -84,6 +84,8 @@ if (!window.location.origin) {
 			 $('#cookie .cb-enable').on ('click', function (){
 			 	body.removeClass ('cookie');
 			 });
+	 	} else {
+	 		cookie.remove ();
 	 	}
 
 
