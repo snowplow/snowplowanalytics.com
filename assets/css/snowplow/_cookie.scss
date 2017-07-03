@@ -60,7 +60,7 @@ body.cookie {
     padding: 30px 0;
     line-height: 1.5em;
     letter-spacing: 0px;
-    background: $brand-darker;
+    background: $gray-light;
     border-bottom:1px solid white;
 
     display:none;
@@ -131,12 +131,12 @@ body.cookie {
             /* CONTINUE BUTTON */
             &:first-of-type {
                 background:white;
-                color:$brand-darker;
+                color:$gray-light;
 
                 &:hover,
                 &:focus {
                     color:white;
-                    background:$brand-darker;
+                    background:$gray-light;
                 }
             }
 
@@ -149,7 +149,7 @@ body.cookie {
 
                 &:hover,
                 &:focus {
-                    color:$brand-darker;
+                    color:$gray-light;
                     background:white;
                 }
             }
