@@ -168,7 +168,11 @@ main {
 }
 
 /*applies to "Apply Now" and "Submit Application" buttons */
-.button {
+#submit_app,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     color: #fff;
     outline: none;
     font-weight: 400;
@@ -183,6 +187,8 @@ main {
     display: inline-block;
     vertical-align: middle;
     background-image: none;
+    background: $brand-primary;
+    text-shadow: none;
     touch-action: manipulation;
     -ms-touch-action: manipulation;
     transition: background .3s, color .3s, border .3s;
