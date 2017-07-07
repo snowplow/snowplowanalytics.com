@@ -1,0 +1,207 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+
+/*
+ * DEPENDENCIES
+ */
+
+@import "vendors/common/_bootstrap";
+@import "vendors/common/_bootstrap-select";
+@import "vendors/common/font-awesome/_font-awesome";
+@import "vendors/common/_slick";
+
+$icomoon-font-path: 'https://snowplowanalytics.com/assets/fonts/';
+@import "vendors/common/icomoon/_style";
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow.github.com)
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "snowplow/_variables";
+
+/*
+ * STYLES
+ */
+
+@import "snowplow/_snowplow.greenhouse.fonts";
+@import "snowplow/_grid";
+@import "snowplow/_colors";
+@import "snowplow/_global";
+@import "snowplow/_typography";
+@import "snowplow/_form";
+
+
+
+/*
+ * OVERRIDES
+ */
+
+
+p {
+
+}
+
+ul {
+	li {
+
+	}
+}
+
+/* location of job */
+.location {
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #424651;
+	margin: 0;
+}
+
+/*wraps the entire job board*/
+#wrapper {
+
+}
+
+/*job board title*/
+#board_title {
+
+}
+
+/*job links*/
+.opening a {
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+main {
+	> .container {
+		>.content {
+		    max-width: 100%;
+		}
+	}
+}
+
+/*the application container*/
+#app_body {
+    max-width: 100%;
+}
+
+/*the application form container*/
+#application {
+    max-width: 100%;
+
+	/*the "Apply for this job" application container header*/
+	.heading {
+	    float: none;
+	    font-size: 28px;
+	    font-weight: lighter;
+	    margin-bottom: 15px;
+	    display: block;
+	    margin: 20px 0;
+	}
+}
+
+/*job name*/
+.app-title {
+
+}
+
+
+/*applies to "at YourCo"*/
+.company-name {
+
+}
+
+/*field labels (e.g.,"First Name")*/
+.field label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-indent: 0;
+}
+
+/*all textareas*/
+.field textarea {
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    padding: 16px 16px 15px;
+    transition: all .3s;
+    box-shadow: none;
+    line-height: 2em;
+    height: auto;
+    border-radius: $border-radius-small;
+}
+
+/*all select boxes*/
+.field select {
+
+}
+
+/*all text boxes*/
+.field input[type='text'] {
+    line-height: 1;
+    font-size: 14px!important;
+    font-weight: 400;
+    white-space: nowrap;
+    padding: 8px!important;
+    transition: all .3s;
+    height: auto;
+    box-shadow: none;
+    border-radius: $border-radius-small;
+    min-width: 50px!important;
+}
+
+#custom_fields div.field input[type=text],
+#custom_fields div.field textarea,
+#custom_fields div.field .text-field,
+#custom_fields div.field .select2-container-multi
+{
+	margin-top: 0;
+    width: 100%;
+}
+
+/*applies to "Apply Now" and "Submit Application" buttons */
+#submit_app,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    color: #fff;
+    outline: none;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    font-size: 14px!important;
+    user-select: none;
+    border-radius: $border-radius-small;
+    text-align: center;
+    white-space: nowrap;
+    padding: 1.2em 2.2em;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: none;
+    background: $brand-primary;
+    text-shadow: none;
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    transition: background .3s, color .3s, border .3s;
+}
+
+/* NOTE - set "background-image: none;" to remove existing gradient*/
+a, input[type='button'].link-like-button {
+	/*applies to all regular page links*/
+}
+
+@media (min-width: 641px){
+	a.locate-me {
+	    margin-right: 10px;
+	    display: block;
+	}
+}
