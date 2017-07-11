@@ -60,11 +60,11 @@ $(function() {
       return false;
     }
 
-    if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
-      $('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
-      $('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
-      return false;
-    }
+    // if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
+    //  $('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
+    //  $('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
+    //  return false;
+    // }
 
     // push to GTM
 
