@@ -1,0 +1,317 @@
+---
+layout: default
+group: compare
+title: Compare
+description: place text here
+permalink: /compare/adobe/
+class: services
+assets:
+  css: assets/css/services.css
+---
+
+
+<script type="text/javascript">
+function show_hide_row(row)
+{
+ $("#"+row).toggle();
+}
+</script>
+
+<style type="text/css">
+.table_display 
+{
+margin: 0px;
+width: 100%;
+/*table-layout: fixed;*/
+}
+
+#table_detail th
+{
+padding: 10px;
+}
+
+#table_detail .hidden_row
+{
+ display:none;
+}
+
+</style>
+
+<section class="text-center" id="data-analytics">
+
+
+<!--     <h5 class="text-uppercase">Snowplow vs Adobe Analytics</h5>
+    <h2>Compare Snowplow</h2>
+    <p>Features across the market.</p>
+ -->
+<div class="text-left">
+
+
+<h3>Snowplow vs Adobe Analytics</h3>
+
+
+<p>
+The following guide outlines the main reasons why you should use Snowplow Insights to power your analytics stack over Adobe Analytics.<br>
+It’s worth noting that Adobe is an end-to-end web analytics solution (you integrate the trackers on your website(s), and you get the reports in their user interface). In contrast, Snowplow Insights is not an end-to-end analytics solution: it is a data collection and processing platform. It is built from the ground up to support event collection across any platform, with web and mobile just the two most popular. Email, displays ads, push notifications, call center, help desk, in-store, Smart Car, Smart Home, Internet of Things are some of the other supported platforms.<br>
+Snowplow Insights is not a SaaS product - each user has their own data pipeline running on their own AWS account. This gives each user complete freedom to define what events they want to record, how those events should be structured and how they want to process them. Snowplow Insights delivers the data directly to the locations where it is most useful: into our client’s own data warehouse and own Unified Log (real-time event stream in Amazon Kinesis).     
+</p>
+
+
+
+<br>
+<br>
+<h4>Feature List Comparison</h4>
+
+
+<table border=1 id="table_detail" cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row1');"><td>Official tracking SDKs</td><td>18</td><td>9</td></tr>
+<tr id="hidden_row1" class="hidden_row">
+<td colspan=6>
+
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+
+<tr><td>ActionScript</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Accelerated Mobile Pages<br />(AMP)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Android</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Arduino</td><td>Yes</td><td>No</td></tr>
+<tr><td>C++</td><td>Yes</td><td>No</td></tr>
+<tr><td>Golang</td><td>Yes</td><td>No</td></tr>
+<tr><td>Java</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>JavaScript</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Lua</td><td>Yes</td><td>No</td></tr>
+<tr><td>.NET</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Node.js</td><td>Yes</td><td>No</td></tr>
+<tr><td>Objective-C (iOS/OS-X)</td><td>Yes</td><td>Yes (iOS)</td></tr>
+<tr><td>PHP</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Pixel</td><td>Yes</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Ruby</td><td>Yes</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+<tr><td>Unity</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Official<br />tracking<br />SDKs<br />open-source?</td><td>Yes</td><td>No</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row2');"><td>Tag manager integrations</td><td>6</td><td>6</td></tr>
+<tr id="hidden_row2" class="hidden_row">
+<td colspan=6>
+    
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+    
+    <tr><td>Angulartics</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>ARanalytics</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Google Tag Manager</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>mParticle</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Tealium</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>QuBiT OpenTag</td><td>Yes</td><td>Yes</td></tr>
+
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row3');"><td>SaaS sources</td><td>11</td><td>1</td></tr>
+<tr id="hidden_row3" class="hidden_row">
+<td colspan=6>
+        
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+
+<tr><td>Iglu</td><td>Yes</td><td>No</td></tr>    
+<tr><td>CallRail</td><td>Yes</td><td>No</td></tr>
+<tr><td>Amazon CloudFront</td><td>Yes</td><td>No</td></tr>
+<tr><td>MailChimp</td><td>Yes</td><td>No</td></tr>
+<tr><td>Mandrill</td><td>Yes</td><td>No</td></tr>
+<tr><td>PagerDuty</td><td>Yes</td><td>No</td></tr>
+<tr><td>Pingdom</td><td>Yes</td><td>No</td></tr>
+<tr><td>SendGrid</td><td>Yes</td><td>No</td></tr>
+<tr><td>Singular</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Twilio</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Urban Airship</td><td>Yes</td><td>Yes</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row4');"><td>Standard Enrichments</td><td>12</td><td>10</td></tr>
+<tr id="hidden_row4" class="hidden_row">
+<td colspan="6">
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+    
+<tr><td>API request</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Campaign attribution</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Cookie extractor</td><td>Yes</td><td>No</td></tr>
+<tr><td>Currency conversion</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Event fingerprint</td><td>Yes</td><td>No</td></tr>
+<tr><td>Geolocation (IP address based)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>HTTP header extractor</td><td>Yes</td><td>No</td></tr>
+<tr><td>IP anonymization</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Referer parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>URL parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Useragent parser</td><td>Yes (2 options)</td><td>Yes</td></tr>
+<tr><td>Weather</td><td>Yes</td><td>No</td></tr>
+<tr><td>SQL query</td><td>Yes</td><td>No</td></tr>
+<tr><td>JavaScript</td><td>Yes</td><td>No</td></tr>
+    
+    </table>
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row5');"><td>Custom enrichments</td><td>2</td><td>0</td></tr>
+<tr id="hidden_row5" class="hidden_row">
+<td colspan=6>
+
+        <table border=1 class="table_display" align=center cellpadding=10>
+
+        <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+    
+    <tr><td>JavaScript</td><td>Yes</td><td>No</td></tr>
+    <tr><td>SQL</td><td>Yes</td><td>No</td></tr>
+    
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row6');"><td>Official analytics SDKs</td><td>3</td><td>0</td></tr>
+<tr id="hidden_row6" class="hidden_row">
+<td colspan=6>
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Adobe Analytics</th>
+</tr>
+    
+<tr><td>.NET</td><td>Yes</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+
+    </table>
+
+
+</td>
+</tr>
+
+</table>
+<br>
+<br>
+
+
+<h4>Define Your Own Custom Events & Entities</h4>
+
+<p>
+Adobe Analytics has a fixed schema: every company running Adobe Analytics, be it an publisher, online roleplaying game, social network etc. will have the same core table with the same columns. Whilst eVars and Props allow the user to add their own custom metrics and dimensions to the core table structure – the end result is a long list of numbered variables appended to the core table structure which don’t clearly describe the interactions they are supposed to represent.
+With Snowplow Insights, we don’t assume that any two businesses want to track the same events and entities nor do we assume that they want to answer the same questions. An online publisher may want to understand what content of theirs is most viral whilst a recipe company might want to see which cuisines their users enjoy cooking.
+In practice this means that setting up Snowplow takes longer as from the ground up, you decide:
+<ol>
+<li>The questions you want to answer.</li>
+<li>The data you want to track.</li>
+<li>How you want to use the data to answer those questions.</li>
+</ol>
+
+The benefit in running through this process is that, in the end, you have a reporting setup that answers your most important questions, in your business’ language.
+</p>
+
+<h4>Out-of-the-box fields</h4>
+<p>
+There are several fields which are available in Snowplow upon setup which just aren’t available in Adobe Analytics, here are some examples:
+<ul>
+<li>IP Adresses of the end user</li>
+<li>Page ping i.e heartbeat events. These include a number of data points which allow you to calculate metrics such as how far down a page a user has scrolled (which in turn allows you to calculate how much content is read) as well as how long users spend on particular content items.</li>
+<li>Performance timing data i.e data on how fast pages take to load.</li>
+<li>IDFA (Open, Apple and Android) / IDFV (Apple).</li>
+</ul>
+</p>
+
+
+
+<h4>Marketing Integrations</h4>
+
+<p>
+Snowplow has a large number of integrations with third party marketing and data providers whilst Adobe offers none:
+<ul>
+<li><a href="http://discourse.snowplowanalytics.com/t/integrating-adjust-with-snowplow-to-add-mobile-attribution-data-to-the-rest-of-your-event-data-1-2/220" target="_blank">Adjust</a> for mobile app attribution</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/io.augur.snowplow" target="_blank">Augur</a> for machine-fingerprinting</li>
+<li><a href="https://github.com/snowplow/iglu-central/blob/master/sql/com.amazon.aws.cloudfront/wd_access_log_1.sql" target="_blank">AWS Cloudfront</a> for log ingestion</li>
+<li><a href="https://github.com/snowplow/iglu-central/blob/master/sql/com.callrail/call_complete_1.sql" target="_blank">CallRail</a> for call tracking</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.clearbit.enrichment" target="_blank">Clearbit</a> for enriching user information</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.mailchimp" target="_blank">Mailchimp</a> for email marketing data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.mandrill" target="_blank">Mandrill</a> for transactional email data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.optimizely" target="_blank">Optimizely</a> for A/B testing</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/org.openweathermap" target="_blank">OpenWeatherMap</a> for weather data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.pagerduty" target="_blank">PagerDuty</a> for devops alerts</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.pingdom" target="_blank">Pingdom</a> for uptime alerts</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.sendgrid" target="_blank">SendGrid</a> for transactional email tracking</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.urbanairship.connect" target="_blank">Urban Airship</a> for mobile marketing</li>
+</ul>
+</p>
+
+
+<h4>Data latency</h4>
+<p>
+It can take over 24 for new data to land in the Adobe reporting interface. In contrast, Snowplow users can run their pipelines hourly, loading data into Redshift with a 2 hour latency. Users of the Snowplow real-time pipeline have the full event stream available to consume in Kinesis and Elastic in seconds.
+</p>
+
+
+<h4>Cost</h4>
+<p>
+With Adobe Analytics, it’s easy to rack up a bill of over $100,000 per year. Running Snowplow Insights is an order of magnitude cheaper.
+</p>
+
+<h4>24 Hour Support</h4>
+
+<p>
+With our support contracts we offer 24-hour coverage to help our users effectively use our technology – this also includes workshops. 
+</p>
+</div>
+</section>
+

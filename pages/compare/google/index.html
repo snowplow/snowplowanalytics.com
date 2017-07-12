@@ -1,0 +1,557 @@
+---
+layout: default
+group: compare
+title: Compare
+description: place text here
+permalink: /compare/google/
+class: services
+assets:
+  css: assets/css/services.css
+---
+
+
+<script type="text/javascript">
+function show_hide_row(row)
+{
+ $("#"+row).toggle();
+}
+</script>
+
+<style type="text/css">
+.table_display 
+{
+margin: 0px;
+width: 100%;
+/*table-layout: fixed;*/
+}
+
+#table_detail th
+{
+padding: 10px;
+}
+
+#table_detail .hidden_row
+{
+ display:none;
+}
+
+</style>
+
+<section class="text-center" id="data-analytics">
+
+
+<!--     <h5 class="text-uppercase">Snowplow vs Google Analytics</h5>
+    <h2>Compare Snowplow</h2>
+    <p>Features across the market.</p>
+ -->
+
+ <div class="text-left">
+
+
+<h3>Snowplow vs Google Analytics</h3>
+
+<p>
+When choosing a platform for performing custom analysis on event-level data in your own data warehouse, we often see Snowplow compared with the Google Analytics 360 / Google BigQuery combination. Whilst there are pros and cons to using both solutions, this guide outlines why Snowplow is the better solution overall.
+</p>
+
+<h4>Out-of-the-box fields</h4>
+<p>
+There are several fields which are available in Snowplow upon setup which just aren’t available in Google Analytics, here are some examples:
+</p>
+
+<ul>
+<li>IP Adresses of the end user</li>
+<li>Link click events i.e automatic recording of any hyperlinks clicked.</li>
+<li>Page ping i.e heartbeat events. These include a number of data points which allow you to calculate metrics such as how far down a page a user has scrolled (which in turn allows you to calculate how much content is read) as well as how long users spend on particular content items.</li>
+<li>Performance timing data i.e data on how fast pages take to load.</li>
+<li>IDFA (Open, Apple and Android) / IDFV (Apple).</li>
+</ul>
+
+
+
+<br>
+<br>
+<h4>Feature List Comparison</h4>
+
+
+<!-- <table border=1 id="table_detail" cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row1');"><td>Official tracking SDKs</td><td>25</td><td>25</td></tr>
+<tr id="hidden_row1" class="hidden_row">
+<td colspan=6>
+
+
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+
+<tr><td>ActionScript<br />(Flash)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Accelerated<br />Mobile<br />Pages<br />(AMP)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Android</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Android<br />Wear</td><td>No</td><td>No</td></tr>
+<tr><td>Appcelerator<br />Titanium</td><td>No</td><td>No</td></tr>
+<tr><td>Arduino</td><td>Yes</td><td>No</td></tr>
+<tr><td>BlackBerry</td><td>No</td><td>No</td></tr>
+<tr><td>C</td><td>No</td><td>No</td></tr>
+<tr><td>C++</td><td>Yes</td><td>No</td></tr>
+<tr><td>Clojure</td><td>No</td><td>No</td></tr>
+<tr><td>cocos2d-x</td><td>No</td><td>No</td></tr>
+<tr><td>Corona</td><td>No</td><td>No</td></tr>
+<tr><td>Electric<br />Imp</td><td>No</td><td>No</td></tr>
+<tr><td>Golang</td><td>Yes</td><td>No</td></tr>
+<tr><td>Java</td><td>Yes</td><td>No</td></tr>
+<tr><td>Java<br />log4j</td><td>No</td><td>No</td></tr>
+<tr><td>JavaScript<br />(browser)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Lua</td><td>Yes</td><td>No</td></tr>
+<tr><td>.NET<br />(C#)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Node.js<br />(JavaScript)</td><td>Yes</td><td>No</td></tr>
+<tr><td>Objective-C<br />(iOS,<br />OS-X<br />et<br />al)</td><td>Yes</td><td>Yes (iOS)</td></tr>
+<tr><td>Perl</td><td>No</td><td>No</td></tr>
+<tr><td>PHP</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Pixel</td><td>Yes</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Ruby</td><td>Yes</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+<tr><td>Swift<br />(iOS,<br />OS-X<br />et<br />al)</td><td>No</td><td>No</td></tr>
+<tr><td>Tracking<br />Pixel<br />(non-JS<br />environment)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Unity</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Xamarin</td><td>No</td><td>Yes</td></tr>
+<tr><td>Windows<br />Phone</td><td>No</td><td>Yes</td></tr>
+<tr><td>Official<br />tracking<br />SDKs<br />open-source?</td><td>Yes</td><td>No</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row2');"><td>Tag manager integrations</td><td>4</td><td>3</td></tr>
+<tr id="hidden_row2" class="hidden_row">
+<td colspan=6>
+    
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+    <tr><td>Angulartics</td><td>Yes</td><td>No</td></tr>
+    <tr><td>ARanalytics</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Google Tag Manager</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>mParticle</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Segment</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Signal</td><td>No</td><td>No</td></tr>
+    <tr><td>Tealium</td><td>Yes</td><td>No</td></tr>
+
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row3');"><td>SaaS sources</td><td>20</td><td>15</td></tr>
+<tr id="hidden_row3" class="hidden_row">
+<td colspan=6>
+        
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+<tr><td>CallRail</td><td>Yes</td><td>No</td></tr>
+<tr><td>Amazon CloudFront</td><td>Yes</td><td>No</td></tr>
+<tr><td>HubSpot</td><td>No</td><td>No</td></tr>
+<tr><td>JIRA</td><td>No</td><td>No</td></tr>
+<tr><td>Intercom</td><td>No</td><td>No</td></tr>
+<tr><td>MailChimp</td><td>Yes</td><td>No</td></tr>
+<tr><td>Mandrill</td><td>Yes</td><td>No</td></tr>
+<tr><td>Marketo</td><td>No</td><td>No</td></tr>
+<tr><td>PagerDuty</td><td>Yes</td><td>No</td></tr>
+<tr><td>Pingdom</td><td>Yes</td><td>No</td></tr>
+<tr><td>Runscope Radar</td><td>No</td><td>No</td></tr>
+<tr><td>Salesforce</td><td>No</td><td>No</td></tr>
+<tr><td>SendGrid</td><td>Yes</td><td>No</td></tr>
+<tr><td>Shopify</td><td>No</td><td>No</td></tr>
+<tr><td>Singular</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Sizmek</td><td>No</td><td>No</td></tr>
+<tr><td>Stripe</td><td>No</td><td>No</td></tr>
+<tr><td>Twilio</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Urban Airship</td><td>Yes</td><td>No</td></tr>
+<tr><td>ZenDesk</td><td>Soon</td><td>No</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row4');"><td>Standard Enrichments</td><td>12</td><td>10</td></tr>
+<tr id="hidden_row4" class="hidden_row">
+<td colspan="6">
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+<tr><td>API request</td><td>Soon</td><td>No</td></tr>
+<tr><td>Campaign attribution</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Cookie extractor</td><td>Yes</td><td>No</td></tr>
+<tr><td>Currency conversion</td><td>Yes</td><td>No</td></tr>
+<tr><td>Event fingerprint</td><td>Yes</td><td>No</td></tr>
+<tr><td>Geolocation (IP address based)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>HTTP header extractor</td><td>Soon</td><td>No</td></tr>
+<tr><td>IP anonymization</td><td>Yes</td><td>No</td></tr>
+<tr><td>Referer parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>URL parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Useragent parser</td><td>Yes (2 options)</td><td>Yes</td></tr>
+<tr><td>Weather</td><td>Yes</td><td>No</td></tr>
+
+    
+    </table>
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row5');"><td>Custom enrichments</td><td>3</td><td>3</td></tr>
+<tr id="hidden_row5" class="hidden_row">
+<td colspan=6>
+
+        <table border=1 class="table_display" align=center cellpadding=10>
+
+        <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+    <tr><td>JavaScript</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Python</td><td>No</td><td>No</td></tr>
+    <tr><td>SQL</td><td>Yes</td><td>No</td></tr>
+    
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row6');"><td>Official analytics SDKs</td><td>8</td><td>3</td></tr>
+<tr id="hidden_row6" class="hidden_row">
+<td colspan=6>
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+<tr><td>Java</td><td>No</td><td>No</td></tr>
+<tr><td>.NET (C#)</td><td>No</td><td>No</td></tr>
+<tr><td>Node.js</td><td>No</td><td>No</td></tr>
+<tr><td>Objective-C (iOS, OS-X et al)</td><td>No</td><td>No</td></tr>
+<tr><td>PHP</td><td>No</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Ruby</td><td>No</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+
+    </table>
+
+
+</td>
+</tr>
+
+</table>
+
+<br>
+<br> -->
+
+
+
+
+<table border=1 id="table_detail" cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row1');"><td>Official tracking SDKs</td><td>18</td><td>6</td></tr>
+<tr id="hidden_row1" class="hidden_row">
+<td colspan=6>
+
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+<tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+
+<tr><td>ActionScript</td><td>Yes</td><td>Yes (Adobe)</td></tr>
+<tr><td>Accelerated Mobile Pages<br />(AMP)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Android</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Arduino</td><td>Yes</td><td>No</td></tr>
+<tr><td>C++</td><td>Yes</td><td>No</td></tr>
+<tr><td>Golang</td><td>Yes</td><td>No</td></tr>
+<tr><td>Java</td><td>Yes</td><td>No</td></tr>
+<tr><td>JavaScript</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Lua</td><td>Yes</td><td>No</td></tr>
+<tr><td>.NET</td><td>Yes</td><td>No</td></tr>
+<tr><td>Node.js</td><td>Yes</td><td>No</td></tr>
+<tr><td>Objective-C (iOS/OS-X)</td><td>Yes</td><td>Yes (iOS)</td></tr>
+<tr><td>PHP</td><td>Yes</td><td>No</td></tr>
+<tr><td>Pixel</td><td>Yes</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Ruby</td><td>Yes</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+<tr><td>Unity</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Official<br />tracking<br />SDKs<br />open-source?</td><td>Yes</td><td>No</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row2');"><td>Tag manager integrations</td><td>6</td><td>6</td></tr>
+<tr id="hidden_row2" class="hidden_row">
+<td colspan=6>
+    
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+    <tr><td>Angulartics</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>ARanalytics</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Google Tag Manager</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>mParticle</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Tealium</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>QuBiT OpenTag</td><td>Yes</td><td>Yes</td></tr>
+
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row3');"><td>SaaS sources</td><td>11</td><td>6</td></tr>
+<tr id="hidden_row3" class="hidden_row">
+<td colspan=6>
+        
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+
+<tr><td>Iglu</td><td>Yes</td><td>No</td></tr>    
+<tr><td>CallRail</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Amazon CloudFront</td><td>Yes</td><td>No</td></tr>
+<tr><td>MailChimp</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Mandrill</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>PagerDuty</td><td>Yes</td><td>No</td></tr>
+<tr><td>Pingdom</td><td>Yes</td><td>No</td></tr>
+<tr><td>SendGrid</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Singular</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Twilio</td><td>Yes (Huskimo)</td><td>No</td></tr>
+<tr><td>Urban Airship</td><td>Yes</td><td>Yes</td></tr>
+
+
+    </table>
+
+
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row4');"><td>Standard Enrichments</td><td>12</td><td>8</td></tr>
+<tr id="hidden_row4" class="hidden_row">
+<td colspan="6">
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+<tr><td>API request</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Campaign attribution</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Cookie extractor</td><td>Yes</td><td>No</td></tr>
+<tr><td>Currency conversion</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Event fingerprint</td><td>Yes</td><td>No</td></tr>
+<tr><td>Geolocation (IP address based)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>HTTP header extractor</td><td>Yes</td><td>No</td></tr>
+<tr><td>IP anonymization</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Referer parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>URL parser</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Useragent parser</td><td>Yes (2 options)</td><td>Yes</td></tr>
+<tr><td>Weather</td><td>Yes</td><td>No</td></tr>
+<tr><td>SQL query</td><td>Yes</td><td>No</td></tr>
+<tr><td>JavaScript</td><td>Yes</td><td>No</td></tr>
+    
+    </table>
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row5');"><td>Custom enrichments</td><td>2</td><td>0</td></tr>
+<tr id="hidden_row5" class="hidden_row">
+<td colspan=6>
+
+        <table border=1 class="table_display" align=center cellpadding=10>
+
+        <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+    <tr><td>JavaScript</td><td>Yes</td><td>No</td></tr>
+    <tr><td>SQL</td><td>Yes</td><td>No</td></tr>
+    
+    </table>
+
+</td>
+</tr>
+
+<tr onclick="show_hide_row('hidden_row6');"><td>Official analytics SDKs</td><td>3</td><td>0</td></tr>
+<tr id="hidden_row6" class="hidden_row">
+<td colspan=6>
+
+    <table border=1 class="table_display" align=center cellpadding=10>
+
+    <tr>
+<th></th>
+<th>Snowplow</th>
+<th>Google Analytics</th>
+</tr>
+    
+<tr><td>.NET</td><td>Yes</td><td>No</td></tr>
+<tr><td>Python</td><td>Yes</td><td>No</td></tr>
+<tr><td>Scala</td><td>Yes</td><td>No</td></tr>
+
+    </table>
+
+
+</td>
+</tr>
+
+</table>
+<br>
+<br>
+
+
+
+
+<h4>Marketing Integrations</h4>
+<p>
+Snowplow has a large number of integrations with third party marketing and data providers that Google lacks:
+
+
+<ul>
+<li><a href="http://discourse.snowplowanalytics.com/t/integrating-adjust-with-snowplow-to-add-mobile-attribution-data-to-the-rest-of-your-event-data-1-2/220" target="_blank">Adjust</a> for mobile app attribution</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/io.augur.snowplow" target="_blank">Augur</a> for machine-fingerprinting</li>
+<li><a href="https://github.com/snowplow/iglu-central/blob/master/sql/com.amazon.aws.cloudfront/wd_access_log_1.sql" target="_blank">AWS Cloudfront</a> for log ingestion</li>
+<li><a href="https://github.com/snowplow/iglu-central/blob/master/sql/com.callrail/call_complete_1.sql" target="_blank">CallRail</a> for call tracking</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.clearbit.enrichment" target="_blank">Clearbit</a> for enriching user information</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.mailchimp" target="_blank">Mailchimp</a> for email marketing data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.mandrill" target="_blank">Mandrill</a> for transactional email data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.optimizely" target="_blank">Optimizely</a> for A/B testing</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/org.openweathermap" target="_blank">OpenWeatherMap</a> for weather data</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.pagerduty" target="_blank">PagerDuty</a> for devops alerts</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.pingdom" target="_blank">Pingdom</a> for uptime alerts</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.sendgrid" target="_blank">SendGrid</a> for transactional email tracking</li>
+<li><a href="https://github.com/snowplow/iglu-central/tree/master/sql/com.urbanairship.connect" target="_blank">Urban Airship</a> for mobile marketing</li>
+</ul>
+
+
+</p>
+
+
+
+<h4>Google Ad Integrations</h4>
+<p>
+Unsurprisingly, Google has nice out-of-the-box integrations between Analytics and its different ad platforms:
+
+<ul>
+<li>AdWords</li>
+<li>AdSense</li>
+<li>DFP</li>
+</ul>
+Whilst our partners at Snowflake Analytics provide plug-and-play Adwords and DFP integrations with Snowplow, they aren’t as simple and easy to use as the Google supported integrations between their own products.
+</p>
+
+
+
+<h4>Modelled vs not-modelled (atomic) data</h4>
+<p>
+Snowplow data is atomic (i.e. not modelled). It is up to each Snowplow user to model their own data according to their own business logic.
+<br />
+In contrast, the data that GA delivers into BigQuery is already modeled i.e. Google has already decided which user performed each action and what session each action belonged to.
+<br />
+Whilst being delivered a data set that ready to be pivoted on in GA is convenient, we much prefer having full control over how we aggregate over sequences of events. There is an enormous amount of value created in being able to define what a “churned user” or what a “session” is rather than taking an out-of-the-box definition.
+</p>
+
+
+<h4>Data latency</h4>
+<p>
+It takes over 24 hours for GA data to hit BigQuery (whilst only a subset of aggregate data is available via. A separate real-time reporting API). In contrast, Snowplow users can run their pipelines hourly, loading data into Redshift with a 2 hour latency. Users of the Snowplow real-time pipeline have the full event stream available to consume in Kinesis2 and Elastic2 in seconds.
+</p>
+
+
+<h4>BigQuery vs Redshift</h4>
+<p>
+Snowplow does not currently support loading data directly into BigQuery (Although this is on our roadmap8). As a result, most Snowplow users do most of their analysis on Snowplow data in Redshift (Although Spark on the data in S3, and Spark Streaming / AWS Lambda / Kinesis Analytics on the Kinesis streams are also increasingly popular ways to consume Snowplow data).
+BigQuery has some great features that Redshift lacks - in particular elastic compute.
+Both technologies struggle when it comes to big-table to big-table joins. The approach for working around this issue is different with both:
+
+<ul>
+
+<li>With BigQuery users are encouraged to nest data in single tables. The GA data structure reflects this</li>
+<li>With Redshift big table to big table joins can be made performant by intelligent use of DISTKEYS and SORTKEYS</li>
+</ul>
+</p>
+
+
+
+<h4>Cost</h4>
+<p>
+With Google Analytics 360, the minimum you’ll pay is $150,000 per year. Snowplow Insights is an order of magnitude cheaper.
+</p>
+
+</div>
+
+
+</section>
