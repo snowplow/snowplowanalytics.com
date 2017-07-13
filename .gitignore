@@ -3,3 +3,7 @@ _site/
 .jekyll-metadata
 .vagrant/
 _site/
+
+/node_modules
+package.json
+gulpfile.js
