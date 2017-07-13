@@ -44,11 +44,17 @@ $icomoon-font-path: 'https://snowplowanalytics.com/assets/fonts/';
 
 
 section {
-    padding: auto ;
+    padding: 70px;
 }
 
 .level-0 {
     margin:0;
+    padding-top:0;
+    column-count: 2; 
+
+    @media (max-width: 768px){
+        column-count:1;
+    }
 }
 
 
@@ -83,8 +89,13 @@ ul {
     padding: 110px 60px;
     border-radius: 2px;
     margin-top: 40px;
+    margin-bottom: 0;
 }
 
+#filter-count {
+    margin: 0;
+    background: $brand-lighter;
+}
 
 section.level-0 {
     background: $brand-lighter;
@@ -110,13 +121,27 @@ main {
 #app_body {
     max-width: 100%;
 
-    .content {
+    #header {
+        padding-right: 0;
+        margin-bottom: 60px;
+    }
+
+    #content {
         >h1:first-of-type {
             display:none;
         }
         >h4:first-of-type {
             display:none;
         }
+    }
+
+    #application {
+        padding:70px;
+    }
+
+    .required-fields {
+        float:none!important;
+        margin-bottom:30px;
     }
 }
 
@@ -233,4 +258,16 @@ a, input[type='button'].link-like-button {
 	    margin-right: 10px;
 	    display: block;
 	}
+}
+
+
+
+#main_fields div.field .field-error-msg,
+#eeoc_fields div.field .field-error-msg {
+    font-size: 12px;
+}
+
+
+.field-error {
+    border-width: 1px!important;
 }
