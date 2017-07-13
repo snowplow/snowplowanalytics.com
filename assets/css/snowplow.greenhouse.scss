@@ -109,6 +109,15 @@ main {
 /*the application container*/
 #app_body {
     max-width: 100%;
+
+    .content {
+        >h1:first-of-type {
+            display:none;
+        }
+        >h4:first-of-type {
+            display:none;
+        }
+    }
 }
 
 /*the application form container*/
