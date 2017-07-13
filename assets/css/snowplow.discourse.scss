@@ -1,0 +1,242 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+
+/*
+ * DEPENDENCIES
+ */
+
+@import "vendors/common/icomoon/_style";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow.github.com)
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "snowplow/_variables";
+
+
+/*
+ * STYLES
+ */
+
+@import "snowplow/_colors";
+@import "snowplow/_discourse.typography";
+@import "snowplow/_form";
+
+
+
+/*
+ * OVERRIDES
+ */
+
+html, body
+{
+    background: $white;
+    color:$gray-dark;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+a {
+    color: $brand-primary;
+}
+
+
+
+
+ol {
+    &.category-breadcrumb {
+        li {
+            border-radius: $border-radius-small;
+            overflow: hidden;
+
+            a {
+                padding: 15px 20px!important;
+            }
+        }
+    }
+}
+
+
+
+.d-header {
+    background: $brand-primary;
+    box-shadow: none;
+
+    .title {
+        margin-top: 8px;
+    }
+
+    #site-logo {
+        max-height: 20px;
+    }
+
+    .icons {
+        .icon {
+            border:0;
+            background: none;
+            margin-right: 22px;
+
+            [class^="fa fa-"] {
+                width: 20px;
+                height: 20px;
+                font-size: 1.2em;
+            }
+
+            &:hover,
+            &:focus {
+                border:0;
+                color:white;
+                background:none;
+            }
+        }
+    }
+}
+
+.drop-down-visible {
+    .d-header {
+        .icons {
+            .active {
+                .icon {
+                    border:0;
+                    color:white;
+                    background:none;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.menu-panel {
+    &.drop-down {
+        border-radius: 3px;
+        box-shadow: none;
+        padding: 20px;
+    }
+}
+
+
+
+
+.list-controls {
+
+    margin: 30px 0;
+
+    .category-dropdown-menu {
+        .cat {
+            padding: 5px 8px;
+        }
+    }
+}
+
+
+
+
+
+.btn {
+    padding: 15px 20px;
+    border-radius: $border-radius-small;
+}
+
+
+
+
+
+.list-controls {
+     .category-dropdown-menu {
+        a {
+            &.home {
+                font-weight: 100;
+            }
+            &.badge-category {
+                padding: 15px 0 5px;
+                font-weight: 100;
+                text-transform: uppercase;
+                font-weight: 100;
+                text-transform: capitalize;
+            }
+        }
+     }
+}
+
+
+
+
+
+.nav-pills {
+    >li {
+        >a {
+            padding: 15px 20px;
+            border-radius: $border-radius-small;
+        }
+    }
+}
+
+
+
+
+
+
+.topic-list {
+
+    >tbody {
+        >tr {
+            transition: background .3s;
+
+            &:nth-child(even) {
+                background: #f0f2f5;
+            }
+
+            &:hover {
+                background: #f0e7ff;
+            }
+        }
+    }
+
+    th, td {
+        padding: 20px 10px;
+        vertical-align: top;
+    }
+
+    .main-link {
+        font-size: 1em;
+    }
+
+    a {
+        &.title {
+            color:$gray-dark;
+        }   
+    }
+}
+
+
+
+
+.badge-wrapper {
+    font-weight: lighter;
+    text-transform: uppercase;
+}

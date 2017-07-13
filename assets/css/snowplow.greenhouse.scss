@@ -43,6 +43,9 @@ $icomoon-font-path: 'https://snowplowanalytics.com/assets/fonts/';
  */
 
 
+section {
+    padding: auto ;
+}
 
 .level-0 {
     margin:0;
@@ -75,8 +78,19 @@ ul {
 
 /*job board title*/
 #board_title {
-
+    text-align: center!important;
+    background: $brand-lighter;
+    padding: 110px 60px;
+    border-radius: 2px;
+    margin-top: 40px;
 }
+
+
+section.level-0 {
+    background: $brand-lighter;
+}
+
+
 
 /*job links*/
 .opening a {
