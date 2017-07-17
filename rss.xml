@@ -16,7 +16,7 @@ title : RSS Feed
 {% for post in site.posts %}
         <item>
                 <title>{{ post.title }}</title>
-                <description>{{ post.content | xml_escape }}</description>
+                <description>{{ post.content | xml_escape | truncate: 255, '...' }}</description>
                 <link>{{ site.production_url }}{{ post.url }}</link>
                 <guid>{{ site.production_url }}{{ post.id }}</guid>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
