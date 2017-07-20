@@ -191,3 +191,10 @@
   avatar: /assets/img/team/devesh.jpg
   spiel: |
       <a href="/blog/authors/devesh/">Devesh</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/devesh-shetty">GitHub</a>, <a href="https://twitter.com/dPrecator">Twitter</a>, <a href="https://www.linkedin.com/in/devesh-shetty/">LinkedIn</a>, <a href="https://www.quora.com/profile/Devesh-Shetty">Quora</a> and on <a href="https://medium.com/@dev_esh">Medium</a>.
+
+- name: Rostyslav
+  full_name: Rostyslav Zatserkovnyi
+  url: /blog/authors/rostyslav/
+  avatar: /assets/img/team/rostyslav.jpg
+  spiel: |
+      <a href="/blog/authors/rostyslav/">Rostyslav</a> is a data engineer at Snowplow. You can find him on <a href="https://github.com/rzats">GitHub</a> and <a href="https://www.linkedin.com/in/rostyslav-zatserkovnyi">LinkedIn</a>.
