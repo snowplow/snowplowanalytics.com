@@ -89,7 +89,7 @@ Nodes and relationships can also have properties. For our experiment, the relati
 
 The following SQL query fetches one year’s worth of data for our `Page` nodes:
 
-```
+{% highlight sql linenos %}
 WITH step1 AS
 (
   -- Select the data for the properties we want to populate
@@ -133,13 +133,13 @@ SELECT
 FROM step2
 
 WHERE n = 1;
-```
+{% endhighlight %}
 
 This query gives us one line per `page_view` event. We also have all the `domain_userid` that we need for the `User` nodes. However, in many cases there are many events for each `domain_userid`. To speed up the process, it's better to give Neo4j a deduplicated list of users so it does not have to check for duplicates when adding the nodes.
 
 To fetch a unique list of users, run this query:
 
-```
+{% highlight sql linenos %}
 SELECT
   domain_userid
 
@@ -151,13 +151,13 @@ WHERE derived_tstamp :: DATE BETWEEN '2016-07-02' AND '2017-07-02'
   AND event  = 'page_view'
 
 GROUP BY 1;
-```
+{% endhighlight %}
 
 You could also include any extra information you want to capture about users, eg location or email. The fastest way to do this is while you build the database, but you can still add properties to nodes later.
 
 We'll also need to pull some data to help us build the `NEXT` relationships between the different page view events. To do this, we can use a window function to identify each event's follow-up page view. We need to partition our data by `domain_userid` and `domain_sessionidx`. We also need to order it by a timestamp that preserves the original order of events, such as the `dvce_created_tstamp` or the `derived_tstamp` (not the `collector_tstamp`!):
 
-```
+{% highlight sql linenos %}
 WITH step1 AS
 (
   SELECT
@@ -202,7 +202,7 @@ SELECT *
 FROM step3
 
 WHERE next_event_id IS NOT NULL; -- filter out events that have no followup page view (because they are the last event in the session)
-```
+{% endhighlight %}
 
 (A side note. In step2 in the above query we're deduplicating the results to ensure that we end up with a list of unique `page_view` events and their follow-up events if any. We do this to make the query universally applicable. However, it's much better if there are no duplicates in your `atomic` tables to begin with. Since Snowplow R88 we are taking care of almost all duplicates during processing, so they don't ever make it into Redshift -- but you have to have cross-batch natural deduplication turned on, which is something we do by request as it has an associated cost. For historical, pre-R88 duplicates, you can use the [deduplication queries] [deduplication-queries] that we released in R72.)
 
@@ -216,32 +216,32 @@ If you are loading the `.csv` files from your local machine (as we are), make su
 
 Let's start by loading the `User` nodes. We can do it by running the following Cypher query:
 
-```
+<pre>
 LOAD CSV WITH HEADERS FROM "file:///user_nodes.csv" AS line
 CREATE (u:User {id: line.domain_userid});
-```
+</pre>
 
 Then, let's load our `Page` nodes:
 
-```
+<pre>
 LOAD CSV WITH HEADERS FROM "file:///view_nodes.csv" AS line
 CREATE (p:Page {id: line.event_id, user: line.domain_userid, page: line.page_url,
         tstamp: line.derived_tstamp, referrer: line.refr_url, session: line.domain_sessionidx});
-```
+</pre>
 
 Before we go on, let's also create a uniqueness constraint on the two labels we already have: `User` and `Page`. That will serve as a check to ensure that all nodes have unique `id` properties -- if they don't Neo4j won't let us create the constraint. (In this case, the `id` property in Neo4j corresponds to `domain_userid` or `event_id` from Redshift -- depending on the type of node.) More importantly, the constraint will ensure that we won't be able to accidentally introduces duplicates if we decide to add more nodes.
 
-```
+<pre>
 CREATE CONSTRAINT ON (user:User) ASSERT user.id IS UNIQUE;
 CREATE CONSTRAINT ON (page:Page) ASSERT page.id IS UNIQUE;
-```
+</pre>
 
 Next up, let's link our `User` nodes to our `Page` nodes by creating the relationships between them. We don't need to use the `LOAD CSV` clause, since all the data we need has already been loaded into Neo4j:
 
-```
+<pre>
 MATCH (u:User), (p:Page) WHERE u.id = p.user
 CREATE (u)-[:VIEWS]->(p);
-```
+</pre>
 
 If you open up the Database Information tab (top left on your screen), you can see lists of all the node labels, relationship types and property keys in your database. Clicking on the `VIEWS` relationship type will autoexecute a query that will show you 25 such relationships. The results will look similar to this:
 
@@ -249,11 +249,11 @@ If you open up the Database Information tab (top left on your screen), you can s
 
 Finally, let's create the relationships between the different page view events that belong to the same user:
 
-```
+<pre>
 LOAD CSV WITH HEADERS FROM "file:///next_relationships.csv" AS line
 MATCH (current:Page), (next:Page) WHERE line.event_id = current.id AND line.next_event_id = next.id
 CREATE (current)-[:NEXT]->(next);
-```
+</pre>
 
 Now all our page views are linked to the user who visited the page and also between each other if they were part of a series of visits.
 
@@ -265,11 +265,11 @@ On the left above we can see the history of a user who visited 5 pages during th
 
 The Neo4j browser console does a great job of visualizing the data in the database. We can use it to search for some patterns that we expect to find, using the LIMIT command to avoid being inundated. For example:
 
-```
+<pre>
 MATCH (u:User)-[:VIEWS]->(p:Page)
 RETURN u, p
 LIMIT 10;
-```
+</pre>
 
 shows us some 'user views page' relationships:
 
@@ -277,11 +277,11 @@ shows us some 'user views page' relationships:
 
 And we can check that our `NEXT` relationships are doing what we expect with:
 
-```
+<pre>
 MATCH p = (:Page)-[:NEXT*1..5]->(:Page)
 RETURN p
 LIMIT 10;
-```
+</pre>
 
 `[:NEXT*1..5]` tells Neo4j to follow between 1 and 5 relationships when walking the graph. This results in:
 
@@ -305,37 +305,37 @@ We start by finding the type of journey we are interested in ('user views homepa
 
 Then, we return the `page` attribute for the nodes that match the `home` variable (in this case it always has the same value: `snowplowanalytics.com/`), and a count of the incoming relationships from among the matching patterns.
 
-```
+<pre>
 MATCH (user:User)-[r:VIEWS]->(home:Page {page: "snowplowanalytics.com/"})
 RETURN home.page AS url, count(r) AS visits;
-```
+</pre>
 
 This returns a table that tells us the number of views of the home page:
 
 
-```
+<pre>
 ╒════════════════════════╤════════╕
 │"url"                   │"visits"│
 ╞════════════════════════╪════════╡
 │"snowplowanalytics.com/"│82026   │
 └────────────────────────┴────────┘
-```
+</pre>
 
 Now we can look for ‘bounces’ -- visitors who only went to the homepage and then left the site. For this, we start by matching the same patterns, but then limit them with a `WHERE` clause and the `NOT` operator.
 
-```
+<pre>
 MATCH (user:User)-[r:VIEWS]->(home:Page {page: "snowplowanalytics.com/"})
 WHERE NOT (home)-[:NEXT]->()
 RETURN home.page AS url, count(r) AS visits;
-```
+</pre>
 
-```
+<pre>
 ╒════════════════════════╤════════╕
 │"url"                   │"visits"│
 ╞════════════════════════╪════════╡
 │"snowplowanalytics.com/"│31116   │
 └────────────────────────┴────────┘
-```
+</pre>
 
 So, of the 82,026 homepage views in that period, 31,116 were not followed by another page view within the same session.
 
@@ -347,16 +347,16 @@ Let’s say that we’re interested in our ‘About’ page because this has our
 
 We start by specifying a pattern that ends in the ‘About’ page. Then we aggregate the results:
 
-```
+<pre>
 MATCH (about:Page {page: "snowplowanalytics.com/company/"})<-[:NEXT]-(prev:Page)
 RETURN prev.page AS previous_page, count(prev) AS visits
 ORDER BY count(prev) DESC
 LIMIT 10;
-```
+</pre>
 
 This time, we’ve asked Neo4j to order the results in descending order, and limit them to the top 10.
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════╤════════╕
 │"previous_page"                                       │"visits"│
 ╞══════════════════════════════════════════════════════╪════════╡
@@ -380,19 +380,19 @@ This time, we’ve asked Neo4j to order the results in descending order, and lim
 ├──────────────────────────────────────────────────────┼────────┤
 │"snowplowanalytics.com/customers/"                    │20      │
 └──────────────────────────────────────────────────────┴────────┘
-```
+</pre>
 
 You will notice that a lot of people seem to have visited the 'About' page two times in a row. In fact, more people have done so than come from any other page on the website apart from the homepage. These cases can be explained as page refreshes. Since they don't tell us a lot about the user's behavior, let's exclude them from the results:
 
-```
+<pre>
 MATCH path = (about:Page {page: "snowplowanalytics.com/company/"})<-[:NEXT]-(prev:Page)
 WHERE NOT prev.page = about.page
 RETURN prev.page AS previous_page, count(prev) AS visits
 ORDER BY count(prev) DESC
 LIMIT 10;
-```
+</pre>
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════╤════════╕
 │"previous_page"                                       │"visits"│
 ╞══════════════════════════════════════════════════════╪════════╡
@@ -416,31 +416,31 @@ LIMIT 10;
 ├──────────────────────────────────────────────────────┼────────┤
 │"discourse.snowplowanalytics.com/"                    │16      │
 └──────────────────────────────────────────────────────┴────────┘
-```
+</pre>
 
 It is easy to amend our query so it finds the page users were on two steps before they got to the 'About' page. We just have to add an extra `NEXT` relationship in the `MATCH` clause:
 
-```
+<pre>
 MATCH (about:Page {page: "snowplowanalytics.com/company/"})<-[:NEXT]-()<-[:NEXT]-(prev:Page)
 WHERE NOT prev.page = about.page
 RETURN prev.page AS previous_page, count(prev) AS visits
 ORDER BY count(prev) DESC
 LIMIT 10;
-```
+</pre>
 
 As a shortcut, we can instruct Neo4j to follow two relationships by writing `[:NEXT*2]`:
 
-```
+<pre>
 MATCH (about:Page {page: "snowplowanalytics.com/company/"})<-[:NEXT*2]-(prev:Page)
 WHERE NOT prev.page = about.page
 RETURN prev.page AS previous_page, count(prev) AS visits
 ORDER BY count(prev) DESC
 LIMIT 10;
-```
+</pre>
 
 In either case the result is the same:
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════╤════════╕
 │"previous_page"                                       │"visits"│
 ╞══════════════════════════════════════════════════════╪════════╡
@@ -464,17 +464,17 @@ In either case the result is the same:
 ├──────────────────────────────────────────────────────┼────────┤
 │"snowplowanalytics.com/blog/"                         │13      │
 └──────────────────────────────────────────────────────┴────────┘
-```
+</pre>
 
 We can go back even further and find the page users were on 5 steps before the ‘About’ page:
 
-```
+<pre>
 MATCH (about:Page {page: "snowplowanalytics.com/company/"})<-[:NEXT*5]-(prev:Page)
 WHERE NOT prev.page = about.page
 RETURN prev.page AS previous_page, count(prev) AS visits
 ORDER BY count(prev) DESC
 LIMIT 10;
-```
+</pre>
 
 This is the kind of search that would be difficult in SQL because it would involve a full table scan for every step back we want to take from our destination page. Neo4j handles this type of query very comfortably, because executing it is simply a matter of identifying journeys that end on the page and then walking the graphs *just* for those journeys. It returned the results of this particular query in 812ms.
 
@@ -484,16 +484,16 @@ In the last section we identified journeys that lead to a particular page. Now l
 
 For this example, we’ll start on our homepage. Let’s identify the three steps that a user takes from the homepage, as a sequence (rather than individual steps as we did in the previous example). We’ll use the EXTRACT command to return just the URL attached to the events in the path, rather than the nodes themselves. That’s because we’re not looking for user IDs, timestamps, etc, so this will give us some cleaner results.
 
-```
+<pre>
 MATCH path = (home:Page {page: "snowplowanalytics.com/"})-[:NEXT*3]->(:Page)
 RETURN EXTRACT(p IN NODES(path)[1..LENGTH(path)+1] | p.page) AS path, COUNT(path) AS users
 ORDER BY COUNT(path) DESC
 LIMIT 10;
-```
+</pre>
 
 This query gives us the 10 most common paths from the homepage:
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════════════════════╤═══════╕
 │"path"                                                                │"users"│
 ╞══════════════════════════════════════════════════════════════════════╪═══════╡
@@ -527,7 +527,7 @@ This query gives us the 10 most common paths from the homepage:
 │["snowplowanalytics.com/product/","snowplowanalytics.com/","snowplowan│240    │
 │alytics.com/"]                                                        │       │
 └──────────────────────────────────────────────────────────────────────┴───────┘
-```
+</pre>
 
 (A quick side note to explain what `NODES(path)[1..LENGTH(path)+1]` does.
 
@@ -539,15 +539,15 @@ The `LENGTH()` function counts the number of relationships in the pattern. In th
 
 This time we’ll look at paths that lead to the ‘About’ page. The only changes we need to make from our previous example is to change the target page and reverse the path order. But just to keep things varied, let’s also exclude paths that include the ‘About’ page before the end.
 
-```
+<pre>
 MATCH path = (:Page)-[:NEXT*3]->(about:Page {page: "snowplowanalytics.com/company/"})
 WHERE NONE(visit IN NODES(path)[0..LENGTH(path)] WHERE visit.page = about.page)
 RETURN EXTRACT(p IN NODES(path)[0..LENGTH(path)] | p.page) AS path, COUNT(path) AS users
 ORDER BY COUNT(path) DESC
 LIMIT 10;
-```
+</pre>
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════════════════════╤═══════╕
 │"path"                                                                │"users"│
 ╞══════════════════════════════════════════════════════════════════════╪═══════╡
@@ -583,7 +583,7 @@ LIMIT 10;
 │["snowplowanalytics.com/","snowplowanalytics.com/products/snowplow-rea│3      │
 │ct/","snowplowanalytics.com/products/snowplow-insights/"]             │       │
 └──────────────────────────────────────────────────────────────────────┴───────┘
-```
+</pre>
 
 ### How many pages do users visit to get from one specific page to another?
 
@@ -593,15 +593,15 @@ First, we need to match the pages we’re interested in, as well as the pattern 
 
 Then, we’ll want to exclude journeys that have either the start or end page as intermediate steps. There are two good reasons for doing this. Consider a user who arrives at the homepage, reads some of the pages in the ‘Services’ section of the site, and then returns to the homepage and goes directly to the blog. According to our matching rules, this user would be counted twice: once from his first visit to the homepage, and again for his second visit. It also seems reasonable to rule out the longer journey: after all, maybe they weren’t looking for the blog when they first arrived at the home page.
 
-```
+<pre>
 MATCH path = (home:Page {page: "snowplowanalytics.com/"})-[:NEXT*..10]->(blog:Page {page: "snowplowanalytics.com/blog/"})
 WHERE NONE(visit IN NODES(path)[1..LENGTH(path)] WHERE visit.page = home.page OR visit.page = blog.page)
 RETURN LENGTH(path) AS steps_from_homepage_to_blog, COUNT(LENGTH(path)) AS users
 ORDER BY LENGTH(path)
 LIMIT 10;
-```
+</pre>
 
-```
+<pre>
 ╒═════════════════════════════╤═══════╕
 │"steps_from_homepage_to_blog"│"users"│
 ╞═════════════════════════════╪═══════╡
@@ -625,7 +625,7 @@ LIMIT 10;
 ├─────────────────────────────┼───────┤
 │10                           │24     │
 └─────────────────────────────┴───────┘
-```
+</pre>
 
 The above table shows that the most common route to get from the homepage to the blog page is directly, but that it is not uncommon to do this journey in 2, 3, 4 and 5 steps.
 
@@ -633,19 +633,20 @@ The above table shows that the most common route to get from the homepage to the
 
 So far, we’ve been specifying pages to start or end at. But we can also ask Neo4j to find common journeys of a given length from anywhere and to anywhere on the website. Let's look for journeys of up to three steps, excluding repeat visits to the same page. Let's also make sure that we only count journeys from a page where a visit actually started to a page where a visit actually ended, ie not count partial journeys.
 
-```
+<pre>
 MATCH (start:Page), (end:Page),
 path = (start)-[:NEXT*..3]->(end)
-WHERE NOT (:Page)-[:NEXT]->(start) AND
-NOT (end)-[:NEXT]->(:Page) AND
-NONE(p IN NODES(path)[1..LENGTH(path)+1] WHERE p.page = start.page) AND
-NONE(p IN NODES(path)[0..LENGTH(path)] WHERE p.page = end.page)
+WHERE
+  NOT (:Page)-[:NEXT]->(start) AND
+  NOT (end)-[:NEXT]->(:Page) AND
+  NONE(p IN NODES(path)[1..LENGTH(path)+1] WHERE p.page = start.page) AND
+  NONE(p IN NODES(path)[0..LENGTH(path)] WHERE p.page = end.page)
 RETURN EXTRACT(p IN NODES(path)[0..LENGTH(path)+1] | p.page) AS path, COUNT(path) AS users
 ORDER BY COUNT(path) DESC
 LIMIT 10;
-```
+</pre>
 
-```
+<pre>
 ╒══════════════════════════════════════════════════════════════════════╤═══════╕
 │"path"                                                                │"users"│
 ╞══════════════════════════════════════════════════════════════════════╪═══════╡
@@ -674,17 +675,18 @@ LIMIT 10;
 ├──────────────────────────────────────────────────────────────────────┼───────┤
 │["snowplowanalytics.com/","snowplowanalytics.com/blog/"]              │345    │
 └──────────────────────────────────────────────────────────────────────┴───────┘
-```
+</pre>
 
 Since we were only interested in journeys of up to 3 steps, it was easy to exclude paths where the start or end page were not repeated and that meant that no other pages were repeated as well. For longer journeys though, we need a different approach. Nicole White's [GraphGist] [graphgist] explains how we can use the `UNWIND` clause to count the number of distinct pages visited. By comparing the number of distinct pages to the length of the path, we can exclude paths that have loops. (Nicole's example is based on the older version of this blog post.)
 
 Now we can find the 10 most common journeys of between 5 and 6 steps without repetitions:
 
-```
+<pre>
 MATCH (start:Page), (end:Page),
 path = (start)-[:NEXT*5..6]->(end)
-WHERE NOT (:Page)-[:NEXT]->(start) AND
-NOT (end)-[:NEXT]->(:Page)
+WHERE
+  NOT (:Page)-[:NEXT]->(start) AND
+  NOT (end)-[:NEXT]->(:Page)
 WITH path, EXTRACT(p IN NODES(path) | p.page) AS pages
 UNWIND pages AS views
 WITH path, COUNT(DISTINCT views) AS distinct_views
@@ -692,7 +694,7 @@ WHERE distinct_views = LENGTH(NODES(path))
 RETURN EXTRACT(p IN NODES(path)[0..LENGTH(path)+1] | p.page) AS path, COUNT(path) AS users
 ORDER BY COUNT(path) DESC
 LIMIT 10;
-```
+</pre>
 
 ## Summary
 
