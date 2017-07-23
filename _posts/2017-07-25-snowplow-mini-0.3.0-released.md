@@ -2,26 +2,29 @@
 layout: post
 title: "Snowplow Mini 0.3.0 released"
 title-short: Snowplow Mini 0.3.0
-tags: [snowplow, real-time, kinesis, developer tools]
+tags: [snowplow, real-time, standalone, on-premise]
 author: Enes
 category: Releases
 ---
 
+We are pleased to announce the 0.3.0 release of Snowplow Mini, our accessible "Snowplow in a box" project.
 
-We are pleased to announce the 0.3.0 release of the Snowplow Mini, an easily-deployable, single instance version of Snowplow.
+Snowplow Mini is the complete Snowplow real-time pipeline running on a single instance, available for easy deployment as a pre-built AMI. Use it to:
 
-This release makes much more easier and secure to use Snowplow Mini.
+1. Set up an inexpensive and easily discardable Snowplow stack for testing tracking and schema changes
+2. Learn about Snowplow without having to set up a horizontally-scalable, highly-available production-grade pipeline
 
+This release focuses on making Snowplow Mini much more ergonomic, with the newly bundled Control Plane, and much more secure, with built-in SSL support courtesy of [Caddy][caddy].
 
 In the rest of this post we will cover new features which is coming with new version:
 
-1. [Control-Plane](/blog/2017/07/07/snowplow-mini-0.3.0-released#control-plane)
-2. [Out-Of-The-Box SSL](/blog/2017/07/07/snowplow-mini-0.3.0-released#out-of-the-box-ssl)
-3. [HTTP authentication while accessing internal application](/blog/2017/07/07/snowplow-mini-0.3.0-released#http-auth)
-4. [Much more easier setup for local development](/blog/2017/07/07/snowplow-mini-0.3.0-released#easier-setup)
-5. [Basic enrichments as standard](/blog/2017/07/07/snowplow-mini-0.3.0-released#basic-enrichments)
-6. [Other Changes](/blog/2017/07/07/snowplow-mini-0.3.0-released#other-changes)
-7. [Getting Help](/blog/2017/07/07/snowplow-mini-0.3.0-released#getting-help)
+1. [Introducing the Control Plane](/blog/2017/07/25/snowplow-mini-0.3.0-released#control-plane)
+2. [Built-in SSL via Caddy](/blog/2017/07/25/snowplow-mini-0.3.0-released#out-of-the-box-ssl)
+3. [HTTP authentication while accessing internal application](/blog/2017/07/25/snowplow-mini-0.3.0-released#http-auth)
+4. [Much more easier setup for local development](/blog/2017/07/25/snowplow-mini-0.3.0-released#easier-setup)
+5. [Basic enrichments as standard](/blog/2017/07/25/snowplow-mini-0.3.0-released#basic-enrichments)
+6. [Other Changes](/blog/2017/07/25/snowplow-mini-0.3.0-released#other-changes)
+7. [Documentation and getting help](/blog/2017/07/25/snowplow-mini-0.3.0-released#getting-help)
 
 
 <!--more-->
@@ -60,7 +63,7 @@ One of the strong features of the Snowplow is enrichments. You can read more abo
 
 We are planning to add new feature for adding enrichments from UI, stay tunned.
 
-<h2 id="other-changes">6. Other Changes</h2>
+<h2 id="other-changes">6. Other changes</h2>
 
 Version 0.3.0 also includes a few internal changes and minor enhancements, including:
 
@@ -68,10 +71,23 @@ Version 0.3.0 also includes a few internal changes and minor enhancements, inclu
 * authenticate Iglu chema registry access from Stream Enrich ([issue #92][92])
 * converting shell scripts to ansible playbooks for provisioning ([issue #52][52])
 
+<h2 id="roadmap">X. Roadmap</h2>
+
+We have plenty planned for Snowplow Mini, and hope to increase the pace of development on this critical Snowplow project over the coming months.
+
+Our first priority is around **robustness**. Currently under the hood Snowplow Mini uses *Unix named pipes* to communicate between the various bundled micro-services. These pipes are relatively fragile - and so we are embarking on a project to add [NSQ][nsq] to all of the relevant micro-services. NSQ will provide a much more robust queueing system for Snowplow Mini.
+
+We are also excited about extending Snowplow Mini's new **Control Plane**. Through the Control Plane we can let non-technical users modify and tweak every aspect of their running pipeline. We are also considering whether Snowplow Mini's Control Plane could be the blueprint for a more generalized control plane for the wider Snowplow ecosystem - watch this space!
+
+A final important philosophical change involves changing Snowplow Mini from *inherently stateful* to **stateless by default**. XXXXX 
+
+If you have other changes and suggestions for the roadmap, please let us know in our [forums][discourse].
 
 <h2 id="getting-help">6. Getting Help</h2>
 
-If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
+DOCUMENTATION LINK?
+
+If you run into any problems, please [raise a bug][issues] or get in touch with us through [the usual channels][talk-to-us].
 
 
 
@@ -82,5 +98,10 @@ If you have any questions or run into any problems, please [raise an issue][issu
 [81]: https://github.com/snowplow/snowplow-mini/issues/81
 [92]: https://github.com/snowplow/snowplow-mini/issues/92
 [52]: https://github.com/snowplow/snowplow-mini/issues/52
-[issues]: https://github.com/snowplow/snowplow-mini/issues
+
+[caddy]: xxx
+[nsq]: http://nsq.io/
+
+[issues]: https://github.com/snowplow/snowplow-mini/issues/new
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
+[discourse]: http://discourse.snowplowanalytics.com
