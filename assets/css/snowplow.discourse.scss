@@ -263,6 +263,10 @@ ol {
         vertical-align: top;
     }
 
+    .topic-excerpt {
+        color: black;
+    }
+
     .main-link {
         font-size: 1em;
     }
@@ -365,6 +369,28 @@ nav {
 }
 
 
+
+
+.categories-and-latest {
+     .topic-list-latest {
+         th {
+            &.latest {
+                line-height: 1;
+                padding: 14px 5px;
+            }
+         }
+     }
+}
+
+
+
+aside {
+    &.quote {
+        blockquote {
+            margin:0;
+        }
+    }
+}
 
 
 
