@@ -52,16 +52,18 @@ With this release, local setup of the Snowplow Mini is made much more easier for
 
 <h2 id="basic-enrichments">5. Basic enrichments as standard</h2>
 
-One of the strong features of the Snowplow is enrichments. You can read more about enrichments in [here][enrichments-info]. With this release, Snowplow Mini is coming with 6 of these enrichments. These enrichments are: 
+Before this release, Snowplow Mini ran without any of the [Snowplow configurable enrichments][enrichments-info] - which is rarely how Snowplow is run in production. 
 
-* IP lookups
+With this release, six of the most popular enrichments are enabled by default on Snowplow Mini. These enrichments are: 
+
+* IP lookups enrichment
 * Campaign attribution enrichment
-* Referer parser
-* ua-parser
-* user-agent-utils
-* event fingerprint
+* referer-parser enrichment
+* ua-parser enrichment
+* user-agent-utils enrichment
+* Event fingerprint enrichment
 
-We are planning to add new feature for adding enrichments from UI, stay tunned.
+For now, these enrichments have been configured with sensible defaults. In a future release, we plan on making the enrichments fully user-configurable via the new Control Plane - watch this space!
 
 <h2 id="other-changes">6. Other changes</h2>
 
