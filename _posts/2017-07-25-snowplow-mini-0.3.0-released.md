@@ -7,11 +7,11 @@ author: Enes
 category: Releases
 ---
 
-We are pleased to announce the 0.3.0 release of Snowplow Mini, our accessible "Snowplow in a box" project.
+We are pleased to announce the 0.3.0 release of Snowplow Mini, our accessible "Snowplow in a box" distribution.
 
 Snowplow Mini is the complete Snowplow real-time pipeline running on a single instance, available for easy deployment as a pre-built AMI. Use it to:
 
-1. Set up an inexpensive and easily discardable Snowplow stack for testing tracking and schema changes
+1. Set up an inexpensive and easily discardable Snowplow stack for testing your tracker and schema changes
 2. Learn about Snowplow without having to set up a horizontally-scalable, highly-available production-grade pipeline
 
 This release focuses on making Snowplow Mini much more ergonomic, with the newly bundled Control Plane, and much more secure, with built-in SSL support courtesy of [Caddy][caddy].
@@ -24,7 +24,7 @@ In the rest of this post we will cover new features which is coming with new ver
 4. [Much more easier setup for local development](/blog/2017/07/25/snowplow-mini-0.3.0-released#easier-setup)
 5. [Basic enrichments as standard](/blog/2017/07/25/snowplow-mini-0.3.0-released#basic-enrichments)
 6. [Other Changes](/blog/2017/07/25/snowplow-mini-0.3.0-released#other-changes)
-7. [Documentation and getting help](/blog/2017/07/25/snowplow-mini-0.3.0-released#getting-help)
+7. [Documentation and getting help](/blog/2017/07/25/snowplow-mini-0.3.0-released#help)
 
 
 <!--more-->
@@ -65,11 +65,11 @@ We are planning to add new feature for adding enrichments from UI, stay tunned.
 
 <h2 id="other-changes">6. Other changes</h2>
 
-Version 0.3.0 also includes a few internal changes and minor enhancements, including:
+Version 0.3.0 also includes some internal changes and minor enhancements under the hood, including:
 
-* upgrading snowplow services to r85 ([issue #81][81])
-* authenticate Iglu chema registry access from Stream Enrich ([issue #92][92])
-* converting shell scripts to ansible playbooks for provisioning ([issue #52][52])
+* Upgrading the various constituent Snowplow micro-services to Snowplow R85 Metamorphosis ([issue #81][81])
+* Authenticating Iglu schema registry access from Stream Enrich ([issue #92][92])
+* Converting Snowplow Mini's shell scripts to Ansible playbooks for easier provisioning ([issue #52][52])
 
 <h2 id="roadmap">X. Roadmap</h2>
 
@@ -79,17 +79,15 @@ Our first priority is around **robustness**. Currently under the hood Snowplow M
 
 We are also excited about extending Snowplow Mini's new **Control Plane**. Through the Control Plane we can let non-technical users modify and tweak every aspect of their running pipeline. We are also considering whether Snowplow Mini's Control Plane could be the blueprint for a more generalized control plane for the wider Snowplow ecosystem - watch this space!
 
-A final important philosophical change involves changing Snowplow Mini from *inherently stateful* to **stateless by default**. XXXXX 
+A final important philosophical change involves changing Snowplow Mini from *inherently stateful* to **stateless by default**. Currently, the Iglu schema registry and Elasticsearch instance live inside the Snowplow Mini; over time we want Snowplow Mini to default to having no such state inside it - instead you would use the Control Plane to connect Snowplow Mini to your external schema registries and storage targets. This should make Snowplow Mini more flexible and more robust. See the [Stateless Snowplow Mini milestone][stateless-milestone] for further details.
 
 If you have other changes and suggestions for the roadmap, please let us know in our [forums][discourse].
 
-<h2 id="getting-help">6. Getting Help</h2>
+<h2 id="getting-help">X. Documentation and getting help</h2>
 
-DOCUMENTATION LINK?
+To learn more about getting started with Snowplow Mini, check out the [Quickstart guide][quickstart].
 
 If you run into any problems, please [raise a bug][issues] or get in touch with us through [the usual channels][talk-to-us].
-
-
 
 [control-plane-issue]: https://github.com/snowplow/snowplow-mini/issues/56
 [ssl-requests-issue]: https://github.com/snowplow/snowplow-mini/issues/48
@@ -98,10 +96,12 @@ If you run into any problems, please [raise a bug][issues] or get in touch with 
 [81]: https://github.com/snowplow/snowplow-mini/issues/81
 [92]: https://github.com/snowplow/snowplow-mini/issues/92
 [52]: https://github.com/snowplow/snowplow-mini/issues/52
+[stateless-milestone]: https://github.com/snowplow/snowplow-mini/milestone/13
 
-[caddy]: xxx
+[caddy]: https://caddyserver.com/
 [nsq]: http://nsq.io/
 
+[quickstart]: https://github.com/snowplow/snowplow-mini/wiki/Quickstart-guide-v0.3.0
 [issues]: https://github.com/snowplow/snowplow-mini/issues/new
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
 [discourse]: http://discourse.snowplowanalytics.com
