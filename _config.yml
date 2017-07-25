@@ -25,6 +25,19 @@ author :
   twitter : username
   feedburner : feedname
 
+
+
+# Social Share default buttons
+# check documentation on http://js-socials.com/demos/
+share_list:
+  - "facebook"
+  - "twitter"
+  - "linkedin"
+  - "googleplus"
+
+
+
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://snowplowanalytics.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: username
@@ -133,3 +146,4 @@ pagination:
     after: 2
 
 ############################################################
+#

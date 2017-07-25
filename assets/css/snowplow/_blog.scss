@@ -4,10 +4,10 @@
 
 @import "../snowplow/_variables";
 
+
 /*
  * DEPENDENCIES
  */
-
 
 
 /*!
@@ -15,120 +15,106 @@
  * BLOG FILE
  */
 
+
 /*
  * STYLES
  */
 
-body.blog
-{
-	main > .container
-	{
-		padding:0;
-	}
+body.blog {
+    main>.container {
+        padding: 0;
+    }
 
-	section
-	{
-		padding-top:0;
-	}
+    section {
+        padding-top: 0;
+    }
 
-	article
-	{
-		max-width:$screen-sm-max;
+    article {
+        max-width: $screen-sm-max;
 
-		& + article
-		{
-			margin-top:80px;
-		}
+        &+article {
+            margin-top: 80px;
+        }
 
-		.content
-		{
-			margin-top: 30px;
-		}
+        .content {
+            margin-top: 90px;
+        }
 
-		.continue
-		{
-			margin-top: 15px;
-			font-size: 14px;
-		}
-	}
+        .continue {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    }
 
-	.datebox
-	{
-		font-size:14px;
-	}
+    .datebox {
+        font-size: 14px;
+    }
 
-	aside
-	{
-		ul
-		{
-			margin:0;
-			padding:0;
-			font-size: 14px;
-			list-style: none;
+    aside {
+        ul {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            list-style: none;
 
-			li
-			{
-				line-height: 1;
-				padding: 10px 0;
-			}
-		}
+            li {
+                line-height: 1;
+                padding: 10px 0;
+            }
+        }
 
-		.categories
-		{
-			margin-top:30px;
-			margin-bottom:20px;
-		}
+        .categories {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
 
-		.header
-		{
-	    	margin-bottom: 20px;
-	    }
-	}
+        .header {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 
 
-.author-profile-box
-{
-	.image,
-	.text
-	{
-		padding:0;
-		display:inline-block;
-	}
+.author-profile-box {
+    .image,
+    .text {
+        padding: 0;
+        display: inline-block;
+    }
 
 
-	.image
-	{
-		max-width: 100px;
-	}
+    .image {
+        width: 100px;
+        max-width: 100%;
+        vertical-align: middle;
+    }
 
-	.title
-	{
-		color:$brand-primary;
-		margin-bottom:12px;
-		font-weight: 400;
-	}
+    .title {
+        color: $brand-primary;
+        margin-bottom: 12px;
+        font-weight: 400;
+    }
 
-	img
-	{
-		height:auto;
-		width:100%;
-	}
+    img {
+        height: auto;
+        width: 100%;
+    }
 
-	.text
-	{
-		font-size: 14px;
-		color:$gray-dark;
-		line-height: 1em;
-		margin-top: 20px;
-	}
+    .text {
+        font-size: 14px;
+        color: $gray-dark;
+        line-height: 1em;
+    }
 
-	@media screen and (min-width:$screen-sm-max) {
-		.text
-		{
-			margin-top: 0;
-			padding-left:30px;
-		}
-	}
+    @media screen and (min-width:$screen-sm-max) {
+    	.image {
+    		max-width: 15%;
+    	}
+        .text {
+            padding-left: 30px;
+            max-width: 80%;
+            vertical-align: middle;
+        }
+    }
 }
