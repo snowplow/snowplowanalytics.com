@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Snowplow 90 Lascaux
-title: "Snowplow 90 Lascaux released, moving loading step onto EMR"
+title: "Snowplow 90 Lascaux released, moving database loading into EMR"
 tags: [snowplow, shred, relational databases]
 author: Anton
 category: Releases
@@ -11,11 +11,11 @@ We are tremendously excited to announce the release of [Snowplow 90 Lascaux][sno
 
 Read on for more information on R90 Lascaux, named after [the Upper Paleolithic cave complex in southwestern France][lascaux]:
 
-1. [RDB Loader](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#rdb-loader)
-2. [Other improvements](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#other)
-3. [Upgrading](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#upgrading)
-4. [Roadmap](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#roadmap)
-5. [Getting help](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#help)
+1. [RDB Loader](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr#rdb-loader)
+2. [Other improvements](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr#other)
+3. [Upgrading](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr#upgrading)
+4. [Roadmap](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr#roadmap)
+5. [Getting help](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr#help)
 
 ![lascaux][lascaux-img]
 
