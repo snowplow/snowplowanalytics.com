@@ -3,8 +3,8 @@ services:
   jekyll:
     image: jekyll/jekyll:latest
     ports:
-      - 8080:8080
-      - 22222:22222
+      - 4000:4000
+      - 35729:35729
     command: jekyll serve --incremental
     volumes:
       - .:/srv/jekyll
