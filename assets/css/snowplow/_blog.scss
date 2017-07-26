@@ -37,7 +37,12 @@ body.blog {
         }
 
         .content {
-            margin-top: 90px;
+            margin-top: 70px;
+        }
+
+        /* Blog list */
+        .text {
+            margin-top: 30px;
         }
 
         .continue {
@@ -115,6 +120,23 @@ body.blog {
             padding-left: 30px;
             max-width: 80%;
             vertical-align: middle;
+        }
+    }
+}
+
+
+body.post {
+    h1:first-of-type {
+        margin-bottom: 10px;
+    }
+
+    .post-footer {
+        margin-top: 100px;
+
+        .qa {
+            h5 {
+                margin-top: 0;
+            }
         }
     }
 }
