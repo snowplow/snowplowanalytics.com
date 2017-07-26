@@ -5,5 +5,5 @@ _site/
 _site/
 
 /node_modules
-package.json
-gulpfile.js
+# package.json
+# gulpfile.js
