@@ -38,14 +38,23 @@ Loading storage within EMR jobflow has many advantages:
 
 <h3 id="other">1.2 Other improvements</h3>
 
-Although we entirely re-implemented and changed execution model of StorageLoader - RDB Loader has all functionality it predecessor had, except unnecessary anymore file-moving logic, which was extracted to EmrEtlRunner and `S3DistCp`
+Although we entirely re-implemented and changed execution model of StorageLoader - RDB Loader has all functionality it predecessor had.
 
 Along with shifting from standalone app to EMR step we also made several important improvements in loading process:
 
-* Whole codebase now written in Scala, which allows us to share many components across codebases and add features in more consistent and confident manner [#3023][issue-3023]
+* Events archiving logic now extracted into EmrEtlRunner and `S3DistCp`, which increases stability and performance of file moving process [#1777][issue-1777]
 * RDB Loader loads all existing run folders from shredded good folder, eliminating possibility of data missing in Redshift due blind archiving [#2962][issue-2962]
-* Fixed eventual consistency problem [#3113][issue-3113]
 * RDB Loader uses IAM role instead of credentials to access Redshift [#3281][issue-3281]
+* Fixed eventual consistency problem [#3113][issue-3113]
+* Whole codebase now written in Scala, which allows us to share many components across codebases and add features in more consistent and confident manner [#3023][issue-3023]
+
+<h3 id="plans">1.3 Plans for RDB Loader</h3>
+
+With initial release of RDB Loader we've achieved feature-parity with StorageLoader, however executing load as EMR step imposes several new restrictions, which we're currently actively looking forward to fix. All of these limitations are addressed by [dedicated milestone][rdb-improvements-milestone] on Github.
+
+Most important limitations include impossibility to load Redshift via an SSH tunnel or similar non-standard setups and visibility of base64-encoded Redshift credentials in EMR console. Latter is much less important that it may look like at first sight, as AWS console supposed to be available only to staff working with pipeline and Redshift supposed to be placed inside dedicated subnet. However, we at Snowplow are taking even minor security issues extremely serious and keep working on improving it.
+
+Last known limitation is that user will have to check EMR step stdout log to diagnose several types of RDB Loader failure, such as invalid configuration or fatal errors, such as OOM. All other success or failure messages should be printed to stdout by EmrEtlRunner.
 
 <h2 id="other">2. Other changes</h2>
 
@@ -71,6 +80,8 @@ aws:
 
 In addition to giving you the tools to tune your Spark cluster to fit your exact needs, we (the whole Snowplow community) will be releasing guides on how best to do just that on [our discourse][discourse].
 [Rick Bolkey][rbolkey] from [OneSpot][onespot] already started working on such a guide which you can find [here][spark-guide], thanks a lot to him!
+
+Third application received update in R90 is Event Manifest Populator, released as part of [R88 Angkor Wat][r88]. It now supports enriched archives created with pre-R83 version of Snowplow ([#3293][issue-3293]).
 
 <h2 id="upgrading">3. Upgrading</h2>
 
@@ -175,12 +186,17 @@ If you have any questions or run into any problems, please [raise an issue][issu
 [splitting-eer-rfc]: http://discourse.snowplowanalytics.com/t/splitting-emretlrunner-into-snowplowctl-and-dataflow-runner/350
 [azure-rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-microsoft-azure/1178
 [create-role]: http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-an-iam-role.html
+[r88]: /blog/2017/04/27/snowplow-r88-angkor-wat-released/
 [r89]: /blog/2017/06/12/snowplow-r89-plain-of-jars-released
 
-[issue-3023]: https://github.com/snowplow/snowplow/issues/3023
+[rdb-improvements-milestone]: https://github.com/snowplow/snowplow/milestone/143
+
+[issue-1777]: https://github.com/snowplow/snowplow/issues/1777
 [issue-2962]: https://github.com/snowplow/snowplow/issues/2962
+[issue-3023]: https://github.com/snowplow/snowplow/issues/3023
 [issue-3113]: https://github.com/snowplow/snowplow/issues/3113
 [issue-3281]: https://github.com/snowplow/snowplow/issues/3281
+[issue-3293]: https://github.com/snowplow/snowplow/issues/3293
 
 [app-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r90_lascaux.zip
 [config-yml]: https://github.com/snowplow/snowplow/blob/master/3-enrich/emr-etl-runner/config/config.yml.sample
