@@ -1,19 +1,17 @@
 ---
 layout: blog
 group: blog
+pagination: 
+  enabled: true
 title: Latest news
 description: Latest news from the Snowplow team
 permalink: /blog/
 class: blog header-white
 ---
 
-
-<!--
-    RECENT 15 POST
--->
 <section class="col-md-9">
     <div class="content">
-    {% for post in site.posts limit:15 %}
+    {% for post in paginator.posts %}
         <article>
             <h2 class="no-margin"><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <div class="datebox">{{ post.date | date_to_long_string }}{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
@@ -24,9 +22,16 @@ class: blog header-white
         </article>
     {% endfor %}
     </div>
+     
+    {% if paginator.total_pages > 1 %}
     <div class="spacer-top-100">
-        <a href="{{ BASE_PATH }}/blog/archive/" class="btn btn-primary">View all posts</a>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="btn btn-primary next">Older</a>
+    {% endif %} {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="btn btn-primary prev">Newer</a>
+    {% endif %}
     </div>
+    {% endif %}
 </section>
 
 <!--

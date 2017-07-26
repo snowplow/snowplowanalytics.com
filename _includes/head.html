@@ -56,7 +56,7 @@
 
     </head>
 
-    <body class="snowplow {{ page.class }}">
+    <body class="snowplow {{ page.class | append: include.class }}">
 
         {% include gtm/google-tag-manager-noscript.js %}
 
