@@ -1,5 +1,7 @@
 vagrant ssh
 cd /vagrant
+sudo gem install bundler
+sudo /usr/local/rvm/gems/ruby-2.2.2/wrappers/bundle install
 bundle exec jekyll serve
 
 You will now be able to view the website on localhost:4001 (on the host)
