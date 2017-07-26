@@ -81,7 +81,8 @@ aws:
 In addition to giving you the tools to tune your Spark cluster to fit your exact needs, we (the whole Snowplow community) will be releasing guides on how best to do just that on [our discourse][discourse].
 [Rick Bolkey][rbolkey] from [OneSpot][onespot] already started working on such a guide which you can find [here][spark-guide], thanks a lot to him!
 
-Third application received update in R90 is Event Manifest Populator, released as part of [R88 Angkor Wat][r88]. It now supports enriched archives created with pre-R83 version of Snowplow ([#3293][issue-3293]).
+Third application received update in R90 is Event Manifest Populator, released as part of [R88 Angkor Wat][r88]. 
+It now supports enriched archives created with pre-R83 versions of Snowplow ([#3293][issue-3293]).
 
 <h2 id="upgrading">3. Upgrading</h2>
 
