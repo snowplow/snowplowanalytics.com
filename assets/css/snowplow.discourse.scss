@@ -228,16 +228,42 @@ ol {
             background: $brand-primary!important;
             border-radius: $border-radius-small;
 
+            i {
+                color: white;
+            }
+
             &:hover,
-            &:focus {
+            &:focus,
+            &.active {
                 color: white;
                 background: $brand-primary-brighter!important;
+
+                i {
+                    color: white;
+                }
             }
         }
     }
 }
 
+.user-main .nav-pills a {
+    color: white;
 
+    i {
+        color: white;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+        color: white;
+        background: $brand-primary-brighter!important;
+
+        i {
+            color: white;
+        }
+    }
+}
 
 
 
