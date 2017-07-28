@@ -125,6 +125,6 @@ And if there's another Snowplow Analytics SDK you'd like us to prioritize creati
 [ssas]: https://github.com/snowplow/snowplow-scala-analytics-sdk
 [scala-sdk-post]: https://snowplowanalytics.com/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released/
 [python-sdk-post]: https://snowplowanalytics.com/blog/2017/04/11/snowplow-python-analytics-sdk-0.2.0-released/
-[issues]: https://github.com/snowplow/snowplow/iglu
+[issues]: https://github.com/snowplow/snowplow-dotnet-analytics-sdk/issues
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
 [discourse]: http://discourse.snowplowanalytics.com/
