@@ -118,6 +118,9 @@
 
 			.item
 			{
+				user-select:none;
+				-ms-user-select: none;
+				-moz-user-select: none;
 				position:static;
 				transition: all .4s;
 
