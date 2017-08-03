@@ -89,7 +89,7 @@ Nodes and relationships can also have properties. For our experiment, the relati
 
 The following SQL query fetches one year’s worth of data for our `Page` nodes:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 WITH step1 AS
 (
   -- Select the data for the properties we want to populate
@@ -139,7 +139,7 @@ This query gives us one line per `page_view` event. We also have all the `domain
 
 To fetch a unique list of users, run this query:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 SELECT
   domain_userid
 
@@ -157,7 +157,7 @@ You could also include any extra information you want to capture about users, eg
 
 We'll also need to pull some data to help us build the `NEXT` relationships between the different page view events. To do this, we can use a window function to identify each event's follow-up page view. We need to partition our data by `domain_userid` and `domain_sessionidx`. We also need to order it by a timestamp that preserves the original order of events, such as the `dvce_created_tstamp` or the `derived_tstamp` (not the `collector_tstamp`!):
 
-{% highlight sql linenos %}
+{% highlight sql%}
 WITH step1 AS
 (
   SELECT

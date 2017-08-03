@@ -37,7 +37,7 @@ body.blog {
         }
 
         .content {
-            margin-top: 70px;
+            margin-top:30px;
         }
 
         /* Blog list */
@@ -126,6 +126,13 @@ body.blog {
 
 
 body.post {
+
+    article {
+        .content {
+            margin-top: 70px;
+        }
+    }
+
     h1:first-of-type {
         margin-bottom: 10px;
     }

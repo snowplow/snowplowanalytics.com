@@ -43,9 +43,9 @@ url: "http://snowplowanalytics.com" # the base hostname & protocol for your site
 twitter_username: username
 github_username:  username
 
-# Build settings
+# More › http://kramdown.gettalong.org/quickref.html
+# Options › http://kramdown.gettalong.org/options.html
 markdown: kramdown
-# theme: minima
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
