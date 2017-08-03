@@ -48,7 +48,7 @@ Great, now we're in the Scala console within SBT, and we have access to all of t
 
 Now let's create a JavaScript-powered ScriptEngine in Scala:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val factory = new javax.script.ScriptEngineManager
 factory: javax.script.ScriptEngineManager = javax.script.ScriptEngineManager@381ebaf3
 
@@ -64,7 +64,7 @@ Excellent - we've now got JavaScript executing from Scala! For more information,
 
 As a next step, let's focus on the boundaries and get data flowing from Scala to JavaScript and back out again. Let's pass in a variable - I'm going to prepend dollar signs to all of my Scala-sourced JavaScript variables to make their origin clear:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> engine.put("$filter", "yeah")
 
 scala> val isFiltered = engine.eval("($filter === \"yeah\") ? true : false;")
@@ -73,7 +73,7 @@ isFiltered: java.lang.Object = true
 
 Great, that worked, although the return type java.lang.Object is obviously a little blunt. Now let's see what happens if we write some invalid JavaScript:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val isFiltered = engine.eval("undefined.splice()")
 javax.script.ScriptException: sun.org.mozilla.javascript.internal.EcmaError:
 TypeError: Cannot call method "splice" of undefined (<Unknown source>#1) in
@@ -84,14 +84,14 @@ Okay - this ScriptException is very similar to what you would see evaluating the
 
 Let's try another failure scenario - where our JavaScript accidentally returns a Number when we are expecting a Boolean:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val isFiltered = engine.eval("($filter === \"yeah\") ? 1 : 0;")
 isFiltered: java.lang.Object = 1.0
 {% endhighlight %}
 
 The return type definitely looks problematic, although the problem won't manifest itself until we try to cast it into a Boolean. So let's put together an example with some type safety:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> import PartialFunction._
 import PartialFunction._
 
@@ -110,12 +110,12 @@ Perfect! We have wrapped our JavaScript in some sensible Scala types. For more i
 
 Let's try something a little more ambitious now. Can we mutate a POJO ("plain old Java object") from inside JavaScript? Only one way to find out:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> class MyPojo { @scala.reflect.BeanProperty var myVar: String = "heart scala" }
 defined class MyPojo
 {% endhighlight %}
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val myPojo = new MyPojo
 myPojo: MyPojo = MyPojo@2bbf1be2
 
@@ -129,7 +129,7 @@ at line number 1
 
 Oh dear! It looks like Java and Scala's getters and setters sugar doesn't translate well into JavaScript. So let's try the actual setter method, and then print using the getter:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> engine.eval("$myPojo.setMyVar(\"heart js\")")
 res10: java.lang.Object = null
 
@@ -140,7 +140,7 @@ res20: java.lang.Object = null
 
 Okay great - the mutation seems to be working. And note that trailing semi-colons are optional, just as they are in "real" JavaScript. Now let's try and get our POJO back out into our Scala context:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val myPojoRedux = engine.get("$myPojo") match {
     case p: MyPojo => p
     case _ => throw new ClassCastException
@@ -155,7 +155,7 @@ Done! So we have made some progress: we have mutated a POJO inside of JavaScript
 
 Okay, what's the situation with Scala case classes? Obviously we won't try to mutate them inside of JavaScript, but it would be great if we can at least see their contents:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> case class MyCaseClass(myVal: String)
 defined class MyCaseClass
 
@@ -175,7 +175,7 @@ We're almost done for our first blog post - of course, we haven't touched Hadoop
 
 Before we go, let's try to generalize our `evalAsBoolean()` method above into something a little bit more reusable. How about a method with a signature like this:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 /**
  * Evaluate some JavaScript into a Some(Boolean),
  * returning None if this evaluation failed.
@@ -190,7 +190,7 @@ def evalAsBoolean(js: String, vars: Map[String, Object]): Option[Boolean]
 
 Hopefully the function arguments and return value are fairly clear, so let's proceed to the whole function definition:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import javax.script.ScriptEngineManager
 import PartialFunction._
 
@@ -223,13 +223,13 @@ def evalAsBoolean(js: String, vars: Map[String, Object]): Option[Boolean] = {
 
 Paste that into the Scala console in SBT and you should see:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 evalAsBoolean: (js: String, vars: Map[String,java.lang.Object])Option[Boolean]
 {% endhighlight %}
 
 Now let's try this out - first with a script which should evaluate to true:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val vars1 = Map[String, Object](
 "one" -> new java.lang.Integer(1),
 "$two" -> new java.lang.Integer(2)
@@ -245,7 +245,7 @@ res1: Option[Boolean] = Some(true)
 
 Now a false value, involving checking a property inside of a case class:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> case class ALang(aLang: String)
 defined class ALang
 
@@ -261,7 +261,7 @@ res2: Option[Boolean] = Some(false)
 
 That's working a treat. Now let's try evaluating an invalid piece of JavaScript:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val js3 = "$doesNotExist.arg()"
 js3: java.lang.String = $doesNotExist.arg()
 
@@ -271,7 +271,7 @@ res3: Option[Boolean] = None
 
 Good, and finally a valid piece of JavaScript but one which returns a String when we want a Boolean:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 scala> val js4 = "\"I heart \" + $lang.aLang();"
 js4: java.lang.String = "I heart " + $lang.aLang();
 

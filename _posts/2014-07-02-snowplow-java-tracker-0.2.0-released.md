@@ -27,7 +27,7 @@ I'll talk more about the new additions made further down in this post:
 
 One of the TrackerC constructors seemed unnecessary so we decided to remove it. The only way to construct a Tracker object now is with the following signature:
 
-{% highlight java linenos %}
+{% highlight java%}
 public TrackerC(String collector_uri, String namespace, String app_id, boolean base64_encode, boolean contracts)
 {% endhighlight %}
 
@@ -35,7 +35,7 @@ public TrackerC(String collector_uri, String namespace, String app_id, boolean b
 
 We wanted the Java tracker to follow the more native naming convention of Java classes, so method names have been renamed from using underscores for word separators into the camel casing convention. Here are a few examples of renamed method calls:
 
-{% highlight java linenos %}
+{% highlight java%}
 // Previous
 public void track_page_view(String page_url, String page_title, String referrer, String context)
 public void track_unstruct_event(String eventVendor, String eventName, String dictInfo, String context)

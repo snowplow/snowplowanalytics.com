@@ -40,7 +40,7 @@ The new `SelfDescribingJson` class is used to make building unstructured events 
 
 So instead of fully specifying the JSON you wish to send like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 my_event = {
 	'schema': 'iglu:com.acme/myevent/jsonschema/1-0-0',
 	'data': {
@@ -58,7 +58,7 @@ my_tracker.track_unstruct_event(my_event, [my_context])
 
 you would now use the `SelfDescribingJson` class to automatically handle the "schema" and "data" fields like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker import SelfDescribingJson
 my_event = SelfDescribingJson(
 	'iglu:com.acme/myevent/jsonschema/1-0-0',
@@ -87,7 +87,7 @@ Michael Thomas ([@mthomas][mthomas] on GitHub) made the Tracker compatible with 
 
 To add the Snowplow Tracker as a dependency to your own Python app, edit your `requirements.txt` and add:
 
-{% highlight python linenos %}
+{% highlight python%}
 snowplow-tracker ~> 0.7.0
 {% endhighlight %}
 

@@ -28,7 +28,7 @@ An instance of the Subject class represents a user who is performing an event in
 
 If your tracker will only be tracking one user, you don't have to create a Subject instance at all - one will be created automatically for you. The only change you need to make is setting the new `subject` argument to `nil` when initializing your tracker:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Create a tracker without specifying a subject
 my_tracker = Snowplow::Tracker.new(my_emitter, nil, 'my_tracker_name', 'my_app_id')
 {% endhighlight %}
@@ -37,7 +37,7 @@ my_tracker = Snowplow::Tracker.new(my_emitter, nil, 'my_tracker_name', 'my_app_i
 
 If you want more than one subject:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 require 'snowplow_tracker'
 
 # Create a simple Emitter which will log events to http://d3rkrsqld9gmqf.cloudfront.net/i
@@ -80,7 +80,7 @@ t.track_page_view("http://www.example.com")
 
 Each tracker instance must now be initialized with an Emitter which is responsible for firing events to a Collector. An Emitter instance is initialized with two arguments: an endpoint and an optional configuration hash. For example:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Create an emitter
 my_emitter = Snowplow::Emitter.new('d3rkrsqld9gmqf.cloudfront.net', {
   :protocol => 'https',
@@ -107,7 +107,7 @@ Every setting in the configuration hash is optional. Here is what they do:
 
 Once the emitter is created, create a tracker like this:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Create a tracker
 my_tracker = Snowplow::Tracker.new(my_emitter, 'my_tracker_name', 'my_app_id')
 {% endhighlight %}
@@ -122,14 +122,14 @@ The AsyncEmitter works just like the Emitter, but is asynchronous - whenever the
 
 It is also possible to initialize a tracker with an array of emitters, in which case events will be sent to all of them:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Create a tracker with multiple emitters
 my_tracker = Snowplow::Tracker.new([my_sync_emitter, my_async_emitter], 'my_tracker_name', 'my_app_id')
 {% endhighlight %}
 
 You can also add new emitters after creating a tracker with the `add_emitter` method:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Create a tracker with multiple emitters
 my_tracker.add_emitter(another_emitter)
 {% endhighlight %}
@@ -138,7 +138,7 @@ my_tracker.add_emitter(another_emitter)
 
 You can manually flush all emitters associated with a tracker using the `flush` method:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Flush all emitters
 t.flush
 {% endhighlight %}
@@ -151,7 +151,7 @@ The flush method takes an optional `sync` argument which determines whether Asyn
 
 All Tracker methods and Subject methods now return `self` and so are chainable:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 e = Snowplow::Emitter.new('d3rkrsqld9gmqf.cloudfront.net')
 s = Snowplow::Subject.new.set_user_id('user-45672').set_color_depth(24)
 t = Snowplow::Tracker.new(e).set_subject(s).track_screen_view('my_title_screen')
@@ -161,7 +161,7 @@ t = Snowplow::Tracker.new(e).set_subject(s).track_screen_view('my_title_screen')
 
 This release introduces logging using Ruby's built-in Logger class. The log level is set to INFO by default but can be changed:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 require 'logger'
 SnowplowTracker::LOGGER.level = Logger::DEBUG
 {% endhighlight %}
@@ -179,7 +179,7 @@ The levels are:
 
 The Snowplow Ruby Tracker uses the [Ruby Contracts gem][contracts] for typechecking. Version 0.3.0 offers the option to turn contracts on or off:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Turn contracts off
 SnowplowTracker::disable_contracts
 
@@ -198,7 +198,7 @@ We have also:
 
 There are three breaking changes to the API, two of which involving the tracker constructor: the first argument is now an Emitter rather than a Sstring, and there is a new second argument which may be a Subject but otherwise defaults to `nil`. An example of how to update your code:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 # Version 0.2.0
 t = SnowplowTracker::Tracker.new('d3rkrsqld9gmqf.cloudfront.net', 'my_tracker_namespace', 'my_app_id')
 

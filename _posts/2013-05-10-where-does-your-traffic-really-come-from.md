@@ -40,13 +40,13 @@ Page referers are a technical solution to identifying where traffic comes from. 
 
 To give an example of how this technique works in practice, let's imagine that I am marketing the website `www.flowersdirect.com`. I run a campaign on AdWords called "November promotion". In my AdWords ad, I include a link (that I hope viewers of the add will click) to my homepage (`www.flowersdirect.com`). However, instead of just including the standard link in my ad, i.e.
 
-{% highlight html linenos %}
+{% highlight html%}
 <a href="http://www.flowersdirect.com">www.flowersdirect.com</a>
 {% endhighlight %}
 
 I add a query parameter onto the end of my link labelling the campaign:
 
-{% highlight html linenos %}
+{% highlight html%}
 <a href="http://www.flowersdirect.com?utm_campaign=November_promotion">www.flowersdirect.com</a>
 {% endhighlight %}
 
@@ -87,7 +87,7 @@ Note that using a traditional web analytics solution, it is:
 
 Using Snowplow, however, spotting errors is easy, because you have access to the raw page URL parameters in your Snowplow events table. The following is some example data from [Psychic Bazaar] [pbz], an online retailer running Snowplow. We have executed the following query to identify page views where the referer is not internal (so that we only look at the first page view in each visit, i.e. the one with all the interesting page referer and page URL data to determine the source of traffic):
 
-{% highlight psql linenos %}
+{% highlight psql%}
 /* PostgreSQL / Redshift */
 SELECT
 	collector_tstamp,
@@ -133,7 +133,7 @@ To work out where a visitor has come from, Google Analytics *first* examines the
 
 In Snowplow, by contrast, we do **not** collapse the two separate data sources (page URL parameters and page referer) into a single 'source' for the visitor. Instead, we expose both to the analyst: we offer five `mkt` fields that are set based on `utm` parameters on the page URL (`mkt_medium`, `mkt_source`, `mkt_term`, `mkt_content`, `mkt_campaign`) and separately we offer three `refr` fields (`refr_medium`, `refr_source`, `refr_term`) that are derived from the HTTP referer header. We can view these fields alongside one-another by executing the following query:
 
-{% highlight psql linenos %}
+{% highlight psql%}
 /* PostgreSQL / Redshift */
 SELECT
 	mkt_medium,
@@ -158,7 +158,7 @@ Another advantage of keeping your referer data separate to your marketing campai
 
 To give a concrete example: Psychic Bazaar buys AdWords on the Google Search network. It does not buy ads on the Google Display network. By running the following query, we can identify which domains those AdWords ads that were clicked on were displayed:
 
-{% highlight psql linenos %}
+{% highlight psql%}
 /* PostgreSQL / Redshift */
 SELECT
 	refr_urlhost,

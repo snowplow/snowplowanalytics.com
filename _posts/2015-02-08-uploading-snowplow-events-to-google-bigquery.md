@@ -100,7 +100,7 @@ You can now view your loaded events in the Developers Console - navigate to the 
 
 Let's take a simple query from Snowplow's Analyst's Cookbook: [Number of unique visitors] [analysts-cookbook]. Adapted to BigQuery's slightly idiosyncratic SQL syntax, it looks like this:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 /* BigQuery */
 SELECT
   LEFT(FORMAT_UTC_USEC(UTC_USEC_TO_DAY(

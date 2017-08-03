@@ -69,7 +69,7 @@ There are no breaking changes in this release - you can upgrade the individual K
 
 However, if you want to configure how many records Stream Enrich should read from Kinesis at a time, update its configuration file to add a `maxRecords` property like so:
 
-{% highlight json linenos %}
+{% highlight json%}
 enrich {
   ...
   streams {
@@ -81,7 +81,7 @@ enrich {
 
 If you want to configure how many records Kinesis Elasticsearch Sink should read from Kinesis at a time, again update its configuration file to add a `maxRecords` property:
 
-{% highlight json linenos %}
+{% highlight json%}
 sink {
   ...
   kinesis {

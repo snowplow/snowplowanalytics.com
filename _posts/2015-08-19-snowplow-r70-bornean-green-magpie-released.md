@@ -77,7 +77,7 @@ Dani Sola has added support for compressing enriched events using [gzip][gzip]. 
 
 If you don't want to hardcode your AWS credentials in the configuration file, you can now read them in from environment variables by using [Ruby ERB templates][erb]:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 aws:
   access_key_id: <%= ENV['AWS_SNOWPLOW_ACCESS_KEY'] %>
   secret_access_key: <%= ENV['AWS_SNOWPLOW_SECRET_KEY'] %>

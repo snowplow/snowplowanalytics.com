@@ -151,13 +151,13 @@ $ bundle install --deployment
 
 From this release onwards, you must specify IAM roles for Elastic MapReduce to use. If you have not already done so, you can create these default EMR roles using the [AWS Command Line Interface] [install-aws-cli], like so:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 $ aws emr create-default-roles
 {% endhighlight %}
 
 Now update your EmrEtlRunner's `config.yml` file to add the default roles you just created:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 :emr:
   :ami_version: 2.4.2       # Choose as per http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-ami.html
   :region: eu-west-1        # Always set this
@@ -167,7 +167,7 @@ Now update your EmrEtlRunner's `config.yml` file to add the default roles you ju
 
 This release also bumps the Hadoop Enrichment process to version **0.14.1**. Update `config.yml` like so:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
   :versions:
     :hadoop_enrich: 0.14.1 # WAS 0.14.0
 {% endhighlight %}

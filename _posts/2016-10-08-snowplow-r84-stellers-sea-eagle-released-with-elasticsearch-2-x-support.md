@@ -31,7 +31,7 @@ We delivered this by dynamically building a Kinesis Elasticsearch Sink binary fo
 
 One important thing to flag is that Elasticsearch 2.x no longer allows field names to contain periods (`.`). While we never used periods within Snowplow or Iglu Central property names, your team may have created some, like so:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
   "schema": "iglu:com.acme/event/jsonschema/1-0-0",
   "data": {
@@ -42,13 +42,13 @@ One important thing to flag is that Elasticsearch 2.x no longer allows field nam
 
 Previously, this would have loaded into Elasticsearch like so:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 > com_acme_event_1: [{"field.with.dots": value}]
 {% endhighlight %}
 
 From this release on, we are automatically converting the field name's periods to underscores, whether you are loading Elasticsearch 1.x or 2.x:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 > com_acme_event_1: [{"field_with_dots": value}]
 {% endhighlight %}
 
@@ -142,7 +142,7 @@ __NOTE__: These timeouts are optional and will default to 300000 if they cannot 
 
 Here is the updated config file template:
 
-{% highlight json linenos %}
+{% highlight json%}
 sink {
   ...
   elasticsearch {

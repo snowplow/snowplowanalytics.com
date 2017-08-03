@@ -34,13 +34,13 @@ No longer having to support Android within the Java Tracker repository has allow
 
 The main update to the API is the merging of the `core` sub-package back into the main tracker. This means that if you have existing code referencing for example:
 
-{% highlight java linenos %}
+{% highlight java%}
 import com.snowplowanalytics.snowplow.tracker.core.DevicePlatform;
 {% endhighlight %}
 
 This import would become:
 
-{% highlight java linenos %}
+{% highlight java%}
 import com.snowplowanalytics.snowplow.tracker.DevicePlatform;
 {% endhighlight %}
 

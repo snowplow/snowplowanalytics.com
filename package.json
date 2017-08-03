@@ -1,0 +1,36 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "0.0.1",
+  "description": "Gulp.js file configuration for HTML5 project",
+  "author": {
+    "name": "Screenly",
+    "url": "https://www.screenly.io/"
+  },
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "browserslist": {
+    "browsers": [
+      "Chrome > 20"
+    ]
+  },
+  "dependencies": {
+    "jshint": "2.9.4",
+    "minimatch": "^3.0.2",
+    "graceful-fs": "^4.0.0",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
+    "node-gyp": "^3.6.2"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-foreach": "^0.1.0",
+    "vinyl": "^2.1.0",
+    "gulp-extname": "^0.2.2",
+    "gulp-insert": "^0.5.0"
+  }
+}

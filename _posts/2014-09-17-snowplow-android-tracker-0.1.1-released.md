@@ -33,7 +33,7 @@ The release version of this tracker (0.1.1) is available within Snowplow's Maven
 
 Here is the Gradle setup for example:
 
-{% highlight groovy linenos %}
+{% highlight groovy%}
 repositories {
     ...
     maven {
@@ -51,7 +51,7 @@ dependencies {
 
 To send the events, you need to update your `AndroidManifest.xml` with the internet access permission:
 
-{% highlight html linenos %}
+{% highlight html%}
 <uses-permission android:name="android.permission.INTERNET" />
 {% endhighlight %}
 
@@ -59,20 +59,20 @@ To send the events, you need to update your `AndroidManifest.xml` with the inter
 
 Using the tracker requires you to import the Tracker module like so:
 
-{% highlight java linenos %}
+{% highlight java%}
 import com.snowplowanalytics.snowplow.tracker.*;
 {% endhighlight %}
 
 We need to create an `Emitter` to send events created by the `Tracker`. The `Emitter` instance requires an Android [`Context`] [android-context] instance as well for caching, which we explain more about [later in this post](#under-the-hood). For now, here is an example of how the `Emitter` and `Tracker` are created:
 
-{% highlight java linenos %}
+{% highlight java%}
 Emitter e1 = new Emitter("d3rkrsqld9gmqf.cloudfront.net", context, HttpMethod.POST);
 Tracker t1 = new Tracker(e1, "AF003", "cloudfront");
 {% endhighlight %}
 
 Now let's send in a couple of events:
 
-{% highlight python linenos %}
+{% highlight python%}
 t1.trackStructuredEvent("shop", "add-to-basket", "Add To Basket", "pcs", 2);
 t1.trackScreenView("HUD > Save Game", "screen23");
 {% endhighlight %}
@@ -87,7 +87,7 @@ If you construct the `Subject` with an Android [`Context`] [android-context], th
 
 Here an example of how this would look:
 
-{% highlight java linenos %}
+{% highlight java%}
 // We attach basic context
 Subject subject1 = new Subject();
 
@@ -103,7 +103,7 @@ If you're using Redshift, you would need to install the mobile_context table usi
 
 The `Subject` class also lets you attach location-based contextual information to your events. To grab the location information you need to add the following permissons to your `AndroidManifest.xml`:
 
-{% highlight html linenos %}
+{% highlight html%}
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 {% endhighlight %}

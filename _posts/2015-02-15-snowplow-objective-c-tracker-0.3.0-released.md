@@ -30,7 +30,7 @@ Please note that this tracker will attach a new context, called `desktop_context
 
 You can now track Google Analytics-style user timings, with the new `trackTimingWithCategory` event. Here is an example:
 
-{% highlight objective-c linenos %}
+{% highlight objective-c%}
 // Upon returning from background
 [tracker trackTimingWithCategory:@"Application"
                         variable:@"Background"
@@ -54,7 +54,7 @@ Jonathan has also contributed a new initializer for the `SnowplowEmitter`, with 
 
 To add the Snowplow Objective-C Tracker as a dependency to your own app, add the following into your Podfile:
 
-{% highlight python linenos %}
+{% highlight python%}
 pod 'SnowplowTracker', '~> 0.3'
 {% endhighlight %}
 

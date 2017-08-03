@@ -14,7 +14,7 @@ As part of our commitment to modular, sustainable technical architectures, we ma
 
 Here is a taster for using the library from C Sharp:
 
-{% highlight c# linenos %}
+{% highlight c#%}
 using RefererParser;
 
 string refererUrl = "http://www.google.com/search?q=gateway+oracle+cards+denise+linn&hl=en&client=safari";

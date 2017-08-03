@@ -30,7 +30,7 @@ Until now, the JavaScript Tracker has sent events to Snowplow using `GET` reques
 
 <h3>An example</h3>
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 	appId: 'my-application',
 	platform: 'web',
@@ -65,7 +65,7 @@ There are three possible ways to specify which elements should be tracked:
 
 This tracks only forms with the "signup" or "order" class, and tracks every field of those forms except for those named "password".
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 var config = {
 	forms: {
 		whitelist: ['signup', 'order']
@@ -78,7 +78,7 @@ var config = {
 
 This tracks every form (the default when a field is not specified) and tracks every field with `id` not equal to "private".
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 var config = {
 	fields: {
 		filter: function (fieldElement) {
@@ -114,7 +114,7 @@ These optional contexts are now configured in the argmap when creating a new tra
 
 Use the new `contexts` field in the tracker constructor to choose which contexts are set:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 // Configuring a tracker to send all three contexts
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 	appId: 'my-application',

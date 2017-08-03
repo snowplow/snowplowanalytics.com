@@ -68,19 +68,19 @@ We built the visualization using the JavaScript library [D3.js](http://d3js.org/
 
 At the core of D3 are [selections](http://bost.ocks.org/mike/selection/). In simplified terms, selections are a group of elements. For example, in each journey we have a group of the steps that define that journey. We are drawing the visualization using [SVG elements](https://github.com/mbostock/d3/wiki/SVG-Shapes) so we represent each journey step as a rectangle `<rect />` element:
 
-{% highlight js linenos %}
+{% highlight js%}
 var journeySteps = journeys.selectAll('rect') // journeys is a selection of 'g' elements
 {% endhighlight %}
 
 The `journeys` themselves are a selection of SVG [group elements](http://www.w3.org/TR/SVG/struct.html#Groups) `<g></g>` with a class to distinguish them from other group elements. Group elements are useful to group other elements, such as the `journeySteps` described above, and also to apply certain styles and transformations that are then shared by all elements of the group, for example opacity:
 
-{% highlight js linenos %}
+{% highlight js%}
 var journeys = container.selectAll('g.journey') // container is another svg element containing all the chart elements
 {% endhighlight %}
 
 which is styled:
 
-{% highlight css linenos %}
+{% highlight css%}
 g.journey {
   opacity: 0.8
 }
@@ -90,7 +90,7 @@ The important part is to ['bind' these selections to datasets](http://bost.ocks.
 
 Here is a sample of our test dataset to make it easier to follow the code that follows:
 
-{% highlight js linenos %}
+{% highlight js%}
 {
   "values": [
     {
@@ -102,14 +102,14 @@ Here is a sample of our test dataset to make it easier to follow the code that f
 }
 {% endhighlight %}
 
-{% highlight js linenos %}
+{% highlight js%}
 var journeys = container.selectAll('g.journey')
     .data(dataset.values)
 {% endhighlight %}
 
 How these elements are added to the webpage depends on the [enter](http://bost.ocks.org/mike/circles/#entering) selection, where we explain via code how we want elements that have a corresponding datum but no actual presence in the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) on the webpage to appear. For example:
 
-{% highlight js linenos %}
+{% highlight js%}
 journeys.enter()
   .append('g')
     .classed('journey', true)
@@ -121,7 +121,7 @@ The declarative way D3 deals with manipulating elements on the webpage via data 
 
 When you bind data to elements, you can specify a [key function](http://bost.ocks.org/mike/constancy/), like this:
 
-{% highlight js linenos %}
+{% highlight js%}
 function keyFunction(d) {
   return d.letters
 }
@@ -142,7 +142,7 @@ One scale, the `yScaleOnAxis`, determines positioning according to the y axis, w
 
 Whenever the brush is changed by clicking and dragging, a 'brush' event is triggered. We add an event listener for this 'brush' event:
 
-{% highlight js linenos %}
+{% highlight js%}
 var viewport = d3.svg.brush()
   .y(yScaleOnAxis)
   .on('brush', function() {
@@ -155,7 +155,7 @@ Each time the viewport is changed by the user, the `yScaleOnChart` scale updates
 
 This is because calling `domain()` without an argument returns its current value without calling it with an argument sets it. The same applies to `extent()`. The extent corresponds to the domain data values the viewport covers. Therefore by changing the `yScaleOnChart` domain to the new `viewport.extent()`, when the chart is re-drawn in the next line of the code, the journeys' vertical position will be re-computed using the new `yScaleOnChart` scaling function:
 
-{% highlight js linenos %}
+{% highlight js%}
 function drawInnerChart(params) {
 
   [...]

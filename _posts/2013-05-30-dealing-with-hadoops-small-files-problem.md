@@ -108,7 +108,7 @@ Given the above, our updated `--groupBy` regular expression was:
 
 Now, all we needed to do was add the call to S3DistCp into our jobflow before our main ETL step. We use the excellent [Elasticity] [elasticity] Ruby library by [Rob Slifka] [rslifka] to execute our jobs, so calling S3DistCp was a matter of adding the extra step to our jobflow in Ruby:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 hadoop_input = "hdfs:///local/snowplow-logs"
 
 # Create the Hadoop MR step for the file crushing
@@ -129,7 +129,7 @@ filecrush_step.arguments = [
 
 And then we had to update our ETL job to take the `--dest` of the S3DistCp step as its own input:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 hadoop_step.arguments = [
             "com.snowplowanalytics.snowplow.enrich.hadoop.EtlJob", # Job to run
             "--hdfs", # Always --hdfs mode, never --local

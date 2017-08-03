@@ -37,13 +37,13 @@ You will also need to add an assembly reference to the .NET Tracker to your proj
 
 Add a using directive to the Snowplow Tracker to your project:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 using Snowplow.Tracker;
 {% endhighlight %}
 
 Create an emitter which will asynchronously send HTTP GET requests:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 var e = new AsyncEmitter("d3rkrsqld9gmqf.cloudfront.net");
 {% endhighlight %}
 
@@ -51,7 +51,7 @@ It is also possible to specify the protocol, method, and port that the emitter w
 
 Create a subject to hold data about a specific user:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 var s = new Subject();
 s.SetUserId("user-567296");
 s.SetTimezone("Europe/London");
@@ -60,13 +60,13 @@ s.SetLang("en");
 
 Create a tracker:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 var t = new Tracker(e, s, "my-tracker-namespace", "my-application-id");
 {% endhighlight %}
 
 Send some events:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 // Track a page view
 t.TrackPageView("http://www.example.com", "title page");
 
@@ -137,7 +137,7 @@ By default, instances of the Emitter class have offline tracking enabled. This m
 
 The Emitter and AsyncEmitter classes use [NLog] [nlog] to log messages to the console. You can set the logging level using the static `setLogLevel` method:
 
-{% highlight csharp linenos %}
+{% highlight csharp%}
 Log.SetLogLevel(Log.Level.Debug);
 {% endhighlight %}
 

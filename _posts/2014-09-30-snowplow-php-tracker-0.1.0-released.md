@@ -23,7 +23,7 @@ This introductory post will cover the following topics:
 
 The Snowplow PHP Tracker is published to [Packagist] [packagist], the central repository for Composer PHP packages. To add it to your project, add it as a requirement in your `composer.json` file:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
     "require": {
         "snowplow/snowplow-tracker": "dev-master"
@@ -39,7 +39,7 @@ Then simply run `composer update` from the root of your project to install it.
 
 Add class aliases to the Snowplow Tracker to include it in your project:
 
-{% highlight php linenos %}
+{% highlight php%}
 use Snowplow\Tracker\Tracker;
 use Snowplow\Tracker\Emitter;
 use Snowplow\Tracker\Subject;
@@ -47,7 +47,7 @@ use Snowplow\Tracker\Subject;
 
 Create an emitter which will synchronously send HTTP POST requests:
 
-{% highlight php linenos %}
+{% highlight php%}
 $emitter = new Emitter("d3rkrsqld9gmqf.cloudfront.net");
 {% endhighlight %}
 
@@ -55,7 +55,7 @@ It is also possible to specify the protocol, method, and port that the emitter w
 
 Create a subject to hold data about a specific user:
 
-{% highlight php linenos %}
+{% highlight php%}
 $subject = new Subject();
 $subject->setUserId("user-567296");
 $subject->setTimezone("Europe/London");
@@ -64,13 +64,13 @@ $subject->setLanguage("en");
 
 Create a tracker:
 
-{% highlight php linenos %}
+{% highlight php%}
 $tracker = new Tracker($emitter, $subject, "my-tracker-namespace", "my-application-id");
 {% endhighlight %}
 
 Send some events:
 
-{% highlight php linenos %}
+{% highlight php%}
 // Track a page view
 $tracker->trackPageView("http://www.example.com", "title page");
 

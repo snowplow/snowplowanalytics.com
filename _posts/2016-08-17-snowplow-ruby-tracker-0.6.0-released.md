@@ -28,7 +28,7 @@ All the tracking methods in the Ruby Tracker now support sending this timestamp 
 
 Here's an example of how to attach a true timestamp to a page view event, as of this release:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 e = SnowplowTracker::Emitter.new('localhost')
 t = SnowplowTracker::Tracker.new(e)
 

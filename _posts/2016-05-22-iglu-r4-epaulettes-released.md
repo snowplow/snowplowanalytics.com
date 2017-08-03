@@ -56,7 +56,7 @@ Typically you won't have to learn the details of the Scala Iglu Core's type clas
 
 Just include the appropriate implementation as a dependency in your project (the artifacts are available in Maven Central):
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val igluCirce = "com.snowplowanalytics" %% "iglu-core-json4s"  % "0.1.0"
 
 // Or:
@@ -66,7 +66,7 @@ val igluJson4s = "com.snowplowanalytics" %% "iglu-core-circe"  % "0.1.0"
 
 Here is an example using iglu-core-json4s:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import com.snowplowanalytics.iglu.core.json4s._
 
 implicit val stringifyData = StringifyData

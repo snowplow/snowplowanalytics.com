@@ -50,7 +50,7 @@ This release brings support for a new sink target for our Scala Stream Collector
 
 As a typical example if you have followed the [Kafka quickstart guide] [kafka-quickstart-guide] you would update your config to have the following values:
 
-{% highlight json linenos %}
+{% highlight json%}
 collector {
   ...
 
@@ -83,7 +83,7 @@ This component has also been updated to now support both a Kafka topic as a sour
 
 Following on from the Stream Collector section above, you can then configure your Stream Enrich application like so:
 
-{% highlight json linenos %}
+{% highlight json%}
 enrich {
   source = "kafka"
   sink = "kafka"
@@ -148,7 +148,7 @@ To upgrade the Stream Collector application:
   * Moving the `collector.sink.kinesis.buffer` section down to `collector.sink.buffer`; as this section will be used to configure limits for both Kinesis and Kafka.
   * Adding a new section within the `collector.sink` block:
 
-{% highlight json linenos %}
+{% highlight json%}
 collector {
   ...
 
@@ -182,7 +182,7 @@ To upgrade the Stream Enrich application:
 * Upgrade your config by:
   * Adding a new section within the `enrich` block:
 
-{% highlight json linenos %}
+{% highlight json%}
 enrich {
   ...
 
