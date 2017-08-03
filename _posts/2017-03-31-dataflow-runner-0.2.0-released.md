@@ -41,7 +41,7 @@ installed by default when launching an EMR cluster.
 
 To specify which applications you want installed on your EMR cluster, you just have to add a JSON array to your cluster configuration as shown:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0",
   "data": {
@@ -74,7 +74,7 @@ cluster, be it master, core or task instances. To do so, you'll need to modify
 the EC2 instances part of your cluster configuration file and add the wanted
 EBS configurations, an example follows.
 
-{% highlight json linenos %}
+{% highlight json%}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0",
   "data": {

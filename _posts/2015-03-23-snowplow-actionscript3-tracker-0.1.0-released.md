@@ -57,7 +57,7 @@ You're now ready to start using the tracker.
 
 Require the Tracker module in your ActionScript code like so:
 
-{% highlight java linenos %}
+{% highlight java%}
 import com.snowplowanalytics.snowplow.tracker.*;
 import com.snowplowanalytics.snowplow.tracker.emitter.*;
 import com.snowplowanalytics.snowplow.tracker.payload.*;
@@ -65,13 +65,13 @@ import com.snowplowanalytics.snowplow.tracker.payload.*;
 
 You are now ready to initialize a Tracker instance:
 
-{% highlight java linenos %}
+{% highlight java%}
 var t1:Tracker = new Tracker(emitter, "AF003", "cf", user1Subject, this.stage, true);
 {% endhighlight %}
 
 Now let's send in a couple of events:
 
-{% highlight python linenos %}
+{% highlight python%}
 t1.trackPageView("www.mysite.com#page3", "Page Three", "www.me.com", contextList);
 t1.trackScreenView("HUD > Save Game", "screen23", contextList, 123456);
 {% endhighlight %}

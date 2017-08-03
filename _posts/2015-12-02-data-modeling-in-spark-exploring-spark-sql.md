@@ -35,7 +35,7 @@ guest$ sbt console
 
 This last step opens the Scala console, which gives us access to all the libraries included in the spark-data-modeling project. We start with defining a [SparkContext][spark-context]:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import org.apache.spark.{SparkContext, SparkConf}
 
 val sc = {
@@ -56,7 +56,7 @@ snowplow-enrichment-archive/enriched/good/run=2015-12-31-23-59-59/
 
 We can now load this data into Spark and create a Resilient Distributed Dataset (RDD):
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val inDir = "s3n://accessKey:secretAccessKey@bucket/path/*"
 val input = sc.textFile(inDir)
 {% endhighlight %}
@@ -78,7 +78,7 @@ We want to load our events into a [Spark DataFrame][spark-data-frame], a distrib
 
 Let's start with transforming the RDD into a more suitable format using the [EventTransformer][event-transformer] object:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import com.snowplowanalytics.snowplow.datamodeling.spark.events.EventTransformer
 
 val jsons = input.
@@ -97,7 +97,7 @@ res1: String = {"app_id":"demo","platform":"web","etl_tstamp":"2015-12-01T08:32:
 
 We can now load this into a Spark DataFrame. First, create a [SQL Context][sql-context]:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import org.apache.spark.sql.SQLContext
 
 val sqlContext = new SQLContext(sc)
@@ -105,7 +105,7 @@ val sqlContext = new SQLContext(sc)
 
 The SQL Context allows us to create DataFrames and execute SQL queries.
 
-{% highlight scala linenos %}
+{% highlight scala%}
 // this is used to implicitly convert an RDD to a DataFrame.
 import sqlContext.implicits._
 
@@ -149,7 +149,7 @@ Now that our events are in a DataFrame, we can run start to model the data. We w
 
 To run SQL queries against the data, we first need to register a table:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 df.registerTempTable("events")
 {% endhighlight %}
 
@@ -170,7 +170,7 @@ scala> sqlContext.sql("SELECT domain_userid, COUNT(*) AS count FROM events GROUP
 
 To store the output in another DataFrame, we run:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val dfVisitors = sqlContext.sql("SELECT domain_userid, MAX(domain_sessionidx) AS sessions FROM events GROUP BY domain_userid")
 
 dfVisitors.registerTempTable("visitors")

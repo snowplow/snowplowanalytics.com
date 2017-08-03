@@ -56,7 +56,7 @@ It is published on [RubyGems.org][rubygems] and can be installed with via `gem` 
 
 To add it as a dependency to your own Ruby gem, please edit your gemfile and add:
 
-{% highlight sh linenos %}
+{% highlight sh%}
 $ gem 'iglu-ruby-client'
 {% endhighlight %}
 
@@ -64,7 +64,7 @@ $ gem 'iglu-ruby-client'
 
 Here is a basic usage of Ruby Iglu resolver:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 require 'iglu-client'
 
 resolver_config = {
@@ -83,7 +83,7 @@ The above snippet initializes the client from a [resolver configuration][resolve
 
 As in the Iglu Scala Client, the Ruby `Resolver` gives full information about what exactly went wrong on invalid JSON, but unlike Scala it throws an exception, rather than returning a plain value:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 invalid_json = {
   :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0", 
   :data => {:latitude => 30.8, :longitude => "invalid"}
@@ -96,7 +96,7 @@ from /Library/Ruby/Gems/2.0.0/gems/json-schema-2.7.0/lib/json-schema/attribute.r
 
 For valid JSON it will return a `true` value:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 valid_json = {
   :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0", 
   :data => {:latitude => 30.8, :longitude => 62.1}

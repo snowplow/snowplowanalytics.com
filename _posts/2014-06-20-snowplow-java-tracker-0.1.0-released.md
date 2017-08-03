@@ -52,7 +52,7 @@ The release version of this tracker (0.1.0) is available within Snowplow's Maven
 
 Here is the Gradle setup for example:
 
-{% highlight groovy linenos %}
+{% highlight groovy%}
 repositories {
     ...
     maven {
@@ -73,19 +73,19 @@ dependencies {
 
 Require the Tracker module in your Java code like so:
 
-{% highlight java linenos %}
+{% highlight java%}
 import com.snowplowanalytics.snowplow.tracker.*;
 {% endhighlight %}
 
 You are now ready to initialize a tracker instance, for example:
 
-{% highlight java linenos %}
+{% highlight java%}
 Tracker t1 = new TrackerC("d3rkrsqld9gmqf.cloudfront.net", "Snowplow Java Tracker Test", "testing_app", "com.snowplow", true, true);
 {% endhighlight %}
 
 Now let's send in a couple of events:
 
-{% highlight python linenos %}
+{% highlight python%}
 t1.track_struct_event("shop", "add-to-basket", null, "pcs", 2, null);
 t1.track_screen_view("HUD > Save Game", "screen23", null);
 {% endhighlight %}

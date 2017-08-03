@@ -47,7 +47,7 @@ The run manifest functionality resides in the new `com.snowplowanalytics.snowplo
 
 Here's a short usage example:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsyncClientBuilder
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain
@@ -103,7 +103,7 @@ This approach is taken inside Snowplow pipeline and serves us quite well there, 
 To solve this we replaced `Validation` with `Either` - a similar data type from the Scala standard library.
 This is the only breaking change in this release, and you still can filter RDD to use only successfully transformed JSONs in a familiar way:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val events = input
   .map(line => EventTransformer.transform(line))
   .filter(_.isRight)
@@ -121,7 +121,7 @@ Check out the [Scala Analytics SDK][sdk-docs] in the main Snowplow wiki.
 
 As of this release, the Scala Analytics SDK is available at Maven Central. If you're using SBT you can add it as follows:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 libraryDependencies += "com.snowplowanalytics" %% "scala-analytics-sdk" % "0.2.0"
 {% endhighlight %}
 

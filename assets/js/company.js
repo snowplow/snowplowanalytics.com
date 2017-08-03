@@ -2,107 +2,142 @@
  * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
  * COMPANY
  */
+;(function($) {
+    $('document').ready(function() {
+        var team = $('.team');
+        var teamGrid = team.find('.grid');
+        var teamItems = teamGrid.find('.item');
+        var sep = $('<div class="sep col-xs-12 no-gutter"></div>').height(0);
+        var header = $('header');
+        var teamTimeOut, scrollingTimeOut, bioClone, lastActiveElement;
 
 
+        function hideBio(callback) {
+            if (bioClone) {
+            	if (bioClone.length) {
+	                sep
+	                .add(bioClone)
+	                .height(0)
+					.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+	                    bioClone.detach().remove();
+	                    sep.height(0).detach().empty();
+	                    teamGrid.removeClass('active');
+	                    teamItems.removeClass('active');
 
-(function ($)
-{
-	$('document').ready (function ()
-	{
-		var team = $('.team');
-		var teamGrid = team.find('.grid');
-		var teamItems = teamGrid.find('.item');
-		var sep = $('<div class="sep col-xs-12 no-gutter"></div>');
-			sep.height(0);
-		var header = $('header');
-		var teamTimeOut, scrollingTimeOut, bioClone;
+	                    sep.unbind ('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+		                
+		                if (callback) {
+		                	callback();
+		                }
+					});
+				}
+            } else {
+                sep
+                .height(0)
+                .detach()
+                .empty()
+				.unbind ('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
 
+                teamGrid.removeClass('active');
+                teamItems.removeClass('active');
 
-		function hideBio ()
-		{
-			if (bioClone && bioClone.length>0)
-				bioClone.detach ().remove ();
-
-			sep.height(0).detach ().empty ();
-			teamGrid.removeClass ('active');
-			teamItems.removeClass ('active');
-		}
-
-
-		function showBio (el, bio, after)
-		{
-			bioClone = bio.clone();
-			sep.empty ().append(bioClone).height(0);
-
-			if (!after)
-				sep.insertBefore (el);
-			else
-				sep.insertAfter (el);
-
-			sep
-			.height( bioClone.outerHeight() )
-			.find('.i-close').on ('click', function (e)
-			{
-				e.preventDefault ();
-				e.stopPropagation ();
-				hideBio ();
-			});
-
-			sep.css('transform', 'perspective( 2000px ) rotateX(0)');
-		}
+                if (callback) {
+                	callback();
+                }
+            }
+        }
 
 
-		teamItems.on ('click', function (e)
-		{
-			clearTimeout (teamTimeOut);
-			e.preventDefault ();
+        function showBio(el, bio, after) {
 
-			teamGrid.addClass ('active');
-			teamItems.removeClass ('active');
+            // SCROLL TO FOCUS IN VIEW
+            $('html, body').stop().animate({ scrollTop: bio.offset().top - header.height() },
+                function() {
+                    bioClone = bio.clone();
+                    sep
+					.unbind ('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend')
+                    .empty()
+                    .html(bioClone)
+                	.css({
+                		height: 0,
+                		opacity: 0,
+                		transform : 'perspective(2000px) rotateX(20deg)'
+                	})
+                    .find('.i-close').on('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        lastActiveElement = null;
+                        hideBio();
+                    });
 
-			var th = $(this);
-				th.addClass ('active');
-			var bio = th.find ('.bio');
-			var rowPos = th.position().top;
-			var nextItems = th.nextAll();
-			var totalNextItems = nextItems.length;
+                    if (!after) {
+                        sep.insertBefore(el);
+                    } else {
+                        sep.insertAfter(el);
+                    }
 
-			if (totalNextItems==0)
-				showBio (th, bio, true);
-			else
-				nextItems.each (function (i)
-				{
-					var item = $(this);
-					if (item.position().top > rowPos) // BREAK POINT
-					{
-						showBio (nextItems[i], bio);
-						return false;
-					}
+					$('html, body').scrollTop(bio.offset().top - header.height());
 
-					if (i+1==totalNextItems) // LAST ELEMENT
-						showBio (item, bio, true);
-				});
+                    setTimeout(function () {
+	                    sep.css({
+	                    	opacity: 1,
+	                		height: bioClone.outerHeight(),
+	                		transform : 'perspective(2000px) rotateX(0deg)'
+	                	});
 
-			// SCROLL TO FOCUS IN VIEW
-			$('html, body').stop().animate({
-				scrollTop: th.offset().top - header.height()
-			});
-		});
+	                    $('html, body').scrollTop(bio.offset().top - header.height());
+                    }, 1);
+                }
+            );
+        }
 
-		$(window).on ('resize.company', function ()
-		{
-			var active = teamItems.filter ('.active');
-			hideBio ();
 
-			teamTimeOut = setTimeout (function (){
-				if (active.length>0)
-					active.trigger ('click');
-			}, 750);
-		});
+        teamItems.on('click', function(e) {
+            clearTimeout(teamTimeOut);
+            e.preventDefault();
 
-		$(window).on ('touchstart.company mousewheel.company', function (){
-			$('html, body').stop();
-		});
-	});
+            teamGrid.addClass('active');
+            teamItems.removeClass('active');
+
+            var th = $(this);
+            th.addClass('active');
+            lastActiveElement = th;
+            var bio = th.find('.bio');
+            var rowPos = th.position().top;
+            var nextItems = th.nextAll();
+            var totalNextItems = nextItems.length;
+
+            if (totalNextItems === 0) {
+                showBio(th, bio, true);
+            } else {
+                nextItems.each(function(i) {
+                    var item = $(this);
+                    if (item.position().top > rowPos) { // BREAK POINT
+                        showBio($(nextItems[i]), bio);
+                        return false;
+                    }
+
+                    if (i + 1 == totalNextItems) { // LAST ELEMENT
+                        showBio(item, bio, true);
+                    }
+                });
+            }
+        });
+
+        $(window).on('resize.company', function() {
+            hideBio();
+
+            clearTimeout('teamTimeOut');
+            teamTimeOut = setTimeout(function() {
+                if (lastActiveElement) {
+                    lastActiveElement.trigger('click');
+                }
+            }, 1000);
+        });
+
+        $(window).on('touchstart.company mousewheel.company', function() {
+            $('html, body').stop();
+        });
+    });
 
 })(jQuery);

@@ -34,7 +34,7 @@ Read on after the fold for:
 
 We have implemented a simple analytics-on-write stream processing job using Apache Samza. Our Samza job reads a Kafka topic, `example-project-inbound`, containing "inbound" events in a JSON format:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
   "timestamp": "2015-06-05T12:54:43Z",
   "type": "Green",

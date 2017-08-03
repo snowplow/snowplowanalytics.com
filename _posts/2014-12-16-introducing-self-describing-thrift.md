@@ -57,13 +57,13 @@ The schema field will be a place to store metadata about the record. Given a sel
 
 What kind of metadata should we put in the schema field? At Snowplow we are using [Iglu] [iglu] schema URIs very successfully for JSON Schema - let's extend this to Thrift! An example Iglu schema URI for Thrift might look something like this:
 
-{% highlight c linenos %}
+{% highlight c%}
 iglu:com.snowplowanalytics.snowplow/SimpleEvent/thrift/1-0-0
 {% endhighlight %}
 
 One way to pull out the schema field is by attempting to deserialize the record using this schema:
 
-{% highlight c linenos %}
+{% highlight c%}
 struct SchemaSniffer {
 	31337: string schema
 }
@@ -77,7 +77,7 @@ Here is an example using a simplified version of our `SnowplowRawEvent` called `
 
 First, let's consider the prelapsarian IDL before we make it self-describing. We will call this un-versioned Thrift IDL "version 0":
 
-{% highlight c linenos %}
+{% highlight c%}
 namespace java com.snowplowanalytics.snowplow.collectors.thrift
 
 struct SimpleEvent {
@@ -88,7 +88,7 @@ struct SimpleEvent {
 
 We now change the tag numbering in an incompatible way, changing the `20` tag from referring to the event's timestamp to referring to its body. This change breaks backward compatibility: if we try to deserialize a version 0 record using the version 1 class, the timestamp field will end up in the body field. At this point we also make our records self-describing by adding the schema field:
 
-{% highlight c linenos %}
+{% highlight c%}
 namespace java com.snowplowanalytics.snowplow.SimpleEvent.thrift.v1
 
 struct SimpleEvent {
@@ -102,7 +102,7 @@ struct SimpleEvent {
 
 We make another backward-incompatible change, changing the type of the `networkUserId` field, so we have to bump the model version to v2:
 
-{% highlight c linenos %}
+{% highlight c%}
 namespace java com.snowplowanalytics.snowplow.SimpleEvent.thrift.v2
 
 struct SimpleEvent {
@@ -118,14 +118,14 @@ Now suppose we have a byte array that we believe is some sort of `SimpleEvent`, 
 
 We first check the schema field by partial deserialization (all code in Scala):
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val sniffer = new SchemaSniffer
 new TDeserializer.deserialize(sniffer, byteArray)
 {% endhighlight %}
 
 If the schema field is not set, the Thrift is not self-describing, so we deserialize it and handle it with the assumption that it was generated using the version 0 of the `SimpleEvent` class. Otherwise, the schema field tells us exactly which class to use. Here is some Scala code which can handle all three versions of the `SimpleEvent`:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import com.snowplowanalytics.snowplow.Sniffer
 import com.snowplowanalytics.snowplow.legacy.thrift.{SimpleEvent => SE0}
 import com.snowplowanalytics.snowplow.SimpleEvent.thrift.v1.{SimpleEvent => SE1}

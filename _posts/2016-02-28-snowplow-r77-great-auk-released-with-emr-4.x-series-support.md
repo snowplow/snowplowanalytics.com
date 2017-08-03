@@ -46,7 +46,7 @@ In the future, StorageLoader will be invisible to the end user - it will become 
 
 When running StorageLoader on EC2, you no longer need to configure it with your AWS credentials. Instead you can set the credentials fields to "iam":
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 aws:
   access_key_id: iam
   secret_access_key: iam
@@ -94,14 +94,14 @@ The latest version of the EmrEtlRunner and StorageLoader are available from our 
 
 The recommended AMI version to run Snowplow is now 4.3.0 - update your configuration YAML as follows:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 emr:
   ami_version: 4.3.0 # WAS 3.7.0
 {% endhighlight %}
 
 You will need to update the jar versions in the same section:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
 versions:
   hadoop_enrich: 1.6.0        # WAS 1.5.1
   hadoop_shred: 0.8.0         # WAS 0.7.0

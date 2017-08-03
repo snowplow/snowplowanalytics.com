@@ -53,7 +53,7 @@ To give a very specific example: at Snowplow we are very interested in whether o
 
 We can add a dimension to our [`events.lookerml`] [events.lookerml] model that categorises whether a specific event has occurred on a services page or not:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
   # Snowplow-website specific dimension
   - dimension: occurred_on_services_page
     type: yesno
@@ -62,7 +62,7 @@ We can add a dimension to our [`events.lookerml`] [events.lookerml] model that c
 
 We can then create a metric that counts the number of events that occur on services pages, further down the [`events.lookerml`] [events.lookerml] definition:
 
-{% highlight yaml linenos %}
+{% highlight yaml%}
   # Snowplow-website specific metric
   - measure: events_on_services_page_count
     type: count

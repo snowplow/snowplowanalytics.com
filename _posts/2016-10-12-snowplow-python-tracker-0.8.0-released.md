@@ -78,7 +78,7 @@ Years ago, when we started to explore ways of enabling our users to send in data
 
 Fast forward to the present and we have a very sophisticated approach to enabling our users to define their own event and context types, and send that data into Snowplow. You as a Snowplow user can define send in your own event JSONs (giving you enormous flexibility to match your event data model to your applications and business processes), but you need to schema those events in advance: enabling Snowplow to validate and process your data reliably, and enabling our users to write downstream data processing applciations. The data is sent into Snowplow as a self-describing JSON with a schema field, identifying what event type it is, and a data field, with the data being passed in e.g.:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
 	"schema": "iglu:com.games_company/save_game/jsonschema/1-0-2",
 	"data": {

@@ -50,7 +50,7 @@ As a result, the range of data captured by the Pixel tracker is smaller than the
 
 The standard Pixel tracking tag looks something like this:
 
-{% highlight html linenos %}
+{% highlight html%}
 <!--Snowplow start plowing-->
 <img src="http://collector.snplow.com/i?&e=pv&page=Root%20README&url=http%3A%2F%2Fgithub.com%2Fsnowplow%2Fsnowplow&aid=snowplow&p=web&tv=no-js-0.1.0" />
 <!--Snowplow stop plowing-->

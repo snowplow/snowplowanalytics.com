@@ -16,7 +16,7 @@ Note that all the SQL given below is Redshift compatible. It can be easier to do
 
 First we need to identify all our marketing touch events. We can generate a table with all of these as follows:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 create table derived.marketing_touches as (
   select
     domain_userid,
@@ -46,7 +46,7 @@ The above table includes a line of data per marketing touch, ordered by user (as
 
 Now lets create a table with all our different revenue events. What these look like will depend on your own particular event schema - for this example we'll assume that revenue events are standard Snowplow [transaction events][snowplow-transaction-events]. It should be straightforward to modify / update the below SQL with your own set of revenue events.
 
-{% highlight sql linenos %}
+{% highlight sql%}
 create table derived.revenue_events as (
   select
     domain_userid,
@@ -67,7 +67,7 @@ How we do the join is firstly a question of business logic: what type of attribu
 
 To do this, we create a new `derived.first_marketing_touch` table, that records only the first marketing touch for each user. This is a subset of the marketing touches recorded in the `derived.marketing_touches` table.
 
-{% highlight sql linenos %}
+{% highlight sql%}
 with first_touch_tstamps as (
   select
     domain_userid,
@@ -99,7 +99,7 @@ create table derived.first_marketing_touch as (
 
 Now it is trivial to join our `derived.first_marketing_touch` table with our `derived.revenue_events` table:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 select
   f.*,
   r.tr_total
@@ -126,7 +126,7 @@ There are a number of ways to do this in SQL - I think the following is the most
 
 First, we need to identify for each revenue event what is the corresponding marketing touch event that we wish to connect. To do this, we first union our marketing touches and revenue event tables into a single table that contains both the marketing touches and the revenue events. For performance reasons, we only include a subset of the columns in our marketing touches table.
 
-{% highlight sql linenos %}
+{% highlight sql%}
 create table derived.marketing_touches_and_revenue_events as (
   select
     domain_userid,
@@ -154,7 +154,7 @@ We need to aggregate over this table so that we set the `marketing_event_id` for
 
 To do that, we use a window function to identify the most recent marketing touch event prior to the revenue event:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 select
   domain_userid,
   derived_tstamp,
@@ -177,7 +177,7 @@ The window function is doing a lot of work for us, so it is worth explaining wha
 
 Now we apply the above window function to generate our final result set:
 
-{% highlight sql linenos %}
+{% highlight sql%}
 with last_touch_event_ids_calculated as (
   select
     domain_userid,

@@ -92,7 +92,7 @@ Upgrading will require various configuration changes to each of the three applic
 
 If you want to include Snowplow tracking for this application please append the following:
 
-{% highlight json linenos %}
+{% highlight json%}
 enrich {
 
     ...
@@ -118,7 +118,7 @@ For a complete example, see our [`config.hocon.sample` file] [ske-sample-hocon].
 * Merge `location` fields into the `elasticsearch` section
 * If you want to include Snowplow Tracking for this application please append the following:
 
-{% highlight json linenos %}
+{% highlight json%}
 sink {
 
     ...

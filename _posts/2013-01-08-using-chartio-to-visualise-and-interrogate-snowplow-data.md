@@ -57,7 +57,7 @@ In interactive mode, ChartIO lets you drag and drop measures into the **Measures
 
 Now we're ready to graph engagement levels over time. Let's start with our first measure of engagement: conversion levels. We want to look at what % of users who visit our site each month that perform a transaction. To do this, we first need to identify users who have performed a transaction each month, using the following query:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 MONTH(dt),
 user_id,
@@ -69,7 +69,7 @@ GROUP BY dt, user_id
 
 Now we join this table with the events table to list all the users who have visited each month and identify which of them has bought:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 visitors.`month`,
 visitors.user_id,
@@ -95,7 +95,7 @@ ORDER BY visitors.`month`, visitors.user_id
 
 Now we can aggregate over the results of the above query, calculating the conversion rate by dividing the number of buyers by the total number of visitors:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 `month`,
 `converted_visitors` / visitors AS conversion_rate
@@ -141,7 +141,7 @@ Great! We can see conversion rates were reasonably stable between September and 
 
 Calculating the number of pageviews per user per month is straightforward in Snowplow - we can use the following query:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 MONTH(dt) AS `month`,
 user_id,
@@ -153,7 +153,7 @@ GROUP BY `month`, user_id
 
 Now we want to aggregate users by the number of pageviews each has done by month:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 `month`,
 page_views,
@@ -172,7 +172,7 @@ ORDER BY `month` ASC, page_views DESC
 
 Lastly we want to bucket values of page views e.g. into 1, 2-5, 6-10, 11-25 and 25+. We can introduce a bucketing into our previous query:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 `month`,
 page_views,
@@ -198,7 +198,7 @@ ORDER BY `month` ASC, page_views DESC
 
 And then aggregate by bucket in the next query:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 `month`,
 bucket,
@@ -244,7 +244,7 @@ This graph suggests that engagement levels dropped in October, but climbed drama
 
 Just to put the two baseline graphs in context, let's add a third graph the tracks the number of unique users per month to our dashboard. Add a new chart using the following simple query:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 MONTH(dt) AS `month`,
 COUNT(DISTINCT(user_id)) as uniques
@@ -276,7 +276,7 @@ A good approach, then, to unpick what's driving growth in engagement levels is t
 
 Psychic Bazaar's only direct marketing spend is on paid search campaigns on Google and Bing. We might therefore wonder whether a change to those campaigns drove the uplift in engagement we see on the site in September. To do this, first we need to identify all the users acquired via paid search:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 user_id,
 '1' AS paid_search
@@ -287,7 +287,7 @@ GROUP BY user_id
 
 Compare this with our data on which users have converted:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 user_id,
 '1' AS buyer
@@ -298,7 +298,7 @@ GROUP BY user_id
 
 And our list of **all** users:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 user_id,
 '1' AS visitor
@@ -308,7 +308,7 @@ GROUP BY user_id
 
 We join the three data sets:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 visitors.user_id,
 buyer,
@@ -342,7 +342,7 @@ ON visitors.user_id = paid_search.user_id
 
 And then aggregate over the result set to compare conversion rates:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 paid_search,
 sum(buyer)/sum(visitor) AS conversion_rate
@@ -386,7 +386,7 @@ Plotting the data in ChartIO we can see that users acquired from paid campaigns 
 
 This naturally leads to the question: has the number of users acquired from paid search increased over the time period? (Especially between November and December, when our increase in conversion rates is most noticeable?) We can find out by graphing the following query, which looks at the number of uniques by month divided by whether they were acquired by paid search or not:
 
-{% highlight mysql linenos %}
+{% highlight mysql%}
 SELECT
 MONTH(dt) AS `month`,
 paid_search,

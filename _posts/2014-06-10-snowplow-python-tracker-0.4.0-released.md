@@ -33,7 +33,7 @@ An instance of the Subject class represents a user who is performing an event in
 
 If you are tracking more than one user at once, create a separate Subject instance for each. An example:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker import Subject, Emitter, Tracker
 
 # Create a simple Emitter which will log events to http://d3rkrsqld9gmqf.cloudfront.net/i
@@ -73,7 +73,7 @@ t.track_page_view("http://www.example.com")
 
 It is also possible to set the subject during Tracker initialization:
 
-{% highlight python linenos %}
+{% highlight python%}
 t = Tracker(emitter=e, subject=s1, namespace="cf", app_id="CF63A")
 {% endhighlight %}
 
@@ -83,7 +83,7 @@ Trackers must be initialized with an Emitter.
 
 This is the signature of the constructor for the base Emitter class:
 
-{% highlight python linenos %}
+{% highlight python%}
 def __init__(self, endpoint,
              protocol="http", port=None, method="get",
              buffer_size=None, on_success=None, on_failure=None):
@@ -115,7 +115,7 @@ Note that `on_success` and `on_failure` callbacks cannot be supplied to this emi
 
 Use a RedisEmitter instance to store events in a [Redis][redis] database for later use. This is the RedisEmitter constructor function:
 
-{% highlight python linenos %}
+{% highlight python%}
 def __init__(self, rdb=None, key="snowplow"):
 {% endhighlight %}
 
@@ -125,7 +125,7 @@ def __init__(self, rdb=None, key="snowplow"):
 
 You can flush the buffer of an emitter associated with a tracker instance `t` like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 t.flush()
 {% endhighlight %}
 
@@ -139,7 +139,7 @@ You can create your own custom emitter class, either from scratch or by subclass
 
 If you are using the synchronous Emitter and call a tracker method which causes the emitter to send a request, that tracker method will return the status code for the request:
 
-{% highlight python linenos %}
+{% highlight python%}
 e = Emitter("d3rkrsqld9gmqf.cloudfront.net")
 t = Tracker(e)
 
@@ -150,7 +150,7 @@ This is useful for initial testing.
 
 Otherwise, the tracker method will return the tracker instance, allowing tracker methods to be chained:
 
-{% highlight python linenos %}
+{% highlight python%}
 e = AsyncEmitter("d3rkrsqld9gmqf.cloudfront.net")
 t = Tracker(e)
 
@@ -165,7 +165,7 @@ The emitters.py module has Python logging turned on. The logger prints messages 
 
 To change this:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker import logger
 
 # Log all messages, even DEBUG messages
@@ -182,7 +182,7 @@ logger.setLevel(60)
 
 The Snowplow Python Tracker uses the [Pycontracts][contracts] module for type checking. The option to turn type checking off has been moved out of Tracker construction:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker import disable_contracts
 disable_contracts()
 {% endhighlight %}
@@ -193,13 +193,13 @@ Switch off Pycontracts to improve performance in production.
 
 The tracker comes with a RedisWorker class which sends Snowplow events from Redis to an emitter. The RedisWorker constructor is similar to the RedisEmitter constructor:
 
-{% highlight python linenos %}
+{% highlight python%}
 def __init__(self, _consumer, key=None, dbr=None):
 {% endhighlight %}
 
 This is how it is used:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker import AsyncEmitter
 from snowplow_tracker.redis_worker import RedisWorker
 
@@ -217,7 +217,7 @@ This will set up a worker which will run indefinitely, taking events from the Re
 
 Snowplow unstructured events and custom contexts are now defined using [JSON schema][json-schema], and should be passed to the Tracker using [self-describing JSONs][self-describing-jsons]. Here is an example of the new format for unstructured events:
 
-{% highlight python linenos %}
+{% highlight python%}
 
 t.track_unstruct_event({
 	"schema": "iglu:com.acme/viewed_product/jsonschema/2-1-0",
@@ -233,7 +233,7 @@ The `data` field contains the actual properties of the event and the `schema` fi
 
 Custom contexts work similarly. Since and event can have multiple contexts attached, the `contexts` argument of each `trackXXX` method must (if provided) be a non-empty array:
 
-{% highlight python linenos %}
+{% highlight python%}
 
 t.track_page_view("localhost", None, "http://www.referrer.com", [{
     schema: "iglu:com.example_company/page/jsonschema/1-2-1",

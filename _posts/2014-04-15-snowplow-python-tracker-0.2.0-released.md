@@ -24,13 +24,13 @@ This post will cover:
 
 The call to import the tracker module has not changed:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker.tracker import Tracker
 {% endhighlight %}
 
 Tracker initialization has been simplified:
 
-{% highlight python linenos %}
+{% highlight python%}
 t = Tracker("d3rkrsqld9gmqf.cloudfront.net")
 {% endhighlight %}
 
@@ -38,7 +38,7 @@ Note that the method to set a collector URL based purely on a Cloudfront subdoma
 
 You can also provide a tracker name argument:
 
-{% highlight python linenos %}
+{% highlight python%}
 t = Tracker("d3rkrsqld9gmqf.cloudfront.net", "cf")
 {% endhighlight %}
 
@@ -46,7 +46,7 @@ Every event fired by `t` will have a tracker namespace field with value "cf". Th
 
 There is one other major improvement to the API: tracker methods no longer require you to supply every argument. Arguments which are not supplied default to `None` and will not be added to the event. For example, the `track_ecommerce_transaction` method takes up to nine arguments, but only `order_id` and `total_value` are mandatory. Suppose we want to call `track_ecommerce_transaction` with just the two mandatory parameters and the optional `country` parameter. This is how to do it:
 
-{% highlight python linenos %}
+{% highlight python%}
 t.track_ecommerce_transaction("12e4ba", 19.99, country="France")
 {% endhighlight %}
 

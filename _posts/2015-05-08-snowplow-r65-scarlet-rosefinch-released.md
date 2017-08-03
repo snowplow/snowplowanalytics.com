@@ -91,7 +91,7 @@ To recreate the pre-r65 behavior, convert the `resolver` section of your configu
 
 To get the resolver from DynamoDB, create a table named "snowplow_config" with hashkey "id" and add an item to the table of the following form:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
     "id": "iglu_resolver",
     "json": "{The resolver as a JSON string}"
@@ -106,7 +106,7 @@ Then provide the `resolver` argument as follows:
 
 To get the enrichments from DynamoDB, the enrichment JSONs must all be stored in a table - you can reuse the "snowplow_config" table. The enrichments' hash keys should have a common prefix, for example "enrich_":
 
-{% highlight json linenos %}
+{% highlight json%}
 {
     "id": "enrich_anon_ip",
     "json": "{anon_ip enrichment configuration as a JSON string}"

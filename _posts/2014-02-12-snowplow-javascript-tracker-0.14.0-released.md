@@ -40,13 +40,13 @@ Our hosted JavaScript JavaScript Tracker is now gzipped for CloudFront delivery 
 
 This new function allows you to set the visitor's business user ID to the value of a first-party cookie. Its signature is:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 function setUserIdFromCookie(cookieName);
 {% endhighlight %}
 
 For example, this code:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push(['setUserIdFromCookie', '_sp_id.4209']);
 {% endhighlight %}
 
@@ -59,20 +59,20 @@ will look for a cookie whose name is "_sp_id.4209". If one is found, the user ID
 We have added support for setting the visitor's business user ID from a field in the querystring of either the current page's URL or the referring page's URL.
 The signatures for the new functions are:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 function setUserIdFromLocation(querystringField);
 function setUserIdFromReferrer(querystringField);
 {% endhighlight %}
 
 For example, to set the user's ID to the value of the "id" field in the local querystring, use:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push([['setUserIdFromLocation', 'id']]);
 {% endhighlight %}
 
 And to set it to the value of the "id" field in the referrer querystring, use:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push([['setUserIdFromReferrer', 'id']]);
 {% endhighlight %}
 
@@ -90,13 +90,13 @@ Many thanks to community member [Josh Spivey] [joshspivey] for this idea and som
 
 Most browsers offer a Do Not Track feature, allowing users to request not to be tracked by websites. You can now respect that preference with:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 function respectDoNotTrack(enable);
 {% endhighlight %}
 
 Use this function like so:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push(['respectDoNotTrack', true]);
 {% endhighlight %}
 

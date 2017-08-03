@@ -32,7 +32,7 @@ The Snowplow JavaScript Tracker uses a "user fingerprint" to identify users base
 
 This version adds two new functions to control user fingerprinting: `enableUserFingerprinting` and `setUserFingerprintSeed`.
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 function enableUserFingerprinting(enable)
 
 function setUserFingerprintSeed(seed)
@@ -40,13 +40,13 @@ function setUserFingerprintSeed(seed)
 
 User fingerprinting is turned on by default, but can be turned off like this:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push(['enableUserFingerprinting', false]);
 {% endhighlight %}
 
 If you want to choose the seed used to generate the user fingerprint, use `setUserFingerprintSeed` like this:
 
-{% highlight javascript linenos %}
+{% highlight javascript%}
 _snaq.push(['setUserFingerprintSeed', 746392851]);
 {% endhighlight %}
 

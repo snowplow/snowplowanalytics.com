@@ -37,7 +37,7 @@ Having the 'right' data model and schema matters, because it enables:
 
 Event data describes what has happened. If I run a newspaper app, for example, I might want to record that one of my readers has viewed a particular article. I could represent this event using the following data:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
 	"timestamp": "2014-07-11 10:44:12",
 	"user_id": "123",
@@ -57,7 +57,7 @@ This feels like a decent data model. However, we might want to develop it. It's 
 
 Our application might already have a data model for users, and it might look like this:
 
-{% highlight json linenos %}
+{% highlight json%}
 "user": {
 	"user_id": "123",
 	"subscriber": true,
@@ -69,7 +69,7 @@ Our application might already have a data model for users, and it might look lik
 
 Similarly, our application might interface directly with a CMS that stores all the different articles, and that CMS already has a well developed data model to describe the article, e.g.:
 
-{% highlight json linenos %}
+{% highlight json%}
 "article": {
 	"article_id": "article_abc",
 	"title": "Germany to face Argentina in World Cup final",
@@ -84,7 +84,7 @@ Similarly, our application might interface directly with a CMS that stores all t
 
 From a data collection point of view, the most straightforward thing to do is to pass the data, as it is already structured in the app / CMS, directly into the analytics system. In Snowplow, we would pass the data in, broadly speaking, using the following format:
 
-{% highlight json linenos %}
+{% highlight json%}
 {
 	"timestamp": "2014-07-11 10:44:12",
 	"event": "viewed_article",

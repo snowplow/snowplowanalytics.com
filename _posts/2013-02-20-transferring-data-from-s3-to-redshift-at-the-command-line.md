@@ -15,7 +15,7 @@ In the course of building out Snowplow support for Redshift, we need to bulk loa
 
 Amazon enables users to bulk load data from S3 into Redshift by executing queries with the following form:
 
-{% highlight postgresql linenos %}
+{% highlight postgresql%}
 copy events
 from 's3://$MY-BUCKET/PATH/TO/FILES/FOR/UPLOAD'
 credentials 'aws_access_key_id=$ACCESS-KEY;aws_secret_access_key=$SECRET-ACCESS-KEY'

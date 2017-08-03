@@ -28,14 +28,14 @@ In the rest of the post we will cover:
 
 Several optional configuration arguments have been added to the `Tracker` class's initialization function. Its new signature looks like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 def __init__(self, collector_uri,
              namespace=None, app_id=None, context_vendor=None, encode_base64=True, contracts=True):
 {% endhighlight %}
 
 The example below would initialize a tracker whose name is "cf" for an application whose ID is "ae9f587d23". It would disable Pycontracts. It does not change the default behaviour of Base64-encoding event data.
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker.tracker import Tracker
 
 t = Tracker("d3rkrsqld9gmqf.cloudfront.net", "cf", "ae9f587d23", "com.example", False)
@@ -45,7 +45,7 @@ t = Tracker("d3rkrsqld9gmqf.cloudfront.net", "cf", "ae9f587d23", "com.example", 
 
 The Python Tracker uses the [Pycontracts][contracts] module for type checking, so a runtime error will be raised if you pass a method a parameter of the wrong type. This check does introduce a performance hit, so we have added the option to disable Pycontracts when configuring a tracker by setting the `contracts` argument to `False`:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker.tracker import Tracker
 
 t = Tracker("d3rkrsqld9gmqf.cloudfront.net", contracts=False)
@@ -55,7 +55,7 @@ t = Tracker("d3rkrsqld9gmqf.cloudfront.net", contracts=False)
 
 In previous versions of the Python Tracker, you had to individually call a tracking method for each item in the ecommerce transaction and for the transaction as a whole. The new version has a single method called `track_ecommerce_transaction` that is called once per transaction. This is its signature:
 
-{% highlight python linenos %}
+{% highlight python%}
 def track_ecommerce_transaction(self, order_id, total_value,
                                 affiliation=None, tax_value=None, shipping=None,
                                 city=None, state=None, country=None, currency=None,
@@ -69,7 +69,7 @@ The relevant argument here is `items`. This should be an array, each of whose en
 
 An example may help. The call to track an ecommerce transaction in which two items are sold might look like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 t.track_ecommerce_transaction("6a8078be", 45, city="London", currency="GBP", items=
     [{  
         "sku": "pbz0026",
@@ -95,13 +95,13 @@ For more detailed documentation, including a full list of fields available for e
 
 In short, custom contexts let you add additional information about the circumstances surrounding an event in the form of a Python dictionary object. Each tracking method now accepts an additional optional contexts parameter before the optional timestamp parameter:
 
-{% highlight python linenos %}
+{% highlight python%}
 def track_page_view(self, page_url, page_title=None, referrer=None, context=None, tstamp=None):
 {% endhighlight %}
 
 The context argument is a Python dictionary. Each of its keys is the name of a context, and each of its values is the flat (not nested) dictionary for that context. So if a visitor arrives on a page advertising a movie, the context argument might look like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 {
     "movie_poster": {          # Context entry
         "movie_name": "Solaris",
@@ -113,7 +113,7 @@ The context argument is a Python dictionary. Each of its keys is the name of a c
 
 This is how to fire a page view event with the above custom context:
 
-{% highlight python linenos %}
+{% highlight python%}
 t.track_page_view("http://www.films.com", "Homepage", context={
     "movie_poster": {
         "movie_name": "Solaris",
@@ -125,7 +125,7 @@ t.track_page_view("http://www.films.com", "Homepage", context={
 
 In order to avoid confusion between custom contexts defined by different companies, fill in the `context_vendor` argument when initializing a tracker:
 
-{% highlight python linenos %}
+{% highlight python%}
 from snowplow_tracker.tracker import Tracker
 
 t = Tracker("d3rkrsqld9gmqf.cloudfront.net", context_vendor="com.example")
@@ -143,13 +143,13 @@ The event vendor parameter represents the company who developed the model for an
 
 Custom unstructured events now have a mandatory `event_vendor` initial field:
 
-{% highlight python linenos %}
+{% highlight python%}
 def track_unstruct_event(self, event_vendor, event_name, dict_, context=None, tstamp=None):
 {% endhighlight %}
 
 Use it like this:
 
-{% highlight python linenos %}
+{% highlight python%}
 t.track_unstruct_event("com.your_company", "viewed_product",  {
 	"product_id": "ASO01043",
 	"price": 49.95
@@ -162,19 +162,19 @@ The event vendor string should follow the same rules as the context vendor strin
 
 Each tracking method now returns a tuple based on the status code of the request it fired. If the code is between 0 and 400, it returns a tuple whose first element is `true` and whose second is the code:
 
-{% highlight python linenos %}
+{% highlight python%}
 (true, 200)
 {% endhighlight %}
 
 If the code is a number not in that range, the first element is instead `false`:
 
-{% highlight python linenos %}
+{% highlight python%}
 (false, 500)
 {% endhighlight %}
 
 Finally, if the host is not found:
 
-{% highlight python linenos %}
+{% highlight python%}
 (false, "Host [http://d3rkrsqld9gmqf.cloudfront.net/i?{{querystring}}] not found (possible connectivity error")
 {% endhighlight %}
 

@@ -30,7 +30,7 @@ $ gem install snowplow-tracker
 
 To add the Snowplow Ruby Tracker as a dependency to your own Ruby gem, edit your gemfile and add:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 gem 'snowplow-tracker'
 {% endhighlight %}
 
@@ -42,19 +42,19 @@ The Snowplow Ruby Tracker is compatible with Ruby versions 1.9.3, 2.0.0, and 2.1
 
 Require the Snowplow Tracker like this:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 require 'snowplow-tracker'
 {% endhighlight %}
 
 Initialize a Tracker like this:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 tracker = SnowplowTracker::Tracker.new('d3rkrsqld9gmqf.cloudfront.net', 'cf', '')
 {% endhighlight %}
 
 Set some additional information:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 tracker.set_user_id('a73e94')
 tracker.set_platform('mob')
 tracker.set_lang('en')
@@ -62,7 +62,7 @@ tracker.set_lang('en')
 
 And fire some events:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 tracker.track_page_view("www.example.com", "example page", "www.referrer.com")
 
 tracker.track_struct_event("shop", "add-to-basket", None, "pcs", 2, 1369330909)

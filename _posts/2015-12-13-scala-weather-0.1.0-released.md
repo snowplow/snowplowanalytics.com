@@ -41,7 +41,7 @@ A free key lets you to perform current weather and forecast lookups; for histori
 
 After obtaining an API key, you can create a client:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 import com.snowplowanalytics.weather.providers.openweather.OwmAsyncClient
 val client = OwmAsyncClient(YOURKEY)
 {% endhighlight %}
@@ -68,7 +68,7 @@ Both clients have same basic set of methods, grouping by data they return:
 
 These methods were designed to follow OpenWeatherMap's own API calls as closely as possible. All of these calls receive similar arguments to those described in [OpenWeatherMap API documentation] [owm-api-docs]. For example, to receive a response equivalent to the API call `api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=YOURKEY`, run the following code:
 
-{% highlight scala linenos %}
+{% highlight scala%}
 val weatherInLondon: Future[WeatherError \/ Current] = asyncClient.currentByCoords(35, 139)
 {% endhighlight %}
 
