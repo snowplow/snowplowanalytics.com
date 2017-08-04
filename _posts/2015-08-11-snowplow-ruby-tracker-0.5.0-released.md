@@ -26,7 +26,7 @@ The Ruby Tracker's `AsyncEmitter` class now uses the [Queue][queue] class to imp
 
 You can configure the number of threads to use with the new `thread_count` field of the AsyncEmitter's configuration hash like this:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 my_emitter = AsyncEmitter.new(MY_ENDPOINT, {
   :thread_count => 10
 })
@@ -48,7 +48,7 @@ The new `SelfDescribingJson` class makes it easier to build unstructured events 
 
 Instead of fully specifying JSONs like this:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 my_event = {
   'schema' => 'iglu:com.acme/myevent/jsonschema/1-0-0',
   'data' => {
@@ -66,7 +66,7 @@ my_tracker.track_unstruct_event(my_event, [my_context])
 
 you would now use the `SelfDescribingJson` class to automatically handle the "schema" and "data" fields like this:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 my_event = SnowplowTracker::SelfDescribingJson.new(
   'iglu:com.acme/myevent/jsonschema/1-0-0',
   {
@@ -90,7 +90,7 @@ Note that this is a breaking change and old-style API calls which manually const
 
 Thanks to Snowplow community member Kacper Bielecki ([@kazjote][kazjote] on GitHub), you can now set a user fingerprint for a Subject like this:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 my_subject.set_fingerprint(7304597607)
 {% endhighlight %}
 
@@ -104,7 +104,7 @@ You will need to update all unstructured events and contexts to use the `SelfDes
 
 The `tracker.flush` method now takes one boolean argument, `async`, which defaults to `false`. Usage of this method is demonstrated below:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 # Perform an asynchronous flush, which moves all buffered events to the work queue to be sent to the collector but doesn't block
 my_tracker.flush(true)
 
@@ -114,7 +114,7 @@ my_tracker.flush
 
 The Emitter class's `buffer_size` configuration option used to be 0-indexed, so with the following configuration the Emitter would send events in batches of 6:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 my_emitter = AsyncEmitter.new(MY_ENDPOINT, {
   :buffer_size => 5
 })

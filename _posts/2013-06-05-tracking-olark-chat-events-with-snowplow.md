@@ -32,7 +32,7 @@ In this blog post, we will describe how we used [Snowplow structured events] [st
 
 Olark provides an easy-to-use Javascript API, that lets us call our own Javascript functions when an Olark chat event happens. There are two that are relevant for us - an event that fires when a visitor pings a message to an "operator" (i.e. the Snowplow team) via the Olark client:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 olark('api.chat.onMessageToOperator', function(event) {
     // our custom function here
 });
@@ -40,7 +40,7 @@ olark('api.chat.onMessageToOperator', function(event) {
 
 ...and an event that fires when an operator pings a message to a visitor:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 olark('api.chat.onMessageToVisitor', function(event) {
     // our custom function here
 });
@@ -48,7 +48,7 @@ olark('api.chat.onMessageToVisitor', function(event) {
 
 We're running Google Tag Manager on the Snowplow website, so we want to push an event into the GTM dataLayer when a chat event happens, so that that event is visible to Snowplow tags configured in GTM. To do this, we add the following Javascript to our page template:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 olark('api.chat.onMessageToOperator', function(event) {
     dataLayer.push({'event': 'olarkMessageToOperator'});
 });
@@ -64,7 +64,7 @@ Now that chat events trigger notifications in the dataLayer, we can create Snowp
 
 Two things are worth noting about the tag. Firstly, the tag itself is very straightforward:
 
-{% highlight html%}
+{% highlight html linenos %}
 <!-- Snowplow event tracking -->
 <script type="text/javascript">
 _snaq.push(['setCollectorUrl', 'collector.snplow.com']);

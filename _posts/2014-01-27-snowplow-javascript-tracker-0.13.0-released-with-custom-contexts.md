@@ -57,13 +57,13 @@ You can attach custom contexts to any Snowplow event type - even custom unstruct
 
 To support custom contexts, we have added a new argument, called `contexts`, onto the end of each `track...()` and `add...()` method. For example, here is the new signature for tracking a page view:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 function trackPageView(customTitle, contexts)
 {% endhighlight %}
 
 The `contexts` argument is always optional on any event call. If set, it must be a JSON taking the form:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 { "context1_name": {
     ...
   },
@@ -92,7 +92,7 @@ We have updated our ecommerce tracking methods to add support for setting the cu
 
 The new `currency` argument is the penultimate argument (the last before `context`, see above) to both the `addTrans()` and `addItem()` methods. Use it like so:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 _snaq.push(['addTrans',
     '1234',           // order ID - required
     'Acme Clothing',  // affiliation or store name
@@ -128,7 +128,7 @@ Many thanks to community member [Ryan Sorensen] [rcs] for contributing the new `
 
 This allows you to override the default tracking platform ("web") with another of the [platform values supported in the Snowplow Tracker Protocol] [protocol-platform]. For example, to set the platform to "mob" for mobile:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 _snaq.push(['setPlatform', 'mob']);
 {% endhighlight %}
 

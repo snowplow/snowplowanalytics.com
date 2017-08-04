@@ -36,7 +36,7 @@ It is very common for Snowplow users to track A/B testing data in Snowplow. This
 
 The integration makes it simple for Optimizely users to grab their Optimizely data in Snowplow: previously users had to write custom JavaScript to grab the relevant fields from the [Optimizely `data object`][optimizely-data-object] and push it into Snowplow, either using their own events (*experiment 'a' run*) or context (*event 'b' occurred whilst experiment 'a' was running*). Now Optimizely users can simply specify which parts of the data object they would like recorded in Snowplow when the JavaScript is initialized, and the tracker will take care of the rest, grabbing the relevant data from Optimizely and sending it as custom context with every event that is recorded into Snowplow. It is as simple as follows:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -86,7 +86,7 @@ The full SQL table definition can be found [here](https://github.com/snowplow/sn
 
 Like the Optimizely integration, the Augur integration is enabled when you initialize the JavaScript:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -126,7 +126,7 @@ The first party cookies set by the Javascript tracker are automatically set to t
 
 That is not ideal: in general we would like each user (or failing that device) to have a consistent first party cookie ID across different top level domains. Previously, this was achieved by setting the cookie domain to `.mysite.com` when initializing the tracking:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -139,7 +139,7 @@ That was fine for users rolling out Snowplow tracking on one domain, but for use
 
 Now that is no longer necessary, you can simply set `discoverRootDomain` to `true`, and the cookie domain will automatically be set to the root domain rather than the top level domain:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -151,7 +151,7 @@ window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 
 We have also added a feature that enables you to force sending data from the tracker via `HTTP` rather than `HTTPS`. Note that this should only be used in test environments. To force sending events via HTTP, set `forceUnsecureTracker` to `true in the tracker initialization:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',

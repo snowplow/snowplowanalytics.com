@@ -35,7 +35,7 @@ Another significant change is the move to greater concurrency in the Tracker. Al
 
 On top of this you can now also set how much logging you would like to see from the Tracker.  The new builder option:
 
-{% highlight java%}
+{% highlight java linenos %}
 Tracker t1 = new Tracker
     .TrackerBuilder( ... )
     .level(LogLevel.VERBOSE) // Logging Options
@@ -69,7 +69,7 @@ The emitter will only be started again on a new event addition or on calling the
 
 Here is an updated example of creating a new emitter:
 
-{% highlight java%}
+{% highlight java linenos %}
 Emitter e1 = new Emitter
     .EmitterBuilder( ... )
     .sendLimit(500) // Will get up to 500 events from the Database
@@ -88,7 +88,7 @@ The dependency on Jackson JSON processor has been removed.
 
 For those developing for older versions of Android or with a very tight dex limit, the need to have any Google Play Services libraries has also been removed. If you do import Google Play Services you will now only need to import the analytics specific package as well instead of the entire Play Services setup:
 
-{% highlight groovy%}
+{% highlight groovy linenos %}
 
 compile 'com.google.android.gms:play-services-analytics:7.5.0'
 

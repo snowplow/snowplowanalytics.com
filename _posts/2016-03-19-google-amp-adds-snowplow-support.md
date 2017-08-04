@@ -42,7 +42,7 @@ Let's look at each of these in turn.
 
 You can track a Snowplow page view in AMP like so:
 
-{% highlight html%}
+{% highlight html linenos %}
 <amp-analytics type="snowplow" id="snowplow2">
 <script type="application/json">
 {
@@ -67,7 +67,7 @@ Google Analytics-style structured events can be sent by setting the AMP trigger 
 
 The following example uses the selector attribute of the trigger to send an event when a particular element is clicked:
 
-{% highlight html%}
+{% highlight html linenos %}
 <amp-analytics type="googleanalytics" id="snowplow3">
 <script type="application/json">
 {

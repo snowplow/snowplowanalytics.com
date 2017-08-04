@@ -46,7 +46,7 @@ To use the new Weather Enrichment functionality you need to:
 
 The [example configuration] [weather-enrichment-config] JSON for this enrichment is as follows:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/weather_enrichment_config/jsonschema/1-0-0",
 
@@ -77,7 +77,7 @@ To go through each of these settings in turn:
 
 To take advantage of this new enrichment, update the "hadoop_enrich" jar version in the "emr" section of your configuration YAML:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   versions:
     hadoop_enrich: 1.4.0 # WAS 1.3.0
     hadoop_shred: 0.6.0 # UNCHANGED

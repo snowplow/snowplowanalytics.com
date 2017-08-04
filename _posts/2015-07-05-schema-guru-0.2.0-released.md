@@ -82,7 +82,7 @@ To derive JSON Schemas from these JSON collections, you can now use a [JSON Path
 
 Let's take these two JSONs:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "version": 1,
   "type": "track",
   "userId": "019mr8mf4r",
@@ -95,7 +95,7 @@ Let's take these two JSONs:
 
 and:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "version": 1,
   "type": "track",
   "userId": "019mr8mf4r",

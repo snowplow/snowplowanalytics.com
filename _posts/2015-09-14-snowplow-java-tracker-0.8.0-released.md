@@ -36,7 +36,7 @@ Please read the [technical documentation][java-manual] for notes on setting up t
 
 To setup a basic Tracker under the new API:
 
-{% highlight java%}
+{% highlight java linenos %}
 OkHttpClient client = new OkHttpClient();
 HttpClientAdapter adapter = OkHttpClientAdapter.builder()
     .url("http://acme.com")
@@ -59,13 +59,13 @@ We have also updated how you track events. In place of many different types of `
 
 Let's look at how we were tracking a page view event before, in version 0.7.0:
 
-{% highlight java%}
+{% highlight java linenos %}
 tracker.trackPageView("www.example.com", "example", "www.referrer.com");
 {% endhighlight %}
 
 For events like an Ecommerce Transaction it quickly becomes difficult to understand:
 
-{% highlight java%}
+{% highlight java linenos %}
 TransactionItem item1 = new TransactionItem("item_id_1", "item_sku_1", 1.00, 1, "item_name", "item_category", "currency");
 TransactionItem item2 = new TransactionItem("item_id_2", "item_sku_2", 1.00, 1, "item_name", "item_category", "currency");
 
@@ -80,7 +80,7 @@ tracker.trackEcommerceTransaction("6a8078be", 300, "my_affiliate", 30, 10, "Lond
 
 By contrast, here is a page view in version 0.8.0:
 
-{% highlight java%}
+{% highlight java linenos %}
 tracker.track(PageView.builder()
     .pageUrl("pageUrl")
     .pageTitle("pageTitle")
@@ -90,7 +90,7 @@ tracker.track(PageView.builder()
 
 And here is the ecommerce event:
 
-{% highlight java%}
+{% highlight java linenos %}
 EcommerceTransactionItem item1 = EcommerceTransactionItem.builder()
     .itemId("item_id_1")
     .sku("item_sku_1")
@@ -137,7 +137,7 @@ Firstly, we have removed the need to define whether you would like to send your 
 
 You can build the emitters like so:
 
-{% highlight java%}
+{% highlight java linenos %}
 Emiter simple = SimpleEmitter.builder()
     .httpClientAdapter( ... )
     .threadCount(20) // Default is 50
@@ -163,7 +163,7 @@ Builder functions explained:
 
 Secondly, we now offer more than one `HttpClient` for sending events. On top of the `ApacheHttpClient` we have now added an `OkHttpClient`. The following objects are what we would embed in the `httpClientAdapter( ... )` builder functions above:
 
-{% highlight java%}
+{% highlight java linenos %}
 CloseableHttpClient apacheClient = HttpClients.createDefault();
 HttpClientAdapter apacheClientAdapter = ApacheHttpClientAdapter.builder()
     .url("http://acme.com")
@@ -218,7 +218,7 @@ In an environment where many different Subjects are involved (e.g. a web server 
 
 This release lets you pass a Subject along with your event, to be used in place of the Tracker's Subject. In this way, you can rapidly switch Subject information between different events:
 
-{% highlight java%}
+{% highlight java linenos %}
 // Make multiple Subjects
 Subject s1 = new Subject.SubjectBuilder()
     .userId("subject-1-uid")

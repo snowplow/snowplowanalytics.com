@@ -30,7 +30,7 @@ Historically, the Objective-C Tracker used 10 events as a hard upper-limit to th
 
 As of this release, we are replacing this with a limit on the number of bytes in a single `POST`. This defaults to 40,000 bytes, but you can override it like so:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 SPEmitter *emitter = [SPEmitter build:^(id<SPEmitterBuilder> builder) {
         [...]
         [builder setByteLimitGet:52000]; // Default is 40000
@@ -48,7 +48,7 @@ Following from the Android Tracker we have now implemented builder patterns for 
 
 To illustrate the change we will send a PageView event under the old and new styles:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 // Deprecated
 [tracker trackPageView:@"DemoPageUrl" 
                  title:nil 
@@ -96,7 +96,7 @@ The tracking functions within `SPTracker` have all been updated to fit the new b
 
 To access the new builders (`SPPageViewBuilder` et al), make sure to import this new file into your code:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 import "SPEvent.h"
 {% endhighlight %}
 
@@ -104,13 +104,13 @@ import "SPEvent.h"
 
 We have also added support for Snowplow's [geolocation context] [geolocation-context]. During `SPSubject` creation you can now specify if you intend to use this context:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 SPSubject * subject = [[SPSubject alloc] initWithPlatformContext:YES andGeoContext:YES];
 {% endhighlight %}
 
 Whereas in the JavaScript and Android Trackers we can automatically fetch the geo-location data for you, in this tracker you need to supply the geo-location data yourself. At a minimum you must populate the latitude and longitude fields:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 [subject setGeoLatitude:123.123]
 [subject setGeoLongitude:-123.123]
 {% endhighlight %}
@@ -136,7 +136,7 @@ We have also added the ability to use the Tracker from within a [tvOS] [tvos] ap
 
 Simply add the SnowplowTracker dependency to your podfile as you would normally:
 
-{% highlight python%}
+{% highlight python linenos %}
 pod 'SnowplowTracker', '~> 0.6'
 {% endhighlight %}
 
@@ -161,7 +161,7 @@ Other updates include:
 
 To add the Snowplow Objective-C Tracker as a dependency to your own app, add the following into your Podfile:
 
-{% highlight python%}
+{% highlight python linenos %}
 pod 'SnowplowTracker', '~> 0.6'
 {% endhighlight %}
 

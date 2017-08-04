@@ -58,7 +58,7 @@ The emitters included with the PHP Tracker now come with debug mode. This mode s
 
 On any failure, debug mode will record the error along with the payload that was meant to be sent. To enable debug mode, all you need to do is append a `true` boolean to the end of the emitter constructor like so:
 
-{% highlight php%}
+{% highlight php linenos %}
 $emitter = new SyncEmitter("d3rkrsqld9gmqf.cloudfront.net", "http", "POST", 50, true);
 {% endhighlight %}
 
@@ -74,7 +74,7 @@ For more information on debugging please consult the [wiki][technical-documentat
 
 The Snowplow PHP Tracker is published to [Packagist] [packagist], the central repository for Composer PHP packages. To add the latest version to your project, add it as a requirement in your `composer.json` file:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "require": {
         "snowplow/snowplow-tracker": "0.2.0"

@@ -49,7 +49,7 @@ body
 {
     font-family: 'Rubik', sans-serif;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 16px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -60,23 +60,8 @@ body
 
 a {
     color: $brand-primary;
-
-    &.mention,
-    &.mention-group {
-        font-weight: lighter;
-    }
 }
 
-
-
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: lighter;
-}
-
-b, strong {
-    font-weight: 400;
-}
 
 
 
@@ -87,7 +72,7 @@ ol {
             overflow: hidden;
 
             a {
-                padding: 10px 20px !important;
+                padding: 15px 20px!important;
             }
         }
     }
@@ -96,7 +81,7 @@ ol {
 
 
 .d-header {
-    background: $brand-primary!important;
+    background: $brand-primary;
     box-shadow: none;
 
     .title {
@@ -116,7 +101,6 @@ ol {
             [class^="fa fa-"] {
                 width: 20px;
                 height: 20px;
-                color: white;
                 font-size: 1.2em;
             }
 
@@ -162,17 +146,6 @@ ol {
 
     margin: 30px 0;
 
-    .btn {
-        color:white;
-        font-size: 13px;
-        padding: 10px 14px;
-        background: $brand-success;
-
-        i.fa {
-            opacity: 1;
-        }
-    }
-
     .category-dropdown-menu {
         .cat {
             padding: 5px 8px;
@@ -185,14 +158,10 @@ ol {
 
 
 .btn {
-    font-size: 13px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: $border-radius-small;
 }
 
-.btn-primary {
-    background: $brand-primary;
-}
 
 
 
@@ -221,49 +190,13 @@ ol {
 .nav-pills {
     >li {
         >a {
-            color: white;
-            font-size: 14px;
-            padding: 10px 14px;
-            transition: all .3s;
-            background: $brand-primary!important;
+            padding: 15px 20px;
             border-radius: $border-radius-small;
-
-            i {
-                color: white;
-            }
-
-            &:hover,
-            &:focus,
-            &.active {
-                color: white;
-                background: $brand-primary-brighter!important;
-
-                i {
-                    color: white;
-                }
-            }
         }
     }
 }
 
-.user-main .nav-pills a {
-    color: white;
 
-    i {
-        color: white;
-    }
-
-    &:hover,
-    &:focus,
-    &.active {
-        color: white;
-        background: $brand-primary-brighter!important;
-
-        i {
-            color: white;
-        }
-    }
-}
 
 
 
@@ -289,61 +222,16 @@ ol {
         vertical-align: top;
     }
 
-    .topic-excerpt {
-        color: black;
-    }
-
     .main-link {
         font-size: 1em;
     }
 
     a {
         &.title {
-            color:black;
+            color:$gray-dark;
         }   
     }
-
-    .num {
-         a {
-            &.badge-posts {
-                font-weight: lighter;
-            }
-         }
-    }
 }
-
-.dropdown-menu {
-    box-shadow: none;
-    border: 1px solid #e9e9e9;
-    padding: 0.25em 0.5em;
-    border-radius: $border-radius-small;
-
-    span {
-        &.title {
-            font-weight: lighter;
-        }
-    }
-
-    li>a:hover,
-    .active>a,
-    .active>a:hover
-    {
-        background-color: $brand-primary-brighter;
-
-        .icon {
-            color:white;
-        }
-
-        span {
-            color:white;
-        }
-
-        .title {
-            color:white;
-        }
-    }
-}
-
 
 
 
@@ -351,94 +239,4 @@ ol {
 .badge-wrapper {
     font-weight: lighter;
     text-transform: uppercase;
-}
-
-
-#topic-title {
-    padding-top: 34px;
-    margin-bottom: 40px;
-}
-
-.topic-body {
-    line-height: 1.6em;
-    padding: 30px 11px 15px 11px;
-}
-
-
-.badge-wrapper {
-    &.bullet {
-
-        .badge-category-parent-bg,
-        .badge-category-bg {
-            border-radius: 50%;
-            width: 10px!important;
-            height: 10px!important;
-        }
-    }    
-}
-
-
-
-nav {
-    &.post-controls {
-        button {
-            &.widget-button {
-                border-radius: $border-radius-small;
-            }
-        }
-    }
-}
-
-
-.topic-map {
-   border-radius: $border-radius-small;
-}
-
-
-
-
-.categories-and-latest {
-     .topic-list-latest {
-         th {
-            &.latest {
-                line-height: 1;
-                padding: 14px 5px;
-            }
-         }
-     }
-}
-
-
-
-aside {
-    &.quote {
-        blockquote {
-            margin:0;
-        }
-    }
-}
-
-
-
-.heatmap-high {color: #9E62DD !important;}
-.heatmap-med {color: #6738B8 !important;}
-.heatmap-low {color: #512C91 !important;}
-.heatmap-high a {color: #9E62DD !important;}
-.heatmap-med a {color: #6738B8 !important;}
-.heatmap-low a {color: #512C91 !important;}
-
-
-
-/**
- * ADMIN
- */
-
-.admin-nav {
-    li {
-        a {
-            &.active {
-                background: $brand-primary;
-            }
-        }
-    }
 }

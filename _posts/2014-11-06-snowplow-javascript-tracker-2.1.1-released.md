@@ -32,7 +32,7 @@ This blog post will cover the following topics:
 
 Enable automatic form tracking using the `enableFormTracking` method:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 snowplow('enableFormTracking');
 {% endhighlight %}
 
@@ -46,13 +46,13 @@ When you call the method, it will only attach event listeners to existing forms,
 
 Use the new `trackAddToCart` and `trackRemoveFromCart` methods to track [`add_to_cart`][add_to_cart] and [`remove_from_cart`][remove_from_cart] events. The signatures of the methods are identical:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 trackRemoveFromCart(sku, name, category, unitPrice, quantity, currency, context);
 {% endhighlight %}
 
 Use them like this:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 snowplow('trackAddToCart', 'item-000303', 'small waistcoat', 'clothing', 79.99, 2, 'USD');
 {% endhighlight %}
 
@@ -60,13 +60,13 @@ snowplow('trackAddToCart', 'item-000303', 'small waistcoat', 'clothing', 79.99, 
 
 The `trackSocialInteraction` method lets you track [`social_interaction`][social_interaction] events on you site. This is its signature:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 trackSocialInteraction(action, network, target, context);
 {% endhighlight %}
 
 An example:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 snowplow('trackSocialInteraction', 'like', 'Facebook', 'blog post 0012');
 {% endhighlight %}
 
@@ -76,13 +76,13 @@ The new `site_search` event describes a user performing a search on a website. I
 
 This is the signature of the corresponding method:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 trackSiteSearch(terms, filters, totalResults, pageResults, context);
 {% endhighlight %}
 
 And an example of `trackSiteSearch` in action:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 snowplow('trackSiteSearch', ['event', 'streams'], {
   'category': 'books',
   'safeSearch': true
@@ -95,7 +95,7 @@ The `filters` parameter is a dictionary whose values can be strings or booleans.
 
 The `trackPageView` method now accepts an additional boolean parameter named "performanceTracking":
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 trackPageView(customTitle, performanceTracking, context);
 {% endhighlight %}
 
@@ -105,13 +105,13 @@ If you set this parameter to `true`, a [`PerformanceTiming`][performancetiming] 
 
 The `link_click` event has been updated to include an optional `content` field. This will be populated with the `innerHTML` property of the link. The `enableLinkClickTracking` now has a "trackContent" parameter which you must set to `true` to capture the innerHTML of clicked links:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 enableLinkClickTracking(criterion, pseudoClicks, trackContent, context);
 {% endhighlight %}
 
 The `trackLinkClick` method, which is used to track individual clicks manually, now accepts an additional string parameter named "content":
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 trackLinkClick(targetUrl, elementId, elementClasses, elementTarget, elementContent, context);
 {% endhighlight %}
 
@@ -125,7 +125,7 @@ This release integrates the core into the client-side Tracker. As a consequence,
 
 You can now specify callback functions which will only be called when `sp.js` has been loaded and initialized:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 function snowplowCallback() {
 	console.log("Snowplow has loaded");
 }
@@ -137,7 +137,7 @@ snowplow(snowplowCallback);
 
 By default, events are sent to a collector using the same protocol ("http" or "https") as the current page. Huge thanks to community member @kujo4pmZ for contributing the option to force the tracker to send all events over https! Just add a `forceSecureTracker` field when creating a tracker:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
         window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', { // Initialise a tracker
           appId: 'CFe23a',
           platform: 'mob',

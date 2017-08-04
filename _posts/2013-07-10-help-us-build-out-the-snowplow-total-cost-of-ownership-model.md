@@ -31,7 +31,7 @@ In the rest of this post, we provide simple instructions for pulling the relevan
 
 Simply execute the following SQL statement in Redshift
 
-{% highlight sql%}
+{% highlight sql linenos %}
 SELECT
 to_char(collector_tstamp, 'YYYY-MM-DD') AS "Day",
 count(*) AS "Number of events"
@@ -237,13 +237,13 @@ Measuring the amount of space occupied by your events in Redshift is very easy.
 
 First, measure the number of events by executing the following query:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 select count(*) from events;
 {% endhighlight %}
 
 Then to find out how much disk space that occupies in your Redshift cluster execute the following query:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 select owner as node, diskno, used, capacity
 from stv_partitions
 order by 1, 2, 3, 4;

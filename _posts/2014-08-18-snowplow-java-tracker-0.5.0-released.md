@@ -54,7 +54,7 @@ If requests are being sent as GET, we default to appending the original `/i` to 
 
 A new class `SchemaPayload` has been added as a wrapper around your custom contexts. The idea is to make sure that each context is a valid self-describing JSON which Snowplow can process. Hence, a `SchemaPayload` instance provides two methods `setSchema` and `setData`. Here's an example if your context was a simple map:
 
-{% highlight java%}
+{% highlight java linenos %}
 // Let's say your context is a simple map
 Map<String, String> contextMap = new HashMap<String, String>();
 contextMap.put("someContextKey", "someContextValue");
@@ -76,7 +76,7 @@ tracker.trackPageView("www.mypage.com", "My Page", "www.me.com", contextList);
 
 What this ends up looking like in a JSON format, note the `co` property:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-0",
   "data": [
@@ -101,7 +101,7 @@ What this ends up looking like in a JSON format, note the `co` property:
 
 The new class also changes the track methods from accepting a context of `List<Map>` to `List<SchemaPayload>`. Here's an example of the new method signatures:
 
-{% highlight java%}
+{% highlight java linenos %}
 // Previous
 trackPageView(String pageUrl, String pageTitle, String referrer, List<Map> context, double timestamp)
 // Now
@@ -112,7 +112,7 @@ trackPageView(String pageUrl, String pageTitle, String referrer, List<SchemaPayl
 
 The Emitter class now supports callbacks for success/failure of sending events. If events fail to send, you can now choose how to handle that failure, by passing in a class using the `RequestCallback` interface to the `Emitter` object. Here's an example to make it easier to understand:
 
-{% highlight java%}
+{% highlight java linenos %}
 Emitter emitter = new Emitter(testURL, HttpMethod.GET, new RequestCallback() {
   @Override
   public void onSuccess(int successCount) {
@@ -129,13 +129,13 @@ Emitter emitter = new Emitter(testURL, HttpMethod.GET, new RequestCallback() {
 If events are all successfully sent, the `onSuccess` method returns the number of successful events sent. If there were any failures, the `onFailure` method returns the successful events sent (if any) and a *list of events* that failed to be sent (i.e. the HTTP state code did not return 200).
 
 We've also added two new Emitter constructors to support callbacks:
-{% highlight java%}
+{% highlight java linenos %}
 Emitter(String URI, RequestCallback callback)
 Emitter(String URI, HttpMethod httpMethod, RequestCallback callback)
 {% endhighlight %}
 
 This is an optional feature, so if you choose to not worry about the failed events, you can still use the original `Emitter` constructors:
-{% highlight java%}
+{% highlight java linenos %}
 Emitter(String URI)
 Emitter(String URI, HttpMethod httpMethod)
 {% endhighlight %}
@@ -145,7 +145,7 @@ Emitter(String URI, HttpMethod httpMethod)
 We've changed the default behavior of sending events in this update. When you create an `Emitter` and set the `HttpMethod` to send GET requests, we default the Emitter to send events instantly upon being tracked. It makes most sense to send GET requests immediately since they cannot be grouped like events sent via POST.
 
 Here is a short example:
-{% highlight java%}
+{% highlight java linenos %}
 // By default BufferOption.Instant is set for GET
 Emitter emitter = new Emitter("collector.acme.net", HttpMethod.GET);
 

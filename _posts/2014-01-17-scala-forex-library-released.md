@@ -66,13 +66,13 @@ For detailed guidance on configuring the library, please see the [Configuration 
 
 Once initialized, an exchange rate lookup is as simple as:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 val jpy2gbp = fx.rate("JPY").to("GBP").nowish
 {% endhighlight %}
 
 Here's a slightly more complex example, of looking up a historic rate:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 // Base currency is USD
 val tradeDate = new DateTime(2011, 3, 13, 11, 39, 27, 567, DateTimeZone.forID("America/New_York"))
 val usd2yen = fx.rate.to("JPY").at(tradeDate)
@@ -86,14 +86,14 @@ For detailed help on currency lookups, please see the [Rate Lookup section] [rea
 
 A currency conversion can be as simple as:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 // Base currency is GBP
 val gbpPriceInEuros = fx.convert(9.99).to("EUR").now
 {% endhighlight %}
 
 Here's a slightly more complex example, of converting a trade using the end of day rate:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 val eodDate = new DateTime(2011, 3, 13, 0, 0)
 val tradeInYen = fx.convert(10000, "GBP").to("JPY").at(eodDate)
 {% endhighlight %}

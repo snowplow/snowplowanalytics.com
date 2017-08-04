@@ -48,7 +48,7 @@ When we are exploring a new technology or platform, we like to start by open-sou
 This example project is a simple *analytics-on-write* job - the kind of event analytics that could occur in a real-life event data pipeline.
 Our Dataflow job reads a Pub/Sub topic containing events in a JSON format:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "timestamp": "2015-06-05T12:54:43.064528",
   "type": "Green",

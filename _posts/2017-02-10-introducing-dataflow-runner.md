@@ -120,7 +120,7 @@ To use Dataflow Runner you will need to create two configuration files. The firs
 
 Here is the cluster configuration - note that this is EMR-specific:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-0",
   "data": {
@@ -176,7 +176,7 @@ Eventually you will see output like the following - `EMR cluster launched succes
 
 Here is a playbook containing a single step - this playbook is *not* EMR-specific:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-0",
   "data": {

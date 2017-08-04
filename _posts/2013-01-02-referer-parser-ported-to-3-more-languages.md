@@ -20,7 +20,7 @@ You can checkout the code on GitHub, in the [referer-parser repository] [repo], 
 
 To use referer-parser from a Python script:
 
-{% highlight python%}
+{% highlight python linenos %}
 from referer_parser import Referer
 
 referer_url = 'http://www.google.com/search?q=gateway+oracle+cards+denise+linn&hl=en&client=safari'
@@ -40,7 +40,7 @@ For more information, please see the Python [README] [python-readme].
 
 To use referer-parser from a Scala app:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 val refererUrl = "http://www.google.com/search?q=gateway+oracle+cards+denise+linn&hl=en&client=safari"
 
 import com.snowplowanalytics.refererparser.scala.Parser
@@ -59,7 +59,7 @@ For more information, please see the Java/Scala [README] [java-scala-readme].
 
 To use referer-parser from a Java program:
 
-{% highlight java%}
+{% highlight java linenos %}
 import com.snowplowanalytics.refererparser.Parser;
 
 ...

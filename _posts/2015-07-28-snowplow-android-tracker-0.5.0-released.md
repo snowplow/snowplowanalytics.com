@@ -27,7 +27,7 @@ This release post will cover the following topics:
 
 This release lets you add a new `client_session` context to each of your Snowplow events, allowing you to easily group events from a single user into a single session. This functionality can be activated by passing in the following builder commands to the Tracker creation step:
 
-{% highlight java%}
+{% highlight java linenos %}
 Tracker tracker = new Tracker.TrackerBuilder( ... )
     .sessionContext(true)     // To use the session context
     .sessionCheckInterval(10) // Checks every 10 seconds (default is 15)
@@ -50,7 +50,7 @@ Session information should survive for the life of the application, i.e. until i
 
 An important note here is that we cannot detect if the application is in the background or not from a library standpoint. You will have to update your applications `onPause()` and `onResume()` functions to manually flag this change. The following samples can be copied into an application activity to set the background state of the application for the session checker:
 
-{% highlight java%}
+{% highlight java linenos %}
 @Override
 protected void onPause() {
     super.onPause();
@@ -76,7 +76,7 @@ Secondly, we have also improved the speed at which events are added and removed 
 
 This means the Tracker now processes as much as possible using a concurrent model, orchestrated by a configurable thread pool that you can define the size of:
 
-{% highlight java%}
+{% highlight java linenos %}
 Tracker tracker = new Tracker.TrackerBuilder( ... )
     .threadCount(20) // A pool of 20 threads
     .build();
@@ -94,13 +94,13 @@ Alongside the performance updates we have made a fundamental change to how all t
 
 To illustrate lets look at how we were tracking a page view event in version 0.4.0:
 
-{% highlight java%}
+{% highlight java linenos %}
 tracker.trackPageView("www.example.com", "example", "www.referrer.com");
 {% endhighlight %}
 
 For events like an Ecommerce Transaction it quickly becomes difficult to reason about:
 
-{% highlight java%}
+{% highlight java linenos %}
 TransactionItem item1 = new TransactionItem("item_id_1", "item_sku_1", 1.00, 1, "item_name", "item_category", "currency");
 TransactionItem item2 = new TransactionItem("item_id_2", "item_sku_2", 1.00, 1, "item_name", "item_category", "currency");
 
@@ -113,7 +113,7 @@ tracker.trackEcommerceTransaction("6a8078be", 300, "my_affiliate", 30, 10, "Lond
 
 Here is a page view in version 0.5.0:
 
-{% highlight java%}
+{% highlight java linenos %}
 tracker.track(PageView.builder()
     .pageUrl("pageUrl")
     .pageTitle("pageTitle")
@@ -123,7 +123,7 @@ tracker.track(PageView.builder()
 
 And here is the ecommerce event:
 
-{% highlight java%}
+{% highlight java linenos %}
 EcommerceTransactionItem item1 = EcommerceTransactionItem.builder()
     .itemId("item_id_1")
     .sku("item_sku_1")

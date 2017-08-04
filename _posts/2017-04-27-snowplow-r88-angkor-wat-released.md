@@ -64,7 +64,7 @@ To start deduplicating events across batches you need to provide EmrEtlRunner a 
 
 Here is an example configuration:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-0",
     "data": {
@@ -162,7 +162,7 @@ snowplow_config
 1. Remove whole `storage.targets` section (leaving `storage.download.folder`) from your `config.yml` file
 2. Update the `hadoop_shred` job version in your configuration YAML like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 versions:
   hadoop_enrich: 1.8.0        # UNCHANGED
   hadoop_shred: 0.11.0        # WAS 0.10.0

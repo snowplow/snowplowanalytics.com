@@ -43,7 +43,7 @@ To setup the C++ Tracker you first need include the source files in your project
 
 You can then instantiate and start a new tracker like so:
 
-{% highlight cpp%}
+{% highlight cpp linenos %}
 #include "tracker.hpp"
 
 Emitter emitter("com.acme.collector", Emitter::Method::POST, Emitter::Protocol::HTTP, 500, 52000, 52000, "events.db");
@@ -52,7 +52,7 @@ Tracker *t = Tracker::init(emitter, NULL, NULL, NULL, NULL, NULL, NULL);
 
 You are now ready to track events, so let's send a screen view event:
 
-{% highlight cpp%}
+{% highlight cpp linenos %}
 string name = "Screen ID - 5asd56";
 
 Tracker::ScreenViewEvent sve;

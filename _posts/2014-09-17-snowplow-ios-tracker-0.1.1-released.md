@@ -33,7 +33,7 @@ $ gem install cocoapods
 
 To add the Snowplow iOS Tracker as a dependency to your iOS project, create a `Podfile` and add the following line:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 platform :ios
 pod 'SnowplowTracker'
 {% endhighlight %}
@@ -51,7 +51,7 @@ To use the Tracker you need to create a Tracker and Request instance. The `Snowp
 
 You can create a `SnowplowRequest` instance easily:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 NSURL *url = [NSURL URLWithString:"collector.acme.net"];
 SnowplowRequest *collector = [[SnowplowRequest alloc] initWithURLRequest:url
                                                               httpMethod:@"POST"];
@@ -59,7 +59,7 @@ SnowplowRequest *collector = [[SnowplowRequest alloc] initWithURLRequest:url
 
 And a `SnowplowTracker` in a similar fashion:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 SnowplowTracker *tracker = [[SnowplowTracker alloc] initWithCollector:collector
                                                                 appId:@"AF003"
                                                         base64Encoded:false
@@ -68,13 +68,13 @@ SnowplowTracker *tracker = [[SnowplowTracker alloc] initWithCollector:collector
 
 You can easily add some additional information to each event, such as a user ID:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 [tracker setUserId:"a73e94"];
 {% endhighlight %}
 
 We can then fire some events like so:
 
-{% highlight objective-c%}
+{% highlight objective-c linenos %}
 [tracker trackPageView:@"www.example.com"
                  title:@"example page"
               referrer:@"www.referrer.com"];

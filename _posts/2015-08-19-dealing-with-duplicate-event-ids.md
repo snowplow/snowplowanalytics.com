@@ -23,7 +23,7 @@ This blogposts covers:
 
 Unfortunately not. Most Snowplow users will find that some events share an event ID. The following SQL query returns the distribution of events per event ID:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 SELECT
   event_count,
   COUNT(*)
@@ -88,7 +88,7 @@ Note that this will remove some events from `atomic`, some of which might be leg
 
 Let’s run through the queries. First, we list the event IDs that occur more than once in `atomic.events`:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 CREATE TABLE duplicates.tmp_ids_1
   DISTKEY (event_id)
   SORTKEY (event_id)
@@ -97,7 +97,7 @@ AS (SELECT event_id FROM (SELECT event_id, COUNT(*) AS count FROM atomic.events 
 
 We use this list to create a table with all events that don’t have a unique event ID:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 CREATE TABLE duplicates.tmp_events
   DISTKEY (event_id)
   SORTKEY (event_id)
@@ -127,7 +127,7 @@ The `GROUP BY` clause combines endogenous duplicates into a single row if all co
 
 Next, we list the event IDs that have now become unique:
 
-{% highlight sql%}
+{% highlight sql linenos %}
 CREATE TABLE duplicates.tmp_ids_2
   DISTKEY (event_id)
   SORTKEY (event_id)
@@ -138,7 +138,7 @@ The last step is wrapped in a [transaction][redshift-begin] to ensure that eithe
 
 First, it deletes the original duplicates from `atomic.events`. Then it inserts the deduplicated natural copies back into the main table, provided that the event ID is not also in `atomic.duplicated_events`. The remaining events are moved to `atomic.duplicated_events`.
 
-{% highlight sql%}
+{% highlight sql linenos %}
 BEGIN;
 
 DELETE FROM atomic.events

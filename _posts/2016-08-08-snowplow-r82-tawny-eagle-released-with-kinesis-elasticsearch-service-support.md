@@ -76,7 +76,7 @@ Only the Elasticsearch Sink app has actually changed. The change does include br
 
 Here is the updated config file template:
 
-{% highlight json%}
+{% highlight json linenos %}
 sink {
   ...
   elasticsearch {

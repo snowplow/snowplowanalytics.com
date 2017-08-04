@@ -98,7 +98,7 @@ tag playbooks.
 
 As an example, we could have the following `playbook.json` file:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1",
   "data": {
@@ -152,7 +152,7 @@ thanks to the format argument.
 
 As an example, if we have the following in our `cluster.json`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -164,7 +164,7 @@ As an example, if we have the following in our `cluster.json`:
 
 it results in:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -180,7 +180,7 @@ As its name implies, the `base64` template function will encode the argument usi
 
 For example:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -192,7 +192,7 @@ For example:
 
 results in:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -214,7 +214,7 @@ dataflow-runner
 
 The following `cluster.json`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -226,7 +226,7 @@ The following `cluster.json`:
 
 results in:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -246,7 +246,7 @@ Prior to 0.3.0, if you forgot to specify a template variable, then the string `<
 
 For example, launching an EMR cluster with the following `cluster.json` configuration:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {
@@ -280,7 +280,7 @@ result in an error instead of an empty string.
 
 Let's say that we have the following `cluster.json`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-1",
   "data": {

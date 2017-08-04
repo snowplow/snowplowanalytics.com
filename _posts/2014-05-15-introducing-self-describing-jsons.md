@@ -34,7 +34,7 @@ Let's get started.
 
 Let's say we have a JSON which looks like this:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"bannerId": "4732ce23d345"
 }
@@ -42,7 +42,7 @@ Let's say we have a JSON which looks like this:
 
 And let's say that we know that this JSON conforms to this schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",
@@ -82,7 +82,7 @@ Let's discuss each of these points next.
 
 Let's add a new property, `self`, to describe our JSON Schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"self": {
@@ -119,7 +119,7 @@ But we still don't have an association between the individual JSON objects and t
 
 How can we associate an individual JSON with its JSON Schema? Let's try a slightly modified JSON format:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"schema": "iglu:com.snowplowanalytics/ad_click/jsonschema/1-0-0",
 	"data": {
@@ -198,7 +198,7 @@ The JSON Schema enforces a few formatting rules for the `self` fields:
 
 Next, we can revise our JSON Schema to flag that this is a self-describing JSON Schema - note the updated `$schema` field:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"self": {
@@ -225,7 +225,7 @@ As per the `self-desc` JSON Schema definition, note that:
 
 And how do we now validate a self-describing JSON against its JSON Schema? To recap, our JSON instance looks like this:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"schema": "iglu:com.snowplowanalytics/ad_click/jsonschema/1-0-0",
 	"data": {

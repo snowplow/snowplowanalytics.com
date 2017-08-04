@@ -45,7 +45,7 @@ The run manifest functionality resides in the new `snowplow_analytics_sdk.run_ma
 
 Here's a short usage example:
 
-{% highlight python%}
+{% highlight python linenos %}
 from boto3 import client
 from snowplow_analytics_sdk.run_manifests import *
 
@@ -95,7 +95,7 @@ Version 0.2.0 also includes a few internal changes and minor enhancements, inclu
 
 As before, the Snowplow Python Analytics SDK is available on [PyPI][pypi]:
 
-{% highlight python%}
+{% highlight python linenos %}
 pip install -U snowplow_analytics_sdk==0.2.0
 {% endhighlight %}
 

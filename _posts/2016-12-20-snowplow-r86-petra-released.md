@@ -83,7 +83,7 @@ AWS has a healthy [roadmap of new data center regions] [region-roadmap] opening 
 
 Upgrading is simple - update the `hadoop_shred` job version in your configuration YAML like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 versions:
   hadoop_enrich: 1.8.0        # UNCHANGED
   hadoop_shred: 0.10.0        # WAS 0.9.0

@@ -26,7 +26,7 @@ Read on for more information...
 
 The initialization method for the Tracker class has been updated. This is its new signature:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 Contract String, Maybe[String], Maybe[String], Bool => Tracker
 def initialize(endpoint, namespace=nil, app_id=nil, encode_base64=@@default_encode_base64)
 {% endhighlight %}
@@ -35,7 +35,7 @@ The change is that the `context_vendor` argument has been removed. This is becau
 
 An example of tracker initialization in version 0.2.0:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 require 'snowplow-tracker'
 
 t = SnowplowTracker::Tracker.new('d3rkrsqld9gmqf.cloudfront.net', 'my_tracker_name', 'my_app_id')
@@ -45,14 +45,14 @@ t = SnowplowTracker::Tracker.new('d3rkrsqld9gmqf.cloudfront.net', 'my_tracker_na
 
 Previously, several arguments were required to build an unstructured event: the name of the event, the JSON describing the event, and the event vendor (the company that developed the event model). Now the signature of `track_unstruct_event` has been simplified:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 Contract @@SelfDescribingJson, Maybe[@@ContextsInput], Maybe[Num] => [Bool, Num]
 def track_unstruct_event(event_json, context=nil, tstamp=nil)
 {% endhighlight %}
 
 A usage example:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 t.track_unstruct_event({
   'schema' => 'iglu:com.acme/viewed_product/jsonschema/1-0-0',
   'data' => {
@@ -74,7 +74,7 @@ Custom contexts describe the circumstances around an individual event. In this v
 
 An example, attaching two custom contexts to a page view event:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 t.track_page_view('http://www.example.com', 'title page', 'http://www.referrer.com', [{
   'schema' => 'iglu:com.acme/viewed_product/jsonschema/1-0-0',
   'data' => {
@@ -92,7 +92,7 @@ t.track_page_view('http://www.example.com', 'title page', 'http://www.referrer.c
 
 When tracking an ecommerce transaction, you can attach an array of custom contexts which will be sent with the transaction:
 
-{% highlight ruby%}
+{% highlight ruby linenos %}
 t.track_ecommerce_transaction({
   # map of arguments for the transaction event
   'order_id' => '12345',

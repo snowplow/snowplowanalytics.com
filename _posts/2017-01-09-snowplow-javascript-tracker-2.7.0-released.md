@@ -69,7 +69,7 @@ Huge thank you to [Snowflake Analytics'][snowflake] [Narbeh Yousefian][narbeh] f
 
 We've added a new `trackSelfDescribingEvent` method for tracking events where you've defined your own event schema e.g.
 
-{% highlight js%}
+{% highlight js linenos %}
 window.snowplow_name_here('trackSelfDescribingEvent', {
     schema: 'iglu:com.my_company/save_game/jsonschema/2-0-0',
     data: {

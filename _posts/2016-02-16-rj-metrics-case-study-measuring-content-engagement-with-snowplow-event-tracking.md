@@ -41,7 +41,7 @@ Yes, we do track conversion rate on this form, and that’s a really important m
 
 Once we had our Snowplow analysis set up and piping data into Amazon Redshift, we were able to use [Mode][mode-analytics] to query the data directly, and visualize those query results.
 
-{% highlight psql%}
+{% highlight psql linenos %}
 WITH events AS (
 	SELECT * from atomic.events WHERE page_url ILIKE '%/resources/reports/the-state-of-data-science%'
 ),

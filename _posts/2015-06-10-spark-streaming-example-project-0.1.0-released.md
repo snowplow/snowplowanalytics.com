@@ -39,7 +39,7 @@ Read on after the fold for:
 
 Our Spark Streaming job reads a Kinesis stream containing events in a JSON format:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "timestamp": "2015-06-05T12:54:43.064528",
   "type": "Green",

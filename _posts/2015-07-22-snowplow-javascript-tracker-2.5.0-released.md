@@ -36,7 +36,7 @@ To make it easier to aggregate all events from a particular page load into singl
 
 To enable this context, add "webPage" to the "contexts" field of the tracker construction argmap:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',
@@ -55,7 +55,7 @@ When you add contexts to a page view, those contexts automatically get added to 
 
 It is now possible to pass a context-generating function to `trackPageView`. This function should return a (possibly empty) array of custom contexts. For example:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 // Turn on page pings every 10 seconds
 window.snowplow('enableActivityTracking', 10, 10);
 
@@ -100,7 +100,7 @@ grunt quick
 
 The previous version of the tracker deprecated the "performanceTiming" argument to the `trackPageView` function. This release removes it completely:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 // Old
 // window.snowplow('trackPageView', customTitleString, performanceTimingBoolean, contextsArray);
 
@@ -112,7 +112,7 @@ window.snowplow('trackPageView', customTitleString, contextsArray, contextGenera
 
 Using the `setSessionCookieTimeout` method is no longer effective. This is because the cookie is set as soon as the tracker is created, before the method gets a chance to be called. Instead, you can add a `sessionCookieTimeout` field to the tracker's construction argmap:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
   appId: 'CFe23a',
   platform: 'web',

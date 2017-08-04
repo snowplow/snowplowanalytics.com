@@ -77,7 +77,7 @@ Let's make SchemaVer more concrete with some examples using JSON Schema, in reve
 
 We have an existing JSON Schema, let's call this `1-0-0`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",
@@ -93,7 +93,7 @@ We have an existing JSON Schema, let's call this `1-0-0`:
 
 Now we want to add an additional field to our schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",
@@ -120,7 +120,7 @@ Therefore we are looking at an `ADDITION`, and so we bump the schema version to 
 
 Let's now make our JSON Schema support `additionalProperties` - this constitutes another `ADDITION`, so we are now on `1-0-2`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",
@@ -139,7 +139,7 @@ Let's now make our JSON Schema support `additionalProperties` - this constitutes
 
 After a while, we add a new field, `cost`:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",
@@ -170,7 +170,7 @@ So we are effectively making a `REVISION` to the data schema - so we bump the ve
 
 Oh dear - we have just realized that we can identify our clicks through a unique `clickId` - no need to be storing the `bannerId` or `impressionId`. Here is our new JSON Schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type": "object",

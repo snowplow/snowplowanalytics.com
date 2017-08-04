@@ -23,7 +23,7 @@ The rest of this blog post will cover the following topics:
 
 Version 2.1.1 added support for custom callbacks to be executed when sp.js loads:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 snowplow(function () {
 	console.log("sp.js has loaded");
 });
@@ -33,7 +33,7 @@ This release extends that support by calling the callback function as a method o
 
 An example which extracts all the available fields:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 // Configure a tracker instance named "cf"
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 	appId: 'snowplowExampleApp',
@@ -79,7 +79,7 @@ The Snowplow JavaScript Tracker maintains a queue of events that have failed to 
 
 You can now disable this use of `localStorage` by setting a flag in the argmap used to create a new tracker instance. You can also disable the use of first-party cookies:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 // Configure a tracker instance named "cf"
 snowplow('newTracker', 'cf', 'd3rkrsqld9gmqf.cloudfront.net', {
 	appId: 'snowplowExampleApp',

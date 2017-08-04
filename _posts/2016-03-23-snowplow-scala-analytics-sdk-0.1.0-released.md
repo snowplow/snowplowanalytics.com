@@ -50,7 +50,7 @@ The JSON Event Transformer takes a Snowplow enriched event and converts it into 
 
 The JSON Event Transformer converts a Snowplow enriched event into a single JSON like so:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "app_id":"demo",
   "platform":"web","etl_tstamp":"2015-12-01T08:32:35.048Z",
   "collector_tstamp":"2015-12-01T04:00:54.000Z","dvce_tstamp":"2015-12-01T03:57:08.986Z",
@@ -62,7 +62,7 @@ The most complex piece of processing is the handling of the self-describing JSON
 
 For example, if an enriched event contained a `com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1`, then the final JSON would contain:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "app_id":"demo","platform":"web","etl_tstamp":"2015-12-01T08:32:35.048Z",
   "unstruct_event_com_snowplowanalytics_snowplow_link_click_1": {
     "targetUrl":"http://www.example.com",
@@ -81,7 +81,7 @@ The latest version of Snowplow Scala Analytics SDK is 0.1.0, which is cross-buil
 
 If you're using SBT, add the following lines to your build file:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 // Resolvers
 val snowplowRepo = "Snowplow Analytics" at "http://maven.snplow.com/releases/"
 
@@ -97,7 +97,7 @@ The Scala Analytics SDK is a great fit for performing Snowplow [event data model
 
 Here's the code we use internally for our own data modeling jobs:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 import com.snowplowanalytics.snowplow.analytics.scalasdk.json.EventTransformer
 
 val events = input
@@ -114,7 +114,7 @@ The Scala Analytics SDK is a great fit for performing analytics-on-write, monito
 
 Here's some sample code for transforming enriched events into JSON inside a Scala Lambda:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 import com.snowplowanalytics.snowplow.analytics.scalasdk.json.EventTransformer
 
 def recordHandler(event: KinesisEvent) {

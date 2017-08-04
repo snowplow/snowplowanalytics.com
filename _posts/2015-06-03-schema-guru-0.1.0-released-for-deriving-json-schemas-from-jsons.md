@@ -55,13 +55,13 @@ The initial 0.1.0 release of Schema Guru has the following features:
 
 Our deriving of JSON Schemas from multiple instances is possible due to the observation that a JSON Schema is a [semigroup] [semigroup] with an associative binary merge operation. For example, the merger of these two valid schemas:
 
-{% highlight json%}
+{% highlight json linenos %}
 {"key": {"type": "integer"}} merge {"key": {"type": "string"}}
 {% endhighlight %}
 
 Will result in another valid schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {"key": {"type": ["integer", "string"]}}
 {% endhighlight %}
 
@@ -77,7 +77,7 @@ From the last example we can see that Schema Guru supports JSON Schema's various
 
 Let's give an example. Here is a JSON instance:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "event": {
     "id": "f1e89550-7fda-11e4-bbe8-22000ad9bf74",
     "length": 42 }}
@@ -85,7 +85,7 @@ Let's give an example. Here is a JSON instance:
 
 And a second one:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "event": {
     "id": 123,
     "length": null }}
@@ -93,7 +93,7 @@ And a second one:
 
 Running Schema Guru against both of these instances generates the following JSON Schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 { "type" : "object",
   "properties" : {
     "event" : {

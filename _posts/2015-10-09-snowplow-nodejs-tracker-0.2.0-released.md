@@ -21,7 +21,7 @@ Read on for more information...
 
 This release brings the Node.js Tracker's API closer to those of other trackers with the addition of Emitters, objects which control how and when the events created by the Tracker are sent to the Snowplow collector. A Tracker object can be configured with one or more Emitters, and sends each event to all Emitters associated with it. This enables you to send events to multiple endpoints, like this:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 var snowplow = require('snowplow-tracker');
 var tracker = snowplow.tracker;
 var emitter = snowplow.emitter;

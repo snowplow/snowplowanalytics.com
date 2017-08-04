@@ -26,7 +26,7 @@ So, what is Apache Hive, and what would you want a Hive UDF for? Hive is a data 
 
 Listing 1: An example HiveQL query
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 SELECT
 dt,
 COUNT(DISTINCT (user_id))
@@ -61,7 +61,7 @@ First, let's create a directory for our project, and add a file, project.sbt int
 Listing 2: Our project.sbt build file
 
 
-{% highlight scala%}
+{% highlight scala linenos %}
 name := "hive-example-udf"
 version := "0.0.1"
 organization := "com.snowplowanalytics"
@@ -88,7 +88,7 @@ Now let's add a file into our udf folder called ToUpper.java, containing:
 
 Listing 3: Our ToUpper.java UDF definition
 
-{% highlight java%}
+{% highlight java linenos %}
 package com.snowplowanalytics.hive.udf;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
@@ -144,7 +144,7 @@ Now let's add a file into our udf test folder called ToUpperTest.scala, containi
 
 Listing 5: Our ToUpperTest.scala Specs2 test
 
-{% highlight java%}
+{% highlight java linenos %}
 package com.snowplowanalytics.hive.udf
 
 import org.apache.hadoop.io.Text
@@ -173,7 +173,7 @@ So let's run this next from SBT:
 
 Listing 6: Testing in SBT
 
-{% highlight text%}
+{% highlight text linenos %}
 > test
 [info] Compiling 1 Scala source to /home/alex/Development/Snowplow/hive-example-udf/target/scala-2.9.2/test-classes...
 [info] ToUpperSpec
@@ -197,7 +197,7 @@ Our tests passed! Now we're ready to use our function "in anger" from Hive. Firs
 
 Listing 7: Packaging our jar
 
-{% highlight text%}
+{% highlight text linenos %}
 > package
 [info] Packaging /home/alex/Development/Snowplow/hive-example-udf/target/scala-2.9.2/hive-example-udf_2.9.2-0.0.1.jar ...
 [info] Done packaging.
@@ -208,14 +208,14 @@ Now take the jarfile (hive-example-udf_2.9.2-0.0.1.jar) and upload it to our Hiv
 
 From your Hive console, you can now add our new UDF like so:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 > add jar /path/to/HiveSwarm.jar;
 > create temporary function to_upper as 'com.snowplowanalytics.hive.udf.ToUpper';
 {% endhighlight %}
 
 And then finally you can use our new UDF in your HiveQL queries, something like this:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 > SELECT toupper(author_name) FROM authors a;
   STEPHEN KING
 {% endhighlight %}

@@ -47,7 +47,7 @@ Use a `POST` request to the schema service to publish new schemas to your reposi
 For example, let's say you own the `com.acme` prefix (the details
 regarding owning a vendor prefix will be covered in the [API authentication section](/blog/2014/08/28/iglu-release-2-with-restful-schema-server/#auth)) and you have a JSON schema defined as follows:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an Acme Inc ad click event",
@@ -114,7 +114,7 @@ curl \
 
 Once the request is processed, you should receive a JSON response like this one:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "status": 201,
   "message": "Schema successfully added",
@@ -163,7 +163,7 @@ curl \
 
 The JSON response should look like this:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an Acme Inc ad click event",
@@ -223,7 +223,7 @@ curl \
 
 To get back:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "vendor": "com.acme",
   "name": "ad_click",
@@ -454,7 +454,7 @@ not familiar with the concept). It essentially means that your schema must have 
 If your schema is not self-describing you will get back this JSON response when
 trying to add it to the repository:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "status": 400,
   "message": "The schema provided is not a valid self-describing schema",
@@ -496,7 +496,7 @@ in the future.
 Similarly to a `POST` request, if the validation fails you will receive the
 following response:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "status": 400,
   "message": "The schema provided is not a valid self-describing schema",
@@ -508,7 +508,7 @@ With the `report` object containing the full validation failure message.
 
 If the validation succeeds, you should get back something like:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "status": 200,
   "message": "The schema provided is a valid self-describing schema"
@@ -535,7 +535,7 @@ the `instance` query parameter the instance to be validated.
 Similarly to validating a schema, you will receive the following JSON if the
 instance is not valid against the schema:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "status": 400,
   "message": "The instance provided is not valid against the schema",
@@ -661,7 +661,7 @@ Once the server is launched, you will still need to add a `super` API key
 manually to the database. This API key will be used to generate your clients'
 API keys.
 
-{% highlight sql%}
+{% highlight sql linenos %}
 insert into apikeys (uid, vendor_prefix, permission, createdat)
 values ('an-uuid', '.', 'super', current_timestamp);
 {% endhighlight %}
@@ -700,7 +700,7 @@ curl \
 
 You should receive a JSON response like this one:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "read": "an-uuid",
     "write": "another-uuid"

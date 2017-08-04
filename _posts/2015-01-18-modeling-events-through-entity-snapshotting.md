@@ -102,7 +102,7 @@ There are some distinct advantages to this approach:
 
 If we squint a little bit, we can see Snowplow's existing support for "custom contexts" as a form of entity snapshotting. Let's take this example from the JavaScript Tracker technical documentation:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 window.snowplow_name_here('trackPageView', null , [{
     schema: "iglu:com.example_company/page/jsonschema/1-2-1",
     data: {
@@ -166,7 +166,7 @@ So far this is all a little theoretical. At Snowplow most of our applied event m
 
 Imagine that we are trying to model an in-game event where a player (Jack, perhaps) sells some armour to another player. In the following self-describing JSON, we represent this event as a set of annotated entity snapshots:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/event_grammar/jsonschema/1-0-0",
   "data": {

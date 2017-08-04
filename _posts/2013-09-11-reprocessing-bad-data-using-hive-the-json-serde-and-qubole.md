@@ -44,7 +44,7 @@ The Snowplow enrichment process takes input lines of data, in the form of collec
 
 The locations are specified in the [EmrEtlRunner config file] [emretlrunner-config-file], an example of which can be found [here] [emretlrunner-config-file].
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 :s3:
   :region: ADD HERE
   :buckets:
@@ -65,7 +65,7 @@ Each bad row is a JSON containing just two fields:
 
 An example row generated for the Snowplow website, caused by Amazon's CloudFront log file format update, is shown below (formatted to make it easier to read):
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "line": "2013-08-19\t04:06:09\tHKG50\t826\t175.159.22.201\tGET\td3v6ndkyapxc2w.cloudfront.net\t/i\t200\thttp://snowplowanalytics.com/analytics/catalog-analytics/market-basket-analysis-identifying-products-that-sell-well-together.html\tMozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_6_8)%20AppleWebKit/534.57.2%20(KHTML,%20like%20Gecko)%20Version/5.1.7%20Safari/534.57.2\te=pv&page=Market%20basket%20analysis%20-%20identifying%20products%20and%20content%20that%20go%20well%20together%20-%20Snowplow%20Analytics&dtm=1376885168897&tid=479753&vp=1361x678&ds=1346x6578&vid=1&duid=24210ca58692c76e&p=web&tv=js-0.12.0&fp=421731260&aid=snowplowweb&lang=en-us&cs=UTF-8&tz=Asia%2FShanghai&refr=http%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3Dmarket%2520basket%2520analysis%2520apriori%2520algorithm%26source%3Dweb%26cd%3D9%26sqi%3D2%26ved%3D0CGgQFjAI%26url%3Dhttp%253A%252F%252Fsnowplowanalytics.com%252Fanalytics%252Fcatalog-analytics%252Fmarket-basket-analysis-identifying-products-that-sell-well-together.html%26ei%3DnZkRUp_UF4qdiAem-YHwAg%26usg%3DAFQjCNE8XEB-2ItaXcOC5i2T-jLvpv77uQ%26sig2%3DFPZRScoJkUEg5G2qa8BoBA%26bvm%3Dbv.50768961%2Cd.aGc%26cad%3Drjt&f_pdf=1&f_qt=1&f_realp=0&f_wma=0&f_dir=0&f_fla=1&f_java=1&f_gears=0&f_ag=0&res=1440x900&cd=24&cookie=1&url=http%3A%2F%2Fsnowplowanalytics.com%2Fanalytics%2Fcatalog-analytics%2Fmarket-basket-analysis-identifying-products-that-sell-well-together.html\t-\tRefreshHit\tmEPXmPmaMHvqTD6ung3_IlOgVuNOLnliGz9mVYn29oyOPMDadhuQpQ==",
     "errors": [
@@ -94,7 +94,7 @@ After a short period Qubole should alert you that the JAR has been successfully 
 
 Now we need to define a table so that Hive can query our bad row data in S3. Execute the following query in the Qubole Composer, making sure that you update the `LOCATION` setting to point to the location in S3 where your bad rows are stored. (This can be worked out from your EmrEtlRunner's `config.yml` file, as explained [above](#how-snowplow-handles-bad-rows)).
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 CREATE EXTERNAL TABLE `bad_rows` (
 	line string,
 	errors array<string>
@@ -109,7 +109,7 @@ LOCATION 's3n://snowplow-data/snplow/bad-rows/';
 
 Our table is partitioned by `run` - each time the Snowplow enrichment process is run (in our case daily), any bad rows are saved in their own separate subfolder labelled `run=2013-xx-xx...`. Let's recover those partitions, by executing the following:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 ALTER TABLE `bad_rows` RECOVER PARTITIONS;
 {% endhighlight %}
 
@@ -119,7 +119,7 @@ ALTER TABLE `bad_rows` RECOVER PARTITIONS;
 
 We run the Snowplow ETL once a day. As a result, each "run" represents one days worth of data. By counting the number of bad rows per run, we effectively calculate the number of bad rows of data generated per day. We can do that by executing the following query:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 SELECT
 run,
 count(*)
@@ -159,7 +159,7 @@ Fortunately, this is pretty straightforward. We need to extract the bad lines ou
 
 To extract the raw lines of data out of the JSONs, we first create another external table in Hive, this time in the location where we will save the data to be reprocessed:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 CREATE EXTERNAL TABLE `data_to_reprocess` (
 	line string  
 )
@@ -176,7 +176,7 @@ Note:
 
 Now that we've created our table, we need to insert into it the bad rows to reprocess:
 
-{% highlight mysql%}
+{% highlight mysql linenos %}
 INSERT INTO TABLE `data_to_reprocess`
 SELECT line
 FROM `bad_rows`;
@@ -192,7 +192,7 @@ We now need to run the Snowplow Enrichment process on this new data set. We do t
 
 Now, create a copy of your [EmrEtlRunner config.yml] [emretlrunner-config-file] with a suitable name e.g. `config-process-bad-rows-2013-09-11.yml` and update the In Bucket to point to the location of the the data to be reprocessed is (i.e. the location of the Hive `data_to_reprocess` table). Don't forget as well to update (if you haven't already done so) the ETL to the latest version, which can handle the change in Amazon's CloudFront log file format:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 :snowplow:
   :hadoop_etl_version: 0.3.4 # Version of the Hadoop ETL
 {% endhighlight %}

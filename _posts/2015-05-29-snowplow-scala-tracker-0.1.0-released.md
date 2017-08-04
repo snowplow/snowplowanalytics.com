@@ -27,7 +27,7 @@ Contents:
 
 The Snowplow Scala Tracker is cross-published for Scala 2.10.x and Scala 2.11.x, and hosted in the Snowplow Maven repository. Assuming you are using SBT, you can add the tracker to your project's `build.sbt` like so:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 // Resolvers
 val snowplowRepo = "Snowplow Releases" at "http://maven.snplow.com/releases/"
 
@@ -45,7 +45,7 @@ You're now ready to start using the Tracker!
 
 You will require these imports:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 import com.snowplowanalytics.snowplow.scalatracker.Tracker
 import com.snowplowanalytics.snowplow.scalatracker.SelfDescribingJson
 import com.snowplowanalytics.snowplow.scalatracker.emitters.AsyncEmitter
@@ -53,14 +53,14 @@ import com.snowplowanalytics.snowplow.scalatracker.emitters.AsyncEmitter
 
 Create a Tracker instance like this:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 val emitter = AsyncEmitter.createAndStart("mycollector.com")
 val tracker = new Tracker(List(emitter), "mytracker", "myapplication")
 {% endhighlight %}
 
 We will now send an unstructured event with a custom context attached. We can create the JSONs for the event using the [json4s DSL][json4s-dsl]:
 
-{% highlight scala%}
+{% highlight scala linenos %}
 import org.json4s.JsonDSL._
 
 val productViewEvent = SelfDescribingJson(

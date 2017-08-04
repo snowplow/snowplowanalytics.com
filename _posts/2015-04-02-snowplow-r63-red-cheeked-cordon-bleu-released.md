@@ -64,7 +64,7 @@ We have extended our existing campaign attribution enrichment to look for and ex
 
 By default the campaign attribution enrichment identifies the three click IDs given above, but you can also configure the enrichment with your own list of click IDs and network names:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow/campaign_attribution/jsonschema/1-0-1",
 
@@ -388,7 +388,7 @@ This section contains upgrading instructions which are common to both our Elasti
 
 To continue parsing useragent strings using the `user_agent_utils` library, you **must** add a new JSON configuration file into your folder of enrichment JSONs:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
 	"schema": "iglu:com.snowplowanalytics.snowplow/user_agent_utils_config/jsonschema/1-0-0",
 
@@ -429,7 +429,7 @@ This release bumps:
 
 In your EmrEtlRunner's `config.yml` file, update your Hadoop jobs versions like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   :versions:
     :hadoop_enrich: 0.14.0 # WAS 0.13.0
     :hadoop_shred: 0.4.0 # WAS 0.3.0

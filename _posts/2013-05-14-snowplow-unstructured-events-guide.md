@@ -30,7 +30,7 @@ Tracking an unstructured event with the JavaScript Tracker is very straightforwa
 
 Here is an example:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 _snaq.push(['trackUnstructEvent', 'Viewed Product',
                 {
                     product_id: 'ASO01043',
@@ -52,7 +52,7 @@ The `properties` JavaScript consists of a set of individual `name: value` proper
 
 The structure must be flat - in other words, properties cannot be nested. Continuing with the exampe code above, this means that the following is **not** allowed:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     category: { primary: 'Womenswear', secondary: 'Dresses'}, // NOT allowed
 }
@@ -83,7 +83,7 @@ Let's go through each of these in turn, providing some examples as we go:
 
 Tracking a Null value for a given field is straightforward:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     returns_id: null
 }
@@ -93,7 +93,7 @@ Tracking a Null value for a given field is straightforward:
 
 Tracking a String is easy:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     product_id: 'ASO01043' // Or "ASO01043"
 }
@@ -103,7 +103,7 @@ Tracking a String is easy:
 
 Tracking a Boolean is also straightforward:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     trial: true
 }
@@ -113,7 +113,7 @@ Tracking a Boolean is also straightforward:
 
 To track an Integer, use a JavaScript Number but add a type suffix like so:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     in_stock$int: 23
 }
@@ -125,7 +125,7 @@ To track an Integer, use a JavaScript Number but add a type suffix like so:
 
 To track a Floating point number, use a JavaScript Number; adding a type suffix is optional:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     price$flt: 4.99,
     sales_tax: 49.99 // Same as $sales_tax:$flt
@@ -136,7 +136,7 @@ To track a Floating point number, use a JavaScript Number; adding a type suffix 
 
 Tracking a pair of Geographic coordinates is done like so:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     check_in$geo: [40.11041, -88.21337] // Lat, long
 }
@@ -156,7 +156,7 @@ Snowplow Dates include the date _and_ the time, with milliseconds precision. The
 
 You can track a date by adding either a JavaScript Number _or_ JavaScript Date to your `properties` object. The following are all valid dates:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     birthday$dt: new Date(1980,11,10), // Sent to Snowplow as birthday$dt: 3996
     birthday2$dt: 3996, // ^ Same as above
@@ -176,7 +176,7 @@ Note that the type prefix only indicates how the JavaScript Number sent to Snowp
 1. If you specify a JavaScript Number but do not add a valid Date suffix (`$dt`, `$tm` or `$tms`), then the value will be incorrectly interpreted by Snowplow as a Number, not a Date
 2. If you specify a JavaScript Number but add the wrong Date suffix, then the Date will be incorrectly interpreted by Snowplow, for example:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     last_ping$dt: 1371129610 // Should have been $tm. Snowplow will interpret this as the year 3756521449
 }
@@ -188,7 +188,7 @@ You can track an Array of values of any data type other than Null.
 
 Arrays must be homogeneous - in other words, all values within the Array must be of the same datatype. This means that the following is **not** allowed:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     sizes: ['xs', 28, 'l', 38, 'xxl'] // NOT allowed
 }
@@ -196,7 +196,7 @@ Arrays must be homogeneous - in other words, all values within the Array must be
 
 By contrast, the following are all allowed:
 
-{% highlight javascript%}
+{% highlight javascript linenos %}
 {
     sizes: ['xs', 's', 'l', 'xl', 'xxl'],
     session_starts$tm: [1371129610, 1064329730, 1341127611],

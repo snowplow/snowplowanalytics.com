@@ -79,7 +79,7 @@ The new enrichment creates a fingerprint from a hash of the [Tracker Protocol] [
 
 The [example configuration JSON] [example-event-fingerprint] for this enrichment is as follows:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/event_fingerprint_config/jsonschema/1-0-0",
   "data": {
@@ -110,7 +110,7 @@ This was because, although our underlying Iglu client cached successfully-found 
 
 Snowplow community member [Dennis Waldron] [dennisatspaceape] has contributed the ability to connect to Postgres and Redshift using SSL. To do this, add an "ssl_mode" field to each target in your configuration YAML:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   targets:
     - name: "My Redshift database"
       type: redshift
@@ -160,20 +160,20 @@ Unzip this file to a sensible location (e.g. `/opt/snowplow-r71`).
 
 You should update the versions of the Enrich and Shred jars in your configuration file:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
     hadoop_enrich: 1.1.0 # Version of the Hadoop Enrichment process
     hadoop_shred: 0.5.0 # Version of the Hadoop Shredding process
 {% endhighlight %}
 
 You should also update the AMI version field:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
     ami_version: 3.7.0
 {% endhighlight %}
 
 For each of your database targets, you must add the new `ssl_mode` field:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   targets:
     - name: "My Redshift database"
       ...

@@ -69,7 +69,7 @@ Upgrading to this release is simple - the only changed components are the jar ve
 
 In the `config.yml` file for your EmrEtlRunner, update your `hadoop_enrich` and `hadoop_shred` job versions like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   versions:
     hadoop_enrich: 1.5.1 # WAS 1.5.0
     hadoop_shred: 0.7.0 # WAS 0.6.0

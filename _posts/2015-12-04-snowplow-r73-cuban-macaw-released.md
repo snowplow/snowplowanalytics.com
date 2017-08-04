@@ -36,7 +36,7 @@ If you need help setting up an Elasticsearch cluster for Snowplow, check out our
 
 To enable this in Snowplow, add an Elasticsearch target to your EmrEtlRunner configuration file:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   targets:
     - name: "Our Elasticsearch cluster" # Name for the target - used to label the corresponding jobflow step
       type: elasticsearch # Marks the database type as Elasticsearch
@@ -96,7 +96,7 @@ The latest version of the EmrEtlRunner and StorageLoader are available from our 
 
 You will need to update the jar versions in the "emr" section of your configuration YAML:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   versions:
     hadoop_enrich: 1.3.0 # Version of the Hadoop Enrichment process
     hadoop_shred: 0.6.0 # Version of the Hadoop Shredding process

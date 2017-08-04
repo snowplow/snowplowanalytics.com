@@ -60,7 +60,7 @@ If there are no raw event files to process, EmrEtlRunner will now exit with a sp
 
 We have updated EmrEtlRunner's handling of Clojure Collector logs. The logs now get renamed on move to:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 basename.yyyy-MM-dd-HH.region.instance.txt.gz
 {% endhighlight %}
 
@@ -104,7 +104,7 @@ This release bumps the Hadoop Enrichment process to version **0.13.0** .
 
 In your EmrEtlRunner's `config.yml` file, update your `hadoop_enrich` and `hadoop_shred` jobs' versions like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
   :versions:
     :hadoop_enrich: 0.13.0 # WAS 0.12.0
 {% endhighlight %}

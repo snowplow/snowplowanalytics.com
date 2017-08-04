@@ -41,7 +41,7 @@ This is an example of the "pull" model where AWS Lambda polls the Amazon Kinesis
 
 Our AWS Lambda reads a Kinesis stream containing events in a JSON format:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "timestamp": "2015-06-30T12:54:43.064528",
   "type": "Green",

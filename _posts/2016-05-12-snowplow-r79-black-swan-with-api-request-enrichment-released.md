@@ -41,7 +41,7 @@ Depending on your tracking implementation, these HTTP headers can contain other 
 
 The configuration is similar to the one for the Cookie Extractor Enrichment:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/http_header_extractor_config/jsonschema/1-0-0",
   "data": {
@@ -67,7 +67,7 @@ This release also updates the Iglu client used by our Hadoop Enrich and Hadoop S
 
 To use registry authentication, you need to be using the Iglu schema registry server released as part of [Iglu R3 Penny Black] [iglu-r3]; the [setup guide] [iglu-setup] is on the Iglu wiki. Then in the Iglu resolver configuration JSON you use with Snowplow, you will need to add `apikey` to the HTTP repository `connection` object, like so:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1",
   "data": {
@@ -114,14 +114,14 @@ We have also:
 
 The recommended AMI version to run Snowplow is now **4.5.0** - update your configuration YAML as follows:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 emr:
   ami_version: 4.5.0 # WAS 4.3.0
 {% endhighlight %}
 
 Next, update your `hadoop_enrich` and `hadoop_shred` job versions like so:
 
-{% highlight yaml%}
+{% highlight yaml linenos %}
 versions:
   hadoop_enrich: 1.7.0        # WAS 1.6.0
   hadoop_shred: 0.9.0         # WAS 0.8.0
@@ -134,7 +134,7 @@ For a complete example, see our [sample `config.yml` template][emretlrunner-conf
 
 If you want to use an Iglu registry with authentication, add a private `apikey` to the registry's configuration entry and set the schema version to [1-0-1][resolver-conf-101]. Here is an example:
 
-{% highlight json%}
+{% highlight json linenos %}
 {
   "schema": "iglu:com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1",
   "data": {

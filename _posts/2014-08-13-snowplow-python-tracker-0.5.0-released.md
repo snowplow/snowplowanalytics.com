@@ -34,7 +34,7 @@ The POST requests sent by the Python Tracker have been changed in three ways:
 
 It is now possible to create a tracker instance which sends events to multiple emitters by supplying an array of emitters to the tracker constructor:
 
-{% highlight python%}
+{% highlight python linenos %}
 from snowplow_tracker.tracker import Tracker
 
 get_emitter = Emitter("d3rkrsqld9gmqf.cloudfront.net")
@@ -45,7 +45,7 @@ t = Tracker([get_emitter, post_emitter], namespace="cf", app_id="my-app-id")
 
 After constructing the tracker, you can add more emitters:
 
-{% highlight python%}
+{% highlight python linenos %}
 new_emitter = Emitter("drywb53f72ag6j.cloudfront.net")
 t.add_emitter(new_emitter)
 {% endhighlight %}
@@ -64,7 +64,7 @@ This release changes the second argument given to the callback in the POST reque
 
 In version 0.4.0, the value returned by the tracker methods was variable. If the method caused a synchronous request to be sent, the status code of that request was returned. Otherwise, the tracker instance was returned, allowing chained method calls like:
 
-{% highlight python%}
+{% highlight python linenos %}
 t.track_screen_view("title screen").track_struct_event("products", "viewed product", "magenta paint")
 {% endhighlight %}
 
