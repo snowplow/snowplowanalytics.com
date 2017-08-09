@@ -153,6 +153,11 @@ For example if your shred step failed, you might want to relaunch EmrEtlRunner w
 The `--start` and `--end` flags which used to allow you to process files for a specific time period
 have been removed since the new staging step doesn't inspect the timestamps in the filenames.
 
+<h3 id="enrich-shred">3.4 Removal of the process-enrich and process-shred flags</h3>
+
+The `--process-enrich` and `--process-shred`, which let you run only the enrich step, and shred step
+respectively have also been retired for the sake of simplifying EmrEtlRunner.
+
 <h2 id="upgrading">4. Upgrading</h2>
 
 Upgrading is fairly straightforward, you'll just need to make use of the new `run` subcommand when
