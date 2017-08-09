@@ -50,7 +50,7 @@ modularity. The following subsections detail those new commands.
 
 <h3 id="run">2.1 Run command</h3>
 
-The previous EmrEtlRunner behavior has been incorporated into a run command. Because of this, an
+The previous EmrEtlRunner behavior has been incorporated into a `run` command. Because of this, an
 old EmrEtlRunner launch which looked like this:
 
 {% highlight bash %}
@@ -65,7 +65,7 @@ will now look like the following:
 
 <h3 id="lint">2.2 Lint command</h3>
 
-You can now lint you resolver file as well as your enrichments thanks to a `lint` subcommand:
+You can now lint you resolver file as well as your enrichments thanks to a `lint` command:
 
 {% highlight bash %}
 ./snowplow-emr-etl-runner lint resolver    -r resolver.json
@@ -78,7 +78,7 @@ There are plans to support linting for storage targets in [issue #3364][i3364].
 
 <h3 id="generate">2.3 Backend for a generate command</h3>
 
-This release also introduces a backend for a `generate` subcommand which will be able to
+This release also introduces a backend for a `generate` command which will be able to
 generate the necessary [Dataflow Runner][df-runner] configuration files.
 
 This command will be formally introduced in a subsequent release when we start to smoothly
@@ -87,12 +87,12 @@ background.
 
 <h2 id="cli-options">3. New EmrEtlRunner CLI options</h2>
 
-This release also introduces and retires a few options to the `run` subcommand.
+This release also introduces and retires a few options to the `run` command.
 
 <h3 id="lock">3.1 Lock</h3>
 
 In order to prevent overlapping job runs, this release introduces a locking mechanism. This
-translates into a `--lock` flag to the `run` subcommand. When specifying this flag, a lock will
+translates into a `--lock` flag to the `run` command. When specifying this flag, a lock will
 be acquired at the start of the job and released upon its successful completion.
 
 There are two strategies for storing the lock: local and distributed.
@@ -156,12 +156,12 @@ have been removed since the new staging step doesn't inspect the timestamps in t
 <h3 id="enrich-shred">3.4 Removal of the process-enrich and process-shred flags</h3>
 
 The `--process-enrich` and `--process-shred`, which let you run only the enrich step, and shred step
-respectively have also been retired for the sake of simplifying EmrEtlRunner.
+respectively, have also been retired for the sake of simplifying EmrEtlRunner.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
-Upgrading is fairly straightforward, you'll just need to make use of the new `run` subcommand when
-launch EmrEtlRunner, no other changes are necessary.
+Upgrading is fairly straightforward, you'll just need to make use of the new `run` command when
+launching EmrEtlRunner, no other changes are necessary.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
