@@ -5,6 +5,7 @@ title-short: Elasticsearch Loader 0.9.0
 tags: [elasticsearch, kinesis, aws]
 author: Ben
 category: Releases
+permalink: blog/2017/07/21/elasticsearch-loader-0.9.0-released/
 ---
 
 We are thrilled to announce [version 0.9.0][release-090] of Elasticsearch Loader, our component
@@ -106,7 +107,7 @@ Elasticsearch Loader project by:
 - Updating the Kinesis Client library ([#51][i51])
 - A flurry of [other library updates](https://github.com/snowplow/snowplow-elasticsearch-loader/issues?utf8=✓&q=is%3Aissue%20milestone%3A"Version%200.9.0"%20Bump)
 
-We also took this opportunity to move this codebase out of the core `snowplow/snowplow` repo, into a dedicated [snowplow/snowplow-elasticsearch-loader][repo]. 
+We also took this opportunity to move this codebase out of the core `snowplow/snowplow` repo, into a dedicated [snowplow/snowplow-elasticsearch-loader][repo].
 
 <h2 id="upgrading">5. Upgrading</h2>
 
