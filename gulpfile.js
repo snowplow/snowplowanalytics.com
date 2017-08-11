@@ -44,6 +44,7 @@ gulp.task('default', function() {
         .pipe (insert.transform(function(contents, file) {
             return contents = contents.replace("\r\n---\r\n", '\r\n---\r\n{% markdown %}\r\n');
         }))
+        .pipe(rename('index.html'))
         .pipe(gulp.dest(source+fl.stem));
 
         cb();

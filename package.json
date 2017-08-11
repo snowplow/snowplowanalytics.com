@@ -31,6 +31,7 @@
     "gulp-foreach": "^0.1.0",
     "vinyl": "^2.1.0",
     "gulp-extname": "^0.2.2",
-    "gulp-insert": "^0.5.0"
+    "gulp-insert": "^0.5.0",
+    "read-vinyl-file-stream": "^2.0.3"
   }
 }
