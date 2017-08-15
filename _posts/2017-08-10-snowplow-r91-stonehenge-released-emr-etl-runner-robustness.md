@@ -34,14 +34,44 @@ to a processing bucket to be further processed.
 This step used to run on the machine running EmrEtlRunner leveraging [Sluice][sluice]. Now it will
 run as an EMR step using [S3DistCp][s3-dist-cp].
 
-The main reason for the change is that the staging step used to rename files by transforming
-timestamps from a format to another. This renaming step produced duplicates in a multi-threaded
-environment which would result in files overwriting each other and would cause data loss.
+The main reason for the change is that the staging step used to rename Clojure log files by
+transforming timestamps from a format to another. This renaming step produced duplicates in a
+multi-threaded environment which would result in files overwriting each other and would cause data
+loss.
 
 In our experiments, less than 1% of the total number of files were lost due to this issue.
 
 The fix introduced in this release delegates the staging step to S3DistCp and doesn't do any
 renaming.
+
+To illustrate the previous point, let's take the example of having a couple of Clojure instances
+and log files according to the following folder structure in your input bucket:
+
+{% highlight bash %}
+$ aws s3 ls --recursive s3://raw/in/
+i-1/
+  _var_log_tomcat8_rotated_localhost_access_log.txt1502463662.gz
+i-2/
+  _var_log_tomcat8_rotated_localhost_access_log.txt1502467262.gz
+{% endhighlight %}
+
+Previously, once the staging step took place, these files would end up as shown below:
+
+{% highlight bash %}
+$ aws s3 ls --recursive s3://raw/processing/
+var_log_tomcat8_rotated_localhost_access_log.2017-08-11-15.eu-west-1.i-1.txt.raw.gz
+var_log_tomcat8_rotated_localhost_access_log.2017-08-11-16.eu-west-1.i-2.txt.raw.gz
+{% endhighlight %}
+
+From now on, they will be kept as is except for the leading underscores which will be removed:
+
+{% highlight bash %}
+$ aws s3 ls --recursive s3://raw/processing/
+i-1/
+  var_log_tomcat8_rotated_localhost_access_log.txt1502463662.gz
+i-2/
+  var_log_tomcat8_rotated_localhost_access_log.txt1502467262.gz
+{% endhighlight %}
 
 <h2 id="commands">2. New EmrEtlRunner commands</h2>
 
