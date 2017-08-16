@@ -6,6 +6,7 @@ tags: [snowplow, enriched events, .NET, .NETStandard, Microsoft Azure]
 author: Devesh
 category: Releases
 image: /assets/img/blog/2017/06/dotnet-analytics-sdk-usage.png
+permalink: /blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released/
 ---
 
 Following in the footsteps of the [Snowplow Scala Analytics SDK][scala-sdk-post] and [Snowplow Python Analytics SDK][python-sdk-post], we are happy to announce the release of the [Snowplow .NET Analytics SDK][sdk-repo].
