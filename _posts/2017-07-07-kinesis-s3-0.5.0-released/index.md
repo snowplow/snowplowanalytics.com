@@ -5,6 +5,7 @@ title-short: Kinesis S3 0.5.0
 tags: [kinesis, s3, aws]
 author: Ben
 category: Releases
+permalink: /blog/2017/07/07/kinesis-s3-0.5.0-released/
 ---
 
 We are proud to be releasing [version 0.5.0][release-050] of Kinesis S3, our project dedicated to

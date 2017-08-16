@@ -6,6 +6,7 @@ tags: [snowplow, spark, enrich, shred]
 author: Ben
 category: Releases
 image: /assets/img/blog/2017/06/plain-of-jars.jpg
+permalink: /blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark/
 ---
 
 We are tremendously excited to announce the release of [Snowplow 89 Plain of Jars][snowplow-release]. This release centers around the port of our batch pipeline from [Twitter Scalding][scalding] to [Apache Spark][spark], a direct implementation of our most popular RFC, [Migrating the Snowplow batch jobs from Scalding to Spark][rfc].
