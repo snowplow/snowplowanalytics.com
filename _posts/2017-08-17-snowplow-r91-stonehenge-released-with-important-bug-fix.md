@@ -1,26 +1,29 @@
 ---
 layout: post
 title-short: Snowplow 91 Stonehenge
-title: "Snowplow 91 Stonehenge released, EmrEtlRunner robustness"
+title: "Snowplow 91 Stonehenge released with important bug fix"
 tags: [snowplow, emr]
 author: Ben
 category: Releases
 ---
 
-We are pleased to issue the release of [Snowplow 91 Stonehenge][snowplow-release]. This release
-revolves around making EmrEtlRunner, the component launching the EMR steps for the batch pipeline,
-more robust. Most notably, this release fixes a long-standing bug in the way the staging step was
-performed.
+We are pleased to announce the release of [Snowplow 91 Stonehenge][snowplow-release].
+
+This release revolves around making EmrEtlRunner, the component launching the EMR steps for the batch pipeline,
+significantly more robust. Most notably, this release fixes a long-standing bug in the way the staging step was
+performed, which affected all users of the Clojure Collector.
+
+This release also lays important groundwork for our planned migration away from EmrEtlRunner towards separate snowplowctl and Dataflow Runner tools, per [our RFC][eer-rfc]. 
 
 If you'd like to know more about R91 Stonehenge, named after
-[the prehistoric monument in England][stonehenge], read on!
+[the prehistoric monument in England][stonehenge], please read on:
 
-1. [Moving the staging step to S3DistCp](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#staging)
-2. [New EmrEtlRunner commands](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#commands)
-3. [New EmrEtlRunner CLI options](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#cli-options)
-4. [Upgrading](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#upgrading)
-5. [Roadmap](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#roadmap)
-6. [Help](/blog/2017/08/10/snowplow-r91-stonehenge-released-emr-etl-runner-robustness#help)
+1. [Moving the staging step to S3DistCp](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#staging)
+2. [New EmrEtlRunner commands](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#commands)
+3. [New EmrEtlRunner CLI options](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#cli-options)
+4. [Upgrading](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#upgrading)
+5. [Roadmap](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#roadmap)
+6. [Help](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#help)
 
 ![stonehenge][stonehenge-img]
 
@@ -28,11 +31,10 @@ If you'd like to know more about R91 Stonehenge, named after
 
 <h2 id="staging">1. Moving the staging step to S3DistCp</h2>
 
-This release overhauls the staging step which is in charge of moving data from the raw input buckets
-to a processing bucket to be further processed.
+This release overhauls the initial staging step which moves data from the raw input bucket(s) in S3
+to a processing bucket for further processing.
 
-This step used to run on the machine running EmrEtlRunner leveraging [Sluice][sluice]. Now it will
-run as an EMR step using [S3DistCp][s3-dist-cp].
+Before this release, this step was run on the EmrEtlRunner host machine, using our [Sluice][sluice] library for S3 operations. From this release, this step is run as an EMR step using [S3DistCp][s3-dist-cp].
 
 The main reason for the change is that the staging step used to rename Clojure log files by
 transforming timestamps from a format to another. This renaming step produced duplicates in a
@@ -115,7 +117,7 @@ This command will be formally introduced in a subsequent release when we start t
 transition away from EmrEtlRunner, read [our RFC on splitting EmrEtlRunner][eer-rfc] for more
 background.
 
-<h2 id="cli-options">3. New EmrEtlRunner CLI options</h2>
+<h2 id="cli-options">3. New and retired EmrEtlRunner CLI options</h2>
 
 This release also introduces and retires a few options to the `run` command.
 
@@ -124,6 +126,8 @@ This release also introduces and retires a few options to the `run` command.
 In order to prevent overlapping job runs, this release introduces a locking mechanism. This
 translates into a `--lock` flag to the `run` command. When specifying this flag, a lock will
 be acquired at the start of the job and released upon its successful completion.
+
+This is much more robust than our previous approach, which involved checking folder contents in S3 to attempt to determine if a previous run was ongoing (or had failed partway through).
 
 There are two strategies for storing the lock: local and distributed.
 
@@ -138,10 +142,8 @@ You can leverage a local lock when launching EmrEtlRunner with:
   --lock path/to/lock
 {% endhighlight %}
 
-This prevents anyone on this machine from launching another run of EmrEtlRunner `path/to/lock` as
-lock.
-
-In a local context, the lock will be materialized by a file on a disk at the speicifed path.
+This prevents anyone on this machine from launching another run of EmrEtlRunner with `path/to/lock` as
+lock. The lock will be represented by a file on a disk at the specifed path.
 
 <h4 id="distributed-lock">3.1.2 Distributed lock</h4>
 
@@ -152,7 +154,7 @@ Anoter strategy is to leverage [Consul][consul] to enforce a distributed lock:
   -c       config.yml \
   -r       resolver.json \
   --lock   path/to/lock \
-  --consul http://localhost:8500
+  --consul http://127.0.0.1:8500
 {% endhighlight %}
 
 That way, anyone using `path/to/lock` as lock and this Consul server will have to respect the lock.
@@ -160,46 +162,52 @@ That way, anyone using `path/to/lock` as lock and this Consul server will have t
 In this case, the lock will be materialized by a key-value pair in Consul, the key being at the
 specified path.
 
-<h3 id="resume-from">3.2 Resume from</h3>
+<h3 id="resume-from">3.2 Resume from step</h3>
 
 This release introduces a `--resume-from` flag to be able to resume the EMR job from a particular
 step, it's particularly useful when recovering from a failed step.
 
 The steps you can resume from are, in order:
 
-`enrich shred elasticsearch archive_raw rdb_load analyze archive_enriched`
+* `enrich`
+* `shred`
+* `elasticsearch`
+* `archive_raw`
+* `rdb_load`
+* `analyze`
+* `archive_enriched`
 
-For example if your shred step failed, you might want to relaunch EmrEtlRunner with:
+For example if your Redshift load failed due to a maintenance window, you might want to relaunch EmrEtlRunner with:
 
 {% highlight bash %}
 ./snowplow-emr-etl-runner run \
   -c            config.yml \
   -r            resolver.json \
-  --resume-from shred
+  --resume-from rdb_load
 {% endhighlight %}
 
 <h3 id="start-end">3.3 Removal of the start and end flags</h3>
 
-The `--start` and `--end` flags which used to allow you to process files for a specific time period
-have been removed since the new staging step doesn't inspect the timestamps in the filenames.
+The `--start` and `--end` flags, which used to allow you to process files for a specific time period
+have been removed. This is because the new S3DistCp-based staging process doesn't inspect the timestamps in the filenames.
 
 <h3 id="enrich-shred">3.4 Removal of the process-enrich and process-shred flags</h3>
 
-The `--process-enrich` and `--process-shred`, which let you run only the enrich step, and shred step
-respectively, have also been retired for the sake of simplifying EmrEtlRunner.
+The `--process-enrich` and `--process-shred` options, which let you run only the `enrich` step, and `shred` step
+respectively, have also been retired, to simplify the EmrEtlRunner.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
-Upgrading is fairly straightforward, you'll just need to make use of the new `run` command when
-launching EmrEtlRunner, no other changes are necessary.
+The latest version of EmrEtlRunner is available from our [Bintray][app-dl].
+
+Upgrading is fairly straightforward, you'll just need to make use of the new `run` command when launching EmrEtlRunner - no other changes are necessary.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases include:
 
-* [R92 [STR] Virunum][r92], a general upgrade of the apps constituting our stream processing
-pipeline
-* [R9x [HAD] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark, Unbounce, StatusGator)
+* [R92 [STR] Virunum][r92], a general upgrade of the apps constituting our stream processing pipeline
+* [R9x [BAT] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark, Unbounce, StatusGator)
 
 <h2 id="help">6. Getting help</h2>
 
@@ -217,6 +225,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [eer-rfc]: http://discourse.snowplowanalytics.com/t/splitting-emretlrunner-into-snowplowctl-and-dataflow-runner/350
 [discourse]: http://discourse.snowplowanalytics.com/
+
+[app-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r91_stonehenge.zip
 
 [i3364]: https://github.com/snowplow/snowplow/issues/3364
 
