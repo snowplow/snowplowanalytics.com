@@ -5,6 +5,7 @@ title-short: Snowplow Ruby Tracker 0.6.0
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Ed
 category: Releases
+permalink: /blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released
 ---
 
 We are pleased to announce the release of version 0.6.0 of the Snowplow Ruby Tracker. This release introduces true timestamp

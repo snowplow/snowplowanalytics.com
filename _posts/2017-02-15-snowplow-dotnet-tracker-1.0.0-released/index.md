@@ -5,6 +5,7 @@ title-short: Snowplow .NET Tracker 1.0.0 Released
 tags: [snowplow, .NET, NETStandard, Xamarin, Mobile]
 author: Ed
 category: Releases
+permalink: /blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released
 ---
 
 We're pleased to announce the 1.0.0 release of Snowplow's .NET Tracker. This is a major reboot of the existing .NET Tracker, convering it into a .NET Standard project; this conversion brings with it support for the tracker on mobile devices through Xamarin, plus all platforms that support .NET Core (Windows, Linux and macOS).

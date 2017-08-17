@@ -5,6 +5,7 @@ title-short: Kinesis Tee 0.1.0
 tags: [snowplow, analytics, kinesis, lambda, aws, stream]
 author: Ed
 category: Releases
+permalink: /blog/2016/10/03/kinesis-tee-0.1.0-released-for-kinesis-stream-filtering-and-transformation
 ---
 
 We are pleased to announce the release of version 0.1.0 of [Kinesis Tee][kinesis-tee-repo].

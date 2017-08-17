@@ -4,6 +4,7 @@ title: 2015-2016 winternship wrap-up
 tags: [snowplow, intern, winter, wintern, internship]
 author: Alex
 category: Recruitment
+permalink: /blog/2016/03/17/2015-2016-winternship-wrapup
 ---
 
 Snowplow's Data Engineering winternships wrapped up last week - many thanks to Ed and Oleks for their fantastic contributions to Snowplow over the winter period! In this blog post we'll introduce both winterns to the Snowplow community, as well as giving a little more background on the projects they worked on.

@@ -5,6 +5,7 @@ title-short: Snowplow 60 Bee Hummingbird
 tags: [snowplow, streams, kinesis, s3, thrift]
 author: Fred
 category: Releases
+permalink: /blog/2015/02/03/snowplow-60-bee-hummingbird-released
 ---
 
 We are happy to announce the release of Snowplow 60! Our sixtieth release focuses on the Snowplow Kinesis flow, and includes:

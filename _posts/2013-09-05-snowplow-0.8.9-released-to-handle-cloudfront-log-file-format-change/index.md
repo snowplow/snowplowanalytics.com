@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.9
 tags: [snowplow, cloudfront logfile format]
 author: Alex
 category: Releases
+permalink: /blog/2013/09/05/snowplow-0.8.9-released-to-handle-cloudfront-log-file-format-change
 ---
 
 We are pleased to announce the immediate availability of Snowplow 0.8.9. This release was necessitated by an unannounced change Amazon made to the CloudFront access log file format on 17th August, discussed in this [AWS Forum thread] [aws-thread] and this [snowplow-user email thread] [email-thread].

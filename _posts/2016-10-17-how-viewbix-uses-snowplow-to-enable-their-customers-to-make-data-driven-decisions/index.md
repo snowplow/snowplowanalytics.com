@@ -5,6 +5,7 @@ title-short: "Case study: Snowplow at Viewbix"
 tags: [python, trackers]
 author: Yali
 category: "User Stories"
+permalink: /blog/2016/10/17/how-viewbix-uses-snowplow-to-enable-their-customers-to-make-data-driven-decisions
 ---
 
 *This is a guest post by Dani Waxman, Product Manager at Viewbix and long time Snowplow user. In this post, Dani describes the journey that the Viewbix team went through in order to enable their users to make data-driven decisions, how they came to use Snowplow and the role that Snowplow plays today at Viewbix.*

@@ -5,6 +5,7 @@ title-short: Google Cloud Dataflow example project
 tags: [snowplow, scala, google, gcp, dataflow, pubsub, bigtable, tutorial, analytics]
 author: Gui
 category: Releases
+permalink: /blog/2017/03/30/google-cloud-dataflow-example-project-released
 ---
 
 We are pleased to announce the release of our new [Google Cloud Dataflow Example Project][repo]!

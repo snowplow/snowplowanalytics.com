@@ -5,6 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.4.0
 tags: [snowplow, javascript, tracker, browser, analytics]
 author: Fred
 category: Releases
+permalink: /blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released
 ---
 
 We are pleased to announce the release of version 2.4.0 of the [Snowplow JavaScript Tracker][release-240]! This release adds support for cross-domain tracking and a new method to track timing events.

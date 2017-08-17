@@ -5,6 +5,7 @@ title-short: Snowplow Scala Tracker 0.3.0
 tags: [snowplow, analytics, scala, tracker]
 author: Anton
 category: Releases
+permalink: /blog/2016/05/14/snowplow-scala-tracker-0.3.0-released
 ---
 
 We are pleased to release version 0.3.0 of the [Snowplow Scala Tracker] [scala-repo]. This release introduces a user-settable "true timestamp", as well as several bug fixes.

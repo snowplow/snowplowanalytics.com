@@ -5,6 +5,7 @@ title-short: Scripting Hadoop part one
 tags: [snowplow, hadoop, scala, rhino, scriptengine, javascript, js]
 author: Alex
 category: Research
+permalink: /blog/2013/10/21/scripting-hadoop-part-1-adventures-with-scala-rhino-and-javascript
 ---
 
 

@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.11
 tags: [snowplow release, ip annonymization, privacy, cloudfront logfile format]
 author: Alex
 category: Releases
+permalink: /blog/2013/10/22/snowplow-0.8.11-released-supports-all-cloudfront-file-formats-and-other-improvements
 ---
 
 We're very pleased to announce the release of Snowplow 0.8.11. This releases includes two different sets of updates:

@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.9
 tags: [snowplow, enrichments, campaign, attribution]
 author: Fred
 category: Releases
+permalink: /blog/2014/10/27/snowplow-0.9.9-released-with-campaign-attribution-enrichment
 ---
 
 We are pleased to announce the release of Snowplow 0.9.9. This is primarily a comprehensive bug fix release, although it also adds the new `campaign_attribution` enrichment to our enrichment registry. Here are the sections after the fold:

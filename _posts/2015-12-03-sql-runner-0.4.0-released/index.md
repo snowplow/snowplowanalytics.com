@@ -5,6 +5,7 @@ title-short: SQL Runner 0.4.0
 tags: [sql, redshift, ssl]
 author: Josh
 category: Releases
+permalink: /blog/2015/12/03/sql-runner-0.4.0-released
 ---
 
 We are pleased to announce version [0.4.0] [040-release] of [SQL Runner] [repo]. SQL Runner is an open source app, written in Go, that makes it easy to execute SQL statements programmatically as part of a Snowplow data pipeline.

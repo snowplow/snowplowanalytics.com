@@ -4,6 +4,7 @@ title: referer-parser now with Java, Scala and Python support
 tags: [referer parsing, parser, attribution marketing, java, scala, python]
 author: Alex
 category: Releases
+permalink: /blog/2013/01/02/referer-parser-ported-to-3-more-languages
 ---
 
 Happy New Year all! It's been three months since we [introduced our Attlib project] [attlib-post], now renamed to [referer-parser] [repo], and we are pleased to announce that referer-parser is now available in three additional languages: Java, Scala and Python.

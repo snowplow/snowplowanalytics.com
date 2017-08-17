@@ -4,6 +4,7 @@ title: The inaugural Snowplow Budapest Meetup is a wrap!
 tags: [meetup, case study, user stories, Secret Sauce Partners]
 author: Yali
 category: Meetups
+permalink: /blog/2016/02/19/the-inaugural-snowplow-meetup-budapest-is-a-wrap
 ---
 
 Two and a half weeks ag ago the Snowplow team was out in the beautiful city of Budapest for the inaugural [Snowplow Meetup Budapest][budapest-meetup].

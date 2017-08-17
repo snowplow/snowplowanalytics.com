@@ -5,6 +5,7 @@ title-short: Snowplow Python Tracker 0.3.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2014/04/25/snowplow-python-tracker-0.3.0-released
 ---
 
 We are pleased to announce the release of the [Snowplow Python Tracker version 0.3.0][repo]. In this version we have added support for Snowplow custom contexts for all events. We have also updated the API for tracker initialization and ecommerce transaction tracking, added the option to turn off Pycontracts to improve performance, and added an event vendor parameter for custom unstructured events.

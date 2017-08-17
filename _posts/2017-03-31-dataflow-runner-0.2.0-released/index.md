@@ -5,6 +5,7 @@ title-short: Dataflow Runner 0.2.0
 tags: [snowplow, golang, orchestration, emr]
 author: Ben
 category: Releases
+permalink: /blog/2017/03/31/dataflow-runner-0.2.0-released
 ---
 
 Building on [the initial release of Dataflow Runner last month](

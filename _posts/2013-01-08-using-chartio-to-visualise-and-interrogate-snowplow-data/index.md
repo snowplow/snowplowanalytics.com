@@ -5,6 +5,7 @@ title-short: Using ChartIO to visualise Snowplow data
 tags: [chartio, analytics, data visualization, query]
 category: Analytics
 author: yali
+permalink: /blog/2013/01/08/using-chartio-to-visualise-and-interrogate-snowplow-data
 ---
 
 In the last couple of weeks, we have been experimenting with [ChartIO] [chartio] - a hosted BI tool for visualising data and creating dashboards. So far, we are very impressed - ChartIO is an excellent analytics tool to use to interrogate and visualise Snowplow data. Given the number of requests we get from Snowplow users to recommend tools to assist with analytics on Snowplow data, we thought it well worth sharing why ChartIO is so good, and give some examples of analyses on Snowplow data using ChartIO.

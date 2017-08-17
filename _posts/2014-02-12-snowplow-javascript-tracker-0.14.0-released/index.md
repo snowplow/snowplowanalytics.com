@@ -5,6 +5,7 @@ title-short: Snowplow JavaScript Tracker 0.14.0
 tags: [snowplow, javascript, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released
 ---
 
 

@@ -5,6 +5,7 @@ title: "Snowplow 85 Metamorphosis released with beta Apache Kafka support"
 tags: [snowplow, kafka, apache kafka, real-time]
 author: Alex
 category: Releases
+permalink: /blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support
 ---
 
 We are pleased to announce the release of [Snowplow 85 Metamorphosis] [snowplow-release]. This release brings initial beta support for using [Apache Kafka] [kafka] with the Snowplow real-time pipeline, as an alternative to Amazon Kinesis.

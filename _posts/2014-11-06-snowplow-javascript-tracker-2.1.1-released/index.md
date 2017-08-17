@@ -5,6 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.1.1
 tags: [snowplow, javascript, tracker, event]
 author: Fred
 category: Releases
+permalink: /blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released
 ---
 
 We are delighted to announce the release of version 2.1.1 of the [Snowplow JavaScript Tracker][repo]! This release contains a number of new features, most prominently several new unstructured events and a context for recording the browser's PerformanceTiming.

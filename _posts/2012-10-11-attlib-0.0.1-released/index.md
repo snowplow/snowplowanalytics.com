@@ -5,6 +5,7 @@ title-short: Attlib launched
 tags: [snowplow, data, processing, marketing, attribution, search engine, keywords]
 author: Yali
 category: Releases
+permalink: /blog/2012/10/11/attlib-0.0.1-released
 ---
 
 **Update 17-Dec-12**: We have renamed Attlib to [referer-parser] [referer-parser], to make it clearer what Attlib does: parse referer URLs. The repository has been updated accordingly. Some of the example code below is out-of-date now: we recommend checking out the [repository] [referer-parser] for more information.

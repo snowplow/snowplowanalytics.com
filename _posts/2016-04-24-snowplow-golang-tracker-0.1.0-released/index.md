@@ -5,6 +5,7 @@ title-short: Snowplow Golang Tracker 0.1.0
 tags: [snowplow, analytics, golang, go, tracker]
 author: Josh
 category: Releases
+permalink: /blog/2016/04/24/snowplow-golang-tracker-0.1.0-released
 ---
 
 We are pleased to announce the release of the [Snowplow Golang Tracker] [golang-repo]. The Tracker is designed to work asynchronously within your Golang code to provide great performance in your applications and servers, even under heavy load, while also storing all of your events persistently in the event of network failure.

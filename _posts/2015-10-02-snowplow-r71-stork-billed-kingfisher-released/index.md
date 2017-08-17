@@ -5,6 +5,7 @@ title-short: Snowplow 71 Stork-Billed Kingfisher
 tags: [snowplow, hadoop, enrichments, timestamps, ssl, fingerprinting]
 author: Fred
 category: Releases
+permalink: /blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released
 ---
 
 We are pleased to announce the release of Snowplow version 71 Stork-Billed Kingfisher. This release significantly overhauls Snowplow's handling of time and introduces event fingerprinting to support deduplication efforts. It also brings our validation of unstructured events and custom context JSONs "upstream" from our Hadoop Shred process into our Hadoop Enrich process.

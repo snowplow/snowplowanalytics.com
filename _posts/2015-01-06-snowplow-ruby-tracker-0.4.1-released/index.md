@@ -5,6 +5,7 @@ title-short: Snowplow Ruby Tracker 0.4.1
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2015/01/06/snowplow-ruby-tracker-0.4.1-released
 ---
 
 We are happy to announce the release of version 0.4.1 of the Snowplow Ruby Tracker. This is a bugfix release which resolves compatibility issues between the Ruby Tracker and the rest of the Snowplow data pipeline.

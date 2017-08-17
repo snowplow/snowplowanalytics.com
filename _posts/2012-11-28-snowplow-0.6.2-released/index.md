@@ -5,6 +5,7 @@ title-short: Snowplow 0.6.2
 tags: [snowplow, release, javascript, bug-fix]
 author: Alex
 category: Releases
+permalink: /blog/2012/11/28/snowplow-0.6.2-released
 ---
 
 Today we are releasing Snowplow version **0.6.2** - a clean-up release after yesterday's 0.6.1 release. This release bumps the JavaScript Tracker to version 0.8.1; the updated minified tracker is available as always here:

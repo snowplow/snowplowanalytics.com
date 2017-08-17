@@ -4,6 +4,7 @@ title: Bauer and Digdeep presentations from the second Snowplow Analytics Sydney
 tags: [meetup, case study, user stories, tableau, geospatial]
 author: Yali
 category: Meetups
+permalink: /blog/2016/01/12/bauer-and-digdeep-presentations-at-snowplow-meetup-sydney
 ---
 
 Last month [Josh] [josh] returned to Sydney, where he organised the second [Snowplow Analytics Meetup Sydney] [meetup] event.

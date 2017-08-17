@@ -5,6 +5,7 @@ title-short: Snowplow Scala Analytics SDK 0.1.0
 tags: [scala, snowplow, enriched events, spark, aws lambda]
 author: Alex
 category: Releases
+permalink: /blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released
 ---
 
 We are pleased to announce the release of our first analytics SDK for Snowplow, created for data engineers and data scientists working with Snowplow in Scala.

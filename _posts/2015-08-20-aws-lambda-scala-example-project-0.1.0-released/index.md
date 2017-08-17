@@ -5,6 +5,7 @@ title-short: AWS Lambda Scala example project
 tags: [snowplow, scala, kinesis, dynamodb, tutorial, analytics]
 author: Vincent
 category: Releases
+permalink: /blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released
 ---
 
 We are pleased to announce the release of our new [AWS Lambda Scala Example Project] [repo]!

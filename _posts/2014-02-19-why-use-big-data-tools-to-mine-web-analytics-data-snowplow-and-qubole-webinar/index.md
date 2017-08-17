@@ -5,6 +5,7 @@ title-short: Qubole webinar featuring Snowplow
 tags: [snowplow, qubole, big data, web analytics, data processing, data collection, data access]
 author: Yali
 category: Analytics
+permalink: /blog/2014/02/19/why-use-big-data-tools-to-mine-web-analytics-data-snowplow-and-qubole-webinar
 ---
 
 Last night, I presented at a webinar organized by our friends at [Qubole] [qubole] on using big data tools to analyze web analytics data. You can view the slides I presented below:

@@ -5,6 +5,7 @@ title-short: JavaScript Tracker 0.13.0
 tags: [snowplow, javascript, tracker, custom context, data model, event grammar]
 author: Alex
 category: Releases
+permalink: /blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts
 ---
 
 We're pleased to announce the immediate availability of the [Snowplow JavaScript Tracker version 0.13.0] [0130-release]. This is the first new release of the Snowplow JavaScript Tracker since separating it from the main Snowplow repository last year.

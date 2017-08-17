@@ -5,6 +5,7 @@ title-short: Scala Forex library
 tags: scala forex currency exchange rate
 author: Alex
 category: Releases
+permalink: /blog/2014/01/17/scala-forex-library-released
 ---
 
 We are proud to announce the release of our new [Scala Forex] [scala-forex] library, developed by [Snowplow wintern Jiawen Zhou] [jiawen-intro]. Jiawen joined us in the Snowplow offices in London this winter and was tasked with taking Scala Forex from a README file to an enterprise-strength Scala library for foreign exchange operations. One month later and we are hugely excited to be sharing her work with the community!

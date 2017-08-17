@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.7
 tags: [snowplow, javascript, tracker, release]
 author: Alex
 category: Releases
+permalink: /blog/2013/07/07/snowplow-0.8.7-released
 ---
 
 After a brief summer intermission, we are pleased to announce the release of [Snowplow **0.8.7**] [snowplow-087]. This is a small release, primarily consisting of bug fixes for the JavaScript Tracker, which is bumped to version 0.12.0.

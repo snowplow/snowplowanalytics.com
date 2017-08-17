@@ -5,6 +5,7 @@ title-short: Second Snowplow Meetup NYC scheduled for September
 tags: [meetups, NYC]
 author: Idan
 category: Meetups
+permalink: /blog/2016/09/07/second-snowplow-meetup-nyc-scheduled-for-september
 ---
 
 On the 26th September at 18:00 we'll have another NYC meetup. The kind folks at [canary] have invited us to hold the meetup at their offices. Not only that, but they're putting on some food and drinks. 

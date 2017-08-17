@@ -5,6 +5,7 @@ title-short: Snowplow Python Analytics SDK 0.2.0
 tags: [python, snowplow, enriched events, spark, dynamodb]
 author: Anton
 category: Releases
+permalink: /blog/2017/04/11/snowplow-python-analytics-sdk-0.2.0-released
 ---
 
 We are pleased to announce the 0.2.0 release of the [Snowplow Python Analytics SDK][sdk-repo], a library providing tools to process and analyze Snowplow enriched event format in Python-compatible data processing frameworks such as [Apache Spark][spark] and [AWS Lambda][lambda].

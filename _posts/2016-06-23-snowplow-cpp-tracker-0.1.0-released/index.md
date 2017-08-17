@@ -5,6 +5,7 @@ title-short: Snowplow C++ Tracker 0.1.0
 tags: [snowplow, analytics, cpp, c++, tracker]
 author: Ed
 category: Releases
+permalink: /blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released
 ---
 
 We are pleased to announce the release of the [Snowplow C++ Tracker] [cpp-repo]. The Tracker is designed to work asynchronously and dependency-free within your C++ code to provide great performance in your applications, games and servers, even under heavy load, while also storing all of your events persistently allowing recovery from temporary network outages.

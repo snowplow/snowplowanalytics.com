@@ -4,6 +4,7 @@ title: Help us build out the Snowplow Event Model
 tags: [snowplow, event model, data model, data schema, structured, unstructured]
 author: Yali
 category: Inside the Plow
+permalink: /blog/2013/02/04/help-us-build-out-the-snowplow-event-model
 ---
 
 At its beating heart, Snowplow is a platform for capturing, storing and analysing event-data, with a real focus on web event data.

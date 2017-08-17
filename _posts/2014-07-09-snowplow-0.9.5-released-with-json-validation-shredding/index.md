@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.5
 tags: [snowplow, json, json schema, redshift, iglu]
 author: Alex
 category: Releases
+permalink: /blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding
 ---
 
 We are hugely excited to announce the release of Snowplow 0.9.5: the first event analytics system to validate incoming event and context JSONs (using JSON Schema), and then automatically shred those JSONs into dedicated tables in Amazon Redshift.

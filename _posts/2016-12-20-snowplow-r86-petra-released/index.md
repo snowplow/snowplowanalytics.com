@@ -5,6 +5,7 @@ title: "Snowplow 86 Petra released"
 tags: [snowplow, sql, data modeling, duplicates, event duplication, de-dupe, de-duplication]
 author: Anton
 category: Releases
+permalink: /blog/2016/12/20/snowplow-r86-petra-released
 ---
 
 We are pleased to announce the release of [Snowplow 86 Petra] [snowplow-release]. This release introduces additional event de-duplication functionality for our Redshift load process, plus a brand new data model that makes it easier to get started with web data. This release also adds support for AWS's newest regions: Ohio, Montreal and London.

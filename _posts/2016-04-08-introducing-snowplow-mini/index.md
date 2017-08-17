@@ -5,6 +5,7 @@ title-short: Snowplow Mini 0.2.0
 tags: [snowplow, real-time, kinesis, developer tools]
 author: Josh
 category: Releases
+permalink: /blog/2016/04/08/introducing-snowplow-mini
 ---
 
 We've built Snowplow for robustness, scalability and flexibility. We have not built Snowplow for ease of use or ease of setup. Nor has the Snowplow Batch Pipeline been built for speed: you might have to wait several hours from sending an event before you can view and analyze that event data in Redshift.

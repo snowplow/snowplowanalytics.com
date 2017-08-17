@@ -5,6 +5,7 @@ title-short: Avalanche 0.1.0
 tags: [snowplow, analytics, gatling, load-testing]
 author: Josh
 category: Releases
+permalink: /blog/2016/05/20/introducing-avalanche-for-load-testing-snowplow
 ---
 
 We are pleased to announce the very first release of [Avalanche] [avalanche-repo], the Snowplow load-testing project.

@@ -5,6 +5,7 @@ title-short: Iglu 3 Penny Black
 tags: [snowplow, iglu, schema, validation, json]
 author: Fred
 category: Releases
+permalink: /blog/2016/03/04/iglu-r3-penny-black-released
 ---
 
 We are excited to announce the immediate availability of a new version of [Iglu] [iglu], incorporating a release of the Swagger-powered Scala Repo Server. Iglu has existed as a project at Snowplow for over two years now: after a period of relative quiet, we have an ambitious release schedule for Iglu planned for 2016, starting with this release.

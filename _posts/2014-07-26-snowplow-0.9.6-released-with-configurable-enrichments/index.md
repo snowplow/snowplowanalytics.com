@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.6
 tags: [snowplow, json, json schema, enrichments]
 author: Fred
 category: Releases
+permalink: /blog/2014/07/26/snowplow-0.9.6-released-with-configurable-enrichments
 ---
 
 We are pleased to announce the release of Snowplow 0.9.6. This release does four things:

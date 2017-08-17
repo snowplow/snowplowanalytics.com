@@ -5,6 +5,7 @@ title-short: Snowplow 0.5.0
 tags: [snowplow, emr, emretlrunner, ruby]
 author: Alex
 category: Releases
+permalink: /blog/2012/10/25/snowplow-0.5.0-released
 ---
 
 We have just released Snowplow **0.5.0**, with an all-new component, the Snowplow EmrEtlRunner. EmrEtlRunner is a Ruby application to run Snowplow's Hive-based ETL (extract, transform, load) process on [Amazon Elastic MapReduce] [amazon-emr] with minimum fuss.

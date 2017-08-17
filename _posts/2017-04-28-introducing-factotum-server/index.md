@@ -5,6 +5,7 @@ title-short: Factotum Server 0.1.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, factotum-server, pipeline, rest, web service]
 author: Nicholas
 category: Releases
+permalink: /blog/2017/04/28/introducing-factotum-server
 ---
 
 We are pleased to announce the release of [Factotum Server][factotum-server-repo], a new open-source system for scheduling and executing [Factotum][factotum-repo] jobs. 

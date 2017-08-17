@@ -5,6 +5,7 @@ title-short: Snowplow 0.5.1
 tags: [snowplow, release]
 author: Alex
 category: Releases
+permalink: /blog/2012/11/01/snowplow-0.5.1-released
 ---
 
 We have just released Snowplow **0.5.1**! Rather than one large new feature, version 0.5.1 is an incremental release which contains lots of small fixes and improvements to the ETL and storage sub-systems. The two big themes of these updates are:

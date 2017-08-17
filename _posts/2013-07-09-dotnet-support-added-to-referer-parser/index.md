@@ -4,6 +4,7 @@ title: .NET (C#) support added to referer-parser
 tags: [snowplow, referer-parser, .net, dotnet, csharp, c#]
 author: Alex
 category: Releases
+permalink: /blog/2013/07/09/dotnet-support-added-to-referer-parser
 ---
 
 We are pleased to announce the addition of [.NET support (C#)] [dotnet-port] to our standalone [referer-parser] [referer-parser] library. Many thanks to [Sepp Wijnands] [swijnands] at [iPerform Software] [iperform] for contributing this latest port!

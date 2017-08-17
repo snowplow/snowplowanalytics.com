@@ -5,6 +5,7 @@ title-short: Initial experiments with Neo4J
 tags: [snowplow, neo4j, graph database, path analysis, cypher]
 author: Nick
 category: Analytics
+permalink: /blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j
 ---
 
 In the [first post](/blog/2014/07/28/explorations-in-analyzing-web-event-data-in-graph-databases/) in this series, we raised the possibility that graph databases might allow us to analyze event data in new ways, especially where we were interested in understanding the sequences that events occured in. In the [second post](/blog/2014/07/30/loading-snowplow-web-event-data-into-graph-databases-for-pathing-analysis/), we walked through loading Snowplow page view event data into Neo4J in a graph designed to enable pathing analytics. In this post, we're going to see whether the hypothesis we raised in the first post is right: can we perform the type of pathing analysis on Snowplow data that is so difficult and expensive when it's in a SQL database, once it's loaded in a graph?

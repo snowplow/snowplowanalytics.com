@@ -4,6 +4,7 @@ title: Building first and last touch attribution models in Redshift SQL
 tags: [data modeling, attribution, first touch, last touch]
 author: Yali
 category: Analytics
+permalink: /blog/2016/02/22/building-first-and-last-touch-attribution-models-in-redshift-sql
 ---
 
 In order to calculate the return on marketing spend on individual campaigns, digital marketers need to connect revenue events, downstream in a user journey, with marketing touch events, upstream in a user journey. This connection is necessary so that the cost of those associated with the marketing campaign that drove those marketing touches can be connected to profit associated with the conversion events later on.

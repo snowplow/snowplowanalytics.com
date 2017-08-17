@@ -5,6 +5,7 @@ title-short: Scala MaxMind GeoIP library
 tags: [snowplow, maxmind, geoip, geography, ip address, enrichment]
 author: Alex
 category: Releases
+permalink: /blog/2013/01/16/scala-maxmind-geoip-released
 ---
 
 A short blog post this, to announce the release of [**Scala MaxMind GeoIP**] [scala-maxmind-geoip], our Scala wrapper for the MaxMind [Java Geo-IP] [java-lib] library.

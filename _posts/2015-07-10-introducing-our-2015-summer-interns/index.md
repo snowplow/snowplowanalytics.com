@@ -4,6 +4,7 @@ title: Introducing our 2015 Snowplow summer interns
 tags: [snowplow, intern, summer, internship]
 author: Alex
 category: Recruitment
+permalink: /blog/2015/07/10/introducing-our-2015-summer-interns
 ---
 
 You have probably seen some new names and faces around the Snowplow blog and GitHub repos recently - we are hugely excited to extend a warm (if somewhat belated) welcome to our three Snowplow summer interns! In this blog post we'll introduce both interns to the Snowplow community, as well as giving a little more background on the projects they are working on.

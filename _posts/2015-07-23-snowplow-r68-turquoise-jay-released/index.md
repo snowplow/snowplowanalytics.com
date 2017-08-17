@@ -5,6 +5,7 @@ title-short: Snowplow 68
 tags: [snowplow, emr, emretlrunner, ruby]
 author: Fred
 category: Releases
+permalink: /blog/2015/07/23/snowplow-r68-turquoise-jay-released
 ---
 
 We are happy to announce the release of Snowplow 68, Turquoise Jay. This is a small release which adapts the EmrEtlRunner to use the new [Elastic MapReduce][emr] API.

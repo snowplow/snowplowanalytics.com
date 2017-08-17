@@ -4,6 +4,7 @@ title: JSON schemas for Redshift datatypes
 tags: [redshift, jsonschema, json]
 author: Fred
 category: Analytics
+permalink: /blog/2015/02/12/redshift-jsonschema-types
 ---
 
 This blog contains [JSON schemas][jsonschema] for the all the data types supported by [Amazon Redshift][redshift].

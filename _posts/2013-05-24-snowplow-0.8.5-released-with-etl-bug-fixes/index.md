@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.5
 tags: [snowplow release, bug fix]
 author: Alex
 category: Releases
+permalink: /blog/2013/05/24/snowplow-0.8.5-released-with-etl-bug-fixes
 ---
 
 We are pleased to announce the immediate availability of Snowplow **0.8.5**. This is a bug fixing release, following on from our launch last week of Snowplow 0.8.4 with geo-IP lookups.

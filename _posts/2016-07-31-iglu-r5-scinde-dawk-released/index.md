@@ -5,6 +5,7 @@ title-short: Iglu 5 Scinde Dawk
 tags: [iglu, json, json schema, registry]
 author: Anton
 category: Releases
+permalink: /blog/2016/07/31/iglu-r5-scinde-dawk-released
 ---
 
 We are pleased to announce the fifth release of the [Iglu Schema Registry System][iglu-repo], with an initial release of `igluctl` - an Iglu command-line tool and Schema DDL as part of Iglu project.

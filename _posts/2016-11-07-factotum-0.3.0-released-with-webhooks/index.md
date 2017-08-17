@@ -5,6 +5,7 @@ title-short: Factotum 0.3.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Ed
 category: Releases
+permalink: /blog/2016/11/07/factotum-0.3.0-released-with-webhooks
 ---
 
 We're pleased to announce the 0.3.0 release of Snowplow's DAG running tool [Factotum][factotum-repo]! This release centers around making DAGs easier to create, monitor and

@@ -5,6 +5,7 @@ title: Web and mobile data only gets you to first base when building a single cu
 tags: [event data, single customer view, multi-channel marketing, customer journey mapping, optimizing customer journeys, email marketing, push messaging, display advertising, call center analytics]
 author: Yali
 category: Inside the Plow
+permalink: /blog/2016/01/17/web-and-mobile-data-only-gets-you-to-first-base-when-building-a-single-customer-view
 ---
 
 One of the main reasons that companies adopt Snowplow is to build a single customer view. For many of our users, Snowplow lets them for the first time join behavioral data gathered from their website and mobile apps with other customer data sets (e.g. CRM). This simple step drives an enormous amount of value.

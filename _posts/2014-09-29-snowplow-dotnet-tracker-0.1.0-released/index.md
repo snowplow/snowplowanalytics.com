@@ -5,6 +5,7 @@ title-short: Snowplow .NET Tracker 0.1.0
 tags: [snowplow, analytics, c#, dotnet, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2014/09/29/snowplow-dotnet-tracker-0.1.0-released
 ---
 
 We are pleased to announce the release of the first version of the [Snowplow .NET Tracker] [repo]. The tracker supports synchronous and asynchronous GET and POST requests and has an offline mode which stores unsent events using [Message Queueing] [msmq].

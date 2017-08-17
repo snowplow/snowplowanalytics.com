@@ -5,6 +5,7 @@ subtitle: "Add business context to your event analytics"
 tags: ["analytics", "Google analytics", "strategy tools", "snowplow analytics", "tutorial"]
 author: João
 category: Analytics
+permalink: /blog/2017/01/27/how-a-clear-data-taxonomy-drives-insight-and-action
 ---
 
 *This is guest blog post by [João Correia][joao-linkedin], Senior Analytics Strategist at YouCaring and an experienced analytics professional, helping organizations embed analytics for growth and innovation. In this post, João explains how to define an analytics strategy with Snowplow Analytics that considers your business context and drives insights and action. Many thanks to João for sharing his views on this topic! If you have a story to share, feel free to get in touch.*

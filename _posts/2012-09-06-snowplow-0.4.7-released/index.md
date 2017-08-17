@@ -5,6 +5,7 @@ title-short: Snowplow 0.4.7
 tags: [snowplow, ecommerce, multi-site, javascript, release]
 author: Alex
 category: Releases
+permalink: /blog/2012/09/06/snowplow-0.4.7-released
 ---
 
 We have just released Snowplow version **0.4.7**. This release bumps the Snowplow JavaScript tracker to version **0.6**, with two significant new features:

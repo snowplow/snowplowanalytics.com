@@ -5,6 +5,7 @@ title-short: Loading Snowplow event-level data into Neo4J
 tags: [snowplow, neo4j, graph database, path analysis, neo4J shell tools, cypher, sql]
 author: Nick
 category: Analytics
+permalink: /blog/2014/07/30/loading-snowplow-web-event-data-into-graph-databases-for-pathing-analysis
 ---
 
 In the [last post](/blog/2014/07/28/explorations-in-analyzing-web-event-data-in-graph-databases/), we discussed how particular types of analysis, particularly path analysis, are not well-supported in traditional SQL databases, and raised the possibility that graph databases like Neo4J might be good platforms for doing this sort of analysis. We went on to design a graph to represent event data, and page view data specifically, which captures the sequence of events.

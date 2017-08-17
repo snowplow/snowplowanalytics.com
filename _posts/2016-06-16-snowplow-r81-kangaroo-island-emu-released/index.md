@@ -5,6 +5,7 @@ title: "Snowplow 81 Kangaroo Island Emu released"
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
+permalink: /blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released
 ---
 
 We are happy to announce the release of Snowplow 81 Kangaroo Island Emu! At the heart of this release is the [Hadoop Event Recovery project] [hre-project], which allows you to fix up Snowplow bad rows and make them ready for reprocessing.

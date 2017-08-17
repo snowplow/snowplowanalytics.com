@@ -5,6 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.6.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, tvos]
 author: Josh
 category: Releases
+permalink: /blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released
 ---
 
 We are pleased to release version 0.6.0 of the [Snowplow Objective-C Tracker] [objc-repo]. This release refactors the event tracking API, introduces tvOS support and fixes an important bug with client sessionization ([#257][257]). Many thanks to community member [Jason][iamjason] for his contributions to this release!

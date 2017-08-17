@@ -5,6 +5,7 @@ title-short: Snowplow Ruby Tracker 0.3.0
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released
 ---
 
 We are happy to announce the release of the Snowplow Ruby Tracker version 0.3.0. This version adds support for asynchronous requests and POST requests, and introduces the new Subject and Emitter classes.

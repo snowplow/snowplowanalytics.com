@@ -4,6 +4,7 @@ title: Issue with Elastic Beanstalk Tomcat container for Clojure Collector users
 tags: [clojure collector,  tomcat, elastic beanstalk, container]
 author: Yali
 category: Other
+permalink: /blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector
 ---
 
 A few weeks ago one of our users reported that they were consistently missing data between 1am and 2am UTC. We investigated the issue and found that their Clojure Collector was not successfully logging data in that hour.

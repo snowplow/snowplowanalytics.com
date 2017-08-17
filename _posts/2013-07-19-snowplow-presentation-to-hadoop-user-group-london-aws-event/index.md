@@ -4,6 +4,7 @@ title: Snowplow presentation at the Hadoop User Group London AWS event
 tags: [amazon, redshift, emr, hadoop, architecture]
 author: Yali
 category: Meetups
+permalink: /blog/2013/07/19/snowplow-presentation-to-hadoop-user-group-london-aws-event
 ---
 
 Yesterday at the [Hadoop User Group][hug-uk], I was very fortunate to get the opportunity to speak about Snowplow at the event focused specifically on Amazon Web Services, and Redshift in particular.

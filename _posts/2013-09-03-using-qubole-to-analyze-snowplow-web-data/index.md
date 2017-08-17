@@ -4,6 +4,7 @@ title: Using Qubole to crunch your Snowplow web data using Apache Hive
 tags: [qubole, hive, emr]
 author: Yali
 category: Analytics
+permalink: /blog/2013/09/03/using-qubole-to-analyze-snowplow-web-data
 ---
 
 We've just published a getting-started guide to using [Qubole][qubole], a managed Big Data service, to query your Snowpow data. You can read the guide [here] [qubole-wiki].

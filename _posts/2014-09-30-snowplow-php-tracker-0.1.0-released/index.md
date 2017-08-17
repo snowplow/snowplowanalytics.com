@@ -5,6 +5,7 @@ title-short: Snowplow PHP Tracker 0.1.0
 tags: [snowplow, analytics, php, tracker]
 author: Josh
 category: Releases
+permalink: /blog/2014/09/30/snowplow-php-tracker-0.1.0-released
 ---
 
 We are pleased to announce the release of the first version of the [Snowplow PHP Tracker] [repo]. The tracker supports synchronous GET and POST requests.

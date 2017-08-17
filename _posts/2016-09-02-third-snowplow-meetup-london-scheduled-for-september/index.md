@@ -5,6 +5,7 @@ title-short: Third Snowplow Meetup London scheduled for September
 tags: [meetups, London]
 author: Idan
 category: Meetups
+permalink: /blog/2016/09/02/third-snowplow-meetup-london-scheduled-for-september
 ---
 
 On the 21st September we'll be hosting our third London meetup taking place at [Skills Matter \ Code Node] [Skills Matter] (Shift Room) from 18:30-21:45. 

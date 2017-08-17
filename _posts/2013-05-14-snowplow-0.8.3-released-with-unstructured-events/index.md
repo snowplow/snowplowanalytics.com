@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.3
 tags: [snowplow, unstructured events, javascript, tracker]
 author: Alex
 category: Releases
+permalink: /blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events
 ---
 
 We're pleased to announce the release of Snowplow **0.8.3**. This release updates our JavaScript Tracker to version 0.11.2, adding the ability to send custom unstructured events to a Snowplow collector with `trackUnstructEvent()`. The Clojure Collector is also bumped to 0.5.0, to include some important bug fixes.

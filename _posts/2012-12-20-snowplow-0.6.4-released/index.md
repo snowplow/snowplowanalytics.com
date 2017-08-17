@@ -5,6 +5,7 @@ title-short: Snowplow 0.6.4
 tags: [snowplow, infobright, ice, columnar database, release]
 author: Alex
 category: Releases
+permalink: /blog/2012/12/20/snowplow-0.6.4-released
 ---
 
 We're happy to announce our next Snowplow release - version **0.6.4**. This release includes updates:

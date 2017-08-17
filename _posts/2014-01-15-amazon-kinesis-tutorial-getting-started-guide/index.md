@@ -4,6 +4,7 @@ title: Amazon Kinesis tutorial - a getting started guide
 tags: [amazon, kinesis, tutorial]
 author: Yali
 category: Inside the Plow
+permalink: /blog/2014/01/15/amazon-kinesis-tutorial-getting-started-guide
 ---
 
 *Of all the developments on the Snowplow roadmap, the one that we are most excited about is porting the Snowplow data pipeline to Amazon Kinesis to deliver real-time data processing. We will publish a separate post outlining why we are so excited about this. (Hint: it's about a lot more than simply real-time analytics on Snowplow data.) This blog post is intended to provide a starting point for developers who are interested in diving into Kinesis.*
