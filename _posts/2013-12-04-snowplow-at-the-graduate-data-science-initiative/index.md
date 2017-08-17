@@ -5,6 +5,7 @@ title-short: Graduate Data Science Initiative in London
 tags: [events, graduate, data science]
 author: Yali
 category: Meetups
+permalink: /blog/2013/12/04/snowplow-at-the-graduate-data-science-initiative
 ---
 
 Last night, I was very privilage to speak at the first meeting of the [Graduate Data Science Initiative meetup] [gdsi], alongside Martin Goodson from Qubit and Eddie Bells from Lyst.

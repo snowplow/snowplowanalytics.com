@@ -5,6 +5,7 @@ title-short: "Snowplow Meetup NYC #2"
 tags: [snowplow, meetup, hadoop, new york, nyc, animoto, canary, product analytics]
 author: Yali
 category: Meetups
+permalink: /blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap
 ---
 
 On September 22nd, the second Snowplow Meetup London took place at the fabulous [Canary][canary] office in Manhatten.

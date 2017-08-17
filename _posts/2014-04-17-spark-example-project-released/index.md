@@ -5,6 +5,7 @@ title-short: Spark Example Project
 tags: [snowplow, spark, emr, example, tutorial]
 author: Alex
 category: Releases
+permalink: /blog/2014/04/17/spark-example-project-released
 ---
 
 On Saturday I attended [Hack the Tower] [hack-the-tower], the monthly collaborative hackday for the London Java and Scala user groups hosted at the Salesforce offices in Liverpool Street.

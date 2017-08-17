@@ -5,6 +5,7 @@ title-short: Using OpenTag with Snowplow
 tags: [javascript, tracker, tag management, datalayer]
 author: Yali
 category: Documentation
+permalink: /blog/2013/01/18/using-snowplow-with-qubit-opentag
 ---
 
 This is a short blog post to highlight a new section on the [Snowplow setup guide] [setup-guide] covering [how to integrate Snowplow with QuBit's OpenTag tag management system] [setup-snowplow-with-opentag].

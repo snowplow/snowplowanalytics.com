@@ -5,6 +5,7 @@ title-short: Looking back at 2016
 tags: [snowplow]
 author: Diogo
 category: Inside the Plow
+permalink: /blog/2017/01/12/looking-back-at-2016
 ---
 
 ![looking-back-to-2016] [looking-back-to-2016]

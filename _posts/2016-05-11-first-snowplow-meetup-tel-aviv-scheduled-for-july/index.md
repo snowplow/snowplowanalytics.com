@@ -5,6 +5,7 @@ title-short: First Snowplow Meetup Tel-Aviv scheduled for July
 tags: [meetups, Tel-Aviv]
 author: Idan
 category: Meetups
+permalink: /blog/2016/05/11/first-snowplow-meetup-tel-aviv-scheduled-for-july
 ---
 
 It gives us great pleasure to announce our first Snowplow meetup in Tel-Aviv.

@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.1
 tags: [snowplow, json, unstructured event, custom context, context]
 author: Alex
 category: Releases
+permalink: /blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support
 ---
 
 We are hugely excited to announce the immediate availability of Snowplow 0.9.1. This release introduces **initial** support for JSON-based custom unstructured events and custom contexts in the Snowplow Enrichment and Storage processes; this is the most-requested feature from our community and a key building block for mobile and app event tracking in Snowplow.

@@ -5,6 +5,7 @@ title-short: Spark Example Project 0.3.0
 tags: [snowplow, spark, emr, example, tutorial]
 author: Alex
 category: Releases
+permalink: /blog/2015/05/10/spark-example-project-0.3.0-released
 ---
 
 We are pleased to announce the release of our [Spark Example Project 0.3.0] [spark-repo], building on the [original release of the project] [010-release] last year.

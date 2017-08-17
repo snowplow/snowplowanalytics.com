@@ -5,6 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.8.0
 tags: [snowplow, javascript, parrable, optimizely, optimizelyx, privacy, optout]
 author: Ben
 category: Releases
+permalink: /blog/2017/05/18/snowplow-javascript-tracker-2.8.0-released
 ---
 
 We are pleased to announce a new release of the

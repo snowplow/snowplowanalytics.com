@@ -5,6 +5,7 @@ title-short: Factotum 0.4.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Josh
 category: Releases
+permalink: /blog/2016/12/22/factotum-0.4.0-released-with-support-for-constraints
 ---
 
 We're pleased to announce the 0.4.0 release of Snowplow's DAG running tool [Factotum][factotum-repo]! This release centers around making DAGs safer to run on distributed clusters by constraining the run to a specific host.

@@ -4,6 +4,7 @@ title: Snowplow meetups announced in London and Sydney
 tags: [snowplow, meetup]
 author: Yali
 category: Meetups
+permalink: /blog/2014/12/08/snowplow-meetup-group-london-announced
 ---
 
 One of the best things about working at Snowplow is that it gives us the opportunity to work with some of the smartest companies in data. Snowplow attracts users who by definition are pushing event data beyond the limits imposed by traditional web and mobile analytics tools. Having and working with such a smart userbase means we get to learn from them every day.

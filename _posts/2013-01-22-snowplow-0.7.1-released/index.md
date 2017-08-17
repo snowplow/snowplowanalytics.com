@@ -5,6 +5,7 @@ title-short: Snowplow 0.7.1
 tags: [snowplow, release, ruby, bundler, rvm]
 author: Alex
 category: Releases
+permalink: /blog/2013/01/22/snowplow-0.7.1-released
 ---
 
 We're happy to announce the release of Snowplow version **0.7.1**. This release is designed to make it much easier to install and run the two Snowplow Ruby applications:

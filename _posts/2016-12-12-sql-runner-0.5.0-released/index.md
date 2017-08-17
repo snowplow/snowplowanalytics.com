@@ -5,6 +5,7 @@ title-short: SQL Runner 0.5.0
 tags: [sql, locking, lock, consul, redshift, postgres]
 author: Josh
 category: Releases
+permalink: /blog/2016/12/12/sql-runner-0.5.0-released
 ---
 
 We are pleased to announce version [0.5.0] [050-release] of [SQL Runner] [repo]. This release adds some powerful new features, including local and Consul-based remote locking to ensure that SQL Runner runs your playbooks as singletons.

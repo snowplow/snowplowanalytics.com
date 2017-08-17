@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.4
 tags: [snowplow, maxmind, geoip, enrichment]
 author: Alex
 category: Releases
+permalink: /blog/2013/05/16/snowplow-0.8.4-released-with-maxmind-geoip
 ---
 
 We are pleased to announce the immediate availability of Snowplow **0.8.4**. This is a big release, which adds geo-IP lookups to the Snowplow Enrichment stage, using the excellent [GeoLite City database] [geolite] from [MaxMind, Inc] [maxmind]. This has been one of the most requested features from the Snowplow community, so we are delighted to launch it. Now you can determine the location of your website visitors directly from the Snowplow events table, and plot that data on a wide range of mapping tools including [Tableau] [tableau-mapping] or [Vincent] [vincent-mapping]:

@@ -5,6 +5,7 @@ title: "Snowplow 78 Great Hornbill released"
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
+permalink: /blog/2016/03/15/snowplow-r78-great-hornbill-released
 ---
 
 We are pleased to announce the immediate availability of [Snowplow 78 Great Hornbill] [snowplow-release]! This release brings our Kinesis pipeline functionally up-to-date with our Hadoop pipeline, and makes various further improvements to the Kinesis pipeline.

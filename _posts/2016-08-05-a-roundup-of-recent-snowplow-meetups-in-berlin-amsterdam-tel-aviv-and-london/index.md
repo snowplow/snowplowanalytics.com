@@ -5,6 +5,7 @@ title-short: Meetup roundup! Amsterdam, Berlin, London and Tel-Aviv
 tags: [meetups, Tel-Aviv]
 author: Yali
 category: Meetups
+permalink: /blog/2016/08/05/a-roundup-of-recent-snowplow-meetups-in-berlin-amsterdam-tel-aviv-and-london
 ---
 
 It has been a busy summer at Snowplow. We've done a number of meetups in some of our favorite cities around the world but failed (until now) to write them up on the website, so apologies - it is very important for us to share talks, slides and insights with the broader Snowplow community. Let us rectify that now! 

@@ -5,6 +5,7 @@ title-short: First Budapest meetup announced
 tags: [budapest, snowplow, meetup, secret sauce partners]
 author: Yali
 category: Meetups
+permalink: /blog/2015/11/23/inaugural-snowplow-meetup-budapest-announced
 ---
 
 We are enormously excited to announce that the first [Snowplow Meetup Budapest] [meetup] has been scheduled for February 2nd, 2016. You can sign up [here] [meetup].

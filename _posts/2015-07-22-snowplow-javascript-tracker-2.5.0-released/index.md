@@ -5,6 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.5.0
 tags: [snowplow, javascript, tracker, browser, analytics]
 author: Fred
 category: Releases
+permalink: /blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released
 ---
 
 We are excited to announce the release of version 2.5.0 of the [Snowplow JavaScript Tracker][release-250]! Among other things, this release adds new IDs for sessions and pageviews, making rich in-page and in-session analytics easier.

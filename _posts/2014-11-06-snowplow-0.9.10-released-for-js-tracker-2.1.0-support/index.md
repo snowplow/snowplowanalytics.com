@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.10
 tags: [snowplow, enrichments, campaign, attribution]
 author: Alex
 category: Releases
+permalink: /blog/2014/11/06/snowplow-0.9.10-released-for-js-tracker-2.1.0-support
 ---
 
 We are pleased to announce the release of Snowplow 0.9.10. This is a minimalistic release designed to support the new events and context of the Snowplow JavaScript Tracker v2.1.1, also [released today] [js-tracker-release]

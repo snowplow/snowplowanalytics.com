@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.12
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
+permalink: /blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta
 ---
 
 Back in February, we introduced initial support for real-time event analytics using [Amazon Kinesis][kinesis]. We are excited to announce the release of Snowplow 0.9.12 which significantly improves and extends our Kinesis support. The major new feature is our all new Kinesis Elasticsearch Sink, which streams event data from Kinesis into [Elasticsearch][elasticsearch] in real-time. The data is then available to power real-time dashboards and analysis (e.g. using [Kibana][kibana]).

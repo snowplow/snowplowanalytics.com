@@ -5,6 +5,7 @@ title-short: Snowplow 61 Pygmy Parrot
 tags: [snowplow, beanstalk, clojure collector, cloudfront]
 author: Alex
 category: Releases
+permalink: /blog/2015/03/02/snowplow-r61-pygmy-parrot-released
 ---
 
 We are pleased to announce the immediate availability of Snowplow 61, Pygmy Parrot.

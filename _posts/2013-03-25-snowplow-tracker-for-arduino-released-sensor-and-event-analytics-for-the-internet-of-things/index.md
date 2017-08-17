@@ -5,6 +5,7 @@ title-short: Snowplow Arduino Tracker
 tags: [snowplow, arduino, tracker, internet of things, release]
 author: Alex
 category: Releases
+permalink: /blog/2013/03/25/snowplow-tracker-for-arduino-released-sensor-and-event-analytics-for-the-internet-of-things
 ---
 
 Today we are releasing our first non-Web tracker for Snowplow - an event tracker for the [Arduino] [arduino] open-source electronics prototyping platform. The [Snowplow Arduino Tracker] [snowplow-arduino-tracker] lets you track sensor and event-stream information from one or more IP-connected Arduino boards.

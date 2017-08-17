@@ -4,6 +4,7 @@ title: 'Data modeling in Spark (Part 1): Running SQL queries on DataFrames in Sp
 title-short: 'Data modeling in Spark (Part 1)'
 author: Christophe
 category: Data Modeling
+permalink: /blog/2015/12/02/data-modeling-in-spark-exploring-spark-sql
 ---
 
 **An updated version of this blogpost was posted to [Discourse](http://discourse.snowplowanalytics.com/t/running-sql-queries-on-dataframes-in-spark-sql-updated/119).**

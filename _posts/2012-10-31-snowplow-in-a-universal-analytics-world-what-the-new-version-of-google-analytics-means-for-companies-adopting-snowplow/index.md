@@ -5,6 +5,7 @@ title-short: Snowplow in a Universal Analytics world
 tags: [snowplow, google, universal analytics]
 author: Yali
 category: Analytics
+permalink: /blog/2012/10/31/snowplow-in-a-universal-analytics-world-what-the-new-version-of-google-analytics-means-for-companies-adopting-snowplow
 ---
 
 Earlier this week, Google announced a series of significant advances in Google Analytics at the GA Summit, that are collectively referred to as [Universal Analytics] [justin-cutroni-summary]. In this post, we look at:

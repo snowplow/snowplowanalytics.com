@@ -5,6 +5,7 @@ title-short: Python Tracker 0.8.0 released
 tags: [python, trackers]
 author: Yali
 category: Releases
+permalink: /blog/2016/10/12/snowplow-python-tracker-0.8.0-released
 ---
 
 We are delighted to release version 0.8.0 of the [Snowplow Python Tracker][python-tracker], for tracking events from your Python apps, services and games. This release adds Python 3.4-5 support, 10 new event types and much richer timestamp support.

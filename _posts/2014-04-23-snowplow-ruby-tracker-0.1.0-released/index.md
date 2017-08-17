@@ -5,6 +5,7 @@ title-short: Snowplow Ruby Tracker 0.1.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Fred
 category: Releases
+permalink: /blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released
 ---
 
 We are happy to announce the release of the new [Snowplow Ruby Tracker] [repo]. This is a Ruby gem designed to send Snowplow events to a Snowplow collector from a Ruby or Rails environment. This post will cover installing and setting up the Tracker, and provide some basic information about its features:

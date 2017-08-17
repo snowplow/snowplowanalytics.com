@@ -5,6 +5,7 @@ title-short: Snowplow 0.8.0
 tags: [snowplow, scalding, hadoop, etl, release, cascading, enterprise data pipeline]
 author: Alex
 category: Releases
+permalink: /blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment
 ---
 
 A new month, a new release! We're excited to announce the immediate availability of Snowplow version **0.8.0**. This has been our most complex release to date: we have done a full rewrite our ETL (aka enrichment) process, adding a few nice data quality enhancements along the way.

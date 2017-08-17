@@ -5,6 +5,7 @@ title-short: Factotum 0.2.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Ed
 category: Releases
+permalink: /blog/2016/06/13/factotum-0.2.0-released
 ---
 
 We are pleased to announce release 0.2.0 of Snowplow's DAG running tool, [Factotum][factotum-repo]. This release introduces variables for jobs and the ability to start jobs from a given task.

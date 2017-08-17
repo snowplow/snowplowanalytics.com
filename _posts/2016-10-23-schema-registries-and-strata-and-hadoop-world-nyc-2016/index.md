@@ -5,6 +5,7 @@ title-short: Schema registries + Strata NYC
 tags: [snowplow, strata, hadoop, new york, nyc, iglu, schema registry, confluent]
 author: Alex
 category: Meetups
+permalink: /blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016
 ---
 
 In late September the Snowplow team attended [Strata + Hadoop World] [strata-nyc-2016] in New York City. It was a great opportunity to check in on the US data science and engineering scenes, and I was pleased to also have the opportunity to give a talk on schema registries.

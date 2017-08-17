@@ -4,6 +4,7 @@ title: Integrating Snowplow with Google Tag Manager
 tags: [snowplow, tag management, google tag manager, datalayer]
 author: Yali
 category: Releases
+permalink: /blog/2012/11/16/integrating-snowplow-with-google-tag-manager
 ---
 
 A month and a half ago, Google launched [Google Tag Manager] [gtm] (GTM), a free tag management solution. That was a defining moment in tag management history as it will no doubt bring tag management, until now the preserve of big enterprises, into the mainstream.

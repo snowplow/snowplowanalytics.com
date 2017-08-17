@@ -5,6 +5,7 @@ title-short: Snowplow 66 Oriental Skylark
 tags: [snowplow, hadoop2, rhino, scripting, lambda architecture]
 author: Alex
 category: Releases
+permalink: /blog/2015/06/16/snowplow-r66-oriental-skylark-released
 ---
 
 We are pleased to announce the release of Snowplow 66, Oriental Skylark. This release upgrades our Hadoop Enrichment process to run on Hadoop 2.4, re-enables our Kinesis-Hadoop lambda architecture and also introduces a new scriptable enrichment powered by JavaScript - our most powerful enrichment yet!

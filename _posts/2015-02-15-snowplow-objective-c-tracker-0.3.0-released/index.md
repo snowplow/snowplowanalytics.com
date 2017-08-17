@@ -5,6 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.3.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec]
 author: Alex
 category: Releases
+permalink: /blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released
 ---
 
 We are pleased to release version 0.3.0 of the [Snowplow Objective-C Tracker] [objc-repo]. Many thanks to [James Duncan Davidson] [duncan] and [atdrendel] [atdrendel] from 6Wunderkinder, and former Snowplow intern [Jonathan Almeida] [jonalmeida] for their huge contributions to this release!

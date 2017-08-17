@@ -5,6 +5,7 @@ title-short: Introducing SchemaVer
 tags: [version, versioning, schema, semver, schemaver]
 author: Alex
 category: Research
+permalink: /blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas
 ---
 
 _Initial SchemaVer draft. Date: 13 March 2014. Draft authors: Alexander Dean, Frederick Blundun._

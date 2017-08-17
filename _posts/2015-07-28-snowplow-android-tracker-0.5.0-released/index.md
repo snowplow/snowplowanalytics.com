@@ -5,6 +5,7 @@ title-short: Snowplow Android Tracker 0.5.0
 tags: [snowplow, analytics, android, mobile, tracker]
 author: Josh
 category: Releases
+permalink: /blog/2015/07/28/snowplow-android-tracker-0.5.0-released
 ---
 
 We are pleased to announce the release of the [Snowplow Android Tracker][repo] version 0.5.0. The Tracker has undergone a series of performance improvements, plus the addition of client-side sessionization.

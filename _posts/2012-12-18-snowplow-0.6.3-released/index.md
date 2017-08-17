@@ -5,6 +5,7 @@ title-short: Snowplow 0.6.3
 tags: [snowplow, javascript, tracker, hive, hiveql]
 author: Alex
 category: Releases
+permalink: /blog/2012/12/18/snowplow-0.6.3-released
 ---
 
 Today we are releasing Snowplow version **0.6.3** - another clean-up release following on from the 0.6.2 release. This release bumps the JavaScript Tracker to version 0.8.2, and the Hive-data-format HiveQL file to version 0.5.2.

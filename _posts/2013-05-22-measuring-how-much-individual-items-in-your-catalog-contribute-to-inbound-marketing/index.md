@@ -4,6 +4,7 @@ title: Measuring how much traffic individual items in your catalog drive to your
 tags: [content marketing, landing page metrics, source, medium]
 author: Yali
 category: Analytics
+permalink: /blog/2013/05/22/measuring-how-much-individual-items-in-your-catalog-contribute-to-inbound-marketing
 ---
 
 We have just added a [new recipe] [measure-inbound-marketing-recipe] to the [catalog analytics] [catalog-analytics] section of the [Analytics Cookbook] [cookbook]. This recipe describes:

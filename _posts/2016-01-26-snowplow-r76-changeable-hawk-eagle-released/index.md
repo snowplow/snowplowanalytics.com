@@ -5,6 +5,7 @@ title: Snowplow 76 Changeable Hawk-Eagle released
 tags: [snowplow, sendgrid, deduplication, shredding]
 author: Alex
 category: Releases
+permalink: /blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released
 ---
 
 We are pleased to announce the release of [Snowplow 76 Changeable Hawk-Eagle][snowplow-release]. This release introduces an event de-duplication process which runs on Hadoop, and also includes an important bug fix for our recent SendGrid webhook support ([#2328] [issue-2328]).

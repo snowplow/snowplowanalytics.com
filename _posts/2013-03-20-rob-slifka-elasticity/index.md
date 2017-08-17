@@ -4,6 +4,7 @@ title: Inside the Plow - Rob Slifka's Elasticity
 tags: snowplow emr elasticity mapreduce
 author: Alex
 category: Inside the Plow
+permalink: /blog/2013/03/20/rob-slifka-elasticity
 ---
 
 *The Snowplow platform is built standing on the shoulders of a whole host of different open source frameworks, libraries and tools. Without the amazing ongoing work by these individuals, companies and not-for-profits, the Snowplow project literally could not exist.*

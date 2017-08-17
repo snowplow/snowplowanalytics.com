@@ -4,6 +4,7 @@ title: Reduce your Cloudfront costs with cache control
 tags: [amazon, cloudfront, cdn, cache control]
 author: Yali
 category: Other
+permalink: /blog/2013/07/02/reduce-your-cloudfront-bills-with-cache-control
 ---
 
 One of the reasons Snowplow is very popular with very large publishers and online advertising networks is that the cost of using Snowplow to track user behavior across your website or network is significantly lower than with our commercial competitors, and that difference becomes more pronounced as the number of users and events you track per day increases.

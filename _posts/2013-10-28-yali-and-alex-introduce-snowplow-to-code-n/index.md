@@ -4,6 +4,7 @@ title: Our video introduction of Snowplow to code_n
 tags: [code_n]
 author: Yali
 category: Other
+permalink: /blog/2013/10/28/yali-and-alex-introduce-snowplow-to-code-n
 ---
 
 We were very flattered to be invited by the team at [code_n] [coden] to enter their competition to identify "outstanding young companies and promote their groundbreaking business models". This year's competition is focused on data, and has the motto *Driving the Data Revolution*.

@@ -5,6 +5,7 @@ title-short: Snowplow 0.7.5
 tags: [snowplow, javascript, tracker]
 author: Alex
 category: Releases
+permalink: /blog/2013/02/25/snowplow-0.7.5-released-with-important-javascript-fix
 ---
 
 We are releasing Snowplow version **0.7.5** - which upgrades the JavaScript tracker to version **0.11.1**. This is a small but important release - because we are fixing an issue introduced in Snowplow version a month ago: **if you are on versions 0.9.1 to 0.11.0 of the JavaScript tracker, please upgrade!**

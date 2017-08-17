@@ -4,6 +4,7 @@ title: "Data collection: the essential, but unloved, foundation of the data valu
 tags: [good data, data collection, technical architecture]
 author: Yali
 category: Inside the Plow
+permalink: /blog/2017/01/16/data-collection-the-essential-but-unloved-foundation-of-the-data-value-chain
 ---
 
 it is so obvious no one bothers saying it.

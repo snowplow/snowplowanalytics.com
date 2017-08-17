@@ -4,6 +4,7 @@ title: Writing Hive UDFs - a tutorial
 tags: [hive, udf, serde, java, hadoop]
 author: Alex
 category: Inside the Plow
+permalink: /blog/2013/02/08/writing-hive-udfs-and-serdes
 ---
 
 _Snowplow's own [Alexander Dean][alex] was recently asked to write an article for the [Software Developer's Journal edition on Hadoop] [journal] The kind folks at the Software Developer's Journal have allowed us to reprint his article in full below._

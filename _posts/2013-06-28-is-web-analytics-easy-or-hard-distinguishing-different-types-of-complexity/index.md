@@ -5,6 +5,7 @@ title-short: Is web analytics easy or hard?
 tags: [webanalytics, complexity, data processing, data model]
 author: Yali
 category: Analytics
+permalink: /blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity
 ---
 
 <p><i>This post is a response to an excellent, but old, blog post by <a href="http://www.gilliganondata.com/index.php/about/">Tim Wilson</a> called <a href="http://www.gilliganondata.com/index.php/2011/08/09/web-analytics-platforms-are-fundamentally-broken/">Web Analytics Platforms are Fundamentally Broken</a>, authored back in August 2011. Tim made the case (that is still true today) that web analytics is hard, and part of that hardness is because web analytics platforms are fundamentally broken. After Tim published his post, a very interesting conversation ensued on <a href="https://plus.google.com/109933174446684687846/posts/fCNTrop8HJz">Google+</a>. Reading through it, I was struck by how many of the points raised are still relevant today, and how many of the participants touched on issues that were central to our thinking when when we conceived of Snowplow.</i></p>

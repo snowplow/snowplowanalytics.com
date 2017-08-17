@@ -4,6 +4,7 @@ title: Budapest Data round-up
 tags: [snowplow, budapest, hungary, big data, hadoop, kinesis]
 author: Alex
 category: Meetups
+permalink: /blog/2014/06/13/budapest-data-round-up
 ---
 
 So the [Budapest Data event] [budapest-dw-forum] (aka Budapest DW Forum) is over for another year - a huge thanks to Bence Arató and the whole team for organizing another excellent conference!

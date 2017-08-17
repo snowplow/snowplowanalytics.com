@@ -5,6 +5,7 @@ title-short: Schema Guru 0.5.0
 tags: [json, json schema, schema, ddl, redshift]
 author: Anton
 category: Releases
+permalink: /blog/2016/02/11/schema-guru-0.5.0-released
 ---
 
 We are pleased to announce the releases of [Schema Guru][repo] 0.5.0 and [Schema DDL][ddl-repo] 0.3.0, with JSON Schema and Redshift DDL processing enhancements and several bug fixes.

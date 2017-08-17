@@ -5,6 +5,7 @@ title-short: Snowplow Scala Analytics SDK 0.2.0
 tags: [scala, snowplow, enriched events, spark, dynamodb]
 author: Anton
 category: Releases
+permalink: /blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released
 ---
 
 We are pleased to announce the 0.2.0 release of the [Snowplow Scala Analytics SDK][sdk-repo], a library providing tools to process and analyze Snowplow enriched events in Scala-compatible data processing frameworks such as [Apache Spark][spark], [AWS Lambda][lambda], [Apache Flink][flink] and [Scalding][scalding], as wells other JVM-compatible data processing frameworks.

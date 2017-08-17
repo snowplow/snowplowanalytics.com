@@ -5,6 +5,7 @@ title-short: Iglu Ruby Client
 tags: [iglu, ruby, json, jsonschema]
 author: Anton
 category: Releases
+permalink: /blog/2017/02/08/iglu-ruby-client-released
 ---
 
 We are pleased to announce the initial release of the [Iglu Ruby Client][repo], our third library in the family of [Iglu] [iglu-repo] clients.

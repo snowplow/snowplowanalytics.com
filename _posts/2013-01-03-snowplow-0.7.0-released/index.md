@@ -5,6 +5,7 @@ title-short: Snowplow 0.7.0
 tags: [snowplow, clojure collector, clojure, third party cookies, amazon elastic beanstalk]
 author: Alex
 category: Releases
+permalink: /blog/2013/01/03/snowplow-0.7.0-released
 ---
 
 Today we are hugely excited to announce the release of Snowplow version **0.7.0**, which includes an experimental new [Clojure-based collector] [clj-collector-impl] designed to run on [Amazon Elastic Beanstalk] [aws-eb]. This release allows you to use Snowplow to uniquely identify and track users across multiple domains - even across a whole content or advertising network.

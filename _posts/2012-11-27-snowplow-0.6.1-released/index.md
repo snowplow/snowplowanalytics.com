@@ -5,6 +5,7 @@ title-short: Snowplow 0.6.1
 tags: [snowplow, storageloader, infobright, ice, release]
 author: Alex
 category: Releases
+permalink: /blog/2012/11/27/snowplow-0.6.1-released
 ---
 
 We're happy to announce our next Snowplow release - version **0.6.1**. This release includes updates:

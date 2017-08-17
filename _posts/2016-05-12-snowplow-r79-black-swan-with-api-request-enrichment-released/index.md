@@ -5,6 +5,7 @@ title: "Snowplow 79 Black Swan with API Request Enrichment released"
 tags: [snowplow, enrichment, iglu, api, rest]
 author: Anton
 category: Releases
+permalink: /blog/2016/05/12/snowplow-r79-black-swan-with-api-request-enrichment-released
 ---
 
 We are pleased to announce the release of [Snowplow 79 Black Swan] [snowplow-release]. This appropriately-named release introduces our powerful new API Request Enrichment, plus a new HTTP Header Extractor Enrichment and several other improvements on the enrichments side.

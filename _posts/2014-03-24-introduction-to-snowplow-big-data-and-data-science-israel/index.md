@@ -5,6 +5,7 @@ title-short: Talk at Big Data and Data Science Israel
 tags: [snowplow, big data, data science, israel, tel aviv, meetup]
 author: Alex
 category: Meetups
+permalink: /blog/2014/03/24/introduction-to-snowplow-big-data-and-data-science-israel
 ---
 
 I was delighted to speak at the [Big Data & Data Science Israel] [meetup] in Herzliya Pituach last night, giving an introduction to Snowplow as an open source web and event analytics platform.

@@ -4,6 +4,7 @@ title: Performing market basket analysis on web analytics data with R
 tags: [market basket analysis, affinity analysis, R, product recommendation]
 author: Yali
 category: Analytics
+permalink: /blog/2013/05/20/performing-market-basket-analysis-with-r-arules-and-snowplow
 ---
 
 We have just added a [new recipe] [market-basket-analysis] to the [Analytics Cookbook] [cookbook]: one that walks through the process of performing a [market basket analysis] [market-basket-analysis], to identify associations between products and/or content items based on user purchase / viewing behavior. The recipe covers performing the analysis on Snowplow data using [R] [r] and the [arules] [arules] package in particular. Although the example walked through uses Snowplow data, the same approach *can* be used with other data sets: I'd be interested in finding out if members of the #measure community can describe how to do the comparable analysis using data from Google Analytics.

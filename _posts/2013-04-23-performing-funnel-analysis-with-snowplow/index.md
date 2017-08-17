@@ -4,6 +4,7 @@ title: Funnel analysis with Snowplow (Platform analytics part 1)
 tags: [snowplow, platform analytics, funnel]
 author: Yali
 category: Analytics
+permalink: /blog/2013/04/23/performing-funnel-analysis-with-snowplow
 ---
 
 [Eleven days ago] [catalog-analytics-intro], we started building out the [Catalog Analytics] [catalog-analytics] section of the [Analytics Cookbook] [anaytics-cookbook], with a set of recipes covering how to measure the performance of [content pages][content-page-analysis] and [product pages] [product-page-analysis].

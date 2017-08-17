@@ -5,6 +5,7 @@ title-short: Measurecamp London recap
 tags: [meetups, london, measurecamp]
 author: Yali
 category: Meetups
+permalink: /blog/2016/09/15/snowplow-at-measurecamp-london-september-2016-a-recap
 ---
 
 Last Saturday, Christophe, Alex and myself were at [Measurecamp London][measurecamp-london].

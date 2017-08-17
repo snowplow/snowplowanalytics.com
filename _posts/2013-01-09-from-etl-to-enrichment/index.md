@@ -5,6 +5,7 @@ title-short: From ETL to enrichment
 tags: [etl, enrichment, data processing, data pipelines]
 category: Inside the Plow
 author: yali
+permalink: /blog/2013/01/09/from-etl-to-enrichment
 ---
 
 In this blog post, we outline our plans to develop the [ETL] [etl] ("extract, transform and load") part of the Snowplow stack. Although in many respects the least sexy element of the stack, it is critical to Snowplow, and we intend to re-architect the ETL step in quite significant ways. In this post, we discuss our plans and the rationale behind them, in the hope to get:

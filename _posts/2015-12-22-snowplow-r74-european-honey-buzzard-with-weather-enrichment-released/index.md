@@ -5,6 +5,7 @@ title-short: Snowplow 74 European Honey Buzzard
 tags: [snowplow, weather, openweathermap, enrichment]
 author: Anton
 category: Releases
+permalink: /blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released
 ---
 
 We are pleased to announce the release of Snowplow release 74 European Honey Buzzard. This release adds a Weather Enrichment to the Hadoop pipeline - making Snowplow the first event analytics platform with built-in weather analytics!

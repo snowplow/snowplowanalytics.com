@@ -5,6 +5,7 @@ title-short: Kinesis S3 0.3.0 released
 tags: [snowplow, kinesis, s3, amazon s3, real-time]
 author: Josh
 category: Releases
+permalink: /blog/2015/07/07/kinesis-s3-0.3.0-released
 ---
 
 We are pleased to announce the release of Kinesis S3 version 0.3.0. This release greatly improves the speed, efficiency, and reliability of Snowplow's real-time S3 sink for Kinesis streams.

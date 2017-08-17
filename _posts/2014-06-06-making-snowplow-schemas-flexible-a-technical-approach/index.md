@@ -5,6 +5,7 @@ title-short: Making Snowplow schemas flexible
 tags: [snowplow, schema, schema evolution, structured data, event analytics, data warehousing]
 author: Yali
 category: Inside the Plow
+permalink: /blog/2014/06/06/making-snowplow-schemas-flexible-a-technical-approach
 ---
 
 In the last couple of months we've been doing an enormous amount of work to make the core Snowplow schema flexible. This is an essential step to making Snowplow an event analytics platform that can be used to store event data from:

@@ -5,6 +5,7 @@ title: "Snowplow 83 Bald Eagle released with SQL Query Enrichment"
 tags: [snowplow, kinesis, real-time]
 author: Anton
 category: Releases
+permalink: /blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment
 ---
 
 We are pleased to announce the release of [Snowplow 83 Bald Eagle] [snowplow-release]. This release introduces our powerful new SQL Query Enrichment, long-awaited support for the EU Frankfurt AWS region, plus POST support for our Iglu webhook adapter.

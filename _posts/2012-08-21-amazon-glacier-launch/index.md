@@ -5,6 +5,7 @@ title-short: Amazon announces Glacier
 author: Alex
 category: Other
 tags: [amazon glacier]
+permalink: /blog/2012/08/21/amazon-glacier-launch
 ---
 
 

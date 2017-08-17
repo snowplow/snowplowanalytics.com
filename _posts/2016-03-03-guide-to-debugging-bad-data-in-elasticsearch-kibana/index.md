@@ -4,6 +4,7 @@ title: Debugging bad data in Elasticsearch and Kibana - a guide
 tags: [bad data, elasticsearch, kibana]
 author: Yali
 category: Analytics
+permalink: /blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana
 ---
 
 One of the features that makes Snowplow unique is that we actually report bad data: any data that hits the Snowplow pipeline and fails to be processed successfully. This is incredibly valuable, because it means you can:

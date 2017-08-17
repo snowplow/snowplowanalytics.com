@@ -4,6 +4,7 @@ title: "Snowplow meetup set for Amsterdam, May 13th"
 tags: [snowplow, meetup]
 author: Yali
 category: Meetups
+permalink: /blog/2015/04/07/snowplow-meetup-amsterdam-set-for-may
 redirect_from: "/blog/2015/04/17/snowplow-meetup-amsterdam-set-for-may/"
 ---
 

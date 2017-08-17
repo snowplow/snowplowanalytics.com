@@ -5,6 +5,7 @@ title: "How to develop better games with level analytics"
 tags: [snowplow, games, gaming, analytics, product, product manager, codecombat]
 author: Colm
 category: Analytics
+permalink: /blog/2017/04/12/how-to-develop-better-games-with-level-analytics
 classification:
    department: product
    seniority: senior

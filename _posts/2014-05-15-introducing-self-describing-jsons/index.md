@@ -4,6 +4,7 @@ title: Introducing self-describing JSONs
 tags: [json, json schema, self-describing, self-correlating, schemaver]
 author: Alex
 category: Research
+permalink: /blog/2014/05/15/introducing-self-describing-jsons
 ---
 
 _Initial self-describing JSON draft. Date: 14 May 2014. Draft authors: Alexander Dean, Frederick Blundun._

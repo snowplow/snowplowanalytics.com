@@ -5,6 +5,7 @@ title-short: Snowplow 73 Cuban Macaw
 tags: [snowplow, hadoop, elasticsearch, redshift]
 author: Fred
 category: Releases
+permalink: /blog/2015/12/04/snowplow-r73-cuban-macaw-released
 ---
 
 Snowplow release 73 Cuban Macaw is now generally available! This release adds the ability to automatically load bad rows from the Snowplow Elastic MapReduce jobflow into [Elasticsearch] [elasticsearch] for analysis, and formally separates the Snowplow enriched event format from the TSV format used to load Redshift.

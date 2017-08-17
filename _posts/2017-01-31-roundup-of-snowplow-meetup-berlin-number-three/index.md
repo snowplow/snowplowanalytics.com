@@ -4,6 +4,7 @@ title: "Roundup of Snowplow Meetup Berlin Number 3"
 tags: ["meetup", "JustWatch", "Incuda", "user journey", "video advertising", "Sauna"]
 author: Giuseppe
 category: Meetups
+permalink: /blog/2017/01/31/roundup-of-snowplow-meetup-berlin-number-three
 ---
 
 The [third Snowplow Meetup Berlin](https://www.meetup.com/Snowplow-Analytics-Berlin/events/233147132/) took place on November the 16th at [Betahaus](https://www.betahaus.com/berlin/). The turnout was great with about 100 people attending. We have filmed the talks, which you can watch in the links below, along with the presentation slides. Below is a list and a description of the talks.

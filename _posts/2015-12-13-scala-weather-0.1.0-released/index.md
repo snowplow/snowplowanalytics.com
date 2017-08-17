@@ -5,6 +5,7 @@ title-short: Scala Weather 0.1.0
 tags: [release, weather, scala, openweathermap]
 author: Anton
 category: Releases
+permalink: /blog/2015/12/13/scala-weather-0.1.0-released
 ---
 
 We are pleased to announce the release of [Scala Weather] [repo] version 0.1.0.

@@ -5,6 +5,7 @@ title-short: Call for data this winter
 tags: [data]
 author: Yali
 category: Analytics
+permalink: /blog/2013/10/28/call-for-data-this-winter
 ---
 
 This winter we are recruiting [interns] [winternship] to join the Snowplow team to work on discrete projects.

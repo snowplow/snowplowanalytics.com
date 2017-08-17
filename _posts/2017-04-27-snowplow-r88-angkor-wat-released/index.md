@@ -5,6 +5,7 @@ title: "Snowplow 88 Angkor Wat released"
 tags: [snowplow, duplicates, event duplication, de-dupe, de-duplication, dynamodb, spark]
 author: Anton
 category: Releases
+permalink: /blog/2017/04/27/snowplow-r88-angkor-wat-released
 ---
 
 We are pleased to announce the release of [Snowplow 88 Angkor Wat][snowplow-release]. This release introduces event de-duplication across different pipeline runs, powered by DynamoDB, along with an important refactoring of the batch pipeline configuration.

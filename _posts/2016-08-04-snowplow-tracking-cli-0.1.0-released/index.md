@@ -5,6 +5,7 @@ title-short: Snowplow Tracking CLI 0.1.0
 tags: [snowplow, cli, json, json schema, schema, events, tracker]
 author: Ronny
 category: Releases
+permalink: /blog/2016/08/04/snowplow-tracking-cli-0.1.0-released
 ---
 
 We are pleased to announce the first release of the [Snowplow Tracking CLI] [tracking-cli]! This is a command-line application (written in Golang) to make it fast and easy to send an event to Snowplow directly from the command line. You can use the app to embed Snowplow tracking directly into your shell scripts.

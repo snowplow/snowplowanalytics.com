@@ -5,6 +5,7 @@ title-short: Snowplow 69 Blue-Bellied Roller
 tags: [snowplow, analytics, data modeling]
 author: Christophe
 category: Releases
+permalink: /blog/2015/07/24/snowplow-r69-blue-bellied-roller-released
 image: blog/2015/07/R69-blue-bellied-roller.jpg
 ---
 

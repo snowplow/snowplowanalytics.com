@@ -5,6 +5,7 @@ title-short: Snowplow 0.9.2
 tags: [snowplow, cloudfront, access log, hive]
 author: Alex
 category: Releases
+permalink: /blog/2014/04/30/snowplow-0.9.2-released-for-new-cloudfront-log-format
 ---
 
 We have now released Snowplow 0.9.2, adding Snowplow support for the updated [CloudFront access log file format] [cf-access-log] introduced by Amazon on the morning of 29th April. This release was a highly collaborative effort with the Snowplow community (see [this email thread] [email-thread] for background).

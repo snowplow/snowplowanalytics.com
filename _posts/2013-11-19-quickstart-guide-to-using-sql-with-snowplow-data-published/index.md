@@ -5,6 +5,7 @@ title-short: Quickstart guide to SQL published
 tags: [sql, postgresql, amazon, redshift]
 author: Yali
 category: Analytics
+permalink: /blog/2013/11/19/quickstart-guide-to-using-sql-with-snowplow-data-published
 ---
 
 Whilst it is possible to use different BI tools to query Snowplow data with limited or no knowledge of SQL, to really get the full power of Snowplow you need to know some SQL.

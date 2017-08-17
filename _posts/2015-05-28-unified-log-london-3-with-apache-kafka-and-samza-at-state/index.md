@@ -4,6 +4,7 @@ title: "Unified Log London 3 with Apache Kafka and Samza at State"
 tags: [unified log, meetup, kafka, samza, state]
 author: Alex
 category: Meetups
+permalink: /blog/2015/05/28/unified-log-london-3-with-apache-kafka-and-samza-at-state
 ---
 
 Last week we held the [third Unified Log London meetup] [meetup-3] here in London. Huge thanks to [Just Eat] [just-eat] for hosting us in their offices and keeping us all fed with pizza and beer!

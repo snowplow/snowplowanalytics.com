@@ -5,6 +5,7 @@ title-short: Snowplow Python Tracker 0.1.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Alex
 category: Releases
+permalink: /blog/2014/03/28/snowplow-python-tracker-0.1.0-released
 ---
 
 We are proud to announce the release of our new [Snowplow Python Tracker] [repo], developed by [Snowplow wintern Anuj More] [anuj-intro]. Anuj was one of our two remote interns this winter, joining the Snowplow team from his base in Mumbai to work on making it easy to send events to Snowplow from Python environments.
