@@ -11,7 +11,7 @@ We are pleased to announce the release of [Snowplow 91 Stonehenge][snowplow-rele
 
 This release revolves around making EmrEtlRunner, the component launching the EMR steps for the batch pipeline,
 significantly more robust. Most notably, this release fixes a long-standing bug in the way the staging step was
-performed, which affected all users of the Clojure Collector ([issue #3364][i3364]).
+performed, which affected all users of the Clojure Collector ([issue #3085][i3085]).
 
 This release also lays important groundwork for our planned migration away from EmrEtlRunner towards separate snowplowctl and Dataflow Runner tools, per [our RFC][eer-rfc].
 
@@ -42,7 +42,7 @@ Part of the staging operation for Clojure Collector logs involved transforming t
 
 In our experiments, the loss rate approached 1% of all Clojure Collector raw event files.
 
-The fix introduced in this release ([issue #3136][3136]) delegates the staging step to S3DistCp and doesn't do any
+The fix introduced in this release ([issue #276][i276]) delegates the staging step to S3DistCp and doesn't do any
 renaming.
 
 <h3 id="staging-illustration">1.2 Illustration of problem and fix</h3>
@@ -253,7 +253,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [label-data-quality]: https://github.com/snowplow/snowplow/labels/data-quality
 
 [i3085]: https://github.com/snowplow/snowplow/issues/3085
-[i3136]: https://github.com/snowplow/snowplow/issues/3136
+[i276]: https://github.com/snowplow/snowplow/issues/276
 [i3364]: https://github.com/snowplow/snowplow/issues/3364
 
 [r92]: https://github.com/snowplow/snowplow/milestone/135
