@@ -11,9 +11,9 @@ We are pleased to announce the release of [Snowplow 91 Stonehenge][snowplow-rele
 
 This release revolves around making EmrEtlRunner, the component launching the EMR steps for the batch pipeline,
 significantly more robust. Most notably, this release fixes a long-standing bug in the way the staging step was
-performed, which affected all users of the Clojure Collector.
+performed, which affected all users of the Clojure Collector ([issue #3364][i3364]).
 
-This release also lays important groundwork for our planned migration away from EmrEtlRunner towards separate snowplowctl and Dataflow Runner tools, per [our RFC][eer-rfc]. 
+This release also lays important groundwork for our planned migration away from EmrEtlRunner towards separate snowplowctl and Dataflow Runner tools, per [our RFC][eer-rfc].
 
 If you'd like to know more about R91 Stonehenge, named after
 [the prehistoric monument in England][stonehenge], please read on:
@@ -31,20 +31,21 @@ If you'd like to know more about R91 Stonehenge, named after
 
 <h2 id="staging">1. Moving the staging step to S3DistCp</h2>
 
+<h3 id="staging-overview">1.1 Overview</h3>
+
 This release overhauls the initial staging step which moves data from the raw input bucket(s) in S3
 to a processing bucket for further processing.
 
 Before this release, this step was run on the EmrEtlRunner host machine, using our [Sluice][sluice] library for S3 operations. From this release, this step is run as an EMR step using [S3DistCp][s3-dist-cp].
 
-The main reason for the change is that the staging step used to rename Clojure log files by
-transforming timestamps from a format to another. This renaming step produced duplicates in a
-multi-threaded environment which would result in files overwriting each other and would cause data
-loss.
+Part of the staging operation for Clojure Collector logs involved transforming timestamps from a format to another. Unfortunately, a race condition in JRuby's multi-threaded environment could result in files overwriting each other, leading to data loss. Many thanks to community member [Victor Ceron][vceron] for isolating this bug.
 
-In our experiments, less than 1% of the total number of files were lost due to this issue.
+In our experiments, the loss rate approached 1% of all Clojure Collector raw event files.
 
-The fix introduced in this release delegates the staging step to S3DistCp and doesn't do any
+The fix introduced in this release ([issue #3136][3136]) delegates the staging step to S3DistCp and doesn't do any
 renaming.
+
+<h3 id="staging-illustration">1.2 Illustration of problem and fix</h3>
 
 To illustrate the previous point, let's take the example of having a couple of Clojure instances
 and log files according to the following folder structure in your input bucket:
@@ -65,7 +66,9 @@ var_log_tomcat8_rotated_localhost_access_log.2017-08-11-15.eu-west-1.i-1.txt.raw
 var_log_tomcat8_rotated_localhost_access_log.2017-08-11-16.eu-west-1.i-2.txt.raw.gz
 {% endhighlight %}
 
-From now on, they will be kept as is except for the leading underscores which will be removed:
+This renaming is where the occasional overwrite could occur.
+
+From now on, the S3DistCp file moves will leave the filenames as-is, except for the leading underscores which will be removed:
 
 {% highlight bash %}
 $ aws s3 ls --recursive s3://raw/processing/
@@ -74,6 +77,14 @@ i-1/
 i-2/
   var_log_tomcat8_rotated_localhost_access_log.txt1502467262.gz
 {% endhighlight %}
+
+<h3 id="staging-postmortem">1.3 Post mortem</h3>
+
+We take data quality and the potential for data loss extremely seriously at Snowplow.
+
+With any fast-evolving project like Snowplow, new issues and regressions will be introduced, and old underlying issues (such as this one) can be uncovered - but the important thing is how we *handle* these issues. In this case, we should have triaged and scheduled a fix for Victor's issue much sooner. Our sincere apologies for this.
+
+Going forwards, we are putting pipeline quality and safety issues front and center with dedicated labels for [data-loss][label-data-loss], [data-quality][label-data-quality] and [security][label-security]. Please make sure to flag any such issues to us, and we will work to always prioritise these issues in our release roadmap (see below for details).
 
 <h2 id="commands">2. New EmrEtlRunner commands</h2>
 
@@ -200,13 +211,20 @@ respectively, have also been retired, to simplify the EmrEtlRunner.
 
 The latest version of EmrEtlRunner is available from our [Bintray][app-dl].
 
-Upgrading is fairly straightforward, you'll just need to make use of the new `run` command when launching EmrEtlRunner - no other changes are necessary.
+Upgrading is straightforward:
+
+1. Make use of the new `run` command when launching EmrEtlRunner
+2. Set up and configure one of the two locking options (see above)
+
+We **strongly recommend** setting up and configuring one of the two locking options. This is the most secure way of preventing a race condition, whereby a second scheduled EmrEtlRunner run starts while the last run is still partway through.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases include:
 
 * [R92 [STR] Virunum][r92], a general upgrade of the apps constituting our stream processing pipeline
+* [R9x [BAT] Priority fixes and ZSTD support][r9x-bat-quality], working on data quality and security issues and enhancing our Redshift event storage with the ZSTD encoding
+* [R9x [STR] Priority fixes][r9x-str-quality], removing the potential for data loss in the stream processing pipeline
 * [R9x [BAT] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark, Unbounce, StatusGator)
 
 <h2 id="help">6. Getting help</h2>
@@ -226,12 +244,22 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [eer-rfc]: http://discourse.snowplowanalytics.com/t/splitting-emretlrunner-into-snowplowctl-and-dataflow-runner/350
 [discourse]: http://discourse.snowplowanalytics.com/
 
+[vceron]: https://github.com/vceron
+
 [app-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r91_stonehenge.zip
 
+[label-security]: https://github.com/snowplow/snowplow/labels/security
+[label-data-loss]: https://github.com/snowplow/snowplow/labels/data-loss
+[label-data-quality]: https://github.com/snowplow/snowplow/labels/data-quality
+
+[i3085]: https://github.com/snowplow/snowplow/issues/3085
+[i3136]: https://github.com/snowplow/snowplow/issues/3136
 [i3364]: https://github.com/snowplow/snowplow/issues/3364
 
 [r92]: https://github.com/snowplow/snowplow/milestone/135
 [r9x-webhooks]: https://github.com/snowplow/snowplow/milestone/129
+[r9x-bat-quality]: https://github.com/snowplow/snowplow/milestone/145
+[r9x-str-quality]: https://github.com/snowplow/snowplow/milestone/144
 
 [s3-dist-cp]: http://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
 [consul]: https://www.consul.io
