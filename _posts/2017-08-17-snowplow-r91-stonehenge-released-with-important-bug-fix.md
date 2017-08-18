@@ -108,7 +108,7 @@ will now look like the following:
 
 <h3 id="lint">2.2 Lint command</h3>
 
-You can now lint you resolver file as well as your enrichments thanks to a `lint` command:
+You can now lint your resolver file as well as your enrichments thanks to a `lint` command:
 
 {% highlight bash %}
 ./snowplow-emr-etl-runner lint resolver    -r resolver.json
