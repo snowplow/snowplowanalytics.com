@@ -15,10 +15,10 @@ This release adds some powerful new features to SQL Runner - many thanks to comm
 For the first time, we are also publishing SQL Runner binaries for Windows and OS X to make it easier to test your SQL Runner playbooks locally.
 
 1. [Command-line variables](/blog/2015/11/05/sql-runner-0.3.0-released/#cli-vars)
-2. [Resuming a playbook from partway thru](/blog/2015/11/05/sql-runner-0.3.0-released/#resume)
-3. [AWS credentials template functions](/blog/2015/11/05/sql-runner-0.3.0-released/#aws-creds)
-4. [Upgrading](/blog/2015/11/05/sql-runner-0.3.0-released/#upgrading)
-5. [Getting help](/blog/2015/11/05/sql-runner-0.3.0-released/#help)
+2. [Resuming a playbook from partway thru](#resume)
+3. [AWS credentials template functions](#aws-creds)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
 
 <!--more-->
 

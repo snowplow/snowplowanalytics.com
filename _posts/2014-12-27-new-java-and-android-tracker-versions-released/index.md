@@ -12,14 +12,14 @@ We are pleased to release new versions of the [Snowplow Android Tracker] [androi
 
 In the rest of this post we will cover:
 
-1. [Vagrant support](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#vagrant)
-2. [Updates to Java Tracker Core](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#tracker-core)
-3. [Updates to the Java Tracker](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#java-tracker)
-4. [Updates to the Android Tracker](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#android-tracker)
-5. [Upgrading the Java Tracker](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#upgrading-java)
-6. [Upgrading the Android Tracker](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#upgrading-android)
-7. [Documentation](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#docs)
-8. [Getting help](/blog/2014/12/27/new-java-and-android-tracker-versions-released/#help)
+1. [Vagrant support](#vagrant)
+2. [Updates to Java Tracker Core](#tracker-core)
+3. [Updates to the Java Tracker](#java-tracker)
+4. [Updates to the Android Tracker](#android-tracker)
+5. [Upgrading the Java Tracker](#upgrading-java)
+6. [Upgrading the Android Tracker](#upgrading-android)
+7. [Documentation](#docs)
+8. [Getting help](#help)
 
 <!--more-->
 

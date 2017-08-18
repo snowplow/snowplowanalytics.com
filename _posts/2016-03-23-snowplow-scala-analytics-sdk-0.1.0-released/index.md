@@ -22,11 +22,11 @@ Some good use cases for the SDK include:
 
 Read on below the jump for:
 
-1. [Overview](/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released#overview)
-2. [The JSON Event Transformer](/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released#json-event-transformer)
-3. [Using the SDK](/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released#using-the-sdk)
-4. [Roadmap](/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released#roadmap)
-5. [Getting help](/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released#help)
+1. [Overview](#overview)
+2. [The JSON Event Transformer](#json-event-transformer)
+3. [Using the SDK](#using-the-sdk)
+4. [Roadmap](#roadmap)
+5. [Getting help](#help)
 
 <!--more-->
 

@@ -17,15 +17,15 @@ In this release we have introduced some new tracking options and compressed our 
 
 This blog post will cover the following changes:
 
-1. [New feature: gzipping](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#gzipping)
-2. [New feature: set user ID from a cookie](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#cookie)
-3. [New feature: set user ID from a querystring](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#querystring)
-4. [New feature: pass a referrer through an iframe](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#iframe)
-5. [New feature: respecting Do Not Track](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#donottrack)
-6. [New build process](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#grunt)
-7. [Other structural improvements](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#structure)
-8. [Upgrading](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#gzipping)
-9. [Getting help](/blog/2014/02/12/snowplow-javascript-tracker-0.14.0-released/#gzipping)
+1. [New feature: gzipping](#gzipping)
+2. [New feature: set user ID from a cookie](#cookie)
+3. [New feature: set user ID from a querystring](#querystring)
+4. [New feature: pass a referrer through an iframe](#iframe)
+5. [New feature: respecting Do Not Track](#donottrack)
+6. [New build process](#grunt)
+7. [Other structural improvements](#structure)
+8. [Upgrading](#gzipping)
+9. [Getting help](#gzipping)
 
 <!--more-->
 

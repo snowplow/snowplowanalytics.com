@@ -12,12 +12,12 @@ We are pleased to release version 0.3.0 of the [Snowplow Scala Tracker] [scala-r
 
 In the rest of this post we will cover:
 
-1. [True timestamp](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#ttm)
-2. [Availability on JCenter and Maven Central](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#jcenter-maven-central)
-3. [Minor updates and bug fixes](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#updates-bugs)
-4. [Upgrading](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#upgrading)
-5. [Roadmap](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#roadmap)
-6. [Getting help](/blog/2016/05/14/snowplow-scala-tracker-0.3.0-released/#help)
+1. [True timestamp](#ttm)
+2. [Availability on JCenter and Maven Central](#jcenter-maven-central)
+3. [Minor updates and bug fixes](#updates-bugs)
+4. [Upgrading](#upgrading)
+5. [Roadmap](#roadmap)
+6. [Getting help](#help)
 
 <!--more-->
 

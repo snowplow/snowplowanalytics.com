@@ -14,15 +14,15 @@ This release makes some significant updates to the Java Tracker. The main object
 
 Some of the other more notable features in this release is support for POST requests, sending of events asynchronous and event queueing. I'll be covering everything mentioned above in more detail:
 
-1. [Structural improvements](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#structure)
-2. [The Emitter class](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#emitter)
-3. [The TrackerPayload class](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#payload)
-4. [The Subject class](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#subject)
-5. [Google Guava Preconditions](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#preconditions)
-6. [Tracker class constructor](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#constructor)
-7. [Optional context and timestamp](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#optional)
-8. [Miscellaneous](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#misc)
-9. [Support](/blog/2014/07/23/snowplow-java-tracker-0.4.0-released/#support)
+1. [Structural improvements](#structure)
+2. [The Emitter class](#emitter)
+3. [The TrackerPayload class](#payload)
+4. [The Subject class](#subject)
+5. [Google Guava Preconditions](#preconditions)
+6. [Tracker class constructor](#constructor)
+7. [Optional context and timestamp](#optional)
+8. [Miscellaneous](#misc)
+9. [Support](#support)
 
 <!--more-->
 

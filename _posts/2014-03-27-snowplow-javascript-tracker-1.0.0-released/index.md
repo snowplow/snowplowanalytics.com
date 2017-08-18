@@ -14,14 +14,14 @@ This release adds new options for user fingerprinting and makes some minor chang
 
 This post will cover the following topics:
 
-1. [New feature: user fingerprint options](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#hash)
-2. [Changes to the Snowplow API](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#api)
-3. [Move to modules](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#modules)
-4. [Automated testing](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#tests)
-5. [Removed deprecated functionality](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#deprecated)
-6. [Other structural improvements](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#structure)
-7. [Upgrading](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#upgrading)
-8. [Getting help](/blog/2014/03/27/snowplow-javascript-tracker-1.0.0-released/#help)
+1. [New feature: user fingerprint options](#hash)
+2. [Changes to the Snowplow API](#api)
+3. [Move to modules](#modules)
+4. [Automated testing](#tests)
+5. [Removed deprecated functionality](#deprecated)
+6. [Other structural improvements](#structure)
+7. [Upgrading](#upgrading)
+8. [Getting help](#help)
 
 <!--more-->
 

@@ -15,8 +15,8 @@ Many thanks to the team at [Skills Matter] [skills-matter] for organizing such a
 
 Below the fold I will briefly cover:
 
-1. [Building robust data pipelines in Scala](/blog/2014/12/17/scala-exchange-building-robust-data-pipelines-in-scala/#my-talk)
-2. [My highlights from Scala eXchange](/blog/2014/12/17/scala-exchange-building-robust-data-pipelines-in-scala/#highlights)
+1. [Building robust data pipelines in Scala](#my-talk)
+2. [My highlights from Scala eXchange](#highlights)
 
 <!--more-->
 

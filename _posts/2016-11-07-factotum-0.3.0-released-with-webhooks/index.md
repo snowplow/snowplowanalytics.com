@@ -13,13 +13,13 @@ reason about, including adding outbound webhooks to Factotum.
 
 In the rest of this post we will cover:
 
-1. [Improving the workflow when creating DAGs](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#workflow)
-2. [Improving job monitoring using webhooks](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#webhooks)
-3. [Behaviors on task failure](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#taskfailure)
-4. [Extras](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#extras)
-5. [Downloading and running Factotum](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#install)
-6. [Roadmap](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#roadmap)
-7. [Contributing](/blog/2016/11/07/factotum-0.3.0-released-with-webhooks#contributing)
+1. [Improving the workflow when creating DAGs](#workflow)
+2. [Improving job monitoring using webhooks](#webhooks)
+3. [Behaviors on task failure](#taskfailure)
+4. [Extras](#extras)
+5. [Downloading and running Factotum](#install)
+6. [Roadmap](#roadmap)
+7. [Contributing](#contributing)
 
 <!--more-->
 

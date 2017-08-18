@@ -23,12 +23,12 @@ If you already use Chronos, I suggest you... ensure your jobs are OK with never 
 
 If you are just starting out building your first batch processing pipeline, consider a much simpler approach: combining the standard Unix tools `cron` and `make` to orchestrate your jobs. This blog post walks you through this approach:
 
-1. [Introducing our batch pipeline](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#pipeline)
+1. [Introducing our batch pipeline](#pipeline)
 2. [Defining our job's DAG in make](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#make)
-3. [Running our Makefile](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#running)
-4. [Scheduling our Makefile in cron](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#cron)
-5. [Handling job failures](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#failures)
-6. [Conclusion](/blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make#conclusion)
+3. [Running our Makefile](#running)
+4. [Scheduling our Makefile in cron](#cron)
+5. [Handling job failures](#failures)
+6. [Conclusion](#conclusion)
 
 <!--more-->
 

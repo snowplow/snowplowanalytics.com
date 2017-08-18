@@ -13,11 +13,11 @@ support, and marks the end of our support for Ruby 1.9.3.
 
 Read on for more detail on:
 
-1. [True timestamp support](/blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/#ttm)
+1. [True timestamp support](#ttm)
 2. [Device-sent timestamp support](/blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/#stm)
-3. [Self describing events](/blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/#selfdescribingevents)
-4. [Upgrading](/blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/#upgrading)
-5. [Getting help](/blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/#help)
+3. [Self describing events](#selfdescribingevents)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
 
 <!--more-->
 

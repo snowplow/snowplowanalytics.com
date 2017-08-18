@@ -12,11 +12,11 @@ permalink: /blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-anal
 
 ![identity stitching] [identity-stitching-img]
 
-1. [What is identity stitching and why does it matter?](/blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-analytics-kissmetrics-and-mixpanel/#what)  
-2. [Different approaches to identity stitching in the case where users log in](/blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-analytics-kissmetrics-and-mixpanel/#login)  
+1. [What is identity stitching and why does it matter?](#what)  
+2. [Different approaches to identity stitching in the case where users log in](#login)  
 3. [Limitations in the approach taken by Universal Analytics, KISSmetrics and Mixpanel](/blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-analytics-kissmetrics-and-mixpanel/#limitations)
-4. [Snowplow: a radically different approach to identity stitching](/blog/2014/04/16/identity-stitching-google-snowplow-vs-universal-analytics-kissmetrics-and-mixpanel/#radical-approach-to-identity-stitching)  
-5. [The benefits of decoupling data collection and business logic](/blog/2014/04/16/identity-stitching-google-snowplow-vs-universal-analytics-kissmetrics-and-mixpanel/#benefits)
+4. [Snowplow: a radically different approach to identity stitching](#radical-approach-to-identity-stitching)  
+5. [The benefits of decoupling data collection and business logic](#benefits)
 
 <!--more-->
 

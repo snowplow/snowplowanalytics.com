@@ -13,8 +13,8 @@ In a [previous blog post][previous-post], we described how we were in the proces
 
 To build that model, though, we need **your help**. In order to ensure that our model is accurate and robust, we need to make sure that the relationships we believe exist between the number of events tracked, and the number and size of files generated, as detailed in the [last post][previous-post], are correct, and that we have modelled them accurately. To that end, we are asking Snowplow users to help us by providing the following data:
 
-1. [The number of events tracked per day](/blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/#events-per-day)
-2. [The number of times the enrichment process is run per day](/blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/#runs-per-day)
+1. [The number of events tracked per day](#events-per-day)
+2. [The number of times the enrichment process is run per day](#runs-per-day)
 3. [The number of Cloudfront log files generated per day, and the volume of data](/blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/#log-files-per-day)
 4. [The amount of time taken to enrich the data in EMR (and the size of cluster used to perform the enrichment)](/blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/#emr-details)
 5. [The number of files outputted back to S3, and the size of those files](/blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/#output-back-to-s3)

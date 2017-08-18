@@ -18,10 +18,10 @@ In Anuj's own words:
 
 In the rest of this post we will cover:
 
-1. [How to install the tracker](/blog/2014/03/28/snowplow-python-tracker-0.1.0-released/#get)
-2. [How to use the tracker](/blog/2014/03/28/snowplow-python-tracker-0.1.0-released/#usage)
-3. [Roadmap](/blog/2014/03/28/snowplow-python-tracker-0.1.0-released/#roadmap)
-4. [Thanks](/blog/2014/03/28/snowplow-python-tracker-0.1.0-released/#thanks)
+1. [How to install the tracker](#get)
+2. [How to use the tracker](#usage)
+3. [Roadmap](#roadmap)
+4. [Thanks](#thanks)
 
 <!--more-->
 

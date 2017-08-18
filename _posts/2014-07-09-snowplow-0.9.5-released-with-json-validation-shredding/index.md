@@ -24,11 +24,11 @@ We designed Snowplow 0.9.5 to deliver on these goals, working in concert with ou
 
 Read on below the fold for:
 
-1. [Shredding](/blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding/#shredding)
-2. [Other new functionality](/blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding/#other)
-3. [Upgrading](/blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding/#upgrading)
-4. [Limitations](/blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding/#limits)
-5. [Documentation and help](/blog/2014/07/09/snowplow-0.9.5-released-with-json-validation-shredding/#help)
+1. [Shredding](#shredding)
+2. [Other new functionality](#other)
+3. [Upgrading](#upgrading)
+4. [Limitations](#limits)
+5. [Documentation and help](#help)
 
 <!--more-->
 

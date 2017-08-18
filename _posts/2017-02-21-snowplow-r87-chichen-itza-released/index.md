@@ -16,13 +16,13 @@ Continuing with this release series named for archaelogical sites, Release 87 is
 
 Read on after the fold for:
 
-1. [Specifying EBS volumes for Hadoop in EmrEtlRunner](/blog/2017/02/21/snowplow-r87-chichen-itza-released#ebs)
-2. [EmrEtlRunner stability and performance improvements](/blog/2017/02/21/snowplow-r87-chichen-itza-released#emretlrunner-misc)
-3. [A load manifest for Redshift](/blog/2017/02/21/snowplow-r87-chichen-itza-released#manifest)
-4. [StorageLoader stability improvements](/blog/2017/02/21/snowplow-r87-chichen-itza-released#storageloader-misc)
-5. [Upgrading](/blog/2017/02/21/snowplow-r87-chichen-itza-released#upgrading)
-6. [Roadmap](/blog/2017/02/21/snowplow-r87-chichen-itza-released#roadmap)
-7. [Getting help](/blog/2017/02/21/snowplow-r87-chichen-itza-released#help)
+1. [Specifying EBS volumes for Hadoop in EmrEtlRunner](#ebs)
+2. [EmrEtlRunner stability and performance improvements](#emretlrunner-misc)
+3. [A load manifest for Redshift](#manifest)
+4. [StorageLoader stability improvements](#storageloader-misc)
+5. [Upgrading](#upgrading)
+6. [Roadmap](#roadmap)
+7. [Getting help](#help)
 
 ![chichen-itza-mexico][chichen-itza-mexico-img]
 

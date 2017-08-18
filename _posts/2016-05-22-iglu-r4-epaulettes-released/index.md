@@ -12,10 +12,10 @@ We are pleased to announce the fourth release of the [Iglu Schema Registry Syste
 
 Read on for more information on Release 4 Epaulettes, named after the [famous Belgian postage stamps] [epaulettes]:
 
-1. [Scala Iglu Core](/blog/2016/05/22/iglu-r4-epaulettes-released/#core)
-2. [Registry Syncer updates](/blog/2016/05/22/iglu-r4-epaulettes-released/#syncer)
-3. [Iglu roadmap](/blog/2016/05/22/iglu-r4-epaulettes-released/#roadmap)
-4. [Getting help](/blog/2016/05/22/iglu-r4-epaulettes-released/#help)
+1. [Scala Iglu Core](#core)
+2. [Registry Syncer updates](#syncer)
+3. [Iglu roadmap](#roadmap)
+4. [Getting help](#help)
 
 ![epaulettes-img] [epaulettes-img]
 

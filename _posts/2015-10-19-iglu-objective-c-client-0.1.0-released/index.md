@@ -12,11 +12,11 @@ We are pleased to announce the release of version 0.1.0 of the [Iglu Objective-C
 
 The rest of this post will cover the following topics:
 
-1. [How to install the client](/blog/2015/10/19/iglu-objective-c-client-0.1.0-released#how-to-install)
-2. [How to use the client](/blog/2015/10/19/iglu-objective-c-client-0.1.0-released#how-to-use)
-3. [Why you should use the client](/blog/2015/10/19/iglu-objective-c-client-0.1.0-released#why-to-use)
-4. [Documentation](/blog/2015/10/19/iglu-objective-c-client-0.1.0-released#docs)
-5. [Getting help](/blog/2015/10/19/iglu-objective-c-client-0.1.0-released#help)
+1. [How to install the client](#how-to-install)
+2. [How to use the client](#how-to-use)
+3. [Why you should use the client](#why-to-use)
+4. [Documentation](#docs)
+5. [Getting help](#help)
 
 <!--more-->
 

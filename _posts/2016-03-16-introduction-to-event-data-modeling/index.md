@@ -16,7 +16,7 @@ Data modeling is an essential step in the Snowplow data pipeline. We find that t
 
 Read on to learn
 
-1. [So what is event data modeling?](/blog/2016/03/16/introduction-to-event-data-modeling/#what)
+1. [So what is event data modeling?](#what)
 2. [Why in most cases, simply aggregating over event data is not enough](/blog/2016/03/16/introduction-to-event-data-modeling/#why)
 3. [Different higher-order units of analysis](/blog/2016/03/16/introduction-to-event-data-modeling/#higher-order-units)
   * [Macro events](/blog/2016/03/16/introduction-to-event-data-modeling/#macro-events)
@@ -24,8 +24,8 @@ Read on to learn
   * [Sessions](/blog/2016/03/16/introduction-to-event-data-modeling/#sessions)
   * [Users](/blog/2016/03/16/introduction-to-event-data-modeling/#users)
   * [Tying particular classes of events in a user journey together to understand the impact of earlier events on later events](#classes)
-4. [Characteristics of modeled data](/blog/2016/03/16/introduction-to-event-data-modeling/#characteristics-of-modeled-data)
-5. [Working with modeled data](/blog/2016/03/16/introduction-to-event-data-modeling/#working-with-modeled-data)
+4. [Characteristics of modeled data](#characteristics-of-modeled-data)
+5. [Working with modeled data](#working-with-modeled-data)
 
 
 <h2 id="what">1. So what is event data modeling?</h2>

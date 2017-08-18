@@ -12,7 +12,7 @@ In late September the Snowplow team attended [Strata + Hadoop World] [strata-nyc
 
 In this blog post we will briefly cover:
 
-1. [What Crimean War gunboats teach us about the need for schema registries](/blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016#schema-registries-talk)
+1. [What Crimean War gunboats teach us about the need for schema registries](#schema-registries-talk)
 2. [Alex's session picks](/blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016#schema-registries-talk#alex-picks)
 3. [Christophe's session picks](/blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016#schema-registries-talk#christophe-picks)
 4. [Some closing thoughts](/blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016#schema-registries-talk#conclusion)

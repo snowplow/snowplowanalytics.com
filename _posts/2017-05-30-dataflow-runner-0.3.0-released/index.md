@@ -14,12 +14,12 @@ improvements.
 
 In this post, we will cover:
 
-1. [Preventing overlapping job runs through locks](/blog/2017/05/30/dataflow-runner-0.3.0-released#locks)
-2. [Tagging playbooks](/blog/2017/05/30/dataflow-runner-0.3.0-released#tags)
-3. [New template functions](/blog/2017/05/30/dataflow-runner-0.3.0-released#templates)
-4. [Other updates](/blog/2017/05/30/dataflow-runner-0.3.0-released#updates)
-5. [Roadmap](/blog/2017/05/30/dataflow-runner-0.3.0-released#roadmap)
-6. [Contributing](/blog/2017/05/30/dataflow-runner-0.3.0-released#contributing)
+1. [Preventing overlapping job runs through locks](#locks)
+2. [Tagging playbooks](#tags)
+3. [New template functions](#templates)
+4. [Other updates](#updates)
+5. [Roadmap](#roadmap)
+6. [Contributing](#contributing)
 
 <!--more-->
 

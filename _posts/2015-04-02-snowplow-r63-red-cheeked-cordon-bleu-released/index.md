@@ -24,15 +24,15 @@ This release has been a huge team effort - with particular thanks going to Snowp
 
 Table of contents:
 
-1. [New enrichment: useragent parsing using ua_parser](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#uap)
+1. [New enrichment: useragent parsing using ua_parser](#uap)
 2. [New enrichment: currency conversion for e-commerce transaction](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#forex)
-3. [Upgraded enrichment: click ID extraction for campaign attribution](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#clid)
-4. [Upgraded enrichment: timezone lookup from IP address using MaxMind](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#tz)
-5. [Upgraded enrichment: useragent parsing using user_agent_utils](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#uau)
-6. [Other improvements to Scala Common Enrich](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#enrich)
-7. [Updates to atomic.events](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#events)
-8. [Updates to the Kinesis applications](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#kinesis)
-9. [Upgrading your Snowplow pipeline](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#upgrade)
+3. [Upgraded enrichment: click ID extraction for campaign attribution](#clid)
+4. [Upgraded enrichment: timezone lookup from IP address using MaxMind](#tz)
+5. [Upgraded enrichment: useragent parsing using user_agent_utils](#uau)
+6. [Other improvements to Scala Common Enrich](#enrich)
+7. [Updates to atomic.events](#events)
+8. [Updates to the Kinesis applications](#kinesis)
+9. [Upgrading your Snowplow pipeline](#upgrade)
 10. [Getting help](/blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released#help)  
 
 <!--more-->

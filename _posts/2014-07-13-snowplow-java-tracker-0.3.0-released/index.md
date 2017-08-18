@@ -14,12 +14,12 @@ Similar to the [previous 0.2.0 release][original-post], this too is a mixture of
 
 You can find more on the new additions futher down in this post:
 
-1. [Strings replaced with Maps for Context](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#maps)
-2. [Timestamp for Trackers](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#timestamp)
-3. [Logging with SLF4J](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#logging)
-4. [Dependency updates](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#dependency)
-5. [Unit testing](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#tests)
-6. [Support](/blog/2014/07/13/snowplow-java-tracker-0.3.0-released/#support)
+1. [Strings replaced with Maps for Context](#maps)
+2. [Timestamp for Trackers](#timestamp)
+3. [Logging with SLF4J](#logging)
+4. [Dependency updates](#dependency)
+5. [Unit testing](#tests)
+6. [Support](#support)
 
 <!--more-->
 

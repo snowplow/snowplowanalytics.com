@@ -10,12 +10,12 @@ permalink: /blog/2016/12/12/sql-runner-0.5.0-released/
 
 We are pleased to announce version [0.5.0] [050-release] of [SQL Runner] [repo]. This release adds some powerful new features, including local and Consul-based remote locking to ensure that SQL Runner runs your playbooks as singletons.
 
-1. [Locking your run](/blog/2016/12/12/sql-runner-0.5.0-released/#lock-your-run)
-2. [Checking and deleting locks](/blog/2016/12/12/sql-runner-0.5.0-released/#check-delete-locks)
-3. [Running a single query](/blog/2016/12/12/sql-runner-0.5.0-released/#run-single-query)
-4. [Other changes](/blog/2016/12/12/sql-runner-0.5.0-released/#other-changes)
-5. [Upgrading](/blog/2016/12/12/sql-runner-0.5.0-released/#upgrading)
-6. [Getting help](/blog/2016/12/12/sql-runner-0.5.0-released/#help)
+1. [Locking your run](#lock-your-run)
+2. [Checking and deleting locks](#check-delete-locks)
+3. [Running a single query](#run-single-query)
+4. [Other changes](#other-changes)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

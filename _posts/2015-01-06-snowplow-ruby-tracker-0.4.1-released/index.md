@@ -14,9 +14,9 @@ Please note that version 0.2.0 of the Ruby Tracker is dependent upon Snowplow 0.
 
 Read on for more detail on:
 
-1. [POST request format fix](/blog/2015/01/06/snowplow-ruby-tracker-0.4.1-released/#post)
-2. [Compatibility](/blog/2015/01/06/snowplow-ruby-tracker-0.4.1-released/#compatibility)
-3. [Getting help](/blog/2015/01/06/snowplow-ruby-tracker-0.4.1-released/#help)
+1. [POST request format fix](#post)
+2. [Compatibility](#compatibility)
+3. [Getting help](#help)
 
 <!--more-->
 

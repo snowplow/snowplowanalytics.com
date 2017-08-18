@@ -12,11 +12,11 @@ We are pleased to announce the release of Snowplow release 74 European Honey Buz
 
 The rest of this post will cover the following topics:
 
-1. [Introducing the weather enrichment](/blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released#introducing)
-2. [Configuring the weather enrichment](/blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released#configuring)
-3. [Upgrading](/blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released#upgrading)
-4. [Getting help](/blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released#help)
-5. [Upcoming releases](/blog/2015/12/22/snowplow-r74-european-honey-buzzard-with-weather-enrichment-released#roadmap)
+1. [Introducing the weather enrichment](#introducing)
+2. [Configuring the weather enrichment](#configuring)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
+5. [Upcoming releases](#roadmap)
 
 ![european-honey-buzzard][european-honey-buzzard]
 

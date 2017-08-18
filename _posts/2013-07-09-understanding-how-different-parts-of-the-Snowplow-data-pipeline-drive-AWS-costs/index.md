@@ -21,10 +21,10 @@ As a result of the pending updates, we held off building the model. But now that
 
 It is worth distinguishing the different AWS services, and examining how each scales with volume of events per day, and over time. If we take a *typical* Snowplow user (i.e. one running the [Cloudfront collector] [cloudfront-collector] rather than the [Clojure collector] [clojure-collector]), and storing their data on Redshift for analysis, rather than analyzing their data in S3 using EMR) then we need to account for:
 
-1. [Cloudfront costs](/blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/#cloudfront),  
-2. [S3 costs](/blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/#s3),  
-3. [EMR costs](/blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/#emr) and
-4. [Redshift costs](/blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/#redshift)
+1. [Cloudfront costs](#cloudfront),  
+2. [S3 costs](#s3),  
+3. [EMR costs](#emr) and
+4. [Redshift costs](#redshift)
 
 <!--more-->
 

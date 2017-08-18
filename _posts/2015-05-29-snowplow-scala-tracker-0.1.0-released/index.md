@@ -16,9 +16,9 @@ The library is built around Akka 2.3.5; events are sent to a Snowplow collector 
 
 Contents:
 
-1. [How to install the tracker](/blog/2015/05/29/snowplow-scala-tracker-0.1.0-released/#get)
-2. [How to use the tracker](/blog/2015/05/29/snowplow-scala-tracker-0.1.0-released/#use)
-3. [Getting help](/blog/2015/05/29/snowplow-scala-tracker-0.1.0-released/#help)
+1. [How to install the tracker](#get)
+2. [How to use the tracker](#use)
+3. [Getting help](#help)
 
 <!--more-->
 

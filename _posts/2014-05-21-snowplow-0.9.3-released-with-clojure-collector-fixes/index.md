@@ -18,10 +18,10 @@ This release also includes some documentation updates - many thanks to community
 
 Read on below the fold for:
 
-1. [Clojure Collector fixes](/blog/2014/05/21/snowplow-0.9.3-released-with-clojure-collector-fixes/#clj-fixes)
-2. [EmrEtlRunner enhancements](/blog/2014/04/30/snowplow-0.9.3-released-with-clojure-collector-fixes/#emr-etl-runner)
-3. [Upgrading](/blog/2014/05/21/snowplow-0.9.3-released-with-clojure-collector-fixes/#upgrading)
-4. [Getting help](/blog/2014/05/21/snowplow-0.9.3-released-with-clojure-collector-fixes/#help)
+1. [Clojure Collector fixes](#clj-fixes)
+2. [EmrEtlRunner enhancements](#emr-etl-runner)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 <!--more-->
 

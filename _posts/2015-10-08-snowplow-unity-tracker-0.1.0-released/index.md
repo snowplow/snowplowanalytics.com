@@ -12,13 +12,13 @@ We are pleased to announce the release of our much-requested [Snowplow Unity Tra
 
 In the rest of this post we will cover:
 
-1. [How to install the tracker](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#how-to-install)
-2. [How to use the tracker](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#how-to-use)
-3. [Core features](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#features)
-4. [Snowplow Pong](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#snowplow-pong)
-5. [Roadmap](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#roadmap)
-6. [Documentation](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#docs)
-7. [Getting help](/blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/#help)
+1. [How to install the tracker](#how-to-install)
+2. [How to use the tracker](#how-to-use)
+3. [Core features](#features)
+4. [Snowplow Pong](#snowplow-pong)
+5. [Roadmap](#roadmap)
+6. [Documentation](#docs)
+7. [Getting help](#help)
 
 <!--more-->
 

@@ -12,16 +12,16 @@ We are pleased to announce the release of the [Snowplow Python Tracker version 0
 
 In the rest of the post we will cover:
 
-1. [Tracker initialization](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#tracker-initialization)
-2. [Disabling contracts](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#contracts)
-3. [Ecommerce tracking](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#ecommerce)
-4. [Custom contexts](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#contexts)
-5. [Event vendors](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#event-vendor)
-6. [Context vendors](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#context-vendor)
-6. [Tracking method return values](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#other)
-7. [Other improvements](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#other)
-8. [Upgrading](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#upgrading)
-9. [Support](/blog/2014/04/25/snowplow-python-tracker-0.3.0-released/#support)
+1. [Tracker initialization](#tracker-initialization)
+2. [Disabling contracts](#contracts)
+3. [Ecommerce tracking](#ecommerce)
+4. [Custom contexts](#contexts)
+5. [Event vendors](#event-vendor)
+6. [Context vendors](#context-vendor)
+6. [Tracking method return values](#other)
+7. [Other improvements](#other)
+8. [Upgrading](#upgrading)
+9. [Support](#support)
 
 <!--more-->
 

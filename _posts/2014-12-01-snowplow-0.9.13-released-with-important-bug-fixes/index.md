@@ -10,10 +10,10 @@ permalink: /blog/2014/12/01/snowplow-0.9.13-released-with-important-bug-fixes/
 
 We are happy to announce the release of Snowplow 0.9.13 fixing two bugs found in last week's release. Read on for more information.
 
-1. [Safer URI parsing](/blog/2014/12/01/snowplow-0.9.13-released-with-important-bug-fixes/#uri)
-2. [Fixed dependency conflict](/blog/2014/12/01/snowplow-0.9.13-released-important-bug-fixes/#conflict)
-3. [Upgrading](/blog/2014/12/01/snowplow-0.9.13-released-important-bug-fixes/#upgrading)
-4. [Help](/blog/2014/12/01/snowplow-0.9.13-released-important-bug-fixes/#help)
+1. [Safer URI parsing](#uri)
+2. [Fixed dependency conflict](#conflict)
+3. [Upgrading](#upgrading)
+4. [Help](#help)
 
 <!--more-->
 

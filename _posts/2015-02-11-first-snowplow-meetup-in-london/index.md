@@ -9,10 +9,10 @@ permalink: /blog/2015/02/11/first-snowplow-meetup-in-london/
 
 This time last week we held the inaugural [Snowplow London meetup](http://www.meetup.com/Snowplow-Analytics-London/). Roughly 50 Snowplow users turned up to listen to two fantastic presentations from [Simply Business](http://www.simplybusiness.co.uk/) and [Metail](http://metail.com/) on the role Snowplow plays in their data architecture and how they use their Snowplow data. The talks were incredibly interesting, so I'm keen to share them with the wider Snowplow community. I'm also very eager to get feedback so that we can build on this start to make future events as interesting as possible - we have aspirations to hold them in many more countries, so that users all over the world get the chance to attend and learn from one-another.
 
-1. [Using Cascalog to model Snowplow data at Metail](/blog/2015/02/11/first-snowplow-meetup-in-london/#metail)
+1. [Using Cascalog to model Snowplow data at Metail](#metail)
 2. [Tracking users across channels and performing multi-channel attribution (using Bayesian networks) at Simply Business](/blog/2015/02/11/first-snowplow-meetup-in-london/#simplybusiness)  
-3. [Feedback and future events](/blog/2015/02/11/first-snowplow-meetup-in-london/#future)
-4. [Many thanks](/blog/2015/02/11/first-snowplow-meetup-in-london/#thanks)
+3. [Feedback and future events](#future)
+4. [Many thanks](#thanks)
 
 <h2><a name="metail">Using Cascalog to model Snowplow data at Metail</a></h2>
 

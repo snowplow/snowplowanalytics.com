@@ -12,15 +12,15 @@ We are pleased to announce the release of [Snowplow 85 Metamorphosis] [snowplow-
 
 Metamorphosis is one of Franz Kafka's most famous books, and an apt codename for this release, as our first step towards an implementation of the full Snowplow platform that can be run off the Amazon cloud, on-premise. (We'll come up with a new non-ornithological codename series for R86 onwards.)
 
-1. [Supporting Apache Kafka](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#kafka)
-2. [Scala Stream Collector and Kafka](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#ssc)
-3. [Stream Enrich and Kafka](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#se)
-4. [Kafka documentation](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#docs)
-5. [Other changes](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#other)
-6. [Upgrading](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#upgrading)
-7. [Roadmap](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#roadmap)
-8. [Behind the scenes](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#behind-the-scenes)
-9. [Getting help](/blog/2016/11/15/snowplow-r85-metamorphosis-released-with-beta-apache-kafka-support#help)
+1. [Supporting Apache Kafka](#kafka)
+2. [Scala Stream Collector and Kafka](#ssc)
+3. [Stream Enrich and Kafka](#se)
+4. [Kafka documentation](#docs)
+5. [Other changes](#other)
+6. [Upgrading](#upgrading)
+7. [Roadmap](#roadmap)
+8. [Behind the scenes](#behind-the-scenes)
+9. [Getting help](#help)
 
 ![kafka-metamorphosis] [kafka-metamorphosis]
 

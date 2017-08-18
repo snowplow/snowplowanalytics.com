@@ -15,11 +15,11 @@ Although this is version 0.2.0 of Huskimo, this is the first publicized release,
 
 Read on after the jump for:
 
-1. [Why Huskimo?](/blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift#why)
-2. [Singular support](/blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift#singular)
-3. [Running Huskimo](/blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift#setup)
-4. [Getting help](/blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift#help)
-5. [Huskimo roadmap](/blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift#roadmap)
+1. [Why Huskimo?](#why)
+2. [Singular support](#singular)
+3. [Running Huskimo](#setup)
+4. [Getting help](#help)
+5. [Huskimo roadmap](#roadmap)
 
 <!--more-->
 

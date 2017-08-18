@@ -14,9 +14,9 @@ The Snowplow ActionScript 3.0 (AS3) Tracker supports [ActionScript 3.0] [as3], a
 
 In the rest of this post we will cover:
 
-1. [How to install the tracker](/blog/2015/03/23/snowplow-actionscript3-tracker-0.1.0-released/#get)
-2. [How to use the tracker](/blog/2015/03/23/snowplow-actionscript3-tracker-0.1.0-released/#use)
-3. [Getting help](/blog/2015/03/23/snowplow-actionscript3-tracker-0.1.0-released/#help)
+1. [How to install the tracker](#get)
+2. [How to use the tracker](#use)
+3. [Getting help](#help)
 
 <!--more-->
 

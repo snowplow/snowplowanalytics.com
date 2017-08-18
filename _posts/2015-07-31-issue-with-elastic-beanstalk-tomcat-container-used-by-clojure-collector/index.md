@@ -15,10 +15,10 @@ After the engineers at Amazon confirmed the bug, they released an updated versio
 
 This alert post will cover the following topics:
 
-1. [Was I affected by the bug?](/blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector/#affected)
-2. [Resolving the issue](/blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector/#fixing)
-3. [Thanks to the team at AWS](/blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector/#thanks)
-4. [Getting help](/blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector/#help)
+1. [Was I affected by the bug?](#affected)
+2. [Resolving the issue](#fixing)
+3. [Thanks to the team at AWS](#thanks)
+4. [Getting help](#help)
 
 <!--more-->
 

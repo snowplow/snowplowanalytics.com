@@ -12,15 +12,15 @@ We are pleased to release version 0.6.0 of the [Snowplow Objective-C Tracker] [o
 
 In the rest of this post we will cover:
 
-1. [Event batching](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#event-batching)
-2. [Event creation](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#event-creation)
-3. [API updates](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#api-updates)
-4. [Geolocation context](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#geo)
-5. [iOS 9.0 and XCode 7 changes](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#ios-9.0)
-6. [tvOS support](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#tvos)
-7. [Demonstration app](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#demo)
-8. [Other changes](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#changes)
-9. [Upgrading](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#upgrading)
+1. [Event batching](#event-batching)
+2. [Event creation](#event-creation)
+3. [API updates](#api-updates)
+4. [Geolocation context](#geo)
+5. [iOS 9.0 and XCode 7 changes](#ios-9.0)
+6. [tvOS support](#tvos)
+7. [Demonstration app](#demo)
+8. [Other changes](#changes)
+9. [Upgrading](#upgrading)
 10. [Getting help](/blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/#help)
 
 <!--more-->

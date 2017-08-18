@@ -14,12 +14,12 @@ Huge thanks go to Elijah Tabb, a.k.a. [ebear][ebear], for contributing the updat
 
 Read on for more information...
 
-1. [New tracker initialization method](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#initialization)
-2. [Updated format for unstructured events](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#unstruct-events)
-3. [Updated format for custom contexts](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#contexts)
-4. [Setting the event ID in the tracker](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#uuid)
-5. [Other improvements](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#improvements)
-6. [Getting help](/blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/#improvements)
+1. [New tracker initialization method](#initialization)
+2. [Updated format for unstructured events](#unstruct-events)
+3. [Updated format for custom contexts](#contexts)
+4. [Setting the event ID in the tracker](#uuid)
+5. [Other improvements](#improvements)
+6. [Getting help](#improvements)
 
 <!--more-->
 

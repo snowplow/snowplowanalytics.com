@@ -10,9 +10,9 @@ permalink: /blog/2013/01/29/introducing-the-pixel-tracker/
 The [Pixel tracker] [pixel-wizard] enables companies running Snowplow to track users in environments that do not support Javascript. In this blog post we will cover:
 
 1. [The purpose of the Pixel tracker)](/blog/2013/01/29/introducing-the-pixel-tracker#why)
-2. [How it works](/blog/2013/01/29/introducing-the-pixel-tracker#mechanics)
-3. [Considerations when using the Pixel tracker with the Clojure collector in particular](/blog/2013/01/29/introducing-the-pixel-tracker#collector-considerations)
-4. [Next steps on the Snowplow tracker roadmap](/blog/2013/01/29/introducing-the-pixel-tracker#roadmap)
+2. [How it works](#mechanics)
+3. [Considerations when using the Pixel tracker with the Clojure collector in particular](#collector-considerations)
+4. [Next steps on the Snowplow tracker roadmap](#roadmap)
 
 <div class="html">
 <a name="why" ><h2>What is the purpose of the Pixel tracker?</h2> </a>

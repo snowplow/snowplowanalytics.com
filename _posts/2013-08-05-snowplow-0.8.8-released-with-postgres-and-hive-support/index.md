@@ -26,10 +26,10 @@ As well as these new features, we have made a large number of improvements acros
 
 After the fold, we will cover the options for upgrading and using the new functionality:
 
-1. [Upgrading](/blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support#upgrading)
-2. [Loading events into Postgres](/blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support#postgres)
-3. [Querying events with HiveQL](/blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support#hiveql)
-4. [Getting help](/blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support#help)
+1. [Upgrading](#upgrading)
+2. [Loading events into Postgres](#postgres)
+3. [Querying events with HiveQL](#hiveql)
+4. [Getting help](#help)
 
 <!--more-->
 

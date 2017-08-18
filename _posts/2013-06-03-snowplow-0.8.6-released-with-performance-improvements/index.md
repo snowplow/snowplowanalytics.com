@@ -16,9 +16,9 @@ We are very pleased to announce the release of Snowplow **0.8.6**, with two sign
 In this post, then, we will cover:
 
 1. [The ETL process speed-up](/blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements#speed-up)
-2. [Using task instances in your ETL process](/blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements#task-instances)
-3. [Upgrading](/blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements#upgrading)
-4. [Getting help](/blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements#help)
+2. [Using task instances in your ETL process](#task-instances)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 <!--more-->
 

@@ -13,12 +13,12 @@ We are pleased to announce the release of version 2.4.0 of the [Snowplow JavaScr
 Read on for more information:
 
 1. [Tracking users cross-domain](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#cross-domain)
-2. [Tracking timings](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#timing)
+2. [Tracking timings](#timing)
 3. [Dynamic handling of single-page apps](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#single-page)
-4. [Improved PerformanceTiming context](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#performance-timing)
-5. [Other improvements](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#other)
-6. [Upgrading](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#upgrading)
-7. [Documentation and help](/blog/2015/03/15/snowplow-javascript-tracker-2.4.0-released/#help)
+4. [Improved PerformanceTiming context](#performance-timing)
+5. [Other improvements](#other)
+6. [Upgrading](#upgrading)
+7. [Documentation and help](#help)
 
 <!--more-->
 

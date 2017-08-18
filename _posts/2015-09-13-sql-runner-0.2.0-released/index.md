@@ -14,9 +14,9 @@ To use SQL Runner, you assemble a playbook i.e. a YAML file that lists the diffe
 
 Read on after the jump for:
 
-1. [New features](/blog/2015/09/13/sql-runner-0.2.0-released/#new-features)
-2. [Upgrading](/blog/2015/09/13/sql-runner-0.2.0-released/#upgrading)
-3. [Getting help](/blog/2015/09/03/sql-runner-0.2.0-released/#help)
+1. [New features](#new-features)
+2. [Upgrading](#upgrading)
+3. [Getting help](#help)
 
 <!--more-->
 

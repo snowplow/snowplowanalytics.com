@@ -13,14 +13,14 @@ We are tremendously excited to announce the release of [Snowplow 89 Plain of Jar
 
 Read on for more information on R89 Plain of Jars, named after [an archeological site in Laos][plain-of-jars]:
 
-1. [Thanks](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#thanks)
-2. [Why Spark?](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#why-spark)
-3. [Spark Enrich and RDB Shredder](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#jobs)
-4. [Under the hood](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#under-the-hood)
-5. [Upgrading](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#upgrading)
-6. [Request for feedback](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#feedback)
-7. [Roadmap](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#roadmap)
-8. [Getting help](/blog/2017/06/12/snowplow-r89-plain-of-jars-released-porting-snowplow-to-spark#help)
+1. [Thanks](#thanks)
+2. [Why Spark?](#why-spark)
+3. [Spark Enrich and RDB Shredder](#jobs)
+4. [Under the hood](#under-the-hood)
+5. [Upgrading](#upgrading)
+6. [Request for feedback](#feedback)
+7. [Roadmap](#roadmap)
+8. [Getting help](#help)
 
 ![plain-of-jars][plain-of-jars-img]
 

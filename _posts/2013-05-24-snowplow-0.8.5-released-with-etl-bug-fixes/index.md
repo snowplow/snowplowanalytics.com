@@ -16,10 +16,10 @@ Many thanks to community members [Peter van Wesep] [petervanwesep] and [Gabor Ra
 
 In this post we will cover:
 
-1. [The showstopper bug fix](/blog/2013/05/24/snowplow-0.8.5-released-with-etl-bug-fixes#showstopper)
-2. [Other improvements](/blog/2013/05/24/snowplow-0.8.5-released-with-etl-bug-fixes#other-improvements)
-3. [Upgrading](/blog/2013/05/24/snowplow-0.8.5-released-with-etl-bug-fixes#upgrading)
-4. [Getting help](/blog/2013/05/24/snowplow-0.8.5-released-with-etl-bug-fixes#help)
+1. [The showstopper bug fix](#showstopper)
+2. [Other improvements](#other-improvements)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 <!--more-->
 

@@ -21,7 +21,7 @@ In the rest of this blog post, rather than simply re-hashing Jay's thoughtpiece,
 1. [The Classic Era  - the pre-big data, pre-SaaS era of operational systems and batch-loaded data warehouses](/blog/2014/01/20/the-three-eras-of-business-data-processing/#classic-era)
 2. [The Hybrid Era - today's hotchpotch of different systems and approaches](/blog/2014/01/20/the-three-eras-of-business-data-processing/#hybrid-era)
 3. [The Unified Era - a future enabled by continuous data processing on a unified log](/blog/2014/01/20/the-three-eras-of-business-data-processing/#unified-era)
-4. [Closing thoughts](/blog/2014/01/20/the-three-eras-of-business-data-processing/#closing-thoughts)
+4. [Closing thoughts](#closing-thoughts)
 
 We'll explore each of these eras in turn:
 

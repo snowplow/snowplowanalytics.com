@@ -15,10 +15,10 @@ Understanding the unstructured event format is important because our Enrichment 
 
 In the rest of this post, then, we will cover:
 
-1. [Basic usage](/blog/2013/05/14/snowplow-unstructured-events-guide#basic-usage)
-2. [The `properties` JavaScript object](/blog/2013/05/14/snowplow-unstructured-events-guide#properties-object)
-3. [Supported datatypes](/blog/2013/05/14/snowplow-unstructured-events-guide#supported-datatypes)
-4. [Getting help](/blog/2013/05/14/snowplow-unstructured-events-guide#help)
+1. [Basic usage](#basic-usage)
+2. [The `properties` JavaScript object](#properties-object)
+3. [Supported datatypes](#supported-datatypes)
+4. [Getting help](#help)
 
 <!--more-->
 

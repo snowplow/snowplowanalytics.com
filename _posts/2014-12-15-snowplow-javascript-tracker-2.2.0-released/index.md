@@ -12,11 +12,11 @@ We are happy to announce the release of version 2.2.0 of the [Snowplow JavaScrip
 
 The rest of this blog post will cover the following topics:
 
-1. [More powerful callbacks](/blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/#callbacks)
-2. [Disabling localStorage and cookies](/blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/#localstorage)
+1. [More powerful callbacks](#callbacks)
+2. [Disabling localStorage and cookies](#localstorage)
 3. [Non-integer offsets](/blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/#offsets)
-4. [Upgrading](/blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/#upgrading)
-5. [Getting help](/blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/#help)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
 
 <!--more-->
 

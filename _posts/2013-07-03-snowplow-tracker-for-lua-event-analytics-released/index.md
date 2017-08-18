@@ -25,9 +25,9 @@ We are hugely excited about our new event tracker for Lua. The first analytics t
 
 After the jump we will cover:
 
-1. [Supported events](/blog/2013/07/03/snowplow-tracker-for-lua-event-analytics-released#supported-events)
-2. [Usage example](/blog/2013/07/03/snowplow-tracker-for-lua-event-analytics-released#usage-example)
-3. [Finding out more](/blog/2013/07/03/snowplow-tracker-for-lua-event-analytics-released#read-more)
+1. [Supported events](#supported-events)
+2. [Usage example](#usage-example)
+3. [Finding out more](#read-more)
 
 <!--more-->
 

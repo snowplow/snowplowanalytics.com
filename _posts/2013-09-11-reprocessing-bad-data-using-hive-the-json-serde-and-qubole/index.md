@@ -28,10 +28,10 @@ In this blog post, we will walk through:
 
 The steps necessary to reprocess the data will be very similar to those required regardless of the reason that the reprocessing is necessary: as a result, this blog post should be useful for anyone interested in using the bad rows functionality to debug and improve the robustness of their event data collection. It should also be useful for anyone interested in using [Hive] [hive] and the [JSON serde] [json-serde] to process JSON data in S3. (Bad row data is stored by Snowplow in JSON format.) We will use [Qubole] [qubole], our preferred platform for running Hive jobs on data in S3, which we previously introduced in [this blog post] [qubole-post].
 
-1. [Understanding how Snowplow handles bad rows](/blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole/#how-snowplow-handles-bad-rows)
+1. [Understanding how Snowplow handles bad rows](#how-snowplow-handles-bad-rows)
 2. [Processing the bad rows data using the JSON serde, Hive and Qubole](/blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole/#processing-bad-rows-data-using-json-serde-hive-qubole)
-3. [Plotting the number of bad rows over time](/blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole/#plot-bad-rows-over-time)
-4. [Reprocessing bad rows](/blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole/#processing-bad-rows)
+3. [Plotting the number of bad rows over time](#plot-bad-rows-over-time)
+4. [Reprocessing bad rows](#processing-bad-rows)
 
 <!--more-->
 

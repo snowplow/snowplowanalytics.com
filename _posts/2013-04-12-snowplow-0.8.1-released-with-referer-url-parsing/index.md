@@ -25,10 +25,10 @@ Snowplow delivers the above functionality by parsing the page referer URIs which
 
 We will publish a post on how to use the data in a blog post in the near-future. In the rest of this post, then, we will cover:
 
-1. [Referer parsing implementation](/blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing#referer-parsing)
-2. [Some example data](/blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing#example-data)
-3. [Upgrading and usage](/blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing#upgrading-usage)
-4. [Getting help](/blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing#help)
+1. [Referer parsing implementation](#referer-parsing)
+2. [Some example data](#example-data)
+3. [Upgrading and usage](#upgrading-usage)
+4. [Getting help](#help)
 
 Read on below the fold to find out more.
 

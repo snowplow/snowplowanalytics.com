@@ -12,10 +12,10 @@ On September 22nd, the second Snowplow Meetup London took place at the fabulous 
 
 I wasn't able to make the event but I'm very lucky that Alex, Idan and Christophe made sure the talks were filmed. You can view them below:
 
-1. [Introducing Sauna: our new decisioning and response platform](/blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/#sauna)
-2. [Snowplow at Canary: why and how Snowplow is used at Canary](/blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/#canary)
-3. [Using Snowplow to enable product analytics at Animoto](/blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/#animoto)
-4. [Event data modeling](/blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/#event-data-modeling)
+1. [Introducing Sauna: our new decisioning and response platform](#sauna)
+2. [Snowplow at Canary: why and how Snowplow is used at Canary](#canary)
+3. [Using Snowplow to enable product analytics at Animoto](#animoto)
+4. [Event data modeling](#event-data-modeling)
 5. [Huge thank you to Tiernan, Stevie, Lincoln and the Canary team for hosting us!](/blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/#thank-yous)
 
 <h2 id="sauna">1. Introducing Sauna: our new decisioning and response platform</h2>

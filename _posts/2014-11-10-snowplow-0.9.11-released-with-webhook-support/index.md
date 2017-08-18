@@ -24,14 +24,14 @@ For our initial 0.9.11 release we are adding support for three different webhook
 
 Here are the sections after the fold:
 
-1. [MailChimp webhook support](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#mailchimp)
-2. [CallRail webhook support](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#callrail)
-3. [Iglu webhook support](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#iglu)
-4. [Updated Clojure Collector](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#clj-collector)
-5. [Updated change_form table](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#change-form)
-6. [Upgrading](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#upgrading)
-7. [Roadmap and contributing](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#roadmap-etc)
-8. [Documentation and help](/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#help)
+1. [MailChimp webhook support](#mailchimp)
+2. [CallRail webhook support](#callrail)
+3. [Iglu webhook support](#iglu)
+4. [Updated Clojure Collector](#clj-collector)
+5. [Updated change_form table](#change-form)
+6. [Upgrading](#upgrading)
+7. [Roadmap and contributing](#roadmap-etc)
+8. [Documentation and help](#help)
 
 <!--more-->
 

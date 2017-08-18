@@ -18,10 +18,10 @@ In Jiawen's own words:
 
 In the rest of this post we will cover:
 
-1. [Why we wrote this library](/blog/2014/01/17/scala-forex-library-released/#rationale)
-2. [How the library is architected](/blog/2014/01/17/scala-forex-library-released/#architecture)
-3. [How to use the library](/blog/2014/01/17/scala-forex-library-released/#usage)
-4. [Thanks](/blog/2014/01/17/scala-forex-library-released/#thanks)
+1. [Why we wrote this library](#rationale)
+2. [How the library is architected](#architecture)
+3. [How to use the library](#usage)
+4. [Thanks](#thanks)
 
 <!--more-->
 

@@ -20,13 +20,13 @@ As well as this new JSON-based functionality, 0.9.1 also includes a host of addi
 
 In the rest of this post we will cover:
 
-1. [Unstructured events and custom contexts](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#json)
-2. [VPC support on EMR](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#vpc)
+1. [Unstructured events and custom contexts](#json)
+2. [VPC support on EMR](#vpc)
 3. [Tracker Protocol-related improvements](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#tp)
-4. [Other improvements](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#other)
-5. [Upgrading](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#upgrading)
-6. [Getting help](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#help)
-7. [Roadmap](/blog/2014/04/11/snowplow-0.9.1-released-with-initial-json-support/#roadmap)
+4. [Other improvements](#other)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
+7. [Roadmap](#roadmap)
 
 <!--more-->
 

@@ -16,12 +16,12 @@ Many thanks to community members [Gabor Ratky] [rgabo], [Andras Tarsoly] [tarsol
 
 In the rest of this post, then, we will cover:
 
-1. [What are unstructured events?](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#definition)
-2. [When to use unstructured events?](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#when)
-3. [Usage](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#usage)
-4. [Upgrading](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#upgrading)
-5. [Roadmap for unstructured events](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#roadmap)
-6. [Getting help](/blog/2013/05/14/snowplow-0.8.3-released-with-unstructured-events/#help)
+1. [What are unstructured events?](#definition)
+2. [When to use unstructured events?](#when)
+3. [Usage](#usage)
+4. [Upgrading](#upgrading)
+5. [Roadmap for unstructured events](#roadmap)
+6. [Getting help](#help)
 
 <!--more-->
 

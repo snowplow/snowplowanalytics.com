@@ -12,15 +12,15 @@ We are pleased to announce the release of the [Snowplow Android Tracker][repo] v
 
 This release post will cover the following topics:
 
-1. [Uncaught exception tracking](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#exceptions)
-2. [Lifecycle event tracking](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#lifecycles)
-3. [Removing RxJava](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#removing-rxjava)
-4. [Singleton setup](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#singleton)
-5. [Client session updates](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#sessions)
-6. [True Timestamp](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#true-timestamp)
-7. [API changes](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#api-changes)
-8. [Other changes](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#other-changes)
-9. [Demo app](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#demo-application)
+1. [Uncaught exception tracking](#exceptions)
+2. [Lifecycle event tracking](#lifecycles)
+3. [Removing RxJava](#removing-rxjava)
+4. [Singleton setup](#singleton)
+5. [Client session updates](#sessions)
+6. [True Timestamp](#true-timestamp)
+7. [API changes](#api-changes)
+8. [Other changes](#other-changes)
+9. [Demo app](#demo-application)
 10. [Documentation](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#docs)
 11. [Getting help](/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#help)
 

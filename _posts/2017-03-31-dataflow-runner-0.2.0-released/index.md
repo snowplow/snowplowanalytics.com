@@ -20,12 +20,12 @@ checkout [the RFC on the subject][eer-rfc].
 
 In the rest of this post, we will cover:
 
-1. [Support for EMR Applications](/blog/2017/03/31/dataflow-runner-0.2.0-released#apps)
-2. [Support for Elastic Block Store](/blog/2017/03/31/dataflow-runner-0.2.0-released#ebs)
-3. [Configurable logging level](/blog/2017/03/31/dataflow-runner-0.2.0-released#log)
-4. [Other updates](/blog/2017/03/31/dataflow-runner-0.2.0-released#updates)
-5. [Roadmap](/blog/2017/03/31/dataflow-runner-0.2.0-released#roadmap)
-6. [Contributing](/blog/2017/03/31/dataflow-runner-0.2.0-released#contributing)
+1. [Support for EMR Applications](#apps)
+2. [Support for Elastic Block Store](#ebs)
+3. [Configurable logging level](#log)
+4. [Other updates](#updates)
+5. [Roadmap](#roadmap)
+6. [Contributing](#contributing)
 
 <!--more-->
 

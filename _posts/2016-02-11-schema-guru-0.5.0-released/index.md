@@ -13,12 +13,12 @@ We are pleased to announce the releases of [Schema Guru][repo] 0.5.0 and [Schema
 This release post will cover the following topics:
 
 1. [More git-friendly DDL files](/blog/2016/02/11/schema-guru-0.5.0-released/#git-friendly)
-2. [Added Java interoperability](/blog/2016/02/11/schema-guru-0.5.0-released/#java)
-3. [Fixed DDL file version bug](/blog/2016/02/11/schema-guru-0.5.0-released/#version)
+2. [Added Java interoperability](#java)
+3. [Fixed DDL file version bug](#version)
 4. [Improvements in Schema-to-DDL transformation](/blog/2016/02/11/schema-guru-0.5.0-released/#schema-to-ddl)
-5. [Upgrading](/blog/2016/02/11/schema-guru-0.5.0-released/#upgrading)
-6. [Getting help](/blog/2016/02/11/schema-guru-0.5.0-released/#help)
-7. [Plans for future releasess](/blog/2016/02/11/schema-guru-0.5.0-released/#roadmap)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
+7. [Plans for future releasess](#roadmap)
 
 <!--more-->
 

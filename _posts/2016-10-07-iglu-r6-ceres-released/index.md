@@ -12,9 +12,9 @@ We are pleased to announce a new Iglu release with some significant updates to [
 
 Read on for more information on Release 6 Ceres, named after the [first postage stamp release in France] [ceres]:
 
-1. [New option to lint schemas to a higher standard](/blog/2016/10/07/iglu-r6-ceres-released/#severity)
-2. [Publish schemas and jsonpath files to S3](/blog/2016/10/07/iglu-r6-ceres-released/#publish-to-s3)
-3. [Other updates](/blog/2016/10/07/iglu-r6-ceres-released/#other)
+1. [New option to lint schemas to a higher standard](#severity)
+2. [Publish schemas and jsonpath files to S3](#publish-to-s3)
+3. [Other updates](#other)
 
 ![ceres-img] [ceres-img]
 

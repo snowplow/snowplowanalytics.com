@@ -18,9 +18,9 @@ Web analysts spend a lot of time exploring where visitors to their websites come
 Unfortunately, identifying where your visitors come from is **not** as straightforward as it often seems. In this post, we will cover:
 
 1. [How, technically, can we determine where visitors have come from?](/blog/2013/05/10/where-does-your-traffic-really-come-from#how)
-2. [Potential sources of errors](/blog/2013/05/10/where-does-your-traffic-really-come-from#errors)
+2. [Potential sources of errors](#errors)
 3. [Problems with relying on the Google Analytics approach, and why the Snowplow approach is superior](/blog/2013/05/10/where-does-your-traffic-really-come-from#ga)
-4. [Surprises when examining visitors acquired from AdWords search campaigns: most visitors clicked on an ad that was not shown on a Google domain](/blog/2013/05/10/where-does-your-traffic-really-come-from#adwords)
+4. [Surprises when examining visitors acquired from AdWords search campaigns: most visitors clicked on an ad that was not shown on a Google domain](#adwords)
 5. [Pulling all the findings together: the value of high-fidelity data in determining where your visitors come from](/blog/2013/05/10/where-does-your-traffic-really-come-from#conclusion)
 
 <!--more-->

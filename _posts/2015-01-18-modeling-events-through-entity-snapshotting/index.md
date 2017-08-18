@@ -21,13 +21,13 @@ This statement may seem unrelated - perhaps even contradictory - to our original
 
 In the rest of this blog post, we will cover the following:
 
-1. [Introduce what we mean by entities](/blog/2015/01/18/modeling-events-through-entity-snapshotting#entities)
-2. [Explore how entities change over time](/blog/2015/01/18/modeling-events-through-entity-snapshotting#entities-and-time)
-3. [Review how our databases handle time](/blog/2015/01/18/modeling-events-through-entity-snapshotting#time-dbs)
-4. [Propose an approach based on entity snapshotting](/blog/2015/01/18/modeling-events-through-entity-snapshotting#entity-snapshotting)
-5. [Revise our event grammar](/blog/2015/01/18/modeling-events-through-entity-snapshotting#revised-event-grammar)
-6. [Represent our event grammar in JSON](/blog/2015/01/18/modeling-events-through-entity-snapshotting#json)
-7. [Draw some conclusions](/blog/2015/01/18/modeling-events-through-entity-snapshotting#conc)
+1. [Introduce what we mean by entities](#entities)
+2. [Explore how entities change over time](#entities-and-time)
+3. [Review how our databases handle time](#time-dbs)
+4. [Propose an approach based on entity snapshotting](#entity-snapshotting)
+5. [Revise our event grammar](#revised-event-grammar)
+6. [Represent our event grammar in JSON](#json)
+7. [Draw some conclusions](#conc)
 
 <!--more-->
 

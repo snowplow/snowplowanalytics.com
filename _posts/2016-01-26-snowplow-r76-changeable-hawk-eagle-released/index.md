@@ -15,10 +15,10 @@ We are pleased to announce the release of [Snowplow 76 Changeable Hawk-Eagle][sn
 Here are the sections after the fold:
 
 1. [Event de-duplication in Hadoop Shred](/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/#deduplication)
-2. [SendGrid webhook bug fix](/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/#sendgrid-fix)
-3. [Upgrading](/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/#upgrading)
-4. [Roadmap and contributing](/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/#roadmap-etc)
-5. [Getting help](/blog/2016/01/26/snowplow-r76-changeable-hawk-eagle-released/#help)
+2. [SendGrid webhook bug fix](#sendgrid-fix)
+3. [Upgrading](#upgrading)
+4. [Roadmap and contributing](#roadmap-etc)
+5. [Getting help](#help)
 
 <!--more-->
 

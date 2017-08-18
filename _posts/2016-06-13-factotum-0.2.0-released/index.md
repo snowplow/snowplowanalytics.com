@@ -12,12 +12,12 @@ We are pleased to announce release 0.2.0 of Snowplow's DAG running tool, [Factot
 
 In the rest of this post we will cover:
 
-1. [Job configuration variables](/blog/2016/06/13/factotum-0.2.0-released#vars)
-2. [Starting a job from a given task](/blog/2016/06/13/factotum-0.2.0-released#resumes)
-3. [Output improvements](/blog/2016/06/13/factotum-0.2.0-released#output)
-4. [Downloading and running Factotum](/blog/2016/06/13/factotum-0.2.0-released#install)
-5. [Roadmap](/blog/2016/06/13/factotum-0.2.0-released#roadmap)
-6. [Contributing](/blog/2016/06/13/factotum-0.2.0-released#contributing)
+1. [Job configuration variables](#vars)
+2. [Starting a job from a given task](#resumes)
+3. [Output improvements](#output)
+4. [Downloading and running Factotum](#install)
+5. [Roadmap](#roadmap)
+6. [Contributing](#contributing)
 
 <!--more-->
 

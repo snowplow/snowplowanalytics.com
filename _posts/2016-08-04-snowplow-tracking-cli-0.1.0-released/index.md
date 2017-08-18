@@ -12,12 +12,12 @@ We are pleased to announce the first release of the [Snowplow Tracking CLI] [tra
 
 In the rest of this post we will cover:
 
-1. [How to install the app](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#how-to-install)
-2. [How to use the app](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#how-to-use)
-3. [Examples](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#examples)
-4. [Under the hood](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#under-the-hood)
-5. [Roadmap](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#roadmap)
-6. [Documentation and getting help](/blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/#docs-help)
+1. [How to install the app](#how-to-install)
+2. [How to use the app](#how-to-use)
+3. [Examples](#examples)
+4. [Under the hood](#under-the-hood)
+5. [Roadmap](#roadmap)
+6. [Documentation and getting help](#docs-help)
 
 <!--more-->
 

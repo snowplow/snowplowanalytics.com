@@ -12,12 +12,12 @@ We are pleased to announce the release of the [Snowplow C++ Tracker] [cpp-repo].
 
 In the rest of this post we will cover:
 
-1. [How to install the tracker](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#how-to-install)
-2. [How to use the tracker](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#how-to-use)
-3. [Core features](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#features)
-4. [Roadmap](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#roadmap)
-5. [Documentation](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#docs)
-6. [Getting help](/blog/2016/06/23/snowplow-cpp-tracker-0.1.0-released/#help)
+1. [How to install the tracker](#how-to-install)
+2. [How to use the tracker](#how-to-use)
+3. [Core features](#features)
+4. [Roadmap](#roadmap)
+5. [Documentation](#docs)
+6. [Getting help](#help)
 
 <!--more-->
 

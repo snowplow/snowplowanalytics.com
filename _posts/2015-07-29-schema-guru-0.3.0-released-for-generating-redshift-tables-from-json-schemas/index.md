@@ -12,14 +12,14 @@ We are pleased to announce the release of Schema Guru 0.3.0 and Schema DDL 0.1.0
 
 This release post will cover the following new topics:
 
-1. [Meet the Schema DDL library](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#schemaddl)
-2. [Commands and CLI changes](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#commands)
-3. [Overview of the ddl command](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#ddl-command)
-4. [ddl command for Snowplow users](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#ddl-for-snowplow)
-5. [Advanced options for ddl command](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#ddl-options)
-6. [Upgrading](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#upgrading)
-6. [Getting help](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#help)
-7. [Plans for next release](/blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/#roadmap)
+1. [Meet the Schema DDL library](#schemaddl)
+2. [Commands and CLI changes](#commands)
+3. [Overview of the ddl command](#ddl-command)
+4. [ddl command for Snowplow users](#ddl-for-snowplow)
+5. [Advanced options for ddl command](#ddl-options)
+6. [Upgrading](#upgrading)
+6. [Getting help](#help)
+7. [Plans for next release](#roadmap)
 
 <!--more-->
 

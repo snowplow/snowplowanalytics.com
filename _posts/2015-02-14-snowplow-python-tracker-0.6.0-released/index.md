@@ -12,14 +12,14 @@ We are pleased to announce the release of [version 0.6.0.post1] [pypi] of the Sn
 
 The rest of this post will cover:
 
-1. [set_ip_address](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#ip)
-2. [set_useragent_user_id](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#ua)
-3. [set_domain_user_id](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#nuid)
-4. [set_network_user_id](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#duid)
-5. [Improved logging](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#logging)
-6. [Upgrading and compatibility](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#upgrading-compatibility)
-7. [Other changes](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#other)
-8. [Getting help](/blog/2015/02/14/snowplow-python-tracker-0.6.0-released/#help)
+1. [set_ip_address](#ip)
+2. [set_useragent_user_id](#ua)
+3. [set_domain_user_id](#nuid)
+4. [set_network_user_id](#duid)
+5. [Improved logging](#logging)
+6. [Upgrading and compatibility](#upgrading-compatibility)
+7. [Other changes](#other)
+8. [Getting help](#help)
 
 <!--more-->
 

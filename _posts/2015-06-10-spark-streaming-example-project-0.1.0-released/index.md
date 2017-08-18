@@ -18,11 +18,11 @@ The [Snowplow Apache Spark Streaming Example Project][repo] can help you jumpsta
 
 Read on after the fold for:
 
-1. [What are Spark Streaming and Kinesis?](/blog/2015/06/10/spark-streaming-example-project-0.1.0-released/#what-are-spark-streaming-and-kinesis)
+1. [What are Spark Streaming and Kinesis?](#what-are-spark-streaming-and-kinesis)
 2. [Introducing analytics-on-write](/blog/2015/06/10/spark-streaming-example-project-0.1.0-released/#introducting-analytics-on-write)
-3. [Detailed setup](/blog/2015/06/10/spark-streaming-example-project-0.1.0-released/#detailed-setup)
-4. [Troubleshooting](/blog/2015/06/10/spark-streaming-example-project-0.1.0-released/#troubleshooting)
-5. [Further reading](/blog/2015/06/10/spark-streaming-example-project-0.1.0-released/#further-reading)
+3. [Detailed setup](#detailed-setup)
+4. [Troubleshooting](#troubleshooting)
+5. [Further reading](#further-reading)
 
 <!--more-->
 

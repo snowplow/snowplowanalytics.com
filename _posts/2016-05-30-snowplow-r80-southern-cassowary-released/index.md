@@ -10,14 +10,14 @@ permalink: /blog/2016/05/30/snowplow-r80-southern-cassowary-released/
 
 [Snowplow 80 Southern Cassowary][snowplow-release] is now available! This is a real-time pipeline release which improves stability and brings the real-time pipeline up-to-date with our Hadoop pipeline.
 
-1. [The latest Common Enrich](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#common-enrich)
-2. [Exiting on error](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#terminate)
-3. [Configurable maxRecords](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#maxrecords)
-4. [Changes to logging](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#logging)
-5. [Continuous deployment](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#cicd)
-5. [Other improvements](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#other)
-6. [Upgrading](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#upgrading)
-7. [Getting help](/blog/2016/05/30/snowplow-r80-southern-cassowary-released#help)
+1. [The latest Common Enrich](#common-enrich)
+2. [Exiting on error](#terminate)
+3. [Configurable maxRecords](#maxrecords)
+4. [Changes to logging](#logging)
+5. [Continuous deployment](#cicd)
+5. [Other improvements](#other)
+6. [Upgrading](#upgrading)
+7. [Getting help](#help)
 
 ![southern-cassowary][southern-cassowary]
 

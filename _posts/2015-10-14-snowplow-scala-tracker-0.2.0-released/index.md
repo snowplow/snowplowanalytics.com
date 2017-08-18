@@ -12,14 +12,14 @@ We are pleased to release version 0.2.0 of the [Snowplow Scala Tracker] [scala-r
 
 In the rest of this post we will cover:
 
-1. [EC2 custom context](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#ec2)
-2. [Batch emitter](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#batch)
-3. [New track methods](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#events)
-4. [Device sent timestamp](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#timestamp)
-5. [Other updates](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#other)
-6. [Bug fixes](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#bugs)
-7. [Upgrading](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#upgrading)
-8. [Getting help](/blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/#help)
+1. [EC2 custom context](#ec2)
+2. [Batch emitter](#batch)
+3. [New track methods](#events)
+4. [Device sent timestamp](#timestamp)
+5. [Other updates](#other)
+6. [Bug fixes](#bugs)
+7. [Upgrading](#upgrading)
+8. [Getting help](#help)
 
 <!--more-->
 

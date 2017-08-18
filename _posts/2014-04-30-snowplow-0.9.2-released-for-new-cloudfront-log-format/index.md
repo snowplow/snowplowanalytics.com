@@ -16,10 +16,10 @@ As well as support for the new log file format, this release also features a new
 
 Read on below the fold for:
 
-1. [Changes in this release](/blog/2014/04/30/snowplow-0.9.2-released-for-new-cloudfront-log-format/#cf-update)
-2. [Other changes in this release](/blog/2014/04/30/snowplow-0.9.2-released-for-new-cloudfront-log-format/#other)
-3. [Upgrading](/blog/2014/04/30/snowplow-0.9.2-released-for-new-cloudfront-log-format/#upgrading)
-4. [Getting help](/blog/2014/04/30/snowplow-0.9.2-released-for-new-cloudfront-log-format/#help)
+1. [Changes in this release](#cf-update)
+2. [Other changes in this release](#other)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 <!--more-->
 

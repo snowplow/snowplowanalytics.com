@@ -10,10 +10,10 @@ permalink: /blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-im
 
 We are very pleased to announce the immediate availability of [Snowplow 0.8.12] [github-release]. We have quite a packed schedule of releases planned over the next few weeks - and we are kicking off with 0.8.12, which consists of various small improvements to our Scalding-based Enrichment process, plus some architectural re-work to prepare for the coming releases (in particular, [Amazon Kinesis] [kinesis] support).
 
-1. [Background on this release](/blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements/#background)
-2. [Scalding Enrichment improvements](/blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements/#improvements)
+1. [Background on this release](#background)
+2. [Scalding Enrichment improvements](#improvements)
 3. [Re-architecting our Enrichment process](/blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements/#rearchitecting)
-4. [Installing this release](/blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements/#install)
+4. [Installing this release](#install)
 
 <div class="html">
 <a name="background"><h2>1. Background on this release</h2></a>

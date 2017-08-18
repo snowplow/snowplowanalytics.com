@@ -12,12 +12,12 @@ We are pleased to announce the release of Snowplow version 72 Great Spotted Kiwi
 
 The rest of this post will cover the following topics:
 
-1. [Click tracking](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#click-tracking)
-2. [New cookie extractor enrichment](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#cookie-extractor)
-3. [New deduplication queries](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#deduplication)
-4. [Upgrading](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#upgrading)
-5. [Getting help](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#help)
-6. [Upcoming releases](/blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released#roadmap)
+1. [Click tracking](#click-tracking)
+2. [New cookie extractor enrichment](#cookie-extractor)
+3. [New deduplication queries](#deduplication)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
+6. [Upcoming releases](#roadmap)
 
 ![great-spotted-kiwi][great-spotted-kiwi]
 

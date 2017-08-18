@@ -12,14 +12,14 @@ We are pleased to release version 0.5.0 of the [Snowplow Objective-C Tracker] [o
 
 In the rest of this post we will cover:
 
-1. [Client sessionization](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#sessionization)
-2. [Tracker performance](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#tracker-performance)
-3. [Event decoration](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#event-decoration)
-4. [API changes](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#api-changes)
-5. [Demonstration app](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#demo)
-6. [Other changes](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#changes)
-7. [Upgrading](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#upgrading)
-8. [Getting help](/blog/2015/09/03/snowplow-objective-c-tracker-0.5.0-released/#help)
+1. [Client sessionization](#sessionization)
+2. [Tracker performance](#tracker-performance)
+3. [Event decoration](#event-decoration)
+4. [API changes](#api-changes)
+5. [Demonstration app](#demo)
+6. [Other changes](#changes)
+7. [Upgrading](#upgrading)
+8. [Getting help](#help)
 
 <!--more-->
 

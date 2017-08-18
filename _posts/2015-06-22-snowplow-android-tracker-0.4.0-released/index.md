@@ -14,13 +14,13 @@ Big thanks to [Duncan][duncand] at Wunderlist for his work on splitting apart th
 
 This release post will cover the following topics:
 
-1. [Alternative to RxJava](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#rx-java-alternatives)
-2. [Tracker updates](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#tracker-updates)
-2. [Emitter updates](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#emitter-updates)
-3. [Under the hood](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#under-the-hood)
-4. [Demo app](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#demo-application)
-5. [Documentation](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#docs)
-6. [Getting help](/blog/2015/06/22/snowplow-android-tracker-0.4.0-released/#help)
+1. [Alternative to RxJava](#rx-java-alternatives)
+2. [Tracker updates](#tracker-updates)
+2. [Emitter updates](#emitter-updates)
+3. [Under the hood](#under-the-hood)
+4. [Demo app](#demo-application)
+5. [Documentation](#docs)
+6. [Getting help](#help)
 
 <!--more-->
 

@@ -18,12 +18,12 @@ Many thanks to Snowplow users [Simply Business] [simply-business] and [Simon Rum
 
 In this post we will cover:
 
-1. [Our new user IDs](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#user-ids)
-2. [Our new event timestamps](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#event-tstamps)
-3. [Bug fixes](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#bug-fixes)
-4. [Breaking changes](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#deprecations)
-5. [Upgrading](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#upgrading)
-6. [Getting help](/blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics#help)
+1. [Our new user IDs](#user-ids)
+2. [Our new event timestamps](#event-tstamps)
+3. [Bug fixes](#bug-fixes)
+4. [Breaking changes](#deprecations)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 Read on below the fold to find out more!
 

@@ -21,10 +21,10 @@ These fields should make a new set of analyses on Snowplow data, including analy
 
 In addition, the new release includes some minor bug fixes. In this post we will cover:
 
-1. [The new fields](/blog/2013/02/15/snowplow-0.7.3-released#new-fields)
-2. [Bug fixes](/blog/2013/02/15/snowplow-0.7.3-released#bug-fixes)
-3. [Breaking changes](/blog/2013/02/15/snowplow-0.7.3-released#breaking-changes)
-4. [Upgrading](/blog/2013/02/15/snowplow-0.7.3-released#upgrade)
+1. [The new fields](#new-fields)
+2. [Bug fixes](#bug-fixes)
+3. [Breaking changes](#breaking-changes)
+4. [Upgrading](#upgrade)
 
 <h2><a name="new-fields">1. New fields</a></h2>
 

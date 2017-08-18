@@ -16,11 +16,11 @@ As of [this week] [snowplow-pr], Snowplow is natively integrated in the project,
 
 Read on after the fold for:
 
-1. [Overview](/blog/2016/03/19/google-amp-adds-snowplow-support#overview)
-2. [Event tracking with AMP](/blog/2016/03/19/google-amp-adds-snowplow-support#events)
+1. [Overview](#overview)
+2. [Event tracking with AMP](#events)
   * [Page views](/blog/2016/03/19/google-amp-adds-snowplow-support#page-views)
   * [Structured events](/blog/2016/03/19/google-amp-adds-snowplow-support#structured-events)
-3. [Getting help](/blog/2016/03/19/google-amp-adds-snowplow-support#help)
+3. [Getting help](#help)
 
 <!--more-->
 

@@ -12,10 +12,10 @@ We're pleased to announce the 0.4.0 release of Snowplow's DAG running tool [Fact
 
 In the rest of this post we will cover:
 
-1. [Constraining job runs](/blog/2016/12/22/factotum-0.4.0-released-with-support-for-constraints#constraints)
-2. [Downloading and running Factotum](/blog/2016/12/22/factotum-0.4.0-released-with-support-for-constraints#install)
-3. [Roadmap](/blog/2016/12/22/factotum-0.4.0-released-with-support-for-constraints#roadmap)
-4. [Contributing](/blog/2016/12/22/factotum-0.4.0-released-with-support-for-constraints#contributing)
+1. [Constraining job runs](#constraints)
+2. [Downloading and running Factotum](#install)
+3. [Roadmap](#roadmap)
+4. [Contributing](#contributing)
 
 <!--more-->
 

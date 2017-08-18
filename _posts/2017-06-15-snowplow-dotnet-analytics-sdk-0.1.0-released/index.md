@@ -23,11 +23,11 @@ This SDK has been developed as a first step towards our RFC, [Porting Snowplow t
 
 Read on below the jump for:
 
-1. [Overview](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#overview)
-2. [The JSON Event Transformer](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#json-event-transformer)
-3. [Installation](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#installation)
-4. [Usage](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#usage)
-5. [Getting help](/blog/2017/06/15/snowplow-dotnet-analytics-sdk-0.1.0-released#help)
+1. [Overview](#overview)
+2. [The JSON Event Transformer](#json-event-transformer)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Getting help](#help)
 
 <!--more-->
 

@@ -16,15 +16,15 @@ We have also made changes to the format of unstructured events and custom contex
 
 In the rest of the post we will cover:
 
-1. [The Subject class](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#subject)
-2. [The Emitter classes](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#emitter)
-3. [Tracker method return values](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#return)
-4. [Logging](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#logging)
-5. [Pycontracts](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#contracts)
-6. [The RedisWorker class](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#worker)
+1. [The Subject class](#subject)
+2. [The Emitter classes](#emitter)
+3. [Tracker method return values](#return)
+4. [Logging](#logging)
+5. [Pycontracts](#contracts)
+6. [The RedisWorker class](#worker)
 7. [Self-describing JSONs](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#schemas)
-8. [Upgrading](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#upgrading)
-9. [Support](/blog/2014/06/10/snowplow-python-tracker-0.4.0-released/#support)
+8. [Upgrading](#upgrading)
+9. [Support](#support)
 
 <!--more-->
 

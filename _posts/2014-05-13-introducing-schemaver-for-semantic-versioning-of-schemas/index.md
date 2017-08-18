@@ -25,11 +25,11 @@ Our initial thought was just to fall back to SemVer for schema versioning - afte
 
 In the rest of the post, I will go through:
 
-1. [SemVer](/blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/#semver) - providing some background for those who are unfamiliar with it
-2. [SchemaVer](/blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/#schemaver) - providing our formula for using SchemaVer
-3. [Design considerations](/blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/#design) - explaining why SchemaVer is structured the way it is
-4. [Use cases](/blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/#usecases) - where should we be using SchemaVer
-5. [Call for feedback](/blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/#feedback) - SchemaVer is a draft, and we would love feedback before we formalize it in Snowplow
+1. [SemVer](#semver) - providing some background for those who are unfamiliar with it
+2. [SchemaVer](#schemaver) - providing our formula for using SchemaVer
+3. [Design considerations](#design) - explaining why SchemaVer is structured the way it is
+4. [Use cases](#usecases) - where should we be using SchemaVer
+5. [Call for feedback](#feedback) - SchemaVer is a draft, and we would love feedback before we formalize it in Snowplow
 
 <!--more-->
 

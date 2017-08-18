@@ -12,14 +12,14 @@ We are pleased to release version 0.8.0 of the [Snowplow Java Tracker] [java-rep
 
 In the rest of this post we will cover:
 
-1. [API updates](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#api)
-2. [Emitter changes](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#emitter)
-3. [Performance](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#performance)
-4. [Changing the Subject](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#changing-the-subject)
-5. [Other improvements](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#other)
-6. [Upgrading](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#upgrading)
-7. [Documentation](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#docs)
-8. [Getting help](/blog/2015/09/14/snowplow-java-tracker-0.8.0-released/#help)
+1. [API updates](#api)
+2. [Emitter changes](#emitter)
+3. [Performance](#performance)
+4. [Changing the Subject](#changing-the-subject)
+5. [Other improvements](#other)
+6. [Upgrading](#upgrading)
+7. [Documentation](#docs)
+8. [Getting help](#help)
 
 <!--more-->
 

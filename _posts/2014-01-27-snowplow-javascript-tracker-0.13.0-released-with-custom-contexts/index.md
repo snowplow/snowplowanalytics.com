@@ -14,12 +14,12 @@ The primary objective of this release was to introduce some key new tracking cap
 
 In the rest of this post, then, we will cover:
 
-1. [New feature: custom contexts](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#contexts)
-2. [New feature: transaction currencies](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#currency)
-3. [New feature: specifying the tracking platform](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#platform)
+1. [New feature: custom contexts](#contexts)
+2. [New feature: transaction currencies](#currency)
+3. [New feature: specifying the tracking platform](#platform)
 4. [Project tidy-up](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#tidyup)
-5. [Upgrading](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#upgrading)
-6. [Getting help](/blog/2014/01/27/snowplow-javascript-tracker-0.13.0-released-with-custom-contexts/#help)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

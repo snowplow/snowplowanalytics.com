@@ -12,13 +12,13 @@ We are pleased to announce the release of [Schema Guru][repo] 0.6.0, with long-a
 
 This release post will cover the following topics:
 
-1. [Introducing migrations](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#migrations)
-2. [Redshift migrations in Schema Guru](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#implementation)
+1. [Introducing migrations](#migrations)
+2. [Redshift migrations in Schema Guru](#implementation)
 3. [New --force flag](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#force)
-4. [Minor CLI changes](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#cli)
-5. [Upgrading](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#upgrading)
-6. [Getting help](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#help)
-7. [Plans for future releases](/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/#roadmap)
+4. [Minor CLI changes](#cli)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
+7. [Plans for future releases](#roadmap)
 
 <!--more-->
 

@@ -11,14 +11,14 @@ At Snowplow we have been thinking about how to version [Thrift][thrift] schemas.
 
 The rest of this post will discuss our proposed solution to this problem:
 
-1. [The problem](/blog/2014/12/16/introducing-self-describing-thrift/#problem)
+1. [The problem](#problem)
 2. [The un-versioned approach](/blog/2014/12/16/introducing-self-describing-thrift/#unversioned)
-3. [Adding a schema field](/blog/2014/12/16/introducing-self-describing-thrift/#schema)
-4. [An example](/blog/2014/12/16/introducing-self-describing-thrift/#example)
-5. [Storage](/blog/2014/12/16/introducing-self-describing-thrift/#storage)
-6. [Versioning](/blog/2014/12/16/introducing-self-describing-thrift/#versioning)
-7. [Namespacing](/blog/2014/12/16/introducing-self-describing-thrift/#namespacing)
-8. [Feedback](/blog/2014/12/16/introducing-self-describing-thrift/#feedback)
+3. [Adding a schema field](#schema)
+4. [An example](#example)
+5. [Storage](#storage)
+6. [Versioning](#versioning)
+7. [Namespacing](#namespacing)
+8. [Feedback](#feedback)
 
 By the way: if you are not well-acquainted with Thrift, do check out the excellent [Thrift: The Missing Guide] [gupta] by [Diwaker Gupta] [diwakergupta].
 

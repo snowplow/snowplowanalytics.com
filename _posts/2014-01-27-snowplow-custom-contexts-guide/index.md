@@ -20,10 +20,10 @@ Understanding the custom context format is important because our Enrichment proc
 
 In the rest of this post we will cover:
 
-1. [Updated method signatures](/blog/2014/01/27/snowplow-custom-contexts-guide/#sigs)
-2. [The `contexts` JavaScript object](/blog/2014/01/27/snowplow-custom-contexts-guide/#contexts)
-3. [A detailed example](/blog/2014/01/27/snowplow-custom-contexts-guide/#eg)
-4. [Getting help](/blog/2014/01/27/snowplow-custom-contexts-guide/#help)
+1. [Updated method signatures](#sigs)
+2. [The `contexts` JavaScript object](#contexts)
+3. [A detailed example](#eg)
+4. [Getting help](#help)
 
 Let's get started after the jump.
 

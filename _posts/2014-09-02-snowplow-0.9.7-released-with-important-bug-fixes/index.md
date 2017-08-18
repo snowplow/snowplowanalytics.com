@@ -21,11 +21,11 @@ As well as these important fixes, 0.9.7 comes with a set of smaller bug fixes pl
 
 Below the fold we will cover:
 
-1. [Shredding bug fix and new shredding functionality](/blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/#shredding)
-2. [Other bug fixes](/blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/#other-bug-fixes)
-3. [Other new functionality](/blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/#other-new-functionality)
-4. [Upgrading](/blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/#upgrading)
-5. [Help](/blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/#help)
+1. [Shredding bug fix and new shredding functionality](#shredding)
+2. [Other bug fixes](#other-bug-fixes)
+3. [Other new functionality](#other-new-functionality)
+4. [Upgrading](#upgrading)
+5. [Help](#help)
 
 <!--more-->
 

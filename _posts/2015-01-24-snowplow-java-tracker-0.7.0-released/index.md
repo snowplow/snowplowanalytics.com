@@ -12,12 +12,12 @@ We are pleased to release version 0.7.0 of the [Snowplow Java Tracker] [java-rep
 
 In the rest of this post we will cover:
 
-1. [Architectural updates](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#architecture)
-3. [API updates](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#api)
-3. [Testing updates](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#testing)
-4. [Upgrading the Java Tracker](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#upgrading)
-5. [Documentation](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#docs)
-6. [Getting help](/blog/2015/01/24/snowplow-java-tracker-0.7.0-released/#help)
+1. [Architectural updates](#architecture)
+3. [API updates](#api)
+3. [Testing updates](#testing)
+4. [Upgrading the Java Tracker](#upgrading)
+5. [Documentation](#docs)
+6. [Getting help](#help)
 
 <!--more-->
 

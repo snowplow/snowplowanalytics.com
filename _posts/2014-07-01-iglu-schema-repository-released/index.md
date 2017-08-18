@@ -18,12 +18,12 @@ As far as we know, Iglu is the first machine-readable schema repository for JSON
 
 In the rest of this post we will cover:
 
-1. [On the importance of schemas](/blog/2014/07/01/iglu-schema-repository-released/#schemas)
-2. [The origins of Iglu](/blog/2014/07/01/iglu-schema-repository-released/#origins)
-3. [Iglu architecture](/blog/2014/07/01/iglu-schema-repository-released/#architecture)
-4. [Using Iglu](/blog/2014/07/01/iglu-schema-repository-released/#usage)
-5. [Limitations and roadmap](/blog/2014/07/01/iglu-schema-repository-released/#roadmap)
-6. [Learning more and getting help](/blog/2014/07/01/iglu-schema-repository-released/#help)
+1. [On the importance of schemas](#schemas)
+2. [The origins of Iglu](#origins)
+3. [Iglu architecture](#architecture)
+4. [Using Iglu](#usage)
+5. [Limitations and roadmap](#roadmap)
+6. [Learning more and getting help](#help)
 
 <!--more-->
 

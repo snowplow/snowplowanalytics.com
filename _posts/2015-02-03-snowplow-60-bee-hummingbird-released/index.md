@@ -19,13 +19,13 @@ _Up until now, all Snowplow releases have used [semantic versioning][semantic-ve
 
 The rest of this post will cover the following topics:
 
-1. [The Kinesis LZO S3 Sink](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#s3-sink)
-2. [Support for POSTs and webhooks in the Scala Stream Collector](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#ssc)
-3. [Scala Stream Collector no longer decodes URLs](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#url-decoding)
+1. [The Kinesis LZO S3 Sink](#s3-sink)
+2. [Support for POSTs and webhooks in the Scala Stream Collector](#ssc)
+3. [Scala Stream Collector no longer decodes URLs](#url-decoding)
 4. [Self-describing Thrift](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#thrift)
-5. [EmrEtlRunner updates](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#emretlrunner-updates)
-6. [Upgrading](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#upgrading)
-7. [Getting help](/blog/2015/02/03/snowplow-60-bee-hummingbird-released/#help)
+5. [EmrEtlRunner updates](#emretlrunner-updates)
+6. [Upgrading](#upgrading)
+7. [Getting help](#help)
 
 <!--more-->
 

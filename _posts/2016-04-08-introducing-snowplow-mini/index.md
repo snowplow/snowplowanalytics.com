@@ -19,11 +19,11 @@ There are occasions when you might want to work with Snowplow in an easier, fast
 
 Today we're delighted to announce [Snowplow Mini][snowplow-mini] to meet the above two use cases: the complete Snowplow Real-Time Pipeline, on a single AMI / EC2 instance. Download, and setup, in minutes...
 
-1. [Overview](/blog/2016/04/08/introducing-snowplow-mini#overview)
-2. [Under the hood](/blog/2016/04/08/introducing-snowplow-mini#topology)
-3. [Software stack](/blog/2016/04/08/introducing-snowplow-mini#software-stack)
-4. [Roadmap](/blog/2016/04/01/introducing-snowplow-mini#roadmap)
-5. [Getting help](/blog/2016/04/01/introducing-snowplow-mini#help)
+1. [Overview](#overview)
+2. [Under the hood](#topology)
+3. [Software stack](#software-stack)
+4. [Roadmap](#roadmap)
+5. [Getting help](#help)
 
 <!--more-->
 

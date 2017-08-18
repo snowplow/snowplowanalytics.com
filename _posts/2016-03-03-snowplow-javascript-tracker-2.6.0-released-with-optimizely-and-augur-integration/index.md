@@ -14,14 +14,14 @@ In addition, we have rolled out support for Enhanced Ecommerce tracking, improve
 
 ![Optimizely and Augur logos][optimizely-augur-logos]
 
-1. [Optimizely integration](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#optimizely-integration)  
-2. [Augur.io integration](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#augur-integration)
-3. [Enhanced Ecommerce tracking](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#enhanced-ecommerce)
+1. [Optimizely integration](#optimizely-integration)  
+2. [Augur.io integration](#augur-integration)
+3. [Enhanced Ecommerce tracking](#enhanced-ecommerce)
 4. [Better automatic domain management (for cookies) and other new functionality](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#new-functionality)
-5. [Improved handling of time](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#improved-handling-of-time)
-6. [Updates and Bug fixes](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#updates-bugs)
-7. [Upgrading](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#upgrading)
-8. [Documentation and help](/blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/#docs)
+5. [Improved handling of time](#improved-handling-of-time)
+6. [Updates and Bug fixes](#updates-bugs)
+7. [Upgrading](#upgrading)
+8. [Documentation and help](#docs)
 
 <!--more-->
 

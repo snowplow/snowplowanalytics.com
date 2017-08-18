@@ -13,15 +13,15 @@ We are delighted to announce the release of version 2.1.1 of the [Snowplow JavaS
 This blog post will cover the following topics:
 
 
-1. [New events](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#events)
-2. [Page performance context](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#performance)
-3. [Link content](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#content)
-4. [Tracker core integration](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#core)
-5. [Custom callbacks](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#callbacks)
-6. [forceSecureTracker](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#https)
-7. [Outbound queue](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#outbound)
-8. [New example page](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#example)
-9. [Other improvements](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#other)
+1. [New events](#events)
+2. [Page performance context](#performance)
+3. [Link content](#content)
+4. [Tracker core integration](#core)
+5. [Custom callbacks](#callbacks)
+6. [forceSecureTracker](#https)
+7. [Outbound queue](#outbound)
+8. [New example page](#example)
+9. [Other improvements](#other)
 10. [Upgrading](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#upgrading)
 11. [Getting help](/blog/2014/11/06/snowplow-javascript-tracker-2.1.1-released/#help)
 

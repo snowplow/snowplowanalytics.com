@@ -13,12 +13,12 @@ We are pleased to announce the release of the [Snowplow Android Tracker][repo] v
 This release post will cover the following topics:
 
 1. [Client-side sessionization](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#sessionization)
-2. [Tracker performance](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#performance)
-3. [Event building](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#event-building)
-4. [Other changes](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#other-changes)
-5. [Demo app](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#demo-application)
-6. [Documentation](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#docs)
-7. [Getting help](/blog/2015/07/28/snowplow-android-tracker-0.5.0-released/#help)
+2. [Tracker performance](#performance)
+3. [Event building](#event-building)
+4. [Other changes](#other-changes)
+5. [Demo app](#demo-application)
+6. [Documentation](#docs)
+7. [Getting help](#help)
 
 <img src="/assets/img/blog/2015/07/android-app-classic-0.2.0-2.png" style="height: 450px; margin: 0 auto;" />
 

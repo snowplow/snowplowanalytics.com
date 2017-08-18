@@ -12,11 +12,11 @@ We are pleased to announce the release of the first version of the [Snowplow .NE
 
 This introductory post will cover the following topics:
 
-1. [Installation](/blog/2014/09/26/snowplow-dotnet-tracker-0.1.0-released/#install)
-2. [How to use the tracker](/blog/2014/09/26/snowplow-dotnet-tracker-0.1.0-released/#usage)
-3. [Features](/blog/2014/09/26/snowplow-dotnet-tracker-0.1.0-released/#offline)
-4. [Logging](/blog/2014/09/26/snowplow-dotnet-tracker-0.1.0-released/#logging)
-5. [Getting help](/blog/2014/09/26/snowplow-dotnet-tracker-0.1.0-released/#help)
+1. [Installation](#install)
+2. [How to use the tracker](#usage)
+3. [Features](#offline)
+4. [Logging](#logging)
+5. [Getting help](#help)
 
 <!--more-->
 

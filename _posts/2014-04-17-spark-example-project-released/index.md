@@ -20,11 +20,11 @@ The particular challenge I set myself this month was to complete our [Spark Exam
 
 In the rest of this blog post I'll talk about:
 
-1. [Challenges of running Spark on EMR](/blog/2014/04/17/spark-example-project-released/#challenges)
-2. [How to use Spark Example Project](/blog/2014/04/17/spark-example-project-released/#usage)
-3. [Getting help](/blog/2014/04/17/spark-example-project-released/#help)
-4. [Thoughts on Spark](/blog/2014/04/17/spark-example-project-released/#thoughts)
-5. [Spark and Snowplow](/blog/2014/04/17/spark-example-project-released/#snowplow-spark)
+1. [Challenges of running Spark on EMR](#challenges)
+2. [How to use Spark Example Project](#usage)
+3. [Getting help](#help)
+4. [Thoughts on Spark](#thoughts)
+5. [Spark and Snowplow](#snowplow-spark)
 
 <!--more-->
 

@@ -12,12 +12,12 @@ We are pleased to announce the release of Kinesis S3 version 0.4.0. Many thanks 
 
 Table of contents:
 
-1. [gzip support](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#gzip-support)
-2. [Infinite loops](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#loops)
-3. [Safer record batching](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#control)
-4. [Bug fixes](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#bug-fixes)
-5. [Upgrading](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#upgrading)
-6. [Getting help](/blog/2015/08/26/snowplow-kinesis-s3-0.4.0-released-with-gzip-support#help)
+1. [gzip support](#gzip-support)
+2. [Infinite loops](#loops)
+3. [Safer record batching](#control)
+4. [Bug fixes](#bug-fixes)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

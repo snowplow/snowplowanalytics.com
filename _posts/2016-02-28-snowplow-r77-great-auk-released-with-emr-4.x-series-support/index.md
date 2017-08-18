@@ -10,15 +10,15 @@ permalink: /blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-
 
 Snowplow release 77 Great Auk is now available! This release focuses on the command-line applications used to orchestrate Snowplow, bringing Snowplow up-to-date with the new 4.x series of Elastic MapReduce releases.
 
-1. [Elastic MapReduce AMI 4.x series compatibility](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#ami)
-2. [Moving towards running Storage Loader on Hadoop](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#ec2)
-3. [Retrying the job in the face of bootstrap failures](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#bootstrap)
-4. [Monitoring improvements](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#tags)
+1. [Elastic MapReduce AMI 4.x series compatibility](#ami)
+2. [Moving towards running Storage Loader on Hadoop](#ec2)
+3. [Retrying the job in the face of bootstrap failures](#bootstrap)
+4. [Monitoring improvements](#tags)
 5. [Removal of snowplow-emr-etl-runner.sh and snowplow-storage-loader.sh](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#removal)
 6. [Bug fixes and other improvements](//blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#bugs)
-7. [Upgrading](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#upgrading)
-8. [Roadmap](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#roadmap)
-9. [Getting help](/blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support#help)
+7. [Upgrading](#upgrading)
+8. [Roadmap](#roadmap)
+9. [Getting help](#help)
 
 ![great-auk][great-auk]
 

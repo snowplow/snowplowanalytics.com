@@ -10,11 +10,11 @@ permalink: /blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released/
 
 We are happy to announce the release of Snowplow 81 Kangaroo Island Emu! At the heart of this release is the [Hadoop Event Recovery project] [hre-project], which allows you to fix up Snowplow bad rows and make them ready for reprocessing.
 
-1. [Hadoop Event Recovery](/blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released#her)
-2. [Stream Enrich race condition](/blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released#race)
-3. [New schemas](/blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released#schemas)
-4. [Upgrading](/blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released#upgrading)
-5. [Getting help](/blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released#help)
+1. [Hadoop Event Recovery](#her)
+2. [Stream Enrich race condition](#race)
+3. [New schemas](#schemas)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
 
 ![kangaroo-island-emu][kangaroo-island-emu]
 

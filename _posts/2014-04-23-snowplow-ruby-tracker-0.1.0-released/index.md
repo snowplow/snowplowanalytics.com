@@ -10,10 +10,10 @@ permalink: /blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released/
 
 We are happy to announce the release of the new [Snowplow Ruby Tracker] [repo]. This is a Ruby gem designed to send Snowplow events to a Snowplow collector from a Ruby or Rails environment. This post will cover installing and setting up the Tracker, and provide some basic information about its features:
 
-1. [How to install the tracker](/blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released/#install)
-2. [How to use the tracker](/blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released/#usage)
-3. [Features](/blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released/#roadmap)
-4. [Getting help](/blog/2014/04/23/snowplow-ruby-tracker-0.1.0-released/#help)
+1. [How to install the tracker](#install)
+2. [How to use the tracker](#usage)
+3. [Features](#roadmap)
+4. [Getting help](#help)
 
 <!--more-->
 

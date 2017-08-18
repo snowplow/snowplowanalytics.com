@@ -10,10 +10,10 @@ permalink: /blog/2016/08/08/snowplow-r82-tawny-eagle-released-with-kinesis-elast
 
 We are happy to announce the release of [Snowplow 82 Tawny Eagle] [snowplow-release]! This release updates the Kinesis Elasticsearch Sink with support for sending events via HTTP, allowing us to now support [Amazon Elasticsearch Service] [amazon-es-service].
 
-1. [Kinesis Elasticsearch Sink](/blog/2016/08/08/snowplow-r82-tawny-eagle-released-with-kinesis-elasticsearch-service-support#kes)
-2. [Distribution changes](/blog/2016/08/08/snowplow-r82-tawny-eagle-released-with-kinesis-elasticsearch-service-support#distribution)
-3. [Upgrading](/blog/2016/08/08/snowplow-r82-tawny-eagle-released-with-kinesis-elasticsearch-service-support#upgrading)
-4. [Getting help](/blog/2016/08/08/snowplow-r82-tawny-eagle-released-with-kinesis-elasticsearch-service-support#help)
+1. [Kinesis Elasticsearch Sink](#kes)
+2. [Distribution changes](#distribution)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 ![tawny-eagle][tawny-eagle]
 

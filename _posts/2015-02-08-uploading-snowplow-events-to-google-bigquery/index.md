@@ -9,12 +9,12 @@ permalink: /blog/2015/02/08/uploading-snowplow-events-to-google-bigquery/
 
 As part of my winternship here at Snowplow Analytics in London, I've been experimenting with using Scala to upload Snowplow's enriched events to [Google's BigQuery] [bigquery] database. The ultimate goal is to add BigQuery support to both Snowplow pipelines, including being able to stream data in near-realtime from an Amazon Kinesis stream to BigQuery. This blog post will cover:
 
-1. [Getting started with BigQuery](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#setup)
-2. [Downloading some enriched events](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#downloading)
-3. [Installing BigQuery Loader CLI](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#installation)
-4. [Analyzing the event stream in BigQuery](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#loading)
-5. [Loading enriched events into BigQuery](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#analyzing)
-6. [Next steps](/blog/2015/02/08/uploading-snowplow-events-to-google-bigquery#next)
+1. [Getting started with BigQuery](#setup)
+2. [Downloading some enriched events](#downloading)
+3. [Installing BigQuery Loader CLI](#installation)
+4. [Analyzing the event stream in BigQuery](#loading)
+5. [Loading enriched events into BigQuery](#analyzing)
+6. [Next steps](#next)
 
 <!--more-->
 

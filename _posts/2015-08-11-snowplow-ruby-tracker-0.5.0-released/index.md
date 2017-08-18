@@ -12,12 +12,12 @@ We are happy to announce the release of version 0.5.0 of the Snowplow Ruby Track
 
 Read on for more detail on:
 
-1. [Improved concurrency](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#threads)
-2. [More robust error handling](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#errors)
-3. [The SelfDescribingJson class](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#selfDescribingJson)
-4. [New setFingerprint method](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#fingerprint)
-5. [Upgrading](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#upgrading)
-6. [Getting help](/blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/#help)
+1. [Improved concurrency](#threads)
+2. [More robust error handling](#errors)
+3. [The SelfDescribingJson class](#selfDescribingJson)
+4. [New setFingerprint method](#fingerprint)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

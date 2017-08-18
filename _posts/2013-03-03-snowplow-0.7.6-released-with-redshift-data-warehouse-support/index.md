@@ -14,12 +14,12 @@ We were very excited when Amazon announced Redshift back in late 2012, and we ha
 
 In this post we will cover:
 
-1. [Why Redshift is a great fit for Snowplow data](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#why-redshift)
-2. [Changes in this version](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#this-version)
-3. [Setting up Snowplow for Redshift](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#snowplow-redshift)
-4. [Upgrading for Infobright/Hive users](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#upgrading)
-5. [Roadmap and next steps](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#roadmap)
-6. [Getting help](/blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support#help)
+1. [Why Redshift is a great fit for Snowplow data](#why-redshift)
+2. [Changes in this version](#this-version)
+3. [Setting up Snowplow for Redshift](#snowplow-redshift)
+4. [Upgrading for Infobright/Hive users](#upgrading)
+5. [Roadmap and next steps](#roadmap)
+6. [Getting help](#help)
 
 Read on below the fold to find out more.
 

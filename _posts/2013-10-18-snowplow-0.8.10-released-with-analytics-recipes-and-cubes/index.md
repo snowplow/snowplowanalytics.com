@@ -10,12 +10,12 @@ permalink: /blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-
 
 We are pleased to announce the release of Snowplow 0.8.10. In this release, we have taken many of the SQL recipes we have covered in the [Analysts Cookbook] [cookbook] and 'baked them' into Snowplow by providing them as views that can be added directly to your Snowplow data in Amazon Redshift or PostgreSQL.
 
-1. [Background on this release](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#background)
-2. [Reorganizing the Snowplow database](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#schema)
-3. [Seeing a recipe in action: charting the number of uniques over time](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#recipe-use)
-4. [Seeing a cube in action: interrogating the visitors cube in Tableau](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#visitor-cube)
-5. [Installing this release](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#setup)
-6. [Next steps: where to go from here](/blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/#next-steps)
+1. [Background on this release](#background)
+2. [Reorganizing the Snowplow database](#schema)
+3. [Seeing a recipe in action: charting the number of uniques over time](#recipe-use)
+4. [Seeing a cube in action: interrogating the visitors cube in Tableau](#visitor-cube)
+5. [Installing this release](#setup)
+6. [Next steps: where to go from here](#next-steps)
 
 <div class="html">
 <a name="background"><h2>1. Background on this release</h2></a>

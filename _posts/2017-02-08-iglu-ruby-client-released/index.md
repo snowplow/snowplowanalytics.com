@@ -12,12 +12,12 @@ We are pleased to announce the initial release of the [Iglu Ruby Client][repo], 
 
 In the rest of this post we will cover:
 
-1. [Introducing Iglu Ruby Client](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#intro)
-2. [Use cases](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#use-cases)
-3. [Setup guide](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#setup-guide)
-4. [Usage](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#usage)
-5. [Roadmap and upcoming features](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#roadmap)
-6. [Getting help](/blog/2017-02-08-iglu-ruby-client-0.1.0-released/#help)
+1. [Introducing Iglu Ruby Client](#intro)
+2. [Use cases](#use-cases)
+3. [Setup guide](#setup-guide)
+4. [Usage](#usage)
+5. [Roadmap and upcoming features](#roadmap)
+6. [Getting help](#help)
 
 <!--more-->
 

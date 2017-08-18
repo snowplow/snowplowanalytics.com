@@ -14,11 +14,11 @@ This release has been heavily informed by our January blog post, [The Snowplow d
 
 In the rest of this post we will cover:
 
-1. [The benefits of the new ETL](/blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment/#benefits)
-2. [Limitations of the new ETL](/blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment/#limitations)
-3. [A note for Infobright/Hive users](/blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment/#infobright-hive-note)
-4. [Upgrading and usage](/blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment/#upgrading-usage)
-5. [Getting help](/blog/2013/04/03/snowplow-0.8.0-released-with-all-new-scalding-based-data-enrichment/#help)
+1. [The benefits of the new ETL](#benefits)
+2. [Limitations of the new ETL](#limitations)
+3. [A note for Infobright/Hive users](#infobright-hive-note)
+4. [Upgrading and usage](#upgrading-usage)
+5. [Getting help](#help)
 
 Read on below the fold to find out more.
 

@@ -12,13 +12,13 @@ We are pleased to announce the release of Kinesis S3 version 0.3.0. This release
 
 Table of contents:
 
-1. [Embedded Snowplow tracking](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#snowplow-tracking)
-2. [Optimization and efficiency](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#optimization)
-3. [More informative bad rows](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#timestamps)
-4. [Improved Vagrant VM](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#vm)
-5. [Other changes](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#other-changes)
-6. [Upgrading](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#upgrading)
-7. [Getting help](/blog/2015/07/08/snowplow-kinesis-s3-0.3.0-released#help)
+1. [Embedded Snowplow tracking](#snowplow-tracking)
+2. [Optimization and efficiency](#optimization)
+3. [More informative bad rows](#timestamps)
+4. [Improved Vagrant VM](#vm)
+5. [Other changes](#other-changes)
+6. [Upgrading](#upgrading)
+7. [Getting help](#help)
 
 <!--more-->
 

@@ -12,14 +12,14 @@ We are excited to announce the release of version 2.5.0 of the [Snowplow JavaScr
 
 Read on for more information:
 
-1. [The session ID](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#session-id)
-2. [The page view ID](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#pageview-id)
+1. [The session ID](#session-id)
+2. [The page view ID](#pageview-id)
 3. [Context-generating functions](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#context-generating-functions)
-4. [New Grunt task](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#grunt)
-5. [Breaking change to trackPageView](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#breaking1)
-6. [Breaking change to session cookie timeouts](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#breaking2)
-7. [Upgrading](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#upgrading)
-8. [Documentation and help](/blog/2015/07/22/snowplow-javascript-tracker-2.5.0-released/#docs)
+4. [New Grunt task](#grunt)
+5. [Breaking change to trackPageView](#breaking1)
+6. [Breaking change to session cookie timeouts](#breaking2)
+7. [Upgrading](#upgrading)
+8. [Documentation and help](#docs)
 
 <!--more-->
 

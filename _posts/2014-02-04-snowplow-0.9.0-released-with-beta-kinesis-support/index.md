@@ -20,13 +20,13 @@ Brandon discussed his Snowplow winternship further in [his own excellent blog po
 
 In the rest of this post we will cover:
 
-1. [Overview of this release](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#overview)
-2. [Scala Stream Collector](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#stream-collector)
-3. [Scala Kinesis Enrich](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#kinesis-enrich)
-4. [Bonus feature: Snowplow local mode](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#local-mode)
-5. [Getting help](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#help)
-6. [Roadmap and contributing](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#roadmap-contrib)
-7. [Thanks](/blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/#thanks)
+1. [Overview of this release](#overview)
+2. [Scala Stream Collector](#stream-collector)
+3. [Scala Kinesis Enrich](#kinesis-enrich)
+4. [Bonus feature: Snowplow local mode](#local-mode)
+5. [Getting help](#help)
+6. [Roadmap and contributing](#roadmap-contrib)
+7. [Thanks](#thanks)
 
 <!--more-->
 

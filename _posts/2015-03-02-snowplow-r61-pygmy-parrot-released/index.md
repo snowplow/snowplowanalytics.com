@@ -18,12 +18,12 @@ This release has a variety of new features, operational enhancements and bug fix
 
 The rest of this post will cover the following topics:
 
-1. [CloudFront access log parsing](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#cf-access-log-parsing)
-2. [Clojure Collector updates](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#clj-collector-updates)
-3. [Operational improvements to EmrEtlRunner](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#emretlrunner-improvements)
-4. [Bug fixes in Scala Common Enrich](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#hadoop-improvements)
-5. [Upgrading](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#upgrading)
-6. [Getting help](/blog/2015/03/02/snowplow-r61-pygmy-parrot-released/#help)
+1. [CloudFront access log parsing](#cf-access-log-parsing)
+2. [Clojure Collector updates](#clj-collector-updates)
+3. [Operational improvements to EmrEtlRunner](#emretlrunner-improvements)
+4. [Bug fixes in Scala Common Enrich](#hadoop-improvements)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

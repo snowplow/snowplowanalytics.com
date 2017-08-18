@@ -26,12 +26,12 @@ An event grammar inspired by RDF is certainly interesting, but I am using a much
 
 So, in the rest of this post we will:
 
-1. [Introduce the components of our grammar](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#grammar)
-2. [Model some ecommerce events](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#ecommerce)
-3. [Model some videogame events](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#videogame)
-4. [Model some digital media events](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#media)
-5. [Discuss what we have learnt](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#learnings)
-6. [Draw some conclusions](/blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar#conc)
+1. [Introduce the components of our grammar](#grammar)
+2. [Model some ecommerce events](#ecommerce)
+3. [Model some videogame events](#videogame)
+4. [Model some digital media events](#media)
+5. [Discuss what we have learnt](#learnings)
+6. [Draw some conclusions](#conc)
 
 <!--more-->
 

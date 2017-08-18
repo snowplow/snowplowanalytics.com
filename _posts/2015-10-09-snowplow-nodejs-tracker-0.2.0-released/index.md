@@ -12,9 +12,9 @@ Version 0.2.0 of the [Snowplow Node.js Tracker][repo] is now available! This rel
 
 Read on for more information...
 
-1. [Emitters](/blog/2015/10/09/snowplow-node.js-tracker-0.2.0-released/#emitters)
-2. [Vagrant quickstart](/blog/2015/10/09/snowplow-node.js-tracker-0.2.0-released/#vagrant)
-3. [Getting help](/blog/2015/10/09/snowplow-node.js-tracker-0.2.0-released/#help)
+1. [Emitters](#emitters)
+2. [Vagrant quickstart](#vagrant)
+3. [Getting help](#help)
 
 <!--more-->
 

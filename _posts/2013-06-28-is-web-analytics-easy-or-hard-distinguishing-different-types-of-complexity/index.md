@@ -19,8 +19,8 @@ permalink: /blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-differe
 The following all make web analytics hard.
 
 1. [Large, complex, high volume, high velocity data](/blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity#data)
-2. [Lots of contextual knowledge requried to understand the data](/blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity#metadata)
-3. [The business questions that people want to use the data to answer are hard](/blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity#questions)
+2. [Lots of contextual knowledge requried to understand the data](#metadata)
+3. [The business questions that people want to use the data to answer are hard](#questions)
 4. [Poorly architected tools make the previous three complexities *harder* to deal with](/blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity#tools)
 
 Much of the discussion around Tim's original post was whether the complexity was the fault of web analytics platforms or not. As should be clear from the above, I believe that a certain amount of complexity is inherent in web analytics. However, Omniture's SiteCatalyst (around which much of the discussion about Tim's blog post focused) actually manages to make things worse.

@@ -19,12 +19,12 @@ The new webhook integrations are as follows:
 
 Here are the sections after the fold:
 
-1. [Urban Airship Connect support](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#urbanairship)
-2. [SendGrid webhook support](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#SendGrid)
-3. [Updated data model](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#datamodel)
-4. [Upgrading](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#upgrading)
-5. [Roadmap and contributing](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#roadmap-etc)
-6. [Documentation and help](/blog/2016/01/02/snowplow-r75-long-legged-buzzard-released/#help)
+1. [Urban Airship Connect support](#urbanairship)
+2. [SendGrid webhook support](#SendGrid)
+3. [Updated data model](#datamodel)
+4. [Upgrading](#upgrading)
+5. [Roadmap and contributing](#roadmap-etc)
+6. [Documentation and help](#help)
 
 <!--more-->
 

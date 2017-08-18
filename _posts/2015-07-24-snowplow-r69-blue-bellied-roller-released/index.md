@@ -13,11 +13,11 @@ We are pleased to announce the release of Snowplow 69, Blue-Bellied Roller, whic
 
 This post covers:
 
-1. [Updated data model: incremental](/blog/2015/07/24/snowplow-r69-blue-bellied-roller-released#incremental)
-2. [New data model: mobile](/blog/2015/07/24/snowplow-r69-blue-bellied-roller-released#mobile)
-3. [New data model: deduplicate](/blog/2015/07/24/snowplow-r69-blue-bellied-roller-released#deduplication)
-4. [Implementing and upgrading SQL data models](/blog/2015/07/24/snowplow-r69-blue-bellied-roller-released#upgrading)
-5. [Details and questions](/blog/2015/07/24/snowplow-r69-blue-bellied-roller-released#details)
+1. [Updated data model: incremental](#incremental)
+2. [New data model: mobile](#mobile)
+3. [New data model: deduplicate](#deduplication)
+4. [Implementing and upgrading SQL data models](#upgrading)
+5. [Details and questions](#details)
 
 <img src="/assets/img/blog/2015/07/R69-blue-bellied-roller.jpg" style="height: 450px; margin: 0 auto;" />
 

@@ -12,12 +12,12 @@ We are happy to announce the release of the [Snowplow Python Tracker version 0.2
 
 This post will cover:
 
-1. [Changes to the API](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#api)
-2. [Python 2.7](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#compatibility)
-3. [Integration tests](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#tests)
-4. [Other improvements](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#other)
-5. [Upgrading](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#upgrading)
-6. [Support](/blog/2014/04/15/snowplow-python-tracker-0.2.0-released/#support)
+1. [Changes to the API](#api)
+2. [Python 2.7](#compatibility)
+3. [Integration tests](#tests)
+4. [Other improvements](#other)
+5. [Upgrading](#upgrading)
+6. [Support](#support)
 
 <!--more-->
 

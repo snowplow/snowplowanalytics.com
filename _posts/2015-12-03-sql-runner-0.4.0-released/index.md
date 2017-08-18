@@ -12,12 +12,12 @@ We are pleased to announce version [0.4.0] [040-release] of [SQL Runner] [repo].
 
 This release adds some powerful new features to SQL Runner - many thanks to community member [Alessandro Andrioni][andrioni] for his huge contributions towards yet another release!
 
-1. [Consul support](/blog/2015/12/03/sql-runner-0.4.0-released/#consul)
-2. [Dry run mode](/blog/2015/12/03/sql-runner-0.4.0-released/#dry-run)
-3. [Environment variables template function](/blog/2015/12/03/sql-runner-0.4.0-released/#env-vars)
-4. [File loading order](/blog/2015/12/03/sql-runner-0.4.0-released/#file-loading)
-5. [Upgrading](/blog/2015/12/03/sql-runner-0.4.0-released/#upgrading)
-6. [Getting help](/blog/2015/12/03/sql-runner-0.4.0-released/#help)
+1. [Consul support](#consul)
+2. [Dry run mode](#dry-run)
+3. [Environment variables template function](#env-vars)
+4. [File loading order](#file-loading)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

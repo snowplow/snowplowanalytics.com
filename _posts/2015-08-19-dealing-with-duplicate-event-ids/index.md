@@ -12,11 +12,11 @@ The Snowplow pipeline outputs a data stream in which each line represents a sing
 
 This blogposts covers:
 
-1. [Is the event ID guaranteed to be unique?](/blog/2015/08/19/dealing-with-duplicate-event-ids#is-the-event-id-guaranteed-to-be-unique)
-2. [What are the possible causes?](/blog/2015/08/19/dealing-with-duplicate-event-ids#what-are-the-possible-causes)
-3. [Deduplicating the event ID](/blog/2015/08/19/dealing-with-duplicate-event-ids#deduplicating-the-event-id)
-4. [Deduplicating the event ID in Redshift](/blog/2015/08/19/dealing-with-duplicate-event-ids#deduplicating-the-event-id-in-redshift)
-5. [Deduplicating the event ID in Kinesis](/blog/2015/08/19/dealing-with-duplicate-event-ids#deduplicating-the-event-id-in-kinesis)
+1. [Is the event ID guaranteed to be unique?](#is-the-event-id-guaranteed-to-be-unique)
+2. [What are the possible causes?](#what-are-the-possible-causes)
+3. [Deduplicating the event ID](#deduplicating-the-event-id)
+4. [Deduplicating the event ID in Redshift](#deduplicating-the-event-id-in-redshift)
+5. [Deduplicating the event ID in Kinesis](#deduplicating-the-event-id-in-kinesis)
 
 <!--more-->
 

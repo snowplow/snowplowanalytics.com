@@ -16,10 +16,10 @@ The [Snowplow GCP Dataflow Streaming Example Project][repo] can help you jumpsta
 
 Read on after the fold for:
 
-1. [What are Google Cloud Dataflow and Pub/Sub and why are we using them?](/blog/2017/03/30/google-cloud-dataflow-example-project-released#what-are-dataflow-and-pubsub)
+1. [What are Google Cloud Dataflow and Pub/Sub and why are we using them?](#what-are-dataflow-and-pubsub)
 2. [Introducing analytics-on-write](/blog/2017/03/30/google-cloud-dataflow-example-project-released#introducing-analytics-on-write)
-3. [Detailed setup](/blog/2017/03/30/google-cloud-dataflow-example-project-released#detailed-setup)
-4. [Our next steps with Google Cloud Platform](/blog/2017/03/30/google-cloud-dataflow-example-project-released#next-steps)
+3. [Detailed setup](#detailed-setup)
+4. [Our next steps with Google Cloud Platform](#next-steps)
 
 <!--more-->
 

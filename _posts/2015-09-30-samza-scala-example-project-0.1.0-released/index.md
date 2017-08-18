@@ -18,10 +18,10 @@ This project was built by the Data Engineering team at [Snowplow Analytics] [sno
 
 Read on after the fold for:
 
-1. [What are Apache Samza and Kafka?](/blog/2015/09/30/samza-scala-example-project-0.1.0-released/#what-are-samza-and-kafka)
-2. [Introducing our stream processing job](/blog/2015/09/30/samza-scala-example-project-0.1.0-released/#introducing-our-job)
-3. [Detailed setup](/blog/2015/09/30/samza-scala-example-project-0.1.0-released/#detailed-setup)
-4. [Further reading](/blog/2015/09/30/samza-scala-example-project-0.1.0-released/#further-reading)
+1. [What are Apache Samza and Kafka?](#what-are-samza-and-kafka)
+2. [Introducing our stream processing job](#introducing-our-job)
+3. [Detailed setup](#detailed-setup)
+4. [Further reading](#further-reading)
 
 <!--more-->
 

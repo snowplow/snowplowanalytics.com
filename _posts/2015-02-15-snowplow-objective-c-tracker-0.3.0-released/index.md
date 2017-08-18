@@ -13,11 +13,11 @@ We are pleased to release version 0.3.0 of the [Snowplow Objective-C Tracker] [o
 In the rest of this post we will cover:
 
 1. [Mac OS-X support](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#osxs)
-3. [New trackTimingWithCategory event](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#timing)
-3. [Removed AFnetworking dependency](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#nsurl)
-4. [Other API changes](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#api)
-5. [Upgrading](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#upgrading)
-6. [Getting help](/blog/2015/02/15/snowplow-objective-c-tracker-0.3.0-released/#help)
+3. [New trackTimingWithCategory event](#timing)
+3. [Removed AFnetworking dependency](#nsurl)
+4. [Other API changes](#api)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 

@@ -18,11 +18,11 @@ The [AWS Lambda] [aws-lambda-service] can help you jumpstart your own real-time 
 
 Read on after the fold for:
 
-1. [What is AWS Lambda and Kinesis?](/blog/2015/07/01/aws-lambda-nodejs-example-project-0.1.0-released/#what-is-aws-lambda)
+1. [What is AWS Lambda and Kinesis?](#what-is-aws-lambda)
 2. [Introducing analytics-on-write](/blog/2015/07/01/aws-lambda-nodejs-example-project-0.1.0-released/#introducting-analytics-on-write)
-3. [Detailed setup](/blog/2015/07/01/aws-lambda-nodejs-example-project-0.1.0-released/#detailed-setup)
-4. [Troubleshooting](/blog/2015/07/01/aws-lambda-nodejs-example-project-0.1.0-released/#troubleshooting)
-5. [Further reading](/blog/2015/07/01/aws-lambda-nodejs-example-project-0.1.0-released/#further-reading)
+3. [Detailed setup](#detailed-setup)
+4. [Troubleshooting](#troubleshooting)
+5. [Further reading](#further-reading)
 
 <!--more-->
 

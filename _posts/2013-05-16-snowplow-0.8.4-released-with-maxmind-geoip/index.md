@@ -23,9 +23,9 @@ Here is some example geo-IP data:
 As well as geo-IP enrichment, there are a number of other code improvements to the Hadoop ETL, plus some minor improvements to EmrEtlRunner and some corresponding updates to the Redshift table. In this post we will cover:
 
 1. [The new geo-IP capabilities](/blog/2013/05/16/snowplow-0.8.4-released-with-maxmind-geoip#geoip)
-2. [Other changes](/blog/2013/05/16/snowplow-0.8.4-released-with-maxmind-geoip#other-changes)
-3. [Upgrading](/blog/2013/05/16/snowplow-0.8.4-released-with-maxmind-geoip#upgrading)
-4. [Getting help](/blog/2013/05/16/snowplow-0.8.4-released-with-maxmind-geoip#help)
+2. [Other changes](#other-changes)
+3. [Upgrading](#upgrading)
+4. [Getting help](#help)
 
 <!--more-->
 

@@ -11,8 +11,8 @@ It was great to have the opportunity to speak at [Span Conference] [span-conf] t
 
 Below the fold I will (briefly) cover:
 
-1. [Why your company needs a Unified Log](/blog/2014/11/02/span-conference/#my-talk)
-2. [My highlights from Span](/blog/2014/11/02/span-conference/#highlights)
+1. [Why your company needs a Unified Log](#my-talk)
+2. [My highlights from Span](#highlights)
 
 <!--more-->
 

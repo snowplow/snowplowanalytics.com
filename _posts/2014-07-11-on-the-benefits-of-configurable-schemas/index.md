@@ -12,8 +12,8 @@ permalink: /blog/2014/07/11/on-the-benefits-of-configurable-schemas/
 Digital analysts don't typically spend a lot of time thinking about data models and schemas. How data is modelled and schema'd, both at data collection time, and at analysis time, makes an enormous difference to how easily insight and value can be derived from that data. In this post, I will explain why data models and schemas matter, and why being able to define your own event data model in Snowplow is a much better approach than squeezing your data into the standard schemas provided by [Adobe] [adobe] and [Google Analytics] [google].
 
 1. [Why digital anaysts, product managers and marketers do not spend a lot of time thinking about data models and schemas today](/blog/2014/07/11/on-the-benefits-of-configurable-schemas/#why-dont-people-think-about-data-models)
-2. [Why data models and schemas matter](/blog/2014/07/11/on-the-benefits-of-configurable-schemas/#why-data-models-and-schemas-matter)
-3. [Snowplow now supports configurable schemas](/blog/2014/07/11/on-the-benefits-of-configurable-schemas/#snowplow-supports-configurable-schemas)
+2. [Why data models and schemas matter](#why-data-models-and-schemas-matter)
+3. [Snowplow now supports configurable schemas](#snowplow-supports-configurable-schemas)
 
 <!--more-->
 

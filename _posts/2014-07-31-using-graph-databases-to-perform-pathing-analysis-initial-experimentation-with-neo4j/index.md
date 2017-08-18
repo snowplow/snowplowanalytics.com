@@ -14,12 +14,12 @@ In this blog post, we're going to answer a set of questions related to the journ
 
 The questions we'll answer are as follows:
 
-1. [How many visits were there to our home page?](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/#how-many-visits-were-there-to-our-homepage)
-2. [What page were users on before arriving at the about page?](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/#what-page-were-users-on-before-arriving-at-the-about-page)
-3. [What journeys do users take from the homepage?](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/#what-journeys-do-users-take-from-the-homepage)
-4. [What are the most common journeys that end on a particular page?](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/#what-are-the-most-common-journeys-that-end-on-a-particular-page)
-5. [How long does it take users to get from one page to another?](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j//#how-long-does-it-take-users-to-get-from-one-page-to-another)
-6. [Identifying common user journeys](/blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/#common-paths)
+1. [How many visits were there to our home page?](#how-many-visits-were-there-to-our-homepage)
+2. [What page were users on before arriving at the about page?](#what-page-were-users-on-before-arriving-at-the-about-page)
+3. [What journeys do users take from the homepage?](#what-journeys-do-users-take-from-the-homepage)
+4. [What are the most common journeys that end on a particular page?](#what-are-the-most-common-journeys-that-end-on-a-particular-page)
+5. [How long does it take users to get from one page to another?](#how-long-does-it-take-users-to-get-from-one-page-to-another)
+6. [Identifying common user journeys](#common-paths)
 
 <p style="text-align:center"><a href="/assets/img/blog/2014/07/Neo4j-structure.png"><img src="/assets/img/blog/2014/07/Neo4j-structure.png"></a></p>
 

@@ -12,11 +12,11 @@ We are pleased to announce the release of [Snowplow 88 Angkor Wat][snowplow-rele
 
 Read on for more information on R88 Angkor Wat, named after the [largest religious monument in the world][angkor-wat]:
 
-1. [New storage targets configuration](/blog/2017/04/27/snowplow-r88-angkor-wat-released#storage-targets)
+1. [New storage targets configuration](#storage-targets)
 2. [Cross-batch natural deduplication](/blog/2017/04/27/snowplow-r88-angkor-wat-released#crossbatch-natural-deduplication)
-3. [Upgrading](/blog/2017/04/27/snowplow-r88-angkor-wat-released#upgrading)
-4. [Roadmap](/blog/2017/04/27/snowplow-r88-angkor-wat-released#roadmap)
-5. [Getting help](/blog/2017/04/27/snowplow-r88-angkor-wat-released#help)
+3. [Upgrading](#upgrading)
+4. [Roadmap](#roadmap)
+5. [Getting help](#help)
 
 ![angkor-wat][angkor-wat-img]
 

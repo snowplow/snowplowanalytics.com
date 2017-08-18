@@ -25,10 +25,10 @@ Huge thanks to Snowplow intern [Jonathan Almeida] [jonalmeida] for his excellent
 
 Below the fold we will cover:
 
-1. [Our updated Clojure Collector](/blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics/#clj)
-2. [Our updated Enrichment process](/blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics/#enrich)
-3. [Upgrading](/blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics/#upgrading)
-4. [Documentation and help](/blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics/#help)
+1. [Our updated Clojure Collector](#clj)
+2. [Our updated Enrichment process](#enrich)
+3. [Upgrading](#upgrading)
+4. [Documentation and help](#help)
 
 <!--more-->
 

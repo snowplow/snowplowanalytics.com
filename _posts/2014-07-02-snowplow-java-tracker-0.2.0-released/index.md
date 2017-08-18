@@ -14,13 +14,13 @@ This release comes shortly after we introduced the community-contributed event t
 
 I'll talk more about the new additions made further down in this post:
 
-1. [Tracker constructor](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#constructor)
-2. [Renamed method calls](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#method-calls)
-3. [Jackson JSON Processor support](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#jackson-json)
-4. [TransactionItem class](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#transaction-item)
+1. [Tracker constructor](#constructor)
+2. [Renamed method calls](#method-calls)
+3. [Jackson JSON Processor support](#jackson-json)
+4. [TransactionItem class](#transaction-item)
 5. [Constant & Parameter classes](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#constant-parameter)
-6. [Miscellaneous](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#misc)
-7. [Support](/blog/2014/07/02/snowplow-java-tracker-0.2.0-released/#support)
+6. [Miscellaneous](#misc)
+7. [Support](#support)
 
 <!--more-->
 

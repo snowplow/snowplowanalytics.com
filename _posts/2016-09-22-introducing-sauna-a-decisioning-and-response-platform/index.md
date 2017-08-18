@@ -22,14 +22,14 @@ The point of Sauna then is to do this third piece: to make it easier for you to 
 
 Read on below the fold to find out more:
 
-1. [A brief dip in the Sauna](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#intro)
-2. [What is a decisioning and response framework?](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#what-and-why)
-3. [The Sauna architecture](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#architecture)
-4. [Using Sauna with SendGrid](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#sendgrid)
-5. [Using Sauna with Optimizely](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#optimizely)
-6. [Setting up Sauna](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#setup)
-7. [Roadmap](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#roadmap)
-8. [Contributing](/blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform#contributing)
+1. [A brief dip in the Sauna](#intro)
+2. [What is a decisioning and response framework?](#what-and-why)
+3. [The Sauna architecture](#architecture)
+4. [Using Sauna with SendGrid](#sendgrid)
+5. [Using Sauna with Optimizely](#optimizely)
+6. [Setting up Sauna](#setup)
+7. [Roadmap](#roadmap)
+8. [Contributing](#contributing)
 
 <!--more-->
 

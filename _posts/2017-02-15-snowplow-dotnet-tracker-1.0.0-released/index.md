@@ -16,11 +16,11 @@ Here is our mobile demonstration app for the tracker running on Xamarin:
 
 Read on for more:
 
-1. [A brief history of .NET Standard](/blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/#history)
-2. [Why we are moving the Tracker to .NET Standard](/blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/#why-we-are-moving)
-3. [Integrating the .NET Tracker](/blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/#integration)
-4. [Using the .NET Tracker 1.0.0](/blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/#use)
-5. [The future of the .NET Tracker](/blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/#future)
+1. [A brief history of .NET Standard](#history)
+2. [Why we are moving the Tracker to .NET Standard](#why-we-are-moving)
+3. [Integrating the .NET Tracker](#integration)
+4. [Using the .NET Tracker 1.0.0](#use)
+5. [The future of the .NET Tracker](#future)
 
 <!--more-->
 

@@ -12,15 +12,15 @@ We are happy to announce the release of the [Snowplow JavaScript Tracker version
 
 This blog post will cover the following changes:
 
-1. [Changes to the Snowplow API](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#api)
-2. [New feature: tracker namespacing](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#tracker-namespacing)
-3. [New feature: link click tracking](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#link-click)
-4. [New feature: ad tracking](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#ads)
-5. [New feature: offline tracking](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#offline)
+1. [Changes to the Snowplow API](#api)
+2. [New feature: tracker namespacing](#tracker-namespacing)
+3. [New feature: link click tracking](#link-click)
+4. [New feature: ad tracking](#ads)
+5. [New feature: offline tracking](#offline)
 6. [Self-describing JSONs](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#schemas)
-7. [Functional tests](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#tests)
-8. [Other improvements](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#other)
-9. [Upgrading](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#upgrading)
+7. [Functional tests](#tests)
+8. [Other improvements](#other)
+9. [Upgrading](#upgrading)
 10. [Documentation and getting help](/blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/#help)
 
 <!--more-->

@@ -10,13 +10,13 @@ permalink: /blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enri
 
 We are pleased to announce the release of [Snowplow 83 Bald Eagle] [snowplow-release]. This release introduces our powerful new SQL Query Enrichment, long-awaited support for the EU Frankfurt AWS region, plus POST support for our Iglu webhook adapter.
 
-1. [SQL Query Enrichment](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#sql-query-enrichment)
+1. [SQL Query Enrichment](#sql-query-enrichment)
 2. [Support for eu-central-1 (Frankfurt)](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#eu-central-1)
-3. [POST support for the Iglu webhook adapter](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#iglu-post)
-4. [Other improvements](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#other)
-5. [Upgrading](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#upgrading)
-6. [Roadmap](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#roadmap)
-7. [Getting help](/blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment#help)
+3. [POST support for the Iglu webhook adapter](#iglu-post)
+4. [Other improvements](#other)
+5. [Upgrading](#upgrading)
+6. [Roadmap](#roadmap)
+7. [Getting help](#help)
 
 ![bald-eagle][bald-eagle]
 

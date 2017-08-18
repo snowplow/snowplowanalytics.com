@@ -14,12 +14,12 @@ Having exhausted the bird population, we needed a new set of names for our Snowp
 
 Read on after the fold for:
 
-1. [Synthetic deduplication](/blog/2016/12/20/snowplow-r86-petra-released#synthetic-dedupe)
-2. [New data model for web data](/blog/2016/12/20/snowplow-r86-petra-released#new-web-data-model)
-3. [Support for new regions](/blog/2016/12/20/snowplow-r86-petra-released#new-regions)
-4. [Upgrading](/blog/2016/12/20/snowplow-r86-petra-released#upgrading)
-5. [Roadmap](/blog/2016/12/20/snowplow-r86-petra-released#roadmap)
-6. [Getting help](/blog/2016/12/20/snowplow-r86-petra-released#help)
+1. [Synthetic deduplication](#synthetic-dedupe)
+2. [New data model for web data](#new-web-data-model)
+3. [Support for new regions](#new-regions)
+4. [Upgrading](#upgrading)
+5. [Roadmap](#roadmap)
+6. [Getting help](#help)
 
 ![petra-jordan][petra-jordan-img]
 

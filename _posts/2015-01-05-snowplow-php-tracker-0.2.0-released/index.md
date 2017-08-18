@@ -14,11 +14,11 @@ Please note that version 0.2.0 of the PHP Tracker is dependent upon Snowplow 0.9
 
 This release post will cover the following topics:
 
-1. [New emitters explained](/blog/2015/01/05/snowplow-php-tracker-0.2.0-released/#emitters)
-2. [New client passthrough functions](/blog/2015/01/05/snowplow-php-tracker-0.2.0-released/#passthroughs)
-3. [Debug mode added](/blog/2015/01/05/snowplow-php-tracker-0.2.0-released/#debug)
-4. [Upgrading](/blog/2015/01/05/snowplow-php-tracker-0.2.0-released/#upgrading)
-5. [Getting help](/blog/2015/01/05/snowplow-php-tracker-0.2.0-released/#help)
+1. [New emitters explained](#emitters)
+2. [New client passthrough functions](#passthroughs)
+3. [Debug mode added](#debug)
+4. [Upgrading](#upgrading)
+5. [Getting help](#help)
 
 <!--more-->
 

@@ -20,10 +20,10 @@ Some good use cases for the SDK include:
 
 Read on below the jump for:
 
-1. [Overview](/blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released#overview)
-2. [Installation](/blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released#installation)
-3. [Usage](/blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released#usage)
-4. [Getting help](/blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released#help)
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Getting help](#help)
 
 <!--more-->
 

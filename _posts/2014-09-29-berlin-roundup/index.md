@@ -11,9 +11,9 @@ Yali and I are back from the Snowplow team's [trip to Berlin] [berlin-trip] - it
 
 Below the fold I will (briefly) cover:
 
-1. [Wednesday: startups roundtable and DAALA](/blog/2014/09/29/berlin-trip-roundup/#daala)
+1. [Wednesday: startups roundtable and DAALA](#daala)
 2. [Thursday: co-up and Big Data Beers](/blog/2014/09/29/berlin-trip-roundup/#big-data-beers)
-3. [Thoughts on the Berlin ecosystem and our next visit](/blog/2014/09/29/berlin-trip-roundup/#thoughts)
+3. [Thoughts on the Berlin ecosystem and our next visit](#thoughts)
 
 <!--more-->
 

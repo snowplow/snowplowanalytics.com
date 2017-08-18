@@ -18,11 +18,11 @@ This is a simple time series analysis stream processing job written in Scala for
 
 Read on after the fold for:
 
-1. [What is AWS Lambda and Kinesis?](/blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released/#what-is-aws-lambda)
+1. [What is AWS Lambda and Kinesis?](#what-is-aws-lambda)
 2. [Introducing analytics-on-write](/blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released/#introducting-analytics-on-write)
-3. [Detailed setup](/blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released/#detailed-setup)
-4. [Troubleshooting](/blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released/#troubleshooting)
-5. [Further reading](/blog/2015/08/20/aws-lambda-scala-example-project-0.1.0-released/#further-reading)
+3. [Detailed setup](#detailed-setup)
+4. [Troubleshooting](#troubleshooting)
+5. [Further reading](#further-reading)
 
 <!--more-->
 

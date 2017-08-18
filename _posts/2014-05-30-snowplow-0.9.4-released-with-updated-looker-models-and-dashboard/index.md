@@ -21,8 +21,8 @@ The new base model has some significant improvements over the old one:
 
 Read on, to:
 
-1. [See the full example dashboard](/blog/2014/05/30/snowplow-0.9.4-released-with-updated-looker-models-and-dashboard/#dashboard)
-2. [Learn how to install/upgrade to the new LookML models](/blog/2014/05/30/snowplow-0.9.4-released-with-updated-looker-models-and-dashboard/#install)
+1. [See the full example dashboard](#dashboard)
+2. [Learn how to install/upgrade to the new LookML models](#install)
 
 <!--more-->
 

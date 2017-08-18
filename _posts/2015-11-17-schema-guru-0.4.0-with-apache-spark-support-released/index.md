@@ -14,15 +14,15 @@ In support of this, we have also released version 0.2.0 of the [schema-ddl] [ddl
 
 This release post will cover the following topics:
 
-1. [Apache Spark support](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#spark)
-2. [Predefined enumerations](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#enums)
-3. [Comments on Redshift table](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#comment)
-4. [Support for minLength and maxLength properties](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#length)
-5. [Edge cases in DDL generation](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#edge-cases)
-6. [Minor changes](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#minor)
-7. [Bug fixes](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#bugs)
-8. [Upgrading](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#upgrading)
-9. [Getting help](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#help)
+1. [Apache Spark support](#spark)
+2. [Predefined enumerations](#enums)
+3. [Comments on Redshift table](#comment)
+4. [Support for minLength and maxLength properties](#length)
+5. [Edge cases in DDL generation](#edge-cases)
+6. [Minor changes](#minor)
+7. [Bug fixes](#bugs)
+8. [Upgrading](#upgrading)
+9. [Getting help](#help)
 10. [Plans for the next release](/blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/#roadmap)
 
 <!--more-->

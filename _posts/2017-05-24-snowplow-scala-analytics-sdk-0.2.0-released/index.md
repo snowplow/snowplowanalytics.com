@@ -14,13 +14,13 @@ This release adds run manifest functionality, removes the Scalaz dependency and 
 
 In the rest of this post we will cover:
 
-1. [Run manifests](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#run-manifests)
-2. [Using the run manifest](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#using-manifests)
-3. [Important bug fixes](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#bug-fixes)
-4. [Removing the Scalaz dependency](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#scalaz)
-5. [Documentation](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#documentation)
-6. [Upgrading](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#upgrading)
-7. [Getting help](/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released#help)
+1. [Run manifests](#run-manifests)
+2. [Using the run manifest](#using-manifests)
+3. [Important bug fixes](#bug-fixes)
+4. [Removing the Scalaz dependency](#scalaz) 
+5. [Documentation](#documentation)
+6. [Upgrading](#upgrading)
+7. [Getting help](#help)
 
 <!--more-->
 

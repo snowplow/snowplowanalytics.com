@@ -14,11 +14,11 @@ release revolves around community-driven improvements as well as the modernizati
 
 This post will cover:
 
-1. [Fix silent suppresion of failures](/blog/2017/07/07/kinesis-s3-0.5.0-released#fix)
-2. [Community contributions](/blog/2017/07/07/kinesis-s3-0.5.0-released#contribs)
-3. [Project modernization](/blog/2017/07/07/kinesis-s3-0.5.0-released#modernization)
-4. [Roadmap](/blog/2017/07/07/kinesis-s3-0.5.0-released#roadmap)
-5. [Contributing](/blog/2017/07/07/kinesis-s3-0.5.0-released#contributing)
+1. [Fix silent suppresion of failures](#fix)
+2. [Community contributions](#contributing)
+3. [Project modernization](#modernization)
+4. [Roadmap](#roadmap)
+5. [Contributing](#contributing)
 
 <!--more-->
 

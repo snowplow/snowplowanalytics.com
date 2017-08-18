@@ -19,15 +19,15 @@ In addition to enabling real-time loading of data into Elasticsearch, we have ma
 
 This release also makes some improvements to Snowplow Common Enrich and Hadoop Enrich which should be invaluable for users of our batch-based event pipeline. Sections below the fold are as follows:
 
-1. [Snowplow Elasticsearch Sink](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#elasticsearch)
-2. [Bad rows stream](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#bad)
-3. [Support for the latest version of Scala Common Enrich](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#sce)
+1. [Snowplow Elasticsearch Sink](#elasticsearch)
+2. [Bad rows stream](#bad)
+3. [Support for the latest version of Scala Common Enrich](#sce)
 4. [Phil Kallos' contributions](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#pkallos)
-5. [Configuring AWS credentials](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#credentials)
-6. [Configurable Kinesis endpoint](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#endpoint)
-7. [HTTP request character limit override](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#character-limit)
-8. [For Hadoop Enrich users: support for tnuid](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#tnuid)
-9. [For Hadoop Enrich users: more relaxed URI parsing](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#netaporter)
+5. [Configuring AWS credentials](#credentials)
+6. [Configurable Kinesis endpoint](#endpoint)
+7. [HTTP request character limit override](#character-limit)
+8. [For Hadoop Enrich users: support for tnuid](#tnuid)
+9. [For Hadoop Enrich users: more relaxed URI parsing](#netaporter)
 10. [Upgrading](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#upgrading)
 11. [Roadmap and contributing](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#roadmap-etc)
 12. [Getting help](/blog/2014/11/26/snowplow-0.9.12-released-with-real-time-load-into-elasticsearch-beta/#help)

@@ -19,10 +19,10 @@ Expect to see further releases, blog posts and tutorials from the Snowplow team 
 
 In the rest of this blog post we'll talk about:
 
-1. [Spark 1.3.0 support](/blog/2015/05/10/spark-example-project-0.3.0-released/#130)
-2. [Simplified Elastic MapReduce support](/blog/2015/05/10/spark-example-project-0.3.0-released/#emr)
-3. [Automated job upload and running on EMR](/blog/2015/05/10/spark-example-project-0.3.0-released/#invoke)
-4. [Getting help](/blog/2015/05/10/spark-example-project-0.3.0-released/#help)
+1. [Spark 1.3.0 support](#130)
+2. [Simplified Elastic MapReduce support](#emr)
+3. [Automated job upload and running on EMR](#invoke)
+4. [Getting help](#help)
 
 <!--more-->
 

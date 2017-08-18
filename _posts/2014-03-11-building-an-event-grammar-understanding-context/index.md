@@ -16,11 +16,11 @@ _**Context**. Not a grammatical term, but we will use context to describe the ph
 
 This was a good start but there is much more to be said about event context. In this blog post, we will cover the theory of event context, grounding it in some examples of context being collected or derived by Snowplow today. I'll then look at some ideas around sources of context, followed by some notes on the relationship between context and prepositional objects. Finally I'll conclude with some thoughts on why event context is so powerful for analytics:
 
-1. [Event context: the theory](/blog/2014/03/11/building-an-event-grammar-understanding-context/#theory)
-2. [Context and Snowplow today](/blog/2014/03/11/building-an-event-grammar-understanding-context/#snowplow)
-3. [Sources of context](/blog/2014/03/11/building-an-event-grammar-understanding-context/#sources)
+1. [Event context: the theory](#theory)
+2. [Context and Snowplow today](#snowplow)
+3. [Sources of context](#sources)
 4. [One man's context...](/blog/2014/03/11/building-an-event-grammar-understanding-context/#prepositions)
-5. [The power of context](/blog/2014/03/11/building-an-event-grammar-understanding-context/#conclusion)
+5. [The power of context](#conclusion)
 
 <!--more-->
 

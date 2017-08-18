@@ -12,12 +12,12 @@ We are pleased to announce the release of Snowplow 66, Oriental Skylark. This re
 
 Table of contents:
 
-1. [Our enrichment process on Hadoop 2.4](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#hadoop2)
+1. [Our enrichment process on Hadoop 2.4](#hadoop2)
 2. [Re-enabled Kinesis-Hadoop lambda architecture](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#lambda)
-3. [JavaScript scripting enrichment](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#js-enrichment)
-4. [Other changes](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#other)
-5. [Upgrading](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#upgrading)
-6. [Getting help](/blog/2015/06/16/snowplow-r66-oriental-skylark-released#help)
+3. [JavaScript scripting enrichment](#js-enrichment)
+4. [Other changes](#other)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 ![oriental-skylark][oriental-skylark]
 

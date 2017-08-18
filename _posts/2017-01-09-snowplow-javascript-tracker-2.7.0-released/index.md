@@ -11,11 +11,11 @@ permalink: /blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/
 We are delighted to kick off 2017 with a new release of our [Javascript Tracker][snowplow-javascript-tracker]. [Version 2.7.0][2.7.0-tag] includes a number of new and improved features including:
 
 1. [Improved tracking for single-page webapps](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#single-page-web-apps)
-2. [Content Security Policy compliance](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#csp-compliance)
-3. [Automatic and manual error tracking](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#error-tracking)
-4. [New configuration options for first party cookies](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#cookie-configuration-options)
-5. [More elegant Optimizely integration](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#elegant-optimizely-integration)
-6. [New `trackSelfDescribingEvent` method](/blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/#track-self-describing-event-method)
+2. [Content Security Policy compliance](#csp-compliance)
+3. [Automatic and manual error tracking](#error-tracking)
+4. [New configuration options for first party cookies](#cookie-configuration-options)
+5. [More elegant Optimizely integration](#elegant-optimizely-integration)
+6. [New `trackSelfDescribingEvent` method](#track-self-describing-event-method)
 
 <!--more-->
 

@@ -16,15 +16,15 @@ We are pleased to announce the release of Snowplow 0.9.14, our 17th and final re
 
 Read on for more information:
 
-1. [Mandrill webhook support](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#mandrill)
-2. [PagerDuty webhook support](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#pagerduty)
-3. [Pingdom webhook support](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#pingdom)
-4. [Vagrant support](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#vagrant)
-5. [EmrEtlRunner improvements](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#emr-etl-runner)
-6. [Making Hadoop Enrich and Hadoop Shred more tolerant](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#hadoop-jobs)
-7. [Clojure Collector bug fixes](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#clojure)
-8. [CloudFront Collector bug fix](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#cloudfront)
-9. [Upgrading](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#upgrading)
+1. [Mandrill webhook support](#mandrill)
+2. [PagerDuty webhook support](#pagerduty)
+3. [Pingdom webhook support](#pingdom)
+4. [Vagrant support](#vagrant)
+5. [EmrEtlRunner improvements](#emr-etl-runner)
+6. [Making Hadoop Enrich and Hadoop Shred more tolerant](#hadoop-jobs)
+7. [Clojure Collector bug fixes](#clojure)
+8. [CloudFront Collector bug fix](#cloudfront)
+9. [Upgrading](#upgrading)
 10. [Help](/blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/#help)
 
 <!--more-->

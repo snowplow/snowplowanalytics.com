@@ -12,15 +12,15 @@ We are pleased to announce the release of Snowplow version 71 Stork-Billed Kingf
 
 The rest of this post will cover the following topics:
 
-1. [Better handling of event time](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#tstamps)
-2. [JSON validation in Scala Common Enrich](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#json-validation)
-3. [New unstructured event fields in enriched events](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#new-fields)
-4. [New event fingerprint enrichment](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#fingerprint)
-5. [More performant handling of missing schemas](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#missing-schemas)
-6. [New CloudFront access log fields](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#access-log)
-7. [Other changes](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#other-changes)
-8. [Using SSL in the StorageLoader](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#sslmode)
-9. [New approach to atomic.events upgrades](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#table-upgrades)
+1. [Better handling of event time](#tstamps)
+2. [JSON validation in Scala Common Enrich](#json-validation)
+3. [New unstructured event fields in enriched events](#new-fields)
+4. [New event fingerprint enrichment](#fingerprint)
+5. [More performant handling of missing schemas](#missing-schemas)
+6. [New CloudFront access log fields](#access-log)
+7. [Other changes](#other-changes)
+8. [Using SSL in the StorageLoader](#sslmode)
+9. [New approach to atomic.events upgrades](#table-upgrades)
 10. [Upgrading](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#upgrading)
 11. [Getting help](/blog/2015/10/02/snowplow-r71-stork-billed-kingfisher-released#help)
 

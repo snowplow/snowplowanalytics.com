@@ -16,9 +16,9 @@ We're very pleased to announce the release of Snowplow 0.8.11. This releases inc
 We'll discuss the updates one at a time, before covering how to [upgrade to the latest version](#upgrade).
 
 1. [Critical upgrade: support for Amazon's new CloudFront log file format](/blog/2013/10/22/snowplow-0.8.11-released-supports-all-cloudfront-file-formats-and-other-improvements/#critical)
-2. [IP address anonymization](/blog/2013/10/22/snowplow-0.8.11-released-supports-all-cloudfront-file-formats-and-other-improvements/#ip)
-3. [Other updates](/blog/2013/10/22/snowplow-0.8.11-released-supports-all-cloudfront-file-formats-and-other-improvements/#other)
-4. [Upgrading](/blog/2013/10/22/snowplow-0.8.11-released-supports-all-cloudfront-file-formats-and-other-improvements/#upgrade)
+2. [IP address anonymization](#ip)
+3. [Other updates](#other)
+4. [Upgrading](#upgrade)
 
 Before we dive into the detail, thanks to community members [Rob Kingson] [kingo] and  [Simon Rumble] [shermozle] for contributing to this release.
 

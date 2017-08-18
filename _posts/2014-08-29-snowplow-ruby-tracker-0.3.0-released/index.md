@@ -12,14 +12,14 @@ We are happy to announce the release of the Snowplow Ruby Tracker version 0.3.0.
 
 The rest of this post will cover:
 
-1. [The Subject class](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#subject)
-2. [The Emitter class](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#emitter)
-3. [Chainable methods](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#chainable-methods)
-4. [Logging](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#logging)
-5. [Contracts](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#contracts)
-6. [Other changes](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#changes)
-7. [Upgrading](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#upgrading)
-8. [Getting help](/blog/2014/08/29/snowplow-ruby-tracker-0.3.0-released/#help)
+1. [The Subject class](#subject)
+2. [The Emitter class](#emitter)
+3. [Chainable methods](#chainable-methods)
+4. [Logging](#logging)
+5. [Contracts](#contracts)
+6. [Other changes](#changes)
+7. [Upgrading](#upgrading)
+8. [Getting help](#help)
 
 <!--more-->
 

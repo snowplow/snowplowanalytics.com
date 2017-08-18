@@ -12,15 +12,15 @@ Almost a month has passed since the [first release][first-release] of [Schema Gu
 
 This release post will cover the following new features:
 
-1. [Web UI](/blog/2015/07/05/schema-guru-0.2.0-released/#webui)
+1. [Web UI](#webui)
 2. [Newline-delimited JSON](/blog/2015/07/05/schema-guru-0.2.0-released/#ndjson)
-3. [Duplicated keys warning](/blog/2015/07/05/schema-guru-0.2.0-released/#duplicates)
-4. [Base64 pattern](/blog/2015/07/05/schema-guru-0.2.0-released/#base64)
-5. [Enums](/blog/2015/07/05/schema-guru-0.2.0-released/#enums)
-6. [Schema segmentation](/blog/2015/07/05/schema-guru-0.2.0-released/#segmentation)
+3. [Duplicated keys warning](#duplicates)
+4. [Base64 pattern](#base64)
+5. [Enums](#enums)
+6. [Schema segmentation](#segmentation)
 7. [Self-describing schemas](/blog/2015/07/05/schema-guru-0.2.0-released/#self-describing)
-8. [Upgrading](/blog/2015/07/05/schema-guru-0.2.0-released/#upgrading)
-9. [Getting help](/blog/2015/07/05/schema-guru-0.2.0-released/#getting-help)
+8. [Upgrading](#upgrading)
+9. [Getting help](#getting-help)
 10. [Plans for the next release](/blog/2015/07/05/schema-guru-0.2.0-released/#roadmap)
 
 <div class="html">

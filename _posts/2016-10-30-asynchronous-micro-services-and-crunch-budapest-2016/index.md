@@ -15,7 +15,7 @@ I gave a talk at Crunch on asynchronous micro-services and the unified log - a n
 This blog post will briefly cover:
 
 1. [Asynchronous micro-services and the unified log](/blog/2016/10/30/asynchronous-micro-services-and-crunch-budapest-2016#async-micro-services)
-2. [My Crunch conference highlights](/blog/2016/10/30/asynchronous-micro-services-and-crunch-budapest-2016#alex-picks)
+2. [My Crunch conference highlights](#alex-picks)
 3. [Some closing thoughts](/blog/2016/10/30/asynchronous-micro-services-and-crunch-budapest-2016#schema-registries-talk#conclusion)
 
 <!--more-->

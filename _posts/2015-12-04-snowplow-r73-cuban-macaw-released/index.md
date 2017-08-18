@@ -12,12 +12,12 @@ Snowplow release 73 Cuban Macaw is now generally available! This release adds th
 
 The rest of this post will cover the following topics:
 
-1. [Loading bad rows into Elasticsearch](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#elasticsearch)
-2. [Changes to the event format loaded into Redshift and Postgres](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#atomicEvents)
-3. [Improved Hadoop job performance](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#forceToDisk)
-4. [Better NAT traversal for the StorageLoader](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#nat)
-5. [Upgrading](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#upgrading)
-6. [Getting help](/blog/2015/12/04/snowplow-r73-cuban-macaw-released#help)
+1. [Loading bad rows into Elasticsearch](#elasticsearch)
+2. [Changes to the event format loaded into Redshift and Postgres](#atomicEvents)
+3. [Improved Hadoop job performance](#forceToDisk)
+4. [Better NAT traversal for the StorageLoader](#nat)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 ![cuban-macaw][cuban-macaw]
 

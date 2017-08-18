@@ -15,11 +15,11 @@ We are pleased to be working with [OpenWeatherMap.org] [openweathermap], Snowplo
 
 This release post will cover the following topics:
 
-1. [Why we wrote this library](/blog/2015/12/13/scala-weather-0.1.0-released/#rationale)
-2. [Usage](/blog/2015/12/13/scala-weather-0.1.0-released/#usage)
-3. [The cache client](/blog/2015/12/13/scala-weather-0.1.0-released/#cache)
-4. [Getting help](/blog/2015/12/13/scala-weather-0.1.0-released/#help)
-5. [Plans for next release](/blog/2015/12/13/scala-weather-0.1.0-released/#roadmap)
+1. [Why we wrote this library](#rationale)
+2. [Usage](#usage)
+3. [The cache client](#cache)
+4. [Getting help](#help)
+5. [Plans for next release](#roadmap)
 
 <!--more-->
 

@@ -44,25 +44,28 @@ if (!window.location.origin) {
 
 (function($) {
     /*
-     * Lets set all vars
-     */
-
-    // Declared but waiting for values
-    var slick;
-
-    // Declared with values
-    var win = $(window);
-    var winScrollTop = 0;
-    var body = $('body');
-    var scrollingTimeOut = 0;
-    var header = $('header');
-
-
-    /*
      * Once document is loaded we start our script
      */
 
     $('document').ready(function() {
+        /*
+         * Lets set all vars
+         */
+
+        // Declared but waiting for values
+        var slick;
+
+        // Declared with values
+        var win = $(window);
+        var winScrollTop = 0;
+        var scrollingTimeOut = 0;
+        var body = $('body');
+        var header = $('header');
+
+
+
+
+
         /**
          * Launch Cookie Consent
          */
@@ -186,7 +189,7 @@ if (!window.location.origin) {
             var hash = this.hash;
             if (hash) {
                 var target = $(hash);
-                if (target.length > 0) {
+                if (target.length) {
                     e.preventDefault();
                     var top = target.offset().top - header.height() - 70;
                     $("html, body").animate({ scrollTop: top }, 1000, function() {

@@ -13,7 +13,7 @@ We've been very focused on reducing the cost of running Snowplow further. Most o
 
 In this post, we explain how to use browser caching to significantly reduce the size of your Cloudfront bills.
 
-1. [Understanding Cloudfront costs and the potential savings](/blog/2013/07/02/reduce-your-cloudfront-bills-with-cache-control/#costs)
+1. [Understanding Cloudfront costs and the potential savings](#costs)
 2. [How to update your files in S3 to get them to cache in your users' browsers](/blog/2013/07/02/reduce-your-cloudfront-bills-with-cache-control/#update)
 
 ![money] [money]
