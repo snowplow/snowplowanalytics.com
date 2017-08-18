@@ -121,7 +121,7 @@
 				user-select:none;
 				-ms-user-select: none;
 				-moz-user-select: none;
-				position:static;
+				position:relative;
 				transition: all .4s;
 
 				@include img-grayscale;
@@ -159,9 +159,7 @@
 
 					img
 					{
-				    	filter: none; /* Applies to FF + IE */
-				    	-webkit-filter: grayscale(0);
-					}	
+					}
 				}
 
 				&.active,

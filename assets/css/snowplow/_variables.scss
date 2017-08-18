@@ -75,18 +75,23 @@ $font-size-base: 18px;
 	{
 		transition: all .3s;
 		border: 1px solid $gray-light;
-	    filter: url('img-filters.svg#grayscale'); /* Firefox 3.5+ */
-	    filter: gray; /* IE6-9 */
-	    -webkit-filter: grayscale(1); /* Webkit Nightlies, Google Chrome Canary and Microsoft Edge*/
+
+		filter: gray; /* IE6-9 */
+		filter: url('img-filters.svg#grayscale'); /* Firefox 3.5+ */
+		filter: grayscale(1);
+		-webkit-filter: grayscale(1);
 	}
 
 	&:hover,
-	&:focus
+	&:focus,
+	&:active,
+	&.active
 	{
 		img
 		{
-	    	filter: none; /* Applies to FF + IE */
-	    	-webkit-filter: grayscale(0);
+			filter: grayscale(0%);
+			-webkit-filter: grayscale(0%);
+			filter: none; /* IE 6-9 */
 		}
 	}
 }
