@@ -12,11 +12,11 @@ We are tremendously excited to announce the release of [Snowplow 90 Lascaux][sno
 
 Read on for more information on R90 Lascaux, named after [the Upper Paleolithic cave complex in southwestern France][lascaux]:
 
-1. [RDB Loader](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#rdb-loader)
-2. [Other improvements](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#other)
-3. [Upgrading](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#upgrading)
-4. [Roadmap](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#roadmap)
-5. [Getting help](/blog/2017/07/26/snowplow-r90-lascaux-released-moving-loading-step-onto-emr#help)
+1. [RDB Loader](#rdb-loader)
+2. [Other improvements](#other)
+3. [Upgrading](#upgrading)
+4. [Roadmap](#roadmap)
+5. [Getting help](#help)
 
 ![lascaux][lascaux-img]
 

@@ -19,12 +19,12 @@ This release also lays important groundwork for our planned migration away from 
 If you'd like to know more about R91 Stonehenge, named after
 [the prehistoric monument in England][stonehenge], please read on:
 
-1. [Moving the staging step to S3DistCp](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#staging)
-2. [New EmrEtlRunner commands](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#commands)
-3. [New EmrEtlRunner CLI options](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#cli-options)
-4. [Upgrading](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#upgrading)
-5. [Roadmap](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#roadmap)
-6. [Help](/blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix#help)
+1. [Moving the staging step to S3DistCp](#staging)
+2. [New EmrEtlRunner commands](#commands)
+3. [New EmrEtlRunner CLI options](#cli-options)
+4. [Upgrading](#upgrading)
+5. [Roadmap](#roadmap)
+6. [Help](#help)
 
 ![stonehenge][stonehenge-img]
 
