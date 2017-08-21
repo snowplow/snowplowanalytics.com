@@ -5,6 +5,7 @@ title: "Snowplow 91 Stonehenge released with important bug fix"
 tags: [snowplow, emr]
 author: Ben
 category: Releases
+permalink: /blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix/
 ---
 
 We are pleased to announce the release of [Snowplow 91 Stonehenge][snowplow-release].

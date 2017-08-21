@@ -5,6 +5,7 @@ title: "Snowplow 90 Lascaux released, moving loading step onto EMR"
 tags: [snowplow, shred, relational databases]
 author: Anton
 category: Releases
+permalink: /blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr/
 ---
 
 We are tremendously excited to announce the release of [Snowplow 90 Lascaux][snowplow-release]. This release introduces RDB Loader, a new EMR-run application replacing our trusty StorageLoader, as proposed in our [Splitting EmrEtlRunner RFC][splitting-eer-rfc]. This release also brings various enhancements and alterations in EmrEtlRunner.
@@ -174,7 +175,7 @@ Upcoming Snowplow releases include:
 * [R9x [HAD] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark, Unbounce, StatusGator)
 * [R9x [HAD] EmrEtlRunner robustness][r9x-eer], continuing our work making EmrEtlRunner more reliable and modular
 
-This release is also an important staging post in our mission of loading Snowplow event data into more databases, and in near-real-time. Watch this space! 
+This release is also an important staging post in our mission of loading Snowplow event data into more databases, and in near-real-time. Watch this space!
 
 <h2 id="help">5. Getting help</h2>
 
