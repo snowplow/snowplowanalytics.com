@@ -5,7 +5,7 @@ title-short: Kinesis Tee 0.1.0
 tags: [snowplow, analytics, kinesis, lambda, aws, stream]
 author: Ed
 category: Releases
-permalink: /blog/2016/10/03/kinesis-tee-0.1.0-released-for-kinesis-stream-filtering-and-transformation
+permalink: /blog/2016/10/03/kinesis-tee-0.1.0-released-for-kinesis-stream-filtering-and-transformation/
 ---
 
 We are pleased to announce the release of version 0.1.0 of [Kinesis Tee][kinesis-tee-repo].
@@ -42,7 +42,7 @@ When traffic in your Kinesis source stream triggers Kinesis Tee, the Lambda func
 
 The **stream transformer** section of the configuration gives you the ability to modify the records as they are passed from the *source stream* to the *sink stream*. Currently, only converting Snowplow Enriched Events (TSV format) to (nested) JSON is supported. This is done using the [Snowplow Scala Analytics SDK](http://snowplowanalytics.com/blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released/).
 
-The **stream filter** section of the configuration lets you discard records from the *source stream*, ensuring they are not published to the *sink stream*. This is controllable by you - using a JavaScript function. See more in [Filtering](https://github.com/snowplow/kinesis-tee/wiki/Guide-for-devops-users#filtering). 
+The **stream filter** section of the configuration lets you discard records from the *source stream*, ensuring they are not published to the *sink stream*. This is controllable by you - using a JavaScript function. See more in [Filtering](https://github.com/snowplow/kinesis-tee/wiki/Guide-for-devops-users#filtering).
 
 Let's go through some brief examples showing the power of Kinesis Tee.
 

@@ -5,7 +5,7 @@ title: "Snowplow 80 Southern Cassowary released"
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
-permalink: /blog/2016/05/30/snowplow-r80-southern-cassowary-released
+permalink: /blog/2016/05/30/snowplow-r80-southern-cassowary-released/
 ---
 
 [Snowplow 80 Southern Cassowary][snowplow-release] is now available! This is a real-time pipeline release which improves stability and brings the real-time pipeline up-to-date with our Hadoop pipeline.

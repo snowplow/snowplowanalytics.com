@@ -5,7 +5,7 @@ title-short: Iglu 6 Ceres
 tags: [iglu, json, json schema]
 author: Yali
 category: Releases
-permalink: /blog/2016/10/07/iglu-r6-ceres-released
+permalink: /blog/2016/10/07/iglu-r6-ceres-released/
 ---
 
 We are pleased to announce a new Iglu release with some significant updates to [Igluctl][igluctl] - our Iglu command-line tool.

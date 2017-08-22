@@ -4,7 +4,7 @@ title: We need to talk about bad data
 tags: [bad data, data pipelines, technical architecture]
 author: Yali
 category: Inside the Plow
-permalink: /blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality
+permalink: /blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/
 ---
 
 <h2><small class="text-muted">Architecting data pipelines for data quality</small></h2>
@@ -12,8 +12,8 @@ permalink: /blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pip
 No one in digital analytics talks about bad data. A lot about working with data is sexy, but managing bad data, i.e. working to improve data quality, is not. Not only is talking about bad data not sexy, it is *really awkward*, because it forces us to confront a hard truth: that our data is not perfect, and therefore the insight that we build on that data might not be reliable. No wonder, then, that so many people in the industry would rather pretend bad data is not a problem, including:
 
 * the vendors who sell web and mobile analytics products
-* the vendors who sell data pipeline collection and processing pipelines, and 
-* the analytics teams that use those products to drive insight. 
+* the vendors who sell data pipeline collection and processing pipelines, and
+* the analytics teams that use those products to drive insight.
 
 ![we-need-to-talk-about-kevin-screenshot][kevin]
 
@@ -25,7 +25,7 @@ We need to talk about bad data. We can't manage an issue unless we identify and 
 3. [Architecting auditable pipelines](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#auditing-pipelines)
 4. [Reprocessing data from scratch](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#reprocess)
 5. [Tracking data lineage](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#lineage)
-6. [Self-describing data](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#self-describing-data) 
+6. [Self-describing data](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#self-describing-data)
 7. [Intelligent use of queues and auto-scaling](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#queues)
 8. [How much confidence do you have in your data pipeline, and the quality of data generated?](/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/#black-box)
 
@@ -33,11 +33,11 @@ We need to talk about bad data. We can't manage an issue unless we identify and 
 
 <h2 id="why">1. Why is bad data such a problem?</h2>
 
-Bad data is a problem because it erodes our confidence in our data, which limits our ability to build insight on that data. To take a very simple example, the graph below shows some metric (it can be any metric) over time, and a temporal dip in that metric. 
+Bad data is a problem because it erodes our confidence in our data, which limits our ability to build insight on that data. To take a very simple example, the graph below shows some metric (it can be any metric) over time, and a temporal dip in that metric.
 
 ![kpi-over-time-with-temporal-dip][kpi]
 
-What caused the dip? 
+What caused the dip?
 
 1. Did something went wrong with our business?
 2. Did something go wrong with our data?
@@ -96,7 +96,7 @@ Let's discuss each of these in turn.
 When you audit data processed through the Snowplow data pipeline, you can drill down to the event-level. That's very important, because:
 
 1. It is the most granular level - so you can be sure that if it is accurate, any views computed on it are accurate
-2. It is the easiest to reason about. If you know an event has occured, you can check that it has been recorded with all the data you expect. 
+2. It is the easiest to reason about. If you know an event has occured, you can check that it has been recorded with all the data you expect.
 
 Most data pipelines are auditable at the event level - one notable exception is Google Analtyics (the free rather than the Premium version, which makes 'hit' level data available in BigQuery.) This seriously limits the ability of Google Analytics users to identify and manage data quality issues - something many have become aware of since migrating from GA Classic to Universal Analytics, with perceived discrepancies in the KPI post-migration being hard to explore leave alone explain.
 
@@ -107,7 +107,7 @@ Event data pipelines are complicated things: a lot of computation is done on the
 Snowplow is architected so that the data can be diligenced throughout the data pipeline. Specifically:
 
 1. The raw requests made to the collector are logged to S3. That means we can diligence that an event has successfully been sent into the Snowplow pipeline before any processing is done on that data in the pipeline
-2. Processed data is also stored in its entirity in Amazon S3, prior to loading into different storage targets (e.g. Elasticsearch or Amazon Redshift) 
+2. Processed data is also stored in its entirity in Amazon S3, prior to loading into different storage targets (e.g. Elasticsearch or Amazon Redshift)
 3. The event-level data can be diligenced in the different storage targets themselves (e.g. Amazon Redshift and Elasticsearch)
 4. The HTTP requests emitted from the trackers can be monitored and diligenced using standard proxy applications, e.g. [Charles][charlesproxy]
 
@@ -206,7 +206,7 @@ Rather than rely on individual boxes, both the Clojure Collector and Scala Strea
 
 Managing bad data is an essential ongoing workstream for any data team that wants to build confidence in the insight developed on their data sets. Unfortunately, most solutions simply do not equip their users with the tools to identify data quality issues, leave along diagnose and resolve them. Bluntly, most commercial analytics and data pipeline solutions are black boxes: certainly you can test sending in a handful of data points and see that they come out of the other side. Of course, you can send data into two different pipelines and compare the output. But beyond that, you can only really choose to trust, or not, each solution.
 
-At Snowplow, we've taken a radically diffent approach: rather than burying bad data, we seek to surface it, so that it can be correctly handled. 
+At Snowplow, we've taken a radically diffent approach: rather than burying bad data, we seek to surface it, so that it can be correctly handled.
 
 <h2>Care about the quality of your data? Want to implement data pipelines that you can rely on?</h2>
 

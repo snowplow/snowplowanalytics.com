@@ -5,7 +5,7 @@ title-short: The inaugural Snowplow Meetup New York is a wrap!
 tags: [meetups, New York, oyster.com, viewbix]
 author: Yali
 category: Meetups
-permalink: /blog/2016/04/20/the-inaugural-snowplow-meetup-new-york-is-a-wrap
+permalink: /blog/2016/04/20/the-inaugural-snowplow-meetup-new-york-is-a-wrap/
 ---
 
 Three weeks ago Snowplow users based in New York convened on the TripAdvisor offices for the first [Snowplow Meetup New York][new-york-meetup].
@@ -16,13 +16,13 @@ We had four speakers from Snowplow, [Oyster.com][oyster] and [Viewbix][viewbix].
 
 <!--more-->
 
-I kicked off the event with a brief overview of the history of Snowplow and a look forward to the key areas of development for the Snowplow platform going forwards. 
+I kicked off the event with a brief overview of the history of Snowplow and a look forward to the key areas of development for the Snowplow platform going forwards.
 
 <div class="iframe-container">
     <iframe src="//www.slideshare.net/slideshow/embed_code/key/BkLX4alEnbV7Qw" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>
 </div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yalisassoon/snowplow-where-we-came-from-and-where-we-are-going-march-2016" title="Snowplow: where we came from and where we are going - March 2016" target="_blank">Snowplow: where we came from and where we are going - March 2016</a> </strong>  </div>
 
-[Ben Hoyt][ben-linkedin] and Devin Pohl from Oyster.com followed up with a look at the analytics journey they'd been on at Oyster.com, with a particular focus on how they came to using [Looker][looker] and Snowplow from Google Analytics. 
+[Ben Hoyt][ben-linkedin] and Devin Pohl from Oyster.com followed up with a look at the analytics journey they'd been on at Oyster.com, with a particular focus on how they came to using [Looker][looker] and Snowplow from Google Analytics.
 
 <div class="iframe-container">
     <iframe src="//www.slideshare.net/slideshow/embed_code/key/xVtHofE1frziSl" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>     </iframe>

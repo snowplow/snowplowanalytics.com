@@ -5,7 +5,7 @@ title-short: Scala Weather 0.1.0
 tags: [release, weather, scala, openweathermap]
 author: Anton
 category: Releases
-permalink: /blog/2015/12/13/scala-weather-0.1.0-released
+permalink: /blog/2015/12/13/scala-weather-0.1.0-released/
 ---
 
 We are pleased to announce the release of [Scala Weather] [repo] version 0.1.0.
@@ -25,7 +25,7 @@ This release post will cover the following topics:
 
 <h2 id="rationale">1. Why we wrote this library</h2>
 
-The [Snowplow] [snowplow-repo] event analytics platform has a growing collection of [configurable event enrichments] [snowplow-enrichments] - from geo-location through custom JavaScript to currency conversions. But the most-requested enrichment still outstanding is a Weather Enrichment: specifically, using the time and geo-location of each event to retrieve the weather and attach it to the event as a context, ready for later analysis. 
+The [Snowplow] [snowplow-repo] event analytics platform has a growing collection of [configurable event enrichments] [snowplow-enrichments] - from geo-location through custom JavaScript to currency conversions. But the most-requested enrichment still outstanding is a Weather Enrichment: specifically, using the time and geo-location of each event to retrieve the weather and attach it to the event as a context, ready for later analysis.
 
 To build this enrichment we needed a couple of things first:
 

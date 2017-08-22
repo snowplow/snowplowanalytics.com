@@ -5,7 +5,7 @@ title-short: Factotum 0.1.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Ed
 category: Releases
-permalink: /blog/2016/04/09/introducing-factotum-data-pipeline-runner
+permalink: /blog/2016/04/09/introducing-factotum-data-pipeline-runner/
 ---
 
 We are pleased to announce the release of [Factotum] [factotum-repo], a new open-source system for the execution of data pipeline jobs.

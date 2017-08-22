@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.6.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, tvos]
 author: Josh
 category: Releases
-permalink: /blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released
+permalink: /blog/2016/01/18/snowplow-objective-c-tracker-0.6.0-released/
 ---
 
 We are pleased to release version 0.6.0 of the [Snowplow Objective-C Tracker] [objc-repo]. This release refactors the event tracking API, introduces tvOS support and fixes an important bug with client sessionization ([#257][257]). Many thanks to community member [Jason][iamjason] for his contributions to this release!
@@ -27,7 +27,7 @@ In the rest of this post we will cover:
 
 <h2><a name="event-batching">1. Event batching</a></h2>
 
-Historically, the Objective-C Tracker used 10 events as a hard upper-limit to the number of events to send to a Snowplow collector at a time in a single `POST`. 
+Historically, the Objective-C Tracker used 10 events as a hard upper-limit to the number of events to send to a Snowplow collector at a time in a single `POST`.
 
 As of this release, we are replacing this with a limit on the number of bytes in a single `POST`. This defaults to 40,000 bytes, but you can override it like so:
 
@@ -51,8 +51,8 @@ To illustrate the change we will send a PageView event under the old and new sty
 
 {% highlight objective-c %}
 // Deprecated
-[tracker trackPageView:@"DemoPageUrl" 
-                 title:nil 
+[tracker trackPageView:@"DemoPageUrl"
+                 title:nil
               referrer:@"DemoPageReferrer"];
 
 // New
@@ -85,7 +85,7 @@ With the aforementioned performance updates the `SPEmitter` has undergone some i
 * Added `setByteLimitPost` builder function for setting a `POST` request byte maximum
 
 The tracking functions within `SPTracker` have all been updated to fit the new builder pattern for event creation. Each tracking function now accepts only a single variable in the form of the event object created. Here is a table of the updated tracking functions:
-    
+
 | Old function name           | New function name        | New argument type |
 |-----------------------------|--------------------------|-------------------|
 | `trackPageView`             | `trackPageViewEvent`     | `SPPageView`      |

@@ -5,7 +5,7 @@ title-short: Snowplow Tracking CLI 0.1.0
 tags: [snowplow, cli, json, json schema, schema, events, tracker]
 author: Ronny
 category: Releases
-permalink: /blog/2016/08/04/snowplow-tracking-cli-0.1.0-released
+permalink: /blog/2016/08/04/snowplow-tracking-cli-0.1.0-released/
 ---
 
 We are pleased to announce the first release of the [Snowplow Tracking CLI] [tracking-cli]! This is a command-line application (written in Golang) to make it fast and easy to send an event to Snowplow directly from the command line. You can use the app to embed Snowplow tracking directly into your shell scripts.
@@ -39,7 +39,7 @@ The command line interface is as follows:
 ```bash
 snowplowtrk --collector=[[COLLECTOR_DOMAIN]] --appid=[[APP_ID]] --method=[[POST|GET]] --sdjson=[[SELF_DESC_JSON]]
 ```
-    
+
 or:
 
 ```bash
@@ -63,7 +63,7 @@ You can either send in a self-describing JSON, or pass in the constituent parts 
 Here are some examples:
 
 ```bash
-$ snowplowtrk --collector snowplow-collector.acme.com --appid myappid --method POST --schema iglu:com.snowplowanalytics.snowplow/event/jsonschema/1-0-0 --json "{\"hello\":\"world\"}" 
+$ snowplowtrk --collector snowplow-collector.acme.com --appid myappid --method POST --schema iglu:com.snowplowanalytics.snowplow/event/jsonschema/1-0-0 --json "{\"hello\":\"world\"}"
 ```
 
 ```bash
@@ -98,7 +98,7 @@ If you have any questions or run into any problems, please [raise an issue][trac
 [tracking-cli]: https://github.com/snowplow/snowplow-tracking-cli
 [tracking-cli-issues]: https://github.com/snowplow/snowplow-tracking-cli/issues
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
-[golang-tracker]: https://github.com/snowplow/snowplow-golang-tracker 
+[golang-tracker]: https://github.com/snowplow/snowplow-golang-tracker
 [self-describing-json]: http://snowplowanalytics.com/blog/2014/05/15/introducing-self-describing-jsons/
 [linux-binary]: https://bintray.com/snowplow/snowplow-generic/download_file?file_path=snowplow_tracking_cli_0.1.0_linux_amd64.zip
 [windows-binary]: https://bintray.com/snowplow/snowplow-generic/download_file?file_path=snowplow_tracking_cli_0.1.0_windows_386.zip

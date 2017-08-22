@@ -5,7 +5,7 @@ title: "Snowplow 84 Steller's Sea Eagle released with Elasticsearch 2.x support"
 tags: [snowplow, kinesis, real-time, elasticsearch]
 author: Josh
 category: Releases
-permalink: /blog/2016/10/08/snowplow-r84-stellers-sea-eagle-released-with-elasticsearch-2-x-support
+permalink: /blog/2016/10/08/snowplow-r84-stellers-sea-eagle-released-with-elasticsearch-2-x-support/
 ---
 
 We are pleased to announce the release of [Snowplow 84 Steller's Sea Eagle] [snowplow-release]. This release brings support for Elasticsearch 2.x to the Kinesis Elasticsearch Sink for both Transport and HTTP clients.

@@ -5,7 +5,7 @@ title-short: Iglu 4 Epaulettes
 tags: [iglu, json, json schema, registry]
 author: Anton
 category: Releases
-permalink: /blog/2016/05/22/iglu-r4-epaulettes-released
+permalink: /blog/2016/05/22/iglu-r4-epaulettes-released/
 ---
 
 We are pleased to announce the fourth release of the [Iglu Schema Registry System][iglu-repo], with an initial release of the Iglu Core library, implemented in Scala.

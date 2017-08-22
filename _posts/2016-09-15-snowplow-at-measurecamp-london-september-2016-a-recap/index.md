@@ -5,7 +5,7 @@ title-short: Measurecamp London recap
 tags: [meetups, london, measurecamp]
 author: Yali
 category: Meetups
-permalink: /blog/2016/09/15/snowplow-at-measurecamp-london-september-2016-a-recap
+permalink: /blog/2016/09/15/snowplow-at-measurecamp-london-september-2016-a-recap/
 ---
 
 Last Saturday, Christophe, Alex and myself were at [Measurecamp London][measurecamp-london].
@@ -30,7 +30,7 @@ Christophe led a very interesting discussion on event data modeling, attended by
 
 Alex gave a talk on using data to build data-driven products. In his own words:
 
-> The challenge for analysts has moved on from deriving insights, to turning our insights into actions. It's no longer enough just to understand which of your customers have a high propensity to churn - what can you *do* about it, ideally in near-real-time? In this session at MeasureCamp London I introduced the rationale for building “measure-driven products”, before diving into a live coding demo using Snowplow, Google Tag Manager and Pusher and some simple JavaScript to power per-customer in-session messaging on a website. 
+> The challenge for analysts has moved on from deriving insights, to turning our insights into actions. It's no longer enough just to understand which of your customers have a high propensity to churn - what can you *do* about it, ideally in near-real-time? In this session at MeasureCamp London I introduced the rationale for building “measure-driven products”, before diving into a live coding demo using Snowplow, Google Tag Manager and Pusher and some simple JavaScript to power per-customer in-session messaging on a website.
 
 You can view his presentation below:
 

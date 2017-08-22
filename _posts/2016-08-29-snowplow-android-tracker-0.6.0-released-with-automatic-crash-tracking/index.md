@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.6.0
 tags: [snowplow, analytics, android, mobile, tracker]
 author: Josh
 category: Releases
-permalink: /blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking
+permalink: /blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/
 ---
 
 We are pleased to announce the release of the [Snowplow Android Tracker][repo] version 0.6.0. This is our first mobile tracker release featuring automated event tracking, in the form of uncaught exceptions and lifecycle events. The Tracker has also undergone a great deal of refactoring to simplify its codebase and make it easier to use.  

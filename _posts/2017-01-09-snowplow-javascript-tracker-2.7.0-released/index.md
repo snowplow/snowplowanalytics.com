@@ -5,7 +5,7 @@ title: "Snowplow Javascript Tracker 2.7.0 released"
 tags: [snowplow, javascript, single page web apps, CSP, Content Security Policy, true timestamp, error tracking, Optimizely]
 author: Yali
 category: Releases
-permalink: /blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released
+permalink: /blog/2017/01/09/snowplow-javascript-tracker-2.7.0-released/
 ---
 
 We are delighted to kick off 2017 with a new release of our [Javascript Tracker][snowplow-javascript-tracker]. [Version 2.7.0][2.7.0-tag] includes a number of new and improved features including:

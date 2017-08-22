@@ -5,7 +5,7 @@ title-short: Factotum 0.2.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Ed
 category: Releases
-permalink: /blog/2016/06/13/factotum-0.2.0-released
+permalink: /blog/2016/06/13/factotum-0.2.0-released/
 ---
 
 We are pleased to announce release 0.2.0 of Snowplow's DAG running tool, [Factotum][factotum-repo]. This release introduces variables for jobs and the ability to start jobs from a given task.
@@ -132,7 +132,7 @@ Task 'echo omega': succeeded after 0.0s
 2/2 tasks run in 0.0s
 {% endhighlight %}
 
-Which skips the task "echo alpha", and starts from "echo beta". 
+Which skips the task "echo alpha", and starts from "echo beta".
 
 In more complicated DAGs, there are some tasks which cannot *currently* be the starting point for jobs. Resuming a job from such tasks would be ambiguous, typically because the DAG has parallel execution branches and a single start point does not tell Factotum enough about the start state of all of the branches.
 
@@ -172,7 +172,7 @@ This series of commands will download the 0.2.0 release, unzip it in your curren
 {% highlight bash %}
 factotum ./echo.factotum
 {% endhighlight %}
- 
+
 <h2 id="roadmap">5. Roadmap for Factotum</h2>
 
 We're taking an iterative approach with Factotum - today Factotum won't give you an entire stack for monitoring, scheduling and running data pipelines, but we plan on growing it into a set of tools that will.

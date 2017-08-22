@@ -5,7 +5,7 @@ title-short: Schema Guru 0.4.0
 tags: [json, json schema, schema, iglu, self-describing, redshift, spark, amazon]
 author: Anton
 category: Releases
-permalink: /blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released
+permalink: /blog/2015/11/17/schema-guru-0.4.0-with-apache-spark-support-released/
 ---
 
 We are pleased to announce the release of Schema Guru version 0.4.0 with [Apache Spark] [spark] support, new features in both schema and ddl subcommands, bug fixes and other enhancements.

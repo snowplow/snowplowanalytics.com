@@ -5,29 +5,29 @@ title-short: Third Snowplow Meetup London scheduled for September
 tags: [meetups, London]
 author: Idan
 category: Meetups
-permalink: /blog/2016/09/02/third-snowplow-meetup-london-scheduled-for-september
+permalink: /blog/2016/09/02/third-snowplow-meetup-london-scheduled-for-september/
 ---
 
-On the 21st September we'll be hosting our third London meetup taking place at [Skills Matter \ Code Node] [Skills Matter] (Shift Room) from 18:30-21:45. 
+On the 21st September we'll be hosting our third London meetup taking place at [Skills Matter \ Code Node] [Skills Matter] (Shift Room) from 18:30-21:45.
 
 ![London-pic]
 
-In this meetup you'll have a chance to hear real people, doing real stuff with real time. We'll also talk about our latest developments and our vision in the real time space. 
+In this meetup you'll have a chance to hear real people, doing real stuff with real time. We'll also talk about our latest developments and our vision in the real time space.
 
 <!--more-->
 
 To do that, we have three great speakers:
 
-1. Dani Sola from [Simply Business] will talk about the near real time pipeline they developed based on Snowplow and Spark Streaming. He'll show us how it's being used to power their call centre and remarketing initiatives. 
+1. Dani Sola from [Simply Business] will talk about the near real time pipeline they developed based on Snowplow and Spark Streaming. He'll show us how it's being used to power their call centre and remarketing initiatives.
 
 2. Daniel Zohar from [Memrise] will be talking about the journy he is taking moving from batch to Real-Time.
 
-3. Alex Dean, our co-founder will Introduce Tupilak, Snowplow's unified log fabric. 
+3. Alex Dean, our co-founder will Introduce Tupilak, Snowplow's unified log fabric.
 Putting a real-time event pipeline into production has many challenges: we need the pipeline to scale automatically based on event volumes, we need constant monitoring to prevent data loss and minimise end-to-end lag, and we need the ability to upgrade and extend the pipeline with zero downtime. We call software which does all this a "unified log fabric", to distinguish it from the unified logs (e.g. Kafka and Kinesis) and stream processing frameworks (e.g. Spark Streaming and Kafka Streams) which such a fabric monitors and orchestrates.
 
 	As part of incorporating Snowplow's Kinesis-based event pipeline into our Managed Service, we developed our own unified log fabric, called Tupilak. In this talk, Alex will introduce Tupilak, explaining the core monitoring and scaling functions of Tupilak and showing live real-time pipelines visualised in the Tupilak UI. We’ll dive into the architecture of Tupilak, understand its basic scaling algorithm and also take a look at how Tupilak itself is built on a Snowplow event stream. There will be a chance to talk about the roadmap for Tupilak, including our plans for porting it to Kubernetes and adding Kafka and Spark Streaming support.
 
-Did I mention already pizza and beer!? 
+Did I mention already pizza and beer!?
 Read on to learn more about the companies that will speaking.
 
 

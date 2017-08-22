@@ -5,7 +5,7 @@ title-short: Second Snowplow Meetup Berlin scheduled for May
 tags: [meetups, Berlin]
 author: Idan
 category: Meetups
-permalink: /blog/2016/04/14/second-snowplow-meetup-berlin-scheduled-for-may
+permalink: /blog/2016/04/14/second-snowplow-meetup-berlin-scheduled-for-may/
 ---
 
 It gives us great pleasure to announce another Snowplow meetup in Berlin co-organised with [LeROI][LeROI] set for the 24th May.

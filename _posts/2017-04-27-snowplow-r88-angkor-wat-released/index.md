@@ -5,7 +5,7 @@ title: "Snowplow 88 Angkor Wat released"
 tags: [snowplow, duplicates, event duplication, de-dupe, de-duplication, dynamodb, spark]
 author: Anton
 category: Releases
-permalink: /blog/2017/04/27/snowplow-r88-angkor-wat-released
+permalink: /blog/2017/04/27/snowplow-r88-angkor-wat-released/
 ---
 
 We are pleased to announce the release of [Snowplow 88 Angkor Wat][snowplow-release]. This release introduces event de-duplication across different pipeline runs, powered by DynamoDB, along with an important refactoring of the batch pipeline configuration.
@@ -97,7 +97,7 @@ There's no golden rule for calculating write capacity and cluster configuration 
 
 <h3 id="dedupe-cold-start">2.5 Solving the "cold start" problem</h3>
 
-The new cross-batch deduplication is powerful, but how do you handle the "cold start" problem where the event manifest table in DynamoDB starts off empty? 
+The new cross-batch deduplication is powerful, but how do you handle the "cold start" problem where the event manifest table in DynamoDB starts off empty?
 
 To help, we have developed a new [Event Manifest Populator][event-manifest-populator] Spark job, which lets you pre-load the DynamoDB table
 from your enriched event archive.
@@ -179,7 +179,7 @@ For a complete example, see our [sample `config.yml` template][emretlrunner-conf
 
 <h3>3.5 Enabling cross-batch deduplication</h3>
 
-**Please be aware that enabling this will have a potentially high cost and performance impact on your Snowplow batch pipeline.** 
+**Please be aware that enabling this will have a potentially high cost and performance impact on your Snowplow batch pipeline.**
 
 If you want to start to deuplicate events across batches you need to add a new [dynamodb_config target][duplicate_storage_config] to your newly created `targets` directory.
 

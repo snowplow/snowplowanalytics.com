@@ -4,7 +4,7 @@ title: Snowplow Meetups set for New York and Boston this spring!
 tags: [meetup, case study, user stories, Custom Made, Carbonite, Oyster Travel, Animoto]
 author: Yali
 category: Meetups
-permalink: /blog/2016/01/27/snowplow-team-in-new-york-and-boston-this-spring
+permalink: /blog/2016/01/27/snowplow-team-in-new-york-and-boston-this-spring/
 ---
 
 Hot off the heels of last month's [Snowplow Meetup Sydney][meetup-sydney] and next month's [Snowplow Meetup Budapest][meetup-budapest], we are very excited to announce Snowplow Meetups in March in [New York] [meetup-ny] and [Boston] [meetup-boston].

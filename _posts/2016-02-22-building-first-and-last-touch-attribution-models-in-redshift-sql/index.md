@@ -4,7 +4,7 @@ title: Building first and last touch attribution models in Redshift SQL
 tags: [data modeling, attribution, first touch, last touch]
 author: Yali
 category: Analytics
-permalink: /blog/2016/02/22/building-first-and-last-touch-attribution-models-in-redshift-sql
+permalink: /blog/2016/02/22/building-first-and-last-touch-attribution-models-in-redshift-sql/
 ---
 
 In order to calculate the return on marketing spend on individual campaigns, digital marketers need to connect revenue events, downstream in a user journey, with marketing touch events, upstream in a user journey. This connection is necessary so that the cost of those associated with the marketing campaign that drove those marketing touches can be connected to profit associated with the conversion events later on.
@@ -22,7 +22,7 @@ create table derived.marketing_touches as (
   select
     domain_userid,
     derived_tstamp,
-    event_id, 
+    event_id,
     mkt_medium,
     mkt_source,
     mkt_term,
@@ -81,7 +81,7 @@ create table derived.first_marketing_touch as (
   select
     m.domain_userid,
     m.derived_tstamp,
-    m.event_id, 
+    m.event_id,
     m.mkt_medium,
     m.mkt_source,
     m.mkt_term,
@@ -96,7 +96,7 @@ create table derived.first_marketing_touch as (
   on m.domain_userid = f.domain_userid
   and m.derived_tstamp = f.first_touch_tstamp
 );
-{% endhighlight %} 
+{% endhighlight %}
 
 Now it is trivial to join our `derived.first_marketing_touch` table with our `derived.revenue_events` table:
 
@@ -107,7 +107,7 @@ select
 from derived.first_marketing_touch f
 right join derived.revenue_events r    
   -- right join in case there is no marketing touch event to join to the revenue event
-on f.domain_userid = r.domain_userid 
+on f.domain_userid = r.domain_userid
 {% endhighlight %}
 
 Bingo! We have a table with a line of data for each revenue event, and all the marketing data associated with the corresponding first touch event for that user.
@@ -149,7 +149,7 @@ create table derived.marketing_touches_and_revenue_events as (
 );
 {% endhighlight %}
 
-The above table includes a line for every marketing touch event and every revenue events. Marketing touch events have a `marketing_event_id` set and revenue events have a `revenue_event_id` set. 
+The above table includes a line for every marketing touch event and every revenue events. Marketing touch events have a `marketing_event_id` set and revenue events have a `revenue_event_id` set.
 
 We need to aggregate over this table so that we set the `marketing_event_id` for each revenue event. This will be the event_id of the most recent marketing touch event prior to the revenue event. We'll then be able to use the event ID to join back with our marketing touches table, to pull all the metadata associated with that marketing touch to the revenue event.
 

@@ -4,14 +4,14 @@ title: Anton Parkhomenko is a Snowplower!
 tags: [anton parkhomenko, data engineer, hiring]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2015/12/25/anton-parkhomenko-is-a-snowplower
+permalink: /blog/2015/12/25/anton-parkhomenko-is-a-snowplower/
 ---
 
 Astute readers of this blog have probably noticed a regular new author - we are hugely excited to introduce Anton Parkhomenko to the Snowplow team!
 
 ![anton-img] [anton-img]
 
-[Anton] [anton-bio] joined us as a [Data Engineering intern this summer] [summer-interns] to launch our new [Schema Guru] [schema-guru] project. Anton was already an experienced software engineer; for him the Snowplow internship was about getting his first professional experience in Scala and Functional Programming, plus gaining exposure to Big Data technologies and open source project practices. 
+[Anton] [anton-bio] joined us as a [Data Engineering intern this summer] [summer-interns] to launch our new [Schema Guru] [schema-guru] project. Anton was already an experienced software engineer; for him the Snowplow internship was about getting his first professional experience in Scala and Functional Programming, plus gaining exposure to Big Data technologies and open source project practices.
 
 After a highly successful internship, which saw the release of Schema Guru versions [0.1.0] [schema-guru-010-post] thru [0.3.0] [schema-guru-030-post], we were delighted to make Anton an offer to join the Snowplow Data Engineering team full-time.
 

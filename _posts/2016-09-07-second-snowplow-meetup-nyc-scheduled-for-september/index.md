@@ -5,25 +5,25 @@ title-short: Second Snowplow Meetup NYC scheduled for September
 tags: [meetups, NYC]
 author: Idan
 category: Meetups
-permalink: /blog/2016/09/07/second-snowplow-meetup-nyc-scheduled-for-september
+permalink: /blog/2016/09/07/second-snowplow-meetup-nyc-scheduled-for-september/
 ---
 
-On the 26th September at 18:00 we'll have another NYC meetup. The kind folks at [canary] have invited us to hold the meetup at their offices. Not only that, but they're putting on some food and drinks. 
+On the 26th September at 18:00 we'll have another NYC meetup. The kind folks at [canary] have invited us to hold the meetup at their offices. Not only that, but they're putting on some food and drinks.
 
 ![NYC-pic]
 
-In this meetup you'll have a chance to hear what some of our mobile only clients are doing with their data. 
+In this meetup you'll have a chance to hear what some of our mobile only clients are doing with their data.
 
 <!--more-->
 
 For that we have four incredible speakers:
 
-1. Licoln Ritter and Stevie Clifton from [Animoto] will have a joint talk about how Snowplow has allowed them to gain insight into their users' behavior and how they've used this new information to shape thier iterative development process. They'll talk about how they designed their events and contexts as well as some details on analysis and interpretation. 
+1. Licoln Ritter and Stevie Clifton from [Animoto] will have a joint talk about how Snowplow has allowed them to gain insight into their users' behavior and how they've used this new information to shape thier iterative development process. They'll talk about how they designed their events and contexts as well as some details on analysis and interpretation.
 
 2. Tiernan Kennedy from [Canary] will talk about the reasons for moving to snowplow and their interesting use case @ Canary. Tiernan will demonstrate some visualizations of using snowplow data with other sources to show how their doing things that they couldn't do at all with GA.
 
 
-3. Christophe Bogaert, our data scientist, is working on his super interesting topic, which we'll share in the next few days. 
+3. Christophe Bogaert, our data scientist, is working on his super interesting topic, which we'll share in the next few days.
 
 [Sign up] today, it's going to be epic!
 

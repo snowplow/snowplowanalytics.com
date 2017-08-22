@@ -5,7 +5,7 @@ title-short: Second Snowplow Meetup London scheduled for June
 tags: [meetups, London]
 author: Idan
 category: Meetups
-permalink: /blog/2016/05/06/second-snowplow-meetup-london-scheduled-for-june
+permalink: /blog/2016/05/06/second-snowplow-meetup-london-scheduled-for-june/
 ---
 
 We are extremely excited to announce our second London meetup taking place at [Skills Matter \ Code Node] [Skills Matter] (Backspace Room) on the 15th June from 18:30-21:45.

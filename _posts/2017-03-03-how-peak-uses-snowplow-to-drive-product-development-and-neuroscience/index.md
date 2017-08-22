@@ -5,7 +5,7 @@ title: "How Peak uses Snowplow to drive product development and neuroscience"
 tags: [snowplow, user stories, neuroscience, product development, games, gaming, training]
 author: Giuseppe
 category: User Stories
-permalink: /blog/2017/03/03/how-peak-uses-snowplow-to-drive-product-development-and-neuroscience
+permalink: /blog/2017/03/03/how-peak-uses-snowplow-to-drive-product-development-and-neuroscience/
 classification:
    department: all
    seniority: any

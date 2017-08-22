@@ -5,7 +5,7 @@ title-short: Snowplow Scala Analytics SDK 0.1.0
 tags: [scala, snowplow, enriched events, spark, aws lambda]
 author: Alex
 category: Releases
-permalink: /blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released
+permalink: /blog/2016/03/23/snowplow-scala-analytics-sdk-0.1.0-released/
 ---
 
 We are pleased to announce the release of our first analytics SDK for Snowplow, created for data engineers and data scientists working with Snowplow in Scala.
@@ -32,7 +32,7 @@ Read on below the jump for:
 
 <h2 id="overview">1. Overview</h2>
 
-The Scala Analytics SDK makes it significantly easier to build applications that consume Snowplow enriched data directly from Kinesis or S3. 
+The Scala Analytics SDK makes it significantly easier to build applications that consume Snowplow enriched data directly from Kinesis or S3.
 
 The Snowplow enriched event is a relatively complex TSV string containing self-describing JSONs. Rather than work with this structure directly, Snowplow analytics SDKs ship with *event transformers*, which translate the Snowplow enriched event format into something more convenient for engineers and analysts.
 

@@ -5,7 +5,7 @@ title: "Snowplow 83 Bald Eagle released with SQL Query Enrichment"
 tags: [snowplow, kinesis, real-time]
 author: Anton
 category: Releases
-permalink: /blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment
+permalink: /blog/2016/09/06/snowplow-r83-bald-eagle-released-with-sql-query-enrichment/
 ---
 
 We are pleased to announce the release of [Snowplow 83 Bald Eagle] [snowplow-release]. This release introduces our powerful new SQL Query Enrichment, long-awaited support for the EU Frankfurt AWS region, plus POST support for our Iglu webhook adapter.
@@ -46,7 +46,7 @@ AWS has a healthy [roadmap of new data center regions] [region-roadmap] opening 
 
 Our [Iglu webhook adapter] [iglu-webhook-adapter] is one of our most powerful webhooks. It lets you track events sent into Snowplow via a `GET` request, where the name-value pairs on the request are composed into a self-describing JSON, with an Iglu-compatible `schema` parameter being used to describe the JSON.
 
-Previously this adapter only supported `GET` requests; as of this release the adapter also supports `POST` requests. You can send in your data in the `POST` request body, either formatted as a JSON or as a form body; the `schema` parameter should be part of the request body. 
+Previously this adapter only supported `GET` requests; as of this release the adapter also supports `POST` requests. You can send in your data in the `POST` request body, either formatted as a JSON or as a form body; the `schema` parameter should be part of the request body.
 
 Many thanks to community member [Mike Robins] [miike] at Snowplow partner [Snowflake Analytics] [snowflake] for contributing this feature!
 

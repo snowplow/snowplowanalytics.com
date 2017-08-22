@@ -5,7 +5,7 @@ title-short: Schema registries + Strata NYC
 tags: [snowplow, strata, hadoop, new york, nyc, iglu, schema registry, confluent]
 author: Alex
 category: Meetups
-permalink: /blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016
+permalink: /blog/2016/10/23/schema-registries-and-strata-and-hadoop-world-nyc-2016/
 ---
 
 In late September the Snowplow team attended [Strata + Hadoop World] [strata-nyc-2016] in New York City. It was a great opportunity to check in on the US data science and engineering scenes, and I was pleased to also have the opportunity to give a talk on schema registries.
@@ -37,7 +37,7 @@ I really enjoyed giving the talk, and appreciated the audience's in-depth questi
 
 <h2 id="alex-picks">2. Alex's session picks</h2>
 
-* **Karthik Ramasamy** from Twitter introduced [Heron, Twitter's Storm replacement, and Distributed Log, an alternative to Kafka] [karthik-talk]. It was a great talk, full of detail - such as on how lagging consumers in Kafka can badly impact on non-lagging consumers; it also inspired me to take a second look at [Heron] [heron], which was recently open-sourced 
+* **Karthik Ramasamy** from Twitter introduced [Heron, Twitter's Storm replacement, and Distributed Log, an alternative to Kafka] [karthik-talk]. It was a great talk, full of detail - such as on how lagging consumers in Kafka can badly impact on non-lagging consumers; it also inspired me to take a second look at [Heron] [heron], which was recently open-sourced
 * **Maxime Beauchemin** gave an [engaging talk introducing Caravel] [maxime-talk], AirBnB's data engineer-friendly open source BI tool. Caravel's impressive traction and featureset should grow even faster with four additional AirBnB engineers joining Maximeto work on Caravel. To find out more on Caravel, check out Rob Kingston's great tutorial, [Visualise Snowplow data using Airbnb Caravel & Redshift] [caravel-tutorial]
 * **Xavier Léauté** reprised his Strata London talk on the [Kafka, Samza and Druid stack at Metamarkets] [xavier-talk]. Metamarkets scale (300 billion events a day) is certainly inspiring, and Xavier makes a great case for using Kafka, Samza, Druid and Spark at that scale. Metamarkets' Spark usage is particularly encouraging: they use Spark exclusively with S3 (no HDFS in sight), and on spot instances only
 

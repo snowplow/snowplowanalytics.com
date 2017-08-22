@@ -5,7 +5,7 @@ title-short: Schema Guru 0.6.0
 tags: [json, json schema, schema, ddl, redshift, schemaver]
 author: Anton
 category: Releases
-permalink: /blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support
+permalink: /blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/
 ---
 
 We are pleased to announce the release of [Schema Guru][repo] 0.6.0, with long-awaited initial support for database migrations in SQL. This release is an important step in allowing Iglu users to easily and safely upgrade Redshift table definitions as they evolve their underlying JSON Schemas.
@@ -83,7 +83,7 @@ BEGIN TRANSACTION;
 
   COMMENT ON TABLE "com_amazon_aws_cloudfront_wd_access_log_1" IS 'iglu:com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2';
 
-END TRANSACTION; 
+END TRANSACTION;
 {% endhighlight %}
 
 **Warning: this new migration capability is experimental: please exercise caution with this feature and always visually inspect any migration script before applying it to a Redshift database.**

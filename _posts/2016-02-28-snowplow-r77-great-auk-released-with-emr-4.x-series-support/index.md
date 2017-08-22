@@ -5,7 +5,7 @@ title: "Snowplow 77 Great Auk released with EMR 4.x series support"
 tags: [snowplow, hadoop, shred, emr, emretlrunner, storageloader]
 author: Fred
 category: Releases
-permalink: /blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support
+permalink: /blog/2016/02/28/snowplow-r77-great-auk-released-with-emr-4.x-series-support/
 ---
 
 Snowplow release 77 Great Auk is now available! This release focuses on the command-line applications used to orchestrate Snowplow, bringing Snowplow up-to-date with the new 4.x series of Elastic MapReduce releases.

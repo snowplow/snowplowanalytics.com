@@ -5,7 +5,7 @@ title: Web and mobile data only gets you to first base when building a single cu
 tags: [event data, single customer view, multi-channel marketing, customer journey mapping, optimizing customer journeys, email marketing, push messaging, display advertising, call center analytics]
 author: Yali
 category: Inside the Plow
-permalink: /blog/2016/01/17/web-and-mobile-data-only-gets-you-to-first-base-when-building-a-single-customer-view
+permalink: /blog/2016/01/17/web-and-mobile-data-only-gets-you-to-first-base-when-building-a-single-customer-view/
 ---
 
 One of the main reasons that companies adopt Snowplow is to build a single customer view. For many of our users, Snowplow lets them for the first time join behavioral data gathered from their website and mobile apps with other customer data sets (e.g. CRM). This simple step drives an enormous amount of value.
@@ -35,12 +35,12 @@ Before we dive into some of the different data sources that we need to build our
 3. Use that map to assign each event to a single user, and for each user stitch together the different events that occurred across different channels, to build a consolidated view of each user. This is the single customer view
 4. Optionally, join that table with other customer data sets (e.g. CRM) that you have available in your data warehouse
 
-Note that the above approach is very diffferent from that taken by packaged analytics vendors (Google Analytics, Adobe Analytics, Mixpanel, Kissmetrics, Keen.io et al) because packaged vendors insist that you decide at data capture time who a user is, whereas Snowplow enables you to defer that decision, and continue to evolve the logic for making that decision as 
+Note that the above approach is very diffferent from that taken by packaged analytics vendors (Google Analytics, Adobe Analytics, Mixpanel, Kissmetrics, Keen.io et al) because packaged vendors insist that you decide at data capture time who a user is, whereas Snowplow enables you to defer that decision, and continue to evolve the logic for making that decision as
 
 1. you learn more about your users, *and*
 2. you start stitching data together from more and more channels.
 
-The first key element, then, to building a *complete* single customer view is to strive to track events across *all* of the different touchpoints and channels where you interact with your users. The second key element is to ensure that events from a single user on one platform can be mapped together with events from a single user on another platform, so that your view of each customer is assembled from the totality of their interactions across all platforms. 
+The first key element, then, to building a *complete* single customer view is to strive to track events across *all* of the different touchpoints and channels where you interact with your users. The second key element is to ensure that events from a single user on one platform can be mapped together with events from a single user on another platform, so that your view of each customer is assembled from the totality of their interactions across all platforms.
 
 ## Tracking event level data from locations outside the web and mobile
 
@@ -71,9 +71,9 @@ This means you see not just what your users have done in your website and mobile
 
 Push messaging is an incredibly powerful channel that puts your message very prominently in users most important device: their cell phone.
 
-As with email marketing, you may have written your own solution (e.g. using [AWS Push Notification service][sns]), or you may be using a third party servicesuch as [Urban Airship] [urbanairship]. 
+As with email marketing, you may have written your own solution (e.g. using [AWS Push Notification service][sns]), or you may be using a third party servicesuch as [Urban Airship] [urbanairship].
 
-If you have written your own push notificaiton system, you would integrate our trackers to record each push notification that is sent to each of your users. 
+If you have written your own push notificaiton system, you would integrate our trackers to record each push notification that is sent to each of your users.
 
 We are delighted that as of [release 75][r75], you can now ingest all your event-level Urban Airship data straight into your Snowplow alongside all your mobile and web behavioral data. That means Urban Airship users can automatically track the following events from Urban Airship, alongside all other event data:
 
@@ -97,9 +97,9 @@ There are companies running Snowplow who track calls using our trackers embedded
 
 A large number of Snowplow users track ad impression and ad click events through Snowplow, enabling them to identify which ads a user has seen and clicked on prior to arriving at a website or app and making a transaction; this kind of tracking enables Snowplow users to build sophisticated attribution models.
 
-Ad impressions are straightforward to track: you simply embed either a Snowplow pixel or the JavaScript Tracker in the ad tag. Note that because you can specify the tracker namespace and cookie name, you can ensure that Snowplow tags loaded in an ad tag do not interfere with other Snowplow tags that are loaded on the page, regardless of their source (other ads or the page itself). 
+Ad impressions are straightforward to track: you simply embed either a Snowplow pixel or the JavaScript Tracker in the ad tag. Note that because you can specify the tracker namespace and cookie name, you can ensure that Snowplow tags loaded in an ad tag do not interfere with other Snowplow tags that are loaded on the page, regardless of their source (other ads or the page itself).
 
-Since [release 72] [r72], it is also possible to use Snowplow to do click tracking. Our Clojure Collector supports redirecting users through a link - so you can track clicks-outs from ads by redirecting them through the collector which records the click before sending the user on to the ultimate click destination. 
+Since [release 72] [r72], it is also possible to use Snowplow to do click tracking. Our Clojure Collector supports redirecting users through a link - so you can track clicks-outs from ads by redirecting them through the collector which records the click before sending the user on to the ultimate click destination.
 
 ## What else?
 
@@ -107,8 +107,8 @@ Building a complete picture of all the different events on all the different tou
 
 ## Interested in collecting and acting on *all* your event data, not just data from apps and the web?
 
-Then [get in touch][contact] with the Snowplow team! 
- 
+Then [get in touch][contact] with the Snowplow team!
+
 [diagram1]: /assets/img/blog/2016/01/single-customer-view-1-web-mobile-crm-datwarehouse.png
 [diagram2]: /assets/img/blog/2016/01/single-customer-view-2-ad-server-email-support-forum-call-center.png
 [trackers]: https://github.com/snowplow/?utf8=%E2%9C%93&query=tracker

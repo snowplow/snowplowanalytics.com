@@ -5,7 +5,7 @@ title: "Snowplow 79 Black Swan with API Request Enrichment released"
 tags: [snowplow, enrichment, iglu, api, rest]
 author: Anton
 category: Releases
-permalink: /blog/2016/05/12/snowplow-r79-black-swan-with-api-request-enrichment-released
+permalink: /blog/2016/05/12/snowplow-r79-black-swan-with-api-request-enrichment-released/
 ---
 
 We are pleased to announce the release of [Snowplow 79 Black Swan] [snowplow-release]. This appropriately-named release introduces our powerful new API Request Enrichment, plus a new HTTP Header Extractor Enrichment and several other improvements on the enrichments side.
@@ -182,7 +182,7 @@ Unfortunately, due to a [current limitation] [i-issue-124] in Iglu's authenticat
 
 <h2 id="roadmap">6. Roadmap</h2>
 
-This enrichment is the first in a series of new flexible dimension widening enrichments for Snowplow; we are hard at work on a [SQL Query Enrichment] [issue-2321], which we will again release with an in-depth tutorial. 
+This enrichment is the first in a series of new flexible dimension widening enrichments for Snowplow; we are hard at work on a [SQL Query Enrichment] [issue-2321], which we will again release with an in-depth tutorial.
 
 As we release more generic enrichments like the JavaScript Scripting Enrichment and the API Request Enrichment, the fact that you can only use one of each enrichment type becomes a more painful limitation. We are now designing a way of specifying an order of enrichment execution steps as [directed acyclic graph] [dag] - which should have performance benefits as well as be much more powerful. Stay tuned on this.
 

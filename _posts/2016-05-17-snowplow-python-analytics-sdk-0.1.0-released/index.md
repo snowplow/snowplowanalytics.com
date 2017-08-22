@@ -5,7 +5,7 @@ title-short: Snowplow Python Analytics SDK 0.1.0
 tags: [python, snowplow, enriched events, spark, aws lambda]
 author: Fred
 category: Releases
-permalink: /blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released
+permalink: /blog/2016/05/17/snowplow-python-analytics-sdk-0.1.0-released/
 ---
 
 Following in the footsteps of the [Snowplow Scala Analytics SDK] [scala-sdk-post], we are happy to announce the release of the [Snowplow Python Analytics SDK] [sdk-repo]! This library makes your Snowplow enriched events easier to work with in Python-compatible data processing frameworks such as [Apache Spark] [spark] and [AWS Lambda] [lambda].

@@ -4,7 +4,7 @@ title: Building robust data pipelines that cope with AWS outages and other major
 tags: [technical architecture, aws]
 author: Yali
 category: Inside the Plow
-permalink: /blog/2016/02/10/building-robust-data-pipelines-that-cope-with-aws-outages-and-other-catastrophes
+permalink: /blog/2016/02/10/building-robust-data-pipelines-that-cope-with-aws-outages-and-other-catastrophes/
 ---
 
 At Snowplow, we pride ourselves on building robust data pipelines. Recently that robustness has been severly tested, by two different outages in the AWS us-east-1 region (one S3 outage, and one DynamoDB outage that caused issues with very many other AWS APIs inculding EC2), and by an SSL certificate issue with one of our client's collectors that meant that for five consecutive days no events were successfully recorded from their most important platform: iOS.

@@ -5,7 +5,7 @@ title-short: Google AMP adds Snowplow support
 tags: [snowplow, amp, ampp, mobile, accelerated mobile pages, accelerated mobile pages project, google]
 author: Alex
 category: Releases
-permalink: /blog/2016/03/19/google-amp-adds-snowplow-support
+permalink: /blog/2016/03/19/google-amp-adds-snowplow-support/
 ---
 
 We are pleased to announce that Google's [Accelerated Mobile Pages Project] [amp] (AMPP or AMP) now supports Snowplow. AMP is an open source initiative led by Google to improve the mobile web experience by optimizing web pages for mobile devices.

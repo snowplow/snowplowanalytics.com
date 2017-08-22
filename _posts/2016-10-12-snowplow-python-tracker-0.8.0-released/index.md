@@ -5,7 +5,7 @@ title-short: Python Tracker 0.8.0 released
 tags: [python, trackers]
 author: Yali
 category: Releases
-permalink: /blog/2016/10/12/snowplow-python-tracker-0.8.0-released
+permalink: /blog/2016/10/12/snowplow-python-tracker-0.8.0-released/
 ---
 
 We are delighted to release version 0.8.0 of the [Snowplow Python Tracker][python-tracker], for tracking events from your Python apps, services and games. This release adds Python 3.4-5 support, 10 new event types and much richer timestamp support.
@@ -93,7 +93,7 @@ Fast forward to the present and we have a very sophisticated approach to enablin
 
 As a result, the data that is sent via our `track_unstruct_event` method is highly structured: it is fully schema'ed. So the method name is highly misleading.
 
-In this release, we've introduced a new (functionally equivalent) method called `track_self_describing_event`, that describes exactly what it does. 
+In this release, we've introduced a new (functionally equivalent) method called `track_self_describing_event`, that describes exactly what it does.
 
 <h2 id="more">5. Other changes</h2>
 

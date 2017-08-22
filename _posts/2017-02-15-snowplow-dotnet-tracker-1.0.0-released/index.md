@@ -5,7 +5,7 @@ title-short: Snowplow .NET Tracker 1.0.0 Released
 tags: [snowplow, .NET, NETStandard, Xamarin, Mobile]
 author: Ed
 category: Releases
-permalink: /blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released
+permalink: /blog/2017/02/15/snowplow-dotnet-tracker-1.0.0-released/
 ---
 
 We're pleased to announce the 1.0.0 release of Snowplow's .NET Tracker. This is a major reboot of the existing .NET Tracker, convering it into a .NET Standard project; this conversion brings with it support for the tracker on mobile devices through Xamarin, plus all platforms that support .NET Core (Windows, Linux and macOS).
@@ -32,7 +32,7 @@ However, it didn't take long for new platforms to appear (and to disappear, in s
 
 We think that the likely intention of PCL was to drive development across all of the .NET platforms into a natural convergence. Unfortunately, this didn't really happen, and so .NET Standard was born as a new harmonization initiative.
 
-.NET Standard is a base class library (BCL) that platforms must be able to execute. This in turn means that libraries can now use a single, unified base class library, and it's up to each platform to provide this. With 
+.NET Standard is a base class library (BCL) that platforms must be able to execute. This in turn means that libraries can now use a single, unified base class library, and it's up to each platform to provide this. With
 .NET Standard the functionality that library developers can offer does not diminish as the number of platforms you want to support increases.  
 
 Platforms that support newer versions of .NET Standard can run libraries that target older versions of the .NET Standard library. Libraries can then re-target to a newer version of the .NET Standard to expand the API available to them.
@@ -66,14 +66,14 @@ Use our `Snowplow.Tracker.PlatformExtensions` NuGet package. This provides extra
 
 You can use either the `Snowplow.Tracker.PlatformExtensions` NuGet package or the base library `Snowplow.Tracker` (also available via NuGet).
 
-Our platform extensions library provides a .NET 4.6.1 implementation - but you can also use the base library (.NET Standard 1.4 libraries can be used directly by .NET 4.6.1+ platform code). 
+Our platform extensions library provides a .NET 4.6.1 implementation - but you can also use the base library (.NET Standard 1.4 libraries can be used directly by .NET 4.6.1+ platform code).
 
 The advantage in using the platform extensions is some additional features - for example an "offline mode" where the tracker will not try to send events when the host is offline. The advantage to using the base library
 is that if you're multiplatform already (or planning to be) using .NET Standard libraries will simplify your deployment and development process.
 
 #### Integrating a platform that's not supported by our PCL (`Snowplow.Tracker.PlatformExtensions`)
 
-Not all platforms are supported as a PCL within `Snowplow.Tracker.PlatformExtensions`. A good example of this is .NET Core. 
+Not all platforms are supported as a PCL within `Snowplow.Tracker.PlatformExtensions`. A good example of this is .NET Core.
 
 In this case, you can still use the `Snowplow.Tracker` package. The `Snowplow.Tracker` package is the base library and contains everything you'll need to track events on any platform. It targets .NET Standard 1.4 and therefore supported by [these platforms][netstandard-version-matrix].
 

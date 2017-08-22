@@ -5,7 +5,7 @@ title-short: Iglu Ruby Client
 tags: [iglu, ruby, json, jsonschema]
 author: Anton
 category: Releases
-permalink: /blog/2017/02/08/iglu-ruby-client-released
+permalink: /blog/2017/02/08/iglu-ruby-client-released/
 ---
 
 We are pleased to announce the initial release of the [Iglu Ruby Client][repo], our third library in the family of [Iglu] [iglu-repo] clients.
@@ -86,7 +86,7 @@ As in the Iglu Scala Client, the Ruby `Resolver` gives full information about wh
 
 {% highlight ruby %}
 invalid_json = {
-  :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0", 
+  :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0",
   :data => {:latitude => 30.8, :longitude => "invalid"}
 }
 
@@ -99,7 +99,7 @@ For valid JSON it will return a `true` value:
 
 {% highlight ruby %}
 valid_json = {
-  :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0", 
+  :schema => "iglu:com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0",
   :data => {:latitude => 30.8, :longitude => 62.1}
 }
 resolver.validate(valid_json) # Evaluates to true

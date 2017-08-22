@@ -5,7 +5,7 @@ title-short: "How we're reinventing digital analytics at Snowplow"
 tags: [digital analytics, web analytics, event analytics]
 author: Yali
 category: Meetups
-permalink: /blog/2016/07/25/how-were-reinventing-digital-analytics-at-snowplow-presentation-to-da-hub-europe
+permalink: /blog/2016/07/25/how-were-reinventing-digital-analytics-at-snowplow-presentation-to-da-hub-europe/
 ---
 
 Last month I was very fortunate to speak at the [DA Hub Europe](https://www.digitalanalyticshub.com/dahub16-europe/eu-homepage), as part of their •Emerging Technology Showcase*.
@@ -35,7 +35,7 @@ If you think about just some of the activities we engage with, that are mediated
 * Keeping fit
 * Playing games
 
-All that behaviour can be captured and mined. 
+All that behaviour can be captured and mined.
 
 <!--more-->
 
@@ -59,7 +59,7 @@ That's because these solutions are:
 
 ## That's not all
 
-Snowplow is 
+Snowplow is
 
 Open source
 

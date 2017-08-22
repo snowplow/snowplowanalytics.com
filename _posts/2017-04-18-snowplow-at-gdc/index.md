@@ -5,7 +5,7 @@ title: "Snowplow at GDC: why gaming companies don’t need to build their own ev
 tags: [snowplow, analytics, data, gaming, games, gdc, aws, codecombat]
 author: Yali
 category: Meetups
-permalink: /blog/2017/04/18/snowplow-at-gdc
+permalink: /blog/2017/04/18/snowplow-at-gdc/
 classification:
    department: product, analyst
    seniority: senior, c-level

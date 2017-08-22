@@ -5,7 +5,7 @@ title-short: Sauna 0.1.0
 tags: [sauna, response, marketing, operations, reaction, action, decisions, decisioning, commands, snowplow]
 author: Alex
 category: Releases
-permalink: /blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform
+permalink: /blog/2016/09/22/introducing-sauna-a-decisioning-and-response-platform/
 ---
 
 It's not every day that we get to announce an all-new *category* of software product here at Snowplow: we are hugely excited to be releasing version 0.1.0 of [Sauna] [sauna-repo], our new open-source decisioning and response platform.

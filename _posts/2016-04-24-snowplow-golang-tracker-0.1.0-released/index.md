@@ -5,7 +5,7 @@ title-short: Snowplow Golang Tracker 0.1.0
 tags: [snowplow, analytics, golang, go, tracker]
 author: Josh
 category: Releases
-permalink: /blog/2016/04/24/snowplow-golang-tracker-0.1.0-released
+permalink: /blog/2016/04/24/snowplow-golang-tracker-0.1.0-released/
 ---
 
 We are pleased to announce the release of the [Snowplow Golang Tracker] [golang-repo]. The Tracker is designed to work asynchronously within your Golang code to provide great performance in your applications and servers, even under heavy load, while also storing all of your events persistently in the event of network failure.
@@ -59,7 +59,7 @@ tracker := sp.InitTracker(sp.RequireEmitter(emitter))
 You are now ready to Track events, so let's send a screen view event:
 
 {% highlight go %}
-tracker.TrackScreenView(sp.ScreenViewEvent{ 
+tracker.TrackScreenView(sp.ScreenViewEvent{
   Id: sp.NewString("Screen ID"),
 })
 {% endhighlight %}
@@ -108,7 +108,7 @@ We have big plans for the Snowplow Golang Tracker at Snowplow, including:
 
 * [Golang Tracker setup guide] [golang-setup] for setting up the tracker
 * [Golang Tracker usage manual] [golang-manual] for instrumenting a Go app with the tracker
-* [Golang Tracker GoDoc documentation] [golang-godoc] for GoDoc's auto-generated documentation for the package 
+* [Golang Tracker GoDoc documentation] [golang-godoc] for GoDoc's auto-generated documentation for the package
 
 <h2 id="help">6. Getting help</h2>
 

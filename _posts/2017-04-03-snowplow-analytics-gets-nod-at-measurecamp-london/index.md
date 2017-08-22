@@ -5,7 +5,7 @@ title: "Snowplow Analytics gets nod at MeasureCamp London"
 tags: [snowplow, MeasureCamp]
 author: Dilyan
 category: Meetups
-permalink: /blog/2017/04/03/snowplow-analytics-gets-nod-at-measurecamp-london
+permalink: /blog/2017/04/03/snowplow-analytics-gets-nod-at-measurecamp-london/
 classification:
    department: all
    seniority: any

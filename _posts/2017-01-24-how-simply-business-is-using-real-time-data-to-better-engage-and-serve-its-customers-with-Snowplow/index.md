@@ -4,7 +4,7 @@ title: "How Simply Business is using real-time data to better engage and serve i
 tags: ["user story", "Simply Business", "real-time"]
 author: Giuseppe
 category: User Stories
-permalink: /blog/2017/01/24/how-simply-business-is-using-real-time-data-to-better-engage-and-serve-its-customers-with-Snowplow
+permalink: /blog/2017/01/24/how-simply-business-is-using-real-time-data-to-better-engage-and-serve-its-customers-with-Snowplow/
 ---
 
 > **“The Snowplow dataset has become part of our core strategic offering”, Stewart Duncan, director of Data Science, Simply Business**

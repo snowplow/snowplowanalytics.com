@@ -5,7 +5,7 @@ title-short: Schema Guru 0.5.0
 tags: [json, json schema, schema, ddl, redshift]
 author: Anton
 category: Releases
-permalink: /blog/2016/02/11/schema-guru-0.5.0-released
+permalink: /blog/2016/02/11/schema-guru-0.5.0-released/
 ---
 
 We are pleased to announce the releases of [Schema Guru][repo] 0.5.0 and [Schema DDL][ddl-repo] 0.3.0, with JSON Schema and Redshift DDL processing enhancements and several bug fixes.
@@ -38,11 +38,11 @@ Schema DDL had a long-standing bug where it versioned all Redshift DDLs with har
 
 To work well with [SchemaVer][schemaver], our Redshift DDL should be versioned after the `MODEL` element of JSON Schema version. For example, schemas with SchemaVers 1-0-0, 1-2-0 or 1-2-3 should all result in table with a version postfix `_1`, and events having any of these three versions can be loaded into this `_1` table.
 
-Many thanks to community member [Cameron Bytheway][camshaft] for his fix here! 
+Many thanks to community member [Cameron Bytheway][camshaft] for his fix here!
 
 <h2 id="schema-to-ddl">4. Improvements in Schema-to-DDL transformation</h2>
 
-With each new release Schema Guru is steadily growing smarter at transforming JSON Schemas into DDL files, 
+With each new release Schema Guru is steadily growing smarter at transforming JSON Schemas into DDL files,
 detecting various clues about how to map JSON Schema properties into column definitions.
 
 This release brings the following improvements:

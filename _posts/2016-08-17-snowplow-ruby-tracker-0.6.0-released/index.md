@@ -5,7 +5,7 @@ title-short: Snowplow Ruby Tracker 0.6.0
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Ed
 category: Releases
-permalink: /blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released
+permalink: /blog/2016/08/17/snowplow-ruby-tracker-0.6.0-released/
 ---
 
 We are pleased to announce the release of version 0.6.0 of the Snowplow Ruby Tracker. This release introduces true timestamp
@@ -33,21 +33,21 @@ Here's an example of how to attach a true timestamp to a page view event, as of 
 e = SnowplowTracker::Emitter.new('localhost')
 t = SnowplowTracker::Tracker.new(e)
 
-t.track_page_view('http://example.com', 
+t.track_page_view('http://example.com',
                   'Snowplow Ruby Tracker 0.6.0 released',
-                  'http://www.referrer.com', 
-                   nil, 
+                  'http://www.referrer.com',
+                   nil,
                    SnowplowTracker::TrueTimestamp.new(1471419787572))
 {% endhighlight %}
 
-The other tracking methods work in the same fashion, with the original timestamp field now accepting an integer or a Timestamp object indicating the type of timestamp. 
+The other tracking methods work in the same fashion, with the original timestamp field now accepting an integer or a Timestamp object indicating the type of timestamp.
 
 <h2 id="stm">2. Device-sent timestamp support</h2>
 
 This release adds a [device-sent timestamp][snowplow-time] to each event transmitted to a collector. This occurs automatically after upgrading to 0.6.0.
 
 <h2 id="selfdescribingevents">3. Track self describing events</h2>
- 
+
 After feedback, we've decided that a better description of "unstructured events" is "self describing events". As such, and to keep the Ruby tracker inline with our other trackers , we've mirrored the "track_unstruct_event" API calls as "track_self_describing_event". These are functionally the same. We will however look to de-support "track_unstruct_event" in future releases.
 
 Both versions of this API call support the true timestamp, and this is again not an API-breaking change.

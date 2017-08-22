@@ -5,7 +5,7 @@ title: "Insights from the first Snowplow meetup in Brazil"
 tags: [snowplow, analytics, data, Getninjas, Creditas]
 author: Bernardo
 category: Meetups
-permalink: /blog/2017/05/03/insights-from-the-first-snowplow-meetup-in-brazil
+permalink: /blog/2017/05/03/insights-from-the-first-snowplow-meetup-in-brazil/
 classification:
    department: data engineering, analyst
    seniority: all

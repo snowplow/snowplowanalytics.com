@@ -5,7 +5,7 @@ title-short: Factotum 0.3.0
 tags: [snowplow, rust, orchestration, dag, data engineering, jobs, tasks, factotum, pipeline]
 author: Ed
 category: Releases
-permalink: /blog/2016/11/07/factotum-0.3.0-released-with-webhooks
+permalink: /blog/2016/11/07/factotum-0.3.0-released-with-webhooks/
 ---
 
 We're pleased to announce the 0.3.0 release of Snowplow's DAG running tool [Factotum][factotum-repo]! This release centers around making DAGs easier to create, monitor and
@@ -28,16 +28,16 @@ In the rest of this post we will cover:
 We've decided that to separate commands effectively, we needed to move to a "subcommand" style arguments system. For this reason, what was originally
 `factotum <your factfile>` is now `factotum run <your factfile>`. All new features will follow this scheme.
 
-The other improvements around workflow broadly fall into the following categories: factfile validation, dry runs and Graphviz dotfile exports. 
+The other improvements around workflow broadly fall into the following categories: factfile validation, dry runs and Graphviz dotfile exports.
 These are discussed in the following sections!
 
 ### Validating factfiles
 
-Factfiles have always been schema'd and validated against the [factfile schema][factfile-schema]. It's not always convenient to locate 
+Factfiles have always been schema'd and validated against the [factfile schema][factfile-schema]. It's not always convenient to locate
 this schema and ensure that the factfile you're working on is valid, so as of version 0.3.0 we've introduced a built-in validation command. This
-includes checking that: your factfile is valid JSON; that it adheres to the JSON schema; and that each task can be executed. 
+includes checking that: your factfile is valid JSON; that it adheres to the JSON schema; and that each task can be executed.
 
-You can use it like this: 
+You can use it like this:
 
 ```factotum validate <your factfile>```
 
@@ -67,7 +67,7 @@ The `COMMAND` here is the real command Factotum will use to execute your task, w
 ### Graphviz dot output
 
 For complicated DAGs, it's not always easy to tell the dependency tree from the text output of a program. That's why as of 0.3.0 Factotum supports
-exporting your DAG as a [Graphviz dotfile][dot-format]. This export can be used to visualise your Factfile in any of [a number of programs][graphviz-renderers], 
+exporting your DAG as a [Graphviz dotfile][dot-format]. This export can be used to visualise your Factfile in any of [a number of programs][graphviz-renderers],
 or a [web based renderer][web-graphviz].
 
 ```factotum dot <your factfile> --output dag.dot```
@@ -108,7 +108,7 @@ You can ingest these events into Snowplow using the [Iglu webhook adapter POST s
 
 ### When updates are sent
 
-Updates are split into two different event types. The first is triggered when the state of the job changes, for example when the job is started or finished. 
+Updates are split into two different event types. The first is triggered when the state of the job changes, for example when the job is started or finished.
 The second is when the state of a specific task changes - for example, when a task is started or failed.
 
 ### Update format
@@ -444,7 +444,7 @@ Multiple tags can be added by repeating the argument:
 
 ## Fail fast vs continue as far as possible
 
-In previous releases of Factotum, when a task fails Factotum will stop processing your job as soon as possible. We call this behaviour "failing fast"; this is the default behavior of Make too (without the `--keep-going` flag being enabled). Failing fast is simple and predictable, however it often results in a lot of tasks that could have been run to not run at all. It's also difficult to reason about, because the final state of the DAG depends not just on which tasks failed, but how long different tasks ran for. 
+In previous releases of Factotum, when a task fails Factotum will stop processing your job as soon as possible. We call this behaviour "failing fast"; this is the default behavior of Make too (without the `--keep-going` flag being enabled). Failing fast is simple and predictable, however it often results in a lot of tasks that could have been run to not run at all. It's also difficult to reason about, because the final state of the DAG depends not just on which tasks failed, but how long different tasks ran for.
 
 That's why as of this release, we're switching to a different model. Factotum will now "keep going" and complete as many tasks as possible, with the tasks that depend on failing tasks
 being the only ones which are skipped.
@@ -501,9 +501,9 @@ Factotum 0.3.0 now ships an macOS version. You can see how to get a copy [here](
 
 ### Turning off terminal colours with --no-colours
 
-Colours aren't for everyone, and they can be distracting if you're piping data to a file (or another source that doesn't understand colour codes). In version 0.2.0 
+Colours aren't for everyone, and they can be distracting if you're piping data to a file (or another source that doesn't understand colour codes). In version 0.2.0
 we introduced support for the `CLICOLOR` environment variable (as described [here][cli-color-variable]). In this release we're complementing that with a command
-line argument `--no-colour` that forces ANSI terminal colours to be turned off. 
+line argument `--no-colour` that forces ANSI terminal colours to be turned off.
 
 ### Eating our own dog food
 

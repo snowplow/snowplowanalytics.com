@@ -5,7 +5,7 @@ title: "Snowplow 81 Kangaroo Island Emu released"
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
-permalink: /blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released
+permalink: /blog/2016/06/16/snowplow-r81-kangaroo-island-emu-released/
 ---
 
 We are happy to announce the release of Snowplow 81 Kangaroo Island Emu! At the heart of this release is the [Hadoop Event Recovery project] [hre-project], which allows you to fix up Snowplow bad rows and make them ready for reprocessing.
@@ -36,7 +36,7 @@ Our Scala Common Enrich library uses the [Apache Commons Base64 class][base64]. 
 
 This issue was particularly affecting high-volume users running Stream Enrich on servers with 4+ vCPUs.
 
-If this issue is affecting you, you'll see potentially many bad rows where the error message reports corrupt-looking JSON, but if you Base64-decode the bad row's original line, the JSON contained within it is valid. 
+If this issue is affecting you, you'll see potentially many bad rows where the error message reports corrupt-looking JSON, but if you Base64-decode the bad row's original line, the JSON contained within it is valid.
 
 In this release we have therefore upgraded our Stream Enrich component to use version 1.10 of the affected library, which makes the class thread-safe. Although non-critical, this update will come to the Hadoop pipeline in a future release.
 

@@ -5,7 +5,7 @@ title-short: The inaugural Snowplow Meetup Boston is a wrap!
 tags: [meetups, Boston, Carbonite, CustomMade]
 author: Yali
 category: Meetups
-permalink: /blog/2016/04/21/the-inaugural-snowplow-meetup-boston-is-a-wrap
+permalink: /blog/2016/04/21/the-inaugural-snowplow-meetup-boston-is-a-wrap/
 ---
 
 Two weeks ago, hot on the heals of the [Snowplow Meetup New York][ny-meetup], Snowplow users in Boston convened on the Carbonite offices for the first [Snowplow Meetup Boston][boston-meetup].

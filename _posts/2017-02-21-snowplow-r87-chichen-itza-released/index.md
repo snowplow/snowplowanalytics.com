@@ -5,7 +5,7 @@ title: "Snowplow 87 Chichen Itza released"
 tags: [snowplow, ebs, emr, redshift, manifest, elasticity]
 author: Alex
 category: Releases
-permalink: /blog/2017/02/21/snowplow-r87-chichen-itza-released
+permalink: /blog/2017/02/21/snowplow-r87-chichen-itza-released/
 ---
 
 We are pleased to announce the immediate availability of [Snowplow 87 Chichen Itza] [snowplow-release].

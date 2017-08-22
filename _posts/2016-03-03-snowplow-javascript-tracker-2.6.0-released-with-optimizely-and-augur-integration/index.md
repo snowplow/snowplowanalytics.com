@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.6.0
 tags: [snowplow, javascript, tracker, browser, analytics]
 author: Josh
 category: Releases
-permalink: /blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration
+permalink: /blog/2016/03/03/snowplow-javascript-tracker-2.6.0-released-with-optimizely-and-augur-integration/
 ---
 
 We are excited to announce the release of version 2.6.0 of the [Snowplow JavaScript Tracker][release-260]! This release brings turnkey [Optimizely][optimizely] and [Augur.io][augur] integration, so you can automatically grab A/B testing data (from Optimizely) and device and user recognition data (from Augur) with the events you track with the JavaScript Tracker.
@@ -73,7 +73,7 @@ Some notes on using these contexts:
 
 <h2 id="augur-integration">2. Augur.io integration</h2>
 
-[Augur.io][augur] is a device and user recognition service, that amongst other things has robust device fingerprinting technology that does not rely on cookies. 
+[Augur.io][augur] is a device and user recognition service, that amongst other things has robust device fingerprinting technology that does not rely on cookies.
 
 The Augur.io integration means that Augur device recognition data is automatically captured and passed into Snowplow with each event recorded, which includes the following data points:
 

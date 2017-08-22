@@ -5,10 +5,10 @@ title-short: Ad impression and click tracking with Snowplow
 tags: [ad impression, ad click, click tracking, display ad]
 author: Yali
 category: Other
-permalink: /blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow
+permalink: /blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/
 ---
 
-It is possible to track both ad impression events and ad click events into Snowplow. That means if you're a Snowplow user buying display ads to drive traffic to your website or app, you can track not only what users do once they click through onto your site or app, but what ads they have been exposed and whether or not they clicked any of them. This is paticularly useful for companies building attribution models, for example. 
+It is possible to track both ad impression events and ad click events into Snowplow. That means if you're a Snowplow user buying display ads to drive traffic to your website or app, you can track not only what users do once they click through onto your site or app, but what ads they have been exposed and whether or not they clicked any of them. This is paticularly useful for companies building attribution models, for example.
 
 In this guide, we describe how to implement Snowplow tracking for ad impression and ad click events.
 
@@ -16,7 +16,7 @@ In this guide, we describe how to implement Snowplow tracking for ad impression 
   * [Using the Javascript tracker](/blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/#js-tracker)  
   * [Using the pixel tracker](/blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/#pixel-tracker)
 2. [Tracking ad clicks](/blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/#tracking-ad-clicks)  
- 
+
 
 <!--more-->
 
@@ -43,7 +43,7 @@ window.adTracker('newTracker', rnd, 'd3rkrsqld9gmqf.cloudfront.net', {
     'encodeBase64': false
 });
 
-window.adTracker('trackAdImpression:' + rnd, 
+window.adTracker('trackAdImpression:' + rnd,
     '67965967893',            // impressionId
     'cpa',                    // costModel - 'cpa', 'cpc', or 'cpm'            
     10,                       // cost - requires costModel
@@ -53,7 +53,7 @@ window.adTracker('trackAdImpression:' + rnd,
     '201',                    // advertiserId
     '12'                      // campaignId
 );
-{% endhighlight %} 
+{% endhighlight %}
 
 You can view a complete example [on Github][github-ad-impression-tracking-with-js-example].
 

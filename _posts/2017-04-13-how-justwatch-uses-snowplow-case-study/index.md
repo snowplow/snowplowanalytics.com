@@ -5,7 +5,7 @@ title: "How JustWatch uses Snowplow data to build a differentiated service for a
 tags: [snowplow, analytics, media, advertising, adtech, justwatch, data, movie, film, studio, video]
 author: Giuseppe
 category: User Stories
-permalink: /blog/2017/04/13/how-justwatch-uses-snowplow-case-study
+permalink: /blog/2017/04/13/how-justwatch-uses-snowplow-case-study/
 classification:
    department: marketer, analyst
    seniority: senior
