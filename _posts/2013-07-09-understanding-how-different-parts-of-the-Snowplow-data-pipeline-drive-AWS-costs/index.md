@@ -4,7 +4,7 @@ title: Unpicking the Snowplow data pipeline and how it drives AWS costs
 tags: [total cost of ownership, cloud services]
 author: Yali
 category: Inside the Plow
-permalink: /blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs
+permalink: /blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/
 ---
 
 Back in March, [Robert Kingston suggested] [tco-google-group] that we develop a Total Cost of Ownership model for Snowplow: something that would enable a user or prospective user to accurately estimate their Amazon Web Services monthly charges going forwards, and see how those costs vary with different traffic levels. We thought this was an excellent idea.

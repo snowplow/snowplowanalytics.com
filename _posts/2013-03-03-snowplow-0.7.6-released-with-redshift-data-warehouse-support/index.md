@@ -5,7 +5,7 @@ title-short: Snowplow 0.7.6
 tags: [snowplow, redshift, datawarehouse]
 author: Alex
 category: Releases
-permalink: /blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support
+permalink: /blog/2013/03/03/snowplow-0.7.6-released-with-redshift-data-warehouse-support/
 ---
 
 We're excited to announce the immediate release of Snowplow version **0.7.6** with support for storing your Snowplow events in [Amazon Redshift] [amazon-redshift].

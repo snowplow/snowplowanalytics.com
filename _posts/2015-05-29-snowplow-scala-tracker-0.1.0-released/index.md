@@ -5,7 +5,7 @@ title-short: Snowplow Scala Tracker 0.1.0
 tags: [snowplow, analytics, scala]
 author: Fred
 category: Releases
-permalink: /blog/2015/05/29/snowplow-scala-tracker-0.1.0-released
+permalink: /blog/2015/05/29/snowplow-scala-tracker-0.1.0-released/
 ---
 
 We are pleased to announce the release of the new [Snowplow Scala Tracker][repo]! This initial release allows you to build and send unstructured events and custom contexts using the [json4s][json4s] library.

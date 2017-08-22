@@ -5,7 +5,7 @@ title-short: Crunchconf Budapest recap
 tags: [conference, crunch, Prezi, UStream, Budapest, big data]
 author: Yali
 category: Meetups
-permalink: /blog/2015/11/09/crunch-practical-big-data-conference-budapest-was-awesome
+permalink: /blog/2015/11/09/crunch-practical-big-data-conference-budapest-was-awesome/
 ---
 
 A couple of weeks ago I was very lucky to attend, and speak at [Crunch Conference] [crunchconf], a practical big data conference in Budapest, organised by the folks at [Ustream][ustream] and [Prezi][prezi], and headlined by some of the titans of the data industry, including [Doug Cutting][dcutting], the creator of [Hadoop][hadoop] (not to mention Lucene and Nutch) and [Martin Kleppmann][mkleppmann], the creator of [Samza][samza].

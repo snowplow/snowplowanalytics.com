@@ -5,7 +5,7 @@ title-short: "Improving Snowplow's understanding of time"
 tags: [snowplow, time, ts, tstamp, event]
 author: Alex
 category: Research
-permalink: /blog/2015/09/15/improving-snowplows-understanding-of-time
+permalink: /blog/2015/09/15/improving-snowplows-understanding-of-time/
 ---
 
 As we evolve the Snowplow platform, one area we keep coming back to is our understanding and handling of time. The time at which an event took place is a crucial fact for every event - but it's surprisingly challenging to determine accurately. Our approach to date has been to capture as many clues as to the "true timestamp" of an event as we can, and record these faithfully for further analysis.

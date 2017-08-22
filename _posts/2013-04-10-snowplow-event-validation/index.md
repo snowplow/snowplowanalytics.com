@@ -5,7 +5,7 @@ title-short: Snowplow event validation
 tags: [snowplow, data, event, validation]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2013/04/10/snowplow-event-validation
+permalink: /blog/2013/04/10/snowplow-event-validation/
 ---
 
 A key goal of the Snowplow project is enabling **high-fidelity analytics** for businesses running Snowplow.

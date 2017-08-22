@@ -5,7 +5,7 @@ title-short: Snowplow Ruby Tracker 0.5.0
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released
+permalink: /blog/2015/08/11/snowplow-ruby-tracker-0.5.0-released/
 ---
 
 We are happy to announce the release of version 0.5.0 of the Snowplow Ruby Tracker. As well as making the Tracker more robust, this release introduces several breaking API changes.

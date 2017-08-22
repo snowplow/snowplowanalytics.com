@@ -5,7 +5,7 @@ title-short: Snowplow Node.js Tracker 0.2.0
 tags: [snowplow, analytics, node, npm, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2015/10/09/snowplow-nodejs-tracker-0.2.0-released
+permalink: /blog/2015/10/09/snowplow-nodejs-tracker-0.2.0-released/
 ---
 
 Version 0.2.0 of the [Snowplow Node.js Tracker][repo] is now available! This release changes the Tracker's architecture and adds the ability to send Snowplow events via either `GET` or `POST`.

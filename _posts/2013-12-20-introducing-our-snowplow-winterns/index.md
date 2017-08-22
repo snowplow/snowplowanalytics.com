@@ -4,7 +4,7 @@ title: Introducing our Snowplow winterns
 tags: [snowplow, intern, wintern, internship]
 author: Alex
 category: Recruitment
-permalink: /blog/2013/12/20/introducing-our-snowplow-winterns
+permalink: /blog/2013/12/20/introducing-our-snowplow-winterns/
 ---
 
 Just over two months ago we announced our winter internship program for open source hackers, [here on this blog] [original-post]. We had no idea what kind of response we would receive - it was our first attempt at designing an internship program, and we had never heard of a startup (even an open source company like ours) recruiting _remote_ interns. As it turned out, we were delighted by the response we received, and we decided to make offers to **three** very talented "winterns" from around the world, rather than the one-to-two originally planned.

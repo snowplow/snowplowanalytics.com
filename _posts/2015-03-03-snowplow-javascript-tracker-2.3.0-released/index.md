@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.3.0
 tags: [snowplow, javascript, tracker, browser, analytics]
 author: Fred
 category: Releases
-permalink: /blog/2015/03/03/snowplow-javascript-tracker-2.3.0-released
+permalink: /blog/2015/03/03/snowplow-javascript-tracker-2.3.0-released/
 ---
 
 We are pleased to announce the release of version 2.3.0 of the [Snowplow JavaScript Tracker][release-230]! This release adds a number of new features including the ability to send events by `POST` rather than `GET`, some new contexts, and improved automatic form tracking.

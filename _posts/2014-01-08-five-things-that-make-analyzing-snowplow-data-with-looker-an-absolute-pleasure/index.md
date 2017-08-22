@@ -4,7 +4,7 @@ title: Five things that make analyzing Snowplow data in Looker an absolute pleas
 tags: [snowplow, analysis, looker]
 author: Yali
 category: Releases
-permalink: /blog/2014/01/08/five-things-that-make-analyzing-snowplow-data-with-looker-an-absolute-pleasure
+permalink: /blog/2014/01/08/five-things-that-make-analyzing-snowplow-data-with-looker-an-absolute-pleasure/
 ---
 
 *Towards the end of 2013 we published our first blog post on [Looker] [looker] where we explored at a technical level why Looker is so well suited to analyzing Snowplow data. Today we [released Snowplow 0.8.13] [looker-release], the [Looker release] [looker-release]. This includes a metadata model to make it easy for Snowplow users to get up and running with Looker on top of Snowplow very quickly. In this post, we get a bit less theoretical, and highlight five very tangible reasons why analyzing Snowplow data with Looker is such an absolute pleasure.*

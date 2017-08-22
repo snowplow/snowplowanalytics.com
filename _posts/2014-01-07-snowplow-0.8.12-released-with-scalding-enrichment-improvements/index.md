@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.12
 tags: [snowplow, enrichment, release, scalding]
 author: Alex
 category: Releases
-permalink: /blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements
+permalink: /blog/2014/01/07/snowplow-0.8.12-released-with-scalding-enrichment-improvements/
 ---
 
 We are very pleased to announce the immediate availability of [Snowplow 0.8.12] [github-release]. We have quite a packed schedule of releases planned over the next few weeks - and we are kicking off with 0.8.12, which consists of various small improvements to our Scalding-based Enrichment process, plus some architectural re-work to prepare for the coming releases (in particular, [Amazon Kinesis] [kinesis] support).

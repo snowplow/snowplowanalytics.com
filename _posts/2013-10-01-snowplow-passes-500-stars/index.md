@@ -4,7 +4,7 @@ title: Snowplow passes 500 stars on GitHub
 tags: [snowplow, github, scala, trending]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2013/10/01/snowplow-passes-500-stars
+permalink: /blog/2013/10/01/snowplow-passes-500-stars/
 ---
 
 As of yesterday, the [Snowplow repository on GitHub] [snowplow] now has over 500 stars! We're hugely excited to reach this milestone, having picked up **300 new watchers** since our [last milestone] [snowplow-200-stars] in January.

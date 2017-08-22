@@ -5,7 +5,7 @@ title-short: Snowplow Java Tracker 0.1.0
 tags: [snowplow, analytics, java, jvm, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2014/06/20/snowplow-java-tracker-0.1.0-released
+permalink: /blog/2014/06/20/snowplow-java-tracker-0.1.0-released/
 ---
 
 We are proud to announce the release of our new [Snowplow Java Tracker] [repo], developed by [Snowplow community member Kevin Gleason] [gleasonk]. This is our first community-contributed event tracker - a real milestone for us at Snowplow and it's all thanks to Kevin's fantastic work!

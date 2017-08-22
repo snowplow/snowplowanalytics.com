@@ -4,7 +4,7 @@ title: Where does your traffic really come from?
 tags: [referrer, referer, traffic, source, medium, marketing, attribution]
 author: Yali
 category: Analytics
-permalink: /blog/2013/05/10/where-does-your-traffic-really-come-from
+permalink: /blog/2013/05/10/where-does-your-traffic-really-come-from/
 ---
 
 <img src="/assets/img/blog/2013/05/lone-traveller.jpg" />

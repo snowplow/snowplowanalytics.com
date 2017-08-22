@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.14
 tags: [snowplow, enrichment, bug, webhooks]
 author: Alex
 category: Releases
-permalink: /blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks
+permalink: /blog/2014/12/31/snowplow-0.9.14-released-with-additional-webhooks/
 ---
 
 We are pleased to announce the release of Snowplow 0.9.14, our 17th and final release of Snowplow for 2014! This release contains a variety of important bug fixes, plus support for three new event streams which can be loaded into your Snowplow event warehouse and unified log:

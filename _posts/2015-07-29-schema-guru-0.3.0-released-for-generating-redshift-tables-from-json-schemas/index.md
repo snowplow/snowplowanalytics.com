@@ -5,7 +5,7 @@ title-short: Schema Guru 0.3.0
 tags: [json, json schema, schema, iglu, self-describing, redshift]
 author: Anton
 category: Releases
-permalink: /blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas
+permalink: /blog/2015/07/29/schema-guru-0.3.0-released-for-generating-redshift-tables-from-json-schemas/
 ---
 
 We are pleased to announce the release of Schema Guru 0.3.0 and Schema DDL 0.1.0, our tools to work with JSON Schemas.

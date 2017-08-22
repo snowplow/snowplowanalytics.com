@@ -4,7 +4,7 @@ title: The inaugural Snowplow meetup in San Francisco is a wrap!
 tags: [snowplow, meetup, san francisco, aws, stumbleupon, tilt, chefsfeed]
 author: Yali
 category: Meetups
-permalink: /blog/2015/10/22/snowplow-meetup-san-francisco-is-a-wrap
+permalink: /blog/2015/10/22/snowplow-meetup-san-francisco-is-a-wrap/
 ---
 
 Just over two weeks ago I met with 50 Snowplow users and prospective users at [Tilt's] [tilt] gorgeous offices in San Francisco for the first Snowplow meetup to take place in San Francisco. There we were very privilaged to hear three fantastic talks: from Pete O'Leary at Chefsfeed, Jackson Wang from Tilt and Nora Paymer from StumbleUpon.

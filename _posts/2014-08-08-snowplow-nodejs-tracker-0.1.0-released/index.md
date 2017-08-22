@@ -5,7 +5,7 @@ title-short: Snowplow Node.js Tracker 0.1.0
 tags: [snowplow, analytics, node, npm, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2014/08/08/snowplow-nodejs-tracker-0.1.0-released
+permalink: /blog/2014/08/08/snowplow-nodejs-tracker-0.1.0-released/
 ---
 
 We are delighted to announce the release of the first version of the [Snowplow Node.js Tracker][repo]. This is an [npm][npm] module designed to send Snowplow events to a Snowplow collector from a [Node.js][node-js] environment.

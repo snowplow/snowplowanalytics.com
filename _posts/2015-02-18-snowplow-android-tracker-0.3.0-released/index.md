@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.3.0
 tags: [snowplow, analytics, android, mobile, tracker]
 author: Josh
 category: Releases
-permalink: /blog/2015/02/18/snowplow-android-tracker-0.3.0-released
+permalink: /blog/2015/02/18/snowplow-android-tracker-0.3.0-released/
 ---
 
 We are pleased to announce the release of the third version of the [Snowplow Android Tracker][repo]. The Tracker has undergone a series of changes including removing the dependancy on the Java Core Library and a move towards using RxJava as a way of implementing asynchronous background tasks.

@@ -4,7 +4,7 @@ title: Announcing our summer open source internship program
 tags: [snowplow, intern, summer, internship]
 author: Alex
 category: Recruitment
-permalink: /blog/2015/04/09/announcing-our-summer-internship-program
+permalink: /blog/2015/04/09/announcing-our-summer-internship-program/
 ---
 
 Snowplow Analytics is looking for 1-2 open source software interns this Summer (May through August), for a 6-8 week paid internship, building on our previous successful internships in [winter 2013/14] [wintern1], [summer 2014] [summer] and [winter 2014/15] [wintern2].

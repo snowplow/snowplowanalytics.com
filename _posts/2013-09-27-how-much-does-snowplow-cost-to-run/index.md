@@ -5,7 +5,7 @@ title-short: How much does Snowplow cost to run
 tags: [snowplow, total cost of ownership]
 author: Yali
 category: Inside the Plow  
-permalink: /blog/2013/09/27/how-much-does-snowplow-cost-to-run
+permalink: /blog/2013/09/27/how-much-does-snowplow-cost-to-run/
 ---
 
 We are very pleased to announce the release of the [Snowplow Total Cost of Ownership Model] [snowplow-tco]. This is a model we started developing [back in July][intro-post], to enable:

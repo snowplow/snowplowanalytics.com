@@ -5,7 +5,7 @@ title-short: Snowplow iOS Tracker 0.1.1
 tags: [snowplow, analytics, ios, tracker]
 author: Jonathan
 category: Releases
-permalink: /blog/2014/09/17/snowplow-ios-tracker-0.1.1-released
+permalink: /blog/2014/09/17/snowplow-ios-tracker-0.1.1-released/
 ---
 
 We're extremely excited to announce our initial release of the [Snowplow iOS Tracker] [repo].

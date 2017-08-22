@@ -5,7 +5,7 @@ title-short: Snowplow Ruby Tracker 0.2.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released
+permalink: /blog/2014/07/31/snowplow-ruby-tracker-0.2.0-released/
 ---
 
 We are pleased to announce the release of the Snowplow Ruby Tracker version 0.2.0. This release brings the Ruby Tracker up to date with the other Snowplow trackers, particularly around support of self-describing custom contexts and unstructured events.

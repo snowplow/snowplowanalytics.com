@@ -5,7 +5,7 @@ title-short: Join the Snowplow team in Budapest
 tags: [budapest bi summit]
 author: Yali
 category: Meetups
-permalink: /blog/2013/10/23/snowplow-team-in-budapest-to-speak-at-open-analytics-conference
+permalink: /blog/2013/10/23/snowplow-team-in-budapest-to-speak-at-open-analytics-conference/
 ---
 
 We are thrilled to be going to Budapest this November, where I've kindly been invited to speak at the [Budapest BI Forum] [budapest-bi-forum] on Snowplow, on a day dedicated to [Open Analytics] [open-analytics-day].

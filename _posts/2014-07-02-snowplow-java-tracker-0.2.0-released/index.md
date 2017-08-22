@@ -5,7 +5,7 @@ title-short: Snowplow Java Tracker 0.2.0
 tags: [snowplow, analytics, java, jvm, tracker]
 author: Jonathan
 category: Releases
-permalink: /blog/2014/07/02/snowplow-java-tracker-0.2.0-released
+permalink: /blog/2014/07/02/snowplow-java-tracker-0.2.0-released/
 ---
 
 We are pleased to announce the release of the [Snowplow Java Tracker version 0.2.0][repo].

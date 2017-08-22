@@ -5,7 +5,7 @@ title-short: Huskimo 0.3.0 with Twilio support
 tags: [huskimo, twilio, telephony, phone, calls, sms, voicemail, redshift]
 author: Alex
 category: Releases
-permalink: /blog/2015/08/30/huskimo-0.3.0-released-warehouse-your-twilio-telephony-data-in-redshift
+permalink: /blog/2015/08/30/huskimo-0.3.0-released-warehouse-your-twilio-telephony-data-in-redshift/
 ---
 
 We are pleased to announce the release of [Huskimo] [huskimo] 0.3.0, for companies who use [Twilio] [twilio] and would like to analyze their telephony data in Amazon Redshift, alongside their Snowplow event data.

@@ -5,7 +5,7 @@ title-short: Loading JSON data into Redshift
 tags: [json, redshift, unstructured, data pipeline, hive, serde]
 author: Yali
 category: Inside the Plow
-permalink: /blog/2013/11/20/loading-json-data-into-redshift
+permalink: /blog/2013/11/20/loading-json-data-into-redshift/
 ---
 
 Very many of our Professional Services projects involve forking the Snowplow codebase so that specific clients can use it to load their event data, stored as JSONs, into Amazon Redshift, so that they can use BI tools to create dashboards and mine that data.

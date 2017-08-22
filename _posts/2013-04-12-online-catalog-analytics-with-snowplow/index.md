@@ -5,7 +5,7 @@ title-short: Measuring product page performance with Snowplow
 tags: [snowplow, ecommerce, retail, catalog, catalogue, analytics]
 author: Yali
 category: Analytics
-permalink: /blog/2013/04/12/online-catalog-analytics-with-snowplow
+permalink: /blog/2013/04/12/online-catalog-analytics-with-snowplow/
 ---
 
 We built Snowplow to enable businesses to execute the widest range of analytics on their web event data. One area of analysis we are particularly excited about is catalog analytics for retailers. Today, we've published the [first recipes] [recipes] in the [catalog analytics] [catalog-analytics] section of the [Snowplow Analytics Cookbook] [cookbook]. These cover [how to measure and compare the performance of different product pages on an ecommerce site] [recipes], using plots like the one below:

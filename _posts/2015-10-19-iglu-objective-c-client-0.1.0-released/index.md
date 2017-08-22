@@ -5,7 +5,7 @@ title-short: Iglu Objective-C Client 0.1.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, iglu, json, jsonschema]
 author: Josh
 category: Releases
-permalink: /blog/2015/10/19/iglu-objective-c-client-0.1.0-released
+permalink: /blog/2015/10/19/iglu-objective-c-client-0.1.0-released/
 ---
 
 We are pleased to announce the release of version 0.1.0 of the [Iglu Objective-C Client] [client-repo]. This is the second Iglu client to be released (following the [Iglu Scala Client] [scala-repo]) and will allow you to test and validate all of your Snowplow self-describing JSONs directly in your OS X and iOS applications.

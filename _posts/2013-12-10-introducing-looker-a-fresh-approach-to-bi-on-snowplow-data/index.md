@@ -5,7 +5,7 @@ title-short: Introducing Looker
 tags: [events, business intelligence, looker, lookml]
 author: Yali
 category: Analytics
-permalink: /blog/2013/12/10/introducing-looker-a-fresh-approach-to-bi-on-snowplow-data
+permalink: /blog/2013/12/10/introducing-looker-a-fresh-approach-to-bi-on-snowplow-data/
 ---
 ![Looker-screenshot] [looker-screenshot]
 

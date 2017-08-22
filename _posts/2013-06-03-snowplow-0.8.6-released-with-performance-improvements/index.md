@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.6
 tags: [hadoop etl, small files problem, task instance, emr]
 author: Alex
 category: Releases
-permalink: /blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements
+permalink: /blog/2013/06/03/snowplow-0.8.6-released-with-performance-improvements/
 ---
 
 We are very pleased to announce the release of Snowplow **0.8.6**, with two significant performance-related improvements to the Hadoop ETL. These improvements are:

@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.4
 tags: [snowplow, Looker, data modelling, LookML, event analytics, business intelligence]
 author: Yali
 category: Releases
-permalink: /blog/2014/05/30/snowplow-0.9.4-released-with-updated-looker-models-and-dashboard
+permalink: /blog/2014/05/30/snowplow-0.9.4-released-with-updated-looker-models-and-dashboard/
 ---
 
 We are very pleased to release Snowplow 0.9.4, which includes a new base LookML data model and dashboard to get Snowplow users started with [Looker][looker].

@@ -4,7 +4,7 @@ title: How configurable data models and schemas make digital analytics better
 tags: [snowplow, json, json schema, redshift, iglu, schema, data model, configurable]
 author: Yali
 category: Analytics
-permalink: /blog/2014/07/11/on-the-benefits-of-configurable-schemas
+permalink: /blog/2014/07/11/on-the-benefits-of-configurable-schemas/
 ---
 
 ![Image of something trying to squeeze into something into which it wont fit] [image1]

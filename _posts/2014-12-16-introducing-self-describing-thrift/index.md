@@ -4,7 +4,7 @@ title: Introducing self-describing Thrift
 tags: [thrift, schema, iglu, model]
 author: Fred
 category: Research
-permalink: /blog/2014/12/16/introducing-self-describing-thrift
+permalink: /blog/2014/12/16/introducing-self-describing-thrift/
 ---
 
 At Snowplow we have been thinking about how to version [Thrift][thrift] schemas. This was prompted by the realization that we need to update the [SnowplowRawEvent schema] [snowplow-raw-event-idl], which we use to serialize the Snowplow events received by the Scala Stream Collector. We want to update this in a way that supports further schema evolution in the future.

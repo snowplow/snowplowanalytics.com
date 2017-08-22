@@ -5,7 +5,7 @@ title-short: Modeling event data in Looker
 tags: [snowplow, looker, london, data modelling, lookml]
 author: Yali
 category: Meetups
-permalink: /blog/2014/12/07/snowplow-presentation-from-look-and-tell-london-event-november-2014
+permalink: /blog/2014/12/07/snowplow-presentation-from-look-and-tell-london-event-november-2014/
 ---
 
 Last month the Looker team flew into London for their inaugural [Look&Tell London][looker-london]. I was very lucky to be given the opportunity to speak at the event.

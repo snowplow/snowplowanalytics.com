@@ -5,7 +5,7 @@ title-short: Schema Guru 0.2.0
 tags: [json, json schema, schema, iglu, self-describing]
 author: Anton
 category: Releases
-permalink: /blog/2015/07/05/schema-guru-0.2.0-released
+permalink: /blog/2015/07/05/schema-guru-0.2.0-released/
 ---
 
 Almost a month has passed since the [first release][first-release] of [Schema Guru][repo], our tool for deriving JSON Schemas from multiple JSON instances. That release was something of a proof-of-concept - in this 0.2.0 release we are adding much richer functionality, plus deeper integration with the Snowplow platform.

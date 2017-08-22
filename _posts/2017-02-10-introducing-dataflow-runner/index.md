@@ -5,7 +5,7 @@ title-short: Dataflow Runner 0.1.0
 tags: [snowplow, golang, orchestration, emr]
 author: Josh
 category: Releases
-permalink: /blog/2017/02/10/introducing-dataflow-runner
+permalink: /blog/2017/02/10/introducing-dataflow-runner/
 ---
 
 We are pleased to announce the release of [Dataflow Runner] [dataflow-runner-repo], a new open-source system for the creation and running of [AWS EMR][aws-emr] jobflow clusters and steps. Big thanks to Snowplow intern [Manoj Rajandrakumar][manoj] for all of his hard work on this project!

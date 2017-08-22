@@ -5,7 +5,7 @@ title-short: Snowplow 64 Palila
 tags: [snowplow, analytics, data modeling]
 author: Christophe
 category: Releases
-permalink: /blog/2015/04/16/snowplow-r64-palila-released
+permalink: /blog/2015/04/16/snowplow-r64-palila-released/
 ---
 
 We are excited to announce the immediate availability of Snowplow 64, Palila. This is a major release which adds a new [data modeling][github-data-modeling] stage to the Snowplow pipeline, as well as fixes a small number of important bugs across the rest of Snowplow.

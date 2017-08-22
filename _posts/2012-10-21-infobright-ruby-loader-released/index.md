@@ -4,7 +4,7 @@ title: Infobright Ruby Loader Released
 tags: [inforbright, ruby, data ingest]
 author: Alex
 category: Releases
-permalink: /blog/2012/10/21/infobright-ruby-loader-released
+permalink: /blog/2012/10/21/infobright-ruby-loader-released/
 ---
 
 We're pleased to start the week with the release of a new Ruby gem, our [Infobright Ruby Loader] [irl-repo] (IRL).

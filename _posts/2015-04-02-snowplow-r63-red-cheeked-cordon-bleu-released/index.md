@@ -5,7 +5,7 @@ title-short: Snowplow 63 Red-Cheeked Cordon-Bleu
 tags: [snowplow, currency, gclid, useragent, ua_parser, forex, oer]
 author: Alex
 category: Releases
-permalink: /blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released
+permalink: /blog/2015/04/02/snowplow-r63-red-cheeked-cordon-bleu-released/
 ---
 
 We are pleased to announce the immediate availability of Snowplow 63, Red-Cheeked Cordon-Bleu. This is a major release which adds two new enrichments, upgrades existing enrichments and significantly extends and improves our Canonical Event Model for loading into Redshift, Elasticsearch and Postgres.

@@ -5,7 +5,7 @@ title-short: The Clojure Collector in detail
 tags: [snowplow, clojure collector, clojure, third party cookies, amazon elastic beanstalk]
 category: Inside the Plow
 author: yali
-permalink: /blog/2013/01/07/the-clojure-collector-in-detail
+permalink: /blog/2013/01/07/the-clojure-collector-in-detail/
 ---
 
 Last week we released [Snowplow 0.7.0] [snowplow-0.7.0]: which included a new Clojure Collector, with some significant new functionality for content networks and ad networks in particular. In this post we explain a lot of the thinking behind the Clojure Collector architecture, before taking a look ahead at the short and long-term development roadmap for the collector.

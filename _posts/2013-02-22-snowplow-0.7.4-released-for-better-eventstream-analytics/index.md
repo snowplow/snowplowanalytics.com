@@ -5,7 +5,7 @@ title-short: Snowplow 0.7.4
 tags: [snowplow, javascript, tracker, release]
 author: Alex
 category: Releases
-permalink: /blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics
+permalink: /blog/2013/02/22/snowplow-0.7.4-released-for-better-eventstream-analytics/
 ---
 
 Another week, another release! We're excited to announce Snowplow version **0.7.4**. The primary purpose of this release is to clean up and rationalise our event data model, in particular around **user IDs** and **event timestamps**. This release should lay the foundations for more sophisticated eventstream analytics (such as funnel analysis), by:

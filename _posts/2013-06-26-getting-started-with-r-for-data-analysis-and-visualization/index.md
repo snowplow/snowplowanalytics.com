@@ -4,7 +4,7 @@ title: Getting started using R for data analysis
 tags: [snowplow, R, data analysis, science]
 author: Yali
 category: Analytics
-permalink: /blog/2013/06/26/getting-started-with-r-for-data-analysis-and-visualization
+permalink: /blog/2013/06/26/getting-started-with-r-for-data-analysis-and-visualization/
 ---
 
 [R] [r] is one of the most popular data analytics tools out there, with a rich and vibrant community of users and contributors. In spite of its popularity in general (and particularly with amongst academics and statisticians), R is not a common tool to find in business or web analysts arsenal, where Excel and Google Analytics tend to reign supreme.

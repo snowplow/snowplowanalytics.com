@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.2.0
 tags: [snowplow, javascript, tracker, event]
 author: Fred
 category: Releases
-permalink: /blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released
+permalink: /blog/2014/12/15/snowplow-javascript-tracker-2.2.0-released/
 ---
 
 We are happy to announce the release of version 2.2.0 of the [Snowplow JavaScript Tracker][repo]. This release improves the Tracker's callback support, making it possible to use access previously internal variables such as the tracker-generated user fingerprint and user ID. It also adds the option to disable the Tracker's use of `localStorage` and first-party cookies.

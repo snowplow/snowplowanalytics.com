@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.10
 tags: [snowplow, analysis, pivot, bi, sql, olap]
 author: Yali
 category: Releases
-permalink: /blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes
+permalink: /blog/2013/10/18/snowplow-0.8.10-released-with-analytics-recipes-and-cubes/
 ---
 
 We are pleased to announce the release of Snowplow 0.8.10. In this release, we have taken many of the SQL recipes we have covered in the [Analysts Cookbook] [cookbook] and 'baked them' into Snowplow by providing them as views that can be added directly to your Snowplow data in Amazon Redshift or PostgreSQL.

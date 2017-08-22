@@ -5,7 +5,7 @@ title-short: Snowplow custom contexts guide
 tags: [snowplow, custom, contexts, javascript, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2014/01/27/snowplow-custom-contexts-guide
+permalink: /blog/2014/01/27/snowplow-custom-contexts-guide/
 ---
 
 ---

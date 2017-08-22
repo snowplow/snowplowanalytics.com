@@ -5,7 +5,7 @@ title-short: How the role of Hive is changing in Snowplow
 tags: [hive, serde, snowplow, hive london, presentation]
 author: Yali
 category: Meetups
-permalink: /blog/2012/10/12/how-the-role-of-hive-is-changing-at-snowplow
+permalink: /blog/2012/10/12/how-the-role-of-hive-is-changing-at-snowplow/
 ---
 
 Last night I gave a presentation to the clever folks at Hive London covering three things:

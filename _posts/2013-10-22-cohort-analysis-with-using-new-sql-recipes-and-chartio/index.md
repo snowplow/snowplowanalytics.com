@@ -5,7 +5,7 @@ title-short: Cohort analysis with ChartIO
 tags: [cohort analysis, chartio]
 author: Yali
 category: Analytics
-permalink: /blog/2013/10/22/cohort-analysis-with-using-new-sql-recipes-and-chartio
+permalink: /blog/2013/10/22/cohort-analysis-with-using-new-sql-recipes-and-chartio/
 ---
 
 

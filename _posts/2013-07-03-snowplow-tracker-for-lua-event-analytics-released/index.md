@@ -5,7 +5,7 @@ title-short: Snowplow Tracker for Lua
 tags: [snowplow, lua, event, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2013/07/03/snowplow-tracker-for-lua-event-analytics-released
+permalink: /blog/2013/07/03/snowplow-tracker-for-lua-event-analytics-released/
 ---
 
 We are very pleased to announce the release of our [SnowplowTracker for Lua event analytics] [snowplow-lua-tracker]. This is our fourth tracker to be released, following on from our [JavaScript] [snowplow-js-tracker], [Pixel] [snowplow-pixel-tracker] and [Arduino] [snowplow-arduino-tracker] Trackers.

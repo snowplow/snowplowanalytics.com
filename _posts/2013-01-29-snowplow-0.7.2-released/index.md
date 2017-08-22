@@ -5,7 +5,7 @@ title-short: Snowplow 0.7.2
 tags: [snowplow, no javascript, pixel, tracker, collector, pixel tracker, tracking pixel]
 author: Alex
 category: Releases
-permalink: /blog/2013/01/29/snowplow-0.7.2-released
+permalink: /blog/2013/01/29/snowplow-0.7.2-released/
 ---
 
 We're excited to announce the release of Snowplow version **0.7.2**. As well as a couple of bug fixes, this release includes our second Snowplow tracker - the [Pixel Tracker] [pixel-tracker], to be used in web environments where a JavaScript-based tracker is not an option.

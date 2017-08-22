@@ -5,7 +5,7 @@ title-short: Snowplow 0.7.3
 tags: [snowplow, javascript, tracker, release]
 author: Alex
 category: Releases
-permalink: /blog/2013/02/15/snowplow-0.7.3-released
+permalink: /blog/2013/02/15/snowplow-0.7.3-released/
 ---
 
 We're excited to announce the release of Snowplow version **0.7.3**. This release adds a set of **16 all-new fields** to our event model:

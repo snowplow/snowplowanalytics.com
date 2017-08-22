@@ -5,7 +5,7 @@ title-short: Snowplow ActionScript 3 Tracker 0.1.0
 tags: [snowplow, analytics, actionscript, flash, actionscript3, as3]
 author: Alex
 category: Releases
-permalink: /blog/2015/03/23/snowplow-actionscript3-tracker-0.1.0-released
+permalink: /blog/2015/03/23/snowplow-actionscript3-tracker-0.1.0-released/
 ---
 
 We are pleased to announce the release of our new [Snowplow ActionScript 3 Tracker] [repo], contributed by Snowplow customer [Viewbix] [viewbix]. This is Snowplow's first customer-contributed tracker - an exciting milestone for us! Huge thanks to Dani, Ephraim, Mark and Nati and the rest of the team at Viewbix for making this tracker a reality.

@@ -5,7 +5,7 @@ title-short: SnowCannon
 author: Alex
 category: Releases
 tags: [node.js]
-permalink: /blog/2012/08/13/introducing-snow-cannon-a-node-js-collector-for-snowplow
+permalink: /blog/2012/08/13/introducing-snow-cannon-a-node-js-collector-for-snowplow/
 ---
 
 We are hugely excited to introduce [SnowCannon] [snowcannon-on-github], a Node.js collector for Snowplow, authored by [@shermozle] (http://twitter.com/shermozle).

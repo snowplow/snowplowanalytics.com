@@ -5,7 +5,7 @@ title-short: "Orchestrating batch processing pipelines with cron and make"
 tags: [cron, make, orchestration, pipeline, etl]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make
+permalink: /blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make/
 ---
 
 At Snowplow we are often asked how best to orchestrate multi-stage ETL pipelines, where these pipelines typically include [Snowplow] [snowplow] and our [SQL Runner] [sql-runner], sometimes [Huskimo] [huskimo] and often third-party apps and scripts.

@@ -5,7 +5,7 @@ title-short: Snowplow 72 Great Spotted Kiwi
 tags: [snowplow, deduplication, click tracking, uri redirect, cookie]
 author: Alex
 category: Releases
-permalink: /blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released
+permalink: /blog/2015/10/15/snowplow-r72-great-spotted-kiwi-released/
 ---
 
 We are pleased to announce the release of Snowplow version 72 Great Spotted Kiwi. This release adds the ability to track clicks through the Snowplow Clojure Collector, adds a cookie extractor enrichment and introduces new deduplication queries leveraging R71's event fingerprint.

@@ -5,7 +5,7 @@ title-short: Snowplow Unity Tracker 0.1.0
 tags: [snowplow, analytics, unity, tracker, mono, gaming]
 author: Josh
 category: Releases
-permalink: /blog/2015/10/08/snowplow-unity-tracker-0.1.0-released
+permalink: /blog/2015/10/08/snowplow-unity-tracker-0.1.0-released/
 ---
 
 We are pleased to announce the release of our much-requested [Snowplow Unity Tracker] [unity-repo]. This Tracker rounds out our support for popular mobile environments, and is an important part of our analytics offering for videogame companies. The Tracker is designed to work completely asynchronously within your Unity code to provide great performance in your games, even under heavy load.

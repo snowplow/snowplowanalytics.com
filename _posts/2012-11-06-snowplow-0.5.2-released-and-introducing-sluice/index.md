@@ -5,7 +5,7 @@ title-short: Snowplow 0.5.2
 tags: snowplow sluice ruby
 author: Alex
 category: Releases
-permalink: /blog/2012/11/06/snowplow-0.5.2-released-and-introducing-sluice
+permalink: /blog/2012/11/06/snowplow-0.5.2-released-and-introducing-sluice/
 ---
 
 Another week, another release: Snowplow **0.5.2**! This is a small release, consisting just of a small set of bug fixes and improvements to EmrEtlRunner - although we'll also use this post to introduce our new Ruby gem, called Sluice.

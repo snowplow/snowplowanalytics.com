@@ -4,7 +4,7 @@ title: A guide to unstructured events in Snowplow 0.8.3
 tags: [snowplow, unstructured, events, javascript, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2013/05/14/snowplow-unstructured-events-guide
+permalink: /blog/2013/05/14/snowplow-unstructured-events-guide/
 ---
 
 Earlier today we [announced the release of Snowplow 0.8.3] [snowplow-083-blog], which updated our JavaScript Tracker to add the ability to send custom unstructured events to a Snowplow collector with `trackUnstructEvent()`.

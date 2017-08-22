@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.8
 tags: [snowplow, mobile, ios, android, analytics]
 author: Alex
 category: Releases
-permalink: /blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics
+permalink: /blog/2014/09/18/snowplow-0.9.8-released-for-mobile-analytics/
 ---
 
 We are hugely excited to announce the release of the long-awaited Snowplow version 0.9.8, adding event analytics support for iOS and Android applications. Mobile event analytics has been the most requested feature from the Snowplow community for some time, with many users keen to feed their Snowplow data pipeline with events from mobile apps, alongside their existing websites and server software.

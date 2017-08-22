@@ -5,7 +5,7 @@ title-short: Snowplow 0.6.5
 tags: [snowplow, javascript, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2012/12/26/snowplow-0.6.5-released
+permalink: /blog/2012/12/26/snowplow-0.6.5-released/
 ---
 
 We're excited to announce our next Snowplow release - version **0.6.5**, a Boxing Day release for Snowplow!

@@ -5,7 +5,7 @@ title-short: Schema Guru 0.1.0
 tags: [json, json schema, schema, iglu]
 author: Anton
 category: Releases
-permalink: /blog/2015/06/03/schema-guru-0.1.0-released-for-deriving-json-schemas-from-jsons
+permalink: /blog/2015/06/03/schema-guru-0.1.0-released-for-deriving-json-schemas-from-jsons/
 ---
 
 We're pleased to announce the first release of [Schema Guru] [schema-guru],

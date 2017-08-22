@@ -5,7 +5,7 @@ title-short: Snowplow 0.6.0
 tags: [snowplow, storageloader, infobright, ice, columnar database, analytics database]
 author: Alex
 category: Releases
-permalink: /blog/2012/11/12/snowplow-0.6.0-released-with-storage-loader
+permalink: /blog/2012/11/12/snowplow-0.6.0-released-with-storage-loader/
 ---
 
 We're very pleased to start the week by releasing a new version of Snowplow - version **0.6.0**. This is a big release for us - as it includes the first version of our all-new StorageLoader. The release also includes a small set of tweaks and bug fixes across the existing Snowplow components, but let's start by introducing StorageLoader:

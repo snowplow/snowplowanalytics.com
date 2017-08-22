@@ -5,7 +5,7 @@ category: Documentation
 tagline: "A tagline! The setup guide has been overhauled tagline(!)"
 tags : [documentation, setup, getting started with Snowplow, tutorial]
 author: Yali
-permalink: /blog/2012/08/02/snowplow-setup-documentation-overhauled
+permalink: /blog/2012/08/02/snowplow-setup-documentation-overhauled/
 ---
 {% include JB/setup %}
 

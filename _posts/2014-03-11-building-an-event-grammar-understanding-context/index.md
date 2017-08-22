@@ -5,7 +5,7 @@ title-short: Building an event grammar
 tags: [event, analytics, grammar, model, semantic, context, environment]
 author: Alex
 category: Research
-permalink: /blog/2014/03/11/building-an-event-grammar-understanding-context
+permalink: /blog/2014/03/11/building-an-event-grammar-understanding-context/
 ---
 
 Here at Snowplow we recently added a new feature called "custom contexts" to our JavaScript Tracker (although not yet into our Enrichment process or Storage targets).

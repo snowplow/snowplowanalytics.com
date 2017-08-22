@@ -5,7 +5,7 @@ title-short: Unified Log Processing available as MEAP
 tags: [snowplow, unified log, kafka, kinesis, manning, meap, event processing]
 author: Alex
 category: Other
-permalink: /blog/2014/07/31/unified-log-processing-available-as-meap
+permalink: /blog/2014/07/31/unified-log-processing-available-as-meap/
 ---
 
 I'm pleased to announce that the first three chapters of my new book are now available as part of the [Manning Publications' Early Access Program (MEAP)] [ulp-manning]! Better still, I can share a 50% off code for the book - the code is **mldean** and it expires on Monday 4th August.

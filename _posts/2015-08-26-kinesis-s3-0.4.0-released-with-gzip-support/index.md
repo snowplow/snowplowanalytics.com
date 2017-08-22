@@ -5,7 +5,7 @@ title-short: Kinesis S3 0.4.0 with gzip support
 tags: [snowplow, kinesis, s3, amazon s3, real-time]
 author: Josh
 category: Releases
-permalink: /blog/2015/08/26/kinesis-s3-0.4.0-released-with-gzip-support
+permalink: /blog/2015/08/26/kinesis-s3-0.4.0-released-with-gzip-support/
 ---
 
 We are pleased to announce the release of Kinesis S3 version 0.4.0. Many thanks to [Kacper Bielecki][kazjote] from Avari for his contribution to this release!

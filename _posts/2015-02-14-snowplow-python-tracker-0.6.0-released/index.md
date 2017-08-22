@@ -5,7 +5,7 @@ title-short: Snowplow Python Tracker 0.6.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2015/02/14/snowplow-python-tracker-0.6.0-released
+permalink: /blog/2015/02/14/snowplow-python-tracker-0.6.0-released/
 ---
 
 We are pleased to announce the release of [version 0.6.0.post1] [pypi] of the Snowplow Python Tracker. This version adds several methods to help identify users by adding client-side data to events. This makes the Tracker more powerful when used in conjunction with a web framework such as [Django][django] or [Flask][flask].

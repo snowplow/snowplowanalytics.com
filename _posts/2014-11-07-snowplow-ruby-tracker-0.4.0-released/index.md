@@ -5,7 +5,7 @@ title-short: Snowplow Ruby Tracker 0.4.0
 tags: [snowplow, analytics, ruby, rails, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2014/11/07/snowplow-ruby-tracker-0.4.0-released
+permalink: /blog/2014/11/07/snowplow-ruby-tracker-0.4.0-released/
 ---
 
 We are pleased to announce the release of version 0.4.0 of the Snowplow Ruby Tracker. This release adds several methods to help identify users using client-side data, making the Ruby Tracker much more powerful when used from a Ruby web or e-commerce framework such as [Rails] [rails], [Sinatra] [sinatra] or [Spree] [spree].

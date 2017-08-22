@@ -4,7 +4,7 @@ title: Introducing the Pixel tracker
 tags: [snowplow, tracker, pixel tracker, image pixel, tracking pixel]
 author: Yali
 category: Releases
-permalink: /blog/2013/01/29/introducing-the-pixel-tracker
+permalink: /blog/2013/01/29/introducing-the-pixel-tracker/
 ---
 
 The [Pixel tracker] [pixel-wizard] enables companies running Snowplow to track users in environments that do not support Javascript. In this blog post we will cover:

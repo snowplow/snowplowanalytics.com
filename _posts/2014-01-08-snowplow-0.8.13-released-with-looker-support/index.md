@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.13
 tags: [snowplow, release, lookml, looker, analytics, data model]
 author: Yali
 category: Releases
-permalink: /blog/2014/01/08/snowplow-0.8.13-released-with-looker-support
+permalink: /blog/2014/01/08/snowplow-0.8.13-released-with-looker-support/
 ---
 
 We are very pleased to announce the release of Snowplow 0.8.13. This release makes it easy for Snowplow users to get started analyzing their Snowplow data with [Looker] [looker], by providing an initial Snowplow data model for Looker so that a whole host of standard dimensions, metrics, entities and events are recognized in the Looker query interface.

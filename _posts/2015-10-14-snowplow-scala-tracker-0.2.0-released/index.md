@@ -5,7 +5,7 @@ title-short: Snowplow Scala Tracker 0.2.0
 tags: [snowplow, analytics, scala, tracker]
 author: Anton
 category: Releases
-permalink: /blog/2015/10/14/snowplow-scala-tracker-0.2.0-released
+permalink: /blog/2015/10/14/snowplow-scala-tracker-0.2.0-released/
 ---
 
 We are pleased to release version 0.2.0 of the [Snowplow Scala Tracker] [scala-repo]. This release introduces a new custom context with EC2 instance metadata, a batch-based emitter, new tracking methods and one breaking API change.

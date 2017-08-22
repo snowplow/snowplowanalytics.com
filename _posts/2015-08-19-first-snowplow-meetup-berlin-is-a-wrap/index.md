@@ -4,7 +4,7 @@ title: The inaugural Snowplow Meetup Berlin is a wrap!
 tags: [snowplow, meetup, berlin, goeuro, sparwelt, attribution, tv attribution, data modeling]
 author: Yali
 category: Meetups
-permalink: /blog/2015/08/19/first-snowplow-meetup-berlin-is-a-wrap
+permalink: /blog/2015/08/19/first-snowplow-meetup-berlin-is-a-wrap/
 ---
 
 On Tuesday evening last week, the first Snowplow Meetup Berlin event took place at Betahaus. Over 60 people turned up to listen to three talks:

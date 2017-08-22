@@ -5,7 +5,7 @@ title-short: Snowplow 0.4.10
 tags: [snowplow, release, hive, serde]
 author: Alex
 category: Releases
-permalink: /blog/2012/10/11/snowplow-0.4.10-released
+permalink: /blog/2012/10/11/snowplow-0.4.10-released/
 ---
 
 We have just released version **0.4.10** of Snowplow - people using 0.4.8 can jump straight to this version. This version updates:

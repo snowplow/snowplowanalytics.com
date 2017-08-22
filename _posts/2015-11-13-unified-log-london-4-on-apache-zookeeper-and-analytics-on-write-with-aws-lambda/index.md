@@ -5,7 +5,7 @@ title-short: Unified Log London 4
 tags: [unified log, zookeeper, zk, lambda, aws lambda, ulp, event streams]
 author: Alex
 category: Meetups
-permalink: /blog/2015/11/13/unified-log-london-4-on-apache-zookeeper-and-analytics-on-write-with-aws-lambda
+permalink: /blog/2015/11/13/unified-log-london-4-on-apache-zookeeper-and-analytics-on-write-with-aws-lambda/
 ---
 
 Last week we held the [fourth Unified Log London meetup] [meetup-4] here in London. As always, huge thanks to Simone Basso and the [Just Eat] [just-eat] team for hosting us in their offices and keeping us all fed with pizza and beer!

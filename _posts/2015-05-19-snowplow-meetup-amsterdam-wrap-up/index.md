@@ -4,7 +4,7 @@ title: "The inaugural Snowplow meetup in Amsterdam is a wrap!"
 tags: [snowplow, meetup]
 author: Yali
 category: Meetups
-permalink: /blog/2015/05/19/snowplow-meetup-amsterdam-wrap-up
+permalink: /blog/2015/05/19/snowplow-meetup-amsterdam-wrap-up/
 ---
 
 Last week Christophe and I headed over to Amsterdam for the first Snowplow meetup in Amsterdam. About 50 data scientists, engineers and analysts joined us at the beautiful [Travelbird] [travelbird] offices to share ideas and approaches to driving value from Snowplow data.

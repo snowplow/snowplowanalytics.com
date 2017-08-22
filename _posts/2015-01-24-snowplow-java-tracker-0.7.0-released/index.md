@@ -5,7 +5,7 @@ title-short: Snowplow Java Tracker 0.7.0
 tags: [snowplow, analytics, java, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2015/01/24/snowplow-java-tracker-0.7.0-released
+permalink: /blog/2015/01/24/snowplow-java-tracker-0.7.0-released/
 ---
 
 We are pleased to release version 0.7.0 of the [Snowplow Java Tracker] [java-repo]. Many thanks to [David Stendardi] [dstendardi] from Viadeo, former Snowplow intern [Jonathan Almeida] [jonalmeida] and [Hamid] [hamidp] from Trello for their contributions to this release!

@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.0.0
 tags: [snowplow, javascript, tracker, browser, analytics]
 author: Fred
 category: Releases
-permalink: /blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released
+permalink: /blog/2014/07/03/snowplow-javascript-tracker-2.0.0-released/
 ---
 
 We are happy to announce the release of the [Snowplow JavaScript Tracker version 2.0.0] [release-200]. This release makes some significant changes to the public API as well as introducing a number of new features, including tracker namespacing and new link click tracking and ad tracking capabilities.

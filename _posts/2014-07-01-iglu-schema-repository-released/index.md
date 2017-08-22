@@ -5,7 +5,7 @@ title-short: Iglu schema repository 0.1.0
 tags: [snowplow, iglu, schema, json schema, repository, registry]
 author: Alex
 category: Releases
-permalink: /blog/2014/07/01/iglu-schema-repository-released
+permalink: /blog/2014/07/01/iglu-schema-repository-released/
 ---
 
 ![snowplow-plus-iglu-img] [snowplow-plus-iglu-img]

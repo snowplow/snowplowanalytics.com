@@ -5,7 +5,7 @@ title-short: New Java and Android Tracker
 tags: [snowplow, analytics, java, android, tracker]
 author: Alex
 category: Releases
-permalink: /blog/2014/12/27/new-java-and-android-tracker-versions-released
+permalink: /blog/2014/12/27/new-java-and-android-tracker-versions-released/
 ---
 
 We are pleased to release new versions of the [Snowplow Android Tracker] [android-repo] (0.2.0) and the [Snowplow Java Tracker] [java-repo] (0.6.0), as well as the Java Tracker Core (0.2.0) that underpins both trackers. Many thanks to [XiaoyiLI] [lixiaoyi] from Viadeo, [Hamid] [hamidp] from Trello and former Snowplow intern [Jonathan Almeida] [jonalmeida] for their contributions to these releases!

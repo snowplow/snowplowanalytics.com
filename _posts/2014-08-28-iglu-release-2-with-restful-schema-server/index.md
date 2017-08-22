@@ -4,7 +4,7 @@ title: Iglu release 2 with a new RESTful schema server
 tags: [iglu, scala, server, api, restful]
 author: Ben
 category: Releases
-permalink: /blog/2014/08/28/iglu-release-2-with-restful-schema-server
+permalink: /blog/2014/08/28/iglu-release-2-with-restful-schema-server/
 ---
 
 We are pleased to announce the second release of Iglu, our machine-readable

@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.8
 tags: [snowplow, postgres, hive, storage]
 author: Alex
 category: Releases
-permalink: /blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support
+permalink: /blog/2013/08/05/snowplow-0.8.8-released-with-postgres-and-hive-support/
 ---
 
 We are pleased to announce the immediate release of Snowplow 0.8.8. This is a big release for us: it adds the ability to store your Snowplow events in the popular [PostgreSQL] [postgres] open-source database. This has been the most requested Snowplow feature all summer, so we are delighted to finally release it.

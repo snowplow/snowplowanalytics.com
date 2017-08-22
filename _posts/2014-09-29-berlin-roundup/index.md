@@ -4,7 +4,7 @@ title: Berlin trip round-up
 tags: [snowplow, berlin, big data beers, daala, co-up]
 author: Alex
 category: Meetups
-permalink: /blog/2014/09/29/berlin-roundup
+permalink: /blog/2014/09/29/berlin-roundup/
 ---
 
 Yali and I are back from the Snowplow team's [trip to Berlin] [berlin-trip] - it was a great visit, seeing plenty of new and old faces alike.

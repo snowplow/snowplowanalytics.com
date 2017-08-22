@@ -4,7 +4,7 @@ title: First experiments with Apache Spark at Snowplow
 tags: [snowplow, scala, spark, tutorial, example, recipe]
 author: Justine
 category: Research
-permalink: /blog/2015/05/21/first-experiments-with-apache-spark
+permalink: /blog/2015/05/21/first-experiments-with-apache-spark/
 ---
 
 ![spark logo][spark-logo]

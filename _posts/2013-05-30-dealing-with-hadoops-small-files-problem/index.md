@@ -4,7 +4,7 @@ title: Dealing with Hadoop's small files problem
 tags: [hadoop, small-file, hdfs, s3distcopy]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2013/05/30/dealing-with-hadoops-small-files-problem
+permalink: /blog/2013/05/30/dealing-with-hadoops-small-files-problem/
 ---
 
 Hadoop has a serious Small File Problem. It's widely known that Hadoop struggles to run MapReduce jobs that involve thousands of small files: Hadoop much prefers to crunch through tens or hundreds of files sized at or around the magic 128 megabytes. The technical reasons for this are well explained in this [Cloudera blog post] [cloudera-small-files] - what is less well understood is how badly small files can slow down your Hadoop job, and what to do about it.

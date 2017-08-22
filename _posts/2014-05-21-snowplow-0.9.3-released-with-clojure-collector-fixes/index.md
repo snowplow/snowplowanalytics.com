@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.3
 tags: [snowplow, clojure collector, emretlrunner]
 author: Alex
 category: Releases
-permalink: /blog/2014/05/21/snowplow-0.9.3-released-with-clojure-collector-fixes
+permalink: /blog/2014/05/21/snowplow-0.9.3-released-with-clojure-collector-fixes/
 ---
 
 We are pleased to announce the release of Snowplow 0.9.3, with a whole host of incremental improvements to EmrEtlRunner, plus two important bug fixes for Clojure Collector users.

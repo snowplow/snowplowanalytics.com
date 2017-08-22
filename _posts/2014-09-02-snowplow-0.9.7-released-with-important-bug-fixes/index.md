@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.7
 tags: [snowplow, shred, bug fix, bug, hive]
 author: Alex
 category: Releases
-permalink: /blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes
+permalink: /blog/2014/09/02/snowplow-0.9.7-released-with-important-bug-fixes/
 ---
 
 We are pleased to announce the immediate availability of Snowplow version 0.9.7. 0.9.7 is a "tidy-up" release which fixes some important bugs, particularly:

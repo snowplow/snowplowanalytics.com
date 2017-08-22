@@ -5,7 +5,7 @@ title-short: Snowplow 70 Bornean Green Magpie
 tags: [snowplow, emr, emretlrunner, storageloader, jruby]
 author: Fred
 category: Releases
-permalink: /blog/2015/08/19/snowplow-r70-bornean-green-magpie-released
+permalink: /blog/2015/08/19/snowplow-r70-bornean-green-magpie-released/
 ---
 
 We are happy to announce the release of Snowplow version 70 Bornean Green Magpie. This release focuses on improving our StorageLoader and EmrEtlRunner components and is the first step towards combining the two into a single CLI application.

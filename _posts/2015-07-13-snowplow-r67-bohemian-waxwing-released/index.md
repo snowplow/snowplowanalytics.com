@@ -5,7 +5,7 @@ title-short: Snowplow 67 Bohemian Waxwing
 tags: [snowplow, kinesis, real-time]
 author: Josh
 category: Releases
-permalink: /blog/2015/07/13/snowplow-r67-bohemian-waxwing-released
+permalink: /blog/2015/07/13/snowplow-r67-bohemian-waxwing-released/
 ---
 
 We are pleased to announce the release of Snowplow 67, Bohemian Waxwing. This release brings a host of upgrades to our real-time [Amazon Kinesis][kinesis] pipeline as well as the embedding of Snowplow tracking into this pipeline.

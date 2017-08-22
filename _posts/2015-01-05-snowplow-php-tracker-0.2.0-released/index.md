@@ -5,7 +5,7 @@ title-short: Snowplow PHP Tracker 0.2.0
 tags: [snowplow, analytics, php, tracker]
 author: Josh
 category: Releases
-permalink: /blog/2015/01/05/snowplow-php-tracker-0.2.0-released
+permalink: /blog/2015/01/05/snowplow-php-tracker-0.2.0-released/
 ---
 
 We are pleased to announce the release of the second version of the [Snowplow PHP Tracker] [repo]. The tracker now supports a variety of synchronous, asynchronous and out-of-band event emitters for GET and POST requests.

@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.2
 tags: [snowplow, clojure collector, release, leiningen]
 author: Alex
 category: Releases
-permalink: /blog/2013/05/08/snowplow-0.8.2-released-with-clojure-collector-enhancements
+permalink: /blog/2013/05/08/snowplow-0.8.2-released-with-clojure-collector-enhancements/
 ---
 
 We're pleased to announce the immediate availability of Snowplow **0.8.2**. This release updates the Clojure Collector only; if you are using the CloudFront Collector, then no upgrade to 0.8.2 is necessary.

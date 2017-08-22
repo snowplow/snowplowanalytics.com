@@ -5,7 +5,7 @@ title-short: Snowplow 0.8.1
 tags: [snowplow, referer parser, parse, referer]
 author: Alex
 category: Releases
-permalink: /blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing
+permalink: /blog/2013/04/12/snowplow-0.8.1-released-with-referer-url-parsing/
 ---
 
 Just nine days after our Snowplow 0.8.0 release, we are pleased to have our next release ready: Snowplow **0.8.1**. With the last release we promised that the new Scalding-based ETL/enrichment process would lay a strong technical foundation for our roadmap - and hopefully this release bears that out!

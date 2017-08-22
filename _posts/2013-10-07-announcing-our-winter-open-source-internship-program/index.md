@@ -4,7 +4,7 @@ title: Announcing our winter open source internship program
 tags: [snowplow, intern, wintern, internship]
 author: Alex
 category: Recruitment
-permalink: /blog/2013/10/07/announcing-our-winter-open-source-internship-program
+permalink: /blog/2013/10/07/announcing-our-winter-open-source-internship-program/
 ---
 
 Applications for the new Snowplow Analytics open source internship program are now open! At Snowplow we are passionate about enterprise-strength open-source technology, and we are hugely excited to be offering paid internships for open source hackers this winter.

@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.13
 tags: [snowplow, enrichment, bug]
 author: Fred
 category: Releases
-permalink: /blog/2014/12/01/snowplow-0.9.13-released-with-important-bug-fixes
+permalink: /blog/2014/12/01/snowplow-0.9.13-released-with-important-bug-fixes/
 ---
 
 We are happy to announce the release of Snowplow 0.9.13 fixing two bugs found in last week's release. Read on for more information.

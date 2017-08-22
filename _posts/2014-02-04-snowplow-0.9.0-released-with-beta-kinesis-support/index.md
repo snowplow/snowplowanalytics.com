@@ -5,7 +5,7 @@ title-short: Snowplow 0.9.0
 tags: [snowplow, kinesis, real-time]
 author: Alex
 category: Releases
-permalink: /blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support
+permalink: /blog/2014/02/04/snowplow-0.9.0-released-with-beta-kinesis-support/
 ---
 
 We are hugely excited to announce the release of Snowplow 0.9.0. This release introduces our initial **beta** support for [Amazon Kinesis] [kinesis] in the Snowplow Collector and Enrichment components, and was developed in close collaboration with Snowplow wintern [Brandon Amos] [brandon-intro-post].

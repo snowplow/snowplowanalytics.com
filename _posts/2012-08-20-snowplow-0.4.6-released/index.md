@@ -5,7 +5,7 @@ title-short: Snowplow 0.4.6
 tags: [Snowplow release]
 author: Alex
 category: Releases
-permalink: /blog/2012/08/20/snowplow-0.4.6-released
+permalink: /blog/2012/08/20/snowplow-0.4.6-released/
 ---
 
 Over the weekend we released Snowplow version **0.4.6**. This was a minor release that added a new capability into the Snowplow JavaScript tracker.

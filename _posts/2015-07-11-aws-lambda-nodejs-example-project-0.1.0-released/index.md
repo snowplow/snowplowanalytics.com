@@ -5,7 +5,7 @@ title-short: AWS Lambda Node.js example project
 tags: [snowplow, javascript, kinesis, dynamodb, tutorial, analytics]
 author: Vincent
 category: Releases
-permalink: /blog/2015/07/11/aws-lambda-nodejs-example-project-0.1.0-released
+permalink: /blog/2015/07/11/aws-lambda-nodejs-example-project-0.1.0-released/
 ---
 
 We are pleased to announce the release of our new [AWS Lambda Node.js Example Project] [repo]!

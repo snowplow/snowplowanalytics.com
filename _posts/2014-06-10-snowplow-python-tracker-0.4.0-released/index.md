@@ -5,7 +5,7 @@ title-short: Snowplow Python Tracker 0.4.0
 tags: [snowplow, analytics, python, django, tracker]
 author: Fred
 category: Releases
-permalink: /blog/2014/06/10/snowplow-python-tracker-0.4.0-released
+permalink: /blog/2014/06/10/snowplow-python-tracker-0.4.0-released/
 ---
 
 We are happy to announce the release of the Snowplow Python Tracker version 0.4.0.

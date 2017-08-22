@@ -4,7 +4,7 @@ title: Introducing our 2014-2015 Snowplow winterns
 tags: [snowplow, intern, winter, wintern, internship]
 author: Alex
 category: Recruitment
-permalink: /blog/2015/01/25/introducing-our-2014-2015-winterns
+permalink: /blog/2015/01/25/introducing-our-2014-2015-winterns/
 ---
 
 We are pleased to announce our two new Data Engineering winterns for the 2014/2015 winter period, Andrew and Aalekh. In this blog post we'll introduce both interns to the Snowplow community, as well as giving a little more background on the projects they are working on.

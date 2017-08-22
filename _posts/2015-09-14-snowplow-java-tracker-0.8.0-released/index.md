@@ -5,7 +5,7 @@ title-short: Snowplow Java Tracker 0.8.0
 tags: [snowplow, analytics, java, tracker]
 author: Josh
 category: Releases
-permalink: /blog/2015/09/14/snowplow-java-tracker-0.8.0-released
+permalink: /blog/2015/09/14/snowplow-java-tracker-0.8.0-released/
 ---
 
 We are pleased to release version 0.8.0 of the [Snowplow Java Tracker] [java-repo]. This release introduces several performance upgrades and a complete rework of the API. Many thanks to [David Stendardi] [dstendardi] from Viadeo for his contributions!

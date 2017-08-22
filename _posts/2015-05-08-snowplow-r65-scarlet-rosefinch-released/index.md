@@ -5,7 +5,7 @@ title-short: Snowplow 65 Scarlet Rosefinch
 tags: [snowplow, kinesis, real-time]
 author: Fred
 category: Releases
-permalink: /blog/2015/05/08/snowplow-r65-scarlet-rosefinch-released
+permalink: /blog/2015/05/08/snowplow-r65-scarlet-rosefinch-released/
 ---
 
 We are pleased to announce the release of Snowplow 65, Scarlet Rosefinch. This release greatly improves the speed, efficiency, and reliability of Snowplow's real-time [Kinesis][kinesis] pipeline.

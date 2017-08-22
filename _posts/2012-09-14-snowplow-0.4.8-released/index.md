@@ -5,7 +5,7 @@ title-short: Snowplow 0.4.8
 tags: [snowplow, ecommerce, multi-site, release]
 author: Alex
 category: Releases
-permalink: /blog/2012/09/14/snowplow-0.4.8-released
+permalink: /blog/2012/09/14/snowplow-0.4.8-released/
 ---
 
 We have just released Snowplow version **0.4.8**, with a set of enhancements to the existing Hive deserializer:

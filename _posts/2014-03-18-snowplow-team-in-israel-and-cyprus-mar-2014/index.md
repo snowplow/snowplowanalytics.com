@@ -5,7 +5,7 @@ title-short: Snowplow team in Israel and Cyprus
 tags: [snowplow, cyprus, israel, tel aviv, nicosia, lefkosia]
 author: Alex
 category: Other
-permalink: /blog/2014/03/18/snowplow-team-in-israel-and-cyprus-mar-2014
+permalink: /blog/2014/03/18/snowplow-team-in-israel-and-cyprus-mar-2014/
 ---
 
 I (Alex) will be heading to Tel Aviv next week and then heading on to Nicosia. If you're interested in meeting up to discuss Snowplow, event analytics or big data processing more generally, I'd love to arrange a meeting!

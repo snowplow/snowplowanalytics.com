@@ -5,7 +5,7 @@ title-short: Inaugural Amazon Kinesis London meetup
 tags: [amazon, kinesis, london, meetup]
 author: Alex
 category: Meetups
-permalink: /blog/2014/01/30/inaugural-amazon-kinesis-meetup
+permalink: /blog/2014/01/30/inaugural-amazon-kinesis-meetup/
 ---
 
 Yesterday evening saw the [inaugural meetup] [1st-meetup] of the [London User Group for Amazon Kinesis] [kinesis-london].

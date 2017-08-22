@@ -4,7 +4,7 @@ title: Fred Blundun is a Snowplower!
 tags: [fred blundun, data engineer, hiring]
 author: Alex
 category: Inside the Plow
-permalink: /blog/2014/07/02/fred-blundun-is-a-snowplower
+permalink: /blog/2014/07/02/fred-blundun-is-a-snowplower/
 ---
 
 You have probably seen a new name behind blog posts, new software releases and email threads recently: we are hugely excited to introduce (somewhat belatedly!) Fred Blundun to the team!

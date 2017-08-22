@@ -5,7 +5,7 @@ title-short: Reprocessing bad rows
 tags: [hive, qubole, json, serde, reprocessing, data, taps]
 author: Yali
 category: Analytics 
-permalink: /blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole
+permalink: /blog/2013/09/11/reprocessing-bad-data-using-hive-the-json-serde-and-qubole/
 ---
 
 **This post is outdated. For more documentation on debugging and recovering bad rows, please visit:**

@@ -5,7 +5,7 @@ title-short: Snowplow team in NYC
 tags: [snowplow, new york, boston, february]
 author: Alex
 category: Meetups
-permalink: /blog/2014/01/21/snowplow-team-in-new-york-city-in-feb-2014
+permalink: /blog/2014/01/21/snowplow-team-in-new-york-city-in-feb-2014/
 ---
 
 

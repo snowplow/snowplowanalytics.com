@@ -4,7 +4,7 @@ title: "Huskimo 0.2.0 released: warehouse your Singular marketing spend data in 
 title-short: Huskimo 0.2.0
 tags: [huskimo, singular, marketing, advertising, redshift]
 author: Alex
-permalink: /blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift
+permalink: /blog/2015/06/21/huskimo-0.2.0-released-warehouse-your-singular-marketing-spend-data-in-redshift/
 ---
 
 We are pleased to announce [Huskimo] [huskimo], an all-new open-source product from the Snowplow team. This initial release of Huskimo is for companies who use [Singular] [singular] to manage their mobile marketing campaigns, and would like to analyze their Singular marketing spend data in Amazon Redshift, alongside their Snowplow event data.

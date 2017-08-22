@@ -5,7 +5,7 @@ title-short: Snowplow iOS Tracker 0.2.0
 tags: [snowplow, analytics, ios, tracker, ifa]
 author: Alex
 category: Releases
-permalink: /blog/2014/11/08/snowplow-ios-tracker-0.2.0-released-with-important-update
+permalink: /blog/2014/11/08/snowplow-ios-tracker-0.2.0-released-with-important-update/
 ---
 
 We are pleased to announce the release of version 0.2.0 of the Snowplow iOS Tracker. This is an important update which changes the Tracker's approach to recording Apple's Identifier For Advertisers (IFA).

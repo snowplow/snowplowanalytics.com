@@ -5,7 +5,7 @@ title-short: Snowplow 62 Tropical Parula
 tags: [snowplow, beanstalk, clojure collector, emretlrunner]
 author: Alex
 category: Releases
-permalink: /blog/2015/03/17/snowplow-r62-tropical-parula-released
+permalink: /blog/2015/03/17/snowplow-r62-tropical-parula-released/
 ---
 
 We are pleased to announce the immediate availability of Snowplow 62, Tropical Parula. This release is designed to fix an incompatibility issue between r61's EmrEtlRunner and some older Elastic Beanstalk configurations. It also includes some other EmrEtlRunner improvements.

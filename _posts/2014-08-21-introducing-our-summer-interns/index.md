@@ -4,7 +4,7 @@ title: Introducing our Snowplow summer interns
 tags: [snowplow, intern, summer, internship]
 author: Alex
 category: Recruitment
-permalink: /blog/2014/08/21/introducing-our-summer-interns
+permalink: /blog/2014/08/21/introducing-our-summer-interns/
 ---
 
 Following on from our highly successful [winter internship program](/blog/2013/10/07/announcing-our-winter-open-source-internship-program/), we were keen to expand the program by recruiting open source hackers for more extended internships over summer 2014. We also wanted to expand the scope of our internship program, by including a **data science** intern alongside our traditional data engineering internships. And as always, our internships were open to remote applicants as well as candidates in London.

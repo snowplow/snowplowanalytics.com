@@ -4,7 +4,7 @@ title: Modeling events through entity snapshotting
 tags: [event, analytics, grammar, model, entities]
 author: Alex
 category: Research
-permalink: /blog/2015/01/18/modeling-events-through-entity-snapshotting
+permalink: /blog/2015/01/18/modeling-events-through-entity-snapshotting/
 ---
 
 At Snowplow we spend a lot of time thinking about how to model events. As businesses re-orient themselves around event streams under the [Unified Log model] [kreps], it becomes ever more important to properly model those event streams. After all: "garbage in" means "garbage out": deriving business value from events is hugely dependent on modeling those events correctly in the first place.
