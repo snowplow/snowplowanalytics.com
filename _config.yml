@@ -71,6 +71,9 @@ plugins:
   - jekyll-paginate-v2
   # - jekyll-redirect-from
 
+# We already have a feed path.  - https://github.com/jekyll/jekyll-feed
+feed:
+  path: atom.xml
 
 # Styles
 sass:
@@ -80,8 +83,7 @@ sass:
 
 
 # Define the excerpt separator, used to determine which part of the blog post gets previewed
-#excerpt_separator: "<!--more-->"
-excerpt_separator: ""
+excerpt_separator: "<!--more-->"
 
 
 
