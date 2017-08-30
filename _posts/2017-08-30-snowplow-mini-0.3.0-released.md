@@ -18,14 +18,14 @@ This release focuses on making Snowplow Mini much more ergonomic, with the newly
 
 Read on for:
 
-1. [Introducing the Control Plane](/blog/2017/08/10/snowplow-mini-0.3.0-released#control-plane)
-2. [Built-in SSL via Caddy](/blog/2017/08/10/snowplow-mini-0.3.0-released#out-of-the-box-ssl)
-3. [HTTP basic authentication](/blog/2017/08/10/snowplow-mini-0.3.0-released#http-auth)
-4. [A simpler local setup via Vagrant](/blog/2017/08/10/snowplow-mini-0.3.0-released#easier-setup)
-5. [Basic enrichments as standard](/blog/2017/08/10/snowplow-mini-0.3.0-released#basic-enrichments)
-6. [Other updates](/blog/2017/08/10/snowplow-mini-0.3.0-released#other-changes)
+1. [Introducing the Control Plane](/blog/2017/08/30/snowplow-mini-0.3.0-released#control-plane)
+2. [Built-in SSL via Caddy](/blog/2017/08/30/snowplow-mini-0.3.0-released#out-of-the-box-ssl)
+3. [HTTP basic authentication](/blog/2017/08/30/snowplow-mini-0.3.0-released#http-auth)
+4. [A simpler local setup via Vagrant](/blog/2017/08/30/snowplow-mini-0.3.0-released#easier-setup)
+5. [Basic enrichments as standard](/blog/2017/08/30/snowplow-mini-0.3.0-released#basic-enrichments)
+6. [Other updates](/blog/2017/08/30/snowplow-mini-0.3.0-released#other-changes)
 7. [Roadmap](/blog/2017/08/10/snowplow-mini-0.3.0-released#roadmap)
-8. [Documentation and getting help](/blog/2017/08/10/snowplow-mini-0.3.0-released#help)
+8. [Documentation and getting help](/blog/2017/08/30/snowplow-mini-0.3.0-released#help)
 
 <!--more-->
 
