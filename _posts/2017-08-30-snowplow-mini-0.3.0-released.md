@@ -86,9 +86,15 @@ Version 0.3.0 also includes some internal changes and minor enhancements under t
 
 We have plenty planned for Snowplow Mini, and hope to increase the pace of development on this critical Snowplow project over the coming months.
 
+<h3 id="roadmap-robustness">7.1 Robustness</h3>
+
 Our first priority is around **robustness**. Currently under the hood Snowplow Mini uses *Unix named pipes* to communicate between the various bundled micro-services. These pipes are relatively fragile - and so we are embarking on a project to add [NSQ][nsq] to all of the relevant micro-services. NSQ will provide a much more robust queueing system for Snowplow Mini.
 
+<h3 id="roadmap-control-plane">7.2 Extending the Control Plane</h3>
+
 We are also excited about extending Snowplow Mini's new **Control Plane**. Through the Control Plane we can let non-technical users modify and tweak every aspect of their running pipeline. We are also considering whether Snowplow Mini's Control Plane could be the blueprint for a more generalized control plane for the wider Snowplow ecosystem - watch this space!
+
+<h3 id="roadmap-stateless">7.3 Stateless by default</h3>
 
 A final important philosophical change involves changing Snowplow Mini from *inherently stateful* to **stateless by default**. Currently, the Iglu schema registry and Elasticsearch instance live inside the Snowplow Mini; over time we want Snowplow Mini to default to having no such state inside it - instead you would use the Control Plane to connect Snowplow Mini to your external schema registries and storage targets. This should make Snowplow Mini more flexible and more robust. See the [Stateless Snowplow Mini milestone][stateless-milestone] for further details.
 
