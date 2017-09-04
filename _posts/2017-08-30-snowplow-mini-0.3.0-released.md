@@ -122,8 +122,8 @@ If you run into any problems, please [raise a bug][issues] or get in touch with 
 [caddy]: https://caddyserver.com/
 [nsq]: http://nsq.io/
 
-[quickstart]: https://github.com/snowplow/snowplow-mini/wiki/Quickstart-guide-v0.3.0
-[submitting-domain-name]: https://github.com/snowplow/snowplow-mini/wiki/Quickstart-guide-v0.3.0#223-configure-instance
+[quickstart]: https://github.com/snowplow/snowplow-mini/wiki/Quickstart-guide
+[submitting-domain-name]: https://github.com/snowplow/snowplow-mini/wiki/Quickstart-guide#223-configure-instance
 [issues]: https://github.com/snowplow/snowplow-mini/issues/new
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
 [discourse]: http://discourse.snowplowanalytics.com
