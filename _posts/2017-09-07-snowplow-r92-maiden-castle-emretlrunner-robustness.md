@@ -76,7 +76,13 @@ the shredded data if the `shred` step was skipped. This behaviour was corrected 
 
 The latest version of EmrEtlRunner is available from our [Bintray][app-dl].
 
-Upgrading from R91 is straightforward and encouraged since no changes are needed.
+In order to use [recently released][rdb-loader-013] RDB Loader you need to make following addition in your configuration YAML:
+
+{% highlight yaml %}
+storage:
+  versions:
+    rdb_loader: 0.13.0        # Was 0.12.0
+{% endhighlight %}
 
 <h2 id="roadmap">6. Roadmap</h2>
 
@@ -100,6 +106,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [stonehenge]: /blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix
 [lascaux]: /blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr
+[rdb-loader-013]: /blog/2017/09/06/rdb-loader-0.13.0-released
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
