@@ -16,13 +16,13 @@ handled.
 If you'd like to know more about R92 Maiden Castle, named after
 [the Iron Age fort in England][maiden-castle], please read on:
 
-1. [Better RDB Loader logs management](/blog/2017/08/23/snowplow-r92-maiden-castle-released#rdb-logs)
-2. [Improved lock handling](/blog/2017/08/23/snowplow-r92-maiden-castle-released#lock)
-3. [The new archive shredded step](/blog/2017/08/23/snowplow-r92-maiden-castle-released#archive-shredded)
-4. [Consistent loading of shredded data](/blog/2017/08/23/snowplow-r92-maiden-castle-released#shredde-data)
-5. [Upgrading](/blog/2017/08/23/snowplow-r92-maiden-castle-released#upgrading)
-6. [Roadmap](/blog/2017/08/23/snowplow-r92-maiden-castle-released#roadmap)
-7. [Help](/blog/2017/08/23/snowplow-r92-maiden-castle-released#help)
+1. [Better RDB Loader logs management](/blog/2017/09/07/snowplow-r92-maiden-castle-released#rdb-logs)
+2. [Improved lock handling](/blog/2017/09/07/snowplow-r92-maiden-castle-released#lock)
+3. [The new archive shredded step](/blog/2017/09/07/snowplow-r92-maiden-castle-released#archive-shredded)
+4. [Consistent loading of shredded data](/blog/2017/09/07/snowplow-r92-maiden-castle-released#shredde-data)
+5. [Upgrading](/blog/2017/09/07/snowplow-r92-maiden-castle-released#upgrading)
+6. [Roadmap](/blog/2017/09/07/snowplow-r92-maiden-castle-released#roadmap)
+7. [Help](/blog/2017/09/07/snowplow-r92-maiden-castle-released#help)
 
 ![maiden-castle][maiden-castle-img]
 
@@ -96,7 +96,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r92-maiden-castle
 
 [maiden-castle]: https://en.wikipedia.org/wiki/Maiden_Castle,_Dorset
-[maiden-castle-img]: /assets/img/blog/2017/08/maiden_castle.jpg
+[maiden-castle-img]: /assets/img/blog/2017/09/maiden_castle.jpg
 
 [stonehenge]: /blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix
 [lascaux]: /blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr
