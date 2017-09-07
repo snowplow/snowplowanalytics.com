@@ -4,7 +4,7 @@ title: Performing web analytics on Snowplow data using Tableau - a video demo
 tags: [ecommerce, tableau, demo, video]
 author: Yali
 category: Analytics
-permalink: /blog/2012/10/24/web-analytics-with-tableau-and-snowplow
+permalink: /blog/2012/10/24/web-analytics-with-tableau-and-snowplow/
 ---
 
 <p>People who see Snowplow for the first time often ask us to <i>"show Snowplow in action"</i>. It is one thing to tell someone that having access to their customer- and event-level data will open up whole new analysis possibilities, but it is another thing to demonstrate those possibilities.</p>
