@@ -5,7 +5,7 @@ title-short: RDB Loader Loader 0.13.0
 tags: [redshift, postgres, shred, relational databases, storage]
 author: Anton
 category: Releases
-permalink: /blog/2017/09/06/rdb-loader-0.13.0-released
+permalink: /blog/2017/09/06/rdb-loader-0.13.0-released/
 ---
 
 We are thrilled to announce [version 0.13.0][release-0130] of Relational Database Loader, 
