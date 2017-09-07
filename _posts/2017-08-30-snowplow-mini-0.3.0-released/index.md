@@ -5,6 +5,7 @@ title-short: Snowplow Mini 0.3.0
 tags: [snowplow, real-time, standalone, on-premise]
 author: Enes
 category: Releases
+permalink: /blog/2017/08/30/snowplow-mini-0.3.0-released
 ---
 
 We are pleased to announce the 0.3.0 release of Snowplow Mini, our accessible "Snowplow in a box" distribution.
