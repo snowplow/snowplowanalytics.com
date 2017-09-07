@@ -30,7 +30,7 @@ This change should also, pending more testing, allow us to support more versions
 You can also now control the logging level of the Elasticsearch Sink from the command line via a system property call of the form:
 
 {% highlight bash %}
-java -jar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn snowplow-elasticsearch-sink-0.7.0 --config {{ config file path }}
+java -jar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn snowplow-elasticsearch-sink-0.7.0 --config {% raw %}{{ config file path }}{% endraw %}
 {% endhighlight %}
 
 Simply change `warn` to any of:

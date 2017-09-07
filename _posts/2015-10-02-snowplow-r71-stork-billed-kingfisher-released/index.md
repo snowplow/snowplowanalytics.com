@@ -130,7 +130,7 @@ Thanks Dennis!
 
 <h2 id="table-upgrades">8. New approach to atomic.events upgrades</h2>
 
-Starting in this release, we are taking a new approach to upgrading the `atomic.events` table. Previous upgrades would typically rename the existing table as "atomic.events_{{old version}}", create a new table with the new structure and copy all events over.
+Starting in this release, we are taking a new approach to upgrading the `atomic.events` table. Previous upgrades would typically rename the existing table as "atomic.events_{% raw %}{{old version}}{% endraw %}", create a new table with the new structure and copy all events over.
 
 From this release onwards, our upgrades to `atomic.events` will always only mutate the existing table using `ALTER` statements. This is intended to make upgrades to existing Redshift databases much faster.
 

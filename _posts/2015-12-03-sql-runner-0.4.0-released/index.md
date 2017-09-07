@@ -51,7 +51,7 @@ We are planning on expanding this mode in the future, to also check the connecti
 Expanding on our template options, you can now load variables directly from your environment. To use:
 
 {% highlight bash %}
-CREATE TABLE some_schema.{{systemEnv "ENV_TABLE_NAME"}} (
+CREATE TABLE some_schema.{% raw %}{{systemEnv "ENV_TABLE_NAME"}}{% endraw %} (
   age int
 );
 {% endhighlight %}
@@ -59,7 +59,7 @@ CREATE TABLE some_schema.{{systemEnv "ENV_TABLE_NAME"}} (
 You can of course also substitute `ENV_TABLE_NAME` for a custom variable passed either via the `-var` argument or inside your plabook:
 
 {% highlight bash %}
-CREATE TABLE some_schema.{{systemEnv .envTableNameVar}} (
+CREATE TABLE some_schema.{% raw %}{{systemEnv .envTableNameVar}}{% endraw %} (
   age int
 );
 {% endhighlight %}
