@@ -118,7 +118,10 @@
 
 			.item
 			{
-				position:static;
+				user-select:none;
+				-ms-user-select: none;
+				-moz-user-select: none;
+				position:relative;
 				transition: all .4s;
 
 				@include img-grayscale;
@@ -156,9 +159,7 @@
 
 					img
 					{
-				    	filter: none; /* Applies to FF + IE */
-				    	-webkit-filter: grayscale(0);
-					}	
+					}
 				}
 
 				&.active,
@@ -190,6 +191,7 @@
 			text-align: left;
 			position: absolute;
 			visibility: hidden;
+			will-change: height, transform, opacity;
 			background-color: lighten($gray-light, 35%);
 
 			article
@@ -215,6 +217,7 @@
 
 			h4
 			{
+				margin-top:0;
 				font-weight:200;
 				letter-spacing: 0;
 
@@ -232,9 +235,11 @@
 
 		.sep
 		{
-			overflow: hidden; 
+			opacity: 0;
+			overflow: hidden;
 			transition: all .8s ease-in-out;
-			transform: perspective( 2000px ) rotateX(20deg);
+			will-change: height, transform, opacity;
+			transform: perspective(2000px) rotateX(40deg);
 			background-color: lighten($gray-light, 35%);
 
 			.bio

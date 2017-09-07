@@ -1,7 +1,4 @@
----
-class: blog header-white
----
-{% include head.html %}
+{% include head.html class='blog post header-white' %}
 
         <main>
             {% include header.html %}
@@ -10,13 +7,29 @@ class: blog header-white
 				<section class="col-md-8">
 				    <article>
 				        <h1>{{ page.title }}</h1>
-				        <div class="datebox">{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+				        <div class="row">
+				        	<div class="col-xs-12 col-sm-6 datebox">{{ page.date | date_to_long_string }}{% for author in site.data.authors %}{% if author.name == page.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
+				        	<div class="col-xs-12 col-sm-6 text-right text-sm-left text-xs-left">
+					        	<div class="social">
+					        		<span class="social-label">Share</span>
+					        		<div class="social-buttons"></div>
+					        	</div>
+				        	</div>
+				        </div>
 				        <div class="content">{{ content }}</div>
 				    </article>
 
-					<div class="spacer-top-50">
-						<div class="spacer-bottom-20">
-							<h5>Thoughts or questions? Come join us in our <a href="http://discourse.snowplowanalytics.com" target="_blank">Discourse forum</a>!</h5>
+					<div class="post-footer">
+						<div class="row spacer-bottom-20">
+							<div class="qa col-xs-12 col-sm-6">
+								<h5>Thoughts or questions?<br/>Come join us in our <a href="http://discourse.snowplowanalytics.com" target="_blank">Discourse forum</a>!</h5>
+							</div>
+							<div class="col-xs-12 col-sm-6 text-right text-sm-left text-xs-left">
+					        	<div class="social">
+					        		<span class="social-label">Share</span>
+					        		<div class="social-buttons"></div>
+					        	</div>
+					        </div>
 						</div>
 						<div class="spacer-top-50">
 							{% include blog/author-profile-box.html %}
