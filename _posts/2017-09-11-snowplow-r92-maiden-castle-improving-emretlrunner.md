@@ -17,9 +17,10 @@ If you'd like to know more about R92 Maiden Castle, named after [the Iron Age hi
 2. [The new archive_shredded step](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#archive-shredded)
 3. [Fixing the run lock bug](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#lock)
 4. [Better RDB Loader logs management](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#rdb-logs)
-5. [Upgrading](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#upgrading)
-6. [Roadmap](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#roadmap)
-7. [Help](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#help)
+5. [Removal of RDB Shredder and Loader](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#move-rdb)
+6. [Upgrading](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#upgrading)
+7. [Roadmap](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#roadmap)
+8. [Help](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#help)
 
 ![maiden-castle][maiden-castle-img]
 
@@ -73,7 +74,11 @@ log messages. This release improves on this process with the following measures:
 step (i.e. error if failed, warning if cancelled, info if successful)
 * After they have been displayed they will be removed from the box running EmrEtlRunner
 
-<h2 id="upgrading">5. Upgrading</h2>
+<h2 id="move-rdb">5. Removal of RDB Shredder and Loader</h2>
+
+Following the [release of the RDB Loader v0.13.0][rdb-loader-013], we have now removed the RDB Shredder and RDB Loader components from the Snowplow "mono-repo". This represents an important milestone in us decoupling database-specific loader applications from the core Snowplow release process.
+
+<h2 id="upgrading">6. Upgrading</h2>
 
 The latest version of EmrEtlRunner is available from our [Bintray][app-dl].
 
@@ -85,7 +90,7 @@ storage:
     rdb_loader: 0.13.0        # Was 0.12.0
 {% endhighlight %}
 
-<h2 id="roadmap">6. Roadmap</h2>
+<h2 id="roadmap">7. Roadmap</h2>
 
 Upcoming Snowplow releases include:
 
@@ -94,7 +99,7 @@ Upcoming Snowplow releases include:
 * [R9x [STR] Priority fixes][r9x-str-quality], removing the potential for data loss in the stream processing pipeline
 * [R9x [BAT] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark, Unbounce, StatusGator)
 
-<h2 id="help">7. Getting help</h2>
+<h2 id="help">8. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on Github.
 
