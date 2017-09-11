@@ -9,7 +9,9 @@ category: Releases
 
 We are pleased to announce the release of [Snowplow 92 Maiden Castle][snowplow-release].
 
-This release is a direct follow-up of [Snowplow 91 Stonehenge][stonehenge], incorporating various improvements from seeing R90 and R91 operate in the wild. In particular, this release fixes some important gotchas in EmrEtlRunner's `--skip`behavior, as well as a bug in the handling of run locks.
+This release is a direct follow-up of [Snowplow 91 Stonehenge][stonehenge], incorporating various
+improvements from seeing R90 and R91 operate in the wild. In particular, this release fixes some
+important gotchas in EmrEtlRunner's `--skip` behavior, as well as a bug in the handling of run locks.
 
 If you'd like to know more about R92 Maiden Castle, named after [the Iron Age hill fort in England][maiden-castle], please read on:
 
@@ -28,8 +30,9 @@ If you'd like to know more about R92 Maiden Castle, named after [the Iron Age hi
 
 <h2 id="shredded-data">1. Fixing the skip shred bug</h2>
 
-When we ported across the RDB Loader from the StorageLoader in R90, we implemented a behavior of skipping the loading
-of the shredded data (self-describing events and contexts) if the `shred` step was skipped.
+When we ported across the RDB Loader from the StorageLoader in R90, we implemented a behavior of
+skipping the loading of the shredded data (self-describing events and contexts) if the `shred` step
+was skipped.
 
 This was a mistake ([#3403][issue-3403]) - it meant that if you needed to resume your pipeline due to for example a Redshift problem, then although the `atomic.events` table would be loaded, the shredded types (events and contexts) would not.
 
@@ -45,7 +48,7 @@ as well as the shredded ones. This was confusing but also difficult to work with
 1. If you skipped `shred` but did not not skip `archive_enriched`, then the S3DistCp step trying to archive the shredded events would fail because there would be no shredded events.
 2. Conversely, if you skipped `archive_enrich` while also skipping `shred`, the enriched events
 would be left in place which would prevent the next EmrEtlRunner run from starting due to a
-`enriched:good` bucket not empty no-op, as described above
+`enriched:good` bucket not empty no-op, as described below
 
 As a result, a standalone `archive_shredded` step has been introduced which is skippable as usual through
 the `--skip` EmrEtlRunner option.
@@ -61,7 +64,7 @@ cluster:
 
 We refer to those situations as "no-ops" (for no operations to perform).
 
-The locking mechanism introduced in R91 suffered from a bug ([#3396][issue-3396]): it failed to released the lock
+The locking mechanism introduced in R91 suffered from a bug ([#3396][issue-3396]): it failed to release the lock
 in cases of a no-op. This has been fixed in R92.
 
 <h2 id="rdb-logs">4. Better RDB Loader logs management</h2>
