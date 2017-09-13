@@ -2,81 +2,64 @@
  * BACKGROUNDS
  */
 
-.bg-black {
-	background-color:$black;
+.bg-black           { background-color:$black; }
+.bg-white           { background-color:$white; }
+.bg-primary-lighter { background-color:$brand-lighter; }
+.bg-primary-darker  { background-color:$brand-darker; }
+.bg-success         { background-color:$brand-success; }
+.bg-success-lighter { background-color:lighten($brand-success, 93.5%); }
+.bg-info            { background-color:$brand-info; }
+.bg-info-lighter    { background-color:lighten($brand-info, 93.5%); }
+.bg-warning         { background-color:$brand-warning; }
+.bg-warning-lighter { background-color:lighten($brand-warning, 93.5%); }
+.bg-danger          { background-color:$brand-danger; }
+.bg-danger-lighter  { background-color:lighten($brand-danger, 93.5%); }
+.bg-gray            { background-color:$gray; }
+.bg-gray-base       { background-color:$gray-base; }
+.bg-gray-darker     { background-color:$gray-darker; }
+.bg-gray-dark       { background-color:$gray-dark; }
+.bg-gray-darker     { background-color:$gray-darker; }
+.bg-gray-light      { background-color:$gray-light; }
+.bg-gray-lighter    { background-color:$gray-lighter; }
+
+
+
+
+
+/**
+ * Gradient Backgrounds
+ */
+@mixin gradient ($colfrom, $colto) {
+
+	position: relative;
+	background-color: none;
+
+	&:before {
+		content: '';
+
+		width: 100%;
+		height: 100%;
+		display: block;
+
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		position: absolute;
+		background: $colfrom; /* For browsers that do not support gradients */
+		background: -webkit-linear-gradient(left top, $colfrom, $colto); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(top right, $colfrom, $colto); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(top right, $colfrom, $colto); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to top right, $colfrom, $colto); /* Standard syntax */
+	}
 }
 
-.bg-white {
-	background-color:$white;
-}
+.bg-grd-success-info { @include gradient ($brand-success, $brand-info); }
 
-.bg-primary-lighter {
-	background-color:$brand-lighter;
-}
 
-.bg-primary-darker {
-	background-color:$brand-darker;
-}
 
-.bg-success {
-	background-color:$brand-success;
-}
 
-.bg-success-lighter {
-	background-color:lighten($brand-success, 93.5%);
-}
-
-.bg-info {
-	background-color:$brand-info;
-}
-
-.bg-info-lighter {
-	background-color:lighten($brand-info, 93.5%);;
-}
-
-.bg-warning {
-	background-color:$brand-warning;
-}
-
-.bg-warning-lighter {
-	background-color:lighten($brand-warning, 93.5%);
-}
-
-.bg-danger {
-	background-color:$brand-danger;
-}
-
-.bg-danger-lighter {
-	background-color:lighten($brand-danger, 93.5%);;
-}
-
-.bg-gray {
-	background-color:$gray;
-}
-
-.bg-gray-base {
-	background-color:$gray-base;
-}
-
-.bg-gray-darker {
-	background-color:$gray-darker;
-}
-
-.bg-gray-dark {
-	background-color:$gray-dark;
-}
-
-.bg-gray-darker {
-	background-color:$gray-darker;
-}
-
-.bg-gray-light {
-	background-color:$gray-light;
-}
-
-.bg-gray-lighter {
-	background-color:$gray-lighter;
-}
 
 
 
@@ -97,7 +80,25 @@
 }
 
 
-.text-brand-light
-{
-	color: $brand-light;
-}
+.text-black            { color:$black; }
+.text-white            { color:$white; }
+.text-brand-darker     { color:$brand-darker; }
+.text-brand-light      { color:$brand-light; }
+.text-primary-light    { color:$brand-light; }
+.text-primary-lighter  { color:$brand-lighter; }
+.text-primary-darker   { color:$brand-darker; }
+.text-success          { color:$brand-success; }
+.text-success-lighter  { color:lighten($brand-success, 93.5%); }
+.text-info             { color:$brand-info; }
+.text-info-lighter     { color:lighten($brand-info, 93.5%); }
+.text-warning          { color:$brand-warning; }
+.text-warning-lighter  { color:lighten($brand-warning, 93.5%); }
+.text-danger           { color:$brand-danger; }
+.text-danger-lighter   { color:lighten($brand-danger, 93.5%); }
+.text-gray             { color:$gray; }
+.text-gray-base        { color:$gray-base; }
+.text-gray-darker      { color:$gray-darker; }
+.text-gray-dark        { color:$gray-dark; }
+.text-gray-darker      { color:$gray-darker; }
+.text-gray-light       { color:$gray-light; }
+.text-gray-lighter     { color:$gray-lighter };
