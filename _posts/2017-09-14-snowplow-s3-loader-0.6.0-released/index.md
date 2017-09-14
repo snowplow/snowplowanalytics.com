@@ -8,27 +8,25 @@ category: Releases
 permalink: /blog/2017/09/13/snowplow-s3-loader-0.6.0-released/
 ---
 
-We are pleased to be releasing [version 0.6.0][release] of Snowplow S3 Loader, formerly known as
-Kinesis S3, our project dedicated to sinking data, including Snowplow raw and enriched event streams
-to S3.
+We are pleased to release [version 0.6.0][release] of Snowplow S3 Loader, formerly known as
+Kinesis S3, our project dedicated to storing data, including Snowplow raw and enriched event streams,
+to Amazon S3.
 
 This post will cover:
 
-1. [NSQ Support](/blog/2017/09/13/snowplow-s3-loader-0.6.0-released#nsq-support)
-2. [Support for "AT_TIMESTAMP" as initial position](/blog/2017/09/13/snowplow-s3-loader-0.6.0-released#at-timestamp)
-3. [Upgrading](/blog/2017/09/13/snowplow-s3-loader-0.6.0-released#upgrading)
-4. [Contributing](/blog/2017/09/13/snowplow-s3-loader-0.6.0-released#contributing)
+1. [NSQ Support](/blog/2017/09/14/snowplow-s3-loader-0.6.0-released#nsq-support)
+2. [Support for "AT_TIMESTAMP" as initial position](/blog/2017/09/14/snowplow-s3-loader-0.6.0-released#at-timestamp)
+3. [Upgrading](/blog/2017/09/14/snowplow-s3-loader-0.6.0-released#upgrading)
+4. [Contributing](/blog/2017/09/14/snowplow-s3-loader-0.6.0-released#contributing)
 
 <!--more-->
 
 <h2 id="nsq-support">1. NSQ Support</h2>
 
-This release introduces NSQ as an event source, hence we had to do away with the old Kinesis S3
-name and replace it with Snowplow S3 Loader. Support for NSQ in the Snowplow S3 Loader is another
-step towards migrating Snowplow Mini to use NSQ and benefit from the ability to sink events to S3.
+This release introduces NSQ as an event source - it is for this reason that we have renamed the project from Kinesis S3.
+Adding NSQ support to the Snowplow S3 Loader is another step towards migrating Snowplow Mini to use NSQ, also enabling Snowplow Mini to back-up its event stream to S3.
 
-[NSQ][nsq-website] is a realtime distributed messaging platform.
-For more information on getting started, you can read the [NSQ installation guide][nsq-install].
+[NSQ][nsq-website] is a realtime distributed messaging platform. For more information on getting started, you can read the [NSQ installation guide][nsq-install].
 
 Assuming you have NSQ setup already, you will need to make some changes to the S3 Loader's
 configuration file in order to sink your NSQ events into an S3 folder:
@@ -57,12 +55,12 @@ the "yyyy-MM-ddTHH:mm:ssZ" format. You can get more information about initial po
 
 <h2 id="upgrading">3. Upgrading</h2>
 
-A couple of changes have been made to how you run the Snowplow Loader.
+Two important changes have been made to how you run the Snowplow Loader.
 
 <h3 id="jar">3.1 Non-executable JARs</h3>
 
 From now on, the produced artifacts will be non-executable JAR files. We found that sbt-assembly,
-the plugin we use to build fat JARs, was producing executable but unfortunately corrupt JAR files.
+the plugin we use to build fat JARs, was producing executable but unfortunately corrupt JAR files, hence this change.
 
 As a result, you’ll now have to launch the loader like so:
 
@@ -71,7 +69,7 @@ As a result, you’ll now have to launch the loader like so:
 <h3 id="conf">3.2 Configuration changes</h3>
 
 There have been quite a few changes made to the configuration expected by the S3 Loader. Please
-check out the [example configuration file][example-config] in the repository to make sure your
+check out the [example configuration file][example-config] in the repository to make sure that your
 configuration file has the expected parameters.
 
 <h2 id="contributing">4. Contributing</h2>
