@@ -191,3 +191,10 @@
   avatar: /assets/img/team/devesh.jpg
   spiel: |
       <a href="/blog/authors/devesh/">Devesh</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/devesh-shetty">GitHub</a>, <a href="https://twitter.com/dPrecator">Twitter</a>, <a href="https://www.linkedin.com/in/devesh-shetty/">LinkedIn</a>, <a href="https://www.quora.com/profile/Devesh-Shetty">Quora</a> and on <a href="https://medium.com/@dev_esh">Medium</a>.
+
+- name: Enes
+  full_name: Enes Aldemir
+  url: /blog/authors/enes/
+  avatar: /assets/img/team/enes.jpeg
+  spiel: |
+      <a href="/blog/authors/enes/">Enes</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/aldemirenes">GitHub</a>, <a href="https://www.linkedin.com/in/enes-aldemir/">LinkedIn</a>.
