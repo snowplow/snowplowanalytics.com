@@ -22,6 +22,21 @@ guest> bundle exec jekyll serve --host 0.0.0.0
 
 You can then view the website on a browser on your host machine, by navigating to [https://localhost:4001](https://localhost:4001)
 
+## Website wont build?
+
+Then from the repo:
+
+```
+ host> cd vagrant
+ host> rm -rf .peru
+ host> rm -rf .oss-playbooks
+ host> cd ..
+ host> vagrant provision
+ host> vagrant ssh
+guest> cd /vagrant
+guest> bundle exec jekyll serve --host 0.0.0.0
+```
+
 ## Website management rules
 
 There are three places to publish the website / any branches on this repo to:
