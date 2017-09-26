@@ -1,7 +1,8 @@
 .same-height
 {
+	width: 100%;
 	display: table;
-	table-layout: auto;
+	table-layout: fixed;
 
 	&:not(.side-by-side) .col
 	{
