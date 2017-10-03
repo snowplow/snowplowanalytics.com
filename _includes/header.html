@@ -57,10 +57,12 @@
                             <li{% include fn/menuClassActive.fn s="picnic" tag="" %}><a href="{{ BASE_PATH }}/customers/picnic">Picnic</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
-                        <a href="{{ BASE_PATH }}/resources" class="dropdown-toggle disabled mute-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="community" %}">
+                        <a href="{{ BASE_PATH }}/community" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
+                            <li><a href="https://www.meetup.com/topics/snowplow/" target="_blank">MeetUp</a></li>
+                            <li><a href="https://github.com/snowplow" target="_blank">GitHub</a></li>                              
                             <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
                         </ul>
                     </li>

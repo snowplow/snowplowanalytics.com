@@ -221,3 +221,13 @@ a
 		margin-bottom:20px;
 	}
 }
+
+
+
+/**
+ * Make background a repeat element X and Y
+ */
+.bg-repeat {
+	background-repeat: repeat!important;
+	background-size: auto!important;
+}
