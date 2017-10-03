@@ -61,6 +61,7 @@ if (!window.location.origin) {
         var scrollingTimeOut = 0;
         var body = $('body');
         var header = $('header');
+        var msnry = $('.js-masonry');
 
 
 
@@ -302,6 +303,13 @@ if (!window.location.origin) {
                     if (isElementInViewport(this) && th.slick('slickGetOption', 'autoplay'))
                         th.slick('slickPlay');
                 });
+
+                /**
+                 * FORCE MASONRY REDRAW
+                 */
+                if (msnry.length){
+                    msnry.masonry();
+                }
             }, 1000);
 
             /*
