@@ -246,6 +246,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [r95]: https://github.com/snowplow/snowplow/milestone/103
 [r9x-bat-quality]: https://github.com/snowplow/snowplow/milestone/145
 [r9x-webhooks]: https://github.com/snowplow/snowplow/milestone/129
+[r9x-str-quality]: https://github.com/snowplow/snowplow/milestone/144
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
