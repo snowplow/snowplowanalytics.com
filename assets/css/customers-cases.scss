@@ -38,6 +38,7 @@
 	.generic-image
 	{
 		margin-top: 250px;
+
 		.call-to-action
 		{
 			margin-top: -390px;
@@ -56,6 +57,16 @@
 				margin-top: 0;
 			}
 		}
+
+		.generic-image
+		{
+			margin-top: 0;
+			padding-top: 0;
+
+			.call-to-action
+			{
+				margin-top: 0;
+			}
+		}
 	}
  }
-
