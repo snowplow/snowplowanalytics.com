@@ -1,7 +1,7 @@
         <footer id="contacts">
             <div class="container">
                 <div class="clearfix">
-                    <div class="brand col-md-5 col-sm-12">
+                    <div class="brand col-md-4 col-sm-12">
                         <a class="brand-logo" href="/"><i class="i-logo-type-claim"></i></a>
                         <div class="brand-about sm-spacer-top-40">
                             <p>Learn more <a href="{{ BASE_PATH }}/company">about us</a> or <a href="{{ BASE_PATH }}/company/contact-us">contact us</a> for more information.</p>
@@ -17,9 +17,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="links col-md-7 col-sm-12">
-                        <div class="cfx">
-                            <div class="col col-xs-6 col-sm-3">
+                    <div class="links col-md-8 col-sm-12">
+                        <div class="cols">
+                            <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="products" tag="" %}><a href="{{ BASE_PATH }}/products">Products</a></h6>
                                 <ul>
                                     <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
@@ -27,14 +27,14 @@
                                     <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-open-source">Open Source</a></li>
                                 </ul>
                             </div>
-                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
+                            <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
                                 <ul>
                                     <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
                                     <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
                                 </ul>
                             </div>
-                            <div class="col col-xs-6 col-sm-3">
+                            <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Customers</a></h6>
                                 <ul>
                                     <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="{{ BASE_PATH }}/customers/justwatch">JustWatch</a></li>
@@ -45,7 +45,14 @@
                                     <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="{{ BASE_PATH }}/customers/trusted-by">Trusted By</a></li>
                                 </ul>
                             </div>
-                            <div class="col col-xs-6 col-sm-3 sm-spacer-top-40">
+                            <div class="col">
+                                <h6{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners" class="mute-link">Partners</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="implementation" tag="" %}><a href="{{ BASE_PATH }}/implementation">Implementation</a></li>
+                                    <li{% include fn/menuClassActive.fn s="technology" tag="" %}><a href="{{ BASE_PATH }}/technology">Technology</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="resources" tag="" %}><a href="#" class="mute-link">Resources</a></h6>
                                 <ul>
                                     <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
