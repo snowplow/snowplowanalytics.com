@@ -57,8 +57,12 @@
                             <li{% include fn/menuClassActive.fn s="picnic" tag="" %}><a href="{{ BASE_PATH }}/customers/picnic">Picnic</a></li>
                         </ul>
                     </li>
-                    <li class="{% include fn/menuClassActive.fn s="partners" %}">
-                        <a href="{{ BASE_PATH }}/company">Partners</a>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="partners" %}">
+                        <a href="{{ BASE_PATH }}/partners" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Partners <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li{% include fn/menuClassActive.fn s="implementation" tag="" %}><a href="{{ BASE_PATH }}/partners/implementation">Implementation Partners</a></li>
+                            <li{% include fn/menuClassActive.fn s="technology" tag="" %}><a href="{{ BASE_PATH }}/partners/technology">Technology Partners</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="resources" %}">
                         <a href="{{ BASE_PATH }}/resources" class="dropdown-toggle disabled mute-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
