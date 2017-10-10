@@ -8,39 +8,34 @@ category: Releases
 permalink: /blog/2017/10/10/snowplow-r94-hill-of-tara-realtime-pipeline-auto-scaling-issue/
 ---
 
-We are pleased to announce the release of [Snowplow 94 Hill of Tara][snowplow-release].
+We are pleased to announce the urgent release of [Snowplow 94 Hill of Tara][snowplow-release], named after [the archaeological complex in Ireland][hill-of-tara].
 
-This release is a direct follow-up of [Snowplow 93][virunum] revolving around a particular issue
-introduced in this release regarding auto-scaling of the Stream Enrich component.
+We take data loss extremely seriously at Snowplow - shortly after the [Snowplow 93 Virunum][virunum] release, routine load testing of another component (the Elasticsearch Loader) detected an active data loss scenario for our core Stream Enrich app, introduced in R93. This data loss manifests itself around auto-scaling of the Stream Enrich component and the Kinesis stream it is writing to.
+
+This release is a critical follow-up to [Snowplow 93][virunum], and focuses on around fixing the data loss issue introduced in R93's Stream Enrich.
 
 <!--more-->
 
-If you'd like to know more about R93 Virunum, named after [the archaeological complex in
-Ireland][hill-of-tara], please read on after the fold:
+Please read on after the fold for:
 
-1. [Fixing the Stream Enrich auto-scaling issue](#enrich-scaling)
+1. [Fixing the Stream Enrich data loss issue](#enrich-scaling)
 2. [Upgrading](#upgrading)
 3. [Roadmap](#roadmap)
 4. [Help](#help)
 
 ![hill-of-tara][hill-of-tara-img]
 
-<h2 id="enrich-scaling">1. Fixing the Stream Enrich auto-scaling issue</h2>
+<h2 id="enrich-scaling">1. Fixing the Stream Enrich data loss issue</h2>
 
-Prior to R93, Stream Enrich would unnecessarily crash when the Kinesis stream Stream Enrich was
-producing to was resharding and Stream Enrich was itself auto-scaling.
+Prior to R93, Stream Enrich would unnecessarily crash when the Kinesis stream that Stream Enrich was
+writing to was resharding and Stream Enrich was itself undergoing auto-scaling.
 
-This issue was solved in R93 by failing instantiation of the Kinesis sink. However, Stream Enrich
-would keep on checkpointing the consumed stream despite not producing enriched data during
-resharding, resulting in missing enriched data.
+This issue was solved in R93 by Stream Enrich failing to instantiate the Kinesis sink until the stream had finished resharding. However, R93's Stream Enrich would unfortunately continue to read raw events and checkpoint those reads, resulting in missing enriched events.
 
-This has been a mistake all along since it's completely fine to produce to a stream in the process
-of resharding ([#3452][i3452]).
+In fact, it is completely fine to write to a stream in the process of resharding ([#3452][i3452]), so this behavior has been corrected in R94, fixing the underlying bug.
 
 There is a [comprehensive guide to this issue][scaling-thread] on Discourse, in case you have been
 affected by it or would like to discuss it further.
-
-This bug has been corrected in R94.
 
 <h2 id="upgrading">2. Upgrading</h2>
 
