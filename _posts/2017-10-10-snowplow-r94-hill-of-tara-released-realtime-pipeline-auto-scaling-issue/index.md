@@ -12,7 +12,7 @@ We are pleased to announce the urgent release of [Snowplow 94 Hill of Tara][snow
 
 We take data loss extremely seriously at Snowplow - shortly after the [Snowplow 93 Virunum][virunum] release, routine load testing of another component (the Elasticsearch Loader) detected an active data loss scenario for our core Stream Enrich app, introduced in R93. This data loss manifests itself around auto-scaling of the Stream Enrich component and the Kinesis stream it is writing to.
 
-This release is a critical follow-up to [Snowplow 93][virunum], and focuses on around fixing the data loss issue introduced in R93's Stream Enrich.
+On discovering this, we immediately prioritised an urgent Snowplow release to fix this specific issue, pushing back the other Snowplow releases we are working on. 
 
 <!--more-->
 
