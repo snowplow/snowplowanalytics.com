@@ -97,6 +97,9 @@ $font-size-base: 18px;
 	}
 }
 
+.img-grayscale {
+	@include img-grayscale;	
+}
 
 
 

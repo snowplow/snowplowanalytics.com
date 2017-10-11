@@ -314,7 +314,7 @@ header
 	}
 
 
-	@media (min-width: $screen-sm-max) and (max-width: $screen-md-min)
+	@media (min-width: $screen-sm-max) and (max-width: $screen-md-max)
 	{
 		.navbar,
 		.navbar-default
