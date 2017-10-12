@@ -130,7 +130,7 @@ and [enrichments][enrichments] in the `config` directory.
 The Stream Enrich image was written by [Daniel Zohar][danielzohar]. Big thanks to Daniel for this
 image and all the advice that he's given us on our Docker journey!
 
-<h3 id="es-loader">3.3 Elasticsearch Loader</h3>
+<h3 id="es-loader">3.3 Snowplow Elasticsearch Loader</h3>
 
 Same as before we can pull and run with the following:
 
@@ -146,7 +146,7 @@ docker run \
 
 Refer to [the Elasticsearch Loader configuration example][es-conf] as required.
 
-<h3 id="s3-loader">3.4 S3 Loader</h3>
+<h3 id="s3-loader">3.4 Snowplow S3 Loader</h3>
 
 As before:
 
