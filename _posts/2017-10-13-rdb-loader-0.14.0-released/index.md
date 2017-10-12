@@ -86,7 +86,7 @@ AWS EC2 Parameter Store allows to store short pieces of data in either encrypted
 Apart from obvious necessity of this mechanism - it also provides some additional benefits and flexibility from security point of view.
 Namely, it's now possible to audit when particular AWS role used particular master key and even provide fine-grained access to third-party AWS accounts to build multi-tenancy Snowplow orchestration cluster.
 
-To allow EMR cluster decrypt and use SSH key from EC2 Parameter Store, you need to add your `jobflow_role` (`EMR_EC2_DefaultRole` by default) to key users in IAM encryption keys.
+To allow EMR cluster decrypt and use SSH key from EC2 Parameter Store, you need to add your `jobflow_role` (`EMR_EC2_DefaultRole` by default) to key users in IAM encryption keys and add `AmazonSSMReadOnlyAccess` policty to this role.
 
 <h2 id="ssl-update">2. AWS SSL Update</h2>
 
