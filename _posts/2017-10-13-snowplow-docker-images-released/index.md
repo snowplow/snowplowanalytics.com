@@ -5,7 +5,7 @@ title-short: Snowplow Docker images
 tags: [snowplow, realtime, docker]
 author: Ben
 category: Releases
-permalink: /blog/2017/10/10/snowplow-docker-images-released/
+permalink: /blog/2017/10/13/snowplow-docker-images-released/
 ---
 
 We are thrilled to announce [the first batch of official Docker images for Snowplow][release-1].
