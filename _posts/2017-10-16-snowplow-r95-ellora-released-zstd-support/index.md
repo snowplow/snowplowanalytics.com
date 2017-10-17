@@ -97,6 +97,11 @@ and finding files has been longer inside EmrEtlRunner to detect no-op (such as f
 present in the processing bucket). To remedy this issue, we're introducing a bootstrap action that
 will delete those useless files from the different buckets used throughout the batch pipeline.
 
+<h3 id="web-model">4.5 Moving the web model to its own repository</h3>
+
+Finally, note that this release moves the web model to its own repository:
+https://github.com/snowplow/web-data-model.
+
 <h2 id="upgrading">5. Upgrading</h2>
 
 <h3 id="redshift">5.1 Upgrading your Redshift database</h3>
