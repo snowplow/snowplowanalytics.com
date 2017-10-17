@@ -48,6 +48,9 @@ with this we’ve written [a migration script][migration-script] along with the
 
 See the [AWS Documentation][aws-zstd] for more information on ZSTD Compression.
 
+Huge thanks to [Mike Robins][miike] who led the charge on ZSTD support with his excellent
+[RFC][zstd-rfc] and the accompanying pull requests.
+
 <h2 id="sessionidx">2. Update domain_sessionidx column in atomic.events to accept larger values</h2>
 
 Some of our users with frequently visited services have faced issues due to recording values higher
@@ -183,6 +186,9 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r96]: https://github.com/snowplow/snowplow/milestone/103
 [r9x-webhooks]: https://github.com/snowplow/snowplow/milestone/129
 [r9x-str-quality]: https://github.com/snowplow/snowplow/milestone/144
+
+[miike]: https://github.com/miike
+[zstd-rfc]: https://discourse.snowplowanalytics.com/t/make-big-data-small-again-with-redshift-zstd-compression/1280
 
 [aws-zstd]: http://docs.aws.amazon.com/redshift/latest/dg/zstd-encoding.html
 [emr-ami]: http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html
