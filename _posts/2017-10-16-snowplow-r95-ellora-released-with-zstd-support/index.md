@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Snowplow R95 Ellora
-title: "Snowplow R95 Ellora released"
+title: "Snowplow R95 Ellora released with ZSTD support"
 tags: [redshift, aws, emr]
 author: Keane
 category: Releases
@@ -10,8 +10,8 @@ permalink: /blog/2017/10/16/snowplow-r94-ellora-released-zstd-support/
 
 We are excited to announce the release of [Snowplow R95 Ellora][snowplow-release].
 
-This release is primarily focused on updates to the `atomic.events` table for Redshift users -
-namely a switch to ZSTD encoding. The change in encoding should lead to significant
+This release is primarily focused on updates to the `atomic.events` table for Redshift users, with
+a long-awaited switch to the ZSTD encoding. This change in column encoding should lead to significant
 reductions in the disk space used by `atomic.events` for all of our users who load their Snowplow to
 Redshift.
 
@@ -20,7 +20,7 @@ please continue reading this post:
 
 <!--more-->
 
-1. [Updating atomic.events to use ZSTD Compression](#zstd)
+1. [Updating atomic.events to use ZSTD compression](#zstd)
 2. [Update `domain_sessionidx` column in `atomic.events` to accept larger values](#sessionidx)
 3. [Support for the newly-introduced Cloudfront format](#cloudfront)
 4. [Under the hood](#misc)
@@ -30,7 +30,7 @@ please continue reading this post:
 
 ![Ellora][ellora-img]
 
-<h2 id="zstd">1. Updating atomic.events to use ZSTD Compression</h2>
+<h2 id="zstd">1. Updating atomic.events to use ZSTD compression</h2>
 
 Ever since AWS added ZSTD support for Redshift earlier this year, we’ve been very interested in
 applying it to `atomic.events` for the potential reductions in disk space usage
@@ -136,8 +136,8 @@ For a complete example, see our sample [`config.yml`][config-yml] template.
 
 <h3 id="resolver">5.3 Updating your Iglu resolver</h3>
 
-We've set up a mirror of Iglu central on Google Cloud Platform to maintain high availability in
-case of S3 outages. To benefit from this mirror, you'll need to add the following repository to your
+We've set up a mirror of Iglu Central on Google Cloud Platform to maintain high availability in
+the case of chronic AWS outages. To benefit from this mirror, you'll need to add the following repository to your
 Iglu resolver JSON file:
 
 {% highlight json %}
