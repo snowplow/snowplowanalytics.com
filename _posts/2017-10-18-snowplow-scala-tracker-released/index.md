@@ -65,6 +65,7 @@ Please check out the [repository][repo] and the [open issues][issues] if you'd l
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
+[scala-tracker]: https://github.com/snowplow/snowplow-scala-tracker
 [repo]: https://github.com/snowplow/snowplow-scala-tracker
 [release-1]: https://github.com/snowplow/snowplow-docker/releases/tag/r1
 
@@ -74,4 +75,3 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [json4s]: https://github.com/json4s/json4s
 [scalaj-http]: https://github.com/scalaj/scalaj-http
-
