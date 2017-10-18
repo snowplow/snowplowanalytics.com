@@ -5,11 +5,11 @@ title-short: Snowplow at Snowplow
 tags: [snowplow, data analytics, data management]
 author: Anthony
 category: Inside the Plow
-permalink: /blog/2017/10/19/how-we-snowplow-at-snowplow/
+permalink: /blog/2017/10/18/how-we-snowplow-at-snowplow/
 description: "How we use Snowplow data here at Snowplow Analytics"
 ---
 
-In [a blog post by co-founder Alex Dean][alex-blog], he said, “Ensuring that the data is high fidelity is essential to ensuring that any operational and strategic decision making that’s made on the basis of that data is sound.”  This concept of high fidelity data is a core component of the Snowplow philosophy; storing granular, event-level data ensures that the resulting internal database is full of deep, rich information that can be sliced and diced in hundreds of different ways. 
+In [a blog post by co-founder Alex Dean][alex-blog], he said, “Ensuring that the data is high fidelity is essential to ensuring that any operational and strategic decision making that’s made on the basis of that data is sound.”  This concept of high fidelity data is a core component of the Snowplow philosophy; storing granular, event-level data ensures that the resulting internal database is full of deep, rich information that can be sliced and diced in hundreds of different ways.
 
 Collection, however, is only half of the equation. Like any tool, even the most sophisticated data collection and reporting is only truly effective when it’s solving the right problem. Because Snowplow data has such a high degree of fidelity, it enables us to view it from whichever angle is necessary, making it ideally suited for informing strategic decisions across all of the Snowplow Analytics teams.
 
@@ -18,7 +18,7 @@ While many of our users use the data from our platform for marketing and digital
 
 <h2 id="analytics and services">Analytics and Services Teams</h2>
 
-The Analytics and Services teams are responsible for ensuring the success and pipeline integrity of our clients. Analytics and Services team members will onboard new clients, working closely with the engineers and analysts on the client’s team to implement our trackers that feed the data pipeline and identify the business problems our clients are looking to solve and how that can be accomplished using Snowplow data. 
+The Analytics and Services teams are responsible for ensuring the success and pipeline integrity of our clients. Analytics and Services team members will onboard new clients, working closely with the engineers and analysts on the client’s team to implement our trackers that feed the data pipeline and identify the business problems our clients are looking to solve and how that can be accomplished using Snowplow data.
 
 Because the Analytics and Services teams work with clients from implementation through execution, our support engineers and data analysts possess a deep mastery of the Snowplow platform and its many components. Members of the Analytics and Services teams are like cartographers, using their wide berth of knowledge about Snowplow data and a client’s objectives to chart a course forward. Every day, they work with our clients to use Snowplow data to create new models or glean new insight from business intelligence tools.
 
@@ -27,9 +27,9 @@ Because the Analytics and Services teams work with clients from implementation t
 
 Our Technical Operations team manages the development and improvement of the infrastructure required to maintain the Snowplow platform, both internally and for our clients. Our business focuses on setting up and running Snowplow for our clients, an ultimately technically challenging process; there are very few companies that exist which are responsible for overseeing many data pipelines in many different client cloud computing accounts.
 
-We believe that the data generated belongs to our clients, and therefore should be served with a 0% loss rate. To do this, with maximum data integrity, requires extremely good monitoring capabilities so our systems and operations teams have constant visibility on exactly what is running and where. We accomplish this with Snowplow, naturally. Because the data belongs to our clients, it remains within their own cloud environment and never leaves. The applications themselves, that comprise the Snowplow pipeline we configure for our clients, emit ‘events’ that describe the current state and performance of the pipelines. These events and metadata are fed into our own Snowplow pipeline, referred to as “Spine,” which acts as the central nervous system for our business and allows us to build a global view of the health of all our client infrastructure. 
+We believe that the data generated belongs to our clients, and therefore should be served with a 0% loss rate. To do this, with maximum data integrity, requires extremely good monitoring capabilities so our systems and operations teams have constant visibility on exactly what is running and where. We accomplish this with Snowplow, naturally. Because the data belongs to our clients, it remains within their own cloud environment and never leaves. The applications themselves, that comprise the Snowplow pipeline we configure for our clients, emit ‘events’ that describe the current state and performance of the pipelines. These events and metadata are fed into our own Snowplow pipeline, referred to as “Spine,” which acts as the central nervous system for our business and allows us to build a global view of the health of all our client infrastructure.
 
-On top of monitoring pipeline health, we run a set of microservices that compute on client metadata and autoscale our client pipelines so they can effectively handle fluctuations in traffic. These autoscaling algorithms are also powered by Snowplow data: as client Snowplow subsystems transmit data to our internal Spine, we compute the latency of data being processed at each stage of the real-time pipeline. We can then scale these pipelines up, with appropriate Kinesis streams and associated applications processing the data, to reduce that latency ensuring not only that we deliver 100% of our client’s data, but that we do it fast. 
+On top of monitoring pipeline health, we run a set of microservices that compute on client metadata and autoscale our client pipelines so they can effectively handle fluctuations in traffic. These autoscaling algorithms are also powered by Snowplow data: as client Snowplow subsystems transmit data to our internal Spine, we compute the latency of data being processed at each stage of the real-time pipeline. We can then scale these pipelines up, with appropriate Kinesis streams and associated applications processing the data, to reduce that latency ensuring not only that we deliver 100% of our client’s data, but that we do it fast.
 
 
 ![latency-monitoring][latency]
@@ -51,7 +51,7 @@ By breaking down our traffic data on our blog, for example, we chart engagement 
 
 <h2 id="leadership">Leadership</h2>
 
-Because Snowplow delivers such rich event data, it’s ideal for reporting on dozens of metrics. Our data scientists feed Snowplow data into Redash, where they’ve constructed custom dashboards based on their models. The high-fidelity data Snowplow delivers enables us to get a clear picture of our customers, both who they are and what they want. The diversity of the information contained within the Snowplow data log is widely applicable across many business units, each one with unique reporting and querying needs. 
+Because Snowplow delivers such rich event data, it’s ideal for reporting on dozens of metrics. Our data scientists feed Snowplow data into Redash, where they’ve constructed custom dashboards based on their models. The high-fidelity data Snowplow delivers enables us to get a clear picture of our customers, both who they are and what they want. The diversity of the information contained within the Snowplow data log is widely applicable across many business units, each one with unique reporting and querying needs.
 
 With each team reporting different KPI’s and supporting statistics, the fact that each metric is tracked from the same log means that our leadership has a holistic view of cross-functional business development data, data that can be accurately queried further to more deeply analyze any given metric or answer questions. By clearly defining our business goals and challenges, our data scientists have modeled our Snowplow data to deliver actionable reports to our leadership. We take a garbage in = garbage out approach to strategically using data: using poor data will result in poor decision making, so we only use the best data.
 
