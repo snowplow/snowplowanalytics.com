@@ -42,7 +42,7 @@ Huge thanks to [Mike Robins][miike] who led the charge on ZSTD support with his 
 [RFC][zstd-rfc] and the accompanying pull requests.
 
 To help with the migration, we have written [a migration script][migration-script], along with the
-[new table definition][table-defintion].
+[new table definition][table-definition].
 
 For more information on ZSTD compression, please check out the relevant [AWS documentation][aws-zstd].
 
