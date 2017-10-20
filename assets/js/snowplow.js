@@ -329,6 +329,18 @@ if (!window.location.origin) {
 			showCount: false,
 			shares: {{ site.share_list | join: "', '" | prepend: "['" | append: "']" }}
 		});
+
+
+
+        /**
+         * MASONRY
+         */
+        var msnry = $('.js-masonry');
+        if (msnry.length) {
+            setTimeout(function (){
+                msnry.masonry();
+            }, 300);
+        }
     });
 
 
