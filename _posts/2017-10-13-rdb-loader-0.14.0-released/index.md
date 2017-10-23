@@ -8,35 +8,35 @@ category: Releases
 permalink: /blog/2017/10/13/rdb-loader-0.14.0-released/
 ---
 
-This release concentrated around improving security and stability of RDB Loader as well as addressing important [AWS security update][aws-ssl-update].
+This release concentrated around improving security and stability of RDB Loader as well as addressing an important [AWS SSL update][aws-ssl-update], previously flagged in this [Discourse post][aws-ssl-alert].
 
 <!--more-->
 
 In this post, we will cover:
 
-1. [SSH Tunnels](#ssh-tunnel)
-2. [AWS SSL Update](#ssl-update)
+1. [SSH tunnels](#ssh-tunnel)
+2. [The AWS SSL update](#ssl-update)
 3. [Other changes](#other)
-4. [RDB Shredder update](#shredder)
+4. [RDB Shredder updates](#shredder)
 5. [Upgrading](#upgrading)
 6. [Contributing](#contributing)
 
-<h2 id="ssh-tunnel">1. SSH Tunnels</h2>
+<h2 id="ssh-tunnel">1. SSH tunnels</h2>
 
-<h3 id="ssh-tunnel-intro">1.1 SSH Tunnels 101</h3>
+<h3 id="ssh-tunnel-intro">1.1 SSH tunnels 101</h3>
 
-SSH tunnels are often used as an additional security layer in Redshift access policy.
-These tunnels include highly restricted [AWC Virtual Private Cloud][aws-vpc] containing Redshift cluster and one host (typically called "[the bastion host][bastion-article]") with the SSH port open to the outside world.
-There's no way to access Redshift cluster or any other host inside this VPC bypassing the bastion host. 
-And to access the cluster through the bastion host, users need to have an approved SSH identity and optionally reside in a white-listed subnet.
+SSH tunnels are often used as an additional security layer around accessing Redshift. These tunnels involve a highly restricted [AWC Virtual Private Cloud][aws-vpc] containing the Redshift cluster and one "[bastion host][bastion-article]" with its SSH port open to the outside world.
 
-Before 0.14.0 such architecture was not possible with RDB Loader and our most security-concerned users had to keep using StorageLoader, where an SSH tunnel could be established as a component entirely detached from StorageLoader itself.
-And unlike StorageLoader, RDB Loader runs on transient EMR clusters, which makes it extremely difficult to make node-alterations allowing to establish SSH tunnel.
-That's why we embedded an SSH tunnel functionality straight into RDB Loader.
+There's no way to access Redshift cluster or any other host inside this VPC except by routing through the bastion host. 
+And to access the cluster through the bastion host, users need to have an approved SSH identity (and optionally reside in a white-listed subnet).
 
-<h3 id="configuring-rdb">1.2 Configuring RDB Loader to work with SSH tunnel</h3>
+Before 0.14.0 this architecture was not supported by RDB Loader, and our most security-conscious users had to keep using StorageLoader, where an SSH tunnel could be easily established outside of StorageLoader itself. This setup is much more challenging with RDB Loader, which runs on transient EMR clusters, making it very difficult to bring up an SSH tunnel.
 
-Since 0.14.0, RDB Loader can consume new storage configurations ([`2-1-0`][new-redshift-config] for Redshift and [`1-1-0`][new-postgres-config]) which can optionally include an `sshTunnel` property:
+For this reason, in this release we have embedded SSH tunnel functionality directly into RDB Loader.
+
+<h3 id="configuring-rdb">1.2 Configuring RDB Loader to work with an SSH tunnel</h3>
+
+As of this release, RDB Loader supports a new version of the configuration files for Redshift ([`2-1-0`][new-redshift-config]) and for Postgres ([`1-1-0`][new-postgres-config]); this new format can optionally include an `sshTunnel` property:
 
 {% highlight json %}
 {
@@ -75,35 +75,32 @@ Since 0.14.0, RDB Loader can consume new storage configurations ([`2-1-0`][new-r
 }
 {% endhighlight %}
 
-This configuration tells RDB Loader to open a temporary SSH tunnel on the EMR master node from `localhost:15151` (an arbitrary port can be choosen, but `sshTunnel.localPort` and `port` must be the same) to `10.0.0.11:5439` which is the Redshift socket *inside* the VPC network.
-When RDB Loader attempts to open a JDBC connection to `localhost:15151` (as specified in root) it will actually connect to Redshift cluster via an encrypted EMR-to-bastion SSH tunnel.
+This configuration tells RDB Loader to open a temporary SSH tunnel on the EMR master node from `localhost:15151` (an arbitrary port can be choosen, but `sshTunnel.localPort` and `port` must be the same) to `10.0.0.11:5439`, which is the Redshift socket *inside* the VPC network.
 
-SSH tunnels would not be so secure and therefore useful if we had decided to store the private bastion SSH key in plain text.
-That's why we embraced [AWS Key Management Service][aws-kms] and [AWS EC2 Parameter Store][aws-parameter-store], those services enable users to store highly secure data, such as passwords and SSH keys in encrypted form.
-AWS KMS allows to create a master key that can be used to encrypt and decrypt arbitrary data. 
-But decryption is only allowed for IAM roles that were specified in the key configuration.
-AWS EC2 Parameter Store allows to store short pieces of data in either encrypted or plain-text form and then retrieve them if the IAM role (assigned to EMR in our case) has necessary permissions.
+When RDB Loader attempts to open a JDBC connection to `localhost:15151` (as specified in the configuration root), it will actually connect to the Redshift cluster via an encrypted EMR-to-bastion SSH tunnel.
 
-Apart from the obvious necessity of this mechanism - it also provides some additional benefits and flexibility from a security point of view.
-Namely, it's now possible to audit when a particular AWS role used a particular master key and even provide fine-grained access to third-party AWS accounts to build multi-tenancy Snowplow orchestration clusters.
+Security would be at risk if we had needed to store the private bastion SSH key in plain text. That's why we have embraced [AWS Key Management Service][aws-kms] and [AWS EC2 Parameter Store][aws-parameter-store], services which let users store highly secure data, such as passwords and SSH keys in encrypted form, specifically:
 
-To allow EMR clusters to decrypt and use SSH key from EC2 Parameter Store, you need to add your `jobflow_role` (`EMR_EC2_DefaultRole` by default) to key users in IAM encryption keys and add `AmazonSSMReadOnlyAccess` policty to this role.
+* AWS KMS lets you create a master key to encrypt and decrypt arbitrary data. Decryption is only allowed for IAM roles that were specified in the key configuration.
+* AWS EC2 Parameter Store lets you store short pieces of data in either encrypted or plain-text form and then retrieve them if the IAM role (assigned to EMR in our case) has the necessary permissions
+
+This is a huge step forwards for the security and integrity of the RDB Loader. It means that you can audit when a particular AWS role used a particular master key, and even setup fine-grained access to third-party AWS accounts.
 
 <h2 id="ssl-update">2. AWS SSL Update</h2>
 
 On September 19, Amazon emailed Redshift users that all certificates currently installed on Redshift clusters [will be replaced][aws-ssl-update] with ACM issued ones.
-As a consequence all clients using SSL **and** outdated/non-native JDBC drivers will not be able to connect to Redshift after October 23, 2017.
-Unfortunately, all releases of StorageLoader and 0.12.0 and 0.13.0 versions of RDB Loader fall into this category.
 
-In this release of RDB Loader we updated the native Redshift JDBC driver bundled with RDB Loader to the latest version which allows one to connect to Redshift via SSL and apparently fixes previously observed issues with SSL connections to Redshift.
+As a consequence all clients using SSL **and** outdated/non-native JDBC drivers will not be able to connect to Redshift after October 23, 2017. Unfortunately, all releases of StorageLoader and 0.12.0 and 0.13.0 versions of RDB Loader fall into this category.
 
-It also means that if you're a Snowplow user and have a requirement to use Redshift only via a secure connection - upgrading to RDB Loader 0.14.0 is the only way to continue to load data into Redshift.
+In this release of RDB Loader we updated the native Redshift JDBC driver bundled with RDB Loader to the latest version which allows one to connect to Redshift via SSL and apparently fixes the previously observed issues with SSL connections to Redshift.
+
+It also means that if you're a Snowplow user and have a requirement to use Redshift only via a secure connection, then upgrading to RDB Loader 0.14.0 is the recommended way of doing this.
 
 <h2 id="other">3. Other changes</h2>
 
-Among onther important security updates in this release, RDB Loader now also provides the ability not to store your Redshift password in plain text in storage configurations.
-Instead, it can be stored in the same way than private SSH key for bastion host - namely in EC2 Parameter Store and encrypted via master key.
-It has the same benefits as KMS-stored SSH key, for example it is possible not to have plain Redshift password saved anywhere, even on the orchestration cluster.
+RDB Loader now also provides the ability not to store your Redshift password in plain text in storage configurations.
+
+Your passwoed can now be stored in the same way as private SSH keys, above, namely in EC2 Parameter Store and encrypted via master key. This approach has the same benefits as a KMS-stored SSH key, and means that you no longer have to have the Redshift password stored in plaintext anywhere.
 
 To enable retrieving password from EC2 parameter store - just replace `password` string with object similar to `sshTunnel.bastion.key`: 
 
@@ -116,7 +113,6 @@ To enable retrieving password from EC2 parameter store - just replace `password`
     }
 }
 {% endhighlight %}
-
 
 Version 0.14.0 includes the newest AWS SDK, which makes it possible to use it from previously unavailable AWS Regions such as ca-central-1 and eu-west-2.
 
@@ -144,6 +140,11 @@ Also schema in storage target configuration need to be updated.
 For Redshift to `iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0` (was `2-0-0`)
 For Postgres to `iglu:com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0` (was `1-0-1`)
 
+To allow EMR clusters to decrypt and use an SSH key from EC2 Parameter Store, you must:
+
+1. Add your `jobflow_role` (`EMR_EC2_DefaultRole` by default) to the key users in IAM encryption keys
+2.  and add `AmazonSSMReadOnlyAccess` policty to this role.
+
 <h2 id="contributing">6. Contributing</h2>
 
 You can check out the [repository][repo] and the [open issues](https://github.com/snowplow/snowplow-rdb-loader/issues?utf8=✓&q=is%3Aissue%20is%3Aopen%20) if you'd like to get involved!
@@ -155,6 +156,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
+[aws-ssl-alert]: xxx
 [aws-ssl-update]: https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-transitioning-to-acm-certs.html
 [bastion-article]: https://en.wikipedia.org/wiki/Bastion_host
 
