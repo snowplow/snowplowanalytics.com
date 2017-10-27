@@ -198,3 +198,11 @@
   avatar: /assets/img/team/enes.jpeg
   spiel: |
       <a href="/blog/authors/enes/">Enes</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/aldemirenes">GitHub</a>, <a href="https://www.linkedin.com/in/enes-aldemir/">LinkedIn</a>.
+
+- name: Anthony
+  full_name: Anthony Mandelli
+  twitter: Mandelliant
+  url: /blog/authors/anthony/
+  avatar: /assets/img/team/Anthony.jpg
+  spiel: |
+      <a href="/blog/authors/anthony/">Anthony</a> is the Digital Marketing Manager at Snowplow. You can find him on <a href="https://twitter.com/Mandelliant">Twitter</a>, <a href="https://www.linkedin.com/in/amandelli/">LinkedIn</a>.
