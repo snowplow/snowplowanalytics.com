@@ -5,8 +5,8 @@ title-short: Data Ownership
 tags: [data analytics, data management]
 author: Anthony
 category: Other
-permalink: /blog/2017/10/24/possession-is-9-10-of-the-law/
-description: "How we use Snowplow data here at Snowplow Analytics"
+permalink: /blog/2017/10/30/possession-is-9-10-of-the-law/
+description: "The Importance of Data Ownership"
 ---
 
 ![data-chart][chart]
