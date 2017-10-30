@@ -38,7 +38,7 @@ When you own your data, from end to end, the environment is completely different
 
 Your raw, event-level data can be piped from multiple sources into your warehouse or unified log and enriched in meaningful ways to provide the answers you’re looking for in your data. Often, those answers don’t become apparent until you start looking closer. With a complete picture of your user journey, you’re no longer limited to superficial analyses of surface-level data points. You can connect a single user’s data from multiple sources such as your CRM, CMS, eCommerce platform, or within a digital environment like a web application or video game. Now, with complete ownership of your user data, you can start drawing real insights.
 
-One stop shopping
+<h2 id="one stop shopping">One stop shopping</h2>
 
 Configuring all of these external systems to produce data that works well together isn’t always easy, but the process can be well worth the effort. Enriching CRM data, for example, with web analytics can show you how your customers are engaging with your website. By then comparing the web traffic with your lead generation, you can calculate actual conversion rates on an email beyond how many subscribers clicked on a call to action, giving you more insight into the ROI for each email you send.
 
