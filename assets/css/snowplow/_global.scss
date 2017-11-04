@@ -1,78 +1,70 @@
-html, body
-{
-	background: $white;
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
+html,
+body {
+    background: $white;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-body
-{
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.5em;
-	letter-spacing: 0.02em;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+body {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5em;
+    letter-spacing: 0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-	&.scrolling
-	{
-		user-select:none;
-		/*pointer-events:none;*/
-		-webkit-overflow-scrolling: touch;
-	}
+    &.scrolling {
+        user-select: none;
+        /*pointer-events:none;*/
+        -webkit-overflow-scrolling: touch;
+    }
 
-	&.freeze
-	{
-		main
-		{
-			height:100vh;
-			overflow:hidden;
-		}
-	}
+    &.freeze {
+        main {
+            height: 100vh;
+            overflow: hidden;
+        }
+    }
 }
 
-main
-{
-	margin:0 auto;
-	max-width:1300px;
+main {
+    margin: 0 auto;
+    max-width: 1300px;
 
-	body.full-frame &
-	{
-		max-width: 100%;
-	}
+    body.full-frame & {
+        max-width: 100%;
+    }
 
-	>.container
-	{
-		margin-top:150px;
-		margin-bottom: 150px;
+    >.container {
+        margin-top: 150px;
+        margin-bottom: 150px;
 
-		>.content
-		{
-			max-width: 768px;
-			margin:0 auto;
-		}
-	}
+        >.content {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+    }
 }
 
 
 
 
-img
-{
-	height: auto;
-	max-width: 100%;
-	user-select: none;
+img {
+    height: auto;
+    max-width: 100%;
+    user-select: none;
 
-	&.adapt
-	{
-		width: 100%;
-		display: block;
-		/*max-height: 100%;*/
-	}
+    &.adapt {
+        width: 100%;
+        display: block;
+        /*max-height: 100%;*/
+    }
 }
+
+
 
 
 /*
@@ -80,20 +72,20 @@ img
  * When we need to clear all font size and spacing
  */
 
-.clearfont
-{
-	font-size: 0;
-	line-height: 0;
-	text-indent: 0;
-	letter-spacing: 0;
+.clearfont {
+    font-size: 0;
+    line-height: 0;
+    text-indent: 0;
+    letter-spacing: 0;
 }
 
 
 
-.cfx
-{
-	@include cfx;
+.cfx {
+    @include cfx;
 }
+
+
 
 
 
@@ -103,42 +95,39 @@ img
  * BORDER-RADIUS
  */
 
-.border-radius-base
-{
-	border-radius: $border-radius-base;
+.border-radius-base {
+    border-radius: $border-radius-base;
 }
 
-.border-radius-large
-{
-	border-radius: $border-radius-large;
+.border-radius-large {
+    border-radius: $border-radius-large;
 }
 
-.border-radius-small
-{
-	border-radius: $border-radius-small;
+.border-radius-small {
+    border-radius: $border-radius-small;
 }
 
-.no-border
-{
-	border-color:transparent!important; /* ITS AN OVERRIDE */
+.no-border {
+    border-color: transparent!important;
+    /* ITS AN OVERRIDE */
 }
 
 
 
 
 
-.side-by-side
-{
-	overflow: hidden;
+.side-by-side {
+    overflow: hidden;
 
-	> .container
-	{
-		background-image: -webkit-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
-		background-image: -o-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
-		background-image: linear-gradient(to right, $brand-success, $brand-success 50%, $brand-info 50%);
-	  	background-repeat: no-repeat;
-	}
+    >.container {
+        background-image: -webkit-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
+        background-image: -o-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
+        background-image: linear-gradient(to right, $brand-success, $brand-success 50%, $brand-info 50%);
+        background-repeat: no-repeat;
+    }
 }
+
+
 
 
 
@@ -149,15 +138,15 @@ img
  * Arrange in z order
  */
 
-.bring-to-front
-{
-	z-index:999;
+.bring-to-front {
+    z-index: 999;
 }
 
-.send-to-back
-{
-	z-index:0;
+.send-to-back {
+    z-index: 0;
 }
+
+
 
 
 
@@ -168,20 +157,19 @@ img
  * Images
  */
 
-img:not(.allow-interact)
-{
-	pointer-events:none;
-	user-select:none;
+img:not(.allow-interact) {
+    pointer-events: none;
+    user-select: none;
 }
 
-a
-{
-	img
-	{
-		pointer-events:auto;
-		user-select:all;
-	}
+a {
+    img {
+        pointer-events: auto;
+        user-select: all;
+    }
 }
+
+
 
 
 
@@ -192,12 +180,14 @@ a
  */
 
 .bring-to-top {
-	z-index: 99;
+    z-index: 99;
 }
 
 .bring-to-bottom {
-	z-index: 0;
+    z-index: 0;
 }
+
+
 
 
 
@@ -208,26 +198,31 @@ a
  */
 
 .overlap-bellow {
-	z-index: 99;
-	margin-bottom:0;
-	transform:translateY(50%);
+    z-index: 99;
+    margin-bottom: 0;
+    transform: translateY(50%);
 
-	@media screen and (max-width:$screen-md-min) {
-		transform:translateY(25%);
-	}
+    @media screen and (max-width: $screen-md-min) {
+        transform:translateY(25%);
+    }
 
-	@media screen and (max-width:$screen-sm-min) {
-		transform:none;
-		margin-bottom:20px;
-	}
+    @media screen and (max-width:$screen-sm-min) {
+        transform: none;
+        margin-bottom: 20px;
+    }
 }
-
-
-
 /**
  * Make background a repeat element X and Y
  */
+
 .bg-repeat {
-	background-repeat: repeat!important;
-	background-size: auto!important;
+    background-repeat: repeat!important;
+    background-size: auto!important;
+}
+/* parrallax effect */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

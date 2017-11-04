@@ -25,7 +25,9 @@ Maybe that’s okay with you. Maybe the data you’re being served is sufficient
 
 There’s an unspoken trend that [no one in digital analytics talks about bad data][yali-blog], as Snowplow co-founder Yali Sassoon points out. This is a mistake. Bad data can often be as insightful as good data if you examine and analyze it closely. An unusually massive spike in account creation could be a QA team doing routine testing or the result of a digital marketing campaign going viral. But, there’s no way to know unless you can pick the data apart, piece by piece, to identify it for what it is. In effort to keep your data clean, third parties will make assumptions for you about that unusual data or blatantly disregard it as erroneous.
 
-Take Google Analytics, for example. The platform does a great job of giving a general overview of what your web analytics look like. What the data lacks in fidelity, it makes up for with easily digestible, high-level portraits of user activity, which is often sufficient enough to draw reasonable conclusions for individuals or organizations new to data analytics. But in order to create those portraits, Google [takes certain liberties][google-analytics] with your data like making its own decisions about which acquisition channels users are coming from, sacrificing true accuracy along the way. Google Analytics also serves you data from a sampling of your traffic, meaning you’re not even seeing a complete picture of your user behavior.
+Take Google Analytics, for example. The platform does a great job of giving a general overview of what your web analytics look like. What the data lacks in fidelity, it makes up for with easily digestible, high-level portraits of user activity, which is often sufficient enough to draw reasonable conclusions for individuals or organizations new to data analytics. But in order to create those portraits, Google [takes certain liberties][google-analytics] with your data, such as making its own decisions about which acquisition channels users are coming from, sacrificing true accuracy along the way. Once you pass the threshold of five hundred thousand sessions, Google Analytics also serves you data from a sampling of your traffic unless you specifically request non-sampled data.
+
+*The original version of this blog post stated that Google Analytics served only sampled data. Thanks to feedback and discussion by [Al Wightman][al] and [Peter O'Neill][peter], who very graciously taught me more about how Google Analytics works, I was able to update this post. Google Analytics, I've since learned, only samples data above the five hundred thousand session threshold or if certain customizations are applied to your report. Al and Peter's comments sparked a lively conversation which has [continued on our Discourse channel][snowplow-v-ga].*
 
 <h2 id="the benefits of ownership">The Benefits of Ownership</h2>
 
@@ -52,6 +54,12 @@ At Snowplow, [we track our web content very closely][content-tracking] to learn 
 [three-eras]: https://snowplowanalytics.com/blog/2014/01/20/the-three-eras-of-business-data-processing/ "Three eras of business data processing"
 
 [content-tracking]: https://snowplowanalytics.com/blog/2017/01/12/looking-back-at-2016/ "Look back at 2016"
+
+[al]: https://twitter.com/AlWightman "Al Wightman Twitter"
+
+[peter]: https://twitter.com/peter_oneill "Peter O'Neill Twitter"
+
+[snowplow-v-ga]: https://discourse.snowplowanalytics.com/t/snowplow-vs-google-analytics/1582
 
 [unified]: /assets/img/blog/2017/10/unified_log_processing.jpg
 
