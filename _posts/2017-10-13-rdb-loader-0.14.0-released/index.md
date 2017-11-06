@@ -156,7 +156,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[aws-ssl-alert]: xxx
+[aws-ssl-alert]: https://discourse.snowplowanalytics.com/t/important-alert-aws-is-replacing-the-ssl-certificates-for-connecting-to-redshift-on-23rd-october/1552
 [aws-ssl-update]: https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-transitioning-to-acm-certs.html
 [bastion-article]: https://en.wikipedia.org/wiki/Bastion_host
 
