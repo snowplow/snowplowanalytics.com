@@ -40,48 +40,48 @@ As of this release, RDB Loader supports a new version of the configuration files
 
 {% highlight json %}
 {
-    "schema": "iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0",
-    "data": {
-        "name": "AWS Redshift enriched events storage",
-        "host": "localhost",
-        "database": "snowplow",
-        "port": 15151,
-        "sslMode": "DISABLE",
-        "username": "loader",
-        "password": "secret",
-        "roleArn": "arn:aws:iam::719197435995:role/RedshiftLoadRole",
-        "schema": "atomic",
-        "maxError": 1,
-        "compRows": 20000,
-        "purpose": "ENRICHED_EVENTS",
-        "sshTunnel": {
-            "bastion": {
-                "host": "bastion.acme.com",
-                "port": 22,
-                "user": "snowplow-loader",
-                "key": {
-                     "ec2ParameterStore": {
-                         "parameterName": "snowplow.rdbloader.redshift.key"
-                     }
-                }
-            },
-            "destination": {
-                "host": "10.0.0.11",
-                "port": 5439
-            },
-            "localPort": 15151
+  "schema": "iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0",
+  "data": {
+    "name": "AWS Redshift enriched events storage",
+    "host": "localhost",
+    "database": "snowplow",
+    "port": 15151,
+    "sslMode": "DISABLE",
+    "username": "loader",
+    "password": "secret",
+    "roleArn": "arn:aws:iam::719197435995:role/RedshiftLoadRole",
+    "schema": "atomic",
+    "maxError": 1,
+    "compRows": 20000,
+    "purpose": "ENRICHED_EVENTS",
+    "sshTunnel": {
+      "bastion": {
+        "host": "bastion.acme.com",
+        "port": 22,
+        "user": "snowplow-loader",
+        "key": {
+          "ec2ParameterStore": {
+            "parameterName": "snowplow.rdbloader.redshift.key"
+          }
         }
+      },
+      "destination": {
+        "host": "10.0.0.11",
+        "port": 5439
+      },
+      "localPort": 15151
     }
+  }
 }
 {% endhighlight %}
 
-This configuration tells RDB Loader to open a temporary SSH tunnel on the EMR master node from `localhost:15151` (an arbitrary port can be choosen, but `sshTunnel.localPort` and `port` must be the same) to `10.0.0.11:5439`, which is the Redshift socket *inside* the VPC network.
+This configuration tells RDB Loader to open a temporary SSH tunnel on the EMR master node from `localhost:15151` (an arbitrary port can be chosen, but `sshTunnel.localPort` and `port` must be the same) to `10.0.0.11:5439`, which is the Redshift socket *inside* the VPC network.
 
 When RDB Loader attempts to open a JDBC connection to `localhost:15151` (as specified in the configuration root), it will actually connect to the Redshift cluster via an encrypted EMR-to-bastion SSH tunnel.
 
-Security would be at risk if we had needed to store the private bastion SSH key in plain text. That's why we have embraced [AWS Key Management Service][aws-kms] and [AWS EC2 Parameter Store][aws-parameter-store], services which let users store highly secure data, such as passwords and SSH keys in encrypted form, specifically:
+Security would be at risk if we had needed to store the private bastion SSH key in plain text. So, we have embraced [AWS Key Management Service][aws-kms] and [AWS EC2 Parameter Store][aws-parameter-store], services which let users store highly secure data, such as passwords and SSH keys in encrypted form, specifically:
 
-* AWS KMS lets you create a master key to encrypt and decrypt arbitrary data. Decryption is only allowed for IAM roles that were specified in the key configuration.
+* AWS KMS lets you create a master key to encrypt and decrypt arbitrary data. Decryption is only allowed for IAM roles that were specified in the key configuration
 * AWS EC2 Parameter Store lets you store short pieces of data in either encrypted or plain-text form and then retrieve them if the IAM role (assigned to EMR in our case) has the necessary permissions
 
 This is a huge step forwards for the security and integrity of the RDB Loader. It means that you can audit when a particular AWS role used a particular master key, and even setup fine-grained access to third-party AWS accounts.
@@ -90,38 +90,39 @@ This is a huge step forwards for the security and integrity of the RDB Loader. I
 
 On September 19, Amazon emailed Redshift users that all certificates currently installed on Redshift clusters [will be replaced][aws-ssl-update] with ACM issued ones.
 
-As a consequence all clients using SSL **and** outdated/non-native JDBC drivers will not be able to connect to Redshift after October 23, 2017. Unfortunately, all releases of StorageLoader and 0.12.0 and 0.13.0 versions of RDB Loader fall into this category.
+As a consequence, all clients using SSL **and** outdated/non-native JDBC drivers were not be able to connect to Redshift after October 23, 2017. Unfortunately, all releases of StorageLoader and the 0.12.x and 0.13.x versions of RDB Loader fall into this category.
 
-In this release of RDB Loader we updated the native Redshift JDBC driver bundled with RDB Loader to the latest version which allows one to connect to Redshift via SSL and apparently fixes the previously observed issues with SSL connections to Redshift.
+In this release of RDB Loader, we have updated the native Redshift JDBC driver bundled with RDB Loader to the latest version; this version can connect to Redshift via SSL and *also* fixes the previously observed issues with SSL connections to Redshift.
 
-It also means that if you're a Snowplow user and have a requirement to use Redshift only via a secure connection, then upgrading to RDB Loader 0.14.0 is the recommended way of doing this.
+If you are a Snowplow user and have a requirement to use Redshift via a secure connection only, then upgrading to RDB Loader 0.14.0 is the recommended way of doing this.
 
 <h2 id="other">3. Other changes</h2>
 
 RDB Loader now also provides the ability not to store your Redshift password in plain text in storage configurations.
 
-Your passwoed can now be stored in the same way as private SSH keys, above, namely in EC2 Parameter Store and encrypted via master key. This approach has the same benefits as a KMS-stored SSH key, and means that you no longer have to have the Redshift password stored in plaintext anywhere.
+Your password can now be stored in the same way as private SSH keys, above, namely in EC2 Parameter Store and encrypted via master key. This approach has the same benefits as a KMS-stored SSH key, and means that you no longer have to have the Redshift password stored in plaintext anywhere.
 
-To enable retrieving password from EC2 parameter store - just replace `password` string with object similar to `sshTunnel.bastion.key`: 
+To enable retrieving password from EC2 parameter store, just replace `password` string with object similar to `sshTunnel.bastion.key`: 
 
 {% highlight json %}
 {
-    "password": {
-        "ec2ParameterStore": {
-            "parameterName": "snowplow.rdbloader.redshift.password"
-        }
+  "password": {
+    "ec2ParameterStore": {
+      "parameterName": "snowplow.rdbloader.redshift.password"
     }
+  }
 }
 {% endhighlight %}
 
-Version 0.14.0 includes the newest AWS SDK, which makes it possible to use it from previously unavailable AWS Regions such as ca-central-1 and eu-west-2.
+Version 0.14.0 also includes the latest AWS SDK, which makes it possible to use it from previously unavailable AWS Regions such as ca-central-1 and eu-west-2.
 
 <h2 id="shredder">4. RDB Shredder update</h2>
 
-We've taken advantage of this RDB Loader release to slightly update the RDB Shredder. Namely, we've
-upgraded the Spark version on which RDB Shredder runs to 2.2.0 and we've made the Shred job a bit
-more robust by allowing overwrites of output data for a particular run. This last change makes
-the `yarn.resourcemanager.am.max-attempts: "1"` configuration not mandatory anymore. This is
+We've taken advantage of this RDB Loader release to slightly update the RDB Shredder.
+
+We have upgraded the Spark version on which RDB Shredder runs to 2.2.0, and we have made the Shred job more
+more robust, by allowing overwrites of output data for a particular run. This last change means that
+the `yarn.resourcemanager.am.max-attempts: "1"` configuration is no longer mandatory - 
 particularly useful if the job fails because of some transient issue.
 
 <h2 id="upgrading">5. Upgrading</h2>
@@ -135,15 +136,16 @@ storage:
     rdb_loader: 0.14.0        # WAS 0.13.0
 {% endhighlight %}
 
-Also schema in storage target configuration need to be updated.
+Als, the schema in storage target configuration need to be updated.
 
-For Redshift to `iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0` (was `2-0-0`)
-For Postgres to `iglu:com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0` (was `1-0-1`)
+For Redshift, change to `iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0` (was `2-0-0`).
+
+For Postgres, change to `iglu:com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0` (was `1-0-1`).
 
 To allow EMR clusters to decrypt and use an SSH key from EC2 Parameter Store, you must:
 
 1. Add your `jobflow_role` (`EMR_EC2_DefaultRole` by default) to the key users in IAM encryption keys
-2.  and add `AmazonSSMReadOnlyAccess` policty to this role.
+2. Add `AmazonSSMReadOnlyAccess` policty to this role
 
 <h2 id="contributing">6. Contributing</h2>
 
