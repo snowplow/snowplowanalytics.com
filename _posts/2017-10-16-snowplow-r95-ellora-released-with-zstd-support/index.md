@@ -81,16 +81,7 @@ This makes the `yarn.resourcemanager.am.max-attempts: "1"` configuration setting
 
 There is a good discussion on the subject on [our Discourse forum][discourse-already-exists].
 
-<h3 id="folder">4.4 New bootstrap action removing empty S3 artifact files</h3>
-
-On recent EMR AMIs, empty files ending with `_$folder$` have been appearing and polluting S3
-buckets; this problem is detailed in [the AWS documentation][folder-files].
-
-One unfortunate side effect has been the degradation of EmrEtlRunner's performance when detecting no-op scenarios, such as files already being present in the processing bucket.
-
-To remedy this issue, this release introduces a bootstrap action that deletes these unnecessary files from the various buckets used throughout the batch pipeline.
-
-<h3 id="web-model">4.5 Moving the web model to its own repository</h3>
+<h3 id="web-model">4.4 Moving the web model to its own repository</h3>
 
 Finally, note that this release moves the web model to its own repository, [snowplow/web-data-model][web-data-model].
 
@@ -142,7 +133,7 @@ Iglu resolver JSON file:
 
 {% highlight json %}
 {
-  "name": "Iglu Central - Mirror 01",
+  "name": "Iglu Central - GCP Mirror",
   "priority": 1,
   "vendorPrefixes": [ "com.snowplowanalytics" ],
   "connection": {
@@ -199,5 +190,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [aws-zstd]: http://docs.aws.amazon.com/redshift/latest/dg/zstd-encoding.html
 [emr-ami]: http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html
-[folder-files]: https://aws.amazon.com/premiumsupport/knowledge-center/emr-s3-empty-files/
 [cf-format]: http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat
