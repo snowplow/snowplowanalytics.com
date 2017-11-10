@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "RDB Loader 0.14.0 released"
-title-short: RDB Loader Loader 0.14.0
+title: "RDB Loader R28 released"
+title-short: RDB Loader Loader R28
 tags: [redshift, postgres, shred, relational databases, storage, security]
 author: Anton
 category: Releases
-permalink: /blog/2017/10/13/rdb-loader-0.14.0-released/
+permalink: /blog/2017/11/10/rdb-loader-r28-released/
 ---
 
 This release concentrated around improving security and stability of RDB Loader as well as addressing an important [AWS SSL update][aws-ssl-update], previously flagged in this [Discourse post][aws-ssl-alert].
+Starting with this release, both RDB Loader and RDB Shredder versions will have same umbrella-release number.
 
 <!--more-->
 
@@ -136,11 +137,13 @@ storage:
     rdb_loader: 0.14.0        # WAS 0.13.0
 {% endhighlight %}
 
-Als, the schema in storage target configuration need to be updated.
+Also, the schema in storage target configuration need to be updated.
 
 For Redshift, change to `iglu:com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0` (was `2-0-0`).
 
 For Postgres, change to `iglu:com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0` (was `1-0-1`).
+
+Make sure EMR allows outbound connections on bastion's SSH port and EMR cluster has access to bastion.
 
 To allow EMR clusters to decrypt and use an SSH key from EC2 Parameter Store, you must:
 
