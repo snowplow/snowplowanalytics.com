@@ -5,7 +5,7 @@ title-short: RDB Loader Loader R28
 tags: [redshift, postgres, shred, relational databases, storage, security]
 author: Anton
 category: Releases
-permalink: /blog/2017/11/10/rdb-loader-r28-released/
+permalink: /blog/2017/11/13/rdb-loader-r28-released/
 ---
 
 This release concentrated around improving security and stability of RDB Loader as well as addressing an important [AWS SSL update][aws-ssl-update], previously flagged in this [Discourse post][aws-ssl-alert].
@@ -131,6 +131,9 @@ particularly useful if the job fails because of some transient issue.
 The primary way to run RDB Loader is still via Snowplow's own EmrEtlRunner, Release 90 and above. You will need to update your `config.yml`:
 
 {% highlight yaml %}
+aws:
+  emr:
+    ami_version: 5.9.0        # WAS 0.
 storage:
   versions:
     rdb_shredder: 0.13.0      # WAS 0.12.0
