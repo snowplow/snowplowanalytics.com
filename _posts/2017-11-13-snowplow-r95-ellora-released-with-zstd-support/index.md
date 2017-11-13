@@ -5,7 +5,7 @@ title: "Snowplow R95 Ellora released with ZSTD support"
 tags: [redshift, aws, emr]
 author: Keane
 category: Releases
-permalink: /blog/2017/10/16/snowplow-r94-ellora-released-zstd-support/
+permalink: /blog/2017/11/13/snowplow-r95-ellora-released-with-zstd-support/
 ---
 
 We are excited to announce the release of [Snowplow R95 Ellora][snowplow-release].
