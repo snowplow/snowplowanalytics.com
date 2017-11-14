@@ -10,8 +10,9 @@ permalink: /blog/2017/11/13/snowplow-r96-zeugma-released-with-nsq-support/
 
 We are pleased to announce the release of Snowplow 96 Zeugma. This release brings initial support
 for using [NSQ][nsq-website] with the Snowplow real-time pipeline, as an alternative to Amazon
-Kinesis or Apache Kafka. Read on for more information on R96 Zeugma, named after
-[an ancient city of Commagene located in southeastern Anatolia][zeugma]:
+Kinesis or Apache Kafka.
+
+Read on for more information on R96 Zeugma, named after [an ancient city of Commagene located in southeastern Anatolia][zeugma]:
 
 <!--more-->
 
@@ -28,62 +29,58 @@ Kinesis or Apache Kafka. Read on for more information on R96 Zeugma, named after
 
 <h2 id="supporting-nsq">1. Supporting NSQ </h2>
 
-[NSQ][nsq-website] is a realtime distributed messaging platform. We are planning on
+[NSQ][nsq-website] is a realtime distributed messaging platform - think of it as a highly-scalable pub/sub system. We are planning on
 [migrating Snowplow Mini to use NSQ under the hood][snowplow-mini-nsq-ticket], and so this new
 functionality is a stepping stone towards this goal.
 
-The main reason behind NSQ support is making the Snowplow Mini pipeline brittle. At the moment,
-Snowplow Mini uses named Unix pipes for inter-process communication.
-Unfortunately, this leads to unexpected behaviours such as backpressure issues and race conditions
-when launching.
+At the moment, Snowplow Mini uses named Unix pipes "under the hood" for communicating between the various Snowplow components. This is an opaque and fairly brittle process - leading to unexpected behaviours such as backpressure issues and race conditions
+when launching. Switching Snowplow Mini to use NSQ is a good compromise: much simpler to setup than Kafka or Kinesis, but much more predictable than named Unix pipes.
 
-We chose NSQ as a replacement because it is relatively straightforward to use and setup.
-Additionally, being able to operate at scale makes NSQ another alternative to Kafka or Kinesis.
+Additionally, being highly scalable and relatively low-cost may make NSQ an important alternative to Kafka or Kinesis for some large-scale Snowplow roll-outs, particularly around the IoT space.
 
 Adding NSQ support in Snowplow translates to:
 
-* Adding a NSQ sink to the Scala Stream Collector
-* Adding a NSQ source and a NSQ sink to Stream Enrich
+* Adding an NSQ sink to the Scala Stream Collector
+* Adding an NSQ source and an NSQ sink to Stream Enrich
 
 We will detail both those steps below, but first let's setup NSQ.
 
 <h2 id="setting-up-nsq">2. Setting up NSQ</h2>
 
-The easiest way to spin up NSQ is through [Docker][docker-install].
-Once you have Docker installed you can run the below commands to get NSQ running in a container:
+The easiest way to spin up NSQ is through [Docker][docker-install]. Once you have Docker installed you can run the below commands to get NSQ running in a container:
 
 {% highlight bash %}
 docker pull nsqio/nsq
 docker run --name lookupd -p 4160:4160 -p 4161:4161 nsqio/nsq /nsqlookupd
 docker run --name nsqd -p 4150:4150 -p 4151:4151 \
     nsqio/nsq /nsqd \
-    --broadcast-address=<host> \
-    --lookupd-tcp-address=<host>:4160
+    --broadcast-address=$host \
+    --lookupd-tcp-address=$host:4160
 {% endhighlight %}
 
-One container will be running `nsqlookupd`, a component dedicated to managing who produces and
-consumes what. Another container will be running `nsqd` which is in charge of receiving, queueing
-and delivering messages.
-
-After running the commands above, you can send the following POST requests in order to
-create the NSQ topics we will use later on.
-
-{% highlight bash %}
-curl -X POST http://<host>/topic/create?topic=GoodRawEvents
-curl -X POST http://<host>/topic/create?topic=BadRawEvents
-curl -X POST http://<host>/topic/create?topic=GoodEnrichedEvents
-curl -X POST http://<host>/topic/create?topic=BadEnrichedEvents
-{% endhighlight %}
-
-`<host>` should be the Docker host's IP address. You can find it with the `ifconfig | grep addr`
+You should set `$host` to the Docker host's IP address. You can find it with the `ifconfig | grep addr`
 command.
 
-If you run all these commands without getting any error, you are ready to continue with the next
+One container will be running `nsqlookupd`, a component dedicated to managing who produces and
+consumes what. Another container will be running `nsqd`, which is in charge of receiving, queueing
+and delivering messages.
+
+After running the commands above, you can send the following `POST` requests in order to
+create the NSQ topics that we will use later on.
+
+{% highlight bash %}
+curl -X POST http://$host/topic/create?topic=GoodRawEvents
+curl -X POST http://$host/topic/create?topic=BadRawEvents
+curl -X POST http://$host/topic/create?topic=GoodEnrichedEvents
+curl -X POST http://$host/topic/create?topic=BadEnrichedEvents
+{% endhighlight %}
+
+Assuming all these commands run without error, you are ready to continue with the next
 steps.
 
 <h2 id="nsq-collector">3. Scala Stream Collector and NSQ</h2>
 
-This release brings support for a new sink target for our Scala Stream Collector in the form of a
+This release brings support for a new sink target for our Scala Stream Collector, in the form of a
 NSQ topic. This feature maps one-to-one in functionality with the current Kinesis and Kafka
 offerings.
 
@@ -125,7 +122,7 @@ NSQ topic, allowing them to be picked up and consumed by other applications, inc
 <h2 id="nsq-enrich">4. Stream Enrich and NSQ</h2>
 
 Stream Enrich has also been updated to support a NSQ topic as a source, and another one as a sink.
-This feature maps one-to-one in functionality with the current Kinesis and Kafka offerings.
+Again, this feature maps one-to-one in functionality with the current Kinesis and Kafka offerings. If you are familiar with our Kinesis or Kafka support, you know the drill!
 
 Following on from the Stream Collector section above, you can then configure your Stream Enrich
 application like so:
@@ -174,12 +171,12 @@ enrich {
 {% endhighlight %}
 
 Events from the Stream Collector’s raw topic will then start to be picked up and enriched before
-being dropped back into the out topic.
+being written to the `out.enriched` topic.
 
 <h2 id="other-nsq-releases">5. Other NSQ releases</h2>
 
-As we previously mentioned, the main purpose of the NSQ support is Snowplow Mini's migration.
-Because of that, we have already added NSQ support to [the Elasticsearch Loader][es-loader] and
+As we previously mentioned, the primary purpose of the NSQ support is Snowplow Mini's migration.
+In support of that, we have already added NSQ support to [the Elasticsearch Loader][es-loader] and
 [S3 Loader][s3-loader].
 
 You can find more detailed information about these versions in
@@ -195,11 +192,13 @@ http://dl.bintray.com/snowplow/snowplow-generic/snowplow_scala_stream_collector_
 http://dl.bintray.com/snowplow/snowplow-generic/snowplow_stream_enrich_0.12.0.zip
 {% endhighlight %}
 
-Also, you will need to make the previously specified changes to the configurations of the Stream
-Collector and Stream Enrich.
+You will need to make the changes to the configurations of the Stream
+Collector and Stream Enrich as specified in the above sections to use NSQ; there are no breaking changes in the R96 configurations for existing Kafka or Kinesis users.
 
-Finally, [an upcoming release of the Snowplow Docker images][docker-rel2] will include images for
+Finally, [an upcoming release of the Snowplow Docker images][docker-r2] will include images for
 both the Scala Stream Collector and Stream Enrich with NSQ support.
+
+There are no material non-NSQ-related changes in R96.
 
 <h2 id="roadmap">7. Roadmap</h2>
 
@@ -209,6 +208,8 @@ Upcoming Snowplow releases will include:
 Unbounce, StatusGator)
 * [R9x [STR] Priority fixes][r9x-str-quality], removing the potential for data loss in the stream
 processing pipeline
+
+And of course, please stay tuned for the [Snowplow Mini 0.4.0 release][snowplow-mini-040] with NSQ support!
 
 <h2 id="help">8. Getting help</h2>
 
@@ -230,10 +231,10 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [es-loader-blog-post]: https://snowplowanalytics.com/blog/2017/09/12/elasticsearch-loader-0.10.0-released/
 [s3-loader-blog-post]: https://snowplowanalytics.com/blog/2017/09/13/snowplow-s3-loader-0.6.0-released/
 
-[docker-rel2]: https://github.com/snowplow/snowplow-docker/pull/28
-
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r96-zeugma
 [discourse]: http://discourse.snowplowanalytics.com/
 
+[docker-r2]: https://github.com/snowplow/snowplow-docker/milestone/2
+[snowplow-mini-040]: https://github.com/snowplow/snowplow-mini/milestone/14
 [r9x-webhooks]: https://github.com/snowplow/snowplow/milestone/129
 [r9x-str-quality]: https://github.com/snowplow/snowplow/milestone/144
