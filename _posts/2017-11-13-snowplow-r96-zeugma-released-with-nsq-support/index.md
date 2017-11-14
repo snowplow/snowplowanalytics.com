@@ -193,7 +193,50 @@ http://dl.bintray.com/snowplow/snowplow-generic/snowplow_stream_enrich_0.12.0.zi
 {% endhighlight %}
 
 You will need to make the changes to the configurations of the Stream
-Collector and Stream Enrich as specified in the above sections to use NSQ; there are no breaking changes in the R96 configurations for existing Kafka or Kinesis users.
+Collector and Stream Enrich as specified in the above sections to use NSQ; there are no breaking
+changes in the R96 confguration for Stream Enrich for existing Kafka or Kinesis users. However,
+the Scala Stream Collector configuration will need refactoring as only one sink configuration will
+be needed from now on.
+
+For example, if you're using Kinesis only the Kinesis configuration will be truly needed:
+
+{% highlight conf %}
+collector {
+  ...
+
+  # sink = kinesis # REMOVED
+
+  streams {
+    ...
+
+    sink {         # ADDED
+      enabled = kinesis # or kafka or nsq
+    
+      region = eu-west-1
+      threadPoolSize = 10
+      aws {
+        accessKey = iam
+        secretKey = iam
+      }
+      backoffPolicy {
+        minBackoff = {{kinesisMinBackoffMillis}}
+        maxBackoff = {{kinesisMaxBackoffMillis}}
+      }
+
+      # Or Kafka
+      #brokers = "{{kafkaBrokers}}"
+      ## Number of retries to perform before giving up on sending a record
+      #retries = 0
+
+      # Or NSQ
+      ## Host name for NSQ tools
+      #host = "{{nsqHost}}"
+      ## TCP port for nsqd, 4150 by default
+      #port = {{nsqdPort}}
+    }
+  }
+}
+{% endhighlight %}
 
 Finally, [an upcoming release of the Snowplow Docker images][docker-r2] will include images for
 both the Scala Stream Collector and Stream Enrich with NSQ support.
