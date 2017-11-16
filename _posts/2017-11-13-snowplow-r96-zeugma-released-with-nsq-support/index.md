@@ -51,15 +51,16 @@ The easiest way to spin up NSQ is through [Docker][docker-install]. Once you hav
 
 {% highlight bash %}
 docker pull nsqio/nsq
-docker run --name lookupd -p 4160:4160 -p 4161:4161 nsqio/nsq /nsqlookupd
-docker run --name nsqd -p 4150:4150 -p 4151:4151 \
+docker run --name lookupd -d -p 4160:4160 -p 4161:4161 nsqio/nsq /nsqlookupd
+docker run --name nsqd -d -p 4150:4150 -p 4151:4151 \
     nsqio/nsq /nsqd \
     --broadcast-address=$host \
     --lookupd-tcp-address=$host:4160
 {% endhighlight %}
 
-You should set `$host` to the Docker host's IP address. You can find it with the `ifconfig | grep addr`
-command.
+You should set `$host` to the `lookupd` Docker container's IP address. You can find it with the
+`docker inspect $container_id` command where `$container_id` is the id of the container running
+`nsqlookupd`.
 
 One container will be running `nsqlookupd`, a component dedicated to managing who produces and
 consumes what. Another container will be running `nsqd`, which is in charge of receiving, queueing
@@ -69,10 +70,10 @@ After running the commands above, you can send the following `POST` requests in 
 create the NSQ topics that we will use later on.
 
 {% highlight bash %}
-curl -X POST http://$host/topic/create?topic=GoodRawEvents
-curl -X POST http://$host/topic/create?topic=BadRawEvents
-curl -X POST http://$host/topic/create?topic=GoodEnrichedEvents
-curl -X POST http://$host/topic/create?topic=BadEnrichedEvents
+curl -X POST http://$host:4161/topic/create?topic=GoodRawEvents
+curl -X POST http://$host:4161/topic/create?topic=BadRawEvents
+curl -X POST http://$host:4161/topic/create?topic=GoodEnrichedEvents
+curl -X POST http://$host:4161/topic/create?topic=BadEnrichedEvents
 {% endhighlight %}
 
 Assuming all these commands run without error, you are ready to continue with the next
@@ -113,8 +114,8 @@ collector {
 }
 {% endhighlight %}
 
-`<host>` must be the Docker host's IP address which you found in the previous section with the
-`ifconfig | grep addr` command.
+`<host>` must be the Docker container's IP address which you found in the previous section with the
+`docker inspect` command.
 
 Launching the collector in this configuration will then start sinking raw events to your configured
 NSQ topic, allowing them to be picked up and consumed by other applications, including Stream Enrich.
@@ -211,7 +212,7 @@ collector {
 
     sink {         # ADDED
       enabled = kinesis # or kafka or nsq
-    
+
       region = eu-west-1
       threadPoolSize = 10
       aws {
