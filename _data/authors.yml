@@ -206,3 +206,10 @@
   avatar: /assets/img/team/Anthony.jpg
   spiel: |
       <a href="/blog/authors/anthony/">Anthony</a> is the Digital Marketing Manager at Snowplow. You can find him on <a href="https://twitter.com/Mandelliant">Twitter</a>, <a href="https://www.linkedin.com/in/amandelli/">LinkedIn</a>.
+
+- name: Kosta
+  full_name: Konstantinos Servis
+  url: /blog/authors/kosta/
+  github: knservis
+  spiel: |
+      <a href="/blog/authors/kosta/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>..
