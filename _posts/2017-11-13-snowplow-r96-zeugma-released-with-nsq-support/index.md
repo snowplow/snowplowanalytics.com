@@ -47,33 +47,20 @@ We will detail both those steps below, but first let's setup NSQ.
 
 <h2 id="setting-up-nsq">2. Setting up NSQ</h2>
 
-The easiest way to spin up NSQ is through [Docker][docker-install]. Once you have Docker installed you can run the below commands to get NSQ running in a container:
+The easiest way to spin up NSQ is through [the NSQ quick start][nsq-quickstart]. For our purposes,
+we only need `nsqlookupd` and `nsqd`.
 
-{% highlight bash %}
-docker pull nsqio/nsq
-docker run --name lookupd -d -p 4160:4160 -p 4161:4161 nsqio/nsq /nsqlookupd
-docker run --name nsqd -d -p 4150:4150 -p 4151:4151 \
-    nsqio/nsq /nsqd \
-    --broadcast-address=$host \
-    --lookupd-tcp-address=$host:4160
-{% endhighlight %}
+`nsqlookupd` is a component dedicated to managing who produces and consumes what. `nsqd`, on the
+other hand, is in charge of receiving, queueing and delivering messages.
 
-You should set `$host` to the `lookupd` Docker container's IP address. You can find it with the
-`docker inspect $container_id` command where `$container_id` is the id of the container running
-`nsqlookupd`.
-
-One container will be running `nsqlookupd`, a component dedicated to managing who produces and
-consumes what. Another container will be running `nsqd`, which is in charge of receiving, queueing
-and delivering messages.
-
-After running the commands above, you can send the following `POST` requests in order to
+After starting both `nsqlookupd` and `nsqd`, you can send the following `POST` requests in order to
 create the NSQ topics that we will use later on.
 
 {% highlight bash %}
-curl -X POST http://$host:4161/topic/create?topic=GoodRawEvents
-curl -X POST http://$host:4161/topic/create?topic=BadRawEvents
-curl -X POST http://$host:4161/topic/create?topic=GoodEnrichedEvents
-curl -X POST http://$host:4161/topic/create?topic=BadEnrichedEvents
+curl -X POST http://127.0.0.1:4161/topic/create?topic=GoodRawEvents
+curl -X POST http://127.0.0.1:4161/topic/create?topic=BadRawEvents
+curl -X POST http://127.0.0.1:4161/topic/create?topic=GoodEnrichedEvents
+curl -X POST http://127.0.0.1:4161/topic/create?topic=BadEnrichedEvents
 {% endhighlight %}
 
 Assuming all these commands run without error, you are ready to continue with the next
@@ -104,18 +91,15 @@ collector {
       enabled = nsq
 
       # Host name for NSQ tools
-      host = "<host>"
+      host = "127.0.0.1"
 
       # TCP port for nsqd
-      port = "4150"
+      port = 4150
     }
 
     ...
 }
 {% endhighlight %}
-
-`<host>` must be the Docker container's IP address which you found in the previous section with the
-`docker inspect` command.
 
 Launching the collector in this configuration will then start sinking raw events to your configured
 NSQ topic, allowing them to be picked up and consumed by other applications, including Stream Enrich.
@@ -153,16 +137,19 @@ enrich {
       # Channel name for the nsq source
       # If more than one applications are reading from the same NSQ topic simultaneously,
       # all of them must have the same channel name for getting all the data from the same topic
-      rawChannel: "StreamEnrichChannel"
+      rawChannel = "StreamEnrichChannel"
 
-      # Host name for NSQ tools
-      host: "<host>"
+      # Host name for nsqd
+      host = "127.0.0.1"
 
       # TCP port for nsqd
-      port: "4150"
+      port = 4150
+
+      # Host name for nsqlookupd
+      lookupHost = "127.0.0.1
 
       # HTTP port for nsqlookupd
-      lookupPort: "4161"
+      lookupPort = 4161
     }
 
     ...
@@ -248,7 +235,7 @@ There are no material non-NSQ-related changes in R96.
 
 Upcoming Snowplow releases will include:
 
-* [R9x [BAT] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark,
+* [R97 [BAT] 4 webhooks][r9x-webhooks], which will add support for 4 new webhooks (Mailgun, Olark,
 Unbounce, StatusGator)
 * [R9x [STR] Priority fixes][r9x-str-quality], removing the potential for data loss in the stream
 processing pipeline
@@ -263,7 +250,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [nsq-website]: http://nsq.io
 [nsq-installing]: http://nsq.io/deployment/installing.html
-[docker-install]: https://docs.docker.com/engine/installation/
+[nsq-quickstart]: http://nsq.io/overview/quick_start.html
 
 [zeugma]: https://en.wikipedia.org/wiki/Zeugma,_Commagene
 [zeugma-img]: /assets/img/blog/2017/11/zeugma.jpg
