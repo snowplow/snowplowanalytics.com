@@ -90,7 +90,7 @@ collector {
     sink {
       enabled = nsq
 
-      # Host name for NSQ tools
+      # Host name for nsqd
       host = "127.0.0.1"
 
       # TCP port for nsqd
@@ -180,13 +180,12 @@ http://dl.bintray.com/snowplow/snowplow-generic/snowplow_scala_stream_collector_
 http://dl.bintray.com/snowplow/snowplow-generic/snowplow_stream_enrich_0.12.0.zip
 {% endhighlight %}
 
-You will need to make the changes to the configurations of the Stream
-Collector and Stream Enrich as specified in the above sections to use NSQ; there are no breaking
-changes in the R96 confguration for Stream Enrich for existing Kafka or Kinesis users. However,
-the Scala Stream Collector configuration will need refactoring as only one sink configuration will
-be needed from now on.
+To use NSQ, you will need to make the changes to the configurations of the Stream
+Collector and Stream Enrich as specified in the above sections to use NSQ.
 
-For example, if you're using Kinesis only the Kinesis configuration will be truly needed:
+If you are already using Kafka or Kinesis: there are no breaking changes in the R96 confguration for Stream Enrich, but you will need to update your Scala Stream Collector's configuration. This is because only *one* sink configuration is needed from now on.
+
+For example, if you're using Kinesis only the Kinesis configuration will be needed:
 
 {% highlight conf %}
 collector {
