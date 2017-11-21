@@ -5,7 +5,7 @@ title-short: Snowplow 96 Zeugma
 tags: [enrichment, collector, nsq, snowplow-mini]
 author: Enes
 category: Releases
-permalink: /blog/2017/11/13/snowplow-r96-zeugma-released-with-nsq-support/
+permalink: /blog/2017/11/21/snowplow-r96-zeugma-released-with-nsq-support/
 ---
 
 We are pleased to announce the release of Snowplow 96 Zeugma. This release brings initial support
