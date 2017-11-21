@@ -137,8 +137,9 @@ Iglu resolver JSON file:
   "priority": 1,
   "vendorPrefixes": [ "com.snowplowanalytics" ],
   "connection": {
-  "http": {
-    "uri": "http://mirror01.iglucentral.com"
+    "http": {
+      "uri": "http://mirror01.iglucentral.com"
+    }
   }
 }
 {% endhighlight %}

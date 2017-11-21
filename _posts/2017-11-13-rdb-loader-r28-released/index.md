@@ -133,7 +133,7 @@ The primary way to run RDB Loader is still via Snowplow's own EmrEtlRunner, Rele
 {% highlight yaml %}
 aws:
   emr:
-    ami_version: 5.9.0        # WAS 0.
+    ami_version: 5.9.0        # WAS 5.5.0
 storage:
   versions:
     rdb_shredder: 0.13.0      # WAS 0.12.0
