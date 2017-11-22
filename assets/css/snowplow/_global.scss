@@ -221,10 +221,10 @@ a {
 /* parrallax effect */
 .parallax {
     background-attachment: fixed;
-    background-position: center ;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 1s;
+    transition: 1;
 }
 
 @media only screen
@@ -237,19 +237,5 @@ and (-webkit-min-device-pixel-ratio: 2) {
         transition: 0;
 
     }
-    .hero.parallax{
-        background-position: center center !important;
-    }
-    .parallax.animate{
-        background-position: center center !important;
-    }
-}
-
-.hero.parallax{
-    background-position: center -100px;
-
-}
-
-.parallax.animate{
-    background-position: center 0;
+ 
 }
