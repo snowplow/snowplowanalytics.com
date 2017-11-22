@@ -32,7 +32,6 @@ body {
 
 main {
     margin: 0 auto;
-    max-width: 1300px;
 
     body.full-frame & {
         max-width: 100%;
@@ -222,9 +221,10 @@ a {
 /* parrallax effect */
 .parallax {
     background-attachment: fixed;
-    background-position: center;
+    background-position: center ;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: 1s;
 }
 
 @media only screen
@@ -236,4 +236,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
         background-attachment: inherit;
 
     }
+}
+
+.hero.parallax{
+    background-position: center -100px;
+
+}
+
+.parallax.animate{
+    background-position: center 0;
 }
