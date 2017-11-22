@@ -225,8 +225,19 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     transition: 1s;
-
 }
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .parallax {
+        background-attachment: inherit;
+
+    }
+}
+
 .hero.parallax{
     background-position: center -100px;
 

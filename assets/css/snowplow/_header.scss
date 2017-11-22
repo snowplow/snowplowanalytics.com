@@ -529,7 +529,10 @@ header
 		position:absolute;
 	}
 
-	@include respond(ipad-pro-portrait) {
+	@media only screen
+	and (min-device-width: 768px)
+	and (max-device-width: 1366px)
+	and (-webkit-min-device-pixel-ratio: 2) {
 
 		.navbar-top {
 			display: none !important;
@@ -549,128 +552,18 @@ header
 			display: block;
 			white-space: normal;
 		}
-
-		.navbar,
-		.navbar-default {
-			.navbar-brand {
-				margin-left: 15px;
-			}
-
-			.navbar-bottom {
-				.navbar-header {
-					margin: 0;
-				}
-			}
-
-			.navbar-default,
-			.navbar-nav {
-				margin: 0;
-				float: none;
-				display: block;
-				white-space: normal;
-
-				.call-to-action {
-					margin-top: 30px;
-					margin-bottom: 50px;
-				}
-
-				.dropdown-menu {
-					border: 0 !important;
-				}
-
-				> li {
-
-					& + li {
-						margin-top: 40px;
-					}
-
-					display: block;
-
-					> a:not(.btn) {
-						font-size: 20px;
-						display: inline-block;
-
-						.fa {
-							display: none;
-						}
-
-						.dropdown-menu {
-							> li {
-								> a {
-								}
-							}
-						}
-					}
-
-					&:hover,
-					&.active {
-						> a {
-							&:after {
-							}
-						}
-					}
-				}
-
-				.dropdown-menu {
-					float: none;
-					opacity: 1;
-					display: block;
-					position: static;
-					text-align: center;
-					visibility: visible;
-
-					li {
-						display: block;
-					}
-				}
-			}
-          .navbar-collapse.collapse {
-            display: none!important;
-          }
-
-			.navbar-collapse {
-				max-height: calc(100vh - 75px);
-				overflow-y: auto !important;
-			}
-
-			.navbar-collapse.collapse.in {
-				display: block!important;
-			}
-			.collapsing {
-				overflow: hidden!important;
-			}
-			
-		}
-	}
-
-	@include respond(ipad-pro-landscape) {
 
 		.navbar{
-			background: $white;
-		}
-		.navbar-top {
-			display: none !important;
-		}
-
-		.navbar-toggle {
-			display: inline-block;
-
-		}
-		.navbar-header {
-			float: inherit;
-		}
-
-		.navbar-default .navbar-nav {
-			margin: 0;
-			float: none;
-			display: block;
-			white-space: normal;
+			background: white
 		}
 
 		.navbar,
 		.navbar-default {
 			.navbar-brand {
 				margin-left: 15px;
+				color: #777 !important;
+				display: block !important;
+
 			}
 
 			.navbar-bottom {
@@ -685,6 +578,7 @@ header
 				float: none;
 				display: block;
 				white-space: normal;
+				background: white;
 
 				.call-to-action {
 					margin-top: 30px;
@@ -741,9 +635,9 @@ header
 					}
 				}
 			}
-          .navbar-collapse.collapse {
-            display: none!important;
-          }
+			.navbar-collapse.collapse {
+				display: none!important;
+			}
 
 			.navbar-collapse {
 				max-height: calc(100vh - 75px);
@@ -758,15 +652,8 @@ header
 			}
 
 		}
-
-		.i-logo-type{
-			color: $gray-base;
-		}
-
-		.container{
-			width: 1300px;
-		}
 	}
+
 
 
 }
