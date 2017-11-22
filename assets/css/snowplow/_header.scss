@@ -530,9 +530,9 @@ header
 	}
 
 	@media only screen
-	and (min-device-width: 1024px)
+	and (min-device-width: 768px)
 	and (max-device-width: 1366px)
-	and (-webkit-min-device-pixel-ratio: 2) {
+	and (-webkit-min-device-pixel-ratio: 1) {
 		.navbar-top {
 			display: none !important;
 		}
@@ -560,7 +560,9 @@ header
 		.navbar-default {
 			.navbar-brand {
 				margin-left: 15px;
-				color: #777;
+				color: #777 !important;
+				display: block !important;
+
 			}
 
 			.navbar-bottom {
