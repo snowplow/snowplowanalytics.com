@@ -237,6 +237,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
         transition: 0;
 
     }
+    .hero.parallax{
+        background-position: center center !important;
+    }
+    .parallax.animate{
+        background-position: center center !important;
+    }
 }
 
 .hero.parallax{
