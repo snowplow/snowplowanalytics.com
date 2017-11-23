@@ -305,10 +305,15 @@ if (!window.location.origin) {
              */
 
             winScrollTop = win.scrollTop();
-            var parralaxHeader = $('.hero.parallax');
+            var parralaxHeader = $('.parallax');
 
             if (winScrollTop >= 80) {
                 body.addClass('scrolled');
+
+                if(winScrollTop  > 500){
+                    winScrollTop = winScrollTop / 10;
+
+                }
                 parralaxHeader.css({'background-position':'center '+(winScrollTop*.1)+'px'});
             } else {
                 parralaxHeader.css({'background-position':'center 0'});
