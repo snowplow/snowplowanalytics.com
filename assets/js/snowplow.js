@@ -276,11 +276,35 @@ if (!window.location.origin) {
          */
 
         function onScroll(e) {
-            if (body.is('.lock-scroll')) {
-                e.preventDefault();
-                e.stopPropagation();
-                win.scrollTop(winScrollTop);
-                return false;
+            var parralaxHeader = $('.hero.parallax');
+
+            if(parralaxHeader.length){
+
+                var hT = parralaxHeader.offset().top,
+                    hH = parralaxHeader.outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+                if (wS < hH && wS != 0){
+                    console.log("HT :"+ hT);
+                    console.log("hH :"+ hH);
+                    console.log("wH :"+ wH);
+                    console.log("wS :"+ wS);
+                    console.log("hT+hH-wH :"+ (hT+hH-wH));
+
+                    parralaxHeader.addClass('animate');
+                    console.log("Entrei");
+
+                }else{
+                    parralaxHeader.removeClass('animate');
+
+                    console.log("Sai");
+                }
+                if (body.is('.lock-scroll')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    win.scrollTop(winScrollTop);
+                    return false;
+                }
             }
 
             /*
@@ -316,6 +340,7 @@ if (!window.location.origin) {
                 body.removeClass('scrolled');
             }
         }
+
 
         win.scroll(onScroll).trigger('scroll');
 
