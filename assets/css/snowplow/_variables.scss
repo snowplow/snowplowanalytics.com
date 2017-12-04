@@ -97,8 +97,8 @@ $font-size-base: 18px;
 	}
 }
 
-.img-grayscale {
-	@include img-grayscale;	
+.img-grayscale {
+	@include img-grayscale;
 }
 
 
@@ -112,12 +112,12 @@ $font-size-base: 18px;
 {
 	&:before,
 	&:after {
-	  content: "";
-	  display: table;
-	} 
+		content: "";
+		display: table;
+	}
 
 	&:after {
-	  clear: both;
+		clear: both;
 	}
 
 	zoom: 1; /* For IE 6/7 (trigger hasLayout) */

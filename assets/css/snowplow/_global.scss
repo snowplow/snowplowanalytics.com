@@ -221,11 +221,12 @@ a {
 /* parrallax effect */
 .parallax {
     background-attachment: fixed;
-    background-position: center ;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 1s;
+    transition: 1;
 }
+
 
 @media only screen
 and (min-device-width: 768px)
@@ -234,15 +235,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
     .parallax {
         background-attachment: inherit;
+        transition: 0;
 
     }
-}
-
-.hero.parallax{
-    background-position: center -100px;
-
-}
-
-.parallax.animate{
-    background-position: center 0;
 }

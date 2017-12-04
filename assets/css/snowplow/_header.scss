@@ -79,79 +79,79 @@ header
 		.navbar-nav
 		{
 
-		float:none;
-		display: inline-block;
+			float:none;
+			display: inline-block;
 
-		.dropdown-menu
-		{
-			left:0;
-			right:0;
-			border:0;
-			top:59px;
-			opacity:0;
-			display:block;
-			border-radius:0;
-			box-shadow:none;
-			visibility: hidden;
-			text-align: center;
-			background: $white;
-		    padding: 0 0 0 0;
-		    /*transform:translateY(-30px);*/
-
-/*			&:before
+			.dropdown-menu
 			{
-				content: '';
-				display: block;
-				border-top: 1px solid #f5f5f5;
-			}
+				left:0;
+				right:0;
+				border:0;
+				top:59px;
+				opacity:0;
+				display:block;
+				border-radius:0;
+				box-shadow:none;
+				visibility: hidden;
+				text-align: center;
+				background: $white;
+				padding: 0 0 0 0;
+				/*transform:translateY(-30px);*/
 
-			&:after
-			{
-				content: '';
-				display: block;
-				border-bottom: 1px solid #f5f5f5;
-			}*/
+				/*			&:before
+                            {
+                                content: '';
+                                display: block;
+                                border-top: 1px solid #f5f5f5;
+                            }
 
-			>li
-			{
-				display:inline-block;
+                            &:after
+                            {
+                                content: '';
+                                display: block;
+                                border-bottom: 1px solid #f5f5f5;
+                            }*/
 
-				> a
+				>li
 				{
-					padding: 0 16px;
-					line-height: 60px;
-					transition: color .3s;
-					position: relative;
-					transition:all .3s;
+					display:inline-block;
+
+					> a
+					{
+						padding: 0 16px;
+						line-height: 60px;
+						transition: color .3s;
+						position: relative;
+						transition:all .3s;
+					}
+				}
+
+				>.active
+				{
+					> a,
+					>a:hover,
+					>a:focus
+					{
+						color:#e0e6ef;
+						background:none;
+						/*pointer-events: none;*/
+					}
 				}
 			}
 
-			>.active
+			.dropdown
 			{
-				> a,
-				>a:hover,
-				>a:focus
+				&:hover,
+				&:focus
 				{
-					color:#e0e6ef;
-					background:none;
-					/*pointer-events: none;*/
+					.dropdown-menu
+					{
+						opacity:1;
+						visibility: visible;
+						/*transform:translateY(0);*/
+					}
 				}
 			}
-		}
-
-		.dropdown
-		{
-			&:hover,
-			&:focus
-			{
-				.dropdown-menu
-				{
-					opacity:1;
-					visibility: visible;
-		    		/*transform:translateY(0);*/
-				}
-			}
-		}
 
 			>li
 			{
@@ -278,7 +278,7 @@ header
 	@media (min-width: $screen-sm-min)
 	{
 		.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-		    margin-left:0;
+			margin-left:0;
 		}
 	}
 

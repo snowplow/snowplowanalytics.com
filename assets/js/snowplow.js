@@ -276,36 +276,8 @@ if (!window.location.origin) {
          */
 
         function onScroll(e) {
-            var parralaxHeader = $('.hero.parallax');
 
-            if(parralaxHeader.length){
 
-                var hT = parralaxHeader.offset().top,
-                    hH = parralaxHeader.outerHeight(),
-                    wH = $(window).height(),
-                    wS = $(this).scrollTop();
-                if (wS < hH && wS != 0){
-                    console.log("HT :"+ hT);
-                    console.log("hH :"+ hH);
-                    console.log("wH :"+ wH);
-                    console.log("wS :"+ wS);
-                    console.log("hT+hH-wH :"+ (hT+hH-wH));
-
-                    parralaxHeader.addClass('animate');
-                    console.log("Entrei");
-
-                }else{
-                    parralaxHeader.removeClass('animate');
-
-                    console.log("Sai");
-                }
-                if (body.is('.lock-scroll')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    win.scrollTop(winScrollTop);
-                    return false;
-                }
-            }
 
             /*
              * Window SCROLLING. For performance whise we could apply
@@ -333,11 +305,21 @@ if (!window.location.origin) {
              */
 
             winScrollTop = win.scrollTop();
+            var parralaxHeader = $('.parallax');
 
             if (winScrollTop >= 80) {
                 body.addClass('scrolled');
+
+                if(winScrollTop  > 500){
+                    winScrollTop = winScrollTop / 10;
+
+                }
+                parralaxHeader.css({'background-position':'center '+(winScrollTop*.1)+'px'});
             } else {
+                parralaxHeader.css({'background-position':'center 0'});
+
                 body.removeClass('scrolled');
+
             }
         }
 
