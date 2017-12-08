@@ -65,12 +65,185 @@ As stated above - it's very easy to operate Snowflake DB, but also Snowflake Loa
 The main pre-requisite is [an existing Snowflake account][snowflake-signup].
 After you've got an access to Snowflake console - only few steps and configuration files are required to get Snowplow enriched data in there.
 
+Currently, Snowflake part of pipeline can be running in parallel, along with main Redshift pipeline or instead of it.
+But both loaders work with enriched data, produced by Snowplow Spark (or Hadoop) Enrich job.
+
+Enrich job and RDB Shredder/Loader can be running via vanila EmrEtlRunner, but recommended way to run Snowflake Transformer and Loader is using [Dataflow Runner][dataflow-runner], which is going to be a default orchestration tool for Snowplow pipeline as per [our RFC][dataflow-runner-rfc].
+
+Inside Snowplow, we're running multiple pipelines loading both Redshift and Snowflake - two pipelines with different (even overlapping) schedules can co-exist without problems: whenever "main" pipeline lefts enriched folder in archive - next Snowflake run will load it, otherwise it just won't do anything.
+
 First, you need to create following config files:
 
 * Dataflow Runner cluster config
-* Dataflow Runner playbook
 * Snowplow Snowflake Loader config
+* Dataflow Runner playbook
 
+Here's example Dataflow Runner cluster configuration:
+
+{% highlight "json" %}
+{
+   "schema":"iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0",
+   "data":{
+      "name": "Snowflake Pipeline",
+      "logUri": "s3://snowplow-snowflake-loader/logs/",
+      "region": "us-east-1",
+      "credentials":{
+         "accessKeyId": "env",
+         "secretAccessKey": "env"
+      },
+      "roles":{
+         "jobflow":"EMR_EC2_DefaultRole",
+         "service":"EMR_DefaultRole"
+      },
+      "ec2":{
+         "amiVersion": "5.9.0",
+         "keyName": null,
+         "location":{
+            "vpc":{
+               "subnetId":null
+            }
+         },
+         "instances":{
+            "master":{
+               "type":"m2.xlarge"
+            },
+            "core":{
+               "type":"m2.xlarge",
+               "count":1
+            },
+            "task":{
+               "type":"m1.medium",
+               "count":0,
+               "bid":"0.015"
+            }
+         }
+      },
+      "tags":[ ],
+      "bootstrapActionConfigs":[ ],
+      "configurations":[
+         {
+            "classification":"core-site",
+            "properties":{
+               "Io.file.buffer.size":"65536"
+            }
+         },
+         {
+            "classification":"mapred-site",
+            "properties":{
+               "Mapreduce.user.classpath.first":"true"
+            }
+         },
+         {
+            "classification":"yarn-site",
+            "properties":{
+               "yarn.resourcemanager.am.max-attempts":"1"
+            }
+         },
+         {
+            "classification":"spark",
+            "properties":{
+               "maximizeResourceAllocation":"true"
+            }
+         }
+      ],
+      "applications":[ "Hadoop", "Spark" ]
+   }
+}
+{% endhighlight %}
+
+The only change you really want to make is `logUri` property - this should be your own S3 path for EMR logs.
+You also might want to change `keyName` and `instances` - though note that in general Snowflake Transformer requires significantly smaller cluster comparing to RDB Shredder due the fact that whole dataset doesn't need to be scattered around on filesystem.
+
+Here's example Snowflake configuration:
+
+{% highlight "json" %}
+
+{
+  "schema": "iglu:com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0",
+  "data": {
+    "name": "Acme Snowflake Storage Target",
+    "accessKeyId": "AKIAXXXXXXXXX",
+    "secretAccessKey": "secret",
+    "awsRegion": "us-east-1"
+    "manifest": "acme-snowflake-run-manifest",
+    "snowflakeRegion": "us-east-1",
+    "database": "snowflake-database",
+    "input": "s3://com-acme-snowplow/archive/enriched/",
+    "stage": "arbitraryStageName",
+    "stageUrl": "s3://com-acme-snowplow/archive/snowflake/",
+    "warehouse": "snowplow_wh",
+    "schema": "atomic",
+    "account": "acme",
+    "username": "snowflake-loader",
+    "password": "secret",
+    "purpose": "ENRICHED_EVENTS"
+  }
+}
+{% endhighlight %}
+
+Unlike with cluster configuration - you probably want to change all fields here (apart `purpose` and `schema`).
+Full description of particular fields as well as setup process is available at [Snowflake Loader documentation][setup-guide]. **TODO this should migrate to snowplow/wiki straight after release**
+
+Another configuration file you'll need is a common [Iglu Resolver config][iglu-config], so far it is used only to validate configuration itself, so feel free to use one with only Iglu Central in it.
+
+And last file you'll need is Dataflow Runner playbook responsible for running Transformer and Loader. Here's an example:
+
+{% highlight "json" %}
+{
+   "schema":"iglu:com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1",
+   "data":{
+      "region":"us-east-1",
+      "credentials":{
+         "accessKeyId":"env",
+         "secretAccessKey":"env"
+      },
+      "steps":[
+         {
+            "type":"CUSTOM_JAR",
+            "name":"Snowflake Transformer",
+            "actionOnFailure":"CANCEL_AND_WAIT",
+            "jar":"command-runner.jar",
+            "arguments":[
+               "spark-submit",
+               "--deploy-mode",
+               "cluster",
+               "--class",
+               "com.snowplowanalytics.snowflake.transformer.Main",
+
+               "s3://snowplow-hosted-assets/4-storage/snowflake-loader/snowplow-snowflake-transformer-0.3.0.jar",
+
+               "--config",
+               "{{.config}}",
+               "--resolver",
+               "{{.resolver}}"
+            ]
+         },
+
+         {
+            "type":"CUSTOM_JAR",
+            "name":"Snowflake Loader",
+            "actionOnFailure":"CANCEL_AND_WAIT",
+            "jar":"command-runner.jar",
+            "arguments":[
+               "s3://snowplow-hosted-assets/4-storage/snowflake-loader/snowplow-snowflake-loader-0.3.0.jar",
+               "com.snowplowanalytics.snowflake.loader.Main",
+
+
+               "load",
+               "--base64",
+               "--config",
+               "{{.config}}",
+               "--resolver",
+               "{{.resolver}}"
+            ]
+         }
+      ],
+      "tags":[ ]
+   }
+}
+{% endhighlight %}
+
+You also can leave all configuration as is or maybe you'll want to run loader from local machine - it's up to you.
 
 <h2 id="roadmap">4. Roadmap</h2>
 
@@ -93,21 +266,25 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowplow-repo]: https://github.com/snowplow/snowplow
 
 [rdb-loader-split]: https://snowplowanalytics.com/blog/2017/09/06/rdb-loader-0.13.0-released/
+[analytics-sdk-post]: https://snowplowanalytics.com/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released/
 
 [snowflake-warehouse]: https://docs.snowflake.net/manuals/user-guide/warehouses-overview.html
 [snowflake-variant]: https://docs.snowflake.net/manuals/sql-reference/data-types-semistructured.html
 
-[analytics-sdk-post]: https://snowplowanalytics.com/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released/
 [dynamodb]: https://aws.amazon.com/dynamodb/
-
 [snowflake-signup]: https://www.snowflake.net/free-trial/
 
 [issue-avro]: https://github.com/snowplow-incubator/snowplow-snowflake-loader/issues/35
 [issue-deduplication]: https://github.com/snowplow-incubator/snowplow-snowflake-loader/issues/33
 [issue-manifest]: https://github.com/snowplow-incubator/snowplow-snowflake-loader/issues/30
 
+[setup-guide]: https://github.com/snowplow-incubator/snowplow-snowflake-loader/wiki/Setup-Guide
+[iglu-config]: https://github.com/snowplow/iglu/wiki/Iglu-client-configuration
+
 [snowplow-sdk]: https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK
 [canonical-event-model]: https://github.com/snowplow/snowplow/wiki/Canonical-event-model
+[dataflow-runner]: https://github.com/snowplow/dataflow-runner/
+[dataflow-runner-rfc]: https://discourse.snowplowanalytics.com/t/splitting-emretlrunner-into-snowplowctl-and-dataflow-runner/350
 
 [snowflake-data-structure]: https://discourse.snowplowanalytics.com/t/how-snowplow-data-is-structured-in-snowflake/1655
 
