@@ -31,7 +31,7 @@ whether it be Amazon Redshift, Amazon S3, ElasticSearch, PostgreSQL or many othe
 
 However, over the last few years Amazon Redshift became a standard de-facto solution, being backed by apps from [core snowplow repository][snowplow-repo].
 While Redshift is a time-tested platform with many advantages, as stated above - we always wanted to provide our users an opportunity to choose the best-fitting solution according to their own, unique requirements.
-As part of this effort recently we [refactored][rdb-loader-12] and [moved out][rdb-loader-13] RDB Loader - a couple of applications responsible for preparing and ingesting enriched data into Amazon Redshift.
+As part of this effort recently we [refactored][release-r90] RDB Loader - a couple of applications responsible for preparing and ingesting enriched data into Amazon Redshift.
 This move laid the foundation for many Snowplow loaders blooming, independently one from another.
 And today, we're proud to announce the newest one - Snowflake Loader.
 
@@ -265,12 +265,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowflake-loader-repo]: https://github.com/snowplow-incubator/snowplow-snowflake-loader
 [snowplow-repo]: https://github.com/snowplow/snowplow
 
-[rdb-loader-split]: https://snowplowanalytics.com/blog/2017/09/06/rdb-loader-0.13.0-released/
+[release-r90]: https://snowplowanalytics.com/blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr/
 [analytics-sdk-post]: https://snowplowanalytics.com/blog/2017/05/24/snowplow-scala-analytics-sdk-0.2.0-released/
-
-[rdb-loader-12]: https://snowplowanalytics.com/blog/2017/11/13/rdb-loader-r28-released/
-
-[rdb-loader-13]: https://snowplowanalytics.com/blog/2017/09/06/rdb-loader-0.13.0-released/
 
 [snowflake-warehouse]: https://docs.snowflake.net/manuals/user-guide/warehouses-overview.html
 [snowflake-variant]: https://docs.snowflake.net/manuals/sql-reference/data-types-semistructured.html
