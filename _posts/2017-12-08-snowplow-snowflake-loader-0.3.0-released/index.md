@@ -43,7 +43,7 @@ And today, we're proud to announce the newest one - Snowflake Loader.
 
 Snowflake is relatively new data warehousing technology, quickly gaining popularity due to its operational simplicity, rich support of semi-structured data, and efficient pricing model.
 
-Right now Snowflake is coupled with AWS due to the fact that it stores data on S3, and S3 is the most popular staging option, but in general nothing prevents them to implement support of Azure Blob Storage or Google Cloud Storage.
+Snowflake is "cloud native" software, currently available only for deployment on Amazon Web Services. We are excited about the potential for Snowflake supporting Microsoft Azure or Google Cloud Platform in the future.
 
 Compared to Amazon Redshift, Snowflake is a managed service - you don't need to setup indexes or calculating capacity, in general you just choose a size of ["virtual warehouse"][snowflake-warehouse]. This is the entity responsible for loading and querying your data, so you pay only for time your warehouse is in the resumed state.
 
