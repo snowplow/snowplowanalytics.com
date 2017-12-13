@@ -51,7 +51,7 @@ Make sure you subscribe to our email list at the bottom of the page and stay tun
 
 [prague]: /assets/img/blog/2017/12/prague.JPG
 
-[team]: /assets/img/blog/2017/12/the-team.JPG
+[team]: /assets/img/blog/2017/12/the-team-2.JPG
 
 [hackathon]: /assets/img/blog/2017/12/hackathon.jpg
 
