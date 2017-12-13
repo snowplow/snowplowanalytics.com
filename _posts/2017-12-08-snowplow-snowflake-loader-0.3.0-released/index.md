@@ -10,7 +10,7 @@ permalink: /blog/2017/12/08/snowplow-snowflake-loader-0.3.0-released/
 
 We are tremendously excited to announce the first public release of the [Snowplow Snowflake Loader][snowflake-loader-repo].
 
-[Snowflake][snowflake-computing] is a fast-growing cloud data warehouse solution which lets you store and access your data with broad variety of tools and application in a very efficient and scalable way.
+[Snowflake][snowflake-computing] is a fast-growing cloud data warehouse solution which lets you store and access your data with a broad variety of tools and applications in a very efficient and scalable way.
 
 If you’d like to know more about Snowflake Loader and how to use it, please continue reading this post:
 
@@ -30,17 +30,23 @@ This approach allowed our users to pick the most convenient storage target and q
 whether it be Amazon Redshift, Amazon S3, ElasticSearch, PostgreSQL or many others.
 
 However, over the last few years Amazon Redshift became a standard de-facto solution, being backed by apps from [core snowplow repository][snowplow-repo].
+
 While Redshift is a time-tested platform with many advantages, as stated above - we always wanted to provide our users an opportunity to choose the best-fitting solution according to their own, unique requirements.
+
 As part of this effort recently we [refactored][release-r90] RDB Loader - a couple of applications responsible for preparing and ingesting enriched data into Amazon Redshift.
+
 This move laid the foundation for many Snowplow loaders blooming, independently one from another.
+
 And today, we're proud to announce the newest one - Snowflake Loader.
 
 <h2 id="snowflake-intro">2. Introducing Snowflake Loader</h2>
 
 Snowflake is relatively new data warehousing technology, quickly gaining popularity due to its operational simplicity, rich support of semi-structured data, and efficient pricing model.
-Right now Snowflake is coupled with AWS due to the fact that it stores data on S3, and S3 is the most popular staging option, but in general nothing prevents them to implement support of Azure Blob Storage or Google Cloud Storage. Indeed, there is evidence that the Snowflake engineering team is working on other blob storage support.
 
-Compared to Amazon Redshift, Snowflake is truly a managed service - you don't need to setup indexes or calculating capacity, in general you just choose a size of ["virtual warehouse"][snowflake-warehouse]. This is the entity responsible for loading and querying your data, so you pay only for time your warehouse is in the resumed state.
+Right now Snowflake is coupled with AWS due to the fact that it stores data on S3, and S3 is the most popular staging option, but in general nothing prevents them to implement support of Azure Blob Storage or Google Cloud Storage.
+
+Compared to Amazon Redshift, Snowflake is a managed service - you don't need to setup indexes or calculating capacity, in general you just choose a size of ["virtual warehouse"][snowflake-warehouse]. This is the entity responsible for loading and querying your data, so you pay only for time your warehouse is in the resumed state.
+
 Another strong side of Snowflake is its support of semi-structured data such as JSON, AVRO or XML. All these formats are first-class citizens in Snowflake thanks to its ["VARIANT" datatype][snowflake-variant], which is heavily used for contexts and self-describing events in enriched data.
 
 Snowplow Snowflake Loader, very much like RDB Loader, consists of two parts, both residing at the same repository:
@@ -50,13 +56,18 @@ Snowplow Snowflake Loader, very much like RDB Loader, consists of two parts, bot
 
 However, this is where the similarities end.
 
-Snowflake Loader takes very different approaches around maintaining a state of loaded data and structuring data inside a database.
+Snowflake Loader takes a very different approach around maintaining a state of loaded data and structuring data inside a database.
+
 Instead of the slow and error-prone file-moving approach taken by RDB Loader, Snowflake Loader uses a run manifest on top of [AWS DynamoDB][dynamodb] which closely resembles one we introduced in [Snowplow Scala Analytics SDK 0.2.0][analytics-sdk-post].
+
 Each time the Transformer job launched - it lists enriched archive and checks what folders were added by the Spark Enrich job recently and haven't been transformed into a Snowflake-compatible format. If a new folder was found - add it to the manifest and when the folder has been processed - change its state to "processed" and write down all the new shredded types found inside it for table alteration at a later point.
 
 The fact that transformer keeps shredded types in an outside manifest also hugely alleviates the manual labor required for keeping a DB structure up-to-date: there's no need to create or alter any tables, you just send data with new schemas and they will become available inside Snowflake DB.
+
 This approach also dictates table structure inside Snowflake, particularly right now we have only one table - `atomic.events`. But unlike Redshift and PostgreSQL, it contains whole, enriched event structure including all contexts and optionally unstructured events. This structure closely resembles one from [Snowplow Analytics SDKs][snowplow-sdk] (not by coincidence - SDK is in the core of Transformer!).
+
 With contexts and unstructured events being the `VARIANT` data type you can query them with Snowflake SQL dialect like they're native types.
+
 You can find out more on how data is structured inside Snowflake in the [dedicated Discourse post][snowflake-data-structure].
 
 <h2 id="install">3. Installing Snowflake Loader</h2>
@@ -64,12 +75,14 @@ You can find out more on how data is structured inside Snowflake in the [dedicat
 As stated above - it's very easy to operate Snowflake DB. Not only that, but Snowflake Loader doesn't add any complexity and is very easy to setup.
 
 The main pre-requisite is [an existing Snowflake account][snowflake-signup].
+
 After you've got access to the Snowflake console - only a few steps and configuration files are required to get Snowplow enriched data in there.
 
 Currently, the Snowflake part of pipeline can be running in parallel along with the main Redshift pipeline, or instead of it.
+
 But both loaders work with enriched data, produced by the Snowplow Spark (or Hadoop) Enrich job.
 
-Enrich job and RDB Shredder/Loader can be running via vanilla EmrEtlRunner, but the recommended way to run Snowflake Transformer and Loader is using [Dataflow Runner][dataflow-runner], which is going to be a default orchestration tool for any Snowplow pipeline as per [our RFC][dataflow-runner-rfc].
+Enrich job and RDB Shredder/Loader can be running via vanilla EmrEtlRunner, but the recommended way to run Snowflake Transformer and Loader is using [Dataflow Runner][dataflow-runner], which is going to become a default orchestration tool for any Snowplow pipeline as per [our RFC][dataflow-runner-rfc].
 
 Inside Snowplow, we're running multiple pipelines loading both Redshift and Snowflake. Two pipelines with different (even overlapping) schedules can co-exist without problems: whenever the "main" pipeline leaves an enriched folder in archive - the next Snowflake run will load it. Otherwise, it just won't do anything.
 
@@ -249,11 +262,12 @@ You can leave all configurations as is or maybe you'll want to run loader from a
 <h2 id="roadmap">4. Roadmap</h2>
 
 Right now Snowplow Snowflake Loader is version 0.3.0 which means it was battle-tested inside Snowplow for some time and we're making it public not in its infancy but well along the path to maturity. We still have a lot of space for improvement, however.
+
 Upcoming Snowplow Snowflake Loader releases will include:
 
-* [AVRO support][issue-avro], which should significantly reduce transformer's output and speed-up the whole pipeline
+* [Arvo support][issue-avro], which should significantly reduce transformer's output and speed-up the whole pipeline
 * [Cross-batch deduplication][issue-deduplication] similar to what we have in RDB Shredder
-* [More robust manifests][issue-manifest]. Right Snowflake Shredder and Loader use separate DynamoDB manifests, which is extremely useful and proven to be reliable, but still can be improved
+* [More robust manifests][issue-manifest]. Currently the Snowflake Shredder and Loader use separate DynamoDB manifests, which is extremely useful and proven to be reliable, but still can be improved
 
 <h2 id="help">7. Getting Help</h2>
 
