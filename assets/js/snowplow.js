@@ -310,9 +310,8 @@ if (!window.location.origin) {
             if (winScrollTop >= 80) {
                 body.addClass('scrolled');
 
-                if(winScrollTop  > 500){
+                if(winScrollTop  > 1600){
                     winScrollTop = winScrollTop / 10;
-
                 }
                 parralaxHeader.css({'background-position':'center '+(winScrollTop*.1)+'px'});
             } else {
