@@ -40,18 +40,19 @@ to the Control Plane in this release. In this post, only new Control Plane featu
 If you want to learn more about the Control Plane API, you can visit
 [the documentation page for Control Plane API][control-plane-doc].
 
-<h3>1.1. Adding external Iglu schema registry</h3>
+<h3>1.1. Adding an external Iglu schema registry</h3>
 
-One of our goals for Snowplow Mini is making it stateless, meaning that Stateless all the required
+One of our goals for Snowplow Mini is making it stateless, meaning that all the required
 services such as Iglu schema registry, Elasticsearch, Postgres etc live outside the actual
 box running Snowplow Mini.
 
-As part of this, you can now configure an external Iglu schema registry via the Control Plane. Simply submit
-a vendor prefix, URI, apikey, name and priority of the external Iglu server, like so:
+As part of this, you can now configure an external Iglu schema registry via the Control Plane.
+Simply submit a vendor prefix, URI, name, priority and optional api key of the external Iglu schema
+registry, like so:
 
 ![external-iglu][external-iglu-img]
 
-After that, you can start to use this external Iglu server in your Snowplow Mini instance.
+After that, you can start to use this schema registry in your Snowplow Mini instance.
 
 <h3>1.2. Uploading custom enrichments</h3>
 
