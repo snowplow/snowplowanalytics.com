@@ -152,4 +152,16 @@
         display: block;
         clear: both;
     }
+
+}
+
+.newsletter{
+    .newsletter-box{
+        border: 1px solid #6737b81c;
+        padding: 29px;
+    }
+
+    .newsletter button.btn.btn-primary {
+        height: 49.9px;
+    }
 }
