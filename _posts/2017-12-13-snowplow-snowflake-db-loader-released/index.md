@@ -10,9 +10,9 @@ permalink: /blog/2017/12/13/snowplow-snowflake-loader-0.3.0-released/
 
 We are tremendously excited to announce the first public release of the [Snowplow Snowflake Loader][snowflake-loader-repo].
 
-[Snowflake][snowflake-computing] is a cloud-native data warehouse that has been rapidly growing in popularity. It competes with Amazon's own Redshift and Google's BigQuery as well as other analytical database technologies like [Teradata][teradata], [Vertica][vertica] and [Exasol][exasol]. Collectively, these database technologies have made working with high volumes of rich, granular, data, like Snowplow generates, significantly easier and more manageable, by making it cost effective to query that data in flexible ways at scale, and plug in a wide variety of business intelligence, data visualization, data analytics and data science toolsets directly on top of the very large data sets.
+[Snowflake][snowflake-computing] is a cloud-native data warehouse that has been rapidly growing in popularity. It competes with Amazon's own Redshift and Google's BigQuery as well as other analytical database technologies like [Teradata][teradata], [Vertica][vertica] and [Exasol][exasol]. Collectively, these database technologies have made working with high volumes of rich, granular data, like Snowplow generates, significantly easier and more manageable by making it cost effective to query that data in flexible ways at scale, and plug in a wide variety of business intelligence, data visualization, data analytics and data science toolsets directly on top of the very large data sets.
 
-We are delighted to be able to give Snowplow users the option to easily load their Snowplow data into Snowflake DB and use this as their primary data warehousing technology. Read on to learn about the many benefits of this exciting new datawarehouse technology.
+We are delighted to be able to give Snowplow users the option to easily load their Snowplow data into Snowflake DB and use this as their primary data warehousing technology. Read on to learn about the many benefits of this exciting new data warehouse technology.
 
 <!--more-->
 
@@ -39,7 +39,7 @@ While Redshift is a time-tested platform with many advantages, we are committed 
 
 As an important step in this direction, we recently [refactored][release-r90] RDB Loader - the application responsible for preparing and ingesting enriched data into Amazon Redshift. This move laid the foundation for us to release Snowplow Loaders for many more data stores.
 
-Today we're proud to announce the newest one - Snowflake Loader.
+Today we're proud to announce the newest one: Snowflake Loader.
 
 <h2 id="snowflake-intro">2. Introducing the Snowflake DB</h2>
 
@@ -50,7 +50,7 @@ Snowflake is relatively new data warehousing technology, quickly gaining popular
 With Snowflake you can scale the computational capability of your data warehouse independently of the storage component. In practice, that means you can:
 
 * Bolster the cluster size temporarily to make queries run faster. If for example you update your data modeling process and what to reprocess your entire data set, you have the ability to up the compute capacity of your cluster and then scale back down once the data modeling is completed. This makes it economical to reprocess very large data sets.
-* Keep your entire data set in your data warehouse - even if the accumulated data volumes are very high. If you're one of the many Snowplow users tracking 100M+ events per day, the volume of data you accumulate in your data warehouse will grow pretty quickly over time. Storing all that data in Redshift quickly becomes expensive and as a result, many Snowplow users of Redshift will only keep a rolling window of the last few days, weeks or months of data in Redshift. (Querying the rest of the data in S3.) With Snowflake, the cost of just storing that data is low: it's only when computing on all of it that the associated Snowflake costs really start rising, making Snowflake an economically attractive choice at large data volumes.
+* Keep your entire data set in your data warehouse - even if the accumulated data volumes are very high. If you're one of the many Snowplow users tracking 100M+ events per day, the volume of data you accumulate in your data warehouse will grow pretty quickly over time. Storing all that data in Redshift rapidly becomes expensive and as a result, many Snowplow users of Redshift will only keep a rolling window of the last few days, weeks or months of data in Redshift (querying the rest of the data in S3). With Snowflake, the cost of just storing that data is low: it's only when computing on all of it that the associated Snowflake costs really start rising, making Snowflake an economically attractive choice at large data volumes.
 
 ### 2.2 Faster scaling
 
@@ -58,7 +58,7 @@ Snowflake DB scales fast. In contrast, resizing a Redshift cluster takes hours a
 
 ### 2.3 Excellent support for nested data types including JSON and AVRO
 
-Querying JSON data in Snowflake is easy, fast and effective. That means that when we load Snowplow data into Snowflake, we're able to load it all into a single table with a single column per event and context type, and the individual event-specific and context-specific fields available as nested types in those columns. This is a very attractive data structure because all your data is in a single, easy to reason about table.
+Querying JSON data in Snowflake is easy, fast, and effective. That means that when we load Snowplow data into Snowflake, we're able to load it all into a single table with a single column per event and context type, and the individual event-specific and context-specific fields available as nested types in those columns. This is a very attractive data structure because all your data is in a single, easy to reason about table.
 
 Redshift, by contrast, has much more limited JSON parsing support: JSON parsing is very brittle (a single malformed JSON will break a whole query) and querying JSONs in Redshift is not performant. As a result, when we load Snowplow data into Redshift we do not use JSON: we shred out each event and context type into a dedicated table, so that they can be queried in a performant way.
 
@@ -89,7 +89,7 @@ Each time the Transformer job is launched - it checks the location in S3 where t
 2. processes the folder has been processed - changing its state to "processed"
 3. logs all the new event and context types found inside it.
 
-This last point is important: if it discovers a new event or context types this information is used to update the `atomic.events` table definition in Snowflake to accommodate the new type, so any new types can be queried immediately.
+This last point is important: if it discovers a new event or context type, this information is used to update the `atomic.events` table definition in Snowflake to accommodate the new type, so any new types can be queried immediately.
 
 With contexts and unstructured events being the `VARIANT` data type you can query any nested fields directly like they're native types.
 
