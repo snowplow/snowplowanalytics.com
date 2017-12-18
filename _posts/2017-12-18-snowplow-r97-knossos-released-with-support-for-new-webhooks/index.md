@@ -93,7 +93,7 @@ To reduce friction for such pipelines, it is now possible to skip the S3 consist
 
 Be aware that this option requires a RDB Loader version greater or equal to 0.13.0.
 
-<h2 id="upgrading">6. Other changes</h2>
+<h2 id="other">6. Other changes</h2>
 
 In addition to the above we have made the following changes:
 
@@ -165,4 +165,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [s3-dist-cp]: http://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r97_knossos.zip
-[config-yml]: https://github.com/snowplow/snowplow/blob/r90-lascaux/3-enrich/emr-etl-runner/config/config.yml.sample
+[config-yml]: https://github.com/snowplow/snowplow/blob/r97-knossos/3-enrich/emr-etl-runner/config/config.yml.sample
