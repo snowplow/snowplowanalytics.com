@@ -26,9 +26,10 @@ Read on for more information:
 3. [StatusGator webhook support](#statusgator)
 4. [Unbounce webhook support](#unbounce)
 5. [EmrEtlRunner improvements](#eer)
-6. [Upgrading](#upgrading)
-7. [Roadmap](#roadmap)
-8. [Help](#help)
+6. [Other changes](#other)
+7. [Upgrading](#upgrading)
+8. [Roadmap](#roadmap)
+9. [Help](#help)
 
 <!--more-->
 
@@ -90,7 +91,18 @@ To reduce friction for such pipelines, it is now possible to skip the S3 consist
 
 Be aware that this option requires a RDB Loader version greater or equal to 0.13.0.
 
-<h2 id="upgrading">6. Upgrading</h2>
+<h2 id="upgrading">6. Other changes</h2>
+
+In addition to the above we have made the following changes:
+* Added functionality to default the port to 443 when reading a log line with https scheme thanks to [Mike Robins][miike].
+* Tolerate content type for GET requests sent to Clojure Collector. The content-type was supposed to be empty before but that was causing problems.
+* Make it easier to run tests locally in Spark Enrich by skipping tests that depend on lzo.
+* Make it easier to run tests locally in Spark Enrich by not using snowplow internal schemas in the tests.
+* Making tests no dependent on the local timezone.
+* Reinstated the publishLocal that was done for Scala Common Enrich during Spark Enrich tests so that the test uses the latest SCE code.
+* Upgraded dependency on user-agent-utils to 1.20
+
+<h2 id="upgrading">7. Upgrading</h2>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
@@ -105,7 +117,7 @@ enrich:
 
 For a complete example, see our sample [`config.yml`][config-yml] template.
 
-<h2 id="roadmap">7. Roadmap</h2>
+<h2 id="roadmap">8. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
@@ -113,7 +125,7 @@ Upcoming Snowplow releases will include:
 * [R9x [BAT] Priority fixes][r9x-bat-quality], which will include resilience, security and data-quality fixes for the AWS batch pipeline
 * [GDPR support part 1][gdpr-support], which will include data privacy features as mandated by the new [EU General Data Protection Regulation][eugdpr-website].
 
-<h2 id="help">8. Getting Help</h2>
+<h2 id="help">9. Getting Help</h2>
 
 For more details on this release, as always do check out the [release notes][snowplow-release] on GitHub.
 
