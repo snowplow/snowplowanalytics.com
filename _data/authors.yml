@@ -213,3 +213,10 @@
   avatar: /assets/img/team/keane.jpg
   spiel: |
       <a href="/blog/authors/keane/">Keane</a> is a Data Scientist at Snowplow. You can find him on <a href="https://uk.linkedin.com/in/keanerobinson">LinkedIn</a>
+
+- name: Kostas
+  full_name: Konstantinos Servis
+  url: /blog/authors/kostas/
+  github: knservis
+  spiel: |
+      <a href="/blog/authors/kosta/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>..
