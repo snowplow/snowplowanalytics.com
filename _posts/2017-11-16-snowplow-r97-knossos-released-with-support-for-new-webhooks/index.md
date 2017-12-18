@@ -26,15 +26,15 @@ Read on for more information:
 3. [StatusGator webhook support](#statusgator)
 4. [Unbounce webhook support](#unbounce)
 5. [EmrEtlRunner improvements](#eer)
-6. [Roadmap](#roadmap)
-7. [Help](#help)
+6. [Upgrading](#upgrading)
+7. [Roadmap](#roadmap)
+8. [Help](#help)
 
 <!--more-->
 
 ![Knossos][minoan-horns]
 
 <h2 id="mailgun">1. Mailgun webhook support</h2>
-
 
 The Mailgun webhook adapter lets you track email and email-related events delivered by [Mailgun][mailgun-website]. Using this functionality, you can warehouse all email-related events alongside your existing Snowplow events.
 
@@ -90,11 +90,22 @@ To reduce friction for such pipelines, it is now possible to skip the S3 consist
 
 Be aware that this option requires a RDB Loader version greater or equal to 0.13.0.
 
-<h3 id="eer-upg">5.3 Upgrading EmrEtlRunner</h3>
+<h2 id="upgrading">6. Upgrading</h2>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
-<h2 id="roadmap">6. Roadmap</h2>
+To benefit from the new webhook integrations, you'll need to bump the Spark Enrich version used in
+the EmrEtlRunner configuration file:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.11.0      # WAS 1.10.0
+{% endhighlight %}
+
+For a complete example, see our sample [`config.yml`][config-yml] template.
+
+<h2 id="roadmap">7. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
@@ -102,7 +113,7 @@ Upcoming Snowplow releases will include:
 * [R9x [BAT] Priority fixes][r9x-bat-quality], which will include resilience, security and data-quality fixes for the AWS batch pipeline
 * [GDPR support part 1][gdpr-support], which will include data privacy features as mandated by the new [EU General Data Protection Regulation][eugdpr-website].
 
-<h2 id="help">7. Getting Help</h2>
+<h2 id="help">8. Getting Help</h2>
 
 For more details on this release, as always do check out the [release notes][snowplow-release] on GitHub.
 
@@ -137,3 +148,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [s3-dist-cp]: http://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r97_knossos.zip
+[config-yml]: https://github.com/snowplow/snowplow/blob/r90-lascaux/3-enrich/emr-etl-runner/config/config.yml.sample
