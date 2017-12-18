@@ -5,7 +5,7 @@ title: "Snowplow R97 Knossos released with support for four new webhooks"
 tags: [webhook, mailgun, unbounce, olark, statusgator]
 author: Kostas
 category: Releases
-permalink: /blog/2017/11/16/snowplow-r97-knsossos-released/
+permalink: /blog/2017/12/18/snowplow-r97-knsossos-released/
 ---
 
 We are excited to announce the release of [Snowplow R97 Knossos][snowplow-release], named [Knossos][knossos] (Greek: Κνωσός) after the palace at the nexus of the Minoan civilization, which was one of the earliest major Grecian civilizations (17th century BCE).
