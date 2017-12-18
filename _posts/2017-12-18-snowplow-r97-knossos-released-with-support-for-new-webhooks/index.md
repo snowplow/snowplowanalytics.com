@@ -19,6 +19,8 @@ Specifically, the four new services from which Snowplow can now receive events a
 - **StatusGator** - for cloud service availability events from hundreds of services from [StatusGator][statusgator-website]
 - **Unbounce** - for lead generation events from [Unbounce][unbounce-website]
 
+Many thanks to previous Snowplow intern [Ronny Yabar][ronnyml] for breaking ground on these webhooks for us!
+
 Read on for more information:
 
 1. [Mailgun webhook support](#mailgun)
@@ -94,13 +96,11 @@ Be aware that this option requires a RDB Loader version greater or equal to 0.13
 <h2 id="upgrading">6. Other changes</h2>
 
 In addition to the above we have made the following changes:
-* Added functionality to default the port to 443 when reading a log line with https scheme thanks to [Mike Robins][miike].
-* Tolerate content type for GET requests sent to Clojure Collector. The content-type was supposed to be empty before but that was causing problems.
-* Make it easier to run tests locally in Spark Enrich by skipping tests that depend on lzo.
-* Make it easier to run tests locally in Spark Enrich by not using snowplow internal schemas in the tests.
-* Making tests no dependent on the local timezone.
-* Reinstated the publishLocal that was done for Scala Common Enrich during Spark Enrich tests so that the test uses the latest SCE code.
-* Upgraded dependency on user-agent-utils to 1.20
+
+* Adding functionality to default the port to 443 when reading a log line with HTTPS scheme. Many thanks to [Mike Robins][miike] for this contribution ([#3483][issue-3483])
+* Tolerating a content-type being set for GET requests sent to Clojure Collector (where previously the content-type had to be empty) ([#2743][issue-2743])
+* Upgrading the dependency on user-agent-utils to version 1.20 ([#2930][issue-2930])
+* Plus a host of updates to our Spark Enrich and Scala Common Enrich test suites to make running these tests easier and more predictable
 
 <h2 id="upgrading">7. Upgrading</h2>
 
@@ -121,7 +121,7 @@ For a complete example, see our sample [`config.yml`][config-yml] template.
 
 Upcoming Snowplow releases will include:
 
-* [R98 Argentomagus][r9x-str-quality], improving security and data resilience for the real-time pipeline. Will also add this release's new webhooks to the RT pipeline
+* [R98 Argentomagus][r9x-str-quality], improving security and data resilience for the real-time pipeline. This release will also add R97's new webhooks to the RT pipeline
 * [R9x [BAT] Priority fixes][r9x-bat-quality], which will include resilience, security and data-quality fixes for the AWS batch pipeline
 * [GDPR support part 1][gdpr-support], which will include data privacy features as mandated by the new [EU General Data Protection Regulation][eugdpr-website].
 
@@ -143,7 +143,12 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [gdpr-support]: https://github.com/snowplow/snowplow/milestone/149
 [eugdpr-website]: http://www.eugdpr.org/
 
+[ronnyml]: https://github.com/ronnyml
 [miike]: https://github.com/miike
+
+[issue-2743]: https://github.com/snowplow/snowplow/issues/2743
+[issue-2930]: https://github.com/snowplow/snowplow/issues/2930
+[issue-3483]: https://github.com/snowplow/snowplow/issues/3483
 
 [mailgun-website]: https://www.mailgun.com
 [mailgun-setup]: https://www.mailgun.com/your-guide-to-webhooks
