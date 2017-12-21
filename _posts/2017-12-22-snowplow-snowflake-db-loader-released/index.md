@@ -204,8 +204,10 @@ Next, here's an example self-describing JSON for configuring the Snowflake Loade
   "schema": "iglu:com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0",
   "data": {
     "name": "Acme Snowflake Storage Target",
-    "accessKeyId": "<<UPDATE ME>>",
-    "secretAccessKey": "<<UPDATE ME>>",
+    "auth": {
+        "accessKeyId": "<<UPDATE ME>>",
+        "secretAccessKey": "<<UPDATE ME>>"
+    }
     "awsRegion": "us-east-1"
     "manifest": "acme-snowflake-run-manifest",
     "snowflakeRegion": "us-east-1",
@@ -223,7 +225,11 @@ Next, here's an example self-describing JSON for configuring the Snowflake Loade
 }
 {% endhighlight %}
 
-You'll probably want to change all fields here, apart from `purpose` and `schema`. A full description of all the important fields, as well as setup process is available at [Snowflake Loader documentation][setup-guide].
+You'll probably want to change all fields here, apart from `purpose` and `schema`. 
+
+Note, that storing your password and credentials in plain text in configuration is not secure.
+Therefore, we strongly advise you follow AWS Role approach for storing credentials and EC2 Parameter Store for storing password.
+Full guide on how to use these approaches as well as full description of all the important fields is available at [Snowflake Loader documentation][setup-guide].
 
 Another configuration file you'll need is a common [Iglu Resolver config][iglu-config]. So far it is used only to validate the configuration itself, so feel free to use one with only Iglu Central in it.
 
@@ -252,9 +258,9 @@ And the last file you'll need is a Dataflow Runner playbook responsible for runn
                "com.snowplowanalytics.snowflake.transformer.Main",
                "s3://snowplow-hosted-assets/4-storage/snowflake-loader/snowplow-snowflake-transformer-0.3.0.jar",
                "--config",
-               "{{.config}}",
+               "{{base64File "./config.json"}}",
                "--resolver",
-               "{{.resolver}}"
+               "{{base64File "./resolver.json"}}"
             ]
          },
 
@@ -262,16 +268,14 @@ And the last file you'll need is a Dataflow Runner playbook responsible for runn
             "type":"CUSTOM_JAR",
             "name":"Snowflake Loader",
             "actionOnFailure":"CANCEL_AND_WAIT",
-            "jar":"command-runner.jar",
+            "jar":"s3://snowplow-hosted-assets/4-storage/snowflake-loader/snowplow-snowflake-loader-0.3.0.jar",
             "arguments":[
-               "s3://snowplow-hosted-assets/4-storage/snowflake-loader/snowplow-snowflake-loader-0.3.0.jar",
-               "com.snowplowanalytics.snowflake.loader.Main",
                "load",
                "--base64",
                "--config",
-               "{{.config}}",
+               "{{base64File "./config.json"}}",
                "--resolver",
-               "{{.resolver}}"
+               "{{base64File "./resolver.json"}}"
             ]
          }
       ],
