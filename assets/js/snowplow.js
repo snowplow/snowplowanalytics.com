@@ -6,6 +6,7 @@
 {% include_relative vendors/_concat/bootstrap.min.js %}
 {% include_relative vendors/_concat/bootstrap-select.min.js %}
 {% include_relative vendors/_concat/grayscale.functions.js %}
+{% include_relative vendors/_concat/bodymovin.min.js %}
 {% include_relative vendors/_concat/grayscale.js %}
 {% include_relative vendors/_concat/slick.min.js %}
 {% include_relative vendors/_concat/masonry.pkgd.min.js %}
@@ -347,6 +348,29 @@ if (!window.location.origin) {
                 msnry.masonry();
             }, 300);
         }
+        var elements = document.getElementsByClassName("bodymovin");
+        for(var x=0; x < elements.length; x++)
+        {
+            var elem = elements[x];
+            var fileName = elem.getAttribute('data-src');
+            var animData = {
+                container: elem,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                rendererSettings: {
+                    progressiveLoad:false
+                },
+                path: '{{BASE_PATH}}/assets/data/'+fileName+'.json'
+            };
+
+            bodymovin.loadAnimation(animData);
+        }
+
+
+
+
+
     });
 
 
