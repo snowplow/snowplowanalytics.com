@@ -5,7 +5,7 @@ title-short: Snowplow Mini 0.4.0
 tags: [snowplow-mini, nsq]
 author: Enes
 category: Releases
-permalink: /blog/2017/12/15/snowplow-mini-0.4.0-released/
+permalink: /blog/2017/12/21/snowplow-mini-0.4.0-released/
 ---
 
 We are pleased to announce the 0.4.0 release of Snowplow Mini, our accessible "Snowplow in a box"
