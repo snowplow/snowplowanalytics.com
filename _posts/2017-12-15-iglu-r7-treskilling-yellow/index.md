@@ -21,7 +21,18 @@ Read on for more information on Release 7 Treskilling Yellow, named after [a Swe
 
 <!--more-->
 
-<h2 id="unversioned-schema">1. Support for Unversioned Schema</h2>
+<h2 id="unversioned-schema">1. The Road to Schema Inference</h2>
+
+Since its inception, Iglu supported only explicitly versioned datums, e.g. user had to be fully aware of schema for data he or she tracks.
+And this is often the case, when this user is in charge of the schema.
+
+However, quite often we've seen so called "unreliable narrator" problem, when third-party service is in charge of sending data to user's pipeline.
+In most of the cases this is a webhook, seending data from SaaS that knows nothing about Iglu.
+What is even worse is that many providers do not care about their API/schema documentation - Snowplow users have to use [Schema Guru][schema-guru] to derive JSON Schema and hope nothing will change on the another side.
+And in fact, SaaS providers rarely care about API consistency as well, so this is a question of time, when significant part of received data will go the bad bucket due invalidation against obsolete schema.
+
+The most important feature in this release is the new partial versions for self-describing datum.
+In fact, it is a biggest new feature 
 
 It is possible to see unversioned JSON instances as following:
 
@@ -205,3 +216,5 @@ For a complete list of updates see the [changelog][changelog].
 [changelog]: https://github.com/snowplow/iglu/blob/master/CHANGELOG
 
 [issue-271]: https://github.com/snowplow/iglu/issues/271
+
+[schema-guru]: TODO
