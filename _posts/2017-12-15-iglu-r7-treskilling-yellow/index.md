@@ -10,7 +10,8 @@ permalink: /blog/2017/12/15/iglu-r7-treskilling-yellow-released/
 
 We are pleased to announce a new Iglu release with some significant refreshments.
 
-1. [Support for Unversioned Schema](#unversioned-schema)
+1. [The Road to Schema Inference](#schema-inference)
+2. [Iglu Scala Core overhaul](#scala-core)
 2. [New Linters](#new-linters)
 3. [A custom format, date, for JSON Schema v4](#new-format-date)
 4. [Other Updates](#other-updates)
@@ -21,7 +22,7 @@ Read on for more information on Release 7 Treskilling Yellow, named after [a Swe
 
 <!--more-->
 
-<h2 id="unversioned-schema">1. The Road to Schema Inference</h2>
+<h2 id="schema-inference">1. The Road to Schema Inference</h2>
 
 Since its inception, Iglu supported only explicitly versioned datums, e.g. user had to be fully aware of schema for data he or she tracks.
 And this is often the case, when this user is in charge of the schema.
@@ -31,21 +32,32 @@ In most of the cases this is a webhook, seending data from SaaS that knows nothi
 What is even worse is that many providers do not care about their API/schema documentation - Snowplow users have to use [Schema Guru][schema-guru] to derive JSON Schema and hope nothing will change on the another side.
 And in fact, SaaS providers rarely care about API consistency as well, so this is a question of time, when significant part of received data will go the bad bucket due invalidation against obsolete schema.
 
-The most important feature in this release is the new partial versions for self-describing datum.
-In fact, it is a biggest new feature 
+With Schema inference our user should be able to provide only "partial" schema version, i.e. `iglu:com.acme/order/jsonschema/1-?-?` or even `iglu:com.acme/order/jsonschema/?-?-?` instead of only one currently available "explicit" version `iglu:com.acme/order/jsonschema/1-2-0`, so full datum can look like following:
 
-It is possible to see unversioned JSON instances as following:
+{% highlight json %}
+{
+  "schema": "iglu:com.acme/order/jsonschema/1-?-?",
+  "data" {
+    "category": "books",
+    "price": 12.1
+  }
+}
+{% endhighlight %}
 
-`com.acme/order/jsonschema/?-?-?`
+In this example, we have known model and unknown revision and addition - it means that when pipeline will find a datum with this schema attached - it'll either try to find a schema within model `1` that datum conforms or infer new schema and upload it to Iglu Registry.
+
+This is a very ambitious project here at Snowplow and in fact a biggest change in Iglu since its inception - a lot of work need to be done on this front, but this is a first step.
+
+**Do not use this schemaing yet - it is not supported by Snowplow pipeline - your data will be invalidated**.
 
 
-`com.acme/order/jsonschema/1-?-?`
+<h2 id="scala-core">2. Iglu Scala Core overhaul</h2>
 
+In order to make above plans possible, we slightly changed our reference implementation of Iglu Core.
 
-`com.acme/order/jsonschema/1-3-?`
-
-
-In order to distinguish versioned and unversioned JSON instances, we decided to introduce two SchemaVer classes, `SchemaVer.Full` and `SchemaVer.Partial`. As expected, `SchemaVer.Full` is for versioned instances and `SchemaVer.Partial` is for unversioned instances.
+Most important change is that `SchemaKey` entity now is not anymore "universal", e.g. can be attached to both schema and datum.
+Instead, `SchemaKey` remains entity that can be attached only to self-describing data and it has `SchemaVer` that can be either `Explicit` or `Partial` to reflect the fact that we need to infer it.
+On the other side, `SchemaMap` is the new almost isomorhpic entity for schemas - it always has explicit `SchemaVer` as we cannot have defined schema with unkown schema.
 
 <h2 id="new-linters">2. New Linters</h2>
 
