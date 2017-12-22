@@ -26,11 +26,11 @@ Read on for:
 
 <!--more-->
 
-1. [New Control Plane features](/blog/2017/10/04/snowplow-mini-0.4.0-released#control-plane)
-2. [NSQ migration](/blog/2017/10/04/snowplow-mini-0.4.0-released#nsq-migration)
-3. [Creating index mappings](/blog/2017/10/04/snowplow-mini-0.4.0-released#index-mappings)
-4. [Other updates](/blog/2017/10/04/snowplow-mini-0.4.0-released#other-changes)
-5. [Documentation and getting help](/blog/2017/10/04/snowplow-mini-0.4.0-released#help)
+1. [New Control Plane features](#control-plane)
+2. [NSQ migration](#nsq-migration)
+3. [Creating index mappings](#index-mappings)
+4. [Other updates](#other-changes)
+5. [Documentation and getting help](#help)
 
 
 <h2 id="control-plane">1. New Control Plane Features</h2>
