@@ -48,8 +48,9 @@ In this example, we have known model and unknown revision and addition - it mean
 
 This is a very ambitious project here at Snowplow and in fact a biggest change in Iglu since its inception - a lot of work need to be done on this front, but this is a first step.
 
-**Do not use this schemaing yet - it is not supported by Snowplow pipeline - your data will be invalidated**.
+**Do not use this versioning yet - it is not implemented nor supported by Snowplow pipeline - your data will be invalidated**.
 
+Expect more news in this area soon.
 
 <h2 id="scala-core">2. Iglu Scala Core overhaul</h2>
 
@@ -57,49 +58,35 @@ In order to make above plans possible, we slightly changed our reference impleme
 
 Most important change is that `SchemaKey` entity now is not anymore "universal", e.g. can be attached to both schema and datum.
 Instead, `SchemaKey` remains entity that can be attached only to self-describing data and it has `SchemaVer` that can be either `Explicit` or `Partial` to reflect the fact that we need to infer it.
-On the other side, `SchemaMap` is the new almost isomorhpic entity for schemas - it always has explicit `SchemaVer` as we cannot have defined schema with unkown schema.
+On the other side, `SchemaMap` is the new almost isomorhpic entity for schemas - it always has explicit `SchemaVer` as we cannot have defined schema with unkown version.
+
+Another important change lays in package-structure. Previously, you had to know what type-class instances you need to import and also mark them implicit yourself.
+As time shown - this approach didn't work well for people, who are just exploring Iglu Core and want to use its primitives.
+Therefore, now you all you need to know are these two imports:
+
+{% highlight scala %}
+// Import all primitive data structures, such as SchemaVer, SchemaKey, SelfDescribingData[A], etc
+import com.snowplowanalytics.iglu.core._
+// Extend primitives with AST-specific syntax and functionality
+import com.snowplowanalytics.iglu.core.json4s.implicits._
+// Or for circe
+import com.snowplowanalytics.iglu.core.circe.implicits._
+{% endhighlight %}
+
+This should greatly improve user experience and portability of Iglu Core.
+
+And last, but not least: Iglu Scala Core now supports all major Scala versions (2.10, 2.11 and 2.12), latest stable version of Circe (0.9.0) and most-common in Snowplow version of Json4s (3.2.11).
 
 <h2 id="new-linters">2. New Linters</h2>
 
+On the front of less radical changes, we've added some new linting features to `igluctl lint` command, which should allow you to avoid subtle mistakes in your schema.
+
 <h3 id="custom-linter">2a. Lint custom formats</h3>
 
-Let's say you have a JSON Schema which makes use of a custom format as following:
+Let's say you have a JSON Schema which implies `camelCase` format. Although for some users this format might seem legit or particular validators even support it, unfortunately Iglu does not have this format and we want to make it very explicit that none properties will be validated against it.
+Also, this linter can help with plain old typos - for example if schema author mistyped `date-time` format as `dale-time` or similar.
 
-{% highlight json %}
-{
-  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Schema for an example event",
-  "self": {
-    "vendor": "com.example_company",
-    "name": "staff",
-    "format": "jsonschema",
-    "version": "1-0-0"
-  },
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "format": "camelCase"
-    },
-    "age": {
-        "type": "number"
-    }
-  },
-  "required":["name"]
-}
-{% endhighlight %}
-
-As of Release 7, linting will warn if you have a custom format.
-
-{% highlight bash %}
-$ /path/to/igluctl lint schemas/com.example_company/staff/ --severityLevel 1
-FAILURE: Schema [/path/to/schema/registry/schemas/com.example_company/staff/jsonschema/1-0-0] contains following errors:
-1. Format [camelCase] is not supported. Available options are: date-time, date, email, hostname, ipv4, ipv6, uri
-TOTAL: 0 Schemas were successfully validated
-TOTAL: 1 invalid Schemas were encountered
-TOTAL: 1 errors were encountered
-{% endhighlight %}
-
+This linter available for default, first severity level, which means it will always be enabled.
 
 <h3 id="optional-linter">2b. Lint optional fields</h3>
 
@@ -129,21 +116,17 @@ Let's say you have a JSON Schema as following:
 }
 {% endhighlight %}
 
-Users would omit a field in `required` if that field isn't required. As natural as it sounds, it is likely to forget omitting some fields. igluctl didn't used to warn for such cases but with this release, we are introducing a higher severity level, 3, so that users will be warned for fields not listed in `required` and fields without `null` `type` information.
+Although, this is totally valid JSON Schema, we at Snowplow found it much more convenient to express "nullability" in datum with actual `null` as value, instead of omitting it entirely.
 
-See `Error 1` below.
-{% highlight bash %}
-$ /path/to/igluctl lint schemas/com.example_company/example_event/ --severityLevel 3
-FAILURE: Schema [/path/to/schema/registry/schemas/com.example_company/example_event/jsonschema/1-0-0] contains following errors:
-1. It is recommended to express absence of property via nullable type
-2. String Schema doesn't contain maxLength nor enum properties nor appropriate format
-3. Numeric Schema doesn't contain minimum and maximum properties
-TOTAL: 0 Schemas were successfully validated
-TOTAL: 1 invalid Schemas were encountered
-TOTAL: 3 errors were encountered
-{% endhighlight %}
+This gives us following advantages:
 
-<h3 id="maxlength-linter">2b. Lint maxLength</h3>
+* schema-derivation tools (like in Spark DataFrame) will always end up knowing about missed property even for super-small datasets
+* it shows that developer is really aware of optional property, not just forgot it
+* it's easier to use null with templating languages
+
+This very opionated preference available only for third severity level, so you'll have to enable it yourself.
+
+<h3 id="maxlength-linter">2c. Lint maxLength</h3>
 
 Let's say you have a JSON Schema as following:
 
@@ -162,7 +145,7 @@ Let's say you have a JSON Schema as following:
     "name": {
       "type": "string",
       "minLength": 3,
-      "maxLength": 65536
+      "maxLength": 100000
     },
     "age": {
         "type": "number"
@@ -172,16 +155,11 @@ Let's say you have a JSON Schema as following:
 }
 {% endhighlight %}
 
-Redshift VARCHAR character type can be at most 65535 bytes.
+Again, for most users this might look like totally valid JSON Schema.
+But in fact, if you're going to use it with Redshift - you'll hit one of its limitations - particularly, Redshift's VARCHAR type can be at most 65535 bytes.
+It means your data will be silently truncated, which is most likely not what you want.
 
-{% highlight bash %}
-$ /path/to/igluctl lint schemas/com.example_company/example_event/ --severityLevel 1
-FAILURE: Schema [/path/to/schema/registry/schemas/com.example_company/example_event/jsonschema/1-0-0] contains following errors:
-1. maxLength [65536] is greater than Redshift VARCHAR(max), 65535
-TOTAL: 0 Schemas were successfully validated
-TOTAL: 1 invalid Schemas were encountered
-TOTAL: 1 errors were encountered
-{% endhighlight %}
+As this is very common problem in our users' schemas - we decided to make it available at default, first severity level.
 
 <h3 id="new-format-date">3. A custom format, date, for JSON Schema v4</h3>
 
