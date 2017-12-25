@@ -2,10 +2,10 @@
 layout: post
 title: Iglu 7 Treskilling Yellow released with huge refreshment
 title-short: Iglu 7 Treskilling Yellow
-tags: [iglu, json, json schema]
+tags: [iglu, json, json schema, redshift]
 author: Oguzhan
 category: Releases
-permalink: /blog/2017/12/15/iglu-r7-treskilling-yellow-released/
+permalink: /blog/2017/12/26/iglu-r7-treskilling-yellow-released/
 ---
 
 We are pleased to announce a new Iglu release with some significant refreshments.
