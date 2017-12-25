@@ -24,13 +24,13 @@ Read on for more information on Release 7 Treskilling Yellow, named after [a Swe
 
 <h2 id="schema-inference">1. The Road to Schema Inference</h2>
 
-Since its inception, Iglu supported only explicitly versioned datums, e.g. user had to be fully aware of schema for data he or she tracks.
-And this is often the case, when this user is in charge of the schema.
+Since its inception, Iglu supported only explicitly versioned datums, e.g. users had to be fully aware of schema they track.
+And this is often the case, when these users are in charge of the schema.
 
 However, quite often we've seen so called "unreliable narrator" problem, when third-party service is in charge of sending data to user's pipeline.
 In most of the cases this is a webhook, seending data from SaaS that knows nothing about Iglu.
 What is even worse is that many providers do not care about their API/schema documentation - Snowplow users have to use [Schema Guru][schema-guru] to derive JSON Schema and hope nothing will change on the another side.
-And in fact, SaaS providers rarely care about API consistency as well, so this is a question of time, when significant part of received data will go the bad bucket due invalidation against obsolete schema.
+And in fact, SaaS providers rarely care about API compatibility as well, so this is a question of time, when significant part of received data will go the bad bucket due invalidation against obsolete schema, or even schema that was never accurate enough.
 
 With Schema inference our user should be able to provide only "partial" schema version, i.e. `iglu:com.acme/order/jsonschema/1-?-?` or even `iglu:com.acme/order/jsonschema/?-?-?` instead of only one currently available "explicit" version `iglu:com.acme/order/jsonschema/1-2-0`, so full datum can look like following:
 
@@ -48,9 +48,9 @@ In this example, we have known model and unknown revision and addition - it mean
 
 This is a very ambitious project here at Snowplow and in fact a biggest change in Iglu since its inception - a lot of work need to be done on this front, but this is a first step.
 
-**Do not use this versioning yet - it is not implemented nor supported by Snowplow pipeline - your data will be invalidated**.
-
 Expect more news in this area soon.
+
+**Do not use this versioning yet - it is not implemented nor supported by Snowplow pipeline - your data will be invalidated**.
 
 <h2 id="scala-core">2. Iglu Scala Core overhaul</h2>
 
@@ -159,41 +159,21 @@ Again, for most users this might look like totally valid JSON Schema.
 But in fact, if you're going to use it with Redshift - you'll hit one of its limitations - particularly, Redshift's VARCHAR type can be at most 65535 bytes.
 It means your data will be silently truncated, which is most likely not what you want.
 
-As this is very common problem in our users' schemas - we decided to make it available at default, first severity level.
+As this is a very common problem in our users' schemas - we decided to make it available at default, first severity level.
 
-<h3 id="new-format-date">3. A custom format, date, for JSON Schema v4</h3>
+<h3 id="new-format-date">3. A new "date" custom format</h3>
 
-Let's say you have a JSON Schema as following:
+One of the most often "wrong" format among our uses was a `date` format.
+But instead of prohibiting it with our new linters - [Mike Robbins][miike] submitted a PR implementing support of `date` format for our `static generate` command (thanks, Mike!).
+Now, all JSON Schemas with `date` format can be transformed into Redshift DDLs with corresponding [`DATE` type][redshift-date].
 
-{% highlight json %}
-{
-  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Schema for an example event",
-  "self": {
-    "vendor": "com.example_company",
-    "name": "example_event",
-    "format": "jsonschema",
-    "version": "1-0-0"
-  },
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "format": "date"
-    },
-    "age": {
-        "type": "number"
-    }
-  },
-  "required":["name"]
-}
-{% endhighlight %}
-
-When linting, igluctl didn’t used to warn users for custom formats, `date` in our case, they don’t make schemas invalid, they are just a custom format attribute in your schema per [JSON Schema v4 specifications][json-schema-v4]. However `date` doesn't look like a custom format to people coming from [JSON Schema v3][json-schema-v3]. This nuance between JSON Schema versions could give users wrong confidence. With this release, we are defining a new format, `date`, so that `date` isn't a custom format for our users.
+`date` format supposed to validate strings of format `YYYY-MM-DD` and now implemented only for Igluctl, but support for Schema Guru and Scala Iglu Client is to come.
 
 <h2 id="other-updates">4. Other Updates</h2>
 
-One of the important capabilities of igluctl is to generate corresponding Redshift table definitions and JSON Path files for JSON Schemas. Thanks to our users, we noticed a few issues with [generation of JSON path filenames and Redshift filenames][issue-271]. This release comes with bug fixes to make sure they are fixed.
+One of the important capabilities of igluctl is to generate corresponding Redshift table definitions and JSON Path files for JSON Schemas. 
+Thanks to our users, we noticed a few issues with [generation of JSON path filenames and Redshift filenames][issue-271]. 
+This release comes with bug fixes to make sure they are fixed.
 
 
 For a complete list of updates see the [changelog][changelog].
@@ -208,3 +188,6 @@ For a complete list of updates see the [changelog][changelog].
 [issue-271]: https://github.com/snowplow/iglu/issues/271
 
 [schema-guru]: TODO
+[miike]: TODO
+[redshift-date]: TODO
+TODO create tickets for date format support in schema guru and iglu client
