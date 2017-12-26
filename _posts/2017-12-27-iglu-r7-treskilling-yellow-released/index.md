@@ -16,7 +16,7 @@ We are pleased to announce a new Iglu release, R7 Treskilling Yellow, bringing t
 4. [Other updates](#other-updates)
 5. [Getting Help](#other-updates)
 
-Read on for more information on Release 7 Treskilling Yellow, named after [a Swedish postage stamp][Treskilling-Yellow] of which only one example is known to exist:
+Read on for more information on Release 7 Treskilling Yellow, named after [a Swedish postage stamp][treskilling-yellow] of which only one example is known to exist:
 
 ![treskilling-yellow-img] [treskilling-yellow-img]
 
@@ -158,7 +158,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [discourse]: http://discourse.snowplowanalytics.com/
 [changelog]: https://github.com/snowplow/iglu/blob/master/CHANGELOG
 
-[Treskilling-Yellow]: https://en.wikipedia.org/wiki/Treskilling_Yellow
+[treskilling-yellow]: https://en.wikipedia.org/wiki/Treskilling_Yellow
 [treskilling-yellow-img]: /assets/img/blog/2017/12/treskilling_yellow.jpg
 [json-schema-v3]: https://tools.ietf.org/html/draft-zyp-json-schema-03
 [json-schema-v4]: https://tools.ietf.org/html/draft-fge-json-schema-validation-00
