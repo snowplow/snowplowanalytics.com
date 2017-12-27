@@ -5,7 +5,7 @@ title-short: Iglu R7 Treskilling Yellow
 tags: [iglu, json, json schema, redshift]
 author: Oguzhan
 category: Releases
-permalink: /blog/2017/12/26/iglu-r7-treskilling-yellow-released/
+permalink: /blog/2017/12/27/iglu-r7-treskilling-yellow-released/
 ---
 
 We are pleased to announce a new Iglu release, R7 Treskilling Yellow, bringing the codebase up-to-date and preparing it for some significant releases going forwards.
