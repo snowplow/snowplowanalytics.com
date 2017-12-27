@@ -6,6 +6,7 @@
 {% include_relative vendors/_concat/bootstrap.min.js %}
 {% include_relative vendors/_concat/bootstrap-select.min.js %}
 {% include_relative vendors/_concat/grayscale.functions.js %}
+{% include_relative vendors/_concat/bodymovin.min.js %}
 {% include_relative vendors/_concat/grayscale.js %}
 {% include_relative vendors/_concat/slick.min.js %}
 {% include_relative vendors/_concat/masonry.pkgd.min.js %}
@@ -276,12 +277,8 @@ if (!window.location.origin) {
          */
 
         function onScroll(e) {
-            if (body.is('.lock-scroll')) {
-                e.preventDefault();
-                e.stopPropagation();
-                win.scrollTop(winScrollTop);
-                return false;
-            }
+
+
 
             /*
              * Window SCROLLING. For performance whise we could apply
@@ -309,13 +306,23 @@ if (!window.location.origin) {
              */
 
             winScrollTop = win.scrollTop();
+            var parralaxHeader = $('.parallax');
 
             if (winScrollTop >= 80) {
                 body.addClass('scrolled');
+
+                if(winScrollTop  > 1600){
+                    winScrollTop = winScrollTop / 10;
+                }
+                parralaxHeader.css({'background-position':'center '+(winScrollTop*.1)+'px'});
             } else {
+                parralaxHeader.css({'background-position':'center 0'});
+
                 body.removeClass('scrolled');
+
             }
         }
+
 
         win.scroll(onScroll).trigger('scroll');
 
@@ -329,6 +336,41 @@ if (!window.location.origin) {
 			showCount: false,
 			shares: {{ site.share_list | join: "', '" | prepend: "['" | append: "']" }}
 		});
+
+
+
+        /**
+         * MASONRY
+         */
+        var msnry = $('.js-masonry');
+        if (msnry.length) {
+            setTimeout(function (){
+                msnry.masonry();
+            }, 300);
+        }
+        var elements = document.getElementsByClassName("bodymovin");
+        for(var x=0; x < elements.length; x++)
+        {
+            var elem = elements[x];
+            var fileName = elem.getAttribute('data-src');
+            var animData = {
+                container: elem,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                rendererSettings: {
+                    progressiveLoad:false
+                },
+                path: '{{BASE_PATH}}/assets/data/'+fileName+'.json'
+            };
+
+            bodymovin.loadAnimation(animData);
+        }
+
+
+
+
+
     });
 
 

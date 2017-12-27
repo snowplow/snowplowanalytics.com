@@ -99,7 +99,29 @@
 		}
 	}
 
-	
+	 .brand {
+		 letter-spacing: 0;
+		 font-size: 36px;
+
+	 }
+
+	 .brand span {
+		 font-size: 18px;
+		 color: white;
+	 }
+
+
+	 .brand i {
+		 font-size: 190px;
+		 vertical-align: middle;
+		 line-height: 0.15em;
+		 margin: 0;
+		 padding: 0;
+		 margin-top: -5px;
+		 display: inline-block;
+	 }
+
+
 	@media (max-width: $screen-md-max)
 	{
 	 	.products
@@ -142,6 +164,10 @@
 					}
 				}
 			}
+		}
+
+		.brand {
+			font-size: 70px;
 		}
 	}
 

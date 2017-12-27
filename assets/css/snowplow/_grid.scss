@@ -795,12 +795,12 @@ section
 
 @mixin spacer-top ( $value:10px )
 {
-	margin-top:$value;
+	margin-top:$value!important;
 }
 
 @mixin spacer-bottom ( $value:10px )
 {
-	margin-bottom:$value;
+	margin-bottom:$value!important;
 }
 
 @mixin spacer ( $value:10px )
