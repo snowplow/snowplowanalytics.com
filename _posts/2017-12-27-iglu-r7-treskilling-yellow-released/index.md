@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Iglu 7 Treskilling Yellow released
-title-short: Iglu 7 Treskilling Yellow
+title: Iglu R7 Treskilling Yellow released
+title-short: Iglu R7 Treskilling Yellow
 tags: [iglu, json, json schema, redshift]
 author: Oguzhan
 category: Releases
