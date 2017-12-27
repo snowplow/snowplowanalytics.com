@@ -154,7 +154,7 @@ For more details on this release, as always do check out the [release notes][sno
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
-[snowplow-release]: https://github.com/iglu/snowplow/releases/r7
+[snowplow-release]: https://github.com/snowplow/iglu/releases/r7-treskilling-yellow
 [discourse]: http://discourse.snowplowanalytics.com/
 [changelog]: https://github.com/snowplow/iglu/blob/master/CHANGELOG
 
