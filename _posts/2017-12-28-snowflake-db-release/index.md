@@ -5,7 +5,7 @@ title: "Snowplow Snowflake DB Loader released"
 tags: [snowflake, storage, relational databases]
 author: Anton
 category: Releases
-permalink: /blog/2017/12/13/snowplow-snowflake-loader-0.3.0-released/
+permalink: /blog/2017/12/28/snowplow-snowflake-loader-0.3.0-released/
 ---
 
 We are tremendously excited to announce the first public release of the [Snowplow Snowflake Loader][snowflake-loader-repo].
