@@ -19,8 +19,8 @@ Read on for more information on R98 Argentomagus, named after
 
 <!--more-->
 
-1. [Better timestamp validation](#ts)
-2. [Configurable Flash cross-domain policy](#flash)
+1. [Stream Enrich: better timestamp validation](#ts)
+2. [Scala Stream Collector: configurable Flash cross-domain policy](#flash)
 3. [Other Scala Stream Collector improvements](#ssc)
 4. [Upgrading](#upgrading)
 5. [Roadmap](#roadmap)
@@ -28,10 +28,10 @@ Read on for more information on R98 Argentomagus, named after
 
 ![argentomagus][argentomagus-img]
 
-<h2 id="ts">1. Better timestamp validation</h2>
+<h2 id="ts">1. Stream Enrich: better timestamp validation</h2>
 
 Prior to this release both the realtime and batch enrichment processes would let nonsensical
-timestamps, such as 22017-11-28 10:01:36, through. However, those events would fail loading into
+timestamps, such as `22017-11-28 10:01:36`, through. However, those events would fail loading into
 the database of your choice.
 
 With Argentomagus, we are deploying the counter measure of failing enrichment for those events to
@@ -40,7 +40,7 @@ failed enrichment.
 
 This data quality improvement will make its way to the batch pipeline in the next release.
 
-<h2 id="flash">2. Configurable Flash cross-domain policy</h2>
+<h2 id="flash">2. Scala Stream Collector: configurable Flash cross-domain policy</h2>
 
 On the security side of things, we have made the cross domain policy of the Scala Stream Collector
 configurable.
@@ -146,7 +146,7 @@ For AWS Classic ELB, the original request's scheme is contained in the `X-Forwar
 
 When using redirects, the Scala Stream Collector would leverage the built-in `Location` header
 provided by [Akka-HTTP][akka-http], the HTTP server library the Scala Stream Collector uses.
-However, if this redirect contained an URL as a query parameter, this URL would be partially
+However, if this redirect contained a URL as a query parameter, this URL would be partially
 decoded and would not be resolvable. This has been fixed in release 98.
 
 <h2 id="upgrading">4. Upgrading</h2>
@@ -158,6 +158,8 @@ http://dl.bintray.com/snowplow/snowplow-generic/snowplow_scala_stream_collector_
 http://dl.bintray.com/snowplow/snowplow-generic/snowplow_stream_enrich_0.13.0.zip
 {% endhighlight %}
 
+Docker images for those new artifacts will follow [shortly][docker-rel-3].
+
 <h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
@@ -165,6 +167,7 @@ Upcoming Snowplow releases will include:
 * [R99 [BAT] GDPR support][r99-gdpr], the first wave of GDPR features being added to Snowplow
 * [R9x [STR] GCP support][r9x-gcp], which will let you run the Snowplow realtime pipeline on
 Google Cloud Platform
+* [R9x [BAT] Priority fixes][r9x-bat], the release analogous to this one for the batch pipeline
 
 <h2 id="help">6. Getting help</h2>
 
@@ -182,6 +185,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [r99-gdpr]: https://github.com/snowplow/snowplow/milestone/149
 [r9x-gcp]: https://github.com/snowplow/snowplow/milestone/138
+[r9x-bat]: https://github.com/snowplow/snowplow/milestone/145
+[docker-rel-3]: https://github.com/snowplow/snowplow-docker/milestone/3
 
 [cross-domain]: http://www.adobe.com/devnet/adobe-media-server/articles/cross-domain-xml-for-streaming.html
 [cookie-bounce]: https://snowplowanalytics.com/blog/2017/10/03/snowplow-r93-virunum-released-realtime-pipeline-refresh/#cookie-bounce
