@@ -214,6 +214,13 @@
   spiel: |
       <a href="/blog/authors/keane/">Keane</a> is a Data Scientist at Snowplow. You can find him on <a href="https://uk.linkedin.com/in/keanerobinson">LinkedIn</a>
 
+- name: Oguzhan
+  full_name: Oguzhan Unlu
+  url: /blog/authors/oguzhan/
+  avatar: /assets/img/team/oguzhan.jpg
+  spiel: |
+      <a href="/blog/authors/oguzhan/">Oguzhan</a> is a Data Engineering Intern at Snowplow. You can find him on <a href="https://github.com/oguzhanunlu">GitHub</a>, <a href="https://www.linkedin.com/in/oguzhanunlu/">LinkedIn</a>.
+
 - name: Kostas
   full_name: Konstantinos Servis
   url: /blog/authors/kostas/
