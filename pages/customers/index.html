@@ -102,13 +102,11 @@ assets:
         <h2 class="text-center">Our Users</h2>
         <p class="text-muted text-center">Priberam sit conectum virboratem juris domun saet nonclosuri. Aesteto guntinuum.</p>
         <div class="users-block-container">
-            {% for image in site.static_files %}
-                {% if image.path contains 'img/common/trusted' %}
-                    <div class="users-block">
-                        <span class="highlight"></span>
-                        <img src="{{ image.path }}" alt="image" />
-                    </div>
-                {% endif %}
+            {% for user in site.data.users %} 
+                <a href="{{ user.link }}" target="_blank" class="users-block">
+                    <span class="highlight"></span>
+                    <img src="{{ user.picture }}" alt="image" />
+                </a> 
             {% endfor %}
         </div>
         <div class="text-center snowplw-btn-container">
@@ -188,13 +186,63 @@ assets:
 
 <section class="differentiate">
     <div class="container-fluid hidden-xs">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Using data to differentiate.</h2>
+                <p class="text-muted text-center">Find out how Snowplow enables Smart People to be transformative with data.</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 differentiate-content left">
+                    <h3>Our Users are diverse.</h3>
+                    <p>
+                        From publishing companies to retailers, jobs boards to broadcasters, dating sites to mobile-only banking providers, limousine services to consumer goods manufacturers, automotive dealerships to games companies, airports to luxury brands, travel companies to serviced office providers, there are not many sectors without a Snowplow user. 
+                    </p>
+                    <p>
+                        We have active and growing communities in London, New York, Sydney, Amsterdam, Sao Paolo, Berlin, San Francisco, Tel Aviv and Dubai.
+                    </p>
+                    <p>
+                        Our customers have a lot in common, though. They are smart. They love data. And they want to use data to differentiate.
+                    </p>
+                </div>
+            </div>
+        </div>
         <img src="/assets/img/common/comp-1.jpg" srcset="assets/img/common/comp-1%402x.jpg 2x" class="comp-1">
         <div class="silver-square"></div>
         <img src="/assets/img/common/comp-2.jpg" srcset="/assets/img/common/comp-2@2x.jpg 2x" class="comp-2">
-        <img src="/assets/img/common/comp-3.jpg" srcset="/assets/img/common/comp-3@2x.jpg 2x" class="comp-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 differentiate-content right">
+                    <h3>
+                        Our Users love data
+                        <br>
+                        and want to use it to 
+                        <br>
+                        differentiate.
+                    </h3>
+                    <p>
+                        There are many digital analytics solutions out there. Many are easier to use than Snowplow. But none of them give you the control of your data that Snowplow does.
+                        <br>
+                        Our users want to be transformative with data. That is why they value that control.
+                    </p>
+                </div>
+            </div>
+        </div>        
+        <div class="container">
+            <img src="/assets/img/common/comp-3.png" srcset="/assets/img/common/comp-3@2x.png 2x" class="comp-3">
+            <div class="differentiate-content center">
+                <h2 class="text-center">Our Users are smart.</h2>
+                <p class="text-muted text-center">
+                    They have to be. Using data to be transformative is hard. 
+                    <br>
+                    Our technology can help you take control of your data. 
+                    <br>
+                    But only smart people in smart teams can use that control to be transformative.
+                </p>
+            </div>
+        </div>         
     </div>
     
-    <div class="container">
+    <div class="container visible-xs">
         <h2 class="text-center">Using data to differentiate.</h2>
         <p class="text-muted text-center">Find out how Snowplow enables Smart People to be transformative with data.</p>
         <div class="row visible-xs">
@@ -234,7 +282,7 @@ assets:
             </div>
         </div>
         <div class="row visible-xs">
-            <img src="/assets/img/common/comp-3.jpg" srcset="/assets/img/common/comp-3@2x.jpg 2x" class="comp-3-mob img-responsive">
+            <img src="/assets/img/common/comp-3.png" srcset="/assets/img/common/comp-3@2x.png 2x" class="comp-3-mob img-responsive">
         </div>
         <div class="differentiate-content center">
             <h2 class="text-center">Our Users are smart.</h2>
