@@ -9,6 +9,8 @@ var video_filter = '', videos_array = [];
 var html_;
 var media_pos = 0;
 
+
+
 $(document).ready(function() {
  	
  	/*
