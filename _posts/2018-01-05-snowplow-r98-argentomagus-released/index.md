@@ -106,7 +106,7 @@ collector {
 And you're making a redirect request to:
 
 {% highlight bash %}
-http://{{your collector endpoint}}/r/tp2?u=http%3A%2F%2Fexample.com%3Fnuid%3D[TOKEN]
+http://your-collector-endpoint/r/tp2?u=http%3A%2F%2Fexample.com%3Fnuid%3D[TOKEN]
 {% endhighlight %}
 
 The redirect will point to:
@@ -178,7 +178,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r93]: https://snowplowanalytics.com/blog/2017/10/03/snowplow-r93-virunum-released-realtime-pipeline-refresh/
 [r97]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/
 
-[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r97-zeugma
+[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r98-argentomagus
 [discourse]: http://discourse.snowplowanalytics.com/
 
 [r99-gdpr]: https://github.com/snowplow/snowplow/milestone/149
