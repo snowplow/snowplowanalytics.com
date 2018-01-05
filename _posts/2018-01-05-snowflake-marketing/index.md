@@ -1,8 +1,8 @@
---
+---
 layout: post
 title: "Snowflake DB and the future of Snowplow storage targets"
 title-short: Snowflake DB and more
-tags: [company roadmap, databases]
+tags: [company roadmap, databases, snowflake]
 author: Anthony
 category: Releases
 permalink: /blog/2018/01/05/snowflake-db-and-the-future-of-snowplow-storage-targets/
@@ -34,6 +34,7 @@ With the passing of time since we released our support for Redshift, people’s 
 Though the AWS team handles much of the management on their end, as a database solution Redshift isn’t quite “fully managed.” Using Redshift efficiently and cost effectively typically requires active management - especially for large scale databases: monitoring the fragmentation levels and the regularly running vacuum and analyze statements. These processes may not be difficult to carry out but there is an overhead involved, and whilst they run they take away a nontrivial percentage of Redshift resources from data consumers that are working with the data.
 
 <h2 id="snowflake computing">Snowflake Computing</h2>
+![snowflake-computing][snowflake]
 
 The Snowflake DB solution has many features that get us excited here at Snowplow (and their thematically similar name is an added bonus). With support for Snowflake DB, we can now offer our users a database solution that scales much faster and can handle extremely high volumes of data collection with relative ease. The platform permits loading data formatted as nested JSON objects, and the robust support for nested data types means that we can load the data into a single, easy to query table in Snowflake. This makes the data set much easier to work with than it would be in Redshift, where we’re forced to “shred out” nested data into dedicated tables to prevent our users from having to rely on Redshift’s brittle JSON parsing.
 
@@ -51,5 +52,7 @@ If you're currently using Snowflake DB, interested in switching over, or have an
 [database]: /assets/img/blog/2018/01/database.jpg
 
 [snowflake-db]: https://snowplowanalytics.com/blog/2017/12/28/snowplow-snowflake-loader-0.3.0-released/
+
+[snowflake]: /assets/img/blog/2018/01/snowflake.jpg
 
 [thread]:https://discourse.snowplowanalytics.com/t/snowflake-db-other-storage-targets/1721
