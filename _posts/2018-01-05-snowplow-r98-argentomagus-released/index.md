@@ -48,7 +48,7 @@ domains. When clients request content hosted on a particular source domain and t
 requests directed towards a domain other than its own, the remote domain needs to host a
 cross-domain policy file that grants access to the source domain, allowing the client to continue
 the transaction.
-> 
+>
 > To allow a Flash media player hosted on another web server to access content from the Adobe Media
 Server web server, we require a crossdomain.xml file. A typical use case will be HTTP streaming
 (VOD or Live) to a Flash Player. The crossdomain.xml file grants a web client the required
@@ -173,7 +173,7 @@ For more details on this release, please check out the [release notes][release-n
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [argentomagus]: https://en.wikipedia.org/wiki/Argentomagus
-[argentomagus-img]: /assets/img/blog/2017/12/argentomagus.jpg
+[argentomagus-img]: /assets/img/blog/2018/01/argentomagus.jpg
 
 [r93]: https://snowplowanalytics.com/blog/2017/10/03/snowplow-r93-virunum-released-realtime-pipeline-refresh/
 [r97]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/
