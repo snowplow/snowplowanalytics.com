@@ -39,14 +39,23 @@ body.customers
 }
 
 
+
+
 /*
  * Customers Page Revamp
  */
 
- main {
+ body {
  	width: 100vw;
  	position: relative;
  	overflow-x: hidden;
+ }
+
+ section {
+ 	@media (min-width: $screen-sm-min) {
+ 		padding-top: 80px;
+ 		padding-bottom: 80px;
+ 	}
  }
 
 $transition_hover: all 0.15s ease-in-out;
@@ -155,21 +164,21 @@ $transition_hover: all 0.15s ease-in-out;
 	height: 30px;
 	line-height: 29px;
 	border-radius: 6px;
-	background-color: $dark-sky-blue-two;
+	background-color: white;
 	font-size: 12px;
 	font-weight: 300;
 	letter-spacing: 0.1px;
 	text-align: left;
-	color: $white;
+	color: $dark-sky-blue-two;
 	cursor: pointer;
 	position: absolute;
 	bottom: 15px;
 	font-weight: normal;
 	border: solid 1px $dark-sky-blue-two;
 	&:hover {
-		background-color: white;
-		color: $dark-sky-blue-two;
 		transition: $transition_hover;
+		background-color: $dark-sky-blue-two;
+		color: white;
 	}
 }
 
@@ -897,6 +906,10 @@ $media-card-w: 347.5px;
 $media-card-h: 363px;
 $media-arrow: 75px;
 .media {
+	@media (min-width: $screen-sm-min) {
+		margin-top: 0;
+		padding-top: 85px;
+	}	
 	h2 {
 		@extend .common-h2 !optional;
 	}
@@ -1008,9 +1021,9 @@ $media-arrow: 75px;
 } //.media
 
 .differentiate {
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: calc(100% - 120px);
+	//background-position: top center;
+	//background-repeat: no-repeat;
+	//background-size: calc(100% - 120px);
 	position: relative;
 	h2 {
 		@extend .common-h2 !optional;
@@ -1045,14 +1058,18 @@ $media-arrow: 75px;
 	}
 	.comp-1 {
 		margin-top: -1500px;
-		width: calc(100% - 30px);
+		width: calc(100% - 15px);
 		@media (min-width: $screen-md-min) {
-			margin-top: -1060px;
+			margin-top: -920px;
 		}
 		&-mob {
 			width: 230vw;
 			max-width: initial;
 			margin-left: -130vw;
+		}
+		&.anim_ {
+			//animation: comp_1_anim 0.5s;
+			//transform: translateY(60px);
 		}
 	}
 	.comp-2 {
@@ -1147,6 +1164,8 @@ $media-arrow: 75px;
 		}
 	}
 } //.differentiate
+
+
 
 .request-demo-costumers {
 	.container-fluid {
