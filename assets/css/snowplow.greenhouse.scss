@@ -276,6 +276,6 @@ a, input[type='button'].link-like-button {
     border-width: 1px!important;
 }
 
-body:not(.snowplow) b, body:not(.snowplow) strong, .content b, .content strong, article b, article strong {
-    font-weight: bold !important;
-}
+strong {
+        font-weight: bold !important;
+    }
