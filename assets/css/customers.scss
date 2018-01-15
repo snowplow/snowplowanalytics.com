@@ -709,9 +709,15 @@ $users-mg: 15px;
 		&.hover--ending {
 			transition: box-shadow 0.5s ease;
 		}
-		img {
-			filter: url(#monochrome);
-			max-height: 100px;
+		.img {
+			//filter: url(#monochrome);
+			//max-height: 100px;
+			width: 80%;
+			height: 80%;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin: 10%;
 		}
 		&-container {
 			display: flex;

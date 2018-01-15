@@ -87,16 +87,7 @@ assets:
     </div>
 </section>
 
-<svg class="defs-only">
-  <filter id="monochrome" color-interpolation-filters="sRGB"
-          x="0" y="0" height="100%" width="100%">
-    <feColorMatrix type="matrix"
-      values="0 0 0 0 0.40 
-              0 0 0 0 0.24  
-              0 0 0 0 0.70 
-              0    0 0 1 0" />
-  </filter>
-</svg>
+
 <section class="users">
     <div class="container">
         <h2 class="text-center">Our Users</h2>
@@ -105,7 +96,7 @@ assets:
             {% for user in site.data.users %} 
                 <a href="{{ user.link }}" target="_blank" class="users-block">
                     <span class="highlight"></span>
-                    <img src="{{ user.picture }}" alt="image" />
+                    <div class="img" style="background-image: url({{ user.picture }});"></div>
                 </a> 
             {% endfor %}
         </div>
