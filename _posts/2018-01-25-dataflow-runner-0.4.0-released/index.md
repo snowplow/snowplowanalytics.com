@@ -1,0 +1,78 @@
+---
+layout: post
+title: "Dataflow Runner 0.4.0 released"
+title-short: Dataflow Runner 0.4.0
+tags: [snowplow, golang, orchestration, emr, hadoop]
+author: Ben
+category: Releases
+permalink: /blog/2018/01/25/dataflow-runner-0.4.0-released/
+---
+
+We are pleased to announce [version 0.4.0][release-040] of Dataflow Runner, our cloud-agnostic tool
+to create clusters and run jobflows. This small release is centered around usability improvements.
+
+In this post, we will cover:
+
+1. [Fetching failed steps logs](#logs)
+2. [Reducing logging noise](#noise)
+3. [Roadmap](#roadmap)
+4. [Contributing](#contributing)
+
+<!--more-->
+
+<h2 id="locks">1. Fetch failed steps logs</h2>
+
+Leveraging the `run-transient` command, which, as a reminder, launches an EMR cluster, execute the
+given steps and shuts the cluster down, it is not possible to access the logs produced by the
+failed steps, if any, through the `--log-failed-steps` flag.
+
+As an example, let's say I launched a cluster performing a couple of [`s3-dist-cp`][s3-dist-cp]
+with the following command:
+
+{% highlight bash %}
+./dataflow-runner run-transient --emr-config cluster.json --emr-playbook playbook.json --log-failed-steps
+{% endhighlight %}
+
+Unfortunately, one of the step failed. However, thanks to the `--log-failed-steps` flag, you'll be
+able to look through its logs without going through the S3 bucket:
+
+{% highlight bash %}
+ERRO[0004] Step 'step' with id 'step-id' was FAILED
+ERRO[0004] Content of log file 'stderr.gz':
+ERRO[0004] Exception in thread "main" java.lang.RuntimeException: Error running job
+    at com.amazon.elasticmapreduce.s3distcp.S3DistCp.run(S3DistCp.java:927)
+    at com.amazon.elasticmapreduce.s3distcp.S3DistCp.run(S3DistCp.java:705)
+    ...
+{% endhighlight %}
+
+<h2 id="tags">2. Reducing logging noise</h2>
+
+We've also improved logging in the sense that each step will produce only one line of log
+throughout the lifetime of the cluster.
+
+This is in contrast with the previous approach which consisted of outputting every step state
+every fifteen seconds.
+
+<h2 id="roadmap">3. Roadmap</h2>
+
+As we stated in [the blog post for the previous release][release-030-post],
+we are committed to supporting other clouds such as Azure HDInsight (see [issue #22][issue-22]) and
+Google Cloud Dataproc (see [issue #33][issue-33]).
+
+If you have other features in mind, feel free to log an issue in
+[the GitHub repository][df-runner-issues].
+
+<h2 id="contributing">4. Contributing</h2>
+
+You can check out the [repository][df-runner-repo] if you'd like to get involved! In particular, any
+preparatory work getting other cloud providers integrated would be much appreciated.
+
+[release-040]: https://github.com/snowplow/dataflow-runner/releases/tag/0.4.0
+[release-030-post]: /blog/2017/05/30/dataflow-runner-0.3.0-released#roadmap
+
+[df-runner-repo]: https://github.com/snowplow/dataflow-runner/
+[df-runner-issues]: https://github.com/snowplow/dataflow-runner/issues/
+[issue-22]: https://github.com/snowplow/dataflow-runner/issues/22
+[issue-33]: https://github.com/snowplow/dataflow-runner/issues/15
+
+[s3-dist-cp]: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
