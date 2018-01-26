@@ -198,3 +198,41 @@
   avatar: /assets/img/team/enes.jpeg
   spiel: |
       <a href="/blog/authors/enes/">Enes</a> is a data engineering intern at Snowplow. You can find him on <a href="https://github.com/aldemirenes">GitHub</a>, <a href="https://www.linkedin.com/in/enes-aldemir/">LinkedIn</a>.
+
+- name: Anthony
+  full_name: Anthony Mandelli
+  twitter: Mandelliant
+  url: /blog/authors/anthony/
+  avatar: /assets/img/team/Anthony.jpg
+  spiel: |
+      <a href="/blog/authors/anthony/">Anthony</a> is the Digital Marketing Manager at Snowplow. You can find him on <a href="https://twitter.com/Mandelliant">Twitter</a>, <a href="https://www.linkedin.com/in/amandelli/">LinkedIn</a>.
+
+- name: Keane
+  full_name: Keane Robinson
+  url: /blog/authors/keane/
+  avatar: /assets/img/team/keane.jpg
+  spiel: |
+      <a href="/blog/authors/keane/">Keane</a> is a Data Scientist at Snowplow. You can find him on <a href="https://uk.linkedin.com/in/keanerobinson">LinkedIn</a>
+
+- name: Oguzhan
+  full_name: Oguzhan Unlu
+  url: /blog/authors/oguzhan/
+  avatar: /assets/img/team/oguzhan.jpg
+  spiel: |
+      <a href="/blog/authors/oguzhan/">Oguzhan</a> is a data engineer at Snowplow. You can find him on <a href="https://github.com/oguzhanunlu">GitHub</a>, <a href="https://www.linkedin.com/in/oguzhanunlu/">LinkedIn</a>.
+
+- name: Kostas
+  full_name: Konstantinos Servis
+  url: /blog/authors/kostas/
+  github: knservis
+  spiel: |
+      <a href="/blog/authors/kostas/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>.
+
+- name: Mike
+  full_name: Mike Hadam
+  twitter: mike_hadam
+  github: mhadam
+  url: /blog/authors/mhadam/
+  avatar:  /assets/img/team/mhadam.jpg
+  spiel:   |
+      <a href="/blog/authors/mhadam/">Mike</a> is a data engineer intern at Snowplow. You can find him on <a href="https://twitter.com/mike_hadam">Twitter</a> and <a href="https://www.linkedin.com/in/mhadam/">LinkedIn</a>.
