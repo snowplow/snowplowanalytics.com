@@ -153,9 +153,9 @@ enrich:
 Upcoming Snowplow releases will include:
 
 * [R100 [BAT] PII Enrichment phase 1][r100-pii], the first wave of GDPR features being added to Snowplow, centred on a new enrichment which can pseudonymize sensitive personally identifiable information
-* [R10x [STR] GCP support][r9x-gcp], which will let you run the Snowplow realtime pipeline on
+* [R10x [STR] GCP support][r10x-gcp], which will let you run the Snowplow realtime pipeline on
 Google Cloud Platform
-* [R10x [BAT] Priority fixes][r9x-bat], various stability, security and data quality improvements for the batch pipeline
+* [R10x [BAT] Priority fixes][r10x-bat], various stability, security and data quality improvements for the batch pipeline
 
 <h2 id="help">7. Getting help</h2>
 
