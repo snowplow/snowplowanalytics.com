@@ -226,4 +226,13 @@
   url: /blog/authors/kostas/
   github: knservis
   spiel: |
-      <a href="/blog/authors/kosta/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>..
+      <a href="/blog/authors/kostas/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>.
+
+- name: Mike
+  full_name: Mike Hadam
+  twitter: mike_hadam
+  github: mhadam
+  url: /blog/authors/mhadam/
+  avatar:  /assets/img/team/mhadam.jpg
+  spiel:   |
+      <a href="/blog/authors/mhadam/">Mike</a> is a data engineer intern at Snowplow. You can find him on <a href="https://twitter.com/mike_hadam">Twitter</a> and <a href="https://www.linkedin.com/in/mhadam/">LinkedIn</a>.
