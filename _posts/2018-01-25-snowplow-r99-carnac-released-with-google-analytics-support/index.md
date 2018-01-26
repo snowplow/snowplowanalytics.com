@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "Snowplow 99 Carnac released"
-title-short: Snowplow 98 Carnac
+title: "Snowplow R99 Carnac released with Google Analytics support"
+title-short: Snowplow R99 Carnac
 tags: [google analytics, measurement protocol]
 author: Ben
 category: Releases
-permalink: /blog/2018/01/25/snowplow-r99-carnac/
+permalink: /blog/2018/01/25/snowplow-r99-carnac-with-google-analytics-support/
 ---
 
 We are pleased to announce the release of [Snowplow R99 Carnac][release-notes]. This batch pipeline
-release makes the much anticipated Google Analytics integration in Snowplow available.
+release debuts the much anticipated Google Analytics integration in Snowplow.
+
+We are initially adding support for Google Analytics to the Snowplow batch pipeline; extending this support to the real-time pipeline will follow in due course.
 
 Read on for more information on R99 Carnac, named after
 [the collection of megalithic sites around the village of Carnac in Britanny, France][carnac]:
@@ -19,7 +21,7 @@ Read on for more information on R99 Carnac, named after
 1. [Why integrate Google Analytics into Snowplow?](#why)
 2. [Overall architecture](#architecture)
 3. [The Snowplow Google Analytics plugin](#plugin)
-4. [New Iglu schemas](#schemas)
+4. [New Iglu Central schemas](#schemas)
 5. [Upgrading](#upgrading)
 6. [Roadmap](#roadmap)
 7. [Help](#help)
@@ -28,15 +30,15 @@ Read on for more information on R99 Carnac, named after
 
 <h2 id="why">1. Why integrate Google Analytics into Snowplow?</h2>
 
-Last May, we put out [an RFC on sending Google Analytics events into Snowplow][rfc]. The main idea
-is to allow data sent using [the Google Analytics Javascript tag][ga] or
-[the Measurement protocol][mp] to be seamlessly integrated into the Snowplow pipeline as events and
+Back in May, we put out [an RFC on sending Google Analytics events into Snowplow][rfc]. The central idea
+is to allow data sent using [the Google Analytics JavaScript tag][ga] or
+[the Measurement Protocol][mp] to be seamlessly integrated into the Snowplow pipeline as events and
 contexts.
 
 To quote the RFC on why we went through the trouble of integrating Google Analytics events in
 Snowplow:
 
->Google Analytics is the most widely used digital anaytics platform in the world. And for good
+>Google Analytics is the most widely used digital analytics platform in the world. And for good
 >reason: it’s a great product - and it’s free!
 >
 >However, as all Snowplow users will be aware, there are significant limitations with Google
@@ -68,27 +70,27 @@ Since the release of the RFC, we've been hard at work on making this a reality.
 
 <h2 id="architecture">2. Overall architecture</h2>
 
-To make things as seamless as possible, we've chosen to write [a Google Analytics plugin][ga-plugin]
-which will intercept requests made to Google Analytics' endpoint and will duplicate them to a
+To make things as plug-and-play as possible, we've chosen to write [a Google Analytics plugin][ga-plugin]
+which will intercept requests made to Google Analytics' endpoint and duplicate them to a
 Snowplow collector.
 
-On Snowplow's side of things, we've extended our pipeline to handle Google Analytics events through
-a new adapter (a component translating arbitrary events into Snowplow ones) and a set of Iglu
+On the Snowplow side of things, we've extended our pipeline to handle Google Analytics events through
+a new adapter (a component translating specific third-party events into Snowplow ones), plus a set of Iglu
 schemas describing Google Analytics events.
 
-The following schema sums up our approach:
+The following diagram sums up our approach:
 
 ![schema][ga-schema-img]
 
-We'll be detailing each system in turn.
+We'll be detailing each subsystem in turn.
 
 <h2 id="plugin">3. The Snowplow Google Analytics plugin</h2>
 
-As mentioned above, we have written a small open-source Google Analytics plugin that will tee the
+As mentioned above, we have written a small open-source Google Analytics plugin that will mirror the
 requests made to Google Analytics to your Snowplow collector. It is available
-[on GitHub][spga-plugin].
+[on GitHub][spga-plugin], and hosted on our CloudFront.
 
-It is fairly straightforward to setup as it integrates nicely into your existing Google Analytics
+It is fairly straightforward to setup, integrating nicely into your existing Google Analytics
 setup:
 
 {% highlight javascript %}
@@ -108,36 +110,36 @@ setup:
 Note that only two lines differ from the usual Google Analytics setup:
 
 - `ga('require', 'spGaPlugin', { endpoint: 'https://events.acme.com' });` which will instantiate our
-plugin configured to tee requests to the `https://events.acme.com` Snowplow collector endpoint.
+plugin configured to mirror requests to the `https://events.acme.com` Snowplow collector endpoint
 - `<script async src="https://d1fc8wv8zag5ca.cloudfront.net/sp-ga-plugin/0.1.0/sp-ga-plugin.js"></script>` which will load our plugin code.
 
-<h2 id="schemas">4. New Iglu schemas</h2>
+<h2 id="schemas">4. New Iglu Central schemas</h2>
 
 Google Analytics support comes with a host of new schemas which are available as:
 
-- a spredsheet on [Google Drive][spreadsheet]
-- the raw schemas in [the Iglu central repository][mp-schemas]
+- A spreadsheet on [Google Drive][spreadsheet]
+- The schemas themselves in [the Iglu Central repository][mp-schemas]
 
-As the multitude of schemas indicates, the approach we took revolves around breaking down the
-Google Analytics payloads into a large set of tightly-defined entities.
+As the multitude of schemas indicates, the approach we took involved breaking down the
+Google Analytics payloads into a large set of closely-defined entities.
 
-As a result, a Google Analytics payload will result in a single enriched event where:
+As a result, a Google Analytics payload will result in a single enriched event consisting of:
 
-- a self-describing JSON as `unstruct_event` which will be determined based on the Google Analytics'
+1. A self-describing JSON, populated into the `unstruct_event` field and determined by the Google Analytics'
 event `hitType`
-- zero or more self-describing JSON contexts as `contexts`
+2. Zero or more self-describing JSONs, populated into the `contexts` field and determined by the rest of the contextual information in the Google Analytics payload
 
-As an example, let's take [a pageview event from the Measurement Protocol definition][pageview]. It
+As an example, let's take [a pageview event from the Measurement Protocol definition][pageview]. Processing this in Snowplow
 will result in an enriched event with:
 
-- a `page_view` entity as `unstruct_event`
-- a list of additional `user`, `hit`, `system_info`, etc contexts stored in the `contexts` field
+- A `page_view` entity as `unstruct_event`
+- A list of additional `user`, `hit`, `system_info` and similar entities stored in the `contexts` field
 
 <h2 id="upgrading">5. Upgrading</h2>
 
 On the client-side you will need to make use of the plugin as described in [section 3](#plugin).
 
-To benefit from the new Google Analytics integration on the pipeline side, you'll need to bump the
+To benefit from the new Google Analytics integration on the batch pipeline side, you'll need to bump the
 Spark Enrich version used in the EmrEtlRunner configuration file:
 
 {% highlight yaml %}
@@ -150,10 +152,10 @@ enrich:
 
 Upcoming Snowplow releases will include:
 
-* [R99 [BAT] GDPR support][r9x-gdpr], the first wave of GDPR features being added to Snowplow
-* [R9x [STR] GCP support][r9x-gcp], which will let you run the Snowplow realtime pipeline on
+* [R100 [BAT] PII Enrichment phase 1][r100-pii], the first wave of GDPR features being added to Snowplow, centred on a new enrichment which can pseudonymize sensitive personally identifiable information
+* [R10x [STR] GCP support][r9x-gcp], which will let you run the Snowplow realtime pipeline on
 Google Cloud Platform
-* [R9x [BAT] Priority fixes][r9x-bat], the release analogous to this one for the batch pipeline
+* [R10x [BAT] Priority fixes][r9x-bat], various stability, security and data quality improvements for the batch pipeline
 
 <h2 id="help">7. Getting help</h2>
 
@@ -168,9 +170,9 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r99-carnac
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[r9x-gdpr]: https://github.com/snowplow/snowplow/milestone/149
-[r9x-gcp]: https://github.com/snowplow/snowplow/milestone/138
-[r9x-bat]: https://github.com/snowplow/snowplow/milestone/145
+[r100-pii]: https://github.com/snowplow/snowplow/milestone/149
+[r10x-gcp]: https://github.com/snowplow/snowplow/milestone/138
+[r10x-bat]: https://github.com/snowplow/snowplow/milestone/145
 
 [rfc]: https://discourse.snowplowanalytics.com/t/sending-google-analytics-events-into-snowplow/1201
 [ga]: https://analytics.google.com/analytics/web
