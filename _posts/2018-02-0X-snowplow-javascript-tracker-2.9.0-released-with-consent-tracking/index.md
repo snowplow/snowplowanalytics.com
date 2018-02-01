@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Snowplow JavaScript Tracker 2.9.0 released"
+title: "Snowplow JavaScript Tracker 2.9.0 released with consent tracking"
 title-short: Snowplow JavaScript Tracker 2.9.0
 tags: [snowplow, javascript, privacy, optout, gdpr, eprivacy, data rights]
 author: Mike
