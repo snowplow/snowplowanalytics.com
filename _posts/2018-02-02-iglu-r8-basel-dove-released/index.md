@@ -8,17 +8,17 @@ category: Releases
 permalink: /blog/2018/02/02/iglu-r8-basel-dove-released/
 ---
 
-We are excited to announce a new Iglu release, introducing a good number of improvements focused on igluctl.
+We are excited to announce a new Iglu release, introducing a good number of improvements focused on our igluctl CLI tool.
 
 1. [Switch from severity levels to granular linting](#skip-checks)
 2. [Dealing with inconsistent schema versions](#missing-schema-versions)
 3. [ZSTD compression support](#zstd)
 4. [New linters](#new-linters)
-5. [Setting owner of Redshift tables](#set-owner)
+5. [Setting ownership of Redshift tables](#set-owner)
 6. [Other updates](#other-updates)
-7. [Getting Help](#help)
+7. [Getting help](#help)
 
-Read on for more information on Release 8 Basel Dove, named after [a Swiss postage stamp][basel-dove], the first tricolor stamp in the world.
+Read on for more information about Release 8 Basel Dove, named after [a Swiss postage stamp][basel-dove] - the first tricolor stamp in the world.
 
 ![basel-dove-img][basel-dove-img]
 
@@ -26,22 +26,19 @@ Read on for more information on Release 8 Basel Dove, named after [a Swiss posta
 
 <h2 id="skip-checks">1. Switch from severity levels to granular linting</h2>
 
-In [igluctl 0.2.0][iglu-r6-release] we introduced the concept of linting severity levels, which was intended to make some schemas to meet higher standards.
-However, time has shown that different use cases imply different idea of higher standard and our inital approach lacks a flexibility required to cover all these use cases.
+In [igluctl 0.2.0][iglu-r6-release] we introduced the concept of severity levels for our schema linting, to help schemas meet higher standards during the authoring process. However, time has shown that different use cases imply different ideas of "higher standards", and the lint levels approach lacks the flexibility required to cover all these use cases.
 
-With new approach, igluctl always defaults to highest possible standard (previosly known as `serverityLevel 3`), which however can be explicitly loosened in order to pass linting.
-This way igluctl allows users to make sure they didn't forget to switch to higher levels.
-If some checks can be omitted - they need to be omitted explicitly.
+As of this release, igluctl always defaults to our previous strictest level (known before as `severityLevel 3`), but you can then explicitly switch off certain bundles of *checks* or *linters*.
 
-To weaken linting, `--skip-checks` option should be used. It accepts list of comma-separated predefined linter names, for example:
+To reduce the linting strictness, the `--skip-checks` accepts a list of comma-separated pre-defined linter names, for example:
 
 {% highlight bash %}
-$ igluctl lint --skip-checks optionalFields,descriptionPresent $SCHEMAS_PATH
+$ igluctl lint --skip-checks descriptionPresent,optionalFields $SCHEMAS_PATH
 {% endhighlight %}
 
-Above linting will not notify user that some fields miss `description` property or fields are implicitly optional (`null` type makes them explitly optional).
+The above linting will not notify user that some fields miss `description` property, and it will ignore that some fields are only implicitly optional (missing the `null` type that makes them explitly optional).
 
-Full list of available checks, their descriptions and use cases are available on [igluctl wiki page][igluctl-lint].
+For the full list of available checks, their descriptions and their use cases, please see the [igluctl wiki page][igluctl-lint].
 
 <h2 id="missing-schema-versions">2. Dealing with inconsistent schema versions</h2>
 
@@ -83,7 +80,7 @@ This new linting feature is considered required and can not be excluded through 
 
 [Mike Robbins][miike] of Snowflake Analytics came up with the proposal and PR for making sure fields have a human-readable `description` property in order to make schemas more maintainable.
 
-<h2 id="set-owner">5. Setting owner of Redshift tables</h2>
+<h2 id="set-owner">5. Setting ownership of Redshift tables</h2>
 
 It is frequently forgotten to set owner of Redshift tables after generating DDLs.
 With this release, we are introducing `--set-owner` parameter to igluctl's `static generate` command. 
@@ -91,17 +88,17 @@ It is provided with a string and igluctl will append an `ALTER TABLE` statement 
 
 <h2 id="other-updates">6. Other updates</h2>
 
-Basel Dove brings few small adjustments too.
+R8 Basel Dove brings a few small adjustments too.
 
-Header part of DDLs contain an auto-generated comment section with project related information. As of now, it will also contain when that DDL was generated in UTC, instead of local time.
+The header part of igluctl-generated Redshift DDLs contains an auto-generated comment section with project-related information. As of this release, it will contain the DDL generation time in UTC, instead of local time.
 
-Basel Dove also fixes [an important bug][issue-313] in igluctl, which could generate false failure messages even though `static push` command executed successfully.
+Basel Dove also fixes [an important bug][issue-313] in igluctl, which could, confusingly, generate incorrect failure messages even though the `static push` command had in fact executed successfully.
 
 <h2 id="help">7. Getting help</h2>
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
-If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
+If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
 [release-notes]: https://github.com/snowplow/iglu/releases/r8-basel-dove
 [discourse]: http://discourse.snowplowanalytics.com/
