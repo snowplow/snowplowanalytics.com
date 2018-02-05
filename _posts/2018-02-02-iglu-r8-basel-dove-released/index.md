@@ -42,16 +42,15 @@ For the full list of available checks, their descriptions and their use cases, p
 
 <h2 id="missing-schema-versions">2. Dealing with inconsistent schema versions</h2>
 
-Main responsibilitt of Schema DDL library is to maintain set of rules to transform one format to another.
-For example, JSON Schema to Redshift DDL conversion.
-
 Each schema format has its own primary use case, leading to certain design choices that in turn can bring particular features as well as limitations.
 Very different use cases and design choices can make it hard to convert one format into another, especially if we want to keep using advantages of both formats and have working migrations.
 Schema DDL, an underlying Iglu library responsible for format-transformations solves this problem by applying a predefined and strict set of rules during the transformation.
 
 Redshift DDL and JSON Schema, two most popular formats among Iglu users form exactly this loose connection, where among many inconsistencies column order becomes one of the most important.
-Specifically, JSON does preserve order of keys, but for Redshift which is a relational columnar data storage, order of columns is crucial - it is worth nothing to append column to the end of the table, but very troublesome to insert into the middle.
-In a slightly oversimplified fashion, Schema DDL applies two rules here: lexicographical and required-columns-first.
+Specifically, JSON does not preserve order of keys, but for Redshift which is a relational columnar data storage, columns order is crucial - it is worth nothing to append new column to the end of the table, but very troublesome to insert one into the middle.
+In a slightly oversimplified fashion, Schema DDL applies two rules here: lexicographical and "required-columns-first".
+
+This simple rule works very well until user doesn't create 
 
 
 TODO THIS SECTION DOESN'T MAKE SENSE. RE-WRITE IT TO EXPLAIN THE ACTUAL PROBLEM:
