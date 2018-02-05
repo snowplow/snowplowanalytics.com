@@ -5,7 +5,7 @@ title-short: Iglu R8 Basel Dove
 tags: [iglu, json, json schema, redshift]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/02/02/iglu-r8-basel-dove-released/
+permalink: /blog/2018/02/06/iglu-r8-basel-dove-released/
 ---
 
 We are excited to announce a new Iglu release, introducing a good number of improvements focused on our igluctl CLI tool.
@@ -41,6 +41,18 @@ The above linting will not notify user that some fields miss `description` prope
 For the full list of available checks, their descriptions and their use cases, please see the [igluctl wiki page][igluctl-lint].
 
 <h2 id="missing-schema-versions">2. Dealing with inconsistent schema versions</h2>
+
+Main responsibilitt of Schema DDL library is to maintain set of rules to transform one format to another.
+For example, JSON Schema to Redshift DDL conversion.
+
+Each schema format has its own primary use case, leading to certain design choices that in turn can bring particular features as well as limitations.
+Very different use cases and design choices can make it hard to convert one format into another, especially if we want to keep using advantages of both formats and have working migrations.
+Schema DDL, an underlying Iglu library responsible for format-transformations solves this problem by applying a predefined and strict set of rules during the transformation.
+
+Redshift DDL and JSON Schema, two most popular formats among Iglu users form exactly this loose connection, where among many inconsistencies column order becomes one of the most important.
+Specifically, JSON does preserve order of keys, but for Redshift which is a relational columnar data storage, order of columns is crucial - it is worth nothing to append column to the end of the table, but very troublesome to insert into the middle.
+In a slightly oversimplified fashion, Schema DDL applies two rules here: lexicographical and required-columns-first.
+
 
 TODO THIS SECTION DOESN'T MAKE SENSE. RE-WRITE IT TO EXPLAIN THE ACTUAL PROBLEM:
 
