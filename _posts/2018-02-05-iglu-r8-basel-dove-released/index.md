@@ -33,47 +33,34 @@ As of this release, igluctl 0.4.0 always defaults to our previous strictest leve
 To reduce the linting strictness, the `--skip-checks` accepts a list of comma-separated pre-defined linter names, for example:
 
 {% highlight bash %}
-$ igluctl lint --skip-checks descriptionPresent,optionalFields $SCHEMAS_PATH
+$ igluctl lint --skip-checks description,optionalNull $SCHEMAS_PATH
 {% endhighlight %}
 
 The above linting will not notify user that some fields miss `description` property, and it will ignore that some fields are only implicitly optional (missing the `null` type that makes them explitly optional).
 
-For the full list of available checks, their descriptions and their use cases, please see the [igluctl wiki page][igluctl-lint].
+For the full list of available checks, their descriptions and their use cases, please see the [igluctl wiki page][linters].
 
 <h2 id="missing-schema-versions">2. Dealing with inconsistent schema versions</h2>
 
 Each schema format has its own primary use case, leading to certain design choices that in turn can bring particular features as well as limitations.
 Very different use cases and design choices can make it hard to convert one format into another, especially if we want to keep using advantages of both formats and have working migrations.
-Schema DDL, an underlying Iglu library responsible for format-transformations solves this problem by applying a predefined and strict set of rules during the transformation.
+Schema DDL, an underlying Iglu library responsible for schema transformations solves this problem by applying a predefined and strict set of rules during the transformation.
 
 Redshift DDL and JSON Schema, two most popular formats among Iglu users form exactly this loose connection, where among many inconsistencies column order becomes one of the most important.
 Specifically, JSON does not preserve order of keys, but for Redshift which is a relational columnar data storage, columns order is crucial - it is worth nothing to append new column to the end of the table, but very troublesome to insert one into the middle.
 In a slightly oversimplified fashion, Schema DDL applies two rules here: lexicographical and "required-columns-first".
 
-This simple rule works very well until user doesn't create 
+This simple rule works very well until user creates next version of JSON Schema with new properties added.
+Problem here is that Schema DDL and igluctl might naively apply same set of rules to all properties, including just added. 
+This will very likely result into mixed columns and therefore corrupted DDL file.
 
+To avoid problems like described above, Schema DDL since version [0.6.0][schema-ddl-060-release] takes into account all previously existing schemas within MODEL and iteratively appends all subsequent new properties to the end of result table.
+This allows us to create seamless migrations for ADDITIONs and preserve consistent table structure across versions.
 
-TODO THIS SECTION DOESN'T MAKE SENSE. RE-WRITE IT TO EXPLAIN THE ACTUAL PROBLEM:
+However, whole this well-tuned strategy fails whenever user forgets to add intermediate schema (`1-0-1` between `1-0-0` and `1-0-2`) or initial (`1-0-0`).
+Until igluctl 0.4.0, it was possible to specify a folder containing these inconsistent versioning, and the `static generate` command would output DDL file treating this as the initial and sole available schema. At the same time, if the initial and "lost" `1-0-0` schema didn't have some new columns added in `1-0-1` - these new columns will be mixed into the middle of DDL, effectively making DDL corrupted and migration impossible.
 
-* JSON Schema is un-ordered
-* Redshift tables are ordered, therefore
-* we need to come up with an ordering system,
-* we chose this ordering system: foobar
-* This is great, but it means that a schema 1-0-5 is not sufficient to know what the column order should be,
-* you need to know which columns were introduced by which schema
-* therefore to generate Redshift DDL, you must have access to all the tables
-* otherwise you will generate incorrect tables
-* Then discuss the actual changes in R8.
-
-TODO ENDS 
-
-All schemas in Iglu registries within a single `MODEL` version (e.g. `1-x-x`) are expected to relate to each other in a specific way, and this relationship is very important for proper DDL derivation, especially when it comes to column-oriented storage such as Amazon Redshift.
-
-This means that, in order to generate consistent and correct Redshift DDL, igluctl *must* be aware of all previously available schemas within the `MODEL` version.
-
-Until this Iglu release, it was possible to specify a folder containing **only** a `1-0-1` schema, and the `static generate` command would output DDL file treating this as the initial and sole available schema. At the same time, if the initial and "lost" `1-0-0` schema didn't have some new columns added in `1-0-1` - these new columns will be mixed into the middle of DDL, effectively making DDL corrupted and migration impossible.
-
-Starting from Basel Dove, it is almost impossible to generate this corrupted DDL by mistake.
+Starting from Basel Dove, it is almost impossible to generate corrupted DDL by mistake.
 New igluctl adds following additional checks and associated alerts to prevent it:
 
 * If user specified folder as input and among schemas there's no 1-0-0 or any other schemas in between - refuse to do anything (but proceed with `--force` option at your own risk)
@@ -98,13 +85,13 @@ Some more work has been done in igluctl 0.4.0 to improve litning mechanism, incl
 
 <h3 id="missing-linter">4.1 Linting missing schema versions</h3>
 
-The `lint` command will now also warn about missing schema versions TODO (inside schemas? somewhere else?) TODO ENDS. This new linting feature is considered essential and cannot be excluded through `--skip-checks`.
+In addition to [already mentioned](#missing-schema-versions) warnings in `static generate`, the `lint` command now also provides check for schema versions consistency, e.g. if you have `1-0-1` schema without initial one.
+This new linting feature is considered essential and cannot be excluded through `--skip-checks`.
 
 <h3 id="description-linter-2">4.2 Linting description</h3>
 
 [Mike Robbins][miike] of Snowflake Analytics came up with the proposal and PR for making sure fields have a human-readable `description` property in order to make schemas more maintainable.
-
-TODO ADD SENTENCE TO EXPLAIN HOW THIS INTERACTS WITH `--skip-checks` TODO ENDS.
+To skip this check, you can pass `description` to `--skip-checks`.
 
 <h2 id="set-owner">5. Setting ownership of Redshift tables</h2>
 
@@ -138,7 +125,8 @@ If you have any questions or run into any problems, please raise a question in [
 [atomic-events-migration]: https://github.com/snowplow/snowplow/blob/master/4-storage/redshift-storage/sql/migrate_0.8.0_to_0.9.0.sql
 
 [iglu-r6-release]: https://snowplowanalytics.com/blog/2016/10/07/iglu-r6-ceres-released/#severity
-[igluctl-lint]: https://github.com/snowplow/iglu/wiki/Igluctl#lint
+[schema-ddl-060-release]: https://snowplowanalytics.com/blog/2016/04/07/schema-guru-0.6.0-released-with-sql-migrations-support/
+[linters]: https://github.com/snowplow/iglu/wiki/Igluctl#linters
 
 [miike]: https://github.com/miike
 
