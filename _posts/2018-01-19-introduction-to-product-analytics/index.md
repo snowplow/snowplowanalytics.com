@@ -49,7 +49,7 @@ We see digital analytics in product management as one of the most exciting new i
 
 [pt2]: https://snowplowanalytics.com/blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 
-[product3]:https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
+[product3]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 
 [group]: /assets/img/blog/2018/01/focus-group.jpg
 

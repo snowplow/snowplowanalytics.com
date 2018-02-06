@@ -57,6 +57,8 @@ The user journey is complex, as the example above shows. Using data in the produ
 
 [product1]: https://snowplowanalytics.com/blog/2018/01/19/product-analytics-part-one-data-and-digital-products/
 
+[product3]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
+
 [Airbnb blog]: https://medium.com/airbnb-engineering/how-airbnb-democratizes-data-science-with-data-university-3eccc71e073a
 
 [facebook pd]: https://code.facebook.com/posts/187489991429453/building-and-testing-at-facebook/
