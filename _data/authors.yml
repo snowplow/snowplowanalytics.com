@@ -219,7 +219,9 @@
   url: /blog/authors/oguzhan/
   avatar: /assets/img/team/oguzhan.jpg
   spiel: |
-      <a href="/blog/authors/oguzhan/">Oguzhan</a> is a Data Engineering Intern at Snowplow. You can find him on <a href="https://github.com/oguzhanunlu">GitHub</a>, <a href="https://www.linkedin.com/in/oguzhanunlu/">LinkedIn</a>.
+      <a href="/blog/authors/oguzhan/">Oguzhan</a> is a data engineer at Snowplow. You can find him on <a href="https://github.com/oguzhanunlu">GitHub</a>, <a href="https://www.linkedin.com/in/oguzhanunlu/">LinkedIn</a>.
+
+  
 
 - name: Kostas
   full_name: Konstantinos Servis
