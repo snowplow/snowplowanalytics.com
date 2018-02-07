@@ -1,0 +1,27 @@
+- name: Snowplow at Weebly
+  who: Audrey Carstensen and Bo Han
+  where: Snowplow San Francisco Meetup &#35;2
+  industry: media
+  excerpt: Weebly’s Audrey Carstensen and Bo Han gave an overview of how Snowplow is deployed at Weebly, before diving into a tonne of detail on how Weebly build funnel analyses in Looker on top of their Snowplow data.
+  picture: /assets/img/videos/video_1.jpg
+  picture_wide: /assets/img/videos/video_1%402x.jpg
+  url: https://www.youtube.com/watch?v=aePjlycXmxg
+
+- name: Snowplow at Sigfig
+  who: Benny Wijatno and Jenna Lemonias
+  where: Snowplow San Francisco Meetup &#35;2
+  industry: retail
+  excerpt: The event kicked off with a talk from Sigfig’s Benny Wijatno and Jenna Lemonias. Benny adn Jenna gave an overview of Sigfig, before exploring how they use Snowplow to answer a wide variety of questions related to customer acquisition.
+  picture: /assets/img/videos/video_2.jpg
+  picture_wide: /assets/img/videos/video_2%402x.jpg
+  url: https://www.youtube.com/watch?v=l2ZYiqlMJPA
+
+- name: Snowplow at Busuu
+  who: Bruce Pannaman
+  where: Snowplow London Meetup &#35;4
+  industry: gaming
+  excerpt: Bruce Pannaman, data scientist at Busuu, talked about why they are using Snowplow to validate and enrich data, enable one source of truth across different data sources, cope with peaks and troughs in the data stream, and easily integrate with third party systems such as Intercom, a customer messaging platform.
+  picture: /assets/img/videos/video_3.jpg
+  picture_wide: /assets/img/videos/video_3%402x.jpg
+  url: https://www.youtube.com/watch?v=wSmTC1JDSyc
+

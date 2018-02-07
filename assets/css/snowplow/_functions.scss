@@ -1,0 +1,73 @@
+.font-correct {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.center {
+	text-align: center;
+	&>* {
+		display: inline-block;
+		width: auto;
+		float: initial !important;
+	}
+}
+.content-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.no-select {     
+	user-select: none;          
+}
+.center-left {
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+}
+.center-top {
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+}
+.center-block {
+	display: block;
+	margin: 0 auto;
+	float: none;
+}
+.bg-contain {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.bg-cover {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.reverse_ellipsis {
+	display: inherit; 
+	height: inherit; 
+	font-size: inherit;
+	line-height: inherit;
+	-webkit-line-clamp: inherit;
+	-webkit-box-orient: inherit;
+	overflow: inherit;
+	text-overflow: inherit;
+}
+
+@mixin ellipsis($font-size, $line-height, $lines-to-show) {
+	display: block; 
+	display: -webkit-box;
+	height: $font-size*$line-height*$lines-to-show;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+//@include ellipsis($font-size, $line-height, $lines-to-show);
+
+
