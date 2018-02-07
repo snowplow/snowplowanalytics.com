@@ -1,27 +1,31 @@
 ---
 title : RSS Feed
 ---
-
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-<channel>
-        <title>{{ site.title }}</title>
-        <description>{{ site.title }} - {{ site.author.name }}</description>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>{{ site.name | xml_escape }}</title>
+        <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
         <link>{{ site.production_url }}{{ site.rss_path }}</link>
         <link>{{ site.production_url }}</link>
-        <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+        <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
+        <lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
-        <ttl>1800</ttl>
-
-{% for post in site.posts %}
+        {% for post in site.posts limit:site.feed_total %}
         <item>
-                <title>{{ post.title }}</title>
-                <description>{{ post.excerpt | xml_escape }}</description>
-                <link>{{ site.production_url }}{{ post.url }}</link>
-                <guid>{{ site.production_url }}{{ post.id }}</guid>
-                <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <title>{{ post.title | xml_escape }}</title>
+            {% if post.author.name %}
+            <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
+            {% endif %} {% if post.excerpt %}
+            <description>{{ post.excerpt | xml_escape }}</description>
+            {% else %}
+            <description>{{ post.content | xml_escape }}</description>
+            {% endif %}
+            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         </item>
-{% endfor %}
-
-</channel>
+        {% endfor %}
+    </channel>
 </rss>

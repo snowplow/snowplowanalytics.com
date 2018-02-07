@@ -105,15 +105,16 @@ $(function() {
       elementSC1.setAttribute("type", "hidden");
       form.appendChild(elementSC1);
 
-      snowplow(function () {
-
-        var elementDUID = document.createElement("input");
-        elementDUID.name = "00N2400000HRtrl";
-        elementDUID.value = this.snplow5.getDomainUserId();
-        elementDUID.setAttribute("type", "hidden");
-        form.appendChild(elementDUID);
-
-      })
+      try {
+        snowplow(function () {
+          var elementDUID = document.createElement("input");
+          elementDUID.name = "00N2400000HRtrl";
+          elementDUID.value = this.snplow5.getDomainUserId();
+          elementDUID.setAttribute("type", "hidden");
+          form.appendChild(elementDUID);
+        })
+      }
+      catch (e) {}
 
       document.getElementById("inputLeadSource").setAttribute("name","lead_source");
       document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");

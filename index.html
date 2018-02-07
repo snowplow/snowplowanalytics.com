@@ -4,6 +4,11 @@ class: home
 title: Snowplow | Enabling Smart People to Differentiate with Data
 description: Snowplow Analytics technology give you control of your own data, setting your team free to use data to be transformative. Take control of you data!
 
+redirect_from:
+  - /analytics/
+  - /documentation/
+  - /no-js-tracker.html
+  - /get-started/
 ---
 
 <section class="slick no-gutter-vertical" data-slick-fade="1" data-slick-selector=".jumbotron" data-slick-controls=".controls">
@@ -37,7 +42,7 @@ description: Snowplow Analytics technology give you control of your own data, se
     <div class="container controls"></div>
 </section>
 
-<section class="hero no-gutter-vertical" style="background-image: url({{ BASE_PATH }}/assets/img/common/hero-4.jpg)">
+<section class="hero no-gutter-vertical parallax" style="background-image: url({{ BASE_PATH }}/assets/img/common/hero-4.jpg)">
     <div class="container text-center well-xs no-border trusties grid-logos grayscale-img">
         <h5>Trusted by</h5>
         <div class="clearfont">
@@ -86,13 +91,17 @@ description: Snowplow Analytics technology give you control of your own data, se
     <div class="container side-by-side same-height well-lg no-gutter no-padding no-border text-center theme-light">
         <div class="container no-gutter">
             <div class="col bg-success pad-100 md-pad-40 xs-pad-20">
-                <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Home_Icon_Insights.svg" width="807" height="526" alt="Snowplow Insights">
+                <div class="bodymovin" data-src="insights"></div>
+                <h3 class="text-uppercase md-spacer-top-50 brand insights-box"><i class="i-logo-type"></i>Insights</h3>
+
                 <h5 class="spacer-30">Data collection done right</h5>
                 <p>Data collection is the foundation of a data strategy. Collect user-level and event-level data across all platforms and channels.</p>
                 <a href="{{ BASE_PATH }}/products/snowplow-insights/" class="btn btn-primary">Learn More</a>
             </div>
             <div class="col bg-info pad-100 md-pad-40 xs-pad-20">
-                <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Home_Icon_React.svg" width="804" height="568" alt="Snowplow React">
+                <div class="bodymovin" data-src="react"></div>
+                <h3 class="text-uppercase md-spacer-top-50 brand insights-box"><i class="i-logo-type"></i>React<span>BETA</span></h3>
+
                 <h5 class="spacer-30">Act on your data in real-time</h5>
                 <p>Tailor your service and messaging to each of your users, across all channels and platforms.</p>
                 <a href="{{ BASE_PATH }}/products/snowplow-react/" class="btn btn-primary">Learn More</a>
@@ -122,7 +131,7 @@ description: Snowplow Analytics technology give you control of your own data, se
                     </ul>
                     <a href="{{ BASE_PATH }}/services/" class="btn btn-primary at-bottom">Learn More</a>
                 </div>
-            </div> 
+            </div>
             <div class="col pad-b-100 xs-pad-b-50">
                 <div class="max-width-80 xs-max-width-100">
                     <!--<h5 class="text-uppercase">Products</h5>-->
