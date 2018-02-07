@@ -5,7 +5,7 @@ title-short: Iglu R8 Basel Dove
 tags: [iglu, json, json schema, redshift]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/02/06/iglu-r8-basel-dove-released/
+permalink: /blog/2018/02/07/iglu-r8-basel-dove-released/
 ---
 
 We are excited to announce a new Iglu release, introducing a good number of improvements focused on our igluctl CLI tool.
