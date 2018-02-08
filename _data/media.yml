@@ -1,0 +1,41 @@
+- media: Gousto
+  title: Gousto use (and love) Snowplow.
+  name: Dejan Petelin
+  content: I was presenting our journey of leveraging Snowplow at the 4th Snowplow London Meetup yesterday. I wrote about Snowplow before for those who don’t know what it is.
+  picture: /assets/img/media_logos/logo-gousto.png
+  picture_wide: /assets/img/media_logos/logo-gousto@2x.png
+
+- media: Medium
+  title: Scaling Unsplash with a small team
+  name: Luke Chesser
+  content: One of the most fun things about building Unsplash si the sheer size, scal, and popularity of the product.
+  picture: /assets/img/media_logos/logo-medium.png
+  picture_wide: /assets/img/media_logos/logo-medium@2x.png
+
+- media: Linkedin
+  title: Free anlaytics fro a growing (mid-stage) SaaS company
+  name: Anup Surendran
+  content: You don’t have a data team, your egineers are still producing your business reports and you’re being asked to deliver increasingly sophistecated and diverse analytics to the business.
+  picture: /assets/img/media_logos/logo-linkedin.png
+  picture_wide: /assets/img/media_logos/logo-linkedin@2x.png
+
+- media: Gousto
+  title: Gousto use (and love) Snowplow.
+  name: Dejan Petelin
+  content: I was presenting our journey of leveraging Snowplow at the 4th Snowplow London Meetup yesterday. I wrote about Snowplow before for those who don’t know what it is.
+  picture: /assets/img/media_logos/logo-gousto.png
+  picture_wide: /assets/img/media_logos/logo-gousto@2x.png
+
+- media: Medium
+  title: Scaling Unsplash with a small team
+  name: Luke Chesser
+  content: One of the most fun things about building Unsplash si the sheer size, scal, and popularity of the product.
+  picture: /assets/img/media_logos/logo-medium.png
+  picture_wide: /assets/img/media_logos/logo-medium@2x.png
+
+- media: Linkedin
+  title: Free anlaytics fro a growing (mid-stage) SaaS company
+  name: Anup Surendran
+  content: You don’t have a data team, your egineers are still producing your business reports and you’re being asked to deliver increasingly sophistecated and diverse analytics to the business.
+  picture: /assets/img/media_logos/logo-linkedin.png
+  picture_wide: /assets/img/media_logos/logo-linkedin@2x.png

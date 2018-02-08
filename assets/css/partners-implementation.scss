@@ -59,3 +59,25 @@
 	}
  }
 
+
+
+ 
+
+
+ .filtered-by-location {
+	border-bottom: solid 1px $gray-lighter;
+	&.blue_, &:last-of-type, &.no_border_ {
+		border-bottom: none;
+	}
+ }
+
+
+
+
+
+
+
+
+
+
+
