@@ -5,7 +5,7 @@ title-short: Warehousing Google Analytics data
 tags: [analytics, Google Analytics, data warehousing]
 author: Anthony
 category: Analytics
-permalink: /blog/2018/02/07/warehousing-google-analytics-data-api-vs-hit-level-data/
+permalink: /blog/2018/02/08/warehousing-google-analytics-data-api-vs-hit-level-data/
 ---
 
 Recently, we very excitedly announced that Google Analytics users could use Snowplow to load their data into their own data warehouses in Redshift and Snowflake DB, a major milestone in making Snowplow available to as many data professionals as possible regardless of their infrastructure. We were humbled by how excited many of you were about this integration, though among the positive sentiment there was a recurring question: why? As we discussed [in the release post][r99], adding native support for Google Analytics gives users the benefits and opportunities of both platforms in a straightforward manner. Specifically, the integration allows for the warehousing of hit-level data collected by the Google Analytics Javascript trackers.
@@ -24,7 +24,7 @@ There are three ways to get your data out of Google Analytics. Each one has diff
 2. By mirroring the Javascript HTTP requests that are made from the Google Analytics trackers to a new location
 3. Accessing your data directly through BigQuery
 
-Taking data and loading it via the GA API into a warehouse is the most common method of moving Google Analytics data. Platforms like [XPlenty][xplenty], [Stitch Data][stitch], or [Treasure Data][treasure], for example, utilize this method to let users pump their GA data into their warehouse so that it can be used with different business intelligence tools. While straightforward and accessible, Google Analytics applies a standard set of data processing steps on data pulled through their API that are standard across their user base and might not be a good fit for every user. This makes actions like segmenting users by behavior using machine learning tools challenging because you’re limited by the granularity of the data you’re loading into your ML process.
+Taking data and loading it via the GA API into a warehouse is the most common method of exporting Google Analytics data. Platforms like [XPlenty][xplenty], [Stitch Data][stitch], or [Treasure Data][treasure], for example, utilize this method to let users pump their GA data into their warehouse. While straightforward and accessible, Google Analytics only makes aggregated data available from the API: effectively you're downloading a report with each request. This makes actions like segmenting users by behavior using machine learning tools challenging because you’re limited by the granularity of the data you’re loading into your ML process.
 
 The second method, mirroring the HTTP requests made by the Google Analytics Javascript on your website to another endpoint that you control, is the method we chose for our integration. Configuring Snowplow for Google Analytics might require front-loading more work (though thanks to Simo Ahava’s hard work, you can find a set of steps [on his website][simo]), but the end result is access to much more granular data. The data returned by this approach has many advantages, but also comes with some disadvantages. Google does a lot of post processing on the raw data before making it available via reports in the Analytics UI which won’t be applied to the mirrored data. This means, for example, that there are no session identifiers associated with each hit. You would also need to apply your own attribution model to the underlying data.
 
@@ -46,7 +46,7 @@ The hit-level data collected through Google Analytics is sent to their servers w
 
 <h2 id="examples">Examples</h2>
 
-Let’s look at examples of what can be done with these two different data types. In Google Analytics, you don’t have access to the cookie ID, so it becomes difficult to drill down to the individual user with the out of the box solution (though we’ve heard many analysts have discovered ways around this). In the absence of this, the GA API allows for pulling aggregate data that can be very useful in monitoring your web traffic.
+Let’s look at examples of what can be done with these two different data types. If you're accessing Google Analytics data through the API, Google does not provide an out of the box option for using cookie ID as a dimension or a filter, making it impossible to drill down to an individual or user level. In the absence of this, the GA API allows for pulling aggregate data that can be very useful in monitoring your web traffic.
 
 Using Google Developer Tools Query Explorer, I attempted to run a query using as many metrics and dimensions as possible, looking to return the richest data possible. My first selection returned an error that these dimensions and metrics cannot be queried together- while Google Analytics has very detailed data, it needs to be combined in certain combinations. By modifying the dimensions and metrics in my query, I was able to generate results:
 
@@ -82,6 +82,8 @@ This query collects the page URL, URL path, and geo-location for one given visit
 
 
 Clicking through the eight pages of results returned by the query will let you retrace the user’s steps as they navigated your website. Adding in additional metrics or dimensions is as straightforward as modifying the SQL query, though that’s easier for some than others. However, even with the extra energy required to have data agency using Snowplow with Google Analytics, the resulting data sets have the potential to be exponentially more specific to your use case and therefore more meaningful in many situations.
+
+<h2 id="try hit-level data">Give hit-level data a try!</h2>
 
 If you’re a Google Analytics user hitting the limits of what you can currently do with your data because of challenges posed by aggregate data or you want to join your Google Analytics data with other data sets in a warehouse for analysis, [contact us][contact] to learn more! We’re always excited to have a chat.
 
