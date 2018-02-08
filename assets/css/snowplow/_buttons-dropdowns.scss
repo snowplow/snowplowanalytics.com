@@ -106,7 +106,8 @@ input[type=submit],
 	    background-color: transparent;
 
 		&:hover,
-		&:focus
+		&:focus,
+		&.active_
 		{
 			color:$brand-primary;
 			background-color:$white; 
