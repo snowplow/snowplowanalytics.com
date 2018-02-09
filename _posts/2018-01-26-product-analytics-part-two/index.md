@@ -8,7 +8,7 @@ category: Analytics
 permalink: /blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 ---
 
-*Part two of our series on product analytics. Read: [Part 1][product1], [Part 3][product3]*
+*Part two of our series on product analytics. Read: [Part 1][product1], [Part 3][product3], [Part 4][product4]*
 
 ---
 
@@ -58,6 +58,8 @@ The user journey is complex, as the example above shows. Using data in the produ
 [product1]: https://snowplowanalytics.com/blog/2018/01/19/product-analytics-part-one-data-and-digital-products/
 
 [product3]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
+
+[product4]: https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/
 
 [Airbnb blog]: https://medium.com/airbnb-engineering/how-airbnb-democratizes-data-science-with-data-university-3eccc71e073a
 
