@@ -5,11 +5,19 @@ $(document).ready(function() { console.log('country_');
 
 		var country_ = $(this).attr('data-country'); 
 
-		$('.filter-by-location').removeClass('active_');
-		$(this).addClass('active_');
+		if (country_ == 0 || country_ == '0') {
+			$('.filter-by-location').removeClass('active_');
+			$(this).addClass('active_');
 
-		$('.filtered-by-location').fadeOut().addClass('hidden_');
-		$('.filtered-by-location[data-country="'+country_+'"]').fadeIn(300).removeClass('hidden_');
+			$('.filtered-by-location').fadeOut().addClass('hidden_');
+			$('.filtered-by-location').fadeIn(300).removeClass('hidden_');
+		} else {
+			$('.filter-by-location').removeClass('active_');
+			$(this).addClass('active_');
+
+			$('.filtered-by-location').fadeOut().addClass('hidden_');
+			$('.filtered-by-location[data-country="'+country_+'"]').fadeIn(300).removeClass('hidden_');
+		}
 
 		checkDivs(1);
 
