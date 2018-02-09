@@ -79,6 +79,8 @@ We’d love to hear about what tools you use regularly as part of your product d
 
 [tools]: /assets/img/blog/2018/02/tools.jpg
 
+[funnel]: /assets/img/blog/2018/02/funnel-analysis.jpg
+
 [discourse]: https://discourse.snowplowanalytics.com/t/most-commonly-used-tools-of-product-analysts/1787
 
 [subscribe]: http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20blogs&utm_medium=hyperlink&utm_campaign=product%20analytics&utm_content=subscription
