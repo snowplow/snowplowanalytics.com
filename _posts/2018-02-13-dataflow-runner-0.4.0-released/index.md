@@ -54,22 +54,24 @@ throughout the lifetime of the cluster.
 
 **TODO BEN CAN YOU DEFINE WHAT one informational line MEANS? ADD A BIT MORE DETAIL HERE**
 
-This is in contrast with the previous approach which consisted of outputting every step state
+This is in contrast with the previous approach which consisted of outputting every step's state
 every fifteen seconds.
+
+**TODO DO YOU MEAN EMITTING EVERY 15 SECONDS THE STATE OF EVERY STEP IN THE JOBFLOW - WHETHER PAST PRESENT OR FUTURE?**
 
 <h2 id="roadmap">3. Roadmap</h2>
 
-As we stated in [the blog post for the previous release][release-030-post],
-we are committed to supporting other clouds such as Azure HDInsight (see [issue #22][issue-22]) and
-Google Cloud Dataproc (see [issue #33][issue-33]).
+Dataflow Runner continues to evolve at Snowplow.
 
-If you have other features in mind, feel free to log an issue in
-[the GitHub repository][df-runner-issues].
+As we stated in [the blog post for the previous release][release-030-post], we are committed to supporting other cloud "big data services" such as Azure HDInsight (see [issue #22][issue-22]) and Google Cloud Dataproc (see [issue #33][issue-33]).
+
+If you have other features in mind, feel free to log an issue in [the GitHub repository][df-runner-issues].
 
 <h2 id="contributing">4. Contributing</h2>
 
-You can check out the [repository][df-runner-repo] if you'd like to get involved! In particular, any
-preparatory work getting other cloud providers integrated would be much appreciated.
+You can check out the [repository][df-runner-repo] if you'd like to get involved!
+
+In particular, any help integrating other big data services such as HDInsight or Cloud Dataproc would be much appreciated.
 
 [release-040]: https://github.com/snowplow/dataflow-runner/releases/tag/0.4.0
 [release-030-post]: /blog/2017/05/30/dataflow-runner-0.3.0-released#roadmap
