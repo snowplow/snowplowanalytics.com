@@ -5,36 +5,36 @@ title-short: Dataflow Runner 0.4.0
 tags: [snowplow, golang, orchestration, emr, hadoop]
 author: Ben
 category: Releases
-permalink: /blog/2018/01/25/dataflow-runner-0.4.0-released/
+permalink: /blog/2018/02/13/dataflow-runner-0.4.0-released/
 ---
 
 We are pleased to announce [version 0.4.0][release-040] of Dataflow Runner, our cloud-agnostic tool
-to create clusters and run jobflows. This small release is centered around usability improvements.
+to create batch-processing clusters and run jobflows. This small release is centered around usability improvements.
 
 In this post, we will cover:
 
-1. [Fetching failed steps logs](#logs)
+1. [Fetching logs for failed steps](#logs)
 2. [Reducing logging noise](#noise)
 3. [Roadmap](#roadmap)
 4. [Contributing](#contributing)
 
 <!--more-->
 
-<h2 id="locks">1. Fetch failed steps logs</h2>
+<h2 id="locks">1. Fetching logs for failed steps</h2>
 
-Leveraging the `run-transient` command, which, as a reminder, launches an EMR cluster, execute the
-given steps and shuts the cluster down, it is not possible to access the logs produced by the
-failed steps, if any, through the `--log-failed-steps` flag.
+When leveraging the `run-transient` command (which launches an EMR cluster, executes the
+given steps and shuts the cluster down), it is now possible to access the logs produced by any
+failed steps through the `--log-failed-steps` flag.
 
-As an example, let's say I launched a cluster performing a couple of [`s3-dist-cp`][s3-dist-cp]
-with the following command:
+In the following example, I launch a cluster to performing a couple of [S3DistCp][s3-dist-cp]
+steps with the following command:
 
 {% highlight bash %}
 ./dataflow-runner run-transient --emr-config cluster.json --emr-playbook playbook.json --log-failed-steps
 {% endhighlight %}
 
-Unfortunately, one of the step failed. However, thanks to the `--log-failed-steps` flag, you'll be
-able to look through its logs without going through the S3 bucket:
+Unfortunately, one of the steps failed to complete successfully. However, thanks to the `--log-failed-steps` flag, you'll be
+able to review its logs without having to access the S3 bucket:
 
 {% highlight bash %}
 ERRO[0004] Step 'step' with id 'step-id' was FAILED
@@ -45,10 +45,14 @@ ERRO[0004] Exception in thread "main" java.lang.RuntimeException: Error running 
     ...
 {% endhighlight %}
 
+**TODO BEN TO EXPLAIN PRECISELY WHICH FILES ARE DOWNLOADED AND PRINTED OUT, AND IN WHAT SCENARIOS.**
+
 <h2 id="tags">2. Reducing logging noise</h2>
 
-We've also improved logging in the sense that each step will produce only one line of log
+We have also reduced the "noisiness" of our logging, with each jobflow step now producing only one informational line
 throughout the lifetime of the cluster.
+
+**TODO BEN CAN YOU DEFINE WHAT one informational line MEANS? ADD A BIT MORE DETAIL HERE**
 
 This is in contrast with the previous approach which consisted of outputting every step state
 every fifteen seconds.
