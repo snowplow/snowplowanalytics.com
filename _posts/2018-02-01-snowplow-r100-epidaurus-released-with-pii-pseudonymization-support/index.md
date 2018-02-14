@@ -136,7 +136,7 @@ Example contents of `pii.json`:
           "pojo": {
             "field": "user_fingerprint"
           }
-        }
+        },
         {
           "json": {
             "field": "contexts",
