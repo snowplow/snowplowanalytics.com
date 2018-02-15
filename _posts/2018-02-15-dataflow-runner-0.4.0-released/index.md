@@ -5,7 +5,7 @@ title-short: Dataflow Runner 0.4.0
 tags: [snowplow, golang, orchestration, emr, hadoop]
 author: Ben
 category: Releases
-permalink: /blog/2018/02/13/dataflow-runner-0.4.0-released/
+permalink: /blog/2018/02/15/dataflow-runner-0.4.0-released/
 ---
 
 We are pleased to announce [version 0.4.0][release-040] of Dataflow Runner, our cloud-agnostic tool
@@ -22,19 +22,18 @@ In this post, we will cover:
 
 <h2 id="locks">1. Fetching logs for failed steps</h2>
 
-When leveraging the `run-transient` command (which launches an EMR cluster, executes the
-given steps and shuts the cluster down), it is now possible to access the logs produced by any
-failed steps through the `--log-failed-steps` flag.
+When leveraging the `run-transient` or `run` commands, it is now possible to access the logs
+produced by any failed steps through the `--log-failed-steps` flag.
 
 In the following example, we launch a cluster to performing a couple of [S3DistCp][s3-dist-cp]
 steps with the following command:
 
 {% highlight bash %}
-./dataflow-runner run-transient --emr-config cluster.json --emr-playbook playbook.json --log-failed-steps
+./dataflow-runner run --emr-playbook playbook.json --emr-cluster j-123 --log-failed-steps
 {% endhighlight %}
 
 Unfortunately, one of the steps failed to complete successfully. However, thanks to the `--log-failed-steps` flag, we'll be
-able to review its logs without having to access the S3 bucket:
+able to review its logs without having to access the S3 bucket which contains the logs:
 
 {% highlight bash %}
 ERRO[0004] Step 'step' with id 'step-id' was FAILED
