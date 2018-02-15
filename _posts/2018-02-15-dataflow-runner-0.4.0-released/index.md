@@ -25,8 +25,7 @@ In this post, we will cover:
 When leveraging the `run-transient` or `run` commands, it is now possible to access the logs
 produced by any failed steps through the `--log-failed-steps` flag.
 
-In the following example, we launch a cluster to performing a couple of [S3DistCp][s3-dist-cp]
-steps with the following command:
+In the following example, we launch a cluster to performing a couple of [S3DistCp][s3-dist-cp] steps with the following command:
 
 {% highlight bash %}
 ./dataflow-runner run --emr-playbook playbook.json --emr-cluster j-123 --log-failed-steps
@@ -44,22 +43,22 @@ ERRO[0004] Exception in thread "main" java.lang.RuntimeException: Error running 
     ...
 {% endhighlight %}
 
-Note that all log files for all the steps which ended up in the `FAILED` state will be printed out.
+All of the log files for all of the steps which ended up in the `FAILED` state will be printed out.
 Usually, those log files can be located in a bucket conforming to the following pattern
 `s3://my-bucket/emr-logs/j-123/steps/s-123/` where:
 
-- `s3://my-bucket/emr-logs` is the log URI you filled out when launching the cluster
-- `j-123` is the cluster ID
-- `s-123` is the failed step ID
+* `s3://my-bucket/emr-logs` is the log URI you filled out when launching the cluster
+* `j-123` is the cluster ID
+* `s-123` is the failed step ID
 
 <h2 id="tags">2. Reducing logging noise</h2>
 
 We have also reduced the "noisiness" of our logging, with each jobflow step now producing only one
-informational line throughout the lifetime of the cluster by specifying its output status, e.g.
+informational line throughout the lifetime of the cluster, specifying the step's concluding status, e.g.
 whether it completed successfully, was cancelled or failed.
 
-This is in contrast with the previous approach which consisted of outputting every completed,
-successfully or not, step's state every fifteen seconds.
+This is in contrast with the previous approach, where Dataflow Runner would output the status of every completed step,
+whether successfully completed or not, *every fifteen seconds*.
 
 <h2 id="roadmap">3. Roadmap</h2>
 
