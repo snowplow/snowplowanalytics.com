@@ -221,7 +221,7 @@
   spiel: |
       <a href="/blog/authors/oguzhan/">Oguzhan</a> is a data engineer at Snowplow. You can find him on <a href="https://github.com/oguzhanunlu">GitHub</a>, <a href="https://www.linkedin.com/in/oguzhanunlu/">LinkedIn</a>.
 
-  
+
 
 - name: Kostas
   full_name: Konstantinos Servis
@@ -238,3 +238,10 @@
   avatar:  /assets/img/team/mhadam.jpg
   spiel:   |
       <a href="/blog/authors/mhadam/">Mike</a> is a data engineer intern at Snowplow. You can find him on <a href="https://twitter.com/mike_hadam">Twitter</a> and <a href="https://www.linkedin.com/in/mhadam/">LinkedIn</a>.
+
+- name: Miriam
+  full_name: Miriam de Medwe
+  url: /blog/authors/miriam/
+  avatar:  /assets/img/team/miriam.jpg
+  spiel:   |
+      <a href="/blog/authors/miriam/">Miriam</a> is the Talent Acquisition Manager at Snowplow. You can find her on <a href="https://www.linkedin.com/in/miriam-de-medwe-929955106/">LinkedIn</a>.
