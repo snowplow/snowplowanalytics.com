@@ -5,7 +5,7 @@ title-short: Dataflow Runner 0.4.0
 tags: [snowplow, golang, orchestration, emr, hadoop]
 author: Ben
 category: Releases
-permalink: /blog/2018/02/15/dataflow-runner-0.4.0-released/
+permalink: /blog/2018/02/16/dataflow-runner-0.4.0-released/
 ---
 
 We are pleased to announce [version 0.4.0][release-040] of Dataflow Runner, our cloud-agnostic tool
