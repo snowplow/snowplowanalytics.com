@@ -8,11 +8,11 @@ category: Releases
 permalink: /blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/
 ---
 
-We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.9.0][2.9.0-tag] introduces data rights event tracking, as well as new and improved form tracking and the ability to make new tracker sessions client-side.
+We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.9.0][2.9.0-tag] introduces first class methods for tracking when users grant or withdraw consent for their personal data to be processed for specific purposes, as well as new and improved form tracking and the ability to make new tracker sessions client-side.
 
 Read on below the fold for:
 
-1. [Data consent tracking](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#data-rights)
+1. [Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#data-rights)
 2. [Form tracking with more control](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#form-tracking)
 3. [Start new sessions client-side](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#sessions)
 4. [Updates and bug fixes](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#updates)
@@ -21,9 +21,9 @@ Read on below the fold for:
 
 <!--more-->
 
-<h2 id="data-rights">1. Data consent tracking</h2>
+<h2 id="data-rights">1. Tracking users granting, adn withdrawing, consent to have their personal data processed for specific purposes</h2>
 
-Against the backdrop of the incoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, various forms of data collection.
+Against the backdrop of the incoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, having their personal data processed for specific purposes.
 
 We envision that many digital businesses will want to track the consent of their users against relatively finegrained "bundles" of specific data usecases, which we model in Snowplow as [consent documents][cds].
 
@@ -88,7 +88,7 @@ Other updates and fixes include:
 
 * Add `identifyUser` as an alias for `setUserId` ([#621][621])
 * Make the `newDocumentTitle` variable local ([#580][580])
-* Enforce that `geolocation.timestamp` is an integer ([#602][602]) 
+* Enforce that `geolocation.timestamp` is an integer ([#602][602])
 * Bump the `semver` dependency to 4.3.2 ([#625][625])
 * Remove `respectOptOutCookie` from the Tracker function comments ([#605][605])
 
