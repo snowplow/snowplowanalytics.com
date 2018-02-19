@@ -17,22 +17,20 @@ Read on for more information on R100 Epidaurus, named after [an ancient city in 
 
 <!--more-->
 1. [What is PII, GDPR, pseudonymization, and why they are important?](#pii-define)
-2. [PII Enrichment](#pii)
-3. [How do I configure pseudonymization for my Snowplow data?](#pii-configure)
+2. [PII Enrichment](#pii-enrichment)
+3. [Pseudonymizing your Snowplow events](#pii-configure)
 4. [Other changes](#other)
-5. [New Iglu Central schemas](#schemas)
 6. [Upgrading](#upgrading)
 7. [Roadmap](#roadmap)
 8. [Help](#help)
 
 ![epidaurus][epidaurus-img]
 
-
 <h2 id="pii-define">1. What is PII, GDPR, pseudonymization, and why they are important?</h2>
 
 <h3>PII</h3>
 
-The term PII originally appeared in the context of healthcare records since the early days of healthcare record keeping. It soon became evident that the accumulation of healthcare records had huge potential to promote population-level measures and very often there was public and research interest in such data. At the same time researches had to be careful to avoid releasing data that could uniquely identify an individual, hence the beginning of anonymization.
+The term [Personally identifiable information][pii-def] originally appeared in the context of healthcare records since the early days of healthcare record keeping. It soon became evident that the accumulation of healthcare records had huge potential to promote population-level measures and very often there was public and research interest in such data. At the same time researches had to be careful to avoid releasing data that could uniquely identify an individual, hence the beginning of anonymization.
 
 Nowadays, collecting and processing large amounts of information is increasingly within reach of even small organizations, with excellent tools, such as Snowplow supporting that process. Naturally, citizens and in turn governments became concerned that this information can be misused, and decided to give back some control to the subjects whose records were being kept (data subjects in EU law terms).
 
@@ -50,29 +48,29 @@ Snowplow in order to help its clients and the open-source users to meet their ob
 
 Concretely, the user is able to configure any and all of the fields that they wish their values hashed within Snowplow. This is only an initial capability to help out users meet the requirements. Through hashing all the identifying fields the user can minimize the risk of identification of a data subject, and should therefore be a good way towards meeting their obligation as data handlers.
 
-<h2 id="pii">2. PII Enrichment</h2>
+<h2 id="pii-enrichment">2. PII Enrichment</h2>
 
-This Snowplow release introduces the *PII Enrichment*, which provides capabilities for better handling the Personally Identifiable Information (PII) of end-users interacting with a Snowplow pipeline.
+This Snowplow release introduces the *PII Enrichment*, which provides capabilities for Snowplow operators to better protect the privacy rights of data subjects. The obligations of handlers of Personally Identifiable Information (PII) data under GDPR have been outlined on the [EU GDPR website][gdpr-web].
 
-The PII pseudonymizer is intended to help our users better protect
-the privacy rights of data subjects. Obligations of handlers of PII data have been outlined in the [EU General Data Protection Regulation site][gdpr-web].
-This release is providing our users with a way to pseudonymize fields in either the built in Snowplow data structures,
-or the user's custom structures.
+This initial release of the PII Enrichment provides a way to *pseudonymize* fields within Snowplow enriched events. You can configure the  enrichment to pseudonymize any of the following datapoints:
 
-In detail, the user can declare any of the Snowplow "POJO" fields (scalar fields that contain a single string value) from the [configuration schema][igc-schema] or any "JSON" path in the fields that contain a JSON string ("contexts", "derived_contexts" or "unstruct_event") as PII and have Snowplow pseudonymize them. In addition, the user needs to specify the "strategy" that will be used in the pseudonymization.
+1. Any of the "first-class" fields which are part of the [Canonical event model][canonical-event-model], are scalar fields containing a single string and have been identified as being potentially sensitive
+2. Any of the properties within the JSON instance of a Snowplow self-describing event or context (wherever that context originated). You simply specify the Iglu schema to target and a [JSON Path][json-path] to identify the property or properties within to pseudonomize
 
-Currently the strategy that is implemented is hashing using one of the following algorithms:
+In addition, you must specify the "strategy" that will be used in the pseudonymization. Currently the available strategies involve *hashing* the PII, using one of the following algorithms:
 
-* `MD2`, the 128-bit algorithm [MD2][md2] (not-recommended due to performance see [RFC6149][rfc6149])
+* `MD2`, the 128-bit algorithm [MD2][md2] (not-recommended due to performance reasons see [RFC6149][rfc6149])
 * `MD5`, the 128-bit algorithm [MD5][md5]
 * `SHA-1`, the 160-bit algorithm [SHA-1][sha-1]
 * `SHA-256`, 256-bit variant of the [SHA-2][sha-2] algorithm
 * `SHA-384`, 384-bit variant of the [SHA-2][sha-2] algorithm
 * `SHA-512`, 512-bit variant of the [SHA-2][sha-2] algorithm
 
-Further capabilities for the PII Enrichment are planned in the [second phase of this PII Enrichment][r10x-pii2].
+There is [a new Iglu schema][igc-schema] that specifies the configuration format for the PII Enrichment.
 
-<h2 id="pii-configure">3. How do I configure pseudonymization for my Snowplow data?</h2>
+Further capabilities for the PII Enrichment, including the ability to reverse pseudonymization in a controlled way, are planned for the [second phase of this PII Enrichment][r10x-pii2].
+
+<h2 id="pii-configure">3. Pseudonymizing your Snowplow events</h2>
 
 <h3>TL;DR</h3>
 
@@ -114,6 +112,9 @@ To setup stream enrich you will need:
 </ol>
 
 <h5>Example configuration</h5>
+
+
+
 
 You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii.json`.
 
@@ -176,28 +177,17 @@ java -jar se/snowplow-stream-enrich-0.14.0-rc1.jar --config se/config.hocon --re
 
 {% endhighlight %}
 
-<h4>Redshift</h4>
-
-If you were already using Snowplow with Redshift as a storage target the existing columns need to be widened and we have created a [migration script][rs-migration] for that purpose.
-
-To use it you simply run it with psql like so:
-
-{% highlight bahs %}
-psql -h <host_enpoint> -p 5439 -d <name_of_the_database> -U <username> -f migrate_0.9.0_to_0.10.0.sql
-{% endhighlight %}
-
+ADD WARNING ABOUT WIDE COLUMNS
 
 <h2 id="other">4. Other changes</h2>
 
-Other changes include widening the labels in Redshift to support the pseudonymization hashes where that was needed to support pseudonymization. We also widened the "se_label" field in Redshift to support URLs. 
+In order to support the replacing of original field values with pseudonymization hashes, we have had to widen various columns in the Redshift `atomic.events` table ([issue #3528][issue-3528]). At the same time, we also widened the "se_label" field in Redshift to support URLs. 
 
-Finally, we continued improving the quality of our codebase by using automated code formatting, which will greatly help new contributors to the project meet our high quality standards.
+Finally, we continue to improve the quality of our codebase by using [scalafmt][scalafmt] automated code formatting, which will greatly help new contributors to the project meet our high quality standards. You can see the standards we applied in [issue #3496][issue-3496].
 
-<h2 id="schemas">5. New Iglu Central schemas</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
-There is [a new Iglu schema][igc-schema] that specifies the configuration format for PII enrichment.
-
-<h2 id="upgrading">6. Upgrading</h2>
+<h3>Stream Enrich</h3>
 
 The updated Stream Enrich artifact for R100 Epidaurus is available at the following location:
 
@@ -205,12 +195,19 @@ The updated Stream Enrich artifact for R100 Epidaurus is available at the follow
 http://dl.bintray.com/snowplow/snowplow-generic/snowplow_stream_enrich_0.14.0.zip
 {% endhighlight %}
 
-Docker images for this new artifact will follow shortly, and the instructions for using them can be found [here][docker-instructions].
+Docker images for this new artifact will follow shortly; the instructions for using them can be found [here][docker-instructions].
 
-If you are using Redshift as a storage target, it is important to update the `atomic.events` table, so that the new fields will fit using:
-[a migration script][rs-migration].
+<h3>Redshift</h3>
 
-<h2 id="roadmap">7. Roadmap</h2>
+If you were already using Snowplow with Redshift as a storage target, the existing columns need to be widened as discussed above. We have created a [migration script][rs-migration] for this purpose.
+
+To use it you simply run it with psql like so:
+
+{% highlight bahs %}
+psql -h <host_enpoint> -p 5439 -d <name_of_the_database> -U <username> -f migrate_0.9.0_to_0.10.0.sql
+{% endhighlight %}
+
+<h2 id="roadmap">6. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
@@ -220,7 +217,7 @@ Upcoming Snowplow releases will include:
 
 We are also hard at work on a [second phase of this PII Enrichment][r10x-pii2], which will allow you to safely capture the original PII values which have been pseudonomized, ready for secure and audited de-anonymization on a case-by-case basis.
 
-<h2 id="help">8. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
@@ -228,6 +225,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [gdpr-web]: https://www.eugdpr.org/
 [igc-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0
+[json-path]: https://github.com/json-path/JsonPath
 
 [md2]: https://en.wikipedia.org/wiki/MD2_(cryptography)#MD2_hashes
 [md5]: https://en.wikipedia.org/wiki/MD5#MD5_hashes
@@ -235,11 +233,21 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [sha-2]: https://en.wikipedia.org/wiki/SHA-2#Comparison_of_SHA_functions
 [rfc6149]: https://tools.ietf.org/html/rfc6149
 
+[pii-def]: https://en.wikipedia.org/wiki/Personally_identifiable_information
+
 [epidaurus]: https://en.wikipedia.org/wiki/Epidaurus
 [epidaurus-img]: /assets/img/blog/2018/02/epidaurus.jpg
 [rs-migration]: https://github.com/snowplow/snowplow/blob/master/4-storage/redshift-storage/sql/migrate_0.9.0_to_0.10.0.sql
 
 [gcp-rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-google-cloud-platform/1505
+
+[canonical-event-model]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
+
+
+
+[scalafmt]: http://scalameta.org/scalafmt/
+[issue-3528]: https://github.com/snowplow/snowplow/issues/3528
+[issue-3496]: https://github.com/snowplow/snowplow/issues/3496
 
 [r10x-gcp]: https://github.com/snowplow/snowplow/milestone/138
 [r10x-bat-prio1]: https://github.com/snowplow/snowplow/milestone/155
