@@ -74,54 +74,15 @@ Further capabilities for the PII Enrichment, including the ability to reverse ps
 
 <h3>Before you start</h3>
 
-This brief tutorial assumes that you have 
+This brief tutorial assumes that you have gone through the [upgrading](#upgrading) section below, [deploying the latest version of Stream Enrich][setup-stream-enrich] and upgrading your Redshift table definition as necessary.
 
-If you are familiar with Snowplow, you can simply skip ahead to the new iglu schema which specifies the configuration format (including all the fields) [here](#schemas) and onwards to the [upgrading](#upgrading) section where you can get the latest standalone, and docker artifacts and the Redshift migration schema.
+<h3>Configuring the PII Enrichment</h3>
 
-<h3>Configuring the streaming pipeline</h3>
+Like all Snowplow enrichments, the PII Enrichment is configured using a JSON document which conforms to a JSON Schema, the [pii_enrichment_config][pii-config-schema], available in Iglu Central.
 
-We will assume that you have already set-up a tracker as described [here][tracker-setup], and skip ahead to setting up a collector. If you haven't and you are comfortable with using the shell you could simply use curl to try out you your collector (next step).
+Here is an example configuration:
 
-<h4>Stream collector</h4>
-One simple way of trialling the PII enrichment up and running is to setup a streaming pipeline. That consists of a stream collector, kinesis and stream enrich. Detailed instructions on how to setup the stream collector can be found [here][stream-collector-setting-up]. In short, you will need to run the newest stream collector using the latest collector artifact:
-{% highlight bash %}
-http://dl.bintray.com/snowplow/snowplow-generic/snowplow_scala_stream_collector_0.12.0.zip
-{% endhighlight %}
-
-In order to run it you will need to:
-
-<ol type="a">
-<li>Have set-up the appropriate kinesis (kafka and NSQ are also supported) stream.</li>
-<li>Obtain a sample configuration file from [here][sample-collector-config] and fill it in.</li>
-<li>Finally run the collector using:</li>
-</ol>
-
-{% highlight bash %}
-java -jar snowplow-stream-collector-0.12.0.jar --config my.conf
-{% endhighlight %}
-
-
-<h4>Stream enrich</h4>
-
-Detailed instructions on how to setup stream enrich can be found as always in the [wiki][setup-stream-enrich]. If you have used Snowplow before, a new configuration file is needed which will follow the corresponding [iglu schema][igc-schema]. A sample instance is given below.
-
-To setup stream enrich you will need:
-
-<ol type="a">
-<li>The name of the "good" stream that you configured above, which you will fill in:</li>
-<li>The sample configuration file [here][sample-enrich-config]. You have to fill in all the relevant values there.</li>
-<li>An instance of the PII enrichment configuration, conformant to the configuration schema [here][igc-schema].</li>
-</ol>
-
-<h5>Example configuration</h5>
-
-
-
-
-You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii.json`.
-
-Example contents of `pii.json`:
-```
+{% highlight json %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0",
   "data": {
@@ -142,9 +103,9 @@ Example contents of `pii.json`:
         },
         {
           "json": {
-            "field": "contexts",
+            "field": "unstruct_event",
             "schemaCriterion": "iglu:com.mailgun/message_clicked/jsonschema/1-0-*",
-            "jsonPath": "$['ip','recipient']"
+            "jsonPath": "$['recipient']"
           }
         }
       ],
@@ -156,26 +117,32 @@ Example contents of `pii.json`:
     }
   }
 }
+{% endhighlight %}
 
-```
+You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii_enrichment_config.json`.
 
-The above configuration is pertinent to a hypothetical pipeline that both tracks usage through both tracker protocol and a Mailgun webhook integration. In that hypothetical scenario that you have setup your tracker to send data to snowplow which includes the `user_id` and `user_fingerprint` fields, and in addition you have set-up the mailgun webhook integration (recently released [here][r97-knossos]); with the above configuration you are specifying that:
+The configuration above is for a Snowplow pipeline that is using receiving events from the Snowplow JavaScript Tracker, plus a Mailgun webhook integration:
 
-<ol type="a">
-  <li>You wish for the `user_id` and `user_fingerprint` from the standard fields to be hashed (full list of fields [here][tracker-protocol] and supported fields for anonymization are [here][igc-schema]).</li>
-  <li>You wish for the `ip` and `recipient` fields from the mailgun message clicked event to be hashed, but only if the schema version begins with `1-0-`</li>
-  <li>You wish to use the `SHA-256` variant of the algorithm (see [PII Enrichment](#pii) and the [schema][igc-schema] for a full list of options)</li>
-</ol>
+* The Snowplow JavaScript Tracker has been configured to emit events which includes the `user_id` and `user_fingerprint` fields
+* The Mailgun webhook (released in [R9 Knossos][r97-knossos]) is emitting `message_clicked` events (among other events, ignored for the purpose of this example)
 
-You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] and the [schema][igc-schema].
+With the above PII Enrichment configuration, then, you are specifying that:
 
-<h5>Execution</h5>
+* You wish for the `user_id` and `user_fingerprint` from the Snowplow Canonical event model fields to be hashed (the full list of supported fields for pseudonymization is viewable [in the enrichment configuration schema][pii-config-schema])
+* You wish for the `recipient` field from the Mailgun `message_clicked` event to be hashed, but only if the schema version begins with `1-0-`
+* You wish to use the `SHA-256` variant of the algorithm for the pseudonymization
 
-Finally you will have to run enrich like so:
+You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] alongside the [schema][pii-config-schema].
+
+<h3>Execution</h5>
+
+As usual, you would run Stream Enrich like so:
 
 {% highlight bash %}
-java -jar se/snowplow-stream-enrich-0.14.0-rc1.jar --config se/config.hocon --resolver file:se/resolver.json --enrichments file:se/enrichments
+java -jar se/snowplow-stream-enrich-0.14.0.jar --config se/config.hocon --resolver file:se/resolver.json --enrichments file:se/enrichments
 {% endhighlight %}
+
+Where your `pii_enrichment_config.json` configuration JSON is found in the `se/enrichments` folder.
 
 ADD WARNING ABOUT WIDE COLUMNS
 
@@ -224,7 +191,7 @@ For more details on this release, please check out the [release notes][release-n
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [gdpr-web]: https://www.eugdpr.org/
-[igc-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0
+[pii-config-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0
 [json-path]: https://github.com/json-path/JsonPath
 
 [md2]: https://en.wikipedia.org/wiki/MD2_(cryptography)#MD2_hashes
@@ -242,8 +209,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [gcp-rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-google-cloud-platform/1505
 
 [canonical-event-model]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
-
-
 
 [scalafmt]: http://scalameta.org/scalafmt/
 [issue-3528]: https://github.com/snowplow/snowplow/issues/3528
@@ -264,4 +229,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [tracker-setup]: https://github.com/snowplow/snowplow/wiki/Setting-up-a-Tracker
 [schema-validator]: https://json-schema-validator.herokuapp.com
 [r97-knossos]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/#mailgun
-[tracker-protocol]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/#mailgun
+
