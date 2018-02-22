@@ -72,7 +72,9 @@ Further capabilities for the PII Enrichment, including the ability to reverse ps
 
 <h2 id="pii-configure">3. Pseudonymizing your Snowplow events</h2>
 
-<h3>TL;DR</h3>
+<h3>Before you start</h3>
+
+This brief tutorial assumes that you have 
 
 If you are familiar with Snowplow, you can simply skip ahead to the new iglu schema which specifies the configuration format (including all the fields) [here](#schemas) and onwards to the [upgrading](#upgrading) section where you can get the latest standalone, and docker artifacts and the Redshift migration schema.
 
@@ -172,9 +174,7 @@ You can easily check whether your own configuration instance conforms to the sch
 Finally you will have to run enrich like so:
 
 {% highlight bash %}
-
 java -jar se/snowplow-stream-enrich-0.14.0-rc1.jar --config se/config.hocon --resolver file:se/resolver.json --enrichments file:se/enrichments
-
 {% endhighlight %}
 
 ADD WARNING ABOUT WIDE COLUMNS
@@ -203,7 +203,7 @@ If you were already using Snowplow with Redshift as a storage target, the existi
 
 To use it you simply run it with psql like so:
 
-{% highlight bahs %}
+{% highlight bash %}
 psql -h <host_enpoint> -p 5439 -d <name_of_the_database> -U <username> -f migrate_0.9.0_to_0.10.0.sql
 {% endhighlight %}
 
