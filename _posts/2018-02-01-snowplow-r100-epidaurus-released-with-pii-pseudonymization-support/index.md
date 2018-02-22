@@ -104,8 +104,8 @@ Here is an example configuration:
         {
           "json": {
             "field": "unstruct_event",
-            "schemaCriterion": "iglu:com.mailgun/message_clicked/jsonschema/1-0-*",
-            "jsonPath": "$['recipient']"
+            "schemaCriterion": "iglu:com.mailchimp/subscribe/jsonschema/1-0-*",
+            "jsonPath": "$.data.['email', 'ip_opt']"
           }
         }
       ],
@@ -119,17 +119,17 @@ Here is an example configuration:
 }
 {% endhighlight %}
 
-You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii_enrichment_config.json`.
+You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii_enrichment_config.json`. The above example and other enrichment configurations can be found as always in the [example configurations][gh-example-configs] on github.
 
-The configuration above is for a Snowplow pipeline that is using receiving events from the Snowplow JavaScript Tracker, plus a Mailgun webhook integration:
+The configuration above is for a Snowplow pipeline that is using receiving events from the Snowplow JavaScript Tracker, plus a Mailchimp webhook integration:
 
 * The Snowplow JavaScript Tracker has been configured to emit events which includes the `user_id` and `user_fingerprint` fields
-* The Mailgun webhook (released in [R9 Knossos][r97-knossos]) is emitting `message_clicked` events (among other events, ignored for the purpose of this example)
+* The Mailchimp webhook (available since [release 0.9.11][release-0.9.11]) is emitting `subscribe` events (among other events, ignored for the purpose of this example)
 
 With the above PII Enrichment configuration, then, you are specifying that:
 
 * You wish for the `user_id` and `user_fingerprint` from the Snowplow Canonical event model fields to be hashed (the full list of supported fields for pseudonymization is viewable [in the enrichment configuration schema][pii-config-schema])
-* You wish for the `recipient` field from the Mailgun `message_clicked` event to be hashed, but only if the schema version begins with `1-0-`
+* You wish for the `data/email` and `data/ip_opt` fields from the Mailchimp `subscribe` event to be hashed, but only if the schema version begins with `1-0-`
 * You wish to use the `SHA-256` variant of the algorithm for the pseudonymization
 
 You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] alongside the [schema][pii-config-schema].
@@ -228,5 +228,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [setup-stream-enrich]: https://github.com/snowplow/snowplow/wiki/setting-up-stream-enrich
 [tracker-setup]: https://github.com/snowplow/snowplow/wiki/Setting-up-a-Tracker
 [schema-validator]: https://json-schema-validator.herokuapp.com
-[r97-knossos]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/#mailgun
 
+[release-0.9.11]: https://snowplowanalytics.com/blog/2014/11/10/snowplow-0.9.11-released-with-webhook-support/#mailchimp
+[gh-example-configs]: https://github.com/snowplow/snowplow/blob/master/3-enrich/config/enrichments/
