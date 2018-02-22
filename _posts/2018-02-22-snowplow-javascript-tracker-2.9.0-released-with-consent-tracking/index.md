@@ -5,27 +5,27 @@ title-short: Snowplow JavaScript Tracker 2.9.0
 tags: [snowplow, javascript, privacy, optout, gdpr, eprivacy, data rights]
 author: Mike
 category: Releases
-permalink: /blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/
+permalink: /blog/2018/02/22/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/
 ---
 
 We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.9.0][2.9.0-tag] introduces first class methods for tracking when users grant or withdraw consent for their personal data to be processed for specific purposes, as well as new and improved form tracking and the ability to make new tracker sessions client-side.
 
 Read on below the fold for:
 
-1. [Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#data-rights)
-2. [Form tracking with more control](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#form-tracking)
-3. [Start new sessions client-side](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#sessions)
-4. [Updates and bug fixes](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#updates)
-5. [Upgrading](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#upgrade)
-6. [Documentation and help](/blog/2018/02/0X/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/#doc)
+1. [Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes](#data-rights)
+2. [Form tracking with more control](#opt-out)
+3. [Start new sessions client-side](#passwords)
+4. [Updates and bug fixes](#updates)
+5. [Upgrading](#upgrade)
+6. [Documentation and help](#doc)
 
 <!--more-->
 
-<h2 id="data-rights">1. Tracking users granting, adn withdrawing, consent to have their personal data processed for specific purposes</h2>
+<h2 id="data-rights">1. Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes</h2>
 
 Against the backdrop of the incoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, having their personal data processed for specific purposes.
 
-We envision that many digital businesses will want to track the consent of their users against relatively finegrained "bundles" of specific data usecases, which we model in Snowplow as [consent documents][cds].
+We envision that many digital businesses will want to track the consent of their users against relatively fine-grained "bundles" of specific data usecases, which we model in Snowplow as [consent documents][cds].
 
 The two new consent tracking methods are:
 
