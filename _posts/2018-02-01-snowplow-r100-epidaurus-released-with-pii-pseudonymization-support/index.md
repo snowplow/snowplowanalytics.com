@@ -32,7 +32,7 @@ Read on for more information on R100 Epidaurus, named after [an ancient city in 
 
 The term [Personally identifiable information][pii-def] originated in the context of healthcare record keeping. It soon became evident that the accumulation of healthcare records had huge potential to promote population-level measures, and very often there was public and research interest in such data. At the same time, researchers had to be careful to avoid releasing data that could uniquely identify an individual, hence the emergence of various strategies for *PII anonymization*.
 
-Nowadays, collecting and processing large amounts of PII is increasingly within reach of even small organizations across ever sector, thanks to powerful platforms such as Snowplow. Naturally, citizens and in turn governments have become concerned that this information can be misused, opting to give back some control to the people whose records were being kept ("data subjects" in EU law terms).
+Nowadays, collecting and processing large amounts of PII is increasingly within reach of even small organizations across every sector, thanks to powerful platforms such as Snowplow. Naturally, citizens and in turn governments have become concerned that this information can be misused, and opted to give back some control to the people whose records were being kept ("data subjects" in EU law terms).
 
 Just as the healthcare records were useful for population-level health studies, so is tracking user behavior down to the level of the individual event useful for any data-driven organization. And just as health records need to be used an disseminated responsibly, so data scientists and analysts need to use event- and customer-level data in a way that protects the rights and identities of data subjects.
 
@@ -44,7 +44,7 @@ The official name is the General Data Protection Regulation (GDPR), and you'll f
 
 <h3>Pseudonymization</h3>
 
-To help Snowplow users meet your obligations under GDPR, in this release we are providing a *pseudonymization* facility, implemented as a Snowplow pipeline enrichment. This is only the first of many features planned to help Snowplow users meet their obligations under GDPR. Pseudonymization essentially means that a datum which can uniquely identify an individual, or betray sensitive information about that individual, is substituted by an alias.
+To help Snowplow users meet their obligations under GDPR, in this release we are providing a *pseudonymization* facility, implemented as a Snowplow pipeline enrichment. This is only the first of many features planned to help Snowplow users meet their obligations under GDPR. Pseudonymization essentially means that a datum which can uniquely identify an individual, or betray sensitive information about that individual, is substituted by an alias.
 
 Concretely, the Snowplow operator is able to configure any and all of the fields whose values they wish to have hashed by Snowplow. Through hashing all the PII fields found within Snowplow events, you can minimize the risk of identification of a data subject - an important step towards meeting your obligations as data handlers.
 
@@ -74,7 +74,7 @@ Further capabilities for the PII Enrichment, including the ability to reverse ps
 
 <h3>Before you start</h3>
 
-This brief tutorial assumes that you have gone through the [upgrading](#upgrading) section below, [deploying the latest version of Stream Enrich][setup-stream-enrich] and upgrading your Redshift table definition as necessary.
+This brief tutorial assumes that you have gone through the [upgrading](#upgrading) section below, [deploying the latest version of Stream Enrich][setup-stream-enrich] and upgrading your Redshift table definitions as necessary.
 
 <h3>Configuring the PII Enrichment</h3>
 
@@ -121,7 +121,7 @@ Here is an example configuration:
 
 You should add that configuration to a directory with the other enrichment configurations. In this example it was added to `se/enrichments` and it was called `pii_enrichment_config.json`. The above example and other enrichment configurations can be found as always in the [example configurations][gh-example-configs] on github.
 
-The configuration above is for a Snowplow pipeline that is using receiving events from the Snowplow JavaScript Tracker, plus a Mailchimp webhook integration:
+The configuration above is for a Snowplow pipeline that is receiving events from the Snowplow JavaScript Tracker, plus a Mailchimp webhook integration:
 
 * The Snowplow JavaScript Tracker has been configured to emit events which includes the `user_id` and `user_fingerprint` fields
 * The Mailchimp webhook (available since [release 0.9.11][release-0.9.11]) is emitting `subscribe` events (among other events, ignored for the purpose of this example)
@@ -148,14 +148,16 @@ The enriched events emitted by Stream Enrich will then have the values correspon
 
 <h3>A warning about JSON Schema validation of pseudonymized values</h5>
 
-One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. The scenario to avoid is as follows:
+One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should chech the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format. 
+
+The scenario to avoid is as follows:
 
 * You have a `customerEmail` property in a JSON Schema which must validate with `format: email`
 * You apply the PII Enrichment to hash that field
 * The enriched event *is* successfully emitted from Stream Enrich...
 * **However**, a downstream process (e.g. RDB Shredder) which validates the now-pseudonymized event will **reject** the event, as the hashed value is no longer in an email format
 
-The same issue can happen with properties with enforced string lengths - note that all of the currently supported pseudonymization functions  will generate **128 character** hashes; be careful if the JSON Schema enforces a shorter length, as again the event will fail downstream validation.
+The same issue can happen with properties with enforced string lengths - note that all of the currently supported pseudonymization functions  will generate up to **128 character** hashes (in the case of SHA-512); be careful if the JSON Schema enforces a shorter length, as again the event will fail downstream validation.
 
 We are exploring ways of avoiding this issue, potentially via a dedicated "pii" annotation within JSON Schema (see [issue #860][issue-860] for more details).
 
