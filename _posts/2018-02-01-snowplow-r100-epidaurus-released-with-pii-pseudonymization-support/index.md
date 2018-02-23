@@ -148,7 +148,7 @@ The enriched events emitted by Stream Enrich will then have the values correspon
 
 <h3>A warning about JSON Schema validation of pseudonymized values</h5>
 
-One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should chech the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format. 
+One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should check the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format. 
 
 The scenario to avoid is as follows:
 
