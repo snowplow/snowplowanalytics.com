@@ -30,9 +30,10 @@ Luke’s team at Half Brick, responsible for the smash hit mobile games Fruit Ni
 
 The story that played out during the development of Bears vs Art is all too common- product analytics, in a vacuum, can be widely disregarded as meaningless. Without a clear process for including data in your development process, one that clearly states what questions you hope to answer, how you’ll test those questions, and what metrics will indicate success or failure, all of the analytics in the world won’t help you, but will in fact actively mislead you. “It sounds pretty simple in theory, but it’s actually pretty complicated,” explained Emily Robinson. A data analyst at Etsy, Emily was [recently a guest on Dataframed][dataframed], Data Camp’s new podcast, where she went on to say, “you can’t just watch your conversion rate, then introduce a new feature, and then watch your conversion rate again.” A/B testing helped Luke to discover features his users loved that the team never considered from the beginning, but thanks to creatively testing, they could easily see what behaviors users preferred and how players engaged with their game.
 
-A/B testing is one of the product analytic tools that is not just useful throughout a product’s lifecycle, but is integral to each step of the process. While something like retention analysis becomes more significant as a product matures, A/B testing is highly relevant early in a product’s life and continues to be a major component around improving a product moving forward. Andrea Burbank, [in a talk at the Crunch Data Conference in 2016], discussed the experimentation culture at Pinterest and how it developed to where it is now. What’s clear from Andrea’s talk is that experimentation done right doesn’t come easy, but it gets better as you practice and mature. New features, changes to core components, and alterations to the user experience all drive user acquisition and A/B testing is how companies determine which new features to roll out:
+A/B testing is one of the product analytic tools that is not just useful throughout a product’s lifecycle, but is integral to each step of the process. While something like retention analysis becomes more significant as a product matures, A/B testing is highly relevant early in a product’s life and continues to be a major component around improving a product moving forward. Andrea Burbank, [in a talk at the Crunch Data Conference in 2016][andrea], discussed the experimentation culture at Pinterest and how it developed to where it is now. What’s clear from Andrea’s talk is that experimentation done right doesn’t come easy, but it gets better as you practice and mature. New features, changes to core components, and alterations to the user experience all drive user acquisition and A/B testing is how companies determine which new features to roll out:
 
-> We’ve invested six months in this [new website], there is absolutely no way we’re not going to roll it out- there’s no point in running an A/B test. What I said was, “hey, even if we’re going to roll it out, by testing it we’ll know what to expect when we do so. And in fact, what we did was detect a bunch of things that we thought weren’t important, that we removed as features, actually were tremendously important, so we avoided that failure. -Andrea Burbank
+> We’ve invested six months in this [new website], there is absolutely no way we’re not going to roll it out- there’s no point in running an A/B test. What I said was, “hey, even if we’re going to roll it out, by testing it we’ll know what to expect when we do so." And in fact, what we did was detect a bunch of things that we thought weren’t important, that we removed as features, actually were tremendously important, so we avoided that failure.  
+-Andrea Burbank
 
 
 <h2 id="creative testing">A/B testing is inherently creative</h2>
@@ -68,24 +69,6 @@ If you want to learn more about how to do A/B testing right as part of using ana
 
 
 
-
-
-
-[bva]: assets/img/blog/2018/02/bva.jpg
-
-[frustration]: assets/img/blog/2018/02/frustration.jpg
-
-[gdc]: https://www.youtube.com/watch?v=4w6LohQ0-wk&t=1761s
-
-[dataframed]: https://www.datacamp.com/community/podcast/data-science-experiments-etsy
-
-[elements]: assets/img/blog/2018/02/elements.jpg
-
-[subscribe]: http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20pt5&utm_medium=blog%20cta&utm_campaign=product%20analytics&utm_content=subscription
-
-[contact]: https://snowplowanalytics.com/company/contact-us/
-
-
 [product1]: https://snowplowanalytics.com/blog/2018/01/19/product-analytics-part-one-data-and-digital-products/
 
 [product2]: https://snowplowanalytics.com/blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
@@ -93,3 +76,20 @@ If you want to learn more about how to do A/B testing right as part of using ana
 [product3]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 
 [product4]: https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/
+
+
+[bva]: /assets/img/blog/2018/02/bva.jpg
+
+[frustration]: /assets/img/blog/2018/02/frustration.jpg
+
+[gdc]: https://www.youtube.com/watch?v=4w6LohQ0-wk&t=1761s
+
+[dataframed]: https://www.datacamp.com/community/podcast/data-science-experiments-etsy
+
+[andrea]: http://www.ustream.tv/recorded/76523152
+
+[elements]: /assets/img/blog/2018/02/elements.jpg
+
+[subscribe]: http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20pt5&utm_medium=blog%20cta&utm_campaign=product%20analytics&utm_content=subscription
+
+[contact]: https://snowplowanalytics.com/company/contact-us/
