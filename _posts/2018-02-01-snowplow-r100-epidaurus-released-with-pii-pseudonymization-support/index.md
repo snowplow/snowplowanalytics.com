@@ -129,7 +129,7 @@ The configuration above is for a Snowplow pipeline that is using receiving event
 With the above PII Enrichment configuration, then, you are specifying that:
 
 * You wish for the `user_id` and `user_fingerprint` from the Snowplow Canonical event model fields to be hashed (the full list of supported fields for pseudonymization is viewable [in the enrichment configuration schema][pii-config-schema])
-* You wish for the `data/email` and `data/ip_opt` fields from the Mailchimp `subscribe` event to be hashed, but only if the schema version begins with `1-0-`
+* You wish for the `data.email` and `data.ip_opt` fields from the Mailchimp `subscribe` event to be hashed, but only if the schema version begins with `1-0-`
 * You wish to use the `SHA-256` variant of the algorithm for the pseudonymization
 
 You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] alongside the [schema][pii-config-schema].
@@ -144,7 +144,20 @@ java -jar se/snowplow-stream-enrich-0.14.0.jar --config se/config.hocon --resolv
 
 Where your `pii_enrichment_config.json` configuration JSON is found in the `se/enrichments` folder.
 
-ADD WARNING ABOUT WIDE COLUMNS
+The enriched events emitted by Stream Enrich will then have the values corresponding to the above PII pseudonymized using SHA-256.
+
+<h3>A warning about JSON Schema validation of pseudonymized values</h5>
+
+One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. The scenario to avoid is as follows:
+
+* You have a `customerEmail` property in a JSON Schema which must validate with `format: email`
+* You apply the PII Enrichment to hash that field
+* The enriched event *is* successfully emitted from Stream Enrich...
+* **However**, a downstream process (e.g. RDB Shredder) which validates the now-pseudonymized event will **reject** the event, as the hashed value is no longer in an email format
+
+The same issue can happen with properties with enforced string lengths - note that all of the currently supported pseudonymization functions  will generate **128 character** hashes; be careful if the JSON Schema enforces a shorter length, as again the event will fail downstream validation.
+
+We are exploring ways of avoiding this issue, potentially via a dedicated "pii" annotation within JSON Schema (see [issue #860][issue-860] for more details).
 
 <h2 id="other">4. Other changes</h2>
 
@@ -211,6 +224,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [canonical-event-model]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
 
 [scalafmt]: http://scalameta.org/scalafmt/
+[issue-860]: https://github.com/snowplow/snowplow/issues/860
 [issue-3528]: https://github.com/snowplow/snowplow/issues/3528
 [issue-3496]: https://github.com/snowplow/snowplow/issues/3496
 
