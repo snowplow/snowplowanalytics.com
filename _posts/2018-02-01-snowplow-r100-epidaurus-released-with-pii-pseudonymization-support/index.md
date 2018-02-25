@@ -44,7 +44,7 @@ The official name is the General Data Protection Regulation (GDPR), and you'll f
 
 <h3>Pseudonymization</h3>
 
-To help Snowplow users meet their obligations under GDPR, in this release we are providing a *pseudonymization* facility, implemented as a Snowplow pipeline enrichment. This is only the first of many features planned to help Snowplow users meet their obligations under GDPR. Pseudonymization essentially means that a datum which can uniquely identify an individual, or betray sensitive information about that individual, is substituted by an alias.
+To help you meet your obligations under GDPR, in this release we are providing a *pseudonymization* facility, implemented as a Snowplow pipeline enrichment. This is only the first of many features planned to help Snowplow users meet their obligations under GDPR. Pseudonymization essentially means that a datum which can uniquely identify an individual, or betray sensitive information about that individual, is substituted by an alias.
 
 Concretely, the Snowplow operator is able to configure any and all of the fields whose values they wish to have hashed by Snowplow. Through hashing all the PII fields found within Snowplow events, you can minimize the risk of identification of a data subject - an important step towards meeting your obligations as data handlers.
 
@@ -74,7 +74,7 @@ Further capabilities for the PII Enrichment, including the ability to reverse ps
 
 <h3>Before you start</h3>
 
-This brief tutorial assumes that you have gone through the [upgrading](#upgrading) section below, [deploying the latest version of Stream Enrich][setup-stream-enrich] and upgrading your Redshift table definitions as necessary.
+This brief tutorial assumes that you have gone through the [upgrading](#upgrading) section below, [deploying the latest version of Stream Enrich][setup-stream-enrich] and upgrading your Redshift `events` table definition.
 
 <h3>Configuring the PII Enrichment</h3>
 
@@ -157,7 +157,7 @@ The scenario to avoid is as follows:
 * The enriched event *is* successfully emitted from Stream Enrich...
 * **However**, a downstream process (e.g. RDB Shredder) which validates the now-pseudonymized event will **reject** the event, as the hashed value is no longer in an email format
 
-The same issue can happen with properties with enforced string lengths - note that all of the currently supported pseudonymization functions  will generate up to **128 character** hashes (in the case of SHA-512); be careful if the JSON Schema enforces a shorter length, as again the event will fail downstream validation.
+The same issue can happen with properties with enforced string lengths - note that all of the currently supported pseudonymization functions  will generate hashes of up to **128 characters** (in the case of SHA-512); be careful if the JSON Schema enforces a shorter length, as again the event will fail downstream validation.
 
 We are exploring ways of avoiding this issue, potentially via a dedicated "pii" annotation within JSON Schema (see [issue #860][issue-860] for more details).
 
