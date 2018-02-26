@@ -5,7 +5,7 @@ title-short: Snowplow R100 Epidaurus
 tags: [pii, pseudonymization]
 author: Kostas
 category: Releases
-permalink: /blog/2018/02/01/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
+permalink: /blog/2018/02/26/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
 ---
 
 We are pleased to announce the release of [Snowplow R100 Epidaurus][release-notes]. This streaming pipeline
