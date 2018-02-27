@@ -37,6 +37,23 @@ guest> cd /vagrant
 guest> bundle exec jekyll serve --host 0.0.0.0
 ```
 
+## Still can't see you page?
+
+One reason this can happen is that your post is future dated. Normally you can add ```future: true``` to ```_config.yaml```, but that may not be supported or work properly for you.
+
+One solution to see a future dated post is to run the vagrant VirtualBox VM clock to the future, however don't overdo it as going to far into the future has caused connection errors. Here is how:
+
+```
+host> VBoxManage list vms  # THIS will show you a list of VMs from which you pick the one that you started
+host> VBoxManage setextradata "snowplowanalytics.com-1517396887" "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled" 1 # replace snowplowanalytics.com-1517396887 with the VM name from step above. It should look similar
+host> Vagrant reload
+... make coffee...
+host> vagrant ssh
+guest> sudo date -s "2018-02-15 00:00:00" # Or whatever future date, but don't overdo it or you may get connection errors
+```
+
+You can check that it worked (and it didn't revert to the host clock) by running ```guest> date``` a few times. After that step, when you run ```jekyll serve``` as in the previous section. You should be able to see all posts dated previous to the date that you set the clock.
+
 ## Website management rules
 
 There are three places to publish the website / any branches on this repo to:
@@ -45,7 +62,7 @@ There are three places to publish the website / any branches on this repo to:
 2. https://next.snowplowanalytics.com (Staging)
 3. https://qa.snowplowanalytics.com (QA and testing)
 
-Please see the instructions below to understand and follow the commit flow for new features and content thorugh QA, Staging and production to ensure a smooth release process.
+Please see the instructions below to understand and follow the commit flow for new features and content through QA, Staging and production to ensure a smooth release process.
 
 ### Working on new features?
 
