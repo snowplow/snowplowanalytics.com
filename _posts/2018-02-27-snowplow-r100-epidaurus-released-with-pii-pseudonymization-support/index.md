@@ -5,7 +5,7 @@ title-short: Snowplow R100 Epidaurus
 tags: [pii, pseudonymization]
 author: Kostas
 category: Releases
-permalink: /blog/2018/02/26/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
+permalink: /blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
 ---
 
 We are pleased to announce the release of [Snowplow R100 Epidaurus][release-notes]. This streaming pipeline
@@ -104,7 +104,7 @@ Here is an example configuration:
         {
           "json": {
             "field": "unstruct_event",
-            "schemaCriterion": "iglu:com.mailchimp/subscribe/jsonschema/1-0-*",
+            "schemaCriterion": "iglu:com.mailchimp/subscribe/jsonschema/1-0-X",
             "jsonPath": "$.data.['email', 'ip_opt']"
           }
         }
@@ -148,7 +148,7 @@ The enriched events emitted by Stream Enrich will then have the values correspon
 
 <h3>A warning about JSON Schema validation of pseudonymized values</h5>
 
-One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should check the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format. 
+One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should check the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format.
 
 The scenario to avoid is as follows:
 
@@ -163,7 +163,7 @@ We are exploring ways of avoiding this issue, potentially via a dedicated "pii" 
 
 <h2 id="other">4. Other changes</h2>
 
-In order to support the replacing of original field values with pseudonymization hashes, we have had to widen various columns in the Redshift `atomic.events` table ([issue #3528][issue-3528]). At the same time, we also widened the "se_label" field in Redshift to support URLs. 
+In order to support the replacing of original field values with pseudonymization hashes, we have had to widen various columns in the Redshift `atomic.events` table ([issue #3528][issue-3528]). At the same time, we also widened the "se_label" field in Redshift to support URLs.
 
 Finally, we continue to improve the quality of our codebase by using [scalafmt][scalafmt] automated code formatting, which will greatly help new contributors to the project meet our high quality standards. You can see the standards we applied in [issue #3496][issue-3496].
 
