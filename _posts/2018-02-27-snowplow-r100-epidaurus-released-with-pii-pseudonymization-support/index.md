@@ -104,7 +104,7 @@ Here is an example configuration:
         {
           "json": {
             "field": "unstruct_event",
-            "schemaCriterion": "iglu:com.mailchimp/subscribe/jsonschema/1-0-X",
+            "schemaCriterion": "iglu:com.mailchimp/subscribe/jsonschema/1-0-\*",
             "jsonPath": "$.data.['email', 'ip_opt']"
           }
         }
@@ -134,7 +134,7 @@ With the above PII Enrichment configuration, then, you are specifying that:
 
 You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] alongside the [schema][pii-config-schema].
 
-<h3>Execution</h5>
+<h3>Execution</h3>
 
 As usual, you would run Stream Enrich like so:
 
@@ -146,7 +146,7 @@ Where your `pii_enrichment_config.json` configuration JSON is found in the `se/e
 
 The enriched events emitted by Stream Enrich will then have the values corresponding to the above PII pseudonymized using SHA-256.
 
-<h3>A warning about JSON Schema validation of pseudonymized values</h5>
+<h3>A warning about JSON Schema validation of pseudonymized values</h3>
 
 One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should check the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format.
 
