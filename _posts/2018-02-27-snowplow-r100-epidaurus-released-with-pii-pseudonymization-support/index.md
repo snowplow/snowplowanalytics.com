@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
 ---
 
-We are pleased to announce the release of [Snowplow R100 Epidaurus][release-notes]. This streaming pipeline
+We are pleased to announce the release of [Snowplow R100 Epidaurus](https://github.com/snowplow/snowplow/releases/tag/r100-epidaurus). This streaming pipeline
 release adds support for pseudonomizing user PII (Personally Identifiable Information) through a new Snowplow enrichment.
 
 We are initially adding this new PII Enrichment to the Snowplow streaming pipeline; extending this support to the batch pipeline will follow in due course.
@@ -134,7 +134,7 @@ With the above PII Enrichment configuration, then, you are specifying that:
 
 You can easily check whether your own configuration instance conforms to the schema by using this [tool][schema-validator] alongside the [schema][pii-config-schema].
 
-<h3>Execution</h5>
+<h3>Execution</h3>
 
 As usual, you would run Stream Enrich like so:
 
@@ -146,7 +146,7 @@ Where your `pii_enrichment_config.json` configuration JSON is found in the `se/e
 
 The enriched events emitted by Stream Enrich will then have the values corresponding to the above PII pseudonymized using SHA-256.
 
-<h3>A warning about JSON Schema validation of pseudonymized values</h5>
+<h5>A warning about JSON Schema validation of pseudonymized values</h5>
 
 One note of caution: always check the underlying JSON Schema to avoid accidentally invalidating an entire event using the PII Enrichment. Specifically, you should check the field definitions of the fields for any constraints that hold under plaintext but not when the field is hashed, such as field length and format.
 
@@ -205,6 +205,14 @@ For more details on this release, please check out the [release notes][release-n
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
+
+[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r100-epidaurus
+
+
+
+
+
+
 [gdpr-web]: https://www.eugdpr.org/
 [pii-config-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0
 [json-path]: https://github.com/json-path/JsonPath
@@ -235,7 +243,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-bat-prio2]: https://github.com/snowplow/snowplow/milestone/145
 [r10x-pii2]: https://github.com/snowplow/snowplow/milestone/153
 
-[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r100-epidaurus
 [discourse]: http://discourse.snowplowanalytics.com/
 [docker-instructions]: https://github.com/snowplow/snowplow/wiki/snowplow-docker-setup
 [stream-collector-setting-up]: https://github.com/snowplow/snowplow/wiki/Setting-up-the-Scala-Stream-Collector
