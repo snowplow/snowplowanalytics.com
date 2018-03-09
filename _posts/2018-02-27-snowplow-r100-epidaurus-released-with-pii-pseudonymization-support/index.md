@@ -6,6 +6,7 @@ tags: [pii, pseudonymization]
 author: Kostas
 category: Releases
 permalink: /blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
+discourse: true
 ---
 
 We are pleased to announce the release of [Snowplow R100 Epidaurus](https://github.com/snowplow/snowplow/releases/tag/r100-epidaurus). This streaming pipeline
