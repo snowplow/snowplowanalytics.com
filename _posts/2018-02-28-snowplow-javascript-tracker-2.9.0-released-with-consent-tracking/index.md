@@ -6,6 +6,7 @@ tags: [snowplow, javascript, privacy, optout, gdpr, eprivacy, data rights]
 author: Mike
 category: Releases
 permalink: /blog/2018/02/28/snowplow-javascript-tracker-2.9.0-released-with-consent-tracking/
+discourse: true
 ---
 
 We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.9.0][2.9.0-tag] introduces first class methods for tracking when users grant or withdraw consent for their personal data to be processed for specific purposes, as well as new and improved form tracking and the ability to make new tracker sessions client-side.
