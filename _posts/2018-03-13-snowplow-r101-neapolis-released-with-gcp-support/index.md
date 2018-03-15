@@ -253,12 +253,12 @@ For more details on this release, please check out the [release notes][release-n
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [neapolis]: https://en.wikipedia.org/wiki/Greek_Theatre_of_Syracuse
-[neapolis-img]: /assets/img/blog/2018/01/neapolis.jpg
+[neapolis-img]: /assets/img/blog/2018/03/neapolis.jpg
 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r101-neapolis
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[r102-bat]: https://github.com/snowplow/snowplow/milestone/145
+[r102-bat]: https://github.com/snowplow/snowplow/milestone/155
 [r103-pii]: https://github.com/snowplow/snowplow/milestone/153
 [r151-beam]: https://github.com/snowplow/snowplow/milestone/151
 
