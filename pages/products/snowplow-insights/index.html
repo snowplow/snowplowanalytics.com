@@ -34,12 +34,20 @@ assets:
     </div>
 
     <div class="container drop-box overlap-bellow">
-        <h4 class="text-uppercase spacer-top-10 md-spacer-top-0">Download Comparison Whitepaper Snowplow VS</h4>
-        <select class="form-control selectpicker" id="form-download" title="Select document" onChange="window.open(this.value, '_blank');">
+        <div class="col-xs-12 col-md-6">
+        <h4 class="text-uppercase spacer-top-10 md-spacer-top-0">Snowplow insights vs <br/> other well-known solutions</h4>
+            <h5 class=" spacer-top-10 md-spacer-top-0">Download our whitepapers!</h5>
+        <select class="form-control selectpicker" id="form-download" title="Select whitepaper" >
             <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
             <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
             <option value="{{ BASE_PATH }}/assets/pdf/Snowplow-VS-Build_Your-Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
         </select>
+            <a id="download-btn"href="#" target="_blank" class="btn btn-primary call-to-action">Download</a>
+
+        </div>
+        <img src="{{ BASE_PATH }}/assets/img/common/img.png" class="img-responsive" alt="Snowplow Insights Pipeline">
+
+
     </div>
 </section>
 
