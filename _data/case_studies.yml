@@ -1,0 +1,47 @@
+- company: Simply Business
+  content: Simply Business uses event data to disrupt the business insurance market.
+  quote: “JustWatch use Snowplow to build a differentiated service for advertising movies, driving spectacular growth.”
+  name: Stewart Duncan
+  position: Director of Data Science
+  company_link: http://google.com
+  picture_top: /assets/img/case_studies/simply_business_top.png
+  picture_top_wide: /assets/img/case_studies/simply_business_top@2x.png
+  picture_bottom: /assets/img/case_studies/Stewart_Duncan.png
+  picture_bottom_wide: /assets/img/case_studies/Stewart_Duncan@2x.png
+  color: silver
+
+- company: Peak
+  content: Peak uses Snowplow to build award winning games and make people smarter.
+  quote: “Snowplow is really powerful when you start to hit that growth curve and going upwards.”
+  name: Stewart Duncan
+  position: Director of Data Science
+  company_link: http://google.com
+  picture_top: /assets/img/case_studies/peak.png
+  picture_top_wide: /assets/img/case_studies/peak@2x.png
+  picture_bottom: /assets/img/case_studies/peak_bottom.png
+  picture_bottom_wide: /assets/img/case_studies/peak_bottom@2x.png
+  color: purple
+
+- company: Viewbix
+  content: Lorem ipsum sit amet consequeteur adisciplit lorem ipsum norem.
+  quote: “Lorem ipsum sit amet consequeteur adisciplit lorem ipsum sit amet.”
+  name: Dani Waxman
+  position: Product Manager
+  company_link: http://google.com
+  picture_top: /assets/img/case_studies/img-bckg-viewbix.png
+  picture_top_wide: /assets/img/case_studies/img-bckg-viewbix@2x.png
+  picture_bottom: /assets/img/case_studies/dani_waxman.png
+  picture_bottom_wide: /assets/img/case_studies/dani_waxman@2x.png
+  color: green
+
+- company: Picnic
+  content: Picnic uses Snowplow to deliver users with a smart, data-driven shopping experience.
+  quote: “Snowplow is really powerful when you start to hit that growth curve and going upwards.”
+  name: Stewart Duncan
+  position: Director of Data Science
+  company_link: http://google.com
+  picture_top: /assets/img/case_studies/picnic_top.png
+  picture_top_wide: /assets/img/case_studies/picnic_top@2x.png
+  picture_bottom: /assets/img/case_studies/picnic_bottom.png
+  picture_bottom_wide: /assets/img/case_studies/picnic_bottom@2x.png
+  color: blue
