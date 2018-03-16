@@ -87,11 +87,12 @@ For Stream Enrich:
 <h3 id="jmx">3.2 Exposing the number of requests made to the collector through JMX</h3>
 
 Thanks to [GitHub user jspc][jspc], the Scala Stream Collector exposes a few metrics through
-[JMX][jmx] with the MBean Name `snowplow:type=StreamCollector`:
+[JMX][jmx] with the MBean `com.snowplowanalytics.snowplow:type=StreamCollector` which contains
+the following attributes:
 
-- `requests`: total number of requests
-- `successfulRequests`: total number of successful requests
-- `failedRequests`: total number of failed requests
+- `Requests`: total number of requests
+- `SuccessfulRequests`: total number of successful requests
+- `FailedRequests`: total number of failed requests
 
 You can turn on JMX by launching the collector in the following manner:
 
@@ -102,10 +103,14 @@ java \
   -Dcom.sun.management.jmxremote.local.only=false \
   -Dcom.sun.management.jmxremote.authenticate=false \
   -Dcom.sun.management.jmxremote.ssl=false \
-  -jar snowplow-stream-collector-google-pubsub-0.13.0.jar
+  -jar snowplow-stream-collector-google-pubsub-0.13.0.jar --config config.hocon
 {% endhighlight %}
 
 For more information on setting JMX up, refer to [this guide][jmx-setup].
+
+<h3 id="kafka">3.3 Upgrading to Kafka 1.0.1</h3>
+
+We've taken advantage of this release to upgrade the Kafka artifacts to Kafka 1.0.1.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
