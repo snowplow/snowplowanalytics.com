@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Snowplow R101 Neapolis released with GCP support"
+title: "Snowplow R101 Neapolis released with initial GCP support"
 title-short: Snowplow R101 Neapolis
 tags: [google pubsub, google cloud platform, realtime]
 author: Ben
@@ -10,7 +10,7 @@ permalink: /blog/2018/03/13/snowplow-r101-neapolis-with-gcp-support/
 
 We are tremendously excited to announce the release of [Snowplow R101 Neapolis][release-notes].
 This realtime release marks the first step in our journey towards making Snowplow
-[Google Cloud Platform][gcp]-native, evolving it into a truly multicloud platform.
+[Google Cloud Platform][gcp]-native, evolving it into a truly multi-cloud platform.
 
 Read on for more information on R101 Neapolis, named after
 [the archeological site in Sicily, Italy where the Greek theatre of Syracuse is located][neapolis]:
@@ -18,7 +18,7 @@ Read on for more information on R101 Neapolis, named after
 <!--more-->
 
 1. [Why bring Google Cloud Platform support to Snowplow?](#why)
-2. [Overall architecture](#architecture)
+2. [Adding GCP support to Stream Collector and Stream Enrich](#gcp-delta)
 3. [Miscellaneous changes](#misc)
 4. [Upgrading](#upgrading)
 5. [Roadmap](#roadmap)
@@ -29,25 +29,22 @@ Read on for more information on R101 Neapolis, named after
 <h2 id="why">1. Why bring Google Cloud Platform support to Snowplow?</h2>
 
 Historically, the Snowplow platform has been closely tied to Amazon Web Services and to a lesser
-extent on-premise, most notably through Kafka support. In order to make the platform accessible to
-all, it is important to make it as much cloud agnostic as possible.
+extent on-premise (largely through Apache Kafka support). In order to make the platform accessible to
+all, it is important to make it as much cloud-agnostic as possible.
 
-This process begins with porting the realtime pipeline to Google Cloud Platform, one of the most
-popular cloud offerings out there and this is what this release is all about.
+This process begins with porting the realtime pipeline to Google Cloud Platform, the hugely popular public cloud offering - and this release is the first step on this journey.
 
-The next releases in this journey will focus on porting the streaming enrichment process to
-[Google Cloud Dataflow][dataflow] and making loading events into [BigQuery][bq] a reality.
+The next releases in our journey to GCP will focus on porting the streaming enrichment process to
+[Google Cloud Dataflow][dataflow] and making loading Snowplow events into [BigQuery][bq] a reality.
 
-For more information regarding our thought process, you can refer to our [RFC][rfc] on the subject.
+For more information regarding our overall plans for Google Cloud Platform, please check out our [RFC][rfc] on the subject.
 
-<h2 id="architecture">2. Overall architecture</h2>
+<h2 id="gcp-delta">2. Adding GCP support to Stream Collector and Stream Enrich</h2>
 
-To those familiar with the current streaming pipeline achitecture, nothing is new, as this release
-is a strict port to GCP.
+To those familiar with the current Snowplow streaming pipeline achitecture, this release will look straightforward: we simply take our existing components and adds support for *publishing* and *subscribing* to [Google Cloud PubSub][pubsub] topics.
 
-Indeed, there is a microservice for the collector that will receive HTTP requests and publish raw
-events to a [Google Cloud PubSub][pubsub] topic and another which will read those raw events,
-enrich them and publish them back to another Google Cloud PubSub topic.
+Specifically, we took our Scala Stream Collector and added support for publishing raw Snowplow wevents to a [Google Cloud PubSub][pubsub] topic. Similarly, we updated our Stream Enrich component to read those raw events off Google Cloud PubSub,
+enrich them and publish them back to another PubSub topic.
 
 We have written dedicated guides to setting up those microservices in the following wiki articles:
 
@@ -61,10 +58,15 @@ release.
 
 <h3 id="split">3.1 Splitting up the different jars</h3>
 
-As we become multicloud and support a growing number of different platforms, it became important
-to split the different artifacts according to their targeted streaming technology to keep the JAR
-size from exploding. As such, from this release onwards, there will be four different collectors
-and stream enrich JARs:
+BEN - THIS ISN'T MISC. THIS SHOULD BE A TOP-LEVEL H2 ALL ON ITS OWN. IT'S A FUNDAMENTAL CHANGE IN HOW WE THINK ABOUT STREAM ENRICH.
+
+As we become multi-cloud and support a growing number of different platforms, it is becoming increasingly important
+to split the different artifacts according to their targeted streaming technology, in order to:
+
+1. Keep the JAR sizes from getting out of hand
+2. Prevent a combinatorial explosion of different source and sink technologies requiring testing (e.g. Kinesis source to Google Cloud PubSub sink)
+
+Therefore, from this release onwards, there will be four different artifacts for the Scala Stream Collector, and four for Stream Enrich.
 
 For the Scala Stream Collector:
 
@@ -84,10 +86,14 @@ For Stream Enrich:
 | snowplow-stream-enrich-kafka-*version*.jar         | [Apache Kafka][kafka]         |
 | snowplow-stream-enrich-nsq-*version*.jar           | [NSQ][nsq]                    |
 
+BEN - WHAT ABOUT STDIN/STDOUT OPTION - DO ALL ARTIFACTS SUPPORT THIS?
+
+This approach reduces artifact size and simplifies testing, at the cost of some flexibility for Stream Enrich. If you were previously running a "hybrid-cloud" Stream Enrich (reading and writing to different streaming technologies), then we suggest setting up a dedicated app downstream of Stream Enrich to bridge the enriched events to the other stream system. 
+
 <h3 id="jmx">3.2 Exposing the number of requests made to the collector through JMX</h3>
 
-Thanks to [GitHub user jspc][jspc], the Scala Stream Collector exposes a few metrics through
-[JMX][jmx] with the MBean `com.snowplowanalytics.snowplow:type=StreamCollector` which contains
+Thanks to [GitHub user jspc][jspc], the Scala Stream Collector now exposes some valuable metrics through
+[JMX][jmx] via the new MBean `com.snowplowanalytics.snowplow:type=StreamCollector`, containing
 the following attributes:
 
 - `Requests`: total number of requests
@@ -121,7 +127,7 @@ The latest version of the Scala Stream Collector is available from our Bintray [
 <h4 id="upg-ssc-conf">4.1.1 Updating the configuration</h4>
 
 For non-Google Cloud PubSub users, the only minor change was made to the `collector.crossDomain`
-section, it's now non-optional but has an `enabled` flag:
+section: it's now non-optional but has an `enabled` flag:
 
 {% highlight yaml %}
 crossDomain {
@@ -150,12 +156,16 @@ sink {
 }
 {% endhighlight %}
 
+WHAT ABOUT AUTHENTICATION - HOW DOES THAT WORK?
+
 For a complete example, see [our sample config.hocon template][ssc-config].
+
+ADD DOCO LINK (NEED TO EXPLAIN multiplier etc)
 
 <h4 id="upg-ssc-launch">4.1.2 Launching</h4>
 
 As explained in [section 3.1](#split), there is now one JAR per platform, as such you'll need to
-write one of the following commands to launch the collector:
+use one of the following commands to launch the collector:
 
 {% highlight bash %}
 java -jar snowplow-stream-collector-google-pubsub-0.13.0.jar --config config.hocon
@@ -202,7 +212,7 @@ enrich {
 }
 {% endhighlight %}
 
-If you want to leverage Google Cloud PubSub, it will have to look like the following:
+If you want to leverage Google Cloud PubSub, it should look like the following:
 
 {% highlight bash %}
 enrich {
@@ -226,7 +236,11 @@ enrich {
 }
 {% endhighlight %}
 
+WHAT ABOUT AUTHENTICATION - HOW DOES THAT WORK?
+
 For a complete example, see [our sample config.hocon template][se-config].
+
+ADD DOCO LINK (NEED TO EXPLAIN multiplier etc)
 
 <h4 id="upg-se-launch">4.2.2 Launching</h4>
 
@@ -243,13 +257,14 @@ java -jar snowplow-stream-enrich-nsq-0.15.0.jar --config config.hocon --resolver
 
 Upcoming Snowplow releases will include:
 
-* [R102 [BAT] Priority fixes][r102-bat], various stability, security and data quality improvements for the batch pipeline
-* [R103 [STR] PII Enrichment phase 2][r103-pii], the second wave of GDPR features being added to
-Snowplow
+* [R102 Afontova Gora][r102-bat], various stability, security and data quality improvements for the batch pipeline
+* [R103 [STR] PII Enrichment phase 2][r103-pii], enhancing our recently-released GDPR-focused PII Enrichment for the realtime pipeline 
 
-Furthermore, as mentioned above, this is only the beginning for GCP in Snowplow as we will be
-porting the streaming enrichment process to [Google Cloud Dataflow][dataflow] thanks to
-[Apache Beam][beam] in [milestone 151][r151-beam] and building a loader for [BigQuery][bq].
+Furthermore, this release is only the beginning for Google Cloud Platform support in Snowplow!
+
+As discussed in our RFC, we plan on porting our streaming enrichment process to [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam] (see [this milestone][r151-beam] for details). In parallel, we are also busy designing our new Snowplow event loader for [BigQuery][bq].
+
+We look forward to your feedback as we continue to roll out and extend our GCP capabilities!
 
 <h2 id="help">6. Getting help</h2>
 
