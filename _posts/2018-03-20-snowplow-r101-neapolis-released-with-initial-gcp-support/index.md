@@ -5,7 +5,7 @@ title-short: Snowplow R101 Neapolis
 tags: [google pubsub, google cloud platform, realtime]
 author: Ben
 category: Releases
-permalink: /blog/2018/03/13/snowplow-r101-neapolis-with-initial-gcp-support/
+permalink: /blog/2018/03/20/snowplow-r101-neapolis-with-initial-gcp-support/
 ---
 
 We are tremendously excited to announce the release of [Snowplow R101 Neapolis][release-notes].
@@ -19,7 +19,7 @@ Read on for more information on R101 Neapolis, named after
 
 1. [Why bring Google Cloud Platform support to Snowplow?](#why)
 2. [Adding GCP support to Stream Collector and Stream Enrich](#gcp-delta)
-3. [Splitting up the different JARs](#split)
+3. [Dedicated artifacts for each platform](#split)
 4. [Miscellaneous changes](#misc)
 5. [Upgrading](#upgrading)
 6. [Roadmap](#roadmap)
@@ -45,7 +45,7 @@ For more information regarding our overall plans for Google Cloud Platform, plea
 <h2 id="gcp-delta">2. Adding GCP support to Stream Collector and Stream Enrich</h2>
 
 To those familiar with the current Snowplow streaming pipeline achitecture, this release will look
-straightforward: we simply take our existing components and adds support for *publishing* and
+straightforward: we simply take our existing components and add support for *publishing* and
 *subscribing* to [Google Cloud PubSub][pubsub] topics.
 
 Specifically, we took our Scala Stream Collector and added support for publishing raw Snowplow
@@ -53,7 +53,7 @@ events to a [Google Cloud PubSub][pubsub] topic. Similarly, we updated our Strea
 to read those raw events off Google Cloud PubSub, enrich them and publish them back to another
 PubSub topic.
 
-We have written dedicated guides to setting up those microservices in the following wiki articles:
+We have written dedicated guides to setting up those micro-services in the following wiki articles:
 
 - [Getting started guide][getting-started]
 - [Setting up the Scala Stream Collector on GCP][ssc-setup-guide]
@@ -62,14 +62,14 @@ We have written dedicated guides to setting up those microservices in the follow
 Huge thanks to our former intern, [Guilherme Pires][colobas], for laying the foundations for this
 release.
 
-<h2 id="split">3. Splitting up the different JARs</h2>
+<h2 id="split">3. Dedicated artifacts for each platform</h2>
 
-As we become multi-cloud and support a growing number of different platforms, it is becoming increasingly important
+As we go multi-cloud and support a growing number of different platforms, it is becoming increasingly important
 to split the different artifacts according to their targeted streaming technology, in order to:
 
 1. Keep the JAR sizes from getting out of hand
 2. Prevent a combinatorial explosion of different source and sink technologies requiring testing
-(e.g. Kinesis source to Google Cloud PubSub sink)
+(e.g. Amazon Kinesis source to Google Cloud PubSub sink)
 
 Therefore, from this release onwards, there will be five different artifacts for the Scala Stream
 Collector, and five for Stream Enrich.
@@ -309,8 +309,8 @@ Upcoming Snowplow releases will include:
   batch pipeline
 * [R103 [STR] PII Enrichment phase 2][r103-pii], enhancing our recently-released GDPR-focused PII
   Enrichment for the realtime pipeline
-* [R10x [STR & BAT] IP lookups enrichment upgrade][r156-ip], moving away from
-  using the legacy database format, which is being sunsetted on 2nd April 2018
+* [R10x [STR & BAT] IP Lookups Enrichment upgrade][r156-ip], moving us away from
+  using the legacy MaxMind database format, which is being sunsetted on 2nd April 2018
 
 Furthermore, this release is only the beginning for Google Cloud Platform support in Snowplow!
 
