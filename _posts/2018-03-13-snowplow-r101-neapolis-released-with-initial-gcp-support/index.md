@@ -5,7 +5,7 @@ title-short: Snowplow R101 Neapolis
 tags: [google pubsub, google cloud platform, realtime]
 author: Ben
 category: Releases
-permalink: /blog/2018/03/13/snowplow-r101-neapolis-with-gcp-support/
+permalink: /blog/2018/03/13/snowplow-r101-neapolis-with-initial-gcp-support/
 ---
 
 We are tremendously excited to announce the release of [Snowplow R101 Neapolis][release-notes].
@@ -19,54 +19,60 @@ Read on for more information on R101 Neapolis, named after
 
 1. [Why bring Google Cloud Platform support to Snowplow?](#why)
 2. [Adding GCP support to Stream Collector and Stream Enrich](#gcp-delta)
-3. [Miscellaneous changes](#misc)
-4. [Upgrading](#upgrading)
-5. [Roadmap](#roadmap)
-6. [Help](#help)
+3. [Splitting up the different JARs](#split)
+4. [Miscellaneous changes](#misc)
+5. [Upgrading](#upgrading)
+6. [Roadmap](#roadmap)
+7. [Help](#help)
 
 ![neapolis][neapolis-img]
 
 <h2 id="why">1. Why bring Google Cloud Platform support to Snowplow?</h2>
 
 Historically, the Snowplow platform has been closely tied to Amazon Web Services and to a lesser
-extent on-premise (largely through Apache Kafka support). In order to make the platform accessible to
-all, it is important to make it as much cloud-agnostic as possible.
+extent on-premise (largely through Apache Kafka support). In order to make the platform accessible
+to all, it is important to make it as much cloud-agnostic as possible.
 
-This process begins with porting the realtime pipeline to Google Cloud Platform, the hugely popular public cloud offering - and this release is the first step on this journey.
+This process begins with porting the realtime pipeline to Google Cloud Platform, the hugely popular
+public cloud offering - and this release is the first step on this journey.
 
 The next releases in our journey to GCP will focus on porting the streaming enrichment process to
 [Google Cloud Dataflow][dataflow] and making loading Snowplow events into [BigQuery][bq] a reality.
 
-For more information regarding our overall plans for Google Cloud Platform, please check out our [RFC][rfc] on the subject.
+For more information regarding our overall plans for Google Cloud Platform, please check out our
+[RFC][rfc] on the subject.
 
 <h2 id="gcp-delta">2. Adding GCP support to Stream Collector and Stream Enrich</h2>
 
-To those familiar with the current Snowplow streaming pipeline achitecture, this release will look straightforward: we simply take our existing components and adds support for *publishing* and *subscribing* to [Google Cloud PubSub][pubsub] topics.
+To those familiar with the current Snowplow streaming pipeline achitecture, this release will look
+straightforward: we simply take our existing components and adds support for *publishing* and
+*subscribing* to [Google Cloud PubSub][pubsub] topics.
 
-Specifically, we took our Scala Stream Collector and added support for publishing raw Snowplow wevents to a [Google Cloud PubSub][pubsub] topic. Similarly, we updated our Stream Enrich component to read those raw events off Google Cloud PubSub,
-enrich them and publish them back to another PubSub topic.
+Specifically, we took our Scala Stream Collector and added support for publishing raw Snowplow
+events to a [Google Cloud PubSub][pubsub] topic. Similarly, we updated our Stream Enrich component
+to read those raw events off Google Cloud PubSub, enrich them and publish them back to another
+PubSub topic.
 
 We have written dedicated guides to setting up those microservices in the following wiki articles:
 
-- Setting up the Scala Stream Collector on GCP ADD LINK
-- Setting up Stream Enrich on GCP ADD LINK
+- [Getting started guide][getting-started]
+- [Setting up the Scala Stream Collector on GCP][ssc-setup-guide]
+- [Setting up Stream Enrich on GCP][se-setup-guide]
 
 Huge thanks to our former intern, [Guilherme Pires][colobas], for laying the foundations for this
 release.
 
-<h2 id="misc">3. Miscellaneous changes</h2>
-
-<h3 id="split">3.1 Splitting up the different jars</h3>
-
-BEN - THIS ISN'T MISC. THIS SHOULD BE A TOP-LEVEL H2 ALL ON ITS OWN. IT'S A FUNDAMENTAL CHANGE IN HOW WE THINK ABOUT STREAM ENRICH.
+<h2 id="split">3. Splitting up the different JARs</h2>
 
 As we become multi-cloud and support a growing number of different platforms, it is becoming increasingly important
 to split the different artifacts according to their targeted streaming technology, in order to:
 
 1. Keep the JAR sizes from getting out of hand
-2. Prevent a combinatorial explosion of different source and sink technologies requiring testing (e.g. Kinesis source to Google Cloud PubSub sink)
+2. Prevent a combinatorial explosion of different source and sink technologies requiring testing
+(e.g. Kinesis source to Google Cloud PubSub sink)
 
-Therefore, from this release onwards, there will be four different artifacts for the Scala Stream Collector, and four for Stream Enrich.
+Therefore, from this release onwards, there will be five different artifacts for the Scala Stream
+Collector, and five for Stream Enrich.
 
 For the Scala Stream Collector:
 
@@ -76,6 +82,7 @@ For the Scala Stream Collector:
 | snowplow-stream-collector-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]     |
 | snowplow-stream-collector-kafka-*version*.jar         | [Apache Kafka][kafka]         |
 | snowplow-stream-collector-nsq-*version*.jar           | [NSQ][nsq]                    |
+| snowplow-stream-collector-stdout-*version*.jar        | stdout                        |
 
 For Stream Enrich:
 
@@ -85,16 +92,20 @@ For Stream Enrich:
 | snowplow-stream-enrich-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]     |
 | snowplow-stream-enrich-kafka-*version*.jar         | [Apache Kafka][kafka]         |
 | snowplow-stream-enrich-nsq-*version*.jar           | [NSQ][nsq]                    |
+| snowplow-stream-enrich-stdin-*version*.jar         | stdin/stdout                  |
 
-BEN - WHAT ABOUT STDIN/STDOUT OPTION - DO ALL ARTIFACTS SUPPORT THIS?
+This approach reduces artifact size and simplifies testing, at the cost of some flexibility for
+Stream Enrich. If you were previously running a "hybrid-cloud" Stream Enrich (reading and writing to
+different streaming technologies), then we suggest setting up a dedicated app downstream of Stream
+Enrich to bridge the enriched events to the other stream system.
 
-This approach reduces artifact size and simplifies testing, at the cost of some flexibility for Stream Enrich. If you were previously running a "hybrid-cloud" Stream Enrich (reading and writing to different streaming technologies), then we suggest setting up a dedicated app downstream of Stream Enrich to bridge the enriched events to the other stream system. 
+<h2 id="misc">4. Miscellaneous changes</h2>
 
-<h3 id="jmx">3.2 Exposing the number of requests made to the collector through JMX</h3>
+<h3 id="jmx">4.1 Exposing the number of requests made to the collector through JMX</h3>
 
-Thanks to [GitHub user jspc][jspc], the Scala Stream Collector now exposes some valuable metrics through
-[JMX][jmx] via the new MBean `com.snowplowanalytics.snowplow:type=StreamCollector`, containing
-the following attributes:
+Thanks to [GitHub user jspc][jspc], the Scala Stream Collector now exposes some valuable metrics
+through [JMX][jmx] via the new MBean `com.snowplowanalytics.snowplow:type=StreamCollector`,
+containing the following attributes:
 
 - `Requests`: total number of requests
 - `SuccessfulRequests`: total number of successful requests
@@ -114,17 +125,23 @@ java \
 
 For more information on setting JMX up, refer to [this guide][jmx-setup].
 
-<h3 id="kafka">3.3 Upgrading to Kafka 1.0.1</h3>
+<h3 id="kafka">4.2 Upgrading to Kafka 1.0.1</h3>
 
 We've taken advantage of this release to upgrade the Kafka artifacts to Kafka 1.0.1.
 
-<h2 id="upgrading">4. Upgrading</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
-<h3 id="upg-ssc">4.1 Scala Stream Collector</h3>
+<h3 id="upg-ssc">5.1 Scala Stream Collector</h3>
 
 The latest version of the Scala Stream Collector is available from our Bintray [here][ssc].
 
-<h4 id="upg-ssc-conf">4.1.1 Updating the configuration</h4>
+A complete setup guide for running the Scala Stream Collector on GCP can be found in the following
+guides:
+
+- [The getting started guide][getting-started]
+- [The Scala Stream Collector setup guide][ssc-setup-guide]
+
+<h4 id="upg-ssc-conf">5.1.1 Updating the configuration</h4>
 
 For non-Google Cloud PubSub users, the only minor change was made to the `collector.crossDomain`
 section: it's now non-optional but has an `enabled` flag:
@@ -142,10 +159,8 @@ However, if you want to leverage Google Cloud PubSub, you'll need to change the
 
 {% highlight yaml %}
 sink {
-  enabled = googlePubSub
-
+  enabled = googlepubsub
   googleProjectId = ID
-
   # values are in milliseconds
   backoffPolicy {
     minBackoff = 50
@@ -156,15 +171,26 @@ sink {
 }
 {% endhighlight %}
 
-WHAT ABOUT AUTHENTICATION - HOW DOES THAT WORK?
-
 For a complete example, see [our sample config.hocon template][ssc-config].
 
-ADD DOCO LINK (NEED TO EXPLAIN multiplier etc)
+If you're running the collector from a GCP instance in the same project, authentication will be
+transparently taken care of for you.
 
-<h4 id="upg-ssc-launch">4.1.2 Launching</h4>
+If not, you'll need to run the following to authenticate:
 
-As explained in [section 3.1](#split), there is now one JAR per platform, as such you'll need to
+{% highlight bash %}
+gcloud auth login
+gcloud auth application-default login
+{% endhighlight %}
+
+Regarding `backoffPolicy`, if sinking a raw event to PubSub fails, the first retry will happen after
+`minBackoff` milliseconds. For the following failures, this backoff will be multiplied by
+`multiplier` each time until it reaches `maxBackoff` milliseconds, its cap. If the sum of the time
+spent backing off exceeds `totalBackoff` milliseconds, the application will shut down.
+
+<h4 id="upg-ssc-launch">5.1.2 Launching</h4>
+
+As explained in [section 3](#split), there is now one JAR per platform, as such you'll need to
 use one of the following commands to launch the collector:
 
 {% highlight bash %}
@@ -172,13 +198,19 @@ java -jar snowplow-stream-collector-google-pubsub-0.13.0.jar --config config.hoc
 java -jar snowplow-stream-collector-kinesis-0.13.0.jar --config config.hocon
 java -jar snowplow-stream-collector-kafka-0.13.0.jar --config config.hocon
 java -jar snowplow-stream-collector-nsq-0.13.0.jar --config config.hocon
+java -jar snowplow-stream-collector-stdout-0.13.0.jar --config config.hocon
 {% endhighlight %}
 
-<h3 id="upg-se">4.2 Stream Enrich</h3>
+<h3 id="upg-se">5.2 Stream Enrich</h3>
 
 The latest version of Stream Enrich is available from our Bintray [here][se].
 
-<h4 id="upg-se-conf">4.2.1 Updating the configuration</h4>
+A complete setup guide for running Stream Enrich on GCP can be found in the following guides:
+
+- [The getting started guide][getting-started]
+- [The Stream Enrich setup guide][se-setup-guide]
+
+<h4 id="upg-se-conf">5.2.1 Updating the configuration</h4>
 
 Configuration for Stream Enrich has been remodeled in order to only allow a source and a sink
 on the same platform and, for example, disallow reading events from a Kafka topic and writing out
@@ -220,8 +252,9 @@ enrich {
     in { ... }                         # UNCHANGED
     out { ... }                        # UNCHANGED
     sourceSink {                       # NEW SECTION
-      enabled = googlePubSub
+      enabled = googlepubsub
       googleProjectId = id
+      threadPoolSize = 4
       backoffPolicy {
         minBackoff = 50
         maxBackoff = 1000
@@ -236,13 +269,27 @@ enrich {
 }
 {% endhighlight %}
 
-WHAT ABOUT AUTHENTICATION - HOW DOES THAT WORK?
-
 For a complete example, see [our sample config.hocon template][se-config].
 
-ADD DOCO LINK (NEED TO EXPLAIN multiplier etc)
+If you're running the collector from a GCP instance in the same project, authentication will be
+transparently taken care of for you.
 
-<h4 id="upg-se-launch">4.2.2 Launching</h4>
+If not, you'll need to run the following to authenticate:
+
+{% highlight bash %}
+gcloud auth login
+gcloud auth application-default login
+{% endhighlight %}
+
+Regarding `backoffPolicy`, if sinking an enriched event to PubSub fails, the first retry will happen
+after `minBackoff` milliseconds. For the following failures, this backoff will be multiplied by
+`multiplier` each time until it reaches `maxBackoff` milliseconds, its cap. If the sum of the time
+spent backing off exceeds `totalBackoff` milliseconds, the application will shut down.
+
+`threadPoolSize` refers to the number of threads available to the
+[PubSub Subscriber][subscriber-doc].
+
+<h4 id="upg-se-launch">5.2.2 Launching</h4>
 
 Same as for the collector, there is now one JAR per targeted platform:
 
@@ -251,22 +298,28 @@ java -jar snowplow-stream-enrich-google-pubsub-0.15.0.jar --config config.hocon 
 java -jar snowplow-stream-enrich-kinesis-0.15.0.jar --config config.hocon --resolver file:iglu.json
 java -jar snowplow-stream-enrich-kafka-0.15.0.jar --config config.hocon --resolver file:iglu.json
 java -jar snowplow-stream-enrich-nsq-0.15.0.jar --config config.hocon --resolver file:iglu.json
+java -jar snowplow-stream-enrich-stdin-0.15.0.jar --config config.hocon --resolver file:iglu.json
 {% endhighlight %}
 
-<h2 id="roadmap">5. Roadmap</h2>
+<h2 id="roadmap">6. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
-* [R102 Afontova Gora][r102-bat], various stability, security and data quality improvements for the batch pipeline
-* [R103 [STR] PII Enrichment phase 2][r103-pii], enhancing our recently-released GDPR-focused PII Enrichment for the realtime pipeline 
+* [R102 Afontova Gora][r102-bat], various stability, security and data quality improvements for the
+  batch pipeline
+* [R103 [STR] PII Enrichment phase 2][r103-pii], enhancing our recently-released GDPR-focused PII
+  Enrichment for the realtime pipeline
 
 Furthermore, this release is only the beginning for Google Cloud Platform support in Snowplow!
 
-As discussed in our RFC, we plan on porting our streaming enrichment process to [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam] (see [this milestone][r151-beam] for details). In parallel, we are also busy designing our new Snowplow event loader for [BigQuery][bq].
+As discussed in our RFC, we plan on porting our streaming enrichment process to
+[Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam] (see
+[this milestone][r151-beam] for details). In parallel, we are also busy designing our new Snowplow
+event loader for [BigQuery][bq].
 
 We look forward to your feedback as we continue to roll out and extend our GCP capabilities!
 
-<h2 id="help">6. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
@@ -300,6 +353,12 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [se-config]: https://github.com/snowplow/snowplow/blob/r101-neapolis/3-enrich/stream-enrich/examples/config.hocon.sample
 
 [rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-google-cloud-platform/1505
+
+[getting-started]: https://github.com/snowplow/snowplow/wiki/GCP:-Getting-Started
+[ssc-setup-guide]: https://github.com/snowplow/snowplow/wiki/GCP:-Setting-up-the-Scala-Stream-Collector
+[se-setup-guide]: https://github.com/snowplow/snowplow/wiki/GCP:-Setting-up-Stream-Enrich
+
+[subscriber-doc]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/com/google/cloud/pubsub/v1/Subscriber.html
 
 [colobas]: https://github.com/colobas
 [jspc]: https://github.com/jspc
