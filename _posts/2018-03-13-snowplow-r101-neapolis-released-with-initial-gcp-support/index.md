@@ -218,7 +218,7 @@ enriched events to a Kinesis stream.
 
 As such, the configuration, if you're using Kinesis, now looks like:
 
-{% highlight bash %}
+{% highlight yaml %}
 enrich {
   streams {
     in { ... }                         # UNCHANGED
@@ -246,7 +246,7 @@ enrich {
 
 If you want to leverage Google Cloud PubSub, it should look like the following:
 
-{% highlight bash %}
+{% highlight yaml %}
 enrich {
   streams {
     in { ... }                         # UNCHANGED
