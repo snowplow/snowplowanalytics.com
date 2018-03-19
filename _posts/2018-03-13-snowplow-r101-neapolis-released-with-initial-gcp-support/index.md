@@ -176,7 +176,7 @@ For a complete example, see [our sample config.hocon template][ssc-config].
 If you're running the collector from a GCP instance in the same project, authentication will be
 transparently taken care of for you.
 
-If not, you'll need to run the following to authenticate:
+If not, you'll need to run the following to authenticate using [GCP's CLI gcloud][gcloud]:
 
 {% highlight bash %}
 gcloud auth login
@@ -274,7 +274,7 @@ For a complete example, see [our sample config.hocon template][se-config].
 If you're running the collector from a GCP instance in the same project, authentication will be
 transparently taken care of for you.
 
-If not, you'll need to run the following to authenticate:
+If not, you'll need to run the following to authenticate using [GCP's CLI gcloud][gcloud]:
 
 {% highlight bash %}
 gcloud auth login
@@ -309,6 +309,8 @@ Upcoming Snowplow releases will include:
   batch pipeline
 * [R103 [STR] PII Enrichment phase 2][r103-pii], enhancing our recently-released GDPR-focused PII
   Enrichment for the realtime pipeline
+* [R10x [STR & BAT] IP lookups enrichment upgrade][r156-ip], moving away from
+  using the legacy database format, which is being sunsetted on 2nd April 2018
 
 Furthermore, this release is only the beginning for Google Cloud Platform support in Snowplow!
 
@@ -334,12 +336,14 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r102-bat]: https://github.com/snowplow/snowplow/milestone/155
 [r103-pii]: https://github.com/snowplow/snowplow/milestone/153
 [r151-beam]: https://github.com/snowplow/snowplow/milestone/151
+[r156-ip]: https://github.com/snowplow/snowplow/milestone/156
 
 [gcp]: https://cloud.google.com/
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 [bq]: https://cloud.google.com/bigquery/
 [pubsub]: https://cloud.google.com/pubsub/
+[gcloud]: https://cloud.google.com/sdk/gcloud/
 
 [kinesis]: https://aws.amazon.com/kinesis/
 [kafka]: http://kafka.apache.org/
