@@ -22,10 +22,28 @@ class: customers, header-white
     <div class="box-image parallax">
         <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_Hero.jpg" width="1440" height="1220" class="adapt" alt="">
     </div>
-    <div class="box-text bg-primary-lighter pad-100 md-pad-40">
-        <h2>Our customers are diverse.</h2>
-        <p>From publishing companies to retailers, jobs boards to broadcasters, dating sites to mobile-only banking providers, limousine services to consumer goods manufacturers, automotive dealerships to games companies, airports to luxury brands, travel companies to serviced office providers, there are not many sectors without a Snowplow user. We have active and growing communities in London, New York, Sydney, Amsterdam, Sao Paolo, Berlin, San Francisco, Tel Aviv and Dubai.</p>
-        <p>Our customers have a lot in common, though. They are smart. They love data. And they want to use data to differentiate.</p>
+</section>
+
+
+<section class="users">
+    <div class="container">
+        <h2 class="text-center">Our Users</h2>
+        <p class="text-muted text-center">Priberam sit conectum virboratem juris domun saet nonclosuri. Aesteto guntinuum.</p>
+        <div class="users-block-container">
+            {% for user in site.data.users %} 
+                <a href="{{ user.link }}" target="_blank" class="users-block">
+                    <span class="highlight"></span>
+                    <div class="img" style="background-image: url({{ user.picture }});"></div>
+                </a> 
+            {% endfor %}
+        </div>
+        <div class="text-center snowplw-btn-container">
+            <div class="snowplw-btn-sides left"></div>
+            <div class="snowplw-btn" id="btn_users">
+                Load More Users
+            </div>
+            <div class="snowplw-btn-sides right"></div>
+        </div>       
     </div>
 </section>
 
@@ -67,25 +85,48 @@ class: customers, header-white
         <div class="col-md-6 pull-right">
             <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_SimplyBusiness.jpg" width="720" height="600" class="" alt="">
         </div>
-        <div class="col-md-6 pull-left xs-pad-t-20 sm-pad-t-20">
-            <div class="text-left pad-r-30 xs-pad-r-0 sm-pad-r-0">
-                <h5 class="text-uppercase spacer-bottom-30">Retail</h5>
-                <h3>Simply Business</h3>
-                <h4>Simply Business use event data to disrupt the business insurance market.</h4>
-                <p class="quote">"The Snowplow data set has become part of our core strategic offering."</p>
-                <p>
-                    <cite>
-                        <small>Stewart Duncan, Director of Data Science</small>
-                    </cite>
+        <img src="/assets/img/common/comp-1.jpg" srcset="/assets/img/common/comp-1@2x.jpg 2x" class="comp-1">
+        <div class="silver-square"></div>
+        <img src="/assets/img/common/comp-2.png" srcset="/assets/img/common/comp-2@2x.png 2x" class="comp-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 differentiate-content right">
+                    <h3>
+                        Our Users love data
+                        <br>
+                        and want to use it to 
+                        <br>
+                        differentiate.
+                    </h3>
+                    <p>
+                        There are many digital analytics solutions out there. Many are easier to use than Snowplow. But none of them give you the control of your data that Snowplow does.
+                        <br>
+                        Our users want to be transformative with data. That is why they value that control.
+                    </p>
+                </div>
+            </div>
+        </div>        
+        <div class="container">
+            <img src="/assets/img/common/comp-3.png" srcset="/assets/img/common/comp-3@2x.png 2x" class="comp-3">
+            <div class="differentiate-content center">
+                <h2 class="text-center">Our Users are smart.</h2>
+                <p class="text-muted text-center">
+                    They have to be. Using data to be transformative is hard. 
+                    <br>
+                    Our technology can help you take control of your data. 
+                    <br>
+                    But only smart people in smart teams can use that control to be transformative.
                 </p>
                 <a href="/customers/simply-business/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
             </div>
         </div>
     </div>
-
-    <div class="container spacer-bottom-100">
-        <div class="col-md-6">
-            <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_JustWatch.jpg" width="720" height="600" class="" alt="">
+    
+    <div class="container visible-xs">
+        <h2 class="text-center">Using data to differentiate.</h2>
+        <p class="text-muted text-center">Find out how Snowplow enables Smart People to be transformative with data.</p>
+        <div class="row visible-xs">
+            <img src="/assets/img/common/comp-1.jpg" srcset="/assets/img/common/comp-1%402x.jpg 2x" class="comp-1-mob img-responsive">
         </div>
         <div class="col-md-6 xs-pad-t-20 sm-pad-t-20">
             <div class="text-left pad-l-30 xs-pad-l-0 sm-pad-l-0">
