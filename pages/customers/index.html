@@ -5,85 +5,22 @@ title: Our Customers are Smart | Snowplow
 description: Our Customers are diverse but have a lot in common, though. They are smart. They love data. And they want to use data to differentiate. Find out how we helped!
 permalink: /customers/
 class: customers, header-white
-assets:
-  css: assets/css/customers.css
-  js: assets/js/costumers.js
+
 ---
 
 <section class="hero">
-    <div class="mask-purple"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <h1>The Case Studies.</h1>
-                <p class="text-muted">Making extraordinary sucessful stories or, as we call it, business as usual.</p>
-            </div>
-        </div>        
+    <div class="container text-center">
+        <h1 class="text-brand-light">Using data to differentiate.</h1>
+        <p class="text-muted">Find out how Snowplow enables Smart People to be transformative with data.</p>
     </div>
 </section>
 
 
-<section class="case-studies">
-    <div class="container">
-        <div class="case-studies-container">
-            {% for case in site.data.case_studies %}           
-                <div class="case-studies-block {{ case.color }}" data-class={{ case.color }}>
-                    <div class="case-studies-block-mask"></div>
-                    <img src={{ case.picture_top }} srcset="{{ case.picture_top_wide }} 2x" class="case-studies-block-pic-top">
-                    <div class="case-studies-block-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="107" viewBox="0 0 120 107"> <path fill="#603AA8" fill-rule="evenodd" d="M115.469 86.658H4.538a4.525 4.525 0 0 1-4.525-4.514V4.514c0-2.49 2.03-4.515 4.525-4.515h110.931a4.526 4.526 0 0 1 4.525 4.515v77.63c0 2.489-2.031 4.514-4.525 4.514zm1.775-82.144c0-.976-.796-1.77-1.775-1.77H4.538c-.978 0-1.775.794-1.775 1.77v77.63c0 .977.797 1.771 1.775 1.771h110.931c.979 0 1.775-.794 1.775-1.771V4.514zm-41.15 42.941l-26.59 14.856a2.913 2.913 0 0 1-1.421.373 2.902 2.902 0 0 1-1.468-.401 2.873 2.873 0 0 1-1.436-2.501v-29.71c0-1.041.537-1.977 1.436-2.503a2.892 2.892 0 0 1 2.889-.028l26.59 14.856a2.9 2.9 0 0 1 1.487 2.529 2.897 2.897 0 0 1-1.487 2.529zm-1.342-2.664L48.159 29.935a.153.153 0 0 0-.075-.021.17.17 0 0 0-.079.022c-.076.046-.076.111-.076.136v29.71c0 .024 0 .089.076.134.076.043.133.012.154.001l26.593-14.856c.022-.013.079-.045.079-.135 0-.09-.057-.121-.079-.135zM2.206 97.912h14.439c.651-3.602 3.81-6.345 7.605-6.345 3.795 0 6.954 2.743 7.605 6.345h86.764a1.373 1.373 0 0 1 0 2.743H31.855c-.651 3.602-3.81 6.345-7.605 6.345-3.795 0-6.954-2.743-7.605-6.345H2.206c-.76 0-1.376-.614-1.376-1.371 0-.758.616-1.372 1.376-1.372zm22.044 6.344c2.749 0 4.985-2.23 4.985-4.972 0-2.742-2.236-4.973-4.985-4.973s-4.985 2.231-4.985 4.973 2.236 4.972 4.985 4.972z"/> </svg>
-                        <p class="case-studies-block-media">media</p>
-                        <h3>{{ case.company }}</h3>
-                        <p class="case-studies-block-content">{{ case.content }}</p>
-                        <p class="case-studies-block-quote">{{ case.quote }}</p>
-                        <p class="case-studies-block-name">{{ case.name }}</p>
-                        <p class="case-studies-block-position">{{ case.position }}</p>
-                    </div>                    
-                    <div class="case-studies-block-pic-bottom">
-                        <img src={{ case.picture_bottom }} srcset="{{ case.picture_bottom_wide }} 2x" class="">
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="text-center snowplw-btn-container">
-            <div class="snowplw-btn-sides left"></div>
-            <div class="snowplw-btn">
-                Load More Case Studies
-            </div>
-            <div class="snowplw-btn-sides right"></div>
-        </div>        
-    </div>
-</section>
 
 
-<section class="testemonials">
-    <div class="container">
-        <h2 class="text-center">Testemonials</h2>
-        <p class="text-muted text-center">Lorem ipsum sit amet consequeteur adisciplit.</p>
-        <div class="testemonials-block-container">
-            <div class="row">
-                {% for testemonial in site.data.testimonials %} 
-                {% assign test = testemonial[1] %} 
-                    <div class="testemonials-block col-sm-6">
-                        <div class="testemonials-block-wrapper">
-                            <p class="testemonials-block-content">{{ test.content }}</p>
-                            <p class="testemonials-block-name">{{ test.full_name }}</p>
-                            <p class="testemonials-block-position">{{ test.position }}</p>
-                            <p class="testemonials-block-company">{{ test.company }}</p>
-                            <div class="testemonials-block-pic" style="background-image: url({{ test.picture }});"></div>
-                            <div class="testemonials-block-link">Explore Case Study</div>
-                        </div>                        
-                    </div>
-                {% endfor %}
-            </div>            
-        </div>
-        <div class="text-center snowplw-btn-container">
-            <div class="snowplw-btn-sides left"></div>
-            <div class="snowplw-btn" id="btn_refresh_testemonials">
-                Refresh
-            </div>
-            <div class="snowplw-btn-sides right"></div>
-        </div>       
+<section class="window">
+    <div class="box-image parallax">
+        <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_Hero.jpg" width="1440" height="1220" class="adapt" alt="">
     </div>
 </section>
 
@@ -111,91 +48,42 @@ assets:
 </section>
 
 
-<section class="videos">
+
+
+<section class="pad-b-20">
     <div class="container">
-        <h2 class="text-center">Videos</h2>
-        <p class="text-muted text-center">Find out how Snowplow enables Smart People to be transformative with data.</p>
-        <p class="small text-center">Filter by industry:</p>
-        <ul class="videos-filters">
-            <li data-filter="all" class="active">All</li>
-            <li data-filter="media">Media</li>
-            <li data-filter="retail">Retail</li>
-            <li data-filter="gaming">Gaming</li>
-        </ul>
-        <div class="videos-block-container row">
-            {% for video in site.data.videos %}
-                <div class="col-sm-12 videos-block" data-filter={{ video.industry }}>
-                    <div class="videos-block-pic" style="background-image: url({{ video.picture }});"></div>
-                    <div class="videos-block-pic-wide" style="background-image: url({{ video.picture_wide }});"></div>
-                    <div class="videos-block-content">
-                        <p class="videos-block-title"><span>{{ video.name }}</span> — {{ video.who }}</p>
-                        <p class="videos-block-where">{{ video.where }}</p>
-                        <p class="videos-block-excerpt hidden-xs">{{ video.excerpt }}</p>
-                        <div class="btn-play" data-url={{ video.name }}>Play</div>
-                    </div>
+        <div class="row">
+            <div class="col-md-6 text-md-center text-sm-center text-xs-center">
+                <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_Img1.jpg" class="img-circle" width="493" height="493" class="" alt="">
+            </div>
+            <div class="col-md-6 lg-spacer-top-100 spacer-top-50 xs-spacer-top-100">
+                <div class="text-left">
+                    <h3>Our users love data and want to use it to differentiate.</h3>
+                    <p>There are many digital analytics solutions out there. Many are easier to use than Snowplow. But none of them give you the control of your data that Snowplow does.</p>
+                    <p>Our users want to be transformative with data. That is why they value that control.</p>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="text-center snowplw-btn-container">
-            <div class="snowplw-btn-sides left"></div>
-            <div class="snowplw-btn youtube">
-                Visit our YouTube Channel
-            </div>
-            <div class="snowplw-btn-sides right"></div>
-        </div>        
-    </div>
-</section>
-
-
-
-<section class="media">
-    <div class="container">
-        <h2 class="text-center">Snowplow in the media</h2>
-        <p class="text-muted text-center">Conectum virboratem juris domun saet nonclosuri. Aesteto guntinuum.</p>
-        <div class="media-blocks-container">
-            <div class="media-blocks-wrapper">
-                {% for media in site.data.media %}
-                    <div class="media-blocks">
-                        <div class="media-blocks-logo-wide" style="background-image: url({{ media.picture }});"></div>
-                        <div class="media-blocks-logo" style="background-image: url({{ media.picture_wide }});"></div>
-                        <p class="media-blocks-title">by {{ media.title }}</p>
-                        <p class="media-blocks-name">{{ media.name }}</p>
-                        <p class="media-blocks-content">{{ media.content }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="media-arrow left inactive">
-                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"> <path fill="#CED1D7" fill-rule="evenodd" d="M75 149.999c-41.421 0-75-33.578-75-75 0-41.42 33.579-75 75-75 41.422 0 75 33.58 75 75 0 41.422-33.578 75-75 75zM44.089 73.798l45.258 26.199.441-52.684-45.699 26.485z"/> </svg>
-            </div>
-            <div class="media-arrow right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"> <path fill="#CED1D7" fill-rule="evenodd" d="M75 149.999c-41.421 0-75-33.578-75-75 0-41.42 33.579-75 75-75 41.422 0 75 33.58 75 75 0 41.422-33.578 75-75 75zM44.089 73.798l45.258 26.199.441-52.684-45.699 26.485z"/> </svg>
             </div>
         </div>
     </div>
 </section>
 
 
-<section class="differentiate">
-    <div class="container-fluid hidden-xs">
-        <div class="container">
-            <div class="row">
-                <h2 class="text-center">Using data to differentiate.</h2>
-                <p class="text-muted text-center">Find out how Snowplow enables Smart People to be transformative with data.</p>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 differentiate-content left">
-                    <h3>Our Users are diverse.</h3>
-                    <p>
-                        From publishing companies to retailers, jobs boards to broadcasters, dating sites to mobile-only banking providers, limousine services to consumer goods manufacturers, automotive dealerships to games companies, airports to luxury brands, travel companies to serviced office providers, there are not many sectors without a Snowplow user. 
-                    </p>
-                    <p>
-                        We have active and growing communities in London, New York, Sydney, Amsterdam, Sao Paolo, Berlin, San Francisco, Tel Aviv and Dubai.
-                    </p>
-                    <p>
-                        Our customers have a lot in common, though. They are smart. They love data. And they want to use data to differentiate.
-                    </p>
-                </div>
-            </div>
+
+
+<section>
+    <div class="container text-center">
+        <h2 class="text-brand-light">Our users are Smart.</h2>
+        <p>They have to be. Using data to be transformative is hard. Our technology can help you take control of your data. But only smart people in smart teams can use that control to be transformative.</p>
+    </div>
+</section>
+
+
+
+
+<section class="bg-primary-lighter">
+    <div class="container spacer-bottom-100">
+        <div class="col-md-6 pull-right">
+            <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_SimplyBusiness.jpg" width="720" height="600" class="" alt="">
         </div>
         <img src="/assets/img/common/comp-1.jpg" srcset="/assets/img/common/comp-1@2x.jpg 2x" class="comp-1">
         <div class="silver-square"></div>
@@ -229,8 +117,9 @@ assets:
                     <br>
                     But only smart people in smart teams can use that control to be transformative.
                 </p>
+                <a href="/customers/simply-business/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
             </div>
-        </div>         
+        </div>
     </div>
     
     <div class="container visible-xs">
@@ -239,60 +128,92 @@ assets:
         <div class="row visible-xs">
             <img src="/assets/img/common/comp-1.jpg" srcset="/assets/img/common/comp-1%402x.jpg 2x" class="comp-1-mob img-responsive">
         </div>
-        <div class="row">
-            <div class="col-sm-6 differentiate-content left">
-                <h3>Our Users are diverse.</h3>
+        <div class="col-md-6 xs-pad-t-20 sm-pad-t-20">
+            <div class="text-left pad-l-30 xs-pad-l-0 sm-pad-l-0">
+                <h5 class="text-uppercase spacer-bottom-30">Media</h5>
+                <h3>JustWatch</h3>
+                <h4>JustWatch use Snowplow to build a differentiated service for advertising movies, driving spectacular growth.</h4>
+                <p class="quote">"Snowplow enabled us to build a sophisticated audience intelligence and double the efficiency of campaigns."</p>
                 <p>
-                    From publishing companies to retailers, jobs boards to broadcasters, dating sites to mobile-only banking providers, limousine services to consumer goods manufacturers, automotive dealerships to games companies, airports to luxury brands, travel companies to serviced office providers, there are not many sectors without a Snowplow user. 
+                    <cite>
+                        <small>Dominik Raute, Co-Founder & CTO</small>
+                    </cite>
                 </p>
-                <p>
-                    We have active and growing communities in London, New York, Sydney, Amsterdam, Sao Paolo, Berlin, San Francisco, Tel Aviv and Dubai.
-                </p>
-                <p>
-                    Our customers have a lot in common, though. They are smart. They love data. And they want to use data to differentiate.
-                </p>
+                <a href="/customers/justwatch/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
             </div>
         </div>
-        <div class="row visible-xs">
-            <img src="/assets/img/common/comp-2.png" srcset="/assets/img/common/comp-2@2x.png 2x" class="comp-2-mob img-responsive">
-        </div>
-        <div class="row">
-            <div class="col-sm-6 differentiate-content right">
-                <h3>
-                    Our Users love data
-                    <br>
-                    and want to use it to 
-                    <br>
-                    differentiate.
-                </h3>
-                <p>
-                    There are many digital analytics solutions out there. Many are easier to use than Snowplow. But none of them give you the control of your data that Snowplow does.
-                    <br>
-                    Our users want to be transformative with data. That is why they value that control.
-                </p>
-            </div>
-        </div>
-        <div class="row visible-xs">
-            <img src="/assets/img/common/comp-3.png" srcset="/assets/img/common/comp-3@2x.png 2x" class="comp-3-mob img-responsive">
-        </div>
-        <div class="differentiate-content center">
-            <h2 class="text-center">Our Users are smart.</h2>
-            <p class="text-muted text-center">
-                They have to be. Using data to be transformative is hard. 
-                <br>
-                Our technology can help you take control of your data. 
-                <br>
-                But only smart people in smart teams can use that control to be transformative.
-            </p>
-        </div>        
     </div>
+    
+    <div class="container spacer-bottom-100">
+        <div class="col-md-6 pull-right">
+            <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_Peak.jpg" width="720" height="600" class="" alt="">
+        </div>
+        <div class="col-md-6 pull-left xs-pad-t-20 sm-pad-t-20">
+            <div class="text-left pad-r-30 xs-pad-r-0 sm-pad-r-0">
+                <h5 class="text-uppercase spacer-bottom-30">Gaming</h5>
+                <h3>Peak</h3>
+                <h4>Peak uses Snowplow to build award winning games and make people smarter.</h4>
+                <p class="quote">"Snowplow is really powerful when you start to hit that growth curve and going upwards."</p>
+                <p>
+                    <cite>
+                        <small>Thomas in’t Veld, Lead Data Scientist</small>
+                    </cite>
+                </p>
+                <a href="/customers/peak/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container spacer-bottom-100">
+        <div class="col-md-6">
+            <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_ViewBix.jpg" width="720" height="600" class="" alt="">
+        </div>
+        <div class="col-md-6 xs-pad-t-20 sm-pad-t-20">
+            <div class="text-left pad-l-30 xs-pad-l-0 sm-pad-l-0">
+                <h5 class="text-uppercase spacer-bottom-30">Ad Tech</h5>
+                <h3>Viewbix</h3>
+                <h4>Viewbix uses Snowplow to help brands create highly engaging video ad campaigns and improve return on advertising spend.</h4>
+                <p class="quote">"When we can show a customer that 95% of actions taken during a video happen between 0:30 and 0:35 seconds in, we have provided amazing value."</p>
+                <p>
+                    <cite>
+                        <small>Dani Waxman, Product Manager</small>
+                    </cite>
+                </p>
+                <a href="/customers/justwatch/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container spacer-bottom-70">
+        <div class="col-md-6 pull-right">
+            <img src="{{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_Customers_Picnic.jpg" width="720" height="600" class="" alt="">
+        </div>
+        <div class="col-md-6 pull-left xs-pad-t-20 sm-pad-t-20">
+            <div class="text-left pad-r-30 xs-pad-r-0 sm-pad-r-0">
+                <h5 class="text-uppercase spacer-bottom-30">Online Retail</h5>
+                <h3>Picnic</h3>
+                <h4>Picnic uses Snowplow to deliver users with a smart, data-driven shopping experience.</h4>
+                <p class="quote">“The Snowplow framework has become an important data analytics tool, indispensable in understanding the Picnic app usage and allowing us to focus on the most impactful features”</p>
+                <p>
+                    <cite>
+                        <small>Dimitar Nedev, Data Infrastructure Lead</small>
+                    </cite>
+                </p>
+                <a href="/customers/picnic/" class="btn btn-outline-primary spacer-top-20">Explore Case Study</a>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 
 
-<section class="no-margin no-padding request-demo-costumers">
-    <div class="container-fluid">
+<section class="no-margin no-padding">
+    <div class="container pad-t-40">
         {% include request-demo.html %}
     </div>
 </section>
 
+
+
+{% include testimonials.html id="eric" %}
