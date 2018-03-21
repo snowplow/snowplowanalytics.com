@@ -5,7 +5,7 @@ title-short: Snowplow R101 Neapolis
 tags: [google pubsub, google cloud platform, realtime]
 author: Ben
 category: Releases
-permalink: /blog/2018/03/20/snowplow-r101-neapolis-with-initial-gcp-support/
+permalink: /blog/2018/03/21/snowplow-r101-neapolis-with-initial-gcp-support/
 ---
 
 We are tremendously excited to announce the release of [Snowplow R101 Neapolis][release-notes].
@@ -77,25 +77,70 @@ Collector, and five for Stream Enrich.
 
 **For the Scala Stream Collector:**
 
-| JAR                                                   | Targeted platform            |
-| ----------------------------------------------------  | ---------------------------- |
-| snowplow-stream-collector-google-pubsub-*version*.jar | [Google Cloud PubSub][pubsub]|
-| snowplow-stream-collector-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]    |
-| snowplow-stream-collector-kafka-*version*.jar         | [Apache Kafka][kafka]        |
-| snowplow-stream-collector-nsq-*version*.jar           | [NSQ][nsq]                   |
-| snowplow-stream-collector-stdout-*version*.jar        | stdout                       |
-
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>JAR</th>
+      <th>Targeted platform</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>snowplow-stream-collector-google-pubsub-<em>version</em>.jar</td>
+      <td><a href="https://cloud.google.com/pubsub/">Google Cloud PubSub</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-collector-kinesis-<em>version</em>.jar</td>
+      <td><a href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-collector-kafka-<em>version</em>.jar</td>
+      <td><a href="http://kafka.apache.org/">Apache Kafka</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-collector-nsq-<em>version</em>.jar</td>
+      <td><a href="http://nsq.io/">NSQ</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-collector-stdout-<em>version</em>.jar</td>
+      <td>stdout</td>
+    </tr>
+  </tbody>
+</table>
 
 
 **For Stream Enrich:**
 
-| JAR                                                | Targeted platform             |
-| -------------------------------------------------- | ----------------------------- |
-| snowplow-stream-enrich-google-pubsub-*version*.jar | [Google Cloud PubSub][pubsub] |
-| snowplow-stream-enrich-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]     |
-| snowplow-stream-enrich-kafka-*version*.jar         | [Apache Kafka][kafka]         |
-| snowplow-stream-enrich-nsq-*version*.jar           | [NSQ][nsq]                    |
-| snowplow-stream-enrich-stdin-*version*.jar         | stdin/stdout                  |
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>JAR</th>
+      <th>Targeted platform</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>snowplow-stream-enrich-google-pubsub-<em>version</em>.jar</td>
+      <td><a href="https://cloud.google.com/pubsub/">Google Cloud PubSub</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-enrich-kinesis-<em>version</em>.jar</td>
+      <td><a href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-enrich-kafka-<em>version</em>.jar</td>
+      <td><a href="http://kafka.apache.org/">Apache Kafka</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-enrich-nsq-<em>version</em>.jar</td>
+      <td><a href="http://nsq.io/">NSQ</a></td>
+    </tr>
+    <tr>
+      <td>snowplow-stream-enrich-stdin-<em>version</em>.jar</td>
+      <td>stdin/stdout</td>
+    </tr>
+  </tbody>
+</table>
 
 
 This approach reduces artifact size and simplifies testing, at the cost of some flexibility for
