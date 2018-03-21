@@ -31,12 +31,12 @@ Read on for more information on R101 Neapolis, named after
 
 Historically, the Snowplow platform has been closely tied to Amazon Web Services and to a lesser
 extent on-premise (largely through Apache Kafka support). In order to make the platform accessible
-to all, it is important to make it as much cloud-agnostic as possible.
+to all, it is important to make it as cloud-agnostic as possible.
 
 This process begins with porting the realtime pipeline to Google Cloud Platform, the hugely popular
 public cloud offering - and this release is the first step on this journey.
 
-The next releases in our journey to GCP will focus on porting the streaming enrichment process to
+The next releases on our journey to GCP will focus on porting the streaming enrichment process to
 [Google Cloud Dataflow][dataflow] and making loading Snowplow events into [BigQuery][bq] a reality.
 
 For more information regarding our overall plans for Google Cloud Platform, please check out our
@@ -74,17 +74,20 @@ to split the different artifacts according to their targeted streaming technolog
 Therefore, from this release onwards, there will be five different artifacts for the Scala Stream
 Collector, and five for Stream Enrich.
 
-For the Scala Stream Collector:
 
-| JAR                                                   | Targeted platform             |
-| ----------------------------------------------------- | ----------------------------- |
-| snowplow-stream-collector-google-pubsub-*version*.jar | [Google Cloud PubSub][pubsub] |
-| snowplow-stream-collector-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]     |
-| snowplow-stream-collector-kafka-*version*.jar         | [Apache Kafka][kafka]         |
-| snowplow-stream-collector-nsq-*version*.jar           | [NSQ][nsq]                    |
-| snowplow-stream-collector-stdout-*version*.jar        | stdout                        |
+**For the Scala Stream Collector:**
 
-For Stream Enrich:
+| JAR                                                   | Targeted platform            |
+| ----------------------------------------------------  | ---------------------------- |
+| snowplow-stream-collector-google-pubsub-*version*.jar | [Google Cloud PubSub][pubsub]|
+| snowplow-stream-collector-kinesis-*version*.jar       | [Amazon Kinesis][kinesis]    |
+| snowplow-stream-collector-kafka-*version*.jar         | [Apache Kafka][kafka]        |
+| snowplow-stream-collector-nsq-*version*.jar           | [NSQ][nsq]                   |
+| snowplow-stream-collector-stdout-*version*.jar        | stdout                       |
+
+
+
+**For Stream Enrich:**
 
 | JAR                                                | Targeted platform             |
 | -------------------------------------------------- | ----------------------------- |
@@ -93,6 +96,7 @@ For Stream Enrich:
 | snowplow-stream-enrich-kafka-*version*.jar         | [Apache Kafka][kafka]         |
 | snowplow-stream-enrich-nsq-*version*.jar           | [NSQ][nsq]                    |
 | snowplow-stream-enrich-stdin-*version*.jar         | stdin/stdout                  |
+
 
 This approach reduces artifact size and simplifies testing, at the cost of some flexibility for
 Stream Enrich. If you were previously running a "hybrid-cloud" Stream Enrich (reading and writing to
