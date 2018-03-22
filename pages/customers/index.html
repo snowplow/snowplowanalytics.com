@@ -16,7 +16,7 @@
        <div class="row">
            <div class="col-sm-6 col-md-4">
                <h1>The Case Studies.</h1>
-               <p class="text-muted">Making extraordinary sucessful stories or, as we call it, business as usual.</p>
+               <p class="text-muted">How smart people differentiate with data.</p>
            </div>
        </div>        
      </div>
@@ -58,8 +58,8 @@
  
 <section class="testemonials">
    <div class="container">
-       <h2 class="text-center">Testemonials</h2>
-       <p class="text-muted text-center">Lorem ipsum sit amet consequeteur adisciplit.</p>
+       <h2 class="text-center">Testimonials</h2>
+       <p class="text-muted text-center">What our customers say about us.</p>
        <div class="testemonials-block-container">
            <div class="row">
                {% for testemonial in site.data.testimonials %} 
@@ -71,7 +71,7 @@
                            <p class="testemonials-block-position">{{ test.position }}</p>
                            <p class="testemonials-block-company">{{ test.company }}</p>
                            <div class="testemonials-block-pic" style="background-image: url({{ test.picture }});"></div>
-                           <div class="testemonials-block-link">Explore Case Study</div>
+                           <!--<div class="testemonials-block-link">Explore Case Study</div>-->
                        </div>                        
                    </div>
                {% endfor %}
@@ -100,7 +100,7 @@
 <section class="users">
    <div class="container">
        <h2 class="text-center">Our Users</h2>
-       <p class="text-muted text-center">Priberam sit conectum virboratem juris domun saet nonclosuri. Aesteto guntinuum.</p>
+       <p class="text-muted text-center">Snowplow users are diverse and are leaders in financial services, eCommerce, mobile gaming, finance, and many other industries.</p>
        <div class="users-block-container">
            {% for user in site.data.users %} 
                <a href="{{ user.link }}" target="_blank" class="users-block">
@@ -160,7 +160,7 @@
 <section class="media">
    <div class="container">
        <h2 class="text-center">Snowplow in the media</h2>
-       <p class="text-muted text-center">Conectum virboratem juris domun saet nonclosuri. Aesteto guntinuum.</p>
+       <p class="text-muted text-center">Read what others are saying about how they use Snowplow to drive their businesses.</p>
        <div class="media-blocks-container">
            <div class="media-blocks-wrapper">
                {% for media in site.data.media %}
