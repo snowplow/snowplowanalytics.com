@@ -8,18 +8,34 @@
 {
 	color:$white;
 	padding:60px;
-	margin:0 auto;
 	max-width: 1220px;
-	text-align:center;
-	background:$brand-success; 
+	background: #32373e;
 	border-radius:$border-radius-base;
+	margin-bottom: 100px;
+	img{
+		position: absolute;
+		bottom: 0;
+		width: 50%;
+		right: 0;
+		height: 100%;
+	}
 
+	.btn{
+		margin-top: 25px;
+	}
 	h4 {
-		font-size: 21px;
+		font-size: 30px;
 		margin:0 40px 0 0;
 		display:inline-block;
 		letter-spacing: normal;
 		vertical-align: middle;
+	}
+	h5 {
+		color:$white;
+		font-size: 20px;
+		letter-spacing: normal;
+		vertical-align: middle;
+		padding: 10px 0;
 	}
 
 	.bootstrap-select {
@@ -30,23 +46,62 @@
 			color:white!important;
 			border-color:$white;
 			background:none;
+			width: 400px;
 		}
 	}
 
 	@media (max-width: $screen-md-max)
 	{
+		text-align: center;
+
+
 		h4 {
 			margin:0;
 		}
 
+
+
 		.bootstrap-select {
 			margin-top:40px;
+
+			.dropdown-toggle {
+				color:white!important;
+				border-color:$white;
+				background:none;
+				width: 300px;
+			}
 		}
+		.btn {
+			width: 50%;
+		}
+
+		img{
+			width: 360px;
+			height: auto;
+		}
+
+
 	}
 
 	@media (max-width: $screen-sm-max)
 	{
 		max-width:95%;
 		padding: 30px;
+
+		.btn {
+			width: 100%;
+		}
+		.bootstrap-select {
+
+			.dropdown-toggle {
+				width: 100%;
+
+			}
+		}
+
+		img{
+			display: none
+		}
+
 	}
 }
