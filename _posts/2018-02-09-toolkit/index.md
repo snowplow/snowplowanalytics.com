@@ -8,7 +8,9 @@ category: Analytics
 permalink: /blog/2018/02/09/the-product-analyst-toolkit/
 ---
 
-*Part four of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3]*
+
+*Part four of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 5][product5]*
+
 
 ---
 
@@ -76,6 +78,8 @@ We’d love to hear about what tools you use regularly as part of your product d
 [product2]: https://snowplowanalytics.com/blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 
 [product3]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
+
+[product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 
 [tools]: /assets/img/blog/2018/02/tools.jpg
 

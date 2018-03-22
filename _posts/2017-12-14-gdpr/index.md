@@ -7,6 +7,7 @@ author: Anthony
 category: Analytics
 permalink: /blog/2017/12/14/gdpr-compliance-in-digital-analytics-and-how-we-want-to-help/
 description: "How we want to help companies navigate GDPR compliance in digital analytics"
+discourse: true
 ---
 ![privacy][lock]
 
@@ -33,7 +34,7 @@ The previous notable attempt to give data subjects more control over what person
 
 In order to address this imbalance and lack of transparency and control around what is arguably highly sensitive personal data, GDPR seeks to establish certain rights for the individuals who generate the data. Rights that, when exercised, allow for the user, not the businesses, to have final say in how their data is used.
 
-<h2 id="the right place at the right time">The right place at the right time</h2>
+<h2 id="rights">The right place at the right time</h2>
 
 Here are the new rights created for data subjects, as provisioned in the General Data Protection Regulation:
 Right to be informed: Users have a right to know what data is being collected and how it’s being used.
