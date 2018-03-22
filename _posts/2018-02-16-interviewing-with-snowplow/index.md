@@ -6,7 +6,6 @@ tags: [analytics, interviewing, startups]
 author: Miriam
 category: Inside the Plow
 permalink: /blog/2018/02/16/acing-your-interview-with-snowplow/
-
 ---
 
 

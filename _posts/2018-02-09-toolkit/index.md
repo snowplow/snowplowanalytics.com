@@ -11,7 +11,6 @@ permalink: /blog/2018/02/09/the-product-analyst-toolkit/
 
 *Part four of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 5][product5]*
 
-
 ---
 
 ![Use a variety of tools to get the job done][tools]

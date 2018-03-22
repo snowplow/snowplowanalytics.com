@@ -8,7 +8,6 @@ category: Analytics
 permalink: /blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 ---
 
-
 *Part two of our series on product analytics. Read: [Part 1][product1], [Part 3][product3], [Part 4][product4], [Part 5][product5]*
 
 ---
