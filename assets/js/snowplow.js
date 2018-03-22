@@ -367,7 +367,11 @@ if (!window.location.origin) {
             bodymovin.loadAnimation(animData);
         }
 
+        /* btn download */
 
+        $('#form-download').change(function(){
+            $('#download-btn').attr('href',this.value);
+        });
 
 
 
