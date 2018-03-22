@@ -11,7 +11,6 @@ permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-proces
 
 *Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5]*
 
-
 ---
 
 <h2 id="more about process">What does successful use of data to drive the product development process like? It’s much more about process and culture than it is about technology.</h2>

@@ -9,7 +9,9 @@ permalink: /blog/2018/01/19/product-analytics-part-one-data-and-digital-products
 ---
 
 
+
 *Part one of our series on product analytics. Read: [Part 2][pt2], [Part 3][product3], [Part 4][product4], [Part 5][product5]*
+
 
 
 ---
