@@ -69,6 +69,6 @@ Learn more about how you can [use Indicative][indicative-demo] to build next-lev
 
 [indicative]: https://www.indicative.com/
 
-[indicative-demo]: https://www.indicative.com/request-a-demo/
+[indicative-demo]: https://www.indicative.com/request-a-demo/?utm_source=snowplow
 
 [insights]: https://snowplowanalytics.com/products/snowplow-insights/?utm_source=behavioral%20data%20with%20indicative&utm_medium=first%20blog&utm_campaign=indicative
