@@ -12,7 +12,7 @@ permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-proces
 
 ---
 
-<h2 id="more about process">What does successful use of data to drive the product development process like? It’s much more about process and culture than it is about technology.</h2>
+<h2 id="more about process">What does successful use of data to drive the product development process look like? It’s much more about process and culture than it is about technology.</h2>
 
 There’s no getting around it - product analytics matters. As we’ve [already explored][product1], [intelligent use of data as an integral part of the product development process is often the differentiator between successful and unsuccessful products][product2]. Unfortunately, putting data at the heart of the product development process is hard and the obstacles are not always what you might think.
 
