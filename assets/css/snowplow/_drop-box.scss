@@ -75,9 +75,12 @@
 			width: 50%;
 		}
 
-			img{
-			display: none
+		img{
+			width: 360px;
+			height: auto;
 		}
+
+
 	}
 
 	@media (max-width: $screen-sm-max)
@@ -94,6 +97,10 @@
 				width: 100%;
 
 			}
+		}
+
+		img{
+			display: none
 		}
 
 	}
