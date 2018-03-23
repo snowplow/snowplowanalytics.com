@@ -28,13 +28,13 @@ Read on for more information on R102 Afontova Gora, named after [the complex of 
 Broadly speaking, Snowplow platform has two primary flavors: batch and realtime.
 Both flavors have own characteristics and use cases.
 For example, with batch users are able to load enriched data to Redshift and Snowflake, while with realtime - to Elasticsearch.
-At the same time batch is cheap, predictable and easy-to-recover and realtime is more expensive and implies more magic behind the scenes.
+At the same time batch is cheap, predictable and easy-to-recover, while realtime is more expensive and implies more magic behind the scenes.
 
 However, nobody said it is impossible to get benefits of both approaches in a single pipeline.
 So called [Lambda architecture][discourse-lambda-architecture] was designed to achieve scalable and fault-tolerant combination of batch and realtime layers.
 
 In most common scenario, Scala Stream Collector writes raw data to S3 and Kinesis, where processed by Spark Enrich and Stream Enrich respectively.
-However, good Lambda architecture implementation assumes that no resources are wasting on duplicated efforts and enrichment is exactly a duplicated effort in both layers.
+At the same time, good Lambda architecture implementation assumes that no resources are wasting on duplicated efforts and enrichment is exactly a duplicated effort, happeining in both layers.
 
 
 <h2 id="architecture">2. New bootstrap scripts</h2>
