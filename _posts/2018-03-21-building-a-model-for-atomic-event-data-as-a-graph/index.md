@@ -27,13 +27,13 @@ In the Snowplow event data model (as currently implemented in RDBMSs), each even
 
 In graph databases, there are many ways event data can be modelled. One example would be to make all the entities in the event nodes in the graph, and then draw relationships between those nodes. Another would be to make the event itself a node that has outgoing relationships to its various attributes, such as user, timestamp, URL, etc. And then there are combinations and variations of these two basic models. It's not obvious which one of these models is 'the right one', if there even is such a thing.
 
-Graphs excel at modelling networks -- social, communication, supply, etc. You can even model and link different types of networks in an overarching graph, which is very powerful. In that environment, events would be best represented by relationships between entities in those networks.
+Graphs excel at modelling networks–social, communication, supply, etc. You can even model and link different types of networks in an overarching graph, which is very powerful. In that environment, events would be best represented by relationships between entities in those networks.
 
 Since graphs are so flexible, the advice is usually to build a model that suits the queries you want to run. Snowplow users come from all sorts of industries and are trying to solve a great variety of challenges. Whatever our model, it needs to be able to accommodate that diversity.
 
 ### Event grammar
 
-We've already done great [work][link2] on developing a generalised event grammar that goes some way towards a graph data model for event data. In that model, an event is a snapshot of set of entities in time, eg a subject, an object, context, etc.
+We've already done great [work][link2] on developing a generalised event grammar that goes some way towards a graph data model for event data. In that model, an event is a snapshot of set of entities in time, e.g. a subject, an object, context, etc.
 
 ![event-grammar][event-grammar]
 
@@ -118,7 +118,7 @@ This is an easy model to abstract over atomic data but it makes querying the dat
 
 A variation of this model is called an event graph. In it each event is a node and the relationships between the events imply causality. Event graphs are useful for modelling sequences of related events, like the series of events that describe a process. (Eg, an `enter_pub` event is followed by a `queue` event, which is followed by `order_pint` event, etc.) This is useful for conceptualising and simulating processes, and could be applied in use cases where we want to build a predictive model.
 
-### Events as nodes vs events as edges
+### Events as nodes versus events as edges
 
 The previous two examples represent two different ways of modeling an event in a graph environment. In the first case, the event is an edge (or, more correctly, an arc spanning many edges). In the second one, the event is a node.
 
@@ -138,7 +138,7 @@ The model above provides a good framework for loading unopinionated atomic data 
 
 ## What should be our pilot storage target?
 
-While there are many exciting options in this space (eg, Amazon's recent announcement of Neptune, it's cloud-native graph solution), we will be using Neo4j for our tests. It is already widely used and its intuitive query language Cypher makes it a great choice for open-ended exploration. It's visualisation layer will help us document the journey.
+While there are many exciting options in this space (like Amazon's recent announcement of Neptune, its cloud-native graph solution), we will be using Neo4j for our tests. It is already widely used and its intuitive query language Cypher makes it a great choice for open-ended exploration. It's visualisation layer will help us document the journey.
 
 We want to be clear though, that we are not yet ready to make a choice as to the best technology to use in production. Our philosophy is that when people chose to use Snowplow, they do not have to be bound to specific third-party providers. As this project matures, expect us to branch out and experiment with other available options besides Neo4j.
 
@@ -148,4 +148,4 @@ We want to be clear though, that we are not yet ready to make a choice as to the
 [event-grammar]: /assets/img/blog/2018/03/revised-grammar.png
 [event-grammar-graph]: /assets/img/blog/2018/03/event-grammar-graph.png
 [time-series]: /assets/img/blog/2018/03/time-series.png
-[denormalised-graph]: /assets/img/blog/2018/03/denormalised-graph.png 
+[denormalised-graph]: /assets/img/blog/2018/03/denormalised-graph.png
