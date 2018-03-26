@@ -11,9 +11,18 @@ discourse: true
 
 In recent months we've been busy expanding the variety of storage targets available for Snowplow users to load [Snowplow enriched events][enriched-event]. We recently launched our Snowflake Loader, and work is underway to add support for Google's BigQuery. Thinking even further ahead, one intriguing option is to add a graph-based storage target for Snowplow.
 
-DILYAN TO ADD REST OF INTRO/TOC FOR THIS POST.
+We'd like to take the community with us on this journey, so we will be documenting our progress in a series of blog posts over the coming weeks and months. In this post we start by exploring options for modelling event data as a graph in general. Later on, we'll look into modelling specific events and contexts of relevant entities. We'll also look into options for storing and querying graph event data.
 
-DILYAN TO EXPLAIN THIS IS THE FIRST POST IN A SERIES (PERHAPS TITLE SHOULD MAKE THIS CLEAR TOO).
+In this post:
+
+1. [Why graph databases?](#why-graph-databases)
+2. [How do we model event data as a graph?](#how-do-we-model-event-data-as-a-graph)
+3. [Taking an event-grammar approach](#taking-an-event-grammar-approach)
+4. [Taking a time-series or event-graph approach](#taking-a-time-series-or-event-graph-approach)
+5. [Events as nodes versus events as edges](#events-as-nodes-versus-events-as-edges)
+6. [Do we only want to load atomic event data in a graph database?](#do-we-only-want-to-load-atomic-event-data-in-a graph-database)
+7. [What should be our pilot storage target?](#what-should-be-our-pilot-storage-target)
+
 
 ## Why graph databases?
 
@@ -37,7 +46,7 @@ Graphs excel at modelling networks – everything from social networks and produ
 
 Since graphs are so flexible, the advice is usually to build a model that suits the queries you want to run. Snowplow users come from all sorts of industries and are trying to solve a great variety of challenges. Whatever our approach, it needs to be able to accommodate that diversity.
 
-DILYAN TO ADD BRIEF INTRO INTO THE FOLLOWING SUB-SECTION OPTIONS
+In the sections below we look at three ways of modelling atomic event data. Each one of them could be further modified, e.g. by choosing which data points should be nodes, which ones should be edges and which ones should be  properties of nodes or edges.
 
 ### Taking an event-grammar approach
 
@@ -144,9 +153,7 @@ Over the following weeks and months we'll use this model to translate the canoni
 
 ## Do we only want to load atomic event data in a graph database?
 
-The model above provides a good framework for loading unopinionated atomic event data into a graph database - but we will also want to load modelled data.
-
-DILYAN TO EXPLAIN WHAT WE MEAN BY MODELLED DATA.
+The model above provides a good framework for loading unopinionated atomic event data into a graph database - but we will also want to load modelled data. By ['data modelling'][intro-to-data-modeling] in this case we mean the process of using business logic to aggregate over the raw granular event data. The resulting 'modelled', opinionated dataset is easier to query and better suited for driving insight.
 
 Compared to the modelling of the events themselves, with modelled data the use cases should be clearer, and the structure of the model in a graph database *should* emerge naturally from those use cases. We will document those experiments as part of this series as well.
 
@@ -158,10 +165,11 @@ This said, our philosophy is always that when people chose to use Snowplow, they
 
 ## The next post in the series
 
-DILYAN TO ADD
+Next up, we'll look into modelling a `page_view` event as a 'denormalised' graph. We'll take a deep dive into considerations about what data points should be nodes, relationships, labels, and properties. 
 
 [neo4j-pathing]: https://snowplowanalytics.com/blog/2017/07/17/loading-and-analysing-snowplow-event-data-in-Neo4j/
 [entity-snapshotting]: https://snowplowanalytics.com/blog/2015/01/18/modeling-events-through-entity-snapshotting/
+[intro-to-data-modeling]: https://snowplowanalytics.com/blog/2016/03/16/introduction-to-event-data-modeling/
 
 [enriched-event]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
 
