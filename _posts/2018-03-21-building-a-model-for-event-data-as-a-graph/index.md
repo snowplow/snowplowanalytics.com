@@ -2,10 +2,10 @@
 layout: post
 title: "Building a model for event data as a graph"
 title-short: Event data as a graph
-tags: []
+tags: [analytics, graph database, data modeling]
 author: Dilyan
-category:
-permalink: /blog/2018/03/21/building-a-model-for-atomic-event-data-as-a-graph/
+category: Data modeling
+permalink: /blog/2018/03/26/building-a-model-for-atomic-event-data-as-a-graph/
 discourse: true
 ---
 
@@ -20,8 +20,9 @@ In this post:
 3. [Taking an event-grammar approach](#taking-an-event-grammar-approach)
 4. [Taking a time-series or event-graph approach](#taking-a-time-series-or-event-graph-approach)
 5. [Events as nodes versus events as edges](#events-as-nodes-versus-events-as-edges)
-6. [Do we only want to load atomic event data in a graph database?](#do-we-only-want-to-load-atomic-event-data-in-a graph-database)
+6. [Do we only want to load atomic event data in a graph database?](#do-we-only-want-to-load-atomic-event-data-in-a-graph-database)
 7. [What should be our pilot storage target?](#what-should-be-our-pilot-storage-target)
+8. [The next post in the series](#the-next-post-in-the-series)
 
 
 ## Why graph databases?
@@ -34,7 +35,7 @@ There are some questions (for example path analysis) that are difficult to answe
 
 The structure of graph databases also means that datapoints are readily extensible through the addition of new nodes and edges. For example, you could add geolocation data modelled as a graph and link it to your Snowplow enriched events by relationships that do not otherwise interfere with the enriched event's data model. That would open up a whole new avenue for enriching the data in-database.
 
-Adding support for a graph storage target to Snowplow could make a lot of sense. But while with RDBMSs the core data model is the same and we only have to account for the way different vendors implement that model, with graph databases there are some crucial questions that we still need to answer.
+Adding support for a graph storage target to Snowplow could make a lot of sense. But while with RDBMSs the core data model is the same and we only have to account for the way different vendors implement that model; with graph databases there are some crucial questions that we still need to answer.
 
 ## How do we model event data as a graph?
 
@@ -56,7 +57,7 @@ We've already done some foundational work on developing a [generalised event gra
 
 This model is already a graph, with nodes representing the various entities and relationships between the nodes.
 
-In a relational database, the relationships between these entities are most often **implicit**: primary and foreign keys are never typed, rarely annotated and often not even enforced. A user with knowledge of the domain and the particular data model will be able to say what role each entity plays in the event and how the entities are related to each other. But in a graph, relationships are always must first-class constructs. And, because relationships in graph databases are always **directed**, the roles of the different entities must also be explicit.
+In a relational database, the relationships between these entities are most often **implicit**: primary and foreign keys are never typed, rarely annotated and often not even enforced. A user with knowledge of the domain and the particular data model will be able to say what role each entity plays in the event and how the entities are related to each other. But in a graph, relationships are always first-class constructs. And, because relationships in graph databases are always **directed**, the roles of the different entities must also be explicit.
 
 In an RDBMS, a subject and an object will be related by virtue of belonging to the same row (event). It is up to the user to decide which entity plays what role; this can cause problems when an event contains multiple entities of the same type but very different significance (e.g. *player one kills player two*).
 
@@ -165,7 +166,7 @@ This said, our philosophy is always that when people chose to use Snowplow, they
 
 ## The next post in the series
 
-Next up, we'll look into modelling a `page_view` event as a 'denormalised' graph. We'll take a deep dive into considerations about what data points should be nodes, relationships, labels, and properties. 
+Next up, we'll look into modelling a `page_view` event as a 'denormalised' graph. We'll take a deep dive into considerations about what data points should be nodes, relationships, labels, and properties.
 
 [neo4j-pathing]: https://snowplowanalytics.com/blog/2017/07/17/loading-and-analysing-snowplow-event-data-in-Neo4j/
 [entity-snapshotting]: https://snowplowanalytics.com/blog/2015/01/18/modeling-events-through-entity-snapshotting/
