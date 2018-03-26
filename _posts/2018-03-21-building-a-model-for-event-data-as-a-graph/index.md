@@ -4,7 +4,7 @@ title: "Building a model for event data as a graph"
 title-short: Event data as a graph
 tags: [analytics, graph database, data modeling]
 author: Dilyan
-category: Data modeling
+category: Data Modeling
 permalink: /blog/2018/03/26/building-a-model-for-atomic-event-data-as-a-graph/
 discourse: true
 ---
