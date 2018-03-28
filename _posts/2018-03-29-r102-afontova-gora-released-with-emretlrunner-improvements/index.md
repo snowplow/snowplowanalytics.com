@@ -27,32 +27,32 @@ Read on for more information on R102 Afontova Gora, named after [the complex of 
 
 <h3>1.1 Snowplow Lambda architecture 101</h3>
 
-Broadly speaking, Snowplow platform has two primary flavors: batch and realtime. Both with own characteristics and use cases.
-Batch pipeline is cheap, predictable and reliable, whereas realtime is faster, more expensive and implies more magic behind the scenes.
+Broadly speaking, the Snowplow platform has two primary flavors: batch and realtime. Each with its own characteristics and use cases.
+Batch pipeline is cheap, predictable and reliable, whereas realtime is faster, more expensive and employs more magic behind the scenes.
 
-However, nobody said it is impossible to get benefits of both approaches in a single pipeline.
-So called [Lambda architecture][discourse-lambda-architecture] was designed to achieve scalable and fault-tolerant combination of batch and realtime layers within single pipeline.
+However, nobody said it is impossible to get the benefits of both approaches in a single pipeline.
+So called [Lambda architecture][discourse-lambda-architecture] was designed to achieve a scalable and fault-tolerant combination of batch and realtime layers within single a pipeline.
 
-In most common and widely-used architecture, Scala Stream Collector writes raw data from Kinesis to S3 and from this point, pipeline splits into two independent flows, with Stream Enrich reading from Kinesis and Spark Enrich reading from S3 respectively.
-At the same time, good Lambda architecture implementation assumes that no resources are wasting on duplicated efforts and in above architecture, enrichment is nothing more than duplicated effort, happeining in both layers and producing same result.
+In most common and widely-used architecture, Scala Stream Collector writes raw data from Kinesis to S3 and from this point, the pipeline splits into two independent flows, with Stream Enrich reading from Kinesis and Spark Enrich reading from S3 respectively.
+At the same time, good Lambda architecture implementation assumes that no resources are wasted on duplicated efforts and in the above architecture, enrichment is nothing more than duplicated effort, happening in both layers and producing same result.
 
 <h3>1.2 EmrEtlRunner Stream Enrich Mode</h3>
 
-To improve architecture described above, we can embrace [Snowplow S3 Loader][s3-loader] to use single Stream Enrich process to produce enriched data to S3 sink.
-But unfortunately until R102 Afontova Gora it was not possible to automate batch part of this architecture with EmrEtlRunner and users had to rely on custom [Dataflow Runner][dataflow-runner] playbooks for staging enriched data, shred it and load to Redshift.
+To improve the architecture described above, we can embrace [Snowplow S3 Loader][s3-loader] using single Stream Enrich to produce enriched data for the S3 sink.
+But unfortunately until R102 Afontova Gora it was not possible to automate the batch part of this architecture with EmrEtlRunner, meaning users had to rely on custom [Dataflow Runner][dataflow-runner] playbooks for staging enriched data, shred it and load to Redshift.
 
-Since R102 EmrEtlRunner supports Stream Enrich mode, which effectively forces EmrEtlRunner to skip staging raw data and Spark Enrich step and instead start from staging enriched data written by S3 Loader.
-Instead of classic `staging raw data -> enrich raw data -> shred enriched data -> load -> archive` steps, pipeline becomes `staging stream-enriched data -> shred enriched data -> load -> archive`.
+Since R102 EmrEtlRunner supports Stream Enrich mode, which effectively forces it to skip the staging raw data and Spark Enrich steps, EmrEtlRunner can instead start from staging enriched data written by S3 Loader.
+Instead of the classic `staging raw data -> enrich raw data -> shred enriched data -> load -> archive` steps, the pipeline becomes `staging stream-enriched data -> shred enriched data -> load -> archive`.
 
-To turn this mode on, you need to add new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
-This new optional bucket should point to the bucket, where S3 Loader writes enriched data.
+To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
+This new optional bucket should point to the bucket where S3 Loader writes enriched data.
 In Stream Enrich mode, some properties such as `aws.s3.buckets.raw` or `enrich.versions` are ignored by EmrEtlRunner and can be removed.
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
 
 Upcoming [RDB Loader][rdb-loader] R29 is concentrated around increasing Shredder's and Loader's stability and dealing with problems such as S3 eventual consistency and accidental double-loading.
 EmrEtlRunner from R102 passes necessary options to these EMR steps if specified versions of artifacts are from R29 or above.
-For example, for Stream Enrich mode, RDB Loader won't add any new records to `atomic.manifest` as `etl_tstamp` is effectively useless for data processed by Stream Enrich.
+For example, for Stream Enrich mode, RDB Loader won't add any new records to `atomic.manifest`, as `etl_tstamp` is effectively useless for data processed by Stream Enrich.
 
 Apart from EMR options which will passed to EMR steps absolutely transparently, EmrEtlRunner also now allows you to optionally skip RDB Loader's upcoming `load_manifest_check` step, preventing data from being double-loaded.
 
@@ -117,4 +117,3 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora_knossos.zip
 [config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/config.yml.sample
-
