@@ -2,15 +2,15 @@
 layout: post
 title: "Snowplow R102 Afontova Gora released with EmrEtlRunner improvements"
 title-short: Snowplow R102 Afontova Gora
-tags: [google analytics, measurement protocol]
+tags: [batch, emr, emretlrunner]
 author: Anton
 category: Releases
 permalink: /blog/2018/03/29/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
 ---
 
-We are pleased to announce the release of [Snowplow R102][release-notes]. This batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner.
+We are pleased to announce the release of [Snowplow R102][release-notes]. This Snowplow batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner, improving the stability and robustness of the pipeline operation.
 
-Read on for more information on R102 Afontova Gora, named after [the complex of Upper Paleolithic sites nearby Krasnoyarsk, Central Siberia][afontova-gora]:
+Read on for more information on R102 Afontova Gora, named after [the complex of Upper Paleolithic sites near my hometown of Krasnoyarsk, Central Siberia][afontova-gora]:
 
 <!--more-->
 
@@ -67,7 +67,7 @@ Also, for AMI5, EmrEtlRunner now uses [specific][issue-3609] bootstrap action tw
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
-To start using EmrEtlRunner in Stream Enrich mode (assuming you have configured [Snowplow S3 Loader][s3-loader]) you will need to add the following new bucket:
+To start using EmrEtlRunner in Stream Enrich mode (assuming you have configured [Snowplow S3 Loader][s3-loader]) you will need to add the following to your configuration file:
 
 {% highlight yaml %}
 aws:
@@ -77,14 +77,16 @@ aws:
         stream: s3://path-to-kinesis/output/
 {% endhighlight %}
 
+Here, the `stream` path specifies where your corresponding Snowplow S3 Loader instance is writing the Snowplow enriched events to. 
+
 For a complete example, see our sample [config.yml][config-yml] template.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
-* [R103 [BAT] IP Lookups Enrichment upgrade][r103-maxmind], urgent update of IP Lookup enrichment migrating to [new MaxMind database format][maximind-announcement]
-* [R10x [BAT] PII Enrichment phase 2][r10x-pii-2], the second wave of GDPR features being added to Snowplow
+* [R103 Paestum][r103-maxmind], an [urgent update][maxmind-announcement] of our IP Lookups Enrichment, moving us away from using the legacy MaxMind database format, which is being sunsetted on 2nd April 2018
+* [R10x [STR] PII Enrichment phase 2][r10x-pii-2], enhancing our recently-released GDPR-focused PII Enrichment for the realtime pipeline
 
 <h2 id="help">6. Getting help</h2>
 
@@ -113,7 +115,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r103-maximind]: https://github.com/snowplow/snowplow/milestone/156
 [r10x-pii-2]: https://github.com/snowplow/snowplow/milestone/153
 
-[maxmind-announcement]: https://blog.hqcodeshop.fi/archives/387-MaxMind-GeoIP-database-legacy-version-discontinued.html
+[maxmind-announcement]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
 
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora_knossos.zip
 [config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/config.yml.sample
