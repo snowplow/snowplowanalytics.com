@@ -50,24 +50,24 @@ In Stream Enrich mode, some properties such as `aws.s3.buckets.raw` or `enrich.v
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
 
-Upcoming [RDB Loader][rdb-loader] R29 is concentrated around increasing Shredder's and Loader's stability and dealing with problems such as S3 eventual consistency and accidental double-loading.
+The upcoming [RDB Loader][rdb-loader] R29 is concentrated around increasing Shredder's and Loader's stability and dealing with problems such as S3 eventual consistency and accidental double-loading.
 EmrEtlRunner from R102 passes necessary options to these EMR steps if specified versions of artifacts are from R29 or above.
 For example, for Stream Enrich mode, RDB Loader won't add any new records to `atomic.manifest`, as `etl_tstamp` is effectively useless for data processed by Stream Enrich.
 
-Apart from EMR options which will passed to EMR steps absolutely transparently, EmrEtlRunner also now allows you to optionally skip RDB Loader's upcoming `load_manifest_check` step, preventing data from being double-loaded.
+Apart from EMR options which will pass to EMR steps absolutely transparently, EmrEtlRunner also now allows you to optionally skip RDB Loader's upcoming `load_manifest_check` step, preventing data from being double-loaded.
 
 <h2 id="architecture">3. Other improvements</h2>
 
 Apart from changes related to stream enrich and RDB Loader R29, EmrEtlRunner also brings multiple bugfixes and changes increasing pipeline's stability.
 
 EmrEtlRunner now tries to recover from very common, but intermittent failures such as `RequestTimeout` ([#3468][issue-3468]) or `ServiceUnavailable` ([#3539][issue-3539]), which were increasing amount of false alarms and adding unnecessary recover steps.
-Also, for AMI5, EmrEtlRunner now uses [specific][issue-3609] bootstrap action tweaking network settings to make cluster fully compatible with [AWS NAT Gateway][nat-gateway]
+Also, for AMI5, EmrEtlRunner now uses [specific][issue-3609] bootstrap action tweaking network settings to make a cluster fully compatible with [AWS NAT Gateway][nat-gateway]
 
 <h2 id="upgrading">4. Upgrading</h2>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
-To start using EmrEtlRunner in Stream Enrich mode (assuming you have configured [Snowplow S3 Loader][s3-loader]) you will need to add new bucket:
+To start using EmrEtlRunner in Stream Enrich mode (assuming you have configured [Snowplow S3 Loader][s3-loader]) you will need to add the following new bucket:
 
 {% highlight yaml %}
 aws:
