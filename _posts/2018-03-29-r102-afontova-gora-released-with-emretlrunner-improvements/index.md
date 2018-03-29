@@ -16,14 +16,14 @@ Read on for more information on R102 Afontova Gora, named after [the complex of 
 
 1. [Support for Kinesis-enriched data](#kinesis-enrich)
 2. [RDB Loader R29 compatibility](#rdb-loader)
-3. [Other improvements](#other)
+3. [Other improvements](#improvements)
 4. [Upgrading](#upgrading)
 5. [Roadmap](#roadmap)
 6. [Help](#help)
 
 ![afontova-gora][afontova-gora-img]
 
-<h2 id="why">1. Support for Kinesis-enriched data</h2>
+<h2 id="kinesis-enrich">1. Support for Kinesis-enriched data</h2>
 
 <h3>1.1 Snowplow Lambda architecture 101</h3>
 
@@ -42,10 +42,10 @@ To improve the architecture described above, we can embrace [Snowplow S3 Loader]
 But unfortunately until R102 Afontova Gora it was not possible to automate the batch part of this architecture with EmrEtlRunner, meaning users had to rely on custom [Dataflow Runner][dataflow-runner] playbooks for staging enriched data, shred it and load to Redshift.
 
 Since R102 EmrEtlRunner supports Stream Enrich mode, which effectively forces it to skip the staging raw data and Spark Enrich steps, EmrEtlRunner can instead start from staging enriched data written by S3 Loader.
-Instead of the classic `staging raw data -> enrich raw data -> shred enriched data -> load -> archive` steps, the pipeline becomes `staging stream-enriched data -> shred enriched data -> load -> archive`.
+Instead of the classic <p class="text-danger">`staging raw data -> enrich raw data -> shred enriched data -> load -> archive`</p> steps, the pipeline becomes <p class="text-danger">`staging stream-enriched data -> shred enriched data -> load -> archive`</p>.
 
 To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
-This new optional bucket should point to the bucket where S3 Loader writes enriched data.
+This new, optional bucket should point to the bucket where S3 Loader writes enriched data.
 In Stream Enrich mode, some properties such as `aws.s3.buckets.raw` or `enrich.versions` are ignored by EmrEtlRunner and can be removed.
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
@@ -56,7 +56,7 @@ For example, for Stream Enrich mode, RDB Loader won't add any new records to `at
 
 Apart from EMR options which will pass to EMR steps absolutely transparently, EmrEtlRunner also now allows you to optionally skip RDB Loader's upcoming `load_manifest_check` step, preventing data from being double-loaded.
 
-<h2 id="architecture">3. Other improvements</h2>
+<h2 id="improvements">3. Other improvements</h2>
 
 Apart from changes related to stream enrich and RDB Loader R29, EmrEtlRunner also brings multiple bugfixes and changes increasing pipeline's stability.
 
