@@ -77,7 +77,7 @@ aws:
         stream: s3://path-to-kinesis/output/
 {% endhighlight %}
 
-Here, the `stream` path specifies where your corresponding Snowplow S3 Loader instance is writing the Snowplow enriched events to. 
+Here, the `stream` path specifies where your corresponding Snowplow S3 Loader instance is writing the Snowplow enriched events to.
 
 For a complete example, see our sample [config.yml][config-yml] template.
 
@@ -112,7 +112,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [issue-3609]: https://github.com/snowplow/snowplow/issues/3609
 [nat-gateway]: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html
 
-[r103-maximind]: https://github.com/snowplow/snowplow/milestone/156
+[r103-maxmind]: https://github.com/snowplow/snowplow/milestone/156
 [r10x-pii-2]: https://github.com/snowplow/snowplow/milestone/153
 
 [maxmind-announcement]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
