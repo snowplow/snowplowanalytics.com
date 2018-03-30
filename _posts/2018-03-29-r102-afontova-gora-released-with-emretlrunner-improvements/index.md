@@ -46,7 +46,7 @@ Instead of the classic `staging raw data -> enrich raw data -> shred enriched da
 
 To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
 This new, optional bucket should point to the bucket where S3 Loader writes enriched data.
-In Stream Enrich mode, some properties such as `aws.s3.buckets.raw` or `enrich.versions` are ignored by EmrEtlRunner and can be removed.
+In Stream Enrich mode, some properties such as `aws.s3.buckets.raw`, `aws.s3.buckets.enriched.bad`, `aws.s3.buckets.enriched.errors` and `enrich.versions` are ignored by EmrEtlRunner and other batch applications.
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
 
