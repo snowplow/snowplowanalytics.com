@@ -2,13 +2,13 @@
 layout: post
 title: "Snowplow R102 Afontova Gora released with EmrEtlRunner improvements"
 title-short: Snowplow R102 Afontova Gora
-tags: [batch, emr, emretlrunner]
+tags: [batch, emr, emretlrunner, lambda]
 author: Anton
 category: Releases
 permalink: /blog/2018/03/29/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
 ---
 
-We are pleased to announce the release of [Snowplow R102][release-notes]. This Snowplow batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner, improving the stability and robustness of the pipeline operation.
+We are pleased to announce the release of [Snowplow R102][release-notes]. This Snowplow batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner, improving the efficiency and stability of the batch pipeline.
 
 Read on for more information on R102 Afontova Gora, named after [the complex of Upper Paleolithic sites near my hometown of Krasnoyarsk, Central Siberia][afontova-gora]:
 
@@ -23,51 +23,69 @@ Read on for more information on R102 Afontova Gora, named after [the complex of 
 
 ![afontova-gora][afontova-gora-img]
 
-<h2 id="kinesis-enrich">1. Support for Kinesis-enriched data</h2>
+<h2 id="kinesis-enrich">1. Support for Stream Enrich'ed events</h2>
 
 <h3>1.1 Snowplow Lambda architecture 101</h3>
 
-Broadly speaking, the Snowplow platform has two primary flavors: batch and realtime. Each with its own characteristics and use cases.
-Batch pipeline is cheap, predictable and reliable, whereas realtime is faster, more expensive and employs more magic behind the scenes.
+Broadly speaking, the Snowplow platform has two primary flavors: the original batch pipeline, and the newer realtime pipeline.
 
-However, nobody said it is impossible to get the benefits of both approaches in a single pipeline.
-So called [Lambda architecture][discourse-lambda-architecture] was designed to achieve a scalable and fault-tolerant combination of batch and realtime layers within single a pipeline.
+The Snowplow realtime pipeline is *not* a strict superset of the capabilities of our batch pipeline: the realtime pipeline is missing the batch pipeline's functionality to prepare and load enriched events into Amazon Redshift.
 
-In most common and widely-used architecture, Scala Stream Collector writes raw data from Kinesis to S3 and from this point, the pipeline splits into two independent flows, with Stream Enrich reading from Kinesis and Spark Enrich reading from S3 respectively.
-At the same time, good Lambda architecture implementation assumes that no resources are wasted on duplicated efforts and in the above architecture, enrichment is nothing more than duplicated effort, happening in both layers and producing same result.
+For Snowplow realtime users wanting to load Redshift, we support a so-called [Lambda architecture][discourse-lambda-architecture], which serves as a scalable and fault-tolerant combination of batch and realtime layers within single a pipeline.
 
-<h3>1.2 EmrEtlRunner Stream Enrich Mode</h3>
+In the Snowplow Lambda architecture, the Scala Stream Collector writes raw collector payload data from Kinesis to S3, and it is at this point that the pipeline splits into two independent flows, with:
 
-To improve the architecture described above, we can embrace [Snowplow S3 Loader][s3-loader] using single Stream Enrich to produce enriched data for the S3 sink.
-But unfortunately until R102 Afontova Gora it was not possible to automate the batch part of this architecture with EmrEtlRunner, meaning users had to rely on custom [Dataflow Runner][dataflow-runner] playbooks for staging enriched data, shred it and load to Redshift.
+1. Stream Enrich reading from Kinesis, and then onwards into further Kinesis streams
+2. Spark Enrich reading from S3, and then onwards into RDB Shredder and RDB Loader
 
-Since R102 EmrEtlRunner supports Stream Enrich mode, which effectively forces it to skip the staging raw data and Spark Enrich steps, EmrEtlRunner can instead start from staging enriched data written by S3 Loader.
-Instead of the classic `staging raw data -> enrich raw data -> shred enriched data -> load -> archive` steps, the pipeline becomes `staging stream-enriched data -> shred enriched data -> load -> archive`.
+Although this architecture is widely used and works well, there is some inefficiency here: we are running the same enrichment process *twice* - in the realtime and batch layers.
 
-To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
-This new, optional bucket should point to the bucket where S3 Loader writes enriched data.
-In Stream Enrich mode, some properties such as `aws.s3.buckets.raw`, `aws.s3.buckets.enriched.bad`, `aws.s3.buckets.enriched.errors` and `enrich.versions` are ignored by EmrEtlRunner and other batch applications.
+<h3>1.2 EmrEtlRunner's new Stream Enrich support</h3>
+
+To remove this duplication, in theory we could setup a [Snowplow S3 Loader][s3-loader] downstream of Stream Enrich's enriched event stream, sinking those enriched events to S3. But unfortunately EmrEtlRunner didn't support processing those enriched event files, leading creative members of the community to try workarounds involving our [Dataflow Runner][dataflow-runner] app
+
+R102 Afontova Gora fixes this, introducing a "Stream Enrich mode" for EmrEtlRunner; this mode of operation effectively forces EmrEtlRunner to skip the staging of the collector payloads and the running of Spark Enrich - instead, EmrEtlRunner kicks off by staging enriched data written by S3 Loader.
+
+In "Stream Enrich mode", the EmrEtlRunner steps are as follows:
+
+1. Stage the enriched events which were written to S3 by the realtime pipeline
+2. Prepare the enriched events for Redshift using RDB Shredder
+3. Load the events into Redshift using RDB Loader
+4. Archive the events in S3
+
+If you are an existing Lambda architecture user, please check out the Upgrading section below for help moving to the new architecture.
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
 
-The upcoming [RDB Loader][rdb-loader] R29 is concentrated around increasing Shredder's and Loader's stability and dealing with problems such as S3 eventual consistency and accidental double-loading.
-EmrEtlRunner from R102 passes necessary options to these EMR steps if specified versions of artifacts are from R29 or above.
-For example, for Stream Enrich mode, RDB Loader won't add any new records to `atomic.manifest`, as `etl_tstamp` is effectively useless for data processed by Stream Enrich.
+The upcoming release for [RDB Loader][rdb-loader], R29, focuses on improving stability, and guarding against problems such as S3 eventual consistency and accidental double-loading.
 
-Apart from EMR options which will pass to EMR steps absolutely transparently, EmrEtlRunner also now allows you to optionally skip RDB Loader's upcoming `load_manifest_check` step, preventing data from being double-loaded.
+This release's EmrEtlRunner update now prepares for the upcoming RDB Loader release, by passing additional information to these EMR steps if the specified versions of the artifacts are from R29 or above.
+
+Stay tuned for the RDB Loader R29 release, where the new functionality will be explained.
 
 <h2 id="improvements">3. Other improvements</h2>
 
-Apart from changes related to stream enrich and RDB Loader R29, EmrEtlRunner also brings multiple bugfixes and changes increasing pipeline's stability.
+This release of EmrEtlRunner also brings multiple bugfixes and improvements to the batch pipeline's operational stability.
 
-EmrEtlRunner now tries to recover from very common, but intermittent failures such as `RequestTimeout` ([#3468][issue-3468]) or `ServiceUnavailable` ([#3539][issue-3539]), which were increasing amount of false alarms and adding unnecessary recover steps.
-Also, for AMI5, EmrEtlRunner now uses [specific][issue-3609] bootstrap action tweaking network settings to make a cluster fully compatible with [AWS NAT Gateway][nat-gateway]
+EmrEtlRunner now tries to recover from very common, but intermittent, failures such as `RequestTimeout` ([#3468][issue-3468]) or `ServiceUnavailable` ([#3539][issue-3539]). This should reduce unnecessary manual recoveries.
+
+Additionally, for AMI 5 clusters, EmrEtlRunner now uses a [specific bootstrap action][issue-3609] which tweaks network settings to make a cluster fully compatible with [AWS NAT Gateway][nat-gateway].
 
 <h2 id="upgrading">4. Upgrading</h2>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
-To start using EmrEtlRunner in Stream Enrich mode (assuming you have configured [Snowplow S3 Loader][s3-loader]) you will need to add the following to your configuration file:
+<h3>4.1 Upgrading for batch pipeline users</h3>
+
+If you are only using the Snowplow batch pipeline, then it is still important to upgrade EmrEtlRunner, to prepare for the next RDB Loader release.
+
+You won't have to make any configuration file updates as part of this upgrade.
+
+<h3>4.1 Upgrading for Lambda architecture users</h3>
+
+If you currently run a Lambda architecture (realtime plus batch), then you will most likely want to upgrade to EmrEtlRunner's new "Stream Enrich mode".
+
+To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file. This should point to the bucket where you have configured [Snowplow S3 Loader][s3-loader]) to write enriched events. Add this like so:
 
 {% highlight yaml %}
 aws:
@@ -77,15 +95,20 @@ aws:
         stream: s3://path-to-kinesis/output/
 {% endhighlight %}
 
-Here, the `stream` path specifies where your corresponding Snowplow S3 Loader instance is writing the Snowplow enriched events to.
+In Stream Enrich mode, some properties in your `config.yml` file, such as `aws.s3.buckets.raw`, `aws.s3.buckets.enriched.bad`, `aws.s3.buckets.enriched.errors` and `enrich.versions`, are ignored by EmrEtlRunner and other batch applications.
 
-For a complete example, see our sample [config.yml][config-yml] template.
+For a complete example, we now have a dedicated sample [stream_config.yml][config-yml] template - this shows what you need to set, and what you can remove.
+
+**An important point:** you need to be careful when making this switchover to avoid either missing events from Redshift, or duplicating them. Our preferred switchover approach is to:
+
+1. Prevent missing events, by building in some time period overlap between the raw and enriched folders in S3, **and**
+2. Prevent duplication in Redshift, by temporarily enable cross-batch deduplication, if it's not already enabled 
 
 <h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
-* [R103 Paestum][r103-maxmind], an [urgent update][maxmind-announcement] of our IP Lookups Enrichment, moving us away from using the legacy MaxMind database format, which is being sunsetted on 2nd April 2018
+* [R103 Paestum][r103-maxmind], an [urgent update][maxmind-announcement] of our IP Lookups Enrichment, moving us away from using the legacy MaxMind database format, which won't be updated after 2nd April 2018
 * [R10x [STR] PII Enrichment phase 2][r10x-pii-2], enhancing our recently-released GDPR-focused PII Enrichment for the realtime pipeline
 
 <h2 id="help">6. Getting help</h2>
@@ -118,4 +141,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [maxmind-announcement]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
 
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora_knossos.zip
-[config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/config.yml.sample
+[config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/stream_config.yml.sample
