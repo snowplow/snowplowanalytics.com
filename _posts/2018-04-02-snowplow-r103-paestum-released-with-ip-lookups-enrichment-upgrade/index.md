@@ -1,0 +1,158 @@
+---
+layout: post
+title: "Snowplow R103 Neapolis released with ip lookups enrichment upgrade"
+title-short: Snowplow R103 Paestum
+tags: [enrichments, clojure collector, ip lookups]
+author: Ben
+category: Releases
+permalink: /blog/2018/04/02/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/
+---
+
+We are proud to announce the release of [Snowplow R103 Paestum][release-notes]. This release is
+centered around upgrading the IP lookups enrichment for both the batch and streaming pipelines given
+the impeding end of life of Maxmind's legacy databases.
+
+It also ships with a security improvement for cross domain policy management on the Clojure
+collector.
+
+Read on for more information on R103 Paestum, named after [the ancient city in in Italy][paestum]:
+
+<!--more-->
+
+1. [Upgrading the IP lookups enrichment](#ip-lookups)
+2. [Cross domain policy management for the Clojure collector](#cdp)
+3. [Upgrading](#upgrading)
+4. [Roadmap](#roadmap)
+5. [Help](#help)
+
+![paestum][paestum-img]
+
+<h2 id="ip-lookups">1. Upgrading the IP lookups enrichment</h2>
+
+As described in [our Discourse post][disc-ip-lookups], MaxMind will not provide monthly updates to
+their now-legacy databases starting April 1st.
+
+To get ahead of this issue and keep the IP lookups enrichment as accurate as possible, we are
+releasing a new version of the enrichment, for both the batch and streaming pipelines, which
+interacts with GeoIP2 databases, Maxmind's new format.
+
+A special thanks to [Tiago Macedo][tmacedo] and [Andrew Korzhuev][andrusha], which worked on
+[the scala-maxmind-iplookups library upgrade][scala-maxmind-iplookups] without which this
+enrichment upgrade wouldn't have been possible.
+
+<h2 id="cdp">2. Cross domain policy management for the Clojure collector</h2>
+
+On the security side of things, we have made the cross domain policy of the Clojure Collector
+configurable.
+
+First, what is a Flash cross-domain policy? Quoting the [Adobe website][cross-domain]:
+
+> A cross-domain policy file is an XML document that grants a web client, such as Adobe Flash Player
+or Adobe Acrobat (though not necessarily limited to these), permission to handle data across
+domains. When clients request content hosted on a particular source domain and that content make
+requests directed towards a domain other than its own, the remote domain needs to host a
+cross-domain policy file that grants access to the source domain, allowing the client to continue
+the transaction.
+>
+> To allow a Flash media player hosted on another web server to access content from the Adobe Media
+Server web server, we require a crossdomain.xml file. A typical use case will be HTTP streaming
+(VOD or Live) to a Flash Player. The crossdomain.xml file grants a web client the required
+permission to handle data across multiple domains.
+
+A cross-domain policy file gives the necessary permissions when, for example, you are trying to make
+a request to a Snowplow collector from a Flash game given that both are running on different hosts.
+
+The Clojure Collector embeds what was a very permissive cross-domain policy file, giving
+permission to any domain and not enforcing HTTPS:
+
+{% highlight xml %}
+<?xml version="1.0"?>
+<cross-domain-policy>
+  <allow-access-from domain="*" secure="false" />
+</cross-domain-policy>
+{% endhighlight %}
+
+With this release, we're completely removing the `/crossdomain.xml` route by default - it will have
+to be manually re-enabled by adding the two following environment properties to your Elastic
+Beanstalk application:
+
+- `SP_CDP_DOMAIN`: the domain that is granted access, `*.acme.com` will match both `http://acme.com`
+and `http://sub.acme.com`.
+- `SP_CDP_SECURE`: a boolean indicating whether to only grant access to HTTPS or both HTTPS and
+HTTP sources
+
+<h2 id="upgrading">3. Upgrading</h2>
+
+<h3 id="upgrading-ip">3.1 Upgrading the IP lookups enrichment</h3>
+
+Whether you are using the batch or streaming pipeline, it is important to perform this upgrade if
+you make use of the IP lookups enrichment.
+
+To make use of the new enrichment, you will need to update your `ip_lookups.json` so that it
+conforms to [the new `2-0-0` schema][ip-lookups-schema]. An example is provided in
+[the GitHub repository][ip-lookups-example].
+
+<h4 id="upgrading-ip-stream">3.1.1 Stream Enrich</h4>
+
+If you are a streaming pipeline user, a version of Stream Enrich incorporating the upgraded ip
+lookups enrichment can be found on our Bintray [here][se].
+
+<h4 id="upgrading-ip-batch">3.1.2 Spark Enrich</h4>
+
+If you are a batch pipeline user, you'll need to either update your EmrEtlRunner configuration
+to the following:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.13.0 # WAS 1.12.0
+{% endhighlight %}
+
+or directly make use of the new Spark Enrich available at:
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.13.0.jar`.
+
+<h3 id="upgrading-clj">3.2 Upgrading the Clojure Collector</h3>
+
+The new Clojure Collector is stored in S3 at:
+`s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-1.2.0-standalone.war`.
+
+To enable the `/crossdomain.xml` make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
+environment properties as described above.
+
+<h2 id="roadmap">4. Roadmap</h2>
+
+Upcoming Snowplow releases will include:
+
+* [R104 [STR] PII Enrichment phase 2][r104-pii], enhancing our recently-released GDPR-focused PII
+  Enrichment for the realtime pipeline
+* [R10X Vallei dei Templi][r10x-str], porting our streaming enrichment process to
+  [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
+
+<h2 id="help">5. Getting help</h2>
+
+For more details on this release, please check out the [release notes][release-notes] on GitHub.
+
+If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
+
+[paestum]: https://en.wikipedia.org/wiki/Paestum
+[paestum-img]: /assets/img/blog/2018/04/paestum.jpg
+
+[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r103-paestum
+[discourse]: http://discourse.snowplowanalytics.com/
+
+[r104-pii]: https://github.com/snowplow/snowplow/milestone/153
+[r10x-str]: https://github.com/snowplow/snowplow/milestone/151
+
+[dataflow]: https://cloud.google.com/dataflow/
+[beam]: https://beam.apache.org/
+[cross-domain]: http://www.adobe.com/devnet/adobe-media-server/articles/cross-domain-xml-for-streaming.html
+
+[disc-ip-lookups]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
+[scala-maxmind-iplookups]: https://github.com/snowplow/scala-maxmind-iplookups
+[ip-lookups-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/ip_lookups/jsonschema/2-0-0
+[ip-lookups-example]: https://github.com/snowplow/snowplow/blob/r103-paestum/3-enrich/config/enrichments/ip_lookups.json
+
+[se]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.16.0#files
+
+[tmacedo]: https://github.com/tmacedo
+[andrusha]: https://github.com/andrusha
