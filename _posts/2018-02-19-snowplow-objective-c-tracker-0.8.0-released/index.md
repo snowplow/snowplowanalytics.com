@@ -24,18 +24,18 @@ In the rest of this post we will cover:
 
 <h2><a name="data-consent">1. Data consent tracking</a></h2>
 
-Against the backdrop of the incoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, various forms of data collection.
+Against the backdrop of the upcoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, various forms of data collection.
 
 We envision that many digital businesses will want to track the consent of their users against relatively finegrained "bundles" of specific data usecases, which we model in Snowplow as [consent documents][cds].
 
 The two new consent tracking methods are:
 
-1. [`trackConsentGranted`][tcg] for the giving of consent
-2. [`trackConsentWithdrawn`][tcw] for the removal of consent
+1. [`trackConsentGrantedEvent`][tcg] for the giving of consent
+2. [`trackConsentWithdrawnEvent`][tcw] for the removal of consent
 
 Each consent event will be associated to one or more consent documents, attached to the event as contexts.
 
-Here is an example of a user opted out of data collection per a specific consent document `1234`:
+Here is an example of a user opting out of data collection per a specific consent document `1234`:
 
 {% highlight objective-c %}
 SPConsentWithdrawnEvent *event = [SPConsentWithdrawnEvent build:^(id<SPConsentWithdrawnBuilder> builder) {
@@ -49,10 +49,11 @@ SPConsentWithdrawnEvent *event = [SPConsentWithdrawnEvent build:^(id<SPConsentWi
 [tracker trackConsentWithdrawnEvent:event];
 {% endhighlight %}
 
-
 <h2><a name="notification-tracking">2. Push notification tracking</a></h2>
 
-The tracker now has support for tracking push notifications! `trackPushNotificationEvent` can be called on the `tracker` instance from inside any of the push notification methods implemented in `AppDelegate`. An [example][push-example] can be found in the Swift demo app - implemented using the notification API in iOS 11.2 ([UserNotifications][usernotifications]).
+The tracker now has support for tracking push notifications. `trackPushNotificationEvent` can be called on the `tracker` instance from inside any of the push notification methods implemented in `AppDelegate`.
+
+An [example][push-example] can be found in the Swift demo app, implemented using the notification API in iOS 11.2 ([UserNotifications][usernotifications]). It looks likes this:
 
 {% highlight objective-c %}
 // Populate the information found in the notification content, i.e. UNNotificationContent or userInfo in 
@@ -74,21 +75,25 @@ SPPushNotification *event = [SPPushNotification build:^(id<SPPushNotificationBui
 [tracker trackPushNotificationEvent:event];
 {% endhighlight %}
 
+MIKE TO ADD DOCUMENTATION LINK.
+
 <h2><a name="swift-demo">3. Swift demonstration app</a></h2>
 
 To provide an example of how the tracker integrates into a Swift project, we've added a Swift demonstration app.
 
 Helpful points are addressed: [exception catching, and importing][swift-docs].
 
-Also take note of [how to view generated interfaces][swift-interfaces] which are essential for finding the type signatures of the methods translated from Objective-C to Swift.
+I DON'T UNDERSTAND THE ABOVE SENTENCE ^^
+
+It's also important to familiarize yourself with [how to view generated interfaces][swift-interfaces] - essential for finding the type signatures of the tracker methods when translated from Objective-C to Swift.
 
 <h2><a name="xcode9">4. XCode 9 bugfixes</a></h2>
 
-To improve compatibility with XCode 9 we have updated the Tracker as follows:
+To improve compatibility with XCode 9 we have fixed a naming conflict in the SnowplowTests bundle ([issue #343][343]).
 
-* Fix a naming conflict in the SnowplowTests bundle ([#343][343])
+We also fixed a compile-time error found in the [Obj-C Client for Iglu][iglu-client], and updated a dependency of the Tracker.
 
-This fixes a compile-time error also found in the [Obj-C Client for Iglu][iglu-client], a dependency of the Tracker.
+^^ WHAT IS THE TICKET FOR THIS ONE?
 
 <h2><a name="changes">5. Other changes</a></h2>
 
@@ -122,7 +127,7 @@ Useful links:
 * The [setup guide][setup-guide]
 * The [0.8.0 release notes][tracker-080]
 
-If you have an idea for a new feature or want help getting things set up, please [get in touch][talk-to-us]. And [raise an issue][issues] if you spot any bugs!
+If you have an idea for a new feature or want help getting things set up, please visit [our Discourse forum][discourse]. And [raise an issue][issues] if you spot any bugs!
 
 [objc-repo]: https://github.com/snowplow/snowplow-objc-tracker
 [tech-docs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker
@@ -144,5 +149,6 @@ If you have an idea for a new feature or want help getting things set up, please
 [329]: https://github.com/snowplow/snowplow-objc-tracker/issues/329
 [334]: https://github.com/snowplow/snowplow-objc-tracker/issues/334
 [lib-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_objc_tracker_0.8.0.zip
-[talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
+
 [issues]: https://github.com/snowplow/snowplow/issues
+[discourse]: http://discourse.snowplowanalytics.com/
