@@ -53,7 +53,7 @@ In "Stream Enrich mode", the EmrEtlRunner steps are as follows:
 3. Load the events into Redshift using RDB Loader
 4. Archive the events in S3
 
-One important difference: in Stream Enrich mode the enriched event files are the master copy of the data you will load into Redshift, so make sure never to manually delete data from the `enriched.good` folder
+One important difference: in Stream Enrich mode the enriched event files are the master copy of the data you will load into Redshift, so make sure never to manually delete data from the `enriched.good` folder.
 
 If you are an existing Lambda architecture user, please check out the Upgrading section below for help moving to the new architecture.
 
