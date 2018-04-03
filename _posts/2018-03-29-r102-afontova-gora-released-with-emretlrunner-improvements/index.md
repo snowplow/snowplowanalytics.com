@@ -53,6 +53,8 @@ In "Stream Enrich mode", the EmrEtlRunner steps are as follows:
 3. Load the events into Redshift using RDB Loader
 4. Archive the events in S3
 
+One important difference between two modes is that after staging in "Stream Enrich", `enriched.good` folder becomes the last place where enriched data is stored, therefore you should never manually delete data from there.
+
 If you are an existing Lambda architecture user, please check out the Upgrading section below for help moving to the new architecture.
 
 <h2 id="rdb-loader">2. RDB Loader R29 compatibility</h2>
@@ -85,7 +87,8 @@ You won't have to make any configuration file updates as part of this upgrade.
 
 If you currently run a Lambda architecture (realtime plus batch), then you will most likely want to upgrade to EmrEtlRunner's new "Stream Enrich mode".
 
-To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file. This should point to the bucket where you have configured [Snowplow S3 Loader][s3-loader]) to write enriched events. Add this like so:
+To turn this mode on, you need to add a new `aws.s3.buckets.enriched.stream` property to your `config.yml` file.
+This should point to the bucket where you have configured [Snowplow S3 Loader][s3-loader]) to write enriched events. Add this like so:
 
 {% highlight yaml %}
 aws:
@@ -95,7 +98,7 @@ aws:
         stream: s3://path-to-kinesis/output/
 {% endhighlight %}
 
-In Stream Enrich mode, some properties in your `config.yml` file, such as `aws.s3.buckets.raw`, `aws.s3.buckets.enriched.bad`, `aws.s3.buckets.enriched.errors` and `enrich.versions`, are ignored by EmrEtlRunner and other batch applications.
+In Stream Enrich mode, some properties in your `config.yml` file, such as `aws.s3.buckets.raw`, `aws.s3.buckets.enriched.bad` are `aws.s3.buckets.enriched.errors` are ignored by EmrEtlRunner and other batch applications.
 
 For a complete example, we now have a dedicated sample [stream_config.yml][config-yml] template - this shows what you need to set, and what you can remove.
 
