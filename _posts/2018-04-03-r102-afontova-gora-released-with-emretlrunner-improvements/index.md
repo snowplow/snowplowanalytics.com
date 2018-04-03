@@ -5,7 +5,7 @@ title-short: Snowplow R102 Afontova Gora
 tags: [batch, emr, emretlrunner, lambda]
 author: Anton
 category: Releases
-permalink: /blog/2018/03/29/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
+permalink: /blog/2018/04/03/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
 ---
 
 We are pleased to announce the release of [Snowplow R102][release-notes]. This Snowplow batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner, improving the efficiency and stability of the batch pipeline.
@@ -121,7 +121,7 @@ For more details on this release, please check out the [release notes][release-n
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [afontova-gora]: https://en.wikipedia.org/wiki/Afontova_Gora
-[afontova-gora-img]: /assets/img/blog/2018/03/afontova-gora.jpg
+[afontova-gora-img]: /assets/img/blog/2018/04/afontova-gora.jpg
 
 [discourse-lambda-architecture]: https://discourse.snowplowanalytics.com/t/how-to-setup-a-lambda-architecture-for-snowplow/249
 [discourse-stream-vs-batch]: https://discourse.snowplowanalytics.com/t/stream-vs-batch/1867
