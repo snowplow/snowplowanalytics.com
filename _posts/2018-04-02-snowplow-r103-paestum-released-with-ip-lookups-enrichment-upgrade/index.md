@@ -21,9 +21,10 @@ Read on for more information on R103 Paestum, named after [the ancient city in i
 
 1. [Upgrading the IP lookups enrichment](#ip-lookups)
 2. [Cross domain policy management for the Clojure collector](#cdp)
-3. [Upgrading](#upgrading)
-4. [Roadmap](#roadmap)
-5. [Help](#help)
+3. [Community contributions](#oss)
+4. [Upgrading](#upgrading)
+5. [Roadmap](#roadmap)
+6. [Help](#help)
 
 ![paestum][paestum-img]
 
@@ -81,9 +82,34 @@ and `http://sub.acme.com`.
 - `SP_CDP_SECURE`: a boolean indicating whether to only grant access to HTTPS or both HTTPS and
 HTTP sources
 
-<h2 id="upgrading">3. Upgrading</h2>
+<h2 id="oss">3. Community contributions</h2>
 
-<h3 id="upgrading-ip">3.1 Upgrading the IP lookups enrichment</h3>
+This release contains quite a few community contributions which we'd like to highlight, thanks
+to everyone involved!
+
+<h3 id="ip">3.1 Improvement to the IP address extractor</h3>
+
+Thanks to [Mike Robins][miike] from [Snowflake Analytics][snowflake-analytics], extracting IP
+address from collector payloads coming from the Scala Stream Collector has gotten better.
+
+Indeed, it now supports IPv6 IPs as well as inspects the `Forwaded` header in addition to the
+historically supported `X-Forwarded-For` header.
+
+<h3 id="mandrill">3.2 Improvements to the Mandrill integration</h3>
+
+A change in the Mandrill events format resulted in Mandrill events failing enrichments. More
+specifically, a `subaccount` property has been generalized to every Mandrill-sent payload.
+
+Thanks to [Adam Gray][acgray] for authoring the new schemas as well as updating the adapter!
+
+<h3 id="doc">3.3 Documentation improvements</h3>
+
+Finally, thanks to [Kristoffer Snabb][ksnabb] and [Thales Mello][thalesmello] for improving the
+documentation!
+
+<h2 id="upgrading">4. Upgrading</h2>
+
+<h3 id="upgrading-ip">4.1 Upgrading the IP lookups enrichment</h3>
 
 Whether you are using the batch or streaming pipeline, it is important to perform this upgrade if
 you make use of the IP lookups enrichment.
@@ -92,12 +118,12 @@ To make use of the new enrichment, you will need to update your `ip_lookups.json
 conforms to [the new `2-0-0` schema][ip-lookups-schema]. An example is provided in
 [the GitHub repository][ip-lookups-example].
 
-<h4 id="upgrading-ip-stream">3.1.1 Stream Enrich</h4>
+<h4 id="upgrading-ip-stream">4.1.1 Stream Enrich</h4>
 
 If you are a streaming pipeline user, a version of Stream Enrich incorporating the upgraded ip
 lookups enrichment can be found on our Bintray [here][se].
 
-<h4 id="upgrading-ip-batch">3.1.2 Spark Enrich</h4>
+<h4 id="upgrading-ip-batch">4.1.2 Spark Enrich</h4>
 
 If you are a batch pipeline user, you'll need to either update your EmrEtlRunner configuration
 to the following:
@@ -111,15 +137,15 @@ enrich:
 or directly make use of the new Spark Enrich available at:
 `s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.13.0.jar`.
 
-<h3 id="upgrading-clj">3.2 Upgrading the Clojure Collector</h3>
+<h3 id="upgrading-clj">4.2 Upgrading the Clojure Collector</h3>
 
 The new Clojure Collector is stored in S3 at:
-`s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-1.2.0-standalone.war`.
+`s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.0.0-standalone.war`.
 
 To enable the `/crossdomain.xml` make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
 environment properties as described above.
 
-<h2 id="roadmap">4. Roadmap</h2>
+<h2 id="roadmap">5. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
@@ -128,7 +154,7 @@ Upcoming Snowplow releases will include:
 * [R10X Vallei dei Templi][r10x-str], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
-<h2 id="help">5. Getting help</h2>
+<h2 id="help">6. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
@@ -153,6 +179,12 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [ip-lookups-example]: https://github.com/snowplow/snowplow/blob/r103-paestum/3-enrich/config/enrichments/ip_lookups.json
 
 [se]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.16.0#files
+
+[miike]: https://github.com/miike
+[snowflake-analytics]: https://www.snowflake-analytics.com/
+[acgray]: https://github.com/acgray
+[ksnabb]: https://github.com/ksnabb
+[thalesmello]: https://github.com/thalesmello
 
 [tmacedo]: https://github.com/tmacedo
 [andrusha]: https://github.com/andrusha
