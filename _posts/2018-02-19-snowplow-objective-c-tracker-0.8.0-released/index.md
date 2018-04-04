@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.8.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, tvos]
 author: Mike
 category: Releases
-permalink: /blog/2018/xx/xx/snowplow-objective-c-tracker-0.8.0-released/
+permalink: /blog/2018/04/xx/snowplow-objective-c-tracker-0.8.0-released/
 ---
 
 We are pleased to release version 0.8.0 of the [Snowplow Objective-C Tracker][objc-repo]. This release introduces data consent tracking, push notification tracking, a Swift demonstration app, and several updates and bug fixes.
@@ -30,8 +30,8 @@ We envision that many digital businesses will want to track the consent of their
 
 The two new consent tracking methods are:
 
-1. [`trackConsentGrantedEvent`][tcg] for the giving of consent
-2. [`trackConsentWithdrawnEvent`][tcw] for the removal of consent
+1. [`trackConsentGrantedEvent`][tcg], for the giving of consent
+2. [`trackConsentWithdrawnEvent`][tcw], for the removal of consent
 
 Each consent event will be associated to one or more consent documents, attached to the event as contexts.
 
@@ -79,7 +79,7 @@ MIKE TO ADD DOCUMENTATION LINK.
 
 <h2><a name="swift-demo">3. Swift demonstration app</a></h2>
 
-To provide an example of how the tracker integrates into a Swift project, we've added a Swift demonstration app.
+To provide an example of how the tracker integrates into a Swift project, we've added a Swift demonstration app to the repo.
 
 Helpful points are addressed: [exception catching, and importing][swift-docs].
 
@@ -99,15 +99,15 @@ We also fixed a compile-time error found in the [Obj-C Client for Iglu][iglu-cli
 
 Other updates include:
 
-* Add trackSelfDescribingEvent method as alias for trackUnstructEvent ([#272][272])
-* Replace NSGregorianCalendar with NSCalendarIdentifierGregorian ([#329][329])
-* Extend copyright notice in all files to 2018 ([#331][331])
-* Add preprocessor flags to disable OpenIDFA or IDFV ([#334][334])
-* Remove "close" from CHANGELOG for issue #333 ([#338][338])
-* Add identifyUser as alias for setUserId ([#341][341])
-* Drop iOS 8 test target, add iOS 10 and 11 ([#344][344])
+* Adding `trackSelfDescribingEvent` method as an alias for `trackUnstructEvent` ([issue #272][272])
+* Replacing `NSGregorianCalendar` with NSCalendarIdentifierGregorian ([issue #329][329])
+* Adding preprocessor flags to disable OpenIDFA or IDFV as required ([issue #334][334])
+* Adding `identifyUser` as an alias for `setUserId` ([issue #341][341])
+* Dropping iOS 8 as a test target, and adding iOS 10 and 11 ([issue #344][344])
 
-Many thanks to [Josh Sklar][jrmsklar] for contributing on issue [#341][341]!
+Many thanks to [Josh Sklar][jrmsklar] for contributing on [issue #341][341]!
+
+JOSH DIDN'T CONTRIBUTE TO 341? HIS PR WAS 345, WHICH ISN'T MENTIONED IN THE ABOVE?
 
 <h2><a name="upgrading">6. Upgrading</a></h2>
 
@@ -121,7 +121,7 @@ If you prefer, you can manually add the tracker's source code and dependencies i
 
 <h2><a name="help">7. Getting help</a></h2>
 
-Useful links:
+As always, please check out the following links:
 
 * The [technical documentation][tech-docs]
 * The [setup guide][setup-guide]
