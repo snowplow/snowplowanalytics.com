@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.8.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, tvos]
 author: Mike
 category: Releases
-permalink: /blog/2018/04/xx/snowplow-objective-c-tracker-0.8.0-released/
+permalink: /blog/2018/04/04/snowplow-objective-c-tracker-0.8.0-released/
 ---
 
 We are pleased to release version 0.8.0 of the [Snowplow Objective-C Tracker][objc-repo]. This release introduces data consent tracking, push notification tracking, a Swift demonstration app, and several updates and bug fixes.
@@ -66,6 +66,7 @@ SPNotificationContent *content = [SPNotificationContent build:^(id<SPNotificatio
 
 SPPushNotification *event = [SPPushNotification build:^(id<SPPushNotificationBuilder> builder) {
   [builder setAction:@"1234"]; // Set the action selected by user
+  [builder setTrigger:@"PUSH"]; // Set the push notification type
   [builder setEventType:@"version"]; // Set the event type e.g. "open", when the user opens the app
   [builder setCategoryIdentifier:@"name"]; // Set the category identifier of the notification
   [builder setThreadIdentifier:@"description"]; // Set the thread identifier of the notification
@@ -75,15 +76,13 @@ SPPushNotification *event = [SPPushNotification build:^(id<SPPushNotificationBui
 [tracker trackPushNotificationEvent:event];
 {% endhighlight %}
 
-MIKE TO ADD DOCUMENTATION LINK.
+Documentation can be found [here][pushdocs].
 
 <h2><a name="swift-demo">3. Swift demonstration app</a></h2>
 
 To provide an example of how the tracker integrates into a Swift project, we've added a Swift demonstration app to the repo.
 
-Helpful points are addressed: [exception catching, and importing][swift-docs].
-
-I DON'T UNDERSTAND THE ABOVE SENTENCE ^^
+For additional information regarding integrating the tracker into a Swift project, the documentation has been updated to address common issues like [exception handling, and importing][swift-docs].
 
 It's also important to familiarize yourself with [how to view generated interfaces][swift-interfaces] - essential for finding the type signatures of the tracker methods when translated from Objective-C to Swift.
 
@@ -91,9 +90,7 @@ It's also important to familiarize yourself with [how to view generated interfac
 
 To improve compatibility with XCode 9 we have fixed a naming conflict in the SnowplowTests bundle ([issue #343][343]).
 
-We also fixed a compile-time error found in the [Obj-C Client for Iglu][iglu-client], and updated a dependency of the Tracker.
-
-^^ WHAT IS THE TICKET FOR THIS ONE?
+We also fixed a compile-time error found in both the Tracker and one of its dependencies, the [Obj-C Client for Iglu][iglu-client].
 
 <h2><a name="changes">5. Other changes</a></h2>
 
@@ -104,10 +101,10 @@ Other updates include:
 * Adding preprocessor flags to disable OpenIDFA or IDFV as required ([issue #334][334])
 * Adding `identifyUser` as an alias for `setUserId` ([issue #341][341])
 * Dropping iOS 8 as a test target, and adding iOS 10 and 11 ([issue #344][344])
+* Add method to SPTracker to get session's userId ([issue #345][345])
+* Fix truncation of structured event value to 6 digits ([issue #299][299])
 
-Many thanks to [Josh Sklar][jrmsklar] for contributing on [issue #341][341]!
-
-JOSH DIDN'T CONTRIBUTE TO 341? HIS PR WAS 345, WHICH ISN'T MENTIONED IN THE ABOVE?
+Many thanks to [Josh Sklar][jrmsklar] for contributing on [issue #345][345], and [Gordon Childs][gchilds] for contributing on [issue #299][299]!
 
 <h2><a name="upgrading">6. Upgrading</a></h2>
 
@@ -138,11 +135,13 @@ If you have an idea for a new feature or want help getting things set up, please
 [jrmsklar]: https://github.com/jrmsklar
 
 [push-example]: https://github.com/snowplow/snowplow-objc-tracker/tree/master/SnowplowSwiftDemo/SnowplowSwiftDemo/AppDelegate.swift
+[pushdocs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#notification
 [tcg]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-granted
 [tcw]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-withdrawn
 [cds]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-documents
 
 [272]: https://github.com/snowplow/snowplow-objc-tracker/issues/272
+[299]: https://github.com/snowplow/snowplow-objc-tracker/issues/299
 [341]: https://github.com/snowplow/snowplow-objc-tracker/issues/341
 [338]: https://github.com/snowplow/snowplow-objc-tracker/issues/338
 [331]: https://github.com/snowplow/snowplow-objc-tracker/issues/331
