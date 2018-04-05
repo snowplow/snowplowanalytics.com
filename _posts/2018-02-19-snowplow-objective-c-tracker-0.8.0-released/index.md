@@ -90,8 +90,6 @@ It's also important to familiarize yourself with [how to view generated interfac
 
 To improve compatibility with XCode 9 we have fixed a naming conflict in the SnowplowTests bundle ([issue #343][343]).
 
-We also fixed a compile-time error found in both the Tracker and one of its dependencies, the [Obj-C Client for Iglu][iglu-client].
-
 <h2><a name="changes">5. Other changes</a></h2>
 
 Other updates include:
