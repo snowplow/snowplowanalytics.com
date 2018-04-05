@@ -69,15 +69,14 @@ exclude:
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
-  - jekyll-minifier
   # - jekyll-redirect-from
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed
 feed:
   path: atom.xml
 
-jekyll-minifier:
-  exclude: 'atom.xml'
+
+
 # Styles
 sass:
   sass_dir: assets/css
