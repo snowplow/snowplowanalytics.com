@@ -75,10 +75,9 @@
 			width: 50%;
 		}
 
-
-			img{
-			display: none
-
+		img{
+			width: 360px;
+			height: auto;
 		}
 
 
@@ -100,6 +99,9 @@
 			}
 		}
 
+		img{
+			display: none
+		}
 
 	}
 }

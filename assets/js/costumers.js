@@ -10,17 +10,6 @@ var html_;
 var media_pos = 0;
 
 
-$.fn.isOnScreen = function(){
-    var viewport = {};
-    viewport.top = $(window).scrollTop();
-    viewport.bottom = viewport.top + $(window).height();
-    var bounds = {};
-    bounds.top = this.offset().top;
-    bounds.bottom = bounds.top + this.outerHeight();
-    return ((bounds.top <= viewport.bottom) && (bounds.bottom >= viewport.top));
-};
-
-
 
 $(document).ready(function() {
  	
@@ -218,9 +207,6 @@ $(document).ready(function() {
  	});
 
 
- 	
- 	
-
 
 
  	 
@@ -242,58 +228,4 @@ $(document).resize(function(event) {
  	 * Media cards handler
  	*/
  	$('.media-blocks-wrapper').width($('.media-blocks').length * ($('.media-blocks').outerWidth() + 15));
-
-
-
-});
-
-
-$(window).scroll(function(event) {
-
-
-
-
-	/*
- 	 * Parallax on Differentiate elements
- 	*/
- 	if ($('.comp-1').isOnScreen()) { 
- 		var comp_offset = 50, // start: -350
-			scr = 0, 
-			comp_vel = 0.4, 
-			comp_res = 0,
-			comp_dir = -1,	// (-1 descending, 1 ascending)
-			comp_home_pos;
- 		comp_home_pos = $('.differentiate').position(); 
-		scr = $(window).scrollTop() - comp_home_pos.top; 
-		comp_res = comp_dir*scr*comp_vel + comp_offset; 
-		$('.comp-1').css('transform', 'translateY('+comp_res+'px)');	
- 	}
- 	if ($('.comp-2').isOnScreen()) { 
- 		var comp_offset = -250, // start: -350
-			scr = 0, 
-			comp_vel = 0.3, 
-			comp_res = 0,
-			comp_dir = 1,	// (-1 descending, 1 ascending)
-			comp_home_pos;
- 		comp_home_pos = $('.differentiate').position(); console.log(comp_home_pos);
-		scr = $(window).scrollTop() - comp_home_pos.top; console.log(scr);
-		comp_res = comp_dir*scr*comp_vel + comp_offset; console.log(comp_res);
-		$('.comp-2').css('transform', 'translateY('+comp_res+'px)');	
- 	}
- 	if ($('.comp-3').isOnScreen()) { 
- 		var comp_offset = 650, // start: -350
-			scr = 0, 
-			comp_vel = 0.4, 
-			comp_res = 0,
-			comp_dir = -1,	// (-1 descending, 1 ascending)
-			comp_home_pos;
- 		comp_home_pos = $('.differentiate').position(); 
-		scr = $(window).scrollTop() - comp_home_pos.top; 
-		comp_res = comp_dir*scr*comp_vel + comp_offset; 
-		$('.comp-3').css('transform', 'translateY('+comp_res+'px)');	
- 	}
-
-
-
-
 });
