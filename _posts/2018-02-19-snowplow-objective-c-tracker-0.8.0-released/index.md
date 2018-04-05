@@ -18,7 +18,7 @@ In the rest of this post we will cover:
 4. [XCode 9 bugfixes](#xcode9)
 5. [Other changes](#changes)
 6. [Upgrading](#upgrading)
-7. [Getting help](/blog/2018/02/19/snowplow-objective-c-tracker-0.8.0-released/#help)
+7. [Getting help](#help)
 
 <!--more-->
 
@@ -76,7 +76,7 @@ SPPushNotification *event = [SPPushNotification build:^(id<SPPushNotificationBui
 [tracker trackPushNotificationEvent:event];
 {% endhighlight %}
 
-Documentation can be found [here][pushdocs].
+Documentation can be found [here][push-docs].
 
 <h2><a name="swift-demo">3. Swift demonstration app</a></h2>
 
@@ -101,7 +101,7 @@ Other updates include:
 * Adding preprocessor flags to disable OpenIDFA or IDFV as required ([issue #334][334])
 * Adding `identifyUser` as an alias for `setUserId` ([issue #341][341])
 * Dropping iOS 8 as a test target, and adding iOS 10 and 11 ([issue #344][344])
-* Add method to SPTracker to get session's userId ([issue #345][345])
+* Add method to `SPTracker` to get the session's `userId` ([issue #345][345])
 * Fix truncation of structured event value to 6 digits ([issue #299][299])
 
 Many thanks to [Josh Sklar][jrmsklar] for contributing on [issue #345][345], and [Gordon Childs][gchilds] for contributing on [issue #299][299]!
@@ -135,7 +135,7 @@ If you have an idea for a new feature or want help getting things set up, please
 [jrmsklar]: https://github.com/jrmsklar
 
 [push-example]: https://github.com/snowplow/snowplow-objc-tracker/tree/master/SnowplowSwiftDemo/SnowplowSwiftDemo/AppDelegate.swift
-[pushdocs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#notification
+[push-docs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#notification
 [tcg]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-granted
 [tcw]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-withdrawn
 [cds]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-documents
