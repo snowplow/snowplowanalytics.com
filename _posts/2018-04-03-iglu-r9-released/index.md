@@ -10,13 +10,12 @@ permalink: /blog/2018/04/03/iglu-r9-bulls-eye-released/
 
 We are excited to announce a new Iglu release, introducing a good number of improvements focused on our Iglu Server.
 
-1. [Switch from spray to akka-http](#akka-http)
-2. [Allow super user to upload schemas](#super-user)
-3. [A new command line interface](#new-cli)
-4. [A new user interface](#new-ui)
-5. [Add metadata to schemas optionally](#metadata)
-6. [Other updates](#other-updates)
-7. [Getting help](#help)
+1. [Iglu Server reload](#server-reload)
+2. [Updated Iglu Server dependencies](#server-bumps)
+3. [Iglu Server improvements](#server-improvements)
+4. [Igluctl improvements](#igluctl)
+5. [Other updates](#other-updates)
+6. [Getting help](#help)
 
 Read on for more information about Release 9 Bull's Eye, named after [the first Brazilian postage stamp][bulls-eye] - having face values of 30, 60 and 90 réis.
 
@@ -24,75 +23,31 @@ Read on for more information about Release 9 Bull's Eye, named after [the first 
 
 <!--more-->
 
-<h2 id="akka-http">1. Switch from spray to Akka HTTP</h2>
+<h2 id="server-reload">1. Iglu Server reload</h2>
 
-Iglu Server was developed by Spray, a well-known HTTP library in Scala ecosystem. However, spray is no longer maintained and has been superseded by Akka HTTP. To stay up to date with modern web development techniques, we are changing underlying HTTP server from Spray to Akka HTTP.
+Last version of Scala Repo Server was [released][r3-blog-post] more than two years ago along with Iglu R3 Penny Black.
+Since then we were mainly focused on tools like [igluctl][igluctl] that supposed to improve Static Registry experience.
+This was a deliverate decision as Static Registry over time has proven its robustness and sufficient enough flexibility.
 
-From a user perspective, the important takeaway from this migration is that one endpoint's path changed as following.
+However, it became clear that in order to keep up with ambitious Iglu roadmap we need a more powerful alternative.
+Hence, we've dusted-off the old Scala Repo Server project, which now becomes just Iglu Server.
 
-Below was the endpoint to be used if you want to delete all schemas belonging to a specific vendor prefix;
+<h2 id="server-bumps">2. Updated Iglu Server dependencies</h2>
 
-{% highlight bash %}
-DELETE /api/auth/keygen?vendor_prefix=<a_vendor_prefix>
-{% endhighlight %}
+As part of reload, first of all we've brought most of internal dependencies, such as [Akka][akka], [Akka HTTP][akka-http] and others up-to-date with modern JVM ecosystem.
+Most of these updated dependencies do not directly impact user experience, instead just fixing subtle bugs in REST interface and improve performance.
 
-With R9 Bull's Eye, that changed to;
+Still, some upgrades do have significant impact. Particularly, updated [Swagger UI][swagger-ui] brings massive overhaul into Iglu Server's UI.
 
-{% highlight bash %}
-DELETE /api/auth/vendor?vendor_prefix=<a_vendor_prefix>
-{% endhighlight %}
+<h2 id="super-user">3. Iglu Server improvements</h2>
 
-As seen, only change happened in last section of path.
+Beside of internal improvements, this release also brings multiple user-facing enhancements.
 
-<h2 id="super-user">2. Allow super user to upload schemas</h2>
+* API key with `super` permissions now allowed to not only create new keys, but also to upload and read schemas
+* You now can pass custom configuration file via convenient command line option: `java -jar <path_to_server_jar> --config <filename>`
+* To make API more consistent with Static Registry, now to get schema metadata you need to provide special query parameter `metadata` to any `/api/schemas/` endpoint.
 
-While an API key with `write` permission is enough to be able to upload schemas to a registry, same operation couldn't be performed with another API key with `super` permission. R9 enables API keys with `super` permission to upload schemas as well.
-
-<h2 id="new-cli">3. A new command line interface</h2>
-
-Up to date, if necessary, Java system properties were being used to provide a custom configuration for server, database etc.
-
-A sample usage would be;
-
-{% highlight bash %}
-java -Dconfig.file=<path_to_custom_configuration> -jar <path_to_server_jar>
-{% endhighlight %}
-
-With R9 Bull's Eye, a new command line interface is being introduced.
-
-{% highlight bash %}
-$ java -jar <path_to_server_jar> --help
-iglu-server 0.3.0
-Usage: iglu-server [options]
-
-  --help               Print this help message
-  --version            Print version info
-
-  --config <filename>  Path to custom config file. It is required and can not be empty.
-{% endhighlight %}
-
-Running Iglu Server with a custom configuration would look like;
-
-{% highlight bash %}
-java -jar <path_to_server_jar> --config <path_to_custom_configuration>
-{% endhighlight %}
-
-<h2 id="new-ui">4. A new user interface</h2>
-
-Our user interface is happening by Swagger UI. Migration of HTTP server from spray to Akka HTTP resulted in migrating Swagger too, since Swagger is released library-specific. With Swagger for Spray, we were making use of top input box to add `apikey` header to HTTP requests for authorization. As of R9 Bull's Eye, with Swagger for Akka HTTP, `Authorization` button at the right top of endpoint list should be used. Clicking on that button will open a popup box with an input box to enter API key to be used as `apikey` HTTP header. Click `Authorize` and `Close` to make sure entered value will be added to requests made from Swagger UI. To edit/remove a previously entered API key, click on `Authorize` button again and then `Logout` to find yourself with a clear input field.
-
-Browse `<host>:<port>` per your configuration to check it out!
-
-
-<h2 id="metadata">5. Add metadata to schemas optionally</h2>
-
-So far, all endpoints returning JSON schemas would include metadata of each schema too and we didn't provide an option to enable or disable it. R9 Bull's Eye introduces a new query parameter `metadata` to all endpoints with method `GET` and under path `/api/schemas/` so that metadata will be included only if `?metadata=1`. By default, metadata isn't included.
-
-<h2 id="other-updates">6. Other updates</h2>
-
-Release 9 Bull's Eye brings some good other stuff too.
-
-As part of our efforts on modernizing Iglu Server, we are dockerizing Iglu Server. If you are interested in running Iglu Server in a docker container, please take a look at [our docker repository][docker-iglu-registry] to see details.
+<h2 id="igluctl">4. Igluctl improvements</h2>
 
 Bull's Eye also fixes two important bugs in igluctl.
 
@@ -100,15 +55,22 @@ Bull's Eye also fixes two important bugs in igluctl.
 
 [Second][issue-300] bug happens when you use igluctl with Java 9. JAXB APIs aren't resolved by default as of Java 9 and users get following.
 
-{% highlight bash %}
-Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
-{% endhighlight %}
+
+As part of our efforts on modernizing Iglu Server, we are dockerizing Iglu Server. If you are interested in running Iglu Server in a docker container, please take a look at [our docker repository][docker-iglu-registry] to see details.
 
 <h2 id="help">7. Getting help</h2>
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
+
+[r3-blog-post]: https://snowplowanalytics.com/blog/2016/03/04/iglu-r3-penny-black-released/
+[igluctl]: https://github.com/snowplow/iglu/wiki/Igluctl
+
+[swagger-ui]: https://swagger.io/swagger-ui/
+
+[akka]: https://akka.io/
+[akka-http]: https://doc.akka.io/docs/akka-http/current/
 
 [release-notes]: https://github.com/snowplow/iglu/releases/tag/r9-bulls-eye
 [discourse]: http://discourse.snowplowanalytics.com/
