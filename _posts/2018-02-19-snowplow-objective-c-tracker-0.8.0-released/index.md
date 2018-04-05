@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.8.0
 tags: [snowplow, analytics, ios, osx, objc, objectivec, tvos]
 author: Mike
 category: Releases
-permalink: /blog/2018/04/04/snowplow-objective-c-tracker-0.8.0-released/
+permalink: /blog/2018/04/06/snowplow-objective-c-tracker-0.8.0-released/
 ---
 
 We are pleased to release version 0.8.0 of the [Snowplow Objective-C Tracker][objc-repo]. This release introduces data consent tracking, push notification tracking, a Swift demonstration app, and several updates and bug fixes.
