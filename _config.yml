@@ -152,3 +152,15 @@ pagination:
 
 # Feed entry limiter
 feed_total: 20
+
+
+#Minify HTML
+compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
