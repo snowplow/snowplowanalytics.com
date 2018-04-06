@@ -358,23 +358,15 @@ if (!window.location.origin) {
             $('#download-btn').attr('href',this.value);
         });
 
-        /* Add Google fonts */
-        var fonts = 'https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i|Slabo+27px';
-        if (document.createStyleSheet) document.createStyleSheet(fonts);
-        else $("head").append($("<link rel='stylesheet' href='"+ fonts +"' type='text/css' media='screen' />"));
-
-        var loadDeferredStyles = function() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement);
-            addStylesNode.parentElement.removeChild(addStylesNode);
-            $("#loading-overlay").fadeOut();
+        var removeLoadingView = function() {
+            setTimeout(function(){
+                $("#loading-overlay").hide();
+            }, 500);
         };
         var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
             window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
+        if (raf) raf(function() { window.setTimeout(removeLoadingView, 0); });
+        else window.addEventListener('load', removeLoadingView);
     });
     
 })(jQuery);

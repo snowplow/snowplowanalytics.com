@@ -47,10 +47,7 @@
         <![endif]-->
 
 
-        <noscript id="deferred-styles">
-            <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
-            {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
-        </noscript>
+
         <style type="text/css">
             #loading-overlay {
                 width: 100%;
