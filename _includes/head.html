@@ -46,19 +46,51 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
-        {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
-        <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+        <noscript id="deferred-styles">
+            <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
+            {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
+        </noscript>
+        <style type="text/css">
+            #loading-overlay {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+                background: white;
+            }
+            #loading-overlay .loader {
+                border: 6px solid #f3f3f3; /* Light grey */
+                border-top: 6px solid #6738b8; /* Blue */
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 2s linear infinite;
+                margin: 0 auto;
+                margin-top: 45vh;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
 
         <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
         <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
     </head>
 
+
     <body class="snowplow {{ page.class | append: include.class }}">
 
-        {% include gtm/google-tag-manager-noscript.js %}
+    <div id="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+
+    {% include gtm/google-tag-manager-noscript.js %}
 
         <!-- Moved below JS to header to ensure it's loaded before contact-us.js or request-demo.js  -->
-        <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js"></script>
+    <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js" defer="defer"></script>
