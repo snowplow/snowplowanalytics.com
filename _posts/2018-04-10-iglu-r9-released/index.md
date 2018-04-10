@@ -5,7 +5,7 @@ title-short: Iglu R9 Bull's Eye
 tags: [iglu, json, json schema, registry]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/04/03/iglu-r9-bulls-eye-released/
+permalink: /blog/2018/04/10/iglu-r9-bulls-eye-released/
 ---
 
 We are excited to announce a new Iglu release, introducing a good number of improvements focused on our Iglu Server.
@@ -38,7 +38,7 @@ Most of these updated dependencies do not directly impact user experience, inste
 
 Still, some upgrades do have significant impact. Particularly, updated [Swagger UI][swagger-ui] brings massive overhaul into Iglu Server's UI and implicitly fixes several UI issues existing in all previous versions.
 
-<h2 id="super-user">3. Iglu Server improvements</h2>
+<h2 id="server-improvements">3. Iglu Server improvements</h2>
 
 Beside of internal improvements, this release also brings multiple user-facing enhancements.
 
@@ -46,8 +46,10 @@ In order to reduce steps required for getting started with Iglu Server, we've ma
 Hence, since this release most of our users can save only single API key for all interactions with Iglu Server.
 For more granular access control, separate `read` and `write` keys still can be used.
 
+Also, considering that Iglu Server could be deployed behind a proxy or a load balancer, we are extending server configuration with a new parameter, `repo-server.baseURL`, which should be set to the address that will be used to reach your Iglu Server, possibly port and endpoint attached. It is used to tell Swagger UI where requests should be sent. Note that protocol of URL should be omitted, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
+
 Before this release, Server by defaulted always attached metadata to all schemas, which made its interface incompatible with more widely used Static Registry.
-Now, by default all schemas returned without any additional information, but you can add a special `metadata` query parameter to any `/api/schemas/` endpoint in order to restore old behavior.
+Now, by default all schemas are returned without any additional information, but you can add a special `metadata` query parameter with value `1` to any `/api/schemas/` endpoint in order to restore old behavior.
 
 Last user-facing addition is a new CLI interface, with single `--config` option so far, that can be used to provide config file with DB and server settings.
 Now you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
@@ -56,8 +58,8 @@ Now you can launch server with following interface: `java -jar $JAR_PATH --confi
 
 Bull's Eye also fixes two important bugs in igluctl, bringing new path 0.4.1 release:
 
-* We've fixed a bug introduced in `0.4.0`, where if `lint` input is the full path to schema and schema's version isn't `1-0-0`, igluctl produced a failure message instead of warning [(#340)][issue-340], 
-* Igluctl now is able to work on top of JRE9 [(#300)][issue-300] 
+* We've fixed a bug introduced in `0.4.0`, where if `lint` input is the full path to schema and schema's version isn't `1-0-0`, igluctl produced a failure message instead of warning [(#340)][issue-340],
+* Igluctl now is able to work on top of JRE9 [(#300)][issue-300]
 
 <h2 id="help">5. Getting help</h2>
 
