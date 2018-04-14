@@ -2,66 +2,79 @@
 layout: post
 title: Iglu R9 Bull's Eye released
 title-short: Iglu R9 Bull's Eye
-tags: [iglu, json, json schema, registry]
+tags: [iglu, json, json schema, registry, schema registry]
 author: Oguzhan
 category: Releases
 permalink: /blog/2018/04/10/iglu-r9-bulls-eye-released/
 ---
 
-We are excited to announce a new Iglu release, introducing a good number of improvements focused on our Iglu Server.
+We are excited to announce a new Iglu release, introducing a number of long-awaited improvements to our Iglu Server, our most advanced Iglu schema registry technology. This release also brings some small but powerful updates to igluctl, the command-line toolkit for Iglu.
 
-1. [Iglu Server reload](#server-reload)
-2. [Updated Iglu Server dependencies](#server-bumps)
-3. [Iglu Server improvements](#server-improvements)
-4. [Igluctl improvements](#igluctl)
-5. [Getting help](#help)
+1. [Iglu Server, reloaded](#server-reload)
+2. [Improvements to Iglu Server](#server-improvements)
+3. [Under the hood of Iglu Server](#server-bumps)
+4. [igluctl updates](#igluctl)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
-Read on for more information about Release 9 Bull's Eye, named after [the first Brazilian postage stamp][bulls-eye] - having face values of 30, 60 and 90 réis.
+Read on for more information about Release 9 Bull's Eye, named after [the first-ever Brazilian postage stamp][bulls-eye].
 
 ![bulls-eye-img][bulls-eye-img]
 
 <!--more-->
 
-<h2 id="server-reload">1. Iglu Server reload</h2>
+<h2 id="server-reload">1. Iglu Server, reloaded</h2>
 
-Last version of Scala Repo Server was [released][r3-blog-post] more than two years ago along with Iglu R3 Penny Black.
-Since then we were mainly focused on tools like [igluctl][igluctl] that supposed to improve Static Registry experience.
-This was a deliberate decision as Static Registry over time has proven its robustness and sufficient enough flexibility.
+Our latest version of what was then-called the "Scala Repo Server" was [released][r3-blog-post] more than two years ago, as part of Iglu R3 Penny Black. That version is still bundled with Snowplow Mini and has proved its worth in that environment.
 
-However, it became clear that in order to keep up with ambitious Iglu roadmap we need a more powerful alternative.
-Hence, we've dusted-off the old Scala Repo Server project, which now becomes just Iglu Server.
+Since then, our Iglu product efforts have focused on tools like [igluctl][igluctl], focused on improving the static schema registry experience for Snowplow operators. This was a deliberate decision, and the Iglu static registry has over time proven its robustness - at the cost of some flexibility.
 
-<h2 id="server-bumps">2. Updated Iglu Server dependencies</h2>
+However, it has become clear that to deliver on our ambitious and exciting Iglu roadmap, we will need a more powerful schema registry engine. We will deliver this through our tried-and-tested Scala Repo Server project, now re-badged as simply Iglu Server.
 
-As part of the reload, first of all we've brought internal dependencies, such as [Akka][akka], [Akka HTTP][akka-http] and many others up-to-date with modern Scala ecosystem.
-Most of these updated dependencies do not directly impact user experience, instead just fixing subtle bugs in REST interface and improving performance.
+<h2 id="server-improvements">2. Improvements to Iglu Server</h2>
 
-Still, some upgrades do have significant impact. Particularly, updated [Swagger UI][swagger-ui] brings massive overhaul into Iglu Server's UI and implicitly fixes several UI issues existing in all previous versions.
+In order to reduce setup time for Iglu Server, we have widened the scope of `super` API keys to the writing and reading of schemas - not only creating new keys. Thus as of R9, it is possible to use just a single API key for all interactions with Iglu Server.
 
-<h2 id="server-improvements">3. Iglu Server improvements</h2>
-
-Beside of internal improvements, this release also brings multiple user-facing enhancements.
-
-In order to reduce steps required for getting started with Iglu Server, we've made `super` API keys allowed to be used for writing and reading schemas, not only creating new keys.
-Hence, since this release most of our users can save only single API key for all interactions with Iglu Server.
 For more granular access control, separate `read` and `write` keys still can be used.
 
-Also, considering that Iglu Server could be deployed behind a proxy or a load balancer, we are extending server configuration with a new parameter, `repo-server.baseURL`, which should be set to the address that will be used to reach your Iglu Server, possibly port and endpoint attached. It is used to tell Swagger UI where requests should be sent. Note that protocol of URL should be omitted, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
+Given that Iglu Server could be deployed behind a proxy or a load balancer, R9 extends the server configuration options with a new parameter, `repo-server.baseURL` - set this to the address that will be used to reach your Iglu Server.
 
-Before this release, Server by defaulted always attached metadata to all schemas, which made its interface incompatible with more widely used Static Registry.
-Now, by default all schemas are returned without any additional information, but you can add a special `metadata` query parameter with value `1` to any `/api/schemas/` endpoint in order to restore old behavior.
+Before this release, Iglu Server attached metadata to all schemas, which made its interface incompatible with more widely-used static schema registry. Now, by default all schemas are returned without any additional information, but you can add a special `metadata` query parameter with value `1` to any `/api/schemas/` endpoint in order to restore old behavior.
 
-Last user-facing addition is a new CLI interface, with single `--config` option so far, that can be used to provide config file with DB and server settings.
+Finally, there is a new CLI interface to Iglu Server, so far offering just a single `--config` option. Use this to provide a configuration file for Iglu Server with DB and server settings.
+
+<h2 id="server-bumps">3. Under the hood of Iglu Server</h2>
+
+As part of the project reboot, we have brought internal dependencies, such as [Akka][akka], [Akka HTTP][akka-http] and others up-to-date with the modern Scala ecosystem.
+
+These dependency updates have fixed some subtle bugs in Iglu Server's REST interface, and have also improved performance.
+
+We are particularly pleased to have updated the registry's [Swagger UI][swagger-ui] - this represents a hugely beneficial to Iglu Server's built-in UI for interacting with schema endpoints.
+
+<h2 id="igluctl">4. igluctl updates</h2>
+
+R9 Bull's Eye also fixes two important bugs in igluctl, introducing a new 0.4.1 version:
+
+* We've fixed a bug introduced in version 0.4.0, whereby if `lint` input is the full path to schema and the schema's version isn't `1-0-0`, then igluctl produced a failure message instead of warning ([issue #340][issue-340]),
+* igluctl now works with JRE9 ([issue #300][issue-300])
+
+<h2 id="help">5. Upgrading</h2>
+
+<h3 id="upgrade-iglu-server">5.1 Iglu Server</h3>
+
+OGUZHAN TO WRITE A SECTION ON HOW TO UPGRADE TO THE LATEST IGLU SERVER WITHOUT ANY DOWNTIME / IMPACT ON PROCESSING.
+
+MIGRATED:
+
+Note that protocol of URL should be omitted, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
+
 Now you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
 
-<h2 id="igluctl">4. Igluctl improvements</h2>
+<h3 id="upgrade-igluctl">5.2 igluctl</h3>
 
-Bull's Eye also fixes two important bugs in igluctl, bringing new path 0.4.1 release:
+OGUZHAN TO EXPLAIN HOW TO UPDATE IGLUCTL
 
-* We've fixed a bug introduced in `0.4.0`, where if `lint` input is the full path to schema and schema's version isn't `1-0-0`, igluctl produced a failure message instead of warning [(#340)][issue-340],
-* Igluctl now is able to work on top of JRE9 [(#300)][issue-300]
-
-<h2 id="help">5. Getting help</h2>
+<h2 id="help">6. Getting help</h2>
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
