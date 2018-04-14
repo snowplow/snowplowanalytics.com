@@ -78,6 +78,8 @@ OGUZHAN TO EXPLAIN HOW TO UPDATE IGLUCTL
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
+OGUZHAN LINK TO THE MASTER DOCUMENTATION ON IGLU SERVER.
+
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
 [r3-blog-post]: https://snowplowanalytics.com/blog/2016/03/04/iglu-r3-penny-black-released/
