@@ -107,12 +107,14 @@ Thanks to [Adam Gray][acgray] for authoring the new schemas as well as updating 
 Finally, thanks to [Kristoffer Snabb][ksnabb] and [Thales Mello][thalesmello] for improving the
 documentation!
 
+ADD A LINK TO THESE IMPROVEMENTS
+
 <h2 id="upgrading">4. Upgrading</h2>
 
-<h3 id="upgrading-ip">4.1 Upgrading the IP lookups enrichment</h3>
+<h3 id="upgrading-ip">4.1 Upgrading the IP Lookups Enrichment</h3>
 
 Whether you are using the batch or streaming pipeline, it is important to perform this upgrade if
-you make use of the IP lookups enrichment.
+you make use of the MaxMind IP Lookups Enrichment.
 
 To make use of the new enrichment, you will need to update your `ip_lookups.json` so that it
 conforms to [the new `2-0-0` schema][ip-lookups-schema]. An example is provided in
@@ -135,23 +137,27 @@ enrich:
 {% endhighlight %}
 
 or directly make use of the new Spark Enrich available at:
-`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.13.0.jar`.
+
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.13.0.jar`
 
 <h3 id="upgrading-clj">4.2 Upgrading the Clojure Collector</h3>
 
-The new Clojure Collector is stored in S3 at:
-`s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.0.0-standalone.war`.
+The new Clojure Collector is available in S3 at:
 
-To enable the `/crossdomain.xml` make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
+`s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.0.0-standalone.war`
+
+To enable the `/crossdomain.xml` path, make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
 environment properties as described above.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-Upcoming Snowplow releases will include:
+We have a packed schedule of new and improved features coming for Snowplow. Upcoming Snowplow releases will include:
 
-* [R104 [STR] PII Enrichment phase 2][r104-pii], enhancing our recently-released GDPR-focused PII
+* [R104 Stoplesteinan][r104-fix], fixing some issues in EmrEtlRuner's "Stream Enrich mode" which were identified in R102 following release
+* [R10x [STR] PII Enrichment phase 2][r10x-pii], enhancing our recently-released GDPR-focused PII
   Enrichment for the realtime pipeline
-* [R10X Vallei dei Templi][r10x-str], porting our streaming enrichment process to
+* [R10x [STR] New webhooks and enrichment][r10x-ms], featuring Marketo and Vero webhook adapters from our partners at [Snowflake Analytics][snowflake-analytics]
+* [R10x Vallei dei Templi][r10x-str], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
 <h2 id="help">6. Getting help</h2>
@@ -166,8 +172,10 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r103-paestum
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[r104-pii]: https://github.com/snowplow/snowplow/milestone/153
+[r104-fix]: https://github.com/snowplow/snowplow/milestone/157
+[r10x-pii]: https://github.com/snowplow/snowplow/milestone/153
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
+[r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
 
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
