@@ -8,7 +8,6 @@ category: Analytics
 permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 ---
 
-
 *Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5]*
 
 ---

@@ -1,9 +1,9 @@
 - company: Simply Business
-  content: Simply Business optimizes customer engagement across all channels including on-site, call center, and digital marketing.
-  quote: "The Snowplow data set has become part of our core strategic offering."
+  content: Simply Business uses event data to disrupt the business insurance market.
+  quote: “JustWatch use Snowplow to build a differentiated service for advertising movies, driving spectacular growth.”
   name: Stewart Duncan
   position: Director of Data Science
-  company_link: https://www.simplybusiness.co.uk/
+  company_link: http://google.com
   picture_top: /assets/img/case_studies/simply_business_top.png
   picture_top_wide: /assets/img/case_studies/simply_business_top@2x.png
   picture_bottom: /assets/img/case_studies/Stewart_Duncan.png
@@ -11,11 +11,11 @@
   color: silver
 
 - company: Peak
-  content: Peak uses Snowplow to build award winning games that help you train your brain.
-  quote: “Snowplow is really powerful when you start to hit that growth curve and going upwards when you see the signs of accelerating growth”
-  name: Thomas in’t Veld
-  position: Lead Data Scientist
-  company_link: http://www.peak.net/
+  content: Peak uses Snowplow to build award winning games and make people smarter.
+  quote: “Snowplow is really powerful when you start to hit that growth curve and going upwards.”
+  name: Stewart Duncan
+  position: Director of Data Science
+  company_link: http://google.com
   picture_top: /assets/img/case_studies/peak.png
   picture_top_wide: /assets/img/case_studies/peak@2x.png
   picture_bottom: /assets/img/case_studies/peak_bottom.png
@@ -23,11 +23,11 @@
   color: purple
 
 - company: Viewbix
-  content: Viewbix uses Snowplow to help brands create highly engaging video ad campaigns and improve return on advertising spend.
-  quote: “We use analytics to show that small changes can drive significant increase in KPIs.”
+  content: Lorem ipsum sit amet consequeteur adisciplit lorem ipsum norem.
+  quote: “Lorem ipsum sit amet consequeteur adisciplit lorem ipsum sit amet.”
   name: Dani Waxman
   position: Product Manager
-  company_link: http://corp.viewbix.com/
+  company_link: http://google.com
   picture_top: /assets/img/case_studies/img-bckg-viewbix.png
   picture_top_wide: /assets/img/case_studies/img-bckg-viewbix@2x.png
   picture_bottom: /assets/img/case_studies/dani_waxman.png
@@ -35,11 +35,11 @@
   color: green
 
 - company: Picnic
-  content: The world's fastest growing online supermarket that makes grocery uses Snowplow to deliver users with a smart, data-driven shopping experience.
-  quote: “Picnic can make informed decisions faster, knowing that our in-app analytics system will be able to handle the Picnic growth.”
-  name: Dimitar Nedev
-  position: Data Infrastructure Lead
-  company_link: https://www.picnic.nl/
+  content: Picnic uses Snowplow to deliver users with a smart, data-driven shopping experience.
+  quote: “Snowplow is really powerful when you start to hit that growth curve and going upwards.”
+  name: Stewart Duncan
+  position: Director of Data Science
+  company_link: http://google.com
   picture_top: /assets/img/case_studies/picnic_top.png
   picture_top_wide: /assets/img/case_studies/picnic_top@2x.png
   picture_bottom: /assets/img/case_studies/picnic_bottom.png
