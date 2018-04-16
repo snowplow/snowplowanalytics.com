@@ -107,7 +107,8 @@ Thanks to [Adam Gray][acgray] for authoring the new schemas as well as updating 
 Finally, thanks to [Kristoffer Snabb][ksnabb] and [Thales Mello][thalesmello] for improving the
 documentation!
 
-ADD A LINK TO THESE IMPROVEMENTS
+- Redirecting our users to Discourse for support requests in `CONTRIBUTING.md`: https://github.com/snowplow/snowplow/pull/3478
+- Renaming Caravel to Superset in `README.md`: https://github.com/snowplow/snowplow/pull/3595
 
 <h2 id="upgrading">4. Upgrading</h2>
 
