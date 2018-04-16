@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Snowplow R103 Neapolis released with ip lookups enrichment upgrade"
+title: "Snowplow R103 Paestum released with IP Lookups Enrichment upgrade"
 title-short: Snowplow R103 Paestum
 tags: [enrichments, clojure collector, ip lookups]
 author: Ben
@@ -9,11 +9,11 @@ permalink: /blog/2018/04/02/snowplow-r103-paestum-released-with-ip-lookups-enric
 ---
 
 We are proud to announce the release of [Snowplow R103 Paestum][release-notes]. This release is
-centered around upgrading the IP lookups enrichment for both the batch and streaming pipelines given
-the impeding end of life of Maxmind's legacy databases.
+centered around upgrading the [IP Lookups Enrichment][ip-lookups-enrichment] for both the batch and streaming pipelines given
+the impending end of life of Maxmind's legacy databases.
 
-It also ships with a security improvement for cross domain policy management on the Clojure
-collector.
+It also ships with a security improvement for cross-domain policy management on the Clojure
+Collector.
 
 Read on for more information on R103 Paestum, named after [the ancient city in in Italy][paestum]:
 
@@ -28,23 +28,23 @@ Read on for more information on R103 Paestum, named after [the ancient city in i
 
 ![paestum][paestum-img]
 
-<h2 id="ip-lookups">1. Upgrading the IP lookups enrichment</h2>
+<h2 id="ip-lookups">1. Upgrading the IP Lookups Enrichment</h2>
 
 As described in [our Discourse post][disc-ip-lookups], MaxMind will not provide monthly updates to
-their now-legacy databases starting April 1st.
+their now-legacy databases starting April 2nd.
 
-To get ahead of this issue and keep the IP lookups enrichment as accurate as possible, we are
+To tackle this issue and keep the IP Lookups Enrichment as accurate as possible, we are
 releasing a new version of the enrichment, for both the batch and streaming pipelines, which
 interacts with GeoIP2 databases, Maxmind's new format.
 
-A special thanks to [Tiago Macedo][tmacedo] and [Andrew Korzhuev][andrusha], which worked on
-[the scala-maxmind-iplookups library upgrade][scala-maxmind-iplookups] without which this
+A special thanks to [Tiago Macedo][tmacedo] and [Andrew Korzhuev][andrusha], who worked on
+[the scala-maxmind-iplookups library upgrade][scala-maxmind-iplookups], without which this
 enrichment upgrade wouldn't have been possible.
 
-<h2 id="cdp">2. Cross domain policy management for the Clojure collector</h2>
+<h2 id="cdp">2. Cross-domain policy management for the Clojure collector</h2>
 
-On the security side of things, we have made the cross domain policy of the Clojure Collector
-configurable.
+On the security side of things, we have made the cross-domain policy of the Clojure Collector
+configurable; this change is inline with the updates made to the Scala Stream Collector back in [Release 98 Argentomagus][r98-ssc].
 
 First, what is a Flash cross-domain policy? Quoting the [Adobe website][cross-domain]:
 
@@ -73,9 +73,7 @@ permission to any domain and not enforcing HTTPS:
 </cross-domain-policy>
 {% endhighlight %}
 
-With this release, we're completely removing the `/crossdomain.xml` route by default - it will have
-to be manually re-enabled by adding the two following environment properties to your Elastic
-Beanstalk application:
+With this release, we're completely removing the `/crossdomain.xml` route by default - should you need it, manually re-enable it by adding the two following environment properties to your Elastic Beanstalk application:
 
 - `SP_CDP_DOMAIN`: the domain that is granted access, `*.acme.com` will match both `http://acme.com`
 and `http://sub.acme.com`.
@@ -84,31 +82,30 @@ HTTP sources
 
 <h2 id="oss">3. Community contributions</h2>
 
-This release contains quite a few community contributions which we'd like to highlight, thanks
+This release contains quite a few community contributions which we'd like to highlight, huge thanks
 to everyone involved!
 
 <h3 id="ip">3.1 Improvement to the IP address extractor</h3>
 
 Thanks to [Mike Robins][miike] from [Snowflake Analytics][snowflake-analytics], extracting IP
-address from collector payloads coming from the Scala Stream Collector has gotten better.
+addresses from collector payloads originating from the Scala Stream Collector has gotten better.
 
-Indeed, it now supports IPv6 IPs as well as inspects the `Forwaded` header in addition to the
+Snowplow now successfully extracts IPv6 IPs from these Scala Stream Collector payloads, and now inspects the `Forwarded` header in addition to the
 historically supported `X-Forwarded-For` header.
 
 <h3 id="mandrill">3.2 Improvements to the Mandrill integration</h3>
 
-A change in the Mandrill events format resulted in Mandrill events failing enrichments. More
-specifically, a `subaccount` property has been generalized to every Mandrill-sent payload.
+An unexpected `subaccount` property in the Mandrill events format has meant that many Mandrill events have been failing enrichment.
 
-Thanks to [Adam Gray][acgray] for authoring the new schemas as well as updating the adapter!
+To resolve this, community member [Adam Gray][acgray] has authored new 1-0-1 schemas for our Mandrill events, and updated the adapter to emit these new versions.
 
 <h3 id="doc">3.3 Documentation improvements</h3>
 
 Finally, thanks to [Kristoffer Snabb][ksnabb] and [Thales Mello][thalesmello] for improving the
-documentation!
+repo-embedded documentation, as follows:
 
-- Redirecting our users to Discourse for support requests in `CONTRIBUTING.md`: https://github.com/snowplow/snowplow/pull/3478
-- Renaming Caravel to Superset in `README.md`: https://github.com/snowplow/snowplow/pull/3595
+- Redirecting our users to Discourse for support requests in our `CONTRIBUTING.md`
+- Renaming Caravel to Superset in our `README.md`
 
 <h2 id="upgrading">4. Upgrading</h2>
 
@@ -118,13 +115,14 @@ Whether you are using the batch or streaming pipeline, it is important to perfor
 you make use of the MaxMind IP Lookups Enrichment.
 
 To make use of the new enrichment, you will need to update your `ip_lookups.json` so that it
-conforms to [the new `2-0-0` schema][ip-lookups-schema]. An example is provided in
-[the GitHub repository][ip-lookups-example].
+conforms to [the new `2-0-0` schema][ip-lookups-schema].
+
+An example is provided in [the GitHub repository][ip-lookups-example].
 
 <h4 id="upgrading-ip-stream">4.1.1 Stream Enrich</h4>
 
-If you are a streaming pipeline user, a version of Stream Enrich incorporating the upgraded ip
-lookups enrichment can be found on our Bintray [here][se].
+If you are a streaming pipeline user, a version of Stream Enrich incorporating the upgraded IP
+Lookups Enrichment can be found on our Bintray [here][se].
 
 <h4 id="upgrading-ip-batch">4.1.2 Spark Enrich</h4>
 
@@ -147,7 +145,7 @@ The new Clojure Collector is available in S3 at:
 
 `s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.0.0-standalone.war`
 
-To enable the `/crossdomain.xml` path, make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
+To re-enable the `/crossdomain.xml` path, make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
 environment properties as described above.
 
 <h2 id="roadmap">5. Roadmap</h2>
@@ -178,10 +176,13 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 [r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
 
+[r98-ssc]: https://snowplowanalytics.com/blog/2018/01/05/snowplow-r98-argentomagus/#flash
+
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 [cross-domain]: http://www.adobe.com/devnet/adobe-media-server/articles/cross-domain-xml-for-streaming.html
 
+[ip-lookups-enrichment]: https://github.com/snowplow/snowplow/wiki/IP-lookups-enrichment
 [disc-ip-lookups]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
 [scala-maxmind-iplookups]: https://github.com/snowplow/scala-maxmind-iplookups
 [ip-lookups-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/ip_lookups/jsonschema/2-0-0
