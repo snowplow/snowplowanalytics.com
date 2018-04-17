@@ -5,7 +5,7 @@ title-short: Iglu R9 Bull's Eye
 tags: [iglu, json, json schema, registry, schema registry]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/04/10/iglu-r9-bulls-eye-released/
+permalink: /blog/2018/04/20/iglu-r9-bulls-eye-released/
 ---
 
 We are excited to announce a new Iglu release, introducing a number of long-awaited improvements to our Iglu Server, our most advanced Iglu schema registry technology. This release also brings some small but powerful updates to igluctl, the command-line toolkit for Iglu.
@@ -62,28 +62,27 @@ R9 Bull's Eye also fixes two important bugs in igluctl, introducing a new 0.4.1 
 
 <h3 id="upgrade-iglu-server">5.1 Iglu Server</h3>
 
-OGUZHAN TO WRITE A SECTION ON HOW TO UPGRADE TO THE LATEST IGLU SERVER WITHOUT ANY DOWNTIME / IMPACT ON PROCESSING.
+Considering configuration files used so far contain `spray` specific settings and Iglu Server `0.3.0` uses `Akka HTTP`, they can't be directly used. However, it is possible to use them by replacing server settings and adding `repo-server.baseURL`. Note that protocol of URL should be omitted for `repo-server.baseURL`, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
 
-MIGRATED:
+Another breaking change is related to endpoint paths. Previously, a DELETE request sent to `api/auth/keygen` was used to delete api keys of a specific vendor prefix. From now on, same request should be sent to `api/auth/vendor`.
 
-Note that protocol of URL should be omitted, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
+Also, Iglu Server `0.3.0` negotiates `Content-Type` with clients. Clients should specify either `Accept: application/json` header or no `Accept` header at all. Resource representation is available only for `application/json`.
 
-Now you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
+Latest Iglu Server can be downloaded from [Bintray][iglu-server-download]. Unzip compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
 
 <h3 id="upgrade-igluctl">5.2 igluctl</h3>
 
-OGUZHAN TO EXPLAIN HOW TO UPDATE IGLUCTL
+igluctl `0.4.1` doesn't introduce any interface change. It is compatible with previous version `0.4.0`. Latest igluctl can be downloaded from [Bintray][igluctl-download].
 
 <h2 id="help">6. Getting help</h2>
 
-For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
-
-OGUZHAN LINK TO THE MASTER DOCUMENTATION ON IGLU SERVER.
+For more details on this release, as always do check out the [release notes][release-notes] and the [wiki page][iglu-server-wiki] on GitHub.
 
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
 [r3-blog-post]: https://snowplowanalytics.com/blog/2016/03/04/iglu-r3-penny-black-released/
 [igluctl]: https://github.com/snowplow/iglu/wiki/Igluctl
+[igluctl-download]: http://dl.bintray.com/snowplow/snowplow-generic/igluctl_0.4.1.zip
 
 [swagger-ui]: https://swagger.io/swagger-ui/
 
@@ -92,6 +91,8 @@ If you have any questions or run into any problems, please raise a question in [
 
 [release-notes]: https://github.com/snowplow/iglu/releases/tag/r9-bulls-eye
 [discourse]: http://discourse.snowplowanalytics.com/
+[iglu-server-wiki]: https://github.com/snowplow/iglu/wiki/Iglu-server-setup
+[iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.3.0.zip
 
 [bulls-eye]: https://en.wikipedia.org/wiki/Bull%27s_Eye_(postage_stamp)
 [bulls-eye-img]: /assets/img/blog/2018/04/bulls_eye.jpg
