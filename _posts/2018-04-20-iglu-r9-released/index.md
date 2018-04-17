@@ -62,17 +62,22 @@ R9 Bull's Eye also fixes two important bugs in igluctl, introducing a new 0.4.1 
 
 <h3 id="upgrade-iglu-server">5.1 Iglu Server</h3>
 
-Considering configuration files used so far contain `spray` specific settings and Iglu Server `0.3.0` uses `Akka HTTP`, they can't be directly used. However, it is possible to use them by replacing server settings and adding `repo-server.baseURL`. Note that protocol of URL should be omitted for `repo-server.baseURL`, i.e. omit `http(s)://`, since Swagger UI will automatically prepend that.
+The new Iglu Server release can be downloaded from [Bintray][iglu-server-download]. Unzip the compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
 
-Another breaking change is related to endpoint paths. Previously, a DELETE request sent to `api/auth/keygen` was used to delete api keys of a specific vendor prefix. From now on, same request should be sent to `api/auth/vendor`.
+The switch from Spray to Akka HTTP has seen some major changes in the configuration file format. However the old format can be adapted by:
 
-Also, Iglu Server `0.3.0` negotiates `Content-Type` with clients. Clients should specify either `Accept: application/json` header or no `Accept` header at all. Resource representation is available only for `application/json`.
+* Replacing or removing the Spray-specific server settings
+* Adding `repo-server.baseURL`, making sure to omit the protocol (i.e. `http(s)://`), because Swagger UI will automatically prepend that
 
-Latest Iglu Server can be downloaded from [Bintray][iglu-server-download]. Unzip compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
+Another breaking change is related to endpoint paths. Previously, a DELETE request sent to `api/auth/keygen` was used to delete API keys of a specific vendor prefix. From now on, that same request should be sent to `api/auth/vendor`.
+
+Finally, Iglu Server 0.3.0 now negotiates `Content-Type` with clients. Clients should specify either `Accept: application/json` header, or no `Accept` header at all; no other header values are supported.
 
 <h3 id="upgrade-igluctl">5.2 igluctl</h3>
 
-igluctl `0.4.1` doesn't introduce any interface change. It is compatible with previous version `0.4.0`. Latest igluctl can be downloaded from [Bintray][igluctl-download].
+The latest igluctl can be downloaded from [Bintray][igluctl-download].
+
+The new version, igluctl 0.4.1, doesn't introduce any interface changes over 0.4.0. 
 
 <h2 id="help">6. Getting help</h2>
 
