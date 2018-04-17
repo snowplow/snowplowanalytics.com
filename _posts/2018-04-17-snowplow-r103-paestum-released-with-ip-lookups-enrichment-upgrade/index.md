@@ -21,10 +21,11 @@ Read on for more information on R103 Paestum, named after [the ancient city in i
 
 1. [Upgrading the IP lookups enrichment](#ip-lookups)
 2. [Cross domain policy management for the Clojure collector](#cdp)
-3. [Community contributions](#oss)
-4. [Upgrading](#upgrading)
-5. [Roadmap](#roadmap)
-6. [Help](#help)
+3. [PII enrichment for the batch pipeline](#pii)
+4. [Community contributions](#oss)
+5. [Upgrading](#upgrading)
+6. [Roadmap](#roadmap)
+7. [Help](#help)
 
 ![paestum][paestum-img]
 
@@ -80,12 +81,17 @@ and `http://sub.acme.com`.
 - `SP_CDP_SECURE`: a boolean indicating whether to only grant access to HTTPS or both HTTPS and
 HTTP sources
 
-<h2 id="oss">3. Community contributions</h2>
+<h2 id="pii">3. PII enrichment for the batch pipeline</h2>
+
+This release also marks the availability of the PII enrichment for the batch pipeline, check out
+[the dedicated blog post][r100-bp] to know more.
+
+<h2 id="oss">4. Community contributions</h2>
 
 This release contains quite a few community contributions which we'd like to highlight, huge thanks
 to everyone involved!
 
-<h3 id="ip">3.1 Improvement to the IP address extractor</h3>
+<h3 id="ip">4.1 Improvement to the IP address extractor</h3>
 
 Thanks to [Mike Robins][miike] from [Snowflake Analytics][snowflake-analytics], extracting IP
 addresses from collector payloads originating from the Scala Stream Collector has gotten better.
@@ -93,13 +99,13 @@ addresses from collector payloads originating from the Scala Stream Collector ha
 Snowplow now successfully extracts IPv6 IPs from these Scala Stream Collector payloads, and now inspects the `Forwarded` header in addition to the
 historically supported `X-Forwarded-For` header.
 
-<h3 id="mandrill">3.2 Improvements to the Mandrill integration</h3>
+<h3 id="mandrill">4.2 Improvements to the Mandrill integration</h3>
 
 An unexpected `subaccount` property in the Mandrill events format has meant that many Mandrill events have been failing enrichment.
 
 To resolve this, community member [Adam Gray][acgray] has authored new 1-0-1 schemas for our Mandrill events, and updated the adapter to emit these new versions.
 
-<h3 id="doc">3.3 Documentation improvements</h3>
+<h3 id="doc">4.3 Documentation improvements</h3>
 
 Finally, thanks to [Kristoffer Snabb][ksnabb] and [Thales Mello][thalesmello] for improving the
 repo-embedded documentation, as follows:
@@ -107,9 +113,9 @@ repo-embedded documentation, as follows:
 - Redirecting our users to Discourse for support requests in our `CONTRIBUTING.md`
 - Renaming Caravel to Superset in our `README.md`
 
-<h2 id="upgrading">4. Upgrading</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
-<h3 id="upgrading-ip">4.1 Upgrading the IP Lookups Enrichment</h3>
+<h3 id="upgrading-ip">5.1 Upgrading the IP Lookups Enrichment</h3>
 
 Whether you are using the batch or streaming pipeline, it is important to perform this upgrade if
 you make use of the MaxMind IP Lookups Enrichment.
@@ -119,12 +125,12 @@ conforms to [the new `2-0-0` schema][ip-lookups-schema].
 
 An example is provided in [the GitHub repository][ip-lookups-example].
 
-<h4 id="upgrading-ip-stream">4.1.1 Stream Enrich</h4>
+<h4 id="upgrading-ip-stream">5.1.1 Stream Enrich</h4>
 
 If you are a streaming pipeline user, a version of Stream Enrich incorporating the upgraded IP
 Lookups Enrichment can be found on our Bintray [here][se].
 
-<h4 id="upgrading-ip-batch">4.1.2 Spark Enrich</h4>
+<h4 id="upgrading-ip-batch">5.1.2 Spark Enrich</h4>
 
 If you are a batch pipeline user, you'll need to either update your EmrEtlRunner configuration
 to the following:
@@ -139,7 +145,7 @@ or directly make use of the new Spark Enrich available at:
 
 `s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.13.0.jar`
 
-<h3 id="upgrading-clj">4.2 Upgrading the Clojure Collector</h3>
+<h3 id="upgrading-clj">5.2 Upgrading the Clojure Collector</h3>
 
 The new Clojure Collector is available in S3 at:
 
@@ -148,7 +154,7 @@ The new Clojure Collector is available in S3 at:
 To re-enable the `/crossdomain.xml` path, make sure to specify the `SP_CDP_DOMAIN` and `SP_CDP_SECURE`
 environment properties as described above.
 
-<h2 id="roadmap">5. Roadmap</h2>
+<h2 id="roadmap">6. Roadmap</h2>
 
 We have a packed schedule of new and improved features coming for Snowplow. Upcoming Snowplow releases will include:
 
@@ -159,7 +165,7 @@ We have a packed schedule of new and improved features coming for Snowplow. Upco
 * [R10x Vallei dei Templi][r10x-str], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
-<h2 id="help">6. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
@@ -176,6 +182,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 [r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
 
+[r100-pii]: https://snowplowanalytics.com/blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/#pii-enrichment
 [r98-ssc]: https://snowplowanalytics.com/blog/2018/01/05/snowplow-r98-argentomagus/#flash
 
 [dataflow]: https://cloud.google.com/dataflow/
