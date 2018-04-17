@@ -5,7 +5,7 @@ title-short: Snowplow R103 Paestum
 tags: [enrichments, clojure collector, ip lookups]
 author: Ben
 category: Releases
-permalink: /blog/2018/04/02/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/
+permalink: /blog/2018/04/17/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/
 ---
 
 We are proud to announce the release of [Snowplow R103 Paestum][release-notes]. This release is
