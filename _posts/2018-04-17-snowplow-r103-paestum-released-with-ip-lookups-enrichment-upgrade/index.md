@@ -6,6 +6,7 @@ tags: [enrichments, clojure collector, ip lookups]
 author: Ben
 category: Releases
 permalink: /blog/2018/04/17/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/
+discourse: true
 ---
 
 We are proud to announce the release of [Snowplow R103 Paestum][release-notes]. This release is
@@ -84,7 +85,7 @@ HTTP sources
 <h2 id="pii">3. PII enrichment for the batch pipeline</h2>
 
 This release also marks the availability of the PII enrichment for the batch pipeline, check out
-[the dedicated blog post][r100-bp] to know more.
+[the dedicated blog post][r100-pii] to learn more.
 
 <h2 id="oss">4. Community contributions</h2>
 
