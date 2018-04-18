@@ -144,5 +144,5 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [maxmind-announcement]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
 
-[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora_knossos.zip
+[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora.zip
 [config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/stream_config.yml.sample
