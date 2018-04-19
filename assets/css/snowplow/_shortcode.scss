@@ -1,0 +1,35 @@
+.sc-contact-us .call-to-action {
+    .btn {
+        background: transparent;
+        border: 1px solid white;
+    }
+}
+.sc-subscribe .call-to-action {
+    background: #ffffff;
+    border: 1px solid #323743;
+    #mce-EMAIL {
+        border-color: #323743;
+        padding: 15px 16px 14px;
+    }
+    h5, p {
+        color: #323743;
+    }
+}
+.sc-request-demo .call-to-action {
+    background:url('../img/common/bg-pattern-wire-small.png') top left repeat #31373d;
+}
+.sc-dynamic .call-to-action {
+    background: #f5faff;
+    h5, p {
+        color: #323743;
+    }
+}
+.shortcode {
+    .btn-lg {
+        margin-top: 10px;
+    }
+    .col-sm-12 {
+        text-align: left;
+        margin-top: 30px;
+    }
+}
