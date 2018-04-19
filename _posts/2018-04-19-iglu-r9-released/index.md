@@ -62,7 +62,7 @@ R9 Bull's Eye also fixes two important bugs in igluctl, introducing a new 0.4.1 
 
 <h3 id="upgrade-iglu-server">5.1 Iglu Server</h3>
 
-The new Iglu Server release can be downloaded from [Bintray][iglu-server-download]. Unzip the compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
+The new Iglu Server release can be downloaded from [here from Bintray][iglu-server-download] (download will start). Unzip the compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
 
 The switch from Spray to Akka HTTP has seen some major changes in the configuration file format. However the old format can be adapted by:
 
@@ -75,7 +75,7 @@ Finally, Iglu Server 0.3.0 now negotiates `Content-Type` with clients. Clients s
 
 <h3 id="upgrade-igluctl">5.2 igluctl</h3>
 
-The latest igluctl can be downloaded from [Bintray][igluctl-download].
+The latest igluctl can be downloaded from [here from Bintray][igluctl-download] (download will start).
 
 The new version, igluctl 0.4.1, doesn't introduce any interface changes over 0.4.0.
 
