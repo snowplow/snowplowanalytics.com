@@ -103,6 +103,8 @@ In Stream Enrich mode, some properties in your `config.yml` file, such as `aws.s
 
 For a complete example, we now have a dedicated sample [stream_config.yml][config-yml] template - this shows what you need to set, and what you can remove.
 
+Notice that in Stream Enrich mode, `staging`, `enrich` and `archive_raw` steps are effectively no-op. To avoid staging enriched data during recovery in this mode you need to skip new `staging_stream_enrich` step.
+
 **An important point:** you need to be careful when making this switchover to avoid either missing events from Redshift, or duplicating them. Our preferred switchover approach is to:
 
 1. Prevent missing events, by building in some time period overlap between the raw and enriched folders in S3, **and**
