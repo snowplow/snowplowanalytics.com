@@ -15,14 +15,16 @@ Read on for more information on R104 Stoplesteinan, named after [the ancient sto
 
 <!--more-->
 
-1. [Stream Enrich mode](#se-mode)
+1. [Bugs in R102 Stream Enrich mode](#r102-bugs)
+2. [Who is affected](#affected)
+3. [How to recover](#recovery)
 4. [Upgrading](#upgrading)
 5. [Roadmap](#roadmap)
 6. [Help](#help)
 
 ![stoplesteinan][stoplesteinan-img]
 
-<h2 id="se-mode">1. Bugs in R102 Stream Enrich mode</h2>
+<h2 id="r102-bugs">1. Bugs in R102 Stream Enrich mode</h2>
 
 In R102 Afontova Gora we presented a new Stream Enrich mode for EmrEtlRunner, improving [Snowplow Lambda architecture][discourse-lambda-architecture].
 
