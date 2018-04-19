@@ -5,7 +5,7 @@ title-short: Iglu R9 Bull's Eye
 tags: [iglu, json, json schema, registry, schema registry]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/04/20/iglu-r9-bulls-eye-released/
+permalink: /blog/2018/04/19/iglu-r9-bulls-eye-released/
 ---
 
 We are excited to announce a new Iglu release, introducing a number of long-awaited improvements to our Iglu Server, our most advanced Iglu schema registry technology. This release also brings some small but powerful updates to igluctl, the command-line toolkit for Iglu.
@@ -58,7 +58,7 @@ R9 Bull's Eye also fixes two important bugs in igluctl, introducing a new 0.4.1 
 * We've fixed a bug introduced in version 0.4.0, whereby if `lint` input is the full path to schema and the schema's version isn't `1-0-0`, then igluctl produced a failure message instead of warning ([issue #340][issue-340]),
 * igluctl now works with JRE9 ([issue #300][issue-300])
 
-<h2 id="help">5. Upgrading</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
 <h3 id="upgrade-iglu-server">5.1 Iglu Server</h3>
 
@@ -77,7 +77,7 @@ Finally, Iglu Server 0.3.0 now negotiates `Content-Type` with clients. Clients s
 
 The latest igluctl can be downloaded from [Bintray][igluctl-download].
 
-The new version, igluctl 0.4.1, doesn't introduce any interface changes over 0.4.0. 
+The new version, igluctl 0.4.1, doesn't introduce any interface changes over 0.4.0.
 
 <h2 id="help">6. Getting help</h2>
 
