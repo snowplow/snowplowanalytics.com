@@ -30,7 +30,16 @@ Check out the videos below and join the official [Snowplow Meetup group][meetup]
 
 Co-founder and CTO Jeremy Hindle of [Headstart][headstart] walks us through how Headstart uses Snowplow to build a data-driven recruitment platform. Used by some of the world’s leading companies, Headstart uses machine learning to help employers efficiently find the best suited candidates, drastically reducing the length of the recruitment process.
 
-[View the talk][headstart-talk]
+View Jeremy's talk here:
+
+<iframe width="595" height="335" src="https://www.youtube.com/embed/9GBkrgWjfv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+Or check out his slides:
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/hlmnc0rUl9Pzrf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/AnthonyMuccio/machine-learning-with-snowplow-analytics-at-headstart" title="Machine learning with Snowplow Analytics at Headstart" target="_blank">Machine learning with Snowplow Analytics at Headstart</a> </strong> </div>
+
+
 
 <h2 id="Metail">Metail</h2>
 
@@ -40,7 +49,17 @@ Co-founder and CTO Jeremy Hindle of [Headstart][headstart] walks us through how 
 
 [Metail][metail] aims to change the way we online shop for clothing by allowing customers to try on clothes online before they buy, increasing purchase confidence and reducing return rates. Data Engineer Gareth Rogers took us behind the scenes and gave us a guided tour through Metail’s unique analytics stack which employs [Amazon Redshift Spectrum][spectrum] to optimize their data querying.
 
-[View the talk][metail-talk]
+Watch Gareth's talk:
+
+<iframe width="595" height="335" src="https://www.youtube.com/embed/v3xBV26E608" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+View Gareth's slides:
+
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/dZUnlBBjXJuJUg" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/AnthonyMuccio/efficient-data-querying-using-snowplow-analytics-at-metail" title="Efficient data querying using Snowplow Analytics at Metail" target="_blank">Efficient data querying using Snowplow Analytics at Metail</a> </strong> </div>
+
+
 
 <h2 id="Lifecake">Lifecake</h2>
 
@@ -50,7 +69,17 @@ Co-founder and CTO Jeremy Hindle of [Headstart][headstart] walks us through how 
 
 One of our data scientists on our services team, Keane Robinson, presented some of the initial findings from work he’s conducted with family-focused photo sharing app [Lifecake][lifecake] and their team to better understand what drives retention. Keane breaks down how he and the Lifecake team approached the problem, their initial findings, and how they worked together to start turning their data into actionable insights.
 
-[View the talk][snowplow-talk]
+See Keane's full talk:
+
+<iframe width="595" height="335" src="https://www.youtube.com/embed/CMzHl3CCJss" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+Check out Keane's slides:
+
+<div class="iframe-container">
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/N5pk9fytGyBViE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/AnthonyMuccio/using-snowplow-to-understand-retention-analysis-at-lifecake" title="Using Snowplow to understand retention analysis at Lifecake" target="_blank">Using Snowplow to understand retention analysis at Lifecake</a> </strong> </div>
+
+</div>
 
 
 [speakers]: /assets/img/blog/2018/04/speakers.jpg
