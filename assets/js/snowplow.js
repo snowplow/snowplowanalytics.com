@@ -1,14 +1,14 @@
 ---
 ---
 
-{% include_relative vendors/dist/jquery-3.1.1.min.js %}
-{% include_relative vendors/dist/jquery.cookiebar.js %}
-{% include_relative vendors/dist/bootstrap.min.js %}
-{% include_relative vendors/dist/bootstrap-select.min.js %}
-{% include_relative vendors/dist/grayscale.functions.js %}
-{% include_relative vendors/dist/bodymovin.min.js %}
-{% include_relative vendors/dist/grayscale.js %}
-{% include_relative vendors/dist/slick.min.js %}
-{% include_relative vendors/dist/masonry.pkgd.min.js %}
-{% include_relative vendors/dist/jssocials.min.js %}
-{% include_relative vendors/dist/core.js %}
+{% include_relative vendors/_concat/jquery-3.1.1.min.js %}
+{% include_relative vendors/_concat/jquery.cookiebar.js %}
+{% include_relative vendors/_concat/bootstrap.min.js %}
+{% include_relative vendors/_concat/bootstrap-select.min.js %}
+{% include_relative vendors/_concat/grayscale.functions.js %}
+{% include_relative vendors/_concat/bodymovin.min.js %}
+{% include_relative vendors/_concat/grayscale.js %}
+{% include_relative vendors/_concat/slick.min.js %}
+{% include_relative vendors/_concat/masonry.pkgd.min.js %}
+{% include_relative vendors/_concat/jssocials.min.js %}
+{% include_relative core.js %}
