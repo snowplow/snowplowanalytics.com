@@ -27,8 +27,6 @@ Read on for more information about Release 9 Bull's Eye, named after [the first-
 
 Our latest version of what was then-called the "Scala Repo Server" was [released][r3-blog-post] more than two years ago, as part of Iglu R3 Penny Black. That version is still bundled with Snowplow Mini and has proved its worth in that environment.
 
-{% include shortcodes/subscribe.html layout="blog" %}
-
 Since then, our Iglu product efforts have focused on tools like [igluctl][igluctl], focused on improving the static schema registry experience for Snowplow operators. This was a deliberate decision, and the Iglu static registry has over time proven its robustness - at the cost of some flexibility.
 
 However, it has become clear that to deliver on our ambitious and exciting Iglu roadmap, we will need a more powerful schema registry engine. We will deliver this through our tried-and-tested Scala Repo Server project, now re-badged as simply Iglu Server.
