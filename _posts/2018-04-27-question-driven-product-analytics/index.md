@@ -42,7 +42,7 @@ This suggested that Lifecake has two types of distinct user journeys, that there
 Solving this day one retention problem presented a huge opportunity for Lifecake: if the team can find a way to get more users to stay with the app for an additional day, the overall numbers of active users would increase significantly. This would lead to a massive increase in return on their acquisition spend with most of the users acquired being retained well beyond three days.
 
 
-
+<br>
 {% include shortcodes/dynamic.html layout="blog" title="The latest in analytics" description="Get all of the latest info from Snowplow on product analytics, graph databases, GDPR, and more, straight in your inbox." btnText="Subscribe now" link="http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20pt6&utm_medium=blog%20cta&utm_campaign=product%20analytics&utm_content=subscription" %}
 
 
