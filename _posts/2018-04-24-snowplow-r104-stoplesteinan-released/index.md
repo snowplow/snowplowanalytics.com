@@ -9,7 +9,7 @@ permalink: /blog/2018/04/24/snowplow-r104-stoplesteinan-released-with-important-
 ---
 
 We are pleased to announce the release of [Snowplow R104 Stoplesteinan][release-notes].
-This release brings few critical stability-related bugfixes to Stream Enrich mode introduced in EmrEtlRunner [R102 Afontova Gora][r102-post].
+This release brings a few critical stability-related bugfixes to Stream Enrich mode introduced in EmrEtlRunner [R102 Afontova Gora][r102-post].
 
 Read on for more information on R104 Stoplesteinan, named after [the ancient stone circle located in southwestern Norway][stoplesteinan]:
 
@@ -26,30 +26,29 @@ Read on for more information on R104 Stoplesteinan, named after [the ancient sto
 
 <h2 id="r102-bugs">1. Bugs in R102 Stream Enrich mode</h2>
 
-In R102 Afontova Gora we presented a new Stream Enrich mode for EmrEtlRunner, improving [Snowplow Lambda architecture][discourse-lambda-architecture].
+In R102 Afontova Gora we presented a new Stream Enrich mode for EmrEtlRunner, improving the [Snowplow Lambda architecture][discourse-lambda-architecture].
 
-Unfortunately, several critical bugs were introduced in recovery process of pipelines with Stream enrich mode enabled, that combined can lead to folders being staled in `enriched.good` or archived without proper shredding and loading (but no data should be lost).
+Unfortunately, several critical bugs were introduced in the recovery process of pipelines with Stream enrich mode enabled, that combined can lead to folders being stalled in `enriched.good` or archived without proper shredding and loading (though no data should be lost).
 
-In Stream Enrich mode, EmrEtlRunner has new skippable step - `staging_stream_enrich`, which replaces both `staging` and `enrich` steps from classic Batch Enrich mode.
-EmrEtlRunner R102 accepts these skip steps and effectively makes them no-op, which can lead pipeline operator to think that EmrEtlRunner did not add staging step.
-However, without skipped `staging_stream_enrich` it does stage enriched data into `enriched.good` folder.
+In Stream Enrich mode, EmrEtlRunner has a new skippable step - `staging_stream_enrich` - which replaces both `staging` and `enrich` steps from the classic Batch Enrich mode.
+EmrEtlRunner R102 accepts these skip steps and effectively makes them no-op, which can lead the pipeline operator to think that EmrEtlRunner did not add a staging step.
+However, without the skipped `staging_stream_enrich` step, the pipeline operator does stage enriched data into an `enriched.good` folder.
 
-Another related bug is always false negative for "ongoing run" check that results in run folders being staled in `enriched.good`.
+Another related bug is always returning false negatives for an "ongoing run" check that results in run folders being stalled in `enriched.good`.
 
 All these bugs were addressed in R104 Stoplesteinan.
 
 <h2 id="affected">2. Who is affected</h2>
 
-All bugs described above impact only Stream Enrich mode and do not cause issues in classic Batch Enrich mode.
-Pipeline likely was affected by these bugs if recovery attempt was made with R102.
+The bugs described above impact only Stream Enrich mode and do not cause issues in classic Batch Enrich mode. A pipeline likely was affected by these bugs if a recovery attempt was made with R102.
 
-* If recovery process was launched skipping `staging` or `enrich` - you need check `enriched.good` for leftover folders
-* If recovery process was launched skipping also `shred` or `rdb_load` - you need to check if Redshift misses any data from folders present in `enriched.archive` or `shredded.archive`
+* If a recovery process was launched which skipped `staging` or `enrich` - you need check `enriched.good` for leftover folders
+* If a recovery process was launched which also skipped `shred` or `rdb_load` - you need to check if Redshift is missing any data from folders present in `enriched.archive` or `shredded.archive`
 
 <h2 id="recovery">3. How to recover</h2>
 
-Recommended way to recover is to [upgrade](#upgrading) to R104 and launch usual recovery process, e.g. with `--resume-from shred` or `--skip staging_stream_enrich`.
-If data was archived without loading or for some reasons immediate upgrade is not possible - you can simply restage data from run folders to `enriched.stream` folder to be staged and processed during next launch.
+The recommended way to recover if you encounter these bugs is to [upgrade](#upgrading) to R104 and launch the usual recovery process, e.g. with `--resume-from shred` or `--skip staging_stream_enrich`.
+If data was archived without loading or for some reason immediate upgrade is not possible - you can simply restage data from the run folders to the `enriched.stream` folder to be staged and processed during your next launch.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
