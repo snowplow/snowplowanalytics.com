@@ -8,7 +8,7 @@ category: Analytics
 permalink: /blog/2018/01/19/product-analytics-part-one-data-and-digital-products/
 ---
 
-*Part one of our series on product analytics. Read: [Part 2][pt2], [Part 3][product3], [Part 4][product4], [Part 5][product5]*
+*Part one of our series on product analytics. Read: [Part 2][pt2], [Part 3][product3], [Part 4][product4], [Part 5][product5], [Part 6][product6]*
 
 ---
 
@@ -54,6 +54,8 @@ We see digital analytics in product management as one of the most exciting new i
 [product4]: https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/
 
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
+
+[product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
 
 [group]: /assets/img/blog/2018/01/focus-group.jpg
 
