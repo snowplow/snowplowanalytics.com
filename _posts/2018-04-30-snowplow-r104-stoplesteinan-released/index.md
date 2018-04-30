@@ -5,7 +5,7 @@ title-short: Snowplow 104 Stoplesteinan
 tags: [batch, emr, emretlrunner, lambda]
 author: Anton
 category: Releases
-permalink: /blog/2018/04/24/snowplow-r104-stoplesteinan-released-with-important-bugfixes/
+permalink: /blog/2018/04/30/snowplow-r104-stoplesteinan-released-with-important-bugfixes/
 ---
 
 We are pleased to announce the release of [Snowplow R104 Stoplesteinan][release-notes].
