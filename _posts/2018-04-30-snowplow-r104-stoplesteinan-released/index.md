@@ -67,7 +67,7 @@ When you upgrade, make sure to update any recovery scripts you have which previo
 
 Upcoming Snowplow releases will include:
 
-* [R105 Pompeii][r015-dedupe], fixing an urgent duplication issue which was introduced in R101 Neapolis (when we introduced the initial GCP support)
+* [R105 Pompeii][r105-dedupe], fixing an urgent duplication issue which was introduced in R101 Neapolis (when we introduced the initial GCP support)
 * [R106 Acropolis][r106-pii], enhancing our recently-released GDPR-focused PII
   Enrichment for the realtime pipeline
 * [R10x [STR] New webhooks and enrichment][r10x-ms], featuring Marketo and Vero webhook adapters from our partners at [Snowflake Analytics][snowflake-analytics]
@@ -87,12 +87,16 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [discourse-lambda-architecture]: https://discourse.snowplowanalytics.com/t/how-to-setup-a-lambda-architecture-for-snowplow/249
 
-[eer-ddl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r104_stoplesteinan.zip
+[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r104_stoplesteinan.zip
 
 [r105-dedupe]: https://github.com/snowplow/snowplow/milestone/159
 [r106-pii]: https://github.com/snowplow/snowplow/milestone/153
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 [r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
+
+[snowflake-analytics]: https://www.snowflake.net/
+[dataflow]: https://cloud.google.com/dataflow/
+[beam]: https://beam.apache.org/
 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r104-stoplesteinan
 [discourse]: http://discourse.snowplowanalytics.com/
