@@ -131,7 +131,10 @@ If you have an idea for a new feature or want help getting things set up, please
 [usernotifcations]: https://developer.apple.com/documentation/usernotifications
 
 [jrmsklar]: https://github.com/jrmsklar
+[gchilds]: https://github.com/gchilds
 
+[swift-interfaces]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#swift-interface
+[swift-docs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#importing
 [push-example]: https://github.com/snowplow/snowplow-objc-tracker/tree/master/SnowplowSwiftDemo/SnowplowSwiftDemo/AppDelegate.swift
 [push-docs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#notification
 [tcg]: https://github.com/mhadam/snowplow.wiki-fork/blob/master/technical-documentation/1a-trackers/ios-tracker/iOS-Tracker.md#consent-granted
@@ -145,6 +148,9 @@ If you have an idea for a new feature or want help getting things set up, please
 [331]: https://github.com/snowplow/snowplow-objc-tracker/issues/331
 [329]: https://github.com/snowplow/snowplow-objc-tracker/issues/329
 [334]: https://github.com/snowplow/snowplow-objc-tracker/issues/334
+[343]: https://github.com/snowplow/snowplow-objc-tracker/issues/343
+[344]: https://github.com/snowplow/snowplow-objc-tracker/issues/344
+[345]: https://github.com/snowplow/snowplow-objc-tracker/issues/345
 [lib-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_objc_tracker_0.8.0.zip
 
 [issues]: https://github.com/snowplow/snowplow/issues
