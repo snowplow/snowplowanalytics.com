@@ -94,7 +94,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 [r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
 
-[snowflake-analytics]: https://www.snowflake.net/
+[snowflake-analytics]: https://www.snowflake-analytics.com/
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 
