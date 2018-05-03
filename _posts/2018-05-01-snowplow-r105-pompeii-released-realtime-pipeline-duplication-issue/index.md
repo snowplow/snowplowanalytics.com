@@ -91,10 +91,10 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 [r10x-ms]: https://github.com/snowplow/snowplow/milestone/158
 
-[at-least-once]: xxx
-[iab-data]: xxx
-[r103-upgrade]: xxx
-[ubuntu-lts]: xxx
+[at-least-once]: https://docs.aws.amazon.com/streams/latest/dev/kinesis-record-processor-duplicates.html
+[iab-data]: https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/
+[r103-upgrade]: /blog/2018/04/17/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/#upgrading
+[ubuntu-lts]: https://wiki.ubuntu.com/LTS
 
 [snowflake-analytics]: https://www.snowflake-analytics.com/
 [dataflow]: https://cloud.google.com/dataflow/
