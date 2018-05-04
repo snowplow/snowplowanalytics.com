@@ -182,6 +182,7 @@ There are a few items of configuration that need to be updated in order to use t
 
 <h3>PII enrichment configuration</h3>
 Here is an example PII enrichment configuration:
+
 ```json
 {
   "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/2-0-0",
