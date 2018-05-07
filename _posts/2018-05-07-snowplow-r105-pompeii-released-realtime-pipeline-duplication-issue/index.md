@@ -5,7 +5,7 @@ title: "Snowplow 105 Pompeii released"
 tags: [snowplow, kinesis, realtime]
 author: Ben
 category: Releases
-permalink: /blog/2018/05/01/snowplow-r105-pompeii-released-realtime-pipeline-duplication-issue/
+permalink: /blog/2018/05/07/snowplow-r105-pompeii-released-realtime-pipeline-duplication-issue/
 ---
 
 We are pleased to announce the urgent release of [Snowplow 105 Pompeii][snowplow-release], named
