@@ -9,11 +9,13 @@ permalink: /blog/2018/04/26/snowplow-android-tracker-0.7.0-released-with-consent
 discourse: true
 ---
 
-We are pleased to announce a new release of the [Snowplow Android Tracker][android-tracker]. [Version 0.7.0][0.7.0-tag] introduces first class methods for tracking when users grant or withdraw consent for their personal data to be processed for specific purposes, as well as new and improved form tracking and the ability to make new tracker sessions client-side.
+We are pleased to announce a new release of the [Snowplow Android Tracker][repo].
+
+[Version 0.7.0][release-notes] introduces first-class methods for tracking when users grant or withdraw consent for their personal data to be processed for specific purposes, as well as new and improved form tracking and the ability to create new tracker sessions client-side.
 
 Read on below the fold for:
 
-1. [Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes](#data-rights)
+1. [Consent trackin](#consent)
 2. [More flexible lifecycle tracking](#lifecycle)
 3. [Improved TLS configuration](#tls)
 4. [New session convenience method](#session)
@@ -23,20 +25,20 @@ Read on below the fold for:
 
 <!--more-->
 
-<h2 id="data-rights">1. Tracking users granting, and withdrawing, consent to have their personal data processed for specific purposes</h2>
+<h2 id="consent">1. Consent tracking</h2>
 
 Against the backdrop of the incoming GDPR and ePrivacy regulations, this release adds new events to track when users give their consent to, and withdraw their consent from, having their personal data processed for specific purposes.
 
-We envision that many digital businesses will want to track the consent of their users against relatively fine-grained "bundles" of specific data usecases, which we model in Snowplow as [consent documents][cds].
+We envision that many digital businesses will want to track the consent of their users against relatively fine-grained "bundles" of specific use cases for data, which we model in Snowplow as [consent documents][cds].
 
 The two new consent tracking methods are:
 
-1. [`trackConsentGranted`][tcg] for the giving of consent
-2. [`trackConsentWithdrawn`][tcw] for the removal of consent
+1. [`trackConsentGranted`][tcg] for the giving of consent by a data subject
+2. [`trackConsentWithdrawn`][tcw] for the removal of consent by a data subject
 
 Each consent event will be associated to one or more consent documents, attached to the event as contexts.
 
-Here is an example of a user opted into data collection per a specific consent document `1234`:
+Here is an example of a user opting into data collection per a specific consent document `1234`:
 
 {% highlight java %}
 List<ConsentDocument> documents = new LinkedList<>();
@@ -59,17 +61,17 @@ t1.track(ConsentGranted.builder()
 
 <h2 id="lifecycle">2. More flexible lifecycle tracking</h2>
 
-Lifecycle tracking now offers fine-tuned control with the functions, `tracker.pauseLifecycleHandler()` and `tracker.resumeLifecycleHandler()`.
+App lifecycle tracking is a powerful auto-tracking capability, introduced in XXX. In this release we now add fine-tuned control of lifecycle tracking, with the functions `tracker.pauseLifecycleHandler()` and `tracker.resumeLifecycleHandler()`.
 
-For example, this can be used to maintain a session when something momentarily backgrounds an activity:
+For example, this can be used to maintain a session uninterrupted when something momentarily backgrounds an activity:
 
 {% highlight java %}
 tracker.pauseLifecycleHandler()
-// call code that backgrounds the activity watched by the lifecycle handler
+// Call code that backgrounds the activity watched by the lifecycle handler
 tracker.resumeLifecycleHandler()
 {% endhighlight %}
 
-The lifecycle handler can also now be constructed with a custom context, so that all `application_foreground` and `application_background` events will include the custom context.
+The lifecycle handler can also now be constructed with a custom context, so that all `application_foreground` and `application_background` events will include the custom context:
 
 {% highlight java %}
 // Create a Map of the data you want to include...
@@ -116,9 +118,9 @@ Emitter e2 = new Emitter
         .build();
 {% endhighlight %}
 
-Alternatively a single string can be passed to the builder: `.tls("TLSv1.1")`.
+Alternatively a single string can be passed to the builder like so: `.tls("TLSv1.1")`.
 
-Documentation is found [here][tls-version].
+As always, documentation is found [here][tls-version].
 
 <h2 id="session">4. New session convenience method</h2>
 
@@ -128,44 +130,39 @@ With this release, a new session can be started with the tracker method, `tracke
 
 Other updates and fixes include:
 
-* Raise minimum supported Android API to level 14 ([#262][262])
-* Unregister LifecycleHandler callbacks on activity destruction ([#259][259])
-* Fix outdated and broken Travis configuration ([#258][258])
-* Reset firstId even if app is in the foreground ([#257][257])
-* Update README markdown in accordance with CommonMark ([#256][256])
-* Add identifyUser as alias for setUserId ([#254][254])
-* Make tracker.setLifecycleHandler take a Context instead of an Activity ([#224][224])
+XXXX CHECK 257
+
+* Fixing the bug where `firstId` was not reset if the app is in the foreground ([issue #257][257])
+* Raising the minimum supported Android API to level 14 ([issue #262][262])
+* Unregistering LifecycleHandler callbacks on activity destruction ([issue #259][259])
+* Fixing our outdated and broken Travis configuration ([issue #258][258])
+* Adding `identifyUser` as an alias for `setUserId` ([issue #254][254])
+* Making `tracker.setLifecycleHandler` take a Context instead of an Activity ([issue #224][224])
 
 <h2><a name="docs">6. Documentation</a></h2>
 
-You can find the updated [Android Tracker documentation] [android-manual] on our wiki.
+You can find the updated [Android Tracker documentation][android-manual] on our wiki.
 
 As part of this release we have updated our tutorials to help Android developers integrate the Tracker into their apps:
 
-* [Guide to integrating the tracker] [integration]
-* [Guide to setting up a test environment] [testing]
-* [Walkthrough of our Android demo app] [demo-walkthrough]
+* [Guide to integrating the tracker][integration]
+* [Guide to setting up a test environment][testing]
+* [Walkthrough of our Android demo app][demo-walkthrough]
 
-You can find the full release notes on GitHub as [Snowplow Android Tracker v0.7.0 release] [android-tracker-release].
+You can find the full release notes on GitHub as [Snowplow Android Tracker v0.7.0 release][android-tracker-release].
 
 <h2 id="doc">7. Getting help</h2>
 
-Please do share any user feedback, feature requests or possible bugs.
+For help on integrating the tracker please have a look at the [setup][android-setup] and [integration][integration] guides.
 
-For help on integrating the application please have a look at the [setup][android-setup] and [integration][integration] guides.
+If you have any questions or run into any problems, please visit [our Discourse forum][discourse]. As always, do raise any bugs in the [Android Tracker's issues][android-issues] on GitHub.
 
-Feel free to [get in touch][talk-to-us] or raise an issue in the [Android Tracker's issues] [android-issues] on GitHub!
+For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
 [repo]: https://github.com/snowplow/snowplow-android-tracker
+[release-notes]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/0.7.0
 
-[0.7.0-tag]:
-
-[tls-version]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#5-sending-event-emitter
-[cds]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-document
-[tcg]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-granted
-[tcw]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-withdrawn
-[lifecycle-doc]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#set-lifecycle-handler
-
+[android-issues]: https://github.com/snowplow/snowplow-android-tracker/issues
 [262]: https://github.com/snowplow/snowplow-android-tracker/issues/262
 [259]: https://github.com/snowplow/snowplow-android-tracker/issues/259
 [258]: https://github.com/snowplow/snowplow-android-tracker/issues/258
@@ -174,15 +171,18 @@ Feel free to [get in touch][talk-to-us] or raise an issue in the [Android Tracke
 [254]: https://github.com/snowplow/snowplow-android-tracker/issues/254
 [224]: https://github.com/snowplow/snowplow-android-tracker/issues/224
 
-[apk-download]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow-demo-app-release-0.2.0.apk
-[other-sources]: http://developer.android.com/distribute/tools/open-distribution.html
+[tls-version]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#5-sending-event-emitter
+[cds]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-document
+[tcg]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-granted
+[tcw]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-withdrawn
+[lifecycle-doc]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#set-lifecycle-handler
 
 [android-setup]: https://github.com/snowplow/snowplow/wiki/Android-Tracker-Setup
 [android-manual]: https://github.com/snowplow/snowplow/wiki/Android-Tracker
-[android-tracker-release]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/0.5.0
+
 [demo-walkthrough]: https://github.com/snowplow/snowplow/wiki/Android-app-walkthrough#walkthrough
 [integration]: https://github.com/snowplow/snowplow/wiki/Android-Integration
 [testing]: https://github.com/snowplow/snowplow/wiki/Android-Testing-locally-and-Debugging
 
-[talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
-[android-issues]: https://github.com/snowplow/snowplow-android-tracker/issues
+[discourse]: http://discourse.snowplowanalytics.com/
+
