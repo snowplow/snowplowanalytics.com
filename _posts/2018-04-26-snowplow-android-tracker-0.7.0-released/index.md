@@ -61,7 +61,7 @@ t1.track(ConsentGranted.builder()
 
 <h2 id="lifecycle">2. More flexible lifecycle tracking</h2>
 
-App lifecycle tracking is a powerful auto-tracking capability, introduced in XXX. In this release we now add fine-tuned control of lifecycle tracking, with the functions `tracker.pauseLifecycleHandler()` and `tracker.resumeLifecycleHandler()`.
+App lifecycle tracking is a powerful auto-tracking capability, introduced in [version 0.6.0][060-lifecycles]. In this release we add fine-tuned control of lifecycle tracking, with the functions `tracker.pauseLifecycleHandler()` and `tracker.resumeLifecycleHandler()`.
 
 For example, this can be used to maintain a session uninterrupted when something momentarily backgrounds an activity:
 
@@ -130,8 +130,6 @@ With this release, a new session can be started with the tracker method, `tracke
 
 Other updates and fixes include:
 
-XXXX CHECK 257
-
 * Fixing the bug where `firstId` was not reset if the app is in the foreground ([issue #257][257])
 * Raising the minimum supported Android API to level 14 ([issue #262][262])
 * Unregistering LifecycleHandler callbacks on activity destruction ([issue #259][259])
@@ -170,6 +168,8 @@ For more details on this release, please check out the [release notes][release-n
 [256]: https://github.com/snowplow/snowplow-android-tracker/issues/256
 [254]: https://github.com/snowplow/snowplow-android-tracker/issues/254
 [224]: https://github.com/snowplow/snowplow-android-tracker/issues/224
+
+[060-lifecycles]: https://snowplowanalytics.com/blog/2016/08/29/snowplow-android-tracker-0.6.0-released-with-automatic-crash-tracking/#lifecycles
 
 [tls-version]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#5-sending-event-emitter
 [cds]: https://github.com/snowplow/snowplow/wiki/Android-Tracker#consent-document
