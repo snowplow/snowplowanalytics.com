@@ -15,7 +15,7 @@ We are pleased to announce a new release of the [Snowplow Android Tracker][repo]
 
 Read on below the fold for:
 
-1. [Consent trackin](#consent)
+1. [Consent tracking](#consent)
 2. [More flexible lifecycle tracking](#lifecycle)
 3. [Improved TLS configuration](#tls)
 4. [New session convenience method](#session)
@@ -137,7 +137,7 @@ Other updates and fixes include:
 * Adding `identifyUser` as an alias for `setUserId` ([issue #254][254])
 * Making `tracker.setLifecycleHandler` take a Context instead of an Activity ([issue #224][224])
 
-<h2><a name="docs">6. Documentation</a></h2>
+<h2><a name="help">6. Documentation</a></h2>
 
 You can find the updated [Android Tracker documentation][android-manual] on our wiki.
 
@@ -147,7 +147,7 @@ As part of this release we have updated our tutorials to help Android developers
 * [Guide to setting up a test environment][testing]
 * [Walkthrough of our Android demo app][demo-walkthrough]
 
-You can find the full release notes on GitHub as [Snowplow Android Tracker v0.7.0 release][android-tracker-release].
+You can find the full release notes on GitHub as [Snowplow Android Tracker v0.7.0 release][release-notes].
 
 <h2 id="doc">7. Getting help</h2>
 
@@ -185,4 +185,3 @@ For more details on this release, please check out the [release notes][release-n
 [testing]: https://github.com/snowplow/snowplow/wiki/Android-Testing-locally-and-Debugging
 
 [discourse]: http://discourse.snowplowanalytics.com/
-
