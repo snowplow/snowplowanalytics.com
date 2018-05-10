@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.7.0
 tags: [snowplow, javascript, privacy, optout, gdpr, eprivacy, data rights]
 author: Mike
 category: Releases
-permalink: /blog/2018/04/26/snowplow-android-tracker-0.7.0-released-with-consent-tracking/
+permalink: /blog/2018/05/10/snowplow-android-tracker-0.7.0-released-with-consent-tracking/
 discourse: true
 ---
 
@@ -113,12 +113,12 @@ Emitter e2 = new Emitter
         .method(HttpMethod.GET) // Optional - Defines how we send the request
         .option(BufferOption.Single) // Optional - Defines how many events we bundle in a POST
         .security(RequestSecurity.HTTPS) // Optional - Defines what protocol used to send events
-        .tls(new String[] { "TLSv1.1", "TLSv1.2" }) // Optional - Defines what TLS versions should be used
+        .tls(EnumSet.of(TLSVersion.TLSv1_1, TLSVersion.TLSv1_2)) // Optional - Defines what TLS versions should be used
         .callback(new EmitterCallback() {...})
         .build();
 {% endhighlight %}
 
-Alternatively a single string can be passed to the builder like so: `.tls("TLSv1.1")`.
+Alternatively a single enum can be passed to the builder like so: `.tls(TLSVersion.TLSv1_2)`.
 
 As always, documentation is found [here][tls-version].
 
