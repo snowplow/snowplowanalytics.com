@@ -137,7 +137,7 @@ Other updates and fixes include:
 * Adding `identifyUser` as an alias for `setUserId` ([issue #254][254])
 * Making `tracker.setLifecycleHandler` take a Context instead of an Activity ([issue #224][224])
 
-<h2><a name="docs">6. Documentation</a></h2>
+<h2 id="docs">6. Documentation</h2>
 
 You can find the updated [Android Tracker documentation][android-manual] on our wiki.
 
