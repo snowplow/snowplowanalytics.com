@@ -137,7 +137,7 @@ Other updates and fixes include:
 * Adding `identifyUser` as an alias for `setUserId` ([issue #254][254])
 * Making `tracker.setLifecycleHandler` take a Context instead of an Activity ([issue #224][224])
 
-<h2><a name="help">6. Documentation</a></h2>
+<h2><a name="docs">6. Documentation</a></h2>
 
 You can find the updated [Android Tracker documentation][android-manual] on our wiki.
 
@@ -149,7 +149,7 @@ As part of this release we have updated our tutorials to help Android developers
 
 You can find the full release notes on GitHub as [Snowplow Android Tracker v0.7.0 release][release-notes].
 
-<h2 id="doc">7. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For help on integrating the tracker please have a look at the [setup][android-setup] and [integration][integration] guides.
 
