@@ -47,7 +47,7 @@ The above two steps are essential for any product development teams that want to
 
 As part of the regular sprint planning process, product managers will be forced to choose how to prioritize different potential updates to the product. This decision can be informed by the clear, quantitative benefit that the team hopes to derive from the update, specified as part of the overall specification process.
 
-<h2 id="deciding">The roll of data in deciding whether or not to roll an update out across the user base</h2>
+<h2 id="deciding">The role of data in deciding whether or not to roll an update out across the user base</h2>
 
 Good data-driven product development teams will have a formal process for A/B testing any new features with a subset of users prior to any rollout of that feature. Remember that the product team will, as part of specifying an update, already have specified the impact that that update should have. A/B testing provides a formal mechanism for measuring if the update has that desired effect.
 
