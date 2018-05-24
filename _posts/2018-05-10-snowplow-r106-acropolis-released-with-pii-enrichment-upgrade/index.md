@@ -330,7 +330,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [config-stream-enrich]: https://github.com/snowplow/snowplow/wiki/Configure-Stream-Enrich
 
 
-[stream-enrich-bintray]: http://i.dunno.where
+[stream-enrich-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.17.0#files
 
-[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r106-Acropolis
+[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r106-acropolis
 [discourse]: http://discourse.snowplowanalytics.com/
