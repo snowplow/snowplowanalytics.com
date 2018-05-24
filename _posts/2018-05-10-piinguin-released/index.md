@@ -74,11 +74,76 @@ PIINGUIN_PORT        = 8080
 PIINGUIN_TIMEOUT_SEC = 10
 ```
 
+<h3 id="#relay-iam-policy"> Piinguin Relay IAM/VPC </h3>
+
+As stated before, both the Relay and the Server need to reside in the same VPC. in addition the lambda needs to have sufficient access from IAM to run. You should create a service role and attach policies that will permit it to run following [this guide][role-creation]. As all Lambda functions it needs to have permission to send its output to CloudWatch Logs so and example IAM policy that permits that is:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "arn:aws:logs:<region>:<account-id>:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:<region>:<account-id>:log-group:/aws/lambda/piinguin-relay:*"
+            ]
+        }
+    ]
+}
+```
+
+As the Lambda will be reading its data form Kinesis it will also need to have permissions to do that with a policy document such as:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "kinesis:*",
+            "Resource": [
+                "arn:aws:kinesis:<region>:<account-id>:stream/<pii-events-stream-name>"
+            ]
+        }
+    ]
+}
+```
+
 <h3 id="#deploying-piinguin"> Piinguin Server </h3>
 The simplest way to deploy Piinguin Server is to obtain the docker image by running the following on your docker host:
 `docker run snowplow-docker-registry.bintray.io/snowplow/piinguin-server:0.1.0`
 This will run the server on the default port `8080` and will use the default DynamoDB table `piinguin`. Both are configurable to other values using `PIINGUIN_PORT` and `PIINGUIN_DYNAMODB_TABLE`, if needed.
 
+<h3 id="#piinguin-iam-policy"> Piinguin Server IAM/VPC </h3>
+
+As stated before, both the Relay and the Server need to reside in the same VPC. in addition the docker host needs to have sufficient access from IAM to run. You should create a service role and attach policies that will permit it to run following [this guide][role-creation].
+
+As the server writes its data to DynamoDB its will need to have access to it with a policy document such as:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:DeleteItem",
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:Scan",
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": "arn:aws:dynamodb:<region>:<account-id>:table/<table-name>"
+        }
+    ]
+}
+```
 
 <h2 id="#help"> 5. Getting help </h2>
 
@@ -100,6 +165,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [analytics-sdk]: https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK
 [collision-issue]: https://github.com/snowplow-incubator/piinguin/issues/8
 [aws-developer-guide]: https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
+[role-creation]: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html
 
 <!--*UPDATE ME*-->
 [acropolis-blog-post]: https://snowplowanalytics.com/blog/2018/05/10/snowplow-r106-acropolis
