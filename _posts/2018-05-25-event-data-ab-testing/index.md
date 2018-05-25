@@ -37,6 +37,8 @@ When you’re running an A/B test, your fundamentally comparing two segments, th
 
 On high-functioning product teams, this becomes challenging to manage. Across the team, members are coming up with great features and contributing to the overall evolution to the product. Each feature needs to be tested, to see if it has the desired effect, before being rolled out to the rest of the userbase, and the chances are high that each test will be run in a fundamentally different way than the others with a different control group and different set of variables to measure. The end result is that a well developed product, with a high functioning product team, might be running dozens or even hundreds of experiments simultaneously.
 
+{% include shortcodes/dynamic.html layout="blog" title="Interested in product analytics? Get the eBook" description="Join our mailing list and be the first to know when our upcoming ebook is available" btnText="NOTIFY ME" link="http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20series&utm_medium=cta&utm_campaign=ebook%20interest&utm_content=product%20analytics%20part%207" %}
+
 Because of this, it’s not uncommon for some companies to run multiple experiments every week. Facebook, for example, is [known for its rapid and rigorous product development cycle][top-companies] and runs hundreds of concurrent tests [every day][facebook] on its billions of users. This is no small feat: not only do those tests needs to be designed and deployed, they need to be tracked and monitored and carefully executed so as not to interfere with one another.
 
 <h2 id="different approaches">Two different approaches to segments and metrics</h2>
