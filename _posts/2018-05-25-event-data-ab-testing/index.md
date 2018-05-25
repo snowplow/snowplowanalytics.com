@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Improving A/B testing with event data modeling"
-description:
-image:
+description: How event data modeling can lead to improved A/B tests
+image: /assets/img/blog/2018/05/test-design.jpg
 title-short: Intelligent question-driven product analytics
 tags: [analytics, product analytics, digital products]
 author: Anthony
@@ -21,6 +21,8 @@ Conducting an A/B test is significantly more complicated than just randomly assi
 Broadly speaking, there are two approaches to tracking and measuring A/B tests. The first involves defining the metrics in advance that will be compared between the different test groups, and instrumenting dedicated tracking specifically for those metrics based on what segment a user belongs in (test, control, or neither). The second is the event analytics approach. In this method, it is only necessary to track that a user belongs in a particular group at least once; afterwords, the relevant metric is computed post-collection when the data is in the data warehouse. In this post, we’ll explore how the event analytics approach works, why it is significantly easier than the alternative, and therefore why event analytic stacks like Snowplow are powerful enablers of product teams that wish to implement multiple simultaneous experiments.
 
 <h2 id="events segments and metrics">Measuring the digital world: understanding the difference between events, segments and metrics</h2>
+
+![measuring the digital world][measure]
 
 To understand the difference between the two approaches for measure A/B tests, we first need to distinguish between events, segments, and metrics.
 
@@ -47,6 +49,8 @@ Event data modeling platforms, like Snowplow, however, are really well suited fo
 
 <h2 id="event based ab testing">Event-based A/B testing in action</h2>
 
+![Give product teams flexibility][product-team]
+
 When you can configure your metrics after the fact, you can run more interesting experiments. Imagine a product team wants to experiment with real-time production recommendations on product pages. They would measure: click-through rate on those recommended products, differences in basket and transaction value for users in the test group, and conversion rate on product pages with recommended products show alongside them (does this make it less likely that a user will buy the original product they’re looking at).
 
 This product team now wants to experiment with a new approach to internal search. They want to know if more people are buying because fewer drop out of the process because they can’t find what item they want, and if improved search capacity would shorten the buying journey because the user finds the item faster. To answer these questions, the product team can compare what percentage of users who search go on to buy a product between the control and test groups and the time taken to buy after performing a search. In both of these cases, these metrics might not have been reported prior to the experiment being run. But, with event-level data, all of the relevant information is already present, in the data warehouse, just waiting to be modeled in new and exciting ways.
@@ -70,6 +74,10 @@ Because they make recording A/B tests so easy, event analytics systems are very 
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 
 [product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
+
+[measure]: /assets/img/blog/2018/05/measure.jpg
+
+[product-team]: /assets/img/blog/2018/05/test-design.jpg
 
 [top-companies]: https://snowplowanalytics.com/blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 
