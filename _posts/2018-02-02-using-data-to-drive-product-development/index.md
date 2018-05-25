@@ -8,7 +8,7 @@ category: Analytics
 permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 ---
 
-*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5], [Part 6][product6]*
+*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5], [Part 6][product6], [Part 7][product7]*
 
 ---
 
@@ -92,6 +92,8 @@ To learn more about product development with us, make sure you [subscribe to our
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 
 [product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
+
+[product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
 
 [discourse-thread]: https://discourse.snowplowanalytics.com/t/habits-of-successful-data-driven-product-teams/1775
 
