@@ -4,7 +4,7 @@ title: "How to manage consent for GDPR, a nuanced approach"
 title-short: Consent management under GDPR
 tags: [analytics, consent, GDPR]
 author: Anthony
-category: Analytics
+category: GDPR
 permalink: /blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/
 discourse: true
 ---
