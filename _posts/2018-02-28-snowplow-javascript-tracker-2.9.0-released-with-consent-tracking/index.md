@@ -38,8 +38,8 @@ Here is an example of a user opted into data collection per a specific consent d
 
 {% highlight javascript %}
 window.snowplow('trackConsentGranted',
-  1234,                          // Consent document id
-  5,                             // Consent document version
+  '1234',                        // Consent document id
+  '5',                           // Consent document version
   'consent_document',            // Consent document name
   'a document granting consent', // Consent document description
   '2020-11-21T08:00:00.000Z'     // Expiry of consent
