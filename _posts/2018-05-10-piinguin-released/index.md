@@ -38,7 +38,7 @@ The first component that receives that data out of the stream is the Piinguin Re
 
 The second component is the piinguin-server itself which has to be in the same secure VPC as the Lambda function. In addition it needs to have access to an AWS Dynamo DB table to store the data. You can read more details about this project [below][#piinguin] and detailed instructions on how to install and run it under [deploying][#deploying].
 
-There is also another component name "piinguin-client" this refers to your own code in which you have made use of either the piinguin-client artifact or another implementation based on the GRPC protocol provided in piinguin. More detail on that under [piinguin][#piinguin].
+There is also another component named "piinguin-client" this refers to your own code in which you have made use of either the piinguin-client artifact or another implementation based on the GRPC protocol provided in piinguin. More detail on that under [piinguin][#piinguin].
 
 <h2 id="#piinguin"> 2. Piinguin </h2>
 
@@ -165,7 +165,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [collision-issue]: https://github.com/snowplow-incubator/piinguin/issues/8
 [aws-developer-guide]: https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
 [role-creation]: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html
+[snowplow-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-piinguin-relay#files
 
 <!--*UPDATE ME*-->
 [acropolis-blog-post]: https://snowplowanalytics.com/blog/2018/05/10/snowplow-r106-acropolis
-[snowplow-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-piinguin-relay
