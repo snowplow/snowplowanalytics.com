@@ -10,40 +10,53 @@ permalink: /blog/2018/05/10/snowplow-r106-acropolis-released-with-pii-enrichment
 
 We are pleased to announce the release of [Snowplow R106 Acropolis][release-notes].
 
-This release brings a many important improvements to the PII enrichment first released in [R100 Epidaurus][r100-post].
+This release brings some important improvements to the PII Enrichment first released in [R100 Epidaurus][r100-post].
 
 Read on for more information on R106 Acropolis, named after [the acropolis of Athens][acropolis]:
 
 <!--more-->
 
-1. [New PII capabilities](#pii-capabilities)
-2. [Emitting a stream of PII events](#pii-events)
-3. [Adding salt to hashing](#pii-salt)
-4. [Other changes](#other)
-5. [Upgrading](#upgrading)
-6. [Roadmap](#roadmap)
-7. [Help](#help)
+TODO: UPDATE TOC WITH SECTION FOR THE IMPORTANT BUG FIX.
+
+1. [Overview of the new PII-related capabilities](#pii-capabilities)
+2. [Emitting a stream of PII transformation events](#pii-events)
+3. [Adding a salt for hashing](#pii-salt)
+4. [IMPORTANT BUG FIX](pii-bugfix)
+5. [Other changes](#other)
+6. [Upgrading](#upgrading)
+7. [Roadmap](#roadmap)
+8. [Help](#help)
 
 ![Acropolis][acropolis-img]
 
-<h2 id="pii-capabilities">1. New PII capabilities</h2>
+<h2 id="pii-capabilities">1. Overview of the new PII-related capabilities</h2>
 
-In the recent [R100 Epidaurus][r100-post] we introduced the capability to pseudonymize Snowplow PII data to help our users comply with [GDPR][gdpr-web].
+In our recent [R100 Epidaurus][r100-post] release, we introduced the capability to pseudonymize Snowplow PII data to help our users meet the [GDPR regulations][gdpr-web].
 
-In brief, that release enabled Snowplow operators to configure any and all of PII fields whose values they wish to have hashed by Snowplow, be it a [Canonical event model][canonical-event-model] field, or an external self-describing or context field.
+In brief, that release let you configure Snowplow to hash any PII-containing fields, be they a [Canonical event model][canonical-event-model] field, or a property within a self-describing event or context.
 
-With this current release, Snowplow operators now have the capacity to configure a stream of events which contain the hashed values, alongside their original values (e.g. and appropriately formatted pair of `"d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"` see below for precise format). That stream can then be used by the operator to enable usage of PII data in a controlled manner separate from all non-PII data. That capability has been harnessed in the [piinguin][piinguin] and [piinguin relay][piinguin-relay] projects to provide access back to the original PII data under the conditions required for [lawful basis for processing][ico-lawful-basis].
+With this current release, users of Snowplow real-time now have the capacity to configure a stream of events which contain the hashed values, alongside their original values. You can think of these pairs as conceptually similar to:
 
-In more detail the current release adds the following 2 major features:
+{% highlight bash %}
+"d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"
+{% endhighlight %}
 
-* [PII event stream](#pii-event-stream)
-* [Pseudonymization salt](#salt)
+This stream of PII transformation events can then be used with the new Snowplow Piinguin project, which we also briefly introduce in this blog post.
 
-<h3 id="pii-event-stream">PII event stream</h3>
+Although the new PII transformation event stream is only available for Snowplow real-time pipeline users, this release also heralds two PII-related updates which are available for both batch and real-time users:
+
+* 
+* [Adding a salt for hashing](#salt)
+
+Let's discuss each of the new capabilities in turn.
+
+<h2 id="pii-events">2. Emitting a stream of PII transformation events</h2>
+
 The PII event stream is a configurable, optional stream of events from the PII enrichment that contain the original hashed and original values. When enabled and configured, it emits a pii event for each event that was pseudonymized in the PII enrichment, containing the original and hashed values. The emitted event is a standard *Enriched Event* formatted event (i.e. TSV) as described in [Canonical event model][canonical-event-model] so that it can be used with the [snowplow analytics SDK][analytics-sdk]. For the implementation details please look at the source code [here][stream-enrich-pii-emit], however there are a couple of fields of particular interest, namely the `contexts` and `unstruct_event`:
 
 Firstly, the `contexts` field in this new event contains a new event type called `parent_event` with a new [schema][parent-event-schema]. Here is an example of such an event:
-```json
+
+{% highlight json %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/contexts/jsonschema/1-0-0",
   "data": [
@@ -55,12 +68,13 @@ Firstly, the `contexts` field in this new event contains a new event type called
     }
   ]
 }
-```
+{% endhighlight %}
+
 This event simply contains the UUID of the parent event where the PII enrichment was applied, giving one the opportunity to verify the enrichment.
 
 The second field of note is the `unstruct_event` field that follows the new [pii-transformation event schema][pii-transformation-schema]. An instance of that event could look like this (depending on the fields configured):
-```json
 
+{% highlight json %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow/unstruct_event/jsonschema/1-0-0",
   "data": {
@@ -116,15 +130,9 @@ The second field of note is the `unstruct_event` field that follows the new [pii
     }
   }
 }
-```
+{% endhighlight %}
+
 In this example there are a few things going on. The PII enrichment was configured to pseudonymize the canonical fields: `user_fingerprint`, `user_ipaddress` and `user_id` and the event contains their original and modified values. In addition, it was configured to pseudonymize fields from the `unstruct_event` and `contexts` fields which are JSON formatted strings. As in the canonical case the event contains the original and modified values, but in addition it contains the schema iglu URL and the JSON path corresponding to it as in the case of `contexts` there could be any number of substitutions depending on the path and schema matches. Finally the strategy and in this case the hashing algorithm version is also given. What is not emitted is the `salt` that was used in the hashing (see [salt][#salt] below).
-
-<h3 id="salt">Pseudonymization salt</h3>
-
-In order to make it harder for the hashed data to be identified we have responded to community feedback and have added salt to the hashing pseudonymization as standard (thank you [falshparker82][falshparker82-issue]). Salt is simply a string that is appended to the end of the string that is going to be hashed, that makes it a lot harder, if not impossible, for someone to simply hash all the possible values of a field and try to match the hash to the pseudonymized values, thus providing an additional layer of protection for PII data.
-The new setting is simply a new field in the configuration for the enrichment (see [adding salt][#pii-salt] and [upgrading][#upgrading]). The salt should remain secret in order to ensure that protection against brute-forcing the hashed values is achieved.
-
-<h2 id="pii-events">2. Emitting a stream of PII events</h2>
 
 In order to emit a stream of PII events the stream needs to exist for some configurations (e.g. Kinesis) and you will need to configure it in two places. You will need to configure `emit` in the pii enrichment configuration, but you will also need to configure the `pii` field in the `stream-enrich` configurations. The two configuration fragments follow, however see [upgrading][#upgrading] for a complete example.
 
@@ -141,7 +149,13 @@ In addition in the [stream enrich configuration][stream-enrich-config] you will 
 pii = <name-of-the-stream-or-topic>
 ```
 
-<h2 id="pii-salt">3. Adding salt to hashing</h2>
+That capability has been harnessed in the [piinguin][piinguin] and [piinguin relay][piinguin-relay] projects to provide access back to the original PII data under the conditions required for [lawful basis for processing][ico-lawful-basis].
+
+
+<h2 id="pii-salt">3. Adding a salt for hashing</h2>
+
+In order to make it harder for the hashed data to be identified we have responded to community feedback and have added salt to the hashing pseudonymization as standard (thank you [falshparker82][falshparker82-issue]). Salt is simply a string that is appended to the end of the string that is going to be hashed, that makes it a lot harder, if not impossible, for someone to simply hash all the possible values of a field and try to match the hash to the pseudonymized values, thus providing an additional layer of protection for PII data.
+The new setting is simply a new field in the configuration for the enrichment (see [adding salt][#pii-salt] and [upgrading][#upgrading]). The salt should remain secret in order to ensure that protection against brute-forcing the hashed values is achieved.
 
 As mentioned above adding salt is simply achieved by adding a new field to the updated pii enrichment configuration. A fragment of that configuration would then look like this (see [upgrading][#upgrading] for a full example):
 
@@ -157,8 +171,11 @@ In this case the salt is simply set to the string `pepper123` which is the appen
 
 *IMPORTANT* Please note that changing the salt will change the hash of the same value and joining with fields in the event store will become *much more* complicated.
 
+<h2 id="pii-bugfix">4. IMPORTANT BUG FIX</h2>
 
-<h2 id="other">4. Other changes</h2>
+KOSTAS TO ADD IN THIS SECTION.
+
+<h2 id="other">5. Other changes</h2>
 
 Other improvements that have been added to this release are:
 
@@ -169,8 +186,7 @@ Automated code formatting further improves the code quality of the repo and make
 
 The kafka integration test uses the example configuration that is included with `stream-enrich` and uses the excellent [kafka-testkit][kafka-testkit] to bring up a kafka broker to run the enrichment, thus extending test coverage and further improving the quality of the codebase.
 
-
-<h2 id="upgrading">5. Upgrading</h2>
+<h2 id="upgrading">6. Upgrading</h2>
 
 The latest version of Stream Enrich is available from our Bintray *UPDATE URL AFTER RELEASE* [here][stream-enrich-bintray].
 
@@ -181,6 +197,7 @@ There are a few items of configuration that need to be updated in order to use t
 * Output stream must exist (if you have configured it)
 
 <h3>PII enrichment configuration</h3>
+
 Here is an example PII enrichment configuration:
 
 ```json
@@ -220,6 +237,7 @@ Here is an example PII enrichment configuration:
     }
   }
 }
+
 ```
 In the above example many items are familiar from [R100 Epidaurus configuration][r100-config] that used the 1-0-0 version of the configuration schema described also in detail on our [relevant wiki page][pii-enrich-wiki].
 
@@ -292,16 +310,15 @@ The only (optional) new entry is `pii` where all the pii data will be sent in th
 
 Finally if you have configured `emitEvent` and a `pii` stream you will need to configure a new stream (or topic), otherwise `stream-enrich` will fail. 
 
-
-<h2 id="roadmap">6. Roadmap</h2>
+<h2 id="roadmap">7. Roadmap</h2>
 
 Upcoming Snowplow releases will include:
 
-* Troy
-* Sodoma and Gomorra
-* Chicken (p)Itza
+* [R106 [STR & BAT] New webhooks and enrichment][r106-ms], featuring Marketo and Vero webhook adapters from our partners at [Snowflake Analytics][snowflake-analytics], plus a new enrichment for detecting bots and spiders using [data from the IAB][iab-data]
+* [R10x Vallei dei Templi][r10x-str], porting our streaming enrichment process to
+  [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
-<h2 id="help">7. Getting help</h2>
+<h2 id="help">8. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
@@ -329,8 +346,9 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [pii-enrich-wiki]: https://github.com/snowplow/snowplow/wiki/PII-pseudonymization-enrichment
 [config-stream-enrich]: https://github.com/snowplow/snowplow/wiki/Configure-Stream-Enrich
 
-
 [stream-enrich-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.17.0#files
 
-[release-notes]: https://github.com/snowplow/snowplow/releases/tag/r106-acropolis
+[r106-ms]: https://github.com/snowplow/snowplow/milestone/158
+[r10x-str]: https://github.com/snowplow/snowplow/milestone/151
+
 [discourse]: http://discourse.snowplowanalytics.com/
