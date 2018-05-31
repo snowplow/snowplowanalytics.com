@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "Understanding the role of anonymization and pseudo-anonymization in GDPR compliance"
+title: "Understanding the role of anonymization and pseudonymization in GDPR compliance"
 title-short: Anonymization in GDPR compliance
 tags: [analytics, personal identifiable data, GDPR]
 author: Anthony
 category: GDPR
-permalink: /blog/2018/03/02/understanding-the-role-of-anonymization-and-pseudo-anonymization-in-gdpr/
+permalink: /blog/2018/03/02/understanding-the-role-of-anonymization-and-pseudonymization-in-gdpr/
 discourse: true
+redirect_from: /blog/2018/03/02/understanding-the-role-of-anonymization-and-pseudo-anonymization-in-gdpr/
 ---
 
 If you visit the [European Union homepage for GDPR][eugdpr], one of the first things you’ll notice is a timer (assuming you read this before enforcement begins). Clearly displayed down to the second, at any given time you can check to see how much time you have left. Considering all of the complexities that come with compliance, problems that must be solved at the technological, procedural, and governance levels, there are many of us who will need to use as much of the remaining days and hours as possible to prepare our organizations for this new set of data protection regulations.
