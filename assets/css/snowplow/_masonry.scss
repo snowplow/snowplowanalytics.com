@@ -24,40 +24,6 @@
 			border-color:#e0e6ef;
 		}
 
-		&.grid-fill-purple
-		{
-			background:#6738b8;
-		}
-
-		&-event	{
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			h5 {
-				width: 100%;
-			}
-			h4 {
-				width: calc(100% - 105px);
-				margin-top: .8em;
-			}
-			&-date {
-				display: inline-block;
-				background: white;
-				border-radius: 5px;
-				color: #6738b8;
-				font-size: 20px;
-				padding: 1.2em;
-				margin: 1em 15px 0 0;
-				width: 90px;
-				height: 100px;
-				text-align: center;
-				span {
-					font-size: 35px;
-					display: block;
-				}
-			}
-		}
-
 		@media (max-width: 1299px)
 		{
 			max-width: calc(50% - 20px);
