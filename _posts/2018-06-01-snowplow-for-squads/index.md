@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Improving A/B testing with event data modeling"
-description: How event data modeling can lead to improved A/B tests
-image: /assets/img/blog/2018/05/test-design.jpg
-title-short: Intelligent question-driven product analytics
+title: "The right data infrastructure to support successful squads"
+description: Empower your squads by building a data stack that lets them do their best work
+image: /assets/img/blog/2018/06/squad.jpg
+title-short: Organizing your data stack for optimal use
 tags: [analytics, product analytics, digital products]
 author: Anthony
 category: Analytics
-permalink: /blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
+permalink: /blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 discourse: true
 ---
 
