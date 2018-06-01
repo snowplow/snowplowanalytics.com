@@ -9,7 +9,7 @@ permalink: /blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intel
 discourse: true
 ---
 
-*Part six of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 4][product4], [Part 5][product5], [Part 7][product7]*
+*Part six of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 4][product4], [Part 5][product5], [Part 7][product7], [Part 8][product8]*
 
 ---
 
@@ -86,6 +86,8 @@ Armed with this insight, the Lifecake team has been able to dramatically increas
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 
 [product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
+
+[product8]: https://snowplowanalytics.com/blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 
 [process]: https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 
