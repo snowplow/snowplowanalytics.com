@@ -45,8 +45,12 @@ This stream of PII transformation events can then be used with the new Snowplow 
 
 Although the new PII transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
 
+<<<<<<< HEAD
 * [Adding a salt for hashing](#pii-salt)
 * [FIXING AN IMPORTANT BUG](#pii-bug)
+=======
+* [Adding a salt for hashing](#salt)
+>>>>>>> 59418d5b80b731b352d4f286204d10bb0f04523d
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
 
@@ -152,7 +156,21 @@ This context simply contains the UUID of the parent event where the PII enrichme
 
 In order to emit a stream of PII events the stream needs to exist for some configurations (e.g. Kinesis) and you will need to configure it in two places. This is covered in detail in the [upgrading](#upgrading) section below.
 
+<<<<<<< HEAD
 <h3>Using the new event stream</h3>
+=======
+```json
+...
+"emitEvent": true
+...
+```
+
+In addition in the [stream enrich configuration][stream-enrich-config] you will need to set the name of the stream or topic:
+
+```bash
+pii = <name-of-the-stream-or-topic>
+```
+>>>>>>> 59418d5b80b731b352d4f286204d10bb0f04523d
 
 That capability has been harnessed in the [piinguin][piinguin] and [piinguin relay][piinguin-relay] projects to provide access back to the original PII data under the conditions required for [lawful basis for processing][ico-lawful-basis].
 
@@ -171,13 +189,65 @@ As mentioned above adding salt is simply achieved by adding a new field to the u
   }
 }
 ```
+
 In this case the salt is simply set to the string `pepper123` which is the appended to every string before hashing.
 
 *IMPORTANT* Please note that changing the salt will change the hash of the same value and joining with fields in the event store will become *much more* complicated.
 
 <h2 id="pii-bugfix">4. IMPORTANT BUG FIX</h2>
 
-KOSTAS TO ADD IN THIS SECTION.
+There was a known issue in one of the underlying libraries that we believed to be harmless, but turned out to cause problems downstream in the pipeline. 
+
+The problem can cause good events to end up in the bad bucket under certain conditions explained below.
+
+The issue as described [here][issue3636] was that
+when the user has configured PII to hash a JSON type field with a json path containing an array of fields like so:
+
+```json
+...
+{
+  "json": {
+    "field": "unstruct_event",
+    "schemaCriterion": "iglu:com.acme/event/jsonschema/1-0-0",
+    "jsonPath": "$.['email', 'username']"
+  }
+}
+...
+```
+
+in events that did not contain both fields, the hashed output would correctly hash the existent one, but it would also create the one that did not exist as an empty object, so the enriched event would contain an output like so
+
+```json
+{
+  "schema": "iglu:com.acme/event/jsonschema/1-0-0",
+  "data": {
+    ... non-hashed fields unaffected
+    "email": "764e2b5c4da5267efd84ab24a86539dfc85031c4",
+    "username": {}
+  }
+}
+
+```
+
+The problem with that event is that it can fail validation downstream depending on the schema `iglu:com.acme/event/jsonschema/1-0-0`.
+
+Concretely, if the fields `email` and `username` in the schema `iglu:com.acme/event/jsonschema/1-0-0` are both optional and only allowed to be strings, then in the case that one of the fields is not there in one event,
+the event will end up in the `bad` bucket during shredding.
+
+In order to get this bug fix, if you are a Stream Enrich user you need to upgrade `stream-enrich` as explained in [upgrading][#upgrading].
+
+For batch pipeline users you can upgrade by updating your EmrEtlRunner configuration
+to the following:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.14.0 # WAS 1.13.0
+{% endhighlight %}
+
+or directly making use of the new Spark Enrich available at:
+
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.14.0.jar`
 
 <h2 id="other">5. Other changes</h2>
 
@@ -259,6 +329,7 @@ Here is an example PII enrichment configuration:
 }
 
 ```
+
 In the above example many items are familiar from [R100 Epidaurus configuration][r100-config] that used the 1-0-0 version of the configuration schema described also in detail on our [relevant wiki page][pii-enrich-wiki].
 
 in brief the above configuration sets up the enrichment to hash the canonical `user_id` and `user_ipaddress` fields, and the JSON fields `unstruct_event` which contains externally sourced `mailchimp` events of a specific version, and within that version the `$.data.email` and `$.data.ip_opt` fields.
@@ -268,7 +339,8 @@ The *new items* are `emitEvent` which configures whether an event will be emitte
 <h3>Stream enrich configuration</h3>
 
 An example configuration for `stream-enrich` may be:
-```
+
+```hocon
 enrich {
 
   streams {
@@ -328,7 +400,7 @@ The only (optional) new entry is `pii` where all the pii data will be sent in th
 
 <h3>Output stream</h3>
 
-Finally if you have configured `emitEvent` and a `pii` stream you will need to configure a new stream (or topic), otherwise `stream-enrich` will fail. 
+Finally if you have configured `emitEvent` and a `pii` stream you will need to configure a new stream (or topic), otherwise `stream-enrich` will fail.
 
 <h2 id="roadmap">7. Roadmap</h2>
 
@@ -375,3 +447,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 
 [discourse]: http://discourse.snowplowanalytics.com/
+[issue3636]: https://github.com/snowplow/snowplow/issues/3636
