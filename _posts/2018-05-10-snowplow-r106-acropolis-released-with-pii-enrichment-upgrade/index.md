@@ -211,6 +211,21 @@ The problem with that event is that it can fail validation downstream depending 
 Concretely, if the fields `email` and `username` in the schema `iglu:com.acme/event/jsonschema/1-0-0` are both optional and only allowed to be strings, then in the case that one of the fields is not there in one event,
 the event will end up in the `bad` bucket during shredding.
 
+In order to get this bug fix, if you are a Stream Enrich user you need to upgrade `stream-enrich` as explained in [upgrading][#upgrading].
+
+For batch pipeline users you can upgrade by updating your EmrEtlRunner configuration
+to the following:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.14.0 # WAS 1.13.0
+{% endhighlight %}
+
+or directly making use of the new Spark Enrich available at:
+
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.14.0.jar`
+
 <h2 id="other">5. Other changes</h2>
 
 Other improvements that have been added to this release are:
