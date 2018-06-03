@@ -19,7 +19,7 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 1. [Overview of the new PII-related capabilities](#pii-capabilities)
 2. [Emitting a stream of PII transformation events](#pii-events)
 3. [Adding a salt for hashing](#pii-salt)
-4. [An important bug fix](pii-bugfix)
+4. [Fixin an important bug](pii-bugfix)
 5. [Other changes](#other)
 6. [Upgrading](#upgrading)
 7. [Roadmap](#roadmap)
@@ -44,7 +44,7 @@ This stream of PII Transformation events can then be used with the new Snowplow 
 Although the new PII Transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
 
 * [Adding a salt for hashing](#pii-salt)
-* [An important bug fix](#pii-bugfix)
+* [Fixing an important bug](#pii-bugfix)
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
 
@@ -155,25 +155,15 @@ That capability is now being served by our new [Piinguin][piinguin] project, whi
 
 <h2 id="pii-salt">3. Adding a salt for hashing</h2>
 
-In order to make it harder for the hashed data to be identified we have responded to community feedback and have added salt to the hashing pseudonymization as standard (thank you [falshparker82][issue-3648]). Salt is simply a string that is appended to the end of the string that is going to be hashed, that makes it a lot harder, if not impossible, for someone to simply hash all the possible values of a field and try to match the hash to the pseudonymized values, thus providing an additional layer of protection for PII data.
-The new setting is simply a new field in the configuration for the enrichment (see [adding salt][#pii-salt] and [upgrading][#upgrading]). The salt should remain secret in order to ensure that protection against brute-forcing the hashed values is achieved.
+In order to make it harder for the hashed PII data to be identified, we have responded to community feedback and  added the option of a salt to the hashing pseudonymization. Many thanks to [falschparker82][falschparker82] of JustWatch for advocating for this approach in [issue #3648][issue-3648].
 
-As mentioned above adding salt is simply achieved by adding a new field to the updated pii enrichment configuration. A fragment of that configuration would then look like this (see [upgrading][#upgrading] for a full example):
+The salt is simply a string that is appended to the end of the string that is going to be hashed; this makes it a lot harder, if not impossible, for someone to "brute force" the pseudonymized data by hashing all the possible values of a field and trying to match the hash.
 
-{% highlight json %}
-"strategy": {
-  "pseudonymize": {
-    "hashFunction": "SHA-1",
-    "salt": "pepper123"
-  }
-}
-{% endhighlight %}
+The new setting is simply a new field in the configuration for the enrichment - see [our Upgrading section](#upgrading) for further details. The salt should remain secret in order to ensure that protection against brute-forcing the hashed values is achieved.
 
-In this case the salt is simply set to the string `pepper123` which is the appended to every string before hashing.
+**Important:** note that changing the salt will change the hash of the same value, which will make working with values pre- and post-salt change much more complicated.
 
-*IMPORTANT* Please note that changing the salt will change the hash of the same value and joining with fields in the event store will become *much more* complicated.
-
-<h2 id="pii-bugfix">4. An important bug fix</h2>
+<h2 id="pii-bugfix">4. Fixing an important bug</h2>
 
 With our R100 introduction of the PII Enrichment, there was a known issue in one of the underlying libraries that we believed to be harmless; unfortunately we have since identified that it *can* cause problems downstream in the pipeline.
 
@@ -339,7 +329,7 @@ Most properties will be familiar from the [R100 Epidaurus configuration][r100-co
 The new items are:
 
 1. `emitEvent` which configures whether an event will be emitted or not
-2. `salt` which as [explained above](#pii-salt) sets up the salt that will be used
+2. `salt` which as [explained above](#pii-salt) sets up the salt that will be used. As well as specifying the salt inline, you can also reference a value held in EC2 Parameter Store
 
 Setting `emitEvent` to true is only relevant for the real-time pipeline; `salt` is applicable to both pipelines.
 
@@ -384,6 +374,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [issue-3648]: https://github.com/snowplow/snowplow/issues/3648
 [issue-3636]: https://github.com/snowplow/snowplow/issues/3636
+
+[falschparker82]: https://github.com/falschparker82
 
 [stream-enrich-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.17.0#files
 
