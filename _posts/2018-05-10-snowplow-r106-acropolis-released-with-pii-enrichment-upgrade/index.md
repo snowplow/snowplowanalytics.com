@@ -149,11 +149,9 @@ This is all covered in detail in the [upgrading](#upgrading) section below.
 
 <h3>Using the new event stream</h3>
 
-XXXX
+This new event stream is intended to be used by downstream processes which want to track the pseudonymization process and make it possible for Snowplow operators to recover the original PII values, if and only if the operator has the appropriate authorization under the conditions required for [lawful basis for processing][ico-lawful-basis].
 
-That capability has been harnessed in the [piinguin][piinguin] and [piinguin relay][piinguin-relay] projects to provide access back to the original PII data under the conditions required for [lawful basis for processing][ico-lawful-basis].
-
-XXXX
+That capability is now being served by our new [Piinguin][piinguin] project, which we are releasing in concert with this release. Please read the [Piinguin and Snowplow Piinguin Relay release blog post][piinguin-relay-post] for more information.
 
 <h2 id="pii-salt">3. Adding a salt for hashing</h2>
 
@@ -365,7 +363,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [acropolis-img]: /assets/img/blog/2018/05/Acropolis_of_Athens.jpg
 
 [piinguin]: https://github.com/snowplow-incubator/piinguin
-[piinguin-relay]: https://github.com/snowplow-incubator/snowplow-piinguin-relay
+[piinguin-relay-post]: UPDATE-THIS-LINK
 [ico-lawful-basis]: https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/
 
 [pii-enrichment]: https://github.com/snowplow/snowplow/wiki/PII-pseudonymization-enrichment
