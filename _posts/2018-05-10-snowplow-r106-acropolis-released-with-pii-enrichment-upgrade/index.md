@@ -19,7 +19,7 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 1. [Overview of the new PII-related capabilities](#pii-capabilities)
 2. [Emitting a stream of PII transformation events](#pii-events)
 3. [Adding a salt for hashing](#pii-salt)
-4. [Important bug fix](pii-bugfix)
+4. [An important bug fix](pii-bugfix)
 5. [Other changes](#other)
 6. [Upgrading](#upgrading)
 7. [Roadmap](#roadmap)
@@ -39,12 +39,12 @@ With this new release, users of Snowplow real-time now have the option to config
 "d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"
 {% endhighlight %}
 
-This stream of PII transformation events can then be used with the new Snowplow Piinguin project, which we will also briefly introduce in this blog post.
+This stream of PII Transformation events can then be used with the new Snowplow Piinguin project, which we will also briefly introduce in this blog post.
 
-Although the new PII transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
+Although the new PII Transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
 
 * [Adding a salt for hashing](#pii-salt)
-* [FIXING AN IMPORTANT BUG](#pii-bug)
+* [An important bug fix](#pii-bugfix)
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
 
@@ -148,7 +148,9 @@ This context simply contains the UUID of the parent event where the PII enrichme
 
 <h3>Enabling the new event stream</h3>
 
-In order to emit a stream of PII events the stream needs to exist for some configurations (e.g. Kinesis) and you will need to configure it in two places. This is covered in detail in the [upgrading](#upgrading) section below.
+In order to emit a stream of PII events the stream needs to exist for some configurations (e.g. Kinesis), and you will need to configure the stream in two separate places.
+
+This is all covered in detail in the [upgrading](#upgrading) section below.
 
 <h3>Using the new event stream</h3>
 
@@ -178,7 +180,7 @@ In this case the salt is simply set to the string `pepper123` which is the appen
 
 *IMPORTANT* Please note that changing the salt will change the hash of the same value and joining with fields in the event store will become *much more* complicated.
 
-<h2 id="pii-bugfix">4. Important bug fix</h2>
+<h2 id="pii-bugfix">4. An important bug fix</h2>
 
 With our R100 introduction of the PII Enrichment, there was a known issue in one of the underlying libraries that we believed to be harmless; unfortunately we have since identified that it *can* cause problems downstream in the pipeline.
 
@@ -208,18 +210,18 @@ In events that did *not* contain both fields, the hashed output would correctly 
 }
 {% endhighlight %}
 
-The problem with that event is that it can fail validation downstream depending on the schema `iglu:com.acme/event/jsonschema/1-0-0`. For example, if the field `username` in the schema `iglu:com.acme/event/jsonschema/1-0-0` is only allowed to be a string, then the event will fail validation and end up in the `bad` bucket during shredding (not during enrichment).
+The problem with that event is that it can fail validation downstream depending on the schema `iglu:com.acme/event/jsonschema/1-0-0`. For example, if the field `username` in the schema is only allowed to be a string, then the event will fail validation and end up in the `bad` bucket during shredding (not during enrichment).
 
 <h2 id="other">5. Other changes</h2>
 
-Other improvements included in this release are:
+Two other improvements included in this release are:
 
-* Automated code formatting for Stream Enrich
-* An integration test for Stream Enrich's Apache Kafka support 
+1. Automated code formatting for Stream Enrich
+2. An integration test for Stream Enrich's Apache Kafka support
 
-Automated code formatting further improves the code quality of the `snowplow/snowplow` repo and makes it easier for new contributors to adhere to the quality standards for Snowplow code.
+Automated code formatting further improves the code quality of the `snowplow/snowplow` repo and makes it easier for new contributors to meet the expected quality standards for Snowplow code.
 
-The kafka integration test uses the example configuration that is included with `stream-enrich` and uses the excellent [kafka-testkit][kafka-testkit] to bring up a kafka broker to run the enrichment, thus extending test coverage and further improving the quality of the codebase.
+The Kafka integration test uses the excellent [Kafka Testkit][kafka-testkit] to bring up a Kafka broker for Stream Enrich to interact with, thus extending test coverage and further improving the maintainability of the codebase.
 
 <h2 id="upgrading">6. Upgrading</h2>
 
