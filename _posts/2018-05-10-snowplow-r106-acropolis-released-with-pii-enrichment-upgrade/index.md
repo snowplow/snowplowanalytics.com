@@ -16,12 +16,10 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 
 <!--more-->
 
-TODO: UPDATE TOC WITH SECTION FOR THE IMPORTANT BUG FIX.
-
 1. [Overview of the new PII-related capabilities](#pii-capabilities)
 2. [Emitting a stream of PII transformation events](#pii-events)
 3. [Adding a salt for hashing](#pii-salt)
-4. [IMPORTANT BUG FIX](pii-bugfix)
+4. [Important bug fix](pii-bugfix)
 5. [Other changes](#other)
 6. [Upgrading](#upgrading)
 7. [Roadmap](#roadmap)
@@ -45,12 +43,8 @@ This stream of PII transformation events can then be used with the new Snowplow 
 
 Although the new PII transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
 
-<<<<<<< HEAD
 * [Adding a salt for hashing](#pii-salt)
 * [FIXING AN IMPORTANT BUG](#pii-bug)
-=======
-* [Adding a salt for hashing](#salt)
->>>>>>> 59418d5b80b731b352d4f286204d10bb0f04523d
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
 
@@ -156,55 +150,43 @@ This context simply contains the UUID of the parent event where the PII enrichme
 
 In order to emit a stream of PII events the stream needs to exist for some configurations (e.g. Kinesis) and you will need to configure it in two places. This is covered in detail in the [upgrading](#upgrading) section below.
 
-<<<<<<< HEAD
 <h3>Using the new event stream</h3>
-=======
-```json
-...
-"emitEvent": true
-...
-```
 
-In addition in the [stream enrich configuration][stream-enrich-config] you will need to set the name of the stream or topic:
-
-```bash
-pii = <name-of-the-stream-or-topic>
-```
->>>>>>> 59418d5b80b731b352d4f286204d10bb0f04523d
+XXXX
 
 That capability has been harnessed in the [piinguin][piinguin] and [piinguin relay][piinguin-relay] projects to provide access back to the original PII data under the conditions required for [lawful basis for processing][ico-lawful-basis].
 
+XXXX
+
 <h2 id="pii-salt">3. Adding a salt for hashing</h2>
 
-In order to make it harder for the hashed data to be identified we have responded to community feedback and have added salt to the hashing pseudonymization as standard (thank you [falshparker82][falshparker82-issue]). Salt is simply a string that is appended to the end of the string that is going to be hashed, that makes it a lot harder, if not impossible, for someone to simply hash all the possible values of a field and try to match the hash to the pseudonymized values, thus providing an additional layer of protection for PII data.
+In order to make it harder for the hashed data to be identified we have responded to community feedback and have added salt to the hashing pseudonymization as standard (thank you [falshparker82][issue-3648]). Salt is simply a string that is appended to the end of the string that is going to be hashed, that makes it a lot harder, if not impossible, for someone to simply hash all the possible values of a field and try to match the hash to the pseudonymized values, thus providing an additional layer of protection for PII data.
 The new setting is simply a new field in the configuration for the enrichment (see [adding salt][#pii-salt] and [upgrading][#upgrading]). The salt should remain secret in order to ensure that protection against brute-forcing the hashed values is achieved.
 
 As mentioned above adding salt is simply achieved by adding a new field to the updated pii enrichment configuration. A fragment of that configuration would then look like this (see [upgrading][#upgrading] for a full example):
 
-```json
+{% highlight json %}
 "strategy": {
   "pseudonymize": {
     "hashFunction": "SHA-1",
     "salt": "pepper123"
   }
 }
-```
+{% endhighlight %}
 
 In this case the salt is simply set to the string `pepper123` which is the appended to every string before hashing.
 
 *IMPORTANT* Please note that changing the salt will change the hash of the same value and joining with fields in the event store will become *much more* complicated.
 
-<h2 id="pii-bugfix">4. IMPORTANT BUG FIX</h2>
+<h2 id="pii-bugfix">4. Important bug fix</h2>
 
-There was a known issue in one of the underlying libraries that we believed to be harmless, but turned out to cause problems downstream in the pipeline. 
+With our R100 introduction of the PII Enrichment, there was a known issue in one of the underlying libraries that we believed to be harmless; unfortunately we have since identified that it *can* cause problems downstream in the pipeline.
 
 The problem can cause good events to end up in the bad bucket under certain conditions explained below.
 
-The issue as described [here][issue3636] was that
-when the user has configured PII to hash a JSON type field with a json path containing an array of fields like so:
+As described in [issue #3636][issue-3636], the bug occurs when the user has configured the PII Enrichment to hash a JSON type field with a JSON Path containing an array of fields like so:
 
-```json
-...
+{% highlight json %}
 {
   "json": {
     "field": "unstruct_event",
@@ -212,29 +194,34 @@ when the user has configured PII to hash a JSON type field with a json path cont
     "jsonPath": "$.['email', 'username']"
   }
 }
-...
-```
+{% endhighlight %}
 
-in events that did not contain both fields, the hashed output would correctly hash the existent one, but it would also create the one that did not exist as an empty object, so the enriched event would contain an output like so
+In events that did *not* contain both fields, the hashed output would correctly hash the existent one, but it would also create the one that did not exist as an empty object, so the enriched event would contain an output like so:
 
-```json
+{% highlight json %}
 {
   "schema": "iglu:com.acme/event/jsonschema/1-0-0",
   "data": {
-    ... non-hashed fields unaffected
     "email": "764e2b5c4da5267efd84ab24a86539dfc85031c4",
     "username": {}
   }
 }
+{% endhighlight %}
 
-```
+The problem with that event is that it can fail validation downstream depending on the schema `iglu:com.acme/event/jsonschema/1-0-0`. For example, if the field `username` in the schema `iglu:com.acme/event/jsonschema/1-0-0` is only allowed to be a string, then the event will fail validation and end up in the `bad` bucket during shredding (not during enrichment).
 
-The problem with that event is that it can fail validation downstream depending on the schema `iglu:com.acme/event/jsonschema/1-0-0`.
+<h2 id="other">5. Other changes</h2>
 
-Concretely, if the fields `email` and `username` in the schema `iglu:com.acme/event/jsonschema/1-0-0` are both optional and only allowed to be strings, then in the case that one of the fields is not there in one event,
-the event will end up in the `bad` bucket during shredding.
+Other improvements included in this release are:
 
-In order to get this bug fix, if you are a Stream Enrich user you need to upgrade `stream-enrich` as explained in [upgrading][#upgrading].
+* Automated code formatting for Stream Enrich
+* An integration test for Stream Enrich's Apache Kafka support 
+
+Automated code formatting further improves the code quality of the `snowplow/snowplow` repo and makes it easier for new contributors to adhere to the quality standards for Snowplow code.
+
+The kafka integration test uses the example configuration that is included with `stream-enrich` and uses the excellent [kafka-testkit][kafka-testkit] to bring up a kafka broker to run the enrichment, thus extending test coverage and further improving the quality of the codebase.
+
+<h2 id="upgrading">6. Upgrading</h2>
 
 For batch pipeline users you can upgrade by updating your EmrEtlRunner configuration
 to the following:
@@ -249,36 +236,23 @@ or directly making use of the new Spark Enrich available at:
 
 `s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.14.0.jar`
 
-<h2 id="other">5. Other changes</h2>
-
-Other improvements that have been added to this release are:
-
-* Automated code formatting for `stream-enrich` and
-* Kafka integration test
-
-Automated code formatting further improves the code quality of the repo and makes it easier for new contributors to adhere to the quality standards for Snowplow code.
-
-The kafka integration test uses the example configuration that is included with `stream-enrich` and uses the excellent [kafka-testkit][kafka-testkit] to bring up a kafka broker to run the enrichment, thus extending test coverage and further improving the quality of the codebase.
-
-<h2 id="upgrading">6. Upgrading</h2>
-
 The latest version of Stream Enrich is available from our Bintray *UPDATE URL AFTER RELEASE* [here][stream-enrich-bintray].
 
  You will need to configure `emit` in the pii enrichment configuration, but you will also need to configure the `pii` field in the `stream-enrich` configurations. The two configuration fragments follow, however see [upgrading][#upgrading] for a complete example.
 
 In the PII enrichment configuration [version 2-0-0][pii-config-2-schema] you will need to setup:
 
-```
+{% highlight json %}
 ...
 "emitEvent": true
 ...
-```
+{% endhighlight %}
 
 In addition in the [stream enrich configuration][stream-enrich-config] you will need to set the name of the stream or topic:
-```
-pii = <name-of-the-stream-or-topic>
-```
 
+{% highlight %}
+pii = <name-of-the-stream-or-topic>
+{% endhighlight %}
 
 There are a few items of configuration that need to be updated in order to use the new capabilities. Those are:
 
@@ -290,7 +264,7 @@ There are a few items of configuration that need to be updated in order to use t
 
 Here is an example PII enrichment configuration:
 
-```json
+{% highlight json %}
 {
   "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/2-0-0",
   "data": {
@@ -327,8 +301,7 @@ Here is an example PII enrichment configuration:
     }
   }
 }
-
-```
+{% endhighlight %}
 
 In the above example many items are familiar from [R100 Epidaurus configuration][r100-config] that used the 1-0-0 version of the configuration schema described also in detail on our [relevant wiki page][pii-enrich-wiki].
 
@@ -340,7 +313,7 @@ The *new items* are `emitEvent` which configures whether an event will be emitte
 
 An example configuration for `stream-enrich` may be:
 
-```hocon
+{% highlight json %}
 enrich {
 
   streams {
@@ -392,7 +365,7 @@ enrich {
     appName = "snowplow-stream-enrich"
   }
 }
-```
+{% endhighlight %}
 
 Most of the above configuration should be familiar for stream enrich users, and if not you can find more information on our [relevant wiki page][config-stream-enrich]
 
@@ -433,7 +406,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [stream-enrich-pii-emit]: https://github.com/snowplow/snowplow/tree/master/3-enrich/stream-enrich/core/src/main/scala/com.snowplowanalytics.snowplow.enrich.stream/sources/Source.scala
 [parent-event-schema]: https://github.com/snowplow/iglu-central/tree/master/schemas/com.snowplowanalytics.snowplow/parent_event/jsonschema/1-0-0
 [pii-transformation-schema]: https://github.com/snowplow/iglu-central/tree/master/schemas/com.snowplowanalytics.snowplow/pii_enrichment/jsonschema/1-0-0
-[falshparker82-issue]: https://github.com/snowplow/snowplow/issues/3648
+
 [kafka-testkit]: https://github.com/bfil/kafka-testkit
 [pii-config-2-schema]: https://github.com/snowplow/iglu-central/tree/master/schemas/com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/2-0-0
 [stream-enrich-config]: https://github.com/snowplow/snowplow/tree/master/3-enrich/stream-enrich/examples/config.hocon.sample
@@ -441,10 +414,12 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [pii-enrich-wiki]: https://github.com/snowplow/snowplow/wiki/PII-pseudonymization-enrichment
 [config-stream-enrich]: https://github.com/snowplow/snowplow/wiki/Configure-Stream-Enrich
 
+[issue-3648]: https://github.com/snowplow/snowplow/issues/3648
+[issue-3636]: https://github.com/snowplow/snowplow/issues/3636
+
 [stream-enrich-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.17.0#files
 
 [r106-ms]: https://github.com/snowplow/snowplow/milestone/158
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 
 [discourse]: http://discourse.snowplowanalytics.com/
-[issue3636]: https://github.com/snowplow/snowplow/issues/3636
