@@ -128,23 +128,18 @@ Let's look at the here are a couple of fields of particular interest, namely the
 
 <h3>The PII Transformation event's parent event</h3>
 
-Firstly, the `contexts` field in this new event contains a new event type called `parent_event` with a new [schema][parent-event-schema]. Here is an example of such an event:
+The `contexts` field in the new PII Transformation event contains a new context called `parent_event` with a new [schema][parent-event-schema]. Here is an example of such an event:
 
 {% highlight json %}
 {
-  "schema": "iglu:com.snowplowanalytics.snowplow/contexts/jsonschema/1-0-0",
-  "data": [
-    {
-      "schema": "com.snowplowanalytics.snowplow/parent_event/jsonschema/1-0-0",
-      "data": {
-        "parentEventId": "a0f0213e-d514-44e5-8c3d-b1fba8c54f0f"
-      }
-    }
-  ]
+  "schema": "com.snowplowanalytics.snowplow/parent_event/jsonschema/1-0-0",
+  "data": {
+    "parentEventId": "a0f0213e-d514-44e5-8c3d-b1fba8c54f0f"
+  }
 }
 {% endhighlight %}
 
-This context simply contains the UUID of the parent event where the PII enrichment was applied, giving one the opportunity to verify the enrichment.
+This context simply contains the Event ID, a UUID, of the parent event for which the PII Enrichment was applied. This can be useful for reconciling the emitted PII Transformation events back to the events which caused them to be generated.
 
 <h3>Enabling the new event stream</h3>
 
@@ -225,8 +220,19 @@ The Kafka integration test uses the excellent [Kafka Testkit][kafka-testkit] to 
 
 <h2 id="upgrading">6. Upgrading</h2>
 
-For batch pipeline users you can upgrade by updating your EmrEtlRunner configuration
-to the following:
+R106 Acropolis is slightly unusual in being a simultaneous release for the Snowplow batch and real-time pipelines.
+
+This upgrading section is broken down as follows:
+
+1. Batch pipeline upgrade instructions
+2. Real-time pipeline upgrade instructions
+3. Full example for the new PII Enrichment configuration
+
+Please make sure to read section 3 alongside either section 1 or 2.
+
+<h3>Batch pipeline upgrade instructions</h3>
+
+To upgrade, update your EmrEtlRunner configuration to the following:
 
 {% highlight yaml %}
 enrich:
@@ -234,15 +240,27 @@ enrich:
     spark_enrich: 1.14.0 # WAS 1.13.0
 {% endhighlight %}
 
-or directly making use of the new Spark Enrich available at:
+Now review the [Full example for the new PII Enrichment configuration](#pii-config) below.
 
-`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.14.0.jar`
+<h3>Real-time pipeline upgrade instructions</h3>
 
 The latest version of Stream Enrich is available from our Bintray *UPDATE URL AFTER RELEASE* [here][stream-enrich-bintray].
 
- You will need to configure `emit` in the pii enrichment configuration, but you will also need to configure the `pii` field in the `stream-enrich` configurations. The two configuration fragments follow, however see [upgrading][#upgrading] for a complete example.
+There are a few steps to using the new capabilities:
 
-In the PII enrichment configuration [version 2-0-0][pii-config-2-schema] you will need to setup:
+1. Create your Kinesis stream or equivalent for the PII Transformation events stream
+2. Update your PII Enrichment configuration (using [version 2-0-0][pii-config-2-schema])
+3. Update your Stream Enrich app configuration
+
+<h4>Create your Kinesis stream or equivalent</h4>
+
+Make sure to create a dedicated Kinesis stream, Apache Kafka topic or equivalent to hold the PII Transformation events - otherwise Stream Enrich will fail.
+
+Do not attempt to re-use your enriched event stream, as then you will be co-mingling sensitive PII data with safely pseudonymized enriched events.
+
+<h4>Update your PII Enrichment configuration</h4>
+
+In the PII Enrichment configuration [version 2-0-0][pii-config-2-schema] you will need to add:
 
 {% highlight json %}
 ...
@@ -250,21 +268,34 @@ In the PII enrichment configuration [version 2-0-0][pii-config-2-schema] you wil
 ...
 {% endhighlight %}
 
-In addition in the [stream enrich configuration][stream-enrich-config] you will need to set the name of the stream or topic:
+The complete configuration file, including salt configuration, can be found in the [Full example for the new PII Enrichment configuration](#pii-config) below.
 
-{% highlight %}
-pii = <name-of-the-stream-or-topic>
+<h4>Update your Stream Enrich app configuration</h4>
+
+In the [Stream Enrich configuration][stream-enrich-config] you will need to add a new property, `pii`, and set it to the stream or topic which should hold the PII Transformation events:
+
+{% highlight json %}
+enrich {
+  streams {
+    ...
+
+    out {
+      enriched = my-enriched-events-stream
+      bad = my-events-that-failed-validation-during-enrichment
+      pii = my-pii-transformation-events-stream
+      partitionKey = ""
+    }
+
+    ...
+  }
+}
 {% endhighlight %}
 
-There are a few items of configuration that need to be updated in order to use the new capabilities. Those are:
+Most of the above configuration should be familiar for Stream Enrich users - if not, you can find more information on the [Stream Enrich configuration wiki page][config-stream-enrich].
 
-* PII enrichment configuration (using [version 2-0-0][pii-config-2-schema])
-* Stream enrich configuration
-* Output stream must exist (if you have configured it)
+<h3 id="pii-config">Full example for the new PII Enrichment configuration</h3>
 
-<h3>PII enrichment configuration</h3>
-
-Here is an example PII enrichment configuration:
+Here is a full example PII enrichment configuration:
 
 {% highlight json %}
 {
@@ -305,77 +336,14 @@ Here is an example PII enrichment configuration:
 }
 {% endhighlight %}
 
-In the above example many items are familiar from [R100 Epidaurus configuration][r100-config] that used the 1-0-0 version of the configuration schema described also in detail on our [relevant wiki page][pii-enrich-wiki].
+Most properties will be familiar from the [R100 Epidaurus configuration][r100-config], which used the 1-0-0 version of the configuration schema, per the [relevant wiki page][pii-enrich-wiki].
 
-in brief the above configuration sets up the enrichment to hash the canonical `user_id` and `user_ipaddress` fields, and the JSON fields `unstruct_event` which contains externally sourced `mailchimp` events of a specific version, and within that version the `$.data.email` and `$.data.ip_opt` fields.
+The new items are:
 
-The *new items* are `emitEvent` which configures whether an event will be emitted or not, and `salt` that as [explained above][#pii-salt] sets up the salt that will be used.
+1. `emitEvent` which configures whether an event will be emitted or not
+2. `salt` which as [explained above](#pii-salt) sets up the salt that will be used
 
-<h3>Stream enrich configuration</h3>
-
-An example configuration for `stream-enrich` may be:
-
-{% highlight json %}
-enrich {
-
-  streams {
-
-    in {
-      raw = my-good-input-stream
-    }
-
-    out {
-      enriched = my-enriched-output-event-without-pii
-
-      bad = my-events-that-failed-validation-during-enrichment
-
-      pii = my-output-event-that-contains-only-pii
-
-      partitionKey = ""
-    }
-
-    sourceSink {
-
-      type =  'kinesis'
-
-      region = 'eu-west-1'
-
-      aws {
-        accessKey = 12345BEEF=
-        secretKey = 12345BEEF=
-      }
-
-      maxRecords = 100
-
-      initialPosition = TRIM_HORIZON
-
-      backoffPolicy {
-        minBackoff = 1000
-        maxBackoff = 10000
-      }
-
-      retries = 0
-
-    }
-
-    buffer {
-      byteLimit = 100000
-      recordLimit = 1000
-      timeLimit = 1000
-    }
-
-    appName = "snowplow-stream-enrich"
-  }
-}
-{% endhighlight %}
-
-Most of the above configuration should be familiar for stream enrich users, and if not you can find more information on our [relevant wiki page][config-stream-enrich]
-
-The only (optional) new entry is `pii` where all the pii data will be sent in the format outlined [above][#pii-event-stream].
-
-<h3>Output stream</h3>
-
-Finally if you have configured `emitEvent` and a `pii` stream you will need to configure a new stream (or topic), otherwise `stream-enrich` will fail.
+Setting `emitEvent` to true is only relevant for the real-time pipeline; `salt` is applicable to both pipelines.
 
 <h2 id="roadmap">7. Roadmap</h2>
 
