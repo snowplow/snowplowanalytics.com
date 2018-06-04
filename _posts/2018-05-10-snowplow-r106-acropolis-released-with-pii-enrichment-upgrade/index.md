@@ -173,7 +173,7 @@ In this case the salt is simply set to the string `pepper123` which is the appen
 
 <h2 id="pii-bugfix">4. IMPORTANT BUG FIX</h2>
 
-There was a known issue in one of the underlying libraries that we believed to be harmless, but turned out to cause problems downstream in the pipeline. 
+There was a known issue in one of the underlying libraries that we believed to be harmless, but turned out to cause problems downstream in the pipeline.
 
 The problem can cause good events to end up in the bad bucket under certain conditions explained below.
 
@@ -239,7 +239,7 @@ The kafka integration test uses the example configuration that is included with 
 
 <h2 id="upgrading">6. Upgrading</h2>
 
-The latest version of Stream Enrich is available from our Bintray *UPDATE URL AFTER RELEASE* [here][stream-enrich-bintray].
+The latest version of Stream Enrich is available from our Bintray [here][stream-enrich-bintray].
 
 There are a few items of configuration that need to be updated in order to use the new capabilities. Those are:
 
