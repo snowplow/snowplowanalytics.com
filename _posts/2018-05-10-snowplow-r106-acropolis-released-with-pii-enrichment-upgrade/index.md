@@ -329,7 +329,7 @@ Most properties will be familiar from the [R100 Epidaurus configuration][r100-co
 The new items are:
 
 1. `emitEvent` which configures whether an event will be emitted or not
-2. `salt` which as [explained above](#pii-salt) sets up the salt that will be used. As well as specifying the salt inline, you can also reference a value held in EC2 Parameter Store
+2. `salt` which as [explained above](#pii-salt) sets up the salt that will be used.
 
 Setting `emitEvent` to true is only relevant for the real-time pipeline; `salt` is applicable to both pipelines.
 
