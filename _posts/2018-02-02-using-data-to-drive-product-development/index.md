@@ -8,8 +8,7 @@ category: Analytics
 permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 ---
 
-
-*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5]*
+*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5], [Part 6][product6], [Part 7][product7]*
 
 ---
 
@@ -48,7 +47,7 @@ The above two steps are essential for any product development teams that want to
 
 As part of the regular sprint planning process, product managers will be forced to choose how to prioritize different potential updates to the product. This decision can be informed by the clear, quantitative benefit that the team hopes to derive from the update, specified as part of the overall specification process.
 
-<h2 id="deciding">The roll of data in deciding whether or not to roll an update out across the user base</h2>
+<h2 id="deciding">The role of data in deciding whether or not to roll an update out across the user base</h2>
 
 Good data-driven product development teams will have a formal process for A/B testing any new features with a subset of users prior to any rollout of that feature. Remember that the product team will, as part of specifying an update, already have specified the impact that that update should have. A/B testing provides a formal mechanism for measuring if the update has that desired effect.
 
@@ -91,6 +90,10 @@ To learn more about product development with us, make sure you [subscribe to our
 [product4]: https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/
 
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
+
+[product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
+
+[product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
 
 [discourse-thread]: https://discourse.snowplowanalytics.com/t/habits-of-successful-data-driven-product-teams/1775
 

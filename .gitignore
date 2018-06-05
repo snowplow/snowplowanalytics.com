@@ -4,7 +4,7 @@ _site/
 .vagrant/
 _site/
 
-
 /node_modules
 /assets/js/vendors/dist/
 **/.DS_Store
+

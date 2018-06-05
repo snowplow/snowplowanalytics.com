@@ -13,7 +13,7 @@ assets:
                 MAIN AREA
             -->
 
-<section class="hero theme-light bg-success" style="background-image: url({{ BASE_PATH }}/assets/img/common/bg-symbol.png)">
+<section class="hero theme-light bg-success" style="background-image: url({{ BASE_PATH }}/assets/img/products/bg-symbol.png)">
     <div class="container text-center spacer-30">
         <h5 class="text-uppercase">Our Products</h5>
         <h1 class="text-uppercase md-spacer-top-50"><i class="i-logo-type"></i>Insights</h1>
@@ -25,10 +25,9 @@ assets:
     <div class="container text-center">
         <div class="col-md-12">
             <h3>Data collection is the foundation of the data value chain.</h3>
-            <p>Snowplow Insights puts you in control of your data collection. You decide what you want track. We deliver that data to you, in your own datawarehouse, so you can ask any question of your data, perform any analysis, use any analytics tool. We surface your data to you, in real-time, so you can act on it.</p>
+            <p>Snowplow Insights puts you in control of your data collection. You decide what you want track. We deliver that data to you, in your own data warehouse, so you can ask any question of your data, perform any analysis, use any analytics tool. We surface your data to you, in real-time, so you can act on it.</p>
             <p>Set your team free to use data to differentiate.</p>
         </div>
-
         <div class="col-md-12 hidden-xs hidden-sm visible-md visible-lg">
             <div class="bodymovin" data-src="insights-pipeline"></div>
 
@@ -40,9 +39,7 @@ assets:
     </div>
 
     <div class="container drop-box overlap-bellow">
-
-        <div class="col-xs-12 col-md-6">
-
+        <div class="col-xs-12 col-sm-6 col-md-6">
         <h4 class="text-uppercase spacer-top-10 md-spacer-top-0">Snowplow insights vs <br/> other well-known solutions</h4>
             <h5 class=" spacer-top-10 md-spacer-top-0">Download our whitepapers!</h5>
         <select class="form-control selectpicker" id="form-download" title="Select whitepaper" >
@@ -53,14 +50,14 @@ assets:
             <a id="download-btn"href="#" target="_blank" class="btn btn-primary call-to-action">Download</a>
 
         </div>
-        <img src="{{ BASE_PATH }}/assets/img/common/img.png" class="img-responsive" alt="Snowplow Insights Pipeline">
+        <img src="{{ BASE_PATH }}/assets/img/products/insights/white-paper.png" class="img-responsive" alt="Snowplow Insights Pipeline">
 
 
     </div>
 </section>
 
 <section class="bg-primary-lighter text-center data-collection">
-    <h3>Digital data collection is hard.</h3>
+    <h3 class="pad-t-50">Digital data collection is hard.</h3>
     <h5 class="spacer-bottom-70">In order to do data collection right, we need to understand what makes doing it well so hard.</h5>
     <div class="container">
         <div class="col-sm-4 pad-l-30 pad-r-30">
@@ -71,6 +68,7 @@ assets:
         </div>
         <div class="col-sm-4 xs-pad-t-70 pad-l-30 pad-r-30">
             <div class="bodymovin pad-b-30" data-src="engagement"></div>
+
 
             <h4>Engagement varies widely</h4>
             <small>Users don't engage with email, dating services or banking apps in the same way. So we should not expect the data from each to look alike, or even be structured alike.</small>
@@ -84,7 +82,8 @@ assets:
     </div>
 </section>
 
-<section id="options" class="bg-grd-success-info" style="background-image: url(/assets/img/common/bg-pattern-wire.png)">
+
+<section id="options" class="bg-grd-success-info" style="background-image: url(/assets/img/products/bg-pattern-wire.png)">
     <div class="container">
         <div>
             <h3 class="spacer-bottom-60 text-center theme-light"><b>What are the options?</b></h3>
@@ -93,9 +92,9 @@ assets:
 
                 <div class="col pad-40 sm-pad-30">
                     <div class="text-center">
-                        <img src="/assets/img/common/products/insights/Snowplow_Website-Product_Icon_Insights-Starter.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
+                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Starter.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
                         <div class="spacer-top-20">
-                            <h3><b>Starter</b></h3>
+                            <h3><b>Startup</b></h3>
                         </div>
                     </div>
 
@@ -114,17 +113,19 @@ assets:
 
                 <div class="col pad-40 sm-pad-20">
                     <div class="text-center">
-                        <img src="/assets/img/common/products/insights/Snowplow_Website-Product_Icon_Insights-Standard.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
+                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Standard.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
                         <div class="spacer-top-20">
-                            <h3><b>Standard</b></h3>
+                            <h3><b>Growth</b></h3>
                         </div>
                     </div>
 
                     <ul class="styled included">
                         <li>Up to 750M events per month</li>
                         <li>Standard + Premium enrichments</li>
-                        <li>Data loaded into S3 + Kinesis + 1 data warehouse + Elastic</li>
+                        <li>Data loaded into S3 + Kinesis + 1 data warehouse (Redshift or Snowflake DB) + Elastic</li>
+                        <li>Data modelling in data warehouse</li>
                         <li>Quarterly customer success check-ins</li>
+                        <li>Redash and/or Superset</li>
                     </ul>
 
                     <div class="price at-bottom at-b-80 text-center">
@@ -136,7 +137,7 @@ assets:
 
                 <div class="col pad-40 sm-pad-20">
                     <div class="text-center">
-                        <img src="/assets/img/common/products/insights/Snowplow_Website-Product_Icon_Insights-Enterprise.svg" width="170" height="178" alt="Insights Options Real-time" draggable="false">
+                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Enterprise.svg" width="170" height="178" alt="Insights Options Real-time" draggable="false">
                         <div class="spacer-top-20">
                             <h3><b>Enterprise</b></h3>
                         </div>
@@ -146,8 +147,10 @@ assets:
                         <li>Unlimited event volumes</li>
                         <li>Standard + Premium enrichments</li>
                         <li>Data loaded into S3 + Kinesis + 1 data warehouse + Elastic</li>
+                        <li>Data modelling in data warehouse or upstream (in-stream)</li>
                         <li>Dedicated CSM</li>
                         <li>Customer data processing topologies</li>
+                        <li>Redash and/or Superset</li>
                     </ul>
 
                     <div class="price at-bottom at-b-80 text-center">
@@ -160,6 +163,7 @@ assets:
         </div>
     </div>
 </section>
+
 
 
 <section class="no-gutter-bottom spacer-bottom-100">
@@ -264,7 +268,7 @@ assets:
 
 
 
-<section class="jumbotron theme-light no-vertical-gutter height-auto parallax" style="background-image:url({{ BASE_PATH }}/assets/img/common/Snowplow_Website-Images_Cases_JustWatch_Hero.jpg)">
+<section class="jumbotron theme-light no-vertical-gutter height-auto parallax" style="background-image:url({{ BASE_PATH }}/assets/img/products/insights/Snowplow_Website-Images_Cases_JustWatch_Hero.jpg)">
     <div class="container">
 
         {% include request-demo.html %}

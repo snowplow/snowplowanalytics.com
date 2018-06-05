@@ -4,7 +4,7 @@ title: "Understanding the role of anonymization and pseudo-anonymization in GDPR
 title-short: Anonymization in GDPR compliance
 tags: [analytics, personal identifiable data, GDPR]
 author: Anthony
-category: Analytics
+category: GDPR
 permalink: /blog/2018/03/02/understanding-the-role-of-anonymization-and-pseudo-anonymization-in-gdpr/
 discourse: true
 ---

@@ -6,6 +6,7 @@ tags: [batch, emr, emretlrunner, lambda]
 author: Anton
 category: Releases
 permalink: /blog/2018/04/03/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
+discourse: true
 ---
 
 We are pleased to announce the release of [Snowplow R102][release-notes]. This Snowplow batch pipeline release brings several long-awaited improvements and bugfixes into EmrEtlRunner, improving the efficiency and stability of the batch pipeline.
@@ -83,7 +84,7 @@ If you are only using the Snowplow batch pipeline, then it is still important to
 
 You won't have to make any configuration file updates as part of this upgrade.
 
-<h3>4.1 Upgrading for Lambda architecture users</h3>
+<h3>4.2 Upgrading for Lambda architecture users</h3>
 
 If you currently run a Lambda architecture (realtime plus batch), then you will most likely want to upgrade to EmrEtlRunner's new "Stream Enrich mode".
 
@@ -102,10 +103,12 @@ In Stream Enrich mode, some properties in your `config.yml` file, such as `aws.s
 
 For a complete example, we now have a dedicated sample [stream_config.yml][config-yml] template - this shows what you need to set, and what you can remove.
 
+Notice that in Stream Enrich mode, `staging`, `enrich` and `archive_raw` steps are effectively no-op. To avoid staging enriched data during recovery in this mode you need to skip new `staging_stream_enrich` step.
+
 **An important point:** you need to be careful when making this switchover to avoid either missing events from Redshift, or duplicating them. Our preferred switchover approach is to:
 
 1. Prevent missing events, by building in some time period overlap between the raw and enriched folders in S3, **and**
-2. Prevent duplication in Redshift, by temporarily enable cross-batch deduplication, if it's not already enabled 
+2. Prevent duplication in Redshift, by temporarily enable cross-batch deduplication, if it's not already enabled
 
 <h2 id="roadmap">5. Roadmap</h2>
 
@@ -143,5 +146,5 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [maxmind-announcement]: https://discourse.snowplowanalytics.com/t/end-of-life-for-the-maxmind-legacy-ip-lookups-databases-important/1863
 
-[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora_knossos.zip
+[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r102_afontova_gora.zip
 [config-yml]: https://github.com/snowplow/snowplow/blob/r102-afontova-gora/3-enrich/emr-etl-runner/config/stream_config.yml.sample

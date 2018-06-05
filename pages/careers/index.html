@@ -8,7 +8,41 @@ assets:
   css: assets/css/careers.css
 ---
 
-{% include jobs-hero.html %}
+<section class="hero theme-light bg-success" style="background-image: url({{ BASE_PATH }}/assets/img/careers/hero-15.jpg)">
+    <div class="container text-center spacer-30">
+        <h5 class="text-uppercase">Join the Snowplow team</h5>
+        <h2>Empower Smart People to<br>Differentiate with Data.</h2>
+    </div>
+</section>
 
-<div id="grnhse_app"></div>
-<script src="https://boards.greenhouse.io/embed/job_board/js?for=snowplow"></script>
+<section class="pad-t-50 pad-b-0">
+	<div class="container">
+		<h3>Join our team and empower a generation of Smart People to Differentiate with Data.</h3>
+		<p>At Snowplow, we believe in the transformative potential of data. Data drives insight and insight drives opportunity.</p>
+		<p>Using data effectively is a creative as well as technical exercise: it starts with asking the right questions. Smart People at the heart of every successful data program. Unfortunately at too many companies, Smart People get tied up doing boring data-related tasks: wrestling data out of silo'd systems, ingesting it into warehouses and analytics engines and joining it with other data sets so that useful things can then be done with it.</p>
+		<p>We build technology that gives Smart People control of their own data. So they can focus on what Smart People are best at: being creative, asking the right question, choosing the analysis technique suitable for answering the question, running the analysis, interpreting the results and acting on those results.</p>
+		<p>Come join our team and help empower the next generation of Smart Digital analysts, scientists, engineers, marketers, product managers and more differentiate with data.</p>
+	</div>
+</section>
+
+<section class="pad-t-30 pad-b-0">
+	<div class="container">
+		<h3>Are you...?</h3>
+		<ul>
+			<li>Intellectually curious</li>
+			<li>Excited to try new things including tools and technologies</li>
+			<li>Like to learn by doing, failing and trying again</li>
+			<li>Hands on - like to deliver: commit code, draw concrete insights</li>
+			<li>Willing to challenge conventional thinking</li>
+			<li>Entrepreneurial and delivery focused?</li>
+		</ul>
+		<p>Then we want to hear from you! Check out our job listings below.</p>
+	</div>
+</section>
+
+<section class="bring-to-front">
+    <div class="container well-lg no-border">
+    	<h2 class="text-center">Current job openings at Snowplow</h2>
+		<div id='lever-jobs-container' class="pad-30"></div><script type='text/javascript'>window.leverJobsOptions = {accountName: 'snowplowanalytics', includeCss: true};</script><script type='text/javascript' src='https://andreasmb.github.io/lever-jobs-embed/index.js'></script>
+	</div>
+</section>
