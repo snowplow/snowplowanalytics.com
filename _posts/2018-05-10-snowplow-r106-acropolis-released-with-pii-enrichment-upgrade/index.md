@@ -35,7 +35,7 @@ In brief, that release let you configure Snowplow to hash any PII-containing fie
 
 With this new release, users of Snowplow real-time now have the option to configure a stream of events which contain the hashed values, alongside their original values. You can think of these pairs as similar to:
 
-{% highlight %}
+{% highlight bash %}
 "d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"
 {% endhighlight %}
 
@@ -383,3 +383,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 
 [discourse]: http://discourse.snowplowanalytics.com/
+[gdpr-web]: 
+[snowflake-analytics]:
+[iab-data]:
+[beam]:
