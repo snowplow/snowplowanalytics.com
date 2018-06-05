@@ -19,7 +19,7 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 1. [Overview of the new PII-related capabilities](#pii-capabilities)
 2. [Emitting a stream of PII transformation events](#pii-events)
 3. [Adding a salt for hashing](#pii-salt)
-4. [Fixin an important bug](pii-bugfix)
+4. [Fixing an important bug](#pii-bugfix)
 5. [Other changes](#other)
 6. [Upgrading](#upgrading)
 7. [Roadmap](#roadmap)
@@ -50,7 +50,7 @@ Let's discuss each of the new PII-related capabilities in turn, starting with th
 
 <h2 id="pii-events">2. Emitting a stream of PII transformation events</h2>
 
-This release adds a configurable, optional stream of events from the PII Enrichment that contain the original hashed and original values.
+This release adds a configurable, optional stream of events from the PII Enrichment that contains the hashed and original values.
 
 When enabled and configured, Stream Enrich will emit into this new stream a "PII Transformation" event for each event that was pseudonymized in the PII enrichment, containing the original and hashed values.
 
@@ -115,16 +115,16 @@ The event follows the new [PII Transformation event JSON schema][pii-transformat
 }
 {% endhighlight %}
 
-In this example there are a few things going on. The PII Enrichment was configured to pseudonymize the canonical fields `user_fingerprint`, `user_ipaddress` and `user_id`, and as such the emitted event contains their original and modified values.
+There are a few notable things about this example. The PII Enrichment was configured to pseudonymize the canonical fields `user_fingerprint`, `user_ipaddress`, and `user_id`, and as such the emitted event contains their original and modified values.
 
 In addition, the enrichment was configured to pseudonymize properties from the `unstruct_event` and `contexts` fields. As before, the event contains the original and modified values, but it also contains:
 
-1. The `schema` property, identifying the Iglu URI for the related and the 
+1. The `schema` property, identifying the Iglu URI for the related events
 2. The `jsonPath` property, corresponding to it as in the case of `contexts` there could be any number of substitutions depending on the path and schema matches
 
-Finally the PII Transformation event strategy and in this case the hashing algorithm version is also given. What is not emitted is the `salt` that was used in the hashing (see [salt](#pii-salt) below)
+Finally the PII Transformation event strategy, in this case the hashing algorithm version, is also given. What is not emitted is the `salt` that was used in the hashing (see [salt](#pii-salt) below)
 
-Let's look at the here are a couple of fields of particular interest, namely the `contexts` and `unstruct_event`:
+Let's look at a couple of fields of particular interest, namely the `contexts` and `unstruct_event`:
 
 <h3>The PII Transformation event's parent event</h3>
 
@@ -155,7 +155,7 @@ That capability is now being served by our new [Piinguin][piinguin] project, whi
 
 <h2 id="pii-salt">3. Adding a salt for hashing</h2>
 
-In order to make it harder for the hashed PII data to be identified, we have responded to community feedback and  added the option of a salt to the hashing pseudonymization. Many thanks to [falschparker82][falschparker82] of JustWatch for advocating for this approach in [issue #3648][issue-3648].
+In order to make it harder for the hashed PII data to be identified, we have responded to community feedback and added the option of a salt to the hashing pseudonymization. Many thanks to [falschparker82][falschparker82] of [JustWatch][justwatch] for advocating for this approach in [issue #3648][issue-3648].
 
 The salt is simply a string that is appended to the end of the string that is going to be hashed; this makes it a lot harder, if not impossible, for someone to "brute force" the pseudonymized data by hashing all the possible values of a field and trying to match the hash.
 
@@ -232,7 +232,7 @@ Now review the [Full example for the new PII Enrichment configuration](#pii-conf
 
 <h3>Real-time pipeline upgrade instructions</h3>
 
-The latest version of Stream Enrich is available from our Bintray *UPDATE URL AFTER RELEASE* [here][stream-enrich-bintray].
+The latest version of Stream Enrich is available from our Bintray [here][stream-enrich-bintray].
 
 There are a few steps to using the new capabilities:
 
@@ -242,7 +242,7 @@ There are a few steps to using the new capabilities:
 
 <h4>Create your Kinesis stream or equivalent</h4>
 
-Make sure to create a dedicated Kinesis stream, Apache Kafka topic or equivalent to hold the PII Transformation events - otherwise Stream Enrich will fail.
+Make sure to create a dedicated Kinesis stream, Apache Kafka topic, or equivalent to hold the PII Transformation events - otherwise Stream Enrich will fail.
 
 Do not attempt to re-use your enriched event stream, as then you will be co-mingling sensitive PII data with safely pseudonymized enriched events.
 
@@ -383,7 +383,12 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
 
 [discourse]: http://discourse.snowplowanalytics.com/
-[gdpr-web]: 
+
+[justwatch]: https://www.justwatch.com/us
+
+
+[dataflow]:
+[gdpr-web]:
 [snowflake-analytics]:
 [iab-data]:
 [beam]:
