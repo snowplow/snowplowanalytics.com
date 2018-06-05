@@ -7,6 +7,7 @@ author: Anthony
 category: GDPR
 permalink: /blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/
 discourse: true
+image: /assets/img/blog/2018/05/devices.jpg
 ---
 
 As a company, you want to provide your users with a congruous experience across multiple platforms and devices including both web and mobile, with your data collection practices being consistent across each platform and device. To do that, you need to give users the opportunity to consent (or not) on each platform. It is nice if when a user grants or withdraws consent on one, it changes the way data is processed across all other devices and platforms. To do this identity stitch, you need to be able to collect the required data across all platforms and devices. But, if you need consent to collect the data to do the identity stitch, then this might be impossible.
