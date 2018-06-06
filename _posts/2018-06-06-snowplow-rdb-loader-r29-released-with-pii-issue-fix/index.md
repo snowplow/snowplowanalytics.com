@@ -52,7 +52,7 @@ This bug resides only in RDB Shredder, so all enriched data remains valid and th
 In order to do that you need to:
 
 1. Identify all affected runs - since the day PII enrichment has been enabled
-2. Clean-up all affected runs from Redshift
+2. [Clean-up all affected runs from Redshift][deleting-data]
 3. [Upgrade](#upgrading) `rdb_shredder` in your `config.yml`
 3. Remove all affected runs from `shredded.archive`
 3. Re-stage enriched data from archive
@@ -90,6 +90,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [pii-enrichment]: https://github.com/snowplow/snowplow/wiki/PII-pseudonymization-enrichment
 
 [atomic-def]: https://github.com/snowplow/snowplow/blob/master/4-storage/redshift-storage/sql/atomic-def.sql
+[deleting-data]: https://discourse.snowplowanalytics.com/t/gdpr-deleting-customer-data-from-redshift-tutorial/1815
 
 [r106-pii]: https://github.com/snowplow/snowplow/milestone/153
 [r10x-str]: https://github.com/snowplow/snowplow/milestone/151
