@@ -6,8 +6,12 @@ tags: [snowplow, looker, event analytics, web analytics]
 author: Yali
 category: Integration
 permalink: /blog/2014/03/19/snowplow-and-looker-announce-formal-partnership/
+<<<<<<< HEAD
 Images:
 https://snowplowanalytics.com/assets/img/blog/2014/03/snowplow-looker.png
+=======
+Images: /assets/img/blog/2014/03/snowplow-looker.png
+>>>>>>> 5c5a44bbd1cd76a31b2916f9e93934c0f2aa05ff
 ---
 
 Over the last few months we've been using Looker more and more, as we've come to appreciate quite how powerfully Looker compliments our own event analytics platform. In that time, we've got to know the team at Looker and are in the process of working with them and some of our clients to implement the combined Looker / Snowplow stack. The whole team is very excited about the results so far and are watching eagerly as our clients evolve those solutions.
