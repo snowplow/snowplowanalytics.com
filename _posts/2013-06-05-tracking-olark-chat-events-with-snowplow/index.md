@@ -8,8 +8,7 @@ permalink: /blog/2013/06/05/tracking-olark-chat-events-with-snowplow/
 <<<<<<< HEAD
 images:
 https://snowplowanalytics.com/assets/img/blog/2013/06/olark/olark-logo.png
-=======
-images: /assets/img/blog/2013/06/olark/olark-logo.png
+
 ---
 >>>>>>> 5c5a44bbd1cd76a31b2916f9e93934c0f2aa05ff
 

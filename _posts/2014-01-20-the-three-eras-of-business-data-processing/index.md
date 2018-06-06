@@ -9,9 +9,7 @@ permalink: /blog/2014/01/20/the-three-eras-of-business-data-processing/
 <<<<<<< HEAD
 Images:
 https://snowplowanalytics.com/assets/img/blog/2014/01/classic-era.png
-=======
-Images: /assets/img/blog/2014/01/classic-era.png
->>>>>>> 5c5a44bbd1cd76a31b2916f9e93934c0f2aa05ff
+
 ---
 
 Every so often, a work emerges that captures and disseminates the bleeding edge so effectively as to define a new norm. For those of us working in eventstream analytics, that moment came late in 2013 with the publication of Jay Kreps' monograph [The Log: What every software engineer should know about real-time data's unifying abstraction] [kreps-the-log]. Anyone involved in the operation or analysis of a digital business ought to read Jay's piece in its entirety. His central point, convincingly argued, is that every digital business should be (re-)structured around a centralized event firehose which:

@@ -5,7 +5,7 @@ tags: [snowplow, json, json schema, redshift, iglu, schema, data model, configur
 author: Yali
 category: Analytics
 permalink: /blog/2014/07/11/on-the-benefits-of-configurable-schemas/
-images: /assets/img/blog/2014/07/too-many-people-to-fit-in-the-train.jpg
+images: https://snowplowanalytics.com/assets/img/blog/2014/07/too-many-people-to-fit-in-the-train.jpg
 ---
 
 ![Image of something trying to squeeze into something into which it wont fit] [image1]
