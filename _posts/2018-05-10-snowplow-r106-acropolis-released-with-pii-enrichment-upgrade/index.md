@@ -391,10 +391,9 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [justwatch]: https://www.justwatch.com/us
 
-
 [dataflow]: https://cloud.google.com/dataflow/
 [gdpr-web]: https://www.eugdpr.org/
 [snowflake-analytics]: https://www.snowflake-analytics.com/
-[iab-data]:
+[iab-data]: https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/
 [beam]: https://beam.apache.org/
 [piinguin-release]: 
