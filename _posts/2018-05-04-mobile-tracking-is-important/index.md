@@ -7,6 +7,8 @@ author: Anthony
 category: GDPR
 permalink: /blog/2018/05/04/tracking-consent-on-mobile-is-just-as-important-as-web-for-gdpr/
 discourse: true
+images:
+https://snowplowanalytics.com/assets/img/blog/2018/05/cross-platform-market.png
 ---
 
 
