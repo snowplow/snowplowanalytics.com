@@ -387,8 +387,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [justwatch]: https://www.justwatch.com/us
 
 
-[dataflow]:
-[gdpr-web]:
-[snowflake-analytics]:
+[dataflow]: https://cloud.google.com/dataflow/
+[gdpr-web]: https://www.eugdpr.org/
+[snowflake-analytics]: https://www.snowflake-analytics.com/
 [iab-data]:
-[beam]:
+[beam]: https://beam.apache.org/
