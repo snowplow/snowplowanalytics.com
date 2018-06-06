@@ -29,6 +29,8 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 
 <h2 id="pii-capabilities">1. Overview of the new PII-related capabilities</h2>
 
+<h3>Snowplow project</h3>
+
 In our recent [R100 Epidaurus][r100-post] release, we introduced the capability to pseudonymize Snowplow PII data to help our users meet the [GDPR regulations][gdpr-web].
 
 In brief, that release let you configure Snowplow to hash any PII-containing fields, be they a [Canonical event model][canonical-event-model] field, or a property within a self-describing event or context.
@@ -47,6 +49,10 @@ Although the new PII Transformation event stream is only available for Snowplow 
 * [Fixing an important bug](#pii-bugfix)
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
+
+<h3>New piinguin project</h3>
+
+Except from the changes outlined above in the `snowplow/snowplow` project the re-identification functionality is completed by the associated Piinguin and Piinguin Relay projects. These two projects simply read the stream that is emitted by the PII Enrichment, store the values, and provide an service that can be queried for original values given the hashed value. They are presented in more detail in a separate [release post][piinguin-release]
 
 <h2 id="pii-events">2. Emitting a stream of PII transformation events</h2>
 
@@ -340,7 +346,6 @@ Upcoming Snowplow releases will include:
 * [R106 [STR & BAT] New webhooks and enrichment][r106-ms], featuring Marketo and Vero webhook adapters from our partners at [Snowflake Analytics][snowflake-analytics], plus a new enrichment for detecting bots and spiders using [data from the IAB][iab-data]
 * [R10x Vallei dei Templi][r10x-str], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
-
 <h2 id="help">8. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
@@ -392,3 +397,4 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowflake-analytics]: https://www.snowflake-analytics.com/
 [iab-data]:
 [beam]: https://beam.apache.org/
+[piinguin-release]: 
