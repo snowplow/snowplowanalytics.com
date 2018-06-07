@@ -3,10 +3,11 @@ layout: post
 title: Understanding Snowplow's unique approach to identity stitching, including comparisons with Universal Analytics, Kissmetrics and Mixpanel
 title-short: Understanding Snowplow's approach to identity stitching
 tags: [snowplow, analytics, custom analytics, cohort analytics]
+description: How different analytics platforms perform identity stitching
+image: /assets/img/blog/2014/04/identity-stitching.png
 author: Yali
 category: Analytics
 permalink: /blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-analytics-kissmetrics-and-mixpanel/
-images: /assets/img/blog/2014/04/identity-stitching.png
 ---
 
 *This post was inspired by two excellent, recently published posts on identity stitching: Yehoshua Coren's post [Universal Analytics is Out of Beta - Time to Switch?][analytics-ninja-post] and Shay Sharon's post on the [intlock][intlock] blog, [The Full Customer Journey - Managing User Identities with Google Universal, Mixpanel and KISSmetrics][shay-sharon-post]. In both posts, the authors explain in great detail the limitations that traditional analytics solutions have when dealing with identity stitching. In this post, I hope to explain how Snowplow's approach to identity stitching is radically different, and as a result, does not suffer from those same limitations.*
