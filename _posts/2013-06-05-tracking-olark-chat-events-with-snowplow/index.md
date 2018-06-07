@@ -2,10 +2,11 @@
 layout: post
 title: Tracking Olark chat events with Snowplow
 tags: [snowplow, olark, structured event tracking]
+description: Tracking Olark events
+image: /assets/img/blog/2013/06/olark/olark-logo.png
 author: Yali
 category: Integration
 permalink: /blog/2013/06/05/tracking-olark-chat-events-with-snowplow/
-images: /assets/img/blog/2013/06/olark/olark-logo.png
 ---
 
 As some of you will have noticed, we recently installed [Olark] [olark] on the Snowplow website. Olark powers the chat box you see on the bottom right of the screen: if you click on it, and if one of the Snowplow team is at their desks, you can talk directly to us.
