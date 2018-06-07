@@ -2,10 +2,11 @@
 layout: post
 title: Help us build out the Snowplow Total Cost of Ownership Model
 tags: [total cost of ownership, cloud services]
+description: Building a Snowplow cost model
+image: /assets/img/blog/2013/07/your-country-needs-you.jpg
 author: Yali
 category: Documentation
 permalink: /blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/
-images: /assets/img/blog/2013/07/your-country-needs-you.jpg
 ---
 
 In a [previous blog post][previous-post], we described how we were in the process of building a [Total Cost of Ownership model][previous-post] for Snowplow: something that would enable a Snowplow user, or prospective user, to accurately forecast their AWS bill going forwards based on their traffic levels.
