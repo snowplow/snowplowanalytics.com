@@ -29,8 +29,6 @@ Read on for more information on R106 Acropolis, named after [the acropolis of At
 
 <h2 id="pii-capabilities">1. Overview of the new PII-related capabilities</h2>
 
-<h3>Snowplow project</h3>
-
 In our recent [R100 Epidaurus][r100-post] release, we introduced the capability to pseudonymize Snowplow PII data to help our users meet the [GDPR regulations][gdpr-web].
 
 In brief, that release let you configure Snowplow to hash any PII-containing fields, be they a [Canonical event model][canonical-event-model] field, or a property within a self-describing event or context.
@@ -41,18 +39,12 @@ With this new release, users of Snowplow real-time now have the option to config
 "d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"
 {% endhighlight %}
 
-This stream of PII Transformation events can then be used with the new Snowplow Piinguin project, which we will also briefly introduce in this blog post.
-
 Although the new PII Transformation event stream is only available for Snowplow real-time pipeline users, this release also brings two other PII-related updates which are available for both batch and real-time users:
 
 * [Adding a salt for hashing](#pii-salt)
 * [Fixing an important bug](#pii-bugfix)
 
 Let's discuss each of the new PII-related capabilities in turn, starting with the new emitted stream.
-
-<h3>New piinguin project</h3>
-
-Except from the changes outlined above in the `snowplow/snowplow` project the re-identification functionality is completed by the associated Piinguin and Piinguin Relay projects. These two projects simply read the stream that is emitted by the PII Enrichment, store the values, and provide an service that can be queried for original values given the hashed value. They are presented in more detail in a separate [release post][piinguin-release]
 
 <h2 id="pii-events">2. Emitting a stream of PII transformation events</h2>
 
@@ -157,7 +149,7 @@ This is all covered in detail in the [upgrading](#upgrading) section below.
 
 This new event stream is intended to be used by downstream processes which want to track the pseudonymization process and make it possible for Snowplow operators to recover the original PII values, if and only if the operator has the appropriate authorization under the conditions required for [lawful basis for processing][ico-lawful-basis].
 
-That capability is now being served by our new [Piinguin][piinguin] project, which we are releasing in concert with this release. Please read the [Piinguin and Snowplow Piinguin Relay release blog post][piinguin-relay-post] for more information.
+We are working on a new open-source project to leverage this event stream, called Piinguin. Expect more information on this project soon.
 
 <h2 id="pii-salt">3. Adding a salt for hashing</h2>
 
@@ -357,8 +349,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [r100-post]: https://snowplowanalytics.com/blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
 [acropolis-img]: /assets/img/blog/2018/05/Acropolis_of_Athens.jpg
 
-[piinguin]: https://github.com/snowplow-incubator/piinguin
-[piinguin-relay-post]: UPDATE-THIS-LINK
 [ico-lawful-basis]: https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/
 
 [pii-enrichment]: https://github.com/snowplow/snowplow/wiki/PII-pseudonymization-enrichment
@@ -396,4 +386,3 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowflake-analytics]: https://www.snowflake-analytics.com/
 [iab-data]: https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/
 [beam]: https://beam.apache.org/
-[piinguin-release]: 
