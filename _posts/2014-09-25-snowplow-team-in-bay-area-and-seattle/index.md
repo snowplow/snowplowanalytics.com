@@ -1,11 +1,13 @@
 ---
 layout: post
 title: The Snowplow team will be in the Bay Area and Seattle in October - get in touch if you'd like to meet
+images: https://snowplowanalytics.com/assets/img/blog/2014/09/team-in-sf-seattle.jpg
 title-short: The Snowplow team in the Bay Area and Seattle
 tags: [snowplow, us, usa, bay area, san francisco, sf, seattle]
 author: Alex
 category: Meetups
 permalink: /blog/2014/09/25/snowplow-team-in-bay-area-and-seattle/
+
 ---
 
 I (Alex) will be in the Bay Area and Seattle for two weeks starting from Monday 6th October, visiting Snowplow customers, users and partners. If you're interested in meeting up to discuss Snowplow, event analytics or [unified log processing] [ulp] more generally, I'd love to arrange a meeting!
