@@ -57,10 +57,10 @@ In order to do that you need to:
 2. Delete all affected runs from Redshift
 3. [Upgrade](#upgrading) `rdb_shredder` in your `config.yml`
 4. Delete all affected runs from `shredded.archive`
-5. Re-stage enriched data from archive
+5. Re-stage enriched data from `enriched.archive` to `enriched.good`
 6. Run EmrEtlRunner with `--resume-from shred` option
 
-@ANTON - DO STEPS 5 & 6 WORK WITH MULTIPLE ENRICHED FOLDERS IN ONE GO? OR DO THEY HAVE TO BE STAGED ONE BY ONE?
+Important note about steps 5 and 6: archived folders cannot be staged all at once. They need to be staged and processed one by one or their contents should be merged into one new folder.
 
 <h2 id="upgrading">3. Upgrading</h2>
 
