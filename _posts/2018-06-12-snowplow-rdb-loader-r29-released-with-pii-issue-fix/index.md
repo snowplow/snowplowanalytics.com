@@ -5,7 +5,7 @@ title: "Snowplow RDB Loader R29 released"
 tags: [snowplow, pii, shred, redshift]
 author: Anton
 category: Releases
-permalink: /blog/2018/06/12/snowplow-rdb-loader-r29-released-with-pii-issue-fix
+permalink: /blog/2018/06/12/snowplow-rdb-loader-r29-released-with-pii-issue-fix/
 ---
 
 We are pleased to announce the release of [Snowplow RDB Loader R29][release], fixing an important bug relating to the PII Enrichment introduced in [R100 Epidaurus][r100-post].
