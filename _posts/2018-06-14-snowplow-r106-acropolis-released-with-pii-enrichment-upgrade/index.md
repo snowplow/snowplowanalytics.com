@@ -5,7 +5,7 @@ title-short: Snowplow 106 Acropolis
 tags: [pii, streaming, pseudonymization]
 author: Kostas
 category: Releases
-permalink: /blog/2018/05/10/snowplow-r106-acropolis-released-with-pii-enrichment-upgrade/
+permalink: /blog/2018/06/14/snowplow-r106-acropolis-released-with-pii-enrichment-upgrade/
 ---
 
 We are pleased to announce the release of [Snowplow R106 Acropolis][release-notes].
