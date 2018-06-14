@@ -33,7 +33,7 @@ In our recent [R100 Epidaurus][r100-post] release, we introduced the capability 
 
 In brief, that release let you configure Snowplow to hash any PII-containing fields, be they a [Canonical event model][canonical-event-model] field, or a property within a self-describing event or context.
 
-With this new release, users of Snowplow real-time now have the option to configure a stream of events which contain the hashed values, alongside their original values. You can think of these pairs as similar to:
+With this new release, users of Snowplow real-time now have the option to configure a stream of events which contain the hashed values alongside their original values. You can think of these pairs as similar to:
 
 {% highlight bash %}
 "d4bd092ce3df26df6f492296ef8e4daf71be4ac9" -> "10.0.2.1"
@@ -147,7 +147,7 @@ This is all covered in detail in the [upgrading](#upgrading) section below.
 
 <h3>Using the new event stream</h3>
 
-This new event stream is intended to be used by downstream processes which want to track the pseudonymization process and make it possible for Snowplow operators to recover the original PII values, if and only if the operator has the appropriate authorization under the conditions required for [lawful basis for processing][ico-lawful-basis].
+This new event stream is intended to be used by downstream processes which want to track the pseudonymization process and make it possible for Snowplow operators to recover the original PII values, if and only if the operator has the appropriate authorization under the conditions required for one of the [lawful bases for processing][ico-lawful-basis].
 
 We are working on a new open-source project to leverage this event stream, called Piinguin. Expect more information on this project soon.
 
