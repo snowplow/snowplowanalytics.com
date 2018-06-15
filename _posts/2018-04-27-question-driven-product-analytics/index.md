@@ -2,6 +2,8 @@
 layout: post
 title: "Getting the most out of product analytics with intelligent questions"
 title-short: Intelligent question-driven product analytics
+description: How asking the right questions can lead to product improvements
+image: /assets/img/blog/2018/04/retained-users.png
 tags: [analytics, product analytics, digital products]
 author: Anthony
 category: Analytics

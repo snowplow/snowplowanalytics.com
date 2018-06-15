@@ -2,6 +2,8 @@
 layout: post
 title-short: How JustWatch uses Snowplow - case study
 title: "How JustWatch uses Snowplow data to build a differentiated service for advertising movies and drive spectacular growth"
+description: How JustWatch uses snowplow data to drive growth
+image: /assets/img/blog/2017/04/dominik-raute-photo.png
 tags: [snowplow, analytics, media, advertising, adtech, justwatch, data, movie, film, studio, video]
 author: Giuseppe
 category: User Stories
