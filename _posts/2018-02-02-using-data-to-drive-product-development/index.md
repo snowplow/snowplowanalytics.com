@@ -2,6 +2,8 @@
 layout: post
 title: "Data-driven product development is more about process, culture, and people than technology"
 title-short: Snowplow product analytics part three
+description: How people and company culture play a bigger role than technology in being data-driven
+image: /assets/img/blog/2018/02/development_loop.jpg
 tags: [analytics, product analytics, digital products]
 author: Yali
 category: Analytics
