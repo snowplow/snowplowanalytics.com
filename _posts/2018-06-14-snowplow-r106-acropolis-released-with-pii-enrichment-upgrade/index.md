@@ -2,6 +2,8 @@
 layout: post
 title: "Snowplow 106 Acropolis released with PII Enrichment upgrade"
 title-short: Snowplow 106 Acropolis
+description: Snowplow introduces a new feature for handling personal information
+image: /assets/img/blog/2018/05/Acropolis_of_Athens.jpg
 tags: [pii, streaming, pseudonymization]
 author: Kostas
 category: Releases
