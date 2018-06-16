@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.8.0
 tags: [snowplow, android, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/06/10/snowplow-android-tracker-0.8.0-released/
+permalink: /blog/2018/06/18/snowplow-android-tracker-0.8.0-released/
 discourse: true
 ---
 
@@ -15,14 +15,14 @@ We are pleased to announce a new release of the [Snowplow Android Tracker][repo]
 
 Read on below the fold for:
 
-1. [Lifecycle tracking](#lifecycle)
-2. [Updates and bug fixes](#updates)
+1. [Adding contexts to the lifecycle tracking](#lifecycle-contexts)
+2. [Fixing a bug in the lifecycle tracking](#lifecycle-bug)
 3. [Documentation](#docs)
 4. [Getting help](#help)
 
 <!--more-->
 
-<h2 id="lifecycle">1. Lifecycle tracking</h2>
+<h2 id="lifecycle-contexts">1. Adding contexts to the lifecycle tracking</h2>
 
 The new methods in the tracker are: `setLifecycleCustomContext` and `getLifecycleCustomContext`.
 
@@ -43,21 +43,15 @@ List<SelfDescribingJson> contexts = tracker.getLifecycleCustomContext();
 contexts.add(context1);
 {% endhighlight %}
 
-<h2 id="updates">2. Updates and bug fixes</h2>
+<h2 id="lifecycle-bug">2. Fixing a bug in the lifecycle tracking</h2>
 
-Other updates and fixes include:
+This release fixes a bug that stopped Android lifecycle tracking whenever an activity is destroyed, due to the LifecycleHandler callbacks being unregistered on activity destruction.
 
-* Fix LifecycleHandler callbacks being unregistered on activity destruction ([issue #266][266])
+For more information on this, please see [issue #266][266].
 
 <h2 id="docs">3. Documentation</h2>
 
 You can find the updated [Android Tracker documentation][android-manual] on our wiki.
-
-As part of this release we have updated our tutorials to help Android developers integrate the Tracker into their apps:
-
-* [Guide to integrating the tracker][integration]
-* [Guide to setting up a test environment][testing]
-* [Walkthrough of our Android demo app][demo-walkthrough]
 
 You can find the full release notes on GitHub as [Snowplow Android Tracker v0.8.0 release][release-notes].
 
