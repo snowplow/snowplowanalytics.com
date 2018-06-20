@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.8.0
 tags: [snowplow, android, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/06/18/snowplow-android-tracker-0.8.0-released/
+permalink: /blog/2018/06/20/snowplow-android-tracker-0.8.0-released/
 discourse: true
 ---
 
@@ -24,9 +24,9 @@ Read on below the fold for:
 
 <h2 id="lifecycle-contexts">1. Adding contexts to the lifecycle tracking</h2>
 
-The new methods in the tracker are: `setLifecycleCustomContext` and `getLifecycleCustomContext`.
+The new methods in the tracker are: `setLifecycleCustomContexts` and `getLifecycleCustomContexts`.
 
-Here is an example of how `getLifecycleCustomContext` can be used to add a new custom context to be sent with lifecycle events:
+Here is an example of how `getLifecycleCustomContexts` can be used to add a new custom context to be sent with lifecycle events:
 
 {% highlight java %}
 // Create a Map of the data you want to include...
@@ -39,7 +39,7 @@ dataMap.put("poster_year", "1978");
 SelfDescribingJson context1 = new SelfDescribingJson("iglu:com.acme/movie_poster/jsonschema/2-1-1", dataMap);
 
 // Now add this JSON into a list of SelfDescribingJsons...
-List<SelfDescribingJson> contexts = tracker.getLifecycleCustomContext();
+List<SelfDescribingJson> contexts = tracker.getLifecycleCustomContexts();
 contexts.add(context1);
 {% endhighlight %}
 
