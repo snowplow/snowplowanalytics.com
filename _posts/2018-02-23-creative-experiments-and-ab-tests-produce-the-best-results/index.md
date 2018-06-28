@@ -8,7 +8,7 @@ category: Analytics
 permalink: /blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 ---
 
-*Part five of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 4][product4], [Part 6][product6], [Part 7][product7]*
+*Part five of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 3][product3], [Part 4][product4], [Part 6][product6], [Part 7][product7], [Part 8][product8]*
 
 ---
 
@@ -80,6 +80,8 @@ If you want to learn more about how to do A/B testing right as part of using ana
 [product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
 
 [product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
+
+[product8]: https://snowplowanalytics.com/blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 
 [bva]: /assets/img/blog/2018/02/bva.jpg
 
