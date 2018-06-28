@@ -5,3 +5,6 @@ _site/
 _site/
 
 /node_modules
+/assets/js/vendors/dist/
+**/.DS_Store
+

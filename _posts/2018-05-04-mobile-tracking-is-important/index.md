@@ -3,6 +3,8 @@ layout: post
 title: "Tracking consent on mobile is just as important as web for GDPR"
 title-short: Mobile consent tracking for GDPR
 tags: [analytics, consent, GDPR]
+description: Why you need to consider mobile when thinking about GDPR
+image: /assets/img/blog/2018/05/cross-platform-market.png
 author: Anthony
 category: GDPR
 permalink: /blog/2018/05/04/tracking-consent-on-mobile-is-just-as-important-as-web-for-gdpr/

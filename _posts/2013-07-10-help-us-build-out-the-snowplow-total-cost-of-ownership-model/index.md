@@ -2,6 +2,8 @@
 layout: post
 title: Help us build out the Snowplow Total Cost of Ownership Model
 tags: [total cost of ownership, cloud services]
+description: Building a Snowplow cost model
+image: /assets/img/blog/2013/07/your-country-needs-you.jpg
 author: Yali
 category: Documentation
 permalink: /blog/2013/07/10/help-us-build-out-the-snowplow-total-cost-of-ownership-model/
