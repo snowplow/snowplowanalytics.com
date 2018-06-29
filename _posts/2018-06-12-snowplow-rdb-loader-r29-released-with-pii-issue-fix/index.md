@@ -69,7 +69,7 @@ If you are using RDB Loader to load events into Redshift or Postgres, you'll nee
 {% highlight yaml %}
 storage:
   versions:
-    rdb_shredder: 1.13.1 # WAS 1.13.0
+    rdb_shredder: 0.13.1 # WAS 0.13.0
 {% endhighlight %}
 
 <h2 id="roadmap">4. Roadmap</h2>
