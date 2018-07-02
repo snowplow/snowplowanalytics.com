@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 0.8.0
 tags: [snowplow, android, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/06/20/snowplow-android-tracker-0.8.0-released/
+permalink: /blog/2018/07/02/snowplow-android-tracker-0.8.0-released/
 discourse: true
 ---
 
