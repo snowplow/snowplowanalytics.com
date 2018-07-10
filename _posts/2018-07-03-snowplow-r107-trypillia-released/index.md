@@ -26,7 +26,7 @@ Read on for more information:
 
 <h2 id="iab">1. IAB Spiders & Robots enrichment</h2>
 
-The IAB Spiders & Robots Enrichment uses the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its' IP address and user agent.
+The IAB Spiders & Robots Enrichment uses the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its IP address and user agent.
 
 You can find out more on the [IAB enrichment][iab-enrichment] page of the Snowplow wiki.
 
@@ -40,7 +40,7 @@ For help setting up the Vero webhook, see the [Vero webhook setup][vero-setup] p
 
 <h2 id="marketo">3. Marketo webhook support</h2>
 
-Marketo lets you track webhook events emitted by [Marketo][marketo-website], a SaaS marketing automation system. This functionality will allow you to ensure that different campaigns you setup are correctly tracked by Snowplow.
+Support for [Marketo][marketo-website] lets you track webhook events emitted by their SaaS marketing automation system. This functionality will allow you to ensure that different campaigns you setup are correctly tracked by Snowplow.
 
 For help setting up the Marketo webhook, refer to the [Marketo webhook setup guide][marketo-setup].
 
