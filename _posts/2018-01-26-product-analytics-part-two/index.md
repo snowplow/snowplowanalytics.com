@@ -2,6 +2,8 @@
 layout: post
 title: "Intelligent use of data in product development differentiates successful companies"
 title-short: Snowplow product analytics part two
+description: The world's top companies use digital analytics
+image: /assets/img/blog/2018/01/blueprint.jpg
 tags: [analytics, product analytics, digital products]
 author: Anthony
 category: Analytics

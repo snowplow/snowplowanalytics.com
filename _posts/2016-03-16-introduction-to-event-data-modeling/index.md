@@ -1,6 +1,8 @@
 ---
 layout: post
 title: An introduction to event data modeling
+description: Learn more about modeling event data
+image: /assets/img/blog/2016/03/lego-building.jpg
 title-short: An introduction to event data modeling
 tags: [data modeling, event data, sql]
 author: Yali
