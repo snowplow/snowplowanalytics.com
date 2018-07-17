@@ -2,6 +2,7 @@
 layout: post
 title-short: Snowplow R107 Trypillia
 title: "Snowplow R107 Trypillia released"
+image: /assets/img/blog/2018/07/Trypillia.jpg
 tags: [enrichment, webhook, iab, vero, marketo]
 author: Rostyslav
 category: Releases
