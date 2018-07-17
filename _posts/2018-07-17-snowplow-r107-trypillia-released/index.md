@@ -5,7 +5,7 @@ title: "Snowplow R107 Trypillia released"
 tags: [enrichment, webhook, iab, vero, marketo]
 author: Rostyslav
 category: Releases
-permalink: /blog/2018/07/03/snowplow-r107-trypillia-released/
+permalink: /blog/2018/07/17/snowplow-r107-trypillia-released/
 ---
 
 We are excited to announce the release of [Snowplow R107 Trypillia][snowplow-release].
