@@ -58,13 +58,16 @@ to have only encrypted data in your bucket, you will need to go through the exis
 in place.
 
 Also, if you are using the Clojure Collector, SSE-S3 encryption needs to be set up at the bucket
-level in order to take effect.
+level, not the folder level, in order to take effect.
+
+Once this is done, you will need to tell EmrEtlRunner that it will have to interact with encrypted
+buckets through the `aws:s3:buckets:encrypted: true` configuration setting.
 
 <h3 id="emr-sec-conf">1.2 Setting up an appropriate EMR security configuration</h3>
 
 Elastic MapReduce offers EMR security configurations, which let you enforce encryption for various aspects of your job. The options are:
 
-- Encrypt data at rest on S3 through EMRFS
+- Encrypt data at rest on S3 when using EMRFS
 - Encrypt data at rest on local disks
 - Encrypt data in-transit
 
@@ -78,10 +81,12 @@ Let's review each of these three EMR encryption options to understand their impa
 
 <h4 id="at-rest-s3">1.2.1 At rest encryption on S3</h4>
 
-This specifies the strategy to encrypt data when EMR interacts with S3 through EMRFS. Note that, by default, even without encryption setup, data is encrypted while in transit from EMR to S3.
+This specifies the strategy to encrypt data when EMR interacts with S3 through EMRFS. By
+default, even without encryption setup, data is encrypted while in transit from EMR to S3.
 
-Once this is done, you will need to tell EmrEtlRunner that it will have to interact with encrypted
-buckets through the `aws:s3:buckets:encrypted: true` configuration setting.
+Note that, currently, the batch pipeline does not make use of EMRFS, instead it copies data from
+S3 to the HDFS cluster on the EMR nodes, and from HDFS to S3, through
+[s3 dist copy][s3-dist-cp] steps, more on that in the next section.
 
 <h4 id="at-rest-local">1.2.2 At rest encryption on local disks</h4>
 
@@ -122,7 +127,7 @@ To set up this type of encryption, you will need to create certificates per Amaz
 
 Please note: for this type of encryption to work, you will need to be in a VPC and the domain name
 specified in the certificates needs to be `*.ec2.internal` if in us-east-1 or
-`*.region.compute.internal` otherwise.
+`*.{{region}}.compute.internal` otherwise.
 
 <h2 id="eer">2. Additional EmrEtlRunner features</h2>
 
@@ -186,7 +191,9 @@ Beanstalk environment property as described above.
 
 Upcoming Snowplow releases are:
 
-xxx
+* [R109 Mileum][r109], which will introduce various new features to our real-time pipeline, particularly the Scala Stream Collector
+* [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
+  [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
 <h2 id="help">6. Getting help</h2>
 
@@ -201,14 +208,18 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[luks]: ttps://guardianproject.info/code/luks/
+[luks]: https://guardianproject.info/code/luks/
 [emr-data-encryption]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-data-encryption-options.html
 [s3-encryption]: https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html
 [emr-sec-conf]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html
 [kms-create]: https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
 [emr-pem-cert]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-encryption-enable.html#emr-encryption-pem-certificate
+[s3-dist-cp]: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
 
-xxx
+[r109]: https://github.com/snowplow/snowplow/milestone/161
+[r110]: https://github.com/snowplow/snowplow/milestone/151
+[dataflow]: https://cloud.google.com/dataflow/
+[beam]: https://beam.apache.org/
 
 [sluice]: https://github.com/snowplow-archive/sluice
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r108_val_camonica.zip
