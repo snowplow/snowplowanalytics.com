@@ -109,6 +109,9 @@ Amazon's [KMS guide][kms-create] for more information.
 It is important to note that the role used in `aws:emr:jobflow_role` in the EmrEtlRunner
 configuration needs to have the `kms:GenerateDataKey` policy for this setting to work.
 
+This policy will be used to generate the necessary data keys using the "master" key created above.
+Those data keys are, in turn, used to encrypt pieces of data on your local disks.
+
 <h4 id="in-transit">1.2.3 In-transit encryption (Spark and MapReduce)</h4>
 
 When running the Spark jobs of the Snowplow pipeline (Enrich and Shred), and running some S3DistCp
