@@ -2,13 +2,15 @@
 layout: post
 title: "Intelligent use of data in product development differentiates successful companies"
 title-short: Snowplow product analytics part two
+description: The world's top companies use digital analytics
+image: /assets/img/blog/2018/01/blueprint.jpg
 tags: [analytics, product analytics, digital products]
 author: Anthony
 category: Analytics
 permalink: /blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/
 ---
 
-*Part two of our series on product analytics. Read: [Part 1][product1], [Part 3][product3], [Part 4][product4], [Part 5][product5], [Part 6][product6]*
+*Part two of our series on product analytics. Read: [Part 1][product1], [Part 3][product3], [Part 4][product4], [Part 5][product5], [Part 6][product6], [Part 7][product7], [Part 8][product8]*
 
 ---
 
@@ -37,7 +39,7 @@ Contrasting with most companies where you have a centralized analytics or data s
 
 <h2 id="home run">Product development home run</h2>
 
-Talking about the early days of the startup on [NPR’s How I Built This podcast][npr], Airbnb founder Joe Gebbia described what he referred to as the trough of sorrow, “where you have a product and a market and they don’t fit, like two gears that don’t touch let and you can’t figure out how to close the gap… it’s completely flat, there’s zero growth.” This is a crucial period in the launching of a new product or piece of technology, when you determine your product-market fit. However, knowing what to measure, what metrics are significant, and collecting that data are challenging and make determining product-market fit tough. In Joe’s words, “This is when people tend to quit.”
+Talking about the early days of the startup on [NPR’s How I Built This podcast][npr], Airbnb founder Joe Gebbia described what he referred to as the trough of sorrow, “where you have a product and a market and they don’t fit, like two gears that don’t touch and you can’t figure out how to close the gap… it’s completely flat, there’s zero growth.” This is a crucial period in the launching of a new product or piece of technology, when you determine your product-market fit. However, knowing what to measure, what metrics are significant, and collecting that data are challenging and make determining product-market fit tough. In Joe’s words, “This is when people tend to quit.”
 
 Joe recognized that there was a problem with adoption, one that could be identified. “We looked at the stats and the data around the early adopters and we noticed a pattern: people don’t know how to take good photos of their home.” The data alone didn’t tell them this. Arriving at the conclusions that the most successful homes on Airbnb had better images, both in quality and ability to display the home’s environment, but the majority of listings lacked quality photos and was blocking adoption was not purely an analytical exercise. Taking the appropriate action required a combination of high quality data along with the intuitive insight gained from thoroughly understanding their product vision and who they want the product to serve. Seeing how people used the Airbnb website showed them that what they thought was perfectly designed was confusing and wrong. It turned out the gap in the market was a poor UI. Armed with that understanding, after making minor tweaks informed by their data they were able to double revenue in the space of one week.
 
@@ -64,6 +66,10 @@ The user journey is complex, as the example above shows. Using data in the produ
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 
 [product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
+
+[product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
+
+[product8]: https://snowplowanalytics.com/blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 
 [Airbnb blog]: https://medium.com/airbnb-engineering/how-airbnb-democratizes-data-science-with-data-university-3eccc71e073a
 

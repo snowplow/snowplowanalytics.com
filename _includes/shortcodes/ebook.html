@@ -1,0 +1,12 @@
+<div class="sc-ebook shortcode">
+    <div class="well call-to-action">
+        <div class="col {% if include.layout == 'blog' %}col-sm-12{% else %}col-sm-8{% endif %} no-gutter">
+            <h5 class="text-uppercase no-margin">{{ include.title }}</h5>
+            <p>{{ include.description }}</p>
+        </div>
+        <div class="col {% if include.layout == 'blog' %}col-sm-12{% else %}col-sm-4{% endif %} no-gutter text-right text-sm-left text-xs-left sm-spacer-top-30">
+            <a href="{{ include.link }}" class="btn btn-primary btn-lg hidden-xs hidden-sm">{{ include.btnText }}</a>
+            <a href="{{ include.link }}" class="btn btn-primary btn-md hidden-lg hidden-md">{{ include.btnText }}</a>
+        </div>
+    </div>
+</div>

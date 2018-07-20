@@ -2,6 +2,8 @@
 layout: post
 title: "How to manage consent for GDPR, a nuanced approach"
 title-short: Consent management under GDPR
+description: The finer points of collecting data under consent management
+image: /assets/img/blog/2018/03/choice.jpg
 tags: [analytics, consent, GDPR]
 author: Anthony
 category: GDPR
