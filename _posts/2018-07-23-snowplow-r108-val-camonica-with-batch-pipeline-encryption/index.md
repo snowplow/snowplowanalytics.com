@@ -1,11 +1,11 @@
 ---
 layout: post
 title-short: Snowplow 108 Val Camonica
-title: "Snowplow 108 Val Camonica released"
+title: "Snowplow R108 Val Camonica with batch pipeline encryption released"
 tags: [snowplow, encryption, batch, clojure, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/06/14/snowplow-r108-val-camonica-with-batch-pipeline-encryption/
+permalink: /blog/2018/07/23/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
 ---
 
 We are pleased to announce the release of [Snowplow 108 Val Camonica][snowplow-release], named
@@ -17,8 +17,7 @@ This release enables the Snowplow batch pipeline to operate fully encrypted. Thi
 - Encrypting Elasticsearch data at rest
 - Encrypting Redshift data at rest
 
-This release brings the ability to have end-to-end encryption for the batch pipeline by making it
-possible to:
+This release brings the ability to have end-to-end encryption for the batch pipeline by making it possible to:
 
 - Encrypt data at rest on S3
 - Encrypt data at rest on the local disks in your EMR cluster
@@ -86,7 +85,7 @@ default, even without encryption setup, data is encrypted while in transit from 
 
 Note that, currently, the batch pipeline does not make use of EMRFS, instead it copies data from
 S3 to the HDFS cluster on the EMR nodes, and from HDFS to S3, through
-[s3 dist copy][s3-dist-cp] steps, more on that in the next section.
+[s3 dist copy][s3-dist-cp] steps; more on that in the next section.
 
 <h4 id="at-rest-local">1.2.2 At rest encryption on local disks</h4>
 
@@ -103,8 +102,8 @@ When enabling this option, please keep the following drawbacks in mind:
 - KMS key usage is subject to pricing: https://aws.amazon.com/kms/pricing/
 - It has a performance impact, e.g. when writing your enriched data to HDFS
 
-To setup this type of encryption you will need to create an appropriate KMS key, refer to
-Amazon's [KMS guide][kms-create] for more information, this key needs to be in the same region
+To setup this type of encryption you will need to create an appropriate KMS key (refer to
+Amazon's [KMS guide][kms-create] for more information). This key needs to be in the same region
 as the EMR cluster.
 
 It is important to note that the role used in `aws:emr:jobflow_role` in the EmrEtlRunner
@@ -135,10 +134,10 @@ specified in the certificates needs to be `*.ec2.internal` if in us-east-1 or
 
 <h2 id="eer">2. Additional EmrEtlRunner features</h2>
 
-We've also taken advantage of this release to bring a couple of ergonomy features to EmrEtlRunner:
+We've also taken advantage of this release to bring a couple of ergonomic features to EmrEtlRunner:
 
 - There is a new `--ignore-lock-on-start` option which lets you ignore a possibly already in place
-lock. Note that, the lock will still be cleaned up if the run ends successfully.
+lock. Note that the lock will still be cleaned up if the run ends successfully.
 - It is now possible to specify which port and protocol you would like to use when monitoring
 EmrEtlRunner through `monitoring:snowplow:{port, protocol}`.
 - Under the hood, EmrEtlRunner now uses the official Ruby AWS SDK instead of our now-retired
