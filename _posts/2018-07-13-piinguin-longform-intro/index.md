@@ -11,15 +11,23 @@ permalink: /blog/2018/07/20/self-describing-data-becomes-self-policing-data/
 discourse: true
 ---
 
->Personal data shall be:
-(a) processed lawfully, fairly and in a transparent manner in relation to the data subject (‘lawfulness, fairness and transparency’);
-(b) collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes
--General Data Protection Regulations, Chapter II Article 5
+>*Personal data shall be:
+<br>
+<br>
+: (a) processed lawfully, fairly and in a transparent manner in relation to the data subject (‘lawfulness, fairness and transparency’);
+<br>
+<br>
+: (b) collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes
+<br>
+<br>
+-General Data Protection Regulations, Chapter II Article 5*
 
 
 At the heart of [GDPR][gdpr] is this idea, that personal data is collected for a specific purpose. Companies that collect personal data identify what this purpose is and make it clear to the data subjects whose data is being collected. It is then a legal requirement that the company only uses that data for that purpose.
 
 This is a **very** difficult requirement to fulfill.
+
+![GDPR is complex][pii-sources]
 
 One of the things that makes data analysis so interesting and rewarding is that all great analysis starts with asking good questions of the data: a new analyst asking a fresh question of an old data set might reveal something new and transformative. For that reason, there's been a strong trend for companies to democratize data - to give many more people access to large, centralized data stores, so you have many more smart people asking many more questions of the data and getting much more insight. The trouble is, this makes it much more likely the data will be used in a way that is not consistent with the purpose for which it was originally intended. Worse still, how do you ensure that all those smart people know what for what purpose the data has been collected and ensure their use of it is consistent with that?
 
@@ -33,6 +41,8 @@ The reasoning behind GDPR is simple and straightforward: as organizations collec
 <h2 id="data governance">Data governance is challenging</h2>
 
 The conversation around GDPR has focused primarily on a data subject’s right to be forgotten and handling consent. Though significant as parts of a legal framework, from a technical perspective deleting data and tracking consent are fundamentally not challenging tasks. But, nobody wants to talk about what is arguably GDPR’s most significant stipulation, that *data must be collected and used only for an explicit purpose.*
+
+![Getting data governance right can be overwhelming][overwhelmed]
 
 Controlling how data is used presents a lot of challenges. As we’ve said, much of the magic of data analysis comes from being able to explore data in new ways, which appears to be diametrically opposed to one of GDPR’s core principles. When speaking about GDPR and analytics in a post-GDPR world, collectively as an industry we acknowledge that data governance is really hard, which, more often than not, means that piece is left out of the conversation. It’s the naked emperor; the hardest aspect of GDPR to comply with is this one, and it’s not talked about because it’s awkward admitting we don’t have a feasible way to comply.  This situation is hard to handle while still protecting the data subject’s rights and using data according to GDPR while still exploring it in new, exciting ways. Companies have to balance collecting enough data to be useful and insightful while still respecting a data subject’s rights.
 
@@ -85,6 +95,10 @@ Piinguin lets you work with pseudonymized data, enabling companies to effectivel
 
 [gdpr]: https://gdpr-info.eu/art-5-gdpr/
 
+[pii-sources]: /assets/img/blog/2018/07/gdpr.jpg
+
 [pseudo]: https://snowplowanalytics.com/blog/2018/03/02/understanding-the-role-of-anonymization-and-pseudonymization-in-gdpr/
+
+[overwhelmed]: /assets/img/blog/2018/07/overwhelmed.jpg
 
 [piinguin]:
