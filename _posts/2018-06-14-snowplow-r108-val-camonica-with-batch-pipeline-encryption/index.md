@@ -104,7 +104,8 @@ When enabling this option, please keep the following drawbacks in mind:
 - It has a performance impact, e.g. when writing your enriched data to HDFS
 
 To setup this type of encryption you will need to create an appropriate KMS key, refer to
-Amazon's [KMS guide][kms-create] for more information.
+Amazon's [KMS guide][kms-create] for more information, this key needs to be in the same region
+as the EMR cluster.
 
 It is important to note that the role used in `aws:emr:jobflow_role` in the EmrEtlRunner
 configuration needs to have the `kms:GenerateDataKey` policy for this setting to work.
