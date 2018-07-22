@@ -1,11 +1,11 @@
 ---
 layout: post
 title-short: Snowplow 108 Val Camonica
-title: "Snowplow 108 Val Camonica released"
+title: "Snowplow R108 Val Camonica with batch pipeline encryption released"
 tags: [snowplow, encryption, batch, clojure, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/06/14/snowplow-r108-val-camonica-with-batch-pipeline-encryption/
+permalink: /blog/2018/07/23/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
 ---
 
 We are pleased to announce the release of [Snowplow 108 Val Camonica][snowplow-release], named
@@ -17,8 +17,7 @@ This release enables the Snowplow batch pipeline to operate fully encrypted. Thi
 - Encrypting Elasticsearch data at rest
 - Encrypting Redshift data at rest
 
-This release brings the ability to have end-to-end encryption for the batch pipeline by making it
-possible to:
+This release brings the ability to have end-to-end encryption for the batch pipeline by making it possible to:
 
 - Encrypt data at rest on S3
 - Encrypt data at rest on the local disks in your EMR cluster
@@ -58,13 +57,16 @@ to have only encrypted data in your bucket, you will need to go through the exis
 in place.
 
 Also, if you are using the Clojure Collector, SSE-S3 encryption needs to be set up at the bucket
-level in order to take effect.
+level, not the folder level, in order to take effect.
+
+Once this is done, you will need to tell EmrEtlRunner that it will have to interact with encrypted
+buckets through the `aws:s3:buckets:encrypted: true` configuration setting.
 
 <h3 id="emr-sec-conf">1.2 Setting up an appropriate EMR security configuration</h3>
 
 Elastic MapReduce offers EMR security configurations, which let you enforce encryption for various aspects of your job. The options are:
 
-- Encrypt data at rest on S3 through EMRFS
+- Encrypt data at rest on S3 when using EMRFS
 - Encrypt data at rest on local disks
 - Encrypt data in-transit
 
@@ -76,12 +78,14 @@ use through the `aws:emr:security_configuration` EmrEtlRunner configuration opti
 
 Let's review each of these three EMR encryption options to understand their impact on our Snowplow batch pipeline.
 
-<h4 id="at-rest-s3">1.2.1 At rest encryption on S3</h4>
+<h4 id="at-rest-s3">1.2.1 At rest encryption on S3 when using EMRFS</h4>
 
-This specifies the strategy to encrypt data when EMR interacts with S3 through EMRFS. Note that, by default, even without encryption setup, data is encrypted while in transit from EMR to S3.
+This specifies the strategy to encrypt data when EMR interacts with S3 through EMRFS. By
+default, even without encryption setup, data is encrypted while in transit from EMR to S3.
 
-Once this is done, you will need to tell EmrEtlRunner that it will have to interact with encrypted
-buckets through the `aws:s3:buckets:encrypted: true` configuration setting.
+Note that, currently, the batch pipeline does *not* make use of EMRFS, instead it copies data from
+S3 to the HDFS cluster on the EMR nodes, and from HDFS to S3, through
+[S3DistCp][s3-dist-cp] steps; more on that in the next section.
 
 <h4 id="at-rest-local">1.2.2 At rest encryption on local disks</h4>
 
@@ -98,11 +102,15 @@ When enabling this option, please keep the following drawbacks in mind:
 - KMS key usage is subject to pricing: https://aws.amazon.com/kms/pricing/
 - It has a performance impact, e.g. when writing your enriched data to HDFS
 
-To setup this type of encryption you will need to create an appropriate KMS key, refer to
-Amazon's [KMS guide][kms-create] for more information.
+To setup this type of encryption you will need to create an appropriate KMS key (refer to
+Amazon's [KMS guide][kms-create] for more information). This key needs to be in the same region
+as the EMR cluster.
 
 It is important to note that the role used in `aws:emr:jobflow_role` in the EmrEtlRunner
 configuration needs to have the `kms:GenerateDataKey` policy for this setting to work.
+
+This policy will be used to generate the necessary data keys using the "master" key created above.
+Those data keys are, in turn, used to encrypt pieces of data on your local disks.
 
 <h4 id="in-transit">1.2.3 In-transit encryption (Spark and MapReduce)</h4>
 
@@ -122,7 +130,7 @@ To set up this type of encryption, you will need to create certificates per Amaz
 
 Please note: for this type of encryption to work, you will need to be in a VPC and the domain name
 specified in the certificates needs to be `*.ec2.internal` if in us-east-1 or
-`*.region.compute.internal` otherwise.
+`*.{{region}}.compute.internal` otherwise.
 
 <h2 id="eer">2. Additional EmrEtlRunner features</h2>
 
@@ -201,12 +209,13 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
-[luks]: ttps://guardianproject.info/code/luks/
+[luks]: https://guardianproject.info/code/luks/
 [emr-data-encryption]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-data-encryption-options.html
 [s3-encryption]: https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html
 [emr-sec-conf]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html
 [kms-create]: https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
 [emr-pem-cert]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-encryption-enable.html#emr-encryption-pem-certificate
+[s3-dist-cp]: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/UsingEMR_s3distcp.html
 
 [r109]: https://github.com/snowplow/snowplow/milestone/161
 [r110]: https://github.com/snowplow/snowplow/milestone/151
