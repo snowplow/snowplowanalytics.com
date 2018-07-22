@@ -30,7 +30,7 @@ Please read on after the fold for:
 
 1. [Enabling end-to-end encryption for the batch pipeline](#encryption)
 2. [Additional EmrEtlRunner features](#eer)
-3. [Revamping the Clojure Collector cookie path handling](#cc)
+3. [Fixing the Clojure Collector's cookie path handling](#cc)
 4. [Upgrading](#upgrading)
 5. [Roadmap](#roadmap)
 6. [Help](#help)
@@ -126,25 +126,23 @@ specified in the certificates needs to be `*.ec2.internal` if in us-east-1 or
 
 <h2 id="eer">2. Additional EmrEtlRunner features</h2>
 
-We've also taken advantage of this release to bring a couple of ergonomy features to EmrEtlRunner:
+This release also brings some ergonomic improvements to EmrEtlRunner:
 
-- There is a new `--ignore-lock-on-start` option which lets you ignore a possibly already in place
-lock. Note that, the lock will still be cleaned up if the run ends successfully.
-- It is now possible to specify which port and protocol you would like to use when monitoring
-EmrEtlRunner through `monitoring:snowplow:{port, protocol}`.
-- Under the hood, EmrEtlRunner now uses the official Ruby AWS SDK instead of our now-retired
-[Sluice][sluice] library which should greatly help with memory consumption.
+- There is a new `--ignore-lock-on-start` option which lets you ignore an already-in-place
+lock, should one exist. Note that the lock will still be cleaned up if the run ends successfully
+- It is now possible to specify the Snowplow collector's port and protocol for EmrEtlRunner observability, through `monitoring:snowplow:{port, protocol}`
+- Under the hood, EmrEtlRunner now uses the official AWS Ruby SDK instead of our now-retired
+[Sluice][sluice] library. This should greatly help with memory consumption
 
-<h2 id="cc">3. Revamping the Clojure Collector cookie path handling</h2>
+<h2 id="cc">3. Fixing the Clojure Collector's cookie path handling</h2>
 
 Up until this release, the Clojure Collector defaulted to having the parent path of the page the
 cookie was requested from as cookie path. For example, if reaching the collector from
 `http://acme.com/data/profiles/my-profile.html`, the cookie path would be `data/profiles`.
 
-With this release, the cookie path will always default to `/`. Additionally, it is now customizable
-through the `SP_PATH` Elastic Beanstalk environment property.
+With R108, the cookie path will always default to `/`. This can be overridden through the `SP_PATH` Elastic Beanstalk environment property.
 
-Finally, we've also taken advantage of this release to update a good number of dependencies.
+Finally, we've updated a good number of dependencies in the Clojure Collector.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
@@ -164,7 +162,7 @@ aws:
       encrypted: true            # Depends on whether your buckets are SSE-S3 encrypted
   emr:
     security_configuration: name # Leave blank if you don't use a security configuration
-    jobflow_role: role           # Needs to have kms:GenerateDataKey when using at rest local disks encryption
+    jobflow_role: role           # Needs to have kms:GenerateDataKey when using at-rest local disks encryption
 monitoring:
   snowplow:
     port: 8080                   # New and optional
@@ -186,7 +184,9 @@ Beanstalk environment property as described above.
 
 Upcoming Snowplow releases are:
 
-xxx
+* [R109 Mileum][r109], which will introduce various new features to our real-time pipeline, particularly the Scala Stream Collector
+* [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
+  [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 
 <h2 id="help">6. Getting help</h2>
 
@@ -208,7 +208,10 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [kms-create]: https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
 [emr-pem-cert]: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-encryption-enable.html#emr-encryption-pem-certificate
 
-xxx
+[r109]: https://github.com/snowplow/snowplow/milestone/161
+[r110]: https://github.com/snowplow/snowplow/milestone/151
+[dataflow]: https://cloud.google.com/dataflow/
+[beam]: https://beam.apache.org/
 
 [sluice]: https://github.com/snowplow-archive/sluice
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r108_val_camonica.zip
