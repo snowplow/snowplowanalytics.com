@@ -144,11 +144,15 @@ lock, should one exist. Note that the lock will still be cleaned up if the run e
 
 <h2 id="cc">3. Fixing the Clojure Collector's cookie path handling</h2>
 
-Up until this release, the Clojure Collector defaulted to having the parent path of the page the
-cookie was requested from as cookie path. For example, if reaching the collector from
-`http://acme.com/data/profiles/my-profile.html`, the cookie path would be `data/profiles`.
+Up until this release, the Clojure Collector defaulted to having the parent path of the requested
+collector endpoint as path for the cookie being set. For example, if you were to use:
 
-With R108, the cookie path will always default to `/`. This can be overridden through the `SP_PATH` Elastic Beanstalk environment property.
+- the pixel endpoint (`my-collector.com/i`), the cookie path would be `/`
+- the Iglu webhook endpoint (`my-collector.com/com.snowplowanalytics.iglu/v1`), the cookie path
+would be `/com.snowplowanalytics.iglu/`.
+
+With R108, the cookie path will always default to `/`, no matter the endpoint hit. This can be
+overridden through the `SP_PATH` Elastic Beanstalk environment property.
 
 Finally, we've updated a good number of dependencies in the Clojure Collector.
 
