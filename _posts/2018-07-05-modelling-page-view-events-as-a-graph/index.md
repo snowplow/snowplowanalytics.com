@@ -9,9 +9,15 @@ permalink: /blog/2018/07/05/modelling-page-view-events-as-a-graph/
 discourse: true
 ---
 
-We've [chosen][link0] to model events as a denormalised graph, where the same things are represented multiple times in different ways (eg as both a node and a relationship). That adds redundancy to the model but makes querying it easier.
+In the previous post in this series we started exploring options for modelling event data as a graph in general. We looked at three ways of modelling atomic event data:
 
-In our chosen model, we are also making use of *reification*, or the turning of relationships into things. In our [event grammar][link1], events naturally exist in the relationships between entities. However, in the graph model, each event will be its own node with outgoing `HAS` relationships to its properties, eg `(event)-[:HAS]->(user)`. Events will be connected to each other by a `NEXT` relationship. There will also be relationships between the various properties of the event, such as `(user)-[:VIEWS]->(page)`.
+- the event grammar approach
+- the event graph approach
+- the denormalised graph approach.
+
+We [chose][building-a-model-for-atomic-event-data-as-a-graph] to model events as a denormalised graph, where the same things are represented multiple times in different ways (eg as both a node and a relationship). That adds redundancy to the model but makes querying it easier.
+
+In our chosen model, we are also making use of *reification*, or the turning of relationships into things. In our [event grammar][modeling-events-through-entity-snapshotting], events naturally exist in the relationships between entities. However, in the graph model, each event will be its own node with outgoing `HAS` relationships to its properties, eg `(event)-[:HAS]->(user)`. Events will be connected to each other by a `NEXT` relationship. There will also be relationships between the various properties of the event, such as `(user)-[:VIEWS]->(page)`.
 
 We'll now explore how we can model a `page_view` event with all its expected properties in the Snowplow pipeline. We'll discuss creating the necessary schemas and implementing them in code.
 
@@ -118,11 +124,11 @@ It's a similar story with any of our custom entity context schemas. In fact, all
 }
 ```
 
-And for some events, such as `page_view`, there isn't a specific JSON schema. The [Elasticsearch enriched event schema][link2] probably comes closest, being a projection of the [canonical event model][link3] (of which the `atomic.events` [table in Redshift][link4] is another projection). But that schema also applies to the other events in the canonical model.
+And for some events, such as `page_view`, there isn't a specific JSON schema. The [Elasticsearch enriched event schema][elasticsearch_enriched_event] probably comes closest, being a projection of the [canonical event model][canonical-event-model] (of which the `atomic.events` [table in Redshift][redshift-storage] is another projection). But that schema also applies to the other events in the canonical model.
 
 ### Composable schemas
 
-For this project we'd like to explore a new approach to building schemas, based on individual schemas for each of the event's components, be they nodes or relationships. The schema for the event itself will then reference those building blocks through [JSON pointers][link5]. This will allow us to reuse entities and relationships across all events they are part of. It will also make maintaining the schemas much easier. For example, if an entity such as a user is part of many events and we want to add a new property to the `User` node, we'll only have to make one change: in the `user` schema. (Currently our self-describing JSON schemas do not support JSON pointers, so this functionality will have to be [added][link6] if we decide to go with this approach.)
+For this project we'd like to explore a new approach to building schemas, based on individual schemas for each of the event's components, be they nodes or relationships. The schema for the event itself will then reference those building blocks through [JSON pointers][json-pointer]. This will allow us to reuse entities and relationships across all events they are part of. It will also make maintaining the schemas much easier. For example, if an entity such as a user is part of many events and we want to add a new property to the `User` node, we'll only have to make one change: in the `user` schema. (Currently our self-describing JSON schemas do not support JSON pointers, so this functionality will have to be [added][issue-370] if we decide to go with this approach.)
 
 To illustrate how this could work, let's look at a simplified `page_view` definition, consisting of two nodes -- `User` and `Page` -- connected by a `VISITED` relationship.
 
@@ -405,7 +411,7 @@ Let's try to model frequently changing properties as nodes; and static / stable 
 
 We'll model the different timestamps as properties of the `Event` node. We can also model them as properties on the relationships within the event.
 
-You can find all of our proposed node schemas in [this GitHub repo][link7].
+You can find all of our proposed node schemas in [this GitHub repo][node-schemas].
 
 ### Drawing the relationships
 
@@ -416,11 +422,11 @@ The next step is to figure out all the relationships between our nodes. We alrea
 
 We can consider all possible combinations of two nodes from the list above and see if any "natural" relationships exist between them. In that way, we can expand the list of relationships. To keep things simple for now, let's assume all constituent nodes are linked by a `[:WITH]` relationship, eg `(Application)<-[:WITH]-(Browser)`, `(Browser)<-[:WITH]-(Session)`.
 
-The proposed schemas for these relationships are in [this repo][link8].
+The proposed schemas for these relationships are in [this repo][relationship-schemas].
 
 ### Composing the `page_view` schema
 
-We now have all the building blocks to compose a schema for the `page_view` event. You can find the schema [here][link9].
+We now have all the building blocks to compose a schema for the `page_view` event. You can find the schema [here][page-view-schema].
 
 If we use this model to represent a series of `page_view` events, we end up with a graph that looks something like this (most nodes are omitted, for clarity):
 
@@ -470,15 +476,15 @@ We take a break from trying to model events as a graph and explore a more preval
 
 
 
-[link0]: https://snowplowanalytics.com/blog/2018/03/26/building-a-model-for-atomic-event-data-as-a-graph/
-[link1]: https://snowplowanalytics.com/blog/2015/01/18/modeling-events-through-entity-snapshotting/
-[link2]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/2-0-0
-[link3]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
-[link4]: https://github.com/snowplow/snowplow/tree/master/4-storage/redshift-storage/sql
-[link5]: https://tools.ietf.org/html/rfc6901
-[link6]: https://github.com/snowplow/iglu/issues/370
-[link7]: https://github.com/snowplow-incubator/graph-event-data-model/tree/master/schemas/com.snowplowanalytics.graph/nodes
-[link8]: https://github.com/snowplow-incubator/graph-event-data-model/tree/master/schemas/com.snowplowanalytics.graph/relationships
-[link9]: https://github.com/snowplow-incubator/graph-event-data-model/blob/master/schemas/com.snowplowanalytics.graph/events/page_view/jsonschema/1-0-0
+[building-a-model-for-atomic-event-data-as-a-graph]: https://snowplowanalytics.com/blog/2018/03/26/building-a-model-for-atomic-event-data-as-a-graph/
+[modeling-events-through-entity-snapshotting]: https://snowplowanalytics.com/blog/2015/01/18/modeling-events-through-entity-snapshotting/
+[elasticsearch_enriched_event]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/2-0-0
+[canonical-event-model]: https://github.com/snowplow/snowplow/wiki/canonical-event-model
+[redshift-storage]: https://github.com/snowplow/snowplow/tree/master/4-storage/redshift-storage/sql
+[json-pointer]: https://tools.ietf.org/html/rfc6901
+[issue-370]: https://github.com/snowplow/iglu/issues/370
+[node-schemas]: https://github.com/snowplow-incubator/graph-event-data-model/tree/master/schemas/com.snowplowanalytics.graph/nodes
+[relationship-schemas]: https://github.com/snowplow-incubator/graph-event-data-model/tree/master/schemas/com.snowplowanalytics.graph/relationships
+[page-view-schema]: https://github.com/snowplow-incubator/graph-event-data-model/blob/master/schemas/com.snowplowanalytics.graph/events/page_view/jsonschema/1-0-0
 
 [page-view-series]: /assets/img/blog/2018/07/page_view_series.png
