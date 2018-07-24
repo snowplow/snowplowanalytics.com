@@ -5,7 +5,7 @@ title: "Snowplow R108 Val Camonica with batch pipeline encryption released"
 tags: [snowplow, encryption, batch, clojure, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/07/23/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
+permalink: /blog/2018/07/24/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
 ---
 
 We are pleased to announce the release of [Snowplow 108 Val Camonica][snowplow-release], named
