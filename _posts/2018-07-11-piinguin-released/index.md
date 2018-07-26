@@ -185,6 +185,35 @@ aws dynamodb create-table --table-name piinguin-prod --attribute-definitions Att
 
 And that completes the setup.
 
+<h3 id="piinguin-smoke-test">4.5 Testing it all works</h3>
+
+One way to verify that the setup works is to checkout the piinguin project [from GitHub][piinguin-github] and try to write and the read back a record: 
+
+```scala
+
+$ sbt "client/console"
+
+scala> import scala.concurrent.{ExecutionContext, Await}
+scala> import scala.concurrent.duration._
+scala> import com.snowplowanalytics.piinguin.client.PiinguinClient
+scala> implicit val ec = ExecutionContext.global
+scala> val c = new PiinguinClient("localhost", 8080)
+scala> val createResult = Await.result(c.createPiiRecord("123", "456"), 10 seconds)
+
+createResult: Either[com.snowplowanalytics.piinguin.client.FailureMessage,com.snowplowanalytics.piinguin.client.SuccessMessage] = Right(SuccessMessage(OK))
+
+scala> import com.snowplowanalytics.piinguin.server.generated.protocols.piinguin.ReadPiiRecordRequest.LawfulBasisForProcessing
+scala> val readResult = Await.result(c.readPiiRecord("123", LawfulBasisForProcessing.CONSENT), 10 seconds)
+
+readResult: Either[com.snowplowanalytics.piinguin.client.FailureMessage,com.snowplowanalytics.piinguin.client.PiinguinClient.PiiRecord] = Right(PiiRecord(123,456))
+```
+
+You can also verify that the record is in DynamoDB by clicking on `items` in the console:
+
+![DynamoDB Items][dynamodb-items]
+
+And verifying that your item is there.
+
 <h2 id="help">5. Getting help</h2>
 
 For more details on working with Piinguin and the Snowplow Piinguin Relay, please check out the documentation here:
@@ -222,3 +251,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [piinguin-wiki]: https://github.com/snowplow-incubator/piinguin/wiki
 [piinguin-setup]: https://github.com/snowplow-incubator/piinguin/wiki/Setting-up-Piinguin
 [piinguin-technical-documentation]: https://github.com/snowplow-incubator/piinguin/wiki/Piinguin-technical-documentation
+
+[piinguin-github]: https://github.com/snowplow-incubator/piinguin/
+[dynamodb-items]: /assets/img/blog/2018/07/dynamodb-items.png
