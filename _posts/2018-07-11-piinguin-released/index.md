@@ -159,6 +159,30 @@ As the server writes its data to DynamoDB it will need to have access to it with
 }
 {% endhighlight %}
 
+<h3 id="piinguin-dynamodb-table">4.5 Setting up DynamoDB table</h3>
+
+The DyanamoDB table will need to be created before Piinguin can be used. 
+
+In order to create a DynamoDb table log-in as normal to the AWS console and start typing `DynamoDB` to the services field:
+
+![List of services][list-of-services]
+
+Then click on DynamoDB from the list of services.
+
+In the DynamoDB page click `create table`:
+
+![create table][create-table]
+
+Finally, specify the desired `table name`, set the `primary key` to **modifiedValue** and its type to **String** and click `Create`.
+
+![create table details][create-table-details]
+
+If you are comfortable with the CLI the quickest way to do the same is:
+
+```bash
+aws dynamodb create-table --table-name piinguin-prod --attribute-definitions AttributeName=modifiedValue,AttributeType=S --key-schema AttributeName=modifiedValue,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
+```
+
 And that completes the setup.
 
 <h2 id="help">5. Getting help</h2>
@@ -191,3 +215,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [snowplow-bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-piinguin-relay#files
 
 [discourse]: https://discourse.snowplowanalytics.com/
+[list-of-services]: /assets/img/blog/2018/07/list-of-services.png
+[create-table]: /assets/img/blog/2018/07/create-table.png
+[create-table-details]: /assets/img/blog/2018/07/create-table-details.png
