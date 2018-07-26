@@ -5,7 +5,7 @@ title-short: Piinguin released
 tags: [pii, piinguin]
 author: Kostas
 category: Releases
-permalink: /blog/2018/07/11/piinguin-snowplow-pii-usage-management-service-released/
+permalink: /blog/2018/07/26/piinguin-snowplow-pii-usage-management-service-released/
 ---
 
 We are pleased to announce the first release of [Piinguin][release-notes] and the associated [Snowplow Piinguin Relay][relay-release-notes]. This initial release introduces basic capabilities for managing the usage of personally identifiable information data from Snowplow.
@@ -159,35 +159,33 @@ As the server writes its data to DynamoDB it will need to have access to it with
 }
 {% endhighlight %}
 
-<h3 id="piinguin-dynamodb-table">4.5 Setting up DynamoDB table</h3>
+<h3 id="piinguin-dynamodb-table">4.5 Setting up the DynamoDB table</h3>
 
-The DyanamoDB table will need to be created before Piinguin can be used. 
+You will need to create the appropriate DyanamoDB table in order to use Piinguin.
 
-In order to create a DynamoDb table log-in as normal to the AWS console and start typing `DynamoDB` to the services field:
+To create a DynamoDb table, log-in as normal to your AWS console and type `DynamoDB` into the services field and select DynamoDB from the list:
 
 ![List of services][list-of-services]
 
-Then click on DynamoDB from the list of services.
-
-In the DynamoDB page click `create table`:
+From the DynamoDB page, click `create table`:
 
 ![create table][create-table]
 
-Finally, specify the desired `table name`, set the `primary key` to **modifiedValue** and its type to **String** and click `Create`.
+Finally, specify the desired `table name`, set the `primary key` to **modifiedValue** and its type to **String**, then click `Create`.
 
 ![create table details][create-table-details]
 
-If you are comfortable with the CLI the quickest way to do the same is:
+If you are comfortable with the CLI, you can also create the DynamoDB table using the following commands:
 
 ```bash
 aws dynamodb create-table --table-name piinguin-prod --attribute-definitions AttributeName=modifiedValue,AttributeType=S --key-schema AttributeName=modifiedValue,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
 ```
 
-And that completes the setup.
+With the DynamoDB table created, setup is now complete and you can use Piinguin.
 
-<h3 id="piinguin-smoke-test">4.5 Testing it all works</h3>
+<h3 id="piinguin-smoke-test">4.6 Testing that Piinguin is functioning</h3>
 
-One way to verify that the setup works is to checkout the piinguin project [from GitHub][piinguin-github] and try to write and the read back a record: 
+One way to verify that your setup works is to checkout the Piinguin project [on GitHub][piinguin-github] and try to write and the read back a record: 
 
 ```scala
 
