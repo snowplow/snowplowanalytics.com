@@ -189,9 +189,9 @@ And that completes the setup.
 
 For more details on working with Piinguin and the Snowplow Piinguin Relay, please check out the documentation here:
 
-* xxx 
-* xxx
-* xxx
+* [Piinguin Wiki][piinguin-wiki]
+* [Piinguin Setup][piinguin-setup]
+* [Piinguin Technical Documentation][piinguin-technical-documentation]
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
@@ -218,3 +218,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 [list-of-services]: /assets/img/blog/2018/07/list-of-services.png
 [create-table]: /assets/img/blog/2018/07/create-table.png
 [create-table-details]: /assets/img/blog/2018/07/create-table-details.png
+
+[piinguin-wiki]: https://github.com/snowplow-incubator/piinguin/wiki
+[piinguin-setup]: https://github.com/snowplow-incubator/piinguin/wiki/Setting-up-Piinguin
+[piinguin-technical-documentation]: https://github.com/snowplow-incubator/piinguin/wiki/Piinguin-technical-documentation
