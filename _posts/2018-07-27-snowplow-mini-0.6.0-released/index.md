@@ -29,8 +29,9 @@ Read on for:
 2. [Docker migration](#docker-migration)
 3. [New Iglu Server](#iglu-server)
 4. [Updating the Elasticsearch stack](#elasticsearch)
-5. [Other updates](#other-changes)
-6. [Documentation and getting help](#help)
+5. [Tiered image sizes](#image-sizes)
+6. [Other updates](#other-changes)
+7. [Documentation, getting help and contributing back](#help)
 
 <!--more-->
 
@@ -56,55 +57,55 @@ This change should be transparent to the Snowplow Mini user, but under the hood 
 
 One of our medium-term goals for Snowplow Mini is to make it stateless, meaning that all the required data stores such as Iglu Server and Elasticsearch will live outside the actual server running Snowplow Mini. This will increase the maintainability and reliability of Snowplow Mini.
 
-In support of this goal, we introduced a Control Plane in [Snowplow Mini 0.4.0][snowplow-mini-0.4.0-control-plane].
+In support of this goal, we introduced a Control Plane in [Snowplow Mini v0.4.0][snowplow-mini-0.4.0-control-plane].
 Today we are adding a new feature to the Control Plane, enabling Iglu Server to use an external Postgres instance.
 
 To be more specific - the Control Plane lets you upload a complete Iglu Server configuration file, letting you configure any aspect of the Iglu Server - not just the Postgres connection details:
 
 ![iglu-server-conf][iglu-server-conf-img]
 
-ALEX UP TO HERE
-
-Note that this release also bumps Iglu Server to `0.3.0` which [introduced][iglu-server-improvements]
-a new configuration parameter `repo-server.baseURL` meaning that you should upload your own
-Iglu Server config file with `repo-server.baseURL` set to `<snowplow-mini-deployment-address>/iglu-server`,
-if you want to interact with the Iglu Server through Swagger UI. Note that you should omit the
-protocol (i.e. http(s)://), because Swagger UI will automatically prepend that.
+This release also bumps Iglu Server to version 0.3.0 which [introduced various improvements][iglu-server-improvements], including a new configuration parameter `repo-server.baseURL`. If you upload your own
+Iglu Server configuration file, be sure to set `repo-server.baseURL` to `<snowplow-mini-deployment-address>/iglu-server`,
+if you want to interact with the Iglu Server through the Swagger UI. Note that you should omit the
+protocol (i.e. http(s)://), because the Swagger UI will automatically prepend that.
 
 <h2 id="elasticsearch">4. Updating the Elasticsearch stack</h2>
 
-Most of the recent issues we faced with Snowplow Mini were mostly due to running very old versions
-of Elasticsearch (1.7.5) and Kibana (4.0.1). Although we considered renewing them before, there was
-a tradeoff between heavier resource usage and having a brand-new Elasticsearch stack. We finally
-made the call and decided to bump Elasticsearch to `6.3.1` at the expense of using bigger
-instances.
+Most of the recent issues we have seen with Snowplow Mini have related to us running very old versions
+of Elasticsearch (v1.7.5) and Kibana (v4.0.1) inside the instance.
 
-<h2 id="other-changes">5. Other updates</h2>
+Although we considered updating these versions before, there has always been a tradeoff between a newer Elasticsearch version and the attendant heavier resource requirements. We have finally made the decision to bump Elasticsearch to July 2018's [version 6.3.1][elasticsearch-6.3.1], at the expense of using bigger instances.
 
-Until today, Snowplow Mini was being used for fairly small AWS images (`t2.medium` or 2 vCPUs and
-4Gb of RAM) and it was almost always enough until now. However, we observed that Snowplow Mini
-started exceeding its initial goal as people were sending more and more events to Mini, machine
-resources started to become an obstacle, causing issues with Elasticsearch, for example. This is
-why, `0.6.0` is available in 3 different sizes:
+<h2 id="image-sizes">6. Tiered image sizes</h2>
 
-* `large`: Elasticsearch has `4G` as heap size and Snowplow apps each have `512M` as heap size.
-* `xlarge` : Double the large image. Elasticsearch has `8G` as heap size and Snowplow apps each have `1.5G` as heap size.
-* `xxlarge` : Double the xlarge image. Elasticsearch has `16G` heap size and Snowplow apps each have `3G` as heap size.
+Historically Snowplow Mini has typically been used with small AWS images (e.g. a `t2.medium`, with 2 vCPUs and
+4Gb of RAM) for relatively unstrenuous use cases.
+
+More recently however, we have seen Snowplow users and customers starting to send more and more events to Mini; machine resources have correspondingly started to become an obstacle, sometimes causing issues with Elasticsearch.
+
+For this reason, Snowplow Mini v0.6.0 is now available in three different sizes:
+
+* `large`: Elasticsearch has 4 GB as heap size and Snowplow apps each have 512 MB as heap size.
+* `xlarge`: double the `large` image. Elasticsearch has 8 GB as heap size and Snowplow apps each have 1.5 GB as heap size.
+* `xxlarge`: double the `xlarge` image. Elasticsearch has 16 GB heap size and Snowplow apps each have 3 GB as heap size.
+
+<h2 id="other-changes">6. Other updates</h2>
 
 This release also comes with some internal changes under the hood, including:
 
-* Bumping Stream Enrich to 0.18.0 ([#174][174])
-* Bumping the Scala Stream Collector to 0.13.0 ([#176][176])
+* Bumping Stream Enrich to v0.18.0 ([issue #174][174])
+* Bumping the Scala Stream Collector to v0.13.0 ([issue #176][176])
 
-What's more, as part of bumping Elasticsearch version to `6.x`, we had to remove the Head plugin
-since site plugins were removed from Elasticsearch. However, the Head plugin can be used as Google
-Chrome [extension][head-plugin].
+Finally, please note that as part of bumping Elasticsearch version to 6.x, we had to remove the Elasticsearch Head plugin,
+because site plugins have been removed from Elasticsearch. However, the Head plugin can still be used as a [Google Chrome extension][head-plugin] should you so wish.
 
-<h2 id="help">5. Documentation and getting help</h2>
+<h2 id="help">7. Documentation, getting help and contributing back</h2>
 
 To learn more about getting started with Snowplow Mini, check out the [Quickstart guide][quickstart].
 
-If you run into any problems, please [raise a bug][issues] or [join our gitter room][gitter-room] or get in touch with us through [the usual channels][talk-to-us].
+If you run into any problems, please [raise a bug][issues] or get in touch with us through [the usual channels][talk-to-us].
+
+If you'd like to help out with the development of Snowplow Mini, please [join our Gitter room][gitter-room].
 
 [docker-migration-issue]: https://github.com/snowplow/snowplow-mini/issues/23
 [control-plane-doc]: https://github.com/snowplow/snowplow-mini/wiki/Control-Plane-API
@@ -123,6 +124,8 @@ If you run into any problems, please [raise a bug][issues] or [join our gitter r
 [issues]: https://github.com/snowplow/snowplow-mini/issues/new
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
 [gitter-room]: https://gitter.im/snowplow/snowplow-mini
+
+[elasticsearch-6.3.1]: https://www.elastic.co/blog/elastic-stack-6-3-1-released
 
 [iglu-server-conf-img]: /assets/img/blog/2018/07/iglu-server-conf.png
 
