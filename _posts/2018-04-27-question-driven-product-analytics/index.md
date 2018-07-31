@@ -45,7 +45,7 @@ Solving this day one retention problem presented a huge opportunity for Lifecake
 
 
 <br>
-{% include shortcodes/ebook.html layout="blog" title="Being data-driven starts with the right question" description="Learn about how the worlds biggest startups successfully use data." btnText="Download eBook" link="https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-6" %}
+{% include shortcodes/ebook.html layout="blog" title="Being data-driven starts with the right question" description="Learn about how the worlds biggest startups successfully use data." btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-6" %}
 
 
 <h2 id="improving day one retention">How do we solve the day one retention problem?</h2>

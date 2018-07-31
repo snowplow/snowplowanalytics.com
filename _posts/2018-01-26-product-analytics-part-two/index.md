@@ -45,7 +45,7 @@ Joe recognized that there was a problem with adoption, one that could be identif
 
 
 
-{% include shortcodes/ebook.html layout="blog" title="Using data to differentiate" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://snowplowanalytics.com/blog/2018/01/26/intelligent-use-of-data-in-product-development-differentiates-successful-companies/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-2" %}
+{% include shortcodes/ebook.html layout="blog" title="Using data to differentiate" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-2" %}
 
 
 

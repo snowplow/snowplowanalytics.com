@@ -59,7 +59,7 @@ Having the discipline to stick to this formal process is the only way product te
 
 
 
-{% include shortcodes/ebook.html layout="blog" title="Using data to develop killer products" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://snowplowanalytics.com/blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-3" %}
+{% include shortcodes/ebook.html layout="blog" title="Using data to develop killer products" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-3" %}
 
 
 

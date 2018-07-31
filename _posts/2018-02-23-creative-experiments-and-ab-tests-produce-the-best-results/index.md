@@ -46,7 +46,7 @@ When Luke and his team started systematically testing Bears vs Art, a cornerston
 
 
 
-{% include shortcodes/ebook.html layout="blog" title="Get creative with your analytics" description="Take your product analytics to the next level with our ebook." btnText="Download now" link="https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-5" %}
+{% include shortcodes/ebook.html layout="blog" title="Get creative with your analytics" description="Take your product analytics to the next level with our ebook." btnText="Download now" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-5" %}
 
 
 

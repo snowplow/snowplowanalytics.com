@@ -50,7 +50,7 @@ Examining a heat map is one of the most powerful ways for your product team to s
 
 
 
-{% include shortcodes/ebook.html layout="blog" title="Equip yourself with the right tools" description="Learn about these tools and other elements of successful data-driven product development" btnText="Download eBook" link="https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-4" %}
+{% include shortcodes/ebook.html layout="blog" title="Equip yourself with the right tools" description="Learn about these tools and other elements of successful data-driven product development" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-4" %}
 
 
 
