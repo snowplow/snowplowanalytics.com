@@ -34,6 +34,11 @@ Gone are the days of having access to a limited set of tools, capable of answeri
 
 In this environment, the product teams that are the most adept at using data strategically, tactically, and systematically as part of their development process have a distinct competitive advantage over those that do not (or do so less well). Data and product analytics have become integral parts of the product development process. And, because the lifecycle of a digital product is vastly different from a physical one, the ability to update, reconfigure, and evolve a digital product allowing it to persist indefinitely so long as it serves the business and the users, advanced product analytics help product teams move past only measuring the impact of past and current changes into creating hypothesis about what should come next. This space, using analytics to help chart your future, is still wide open with many avenues unexplored and we’re only just beginning to see what’s possible.
 
+
+{% include shortcodes/ebook.html layout="blog" title="Built with data" description="A comprehensive look at how the world's top companies use data to develop digital products" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-1" %}
+
+
+
 <h2 id="invest in product analytics">Invest in product analytics… your business needs it</h2>
 
 Product analytics, at its core, is looking at empirical data to determine if your product is the best version of itself, or on the right track to be. Much like product management, product analytics has matured beyond being an afterthought or relegated to the long list of things your business will “eventually” do; you may not be leveraging product analytics now, but you can bet the success of your next major release that your competitors are. Just because companies and product teams are proactively using product analytics, however, doesn’t mean they’re doing it right. As product analytics is still a new area, there isn’t the same breadth and depth of resources around the topic as there is around something like marketing or web analytics, older disciplines that benefit from years of rigorous testing and trial and error. This series on product analytics aims to change that.
