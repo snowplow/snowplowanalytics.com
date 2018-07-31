@@ -37,10 +37,10 @@ Read on for:
 
 <h2 id="gcp-support">1. Google Cloud Platform support</h2>
 
-Version 0.6.0 introduces Snowplow Mini to the Google Cloud Platform ecosystem, enabling our users to experience Snowplow 
+Version 0.6.0 introduces Snowplow Mini to the Google Cloud Platform ecosystem, enabling our users to experience Snowplow
 Mini for the first time on GCP!
 
-We offer three different GCP images, for three new sizes of Snowplow Mini.
+We offer three different GCP images for the three new sizes of Snowplow Mini.
 
 Check out [the Snowplow Mini GCP Setup Guide][setup-guide-gcp] to find out how to use them and more.
 
@@ -49,16 +49,16 @@ Check out [the Snowplow Mini GCP Setup Guide][setup-guide-gcp] to find out how t
 Until this release, we were using the traditional Linux startup manager, SysVinit, to
 bring up the different applications and services in Snowplow Mini.
 
-Although this approach is of course tried-and-tested, we wanted to leverage our [Docker images][snowplow-docker] to benefit from the advantages of Docker for Snowplow Mini's management - namely portability across machines, out-of-the-box logging, volume management and more.
+Although this approach is of course tried-and-tested, we wanted to leverage our [Docker images][snowplow-docker] to benefit from the advantages managing Snowplow Mini with Docker - namely portability across machines, out-of-the-box logging, volume management and more.
 
 This change should be transparent to the Snowplow Mini user, but under the hood Snowplow Mini now uses [Docker Compose][docker-compose] to run its component parts.
 
 <h2 id="iglu-server">3. New Iglu Server</h2>
 
-One of our medium-term goals for Snowplow Mini is to make it stateless, meaning that all the required data stores such as Iglu Server and Elasticsearch will live outside the actual server running Snowplow Mini. This will increase the maintainability and reliability of Snowplow Mini.
+One of our medium-term goals for Snowplow Mini is to make it stateless, meaning that all the required data stores, such as Iglu Server and Elasticsearch, will live outside the actual server running Snowplow Mini. This will increase the maintainability and reliability of Snowplow Mini.
 
 In support of this goal, we introduced a Control Plane in [Snowplow Mini v0.4.0][snowplow-mini-0.4.0-control-plane].
-Today we are adding a new feature to the Control Plane, enabling Iglu Server to use an external Postgres instance.
+Today we are adding a new feature to the Control Plane: enabling Iglu Server to use an external Postgres instance.
 
 To be more specific - the Control Plane lets you upload a complete Iglu Server configuration file, letting you configure any aspect of the Iglu Server - not just the Postgres connection details:
 
@@ -76,7 +76,7 @@ of Elasticsearch (v1.7.5) and Kibana (v4.0.1) inside the instance.
 
 Although we considered updating these versions before, there has always been a tradeoff between a newer Elasticsearch version and the attendant heavier resource requirements. We have finally made the decision to bump Elasticsearch to July 2018's [version 6.3.1][elasticsearch-6.3.1], at the expense of using bigger instances.
 
-<h2 id="image-sizes">6. Tiered image sizes</h2>
+<h2 id="image-sizes">5. Tiered image sizes</h2>
 
 Historically Snowplow Mini has typically been used with small AWS images (e.g. a `t2.medium`, with 2 vCPUs and
 4Gb of RAM) for relatively unstrenuous use cases.
