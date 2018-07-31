@@ -74,8 +74,6 @@ $(function() {
         email: email,
         phone: phone,
         company: company,
-        insights: insights,
-        react: react
       }
     });
 
