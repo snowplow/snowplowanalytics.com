@@ -45,7 +45,7 @@ Solving this day one retention problem presented a huge opportunity for Lifecake
 
 
 <br>
-{% include shortcodes/dynamic.html layout="blog" title="The latest in analytics" description="Get all of the latest info from Snowplow on product analytics, graph databases, GDPR, and more, straight in your inbox." btnText="Subscribe now" link="http://snowplowanalytics.us11.list-manage.com/subscribe?u=10bb4a6f31d5f19e0d0b54476&id=bb28c7d30d&utm_source=product%20analytics%20pt6&utm_medium=blog%20cta&utm_campaign=product%20analytics&utm_content=subscription" %}
+{% include shortcodes/ebook.html layout="blog" title="Being data-driven starts with the right question" description="Learn about how the worlds biggest startups successfully use data." btnText="Download eBook" link="https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-6" %}
 
 
 <h2 id="improving day one retention">How do we solve the day one retention problem?</h2>
