@@ -43,6 +43,12 @@ Talking about the early days of the startup on [NPR’s How I Built This podcast
 
 Joe recognized that there was a problem with adoption, one that could be identified. “We looked at the stats and the data around the early adopters and we noticed a pattern: people don’t know how to take good photos of their home.” The data alone didn’t tell them this. Arriving at the conclusions that the most successful homes on Airbnb had better images, both in quality and ability to display the home’s environment, but the majority of listings lacked quality photos and was blocking adoption was not purely an analytical exercise. Taking the appropriate action required a combination of high quality data along with the intuitive insight gained from thoroughly understanding their product vision and who they want the product to serve. Seeing how people used the Airbnb website showed them that what they thought was perfectly designed was confusing and wrong. It turned out the gap in the market was a poor UI. Armed with that understanding, after making minor tweaks informed by their data they were able to double revenue in the space of one week.
 
+
+
+{% include shortcodes/ebook.html layout="blog" title="Using data to differentiate" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-2" %}
+
+
+
 <h2 id="iteration">Analytics drives iteration and innovation</h2>
 
 Today, data at Airbnb remains so important that the team has their own dedicated [Twitter][twitter] account and [blog space][airbnb data blog]. As the platform continues to grow and spread around the world, the data scientists at Airbnb are constantly identifying and improving pain points to keep the end to end user experience frictionless and positive. It’s easy to focus on the happy user, the “correct” user path. Product analytics becomes a very simple, reductive process when everyone does everything right and everything goes well. You have your product funnel and you track conversions from point to point.

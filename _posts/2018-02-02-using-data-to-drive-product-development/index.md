@@ -57,6 +57,13 @@ With each new release of a product, therefore, a new set of A/B tests will be la
 
 Having the discipline to stick to this formal process is the only way product teams can ensure that over time successive releases drive significant incremental improvements to the products.
 
+
+
+{% include shortcodes/ebook.html layout="blog" title="Using data to develop killer products" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-3" %}
+
+
+
+
 <h2 id="process">Process matters</h2>
 
 As should be clear from the description above, data-driven product teams follow a very formal, detail-oriented process, where data plays a role in:

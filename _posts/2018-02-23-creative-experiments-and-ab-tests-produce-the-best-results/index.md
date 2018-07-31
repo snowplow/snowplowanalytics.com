@@ -44,6 +44,12 @@ What separates Luke, Emily, Andrea, and other designers and analysts who use A/B
 
 When Luke and his team started systematically testing Bears vs Art, a cornerstone of their mission was to challenge all assumptions. In the initial design of the game, levels were organized in a saga-style map where completing one level moved the player on to the next (think Candy Crush). But, alternatives were never even discussed during the design process. The willingness to accept that even these basic decisions about the design of the game could be wrong, and aggressively test the validity of those decisions, helped the Bears vs Art team move beyond classical retention tactics and create a game that was truly compelling for their players, organically drawing them back day after day. “Online experimenting gives us a way to confidently say your change made a difference,” explained Emily, and that level of confidence is what allowed the Bears vs Art team to move forward. We shouldn’t be surprised, then, that experiments are such a fundamental and powerful tool when drawing insights from data. After all, the advancing of science generation after generation comes from the breakthroughs born of experiments.
 
+
+
+{% include shortcodes/ebook.html layout="blog" title="Get creative with your analytics" description="Take your product analytics to the next level with our ebook." btnText="Download now" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-5" %}
+
+
+
 <h2 id="astrophysics">An aside about science</h2>
 
 One of the things that makes astrophysics such a unique and difficult science to make breakthroughs in is that the scope for experimentation is extremely limited as most stellar objects can’t be squeezed into a lab. This leaves astrophysicists constantly looking for opportunities to observe very specific phenomena that would prove or disprove a given theory. Doing analytics on a product without experimentations is like doing astrophysics: you’re stuck passively watching and waiting, hoping to observe exactly the right event that will support your hypothesis or not.
