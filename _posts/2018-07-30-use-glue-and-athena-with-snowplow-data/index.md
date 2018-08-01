@@ -29,14 +29,19 @@ In order to set up the AWS Glue crawler, login to the AWS console as normal and 
 
 ![console glue search][console-glue-search]
 
+Create database
 
-Update columns (TODO: manage json viewport or create gist)
+```bash
+aws glue create-database --database-input '{"Name": "snowplow-data", "Description": "Snowplow Data"}'
+```
 
-```json
+Update columns (TODO: manage viewport or create gist)
+
+```bash
+aws glue create-table --database-name snowplow-data --table-input '
 {
   "Name": "archive",
   "Owner": "owner",
-  "LastAccessTime": 1533033980.0,
   "Retention": 0,
   "StorageDescriptor": {
     "Columns": [
@@ -578,39 +583,12 @@ Update columns (TODO: manage json viewport or create gist)
     },
     "BucketColumns": [],
     "SortColumns": [],
-    "Parameters": {
-      "CrawlerSchemaDeserializerVersion": "1.0",
-      "CrawlerSchemaSerializerVersion": "1.0",
-      "UPDATED_BY_CRAWLER": "snowplow-archive",
-      "averageRecordSize": "2125",
-      "classification": "csv",
-      "columnsOrdered": "true",
-      "compressionType": "none",
-      "delimiter": "\t",
-      "objectCount": "5",
-      "recordCount": "8212",
-      "sizeKey": "17555888",
-      "typeOfData": "file"
-    },
     "StoredAsSubDirectories": false
   },
   "PartitionKeys": [],
-  "TableType": "EXTERNAL_TABLE",
-  "Parameters": {
-    "CrawlerSchemaDeserializerVersion": "1.0",
-    "CrawlerSchemaSerializerVersion": "1.0",
-    "UPDATED_BY_CRAWLER": "snowplow-archive",
-    "averageRecordSize": "2125",
-    "classification": "csv",
-    "columnsOrdered": "true",
-    "compressionType": "none",
-    "delimiter": "\t",
-    "objectCount": "5",
-    "recordCount": "8212",
-    "sizeKey": "17555888",
-    "typeOfData": "file"
-  }
+  "TableType": "EXTERNAL_TABLE"
 }
+'
 ```
 
 ## 3. Use AWS Athena to access the data
@@ -649,6 +627,8 @@ FROM
 WHERE cardinality(performance_events) = 1
 ;
 ```
+
+(View not supported due to `ARRAY(JSON)` but it probably should be)
 
 Unsupported DDL in Athena: 
 https://docs.aws.amazon.com/athena/latest/ug/unsupported-ddl.html
