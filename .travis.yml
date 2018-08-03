@@ -3,8 +3,10 @@ cache: bundler
 rvm:
   - 2.2.2
 
+before_install:
+  - pip install --upgrade pip
+
 install:
-  - pip install --upgrade pip
   - pip install --user awscli
   - pip install --user s3cmd
 
