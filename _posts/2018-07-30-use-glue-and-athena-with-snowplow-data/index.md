@@ -12,10 +12,6 @@ This is a HOWTO on how to use Snowplow archive data with AWS Glue.
 
 The objective is to present an example of how to use AWS Glue with snowplow data and how to use that data in AWS Athena and AWS Redshift Spectrum.
 
-<!-- It simplifies and follows [a similar guide][best-practices-athena-glue] from Amazon and specializes to the Snowplow data, but does not go into using Quicksight. --> 
-
-<!-- ![Glue crawler (source: https://docs.aws.amazon.com/athena/latest/ug/glue-best-practices.html)][glue-crawler] -->
-
 The HOWTO consists of three parts:
 
 1. [Creating the source table in AWS Glue Data Catalog](#creating-the-source-table-in-aws-glue-data-catalog).
@@ -680,7 +676,7 @@ The screen should then look like this:
 
 ![Parquet run][glue-parquet-run]
 
-And you can click on `Run job`. 
+And you can click on `Run job`.
 
 Once the job is finished (you can monitor the progress on the bottom of the screen under `Logs`), you should have created a number of files in your chosen location, with the suffix `snappy.parquet` (e.g. `s3://your-ouput0bucket/your-chosen-prefix/part-00136-b2b9d533-88bc-4307-a2a6-a452a459fe85-c000.snappy.parquet`).
 
