@@ -1,18 +1,30 @@
 ---
 layout: post
 title-short: Glue and Athena with Snowplow
-title: "HOWTO setup AWS Glue and AWS Athena with Snowplow archive data"
+title: "Using AWS Glue and AWS Athena with Snowplow data"
 tags: [snowplow, glue, athena, parquet]
 author: Kostas
 category: Other
 permalink: /blog/2018/07/30/use-glue-and-athena-with-snowplow-data/
 ---
 
-This is a HOWTO on how to use Snowplow archive data with AWS Glue. 
+# Overview
 
-The objective is to present an example of how to use AWS Glue with snowplow data and how to use that data in AWS Athena and AWS Redshift Spectrum.
+This is a guide on how to use Snowplow archive data with AWS Glue.
 
-The HOWTO consists of three parts:
+The objective is to open new possibilities in using Snowplow data with some examples of how to use AWS Glue with snowplow data and how to use the schemas created in AWS Athena and/or AWS Redshift Spectrum.
+
+In order to bring the example closer to our day-to-day users, we will assume that the overall goal is the same in both the Athena and the Redshift Spectrum case, that is to access some of the Enriched Event data and in particular one of the contexts, as a table. 
+
+This may be useful for a number of reasons. Usually it would be the case that the data that is needed is no longer on Redshift (e.g. if the client is droping all but the last month of data to save space).
+In that case the user may need to query some data from the Snowplow archive either in order to re-import them, or just to run a large query without affecting the Redshift cluster by running the query on Athena.
+
+In both cases we will need to create a schema in order to read in the data which are formatted in Snowplow's *Enriched Event* format.
+
+The optional second step is there in case you are planning to use the archive often, in which case performance would be important so a way to create a copy of the archive in [parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format. 
+If that is what you are trying to do you may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
+
+This guide consists of four parts (the second step is optional):
 
 1. [Creating the source table in AWS Glue Data Catalog](#creating-the-source-table-in-aws-glue-data-catalog).
 2. [Optionally format shift to parquet using Glue](#optionally-format-shift-to-parquet-using-glue).
@@ -21,11 +33,28 @@ The HOWTO consists of three parts:
 
 ## Prerequisites
 
-In order to use the created AWS Glue Data Catalog tables in AWS Athena and AWS Redshift Spectrum, you will need to upgrade Athena to use the Data Catalog. please familiarize yourself with what that means by reading the [relevant FAQ][athena-dq-faq]. 
+Setting up Glue, Glue Data Catalog and their assorted IAM policies is beyond the scope of this guide, but the main prerequisite units are mentioned here along with links to guides to set up everything, before you start following this guide.
 
-Once you are happy with that change carry out the upgrade by following the relevant [step-by-step guide][athena-dq-sbs].
+As we want to create a schema in some metastore that is shared across all the frameworks we are using, we are going to use the AWS Data Catalog. Also we will need appropriate permissions and aws-cli.
 
-You will need to have aws cli set up, as some actions are going to require it.
+### Setup Data Catalog in Athena
+
+In order to use the created AWS Glue Data Catalog tables in AWS Athena and AWS Redshift Spectrum, you will need to upgrade Athena to use the Data Catalog.
+Please familiarize yourself with what that means by reading the [relevant FAQ][athena-dq-faq].
+
+Once you are happy with that change, carry out the upgrade by following the relevant [step-by-step guide][athena-dq-sbs].
+
+### IAM Service Role
+
+You will also need to have an appropriate IAM role for glue that can read from your snowplow archive S3 location and, if following the optional step, write to the output.
+
+Please follow steps 1 and 2 from the AWS Glue getting started guide, which you can find [here][glue-gs1] and [here][glue-gs2].
+
+### Setup AWS Cli
+
+You will also need to have [aws cli][aws-cli] set up, as some actions are going to require it. 
+
+Please follow the excellent [AWS documentation][aws-cli] on AWS to get it set-up for your platform, including having the correct credentials with Glue and S3 permissions.
 
 ## Creating the source table in AWS Glue Data Catalog
 
@@ -36,6 +65,7 @@ To do that you will need to login to the AWS Console as normal and click on the 
 ![Glue click][console-glue-search]
 
 ### Creating the database
+
 Then you will need to add a database by clicking on Databases from the left pane and then the `Add Database` button:
 
 ![Glue add database][glue-add-database]
@@ -645,8 +675,6 @@ on the Athena page. Ensure that you have selected `snowplow_data` as the databas
 Which should result in an output like this if successful:
 
 ![Athena MSCK result][athena-msck-result]
-
-You will also need to have an appropriate IAM role for glue that can read and write to/from your bucket(s) and prefix(es) for both the input (csv archive) and output (parquet archive).
 
 ### Setup a simple parquet job to format shift to parquet
 
@@ -1388,11 +1416,15 @@ You may of course insert the data into another table in redshift for better perf
 If you have any question regarding this guide or you need help with how you could use your Snowplow data with Athena, Glue and Redhsift, please please visit [our Discourse forum][discourse].
 
 [best-practices-athena-glue]: https://docs.aws.amazon.com/athena/latest/ug/glue-best-practices.html
-
+[parquet]: https://parquet.apache.org/
+[aws-cli]: https://aws.amazon.com/cli/
+[glue-gs2]: https://docs.aws.amazon.com/glue/latest/dg/getting-started-access.html
+[glue-gs1]: https://docs.aws.amazon.com/glue/latest/dg/create-service-policy.html
+[glue-triggers]: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html
 [console-glue-search]: /assets/img/blog/2018/07/console-glue-search.png
 [glue-add-database]: /assets/img/blog/2018/07/glue-add-database.png
 [athena-msck]: /assets/img/blog/2018/07/athena-msck.png
-[athena-athena-msck-result]: /assets/img/blog/2018/07/athena-msck-result.png
+[athena-msck-result]: /assets/img/blog/2018/07/athena-msck-result.png
 [glue-parquet-1]: /assets/img/blog/2018/07/glue-parquet-1.png
 [glue-parquet-2]: /assets/img/blog/2018/07/glue-parquet-2.png
 [glue-parquet-3]: /assets/img/blog/2018/07/glue-parquet-3.png

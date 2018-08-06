@@ -10,31 +10,49 @@ This repo contains the source code and content for the [Snowplow](https://snowpl
 
 ## Quickstart
 
-Assuming git and **[rbenv][rbenv-install]** installed:
+Assuming git, **[Vagrant][vagrant-install]** and **[VirtualBox][virtualbox-install]** installed:
 
 ```bash
  host> git clone https://github.com/snowplow/snowplowanalytics.com
  host> cd snowplowanalytics.com
- host> make install
+ host> vagrant up && vagrant ssh
+guest> cd /vagrant
+guest> bundle exec jekyll serve --host 0.0.0.0
 ```
 
-This will install the required Ruby environment into `rbenv` as well as the required Gems stored within the Gemfile.
+You can then view the website on a browser on your host machine, by navigating to [https://localhost:4001](https://localhost:4001)
 
-__WARNING__: The installation can take up to 10 minutes.
+## Website wont build?
 
-Once installed you are ready to `serve` on your host:
+Then from the repo:
 
-```bash
- host> make serve
+```
+ host> cd vagrant
+ host> rm -rf .peru
+ host> rm -rf .oss-playbooks
+ host> cd ..
+ host> vagrant provision
+ host> vagrant ssh
+guest> cd /vagrant
+guest> bundle exec jekyll serve --host 0.0.0.0
 ```
 
-To use the incremental `serve` mode:
+## Still can't see you page?
 
-```bash
- host> make serve-incremental
+One reason this can happen is that your post is future dated. Normally you can add ```future: true``` to ```_config.yaml```, but that may not be supported or work properly for you.
+
+One solution to see a future dated post is to run the vagrant VirtualBox VM clock to the future, however don't overdo it as going to far into the future has caused connection errors. Here is how:
+
+```
+host> VBoxManage list vms  # THIS will show you a list of VMs from which you pick the one that you started
+host> VBoxManage setextradata "snowplowanalytics.com-1517396887" "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled" 1 # replace snowplowanalytics.com-1517396887 with the VM name from step above. It should look similar
+host> vagrant reload
+... make coffee...
+host> vagrant ssh
+guest> sudo date -s "2018-02-15 00:00:00" # Or whatever future date, but don't overdo it or you may get connection errors
 ```
 
-You can then view the website on a browser on your host machine, by navigating to [localhost:4000](localhost:4000)
+You can check that it worked (and it didn't revert to the host clock) by running ```guest> date``` a few times. After that step, when you run ```jekyll serve``` as in the previous section. You should be able to see all posts dated previous to the date that you set the clock.
 
 ## Website management rules
 
@@ -114,4 +132,5 @@ All content is Copyright © 2012-2017 Snowplow Analytics Ltd and not to be reuse
 [travis-image-develop]: https://travis-ci.org/snowplow/snowplowanalytics.com.svg?branch=next.snowplowanalytics.com
 [travis-image-qa]: https://travis-ci.org/snowplow/snowplowanalytics.com.svg?branch=qa.snowplowanalytics.com
 
-[rbenv-install]: https://github.com/rbenv/rbenv#homebrew-on-macos
+[vagrant-install]: http://docs.vagrantup.com/v2/installation/index.html
+[virtualbox-install]: https://www.virtualbox.org/wiki/Downloads
