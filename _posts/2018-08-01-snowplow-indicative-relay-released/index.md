@@ -22,7 +22,7 @@ of Snowplow enriched events from a Kinesis stream into [Indicative][indicative].
 [Indicative][indicative] is an emerging customer analytics platform, optimised for
 customer journey analytics. It is particularly well suited for marketers,
 product managers, and analysts. Indicative connects to many data sources in order to give
-a needed insight into users behaviour.
+a needed insight into users behaviour. To learn more, you can take a look at our [previous blog post][previous-blog]
 
 ![indicative][indicative-img]
 
@@ -80,7 +80,7 @@ a JSON form as an example:
   "domain_sessionid": "2b15e5c8-d3b1-11e4-b9d6-1681e6b88ec1",
   "derived_tstamp": "2013-11-26 00:03:57.886",
   "event_vendor": "com.snowplowanalytics.snowplow",
-  "event_name": "link_click",
+  "event_name": "page_view",
   "event_format": "jsonschema",
   "event_version": "1-0-0",
   "event_fingerprint": "e3dbfa9cca0412c3d4052863cefb547f",
@@ -92,7 +92,7 @@ It would be transformed into the following Indicative event:
 
 {% highlight json %}
  {
-    "eventName": "link_click",
+    "eventName": "page_view",
     "timestamp": "2013-11-26T00:03:57.886",
     "eventUniqueId": "jon.doe@email.com",
     "properties": {
@@ -113,7 +113,7 @@ It would be transformed into the following Indicative event:
         "domain_sessionid": "2b15e5c8-d3b1-11e4-b9d6-1681e6b88ec1",
         "derived_tstamp": "2013-11-26 00:03:57.886",
         "event_vendor": "com.snowplowanalytics.snowplow",
-        "event_name": "link_click",
+        "event_name": "page_view",
         "event_format": "jsonschema",
         "event_version": "1-0-0",
         "event_fingerprint": "e3dbfa9cca0412c3d4052863cefb547f",
@@ -134,6 +134,9 @@ It would be transformed into the following Indicative event:
  }
 {% endhighlight %}
 
+All above fields can be given more descriptive names and categories through the Indicative UI:
+
+![indicative fields][indicative-fields-img]
 
 
 <h2 id="setup">3. Requirements and setup</h2>
@@ -151,6 +154,9 @@ In case you spot any bugs, please report them through [GitHub issues][github-iss
 [indicative]: https://www.indicative.com/
 [indicative-rest-api]: https://app.indicative.com/docs/integration.html
 [indicative-img]: /assets/img/blog/2018/08/indicative-img.png
+[indicative-fields-img]: /assets/img/blog/2018/08/indicative-fields-img.png
+
+[previous-blog]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
 
 [hosted-assets]: https://github.com/snowplow/snowplow/wiki/Hosted-assets#6-relays
 [github-page]: https://github.com/snowplow-incubator/snowplow-indicative-relay
