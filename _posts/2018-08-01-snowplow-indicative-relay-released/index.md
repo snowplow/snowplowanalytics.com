@@ -22,7 +22,7 @@ of Snowplow enriched events from a Kinesis stream into [Indicative][indicative].
 [Indicative][indicative] is an emerging customer analytics platform, optimised for
 customer journey analytics. It is particularly well suited for marketers,
 product managers, and analysts. Indicative connects to many data sources in order to give
-a needed insight into users behaviour. To learn more, you can take a look at our [previous blog post][previous-blog]
+a needed insight into users behaviour. To learn more, you can take a look at our [previous blog post][previous-blog].
 
 ![indicative][indicative-img]
 
