@@ -22,7 +22,7 @@ Read on for more information on Piinguin and the Snowplow Piinguin Relay:
 
 <h2 id="overview">1. Overview</h2>
 
-Following the release of [Snowplow R106 Acropolis][acropolis-blog-post], which added the capability to emit a stream of PII transformation events, we have continued to develop tools to support the responsible management of personally identifiable information.
+Following the release of [Snowplow R106 Acropolis][r106-blog-post], which added the capability to emit a stream of PII transformation events, we have continued to develop tools to support the responsible management of personally identifiable information.
 
 If you want to learn more about PII and how it is managed by the Snowplow PII enrichment, you can read more in the release posts for [Snowplow R100 Epidaurus][r100-blog-post] and [R106 Acropolis][r106-blog-post].
 
@@ -185,7 +185,7 @@ With the DynamoDB table created, setup is now complete and you can use Piinguin.
 
 <h3 id="piinguin-smoke-test">4.6 Testing that Piinguin is functioning</h3>
 
-One way to verify that your setup works is to checkout the Piinguin project [on GitHub][piinguin-github] and try to write and the read back a record: 
+One way to verify that your setup works is to checkout the Piinguin project [on GitHub][piinguin-github] and try to write and the read back a record:
 
 ```scala
 
