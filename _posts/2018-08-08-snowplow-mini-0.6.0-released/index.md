@@ -5,7 +5,7 @@ title-short: Snowplow Mini 0.6.0
 tags: [snowplow-mini, docker, iglu-server, elasticsearch]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/08/07/snowplow-mini-0.6.0-released/
+permalink: /blog/2018/08/08/snowplow-mini-0.6.0-released/
 ---
 
 We are pleased to announce the 0.6.0 release of Snowplow Mini, our accessible "Snowplow in a box" distribution.
@@ -32,15 +32,15 @@ Read on for:
 
 <h2 id="gcp-support">1. Google Cloud Platform support</h2>
 
-`0.6.0` introduces Snowplow Mini to GCP ecosystem, enabling our users to have Snowplow real-time pipeline experience on GCP!
+Version `0.6.0` introduces Snowplow Mini to the GCP ecosystem, enabling our users to have the Snowplow real-time pipeline experience on GCP!
 
-We offer 3 different images for 3 new sizes of Snowplow Mini.
+We offer three different images for the three new sizes of Snowplow Mini.
 
 Check out [Snowplow Mini GCP Setup Guide][setup-guide-gcp] to find out how to use them and more!
 
 <h2 id="docker-migration">2. Docker migration</h2>
 
-Up until this release, we were using the traditional Linux service management package, `SysVinit`. Even though this approach is quite mature enough, we wanted to benefit from advantages of Docker for Snowplow Mini's management, i.e. portability across machines, out-of-the-box logging service, volume management etc.
+Up until this release, we were using the traditional Linux service management package, `SysVinit`. Even though this approach is quite mature enough, we wanted to leverage our Docker images to benefit from the advantages of managing Snowplow Mini with Docker, i.e. portability across machines, out-of-the-box logging service, volume management, and more.
 
 This migration also comes with some internal changes under the hood, including:
 
@@ -51,9 +51,9 @@ This migration also comes with some internal changes under the hood, including:
 
 <h2 id="iglu-server">3. New Iglu Server</h2>
 
-One of our goals for Snowplow Mini is making it stateless, meaning that all the required services such as Iglu Server, Elasticsearch, Postgres etc live outside the actual box running Snowplow Mini.
+One of our goals for Snowplow Mini is making it stateless, meaning that all the required services such as Iglu Server, Elasticsearch, Postgres, etc, live outside the actual box running Snowplow Mini.
 
-As part of this goal, we've introduced plenty of features for Control Plane previously in [Snowplow Mini 0.4.0][snowplow-mini-0.4.0-post]. Today we are adding a new feature on top of them, enabling Iglu Server to use an external Postgres instance.
+As part of this goal, we've introduced plenty of features for Control Plane previously in [Snowplow Mini 0.4.0][snowplow-mini-0.4.0-post]. Today we are adding a new feature on top of them: enabling Iglu Server to use an external Postgres instance.
 
 Instead of specifying external Postgres configuration only, placed in Iglu Server's configuration file, we introduce the ability to upload Iglu Server configuration file, enabling to play with all bits of the configuration including Postgres connection details.
 
@@ -67,7 +67,7 @@ Most of the recent issues we faced with Snowplow Mini were mostly due to running
 
 <h2 id="other-changes">5. Other updates</h2>
 
-Until today, Snowplow Mini was being used inside AWS's `t2.large` instances and it served well for demonstration purposes. However, we observed that Snowplow Mini started exceeding its initial motivation and machine resources started to become an obstacle, causing issues with Elasticsearch etc. This is why, `0.6.0` is available at 3 different sizes.
+Until today, Snowplow Mini was being used inside AWS's `t2.medium` instances and it served well for demonstration purposes. However, we observed that Snowplow Mini started exceeding its initial motivation and machine resources started to become an obstacle, causing issues with Elasticsearch etc. This is why, `0.6.0` is available at 3 different sizes.
 
 * `large` : Same image published so far. Elasticsearch has `4g` heap size and Snowplow apps has `0.5g` heap size.
 * `xlarge` : Double the large image. Elasticsearch has `8g` heap size and Snowplow apps has `1.5g` heap size.
@@ -75,7 +75,7 @@ Until today, Snowplow Mini was being used inside AWS's `t2.large` instances and 
 
 What's more, as part of bumping Elasticsearch version to `6.x`, we had to remove Head plugin since site plugins are removed from Elasticsearch as of `5.x`. However, Head plugin can be used as Google Chrome [extension][head-plugin].
 
-<h2 id="help">5. Documentation and getting help</h2>
+<h2 id="help">6. Documentation and getting help</h2>
 
 To learn more about getting started with Snowplow Mini, check out the [Quickstart guide][quickstart].
 
