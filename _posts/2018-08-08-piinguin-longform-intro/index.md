@@ -13,6 +13,8 @@ discourse: true
 
 *This is an introduction to a new Snowplow technology; see the [official developer release][piinguin] for a detailed technical walkthrough.*
 
+---
+
 >Personal data shall be:
 <br>
 <br>
