@@ -5,7 +5,7 @@ title-short: Piinguin released
 tags: [pii, piinguin]
 author: Kostas
 category: Releases
-permalink: /blog/2018/07/26/piinguin-snowplow-pii-usage-management-service-released/
+permalink: /blog/2018/08/08/piinguin-snowplow-pii-usage-management-service-released/
 ---
 
 We are pleased to announce the first release of [Piinguin][release-notes] and the associated [Snowplow Piinguin Relay][relay-release-notes]. This initial release introduces basic capabilities for managing the usage of personally identifiable information data from Snowplow.
@@ -64,7 +64,7 @@ Both the Piinguin Server and the Piinguin Relay currently support AWS only, and 
 
 <h3 id="#deploying-relay">4.1 Configuring the Snowplow Piinguin Relay</h3>
 
-You can obtain the relay artifact from [our Bintray account][snowplow-bintray].
+You can obtain the relay artifact from [our S3 public assets buckets][snowplow-s3-assets] appropriate for your region.
 
 In order for you to create an AWS Lambda function, please follow the detailed [developer guide][aws-developer-guide]. When creating the Lambda, make sure to:
 
@@ -129,10 +129,10 @@ As the Lambda will be reading its PII transformation events from Kinesis, it wil
 The simplest way to deploy Piinguin Server is to obtain the Docker image by running the following on your Docker host:
 
 {% highlight bash %}
-$ docker run snowplow-docker-registry.bintray.io/snowplow/piinguin-server:0.1.0
+$ docker run snowplow-docker-registry.bintray.io/snowplow/piinguin-server:0.1.1
 {% endhighlight %}
 
-This will run the server on the default port `8080` and will use the default DynamoDB table `piinguin`. Both are configurable to other values using `PIINGUIN_PORT` and `PIINGUIN_DYNAMODB_TABLE`, if needed.
+This will run the server on the default port `8080` and will use the default DynamoDB table `piinguin`. Both are configurable to other values using `PIINGUIN_PORT` and `PIINGUIN_DYNAMODB_TABLE`, if needed. See the relevant [readme][snpl-docker-piinguin-readme] for more information.
 
 <h3 id="piinguin-iam-policy">4.4 Setting up server permissions to the VPC</h3>
 
@@ -222,7 +222,7 @@ For more details on working with Piinguin and the Snowplow Piinguin Relay, pleas
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
-[release-notes]: https://github.com/snowplow-incubator/piinguin/releases/tag/0.1.0
+[release-notes]: https://github.com/snowplow-incubator/piinguin/releases/tag/0.1.1
 [relay-release-notes]: https://github.com/snowplow-incubator/snowplow-piinguin-relay/releases/tag/0.1.0
 
 [r100-blog-post]: https://snowplowanalytics.com/blog/2018/02/27/snowplow-r100-epidaurus-released-with-pii-pseudonymization-support/
@@ -252,3 +252,5 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [piinguin-github]: https://github.com/snowplow-incubator/piinguin/
 [dynamodb-items]: /assets/img/blog/2018/07/dynamodb-items.png
+[snowplow-s3-assets]: https://github.com/snowplow/snowplow/wiki/Hosted-assets
+[snpl-docker-piinguin-readme]: https://github.com/snowplow/snowplow-docker/tree/develop/piinguin-server
