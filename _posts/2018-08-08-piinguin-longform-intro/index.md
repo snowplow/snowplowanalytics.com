@@ -7,11 +7,11 @@ title-short: Working with PII and Snowplow
 tags: [analytics, GDPR, data governance]
 author: Anthony
 category: GDPR
-permalink: /blog/2018/07/20/self-describing-data-becomes-self-policing-data/
+permalink: /blog/2018/08/08/self-describing-data-becomes-self-policing-data/
 discourse: true
 ---
 
->*Personal data shall be:
+>Personal data shall be:
 <br>
 <br>
 : (a) processed lawfully, fairly and in a transparent manner in relation to the data subject (‘lawfulness, fairness and transparency’);
@@ -20,7 +20,7 @@ discourse: true
 : (b) collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes
 <br>
 <br>
--General Data Protection Regulations, Chapter II Article 5*
+-General Data Protection Regulations, Chapter II Article 5
 
 
 At the heart of [GDPR][gdpr] is this idea, that personal data is collected for a specific purpose. Companies that collect personal data identify what this purpose is and make it clear to the data subjects whose data is being collected. It is then a legal requirement that the company only uses that data for that purpose.
@@ -75,7 +75,7 @@ Analysts can still creatively explore pseudonymized data and it can still be dem
 
 <h2 id="pseudonymized data">Working with pseudonymized data</h2>
 
-The next part of the solution we’ve built at Snowplow provides the opportunity for companies to unanonymize the data in a controlled way. The idea is that in certain cases, stakeholders may want to use the personal data. For example, a marketer may identify a segment of interesting users in the data warehouse that they wish to target with a campaign. They’ve checked the data set to confirm that all the users in the segment have consented to being marketed to, and so believe they are in their rights to target them. They cannot, however, do so because the user’s personal identifiers (such as their cookie IDs or their email addresses) have been pseudonymized. So the marketer submits a request to the data protection officer who logs the request, reviews it, and signs off on it. The DPO then uses our new functionality, which we’ve called “Piinguin,” to unanonymize just that specific list of user IDs the marketer requested and pass them back to the marketer to use to execute her campaign.
+The next part of the solution we’ve built at Snowplow provides the opportunity for companies to unanonymize the data in a controlled way. The idea is that in certain cases, stakeholders may want to use the personal data. For example, a marketer may identify a segment of interesting users in the data warehouse that they wish to target with a campaign. They’ve checked the data set to confirm that all the users in the segment have consented to being marketed to, and so believe they are in their rights to target them. They cannot, however, do so because the user’s personal identifiers (such as their cookie IDs or their email addresses) have been pseudonymized. So the marketer submits a request to the data protection officer who logs the request, reviews it, and signs off on it. The DPO then uses our new functionality, [which we’ve called “Piinguin,”][piinguin] to unanonymize just that specific list of user IDs the marketer requested and pass them back to the marketer to use to execute her campaign.
 
 This means that we can still use the pseudonymized data for personalized use cases (with caution). With the introduction of Piinguin, the Snowplow platform now has functionality that enables users to, in a controlled environment, un-anonymize the data. This is a process that is owned by the Data Protection Officer so she or he can ensure that each time, for example, a marketer wants to use the data to target a set of users, that marketer is only using the data in a way that is compatible with the reasons it was collected and in accordance with the preferences of the individual users (when necessary).
 
