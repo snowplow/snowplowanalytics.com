@@ -11,6 +11,8 @@ permalink: /blog/2018/08/08/self-describing-data-becomes-self-policing-data/
 discourse: true
 ---
 
+*This is an introduction to a new Snowplow technology; see the [official developer release][piinguin] for a detailed technical walkthrough.*
+
 >Personal data shall be:
 <br>
 <br>
@@ -101,4 +103,4 @@ Piinguin lets you work with pseudonymized data, enabling companies to effectivel
 
 [overwhelmed]: /assets/img/blog/2018/07/overwhelmed.jpg
 
-[piinguin]:
+[piinguin]: https://snowplowanalytics.com/blog/2018/08/08/piinguin-snowplow-pii-usage-management-service-released/
