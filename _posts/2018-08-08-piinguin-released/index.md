@@ -8,6 +8,10 @@ category: Releases
 permalink: /blog/2018/08/08/piinguin-snowplow-pii-usage-management-service-released/
 ---
 
+*This is a detailed technical walkthrough of Piinguin; to learn more about what Piinguin does and why we built it, see the [Piinguin introduction post.][piinguin-intro]*
+
+---
+
 We are pleased to announce the first release of [Piinguin][release-notes] and the associated [Snowplow Piinguin Relay][relay-release-notes]. This initial release introduces basic capabilities for managing the usage of personally identifiable information data from Snowplow.
 
 Read on for more information on Piinguin and the Snowplow Piinguin Relay:
@@ -221,6 +225,8 @@ For more details on working with Piinguin and the Snowplow Piinguin Relay, pleas
 * [Piinguin Technical Documentation][piinguin-technical-documentation]
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
+
+[piinguin-intro]: https://snowplowanalytics.com/blog/2018/08/08/self-describing-data-becomes-self-policing-data/
 
 [release-notes]: https://github.com/snowplow-incubator/piinguin/releases/tag/0.1.1
 [relay-release-notes]: https://github.com/snowplow-incubator/snowplow-piinguin-relay/releases/tag/0.1.0
