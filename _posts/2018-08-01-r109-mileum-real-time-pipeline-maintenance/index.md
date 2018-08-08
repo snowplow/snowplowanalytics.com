@@ -19,6 +19,7 @@ we would like to give a huge shoutout to the contributors who made it possible:
 - [Saeed Zareian][szareiangm] from [the Globe and Mail](https://www.theglobeandmail.com/)
 - [Arihant Surana][arihantsurana] from [BigCommerce](https://www.bigcommerce.com/)
 - [Dani Solà][danisola] from [Simply Business](https://www.simplybusiness.co.uk/)
+- [Robert Kingston][kingo55] from [Mint Metrics](https://mintmetrics.io/)
 
 Please read on after the fold for:
 
@@ -44,7 +45,66 @@ We will be doing the same thing for the referer parser enrichment in a future re
 
 Huge thanks to [Kevin Irwin][userkci] for contributing this change!
 
-<h3 id="cf">1.2 Cloudfront updates</h3>
+<h3 id="cf">1.2 More flexible Iglu webhook</h3>
+
+Up until this release if you were to POST a JSON array to the Iglu webhook, such as:
+
+{% highlight bash %}
+curl -X POST \
+  -H 'Content-Type: application/json' \
+  -d '[
+    {"name": "name1"},
+    {"name": "name2"}
+  ]' \
+  'http://collector/com.snowplowanalytics.iglu/v1?schema=iglu%3Acom.acme%2Fschema%2Fjsonschema%2F1-0-0'
+{% endhighlight %}
+
+The Iglu webhook would assume a singleton event with an array at its root and a schema which would
+look like the following:
+
+{% highlight json %}
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for acme",
+  "self": {
+    "vendor": "com.acme",
+    "name": "schema",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" }
+    }
+  }
+}
+{% endhighlight %}
+
+We have now changed this behaviour to instead consider an array as multiple events which, in our
+case, would have the following schema:
+
+{% highlight json %}
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for acme",
+  "self": {
+    "vendor": "com.acme",
+    "name": "schema",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" }
+  }
+}
+{% endhighlight %}
+
+This should ease integration with webhooks which send data in bulk.
+
+<h3 id="cf">1.3 Cloudfront updates</h3>
 
 This release introduces support for the 26-field Cloudfront format that was released in January.
 You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
@@ -54,7 +114,7 @@ We have also taken advantage of working on Cloudfront to leverage the `x-forward
 populate the user's ip address.
 Thanks a lot to [Dani Solà][danisola] for contributing this change!
 
-<h3 id="ips">1.3 Handle comma-separated list of ips</h3>
+<h3 id="ips">1.4 Handle comma-separated list of ips</h3>
 
 Speaking about `X-Forwarded-For` headers, they can contain a comma-separated list of ips in case
 the request went through multiple load balancers. The header will indeed accumulate the different
@@ -69,7 +129,7 @@ the successive proxies.
 Based on these facts, we have made the choice to only conserve the first ip in case of a
 comma-separated list.
 
-<h3 id="kinesis">1.4 Enable specifying a custom Kinesis endpoint</h3>
+<h3 id="kinesis">1.5 Enable specifying a custom Kinesis endpoint</h3>
 
 Before this release, the Kinesis endpoint to use for Stream Enrich was determined based on the AWS
 region you wanted to run on. Unfortunately, this didn't allow for use of projects like
@@ -80,9 +140,10 @@ optionally specify a custom endpoint directly through the `customEndpoint` confi
 
 Note that this feature is also available for the Scala Stream Collector.
 
-<h3 id="misc">1.5 Build dependency updates</h3>
+<h3 id="misc">1.6 Miscellaneous updates</h3>
 
-Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency updates!
+Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency updates and
+[Robert Kingston][kingo55] for example updates.
 
 <h2 id="se">2. Scala Stream Collector updates</h2>
 
@@ -183,7 +244,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r109-lambaesis
 
 [lambaesis]: https://en.wikipedia.org/wiki/Lambaesis
-[val-camonica-img]: /assets/img/blog/2018/08/lambaesis.jpg
+[lambaesis-img]: /assets/img/blog/2018/08/lambaesis.jpg
 
 [userkci]: https://github.com/userkci
 [rbolkey]: https://github.com/rbolkey
@@ -191,6 +252,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [szareiangm]: https://github.com/szareiangm
 [arihantsurana]: https://github.com/arihantsurana
 [danisola]: https://github.com/danisola
+[kingo55]: https://github.com/kingo55
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
