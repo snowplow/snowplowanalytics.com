@@ -35,7 +35,7 @@ In this post we'll cover:
 
 In Neo4j and other graph databases, nodes, relationships and patterns are schemaless. This means the database does not distinguish between different types of nodes, relationships or patterns. It's up to developers to enforce any types.
 
-At Snowplow, our preferred way of establishing the contract between the app sending the events and any process that consumes them (for validation, enrichment, loading, modelling, etc) is through schemas. However, typically, a Snowplow-authored self-describing JSON schema will not describe an entire event. A couple of examples illustrate this point.
+At Snowplow, our preferred way of establishing the contract between the app sending the events and any process that consumes them (for validation, enrichment, loading, modelling, etc) is through schemas. However, typically, a Snowplow-authored self-describing JSON Schema will not describe an entire event. A couple of examples illustrate this point.
 
 Here is the JSON schema for a `submit_form` event from Iglu Central:
 
@@ -471,8 +471,6 @@ class Application(Node):
 ### Next up in the series
 
 We take a break from trying to model events as a graph and explore another use case for graphs in event analytics -- identity resolution.
-
-
 
 [building-a-model-for-atomic-event-data-as-a-graph]: https://snowplowanalytics.com/blog/2018/03/26/building-a-model-for-atomic-event-data-as-a-graph/
 [modeling-events-through-entity-snapshotting]: https://snowplowanalytics.com/blog/2015/01/18/modeling-events-through-entity-snapshotting/
