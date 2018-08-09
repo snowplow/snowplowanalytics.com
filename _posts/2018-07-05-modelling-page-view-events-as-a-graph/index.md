@@ -9,19 +9,19 @@ permalink: /blog/2018/07/05/modelling-page-view-events-as-a-graph/
 discourse: true
 ---
 
-In the previous post in this series we started exploring options for modelling event data as a graph in general. We looked at three ways of modelling atomic event data:
+In the [previous post in this series][building-a-model-for-atomic-event-data-as-a-graph] we started exploring options for modelling event data as a graph in general. We looked at three ways of modelling atomic event data:
 
-- the event grammar approach
-- the event graph approach
-- the denormalised graph approach.
+1. The event grammar approach.
+2. The event graph approach.
+3. The denormalised graph approach.
 
-We [chose][building-a-model-for-atomic-event-data-as-a-graph] to model events as a denormalised graph, where the same things are represented multiple times in different ways (eg as both a node and a relationship). That adds redundancy to the model but makes querying it easier.
+Ultimately we [chose][building-a-model-for-atomic-event-data-as-a-graph] to model events as a denormalised graph, where the same things are represented multiple times in different ways (eg as both a node and a relationship). That adds redundancy to the model but makes querying it easier.
 
-In our chosen model, we are also making use of *reification*, or the turning of relationships into things. In our [event grammar][modeling-events-through-entity-snapshotting], events naturally exist in the relationships between entities. However, in the graph model, each event will be its own node with outgoing `HAS` relationships to its properties, eg `(event)-[:HAS]->(user)`. Events will be connected to each other by a `NEXT` relationship. There will also be relationships between the various properties of the event, such as `(user)-[:VIEWS]->(page)`.
+In our chosen model, we also made use of *reification*, or the turning of relationships into things. In our [event grammar][modeling-events-through-entity-snapshotting], events naturally exist in the relationships between entities. However, in the graph model, each event will be its own node with outgoing `HAS` relationships to its properties, for instance `(event)-[:HAS]->(user)`. Events will be connected to each other by a `NEXT` relationship. There will also be relationships between the various properties of the event, such as `(user)-[:VIEWS]->(page)`.
 
-We'll now explore how we can model a `page_view` event with all its expected properties in the Snowplow pipeline. We'll discuss creating the necessary schemas and implementing them in code.
+In this post, we will explore how we could model a `page_view` event with all its expected properties for the Snowplow pipeline. We'll discuss creating the necessary schemas and implementing them in code.
 
-In this post:
+In this post we'll cover:
 
 1. [Self-describing events](#self-describing-events)
 2. [Custom contexts](#custom-contexts)
@@ -31,11 +31,11 @@ In this post:
 6. [Composing the `page_view` schema](#composing-the-page-view-schema)
 7. [Implementing the contract in code](#implementing-the-contract-in-code)
 
+### Self-describing events
+
 In Neo4j and other graph databases, nodes, relationships and patterns are schemaless. This means the database does not distinguish between different types of nodes, relationships or patterns. It's up to developers to enforce any types.
 
 At Snowplow, our preferred way of establishing the contract between the app sending the events and any process that consumes them (for validation, enrichment, loading, modelling, etc) is through schemas. However, typically, a Snowplow-authored self-describing JSON schema will not describe an entire event. A couple of examples illustrate this point.
-
-### Self-describing events
 
 Here is the JSON schema for a `submit_form` event from Iglu Central:
 
@@ -192,10 +192,10 @@ We start by defining the schemas for each of the two nodes and the relationship:
       "format": "date-time"
     },
     "startNode": {
-      "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.graph/user/jsonschema/1-0-0#"
+      "$ref": "iglu:com.snowplowanalytics.graph/user/jsonschema/1-0-0"
     },
     "endNode": {
-      "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.graph/page/jsonschema/1-0-0#"
+      "$ref": "iglu:com.snowplowanalytics.graph/page/jsonschema/1-0-0"
     }
   },
 
@@ -226,10 +226,10 @@ We can then use these schemas to compose a schema for the `page_view` event:
       "type": "object",
       "properties": {
         "user": {
-          "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.graph/user/jsonschema/1-0-0#"
+          "$ref": "iglu:com.snowplowanalytics.graph/user/jsonschema/1-0-0"
         },
         "page": {
-          "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.graph/page/jsonschema/1-0-0#"
+          "$ref": "iglu:com.snowplowanalytics.graph/page/jsonschema/1-0-0"
         }
       }
     },
@@ -238,7 +238,7 @@ We can then use these schemas to compose a schema for the `page_view` event:
       "type": "object",
       "properties": {
         "visited": {
-          "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.graph/visited/jsonschema/1-0-0#"
+          "$ref": "iglu:com.snowplowanalytics.graph/visited/jsonschema/1-0-0"
         }
       }
     }
@@ -420,7 +420,7 @@ The next step is to figure out all the relationships between our nodes. We alrea
 - `(Event)-[:NEXT]->(Event)`
 - `(Event)-[:HAS]->(Non-event node)`.
 
-We can consider all possible combinations of two nodes from the list above and see if any "natural" relationships exist between them. In that way, we can expand the list of relationships. To keep things simple for now, let's assume all constituent nodes are linked by a `[:WITH]` relationship, eg `(Application)<-[:WITH]-(Browser)`, `(Browser)<-[:WITH]-(Session)`.
+We can consider all possible combinations of two nodes from the list above and see if any "natural" relationships exist between them. In that way, we can expand the list of relationships. To keep things simple for now, let's assume all constituent nodes are linked by a `[:WITH]` relationship, eg `(Application)<-[:WITH]-(Browser)`, `(Browser)<-[:WITH]-(Session)`. Admittedly, this is not very insightful for the casual observer. We will revisit relationships in a future post to expand on that. For now, we're just using the `[:WITH]` relationship to denormalise the graph, so we can easily run queries on it.
 
 The proposed schemas for these relationships are in [this repo][relationship-schemas].
 
@@ -434,7 +434,7 @@ If we use this model to represent a series of `page_view` events, we end up with
 
 Event nodes (in grey) are connected via `NEXT` relationships. Each one of them has outgoing `HAS` relationships to constituent nodes, such as `Page` (magenta) and `User` (blue). In turn, the constituent nodes are linked via `WITH` relationships.
 
-Now we can easily query all the pages visited by a user, without having to go via the event node:
+Now we can easily query all the pages visited by a user, without having to go via the event node thanks to the `[:WITH]` relationships:
 
 ```
 MATCH (u:User)-[:WITH]-(p:Page)
@@ -454,25 +454,23 @@ RETURN path;
 
 ### Implementing the contract in code
 
-Now that we've schemaed everything, we can think about how we can implement this in actual code. A great thing about schemas is that the code falls naturally out of them. For example, here's a POJO representing the `Application` node along with a method that will create the node in the database (code to connect to Neo4j not shown):
+Now that we've schemaed everything, we can think about how we can implement this in actual code.
 
-```Scala
-sealed trait Node
+A great thing about schemas is that the code falls naturally out of them. For example, here's how we might represent the `Application` node in Scala, along with a method that will create the node in the database in pseudocode:
 
-case class Application(appId: String, platform: Option[String]) extends Node {
-  def create: Unit = {
-    val statementText =
-      """MERGE (application:Application {app_id: $app_id, platform: $platform});"""
-    val values = Map[String, AnyRef]("app_id" -> this.appId, "platform" -> this.platform).asJava
-    val statement = new Statement(statementText).withParameters(values)
-    val _ = session.run(statement)
-  }
-}
+```
+class Node:
+  def create(**options)
+
+class Application(Node):
+  def create(app_id, platform):
+    statement = "MERGE (application:Application {app_id: $app_id, platform: $platform})"
+    neo4j.execute(statement, {'platform': platform, 'app_id': app_id})
 ```
 
 ### Next up in the series
 
-We take a break from trying to model events as a graph and explore a more prevalent use case -- identity resolution.
+We take a break from trying to model events as a graph and explore another use case for graphs in event analytics -- identity resolution.
 
 
 
