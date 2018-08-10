@@ -1,0 +1,140 @@
+---
+layout: post
+title: SQL Runner 0.7.0 released
+title-short: SQL Runner 0.7.0
+tags: [sql, postgres]
+author: Mike
+category: Releases
+permalink: /blog/2018/08/15/sql-runner-0.7.0-released/
+---
+
+We are pleased to announce version [0.7.0] [070-release] of [SQL Runner][repo]. This release adds many new features including returned query output, templated playbooks, the ability to view evaluated SQL file templates, and other updates.
+
+1. [Query output](#query-output)
+2. [Templated playbooks](#templated-playbooks)
+3. [Check SQL queries](#check-sql)
+4. [Consul lock](#consul-lock)
+5. [Other changes](#other-changes)
+6. [Upgrading](#upgrading)
+7. [Getting help](#help)
+
+<!--more-->
+
+<h2 id="query-output">1. Query output</h2>
+
+This release introduces the ability to view output from queries. Using the `-dropOutput` flag will print all query results to the console formatted in a table, following each step.
+
+{% highlight bash %}
+$ ./sql-runner -deleteLock /locks/hard/1
+!!! ---------- fill with example ---------- !!!
+{% endhighlight %}
+
+<h2 id="templated-playbooks">2. Templated playbooks</h2>
+
+The `-var` will now pass into playbooks, as it does with SQL files. This should be useful for secrets, etc. to be loaded from local storage. Along with this, the `-var` flag will also now allow multiple key-value pairs. The pairs must be comma separated (e.g. `key=value,key2=value2`).
+
+Many thanks to community member [dannymc129][dannymc129] for contributing these features!
+
+<h2 id="check-sql">3. Check SQL queries</h2>
+
+The `-fillTemplates` flag will evaluate a SQL file, and print the query in the console, exactly how it would be run against the database. This can assist in debugging templated files, where it's useful to see the transformations around how variables are inserted into templates.
+
+For example:
+{% highlight bash %}
+
+{% endhighlight %}
+
+<h2 id="consul-lock">4. Consul locking</h2>
+
+The `-consulLock` option can be used to allow for local playbooks to run, while using Consul for locking.
+
+<h2 id="other-changes">5. Other changes</h2>
+
+Snowflake target configuration will now not error if you include the region variable for a user in the default Snowflake region.
+
+A dedicated return code(8) will be returned if no queries are run.
+
+Use of godep has now been replaced with dep.
+
+A random number templating function has been added - use `randomInt`.
+
+During dry run, connection to targets will be attempted and appropriate `SUCCESS` and `ERROR` messages will be output to the console.
+
+<h2 id="upgrading">6. Upgrading</h2>
+
+SQL Runner 0.7.0 is available as a standalone binary for 64-bit Linux, Windows and macOS on Bintray. Download them as follows:
+
+{% highlight bash %}
+# Linux
+$ wget http://dl.bintray.com/snowplow/snowplow-generic/sql_runner_0.7.0_linux_amd64.zip
+
+# Windows
+C:\> Invoke-WebRequest -OutFile sql_runner_0.7.0_windows_amd64.zip http://dl.bintray.com/snowplow/snowplow-generic/sql_runner_0.7.0_windows_amd64.zip
+
+# macOS
+$ wget http://dl.bintray.com/snowplow/snowplow-generic/sql_runner_0.7.0_darwin_amd64.zip
+{% endhighlight %}
+
+Once downloaded, unzip it (Linux for example):
+
+{% highlight bash %}
+$ unzip sql_runner_0.7.0_linux_amd64.zip
+{% endhighlight %}
+
+Run it like so:
+
+{% highlight bash %}
+$ ./sql-runner
+sql-runner version: 0.7.0
+Run playbooks of SQL scripts in series and parallel on Redshift and Postgres
+Usage:
+  -checkLock string
+      Checks whether the lockfile already exists
+  -consul string
+      The address of a consul server with playbooks and SQL files stored in KV pairs
+  -consulLock
+      Will read playbooks locally, but use Consul for locking.
+  -deleteLock string
+      Will attempt to delete a lockfile if it exists
+  -dropOutput
+      Will print all output from queries
+  -dryRun
+      Runs through a playbook without executing any of the SQL
+  -fillTemplates
+      Will print all queries after templates are filled
+  -fromStep string
+      Starts from a given step defined in your playbook
+  -help
+      Shows this message
+  -lock string
+      Optional argument which checks and sets a lockfile to ensure this run is a singleton. Deletes lock on run completing successfully
+  -playbook string
+      Playbook of SQL scripts to execute
+  -runQuery string
+      Will run a single query in the playbook
+  -softLock string
+      Optional argument, like '-lock' but the lockfile will be deleted even if the run fails
+  -sqlroot string
+      Absolute path to SQL scripts. Use PLAYBOOK, BINARY and PLAYBOOK_CHILD for those respective paths (default "PLAYBOOK")
+  -var value
+      Variables to be passed to the playbook, in the key=value format
+  -version
+      Shows the program version
+{% endhighlight %}
+
+<h2 id="help">6. Getting help</h2>
+
+For more details on this release, please check out the [SQL Runner 0.7.0 release notes][070-release] on GitHub.
+
+If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
+
+[lritter]: https://github.com/lritter
+[pull-62]: https://github.com/snowplow/sql-runner/pull/62
+[issue-57]: https://github.com/snowplow/sql-runner/issues/57
+[issue-73]: https://github.com/snowplow/sql-runner/issues/73
+
+[consul]: https://www.consul.io/
+[repo]: https://github.com/snowplow/sql-runner
+[issues]: https://github.com/snowplow/sql-runner/issues
+[070-release]: https://github.com/snowplow/sql-runner/releases/tag/0.7.0
+[talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
