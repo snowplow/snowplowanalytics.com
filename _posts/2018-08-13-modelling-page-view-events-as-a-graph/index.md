@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Modelling `page_view` events as a graph"
+title: "Modelling page view events as a graph"
 title-short: Page views as a graph
 tags: [analytics, graph database, data modeling]
+image: /assets/img/blog/2018/07/page_view_series.png
 author: Dilyan
 category: Data Modeling
-permalink: /blog/2018/07/05/modelling-page-view-events-as-a-graph/
+permalink: /blog/2018/08/13/modelling-page-view-events-as-a-graph/
 discourse: true
 ---
 
@@ -26,16 +27,16 @@ In this post we'll cover:
 1. [Self-describing events](#self-describing-events)
 2. [Custom contexts](#custom-contexts)
 3. [Composable schemas](#composable-schemas)
-4. [Identifying entities for the `page_view` event](#identifying-entities-for-the-page-view-event)
+4. [Identifying entities for the `page_view` event](#identifying-entities-for-the-page_view-event)
 5. [Drawing the relationships](#drawing-the-relationships)
-6. [Composing the `page_view` schema](#composing-the-page-view-schema)
+6. [Composing the `page_view` schema](#composing-the-page_view-schema)
 7. [Implementing the contract in code](#implementing-the-contract-in-code)
 
 ### Self-describing events
 
 In Neo4j and other graph databases, nodes, relationships and patterns are schemaless. This means the database does not distinguish between different types of nodes, relationships or patterns. It's up to developers to enforce any types.
 
-At Snowplow, our preferred way of establishing the contract between the app sending the events and any process that consumes them (for validation, enrichment, loading, modelling, etc) is through schemas. However, typically, a Snowplow-authored self-describing JSON Schema will not describe an entire event. A couple of examples illustrate this point.
+At Snowplow Analytics, our preferred way of establishing the contract between the app sending the events and any process that consumes them (for validation, enrichment, loading, modelling, etc) is through schemas. However, typically, a Snowplow-authored self-describing JSON Schema will not describe an entire event. A couple of examples illustrate this point.
 
 Here is the JSON schema for a `submit_form` event from Iglu Central:
 
@@ -250,9 +251,9 @@ We can then use these schemas to compose a schema for the `page_view` event:
 
 ### Identifying entities for the `page_view` event
 
-Let's figure out which `atomic` properties should go into the `page_view` event. The `atomic.events` table is pretty wide but nor all fields are required for a `page_view`. For example, all fields that start with the `tr_` prefix only apply to `transaction` events.
+Let's figure out which `atomic` properties should go into the `page_view` event. The `atomic.events` table is pretty wide but all fields are not required for a `page_view`. For example, all fields that start with the `tr_` prefix only apply to `transaction` events.
 
-After removing all the irrelevant fields, we end up with this list of properties. (I've broken them down into rough categories for ease of reading.)
+After removing all the irrelevant fields, we end up with this list of properties. I've broken them down into rough categories for ease of reading:
 
 **Application**
 - app_id
