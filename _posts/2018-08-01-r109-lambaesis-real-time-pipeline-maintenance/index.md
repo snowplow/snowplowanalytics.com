@@ -26,7 +26,7 @@ Please read on after the fold for:
 1. [Enrichment process updates](#se)
 2. [Scala Stream Collector updates](#ssc)
 3. [EmrEtlRunner bugfix](#eer)
-4. [Community updates](#community)
+4. [Supporting community contributions](#community)
 5. [Upgrading](#upgrading)
 6. [Roadmap](#roadmap)
 7. [Help](#help)
@@ -212,7 +212,7 @@ This issue can prevent the Elastic MapReduce job from being launched.
 
 We've fixed this issue by making those functions iterative.
 
-<h2 id="community">4. Community updates</h2>
+<h2 id="community">4. Supporting community contributions</h2>
 
 We have taken advantage of this release to improve how we interact with our community of open source
 developers and othe contributors. This initiative translates into:
