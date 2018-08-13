@@ -23,17 +23,18 @@ we would like to give a huge shoutout to the contributors who made it possible:
 
 Please read on after the fold for:
 
-1. [Stream Enrich updates](#se)
+1. [Enrichment process updates](#se)
 2. [Scala Stream Collector updates](#ssc)
-3. [Community updates](#community)
-4. [Upgrading](#upgrading)
-5. [Roadmap](#roadmap)
-6. [Help](#help)
+3. [EmrEtlRunner bugfix](#eer)
+4. [Community updates](#community)
+5. [Upgrading](#upgrading)
+6. [Roadmap](#roadmap)
+7. [Help](#help)
 
 ![lambaesis][lambaesis-img]
 Lambese - M. Gasmi / CC-BY 2.5
 
-<h2 id="se">1. Stream Enrich updates</h2>
+<h2 id="se">1. Enrichment process updates</h2>
 
 <h3 id="ext">1.1 Externalize the file used for the user agent parser enrichment</h3>
 
@@ -199,7 +200,20 @@ crossDomain {
 }
 {% endhighlight %}
 
-<h2 id="community">3. Community updates</h2>
+<h2 id="eer">3. EmrEtlRunner bugfix</h2>
+
+In [R108][r108-blogpost] we started leveraging the official AWS Ruby SDK in EmrEtlRunner and
+replaced our deprecated Sluice library.
+
+However, the functions we wrote to run the different empty checks were recursive and can blow up the
+stack if you have a large number of [EMR S3 empty files][emr-s3-empty-files] (more than five
+thousands in our tests).
+
+This issue prevents the EMR job from being launched.
+
+We've fixed this issue by making those functions iterative.
+
+<h2 id="community">4. Community updates</h2>
 
 We have taken advantage of this release to improve how we interact with our community of open source
 developers. This initiative translates into:
@@ -210,17 +224,17 @@ feature you want to contribute next
 - As well as new issue and pull request templates which should hopefully give better guidance if you
 are looking to contribute
 
-<h2 id="upgrading">4. Upgrading</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
 This release applies only to our real-time pipeline on AWS, GCP or on-premise through Kafka - if you
 are running any other flavor of Snowplow, there is no upgrade necessary.
 
-<h3 id="upg-se">4.1 Upgrading Stream Enrich</h3>
+<h3 id="upg-se">5.1 Upgrading Stream Enrich</h3>
 
 - artifact
 - optional endpoint
 
-<h3 id="upg-ssc">4.2 Upgrading the Scala Stream Collector</h3>
+<h3 id="upg-ssc">5.2 Upgrading the Scala Stream Collector</h3>
 
 - artifact
 - optional endpoint
@@ -228,7 +242,7 @@ are running any other flavor of Snowplow, there is no upgrade necessary.
 - customizable root route
 - crossdomains
 
-<h2 id="roadmap">5. Roadmap</h2>
+<h2 id="roadmap">6. Roadmap</h2>
 
 Upcoming Snowplow releases are:
 
@@ -259,4 +273,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [r110]: https://github.com/snowplow/snowplow/milestone/151
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
+[r108-blogpost]: https://snowplowanalytics.com/blog/2018/07/24/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
+[emr-s3-empty-files]: https://aws.amazon.com/premiumsupport/knowledge-center/emr-s3-empty-files/
 
