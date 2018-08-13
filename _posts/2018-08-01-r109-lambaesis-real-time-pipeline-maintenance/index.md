@@ -10,10 +10,10 @@ permalink: /blog/2018/08/01/snowplow-r109-lambaesis-real-time-pipeline-maintenan
 
 We are pleased to announce the release of [Snowplow 109 Lambaesis][snowplow-release], named
 after [the archeological site in north-eastern Algeria][lambaesis]. This release focuses on
-upgrading the real-time pipeline components.
+upgrading the AWS real-time pipeline components.
 
 This release is one of the most community-driven release in the history of Snowplow. As such,
-we would like to give a huge shoutout to the contributors who made it possible:
+we would like to give a huge shoutout to each of the contributors who made it possible:
 
 - [Kevin Irwin][userkci] and [Rick Bolkey][rbolkey] from [OneSpot][onespot]
 - [Saeed Zareian][szareiangm] from [the Globe and Mail](https://www.theglobeandmail.com/)
@@ -38,9 +38,9 @@ Lambese - M. Gasmi / CC-BY 2.5
 
 <h3 id="ext">1.1 Externalize the file used for the user agent parser enrichment</h3>
 
-Up until this release, the user agent parser enrichment relied on a "database" of user agents
-regexes that was part of the JAR. With this release, we have externalized this file to
-decorrelate updates to the file with updates the library which gives us a lot more flexibility.
+Up until this release, the [user agent parser enrichment][ua-parser-enrichment] relied on a "database" of user agents
+regexes that was embedded within the code. With this release, we have externalized this file to
+decorrelate updates to the file with updates the library, which gives us a lot more flexibility.
 
 We will be doing the same thing for the referer parser enrichment in a future release.
 
@@ -83,7 +83,7 @@ look like the following:
 }
 {% endhighlight %}
 
-We have now changed this behaviour to instead consider an array as multiple events which, in our
+We have now changed this behavior to instead consider an array as multiple events which, in our
 case, would have the following schema:
 
 {% highlight json %}
@@ -105,7 +105,7 @@ case, would have the following schema:
 
 This should ease integration with webhooks which send data in bulk.
 
-<h3 id="cf">1.3 Cloudfront updates</h3>
+<h3 id="cf">1.3 CloudFront updates</h3>
 
 This release introduces support for the 26-field Cloudfront format that was released in January.
 You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
@@ -153,7 +153,7 @@ Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency upd
 The Scala Stream Collector can now reject requests which contain a cookie with a specified name
 and value. If the request is rejected based on this cookie, no tracking will happen: no events will
 be sent downstream and no cookies will be sent back.
-
+s
 The configuration takes the following form:
 
 {% highlight hocon %}
@@ -205,24 +205,21 @@ crossDomain {
 In [R108][r108-blogpost] we started leveraging the official AWS Ruby SDK in EmrEtlRunner and
 replaced our deprecated Sluice library.
 
-However, the functions we wrote to run the different empty checks were recursive and can blow up the
-stack if you have a large number of [EMR S3 empty files][emr-s3-empty-files] (more than five
-thousands in our tests).
+Unfortunately, the functions we wrote to run the different empty file checks were recursive and can blow up the
+stack if you have a large number of [EMR S3 empty files][emr-s3-empty-files] (more than 5,000 files in our tests).
 
-This issue prevents the EMR job from being launched.
+This issue can prevent the Elastic MapReduce job from being launched.
 
 We've fixed this issue by making those functions iterative.
 
 <h2 id="community">4. Community updates</h2>
 
 We have taken advantage of this release to improve how we interact with our community of open source
-developers. This initiative translates into:
+developers and othe contributors. This initiative translates into:
 
-- [A new Gitter room](https://gitter.im/snowplow/snowplow) where you can chat with us on which
-feature you want to contribute next
-- [A new contributing guide](https://github.com/snowplow/snowplow/blob/master/CONTRIBUTING.md)
-- As well as new issue and pull request templates which should hopefully give better guidance if you
-are looking to contribute
+- [A new Gitter room](https://gitter.im/snowplow/snowplow) where you can chat with the Snowplow engineers and share ideas on contributions you would like to make to the project
+- [A new contributing guide][contributing]
+- New issue and pull request templates to give better guidance if you are looking to contribute
 
 <h2 id="upgrading">5. Upgrading</h2>
 
@@ -244,7 +241,7 @@ are running any other flavor of Snowplow, there is no upgrade necessary.
 
 <h2 id="roadmap">6. Roadmap</h2>
 
-Upcoming Snowplow releases are:
+Upcoming Snowplow releases include:
 
 * [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
@@ -270,9 +267,12 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
+[contributing]: https://github.com/snowplow/snowplow/blob/master/CONTRIBUTING.md
+
+[ua-parser-enrichment]: https://github.com/snowplow/snowplow/wiki/ua-parser-enrichment
+
 [r110]: https://github.com/snowplow/snowplow/milestone/151
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 [r108-blogpost]: https://snowplowanalytics.com/blog/2018/07/24/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
 [emr-s3-empty-files]: https://aws.amazon.com/premiumsupport/knowledge-center/emr-s3-empty-files/
-
