@@ -105,17 +105,7 @@ case, would have the following schema:
 
 This should ease integration with webhooks which send data in bulk.
 
-<h3 id="cf">1.3 CloudFront updates</h3>
-
-This release introduces support for the 26-field Cloudfront format that was released in January.
-You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
-Thanks to [Moshe Demri](https://github.com/mdemri) for signaling the issue.
-
-We have also taken advantage of working on Cloudfront to leverage the `x-forwarded-for` field to
-populate the user's ip address.
-Thanks a lot to [Dani Solà][danisola] for contributing this change!
-
-<h3 id="ips">1.4 Handle comma-separated list of ips</h3>
+<h3 id="ips">1.3 Handle comma-separated list of ips</h3>
 
 Speaking about `X-Forwarded-For` headers, they can contain a comma-separated list of ips in case
 the request went through multiple load balancers. The header will indeed accumulate the different
@@ -130,7 +120,7 @@ the successive proxies.
 Based on these facts, we have made the choice to only conserve the first ip in case of a
 comma-separated list.
 
-<h3 id="kinesis">1.5 Enable specifying a custom Kinesis endpoint</h3>
+<h3 id="kinesis">1.4 Enable specifying a custom Kinesis endpoint</h3>
 
 Before this release, the Kinesis endpoint to use for Stream Enrich was determined based on the AWS
 region you wanted to run on. Unfortunately, this didn't allow for use of projects like
@@ -140,6 +130,18 @@ Thanks to [Arihant Surana][arihantsurana], it is now possible to
 optionally specify a custom endpoint directly through the `customEndpoint` configuration.
 
 Note that this feature is also available for the Scala Stream Collector.
+
+<h3 id="cf">1.5 CloudFront updates</h3>
+
+This release introduces support for the 26-field Cloudfront format that was released in January.
+You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
+Thanks to [Moshe Demri](https://github.com/mdemri) for signaling the issue.
+
+We have also taken advantage of working on Cloudfront to leverage the `x-forwarded-for` field to
+populate the user's ip address.
+Thanks a lot to [Dani Solà][danisola] for contributing this change!
+
+Since those changes concern only the batch pipeline they will be made available in a future release.
 
 <h3 id="misc">1.6 Miscellaneous updates</h3>
 
@@ -153,7 +155,7 @@ Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency upd
 The Scala Stream Collector can now reject requests which contain a cookie with a specified name
 and value. If the request is rejected based on this cookie, no tracking will happen: no events will
 be sent downstream and no cookies will be sent back.
-s
+
 The configuration takes the following form:
 
 {% highlight hocon %}
@@ -212,6 +214,9 @@ This issue can prevent the Elastic MapReduce job from being launched.
 
 We've fixed this issue by making those functions iterative.
 
+On a side note, we encourage everyone to use `s3a` when referencing buckets in the EmrEtlRunner
+configuration because, when using s3a, those empty files are not generated.
+
 <h2 id="community">4. Supporting community contributions</h2>
 
 We have taken advantage of this release to improve how we interact with our community of open source
@@ -228,16 +233,98 @@ are running any other flavor of Snowplow, there is no upgrade necessary.
 
 <h3 id="upg-se">5.1 Upgrading Stream Enrich</h3>
 
-- artifact
-- optional endpoint
+A new version of Stream Enrich incorporating the changes discussed above can be found on our Bintray
+[here][se-dl].
+
+To make use of an external user agent database, you can update your enrichment file to the
+following:
+
+{% highlight json %}
+{
+  "schema": "iglu:com.snowplowanalytics.snowplow/ua_parser_config/jsonschema/1-0-1",
+  "data": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "ua_parser_config",
+    "enabled": true,
+    "parameters": {
+      "database": "regexes.yaml",
+      "uri": "s3://snowplow-hosted-assets/third-party/ua-parser/"
+    }
+  }
+}
+{% endhighlight %}
+
+Note the bump to the version `1-0-1` as well as the specification of the location of the user agent
+database. The database is the one maintained in the [uap-core repository](https://github.com/ua-parser/uap-core).
+
+An example can be found in [our repository](https://github.com/snowplow/snowplow/blob/master/3-enrich/config/enrichments/ua_parser_config.json).
 
 <h3 id="upg-ssc">5.2 Upgrading the Scala Stream Collector</h3>
 
-- artifact
-- optional endpoint
-- dnt
-- customizable root route
-- crossdomains
+A new version of Stream Enrich incorporating the changes discussed above can be found on our Bintray
+[here][ssc-dl].
+
+To make use of this new version, you'll need to amend your configuration in the following ways:
+
+- Add a `doNotTrackCookie` section:
+
+{% highlight hocon %}
+doNotTrackCookie {
+  enabled = false
+  name = cookie-name
+  value = cookie-value
+}
+{% endhighlight %}
+
+- Add a `rootResponse` section:
+
+{% highlight hocon %}
+rootResponse {
+  enabled = false
+  statusCode = 200
+  body = “ok”
+}
+{% endhighlight %}
+
+- Turn `crossDomain.domain` into `crossDomain.domains`:
+
+{% highlight hocon %}
+crossDomain {
+  enabled = false
+  domains = [ "*.acme.com", "*.emca.com" ]
+  secure = true
+}
+{% endhighlight %}
+
+A full configuration can be found [in the repository](https://github.com/snowplow/snowplow/blob/r109-lambaesis/2-collectors/scala-stream-collector/examples/config.hocon.sample)
+
+<h3 id="upg-eer">5.3 Upgrading EmrEtlRunner</h3>
+
+The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
+
+We also encourage people to move the buckets to s3a, to not create empty files:
+
+{% highlight yaml %}
+aws:
+  s3:
+    bucket:
+      raw:
+        in:
+          - "s3a://bucket/in"
+        processing: "s3a://bucket/processing"
+        archive: "s3a://bucket/archive/raw"
+      enriched:
+        good: "s3a://bucket/enriched/good"
+        bad: "s3a://bucket/enriched/bad"
+        errors: "s3a://bucket/enriched/errors"
+        archive: "s3a://bucket/archive/enriched"
+      shredded:
+        good: "s3a://bucket/shredded/good"
+        bad: "s3a://bucket/shredded/bad"
+        errors: "s3a://bucket/shredded/errors"
+        archive: "s3a://bucket/archive/shredded"
+...
+{% endhighlight %}
 
 <h2 id="roadmap">6. Roadmap</h2>
 
@@ -245,6 +332,7 @@ Upcoming Snowplow releases include:
 
 * [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
+* [R11x][r11x], making those changes available to the batch pipeline, among other things
 
 <h2 id="help">6. Getting help</h2>
 
@@ -271,7 +359,12 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [ua-parser-enrichment]: https://github.com/snowplow/snowplow/wiki/ua-parser-enrichment
 
+[eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r109_lambaesis.zip
+[se-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.19.0#files
+[ssc-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-scala-stream-collector/0.14.0#files
+
 [r110]: https://github.com/snowplow/snowplow/milestone/151
+[r11x]: https://github.com/snowplow/snowplow/milestone/154
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 [r108-blogpost]: https://snowplowanalytics.com/blog/2018/07/24/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
