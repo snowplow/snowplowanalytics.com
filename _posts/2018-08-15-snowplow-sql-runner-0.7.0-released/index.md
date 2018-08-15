@@ -62,15 +62,15 @@ The `-consulLock` option can be used to allow for local playbooks to be run, whi
 
 <h2 id="other-changes">5. Other changes</h2>
 
-Snowflake target configuration will now not error if you include the region variable for a user in the default Snowflake region.
+* Snowflake target configuration will now not error if you include the region variable for a user in the default Snowflake region.
 
-A dedicated return code(8) will be returned if no queries are run.
+* A dedicated return code(8) will be returned if no queries are run.
 
-Use of godep has now been replaced with dep.
+* Use of godep has now been replaced with dep.
 
-A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [tclass][tclass] for contributing this feature!
+* A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [tclass][tclass] for contributing this feature!
 
-During dry run, connection to targets will be attempted and appropriate `SUCCESS` and `ERROR` messages will be output to the console.
+* During dry run, connection to targets will be attempted and appropriate `SUCCESS` and `ERROR` messages will be output to the console.
 
 <h2 id="upgrading">6. Upgrading</h2>
 
