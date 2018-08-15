@@ -25,13 +25,25 @@ We are pleased to announce version [0.7.0] [070-release] of [SQL Runner][repo]. 
 This release introduces the ability to view output from queries. Using the `-dropOutput` flag will print all query results to the console formatted in a table, following each step.
 
 {% highlight bash %}
-$ ./sql-runner -deleteLock /locks/hard/1
-!!! ---------- fill with example ---------- !!!
+$ ./sql-runner -dropOutput -playbook integration/resources/good-postgres.yml -var test_date=`date "+%Y_%m_%d"` -fromStep "Create schema and table"
+...
+2018/08/15 00:17:35 EXECUTING Output (in step Output @ My Postgres database 1): /opt/gopath/src/github.com/snowplow/sql-runner/integration/resources/postgres-sql/good/output.sql
+2018/08/15 00:17:35 QUERY OUTPUT:
+| AGE | FIRSTNAME |   CITY   | COUNTRY |
+|-----|-----------|----------|---------|
+|  18 | john      | new york | us      |
+|  20 | ben       | london   | uk      |
+|  32 |           |          |         |
+...
 {% endhighlight %}
 
 <h2 id="templated-playbooks">2. Templated playbooks</h2>
 
 The `-var` will now pass into playbooks, as it does with SQL files. This should be useful for secrets, etc. to be loaded from local storage. Along with this, the `-var` flag will also now allow multiple key-value pairs. The pairs must be comma separated (e.g. `key=value,key2=value2`).
+
+{% highlight bash %}
+$ ./sql-runner -playbook integration/resources/good-postgres-with-template.yml -var password=,host=localhost
+{% endhighlight %}
 
 Many thanks to community member [dannymc129][dannymc129] for contributing these features!
 
@@ -41,12 +53,12 @@ The `-fillTemplates` flag will evaluate a SQL file, and print the query in the c
 
 For example:
 {% highlight bash %}
-
+$ ./sql-runner -fillTemplates -playbook integration/resources/good-postgres-with-template.yml -var username=postgres,password=,host=localhost
 {% endhighlight %}
 
 <h2 id="consul-lock">4. Consul locking</h2>
 
-The `-consulLock` option can be used to allow for local playbooks to run, while using Consul for locking.
+The `-consulLock` option can be used to allow for local playbooks to be run, while using Consul for locking.
 
 <h2 id="other-changes">5. Other changes</h2>
 
@@ -56,7 +68,7 @@ A dedicated return code(8) will be returned if no queries are run.
 
 Use of godep has now been replaced with dep.
 
-A random number templating function has been added - use `randomInt`.
+A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [tclass][tclass] for contributing this feature!
 
 During dry run, connection to targets will be attempted and appropriate `SUCCESS` and `ERROR` messages will be output to the console.
 
@@ -128,10 +140,8 @@ For more details on this release, please check out the [SQL Runner 0.7.0 release
 
 If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
 
-[lritter]: https://github.com/lritter
-[pull-62]: https://github.com/snowplow/sql-runner/pull/62
-[issue-57]: https://github.com/snowplow/sql-runner/issues/57
-[issue-73]: https://github.com/snowplow/sql-runner/issues/73
+[dannymc129]: https://github.com/dannymc129
+[tclass]: https://github.com/tclass
 
 [consul]: https://www.consul.io/
 [repo]: https://github.com/snowplow/sql-runner
