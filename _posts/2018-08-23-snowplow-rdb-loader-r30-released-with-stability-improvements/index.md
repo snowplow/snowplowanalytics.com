@@ -5,7 +5,7 @@ title: "Snowplow RDB Loader R30 released"
 tags: [snowplow, shred, redshift]
 author: Anton
 category: Releases
-permalink: /blog/2018/08/01/snowplow-rdb-loader-r30-released-with-stability-improvements/
+permalink: /blog/2018/08/23/snowplow-rdb-loader-r30-released-with-stability-improvements/
 ---
 
 We are pleased to announce the release of [Snowplow RDB Loader R30][release] adding multiple usability and stability improvements.
