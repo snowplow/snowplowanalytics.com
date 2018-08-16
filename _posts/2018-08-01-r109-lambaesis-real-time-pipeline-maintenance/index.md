@@ -23,7 +23,7 @@ we would like to give a huge shoutout to each of the contributors who made it po
 
 Please read on after the fold for:
 
-1. [Enrichment process updates](#se)
+1. [Stream Enrich updates](#se)
 2. [Scala Stream Collector updates](#ssc)
 3. [EmrEtlRunner bugfix](#eer)
 4. [Supporting community contributions](#community)
@@ -34,9 +34,9 @@ Please read on after the fold for:
 ![lambaesis][lambaesis-img]
 Lambese - M. Gasmi / CC-BY 2.5
 
-<h2 id="se">1. Enrichment process updates</h2>
+<h2 id="se">1. Stream Enrich updates</h2>
 
-<h3 id="ext">1.1 Externalize the file used for the user agent parser enrichment</h3>
+<h3 id="ext">1.1 Externalizing the file used for the user agent parser enrichment</h3>
 
 Up until this release, the [user agent parser enrichment][ua-parser-enrichment] relied on a "database" of user agents
 regexes that was embedded within the code. With this release, we have externalized this file to
@@ -45,6 +45,8 @@ decorrelate updates to the file with updates the library, which gives us a lot m
 We will be doing the same thing for the referer parser enrichment in a future release.
 
 Huge thanks to [Kevin Irwin][userkci] for contributing this change!
+
+Note that this change will make its way into a future batch release.
 
 <h3 id="cf">1.2 More flexible Iglu webhook</h3>
 
@@ -107,9 +109,9 @@ This should ease integration with webhooks which send data in bulk.
 
 <h3 id="ips">1.3 Handle comma-separated list of ips</h3>
 
-Speaking about `X-Forwarded-For` headers, they can contain a comma-separated list of ips in case
-the request went through multiple load balancers. The header will indeed accumulate the different
-ips, for example:
+One thing we have noticed users experiencing is `X-Forwarded-For` headers containing a
+comma-separated list of ips in case the request went through multiple load balancers. The header
+will indeed accumulate the different ips, for example:
 
 `X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98`
 
