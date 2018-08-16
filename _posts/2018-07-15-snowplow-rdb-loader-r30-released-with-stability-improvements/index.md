@@ -42,14 +42,14 @@ In order to do that, we implemented following load algorithm in R30:
 
 Before R30 we didn't have 3rd and 4th steps and therefore nothing (in RDB Loader) prevented loading data multiple times.
 
-### Folder
+### Histrical loading
 
 Sequence of steps shown above illustrates that RDB Loader always assumes that most recent `etl_tstamp` in `atomic.events` is the timestamp of current run folder.
 Which is the case only when pipeline is functioning without interruptions.
 However, often we need to load archived data (using `--folder` option introduced in [RDB Loader 0.13.0][v013-post]) for example when operator discovered that folder was not loaded (e.g. due mistakenly used `--resume-from` in EmrEtlRunner).
 In this case, RDB Loader incorrectly identifies `etl_tstamp` of the load as most recent one, which in fact would corrupt manifest table or prevent data from loading.
 
-In R30 we introduced so called "transitional load", which happens only when `--folder` passed.
+In R30 we introduced so called "transitional load" mode, which enables only when `--folder` option is passed.
 In this mode, RDB Loader loads atomic data into a temporary created table with ideantical to `atomic.events` schema in order to get precise information about dataset that it is about to load.
 With transitional load, RDB Loader can inspect temporary table and get the correct `etl_tstamp` without being confused by existing data.
 If `etl_tstamp` does not exist in load manifest - data will be moved over to `atomic.events` table and temporary table will get dropped.
@@ -65,7 +65,7 @@ We also introduced three new steps that user can skip during RDB Loader job:
 * `load_manifest` - to skip all load manifest interactions: check and write
 * `transitional_load` - to skip transitional load even when `--folder` is specified
 
-EmrEtlRunner Since R102 will skip `load_manifest` for any pipeline with enabled Stream Enrich Mode, as `etl_tstamp` does not make any sense after Stream Enrich.
+EmrEtlRunner Since [R102 Afontova Gora][r102-post] will skip `load_manifest` for any pipeline with enabled Stream Enrich Mode, as `etl_tstamp` does not bear any useful information within real-time pipeline.
 
 Skip these at your own risk and when you fully understand the consequences, as failure during load manifest check almost always will mean double-loading.
 
@@ -89,7 +89,7 @@ All mandatory changes are illustrated in [upgrading](#upgrading) section.
 
 <h2 id="logging">3. Logging improvements</h2>
 
-Historically, RDB Loader provided very modest log output, showing only what steps were successfully executed.
+Historically, RDB Loader provided very concise log output, showing only what steps were successfully executed.
 Using this output for debugging purposes was quite troublesome and operators had to rely on third-party sources.
 
 Since this release, RDB Loader provides very detailed information about load process, in particular it adds:
@@ -98,24 +98,36 @@ Since this release, RDB Loader provides very detailed information about load pro
 2. Eventual consistency check delays
 3. Improved failure messages, showing possible resolution steps
 4. Timestamps for all messages, so operator would be able to figure out what step takes most of the time
-5. List of timestamped and truncated `COPY INTO` statements in `stdout` (won't be printed by EmrEtlRunner, but will be present in EMR logs)
+5. List of timestamped and truncated `COPY INTO` statements in `stdout` (won't be printed by EmrEtlRunner, but be present in EMR logs)
 
 <h2 id="logging">4. Processing manifest</h2>
 
-Another big new feature of this release is introduction of processing manifest.
-Processing manifest is 
+Another big new feature of this release is introduction of Snowplow Processing Manifest.
+
+Snowplow Processing Manifest is a library and journal allowing jobs to keep record of all significant steps in pipeline,.
+It is designed as a very generic mechanism independent from backend and target database.
+Currently only AWS DynamoDB is available as backend and only Redshift (through RDB Shredder and Loader) supported as target database, however similar mechanism is used in [Snowplow Snowflake Loader][snowflake-loader-post] and we have plans to migrate Snowflake Loader to exact same format of manifest in order to make processing an universal glue between pipeline components.
+
+Most important features of manifest include:
+
+* Track of all shredded types in a folders in order to skip S3 consistency check delays
+* Track of all RDB Shredder and Loader runs with their respective timestamps and exit statuses
+* Locking mechanism preventing double-loading and race conditions
+
+Right now processing manifest in RDB Loader is considered beta and not necessary needs to be enabled in order to use RDB Loader.
+
+Stay tuned for more information on processing manifest and how to use it along with its official announcement.
 
 
-
-<h2 id="other">2. Other changes</h2>
+<h2 id="other">5. Other improvements</h2>
 
 * RDB Shredder with enabled cross-batch deduplication does not automatically create DynamoDB event manifest anymore
 * Fixed a bug, where Loader would fail in JDBC password could be interpreted as invalid regular expression
 
 
-<h2 id="upgrading">3. Upgrading</h2>
+<h2 id="upgrading">6. Upgrading</h2>
 
-If you are using RDB Loader to load events into Redshift or Postgres, you'll need to update your EmrEtlRunner configuration to the following:
+If you are using EmrEtlRunner, you'll need to update your `config.yml` file:
 
 {% highlight yaml %}
 storage:
@@ -124,7 +136,7 @@ storage:
     rdb_loader: 0.15.0 # WAS 0.14.0
 {% endhighlight %}
 
-To update Redshift configuration JSON:
+In storage target configuration for Redshift you'll need to do following changes:
 
 1. Switch SchemaVer to `3-0-0`
 2. Remove `sslMode` and add `jdbc` JSON object instead
@@ -132,6 +144,13 @@ To update Redshift configuration JSON:
 4. Assign random UUID to `id` property (add it if it didn't exist)
 5. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
 6. Add `"processingManifest": null` unless you're going to use the processing manifest
+
+If you're loading data to PostgreSQL, you'll need to make following changes in respective config:
+
+1. Switch SchemaVer to `2-0-0`
+2. Assign random UUID to `id` property (add it if it didn't exist)
+3. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
+4. Add `"processingManifest": null` unless you're going to use the processing manifest
 
 <h2 id="roadmap">4. Roadmap</h2>
 
@@ -154,6 +173,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [r28-post]: https://snowplowanalytics.com/blog/2017/11/13/rdb-loader-r28-released/
 [r87-post]: https://snowplowanalytics.com/blog/2017/02/21/snowplow-r87-chichen-itza-released/
 [r102-post]: https://snowplowanalytics.com/blog/2018/04/03/snowplow-r102-afontova-gora-with-emretlrunner-improvements/
+[snowflake-loader-post]: https://snowplowanalytics.com/blog/2017/12/28/snowplow-snowflake-loader-0.3.0-released/
 
 [redshift-jdbc]: https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-options.html
 [target-jdbc-options]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/3-0-0#L196-L254
