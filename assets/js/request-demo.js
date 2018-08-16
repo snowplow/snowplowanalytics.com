@@ -25,9 +25,7 @@ $(function() {
     var email = document.getElementById("inputEmail").value;
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
-    var insights = document.getElementById('inputLeadInsights').checked ? true : false;
-    var react = document.getElementById('inputLeadReact').checked ? true : false;
-
+    
     // validate inputs
 
     if (firstName == "") {
@@ -76,8 +74,6 @@ $(function() {
         email: email,
         phone: phone,
         company: company,
-        insights: insights,
-        react: react
       }
     });
 
@@ -126,7 +122,7 @@ $(function() {
       document.getElementById("inputPhone").setAttribute("name", "phone");
 
       form.method = "POST";
-      form.action = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+      form.action = "http://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
       form.submit();
 
     }
