@@ -1,18 +1,18 @@
 ---
 layout: post
 title-short: Snowplow 109 Lambaesis
-title: "Snowplow R109 Lambaesis real-time pipeline maintenance"
+title: "Snowplow R109 Lambaesis real-time pipeline upgrade"
 tags: [snowplow, real-time, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/08/01/snowplow-r109-lambaesis-real-time-pipeline-maintenance/
+permalink: /blog/2018/08/01/snowplow-r109-lambaesis-real-time-pipeline-upgrade/
 ---
 
 We are pleased to announce the release of [Snowplow 109 Lambaesis][snowplow-release], named
 after [the archeological site in north-eastern Algeria][lambaesis]. This release focuses on
 upgrading the AWS real-time pipeline components, although it also updates EmrEtlRunner for batch pipeline customers.
 
-This release is one of the most community-driven release in the history of Snowplow. As such,
+This release is one of the most community-driven releases in the history of Snowplow Analytics. As such,
 we would like to give a huge shout-out to each of the contributors who made it possible:
 
 - [Kevin Irwin][userkci] and [Rick Bolkey][rbolkey] from [OneSpot][onespot]
@@ -37,15 +37,12 @@ Lambese - M. Gasmi / CC-BY 2.5
 
 <h3 id="ext">1.1 Externalizing the file used for the user agent parser enrichment</h3>
 
-Up until this release, the [User Agent Parser Enrichment][ua-parser-enrichment] relied on a "database" of user agents
-regexes that was embedded within the code. With this release, we have externalized this file to
-decorrelate updates to the file with updates the library, which gives us a lot more flexibility.
+Up until this release, the [User Agent Parser Enrichment][ua-parser-enrichment] relied on a "database" of user agent regexes that was embedded within the code. With this release, we have externalized this file to
+decorrelate updates to the file from updates to the library, which gives us a lot more flexibility.
 
-We will be doing the same thing for the Referer Parser Enrichment in a future release.
+This User Agent Parses update will of course make its way into a future batch pipeline release, and we'll be doing the same thing for the Referer Parser Enrichment as well.
 
 Huge thanks to [Kevin Irwin][userkci] for contributing this change!
-
-This update will of course also make its way into a future batch pipeline release.
 
 <h3 id="cf">1.2 More flexible Iglu webhook</h3>
 
@@ -61,7 +58,7 @@ curl -X POST \
   'http://collector/com.snowplowanalytics.iglu/v1?schema=iglu%3Acom.acme%2Fschema%2Fjsonschema%2F1-0-0'
 {% endhighlight %}
 
-Then the Iglu webhook would assume you were sending a singleton event with an array of objects at its root; the schema would look like the following:
+The Iglu webhook would assume you were sending a singleton event with an array of objects at its root; the schema would look like the following:
 
 {% highlight json %}
 {
@@ -83,8 +80,7 @@ Then the Iglu webhook would assume you were sending a singleton event with an ar
 }
 {% endhighlight %}
 
-We have now changed this behavior, to instead treat an incoming array as multiple events which, in our
-case, would each have the following schema:
+We have now changed this behavior to instead treat an incoming array as multiple events which, in our case, would each have the following schema:
 
 {% highlight json %}
 {
@@ -107,8 +103,7 @@ This should make it easier to work with event sources which need to `POST` event
 
 <h3 id="ips">1.3 Handle a comma-separated list of IP addresses</h3>
 
-We have seen Snowplow users and customers encountering `X-Forwarded-For` headers containing a
-comma-separated list of IP addresses, occurring when the request went through multiple load balancers. The header in the raw event payload will indeed accumulate the different IP addresses, for example:
+We have seen Snowplow users and customers encountering `X-Forwarded-For` headers containing a comma-separated list of IP addresses, occurring when the request went through multiple load balancers. The header in the raw event payload will indeed accumulate the different IP addresses, for example:
 
 `X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98`
 
@@ -123,7 +118,7 @@ comma-separated list.
 
 Before this release, the Kinesis endpoint for Stream Enrich was determined by the AWS
 region that you wanted to run in. Unfortunately, this didn't allow for use of projects like
-[localstack][localstack] which let you mimick AWS services locally.
+[localstack][localstack] which let you mimic AWS services locally.
 
 Thanks to [Arihant Surana][arihantsurana], it is now possible to
 optionally specify a custom endpoint directly through the `customEndpoint` configuration.
@@ -137,7 +132,7 @@ Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency upd
 
 <h2 id="se">2. Scala Stream Collector updates</h2>
 
-<h3 id="dnt">2.1 Respect a do not track cookie</h3>
+<h3 id="dnt">2.1 Reject requests with "do not track" cookies</h3>
 
 The Scala Stream Collector can now reject requests which contain a cookie with a specified name
 and value. If the request is rejected based on this cookie, no tracking will happen: no events will
@@ -156,8 +151,7 @@ doNoTrackCookie {
 <h3 id="root">2.2 Customize the response from the root route</h3>
 
 It is now possible to customize what is sent back when hitting the `/` route of the Scala Stream
-Collector. Whereas the collector always sent a 404 before, you can now customize it through a
-configuration:
+Collector. Whereas the collector always sent a 404 before, you can now customize it through the following configuration:
 
 {% highlight hocon %}
 rootResponse {
@@ -201,7 +195,7 @@ stack if you have a large number of [EMR S3 empty files][emr-s3-empty-files] (mo
 
 This issue can prevent the Elastic MapReduce job from being launched.
 
-We've now fixed this issue by making those functions iterative.
+We've now fixed this by making those functions iterative.
 
 On a side note: we now encourage everyone to use `s3a` when referencing buckets in the EmrEtlRunner
 configuration because, when using `s3a`, those problematic empty files are simply not generated.
