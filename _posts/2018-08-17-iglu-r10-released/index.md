@@ -60,7 +60,7 @@ As of R10 Tiflis, both validation endpoints use `POST` method so that schemas wo
 
 The new Iglu Server release can be downloaded from [here from Bintray][iglu-server-download] (download will start). Unzip the compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
 
-The only breaking change is regarding 2 validation endpoints under `/api/schemas/validate/`. Previously, a `GET` request sent to any endpoint under `/api/schemas/validate/` would be used for validation. From now on, same request should be sent using `POST` method. Also, schemas shouldn't be appended to request URL, instead they should be in body as form data where key is `schema` and value is your schema.
+The only breaking change is regarding 2 validation endpoints under `/api/schemas/validate/`. Previously, a `GET` request sent to any endpoint under `/api/schemas/validate/` would be used for validation. From now on, same request should be sent using `POST` method. Also, schemas shouldn't be appended to request URL, instead they should be in body as form data.
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
