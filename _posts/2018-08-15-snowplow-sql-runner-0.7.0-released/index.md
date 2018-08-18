@@ -8,9 +8,9 @@ category: Releases
 permalink: /blog/2018/08/15/sql-runner-0.7.0-released/
 ---
 
-We are pleased to announce version [0.7.0] [070-release] of [SQL Runner][repo]. This release adds many new features including returned query output, templated playbooks, the ability to view evaluated SQL file templates, and other updates.
+We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. This release adds many new features including the printing out of query output, templated playbooks, the ability to view evaluated SQL file templates, and more:
 
-1. [Query output](#query-output)
+1. [Viewing query output](#query-output)
 2. [Templated playbooks](#templated-playbooks)
 3. [Check SQL queries](#check-sql)
 4. [Consul lock](#consul-lock)
@@ -20,7 +20,7 @@ We are pleased to announce version [0.7.0] [070-release] of [SQL Runner][repo]. 
 
 <!--more-->
 
-<h2 id="query-output">1. Query output</h2>
+<h2 id="query-output">1. Viewing query output</h2>
 
 This release introduces the ability to view output from queries. Using the `-dropOutput` flag will print all query results to the console formatted in a table, following each step.
 
@@ -37,9 +37,11 @@ $ ./sql-runner -dropOutput -playbook integration/resources/good-postgres.yml -va
 ...
 {% endhighlight %}
 
+SEE QUESTION FROM ALEX HERE: https://github.com/snowplow/sql-runner/pull/130#issuecomment-414083253
+
 <h2 id="templated-playbooks">2. Templated playbooks</h2>
 
-The `-var` will now pass into playbooks, as it does with SQL files. This should be useful for secrets, etc. to be loaded from local storage. Along with this, the `-var` flag will also now allow multiple key-value pairs. The pairs must be comma separated (e.g. `key=value,key2=value2`).
+The `-var` will now pass variables into playbooks, as it does with SQL files. This should be useful for treatment of secrets and credentials which you don't want to embed directly in playbooks. Along with this, the `-var` flag also now permits multiple key-value pairs; the pairs must be comma separated (e.g. `key=value,key2=value2`).
 
 {% highlight bash %}
 $ ./sql-runner -playbook integration/resources/good-postgres-with-template.yml -var password=,host=localhost
@@ -56,21 +58,23 @@ For example:
 $ ./sql-runner -fillTemplates -playbook integration/resources/good-postgres-with-template.yml -var username=postgres,password=,host=localhost
 {% endhighlight %}
 
+Note that with the `-fillTemplates` flag, no SQL will actually be executed.
+
 <h2 id="consul-lock">4. Consul locking</h2>
 
 The `-consulLock` option can be used to allow for local playbooks to be run, while using Consul for locking.
 
+SEE QUESTION FROM ALEX HERE: https://github.com/snowplow/sql-runner/issues/96#issuecomment-414084012
+
 <h2 id="other-changes">5. Other changes</h2>
 
-* Snowflake target configuration will now not error if you include the region variable for a user in the default Snowflake region.
+This release brings a whole host of other updates:
 
-* A dedicated return code(8) will be returned if no queries are run.
-
-* Use of godep has now been replaced with dep.
-
-* A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [tclass][tclass] for contributing this feature!
-
-* During dry run, connection to targets will be attempted and appropriate `SUCCESS` and `ERROR` messages will be output to the console.
+* A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [Tobi][tclass] for contributing this feature!
+* SQL Runner now returns a dedicated exit code (8) if no queries are found to be run
+* During dry run, SQL Runner will now attempt to connect to targets, printing corresponding `SUCCESS` and `ERROR` messages to the terminal
+* Our Snowflake target configuration now lets you include the region variable for the default Snowflake region (previously this would error)
+* Use of godep has now been replaced with dep
 
 <h2 id="upgrading">6. Upgrading</h2>
 
@@ -133,6 +137,8 @@ Usage:
   -version
       Shows the program version
 {% endhighlight %}
+
+NOTE THE ABOVE WILL CHANGE BASED ON THE COMMENTS ON A COUPLE OF THE FLAG NAMES.
 
 <h2 id="help">6. Getting help</h2>
 
