@@ -28,7 +28,7 @@ Each row in this table represents metadata about a job performed by RDB Loader.
 Until now RDB Loader nor other Snowplow sotfware never used this table for any purpose and it was purely informational.
 In R30 we decided to change that and implemented several defensive checks that work on top of `manifest` table and add extra-safety to loading process.
 
-### Double-loading
+<h3>Double-loading</h3>
 
 First issue we addressed using load manifest is accidental double-loading, which can happen quite often if pipeline operator isn't very experienced with recovery process.
 In order to do that, we implemented following load algorithm in R30:
@@ -41,7 +41,7 @@ In order to do that, we implemented following load algorithm in R30:
 
 Before R30 we didn't have 3rd and 4th steps and therefore nothing (in RDB Loader) prevented loading data multiple times.
 
-### Histrical loading
+<h3>Historical loading</h3>
 
 Sequence of steps shown above illustrates that RDB Loader always assumes that most recent `etl_tstamp` in `atomic.events` is the timestamp of current run folder.
 Which is the case only when pipeline is functioning without interruptions.
@@ -56,7 +56,7 @@ Otherwise - transaction will be aborted.
 
 Notice that in order to seamlessly use this feature, your DB user should have permissions to create and drop tables.
 
-### Steps
+<h3>New skippable steps</h3>
 
 We also introduced three new steps that user can skip during RDB Loader job:
 
@@ -117,14 +117,16 @@ Right now processing manifest in RDB Loader is considered beta and not necessary
 
 Stay tuned for more information on processing manifest and how to use it along with its official announcement.
 
-
 <h2 id="other">5. Other improvements</h2>
 
 * RDB Shredder with enabled cross-batch deduplication does not automatically create DynamoDB event manifest anymore [#62][issue-62]
 * Fixed a bug, where Loader would fail in JDBC password could be interpreted as invalid regular expression [#87][issue-87]
 
-
 <h2 id="upgrading">6. Upgrading</h2>
+
+To make use of the new version, you will need to update your EmrEtlRunner configuration, and also the storage target configuration for either Redshift or Postgres.
+
+<h3>EmrEtlRunner</h3>
 
 If you are using EmrEtlRunner, you'll need to update your `config.yml` file:
 
@@ -135,6 +137,8 @@ storage:
     rdb_loader: 0.15.0 # WAS 0.14.0
 {% endhighlight %}
 
+<h3>Redshift</h3>
+
 In storage target configuration for Redshift you'll need to do following changes:
 
 1. Switch SchemaVer to `3-0-0`
@@ -143,6 +147,8 @@ In storage target configuration for Redshift you'll need to do following changes
 4. Assign random UUID to `id` property (add it if it didn't exist)
 5. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
 6. Add `"processingManifest": null` unless you're going to use the processing manifest
+
+<h3>PostgreSQL</h3>
 
 If you're loading data to PostgreSQL, you'll need to make following changes in respective config:
 
