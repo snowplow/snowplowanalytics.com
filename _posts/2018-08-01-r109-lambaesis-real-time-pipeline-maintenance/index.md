@@ -234,7 +234,7 @@ following:
     "name": "ua_parser_config",
     "enabled": true,
     "parameters": {
-      "database": "regexes.yaml",
+      "database": "useragents-latest.yaml",
       "uri": "s3://snowplow-hosted-assets/third-party/ua-parser/"
     }
   }
