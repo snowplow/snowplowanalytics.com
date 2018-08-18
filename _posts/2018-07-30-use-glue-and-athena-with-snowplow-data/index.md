@@ -8,30 +8,34 @@ category: Other
 permalink: /blog/2018/07/30/use-glue-and-athena-with-snowplow-data/
 ---
 
-# Overview
+This is a guide to interacting with Snowplow enriched events in Amazon S3 with AWS Glue.
 
-This is a guide on how to use Snowplow archive data with AWS Glue.
+The objective is to open new possibilities in using Snowplow event data via AWS Glue, and how to use the schemas created in AWS Athena and/or AWS Redshift Spectrum.
 
-The objective is to open new possibilities in using Snowplow data with some examples of how to use AWS Glue with snowplow data and how to use the schemas created in AWS Athena and/or AWS Redshift Spectrum.
+This guide consists of the following sections:
 
-In order to bring the example closer to our day-to-day users, we will assume that the overall goal is the same in both the Athena and the Redshift Spectrum case, that is to access some of the Enriched Event data and in particular one of the contexts, as a table.
+1. [Why analyze Snowplow enriched events in S3?](#s3-analysis)
+2. [AWS Glue prerequisites](#glue-reqs)
+3. [Creating the source table in Glue Data Catalog](#creating-the-source-table-in-aws-glue-data-catalog)
+4. [Optionally format shift to Parquet using Glue](#optionally-format-shift-to-parquet-using-glue)
+5. [Use AWS Athena to access the data](#use-aws-athena-to-access-the-data)
+6. [Use AWS Redshift Spectrum to access the data](#use-aws-redshift-spectrum-to-access-the-data)
+7. [Further help](#further-help)
 
-This may be useful for a number of reasons. Usually it would be the case that the data that is needed is no longer on Redshift (e.g. if the client is dropping all but the last month of data to save space).
+<!--more-->
+
+## Why analyze Snowplow enriched events in S3?
+
+THIS SECTION NEEDS MUCH MORE 'POP'.
+
+We will assume that the overall goal is the same in both the Athena and the Redshift Spectrum cases: analyzing Snowplow enriched events and their associated contexts. 
+
+This may be useful for a number of reasons. Usually it would be the case that the data that is needed is no longer on Redshift (e.g. if the client is droping all but the last month of data to save space).
 In that case the user may need to query some data from the Snowplow archive either in order to re-import them, or just to run a large query without affecting the Redshift cluster by running the query on Athena.
 
 In both cases we will need to create a schema in order to read in the data which are formatted in Snowplow's *Enriched Event* format.
 
-The optional second step is there in case you are planning to use the archive often, in which case performance would be important so a way to create a copy of the archive in [parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format.
-If that is what you are trying to do you may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
-
-This guide consists of four parts (the second step is optional):
-
-1. [Creating the source table in AWS Glue Data Catalog](#creating-the-source-table-in-aws-glue-data-catalog).
-2. [Optionally format shift to parquet using Glue](#optionally-format-shift-to-parquet-using-glue).
-3. [Use AWS Athena to access the data](#use-aws-athena-to-access-the-data).
-4. [Use AWS Redshift Spectrum to access the data](#use-aws-redshift-spectrum-to-access-the-data).
-
-## Prerequisites
+## AWS Glue prerequisites
 
 Setting up Glue, Glue Data Catalog and their assorted IAM policies is beyond the scope of this guide, but the main prerequisite units are mentioned here along with links to guides to set up everything, before you start following this guide.
 
@@ -40,6 +44,7 @@ As we want to create a schema in some metastore that is shared across all the fr
 ### Setup Data Catalog in Athena
 
 In order to use the created AWS Glue Data Catalog tables in AWS Athena and AWS Redshift Spectrum, you will need to upgrade Athena to use the Data Catalog.
+
 Please familiarize yourself with what that means by reading the [relevant FAQ][athena-dq-faq].
 
 Once you are happy with that change, carry out the upgrade by following the relevant [step-by-step guide][athena-dq-sbs].
@@ -52,7 +57,7 @@ Please follow steps 1 and 2 from the AWS Glue getting started guide, which you c
 
 ### Setup AWS Cli
 
-You will also need to have [aws cli][aws-cli] set up, as some actions are going to require it.
+You will also need to have [aws cli][aws-cli] set up, as some actions are going to require it. 
 
 Please follow the excellent [AWS documentation][aws-cli] on AWS to get it set-up for your platform, including having the correct credentials with Glue and S3 permissions.
 
@@ -80,7 +85,9 @@ aws glue create-database --database-input '{"Name": "snowplow_data", "Descriptio
 
 ### Creating the archive table
 
-In order to create the table, you will need to use the CLI as creating all the fields (~130) would be too error-prone and tedious using the console, so you are encouraged to use a command like the following, instead of the web interface:
+In order to create the table, you will need to use the CLI as creating all the fields (~130) would be too error-prone and tedious using the console.
+
+Use a command like so:
 
 ```bash
 aws glue create-table --database-name snowplow_data --table-input '
@@ -640,21 +647,23 @@ aws glue create-table --database-name snowplow_data --table-input '
 '
 ```
 
-After this step you will have the table definition exists that can be used with Glue, Athena and Redshift, however you will need to update the partitions every time the underlying data changes (e.g. new data arrives).
+After this step you will have the table definition exists that can be used with Glue, Athena and Redshift, however you will need to update the partitions every time the underlying data changes (e.g. new data arrives). 
 
-One way of doing that is to run the following on Athena:
+One way of doing that is to run the following SQL on Athena:
 
-```sql
+```sql 
 MSCK REPAIR TABLE archive;
 ```
 
-Unless you have the correct partitions in the metastore you will not be able to query all (or any) of the snowplow data using that table definition (even though the data is there).
+Unless you have the correct partitions in the metastore you will not be able to query all (or any) of the Snowplow data using that table definition (even though the data is there).
 
-The alternative is to not specify partition keys in the definition above by setting `"PartitionKeys": []` but that will prevent using that table definition in Glue in some cases (however you will be able to use it in Athena and Spectrum), such as in the parquet example below.
+The alternative is to not specify partition keys in the definition above by setting `"PartitionKeys": []` but that will prevent using that table definition in Glue in some cases (however you will be able to use it in Athena and Spectrum), such as in the Parquet example below.
 
-## Optionally format shift to parquet using Glue
+## 2. Optionally format shift to Parquet using Glue
 
-This step is **optional** and only makes sense if you want to create a parquet version of the archive for frequent efficient use.
+The optional second step is there in case you are planning to use the archive often, in which case performance would be important. A way to create a copy of the archive in [Parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format.
+
+This step is **optional** and only makes sense if you want to create a Parquet version of the archive for frequent efficient use.
 
 A prerequisite for this step is that you have created a partition key on Step 1.
 
@@ -668,7 +677,7 @@ In order to run this step you will need to ensure that the data partitions have 
 MSCK REPAIR TABLE archive;
 ```
 
-on the Athena page. Ensure that you have selected `snowplow_data` as the database and that the archive table is shown as `(Partitioned)` like so:
+on the Athena page. Ensure that you have selected `snowplow_data` as the database and that the archive table is shown as `(Partitioned)` like so: 
 
 ![Athena MSCK][athena-msck]
 
@@ -676,7 +685,7 @@ Which should result in an output like this if successful:
 
 ![Athena MSCK result][athena-msck-result]
 
-### Setup a simple parquet job to format shift to parquet
+### Setup a simple Parquet job to format shift to Parquet
 
 Back on the Glue page, click on `Jobs` from the left pane and then the `Add job` button:
 
@@ -686,7 +695,7 @@ On the Add job workflow, choose the appropriate name for the job and an IAM role
 
 ![Add job 2][glue-parquet-2]
 
-On `Choose your data sources` simply choose the `archive` table from the `snowplow_data` database and click `Next`:
+On `Choose your data sources` simply choose the `archive` table from the `snowplow_data` database and click `Next`: 
 
 ![Add job 3][glue-parquet-3]
 
@@ -698,7 +707,7 @@ and click `Next`.
 
 In the `Map the source columns to target columns` accept the default (you should see a 1-1 mapping of all the fields) mapping and click `Next`.
 
-Finally review and click "Save job and edit script".
+Finally review and click `Save job and edit script`.
 
 The screen should then look like this:
 
@@ -706,7 +715,7 @@ The screen should then look like this:
 
 And you can click on `Run job`.
 
-Once the job is finished (you can monitor the progress on the bottom of the screen under `Logs`), you should have created a number of files in your chosen location, with the suffix `snappy.parquet` (e.g. `s3://your-output-bucket/your-chosen-prefix/part-00136-b2b9d533-88bc-4307-a2a6-a452a459fe85-c000.snappy.parquet`).
+Once the job is finished (you can monitor the progress on the bottom of the screen under `Logs`), you should have created a number of files in your chosen location, with the suffix `snappy.parquet` (e.g. `s3://your-ouput0bucket/your-chosen-prefix/part-00136-b2b9d533-88bc-4307-a2a6-a452a459fe85-c000.snappy.parquet`).
 
 ### Create table definition for your parquet data
 
@@ -1267,22 +1276,26 @@ aws glue create-table --database-name snowplow_data --table-input '
 
 If you have gone through this step, remember to use `archive_parquet` table instead of `archive` in the subesquent steps.
 
-## Use AWS Athena to access the data
+### Keeping your Parquet data up-to-date
+
+You may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
+
+## 3. Use AWS Athena to access the data
 
 Now that you have a Data Catalog entry that you can use, head over to the Athena console and select `snowplow_data` as the database for our new query in the `Query Editor`:
 
 ![Athena new query][athena-new-query]
 
-Now in the `query editor` you can try using the new table.
+Now in the `query editor` you can try using the new table. 
 
-Below is an example query that you can run on Athena to access your data.
+Below is an example query that you can run on Athena to access your data. 
 
-That query extracts a context that matches the `iglu:org.w3/PerformanceTiming/jsonschema/1-0-0` iglu schema out of teh `contexts` field and then extracts the individual fields out of that context.
+That query extracts a context that matches the `iglu:org.w3/PerformanceTiming/jsonschema/1-0-0` iglu schema out of the `contexts` field and then extracts the individual fields out of that context.
 
 At the time of writing, due to a limitation of the Data Catalog this cannot be turned into a view.
 
 ```sql
-SELECT
+SELECT 
 json_extract(performance_events[1], '$.data.navigationStart') AS navigationStart,
 json_extract(performance_events[1], '$.data.unloadEventStart') AS unloadEventStart,
 json_extract(performance_events[1], '$.data.unloadEventEnd') AS unloadEventEnd,
@@ -1318,7 +1331,7 @@ WHERE cardinality(performance_events) = 1
 
 For further details on what is and what isn't supported read the excellent AWS documentation, including [unsupported DDL in Athena][unsupported-ddl-in-athena].
 
-## Use AWS Redshift Spectrum to access the data
+## 4. Redshift
 
 Just as with the previous step, you will need to create an appropriate role that can access your data, which you can do by following the [IAM Role guide here][iam-redshift]
 
@@ -1327,7 +1340,7 @@ Just as with the previous step, you will need to create an appropriate role that
 In order to use the table create in Data Catalog, you will need to create an external schema using the IAM role that you have created, using:
 
 ```sql
-create external schema glue_schema from data catalog
+create external schema glue_schema from data catalog 
 database 'snplow-enriched-archive'
 iam_role 'arn:aws:iam::719197435995:role/konstantinos-RS-load';
 ```
@@ -1336,32 +1349,32 @@ For more background on external schemas, read the excellent [AWS documentation][
 
 ### Using the table
 
-Finally, for the same scenario as with -Presto- Athena above, in order to isolate a ingle context and extract it's fields you would do something like this:
+Finally, for the same scenario as with Athena above, in order to isolate a single context and extract its fields you would do something like this:
 
 ```sql
-CREATE OR REPLACE VIEW performanceEvents AS
-SELECT
-    navigationStart,
-    unloadEventStart,
-    unloadEventEnd,
-    redirectStart,
-    redirectEnd,
-    fetchStart,
-    domainLookupStart,
-    domainLookupEnd,
-    connectStart,
-    connectEnd,
-    secureConnectionStart,
-    requestStart,
-    responseStart,
-    responseEnd,
-    domLoading,
-    domInteractive,
-    domContentLoadedEventStart,
-    domContentLoadedEventEnd,
-    domComplete,
-    loadEventStart,
-    loadEventEnd,
+CREATE OR REPLACE VIEW performanceEvents AS 
+SELECT 
+    navigationStart, 
+    unloadEventStart, 
+    unloadEventEnd, 
+    redirectStart, 
+    redirectEnd, 
+    fetchStart, 
+    domainLookupStart, 
+    domainLookupEnd, 
+    connectStart, 
+    connectEnd, 
+    secureConnectionStart, 
+    requestStart, 
+    responseStart, 
+    responseEnd, 
+    domLoading, 
+    domInteractive, 
+    domContentLoadedEventStart, 
+    domContentLoadedEventEnd, 
+    domComplete, 
+    loadEventStart, 
+    loadEventEnd, 
     chromeFirstPaint
 FROM
 (SELECT
@@ -1413,7 +1426,7 @@ You may of course insert the data into another table in redshift for better perf
 
 ## Further help
 
-If you have any question regarding this guide or you need help with how you could use your Snowplow data with Athena, Glue and Redhsift, please please visit [our Discourse forum][discourse].
+If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redhsift, please please visit [our Discourse forum][discourse].
 
 [best-practices-athena-glue]: https://docs.aws.amazon.com/athena/latest/ug/glue-best-practices.html
 [parquet]: https://parquet.apache.org/
