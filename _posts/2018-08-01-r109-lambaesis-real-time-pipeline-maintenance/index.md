@@ -105,7 +105,9 @@ This should make it easier to work with event sources which need to `POST` event
 
 We have seen Snowplow users and customers encountering `X-Forwarded-For` headers containing a comma-separated list of IP addresses, occurring when the request went through multiple load balancers. The header in the raw event payload will indeed accumulate the different IP addresses, for example:
 
-`X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98`
+{% highlight %}
+X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98`
+{% endhighlight %}
 
 According to [the specification for this header][x-forwarded-for-docs],
 the first address is supposed to be the original client IP address whereas the following ones correspond to
@@ -148,6 +150,8 @@ doNoTrackCookie {
 }
 {% endhighlight %}
 
+You will have to set this cookie yourself, on a domain which the Scala Stream Collector can read.
+
 <h3 id="root">2.2 Customize the response from the root route</h3>
 
 It is now possible to customize what is sent back when hitting the `/` route of the Scala Stream
@@ -167,7 +171,7 @@ rootResponse {
 }
 {% endhighlight %}
 
-This neat feature lets you provide an information page about your event collection and processing on the collector's root URL, ready for curious site visitors to discover.
+This neat feature lets you provide an information page about your event collection and processing on the collector's root URL, ready for site visitors to review.
 
 <h3 id="head">2.3 Support for HEAD requests </h3>
 
@@ -205,13 +209,13 @@ configuration because, when using `s3a`, those problematic empty files are simpl
 We have taken advantage of this release to improve how we support our community of open source
 developers and other contributors. This initiative translates into:
 
-- [A new Gitter room][gitter-snowplow] where you can chat with the Snowplow engineers and share ideas on contributions you would like to make to the project
+- [A new Gitter room for Snowplow][gitter-snowplow], where you can chat with the Snowplow engineers and share ideas on contributions you would like to make to the project
 - [A new contributing guide][contributing]
 - New issue and pull request templates to give better guidance if you are looking to contribute
 
 <h2 id="upgrading">5. Upgrading</h2>
 
-This release applies only to our real-time pipeline on AWS, GCP or on-premise through Kafka - if you
+This release applies only to our real-time pipeline running on AWS, GCP or on-premise through Kafka - if you
 are running any other flavor of Snowplow, there is no upgrade necessary.
 
 <h3 id="upg-se">5.1 Upgrading Stream Enrich</h3>
@@ -238,9 +242,11 @@ following:
 {% endhighlight %}
 
 Note the bump to the version `1-0-1` as well as the specification of the location of the user agent
-database. The database is the one maintained in the [uap-core repository](https://github.com/ua-parser/uap-core).
+database. The database is the one maintained in the [uap-core repository][uap-core].
 
-An example can be found in [our repository](https://github.com/snowplow/snowplow/blob/master/3-enrich/config/enrichments/ua_parser_config.json).
+An example can be found in [our repository][ua-parser-config].
+
+We will be keeping the external user agent database that we host in Amazon S3 up-to-date as the upstream project releases new versions of it.
 
 <h3 id="upg-ssc">5.2 Upgrading the Scala Stream Collector</h3>
 
@@ -279,13 +285,13 @@ crossDomain {
 }
 {% endhighlight %}
 
-A full configuration can be found [in the repository](https://github.com/snowplow/snowplow/blob/r109-lambaesis/2-collectors/scala-stream-collector/examples/config.hocon.sample)
+A full configuration can be found [in the repository][ssc-config].
 
 <h3 id="upg-eer">5.3 Upgrading EmrEtlRunner</h3>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
-We also encourage people to switch all of your bucket paths to `s3a`, which will prevent the pipeline's S3DistCp steps from creating empty files:
+We also encourage people to switch all of your bucket paths to `s3a`, which will prevent the pipeline's S3DistCp steps from creating empty files, like so:
 
 {% highlight yaml %}
 aws:
@@ -315,7 +321,7 @@ Upcoming Snowplow releases include:
 
 * [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
-* [R11x (Batch Pipeline Release)][r11x], making the new features of this release available to the batch pipeline, among other things
+* [R11x [BAT] Increased stability)][r11x-stability], making the new features of this release available to the batch pipeline, and improving batch pipeline stability
 
 <h2 id="help">6. Getting help</h2>
 
@@ -354,8 +360,12 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [se-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.19.0#files
 [ssc-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-scala-stream-collector/0.14.0#files
 
+[uap-core]: https://github.com/ua-parser/uap-core
+[ua-parser-config]: https://github.com/snowplow/snowplow/blob/master/3-enrich/config/enrichments/ua_parser_config.json
+[ssc-config]: https://github.com/snowplow/snowplow/blob/r109-lambaesis/2-collectors/scala-stream-collector/examples/config.hocon.sample
+
 [r110]: https://github.com/snowplow/snowplow/milestone/151
-[r11x]: https://github.com/snowplow/snowplow/milestone/154
+[r11x-stability]: https://github.com/snowplow/snowplow/milestone/162
 [dataflow]: https://cloud.google.com/dataflow/
 [beam]: https://beam.apache.org/
 [r108-blogpost]: https://snowplowanalytics.com/blog/2018/07/24/snowplow-r108-val-camonica-with-batch-pipeline-encryption-released/
