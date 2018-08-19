@@ -15,7 +15,7 @@ Please read on after the fold for:
 1. [Load manifest improvements](#load-manifest)
 2. [Configuration refactoring](#configuration)
 3. [Logging improvements](#logging)
-4. [Processing manifest](#processing-manifest)
+4. [Snowplow Processing Manifest](#processing-manifest)
 5. [Other improvements](#other)
 6. [Upgrading](#upgrading)
 7. [Getting help](#help)
@@ -87,39 +87,38 @@ All mandatory changes are set out in the [upgrading](#upgrading) section below.
 
 <h2 id="logging">3. Logging improvements</h2>
 
-Historically, RDB Loader provided very concise log output, showing only what steps were successfully executed.
-Using this output for debugging purposes was quite troublesome and operators had to rely on third-party sources.
+Historically, RDB Loader provided very concise log output, showing only what steps were successfully executed. Using this output for debugging purposes was challenging, and operators had to rely on third-party sources.
 
-Since this release, RDB Loader provides very detailed information about load process, in particular it adds:
+From R30, RDB Loader provides very detailed information about the load process, in particular adding:
 
-1. List of discovered folders (usually just one) with full list of shredded types found there.
+1. List of discovered folders (usually just one) with full list of shredded types found there
 2. Eventual consistency check delays
 3. Improved failure messages, showing possible resolution steps
-4. Timestamps for all messages, so operator would be able to figure out what step takes most of the time
-5. List of timestamped and truncated `COPY INTO` statements in `stdout` (won't be printed by EmrEtlRunner, but be present in EMR logs)
+4. Timestamps for all messages, helping to highlight which steps take the most time
+5. List of timestamped and truncated `COPY INTO` statements in `stdout` - this won't be printed by EmrEtlRunner, but *will* be present in EMR logs
 
-<h2 id="logging">4. Processing manifest</h2>
+<h2 id="logging">4. Snowplow Processing Manifest</h2>
 
-Another big new feature of this release is introduction of Snowplow Processing Manifest.
+Another major new feature of this release is introduction of Snowplow Processing Manifest - not to be confused with the Redshift `atomic.manifest` table discussed above.
 
-Snowplow Processing Manifest is a library and journal allowing jobs to keep record of all significant steps in pipeline,.
-It is designed as a very generic mechanism independent from backend and target database.
-Currently only AWS DynamoDB is available as backend and only Redshift (through RDB Shredder and Loader) supported as target database, however similar mechanism is used in [Snowplow Snowflake Loader][snowflake-loader-post] and we have plans to migrate Snowflake Loader to exact same format of manifest in order to make processing an universal glue between pipeline components.
+Snowplow Processing Manifest is a library and journal allowing jobs to keep a record of all significant processing steps in a pipeline. It has been designed as a very generic mechanism, independent from specific processing engines and target databases.
 
-Most important features of manifest include:
+Currently only AWS DynamoDB is available as a backend for the manifest, and only Redshift (through RDB Shredder and Loader) is supported as target database, however a similar approach is used in [Snowplow Snowflake Loader][snowflake-loader-post], and we have plans to migrate Snowflake Loader to use the Snowplow Processing Manifest, which will evolve into a "universal glue" between pipeline components.
 
-* Track of all shredded types in a folders in order to skip S3 consistency check delays
-* Track of all RDB Shredder and Loader runs with their respective timestamps and exit statuses
-* Locking mechanism preventing double-loading and race conditions
+The most important features of Snowplow Processing Manifest include:
 
-Right now processing manifest in RDB Loader is considered beta and not necessary needs to be enabled in order to use RDB Loader.
+* Tracking of all shredded types in a folder, in order to skip S3 consistency check delays
+* Tracking of all RDB Shredder and Loader runs with their respective timestamps and exit statuses
+* Locking mechanism, preventing double-loading and race conditions
 
-Stay tuned for more information on processing manifest and how to use it along with its official announcement.
+Right now, the Snowplow Processing Manifest as embedded in RDB Loader is considered as *beta*, and it does **not** need to be enabled in order to use RDB Loader, nor make use of any of the new functionality outlined above. The manifest is disabled by default.
+
+Stay tuned for more information on Snowplow Processing Manifest, coming in an official announcement soon.
 
 <h2 id="other">5. Other improvements</h2>
 
-* RDB Shredder with enabled cross-batch deduplication does not automatically create DynamoDB event manifest anymore [#62][issue-62]
-* Fixed a bug, where Loader would fail in JDBC password could be interpreted as invalid regular expression [#87][issue-87]
+* RDB Shredder with enabled cross-batch deduplication does not automatically create DynamoDB event manifest anymore - you will need to create this table manually [#62][issue-62]
+* We fixed a bug where the Loader would fail if the JDBC password could be interpreted as an invalid regular expression [#87][issue-87]
 
 <h2 id="upgrading">6. Upgrading</h2>
 
@@ -138,14 +137,14 @@ storage:
 
 <h3>Redshift</h3>
 
-In storage target configuration for Redshift you'll need to do following changes:
+In the storage target configuration for Redshift, you'll need to do following changes:
 
 1. Switch SchemaVer to `3-0-0`
 2. Remove `sslMode` and add `jdbc` JSON object instead
 3. In case you had `"sslMode": "DISABLE"` - add `"ssl": false` to `jdbc`; if you had `"sslMode": "REQUIRE"` - add `"ssl": true` to `jdbc`
 4. Assign random UUID to `id` property (add it if it didn't exist)
 5. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
-6. Add `"processingManifest": null` unless you're going to use the processing manifest
+6. Add `"processingManifest": null` unless you're going to use the processing manifest (to be covered in a future release announcement)
 
 <h3>PostgreSQL</h3>
 
@@ -154,7 +153,7 @@ If you're loading data to PostgreSQL, you'll need to make following changes in r
 1. Switch SchemaVer to `2-0-0`
 2. Assign random UUID to `id` property (add it if it didn't exist)
 3. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
-4. Add `"processingManifest": null` unless you're going to use the processing manifest
+4. Add `"processingManifest": null` unless you're going to use the processing manifest (to be covered in a future release announcement)
 
 <h2 id="help">7. Getting help</h2>
 
@@ -176,4 +175,3 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [discourse]: http://discourse.snowplowanalytics.com/
 [release]: https://github.com/snowplow/snowplow-rdb-loader/releases/r30
-
