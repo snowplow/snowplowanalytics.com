@@ -20,71 +20,70 @@ Please read on after the fold for:
 6. [Upgrading](#upgrading)
 7. [Getting help](#help)
 
+<!--more-->
+
 <h2 id="load-manifest">1. Load manifest improvements</h2>
 
 In [R87 Chichen Itza][r87-post] we introduced the Redshift load manifest, widely known as `atomic.manifest` table.
-Each row in this table represents metadata about a job performed by RDB Loader.
+Each row in this table represents metadata about a loading "job" performed by RDB Loader.
 
-Until now RDB Loader nor other Snowplow sotfware never used this table for any purpose and it was purely informational.
-In R30 we decided to change that and implemented several defensive checks that work on top of `manifest` table and add extra-safety to loading process.
+Until now, neither RDB Loader nor any other Snowplow sotfware has used this table for any purpose - it was purely informational. In this release, we have changed that and implemented several defensive checks that work on top of `manifest` table and add extra-safety to the loading process:
 
-<h3>Double-loading</h3>
+<h3>Protection from double-loading</h3>
 
-First issue we addressed using load manifest is accidental double-loading, which can happen quite often if pipeline operator isn't very experienced with recovery process.
-In order to do that, we implemented following load algorithm in R30:
+The first issue we have addressed using load manifest is accidental double-loading, which can happen if the Snowplow operator isn't very experienced with the recovery process. R30 implements the following load algorithm:
 
 1. Start a DB transaction
 2. Load data into `atomic.events` table
 3. Check latest `etl_tstamp` in `atomic.events`
-4. If latest record in `atomic.manifest` has same `etl_tstamp` - abort the transaction
-5. Otherwise - proceed to shredded data, write new record to manifest and commit the transaction
+4. If latest record in `atomic.manifest` has same `etl_tstamp`, abort the transaction
+5. Otherwise, proceed to shredded data, write new record to manifest and commit the transaction
 
-Before R30 we didn't have 3rd and 4th steps and therefore nothing (in RDB Loader) prevented loading data multiple times.
+Before R30 we didn't have the third and fourth steps, so nothing in RDB Loader prevented loading data multiple times.
 
 <h3>Historical loading</h3>
 
-Sequence of steps shown above illustrates that RDB Loader always assumes that most recent `etl_tstamp` in `atomic.events` is the timestamp of current run folder.
-Which is the case only when pipeline is functioning without interruptions.
-However, often we need to load archived data (using `--folder` option introduced in [RDB Loader 0.13.0][v013-post]) for example when operator discovered that folder was not loaded (e.g. due mistakenly used `--resume-from` in EmrEtlRunner).
-In this case, RDB Loader incorrectly identifies `etl_tstamp` of the load as most recent one, which in fact would corrupt manifest table or prevent data from loading.
+RDB Loader has always assumed that the most recent `etl_tstamp` in `atomic.events` is the timestamp of the current "run" folder.
 
-In R30 we introduced so called "transitional load" mode, which enables only when `--folder` option is passed.
-In this mode, RDB Loader loads atomic data into a temporary created table with ideantical to `atomic.events` schema in order to get precise information about dataset that it is about to load.
-With transitional load, RDB Loader can inspect temporary table and get the correct `etl_tstamp` without being confused by existing data.
-If `etl_tstamp` does not exist in load manifest - data will be moved over to `atomic.events` table and temporary table will get dropped.
-Otherwise - transaction will be aborted.
+This is normally the case - but sometimes we need to load archived data, using the `--folder` option introduced in [RDB Loader 0.13.0][v013-post]); this could happen when the operator discovers that a given folder was not loaded (in turn happening perhaps due to mistakenly using `--resume-from` in EmrEtlRunner).
 
-Notice that in order to seamlessly use this feature, your DB user should have permissions to create and drop tables.
+In this case, RDB Loader incorrectly treats the most recent `etl_tstamp` as the timestamp for the historical load, which can corrupt the manifest table or prevent data from loading.
+
+R30 introduces a "transitional load" mode, activating only when `--folder` option is passed. In this mode, RDB Loader loads atomic data into a temporary created table, with a schema identical to `atomic.events`, in order to get precise information about the dataset that it is about to load.
+
+With transitional load, RDB Loader can inspect temporary table and get the correct `etl_tstamp` without being confused by existing data. Only if `etl_tstamp` does not exist in the load manifest will the data be moved over to `atomic.events` table and the temporary table be dropped; otherwise, the transaction will be aborted.
+
+Notice that in order to use this feature, your database user should have permissions to create and drop tables.
 
 <h3>New skippable steps</h3>
 
-We also introduced three new steps that user can skip during RDB Loader job:
+R30 also introduces three new steps that the user can skip during RDB Loader job:
 
-* `load_manifest_check` - to not perform the check described above, so any data would be able to get into Redshift
-* `load_manifest` - to skip all load manifest interactions: check and write
-* `transitional_load` - to skip transitional load even when `--folder` is specified
+* `load_manifest_check` - skipping the check described above, meaning that any data, even duplicated data, will be loadable into Redshift
+* `load_manifest` - skipping all the load manifest interactions, i.e. checking and writing to the manifest
+* `transitional_load` - skipping the "transitional load" mode introduced above, even when `--folder` is specified
 
-EmrEtlRunner Since [R102 Afontova Gora][r102-post] will skip `load_manifest` for any pipeline with enabled Stream Enrich Mode, as `etl_tstamp` does not bear any useful information within real-time pipeline.
+Note that EmrEtlRunner since [R102 Afontova Gora][r102-post] will skip `load_manifest` for any pipeline with "stream erich" mode running, as then `etl_tstamp` does not bear any useful information within real-time pipeline.
 
-Skip these at your own risk and when you fully understand the consequences, as failure during load manifest check almost always will mean double-loading.
+Skip these steps at your own risk and when you fully understand the consequences, as a failure during `load_manifest_check` almost always will mean double-loading.
 
 <h2 id="configuration">2. Configuration refactoring</h2>
 
 Historically, RDB Loader used PostgreSQL-compatible options to configure an SSL connection, which could have one of following available settings: `DISABLE`, `REQUIRE`, `VERIFY_CA` or `VERIFY_FULL`.
+
 However, this method does not match [Redshift configuration][redshift-jdbc], where `sslMode` could be only `verify-ca` or `verify-full`.
 
-In this version we re-worked configuration file to instead use direct JDBC configuration options in new `jdbc` object that includes most of available Redshift JDBC options.
-You can see full list of available settings in [configuration JSON Schema][target-jdbc-options].
+In this version we have re-worked the configuration file to instead use direct JDBC configuration options in a new `jdbc` object, which includes most of the available Redshift JDBC options. You can see full list of available settings in [configuration JSON Schema][target-jdbc-options].
 
-Root-level `sslMode` is not a valid setting anymore.
+Note that the root-level `sslMode` is not a valid setting anymore.
 
-We also took this opportunity of configuration refactoring to make few more forward-looking changes and clean-ups:
+We also took this opportunity to make some forward-looking changes and clean-ups:
 
-* All optional root-level settings are cannot be omitted, and must be set to `null`
-* `id` setting is not an optional anymore, and must be set to random UUID
-* New optional `processingManifest` option added, more on this later
+* All optional root-level settings cannot now be omitted, and must be set to `null`
+* `id` setting is not an optional anymore, and must be set to a (random) UUID
+* A new optional `processingManifest` option has been added - more on this later
 
-All mandatory changes are illustrated in [upgrading](#upgrading) section.
+All mandatory changes are set out in the [upgrading](#upgrading) section below.
 
 <h2 id="logging">3. Logging improvements</h2>
 
