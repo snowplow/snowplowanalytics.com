@@ -8,34 +8,37 @@ category: Releases
 permalink: /blog/2018/08/01/snowplow-indicative-relay-released/
 ---
 
-We are pleased to announce the release of Snowplow Indicative Relay.
-It is an [AWS Lambda][aws-lambda] function, which allows for sending batches
+We are pleased to announce the release of the Snowplow Indicative Relay.
+
+This is a Snowplow relay project, implemented as an [AWS Lambda][aws-lambda] function which allows for sending batches
 of Snowplow enriched events from a Kinesis stream into [Indicative][indicative].
 
 1. [What is Indicative?](#indicative)
-2. [How does a relay work?](#how-does-it-work)
+2. [How does the relay work?](#how-does-it-work)
 3. [Requirements and setup](#setup)
 4. [Getting help](#help)
 
 <h2 id="indicative">1. What is Indicative?</h2>
 
-[Indicative][indicative] is an emerging customer analytics platform, optimised for
-customer journey analytics. It is particularly well suited for marketers,
-product managers, and analysts. Indicative connects to many data sources in order to give
-a needed insight into users behaviour. To learn more, you can take a look at our [previous blog post][previous-blog].
+[Indicative][indicative] is an emerging customer analytics platform, optimised for customer journey analytics.
+
+It is particularly well suited for marketers, product managers, and analysts. Indicative connects to many data sources in order to give a needed insight into users behavior - and is a great fit for analyzing Snowplow event data.
+
+To learn more about using Indicative with Snowplow, take a look at our [previous blog post][snowplow-indicative-blog].
 
 ![indicative][indicative-img]
 
-<h2 id="how-does-it-work">2. How does a relay work?</h2>
+<h2 id="how-does-it-work">2. How does the relay work?</h2>
 
-Relay is a stream consumer in a form of an AWS Lambda function. 
-It retrieves events from a Kinesis stream of Snowplow enriched events and transfers them 
-straight into Indicative in real time, skipping the storage part of the pipeline.
-To be most efficient and cost-effective, the relay consumes and transfers
-the events in batches, thus invoking the lambda only once per many events.
+Snowplow Relay is an initiative for feeding Snowplow enriched events into third-party tools or *destinations*, from SaaS marketing platforms to open-source machine learning engines to fraud detection services. We call an individual app that feeds Snowplow events into a specific destination a *relay*.
 
-Snowplow Indicative Relay uses the [Indicative REST API][indicative-rest-api] under the hood
-by transforming incoming events into the format expected by Indicative.
+The Snowplow Indicative Relay is a Kinesis stream consumer in a form of an AWS Lambda function.
+
+The relay retrieves events from a Kinesis stream of Snowplow enriched events, transforms them to be compatible with Indicative's event model, and then loads them into Indicative in real time using the [Indicative REST API][indicative-rest-api].
+
+FROM HERE ->
+
+The relay transforms incoming events into the format expected by Indicative.
 Let's take this (very simplified for brevity) Snowplow enriched event in
 a JSON form as an example:
 
@@ -138,17 +141,25 @@ All above fields can be given more descriptive names and categories through the 
 
 ![indicative fields][indicative-fields-img]
 
+<-- TO HERE, ALL THIS SHOULD MIGRATE INTO THE WIKI PER https://github.com/snowplow-incubator/snowplow-indicative-relay/issues/6
 
 <h2 id="setup">3. Requirements and setup</h2>
 
-To simplify the process of deploying the function, Snowplow Analytics provides its jar file through [Hosted assets][hosted-assets]
-on AWS S3. Detailed setup instructions are provided on the project's [GitHub page][github-page].
+To simplify the process of deploying the Snowplow Indicative Relay function, Snowplow Analytics provides its jar file through [Hosted assets][hosted-assets] on AWS S3.
+
+Detailed setup instructions are provided on the project's [GitHub page][github-page].
+
+THIS SECTION TO BE UPDATED FOLLOWING https://github.com/snowplow-incubator/snowplow-indicative-relay/issues/5
+
+ONCE YOU HAVE SETUP, HOW DO YOU KNOW IT IS WORKING?
+
+YOU ARE MISSING AN EXAMPLE OF USING THE DATA IN INDICATIVE.
 
 <h2 id="help">4. Getting help</h2>
 
-If you have questions or run into any problems, please visit [our Discourse forum][discourse]. 
-In case you spot any bugs, please report them through [GitHub issues][github-issues].
+If you have questions or run into any problems, please visit [our Discourse forum][discourse].
 
+And if you spot any bugs, please report them through [GitHub issues][github-issues].
 
 [aws-lambda]: https://aws.amazon.com/lambda/
 [indicative]: https://www.indicative.com/
@@ -156,7 +167,7 @@ In case you spot any bugs, please report them through [GitHub issues][github-iss
 [indicative-img]: /assets/img/blog/2018/08/indicative-img.png
 [indicative-fields-img]: /assets/img/blog/2018/08/indicative-fields-img.png
 
-[previous-blog]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
+[snowplow-indicative-blog]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
 
 [hosted-assets]: https://github.com/snowplow/snowplow/wiki/Hosted-assets#6-relays
 [github-page]: https://github.com/snowplow-incubator/snowplow-indicative-relay
