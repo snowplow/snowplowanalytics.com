@@ -76,21 +76,6 @@
 
         <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
         <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-            var allowSubmit = false;
-            function capcha_filled () {
-                allowSubmit = true;
-                }
-            function capcha_expired () {
-                allowSubmit = false;
-                }
-            function check_if_capcha_is_filled (e) {
-                if(allowSubmit) return true;
-                e.preventDefault();
-                alert('Fill in the capcha!');
-                }
-        </script>
     </head>
 
 
