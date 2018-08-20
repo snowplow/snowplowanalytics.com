@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2018/08/21/iglu-r10-tiflis-released/
 ---
 
-We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother Igluctl workflow.
+We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother igluctl workflow.
 This release also introduces small but important updates to Iglu Server and core libraries.
 
 1. [Schema workflow, simplified](#schema-workflow)
@@ -32,7 +32,7 @@ Working with JSON Schemas within the Snowplow ecosystem involves quite some step
 3. Push schemas to one or more schema registries
 4. Sync JSON Paths files to one or more Amazon S3 buckets
 
-All of these actions are handled by specific Igluctl subcommands, one operation at a time.
+All of these actions are handled by specific igluctl subcommands, one operation at a time.
 
 Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course all of the manual steps quickly become painfully repetitive when you work with schemas regularly.
 
@@ -95,22 +95,35 @@ As a last change - we've dropped Scala 2.10 support from all core libraries. Sca
 
 <h3 id="upgrade-iglu-server">4.1 Iglu Server</h3>
 
-The new Iglu Server release can be downloaded from [here from Bintray][iglu-server-download] (download will start). Unzip the compressed file and then you can launch server with following interface: `java -jar $JAR_PATH --config $CONFIG_PATH`.
+The new Iglu Server release can be downloaded from [Bintray][iglu-server-download] (download will start).
+
+Unzip the compressed file and then you can launch the server like so:
+
+{% highlight bash %}
+$ java -jar $JAR_PATH --config $CONFIG_PATH
+{% endhighlight %}
+
+REWRITE THIS TO FLOW BETTER ->
 
 The only breaking change is regarding 2 validation endpoints under `/api/schemas/validate/`.
 Previously, a `GET` request sent to any endpoint under `/api/schemas/validate/` would be used for validation.
 From now on, same request should be sent using `POST` method.
 Also, schemas shouldn't be appended to request URL, instead they should be in body as form data.
 
+<- THANKS
+
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
-The latest igluctl can be downloaded from [here from Bintray][igluctl-download].
+The latest igluctl, version 0.5.0, can be downloaded from [here from Bintray][igluctl-download].
 
-The new version, igluctl 0.5.0, doesn't deprecate any interface from previous version, 0.4.1.
+The new version doesn't deprecate any behaviors from the previous version, 0.4.1.
 
 <h2 id="help">5. Getting help</h2>
 
-For more details on this release, as always do check out the [release notes][release-notes] and the [wiki page][iglu-server-wiki] on GitHub.
+For more details on this release, as always do check out the [release notes][release-notes] and the relevant documentation pages:
+
+* [XXXXX][iglu-server-wiki]
+* XXXXXXXX
 
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
