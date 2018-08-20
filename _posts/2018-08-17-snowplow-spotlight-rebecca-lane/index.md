@@ -2,7 +2,7 @@
 layout: post
 title: "Snowplow Spotlight Rebecca Lane"
 description: Meet Rebecca, Customer Experience & Analytics Manager
-image:
+image: /assets/img/blog/2018/08/Rebecca_02.jpg
 title-short: Snowplow Spotlight Recca
 tags: [analytics, snowplow team, startups, company culture]
 author: Miriam
