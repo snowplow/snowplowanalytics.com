@@ -10,7 +10,8 @@ permalink: /blog/2018/08/01/snowplow-r109-lambaesis-real-time-pipeline-upgrade/
 
 We are pleased to announce the release of [Snowplow 109 Lambaesis][snowplow-release], named
 after [the archeological site in north-eastern Algeria][lambaesis]. This release focuses on
-upgrading the AWS real-time pipeline components, although it also updates EmrEtlRunner for batch pipeline customers.
+upgrading the AWS real-time pipeline components, although it also updates EmrEtlRunner and Spark
+Enrich for batch pipeline users.
 
 This release is one of the most community-driven releases in the history of Snowplow Analytics. As such,
 we would like to give a huge shout-out to each of the contributors who made it possible:
@@ -18,11 +19,12 @@ we would like to give a huge shout-out to each of the contributors who made it p
 - [Kevin Irwin][userkci] and [Rick Bolkey][rbolkey] from [OneSpot][onespot]
 - [Saeed Zareian][szareiangm] from [the Globe and Mail][the-globe-and-mail]
 - [Arihant Surana][arihantsurana] from [BigCommerce][bigcommerce]
+- [Dani Solà][danisola] from [Simply Business][simply-business]
 - [Robert Kingston][kingo55] from [Mint Metrics][mint-metrics]
 
 Please read on after the fold for:
 
-1. [Stream Enrich updates](#se)
+1. [Enrichment process updates](#se)
 2. [Scala Stream Collector updates](#ssc)
 3. [EmrEtlRunner bugfix](#eer)
 4. [Supporting community contributions](#community)
@@ -33,14 +35,14 @@ Please read on after the fold for:
 ![lambaesis][lambaesis-img]
 Lambese - M. Gasmi / CC-BY 2.5
 
-<h2 id="se">1. Stream Enrich updates</h2>
+<h2 id="se">1. Enrichment process updates</h2>
 
 <h3 id="ext">1.1 Externalizing the file used for the user agent parser enrichment</h3>
 
-Up until this release, the [User Agent Parser Enrichment][ua-parser-enrichment] relied on a "database" of user agent regexes that was embedded within the code. With this release, we have externalized this file to
+Up until this release, the [User Agent Parser Enrichment][ua-parser-enrichment] relied on a "database" of user agent regexes that was embedded along the code. With this release, we have externalized this file to
 decorrelate updates to the file from updates to the library, which gives us a lot more flexibility.
 
-This User Agent Parses update will of course make its way into a future batch pipeline release, and we'll be doing the same thing for the Referer Parser Enrichment as well.
+This User Agent Parser Enrichment update is available for both batch and real-time users, and we'll be doing the same thing for the Referer Parser Enrichment as well.
 
 Huge thanks to [Kevin Irwin][userkci] for contributing this change!
 
@@ -106,7 +108,7 @@ This should make it easier to work with event sources which need to `POST` event
 We have seen Snowplow users and customers encountering `X-Forwarded-For` headers containing a comma-separated list of IP addresses, occurring when the request went through multiple load balancers. The header in the raw event payload will indeed accumulate the different IP addresses, for example:
 
 {% highlight %}
-X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98`
+X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98
 {% endhighlight %}
 
 According to [the specification for this header][x-forwarded-for-docs],
@@ -116,7 +118,9 @@ the successive proxies.
 Based on this, we have made the choice to only conserve the first IP address in the case of a
 comma-separated list.
 
-<h3 id="kinesis">1.4 Specify a custom Kinesis endpoint</h3>
+<h3 id="rt">1.4 Stream Enrich updates</h3>
+
+This section is for updates that apply to the real-time pipeline only.
 
 Before this release, the Kinesis endpoint for Stream Enrich was determined by the AWS
 region that you wanted to run in. Unfortunately, this didn't allow for use of projects like
@@ -126,6 +130,18 @@ Thanks to [Arihant Surana][arihantsurana], it is now possible to
 optionally specify a custom endpoint directly through the `customEndpoint` configuration.
 
 Note that this feature is also available for the Scala Stream Collector.
+
+<h3 id="batch">1.5 Spark Enrich updates</h3>
+
+This section is for updates that apply to the batch pipeline only.
+
+This release introduces support for the 26-field Cloudfront format that was released in January.
+You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
+Thanks to [Moshe Demri](https://github.com/mdemri) for signaling the issue.
+
+We have also taken advantage of working on Cloudfront to leverage the `x-forwarded-for` field to
+populate the user's ip address.
+Thanks a lot to [Dani Solà][danisola] for contributing this change!
 
 <h3 id="misc">1.6 Miscellaneous updates</h3>
 
@@ -223,6 +239,23 @@ are running any other flavor of Snowplow, there is no upgrade necessary.
 A new version of Stream Enrich incorporating the changes discussed above can be found on our Bintray
 [here][se-dl].
 
+<h3 id="upg-seb">5.2 Upgrading Spark Enrich</h3>
+
+If you are a batch pipeline user, you'll need to either update your EmrEtlRunner configuration
+to the following:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.16.0 # WAS 1.15.0
+{% endhighlight %}
+
+or directly make use of the new Spark Enrich available at:
+
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.16.0.jar`
+
+<h3 id="upg-uap">5.3 Upgrading the User Agent Parser Enrichment</h3>
+
 To make use of an external user agent database, you can update your enrichment file to the
 following:
 
@@ -234,7 +267,7 @@ following:
     "name": "ua_parser_config",
     "enabled": true,
     "parameters": {
-      "database": "useragents-latest.yaml",
+      "database": "regexes-latest.yaml",
       "uri": "s3://snowplow-hosted-assets/third-party/ua-parser/"
     }
   }
@@ -248,7 +281,7 @@ An example can be found in [our repository][ua-parser-config].
 
 We will be keeping the external user agent database that we host in Amazon S3 up-to-date as the upstream project releases new versions of it.
 
-<h3 id="upg-ssc">5.2 Upgrading the Scala Stream Collector</h3>
+<h3 id="upg-ssc">5.4 Upgrading the Scala Stream Collector</h3>
 
 A new version of Stream Enrich incorporating the changes discussed above can be found on our Bintray
 [here][ssc-dl].
@@ -287,7 +320,7 @@ crossDomain {
 
 A full configuration can be found [in the repository][ssc-config].
 
-<h3 id="upg-eer">5.3 Upgrading EmrEtlRunner</h3>
+<h3 id="upg-eer">5.5 Upgrading EmrEtlRunner</h3>
 
 The latest version of EmrEtlRunner is available from our Bintray [here][eer-dl].
 
@@ -323,7 +356,7 @@ Upcoming Snowplow releases include:
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
 * [R11x [BAT] Increased stability)][r11x-stability], making the new features of this release available to the batch pipeline, and improving batch pipeline stability
 
-<h2 id="help">6. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
@@ -340,6 +373,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [szareiangm]: https://github.com/szareiangm
 [arihantsurana]: https://github.com/arihantsurana
 [kingo55]: https://github.com/kingo55
+[danisola]: https://github.com/danisola
 
 [discourse]: http://discourse.snowplowanalytics.com/
 
