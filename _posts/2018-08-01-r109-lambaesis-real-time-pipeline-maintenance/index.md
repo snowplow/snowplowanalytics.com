@@ -135,13 +135,12 @@ Note that this feature is also available for the Scala Stream Collector.
 
 This section is for updates that apply to the batch pipeline only.
 
-This release introduces support for the 26-field Cloudfront format that was released in January.
-You can find more information in [the AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat).
-Thanks to [Moshe Demri](https://github.com/mdemri) for signaling the issue.
+This release introduces support for the 26-field CloudFront format that was released in January, for Snowplow users processing CloudFront access logs using Snowplow.
 
-We have also taken advantage of working on Cloudfront to leverage the `x-forwarded-for` field to
-populate the user's ip address.
-Thanks a lot to [Dani Solà][danisola] for contributing this change!
+You can find more information in [the AWS documentation][cf-logs]; thanks to [Moshe Demri][mdemri] for signaling the issue.
+
+We have also taken advantage of our work on CloudFront to leverage the `x-forwarded-for` field to
+populate the user's IP address. Thanks a lot to [Dani Solà][danisola] for contributing this change!
 
 <h3 id="misc">1.6 Miscellaneous updates</h3>
 
@@ -230,9 +229,6 @@ developers and other contributors. This initiative translates into:
 - New issue and pull request templates to give better guidance if you are looking to contribute
 
 <h2 id="upgrading">5. Upgrading</h2>
-
-This release applies only to our real-time pipeline running on AWS, GCP or on-premise through Kafka - if you
-are running any other flavor of Snowplow, there is no upgrade necessary.
 
 <h3 id="upg-se">5.1 Upgrading Stream Enrich</h3>
 
@@ -389,6 +385,9 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [the-globe-and-mail]: https://www.theglobeandmail.com/
 [bigcommerce]: https://www.bigcommerce.com/
 [mint-metrics]: https://mintmetrics.io/
+
+[cf-logs]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat
+[mdemri]: https://github.com/mdemri
 
 [eer-dl]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r109_lambaesis.zip
 [se-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.19.0#files
