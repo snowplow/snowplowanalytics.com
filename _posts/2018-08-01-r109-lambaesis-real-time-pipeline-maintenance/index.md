@@ -107,7 +107,7 @@ This should make it easier to work with event sources which need to `POST` event
 
 We have seen Snowplow users and customers encountering `X-Forwarded-For` headers containing a comma-separated list of IP addresses, occurring when the request went through multiple load balancers. The header in the raw event payload will indeed accumulate the different IP addresses, for example:
 
-{% highlight %}
+{% highlight bash %}
 X-Forwarded-For: 132.130.245.228, 14.189.65.12, 132.71.227.98
 {% endhighlight %}
 
