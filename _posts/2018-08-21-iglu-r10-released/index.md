@@ -25,46 +25,51 @@ Read on for more information about Release 10 Tiflis, named after [the first pro
 
 <h2 id="schema-workflow">1. Schema workflow, simplified</h2>
 
-Working with JSON schemas in Snowplow ecosystem includes following steps:
+Working with JSON Schemas within the Snowplow ecosystem involves quite some steps:
 
 1. Lint
-2. Generate DDLs, optionally with jsonpaths
-3. Push to one or more schema registries 
-4. Sync to one or more Amazon S3 buckets
+2. Generate DDLs for Redshift, along with JSON Paths files
+3. Push schemas to one or more schema registries
+4. Sync JSON Paths files to one or more Amazon S3 buckets
 
-All these actions are handled by a specific igluctl subcommand, one operation at a time.
+All of these actions are handled by specific Igluctl subcommands, one operation at a time.
 
-Although going step by step may bring a better understanding of what's going on, the time has shown that granular approach to schema workflow was also opening the way for some human mistakes, such as forgetting linting sometimes which could cause serious issues downwards the workflow.
-Also, having to go through each of the steps manually starts to become cumbersome and error prone, especially if you regularly work with schemas.
+Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course all of the manual steps quickly become painfully repetitive when you work with schemas regularly.
 
-With R10 Tiflis, we are introducing a new igluctl subcommand, `static deploy`, to perform whole schema workflow at single step. 
-This new command will work with a config file, provided by user.
-We aim to simplify the schema workflow and lower the entry barrier.
+With R10 Tiflis, we are introducing a new igluctl subcommand, `static deploy`, to perform the whole schema workflow from a single command.
 
-This new command accepts a single argument - path to self-describing JSON config file:
+This new command is powered by a config file, provided by the user. The command takes a single argument - the path to self-describing JSON config file:
 
 {% highlight bash %}
 $ igluctl static deploy /path/to/config.json
 {% endhighlight %}
 
-Config file itself contains list of steps to perform and all necessary necessary information such as bucket paths, registry endpoints and linting options.
-Checkout [Iglu wiki][igluctl-wiki] to learn more about configuration file.
+The config file itself contains a list of steps to perform and all necessary information such as bucket paths, registry endpoints and linting options. Check out the [Iglu wiki][igluctl-wiki] to learn more about the configuration file format.
 
-Some users might also want to maintain separate versions of environments for production and test (such as Snowplow Mini) environments.
-
+You can also use this approach to maintain separate schema registry setups for production and test (e.g. Snowplow Mini) environments.
 
 <h2 id="server-improvements">2. Improvements to Iglu Server</h2>
 
 <h3 id="draft-schemas">2.1 Drafting schemas</h3>
 
-R10 Tiflis introduces a new service in Iglu Server, enabling to draft schemas.
+R10 Tiflis introduces a new set of endpoints in Iglu Server, enabling you to write *draft* schemas.
+
+I DON'T UNDERSTAND THIS SECTION ->
+
 All endpoints under `/api/schemas/` has a correspondence under `/api/draft/`, meaning that a work-in-progress schema can be added, read and updated as draft.
 When the work on a schema is finalized, it is ready to be processed under `/api/schemas/` endpoints.
 
+^^ WHAT DOES "ready to be processed" MEAN?
+
 Note that, for any `/api/schemas/` endpoint ending with `version`, it ends with `draftNumber` under `/api/draft`.
+
+^^ WHAT DOES THIS MEAN?
+
 Draft number of a schema starts with `1` and increase as needed.
 
 Using draft service frees user from thinking about `version` until the schema is ready to be used under `/api/schemas/` endpoints.
+
+I DON'T UNDERSTAND THIS SECTION AT ALL. CAN YOU TRY RE-WRITING IT TO MAKE MORE SENSE? PERHAPS SHOW SOME EXAMPLE CRUD OPERATIONS WITH THE NEW ENDPOINTS.
 
 <h3 id="validation-methods">2.2 Validation endpoints, revisited</h3>
 
@@ -108,7 +113,6 @@ The new version, igluctl 0.5.0, doesn't deprecate any interface from previous ve
 For more details on this release, as always do check out the [release notes][release-notes] and the [wiki page][iglu-server-wiki] on GitHub.
 
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
-
 
 [igluctl-wiki]: https://github.com/snowplow/iglu/wiki/Igluctl
 [igluctl-download]: http://dl.bintray.com/snowplow/snowplow-generic/igluctl_0.5.0.zip
