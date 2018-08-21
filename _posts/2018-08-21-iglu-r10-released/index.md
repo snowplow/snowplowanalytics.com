@@ -125,7 +125,7 @@ As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where instance 
 ```
 curl -X POST \
 HOST/api/schemas/validate/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0 \
--F 'instance={}'
+-F 'instance={...}'
 ```
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
