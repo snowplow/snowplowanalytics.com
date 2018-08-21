@@ -52,24 +52,23 @@ You can also use this approach to maintain separate schema registry setups for p
 
 <h3 id="draft-schemas">2.1 Drafting schemas</h3>
 
-R10 Tiflis introduces a new set of endpoints in Iglu Server, enabling you to write *draft* schemas.
+It is likely to take more than one iteration to prepare a json schema. In the meantime, the author could choose to upload work-in-progress schema to the registry or store somewhere else until it is ready to be used.
 
-I DON'T UNDERSTAND THIS SECTION ->
+In order to improve Iglu experience with respect to above scenarios, R10 Tiflis introduces a new service, `Draft Schemas`, to work with unfinished, i.e. `draft` schemas. This new service comes with 7 endpoints, hosted under `/api/draft/`;
 
-All endpoints under `/api/schemas/` has a correspondence under `/api/draft/`, meaning that a work-in-progress schema can be added, read and updated as draft.
-When the work on a schema is finalized, it is ready to be processed under `/api/schemas/` endpoints.
+* `GET HOST/api/draft/public`: Retrieves all public & draft schemas
+* `GET HOST/api/draft/{vendor}`: Retrieves all draft schemas belonging to a specific vendor
+* `GET HOST/api/draft/{vendor}/{name}`: Retrieves all draft schemas belonging to a specific vendor & name combination
+* `GET HOST/api/draft/{vendor}/{name}/{format}`: Retrieves all draft schemas belonging to a specific vendor & name & format combination
+* `GET HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Retrieve a draft schema based on its (vendor, name, format, draftNumber)
+* `POST HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Adds a draft schema based on its (vendor, name, format, draftNumber)
+* `PUT HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Retrieve a draft schema based on its (vendor, name, format, draftNumber)
 
-^^ WHAT DOES "ready to be processed" MEAN?
+Draft number of a schema starts with `1` and can be increased as needed.
 
-Note that, for any `/api/schemas/` endpoint ending with `version`, it ends with `draftNumber` under `/api/draft`.
+Using draft service frees user from thinking about which `version` to decide on until the schema is finalized.
 
-^^ WHAT DOES THIS MEAN?
-
-Draft number of a schema starts with `1` and increase as needed.
-
-Using draft service frees user from thinking about `version` until the schema is ready to be used under `/api/schemas/` endpoints.
-
-I DON'T UNDERSTAND THIS SECTION AT ALL. CAN YOU TRY RE-WRITING IT TO MAKE MORE SENSE? PERHAPS SHOW SOME EXAMPLE CRUD OPERATIONS WITH THE NEW ENDPOINTS.
+Visit [Draft Schemas Wiki Page][draft-schemas-wiki] to learn more about it.
 
 <h3 id="validation-methods">2.2 Validation endpoints, revisited</h3>
 
@@ -77,7 +76,7 @@ Iglu Server offers two endpoints under `/api/schemas/validate`.
 One endpoint to check if a schema is self-describing and another endpoint to validate a JSON instance against its JSON schema.
 
 However, both endpoints append schema to request's URL since their HTTP method is `GET`.
-It was possible to hit URI lenght limit of Akka HTTP server or any possible reverse proxy or load balancer in front of Iglu Server, if your schema is long enough.
+It was possible to hit URI length limit of Akka HTTP server or any possible reverse proxy or load balancer in front of Iglu Server, if your schema is long enough.
 
 As of R10 Tiflis, both validation endpoints use `POST` method so that schemas won't be in request URL, removing the chance of hitting a limitation from server.
 
@@ -103,14 +102,31 @@ Unzip the compressed file and then you can launch the server like so:
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
-REWRITE THIS TO FLOW BETTER ->
+The only breaking change is regarding validation endpoints.
 
-The only breaking change is regarding 2 validation endpoints under `/api/schemas/validate/`.
-Previously, a `GET` request sent to any endpoint under `/api/schemas/validate/` would be used for validation.
-From now on, same request should be sent using `POST` method.
-Also, schemas shouldn't be appended to request URL, instead they should be in body as form data.
+* `HOST/api/schemas/validate/{schemaFormat}` : the endpoint to validate if a schema is self describing
 
-<- THANKS
+Up to day, it accepted `GET` requests where schema is appended to url.
+
+As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where schema is sent as form data. An example request using `cURL` could be as following;
+
+```
+curl -X POST \
+HOST/api/schemas/validate/jsonschema \
+-F 'schema={...}'
+```
+
+* `/api/schemas/validate/{vendor}/{name}/{schemaFormat}/{version}` : the endpoint to validate a schema against its schema
+
+Up to day, it accepted `GET` requests where instance is appended to url.
+
+As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where instance is sent as form data. An example request using `cURL` could be as following;
+
+```
+curl -X POST \
+HOST/api/schemas/validate/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0 \
+-F 'instance={}'
+```
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
@@ -122,17 +138,19 @@ The new version doesn't deprecate any behaviors from the previous version, 0.4.1
 
 For more details on this release, as always do check out the [release notes][release-notes] and the relevant documentation pages:
 
-* [XXXXX][iglu-server-wiki]
-* XXXXXXXX
+* [Iglu Server][iglu-server-wiki]
+* [Igluctl][igluctl-wiki]
 
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
 [igluctl-wiki]: https://github.com/snowplow/iglu/wiki/Igluctl
 [igluctl-download]: http://dl.bintray.com/snowplow/snowplow-generic/igluctl_0.5.0.zip
 
+[draft-schemas-wiki]: https://github.com/snowplow/iglu/wiki/The-draft-schema-service
+
 [release-notes]: https://github.com/snowplow/iglu/releases/tag/r10-tiflis
 [discourse]: http://discourse.snowplowanalytics.com/
-[iglu-server-wiki]: https://github.com/snowplow/iglu/wiki/Iglu-server-setup
+[iglu-server-wiki]: https://github.com/snowplow/iglu/wiki/Iglu-server
 [iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.4.0.zip
 
 [bigquery]: https://cloud.google.com/bigquery/
