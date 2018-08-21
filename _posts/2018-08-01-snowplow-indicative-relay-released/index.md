@@ -41,7 +41,7 @@ The relay retrieves events from a Kinesis stream of Snowplow enriched events, tr
 
 To simplify the process of deploying the Snowplow Indicative Relay function, Snowplow Analytics provides its jar file through [Hosted assets][hosted-assets] on AWS S3.
 
-Detailed setup instructions are provided on the project's [GitHub wiki page][github-wiki-page].
+Detailed setup instructions, as well as more technical information, are provided on the project's [GitHub wiki page][github-wiki-page].
 
 <h2 id="usage">4. Usage</h2>
 
