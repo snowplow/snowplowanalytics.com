@@ -351,7 +351,7 @@ Upcoming Snowplow releases include:
 
 * [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
-* [R11x [BAT] Increased stability][r11x-stability], making the new features of this release available to the batch pipeline, and improving batch pipeline stability
+* [R11x [BAT] Increased stability][r11x-stability], improving batch pipeline stability
 
 <h2 id="help">7. Getting help</h2>
 
