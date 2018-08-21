@@ -5,7 +5,7 @@ title: "Snowplow R109 Lambaesis real-time pipeline upgrade"
 tags: [snowplow, real-time, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/08/01/snowplow-r109-lambaesis-real-time-pipeline-upgrade/
+permalink: /blog/2018/08/21/snowplow-r109-lambaesis-real-time-pipeline-upgrade/
 ---
 
 We are pleased to announce the release of [Snowplow 109 Lambaesis][snowplow-release], named
@@ -33,6 +33,7 @@ Please read on after the fold for:
 7. [Help](#help)
 
 ![lambaesis][lambaesis-img]
+<br>
 Lambese - M. Gasmi / CC-BY 2.5
 
 <h2 id="se">1. Enrichment process updates</h2>
@@ -147,7 +148,7 @@ populate the user's IP address. Thanks a lot to [Dani Solà][danisola] for contr
 Thanks a lot to [Saeed Zareian][szareiangm] for a flurry of build dependency updates and
 [Robert Kingston][kingo55] for example updates.
 
-<h2 id="se">2. Scala Stream Collector updates</h2>
+<h2 id="ssc">2. Scala Stream Collector updates</h2>
 
 <h3 id="dnt">2.1 Reject requests with "do not track" cookies</h3>
 
@@ -350,7 +351,7 @@ Upcoming Snowplow releases include:
 
 * [R110 Vallei dei Templi][r110], porting our streaming enrichment process to
   [Google Cloud Dataflow][dataflow], leveraging the [Apache Beam APIs][beam]
-* [R11x [BAT] Increased stability)][r11x-stability], making the new features of this release available to the batch pipeline, and improving batch pipeline stability
+* [R11x [BAT] Increased stability][r11x-stability], making the new features of this release available to the batch pipeline, and improving batch pipeline stability
 
 <h2 id="help">7. Getting help</h2>
 
@@ -363,6 +364,8 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [lambaesis]: https://en.wikipedia.org/wiki/Lambaesis
 [lambaesis-img]: /assets/img/blog/2018/08/lambaesis.jpg
 
+
+[simply-business]: https://www.simplybusiness.co.uk/
 [userkci]: https://github.com/userkci
 [rbolkey]: https://github.com/rbolkey
 [onespot]: https://www.onespot.com/
