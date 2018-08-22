@@ -117,6 +117,7 @@ To get started loading your Snowplow data into Snowflake, you first need to crea
 
 Here's an example Dataflow Runner cluster configuration:
 
+{% raw %}
 {% highlight json %}
 {
    "schema":"iglu:com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0",
@@ -187,6 +188,7 @@ Here's an example Dataflow Runner cluster configuration:
    }
 }
 {% endhighlight %}
+{% endraw %}
 
 You will need to update:
 
@@ -198,6 +200,7 @@ You also might want to change the `instances` configuration - though note that i
 
 Next, here's an example self-describing JSON for configuring the Snowflake Loader:
 
+{% raw %}
 {% highlight json %}
 
 {
@@ -224,6 +227,7 @@ Next, here's an example self-describing JSON for configuring the Snowflake Loade
   }
 }
 {% endhighlight %}
+{% endraw %}
 
 You'll probably want to change all fields here, apart from `purpose` and `schema`.
 
@@ -235,6 +239,7 @@ Another configuration file you'll need is a common [Iglu Resolver config][iglu-c
 
 And the last file you'll need is a Dataflow Runner playbook responsible for running Transformer and Loader. Here's an example:
 
+{% raw %}
 {% highlight json %}
 {
    "schema":"iglu:com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1",
@@ -283,6 +288,7 @@ And the last file you'll need is a Dataflow Runner playbook responsible for runn
    }
 }
 {% endhighlight %}
+{% endraw %}
 
 You can leave the job steps as they are, or optionally you could run the Loader step from a local machine - it's up to you.
 
