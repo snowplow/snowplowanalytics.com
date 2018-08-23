@@ -18,7 +18,7 @@ we would like to give a huge shout-out to each of the contributors who made it p
 
 - [Kevin Irwin][userkci] and [Rick Bolkey][rbolkey] from [OneSpot][onespot]
 - [Saeed Zareian][szareiangm] from [the Globe and Mail][the-globe-and-mail]
-- [Arihant Surana][arihantsurana] from [HiPages][hipages]
+- [Arihant Surana][arihantsurana] from [HiPages][hi-pages]
 - [Dani Solà][danisola] from [Simply Business][simply-business]
 - [Robert Kingston][kingo55] from [Mint Metrics][mint-metrics]
 
