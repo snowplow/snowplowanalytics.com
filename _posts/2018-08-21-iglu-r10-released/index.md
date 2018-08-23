@@ -9,9 +9,9 @@ permalink: /blog/2018/08/21/iglu-r10-tiflis-released/
 ---
 
 We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother igluctl workflow.
-This release also introduces small but important updates to Iglu Server and core libraries.
+This release also introduces small but important updates to Iglu Server and the core libraries.
 
-1. [Schema workflow, simplified](#schema-workflow)
+1. [Schema workflow, simplified](#schema-workflow-simplified)
 2. [Improvements to Iglu Server](#server-improvements)
 3. [Improvements to core libraries](#core-improvements)
 4. [Upgrading](#upgrading)
@@ -23,9 +23,9 @@ Read on for more information about Release 10 Tiflis, named after [the first pro
 
 <!--more-->
 
-<h2 id="schema-workflow">1. Schema workflow, simplified</h2>
+<h2 id="schema-workflow-simplified">1. Schema workflow, simplified</h2>
 
-Working with JSON Schemas within the Snowplow ecosystem involves quite some steps:
+Working with JSON Schemas within the Snowplow ecosystem can be cumbersome and requires multiple steps:
 
 1. Lint
 2. Generate DDLs for Redshift, along with JSON Paths files
@@ -34,17 +34,17 @@ Working with JSON Schemas within the Snowplow ecosystem involves quite some step
 
 All of these actions are handled by specific igluctl subcommands, one operation at a time.
 
-Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course all of the manual steps quickly become painfully repetitive when you work with schemas regularly.
+Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course all of the manual steps quickly become painfully repetitive and cause friction when working with schemas regularly.
 
-With R10 Tiflis, we are introducing a new igluctl subcommand, `static deploy`, to perform the whole schema workflow from a single command.
+With R10 Tiflis, to address this friction we are introducing a new igluctl subcommand, `static deploy`, to perform the whole schema workflow from a single command.
 
-This new command is powered by a config file, provided by the user. The command takes a single argument - the path to self-describing JSON config file:
+This new command is powered by a config file provided by the user and takes a single argument - the path to self-describing JSON config file:
 
 {% highlight bash %}
 $ igluctl static deploy /path/to/config.json
 {% endhighlight %}
 
-The config file itself contains a list of steps to perform and all necessary information such as bucket paths, registry endpoints and linting options. Check out the [Iglu wiki][igluctl-wiki] to learn more about the configuration file format.
+The config file itself contains a list of steps to perform along with all necessary information such as bucket paths, registry endpoints, and linting options. Check out the [Iglu wiki][igluctl-wiki] to learn more about the configuration file format.
 
 You can also use this approach to maintain separate schema registry setups for production and test (e.g. Snowplow Mini) environments.
 
@@ -52,9 +52,9 @@ You can also use this approach to maintain separate schema registry setups for p
 
 <h3 id="draft-schemas">2.1 Drafting schemas</h3>
 
-It is likely to take more than one iteration to prepare a json schema. In the meantime, the author could choose to upload work-in-progress schema to the registry or store somewhere else until it is ready to be used.
+Preparing a JSON schema can be a laborious process that likely takes time and requires several iterations. However, it's possible to upload work-in-progress schema to your registry, or store them elsewhere, until they're ready to be used.
 
-In order to improve Iglu experience with respect to above scenarios, R10 Tiflis introduces a new service, `Draft Schemas`, to work with unfinished, i.e. `draft` schemas. This new service comes with 7 endpoints, hosted under `/api/draft/`;
+In order to improve the Iglu experience with respect to this workflow, R10 Tiflis introduces a new service, `Draft Schemas`, to handle unfinished, i.e. `draft` schemas. This new service comes with seven endpoints, hosted under `/api/draft/`;
 
 * `GET HOST/api/draft/public`: Retrieves all public & draft schemas
 * `GET HOST/api/draft/{vendor}`: Retrieves all draft schemas belonging to a specific vendor
@@ -64,31 +64,30 @@ In order to improve Iglu experience with respect to above scenarios, R10 Tiflis 
 * `POST HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Adds a draft schema based on its (vendor, name, format, draftNumber)
 * `PUT HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Retrieve a draft schema based on its (vendor, name, format, draftNumber)
 
-Draft number of a schema starts with `1` and can be increased as needed.
+The default draft number of a schema starts with `1` and can be increased as needed.
 
-Using draft service frees user from thinking about which `version` to decide on until the schema is finalized.
+Using the `Draft Schemas` service frees the user from thinking about which `version` to decide on until the schema is finalized.
 
-Visit [Draft Schemas Wiki Page][draft-schemas-wiki] to learn more about it.
+Visit the [Draft Schemas Wiki Page][draft-schemas-wiki] for more details about this new service.
 
 <h3 id="validation-methods">2.2 Validation endpoints, revisited</h3>
 
 Iglu Server offers two endpoints under `/api/schemas/validate`.
 One endpoint to check if a schema is self-describing and another endpoint to validate a JSON instance against its JSON schema.
 
-However, both endpoints append schema to request's URL since their HTTP method is `GET`.
-It was possible to hit URI length limit of Akka HTTP server or any possible reverse proxy or load balancer in front of Iglu Server, if your schema is long enough.
+However, both endpoints append the schema to the request's URL since their HTTP method is `GET`. If your schema is long enough, you run the risk of hitting the URL length limit of Akka HTTP server or any reverse proxy or load balancer you have in front of Iglu Server.
 
-As of R10 Tiflis, both validation endpoints use `POST` method so that schemas won't be in request URL, removing the chance of hitting a limitation from server.
+As of R10 Tiflis, both validation endpoints use `POST` so that schemas won't be in the request URL, removing the chance of hitting a limitation from the server.
 
 <h2 id="core-improvements">3. Improvements to core libraries</h2>
 
-Both core libraries, Schema DDL and Iglu Core received their updates as well.
+Both core libraries, Schema DDL and Iglu Core, received updates as well.
 
-Schema DDL now includes abstract syntax tree Google BigQuery which can be used to generate BigQuery DDLs from JSON Schemas and cast self-describing JSON instances to their corresponding BigQuery schema.
+Schema DDL now includes abstract syntax trees for Google BigQuery which can be used to generate BigQuery DDLs from JSON Schemas and cast self-describing JSON instances to their corresponding BigQuery schema.
 
-Iglu Scala Core also includes several minor changes such as new `Decoder` and `Encoder` instances in `iglu-core-circe` module and convenient `parse` methods on all core entities.
+Iglu Scala Core also includes several minor changes such as new `Decoder` and `Encoder` instances in the `iglu-core-circe` module and convenient `parse` methods on all core entities.
 
-As a last change - we've dropped Scala 2.10 support from all core libraries. Scala 2.11 is minimal required version of compiler.
+And finally - we've dropped Scala 2.10 support from all core libraries. **Scala 2.11 is now the minimal required version of compiler.**
 
 <h2 id="upgrading">4. Upgrading</h2>
 
@@ -96,19 +95,19 @@ As a last change - we've dropped Scala 2.10 support from all core libraries. Sca
 
 The new Iglu Server release can be downloaded from [Bintray][iglu-server-download] (download will start).
 
-Unzip the compressed file and then you can launch the server like so:
+Unzip the compressed file and then you can launch the server with the following command:
 
 {% highlight bash %}
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
-The only breaking change is regarding validation endpoints.
+The only major change comes from the validation endpoints update mentioned above.
 
 * `HOST/api/schemas/validate/{schemaFormat}` : the endpoint to validate if a schema is self describing
 
-Up to day, it accepted `GET` requests where schema is appended to url.
+Until recently, this endpoint only accepted `GET` requests where schema are appended to the URL.
 
-As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where schema is sent as form data. An example request using `cURL` could be as following;
+As of Iglu Server `0.4.0`, this endpoint also accepts `POST` requests where schema are sent as form data. An example request using `cURL` would look something like:
 
 ```
 curl -X POST \
@@ -118,9 +117,9 @@ HOST/api/schemas/validate/jsonschema \
 
 * `/api/schemas/validate/{vendor}/{name}/{schemaFormat}/{version}` : the endpoint to validate a schema against its schema
 
-Up to day, it accepted `GET` requests where instance is appended to url.
+This endpoint previously only accepted `GET` requests where the instance is appended to the URL.
 
-As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where instance is sent as form data. An example request using `cURL` could be as following;
+As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where the instance is sent as form data. An example request using `cURL` would look like:
 
 ```
 curl -X POST \
@@ -130,9 +129,9 @@ HOST/api/schemas/validate/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
-The latest igluctl, version 0.5.0, can be downloaded from [here from Bintray][igluctl-download].
+The latest igluctl, version 0.5.0, can be downloaded [from Bintray here][igluctl-download].
 
-The new version doesn't deprecate any behaviors from the previous version, 0.4.1.
+This new version doesn't deprecate any behaviors from the previous version, 0.4.1.
 
 <h2 id="help">5. Getting help</h2>
 
