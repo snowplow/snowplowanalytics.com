@@ -18,7 +18,7 @@ we would like to give a huge shout-out to each of the contributors who made it p
 
 - [Kevin Irwin][userkci] and [Rick Bolkey][rbolkey] from [OneSpot][onespot]
 - [Saeed Zareian][szareiangm] from [the Globe and Mail][the-globe-and-mail]
-- [Arihant Surana][arihantsurana] from [BigCommerce][bigcommerce]
+- [Arihant Surana][arihantsurana] from [HiPages][hipages]
 - [Dani Solà][danisola] from [Simply Business][simply-business]
 - [Robert Kingston][kingo55] from [Mint Metrics][mint-metrics]
 
@@ -386,7 +386,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [gitter-snowplow]: https://gitter.im/snowplow/snowplow
 
 [the-globe-and-mail]: https://www.theglobeandmail.com/
-[bigcommerce]: https://www.bigcommerce.com/
+[hi-pages]: https://www.homeimprovementpages.com.au/
 [mint-metrics]: https://mintmetrics.io/
 
 [cf-logs]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#LogFileFormat
