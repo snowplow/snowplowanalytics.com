@@ -91,6 +91,7 @@ Nodes and relationships can also have properties. For our experiment, the relati
 
 The following SQL query fetches one year’s worth of data for our `Page` nodes:
 
+{% raw %}
 {% highlight sql linenos %}
 WITH step1 AS
 (
@@ -136,11 +137,13 @@ FROM step2
 
 WHERE n = 1;
 {% endhighlight %}
+{% endraw %}
 
 This query gives us one line per `page_view` event. We also have all the `domain_userid` that we need for the `User` nodes. However, in many cases there are many events for each `domain_userid`. To speed up the process, it's better to give Neo4j a deduplicated list of users so it does not have to check for duplicates when adding the nodes.
 
 To fetch a unique list of users, run this query:
 
+{% raw %}
 {% highlight sql linenos %}
 SELECT
   domain_userid
@@ -154,11 +157,13 @@ WHERE derived_tstamp :: DATE BETWEEN '2016-07-02' AND '2017-07-02'
 
 GROUP BY 1;
 {% endhighlight %}
+{% endraw %}
 
 You could also include any extra information you want to capture about users, eg location or email. The fastest way to do this is while you build the database, but you can still add properties to nodes later.
 
 We'll also need to pull some data to help us build the `NEXT` relationships between the different page view events. To do this, we can use a window function to identify each event's follow-up page view. We need to partition our data by `domain_userid` and `domain_sessionidx`. We also need to order it by a timestamp that preserves the original order of events, such as the `dvce_created_tstamp` or the `derived_tstamp` (not the `collector_tstamp`!):
 
+{% raw %}
 {% highlight sql linenos %}
 WITH step1 AS
 (
@@ -205,6 +210,7 @@ FROM step3
 
 WHERE next_event_id IS NOT NULL; -- filter out events that have no followup page view (because they are the last event in the session)
 {% endhighlight %}
+{% endraw %}
 
 (A side note. In step2 in the above query we're deduplicating the results to ensure that we end up with a list of unique `page_view` events and their follow-up events if any. We do this to make the query universally applicable. However, it's much better if there are no duplicates in your `atomic` tables to begin with. Since Snowplow R88 we are taking care of almost all duplicates during processing, so they don't ever make it into Redshift -- but you have to have cross-batch natural deduplication turned on, which is something we do by request as it has an associated cost. For historical, pre-R88 duplicates, you can use the [deduplication queries] [deduplication-queries] that we released in R72.)
 
