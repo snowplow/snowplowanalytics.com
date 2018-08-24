@@ -54,7 +54,7 @@ You can also use this approach to maintain separate schema registry setups for p
 
 Preparing a JSON schema can be a laborious process that likely takes time and requires several iterations. However, it's possible to upload work-in-progress schema to your registry, or store them elsewhere, until they're ready to be used.
 
-In order to improve the Iglu experience with respect to this workflow, R10 Tiflis introduces a new service, `Draft Schemas`, to handle unfinished, i.e. `draft` schemas. This new service comes with seven endpoints, hosted under `/api/draft/`;
+Knowing that this is a common practice among users working with schema, R10 Tiflis introduces a new service, `Draft Schemas`, to handle unfinished, i.e. `draft`, schemas. This new service comes with seven endpoints, hosted under `/api/draft/`;
 
 * `GET HOST/api/draft/public`: Retrieves all public & draft schemas
 * `GET HOST/api/draft/{vendor}`: Retrieves all draft schemas belonging to a specific vendor
