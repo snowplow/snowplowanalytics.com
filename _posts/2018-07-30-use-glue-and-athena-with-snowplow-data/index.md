@@ -27,8 +27,7 @@ In that case the user may need to query some data from the Snowplow archive eith
 One scenario is that we want to access a the fields of a context as a table.
 <!--more-->
 
-## Why analyze Snowplow enriched events in S3?
-
+<h2 id="s3-analysis">1. Why analyze Snowplow enriched events in S3?</h2>
 
 The optional second step is there in case you are planning to use the archive often, in which case performance would be important so a way to create a copy of the archive in [parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format.
 If that is what you are trying to do you may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
@@ -41,7 +40,7 @@ In that case the user may need to query some data from the Snowplow archive eith
 
 In both cases we will need to create a schema in order to read in the data which are formatted in Snowplow's *Enriched Event* format.
 
-## AWS Glue prerequisites
+<h2 id="glue-reqs">2. AWS Glue prerequisites</h2>
 
 Setting up Glue, Glue Data Catalog and their assorted IAM policies is beyond the scope of this guide, but the main prerequisite units are mentioned here along with links to guides to set up everything, before you start following this guide.
 
@@ -67,7 +66,7 @@ You will also need to have [aws cli][aws-cli] set up, as some actions are going 
 
 Please follow the excellent [AWS documentation][aws-cli] on AWS to get it set-up for your platform, including having the correct credentials with Glue and S3 permissions.
 
-## Creating the source table in AWS Glue Data Catalog
+<h2 id="creating-the-source-table-in-aws-glue-data-catalog">3. Creating the source table in AWS Glue Data Catalog</h2>
 
 In order to use the data in Athena and Redshift, you will need to create the table schema in the AWS Glue Data Catalog.
 
@@ -665,7 +664,7 @@ Unless you have the correct partitions in the metastore you will not be able to 
 
 The alternative is to not specify partition keys in the definition above by setting `"PartitionKeys": []` but that will prevent using that table definition in Glue in some cases (however you will be able to use it in Athena and Spectrum), such as in the Parquet example below.
 
-## Optionally format shift to Parquet using Glue
+<h2 id="optionally-format-shift-to-parquet-using-glue">4. Optionally format shift to Parquet using Glue</h2>
 
 The optional second step is there in case you are planning to use the archive often, in which case performance would be important. A way to create a copy of the archive in [Parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format.
 
@@ -1282,7 +1281,7 @@ aws glue create-table --database-name snowplow_data --table-input '
 
 If you have gone through this step, remember to use `archive_parquet` table instead of `archive` in the subesquent steps.
 
-## Use AWS Athena to access the data
+<h2 id="use-aws-athena-to-access-the-data">5. Use AWS Athena to access the data</h2>
 ### Keeping your Parquet data up-to-date
 
 You may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
@@ -1337,7 +1336,7 @@ WHERE cardinality(performance_events) = 1
 
 For further details on what is and what isn't supported read the excellent AWS documentation, including [unsupported DDL in Athena][unsupported-ddl-in-athena].
 
-## Use AWS Redshift Spectrum to access the data
+<h2 id="use-aws-redshift-spectrum-to-access-the-data">6. Use AWS Redshift Spectrum to access the data</h2>
 
 Just as with the previous step, you will need to create an appropriate role that can access your data, which you can do by following the [IAM Role guide here][iam-redshift]
 
@@ -1430,7 +1429,7 @@ WITH NO SCHEMA BINDING;
 
 You may of course insert the data into another table in redshift for better performance.
 
-## Further help
+<h2 id="further-help">7. Further help</h2>
 
 If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redhsift, please please visit [our Discourse forum][discourse].
 
