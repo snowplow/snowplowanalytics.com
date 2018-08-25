@@ -9,11 +9,11 @@ permalink: /blog/2018/08/21/iglu-r10-tiflis-released/
 ---
 
 We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother igluctl workflow.
-This release also introduces small but important updates to Iglu Server and the core libraries.
+This release also introduces small but important updates to Iglu Server and the core Iglu libraries.
 
 1. [Schema workflow, simplified](#schema-workflow-simplified)
 2. [Improvements to Iglu Server](#server-improvements)
-3. [Improvements to core libraries](#core-improvements)
+3. [Improvements to the core libraries](#core-improvements)
 4. [Upgrading](#upgrading)
 5. [Getting help](#help)
 
@@ -34,11 +34,11 @@ Working with JSON Schemas within the Snowplow ecosystem can be cumbersome and re
 
 All of these actions are handled by specific igluctl subcommands, one operation at a time.
 
-Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course all of the manual steps quickly become painfully repetitive and cause friction when working with schemas regularly.
+Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course the manual steps quickly become painfully repetitive and cause friction when working with schemas regularly.
 
 With R10 Tiflis, to address this friction we are introducing a new igluctl subcommand, `static deploy`, to perform the whole schema workflow from a single command.
 
-This new command is powered by a config file provided by the user and takes a single argument - the path to self-describing JSON config file:
+This new command is powered by a self-describing JSON config file provided by the user, and takes a single argument - the path to this config file:
 
 {% highlight bash %}
 $ igluctl static deploy /path/to/config.json
@@ -52,42 +52,46 @@ You can also use this approach to maintain separate schema registry setups for p
 
 <h3 id="draft-schemas">2.1 Drafting schemas</h3>
 
-Preparing a JSON schema can be a laborious process that likely takes time and requires several iterations. However, it's possible to upload work-in-progress schema to your registry, or store them elsewhere, until they're ready to be used.
+Preparing a JSON Schema can be a laborious process, taking time and requiring several iterations. A schema author will want to store these work-in-progress schemas somewhere, until they're ready to be used.
 
-Knowing that this is a common practice among users working with schema, R10 Tiflis introduces a new service, `Draft Schemas`, to handle unfinished, i.e. `draft`, schemas. This new service comes with seven endpoints, hosted under `/api/draft/`;
+Recognising this common use-case, R10 Tiflis introduces a new service, Draft Schemas, to handle unfinished, i.e. `draft`, schemas. This new service comes with seven endpoints, hosted under `/api/draft/`:
 
-* `GET HOST/api/draft/public`: Retrieves all public & draft schemas
-* `GET HOST/api/draft/{vendor}`: Retrieves all draft schemas belonging to a specific vendor
-* `GET HOST/api/draft/{vendor}/{name}`: Retrieves all draft schemas belonging to a specific vendor & name combination
-* `GET HOST/api/draft/{vendor}/{name}/{format}`: Retrieves all draft schemas belonging to a specific vendor & name & format combination
-* `GET HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Retrieve a draft schema based on its (vendor, name, format, draftNumber)
-* `POST HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Adds a draft schema based on its (vendor, name, format, draftNumber)
-* `PUT HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}`: Retrieve a draft schema based on its (vendor, name, format, draftNumber)
+* `GET HOST/api/draft/public` - retrieves all draft *public* schemas
+* `GET HOST/api/draft/{vendor}` - retrieves all draft schemas belonging to a specific vendor
+* `GET HOST/api/draft/{vendor}/{name}` - retrieves all draft schemas belonging to a specific vendor and name combination
+* `GET HOST/api/draft/{vendor}/{name}/{format}` - retrieves all draft schemas belonging to a specific vendor, name and format combination
+* `GET HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}` - retrieves a draft schema based on its vendor, name, format and `draftNumber`
+* `POST HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}` - adds a draft schema based on its vendor, name, format, and `draftNumber`
+* `PUT HOST/api/draft/{vendor}/{name}/{format}/{draftNumber}` - retrieves a draft schema based on its vendor, name, format and `draftNumber`
 
-The default draft number of a schema starts with `1` and can be increased as needed.
+The default `draftNumber` of a schema is 1, and can be increased as needed.
 
-Using the `Draft Schemas` service frees the user from thinking about which `version` to decide on until the schema is finalized.
+Using the Draft Schemas service frees the user from thinking about which schema `version` to decide on, right until the schema is finalized.
 
 Visit the [Draft Schemas Wiki Page][draft-schemas-wiki] for more details about this new service.
 
 <h3 id="validation-methods">2.2 Validation endpoints, revisited</h3>
 
-Iglu Server offers two endpoints under `/api/schemas/validate`.
-One endpoint to check if a schema is self-describing and another endpoint to validate a JSON instance against its JSON schema.
+Iglu Server offers two endpoints under `/api/schemas/validate`:
 
-However, both endpoints append the schema to the request's URL since their HTTP method is `GET`. If your schema is long enough, you run the risk of hitting the URL length limit of Akka HTTP server or any reverse proxy or load balancer you have in front of Iglu Server.
+* One endpoint checks if a schema is self-describing
+* The other endpoint lets you validate a JSON instance against its JSON Schema
 
-As of R10 Tiflis, both validation endpoints use `POST` so that schemas won't be in the request URL, removing the chance of hitting a limitation from the server.
+However, both endpoints append the schema to the request's URL, since their HTTP method is `GET`. If your schema is large enough, you run the risk of hitting the URL length limit of Akka HTTP server or any reverse proxy or load balancer that you have in front of Iglu Server.
 
-<h2 id="core-improvements">3. Improvements to core libraries</h2>
+As of this release, both validation endpoints support `POST`, with which the schemas are no longer sent in the request URL.
+ 
+<h2 id="core-improvements">3. Improvements to the core libraries</h2>
 
-Both core libraries, Schema DDL and Iglu Core, received updates as well.
+Both core libraries, Schema DDL and Iglu Core, have received updates as well.
 
-Schema DDL now includes abstract syntax trees for Google BigQuery which can be used to generate BigQuery DDLs from JSON Schemas and cast self-describing JSON instances to their corresponding BigQuery schema.
+Schema DDL now includes abstract syntax trees for [Google BigQuery][bigquery] which can be used to generate BigQuery DDLs from JSON Schemas and cast self-describing JSON instances to their corresponding BigQuery schema.
 
-Iglu Scala Core also includes several minor changes such as new `Decoder` and `Encoder` instances in the `iglu-core-circe` module and convenient `parse` methods on all core entities.
+These additions support the work we are doing with Google BigQuery following our Google Cloud Platform [RFC][rfc]. 
 
-And finally - we've dropped Scala 2.10 support from all core libraries. **Scala 2.11 is now the minimal required version of compiler.**
+Iglu Scala Core also includes several minor changes such as new `Decoder` and `Encoder` instances in the `iglu-core-circe` module and a convenient `parse` methods on all core entities.
+
+And finally - we have dropped Scala 2.10 support from all core Iglu libraries. Scala 2.11 is now the minimum Scala version to compile against.
 
 <h2 id="upgrading">4. Upgrading</h2>
 
@@ -95,37 +99,34 @@ And finally - we've dropped Scala 2.10 support from all core libraries. **Scala 
 
 The new Iglu Server release can be downloaded from [Bintray][iglu-server-download] (download will start).
 
-Unzip the compressed file and then you can launch the server with the following command:
+Unzip the compressed file and you can launch the server with the following command:
 
 {% highlight bash %}
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
-The only major change comes from the validation endpoints update mentioned above.
+The only major change comes from the `POST`-using validation endpoints update mentioned above:
 
-* `HOST/api/schemas/validate/{schemaFormat}` : the endpoint to validate if a schema is self describing
+* `HOST/api/schemas/validate/{schemaFormat}` - the endpoint to validate if a schema is self-describing
+* `/api/schemas/validate/{vendor}/{name}/{schemaFormat}/{version}` - the endpoint to validate a JSON instance against its schema
 
-Until recently, this endpoint only accepted `GET` requests where schema are appended to the URL.
+Until recently, these endpoints only accepted `GET` requests where schema or instance are appended to the URL.
 
-As of Iglu Server `0.4.0`, this endpoint also accepts `POST` requests where schema are sent as form data. An example request using `cURL` would look something like:
+As of Iglu Server `0.4.0`, these endpoints also accept `POST` requests where schema or instance are sent as form data. An example request for checking if a schema is self-describing would look something like this:
 
-```
-curl -X POST \
+{% highlight bash %}
+$ curl -X POST \
 HOST/api/schemas/validate/jsonschema \
 -F 'schema={...}'
-```
+{% endhighlight %}
 
-* `/api/schemas/validate/{vendor}/{name}/{schemaFormat}/{version}` : the endpoint to validate a schema against its schema
+An example request to validate a JSON instance against its JSON Schema would look like:
 
-This endpoint previously only accepted `GET` requests where the instance is appended to the URL.
-
-As of Iglu Server `0.4.0`, this endpoint accepts `POST` requests where the instance is sent as form data. An example request using `cURL` would look like:
-
-```
-curl -X POST \
+{% highlight bash %}
+$ curl -X POST \
 HOST/api/schemas/validate/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0 \
 -F 'instance={...}'
-```
+{% endhighlight %}
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
@@ -153,6 +154,7 @@ If you have any questions or run into any problems, please raise a question in [
 [iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.4.0.zip
 
 [bigquery]: https://cloud.google.com/bigquery/
+[rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-google-cloud-platform/1505
 
 [tiflis]: https://commons.wikimedia.org/wiki/Stamps_of_Russia,_1857-1917#Tiflis
 [tiflis-img]: /assets/img/blog/2018/08/tiflis.jpg
