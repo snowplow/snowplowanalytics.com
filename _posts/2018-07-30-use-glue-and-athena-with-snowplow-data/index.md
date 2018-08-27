@@ -22,27 +22,33 @@ This guide consists of the following sections:
 6. [Use AWS Redshift Spectrum to access the data](#use-aws-redshift-spectrum-to-access-the-data)
 7. [Further help](#further-help)
 
-This may be useful for a number of reasons. Usually it would be the case that the data that is needed is no longer on Redshift (e.g. if the client is dropping all but the last month of data to save space), because that user only keeps the most recent data.
-
-Another possibility is that the user would like to get a special subset of the data onto S3 or another store for specific use.
-
-In that case the user may need to query some data from the Snowplow archive either in order to re-import them, or just to run a large query without affecting the Redshift cluster by running the query on Athena.
-<!--more-->
-
 <h2 id="s3-analysis">1. Why analyze Snowplow enriched events in S3?</h2>
 
-The optional second step is there in case you are planning to use the archive often, in which case performance would be important so a way to create a copy of the archive in [parquet][parquet] is shown, which is an efficient, columnar, Hadoop file format.
+Analyzing the data on S3 may be good for a number of reasons. 
+
+One common reason is when the data that is needed is no longer on Redshift because the data owner only keeps the most recent data in Redshift (e.g. if the data owner is dropping all but the last month of data to save space).
+
+Another possibility is that the user would like to get a special subset of the data onto S3 and make it available for a specific use.
+
+Yet another motivation, may be to run a very large query on all history without affecting a resource constrained Redshift cluster.
+
+In all those examples one or both of the following examples may be useful.
+
+For instance to get back deleted data from S3 one may use the Redshift Spectrum example to query the archive and even insert the query result into a new table.
+
+In the case of the resource constrained Redshift Cluster the data owner may elect to run the query on Athena.
+
+The [optional parquet step](#optionally-format-shift-to-parquet-using-glue) is there in case you are planning to use the archive often, in which case performance would be important, so a way to create a copy of the archive in [parquet][parquet] is shown. Parquet is an efficient, columnar, Hadoop file format which is ideally suited to that use case.
+
 If that is what you are trying to do you may want to also want to look into [triggers][glue-triggers] for the Glue script, which will enable you to keep the parquet copy up to date.
-THIS SECTION NEEDS MUCH MORE 'POP'.
 
-We will assume that the overall goal is the same in both the Athena and the Redshift Spectrum cases: analyzing Snowplow enriched events and their associated contexts.
+In order to develop these examples we will use a hypothetical scenario, in which we want to analyze Snowplow enriched events by extracting a certain context from the contexts field.
 
-This may be useful for a number of reasons. Usually it would be the case that the data that is needed is no longer on Redshift (e.g. if the client is dropping all but the last month of data to save space).
-In that case the user may need to query some data from the Snowplow archive either in order to re-import them, or just to run a large query without affecting the Redshift cluster by running the query on Athena.
+Specifically, we will the context with schema `iglu:org.w3/PerformanceTiming/jsonschema/1-0-0`. That context contains performance information about page loading and the hypothetical analyst would like to obtain that data as a table, perhaps in order to correlate performance with something else (e.g. a new version of the website being release, and how that affects performance).
 
-In both cases we will need to create a schema in order to read in the data which are formatted in Snowplow's *Enriched Event* format.
+In both cases we will need to create a schema in order to read in the data which are formatted in Snowplow's *Enriched Event* format, which is covered in the [schema setup step below](#creating-the-source-table-in-aws-glue-data-catalog), which has its requirements outlined in the [prerequisites step](#glue-reqs).
 
-To demonstrate the sequence of steps needed, we are going to assume a scenario that an analyst needs to get all historic data for a particular context that is present in some events and follows the schema `iglu:org.w3/PerformanceTiming/jsonschema/1-0-0`. That context contains performance information about page loading and the analyst would like to obtain that data as a table, perhaps in order to correlate performance with something else (e.g. a new version of the website).
+Finally, you can follow either one or both of the [Athena](#use-aws-athena-to-access-the-data) or [Redshift Spectrum](#use-aws-redshift-spectrum-to-access-the-data) steps to achieve that goal.
 
 <h2 id="glue-reqs">2. AWS Glue prerequisites</h2>
 
@@ -1435,7 +1441,7 @@ You may of course insert the data into another table in redshift for better perf
 
 <h2 id="further-help">7. Further help</h2>
 
-If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redhsift, please please visit [our Discourse forum][discourse].
+If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redshift, please please visit [our Discourse forum][discourse].
 
 [best-practices-athena-glue]: https://docs.aws.amazon.com/athena/latest/ug/glue-best-practices.html
 [parquet]: https://parquet.apache.org/
