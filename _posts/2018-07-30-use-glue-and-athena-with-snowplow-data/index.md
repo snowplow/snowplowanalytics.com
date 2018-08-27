@@ -1441,7 +1441,7 @@ You may of course insert the data into another table in redshift for better perf
 
 <h2 id="further-help">7. Further help</h2>
 
-If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redshift, please please visit [our Discourse forum][discourse].
+If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redshift, please visit [our Discourse forum][discourse].
 
 [best-practices-athena-glue]: https://docs.aws.amazon.com/athena/latest/ug/glue-best-practices.html
 [parquet]: https://parquet.apache.org/
