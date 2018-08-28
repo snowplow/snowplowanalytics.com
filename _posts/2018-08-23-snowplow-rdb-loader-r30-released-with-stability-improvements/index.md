@@ -97,7 +97,7 @@ With R30, RDB Loader provides very detailed information about the load process, 
 4. Timestamps for all messages, helping to highlight which steps take the most time
 5. List of timestamped and truncated `COPY INTO` statements in `stdout` - this won't be printed by EmrEtlRunner, but *will* be present in EMR logs
 
-<h2 id="logging">4. Snowplow Processing Manifest</h2>
+<h2 id="processing-manifest">4. Snowplow Processing Manifest</h2>
 
 Another major new feature of this release isthe introduction of Snowplow Processing Manifest - not to be confused with the Redshift `atomic.manifest` table discussed above.
 
