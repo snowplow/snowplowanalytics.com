@@ -133,7 +133,7 @@ $(function() {
       document.getElementById("inputMessage").setAttribute("name","00N2400000HU7tD");
 
       form.method = "POST";
-      form.action = "http://go.snowplowanalytics.com/l/571483/2018-07-31/32ysw6v";
+      form.action = "https://go.snowplowanalytics.com/l/571483/2018-07-31/32ysw6v";
       form.submit();
 
     }

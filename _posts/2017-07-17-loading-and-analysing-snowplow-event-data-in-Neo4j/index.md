@@ -1,13 +1,14 @@
 ---
 layout: post
-title: Loading and analyzing Snowplow event data in Neo4j
+title-short: Snowplow event data in Neo4j
+title: "Loading and analyzing Snowplow event data in Neo4j"
 tags: [snowplow, neo4j, graph database, path analysis, cypher]
 author: Dilyan
 category: Analytics
 permalink: /blog/2017/07/17/loading-and-analysing-snowplow-event-data-in-Neo4j/
 ---
 
-Back in 2014 we published a series of blog post on using Snowplow event data in the graph database [Neo4j] [neo4j]. Three years on, they're still among our most popular blog posts. (See below for links to the original posts.)
+Back in 2014 we published a series of blog post on using Snowplow event data in the graph database [Neo4j][neo4j]. Three years on, they're still among our most popular blog posts. (See below for links to the original posts.)
 
 A lot has changed since then. Neo4j has strengthened its position as a leading graph database solution. Its query language, Cypher, has grown with the platform. It has changed to the point where some of the queries from the original posts no longer work verbatim. We've come up with a more straightforward model to fit Snowplow data in a graph environment.
 
