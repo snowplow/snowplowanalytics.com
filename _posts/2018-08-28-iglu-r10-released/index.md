@@ -5,7 +5,7 @@ title-short: Iglu R10 Tiflis
 tags: [iglu, json, json schema, registry, schema registry]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/08/21/iglu-r10-tiflis-released/
+permalink: /blog/2018/08/28/iglu-r10-tiflis-released/
 ---
 
 We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother igluctl workflow.
@@ -80,14 +80,14 @@ Iglu Server offers two endpoints under `/api/schemas/validate`:
 However, both endpoints append the schema to the request's URL, since their HTTP method is `GET`. If your schema is large enough, you run the risk of hitting the URL length limit of Akka HTTP server or any reverse proxy or load balancer that you have in front of Iglu Server.
 
 As of this release, both validation endpoints support `POST`, with which the schemas are no longer sent in the request URL.
- 
+
 <h2 id="core-improvements">3. Improvements to the core libraries</h2>
 
 Both core libraries, Schema DDL and Iglu Core, have received updates as well.
 
 Schema DDL now includes abstract syntax trees for [Google BigQuery][bigquery] which can be used to generate BigQuery DDLs from JSON Schemas and cast self-describing JSON instances to their corresponding BigQuery schema.
 
-These additions support the work we are doing with Google BigQuery following our Google Cloud Platform [RFC][rfc]. 
+These additions support the work we are doing with Google BigQuery following our Google Cloud Platform [RFC][rfc].
 
 Iglu Scala Core also includes several minor changes such as new `Decoder` and `Encoder` instances in the `iglu-core-circe` module and a convenient `parse` methods on all core entities.
 
