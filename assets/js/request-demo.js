@@ -122,7 +122,7 @@ $(function() {
       document.getElementById("inputPhone").setAttribute("name", "phone");
 
       form.method = "POST";
-      form.action = "http://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
+      form.action = "https://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
       form.submit();
 
     }
