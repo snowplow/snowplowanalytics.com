@@ -21,9 +21,9 @@ of Snowplow enriched events from a Kinesis stream into [Indicative][indicative].
 
 <h2 id="indicative">1. What is Indicative?</h2>
 
-[Indicative][indicative] is an emerging customer analytics platform, optimised for customer journey analytics.
+[Indicative][indicative] is an emerging customer analytics platform, optimized for customer journey analytics.
 
-It is particularly well suited for marketers, product managers, and analysts. Indicative connects to many data sources in order to give a needed insight into users behavior - and is a great fit for analyzing Snowplow event data.
+It is particularly well suited for marketers, product managers, and analysts. Indicative connects to many data sources to help analyze and visualize user behavior - and is a great fit for analyzing Snowplow event data.
 
 To learn more about using Indicative with Snowplow, take a look at our [previous blog post about Indicative][snowplow-indicative-blog].
 
@@ -33,9 +33,9 @@ To learn more about using Indicative with Snowplow, take a look at our [previous
 
 Snowplow Relay is an initiative for feeding Snowplow enriched events into third-party tools or *destinations*, from SaaS marketing platforms to open-source machine learning engines to fraud detection services. We call an individual app that feeds Snowplow events into a specific destination a *relay*.
 
-The Snowplow Indicative Relay is a Kinesis stream consumer in a form of an AWS Lambda function.
+The Snowplow Indicative Relay is a Kinesis stream consumer in the form of an AWS Lambda function.
 
-The relay retrieves events from a Kinesis stream of Snowplow enriched events, transforms them to be compatible with Indicative's event model, and then loads them into Indicative in real time using the [Indicative REST API][indicative-rest-api].
+This relay retrieves events from a Kinesis stream of Snowplow enriched events, transforms them to be compatible with Indicative's event model, and then loads them into Indicative in real time using the [Indicative REST API][indicative-rest-api].
 
 More [technical information][wiki-tech-info] on the relay can be found on the wiki.
 
