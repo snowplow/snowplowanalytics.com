@@ -22,10 +22,10 @@ We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. T
 
 <h2 id="query-output">1. Viewing query output</h2>
 
-This release introduces the ability to view output from queries. Using the `-dropOutput` flag will print all query results to the console formatted in a table, following each step.
+This release introduces the ability to view output from queries. Using the `-showQueryOutput` flag will print all query results to the console formatted in a table, following each step.
 
 {% highlight bash %}
-$ ./sql-runner -dropOutput -playbook integration/resources/good-postgres.yml -var test_date=`date "+%Y_%m_%d"` -fromStep "Create schema and table"
+$ ./sql-runner -showQueryOutput -playbook integration/resources/good-postgres.yml -var test_date=`date "+%Y_%m_%d"` -fromStep "Create schema and table"
 ...
 2018/08/15 00:17:35 EXECUTING Output (in step Output @ My Postgres database 1): /opt/gopath/src/github.com/snowplow/sql-runner/integration/resources/postgres-sql/good/output.sql
 2018/08/15 00:17:35 QUERY OUTPUT:
@@ -36,8 +36,6 @@ $ ./sql-runner -dropOutput -playbook integration/resources/good-postgres.yml -va
 |  32 |           |          |         |
 ...
 {% endhighlight %}
-
-SEE QUESTION FROM ALEX HERE: https://github.com/snowplow/sql-runner/pull/130#issuecomment-414083253
 
 <h2 id="templated-playbooks">2. Templated playbooks</h2>
 
@@ -62,9 +60,7 @@ Note that with the `-fillTemplates` flag, no SQL will actually be executed.
 
 <h2 id="consul-lock">4. Consul locking</h2>
 
-The `-consulLock` option can be used to allow for local playbooks to be run, while using Consul for locking.
-
-SEE QUESTION FROM ALEX HERE: https://github.com/snowplow/sql-runner/issues/96#issuecomment-414084012
+The `-consulOnlyForLock` option can be used to allow for local playbooks to be run, while using Consul for locking.
 
 <h2 id="other-changes">5. Other changes</h2>
 
@@ -108,11 +104,11 @@ Usage:
       Checks whether the lockfile already exists
   -consul string
       The address of a consul server with playbooks and SQL files stored in KV pairs
-  -consulLock
+  -consulOnlyForLock
       Will read playbooks locally, but use Consul for locking.
   -deleteLock string
       Will attempt to delete a lockfile if it exists
-  -dropOutput
+  -showQueryOutput
       Will print all output from queries
   -dryRun
       Runs through a playbook without executing any of the SQL
@@ -137,8 +133,6 @@ Usage:
   -version
       Shows the program version
 {% endhighlight %}
-
-NOTE THE ABOVE WILL CHANGE BASED ON THE COMMENTS ON A COUPLE OF THE FLAG NAMES.
 
 <h2 id="help">6. Getting help</h2>
 
