@@ -11,8 +11,6 @@ $(function() {
     return regex.test(email);
   }
 
-
-
   $('#submitRequestTrial').click(function() {
 
     // hide previous error messages
@@ -27,15 +25,16 @@ $(function() {
     var email = document.getElementById("inputEmail").value;
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
-    var response = grecaptcha.getResponse();
+    var response = document.getElementById("inputRecaptcha").value;
     
     // validate inputs
 
-    if (response.length == 0) {
-      $('#groupResponse').addClass("error");
-      $('#controlsResponse').append('<div class="help-inline">Please check the Recaptcha.</div>');
+    if (response == 0) {
+      $('#groupRecaptcha').addClass("error");
+      $('#controlsRecaptcha').append('<div class="help-inline">Please check the Recaptcha.</div>');
       return false;
     }
+
 
     if (firstName == "") {
       $('#groupFirstName').addClass("error"); // add class 'error' to #groupFirstName
@@ -146,8 +145,5 @@ $(function() {
 
   });
 
-  function recaptcha_callback() {
-    document.getElementById('groupResponse').innerHTML = '':
-  }
 
 });
