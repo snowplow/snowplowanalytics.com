@@ -166,9 +166,7 @@
     }
 }
 
-.g-recaptcha > div{
-  margin 10px auto !important;
-  text-align: center;
-  width: auto !important;
-  height: auto !important;
+.g-recaptcha {
+  margin: 10px auto;
+  width: 304px;
 }
