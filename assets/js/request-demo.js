@@ -25,17 +25,26 @@ $(function() {
     var email = document.getElementById("inputEmail").value;
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
-    var response = document.getElementById("inputRecaptcha").value;
     
-    // validate inputs
 
-    if (response == 0) {
-      $('#groupRecaptcha').addClass("error");
-      $('#controlsRecaptcha').append('<div class="help-inline">Please check the Recaptcha.</div>');
-      return false;
+    var $captcha = $( '#recaptcha' ),
+        response = grecaptcha.getResponse();
+  
+    if (response.length === 0) {
+      $( '.msg-error').text( "reCAPTCHA is mandatory" );
+      if( !$captcha.hasClass( "error" ) ){
+        $captcha.addClass( "error" );
+      }
+    } else {
+      $( '.msg-error' ).text('');
+      $captcha.removeClass( "error" );
+      alert( 'reCAPTCHA marked' );
     }
 
 
+    // validate inputs
+
+  
     if (firstName == "") {
       $('#groupFirstName').addClass("error"); // add class 'error' to #groupFirstName
       $('#controlsFirstName').append('<div class="help-inline">Please enter a first name.</div>'); // add this div after the #controlsFirstName element
