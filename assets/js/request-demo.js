@@ -31,8 +31,9 @@ $(function() {
     
     // validate inputs
 
-    if(response.length == 0) {
-      document.getElementById('g-recaptcha-error').innerHTML = '<div class="help-inline">Please check the Recaptcha.</div>';
+    if (response.length == 0) {
+      $('#groupResponse').addClass("error");
+      $('#controlsResponse').append('<div class="help-inline">Please check the Recaptcha.</div>');
       return false;
     }
 
@@ -146,7 +147,7 @@ $(function() {
   });
 
   function recaptcha_callback() {
-    document.getElementById('g-recaptcha-error').innerHTML = '':
+    document.getElementById('groupResponse').innerHTML = '':
   }
 
 });
