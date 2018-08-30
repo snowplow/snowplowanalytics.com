@@ -25,6 +25,7 @@ $(function() {
     var email = document.getElementById("inputEmail").value;
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
+    var recaptcha = document.getElementById("inputRecaptcha").value;
     
     // validate inputs
 
@@ -56,6 +57,12 @@ $(function() {
       $('#groupCompany').addClass("error"); // add class 'error' to #groupCompany
       $('#controlsCompany').append('<div class="help-inline">Please enter a company name.</div>'); // add this div after the #controlsCompany element
       return false;
+    }
+
+    if (recaptcha == "") {
+      $('#groupRecaptcha').addClass("error");// add class 'error' to #groupRecaptcha
+      $('#controlsRecaptcha').append('<div class="help-inline">Please check the Recaptcha.</div>'); // add this div after the #controlsCompany element
+      return false; 
     }
 
     // if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
