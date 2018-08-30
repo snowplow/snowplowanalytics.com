@@ -166,7 +166,9 @@
     }
 }
 
-.center-captcha {
-    margin: 0 auto;
-    display: block;
+.g-recaptcha > div{
+  margin 10px auto !important;
+  text-align: center;
+  width: auto !important;
+  height: auto !important;
 }
