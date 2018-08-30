@@ -13,7 +13,7 @@ We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. T
 1. [Viewing query output](#query-output)
 2. [Templated playbooks](#templated-playbooks)
 3. [Check SQL queries](#check-sql)
-4. [Consul lock](#consul-lock)
+4. [Using Consul only for locking](#consul-only-for-lock)
 5. [Other changes](#other-changes)
 6. [Upgrading](#upgrading)
 7. [Getting help](#help)
@@ -61,7 +61,7 @@ $ ./sql-runner -fillTemplates -playbook integration/resources/good-postgres-with
 
 Note that with the `-fillTemplates` flag, no SQL will actually be executed.
 
-<h2 id="consul-lock">4. Consul locking</h2>
+<h2 id="consul-only-for-lock">4. Using Consul only for locking</h2>
 
 The new `-consulOnlyForLock` flag lets you run local playbooks, while using Consul for locking.
 
