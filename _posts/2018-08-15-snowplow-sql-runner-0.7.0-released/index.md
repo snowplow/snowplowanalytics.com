@@ -22,7 +22,7 @@ We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. T
 
 <h2 id="query-output">1. Viewing query output</h2>
 
-This release introduces the ability to view output from queries. Using the `-showQueryOutput` flag will print all query results to the console formatted in a table, following each step.
+Version 0.7.0 introduces the ability to view output from queries. Using the `-showQueryOutput` flag will print all query results to the console formatted in a table, following each step.
 
 {% highlight bash %}
 $ ./sql-runner -showQueryOutput -playbook integration/resources/good-postgres.yml -var test_date=`date "+%Y_%m_%d"` -fromStep "Create schema and table"
@@ -39,7 +39,9 @@ $ ./sql-runner -showQueryOutput -playbook integration/resources/good-postgres.ym
 
 <h2 id="templated-playbooks">2. Templated playbooks</h2>
 
-The `-var` will now pass variables into playbooks, as it does with SQL files. This should be useful for treatment of secrets and credentials which you don't want to embed directly in playbooks. Along with this, the `-var` flag also now permits multiple key-value pairs; the pairs must be comma separated (e.g. `key=value,key2=value2`).
+The `-var` will now pass variables into playbooks, as it does with SQL files. This should be useful for treatment of secrets and credentials that you don't want to embed directly in playbooks.
+
+Along with this, the `-var` flag also now permits multiple key-value pairs; the pairs must be comma separated (e.g. `key=value,key2=value2`), like so:
 
 {% highlight bash %}
 $ ./sql-runner -playbook integration/resources/good-postgres-with-template.yml -var password=,host=localhost
@@ -49,9 +51,10 @@ Many thanks to community member [dannymc129][dannymc129] for contributing these 
 
 <h2 id="check-sql">3. Check SQL queries</h2>
 
-The `-fillTemplates` flag will evaluate a SQL file, and print the query in the console, exactly how it would be run against the database. This can assist in debugging templated files, where it's useful to see the transformations around how variables are inserted into templates.
+The new `-fillTemplates` flag will evaluate a SQL file, and print the query in the console, exactly how it would be run against the database. This can assist in debugging templated files, where it's useful to see the transformations around how variables are inserted into templates.
 
 For example:
+
 {% highlight bash %}
 $ ./sql-runner -fillTemplates -playbook integration/resources/good-postgres-with-template.yml -var username=postgres,password=,host=localhost
 {% endhighlight %}
@@ -60,7 +63,7 @@ Note that with the `-fillTemplates` flag, no SQL will actually be executed.
 
 <h2 id="consul-lock">4. Consul locking</h2>
 
-The `-consulOnlyForLock` option can be used to allow for local playbooks to be run, while using Consul for locking.
+The new `-consulOnlyForLock` flag lets you run local playbooks, while using Consul for locking.
 
 <h2 id="other-changes">5. Other changes</h2>
 
@@ -69,8 +72,8 @@ This release brings a whole host of other updates:
 * A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [Tobi][tclass] for contributing this feature!
 * SQL Runner now returns a dedicated exit code (8) if no queries are found to be run
 * During dry run, SQL Runner will now attempt to connect to targets, printing corresponding `SUCCESS` and `ERROR` messages to the terminal
-* Our Snowflake target configuration now lets you include the region variable for the default Snowflake region (previously this would error)
-* Use of godep has now been replaced with dep
+* Our Snowflake target configuration now lets you include `xxx`, the region variable for the default Snowflake region (previously this would error)
+* Use of godep has been replaced with dep
 
 <h2 id="upgrading">6. Upgrading</h2>
 
@@ -87,7 +90,7 @@ C:\> Invoke-WebRequest -OutFile sql_runner_0.7.0_windows_amd64.zip http://dl.bin
 $ wget http://dl.bintray.com/snowplow/snowplow-generic/sql_runner_0.7.0_darwin_amd64.zip
 {% endhighlight %}
 
-Once downloaded, unzip it (Linux for example):
+Once downloaded, unzip it, for example with Linux:
 
 {% highlight bash %}
 $ unzip sql_runner_0.7.0_linux_amd64.zip
