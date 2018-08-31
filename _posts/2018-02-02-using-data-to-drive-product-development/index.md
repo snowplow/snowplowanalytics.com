@@ -2,13 +2,15 @@
 layout: post
 title: "Data-driven product development is more about process, culture, and people than technology"
 title-short: Snowplow product analytics part three
+description: How people and company culture play a bigger role than technology in being data-driven
+image: /assets/img/blog/2018/02/development_loop.jpg
 tags: [analytics, product analytics, digital products]
 author: Yali
 category: Analytics
 permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 ---
 
-*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5]*
+*Part three of our series on product analytics. Read: [Part 1][product1], [Part 2][product2], [Part 4][product4], [Part 5][product5], [Part 6][product6], [Part 7][product7], [Part 8][product8]*
 
 ---
 
@@ -47,13 +49,20 @@ The above two steps are essential for any product development teams that want to
 
 As part of the regular sprint planning process, product managers will be forced to choose how to prioritize different potential updates to the product. This decision can be informed by the clear, quantitative benefit that the team hopes to derive from the update, specified as part of the overall specification process.
 
-<h2 id="deciding">The roll of data in deciding whether or not to roll an update out across the user base</h2>
+<h2 id="deciding">The role of data in deciding whether or not to roll an update out across the user base</h2>
 
 Good data-driven product development teams will have a formal process for A/B testing any new features with a subset of users prior to any rollout of that feature. Remember that the product team will, as part of specifying an update, already have specified the impact that that update should have. A/B testing provides a formal mechanism for measuring if the update has that desired effect.
 
 With each new release of a product, therefore, a new set of A/B tests will be launched to test the latest batch of features. At the end of the test period the results of those tests will be assessed. Only then will product teams that are serious about data roll out those features where the A/B test showed that the update had the desired effect to the rest of the user base. Otherwise the feature will be canned.
 
 Having the discipline to stick to this formal process is the only way product teams can ensure that over time successive releases drive significant incremental improvements to the products.
+
+
+
+{% include shortcodes/ebook.html layout="blog" title="Using data to develop killer products" description="A comprehensive look at the tools, technology, and culture companies need to effectively use data" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-3" %}
+
+
+
 
 <h2 id="process">Process matters</h2>
 
@@ -90,6 +99,12 @@ To learn more about product development with us, make sure you [subscribe to our
 [product4]: https://snowplowanalytics.com/blog/2018/02/09/the-product-analyst-toolkit/
 
 [product5]: https://snowplowanalytics.com/blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
+
+[product6]: https://snowplowanalytics.com/blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
+
+[product7]: https://snowplowanalytics.com/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
+
+[product8]: https://snowplowanalytics.com/blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 
 [discourse-thread]: https://discourse.snowplowanalytics.com/t/habits-of-successful-data-driven-product-teams/1775
 

@@ -78,7 +78,7 @@
         &.github, &.grid-item--width2 {
             padding-right: 18%;
             width: calc((100% - 20px) * (2 / 3) + 10px);
-            background: url(../img/common/community-github-bg.png) bottom right no-repeat #1e2128;
+            background: url(../img/community/community-github-bg.png) bottom right no-repeat #1e2128;
 
             @media screen and (max-width: 970px) {
                 width: calc((100% - 10px) / 2);
@@ -110,7 +110,7 @@
         &.meetup {
             height: 730px;
             position: relative;
-            background: url(../img/common/community-meetup-bg.png) bottom center no-repeat #bebec2;
+            background: url(../img/community/community-meetup-bg.png) bottom center no-repeat #bebec2;
 
             .btn {
                 left: 60px;
@@ -128,7 +128,7 @@
 
         &.blog {
             background-color: #2c54ff;
-            background-image: url(/assets/img/common/bg-pattern-wire.png);
+            background-image: url(/assets/img/community/bg-pattern-wire.png);
         }
 
         &.discourse {
