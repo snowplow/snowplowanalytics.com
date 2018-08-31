@@ -5,7 +5,7 @@ title-short: Iglu R10 Tiflis
 tags: [iglu, json, json schema, registry, schema registry]
 author: Oguzhan
 category: Releases
-permalink: /blog/2018/08/28/iglu-r10-tiflis-released/
+permalink: /blog/2018/08/29/iglu-r10-tiflis-released/
 ---
 
 We are excited to announce the release of Iglu R10 Tiflis, paving the way for a smoother igluctl workflow.
