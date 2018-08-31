@@ -72,7 +72,7 @@ This release brings a whole host of other updates:
 * A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [Tobi][tclass] for contributing this feature!
 * SQL Runner now returns a dedicated exit code (8) if no queries are found to be run
 * During dry run, SQL Runner will now attempt to connect to targets, printing corresponding `SUCCESS` and `ERROR` messages to the terminal
-* Our Snowflake target configuration now lets you include `xxx`, the region variable for the default Snowflake region (previously this would error)
+* Our Snowflake target configuration now lets you specify `us-west` as the region variable for the default Snowflake region (previously this would error)
 * Use of godep has been replaced with dep
 
 <h2 id="upgrading">6. Upgrading</h2>
