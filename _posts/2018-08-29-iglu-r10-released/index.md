@@ -105,6 +105,16 @@ Unzip the compressed file and you can launch the server with the following comma
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
+Alter `schemas` table in order to make it compatible with 0.4.0 schema:
+
+{% highlight bash %}
+$ psql \
+    -U $IGLU_DBUSER \
+    -h $IGLU_HOST \
+    -W $IGLU_DBNAME \
+    -c "ALTER TABLE schemas ADD COLUMN "draftnumber" VARCHAR(50) NOT NULL DEFAULT '0';"
+{% endhighlight %}
+
 The only major change comes from the `POST`-using validation endpoints update mentioned above:
 
 * `HOST/api/schemas/validate/{schemaFormat}` - the endpoint to validate if a schema is self-describing
