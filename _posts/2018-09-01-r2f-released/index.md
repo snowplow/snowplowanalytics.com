@@ -78,6 +78,7 @@ As you can see in the [running](#running) section, there is an argument called `
 This is a very coarse filter that will only catch the worst cases where that happens. 
 So far we haven't identified a generic enough solution to catch for sure all cases where the user has made a mistake like that but there are some ideas about other safeguards (and of course new ideas are welcome, so please submit a [new issue on github][repo-issues] if you have).
 Until other measures are implemented in R2F it is sensible to have some other measures in place to catch that issue downstream (for instance a weekly or monthly sanity check in the target database).
+
 Of course in order to recover from such an issue you need to have a backup of the data which is hard to do while also meeting the requirement to erase all data for a certain client.
 One solution is to keep the old archive in another bucket or prefix (in the case of S3) which will automatically expire through some sort of object life cycle policy and/or versioning.
 Whichever solution to this problem you choose, we would like to hear about your experience on [discourse][discourse]
