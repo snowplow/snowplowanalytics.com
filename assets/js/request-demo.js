@@ -26,8 +26,10 @@ $(function() {
     var phone = document.getElementById("inputPhone").value;
     var company = document.getElementById("inputCompany").value;
     
+
     // validate inputs
 
+  
     if (firstName == "") {
       $('#groupFirstName').addClass("error"); // add class 'error' to #groupFirstName
       $('#controlsFirstName').append('<div class="help-inline">Please enter a first name.</div>'); // add this div after the #controlsFirstName element
@@ -58,6 +60,12 @@ $(function() {
       return false;
     }
 
+    if (recaptcha == "") {
+      $('#groupRecaptcha').addClass("error");// add class 'error' to #groupRecaptcha
+      $('#controlsRecaptcha').append('<div class="help-inline">Please check the Recaptcha.</div>'); // add this div after the #controlsCompany element
+      return false; 
+    }
+
     // if ((insights = false) && (react = false)) { // CAN'T GET THIS TO WORK!!!
     //  $('#groupLeadSource').addClass("error"); // add class 'error' to #groupLeadSource
     //  $('#controlsLeadInsights').append('<div class="help-inline">Please choose a product.</div>'); // add this div after the #controlsLeadInsights element
@@ -74,6 +82,8 @@ $(function() {
         email: email,
         phone: phone,
         company: company,
+        insights: false,
+        react: false
       }
     });
 
@@ -130,5 +140,6 @@ $(function() {
     return false;
 
   });
+
 
 });
