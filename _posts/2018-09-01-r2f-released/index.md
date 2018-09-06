@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title-short: Right to be forgotten spark job released
