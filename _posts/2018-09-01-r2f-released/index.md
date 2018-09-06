@@ -76,7 +76,7 @@ This process does not preserve the directory structure under the `enrihed archiv
 As you can see in the [running](#running) section, there is an argument called `maximum-matching-proportion` which is a safeguard for the case that you have chosen a value as removal criterion that corresponds to many rows.
 
 This is a very coarse filter that will only catch the worst cases where that happens. 
-So far we haven't identified a generic enough solution to catch for sure all cases where the user has made a mistake like that but there are some ideas about other safeguards (and of course new ideas are welcome, so please submit a [new issue on github][repo-issues] if you have).
+So far we haven't identified a generic enough solution to catch for sure all cases where the user has made a mistake like that but there are some ideas about other safeguards (and of course new ideas are welcome, so please submit a [new issue on github][repo-issues] if you have one).
 Until other measures are implemented in R2F it is sensible to have some other measures in place to catch that issue downstream (for instance a weekly or monthly sanity check in the target database).
 
 Of course in order to recover from such an issue you need to have a backup of the data which is hard to do while also meeting the requirement to erase all data for a certain client.
