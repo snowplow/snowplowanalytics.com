@@ -105,7 +105,7 @@ Unzip the compressed file and you can launch the server with the following comma
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
-Alter `schemas` table in order to make it compatible with 0.4.0 schema:
+Alter the `schemas` table in order to make it compatible with the 0.4.0 schema:
 
 {% highlight bash %}
 $ psql \
