@@ -57,6 +57,7 @@ spark-submit \
 ```
 
 The R2F arguments are:
+
     * `--removal-criteria` (in this example `s3://snowplow-data-<mycompany>/config/to_be_forgotten.json`): 
         This is the URL of the removal criteria file containing the criteria for which an event will be removed form the archive.
     * `--input-directory` (in this example `s3://snowplow-data-<mycompany>/enriched/archive/`):
