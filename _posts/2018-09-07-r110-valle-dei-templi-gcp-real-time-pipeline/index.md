@@ -5,7 +5,7 @@ title: "Snowplow R110 Valle dei Templi GCP real-time pipeline"
 tags: [snowplow, real-time, GCP]
 author: Ben
 category: Releases
-permalink: /blog/2018/08/31/snowplow-r110-valle-dei-templi-gcp-real-time-pipeline/
+permalink: /blog/2018/09/07/snowplow-r110-valle-dei-templi-gcp-real-time-pipeline/
 ---
 
 We are excited to announce the release of [Snowplow 110 Valle dei Templi][snowplow-release], named
