@@ -61,7 +61,7 @@ The R2F arguments are:
 * `--removal-criteria` (in this example `s3://snowplow-data-<mycompany>/config/to_be_forgotten.json`): 
         This is the URL of the removal criteria file containing the criteria for which an event will be removed form the archive.
 * `--input-directory` (in this example `s3://snowplow-data-<mycompany>/enriched/archive/`):
-        The directory that contains the snoplow data input
+        The directory that contains the snowplow data input
 * `--non-matching-output-directory` (in this case `s3://snowplow-data-<mycompany>/r2f-test/non-matching/runid=<yyyy-mm-dd-HH-MM-SS>`):
         The directory that contains all data that do not match the criteria
 * (Optional) `--matching-output-directory` (in this case `s3://snowplow-data-<mycompany>/r2f-test/matching/runid=<yyyy-mm-dd-HH-MM-SS>`):
