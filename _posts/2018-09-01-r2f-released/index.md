@@ -10,7 +10,7 @@ permalink: /blog/2018/09/01/r2-released/
 
 We are pleased to announce the release of the [R2F (Right to be forgotten)][r2f-release] spark job.
 
-This is a stand-alone spark job that removes rows from the enriched event archive which contain specific PII identifiers. It is intended for Snowplow users to easily remove data about a specific user, when the data subject has requested it under the "right to be forgotten" in GDPR.
+This is a stand-alone spark job that removes rows from the enriched events which contain specific PII identifiers. It is intended to enable Snowplow users to easily remove data about a specific user, when the data subject has requested it under the "right to be forgotten" rights in GDPR.
 
 From the point of view of a user deploying snowplow, this job falls under the new category of "housekeeping" jobs, which are background tasks, meant to optimise or, in this case, clean up data.
 
@@ -69,7 +69,7 @@ The R2F arguments are:
 * `--maximum-matching-proportion` (In this case `0.01`):
         The maximum proportion of the input events that are allowed to match. If the actual proportion is higher the job will fail.
 
-This process does not preserve the directory structure under the `enrihed archive` (namely the `run=<runid>` subfolders).
+This process does not preserve the directory structure under the `enriched archive` (namely the `run=<runid>` subfolders).
 
 <h2 id="#considerations">3. Further considerations</h2>
 
