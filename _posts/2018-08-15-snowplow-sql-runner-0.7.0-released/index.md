@@ -5,7 +5,7 @@ title-short: SQL Runner 0.7.0
 tags: [sql, postgres]
 author: Mike
 category: Releases
-permalink: /blog/2018/08/15/sql-runner-0.7.0-released/
+permalink: /blog/2018/09/11/sql-runner-0.7.0-released/
 ---
 
 We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. This release adds many new features including the printing out of query output, templated playbooks, the ability to view evaluated SQL file templates, and more:
@@ -13,10 +13,9 @@ We are pleased to announce [version 0.7.0][070-release] of [SQL Runner][repo]. T
 1. [Viewing query output](#query-output)
 2. [Templated playbooks](#templated-playbooks)
 3. [Check SQL queries](#check-sql)
-4. [Using Consul only for locking](#consul-only-for-lock)
-5. [Other changes](#other-changes)
-6. [Upgrading](#upgrading)
-7. [Getting help](#help)
+4. [Other changes](#other-changes)
+5. [Upgrading](#upgrading)
+6. [Getting help](#help)
 
 <!--more-->
 
@@ -61,21 +60,19 @@ $ ./sql-runner -fillTemplates -playbook integration/resources/good-postgres-with
 
 Note that with the `-fillTemplates` flag, no SQL will actually be executed.
 
-<h2 id="consul-only-for-lock">4. Using Consul only for locking</h2>
 
-The new `-consulOnlyForLock` flag lets you run local playbooks, while using Consul for locking.
-
-<h2 id="other-changes">5. Other changes</h2>
+<h2 id="other-changes">4. Other changes</h2>
 
 This release brings a whole host of other updates:
 
+* The new `-consulOnlyForLock` flag lets you run local playbooks, while using Consul for locking.
 * A random number templating function has been added - use `randomInt` in your SQL templates. Thanks to community member [Tobi][tclass] for contributing this feature!
-* SQL Runner now returns a dedicated exit code (8) if no queries are found to be run
-* During dry run, SQL Runner will now attempt to connect to targets, printing corresponding `SUCCESS` and `ERROR` messages to the terminal
-* Our Snowflake target configuration now lets you specify `us-west` as the region variable for the default Snowflake region (previously this would error)
-* Use of godep has been replaced with dep
+* SQL Runner now returns a dedicated exit code (8) if no queries are found to be run.
+* During dry run, SQL Runner will now attempt to connect to targets, printing corresponding `SUCCESS` and `ERROR` messages to the terminal.
+* Our Snowflake target configuration now lets you specify `us-west` as the region variable for the default Snowflake region (previously this would error).
+* Use of godep has been replaced with dep.
 
-<h2 id="upgrading">6. Upgrading</h2>
+<h2 id="upgrading">5. Upgrading</h2>
 
 SQL Runner 0.7.0 is available as a standalone binary for 64-bit Linux, Windows and macOS on Bintray. Download them as follows:
 
