@@ -21,9 +21,11 @@ of Snowplow enriched events from a Kinesis stream into [Indicative][indicative].
 
 <h2 id="indicative">1. What is Indicative?</h2>
 
-[Indicative][indicative] is an emerging customer analytics platform, optimized for customer journey analytics.
+[Indicative][indicative] is an emerging customer analytics platform, optimized for analyzing customer journeys.
 
-It is particularly well suited for marketers, product managers, and analysts. Indicative connects to many data sources to help analyze and visualize user behavior - and is a great fit for analyzing Snowplow event data.
+It is particularly well suited for marketers, product managers, and business analysts. Indicative connects to many data sources to help analyze and visualize user behavior - and because it is so well suited to working with complex, multi-touch user journeys, it is a great fit for analyzing Snowplow event data.
+
+Indicative's multi-dimensional funnel analysis and intuitive interface make it a powerful tool for those without advanced SQL knowledge to run sophisticated analyses on their data. Marketing teams can analyze what behaviors are most common after a user opens an email and which of those behaviors indicate that user might become a customer, and product managers can clearly see how new features impact retention rates across different user cohorts.
 
 To learn more about using Indicative with Snowplow, take a look at our [previous blog post about Indicative][snowplow-indicative-blog].
 
