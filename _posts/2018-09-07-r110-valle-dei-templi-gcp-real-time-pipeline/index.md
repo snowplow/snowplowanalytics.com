@@ -5,7 +5,7 @@ title: "Snowplow R110 Valle dei Templi GCP real-time pipeline"
 tags: [snowplow, real-time, GCP]
 author: Ben
 category: Releases
-permalink: /blog/2018/09/07/snowplow-r110-valle-dei-templi-gcp-real-time-pipeline/
+permalink: /blog/2018/09/12/snowplow-r110-valle-dei-templi-gcp-real-time-pipeline/
 ---
 
 We are excited to announce the release of [Snowplow 110 Valle dei Templi][snowplow-release], named
@@ -22,7 +22,7 @@ Please read on after the fold for:
 
 ![valle-dei-templi][valle-dei-templi-img]
 <br>
-By Jos Dielis (Valle dei Templi) [CC BY 2.0  (https://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons
+By Jos Dielis [Valle dei Templi][valle-img-cc], via Wikimedia Commons
 
 <h2 id="beam">1. Beam Enrich</h2>
 
@@ -54,7 +54,7 @@ called [Scio][scio], which Beam Enrich leverages.
 
 <h2 id="bug-fixes">2. AWS pipeline bug fixes</h2>
 
-This release also brings with it two important bug fixes, one each for our AWS batch and real-time pipelines. 
+This release also brings with it two important bug fixes, one each for our AWS batch and real-time pipelines.
 
 <h3 id="cc">2.1 Clojure Collector's CORS response</h3>
 
@@ -215,6 +215,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r110-valle-dei-templi
 
 [valle-dei-templi]: https://en.wikipedia.org/wiki/Valle_dei_Templi
+[valle-img-cc]: https://creativecommons.org/licenses/by/2.0
 [valle-dei-templi-img]: /assets/img/blog/2018/08/valle-dei-templi.jpg
 
 [r101]: https://snowplowanalytics.com/blog/2018/03/21/snowplow-r101-neapolis-with-initial-gcp-support/
@@ -241,6 +242,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [se-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.19.1#files
 [beam-dl]: https://bintray.com/snowplow/snowplow-generic/snowplow-beam-enrich/0.1.0#files
-[beam-docker-dl]: https://bintray.com/snowplow/registry/snowplow%3Asnowplow-beam-enrich
+[beam-docker-dl]: https://bintray.com/snowplow/registry/snowplow%3Abeam-enrich
 
 [r11x-stability]: https://github.com/snowplow/snowplow/milestone/162
