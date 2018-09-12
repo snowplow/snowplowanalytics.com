@@ -20,8 +20,6 @@ This release brings Snowplow Mini experience to Google Cloud Platform, migrates 
 
 Read on for:
 
-<!--more-->
-
 1. [Google Cloud Platform support](#gcp-support)
 2. [Docker migration](#docker-migration)
 3. [New Iglu Server](#iglu-server)
@@ -29,6 +27,7 @@ Read on for:
 5. [Other updates](#other-changes)
 6. [Documentation and getting help](#help)
 
+<!--more-->
 
 <h2 id="gcp-support">1. Google Cloud Platform support</h2>
 
