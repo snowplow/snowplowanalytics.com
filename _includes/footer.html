@@ -8,17 +8,10 @@
                             <p>Want to be part of our team? Visit our <a href="{{ BASE_PATH }}/company/careers/">Careers</a> page.
                             <p>Subscribe our newsletter to get our latest updates:</p>
                         </div>
-                        <form action="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z8ys92" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                            <div class="input-group newsletter">
-                                <input type="email" class="form-control" id="mce-EMAIL" name="EMAIL" placeholder="Insert your email" required>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="submit">Subscribe</button>
-                                </span>
-                            </div>
-                            <div style="position:absolute; left:-9999px; top: -9999px;">
-                                <label for="pardot_extra_field">Comments</label>
-                                <input type="text" id="pardot_extra_field" name="pardot_extra_field">
-                            </div>
+                        <form action="http://go.snowplowanalytics.com/l/571483/2018-06-26/2z8ys92" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" onsubmit="check_if_capcha_is_filled">
+                            <input type="email" class="form-control newsletter" id="mce-EMAIL" name="EMAIL" placeholder="Insert your email" style="background-color: #323743;    border: 0; width: 86%; margin-bottom: 10px;" required>
+                            <div class="g-recaptcha" data-sitekey="6LeWOmoUAAAAAP6fMS39CfTPe6cRERuHq1HMHV4M" data-callback="recaptcha_callback" data-theme="dark" style="margin-bottom: 10px;"></div>
+                            <input id="submit-btn" class="btn btn-primary" type="submit" value="Subscribe" disabled>
                         </form>
                     </div>
                     <div class="links col-md-8 col-sm-12">
@@ -89,6 +82,14 @@
         {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
         {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
         {% if page.layout == 'post' %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/assets/js/vendors/prism.js'></script>{% endif %}
+
+        <script>
+            function recaptcha_callback() {
+                var submitBtn = document.querySelector('#submit-btn');
+                submitBtn.removeAttribute('disabled');
+                submitBtn.style.cursor = 'pointer';
+            }
+        </script>
 
         </body>
 </html>
