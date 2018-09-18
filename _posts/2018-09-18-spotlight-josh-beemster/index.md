@@ -7,12 +7,14 @@ title-short: Snowplow Spotlight Josh
 tags: [analytics, snowplow team, snowplow, startups, company culture, inside the plow]
 author: Miriam
 category: Inside the Plow
-permalink: /blog/2018/08/17/snowplow-spotlight-josh-beemster/
+permalink: /blog/2018/09/18/snowplow-spotlight-josh-beemster/
 discourse: true
 ---
 
 ![Josh Beemster][josh]
+<br>
 Josh Beemster
+<br>
 TechOps Lead based in Dijon, France
 
 
@@ -51,7 +53,7 @@ It’s awesome!  For me the ability to move around and work from different locat
 
 I love spending time with my family, going travelling, skateboarding and working on side projects (currently developing an RSS reader for Android).
 
-<h2>What are 3 things still left on your bucket list?<h2>
+<h2>What are 3 things still left on your bucket list?</h2>
 
 1. Live in more countries! I’d like to live in Prague / other cities in Europe, as well as the States. I really enjoy absorbing other cultures and taking advantage of the fact that I can work from anywhere (as long as I have network!)
 2. Go travelling in South East Asia
