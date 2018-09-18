@@ -90,7 +90,7 @@ If you’re new to Snowplow and Indicative and would like to better understand h
 
 Open source users: please follow the instructions [here][docs].
 
-[technical]: 
+[technical]: https://snowplowanalytics.com/blog/2018/08/01/snowplow-indicative-relay-released/
 [partnership]: https://www.indicative.com/blog/insight-data-science-snowplow-analytics-indicative-partnership/?utm_source=partner&utm_medium=snowplow&utm_campaign=content
 [morse]: assets/img/blog/2018/09/morse-code-pointillism.jpg
 [indicative-landing]:
