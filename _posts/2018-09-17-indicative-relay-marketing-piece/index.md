@@ -36,20 +36,7 @@ This creates friction in socializing the data around the company and means that 
 
 Indicative takes a new and different approach to data analysis than what’s been previously used by BI tools built on tabular data and SQL data warehouses. The Indicative platform stores data in a proprietary database optimized for user journey analytics and provides an intuitive interface that makes it easy for any product manager or marketer to explore user journeys by simply dragging and dropping.
 
-***
-
-We know the power and flexibility of Indicative’s platform make it an ideal candidate for handling Snowplow data, and we’re excited to announce that we’ve built a direct integration to empower our users.
-
-and the natural evolution of [our partnership][indicative-partner-post] is to build a direct integration.
-
-This power and flexibility makes Indicative an ideal candidate for handling Snowplow data and a natural choice for which to build an integration.
-
-...and a natural choice for us to build an integration with
-...and a natural choice for which we should build an integration
-...Snowplow data, making building an integration a natural/obvious choice (for us).
-
-***
-
+Over the last few months the number of Snowplow users who have adopted Indicative has grown, and we have seen how powerful the combination of rich Snowplow data with Indicative’s analysis UI can be. We wanted to enable more of our users to benefit from Indicative’s technology and so jumped at the opportunity to build a one click integration with Indicative.
 
 *Using event data in a traditional analytics tool is a lot like Morse code: the dots and dashes are all laid out in nice, neat rows that take time to read but ultimately describe something. But, when you take event data and analyze and visualize it in a way that’s optimized to handle its unique richness, the results are very different.*
 
@@ -66,10 +53,10 @@ We're enormously excited about enabling Snowplow users to analyse their data wit
 
 Analyzing Snowplow data with Indicative lets product managers explore complicated questions about their users’ behavior to discover answers they’ve always searched for but could not accurately represent, all unbridled by their level of SQL expertise. Product managers can uncover:
 
-Which of our users have tried the new feature?
-How have users engaged with the new feature?
-At what stage in their journey do they start with the new feature?
-How long do they spend working with the new feature?
+* Which of our users have tried the new feature?
+* How have users engaged with the new feature?
+* At what stage in their journey do they start with the new feature?
+* How long do they spend working with the new feature?
 How many of them used it to actually accomplish something?
 Are there any differences in characteristics between the users who tried the feature and those who did not?
 Are there differences in the behaviour of users who have engaged with the new feature, with those who have not, down the line?
