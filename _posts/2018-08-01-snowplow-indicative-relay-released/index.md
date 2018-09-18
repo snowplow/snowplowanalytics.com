@@ -27,7 +27,7 @@ It is particularly well suited for marketers, product managers, and business ana
 
 Indicative's multi-dimensional funnel analysis and intuitive interface make it a powerful tool for those without advanced SQL knowledge to run sophisticated analyses on their data. Marketing teams can analyze what behaviors are most common after a user opens an email and which of those behaviors indicate that user might become a customer, and product managers can clearly see how new features impact retention rates across different user cohorts.
 
-To learn more about using Indicative with Snowplow, take a look at our [previous blog post about Indicative][snowplow-indicative-blog].
+To learn more about using Indicative with Snowplow, take a look at our [blog post about using the Indicative Relay][snowplow-indicative-blog].
 
 ![indicative][indicative-img]
 
@@ -71,12 +71,15 @@ You can find more information on the relay on its [wiki][wiki].
 
 And if you spot any bugs, please report them through [GitHub issues][github-issues].
 
+
+
+
 [aws-lambda]: https://aws.amazon.com/lambda/
 [indicative]: https://www.indicative.com/
 [indicative-rest-api]: https://app.indicative.com/docs/integration.html
 [indicative-img]: /assets/img/blog/2018/08/indicative-img.png
 
-[snowplow-indicative-blog]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
+[snowplow-indicative-blog]: https://snowplowanalytics.com/blog/2018/09/17/high-end-customer-analytics-with-snowplow-and-indicative/
 
 [property-labels-img]: /assets/img/blog/2018/08/indicative-property-labels.png
 [funnel-img]: /assets/img/blog/2018/08/indicative-funnel.png
