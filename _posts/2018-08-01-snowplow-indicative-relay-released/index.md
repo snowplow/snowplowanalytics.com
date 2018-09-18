@@ -5,7 +5,7 @@ title: "Snowplow Indicative Relay released"
 tags: [snowplow, relay, indicative]
 author: Andrzej
 category: Releases
-permalink: /blog/2018/08/01/snowplow-indicative-relay-released/
+permalink: /blog/2018/09/18/snowplow-indicative-relay-released/
 ---
 
 We are pleased to announce the release of the Snowplow Indicative Relay.
