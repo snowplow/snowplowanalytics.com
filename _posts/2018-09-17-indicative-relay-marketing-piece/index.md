@@ -7,7 +7,7 @@ title-short: Snowplow and Indicative joint integration
 tags: [analytics, partnerships, Indicative, dataviz, visualization, behavioral analytics, customer analytics]
 author: Anthony
 category: Integration
-permalink: /blog/2018/09/17/high-end-customer-analytics-with-snowplow-and-indicative/
+permalink: /blog/2018/09/19/high-end-customer-analytics-with-snowplow-and-indicative/
 discourse: true
 ---
 
@@ -89,11 +89,7 @@ Event data by itself only describes the world as it is. By running experiments, 
 
 <h2 id="get started">Get started with Snowplow and Indicative</h2>
 
-Snowplow Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration following these steps:
-1. Create an [Indicative account][indicative-landing]
-2. Copy your Indicative API key
-3. Follow our [setup guide][snowplow-doc]
-4. Select Indicative
+Snowplow Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration following our [setup guide][snowplow-doc].
 
 If you’re new to Snowplow and Indicative and would like to better understand how both technologies work together to provide you with unparalleled control and flexibility to work with your event data, [get in touch][demo] to see the integration in action.
 
@@ -111,7 +107,7 @@ Open source users: please follow the instructions [here][docs].
 
 [indicative-landing]:
 
-[snowplow-doc]:
+[snowplow-doc]: https://next.docs.snowplowanalytics.com/snowplow-insights/setup/indicative-integration-overview/
 
 [demo]: https://snowplowanalytics.com/request-demo/?utm_source=snp-blog&utm_medium=demo-link&utm_content=snowplow-indicative-relay
 
