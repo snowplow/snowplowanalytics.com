@@ -89,12 +89,14 @@ Event data by itself only describes the world as it is. By running experiments, 
 
 <h2 id="get started">Get started with Snowplow and Indicative</h2>
 
-Snowplow Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration following our [setup guide][snowplow-doc].
+Snowplow Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration by [creating a free Indicative account][indicative-landing] then following our [setup guide][snowplow-doc].
 
 If you’re new to Snowplow and Indicative and would like to better understand how both technologies work together to provide you with unparalleled control and flexibility to work with your event data, [get in touch][demo] to see the integration in action.
 
 Open source users: please follow the instructions [here][docs].
 
+---
+*Make sure you [read Indicative's announcement][indicative-announcement] about using Snowplow with Indicative to power real-time analytics*
 
 
 [technical]: https://snowplowanalytics.com/blog/2018/08/01/snowplow-indicative-relay-released/
@@ -105,10 +107,12 @@ Open source users: please follow the instructions [here][docs].
 
 [morse]: /assets/img/blog/2018/09/morse-code-pointillism.jpg
 
-[indicative-landing]:
+[indicative-landing]: www.indicative.com/snowplow?utm_source=partner&utm_medium=snowplow&utm_campaign=integration
 
-[snowplow-doc]: https://next.docs.snowplowanalytics.com/snowplow-insights/setup/indicative-integration-overview/
+[snowplow-doc]: https://docs.snowplowanalytics.com/snowplow-insights/setup/indicative-integration-overview/
 
 [demo]: https://snowplowanalytics.com/request-demo/?utm_source=snp-blog&utm_medium=demo-link&utm_content=snowplow-indicative-relay
 
 [docs]: https://support.indicative.com/hc/en-us/articles/360015380991
+
+[indicative-announcement]: http://indicative.com/blog/real-time-data-analysis-efficient-business?utm_source=partner&utm_medium=snowplow&utm_campaign=integration
