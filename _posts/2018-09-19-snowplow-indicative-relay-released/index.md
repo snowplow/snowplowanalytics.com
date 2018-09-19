@@ -79,7 +79,7 @@ And if you spot any bugs, please report them through [GitHub issues][github-issu
 [indicative-rest-api]: https://app.indicative.com/docs/integration.html
 [indicative-img]: /assets/img/blog/2018/08/indicative-img.png
 
-[snowplow-indicative-blog]: https://snowplowanalytics.com/blog/2018/09/17/high-end-customer-analytics-with-snowplow-and-indicative/
+[snowplow-indicative-blog]: https://snowplowanalytics.com/blog/2018/09/19/high-end-customer-analytics-with-snowplow-and-indicative/
 
 [property-labels-img]: /assets/img/blog/2018/08/indicative-property-labels.png
 [funnel-img]: /assets/img/blog/2018/08/indicative-funnel.png
