@@ -101,13 +101,13 @@ Open source users: please follow the instructions [here][docs].
 
 [technical]: https://snowplowanalytics.com/blog/2018/08/01/snowplow-indicative-relay-released/
 
-[partnership]: https://www.indicative.com/blog/insight-data-science-snowplow-analytics-indicative-partnership/?utm_source=partner&utm_medium=snowplow&utm_campaign=content
+[partnership]: https://www.indicative.com/blog/insight-data-science-snowplow-analytics-indicative-partnership/?utm_source=partners&utm_medium=snowplow&utm_campaign=partnershipannouncement
 
 [snowplow-partnership]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
 
 [morse]: /assets/img/blog/2018/09/morse-code-pointillism.jpg
 
-[indicative-landing]: www.indicative.com/snowplow?utm_source=partner&utm_medium=snowplow&utm_campaign=integration
+[indicative-landing]: https://www.indicative.com/snowplow?utm_source=partners&utm_medium=snowplow&utm_campaign=integration
 
 [snowplow-doc]: https://docs.snowplowanalytics.com/snowplow-insights/setup/indicative-integration-overview/
 
@@ -115,4 +115,4 @@ Open source users: please follow the instructions [here][docs].
 
 [docs]: https://support.indicative.com/hc/en-us/articles/360015380991
 
-[indicative-announcement]: http://indicative.com/blog/real-time-data-analysis-efficient-business?utm_source=partner&utm_medium=snowplow&utm_campaign=integration
+[indicative-announcement]: https://www.indicative.com/blog/real-time-data-analysis-efficient-business/?utm_source=partners&utm_medium=snowplow&utm_campaign=relayannouncement
