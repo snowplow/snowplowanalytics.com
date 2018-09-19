@@ -7,7 +7,7 @@ title-short: Snowplow and Indicative joint integration
 tags: [analytics, partnerships, Indicative, dataviz, visualization, behavioral analytics, customer analytics]
 author: Anthony
 category: Integration
-permalink: /blog/2018/09/19/high-end-customer-analytics-with-snowplow-and-indicative/
+permalink: /blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/
 discourse: true
 ---
 
