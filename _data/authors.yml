@@ -245,3 +245,9 @@
   avatar:  /assets/img/team/miriam.jpg
   spiel:   |
       <a href="/blog/authors/miriam/">Miriam</a> is the Talent Acquisition Manager at Snowplow. You can find her on <a href="https://www.linkedin.com/in/miriam-de-medwe-929955106/">LinkedIn</a>.
+
+- name: Andrzej
+  full_name: Andrzej Soltysik
+  url: /blog/authors/andrzej/
+  spiel:   |
+      <a href="/blog/authors/miriam/">Andrzej</a> is an engineering intern with Snowplow Analytics, helping us with many different projects including the recent Indicative Relay.
