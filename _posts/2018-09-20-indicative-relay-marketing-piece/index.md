@@ -26,6 +26,10 @@ To understand the user journey as a whole using event data effectively means ana
 
 As a result, the most actionable insights remain buried deep within the data, largely inaccessible without the complicated SQL necessary to make sense of event data in the SQL-based data warehouses powering most BI tools. Traditional business intelligence tools and SQL grew up around simple tables of data, and statistics gives us a wide set of functions to understand this data. But with event data, to see how it describes complex behaviors in great detail, we need to look at sequences of events and aggregate them with other sequences to see a bigger picture which enables us to look for patterns and find insights. Think of your customers and how unique and varied their journeys with your brand are: how would you represent that in a BI tool? Event data is a different, powerful kind of data.
 
+*Using event data in a traditional analytics tool is a lot like Morse code: the dots and dashes are all laid out in nice, neat rows that take time to read but ultimately describe something. But, when you take event data and analyze and visualize it in a way that’s optimized to handle its unique richness, the results are very different.*
+
+![morse code vs pointillism][morse]
+
 <h2 id="be empowered by data">Be empowered by data, not burdened</h2>
 
 Typically, in order to explore data to the depth necessary to drive the greatest impact, the most successful Snowplow users have substantial SQL expertise and invest significant amounts of time into modeling their data to make it easy for users throughout their company to consume with their BI tool of choice.
@@ -38,9 +42,9 @@ Indicative takes [a new and different approach][partnership] to data analysis th
 
 Since we initially [announced our partnership][snowplow-partnership], the number of Snowplow users who have adopted Indicative has grown, and we have seen how powerful the combination of rich Snowplow data with Indicative’s analysis UI can be. We wanted to enable more of our users to benefit from Indicative’s technology and so jumped at the opportunity to build a one click integration with Indicative.
 
-*Using event data in a traditional analytics tool is a lot like Morse code: the dots and dashes are all laid out in nice, neat rows that take time to read but ultimately describe something. But, when you take event data and analyze and visualize it in a way that’s optimized to handle its unique richness, the results are very different.*
+*Indicative's unique platform is capable of handling complex behavioral data and turning it into something businesses can use to drive insights*
 
-![morse code vs pointillism][morse]
+![Indicative][indicative-plat]
 
 With Indicative, you can take detailed, highly structured Snowplow data and quickly build funnels to visualize that data to explore and make sense of the customer journeys you want to understand better. This makes it possible to build significantly more complex graphs than are supported by traditional funnel analytics tools.
 
@@ -106,6 +110,8 @@ Open source users: please follow the instructions [here][docs].
 [snowplow-partnership]: https://snowplowanalytics.com/blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
 
 [morse]: /assets/img/blog/2018/09/morse-code-pointillism.jpg
+
+[indicative-plat]: /assets/img/blog/2018/09/indicative-plat.png
 
 [indicative-landing]: https://www.indicative.com/snowplow?utm_source=partners&utm_medium=snowplow&utm_campaign=integration
 
