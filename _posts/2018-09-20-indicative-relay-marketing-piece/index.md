@@ -103,7 +103,7 @@ Open source users: please follow the instructions [here][docs].
 *Make sure you [read Indicative's announcement][indicative-announcement] about using Snowplow with Indicative to power real-time analytics*
 
 
-[technical]: https://snowplowanalytics.com/blog/2018/08/01/snowplow-indicative-relay-released/
+[technical]: https://snowplowanalytics.com/blog/2018/09/20/snowplow-indicative-relay-released/
 
 [partnership]: https://www.indicative.com/blog/insight-data-science-snowplow-analytics-indicative-partnership/?utm_source=partners&utm_medium=snowplow&utm_campaign=partnershipannouncement
 
