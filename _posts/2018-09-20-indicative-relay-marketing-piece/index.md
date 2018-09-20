@@ -89,7 +89,7 @@ Event data by itself only describes the world as it is. By running experiments, 
 
 <h2 id="get started">Get started with Snowplow and Indicative</h2>
 
-Snowplow Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration by [creating a free Indicative account][indicative-landing] then following our [setup guide][snowplow-doc].
+Snowplow Growth and Enterprise Insights customers who want to see how powerful Indicative is for themselves can easily set up the integration by [creating a free Indicative account][indicative-landing] then following our [setup guide][snowplow-doc].
 
 If you’re new to Snowplow and Indicative and would like to better understand how both technologies work together to provide you with unparalleled control and flexibility to work with your event data, [get in touch][demo] to see the integration in action.
 
