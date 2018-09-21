@@ -133,6 +133,10 @@ $ sbt
 [success] Total time: 0 s, completed 28-Jan-2013 16:41:53
 {% endhighlight %}
 
+<br>
+{% include shortcodes/ebook.html layout="blog" title="Master building data-driven products" description="Get the latest eBook from Snowplow Analytics and use data to build killer products" btnText="Download eBook" link="https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=hive-udfs" %}
+<br>
+
 ## Testing our UDF
 
 Okay great, now time to write a test to make sure this is doing what we expect! First we create a folder for it:
