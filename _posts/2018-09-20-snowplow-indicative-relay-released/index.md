@@ -1,6 +1,6 @@
 ---
 layout: post
-title-short: Snowplow Indicative Relay
+title-short: Snowplow Indicative Relay launched
 title: "Snowplow Indicative Relay released"
 tags: [snowplow, relay, indicative]
 author: Andrzej
