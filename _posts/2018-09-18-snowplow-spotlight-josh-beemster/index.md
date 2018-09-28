@@ -7,7 +7,7 @@ title-short: Snowplow Spotlight Josh
 tags: [analytics, snowplow team, snowplow, startups, company culture, inside the plow]
 author: Miriam
 category: Inside the Plow
-permalink: /blog/2018/09/18/snowplow-spotlight-josh-beemster/
+permalink: /blog/2018/09/28/snowplow-spotlight-josh-beemster/
 discourse: true
 ---
 
@@ -50,12 +50,12 @@ It’s awesome! For me the ability to move around and work from different locati
 
 <h2>What do you like to spend time doing when you’re not at work?</h2>
 
-I love spending time with my family, going travelling, skateboarding and working on side projects (currently developing an RSS reader for Android).
+I love spending time with my family, going traveling, skateboarding and working on side projects (currently developing an RSS reader for Android).
 
 <h2>What are 3 things still left on your bucket list?</h2>
 
 1. Live in more countries! I’d like to live in Prague / other cities in Europe, as well as the States. I really enjoy absorbing other cultures and taking advantage of the fact that I can work from anywhere (as long as I have network!)
-2. Go travelling in South East Asia
+2. Go traveling in South East Asia
 3. Get my driving license (extra difficult when you’re not taking it in your native language!)
 
 [josh]: /assets/img/team/josh.jpg
