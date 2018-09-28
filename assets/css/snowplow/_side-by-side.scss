@@ -17,15 +17,15 @@
 			float: left;
 			height: 100%;
 			position:relative;
-    		padding-bottom: 170px;
+    		//padding-bottom: 170px;
 
-			.btn:last-child
-			{
-				left:50%;
-				bottom:80px;
-				position:absolute;
-				transform:translateX(-50%); 
-			}
+			//.btn:last-child
+			//{
+			//	left:50%;
+			//	bottom:80px;
+			//	position:absolute;
+			//	transform:translateX(-50%); 
+			//}
 		}
 
 		@media screen and (max-width:$screen-sm-max)

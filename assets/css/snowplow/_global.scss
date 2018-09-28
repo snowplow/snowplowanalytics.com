@@ -117,13 +117,6 @@ img {
 
 .side-by-side {
     overflow: hidden;
-
-    >.container {
-        background-image: -webkit-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
-        background-image: -o-linear-gradient(left, $brand-success, $brand-success 50%, $brand-info 50%);
-        background-image: linear-gradient(to right, $brand-success, $brand-success 50%, $brand-info 50%);
-        background-repeat: no-repeat;
-    }
 }
 
 
