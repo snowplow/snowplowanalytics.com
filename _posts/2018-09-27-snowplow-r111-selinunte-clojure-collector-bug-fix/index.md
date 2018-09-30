@@ -5,7 +5,7 @@ title: "Snowplow R111 Selinunte Clojure Collector bug fix"
 tags: [snowplow, batch, clojure, collector]
 author: Ben
 category: Releases
-permalink: /blog/2018/09/27/snowplow-r111-clojure-collector-bug-fix/
+permalink: /blog/2018/09/27/snowplow-r111-selinunte-clojure-collector-bug-fix/
 ---
 
 [Snowplow 111 Selinunte][snowplow-release], named after
