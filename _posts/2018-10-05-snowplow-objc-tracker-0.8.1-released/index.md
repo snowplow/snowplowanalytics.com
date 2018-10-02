@@ -25,7 +25,7 @@ Read on below the fold for:
 
 <h2 id="appcontext">1. Application contexts</h2>
 
-We introduce application contexts in this release, in order to attach information related to the application being tracked. Information like the application version will be included.
+In this release we introduce application contexts. This feature allows one to determine which version of an app sent a particular event.
 
 This can be enabled in the tracker initialization, and doing so will send an application context with every event.
 
