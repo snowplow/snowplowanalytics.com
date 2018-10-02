@@ -14,7 +14,7 @@ on the bug fix for the Clojure Collector published in [Release 110][r110-cc].
 
 Please read on after the fold for:
 
-1. [Clojure Collector bug fix](#cc)
+1. [Clojure Collector bug fix](#bug-fixes)
 2. [Upgrading](#upgrading)
 3. [Roadmap](#roadmap)
 4. [Help](#help)
@@ -31,7 +31,7 @@ Unfortunately, the bug fix for the Clojure Collector provided in [Release 110][r
 sufficient to complete the story around cross-origin resource sharing (CORS for short) for the
 Clojure Collector.
 
-Indeed, R110's bug fix ([issue #3875](issue-3875)) only targeted `OPTIONS` requests. In this
+Indeed, R110's bug fix ([issue #3875](https://github.com/snowplow/snowplow/issues/3875)) only targeted `OPTIONS` requests. In this
 release, we are extending it to support `POST` requests.
 
 As a result, we are now sending back a response containing the original value of the `Origin` header
@@ -70,4 +70,3 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [discourse]: http://discourse.snowplowanalytics.com/
 
 [r11x-stability]: https://github.com/snowplow/snowplow/milestone/162
-[issue-3875]: https://github.com/snowplow/snowplow/issues/3875
