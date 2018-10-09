@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Snowplow Obj-C Tracker 0.8.1 released"
-title-short: Snowplow Obj-C Tracker 0.8.1
+title: "Snowplow Obj-C Tracker 0.9.0 released"
+title-short: Snowplow Obj-C Tracker 0.9.0
 tags: [snowplow, ios, objc, contexts, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/10/05/snowplow-objc-tracker-0.8.1-released/
+permalink: /blog/2018/10/05/snowplow-objc-tracker-0.9.0-released/
 discourse: true
 ---
 
 We are pleased to announce a new release of the [Snowplow Obj-C Tracker][repo].
 
-[Version 0.8.1][release-notes] introduces application contexts, and lifecycle event tracking.
+[Version 0.9.0][release-notes] introduces application contexts, and lifecycle event tracking.
 
 Read on below the fold for:
 
@@ -85,7 +85,7 @@ Other updates and fixes include:
 
 You can find the updated [Obj-C Tracker documentation][objc-manual] on our wiki.
 
-You can find the full release notes on GitHub as [Snowplow Obj-C Tracker v0.8.1 release][release-notes].
+00000000find the full release notes on GitHub as [Snowplow Obj-C Tracker v0.9.0 release][release-notes].
 
 <h2 id="help">5. Getting help</h2>
 
