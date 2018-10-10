@@ -129,7 +129,7 @@ if (!window.location.origin) {
         var maps = $('.map');
         if (maps.length > 0) {
             if ('google' in window == false) {
-                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyC53hH9JnDOILAqpXQsEtpcpfr3lt0LSl0")
+                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJFNX910dv_J-m8uBY_7BUEFoZnAvjFus")
                     .done(function(script, textStatus) {
                         maps.each(function() {
                             var th = $(this);
