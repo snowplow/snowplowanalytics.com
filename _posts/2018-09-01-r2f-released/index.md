@@ -5,7 +5,7 @@ title: "New Right to be forgotten spark job adds more GDPR support"
 tags: [snowplow, gdpr, pii]
 author: Kostas
 category: Releases
-permalink: /blog/2018/09/01/new-right-to-be-forgotten-spark-job-adds-more-gdpr-support/
+permalink: /blog/2018/10/17/new-right-to-be-forgotten-spark-job-adds-more-gdpr-support/
 ---
 
 We are pleased to announce the release of the [R2F (Right to be forgotten)][r2f-release] spark job.
