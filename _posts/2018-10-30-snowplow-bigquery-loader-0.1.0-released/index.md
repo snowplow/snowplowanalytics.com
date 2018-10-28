@@ -26,10 +26,11 @@ Read on below the fold for:
 
 <h2 id="gcp">1. Google Cloud Platform support</h2>
 
-One year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][rfc], which laid the ground for native support of Google Cloud Platform in Snowplow core components: collector, enrich job, storage loader and data lake.
+One year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][rfc], which laid the ground for native support of Google Cloud Platform across the Snowplow core components: collector, enrichment, warehouse loading and event archival.
 
-Since then we were researching Google Cloud Platorm and working on implementing these components.
-[R101 Neapolis][r101-initial-support] introduced [Google PubSub][google-pubsub] support to our Stream Collector.
+Since that announcement, we have been busy exploring the Google Cloud Platorm and working on prototype components.
+[R101 Neapolis][r101-initial-support] introduced [Google Cloud PubSub][google-pubsub] support to our Stream Collector and added provisional Cloud PubSub support to Stream Enrich (our existing real-time enrichment process for Kinesis).
+
 [R110 Valle dei Templi][r110-beam-enrich] added new Beam Enrich component that reads raw events from PubSub subscription and performs standard enrichment process using [Google Cloud Dataflow][dataflow], a service for distributed data processing.
 At last, our recent release of [SQL Runner][sql-runner] makes it possible to run your data modeling playbooks against BigQuery.
 
