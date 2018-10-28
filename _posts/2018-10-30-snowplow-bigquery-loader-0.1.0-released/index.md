@@ -153,13 +153,13 @@ $ ./snowplow-bigquery-mutator \
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-This is the first public release of BigQuery Loader and it can be considered stable and reliable enough for most production use cases.
-It showed itself very well in our internal testing program, but many things are still subject to change.
-Next changes will most likely be concentrated around following aspects:
+This is the first public release of BigQuery Loader, and it can be considered stable and reliable enough for most production use cases.
 
-* Table structure. Currently all columns have precise version of schema, e.g. `contexts_com_acme_product_context_1_0_0`. We think that this model is enough for many use cases, but not optimal for data models with heavy use self-describing data and we're considering more common MODEL-based versioning (e.g. `contexts_com_acme_product_context_1`), we're planning to implement it in next major version of Loader and still open for suggestions.
-* Deduplication. Google PubSub has very weak delivery guarantees and Snowplow pipeline has its own [source of duplicates][deduplication], which means some deduplication mechanism will 
-* State-management. Currently state is managed by `typesTopic`, which makes it very hard to reason about processing happening in pipeline and we're looking for more sophisticated and preserving solutions
+It has performed well in our internal testing program, but many things are still subject to change. Upcoming changes will most likely be focused on the following aspects:
+
+* **Table structure** - currently all columns are created with the precise version of schema, e.g. `contexts_com_acme_product_context_1_0_0`. We think that this model is enough for many use cases, but not optimal for data models which make heavy use of self-describing data with regularly evolving schemas. We're thus considering `MODEL`-based versioning (e.g. `contexts_com_acme_product_context_1`) for the next major version of Loader - but are still open to suggestions
+* **Deduplication** - Google Cloud PubSub has very weak delivery guarantees and a Snowplow pipeline has to contend with [various sources of duplicates][deduplication], so we will need some deduplication mechanism in due course
+* **State management** - currently, the loader tracks its own state via the `typesTopic` introduced above. This makes it very hard to reason about how BigQuery loading is proceeding, so we are looking for more sophisticated solutions going forwards
 
 <h2 id="help">6. Getting help</h2>
 
