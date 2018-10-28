@@ -9,23 +9,24 @@ permalink: /blog/2018/10/30/snowplow-bigquery-loader-0.1.0-released/
 ---
 
 We are tremendously excited to announce the public release of the [Snowplow BigQuery Loader][bigquery-loader-repo].
-[Google BigQuery][bigquery] is highly scalable and fully managed data storage with real-time ingestion and rich support of semi-structured data.
-This Loader was the last component missing in Google Cloud Platform version of Snowplow pipeline, following after [Google PubSub support][r101-inital-support] in Stream Collector and
-[Beam Enrich][r110-beam-enrich] in Snowplow core, effectively making Snowplow a truly multi-cloud platform.
+[Google BigQuery][bigquery] is a highly-scalable and fully-managed data warehouse with real-time ingestion and rich support for semi-structured data.
 
-<!--more-->
+The BigQuery Loader was the "missing piece" in the Google Cloud Platform version of Snowplow pipeline, following after [Google PubSub support][r101-inital-support] in Stream Collector and [Beam Enrich][r110-beam-enrich] in Snowplow core. This release makes Snowplow a truly multi-cloud platform.
 
-1. [Google Cloud Platform Support](#gcp)
+Read on below the fold for:
+
+1. [Google Cloud Platform support](#gcp)
 2. [Google BigQuery](#bigquery)
 3. [Snowplow BigQuery Loader](#loader)
 4. [Setup](#setup)
 5. [Roadmap](#roadmap)
-6. [Getting Help](#help)
+6. [Getting help](#help)
 
+<!--more-->
 
-<h2 id="gcp">1. Google Cloud Platform Support</h2>
+<h2 id="gcp">1. Google Cloud Platform support</h2>
 
-Year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][rfc], where layed the ground for native support of Google Cloud Platform in Snowplow core components: collector, enrich job, storage loader and data lake.
+One year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][rfc], which laid the ground for native support of Google Cloud Platform in Snowplow core components: collector, enrich job, storage loader and data lake.
 
 Since then we were researching Google Cloud Platorm and working on implementing these components.
 [R101 Neapolis][r101-initial-support] introduced [Google PubSub][google-pubsub] support to our Stream Collector.
@@ -149,7 +150,6 @@ $ ./snowplow-bigquery-mutator \
     --resolver $RESOLVER \
 {% endhighlight %}
 
-
 <h2 id="roadmap">5. Roadmap</h2>
 
 This is the first public release of BigQuery Loader and it can be considered stable and reliable enough for most production use cases.
@@ -160,12 +160,11 @@ Next changes will most likely be concentrated around following aspects:
 * Deduplication. Google PubSub has very weak delivery guarantees and Snowplow pipeline has its own [source of duplicates][deduplication], which means some deduplication mechanism will 
 * State-management. Currently state is managed by `typesTopic`, which makes it very hard to reason about processing happening in pipeline and we're looking for more sophisticated and preserving solutions
 
-<h2 id="help">6. Getting Help</h2>
+<h2 id="help">6. Getting help</h2>
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
-If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
-
+And if you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [rfc]: https://discourse.snowplowanalytics.com/t/porting-snowplow-to-google-cloud-platform/1505
 [google-analytics-360]: https://marketingplatform.google.com/about/analytics-360/
