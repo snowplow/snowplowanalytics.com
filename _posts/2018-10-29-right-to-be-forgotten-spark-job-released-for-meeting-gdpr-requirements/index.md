@@ -1,41 +1,43 @@
 ---
 layout: post
-title-short: Right to be forgotten spark job released
-title: "New Right to be forgotten spark job adds more GDPR support"
-tags: [snowplow, gdpr, pii]
+title-short: Right to be Forgotten Spark job
+title: "Right to be Forgotten Spark job released for meeting GDPR requirements"
+tags: [snowplow, gdpr, pii, r2f]
 author: Kostas
 category: Releases
-permalink: /blog/2018/10/17/new-right-to-be-forgotten-spark-job-adds-more-gdpr-support/
+permalink: /blog/2018/10/29/right-to-be-forgotten-spark-job-released-for-meeting-gdpr-requirements/
 ---
 
-We are pleased to announce the release of the [R2F (Right to be forgotten)][r2f-release] spark job.
+We are pleased to announce the release of our [R2F (Right to be Forgotten)][r2f-release] Spark job.
 
-This is a stand-alone spark job that removes rows from the enriched events which contain specific PII identifiers. It is intended to enable Snowplow users to easily remove data about a specific user, when the data subject has requested it when exercising his or her "right to be forgotten" under Article 17 of the [GDPR][eugdpr].
+This is a stand-alone Spark job that removes rows from your Snowplow enriched events archive in Amazon S3, based on specific PII identifiers. It lets Snowplow users easily remove data about a specific user, when the data subject has requested it when exercising his or her "right to be forgotten" under Article 17 of the [GDPR][eugdpr].
 
 For those deploying Snowplow, the R2F job falls under the new category of "housekeeping" jobs which are background tasks meant to optimize or clean up data (as in this case).
 
 Please read on for:
 
-1. [The Right to be Forgotten](#right-to-be-forgotten)
-2. [Running R2F](#running)
+1. [The GDPR's Right to be Forgotten](#right-to-be-forgotten)
+2. [Running the R2F Spark job](#running)
 3. [Further considerations](#considerations)
 4. [Help](#help)
 
-<h2 id="right-to-be-forgotten">1. The Right to be Forgotten</h2>
+<!--more-->
+
+<h2 id="right-to-be-forgotten">1. The GDPR's Right to be Forgotten</h2>
 
 Even before [GDPR][eugdpr], many users of information services were concerned that their actions and behavior would be recorded and be available to the data controller, long after the consent or interaction that justified the data to be recorded and processed had ceased.
 
 Under the [GDPR][eugdpr], the EU created a clear regulation describing the obligations of data controllers with specific attention being paid to a data subject's right to be forgotten.
-While the regulation has special provisions for freedom of expression, in general, maintaining and processing personally identifiable information is now [conditional][ico-basis] and [time-limited][commission-time-limit], thus addressing a significant policy gap between individual rights vs commercial interests.
 
-To help our clients along the path of responsible data processing, we have included a number of features to help pseudonymize data in the main Snowplow pipeline under releases [R100][r100-blog] and [R106][r106-blog].
-Alongside these efforts, we also released [Piinguin][piinguin-blog] in order to better manage re-identification, should that be necessary.
+While the regulation has special provisions for freedom of expression, in general, maintaining and processing personally identifiable information is now [conditional][ico-basis] and [time-limited][commission-time-limit], thus addressing a significant policy gap between individual rights and commercial interests.
 
-The current release of R2F addresses the requirement to remove archived data pertaining to a data subject. Under GDPR "[Article 17 - Right to erasure (‘right to be forgotten’)][eurlex]" the data subject can request the erasure and the controller, usually, is obliged to act (see also [EU commission example][commission]).
+To help Snowplow users along the path of responsible data processing, we have included a number of features to help pseudonymize data in the main Snowplow pipeline under releases [R100][r100-blog] and [R106][r106-blog]. Alongside these efforts, we also released [Piinguin][piinguin-blog] in order to better manage re-identification, should that be necessary.
 
-Trying to come up with a way to remove data from the Snowplow archive when that happens can lead to errors and possibly miss the "without undue delay" condition. As a result, to address this need we created the right to be forgotten spark job.
+Under GDPR's [Article 17 - Right to erasure ('right to be forgotten')][eurlex], the data subject can request the erasure and the data controller, usually, is obliged to act (see also [this example from the EU Commission][commission]).
 
-<h2 id="running">2. Running R2F</h2>
+As the operator of a Snowplow pipeline, you will want to remove data from a Snowplow event archive in Amazon S3 following an R2F request in a reliable and timely ("without undue delay") fashion. To address this need, we created the Right to be Forgotten Spark job; this complements our existing tutorials for removing R2F data from [Redshift][r2f-redshift] and [Snowflake][r2f-snowflake].
+
+<h2 id="running">2. Running the R2F Spark job</h2>
 
 Running R2F requires a "removal criteria" file in order to match the rows to be erased. The file consists of rows of a single JSON self-describing datum which conforms to the [iglu schema here][removal-criteria-iglu-schema].
 As can be seen from the schema, it expects a single criterion of either `json` or `pojo` fields. Special care needs to be taken that the value uniquely identifies an individual as there is a chance (e.g. when using an IP address) that it does not and more data than intended is erased.
@@ -105,3 +107,6 @@ If you have any questions or run into any problems, please raise a question in [
 [repo-issues]: https://github.com/snowplow-incubator/right-to-be-forgotten-spark-job/issues
 [discourse]: https://discourse.snowplowanalytics.com/
 [r2f-wiki]: https://github.com/snowplow-incubator/right-to-be-forgotten-spark-job/wiki
+
+[r2f-redshift]: https://discourse.snowplowanalytics.com/t/gdpr-deleting-customer-data-from-redshift-tutorial/1815
+[r2f-snowflake]: https://discourse.snowplowanalytics.com/t/gdpr-deleting-customer-data-from-snowflake-tutorial/1848
