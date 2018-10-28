@@ -39,13 +39,17 @@ As the operator of a Snowplow pipeline, you will want to remove data from a Snow
 
 <h2 id="running">2. Running the R2F Spark job</h2>
 
-Running R2F requires a "removal criteria" file in order to match the rows to be erased. The file consists of rows of a single JSON self-describing datum which conforms to the [iglu schema here][removal-criteria-iglu-schema].
-As can be seen from the schema, it expects a single criterion of either `json` or `pojo` fields. Special care needs to be taken that the value uniquely identifies an individual as there is a chance (e.g. when using an IP address) that it does not and more data than intended is erased.
-To avoid that, an additional argument needs to be provided to the spark job that specifies the maximum proportion of rows from the archive that you expect to be matched in that execution (e.g. 0.5 for half), as a safeguard. The job will fail if that number is exceeded.
+Running the R2F Spark job requires a "removal criteria" file in order to match the events to be erased.
 
-So in your spark installation (assumed to be EMR for this example) all you would need to do is:
+The file consists of rows of a single JSON self-describing datum which conforms to the [JSON Schema here][removal-criteria-iglu-schema]. As can be seen from the schema, it expects a single criterion of either `json` or `pojo` fields.
 
-```bash
+Special care needs to be taken that the value uniquely identifies a single individual, as there is a chance (e.g. when using an IP address) that it does not and more events than intended could be erased.
+
+To avoid that, an argument should be provided to the Spark job that specifies the maximum proportion of rows from the archive that you expect to be matched in that execution (e.g. 0.01 for 1%), as a safeguard. The job will fail if that number is exceeded.
+
+Here is an example of running the R2F job against Elastic MapReduce:
+
+{% highlight bash %}
 spark-submit \
     --master yarn \
     --deploy-mode client ./snowplow-right-to-be-forgotten-job-0.1.0.jar \
@@ -54,22 +58,17 @@ spark-submit \
     --non-matching-output-directory s3://snowplow-data-<mycompany>/r2f-test/non-matching/runid=<yyyy-mm-dd-HH-MM-SS> \
     --matching-output-directory s3://snowplow-data-<mycompany>/r2f-test/matching/runid=<yyyy-mm-dd-HH-MM-SS> \
     --maximum-matching-proportion 0.01
-```
+{% endhighlight %}
 
 The R2F arguments are:
 
-* `--removal-criteria` (in this example `s3://snowplow-data-<mycompany>/config/to_be_forgotten.json`):
-        This is the URL of the removal criteria file containing the criteria for which an event will be removed form the archive.
-* `--input-directory` (in this example `s3://snowplow-data-<mycompany>/enriched/archive/`):
-        The directory that contains the snowplow data input
-* `--non-matching-output-directory` (in this case `s3://snowplow-data-<mycompany>/r2f-test/non-matching/runid=<yyyy-mm-dd-HH-MM-SS>`):
-        The directory that contains all data that do not match the criteria
-* (Optional) `--matching-output-directory` (in this case `s3://snowplow-data-<mycompany>/r2f-test/matching/runid=<yyyy-mm-dd-HH-MM-SS>`):
-        The directory that contains the matching output
-* `--maximum-matching-proportion` (In this case `0.01`):
-        The maximum proportion of the input events that are allowed to match. If the actual proportion is higher the job will fail.
+* `--removal-criteria` (in this example `s3://snowplow-data-<mycompany>/config/to_be_forgotten.json`): this is the URL of the removal criteria file containing the criteria for which events will be removed from the archive
+* `--input-directory` (in this example `s3://snowplow-data-<mycompany>/enriched/archive/`): the directory that contains the Snowplow event archive
+* `--non-matching-output-directory` (in this example `s3://snowplow-data-<mycompany>/r2f-test/non-matching/runid=<yyyy-mm-dd-HH-MM-SS>`): the directory to write out allevents that do **not** match the criteria
+* `--matching-output-directory` (in this example `s3://snowplow-data-<mycompany>/r2f-test/matching/runid=<yyyy-mm-dd-HH-MM-SS>`): the directory that contains the matching output. Optional
+* `--maximum-matching-proportion` (in this example `0.01`): the maximum proportion of the input events that are allowed to match. If the actual proportion is higher the job will fail
 
-**Note:** This process does not preserve the directory structure under the `enriched archive` (namely the `run=<runid>` subfolders).
+**Note:** when writing out the filtered output, the R2F Spark job does not preserve the directory structure found within the enriched archive, specifically the `run=<runid>` subfolders.
 
 <h2 id="considerations">3. Further considerations</h2>
 
