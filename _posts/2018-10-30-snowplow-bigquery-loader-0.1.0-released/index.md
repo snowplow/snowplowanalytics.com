@@ -51,45 +51,37 @@ BigQuery has a unique combination of features and characteristics that makes it 
 
 <h3 id="loader-overview">3.1. Overview</h3>
 
-BigQuery is a third cloud warehouse supported by Snowplow (excluding several discounted ones).
-By virtue of our growing expertise, each new storage option provides more seamless experience, leveraging as many warehouse's advantages as possible.
+We're excited with the BigQuery Loader to take onboard the lessons we have learnt from support Amazon Redshift and Snowflake DB in the preceding years.
 
-For example, real-time ingestion wouldn't be so appealing if our users had to manually generate and execute DDL statements after adding new context or self-describing event.
-Therefore, automatic table mutation is implemented from the first version of BigQuery Loader.
-You just upload new JSON schema to Iglu Registry and start sending data with this schema - Loader creates corresponding column automatically.
+For example, the BigQuery Loader supports automatic table mutation based on incoming self-describing events and contexts. Just make sure to upload your new JSON Schema to your Iglu registry, then start sending events with this schema - the BigQuery Loader will create the corresponding column inside your BigQuery events table automatically.
 
-Another feature that we couldn't neglect is expressive SQL type system providing more fine-grained control over data being loaded.
-There's no option for plain semistructured data as in Snowflake DB and we would like to keep data as structured as possible, thus each self-describing schema is mapped to a `STRUCT` column, reflecing all its properties.
-This also works with any kind of nested structure, including deeply nested arrays, which wouldn't be possible in many other SQL-like warehouses like Redshift.
-It also means, that unlike in Redshift, each shredded type is represented as a separate column, not separate table. 
-It makes slow `JOIN`s unnecessary and removes problem with possible cartesian product.
+It was also great to integrate with BigQuery's expressive SQL type system. To keep our event data as structured as possible, in BigQuery each self-describing schema is mapped to a `STRUCT` column, reflecting all its properties. This also works with any kind of nested structure, including deeply nested arrays - meaning that we can represent each shredded type can be represented as a separate column, not a separate table as we have to use in Redshift.
 
-These two features are powered by our Iglu schemaing technology which includes full-featured BigQuery DDL abstract syntax tree and JSON Schema to BigQuery DDL since [R10 Tiflis][iglu-r10].
+These two features are powered by our Iglu schema technology, which as of [R10 Tiflis][iglu-r10] includes a full-featured BigQuery DDL abstract syntax tree and support for JSON Schema to BigQuery DDL generation.
 
 <h3 id="loader-architecture">3.2. Architecture</h3>
 
-Unlike existing Loaders, BigQuery Loader's architecture is entirely real-time and designed for unbounded data streams.
-It doesn't involve a blob storage in order to stage the data (unless you configure it separately) and never makes assumption about data volumes.
-Instead, as other components of Snowplow GCP pipeline, it uses exclusively Google PubSub topics in order to read enriched data, sink bad rows and fullfill other needs.
+Unlike existing Loaders, the BigQuery Loader's architecture is entirely real-time and designed for unbounded data streams. It does not use cloud/blob storage to stage the data, and it makes no assumptions about data volumes. As with the other components of Snowplow GCP pipeline, the Loader exclusively uses Cloud PubSub topics in order to read enriched events, sink bad rows and handle all related tasks.
 
-BigQuery Loader consists of two applications:
+The Snowplow BigQuery Loader consists of two applications:
 
-* Loader itself, a Dataflow job that transforms stream of enriched events into BigQuery format and ingests them
-* Mutator, a stand-alone JVM application that performs necessary `ALTER TABLE` statements
+1. The Loader itself, a Cloud Dataflow job that transforms stream of enriched events into BigQuery format and ingests them
+2. The Mutator, a stand-alone JVM application that performs the necessary `ALTER TABLE` statements
 
-Both applications communicate through so called `typesTopic` topic.
-Loader sends there all types it encountered and Mutator performs table mutation whenever necessary. Mutator should be constantly running and consuming PubSub messages.
+The two applications communicate through the `typesTopic` topic. The Loader writes to that topic all of the types that it has encountered; the Mutator then reads from that topic to perform mutation of the events table as necessary. The Mutator should be constantly running and consuming PubSub messages.
 
-Beside of `typesTopic`, Loader makes use of two other PubSub topics:
+Alongside the `typesTopic`, the Loader makes use of two other PubSub topics:
 
-* `badRows` - rows that for some reason couldn't be transformed in BigQuery format. Usually it means Iglu Registry outage or unexpected schema patch, because data already has passed validation in enrich, but Loader couldn't transform it into BigQuery format in accordance with Iglu schema. This closely resembles "shredded bad" data from RDB Shredder, it contains reason of failure and raw enriched JSON.
-* `failedInserts` - another PubSub topic, where Loader sends data that has passed transformation, but for some reasons failed on last insertion stage. Unlike `badRows`-data it does not contain the reason of failure and has a form of ready-to-be-inserted BigQuery row format. Main source of failed inserts is a short period of time between first event with new schema processed by Loader and Mutator performed necessary mutation.
+1. `badRows` - rows that for some reason couldn't be transformed into BigQuery format. It could be caused by an Iglu registry outage, or by an unexpected schema patch or overwrite. This closely resembles the "shredded bad" data generated by our RDB Shredder for Redshift, and contains reason of failure and raw enriched JSON
+2. `failedInserts` - the Loader sends data to this topic that *has* passed transformation, but for some reason failed during the actual insertion stage. Unlike `badRows` data, these records unfortunately do not contain the reason of failure - they are in the form of ready-to-be-inserted BigQuery row format. The main source of failed inserts is the short period of time between the first event with new schema processed by the Loader, and the Mutator performing the necessary mutation
 
-Both "failed inserts" and "bad rows" have different format, cause and recovery strategies.
-Bad rows should be extremely rare and in order to recover them one needs to sink the data to Cloud Storage and apply recovery strategy depending on root cause.
-Failed inserts in turn usually can be simply forwarded to BigQuery one more time - if they were caused by Mutator's delay and Mutator managed to perform its statements - these rows will be accepted by BigQuery.
+Both "failed inserts" and "bad rows" have different formats, causes and recovery strategies.
 
-Note that PubSub has a [retention time][pubsub-retention] for 7 days. After this time, messages will be silently dropped. It means that for this time you either need to recover them or sink to cloud storage in order to not loose the data.
+Bad rows should be extremely rare and in order to recover them one needs to sink the data to Cloud Storage and apply an appropriate recovery strategy depending on the root cause.
+
+Failed inserts in turn usually can be simply forwarded to BigQuery one more time - if they were simply caused by the Mutator's delay, then these rows will be accepted the second time by BigQuery.
+
+Note that PubSub has a [retention time][pubsub-retention] for 7 days. After this time, messages will be silently dropped. Therefore, we recommend sinking these topics to cloud storage to prevent data loss.
 
 <h2 id="bigquery">4. Setup</h2>
 
