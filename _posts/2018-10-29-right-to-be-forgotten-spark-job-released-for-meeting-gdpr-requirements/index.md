@@ -73,20 +73,23 @@ The R2F arguments are:
 
 <h2 id="considerations">3. Further considerations</h2>
 
-<h3 >Data Loss</h3>
-As you can see in the [running](#running) section, there is an argument called `maximum-matching-proportion` which is a safeguard for the case that you have chosen a value as removal criterion that corresponds to many rows.
+<h3>Overzealous deletion of data</h3>
 
-This is a very coarse filter that will only catch the worst cases where that happens.
-We have yet to identify a generic enough solution to reliably catch all cases where the user has mistakenly selected a removal criterion that corresponds to multiple rows, but we're investigating alternative safeguards (and of course new ideas are always welcome so please submit a [new issue on github][repo-issues] if you have one).
-Until other measures are implemented in R2F it is sensible to have some other measures in place to catch issues downstream (for instance a weekly or monthly sanity check in the target database).
+As you can see in the [running](#running) section, there is an argument called `maximum-matching-proportion` which is a safeguard in case that you have provided a value as removal criterion that corresponds to many events across many users.
 
-Of course in order to recover from such an issue you need to have a backup of the data which is hard to do while also meeting the requirement to erase all data for a certain client.
-One solution is to keep the old archive in another bucket or prefix (in the case of S3) which will automatically expire through some sort of object life cycle policy and/or versioning.
-Whichever solution to this problem you choose, we would like to hear about your experience on [discourse][discourse]
+This is a very coarse filter that will only catch the worst cases of excessive deletion; we have yet to identify a generic enough solution to reliably catch all cases where the user has mistakenly selected an overly-wide removal criterion. However, we continue to explore alternative safeguards - and of course new ideas are always welcome, so please submit a [new issue on GitHub][repo-issues] if you have one.
 
-<h3 >Size of removal criteria file</h3>
+Until other measures are implemented in the R2F Spark job, it is sensible to have some other measures in place to catch issues downstream, for instance a weekly or monthly sanity check in the target database.
 
-It is assumed that the file is small enough to fit in memory in each executor. Back of the envelope calculations show that this is a reasonable assumption. If that is not the case please submit a [new issue on github][repo-issues] or even better a PR. This assumption simplifies the code but also should make execution very fast.
+Of course, in order to recover from such an issue, you need a backup of the data, which is hard to do while also meeting the requirement to erase all such data. One solution could be to keep the old archive in another bucket or prefix (in the case of S3), eventually automatically expiring through some sort of object life cycle policy and/or versioning.
+
+Whichever solution to this problem you choose, we would like to hear about your experiences on [Discourse][discourse].
+
+<h3>Size of removal criteria file</h3>
+
+It is assumed that the file is small enough to fit in memory in each executor. Back of the envelope calculations show that this is a reasonable assumption; this approach simplifies the code and also makes execution very fast.
+
+If you find that your removal criteria file size breaks the Spark job, please submit a [new issue on GitHub][repo-issues] or even better a PR.
 
 <h2 id="help">4. Help</h2>
 
