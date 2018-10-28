@@ -85,18 +85,20 @@ Note that PubSub has a [retention time][pubsub-retention] for 7 days. After this
 
 <h2 id="bigquery">4. Setup</h2>
 
-Setup of BigQuery Loader is fairly straightforward and can be divided into following steps:
+Setup of the Snowplow BigQuery Loader is relatively straightforward, involving the following steps:
 
-1. Setup rest of Snowplow GCP stack
-2. Create necessary PubSub topics and subscriptions
-3. Initialize empty events table
-4. Write configuration file
-5. Launch Mutator
-6. Submit Loader job to Dataflow
+1. Setup rest of the Snowplow GCP stack
+2. Create the necessary PubSub topics and subscriptions
+3. Initialize the empty events table
+4. Write the configuration file
+5. Launch the Mutator
+6. Submit the Loader job to Dataflow
 
-Both Muator and Loader use same self-describing JSON configuration file with [`iglu:com.snowplowanalytics.snowplow.storage/bigquery_config/jsonschema/1-0-0`][bigquery-config] schema.
+Both Mutator and Loader use the same self-describing JSON configuration file with this schema:
 
-Here's configuration example:
+[`iglu:com.snowplowanalytics.snowplow.storage/bigquery_config/jsonschema/1-0-0`][bigquery-config]
+
+Here is a configuration example:
 
 {% highlight yaml %}
 {
@@ -124,9 +126,18 @@ Here's configuration example:
 }
 {% endhighlight %}
 
-Most of above properties should be descriptive enough. You can find more on [our wiki][documentation]
+For more information on these configuration properties, check out [the Loader's wiki][documentation].
 
-In order to run applications, you can use following commands:
+You can initialize the Mutator like this:
+
+{% highlight bash %}
+$ ./snowplow-bigquery-mutator \
+    listen      # Can be "init" to create empty table
+    --config $CONFIG \
+    --resolver $RESOLVER \
+{% endhighlight %}
+
+Then you can submit the Loader itself to Cloud Dataflow like so:
 
 {% highlight bash %}
 $ snowplow-bigquery-loader \
@@ -134,11 +145,6 @@ $ snowplow-bigquery-loader \
     --resolver=$RESOLVER \
     --runner=DataflowRunner \
     --saveHeapDumpsToGcsPath=gs://dataflow-staging-us-central1-102462720186/heap/
-
-$ ./snowplow-bigquery-mutator \
-    listen      # Can be "init" to create empty table
-    --config $CONFIG \
-    --resolver $RESOLVER \
 {% endhighlight %}
 
 <h2 id="roadmap">5. Roadmap</h2>
@@ -152,6 +158,8 @@ It has performed well in our internal testing program, but many things are still
 * **State management** - currently, the loader tracks its own state via the `typesTopic` introduced above. This makes it very hard to reason about how BigQuery loading is proceeding, so we are looking for more sophisticated solutions going forwards
 
 <h2 id="help">6. Getting help</h2>
+
+You'll find documentation for the BigQuery Loader on the [project's wiki][documentation].
 
 For more details on this release, as always do check out the [release notes][release-notes] on GitHub.
 
