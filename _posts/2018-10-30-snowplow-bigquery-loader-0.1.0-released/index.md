@@ -31,23 +31,21 @@ One year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][
 Since that announcement, we have been busy exploring the Google Cloud Platorm and working on prototype components.
 [R101 Neapolis][r101-initial-support] introduced [Google Cloud PubSub][google-pubsub] support to our Stream Collector and added provisional Cloud PubSub support to Stream Enrich (our existing real-time enrichment process for Kinesis).
 
-[R110 Valle dei Templi][r110-beam-enrich] added new Beam Enrich component that reads raw events from PubSub subscription and performs standard enrichment process using [Google Cloud Dataflow][dataflow], a service for distributed data processing.
-At last, our recent release of [SQL Runner][sql-runner] makes it possible to run your data modeling playbooks against BigQuery.
+[R110 Valle dei Templi][r110-beam-enrich] then added a new Beam Enrich application, which reads raw events from PubSub subscription and performs standard enrichment process using [Google Cloud Dataflow][dataflow], a service for distributed data processing; this replaced the Cloud PubSub support in Stream Enrich.
 
-Today we are ready to announce that you can deploy your entire pipeline on Google Cloud and analyze enriched data using best in class tools such as Google BigQuery and Dataflow.
+And with today's release of the BigQuery Loader, you can now deploy your entire pipeline on Google Cloud and analyze Snowplow enriched data using best in class tools such as BigQuery and Cloud Dataflow.
 
 <h2 id="bigquery">2. Google BigQuery</h2>
 
-Google BigQuery is a big player on market of analytics warehouses.
-It provides seamless integration with many [Google services][bigquery-transfer], including other GCP products and [Google Analytics][google-analytics-360] as well as near real-time analytics and familiar SQL interface for analysts.
+Google BigQuery is gaining increasing adoption and mind-share as a cloud-native, elastically scalable data warehouse. It provides seamless integration with many [Google services][bigquery-transfer], including other GCP products and [Google Analytics][google-analytics-360], supports near real-time analytics and offers a familiar SQL interface for analysts.
 
-It has a unique combination of features and characteristics that makes it a perfect addition to a growing list of storage targets supported by Snowplow.
+BigQuery has a unique combination of features and characteristics that makes it a perfect addition to a growing list of storage targets supported by Snowplow:
 
-* Real-time ingestion. A completely new feature in Snowplow ecosystem, allowing to sink tremendous volumes of data and query it with subsecond delays. This opens makes it appealing for such use cases as fraud-detection or real-time recommendations engine.
-* Fully managed. Unlike Amazon Redshift, you don't need to worry about any kind of maintaining, such as `VACUUM`ing or scaling - our test pipelines were handling tens of millions records per day without any disruptance
-* Support of semi-structured data. Taking best of two worlds, like Snowflake Google BigQuery has support of `STRUCT`s (JSON objects) and `REPEATED` mode (arrays), but at the same time maintains these entities with statically known structure, so all queries are type-checked
-* As one of the most popular analytics warehouses, BigQuery has wide [range of integrations][bigquery-transfer], support of [public datasets][bigquery-public-datasets] and growing list of [partners][bigquery-partners]
-* Pricing model. With BigQuery you pay only scanned rows, which combined with appropriate [partitioning][partitioning] strategy can make BigQuery an extremely cheap solution in a big variety of use cases.
+* **Real-time ingestion** - with Snowplow loading into BigQuery we can sink tremendous volumes of data and query it with subsecond delays. This makes BigQuery appealing for such use cases as fraud-detection or real-time recommendations engines
+* **Fully managed** - unlike with say Amazon Redshift, you don't need to worry about warehouse maintainance, such as `VACUUM`ing or cluster scaling - our test pipelines have been handling tens of millions records per day without any disruption
+* **Support for semi-structured data** - Google BigQuery has support for `STRUCT`s (JSON objects) and `REPEATED` elements (arrays), and enforces statically known structures for these entities, so that all queries are type-checked
+* **On-demand pricing model** - with BigQuery you pay only for scanned rows, which combined with an appropriate [partitioning][partitioning] strategy can make BigQuery an extremely cheap solution in a big variety of use cases
+* **Extensive ecosystem** - as one of the most popular analytics warehouses, BigQuery already has a wide [range of integrations][bigquery-transfer], support for various [public datasets][bigquery-public-datasets] and growing list of [partners][bigquery-partners]
 
 <h2 id="loader">3. Snowplow BigQuery Loader</h2>
 
