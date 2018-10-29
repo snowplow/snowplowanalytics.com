@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.9.0
 tags: [snowplow, ios, objc, contexts, objectivec, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/10/15/snowplow-objective-c-tracker-0.9.0-released/
+permalink: /blog/2018/10/29/snowplow-objective-c-tracker-0.9.0-released/
 discourse: true
 ---
 
@@ -105,7 +105,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [objc-manual]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker
 [objc-setup]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker-Setup
-[app-context-doc]: xxx
-[lifecycle-doc]: xxx
+[app-context-doc]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#226-application-context
+[lifecycle-doc]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker#225-client_session
 
 [discourse]: http://discourse.snowplowanalytics.com/
