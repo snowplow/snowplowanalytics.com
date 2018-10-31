@@ -5,7 +5,7 @@ title-short: Snowplow Objective-C Tracker 0.9.0
 tags: [snowplow, ios, objc, contexts, objectivec, lifecycle]
 author: Mike
 category: Releases
-permalink: /blog/2018/10/29/snowplow-objective-c-tracker-0.9.0-released/
+permalink: /blog/2018/10/31/snowplow-objective-c-tracker-0.9.0-released/
 discourse: true
 ---
 
