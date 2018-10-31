@@ -5,7 +5,7 @@ title: "Right to be Forgotten Spark job released for meeting GDPR requirements"
 tags: [snowplow, gdpr, pii, r2f]
 author: Kostas
 category: Releases
-permalink: /blog/2018/10/29/right-to-be-forgotten-spark-job-released-for-meeting-gdpr-requirements/
+permalink: /blog/2018/10/31/right-to-be-forgotten-spark-job-released-for-meeting-gdpr-requirements/
 ---
 
 We are pleased to announce the release of our [R2F (Right to be Forgotten)][r2f-release] Spark job.
