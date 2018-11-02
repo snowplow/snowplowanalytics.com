@@ -79,7 +79,7 @@ Here, we provide an example using `gcloud`:
 
 {% highlight bash %}
 gcloud dataflow jobs run [JOB-NAME] \
-  --gcs-location gs://snowplow-hosted-assets/4-storage/cloud-storage-loader/0.1.0/CloudStorageLoaderTemplate-0.1.0 \
+  --gcs-location gs://snowplow-hosted-assets/4-storage/snowplow-google-cloud-storage-loader/0.1.0/SnowplowGoogleCloudStorageLoaderTemplate-0.1.0 \
   --parameters \
     inputSubscription=projects/[PROJECT]/subscriptions/[SUBSCRIPTION],\
     outputDirectory=gs://[BUCKET]/YYYY/MM/dd/HH/,\ # partitions by date
@@ -98,7 +98,7 @@ You can find the archive hosted on [our Bintray][bintray].
 Once unzipped the artifact can be run as follows:
 
 {% highlight bash %}
-./bin/cloud-storage-loader \
+./bin/snowplow-google-cloud-storage-loader \
   --runner=DataFlowRunner \
   --project=[PROJECT] \
   --streaming=true \
@@ -116,13 +116,13 @@ Once unzipped the artifact can be run as follows:
 To display the help message:
 
 {% highlight bash %}
-./bin/cloud-storage-loader --help
+./bin/snowplow-google-cloud-storage-loader --help
 {% endhighlight %}
 
 To display documentation about Cloud Storage Loader-specific options:
 
 {% highlight bash %}
-./bin/cloud-storage-loader --help=com.snowplowanalytics.storage.cloudstorage.loader.Options
+./bin/snowplow-google-cloud-storage-loader --help=com.snowplowanalytics.storage.googlecloudstorage.loader.Options
 {% endhighlight %}
 
 <h3 id="docker">2.3 Running through the Docker image</h3>
@@ -134,7 +134,7 @@ A container can be run as follows:
 {% highlight bash %}
 docker run \
   -e GOOGLE_APPLICATION_CREDENTIALS=/snowplow/config/credentials.json \ # if running outside GCP
-  snowplow-docker-registry.bintray.io/snowplow/cloud-storage-loader:0.1.0 \
+  snowplow-docker-registry.bintray.io/snowplow/snowplow-google-cloud-storage-loader:0.1.0 \
   --runner=DataFlowRunner \
   --job-name=[JOB-NAME] \
   --project=[PROJECT] \
@@ -153,15 +153,15 @@ docker run \
 To display the help message:
 
 {% highlight bash %}
-docker run snowplow-docker-registry.bintray.io/snowplow/cloud-storage-loader:0.1.0 \
+docker run snowplow-docker-registry.bintray.io/snowplow/snowplow-google-cloud-storage-loader:0.1.0 \
   --help
 {% endhighlight %}
 
 To display documentation about Cloud Storage Loader-specific options:
 
 {% highlight bash %}
-docker run snowplow-docker-registry.bintray.io/snowplow/cloud-storage-loader:0.1.0 \
-  --help=com.snowplowanalytics.storage.cloudstorage.loader.Options
+docker run snowplow-docker-registry.bintray.io/snowplow/snowplow-google-cloud-storage-loader:0.1.0 \
+  --help=com.snowplowanalytics.storage.googlecloudstorage.loader.Options
 {% endhighlight %}
 
 <h3 id="additional">2.4 Additional options</h3>
@@ -196,6 +196,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [template]: https://cloud.google.com/dataflow/docs/templates/overview
 [executing-templates]: https://cloud.google.com/dataflow/docs/templates/executing-templates
 
-[bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-cloud-storage-loader
+[bintray]: https://bintray.com/snowplow/snowplow-generic/snowplow-google-cloud-storage-loader
 [bintray-docker]: https://bintray.com/snowplow/registry/snowplow%3Asnowplow-google-cloud-storage-loader
 
