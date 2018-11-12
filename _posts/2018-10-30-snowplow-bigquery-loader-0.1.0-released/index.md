@@ -68,6 +68,8 @@ The Snowplow BigQuery Loader consists of two applications:
 1. The Loader itself, a Cloud Dataflow job that transforms stream of enriched events into BigQuery format and ingests them
 2. The Mutator, a stand-alone JVM application that performs the necessary `ALTER TABLE` statements
 
+![architecture][architecture-img]
+
 The two applications communicate through the `typesTopic` topic. The Loader writes to that topic all of the types that it has encountered; the Mutator then reads from that topic to perform mutation of the events table as necessary. The Mutator should be constantly running and consuming PubSub messages.
 
 Alongside the `typesTopic`, the Loader makes use of two other PubSub topics:
@@ -185,7 +187,8 @@ And if you have any questions or run into any problems, please visit [our Discou
 
 [r101-inital-support]: https://snowplowanalytics.com/blog/2018/03/21/snowplow-r101-neapolis-with-initial-gcp-support/
 [r110-beam-enrich]: https://snowplowanalytics.com/blog/2018/09/12/snowplow-r110-valle-dei-templi-introduces-real-time-enrichments-on-gcp/
-[sql-runner]: TODO
+[sql-runner]: https://discourse.snowplowanalytics.com/t/sql-runner-0-8-0-released
+[lambaesis-img]: /assets/img/blog/2018/11/bigquery-architecture.jpg
 
 [bigquery-loader-repo]: https://github.com/snowplow-incubator/snowplow-bigquery-loader
 [bigquery]: https://cloud.google.com/bigquery/
