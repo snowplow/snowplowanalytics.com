@@ -34,7 +34,7 @@ You can find all the supported target configurations [in Iglu Central][snowplow-
 
 This change means that the older `config.yml` format is no longer valid; both EmrEtlRunner and StorageLoader now need to accept `--targets` option specifying directory with storage configuration JSONs, plus the `--resolver` option to validate these JSONs.
 
-<h2 id="synthetic-dedupe">2. Cross-batch natural deduplication</h2>
+<h2 id="crossbatch-natural-deduplication">2. Cross-batch natural deduplication</h2>
 
 <h3 id="dedupe-history">2.1 The deduplication story so far</h3>
 
