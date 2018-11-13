@@ -5,21 +5,21 @@ title: "Snowplow Google Cloud Storage Loader 0.1.0 released"
 tags: [snowplow, real-time, GCP]
 author: Ben
 category: releases
-permalink: /blog/2018/11/01/snowplow-google-cloud-storage-loader-0.1.0-released/
+permalink: /blog/2018/11/13/snowplow-google-cloud-storage-loader-0.1.0-released/
 ---
 
-We are pleased to release the first version of the [Snowplow Google Cloud Storage Loader][loader]. This application reads data from a Google [Pub/Sub][pubsub] topic and writes it to Google Cloud Storage. This is an essential component in the Snowplow for GCP stack we are close to completing: this application enables users to sink any bad data from Pub/Sub to [Cloud Compute][storage], from where it can be reprocessed, and in addition to sink either the raw or enriched data to Google Cloud Compute as a backup.
+We are pleased to release the first version of the [Snowplow Google Cloud Storage Loader][loader]. This application reads data from a Google [Pub/Sub][pubsub] topic and writes it to a Google Cloud Storage bucket. This is an essential component in the Snowplow for GCP stack we are close to completing: this application enables users to sink any bad data from Pub/Sub to [Cloud Storage][storage], from where it can be reprocessed, and in addition sink either the raw or enriched data to Cloud Storage as a permanent backup.
 
 Please read on after the fold for:
 
-1. [Snowplow Google Cloud Storage Loader](#csl)
-2. [Running](#running)
-3. [GCP roadmap](#roadmap)
-4. [Help](#help)
+1. [An overview of the Snowplow Google Cloud Storage Loader](#csl)
+2. [Running the Snowplow Google Cloud Storage Loader](#running)
+3. [The GCP roadmap](#roadmap)
+4. [Getting help](#help)
 
 <!--more-->
 
-<h2 id="csl">1. Snowplow Google Cloud Storage loader</h2>
+<h2 id="csl">1. An overview of the Snowplow Google Cloud Storage Loader</h2>
 
 The Snowplow Google Cloud Storage Loader is a [Cloud Dataflow][dataflow] job which:
 
@@ -57,7 +57,7 @@ capabilities with regards to streaming and windowing:
 Finally, the loader can optionally compress data in gzip or bz2. Note that bz2-compressed data can't be
 loaded directly into [BigQuery][bq].
 
-<h2 id="running">2. Running</h2>
+<h2 id="running">2. Running the Snowplow Google Cloud Storage Loader</h2>
 
 The Google Cloud Storage Loader comes as a ZIP archive, a Docker image or a
 [Cloud Dataflow template][template], feel free to choose the one which fits your use case the most.
