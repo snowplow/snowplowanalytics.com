@@ -5,7 +5,7 @@ title: "Snowplow BigQuery Loader released"
 tags: [bigquery, storage, GCP, real-time]
 author: Anton
 category: Releases
-permalink: /blog/2018/10/30/snowplow-bigquery-loader-0.1.0-released/
+permalink: /blog/2018/11/21/snowplow-bigquery-loader-0.1.0-released/
 ---
 
 We are tremendously excited to announce the public release of the [Snowplow BigQuery Loader][bigquery-loader-repo].
@@ -81,7 +81,8 @@ Both "failed inserts" and "bad rows" have different formats, causes and recovery
 
 Bad rows should be extremely rare and in order to recover them one needs to sink the data to Cloud Storage and apply an appropriate recovery strategy depending on the root cause.
 
-Failed inserts in turn usually can be simply forwarded to BigQuery one more time - if they were simply caused by the Mutator's delay, then these rows will be accepted the second time by BigQuery.
+Failed inserts in turn usually can be simply forwarded to BigQuery using auxiliary [BigQuery Forwarder job][forwarder].
+If they were simply caused by the Mutator's delay, then these rows will be accepted the second time by BigQuery.
 
 Note that PubSub has a [retention time][pubsub-retention] for 7 days. After this time, messages will be silently dropped. Therefore, we recommend sinking these topics to cloud storage to prevent data loss.
 
@@ -91,7 +92,7 @@ Setup of the Snowplow BigQuery Loader is relatively straightforward, involving t
 
 1. Setup rest of the Snowplow GCP stack
 2. Create the necessary PubSub topics and subscriptions
-3. Initialize the empty events table
+3. Initialize the empty events table (optionally with [partitioning][partitioning-setup] on `derived_tstamp` column)
 4. Write the configuration file
 5. Launch the Mutator
 6. Submit the Loader job to Dataflow
@@ -155,7 +156,7 @@ This is the first public release of BigQuery Loader, and it can be considered st
 
 It has performed well in our internal testing program, but many things are still subject to change. Upcoming changes will most likely be focused on the following aspects:
 
-* **Table structure** - currently all columns are created with the precise version of schema, e.g. `contexts_com_acme_product_context_1_0_0`. We think that this model is enough for many use cases, but not optimal for data models which make heavy use of self-describing data with regularly evolving schemas. We're thus considering `MODEL`-based versioning (e.g. `contexts_com_acme_product_context_1`) for the next major version of Loader - but are still open to suggestions
+* **Table structure** - currently all columns are created with the precise version of schema, e.g. `contexts_com_acme_product_context_1_0_0`. We think that this model is enough for many use cases, but not optimal for data models which make heavy use of self-describing data with regularly evolving schemas. We're thus considering `MODEL`-based versioning (e.g. `contexts_com_acme_product_context_1`) using table-sharding for the next major version of Loader - but are still open to suggestions
 * **Deduplication** - Google Cloud PubSub has very weak delivery guarantees and a Snowplow pipeline has to contend with [various sources of duplicates][deduplication], so we will need some deduplication mechanism in due course
 * **State management** - currently, the loader tracks its own state via the `typesTopic` introduced above. This makes it very hard to reason about how BigQuery loading is proceeding, so we are looking for more sophisticated solutions going forwards
 
@@ -176,6 +177,7 @@ And if you have any questions or run into any problems, please visit [our Discou
 
 [partitioning]: https://cloud.google.com/bigquery/docs/partitioned-tables
 [pubsub-retention]: https://cloud.google.com/pubsub/docs/subscriber
+[forwarder]: https://github.com/snowplow-incubator/snowplow-bigquery-loader/wiki#snowplow-bigquery-forwarder
 
 [iglu-r10]: https://snowplowanalytics.com/blog/2018/08/29/iglu-r10-tiflis-released/
 [bigquery-config]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.storage/bigquery_config/jsonschema/1-0-0
@@ -184,11 +186,12 @@ And if you have any questions or run into any problems, please visit [our Discou
 
 [google-pubsub]: https://cloud.google.com/pubsub/
 [dataflow]: https://cloud.google.com/dataflow/
+[partitioning-setup]: https://cloud.google.com/bigquery/docs/creating-column-partitions
 
 [r101-inital-support]: https://snowplowanalytics.com/blog/2018/03/21/snowplow-r101-neapolis-with-initial-gcp-support/
 [r110-beam-enrich]: https://snowplowanalytics.com/blog/2018/09/12/snowplow-r110-valle-dei-templi-introduces-real-time-enrichments-on-gcp/
 [sql-runner]: https://discourse.snowplowanalytics.com/t/sql-runner-0-8-0-released
-[lambaesis-img]: /assets/img/blog/2018/11/bigquery-architecture.jpg
+[architecture-img]: /assets/img/blog/2018/11/bigquery-architecture.jpg
 
 [bigquery-loader-repo]: https://github.com/snowplow-incubator/snowplow-bigquery-loader
 [bigquery]: https://cloud.google.com/bigquery/
