@@ -42,3 +42,12 @@ dejan:
   position: Head of Data Science
   content: Snowplow plays an integral part of our data infrastructure, allowing us to collect very granular data on our customers’ interactions. Besides collecting interaction events from our website, mobile apps and emails, we also use Snowplow as a unified log collecting backend events, which completes a single customer view.
   picture:  /assets/img/testimonials/robert-kingston.jpg
+
+sean:
+  name: Sean
+  full_name: Sean Halliburton
+  company: Nordstrom
+  company_link: https://shop.nordstrom.com/
+  position: Senior Data Engineering Manager
+  content: Snowplow has blown Nordstrom’s minds in speed and range of data, offering complete extensibility of batch and real-time feeds and schemas in hours and seconds, respectively. With a small but dedicated team of engineers, we were able to replace our bulky and expensive third-party solution with one custom tailored to our needs and satisfaction. There’s simply no going back.
+  picture: /assets/img/testimonials/nordstrom-n.jpg
