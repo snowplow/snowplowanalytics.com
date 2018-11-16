@@ -28,33 +28,33 @@ Read on below the fold for:
 
 One year ago we published [our "Porting Snowplow to Google Cloud Platform" RFC][rfc], which laid the ground for native support of Google Cloud Platform across the Snowplow core components: collector, enrichment, warehouse loading and event archival.
 
-Since that announcement, we have been busy exploring the Google Cloud Platorm and working on prototype components.
+Since that announcement, we have been busy exploring the Google Cloud Platform and working on prototype components.
 [R101 Neapolis][r101-initial-support] introduced [Google Cloud Pub/Sub][google-pubsub] support to our Stream Collector and added provisional Cloud Pub/Sub support to Stream Enrich (our existing real-time enrichment process for Kinesis).
 
-[R110 Valle dei Templi][r110-beam-enrich] then added a new Beam Enrich application, which reads raw events from Pub/Sub subscription and performs standard enrichment process using [Google Cloud Dataflow][dataflow], a service for distributed data processing; this replaced the Cloud Pub/Sub support in Stream Enrich.
+[R110 Valle dei Templi][r110-beam-enrich] then added a new Beam Enrich application, which reads raw events from Pub/Sub subscription and performs standard the enrichment process using [Google Cloud Dataflow][dataflow], a service for distributed data processing; this replaced the Cloud Pub/Sub support in Stream Enrich.
 
-And with today's release of the BigQuery Loader, you can now deploy your entire pipeline on Google Cloud and analyze Snowplow enriched data using best in class tools such as BigQuery and Cloud Dataflow.
+And with today's release of the BigQuery Loader, you can now deploy your entire pipeline on Google Cloud and analyze Snowplow enriched data using best-in-class tools such as BigQuery and Cloud Dataflow.
 
 <h2 id="bigquery">2. Google BigQuery</h2>
 
 Google BigQuery is gaining increasing adoption and mind-share as a cloud-native, elastically scalable data warehouse. It provides seamless integration with many [Google services][bigquery-transfer], including other GCP products and [Google Analytics][google-analytics-360], supports near real-time analytics and offers a familiar SQL interface for analysts.
 
-BigQuery has a unique combination of features and characteristics that makes it a perfect addition to a growing list of storage targets supported by Snowplow:
+BigQuery has a unique combination of features and characteristics that make it a perfect addition to a growing list of storage targets supported by Snowplow:
 
 * **Elastic compute** - BigQuery scales elastically, making it performant to run very computationally intensive queries
-* **Real-time ingestion** - with Snowplow loading into BigQuery we can sink tremendous volumes of data and query it with subsecond delays. This makes BigQuery appealing for such use cases as fraud-detection or real-time recommendations engines
-* **Fully managed** - unlike with say Amazon Redshift, you don't need to worry about warehouse maintainance, such as `VACUUM`ing or cluster scaling - our test pipelines have been handling tens of millions records per day without any disruption
-* **Support for semi-structured data** - Google BigQuery has support for `STRUCT`s (JSON objects) and `REPEATED` elements (arrays), and enforces statically known structures for these entities, so that all queries are type-checked
-* **On-demand pricing model** - with BigQuery you pay only for scanned rows. This makes BigQuery a better suited data store than Redshift for users who want to warehouse very large volumes of data 
-* **Extensive ecosystem** - as one of the most popular analytics warehouses, BigQuery already has a wide [range of integrations][bigquery-transfer], support for various [public datasets][bigquery-public-datasets] and growing list of [partners][bigquery-partners]. In particular, many Google services, including Campaign Manager (formerly DoubleClick), Ad Manager and Youtube, support exporting data directly into BigQuery, where it is now possible to join that data with Snowplow data
+* **Real-time ingestion** - with Snowplow loading into BigQuery we can sink tremendous volumes of data and query it with sub-second delays. This makes BigQuery appealing for use cases like fraud-detection or real-time recommendations engines
+* **Fully managed** - unlike with Amazon Redshift, for example, you don't need to worry about warehouse maintenance, such as `VACUUM`ing or cluster scaling - our test pipelines have been handling tens of millions records per day without any disruption
+* **Support for semi-structured data** - Google BigQuery has support for `STRUCT`s (JSON objects) and `REPEATED` elements (arrays), and enforces statically known structures for these entities so that all queries are type-checked
+* **On-demand pricing model** - with BigQuery you pay only for scanned rows. This makes BigQuery a better suited data store than Redshift for users who want to warehouse very large volumes of data
+* **Extensive ecosystem** - as one of the most popular analytics warehouses, BigQuery already has a wide [range of integrations][bigquery-transfer], support for various [public datasets][bigquery-public-datasets] and growing list of [partners][bigquery-partners]. In particular, many Google services, including Campaign Manager (formerly DoubleClick), Ad Manager, and Youtube, support exporting data directly into BigQuery, where it is now possible to join that data with Snowplow data
 
 <h2 id="loader">3. Snowplow BigQuery Loader</h2>
 
 <h3 id="loader-overview">3.1. Overview</h3>
 
-We have been able to apply lessons learnt building loaders for Redshift and SnowflakeDB and apply them to the BigQuery Loader.
+We have been able to take the lessons learnt building loaders for Redshift and SnowflakeDB and apply them to the BigQuery Loader.
 
-For example, the BigQuery Loader  automatically updates table definitions in BigQuery when events and entities (i.e. contexts) are received with new schema versions. Simply ensure that any new schema versions have been uploaded your Iglu registry, then start sending events with this schema: the BigQuery Loader will create the corresponding additional column inside your BigQuery events table automatically.
+For example, the BigQuery Loader automatically updates table definitions in BigQuery when events and entities (i.e. contexts) are received with new schema versions. Simply ensure that any new schema versions have been uploaded your Iglu registry, then start sending events with the new schema: the BigQuery Loader will create the corresponding additional column inside your BigQuery events table automatically.
 
 It was also great to integrate with BigQuery's expressive SQL type system. To keep our event data as structured as possible, in BigQuery each self-describing schema is mapped to a `STRUCT` column, reflecting all its properties. This also works with any kind of nested structure, including deeply nested arrays - any shredded type can be represented as a separate column, not a separate table as we have to use in Redshift.
 
@@ -62,7 +62,7 @@ These two features are powered by our Iglu schema technology, which as of [R10 T
 
 <h3 id="loader-architecture">3.2. Architecture</h3>
 
-Unlike existing Loaders, the BigQuery Loader's architecture is entirely real-time and designed for unbounded data streams. It does not use cloud/blob storage to stage the data, and it makes no assumptions about data volumes. As with the other components of Snowplow GCP pipeline, the Loader exclusively uses Cloud Pub/Sub topics in order to read enriched events, sink bad rows and handle all related tasks.
+Unlike existing Loaders, the BigQuery Loader's architecture is entirely real-time and designed for unbounded data streams. It does not use cloud/blob storage to stage the data, and it makes no assumptions about data volumes. As with the other components of Snowplow GCP pipeline, the Loader exclusively uses Cloud Pub/Sub topics in order to read enriched events, sink bad rows, and handle all related tasks.
 
 The Snowplow BigQuery Loader consists of two applications:
 
@@ -78,14 +78,14 @@ Alongside the `typesTopic`, the Loader makes use of two other Pub/Sub topics:
 1. `badRows` - rows that for some reason couldn't be transformed into BigQuery format. These could be caused by an Iglu registry outage, or by an unexpected schema patch or overwrite. This closely resembles the "shredded bad" data generated by our RDB Shredder for Redshift, and contains the reason of failure and raw enriched JSON
 2. `failedInserts` - the Loader sends data to this topic that *has* passed transformation, but for some reason failed during the actual insertion stage. Unlike `badRows` data, these records unfortunately do not contain the reason of failure - they are in the form of ready-to-be-inserted BigQuery row format. The main source of failed inserts is the short period of time between the first event with new schema processed by the Loader, and the Mutator performing the necessary mutation
 
-Both "failed inserts" and "bad rows" have different formats, causes and recovery strategies.
+Both "bad rows" and "failed inserts" have different formats, causes and recovery strategies.
 
-Bad rows should be extremely rare and in order to recover them one needs to sink the data to Cloud Storage (we recommend using our [`snowplow-google-cloud-storage-loader`][snowplow-google-cloud-storage-loader] and apply an appropriate recovery strategy depending on the root cause. (Stay tuned for the release of `snowplow-event-recovery` - to do just this.)
+Bad rows should be extremely rare and in order to recover them one needs to sink the data to Cloud Storage (we recommend using our [`snowplow-google-cloud-storage-loader`][snowplow-google-cloud-storage-loader] and apply an appropriate recovery strategy depending on the root cause. Stay tuned for the release of `snowplow-event-recovery` - to do just this.)
 
-Failed inserts in turn usually can be simply forwarded to BigQuery using auxiliary [BigQuery Forwarder job][forwarder].
-If they were simply caused by the Mutator's delay, then these rows will be accepted the second time by BigQuery.
+Failed inserts in turn usually can be simply forwarded to BigQuery using the auxiliary [BigQuery Forwarder job][forwarder].
+If they were simply caused by the Mutator's delay, then BigQuery will accept these rows the second time.
 
-Note that Pub/Sub has a [retention time][pubsub-retention] for 7 days. After this time, messages will be silently dropped. Therefore, we recommend sinking these topics to Cloud Storage to prevent data loss.
+Note that Pub/Sub has a [retention time][pubsub-retention] of 7 days. After this time, messages will be silently dropped. Therefore, we recommend sinking these topics to Cloud Storage to prevent data loss.
 
 <h2 id="bigquery">4. Setup</h2>
 
@@ -93,7 +93,7 @@ Setup of the Snowplow BigQuery Loader is relatively straightforward, involving t
 
 1. Setup rest of the Snowplow GCP stack
 2. Create the necessary Pub/Sub topics and subscriptions
-3. Initialize the empty events table (optionally with [partitioning][partitioning-setup] on `derived_tstamp` column)
+3. Initialize the empty events table (optionally with [partitioning][partitioning-setup] on the `derived_tstamp` column)
 4. Write the configuration file
 5. Launch the Mutator
 6. Submit the Loader job to Dataflow
