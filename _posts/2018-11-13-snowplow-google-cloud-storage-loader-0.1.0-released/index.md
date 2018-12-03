@@ -8,7 +8,7 @@ category: releases
 permalink: /blog/2018/11/13/snowplow-google-cloud-storage-loader-0.1.0-released/
 ---
 
-We are pleased to release the first version of the [Snowplow Google Cloud Storage Loader][loader]. This application reads data from a Google [Pub/Sub][pubsub] topic and writes it to a Google Cloud Storage bucket. This is an essential component in the Snowplow for GCP stack we are close to completing: this application enables users to sink any bad data from Pub/Sub to [Cloud Storage][storage], from where it can be reprocessed, and in addition sink either the raw or enriched data to Cloud Storage as a permanent backup.
+We are pleased to release the first version of the [Snowplow Google Cloud Storage Loader][loader]. This application reads data from a Google [Pub/Sub][pubsub] topic and writes it to a Google Cloud Storage bucket. This is an essential component in the Snowplow for GCP stack we are launching: this application enables users to sink any bad data from Pub/Sub to [Cloud Storage][storage], from where it can be reprocessed, and subsequently sink either the raw or enriched data to Cloud Storage as a permanent backup.
 
 Please read on after the fold for:
 
@@ -27,7 +27,7 @@ The Snowplow Google Cloud Storage Loader is a [Cloud Dataflow][dataflow] job whi
 * Groups the records by a configurable time window
 * Writes the records into a [Cloud Storage][storage] bucket
 
-As part of a Snowplow installation on GCP, this loader is  particularly useful for archive data from the raw, enriched or the bad stream to long-term storage.
+As part of a Snowplow installation on GCP, this loader is  particularly useful to archive data from the raw, enriched, or bad streams to long-term storage.
 
 It can additionally partition the output bucket by date (up to the hour), making it faster and less expensive to query the data over particular time periods. The following is an example layout of the output bucket:
 
@@ -59,7 +59,7 @@ loaded directly into [BigQuery][bq].
 
 <h2 id="running">2. Running the Snowplow Google Cloud Storage Loader</h2>
 
-The Google Cloud Storage Loader comes as a ZIP archive, a Docker image or a
+The Google Cloud Storage Loader comes as a ZIP archive, a Docker image, or a
 [Cloud Dataflow template][template], feel free to choose the one which fits your use case the most.
 
 <h3 id="template">2.1 Running through the template</h3>
@@ -70,7 +70,7 @@ You can run Dataflow templates using a variety of means:
 - Using `gcloud` at the command line
 - Using the REST API
 
-Refer to [the documentation on executing templates][executing-templates] to know more.
+Refer to [the documentation on executing templates][executing-templates] to learn more.
 
 Here, we provide an example using `gcloud`:
 
@@ -173,12 +173,14 @@ A full list of all the Beam CLI options can be found in the [documentation for G
 
 <h2 id="roadmap">3. GCP roadmap</h2>
 
-For those of you following our Google Cloud Platform progress: we plan to shortly release: 
+For those of you following our Google Cloud Platform progress, make sure you read our [official GCP launch announcement][launch] and our [BigQuery Loader release post][bql].
+
+We plan to shortly release:
 
 - A new event recovery workflow
 - A new release of Beam Enrich, which integrates with Cloud Dataflow templates mentioned above; you
 can check out [the original blogpost for Snowplow R110 Valle dei Templi][r110] to find out more about Beam Enrich
-- An initial version of our BigQuery loader, which will stream enriched data from Pub/Sub directly into BigQuery
+
 
 <h2 id="help">4. Getting help</h2>
 
@@ -205,3 +207,5 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [beam-cli-docs]: https://cloud.google.com/dataflow/pipelines/specifying-exec-params#setting-other-cloud-pipeline-options
 
 [discourse]: https://discourse.snowplowanalytics.com/
+
+[bql]: /blog/2018/12/03/snowplow-bigquery-loader-0.1.0-released/
