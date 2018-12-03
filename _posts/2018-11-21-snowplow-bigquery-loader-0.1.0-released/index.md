@@ -5,7 +5,7 @@ title: "Snowplow BigQuery Loader released"
 tags: [bigquery, storage, GCP, real-time]
 author: Anton
 category: Releases
-permalink: /blog/2018/11/21/snowplow-bigquery-loader-0.1.0-released/
+permalink: /blog/2018/12/03/snowplow-bigquery-loader-0.1.0-released/
 ---
 
 We are tremendously excited to announce the public release of the [Snowplow BigQuery Loader][bigquery-loader-repo].
@@ -87,7 +87,7 @@ If they were simply caused by the Mutator's delay, then BigQuery will accept the
 
 Note that Pub/Sub has a [retention time][pubsub-retention] of 7 days. After this time, messages will be silently dropped. Therefore, we recommend sinking these topics to Cloud Storage to prevent data loss.
 
-<h2 id="bigquery">4. Setup</h2>
+<h2 id="setup">4. Setup</h2>
 
 Setup of the Snowplow BigQuery Loader is relatively straightforward, involving the following steps:
 
@@ -198,7 +198,8 @@ And if you have any questions or run into any problems, please visit [our Discou
 [bigquery]: https://cloud.google.com/bigquery/
 [snowplow-repo]: https://github.com/snowplow/snowplow
 
-[release-notes]: https://github.com/snowplow/snowplow-bigquery-loader/releases/tag/0.1.0
+[release-notes]: https://github.com/snowplow-incubator/snowplow-bigquery-loader/releases/0.1.0
+
 [discourse]: http://discourse.snowplowanalytics.com/
 
 [snowplow-google-cloud-storage-loader]: https://github.com/snowplow-incubator/snowplow-google-cloud-storage-loader
