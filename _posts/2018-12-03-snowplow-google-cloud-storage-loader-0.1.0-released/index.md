@@ -208,4 +208,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [discourse]: https://discourse.snowplowanalytics.com/
 
+[launch]: /blog/2018/12/03/snowplow-for-google-cloud-platform-is-here/
+
 [bql]: /blog/2018/12/03/snowplow-bigquery-loader-0.1.0-released/
