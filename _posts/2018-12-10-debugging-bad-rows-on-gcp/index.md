@@ -139,15 +139,36 @@ Now, within the `data:` key of that JSON object, we'll find the data for the eve
 
 This will be an array of events comprised of key-value pairs that correspond to the [Snowplow tracker protocol](https://github.com/snowplow/snowplow/wiki/snowplow-tracker-protocol). There are two places we'll find our custom data - in the `cx` field (where custom entity/context data are found), or in the `ue_px` field (where custom event data are found). Both will again be base64 encoded strings.
 
+The last step to debugging is to decode these fields, and find the one that has the mismatch indicated by the error message. Once you've decoded them you'll notice that this data is in [self-describing JSON form](https://snowplowanalytics.com/blog/2014/05/15/introducing-self-describing-jsons/).
 
-The last step to debugging is to decode these fields, and find the one that has the mismatch indicated by the error message. Once you've decoded them you'll notice that this data is in [self-describing JSON form](https://snowplowanalytics.com/blog/2014/05/15/introducing-self-describing-jsons/):
+For custom events, the data will be a nested JSON:
+
+
+```JSON
+{
+  "data": {
+    "data": {
+      "field_1": "value_1",
+      "field_2": "value_2",
+      "field_3": "value_3"
+    },
+    "schema": "iglu:com.example/example_event/jsonschema/1-0-1"
+  },
+  "schema": "iglu:com.snowplowanalytics.snowplow/unstruct_event/jsonschema/1-0-0"
+}
+```
+
+The inner `schema` field is the schema against which the event was sent.
+
+
+For custom entities/contexts, this will be a nested array of self-describing JSONs:
 
 ```JSON
 {
   "data": [
     {
       "data": {
-        "example_context": "{}"
+        "field_1": "value_1"
       },
       "schema": "iglu:com.example/example_context/jsonschema/1-0-1"
     }
