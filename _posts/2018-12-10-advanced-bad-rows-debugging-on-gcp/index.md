@@ -107,7 +107,7 @@ Custom schemas are found under the `cx` key, and once base64 Decoded will have t
   "data": [
     {
       "data": {
-        "example_context": "{}"
+        "field_1": "value_1"
       },
       "schema": "iglu:com.example/example_context/jsonschema/1-0-1"
     }
