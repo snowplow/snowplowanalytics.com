@@ -1,4 +1,4 @@
-## Monitoring Bad Rows in GCP
+## Monitoring Bad Rows in GCP - Datastudio Monitoring
 
 One of the key features to Snowplow pipeline is that it's architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. Another key feature to Snowplow is that it's highly loss-averse - when data fails validation, those events are preserved as bad rows. [Read more about data quality]](https://snowplowanalytics.com/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/).
 
@@ -51,10 +51,9 @@ Finally, autodetect schema and input parameters.
 
 Click create table and you're good to go. You can already start exploring your bad rows using SQL.
 
-!!!![SCREENSHOT OF SELECT ALL]!!!!
+!!!![SCREENSHOT OF TABLE SCHEMA]!!!!
 
-If we run a `SELECT *` on the data we'll see that there are three fields in the data - `failure_tstamp`, a nested errors object, containing `message` and `level`, and `line` - which is the base64 encoded payload containing the data.
-
+We can already start to look into our bad rows using SQL. If we take a look at the table schema, we'll see that there are three fields in the data - `failure_tstamp`, a nested errors object, containing `message` and `level`, and `line` - which is the base64 encoded payload containing the data.
 
 Importantly, bad rows don't just contain Snowplow events which have failed validation - every request that hits the collector but doesn't meet the structure dictated by the schema will land in bad rows.
 
@@ -66,7 +65,7 @@ So there are some error messages that can safely be ignored - for example:
 
 These errors can happen for a number of reasons - bots trawling the internet for vulnerabilities, or empty requests hitting the collector for various reasons. They can be filtered out by unnesting the errors field and using a `WHERE` clause.
 
-We'll dive into investigating bad rows in BigQuery SQL !!!!!!![REFERENCE TO WHEREVER THAT IS]!!!!!! . First, we'll set up some visualisations to monitor bad row volumes in real-time.
+We'll dive into investigating and debugging bad rows in BigQuery SQL in another post !!!!!!![REFERENCE TO WHEREVER THAT IS?]!!!!!! . First, we'll set up some visualisations to monitor bad row volumes in real-time.
 
 
 #### 2. Connect Data Studio to your table as a data source
@@ -93,8 +92,7 @@ You'll notice that there are a lot of errors we can safely disregard in there (a
 
 **Bad rows over time**
 
-For this visualisation I chose a bar chart, sorted by `failure_tstamp`, and again applied the filter we created in the last step. Now we can easily see if there's a spike in bad rows over time - which would suggest that some tracking or schema change has caused issues.
-
+For this visualisation I chose a bar chart, sorted by `failure_tstamp`, and again applied the filter we created in the last step. Now we can easily see if there's a spike in bad rows over time - which would suggest that some tracking or schema change has caused issues. By choosing `errors.message` as a dimension, and selecting Stacked Bar chart in the Style tab, we can also easily see how big of a problem each error is.
 
 **Bad rows per error over time**
 
@@ -106,6 +104,8 @@ Finally, adding a date range box allows us to filter on date easily - so consume
 
 ---
 
-The end result is a Data Studio report which can be used to identify problems with validation in real-time. Every time you refresh the report, Data Studio will update the reports via a query on the External table we created in BigQuery.
+The end result is a Data Studio report which can be used to identify problems with validation in real-time. Every time you refresh the report, Data Studio will update the reports via a query on the External table we created in BigQuery:
+
+!!!!! [SCREENSHOT OF OUTCOME] !!!!
 
 Note that External tables don't utilise caching so every time you run your queries you'll be charged for the data scan - unless you have massive volume this won't be an issue. If you do have enough volume for this to be a consideration, note that the bad rows data is partitioned by date via filename.
