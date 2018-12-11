@@ -122,15 +122,14 @@ WHERE e.message LIKE 'error: instance type (object) does not match any allowed p
 
 **The structure of the line**
 
-Because validation happens in the early stages of Stream Enrich, the structure of the line will be in Thrift format - so there will be information about the processing of the event, and the event itself will be in a JSON object under the key `data`. You might notice some strange characters in the decoded line - this isn't anything to worry about as we don't need that information - what's important is that we have this `data` JSON object.
+Because validation happens in the early stages of Stream Enrich, the structure of the line will be in Thrift message format - so there will be information about the http request involved, and the Snowplow event itself will be in a JSON object under the key `data`. You might notice some strange characters in the decoded line - this isn't anything to worry about as we don't need that information - what's important is that we have this `data` JSON object.
 
-To make life easier in handling the bad row, we can filter the extraneous bits out with `REGEXP_EXTRACT_ALL()`:
+To make life easier in handling the bad row, we can filter the extraneous bits out with `SAFE.REGEXP_EXTRACT()`:
 
 ```SQL
 SELECT
   e.message,
-  SAFE_CONVERT_BYTES_TO_STRING(line),
-  REGEXP_EXTRACT_ALL(SAFE_CONVERT_BYTES_TO_STRING(line), "{.*}")
+  SAFE.REGEXP_EXTRACT(SAFE_CONVERT_BYTES_TO_STRING(line), '{\"data.*}')
 FROM bad_rows.bad_rows_native,
 UNNEST(errors) e
 WHERE e.message LIKE 'error: instance type (object) does not match any allowed primitive type%'
@@ -161,7 +160,7 @@ The inner `schema` field contains the custom schema against which data was sent,
 
 In the example we've found: `instance type (object) does not match any allowed primitive type (allowed: ["string"])` - it looks like some field which should be a string is being sent as a JSON or other object - so I need to find the field that has a `string` specified in the schema but has an object against it in the payload.
 
-At this stage, I recommend simply copying the base64 strings and manually decoding to delve into the issue - I use a text editor plugin to do so, you could also use a command line tool or if your data isn't sensitive, an in-browswer service.
+At this stage, I recommend simply copying the base64 strings and manually decoding to delve into the issue - I use a text editor plugin to do so, you could also use a command line tool or other option to decode the data.
 
 ---
 
