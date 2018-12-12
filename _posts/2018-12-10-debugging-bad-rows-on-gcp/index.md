@@ -1,10 +1,21 @@
+---
+layout: post
+title-short: Debugging Bad Rows on GCP
+title: "Debugging bad rows on GCP"
+tags: [snowplow, real-time, GCP, bad-rows]
+author: Colm
+category:
+permalink:
+---
+
+
 ## Debugging bad rows on GCP
 
-One of the key features to Snowplow pipeline is that it's architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. Another key feature to Snowplow is that it's highly loss-averse - when data fails validation, those events are preserved as bad rows. [Read more about data quality]](https://snowplowanalytics.com/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/).
+One of the key features to Snowplow pipeline is that it's architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. Another key feature to Snowplow is that it's highly loss-averse - when data fails validation, those events are preserved as bad rows. [Read more about data quality][data-quality].
 
-This post focuses on setting up Data Studio visualisations to monitor bad rows on the GCP version of the pipeline - for users on AWS, bad rows are stored in S3, Elasticsearch or both - you can read more about handling them in these other posts: [Elasticsearch](https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-elasticsearch-and-kibana-tutorial/28), [S3 Athena (batch)](https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-athena-tutorial/948), [S3 Athena (real-time)](https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-athena-real-time-tutorial/2189).
+This post focuses on setting up Data Studio visualisations to monitor bad rows on the GCP version of the pipeline - for users on AWS, bad rows are stored in S3, Elasticsearch or both - you can read more about handling them in these other posts: [Elasticsearch][es], [S3 Athena (batch)][s3b], [S3 Athena (real-time)][s3rt].
 
-On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users should set up the [Cloud Storage Loader](https://github.com/snowplow/snowplow/wiki/setting-up-snowplow-google-cloud-storage-loader), Snowplow Insights customers will have this set up as standard.
+On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users should set up the [Cloud Storage Loader][csl], Snowplow Insights customers will have this set up as standard.
 
 One of the great things about GCP is that BigQuery plays nicely with external data sources - so you can create tables from your data in Cloud Storage, without paying for data transfer (charging is based on the amount of data scanned). This guide will walk through the process of surfacing your bad rows in BigQuery and using SQL to investigate issues.
 
@@ -25,7 +36,7 @@ Users familiar with bad rows on AWS will recognise this structure - the idea is 
 
 BigQuery offers two options for querying data from Cloud Storage - external and native tables.
 
-[External tables](https://cloud.google.com/bigquery/external-data-sources) will take a little longer to query, but they scan the data in Cloud Storage itself without moving it - so you can use them for real-time diagnostics.
+[External tables][et] will take a little longer to query, but they scan the data in Cloud Storage itself without moving it - so you can use them for real-time diagnostics.
 
 Native tables import the data into BigQuery - querying them will be faster, but you need to manually import the data to get the latest bad rows.
 
@@ -54,13 +65,9 @@ Name the table something sensible - I've gone with bad_rows_native.
 
 Finally, autodetect schema and input parameters.
 
-!!!!![SCREENSHOT]!!!!!
-
+![Create Native Table][ntbl]
 
 Click create table and you're good to go. You can already start exploring your bad rows using SQL.
-
-!!!![SCREENSHOT OF SELECT ALL]!!!!
-
 
 #### 2. Count bad rows per error message
 
@@ -137,9 +144,9 @@ WHERE e.message LIKE 'error: instance type (object) does not match any allowed p
 
 Now, within the `data:` key of that JSON object, we'll find the data for the events which have been sent. If you've set up your tracking to send a batch of events together as a `POST` request, then all of the events sent together will be in this payload - one or more of those will have caused the bad row (note that this doesn't mean that all of these events have failed validation, just that at least one of them did).
 
-This will be an array of events comprised of key-value pairs that correspond to the [Snowplow tracker protocol](https://github.com/snowplow/snowplow/wiki/snowplow-tracker-protocol). There are two places we'll find our custom data - in the `cx` field (where custom entity/context data are found), or in the `ue_px` field (where custom event data are found). Both will again be base64 encoded strings.
+This will be an array of events comprised of key-value pairs that correspond to the [Snowplow tracker protocol][tp2]. There are two places we'll find our custom data - in the `cx` field (where custom entity/context data are found), or in the `ue_px` field (where custom event data are found). Both will again be base64 encoded strings.
 
-The last step to debugging is to decode these fields, and find the one that has the mismatch indicated by the error message. Once you've decoded them you'll notice that this data is in [self-describing JSON form](https://snowplowanalytics.com/blog/2014/05/15/introducing-self-describing-jsons/).
+The last step to debugging is to decode these fields, and find the one that has the mismatch indicated by the error message. Once you've decoded them you'll notice that this data is in [self-describing JSON form][sdj].
 
 For custom events, the data will be a nested JSON:
 
@@ -188,3 +195,22 @@ At this stage, I recommend simply copying the base64 strings and manually decodi
 #### 4. Moving on from here
 
 There is more we could do in BigQuery to make our lives easier on debugging. For example, you could write a complicated SQL query to unnest, decode and extract all the data you're interested in, or define a Javascript UDF to handle extracting the relevant information from the line. Be warned that the amount of nesting and decoding in the data makes the SQL route quite tricky - and it's likely that you'll need to import an external library for the UDF portion.
+
+
+[data-quality]: https://snowplowanalytics.com/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/
+
+[es]: https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-elasticsearch-and-kibana-tutorial/28
+
+[s3b]: https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-athena-tutorial/948
+
+[s3rt]: https://discourse.snowplowanalytics.com/t/debugging-bad-rows-in-athena-real-time-tutorial/2189
+
+[csl]: https://github.com/snowplow/snowplow/wiki/setting-up-snowplow-google-cloud-storage-loader
+
+[et]: https://cloud.google.com/bigquery/external-data-sources
+
+[tp2]: https://github.com/snowplow/snowplow/wiki/snowplow-tracker-protocol
+
+[sdj]: https://snowplowanalytics.com/blog/2014/05/15/introducing-self-describing-jsons/
+
+[ntbl]: /assets/img/blog/2018/12/create-native-table.jpg
