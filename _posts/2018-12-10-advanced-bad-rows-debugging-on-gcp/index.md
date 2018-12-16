@@ -2,7 +2,7 @@
 
 In previous posts, we provided a walkthrough of monitoring bad rows using DataStudio !!!!!LINK here!!!! , and debugging bad rows in BigQuery !!!!LINK HERE!!!! . There are two nice things about the GCP ecosystem that allow us go a step further than this - because BigQuery plays nicely with external data sources, and it offers a range of functions for handling nested data, it's possible get over the hurdle of bad rows format and remove some of the manual work in this process.
 
-In general, bad rows are still not straightforward, because we're dealing with pre-enrichment payloads, the pipeline hasn't had a chance to work its magic and make the data user-friendly yet - so we're still dealing with highly nested data and base64 encoded payloads. However if we do a good job of creating a safe User-Defined Function (UDF), then we can provide something quite valuable to the debugging process: counts of schemas involved in each error. For advanced users, and those with a lot of schemas and a lot of bad rows, the below approach will take some of the work out of the process. For those that aren't burdened with volume and complexity, the below is probably more effort than it's worth.
+In this guide we'll leverage some of the great work Snowflake Analytics have done and
 
 #### Why counts of schemas are useful
 
@@ -14,50 +14,214 @@ We will do this by:
 - Defining a UDF to extract unique schemas per line
 - Using SQL to count rows grouped by error message and schema
 
----
 
-### Upload a library to decode base64
+### Upload some libraries
 
-The Bigquery Javascript environment doesn't come with a native means of decoding base64, so in order to define a UDF which gets to the data we want, we'll need to upload a library. This done by uploading the relevant file to a bucket in CloudStorage, then referencing that location in the UDF.
+Two libraries must be in Cloud Storage for this function once only: the `atob_btoa` `thrift_codec`.
 
-I chose to use the `atob_btoa.js` library as outlined in [this stackoverflow post](https://stackoverflow.com/questions/44836246/base64-encoding-in-a-bigquery-user-defined-function).
+### Our UDFS
+
+Bad data is in Thrift and base64 encoded format. We're going to use our UDF to get at the values, and spit out as much useful information as we can from it:
+
+The function returns much of the useful data in a bad row, including an array of unique schemas found in the payload (the `schemas` field), and a dump of all custom event JSON found (matched to its schema - the `custom_data` field), and app_id, platform, etc.
+
+```
+CREATE TEMP FUNCTION GetData(b BYTES)
+  RETURNS STRUCT<
+    appid STRING, -- as set in tracker
+    platform STRING, -- as set in tracker
+    tracker STRING, -- tracker name & version
+    querystring STRING, -- querytring for the event (relevant to things like the pixel tracker or redirects)
+    network_userid STRING,
+    ipAddress STRING,
+    refererUri STRING,  
+    hostname STRING,
+    timestamp INT64, -- Epoch timestamp (ms)
+    schemas ARRAY<STRING>,
+    custom_data ARRAY<STRUCT<schema STRING, data STRING>>> LANGUAGE js AS """
+
+schema_array = []
+data_array = []
+custom_data_array = []
+custom_data_struct = []
+test_array = []
+
+try {
+decoded = decodeB64Thrift(b)
+}
+catch {schema_array = 'error in decoding raw line'}
+
+if(decoded.hasOwnProperty("body")) {
+
+ var data = JSON.parse(decoded['body']).data
+
+ for (var i in data) {
+
+   // Get custom event schemas safely
+
+   if(data[i].hasOwnProperty("ue_px")) {
+     if(JSON.parse(atob(data[i].ue_px)).hasOwnProperty('data')){
+       if(JSON.parse(atob(data[i].ue_px)).data.hasOwnProperty('schema')){
+
+          schema = JSON.parse(atob(data[i].ue_px)).data.schema
+          schema_array.push(schema)
+
+          data_string = JSON.stringify(JSON.parse(atob(data[i].ue_px)).data)
+
+         data_array.push(data_string)
+         custom_data_array.push(data_string)
 
 
-### Getting to input data
+         data1 = JSON.parse(data_string)
+         data1.data = JSON.stringify(data1.data)
 
-As we discussed in our previous post on debugging bad rows, the format of the line once decoded isn't very friendly. However, there's a nice Javascript-friendly JSON object sitting in there, so we can use a REGEX to get to it:
+         custom_data_struct.push(data1)
 
-```SQL
+       }
+       else{schema_array.push('value not found - key error')
+       }
+
+     }
+     else{schema_array.push('value not found - key error')
+     }
+
+   }
+
+    else {schema_array.push('value not found - no custom event found')}
+
+   //Get custom context schemas safely
+
+   if(data[i].hasOwnProperty("cx")){
+    all_entities = JSON.parse(atob(data[i].cx))
+
+    for (var j in all_entities){
+
+        for (var k in all_entities[j]){
+        entity_struct = {}
+
+        var entity_data = all_entities[j][k]
+
+        if (entity_data.hasOwnProperty("schema")){
+          entity_schema = entity_data.schema
+
+          entity_struct.schema = entity_schema
+          schema_array.push(entity_schema)
+        }
+
+        if (entity_data.hasOwnProperty("data")){
+          entity_string = JSON.stringify(entity_data.data)
+          entity_struct.data = entity_string
+
+        }
+
+        if (entity_struct.hasOwnProperty("schema") | entity_struct.hasOwnProperty("data")) {
+          test_array.push(JSON.stringify(entity_struct))
+
+          custom_data_struct.push(entity_struct)
+          }
+        }
+    }
+
+
+    }
+
+ }
+
+ schema_array = schema_array.filter(function(item, pos) {
+   return schema_array.indexOf(item) == pos;
+ })
+
+ }
+
+   var appid = ''
+   if(data[0].hasOwnProperty("aid")){
+   appid = data[0].aid
+   }
+
+   var platform = ''
+   if(data[0].hasOwnProperty("p")){
+   platform = data[0].p
+   }
+
+   var tracker = ''
+   if(data[0].hasOwnProperty("tv")){
+   tracker = data[0].tv
+   }
+
+   var querystring = ''
+   if(decoded.hasOwnProperty("querystring")) {
+   querystring = decoded.querystring
+   }
+   var network_userid = ''
+   if(decoded.hasOwnProperty("network_userid")){
+   network_userid = decoded.network_userid
+   }
+
+   var ipAddress = ''
+   if(decoded.hasOwnProperty("ipAddress")){
+   ipAddress = decoded.ipAddress
+   }
+
+  var timestamp = ''
+  if(decoded.hasOwnProperty("timestamp")){
+  timestamp = decoded.timestamp
+  }
+
+  var collector = ''
+  if(decoded.hasOwnProperty("collector")){
+  collector = decoded.collector
+    }
+
+   var refererUri = ''
+   if(decoded.hasOwnProperty("refererUri")){
+   refererUri = decoded.refererUri
+   }
+
+   var contentType = ''
+   if(decoded.hasOwnProperty("contentType")){
+   contentType = decoded.contentType
+   }
+
+   var hostname = ''
+   if(decoded.hasOwnProperty("hostname")){
+   hostname = decoded.hostname
+   }
+
+return {
+        "appid": appid,
+        "platform": platform,
+        "tracker": tracker,
+        "timestamp": timestamp,
+        "collector": collector,
+        "contentType": contentType,
+        "hostname": hostname,
+        "querystring": querystring,
+        "refererUri": refererUri,
+        "network_userid": network_userid,
+        "ipAddress": ipAddress,
+        "hostname": hostname,
+        "schemas": schema_array,
+        "custom_data": custom_data_struct};
+"""
+OPTIONS (library=['gs://javascript_libraries/thrift_codec2.js', 'gs://javascript_libraries/btoa_atob.js']);
+
 SELECT
   e.message,
-  SAFE.REGEXP_EXTRACT(SAFE_CONVERT_BYTES_TO_STRING(line), '{\"data.*}') AS input
+  GetData(line),
+  TIMESTAMP_MILLIS(GetData(line).timestamp)
+
 FROM bad_rows.bad_rows_native,
 UNNEST(errors) e
 WHERE e.message NOT LIKE 'Querystring is empty%'
 AND e.message NOT LIKE 'Payload with vendor%'
 ```
 
-The data in the input field will be a JSON object, which we'll pass into our function. We could pass the whole line, and do this decode and cleanup work from there if we wanted to as well - the logic is the same in SQL or Javascript.
 
 
-### Defining the User-Defined Function
 
-Now, our input is a JSON-format string. The JSON object it represents has a top-level key 'data', whose value is an array of Snowplow events. So the first thing we need to do is parse the string into JSON, and loop through the array. We also want to define the parameters of our function and allow it access to the library we've just uploaded:
 
-```SQL
-CREATE TEMP FUNCTION ListSchemas(b STRING) RETURNS ARRAY<STRING> LANGUAGE js AS"""
 
-var result = []
-var data = JSON.parse(b).data
 
- for (var i in data) {
-   // Do something
- }
- """
-OPTIONS (library='gs://javascript_libraries/btoa_atob.js');
-```
-
-Within each Snowplow event, there one or more custom event, one or more custom context, both, or neither. Because events and contexts have a different structure, we'll need to handle them differently within the loop.
 
 #### Custom events
 
