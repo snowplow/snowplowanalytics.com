@@ -38,11 +38,11 @@ The following methods are added to the tracker:
 2. [`removeGlobalContexts`][remove-global]
 3. [`clearGlobalContexts`][clear-global]
 
-For a taste of the functionality, here we can define that a context is only sent for events with the schema vendor `com.acme.marketing`. Notice that `addGlobalContexts` must be supplied with an array of global contexts.
+For a taste of the functionality, here we can define that a context is only sent for events with the schema vendor `com.acme`. Notice that `addGlobalContexts` must be supplied with an array of global contexts.
 
 {% highlight javascript %}
 let user_context = {
-  schema: 'iglu:com.acme.contexts/user_context/jsonschema/1-0-0'
+  schema: 'iglu:com.acme/user_context/jsonschema/1-0-0'
   data: {
     userid: 1234,
     name: 'john doe'
@@ -53,7 +53,7 @@ let user_context = {
 // our global context must be supplied as an array, where the first element is
 // the conditional part and the context is the second element
 let global_context = [
-  {accept: 'iglu:com.acme.marketing/\*/jsonschema/1-0-0'},
+  {accept: 'iglu:com.acme/\*/jsonschema/1-0-0'},
   user_context
 ]
 
