@@ -9,7 +9,13 @@ permalink: /blog/2018/12/10/snowplow-javascript-tracker-2.10.0-released-with-glo
 discourse: true
 ---
 
-We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.10.0][2.10.0-tag] introduces global contexts, a set of powerful features for working with contexts. Also included are: more context features for link and form tracking, a new option to prevent exceptions from surfacing, and many other under-the-hood improvements, updates, and bugfixes.
+We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.10.0][2.10.0-tag] introduces global contexts, a set of powerful tools for working with contexts. Contexts are one of the most important features in Snowplow: they enable companies running Snowplow to track much rich, highly structured data that is easy to work with. In this post we'll quickly review what contexts are, before explaining why the "global contexts" functionality released is so powerful for companies that want to collect rich event-level data.
+
+Also included in this release are:
+
+* more context features for link and form tracking,
+* a new option to prevent exceptions from surfacing, and
+* many other under-the-hood improvements, updates, and bugfixes.
 
 Read on below the fold for:
 
@@ -24,16 +30,116 @@ Read on below the fold for:
 
 <h2 id="global-contexts">1. Global contexts</h2>
 
-This release introduces a set of powerful tracker features for controlling when contexts are added to events. Traditionally, trackers have offered predefined contexts that add contexts to every event when enabled. We refer to these new contexts with expanded capabilities as global contexts because each global context is evaluated when an event is sent.
+This release introduces a set of powerful tracker features for controlling when contexts are added to events. Before we go in and describe those features it is worth having a quick recap on what contexts are and why they are so important.
 
-Global context capabilities:
+### 1.1 A quick recap on contexts
 
-- adding contexts to every event
-- evaluating contexts dynamically, we allow user-supplied callbacks that optionally accept an argument containing important information (schema URI, event payload, event type)
-- adding contexts based on an event's schema URI
-- adding contexts based on the result of a user-supplied callback
+#### 1.1.1 What are contexts?
+
+Snowplow is a data collection platform for recording events. Events can be very varied. To give just a handful of examples:
+
+* Job seeker submits application for job  
+* Shopper adds item to basket
+* Visitor shares video on Twitter
+
+Each of these events involves multiple different contexts or entities, where each context or entity can be described by multiple data points. To take the first example: "Job seeker submits application for job", this might involve the following contexts or entities:
+
+* The job seeker
+* The job applied for
+* The application submitted
+* The web page the application was submitted on
+* The device that the user was on when he/ she submitted the application
+
+Each of these contexts or entities might be described by multiple data points. For example, we might want to know the following about the job seeker:
+
+* ID
+* Gender
+* Data of birth
+* Qualification level
+* Any specialisms
+* Salary expectations
+* Location
+
+So when you record an event in Snowplow, you typically want to record data about all the entities or contexts involved in the event, and for each context, capture as much rich data as possible. Contexts make this possible: in the above example "job seeker submits application for job" you might track fire the following:
+
+{% highlight javascript %}
+window.snowplow("trackSelfDescribingEvent", {
+    "schema": "iglu:com.jobsite/submit_application/jsonschema/1-0-0",
+    "data": {
+      "applicationId": "abc123"
+    },
+    [{
+          "schema": "iglu:com.jobsite/job_seeker/jsonschema/1-0-0",
+          "data": {
+            "id": "jobseeker1",
+            "gender": "female",
+            "dateOfBirth": "2003-01-06",
+            "qualification": "Masters",
+            "specialisms": ["marketing", "digital"],
+            "location": "London, UK"
+        },
+      },
+      {
+          "schema": "iglu:com.jobsite/job/jsonschema/1-0-0",
+          "data": {
+              "id": "job1",
+              "title": "PPC Manager",
+              "salary": 25000,
+              "location": "London, UK",
+              "employer": "The Big Cola Company"
+          }
+    },{
+          "schema": "iglu:com.jobsite/application/jsonschema/1-0-0",
+          "data": {
+              "cv_uploaded": true,
+              "cv_location": "https://uploads.jobsite.com/cvs/cv123"
+          }
+    }]
+  })
+{% endhighlight %}
+
+It is possible for the company recording the event to send as many self-describing contexts with each event describing each of the contexts or entities involved in the event. (In the above example three contexts are sent with the event.) With each context it is possible to send as many data points as you wish. Typically, contexts will be common across multiple different event types. So the self-desribing JSON describing the job seeker would be sent with every event performed by that job seeker, including:
+
+* searching for jobs
+* viewing particular jobs
+* favoriting particular jobs
+* putting together an application
+* submitting that application to a particular job
+* any downstream events associated with interacting with the recruiter during the application process
+
+#### 1.1.2 Predefined contexts
+
+As the above example shows, with Snowplow it is possible to send as many contexts as you want with each event, with as many data points as you wish per context. In addition, Snowplow Trackers support sending "pre-defined" contexts with every event sent. For example, the Javascript Tracker supports automatically sending the following contexts:
+
+* A [web page context][web-page-context], that identifies the web page on which an event occurs. This is useful if someone has got multiple tabs on a web site open at the same time and is flicking between them, so you can identify on which browser tab each event occurs in, and understand how the visitor is using each tab
+* A [performance timing context][performance-timing-context], with data about how fast the web page loads
+* A session context, that identifies which session an event occurred in, and what the cookie ID of the user is
+* A [GA Cookies context][ga-cookies-context], that records the values in any Google Analytics cookies that have been set from the same domain
+* A set of Optimizely contexts, that describe any experiments that are currently being run and if so, which
+
+These are enabled when initializing the tracker. Once enabled, they are sent with every single event recorded.
+
+
+## 1.2 Introducing Global Contexts
+
+Up until now, Snowplow has offered users:
+
+* The ability to send as many contexts as desired with each individual event
+* The ability to automatically send some pre defined contexts with every single event
+
+Global contexts provide the ability for end users to:
+
+* Define their own contexts once (e.g. on tracker initialization) and then have this context sent with every single event subsequently recorded on the page. This saves developers having to manually build and send the context array with every single event fired.
+* Define rules so that particular contexts are only sent with particular event types. This can be done in a number of ways:
+  * based on the event schema URI
+  * based on a user-supplied callback function that optionally accepts an argument containing the schema URI, event payload and event type
+
+This puts an enormous amount of power in the hands of developers implementing Snowplow, to track a lot more rich data, conveniently, with each event.
+
+## 1.3 Using the new Global context functionality
 
 The following methods are added to the tracker:
+
 1. [`addGlobalContexts`][add-global]
 2. [`removeGlobalContexts`][remove-global]
 3. [`clearGlobalContexts`][clear-global]
@@ -154,6 +260,12 @@ Finally, if you run into any issues or have any questions, please
 
 [new-session]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#state
 [transforms]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#custom-form-tracking
+
+[web-page-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#webPage
+[performance-timing-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#performanceTiming
+[optimizely-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#optimizelyXSummary
+[ga-cookies-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#22154-geolocation-context
+
 
 [580]: https://github.com/snowplow/snowplow-javascript-tracker/issues/580
 [602]: https://github.com/snowplow/snowplow-javascript-tracker/issues/602
