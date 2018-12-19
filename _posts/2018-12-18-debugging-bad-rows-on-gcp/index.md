@@ -6,6 +6,7 @@ tags: [snowplow, real-time, GCP, bad-rows, BigQuery]
 author: Colm
 category: Analytics
 permalink: /blog/2018/12/19/debugging-bad-rows-on-gcp
+discourse: true
 ---
 
 One of the key features of the Snowplow pipeline is that it's architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. Another key feature is that it's highly loss-averse: when data fails validation, those events are preserved as bad rows. [Read more about data quality][data-quality].
