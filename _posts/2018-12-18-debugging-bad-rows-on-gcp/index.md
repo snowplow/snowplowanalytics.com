@@ -209,7 +209,7 @@ I've already mentioned our guide to setting up a bad rows monitoring dashboard i
 
 [table-schema]: assets/img/blog/2018/12/table-schema.jpg
 
-[counts-per-message]: assets/img/blog/2018/12/count_messages.jpg
+[counts-per-message]: assets/img/blog/2018/12/count-messages.jpg
 
 [native-table]: assets/img/blog/2018/12/native-table.jpg
 
