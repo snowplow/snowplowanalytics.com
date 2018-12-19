@@ -20,7 +20,7 @@ guest> cd /vagrant
 guest> bundle exec jekyll serve --host 0.0.0.0
 ```
 
-You can then view the website on a browser on your host machine, by navigating to [https://localhost:4001](https://localhost:4001)
+You can then view the website on a browser on your host machine, by navigating to [localhost:4001](localhost:4001)
 
 ## Website wont build?
 
