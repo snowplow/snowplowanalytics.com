@@ -16,11 +16,7 @@ On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users 
 
 ### Dealing with Bad Rows
 
-<<<<<<< HEAD
-When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice, easy-to-use format yet. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
-=======
-When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice easy-to-use format. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
->>>>>>> fccb627c7d2f93eaa5126854aebf544cd9911be4
+When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice, easy-to-use format. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
 
 The best process for handling bad rows is to evaluate what the causes of validation failure (and scale of the issue) are, narrow it down as much as possible, then dig in to find and fix the source of the failure.
 
@@ -39,7 +35,7 @@ BigQuery allows us to query data from Cloud Storage in one of two ways:
 
 2. Native tables import the data into BigQuery and allow you to query from there. There are no data transfer charges from Cloud Storage but the normal charges per scanned data apply. With native tables, you can only see the data you imported when you created the table - which is a manual process. Queries will likely be faster than for external tables.
 
-In this guide we're going to use an external table for monitoring/diagnosis of the problem, and simply use a `CREATE TABLE AS` statement to generate a smaller native table and dig into the specifics. That way we create the external table once, and our volume management strategy is to simply use partitions and subset that table when we need a native one.
+In this guide, we’ll create an external table for monitoring/diagnosis of the problem since this will be up to date in near-real-time, and a native table to dig into the specifics - as this allows us stricter control over the amount of data we scan (and therefore the cost).
 
 ### 1. Create an external table and diagnose
 
@@ -99,7 +95,7 @@ The output of this query looks something like this:
 
 ![counts per message][counts-per-message]
 
-Some error messages will already give you an indication of what to fix - for example a schema path issue indicate that either the schema wasn't correctly uploaded to Iglu, or the tracker references the wrong path.
+Some error messages will already give you an indication of what to fix - for example a schema path issue indicate that either the schema wasn't correctly uploaded to Iglu, or the tracker references the wrong path. But for some, you'll also need to look at the custom data that created the error to figure out exactly where the validation failure comes from.
 
 At this point, it's a good idea to set up some monitoring dashboards for bad rows (a guide for doing this in Google Data Studio is forthcoming).
 
@@ -111,7 +107,7 @@ The above allows us to count bad rows over time - so we can see what errors we s
 > Unrecognized event [null]
 > Payload with vendor [] and version [] not supported by this version of Scala Common Enrich
 
-These aren't Snowplow events - they're mostly caused by requests which didn't come from a Snowplow tracker hitting the Snowplow collector.
+These aren't Snowplow events - they're mostly caused by requests which didn't come from a Snowplow tracker.
 
 The other bad rows mean the data sent didn't match our schemas:
 
