@@ -5,7 +5,7 @@ title: "Debugging bad rows on GCP"
 tags: [snowplow, real-time, GCP, bad-rows, BigQuery]
 author: Colm
 category: Analytics
-permalink: /blog/2018/12/19/debugging-bad-rows-on-gcp
+permalink: /blog/2018/12/19/debugging-bad-rows-on-gcp/
 discourse: true
 ---
 
