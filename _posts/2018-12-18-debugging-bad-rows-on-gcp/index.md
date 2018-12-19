@@ -16,9 +16,13 @@ On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users 
 
 ### Dealing with Bad Rows
 
+<<<<<<< HEAD
 When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice, easy-to-use format yet. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
+=======
+When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice easy-to-use format. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
+>>>>>>> fccb627c7d2f93eaa5126854aebf544cd9911be4
 
-The best process for handling bad rows therefore, is to evaluate what the causes of validation failure (and scale of the issue) are, narrow it down as much as possible, then dig in to find and fix the source of the failure.
+The best process for handling bad rows is to evaluate what the causes of validation failure (and scale of the issue) are, narrow it down as much as possible, then dig in to find and fix the source of the failure.
 
 Bad rows are caused by one of two things:
 
@@ -206,12 +210,12 @@ Make sure you [sign up for our newsletter][newsletter] to get emailed about our 
 
 [cloud-storage-loader]: https://github.com/snowplow/snowplow/wiki/setting-up-snowplow-google-cloud-storage-loader
 
-[create-external]: assets/img/blog/2018/12/create-external.jpg
+[create-external]: /assets/img/blog/2018/12/create-external.jpg
 
-[table-schema]: assets/img/blog/2018/12/table-schema.jpg
+[table-schema]: /assets/img/blog/2018/12/table-schema.jpg
 
-[counts-per-message]: assets/img/blog/2018/12/count-messages.jpg
+[counts-per-message]: /assets/img/blog/2018/12/count-messages.jpg
 
-[native-table]: assets/img/blog/2018/12/native-table.jpg
+[native-table]: /assets/img/blog/2018/12/native-table.jpg
 
 [newsletter]: https://go.snowplowanalytics.com/l/571483/2018-06-21/2yvms68?utm_source=snp-blog&utm_medium=text-link&utm_content=newsletter
