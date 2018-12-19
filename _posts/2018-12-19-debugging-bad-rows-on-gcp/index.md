@@ -1,23 +1,23 @@
 ---
 layout: post
-title-short: Debugging bad rows on GCP
+title-short: Debugging bad rows on GCP with BigQuery
 title: "Debugging bad rows on GCP"
 tags: [snowplow, real-time, GCP, bad-rows, BigQuery]
 author: Colm
 category: Analytics
-permalink: /blog/2018/12/19/debugging-bad-rows-on-gcp/
+permalink: /blog/2018/12/19/debugging-bad-rows-on-gcp-with-bigquery/
 discourse: true
 ---
 
 One of the key features of the Snowplow pipeline is that it's architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. Another key feature is that it's highly loss-averse: when data fails validation, those events are preserved as bad rows. [Read more about data quality][data-quality].
 
-This post focuses on debugging bad rows for our recently released Google Cloud Platform pipeline. We have similar guides to doing this in an AWS landscape here: [Elasticsearch][esdebugging], [S3 Athena (batch)][athena-batch], [S3 Athena (real-time)][athena-rt].
+This post focuses on debugging bad rows for our recently released Google Cloud Platform pipeline using the data warehouse, Google BigQuery. We have similar guides to doing this in an AWS landscape here: [Elasticsearch][esdebugging], [S3 Athena (batch)][athena-batch], [S3 Athena (real-time)][athena-rt].
 
 On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users should set up the [Cloud Storage Loader][cloud-storage-loader]; Snowplow Insights customers will have this set up as standard.
 
 ### Dealing with Bad Rows
 
-When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice, easy-to-use format. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to diagnose why the event failed validation.
+When data hits the collector but fails the validation step of the Snowplow Pipeline, those events are dumped into 'bad rows'. Since validation happens early in the Enrich process, the actual payload of the data hasn't yet been put into a nice, easy-to-use format. Getting at the actual values in the payload requires some effort, but bad rows do give us easier access to information which allows us to run queries in order to diagnose why the event failed validation.
 
 The best process for handling bad rows is to evaluate what the causes of validation failure (and scale of the issue) are, narrow it down as much as possible, then dig in to find and fix the source of the failure.
 
@@ -32,7 +32,7 @@ Bad rows are caused by one of two things:
 
 BigQuery allows us to query data from Cloud Storage in one of two ways:
 
-1. External tables scan the data from Cloud Storage - this has the advantage of always querying the latest data. However, while it's possible to limit the amount of data scanned, external tables don't take advantage of caching, and queries can be slower.
+1. External tables scan the data from Cloud Storage as your data source- this has the advantage of always querying the latest data. However, while it's possible to limit the amount of data scanned, external tables don't take advantage of caching, and queries can be slower.
 
 2. Native tables import the data into BigQuery and allow you to query from there. There are no data transfer charges from Cloud Storage but the normal charges per scanned data apply. With native tables, you can only see the data you imported when you created the table - which is a manual process. Queries will likely be faster than for external tables.
 
@@ -40,21 +40,21 @@ In this guide, we’ll create an external table for monitoring/diagnosis of the 
 
 ### 1. Create an external table and diagnose
 
-In the BigQuery UI, create a dataset to house your bad rows data - here I've named it `bad_rows`. Then create a table in that dataset, with the following options:
+In the BigQuery UI, create a dataset to house your bad rows data - here I've named it `bad_rows`. Then build a new table in that BigQuery dataset, with the following options:
 
 **Create table from** Google Cloud Storage
 
-You'll want to point it to the root of your bad rows bucket with the `/*` operator, to encapsulate all bad rows. File format is JSON.
+You'll want to point it to the root of your bad rows bucket with the `/*` operator, to encapsulate all bad rows; the table will be a JSON file.
 
 **Table type** should be External table
 
 Name the table something sensible - I've gone with bad_rows_external.
 
-Finally, autodetect schema and input parameters.
+Finally, autodetect schema and input parameters (note: at the time of writing this is unavailable for Cloud Datastore exports).
 
 ![Create external Table][create-external]
 
-Click "create table" and you're good to go. You can already start exploring your bad rows using SQL.
+Click "create table" and you're good to go. You can already start exploring your bad rows BigQuery data using SQL.
 
 If we take a look at the table schema, we'll see that there are three fields in the data - `failure_tstamp`, a nested errors object, containing `message` and `level`, and `line` - which is the base64 encoded payload containing the data.
 
@@ -76,7 +76,7 @@ Using this in a `WHERE` clause will result in only the files with relevant dates
 
 #### 1.2 Counting bad rows per error:
 
-With the below SQL we can count how many bad rows per day we get for each error message:
+With the query results from the below SQL, we can count how many bad rows per day we get for each error message:
 
 ```SQL
 SELECT
@@ -92,17 +92,17 @@ ORDER BY 1,3 DESC
 
 The `UNNEST` function is used because the errors object contains an array of `STRUCT` objects - so do note that rows with more than one error message will be counted against both messages.
 
-The output of this query looks something like this:
+The query results look something like this:
 
 ![counts per message][counts-per-message]
 
-Some error messages will already give you an indication of what to fix - for example a schema path issue indicate that either the schema wasn't correctly uploaded to Iglu, or the tracker references the wrong path. But for some, you'll also need to look at the custom data that created the error to figure out exactly where the validation failure comes from.
+Some error messages will already give you an indication of what to fix - for example a schema path issue indicates that either the schema wasn't correctly uploaded to Iglu, or the tracker references the wrong path (such as an old path). But for some, you'll also need to look at the custom data that created the error to figure out exactly where the validation failure comes from.
 
 At this point, it's a good idea to set up some monitoring dashboards for bad rows (a guide for doing this in Google Data Studio is forthcoming).
 
 #### 2. Subset the data and dig into the issue
 
-The above allows us to count bad rows over time - so we can see what errors we saw, when we had bad rows, and how many of them we had. There are some rows we can safely ignore, with messages like:
+The above SQL query allows us to count bad rows over time - so we can see what errors we saw, when we had bad rows, and how many of them we had. There are some rows we can safely ignore, with messages like:
 
 > Querystring is empty: no raw event to process
 > Unrecognized event [null]
@@ -123,7 +123,7 @@ The output of my counts above tell me that the last day or so of data contains a
 
 The `line` column in our bad rows data is a base-64 encoded collector payload, we can decode it using: `SAFE_CONVERT_BYTES_TO_STRING(line)`. This will be thrift-encoded, and depending on what's happened upstream may be of different formats. Within the decoded line object, we have a JSON object which contains Snowplow data. This is where we'll find the custom data we're looking for.
 
-For each particular error, we can get at the data with a query like:
+For each particular error, we can get at the data with a SQL query like:
 
 ```SQL
 SELECT
@@ -151,7 +151,7 @@ Now the `tracker_data` field here will look something like this (if you're sendi
 
 That is to say, the "data" key in this output contains an array of Snowplow event data. Custom data will be base64-encoded strings within certain fields of this JSON object. You might want to try to decode it using SQL, but the simplest thing to do is to manually decode the base64 and take a look.
 
-Within the event data, there are two places we'll find custom data:
+Within the event data, there are two places we'll find custom data types:
 
 The `ue_px` field will be present if the event is a custom event. This is base64 encoded, which when decoded contains a JSON object:
 
@@ -185,12 +185,12 @@ The `cx` field will be present if the event has any entities attached. Again thi
 }
 ```
 
-The task now is to find the offending data which caused the failure, and address the problem.
+The next steps are to find the offending data which caused the failure, and address the problem.
 
 
 #### Exploring further
 
-I've already mentioned our upcoming guide to setting up a bad rows monitoring dashboard in Data Studio. As stated, using SQL to get at the data is an option, but not likely a fruitful one. Another option is to define a JavaScript User-Defined Function to extract and output the relevant data from the line.
+I've already mentioned our upcoming guide to setting up a bad rows monitoring dashboard in Data Studio. As stated, using SQL to get at the data is an option, but not likely a fruitful one. Another option is to define a JavaScript User-Defined Function to extract and output the relevant data from the line in the BigQuery table.
 
 Make sure you [sign up for our newsletter][newsletter] to get emailed about our upcoming posts on working with Snowplow data in GCP.
 
