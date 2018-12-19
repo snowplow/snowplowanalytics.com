@@ -1,11 +1,11 @@
 ---
 layout: post
-title-short: Debugging bad data on GCP with BigQuery
-title: "Debugging bad data on GCP with BigQuery"
+title-short: Debugging bad data in GCP with BigQuery
+title: "Debugging bad data in GCP with BigQuery"
 tags: [snowplow, real-time, GCP, bad-rows, BigQuery]
 author: Colm
 category: Analytics
-permalink: /blog/2018/12/19/debugging-bad-data-on-gcp-with-bigquery/
+permalink: /blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/
 discourse: true
 ---
 
