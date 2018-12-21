@@ -98,7 +98,7 @@ window.snowplow("trackSelfDescribingEvent", {
   })
 {% endhighlight %}
 
-It is possible for the company recording the event to send as many self-describing contexts with each event describing each of the contexts or entities involved in the event. (In the above example three contexts are sent with the event.) With each context it is possible to send as many data points as you wish. Typically, contexts will be common across multiple different event types. So the self-desribing JSON describing the job seeker would be sent with every event performed by that job seeker, including:
+It is possible for the company recording the event to send as many self-describing contexts with each event describing each of the contexts or entities involved in the event. (In the above example three contexts are sent with the event.) With each context it is possible to send as many data points as you wish. Typically, contexts will be common across multiple different event types. So the self-describing JSON describing the job seeker would be sent with every event performed by that job seeker, including:
 
 * searching for jobs
 * viewing particular jobs
