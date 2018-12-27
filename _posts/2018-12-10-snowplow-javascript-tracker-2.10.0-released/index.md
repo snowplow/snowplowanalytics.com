@@ -191,6 +191,8 @@ window.snowplow('enableFormTracking', config, context);
 
 Full documentation can be found [here][link-tracking-sp] for link tracking and [here][form-tracking-sp] for form tracking.
 
+Many thanks to Bernardo Srulzon[bernardo] for contributing this feature!
+
 <h2 id="beacon-api">4. Beacon API for event sending</h2>
 
 This release allows you to send events to a collector using the Beacon API, in addition to the traditional `GET` and `POST` options.
@@ -209,7 +211,9 @@ window.snowplow("newTracker", "cf", "d3rkrsqld9gmqf.cloudfront.net", {
 });
 {% endhighlight %}
 
-Documentation can be found [here][beacon-api-sp].
+Full documentation can be found [here][beacon-api-sp].
+
+Many thanks to [Adam Nagy][nagyadam] for contributing this feature!
 
 <h2 id="updates">4. Updates and bug fixes</h2>
 
@@ -230,6 +234,8 @@ Other updates and fixes include:
 * Fix log output for failed integration tests ([#689][689])
 * Use modularized imports for lodash ([#502][502])
 * Update npm steps in .travis.yml ([#690][690])
+
+Many thanks to [Michael Maletich][michael] and [Sadhasivam][sadhasivam] for their contributions!
 
 <h2 id="upgrade">5. Upgrading</h2>
 
@@ -296,3 +302,8 @@ Finally, if you run into any issues or have any questions, please
 [689]: https://github.com/snowplow/snowplow-javascript-tracker/issues/689
 [502]: https://github.com/snowplow/snowplow-javascript-tracker/issues/502
 [690]: https://github.com/snowplow/snowplow-javascript-tracker/issues/690
+
+[adam]: https://github.com/nagyadam2092
+[bernardo]: https://github.com/bernardosrulzon
+[michael]: https://github.com/HawaiianSpork
+[sadhasivam]: https://github.com/sadhasivam
