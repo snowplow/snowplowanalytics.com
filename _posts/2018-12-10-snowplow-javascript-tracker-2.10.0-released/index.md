@@ -180,7 +180,6 @@ window.snowplow('addGlobalContexts', [global_context]);
 
 <h2 id="link-form-tracking">3. Dynamic contexts for link and form tracking</h2>
 
-
 The feature allows dynamic contexts to be passed in the `context` argument seen in the examples methods below for enabling link and form tracking. For form change events, context generators are passed `(elt, type, value)`, and form submission events are passed `(elt, innerElements)`. Link tracking events pass the source element to the context generator.
 
 {% highlight javascript %}
@@ -248,27 +247,34 @@ Finally, if you run into any issues or have any questions, please
 [raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
 
 [js-tracker]: https://github.com/snowplow/snowplow-javascript-tracker
-[2.10.0-tag]: https://github.com/snowplow/snowplow-javascript-tracker/releases/tag/2.9.0
+[2.10.0-tag]: https://github.com/snowplow/snowplow-javascript-tracker/releases/tag/2.10.0
 [setup]: https://github.com/snowplow/snowplow/wiki/Javascript-tracker-setup
 [issues]: https://github.com/snowplow/snowplow-javascript-tracker/issues
 [forums]: https://discourse.snowplowanalytics.com/
 [docs]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker
 
-[cds]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#consent-documents
-[tcg]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#trackConsentGranted
-[tcw]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#trackConsentWithdrawn
-
-[new-session]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#state
-[transforms]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#custom-form-tracking
+[global-contexts-docs]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#316-custom-contexts
+[add-global]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#31751-addglobalcontexts
+[remove-global]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#31752-removeglobalcontexts
+[clear-global]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#31753-clearglobalcontexts
 
 [web-page-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#webPage
 [performance-timing-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#performanceTiming
 [optimizely-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#optimizelyXSummary
 [ga-cookies-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#22154-geolocation-context
 
-
-[580]: https://github.com/snowplow/snowplow-javascript-tracker/issues/580
-[602]: https://github.com/snowplow/snowplow-javascript-tracker/issues/602
-[605]: https://github.com/snowplow/snowplow-javascript-tracker/issues/605
-[621]: https://github.com/snowplow/snowplow-javascript-tracker/issues/621
-[625]: https://github.com/snowplow/snowplow-javascript-tracker/issues/625
+[693]: https://github.com/snowplow/snowplow-javascript-tracker/issues/693
+[672]: https://github.com/snowplow/snowplow-javascript-tracker/issues/672
+[667]: https://github.com/snowplow/snowplow-javascript-tracker/issues/667
+[579]: https://github.com/snowplow/snowplow-javascript-tracker/issues/579
+[684]: https://github.com/snowplow/snowplow-javascript-tracker/issues/684
+[686]: https://github.com/snowplow/snowplow-javascript-tracker/issues/686
+[691]: https://github.com/snowplow/snowplow-javascript-tracker/issues/691
+[685]: https://github.com/snowplow/snowplow-javascript-tracker/issues/685
+[671]: https://github.com/snowplow/snowplow-javascript-tracker/issues/671
+[665]: https://github.com/snowplow/snowplow-javascript-tracker/issues/665
+[687]: https://github.com/snowplow/snowplow-javascript-tracker/issues/687
+[688]: https://github.com/snowplow/snowplow-javascript-tracker/issues/688
+[689]: https://github.com/snowplow/snowplow-javascript-tracker/issues/689
+[502]: https://github.com/snowplow/snowplow-javascript-tracker/issues/502
+[690]: https://github.com/snowplow/snowplow-javascript-tracker/issues/690
