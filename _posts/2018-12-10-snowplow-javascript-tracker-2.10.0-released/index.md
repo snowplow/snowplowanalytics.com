@@ -159,7 +159,7 @@ let user_context = {
 // our global context must be supplied as an array, where the first element is
 // the conditional part and the context is the second element
 let global_context = [
-  {accept: 'iglu:com.acme/\*/jsonschema/\*'},
+  {accept: 'iglu:com.acme/*/jsonschema/*'},
   user_context
 ]
 
@@ -178,6 +178,8 @@ You can disable this by setting the following value:
 window.snowplow('setDebug', true);
 {% endhighlight %}
 
+Full documentation can be found [here][error-output-sp].
+
 <h2 id="link-form-tracking">3. Dynamic contexts for link and form tracking</h2>
 
 The feature allows dynamic contexts to be passed in the `context` argument seen in the examples methods below for enabling link and form tracking. For form change events, context generators are passed `(elt, type, value)`, and form submission events are passed `(elt, innerElements)`. Link tracking events pass the source element to the context generator.
@@ -187,6 +189,8 @@ window.snowplow('enableLinkClickTracking', criterion, pseudoClicks, trackContent
 window.snowplow('enableFormTracking', config, context);
 {% endhighlight %}
 
+Full documentation can be found [here][link-tracking-sp] for link tracking and [here][form-tracking-sp] for form tracking.
+
 <h2 id="beacon-api">4. Beacon API for event sending</h2>
 
 This release allows you to send events to a collector using the Beacon API, in addition to the traditional `GET` and `POST` options.
@@ -195,7 +199,7 @@ The Beacon API is an interface implemented by browsers that allows the tracker t
 
 This feature can be enabled by setting the argmap value, `beacon` to `true`.
 
-More documentation about the Beacon API can be found: [here][beacon-api-mozilla].
+More documentation about the Beacon API can be found [here][beacon-api-mozilla].
 
 {% highlight javascript %}
 window.snowplow("newTracker", "cf", "d3rkrsqld9gmqf.cloudfront.net", {
@@ -205,25 +209,27 @@ window.snowplow("newTracker", "cf", "d3rkrsqld9gmqf.cloudfront.net", {
 });
 {% endhighlight %}
 
+Documentation can be found [here][beacon-api-sp].
+
 <h2 id="updates">4. Updates and bug fixes</h2>
 
 Other updates and fixes include:
 
 * Transpile helpers.js and detectors.js ([#693][693])
-* Fix default configOptOutCookie value ([#672][#672])
-* Remove outdated addClickListener method ([#667][#667])
-* Tracking click events on forms ([#579][#579])
-* Update tracker script banner ([#684][#684])
-* Add new local testing workflow ([#686][#686])
-* Clean up indentation of integration test template ([#691][#691])
-* Update outdated dependencies ([#685][#685])
-* Fix typo in sesname variable ([#671][#671])
-* Add Babel to build process ([#665][#665])
-* Replace YUI Compressor with UglifyJS ([#687][#687])
-* Refresh npm authentication token ([#688][#688])
-* Fix log output for failed integration tests ([#689][#689])
-* Use modularized imports for lodash ([#502][#502])
-* Update npm steps in .travis.yml ([#690][#690])
+* Fix default configOptOutCookie value ([#672][672])
+* Remove outdated addClickListener method ([#667][667])
+* Tracking click events on forms ([#579][579])
+* Update tracker script banner ([#684][684])
+* Add new local testing workflow ([#686][686])
+* Clean up indentation of integration test template ([#691][691])
+* Update outdated dependencies ([#685][685])
+* Fix typo in sesname variable ([#671][671])
+* Add Babel to build process ([#665][665])
+* Replace YUI Compressor with UglifyJS ([#687][687])
+* Refresh npm authentication token ([#688][688])
+* Fix log output for failed integration tests ([#689][689])
+* Use modularized imports for lodash ([#502][502])
+* Update npm steps in .travis.yml ([#690][690])
 
 <h2 id="upgrade">5. Upgrading</h2>
 
@@ -262,12 +268,18 @@ Finally, if you run into any issues or have any questions, please
 [remove-global]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#31752-removeglobalcontexts
 [clear-global]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#31753-clearglobalcontexts
 
+[link-tracking-sp]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#391-enablelinkclicktracking
+[form-tracking-sp]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#3102-custom-form-tracking
+
 [web-page-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#webPage
 [performance-timing-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#performanceTiming
 [optimizely-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#optimizelyXSummary
 [ga-cookies-context]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#22154-geolocation-context
 
 [beacon-api-mozilla]: https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API
+[beacon-api-sp]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#22161-beacon-api-support
+
+[error-output-sp]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#error-output
 
 [693]: https://github.com/snowplow/snowplow-javascript-tracker/issues/693
 [672]: https://github.com/snowplow/snowplow-javascript-tracker/issues/672
