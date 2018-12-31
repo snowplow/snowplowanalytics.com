@@ -23,11 +23,11 @@ Read on below the fold for:
 
 <h2 id="dedupe">1. Deduplication</h2>
 
-It’s possible for 2 or more Snowplow events to have the same event ID due to the event ID being set in a Snowplow tracker rather than the pipeline, which can cause problems when the events are loaded into Snowflake. Event duplicates can prove a challenge in any event pipeline - we have previously discussed this issue in detail in [this blog post][duplicate-blog] and on our [Discourse forum][duplicate-discourse].
+It’s possible for two or more Snowplow events to have the same event ID, for example because a duplicate has been introduced at one of the stages in the data processing upstream of the data landing in Snowflake DB. Event duplicates can prove a challenge in any event pipeline - we have previously discussed this issue in detail in [this blog post][duplicate-blog] and on our [Discourse forum][duplicate-discourse].
 
-To mitigate this issue, version 0.4.0 introduces both in-batch deduplication and [DynamoDB][dynamodb]-powered cross-batch natural deduplication:
+To mitigate this issue, version 0.4.0 introduces both in-batch deduplication and [DynamoDB][dynamodb]-powered cross-batch deduplication:
 
-* In-batch deduplication groups events with the same `event_id` and `event_fingerprint` in a single batch, then eliminates duplicates within each individual group.
+* In-batch deduplication groups events with the same `event_id` and `event_fingerprint` in a single batch.
 
 * Cross-batch deduplication works by extracting the ID and fingerprint of an event, as well as `etl_tstamp` which identifies a single batch, then storing these properties in a DynamoDB table. Duplicate events with the same ID and fingerprint that were seen in previous batches are silently dropped from the Snowflake Transformer output.
 
@@ -37,7 +37,7 @@ Alongside this Snowflake Loader release, we have also released the first version
 
 <h2 id="s3-optimizations">2. S3 optimizations</h2>
 
-This update introduces a significant performance improvement eliminating an S3-based bottleneck in the Snowflake Transformer. In previous versions, when Transformer wrote files from Spark, its output was initially stored to a temporary destination then renamed when the job has succeeded. However, since S3 is an object store, renaming files is a very expensive operation that requires a complete rewrite. This process was a notable bottleneck in the Transformer, making it incapable of processing large volumes of data (over 1TB/day) even after cluster upscaling.
+This update introduces a significant performance improvement eliminating an S3-based bottleneck in the Snowflake Transformer. In previous versions, when the Transformer wrote files from Spark, the output was initially stored to a temporary destination and then renamed when the job has succeeded. However, because S3 is an object store, renaming files is a very expensive operation that requires a complete rewrite. This process was a notable bottleneck in the Transformer, making it incapable of processing large volumes of data (over 1TB/day) even with a large EMR cluster.
 
 Version 0.4.0 solves this problem by using a [custom staging committer][s3committer], which accelerates writing to S3 from Spark by writing task outputs to a temporary directory on the local filesystem rather than S3. This represents a significant performance improvement by avoiding expensive S3 renaming operations. While usage of this committer is optional, it is highly recommended - an example of a Dataflow Runner config with the optimization enabled can be found in the [Setup Guide][dataflow-runner-wiki].
 
