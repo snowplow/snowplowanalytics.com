@@ -191,7 +191,7 @@ window.snowplow('enableFormTracking', config, context);
 
 Full documentation can be found [here][link-tracking-sp] for link tracking and [here][form-tracking-sp] for form tracking.
 
-Many thanks to Bernardo Srulzon[bernardo] for contributing this feature!
+Many thanks to [Bernardo Srulzon][bernardo] for contributing this feature!
 
 <h2 id="beacon-api">4. Beacon API for event sending</h2>
 
@@ -304,6 +304,7 @@ Finally, if you run into any issues or have any questions, please
 [690]: https://github.com/snowplow/snowplow-javascript-tracker/issues/690
 
 [adam]: https://github.com/nagyadam2092
+[nagyadam]: https://github.com/nagyadam2092
 [bernardo]: https://github.com/bernardosrulzon
 [michael]: https://github.com/HawaiianSpork
 [sadhasivam]: https://github.com/sadhasivam
