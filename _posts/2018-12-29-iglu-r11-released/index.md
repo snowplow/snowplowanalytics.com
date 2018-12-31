@@ -130,4 +130,4 @@ If you have any questions or run into any problems, please raise a question in [
 [migrations-rfc]: https://discourse.snowplowanalytics.com/t/redshift-automatic-table-migrations-rfc/2555
 
 [capul-de-bour]: https://en.wikipedia.org/wiki/Moldavian_Bull%27s_Heads
-[tiflis-img]: /assets/img/blog/2018/12/iglu-r11-stamp.jpg
+[capul-de-boug-img]: /assets/img/blog/2018/12/iglu-r11-stamp.jpg
