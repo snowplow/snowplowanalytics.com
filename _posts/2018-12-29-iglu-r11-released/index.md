@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2019/01/03/iglu-r11-capul-de-bour-released/
 ---
 
-We are excited to announce the release of Iglu R11 Capul de bour, with long-awaited detailed linter messages and major improvements in Iglu Server and core libraries.
+We are excited to announce the release of Iglu R11 Capul de bour, with more helpful linter messages and improved functionality in both Iglu Server and the core libraries.
 
 1. [Improved linter messages](#linting)
 2. [Improvements to Iglu Server](#server-improvements)
@@ -25,10 +25,10 @@ Read on for more information about Release 11 Capul de bour, named after [the se
 
 <h2 id="schema-workflow-simplified">1. Improved linter messages</h2>
 
-Since its inception, igluctl was able to check a static registry for many kinds of inconsistencies in JSON schemas that cannot be handled by [JSON meta schema][json-metaschema], such as `minimum` value greater than `maximum` or set of string-specific properties in a field with non-string type.
-This allowed our users to prevent great amount of issues during enrichment and loading.
-However, it was quite cumbersome to find out the problematic place in the JSON Schema, because messages produced by igluctl did not contain any references to the field or line number.
-Since 0.7.0 igluctl groups problematic issues by their types and adds corresponding [JSON Pointer][json-pointers] to facilitate localization of problematic property.
+Since its inception, it has been possible to use `igluctl` to check a static schema registry for many kinds of inconsistencies in JSON schemas that cannot be handled by [JSON meta schema][json-metaschema], such as `minimum` value greater than `maximum` or set of string-specific properties in a field with non-string type.
+
+However, when users were presented with error messages from the linter, they often found it hard to identify the source fo the error, because messages produced by `igluctl` did not contain any references to the field in the JSON schema, or the line number.
+Now `igluctl` groups problematic issues by their types and adds corresponding [JSON Pointers][json-pointers] to facilitate localization of problematic property.
 
 Here's an example output for problematic schema with three discovered issues:
 
@@ -44,33 +44,32 @@ threadId
  - /properties/notification/properties/userInfo/properties/aps/properties/alert
 ```
 
-Apart from JSON Pointers, which were most anticipated feature, we also improved descriptions of issues to make it clear what do they mean and how to fix them.
+As well as introducing JSON Pointers, we have also improved the descriptions provided of issues to hopefully make it easier to understand what they mean and how to fix them.
 
 <h2 id="server-improvements">2. Improvements to Iglu Server</h2>
 
-As in last couple of releases, Iglu Server got its fair bit of updates.
-Most important update is new validation semantics, which now is entirely aligned with igluctl due a common backend - Schema DDL library.
+The most significant update to Iglu Server in this release is the introduction of new validation semantics. These are exactly the same as those provided in `igluctl`: they both use the same Schema DDL library to power them.
 
-In order to validate your JSON Schema using Iglu Server you can invoke curl command like following:
+Iglu Server exposes a new `validate` API:
 
 {% highlight "bash" %}
-$ curl -X POST "http://iglu.acme.com/api/validate/jsonschema" 
-    \ -H  "accept: application/json" 
+$ curl -X POST "http://iglu.acme.com/api/validate/jsonschema"
+    \ -H  "accept: application/json"
     \ -H  "Content-Type: application/json" \
     -d '{"type": "object", "additionalProperties": true}'
 {% endhighlight %}
 
-This should produce a detailed linting output in JSON format, preserving JSON Pointers already mentioned in igluctl section and corresponding messages.
+This should produce a detailed linting output in JSON format, preserving JSON Pointers already mentioned in `igluctl` section and corresponding messages.
 
-Also, we've improved all output messages by removing redundant `status` property from response's body and standardizing on [ISO 8601][iso-8601] for all date properties (such as `createdAt` and `updatedAt`).
+In addition, we have improved all output messages by removing the redundant `status` property from response's body and standardizing all dates outputed on [ISO 8601][iso-8601].
 
-From infrastructure point of view, we embedded building a docker image into release process, so `snowplow-docker-registry.bintray.io/snowplow/iglu-server` image from now on should be available straight after release.
+From infrastructure point of view, we embedded building a docker image into release process, so the `snowplow-docker-registry.bintray.io/snowplow/iglu-server` image should be available immediately after release.
 
 <h2 id="core-improvements">3. Improvements to the core libraries</h2>
 
 Both core libraries, Schema DDL and Iglu Core, have received updates as well.
 
-Among many dependency bumps (such as [circe][circe] to 0.10.1 and Scala to 2.12.8) Schema DDL got new functionality that supports JSON Pointers in igluctl along with more type-safe and lossless API for AST generation.
+Among many dependency bumps (such as [circe][circe] to 0.10.1 and Scala to 2.12.8) Schema DDL got new functionality that supports JSON Pointers in `igluctl` along with more type-safe and lossless API for AST generation.
 
 Also as our company-wide effort, we've finished the internal migrations from [scalaz][scalaz] to [cats][cats] and from [json4s][json4s] to [circe][circe].
 
@@ -94,7 +93,7 @@ This new version doesn't deprecate any behaviors from the previous version, 0.6.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-Our biggest priority for Iglu R12 is functionality backing up our upcoming Redshift table automigration process as per our recently [published RFC][migrations-rfc].
+Our biggest priority for Iglu R12 is functionality to support our upcoming Redshift table automigration process as per our recently [published RFC][migrations-rfc].
 
 This will include a lot new functionality in core library as well as in Scala Iglu Client.
 
