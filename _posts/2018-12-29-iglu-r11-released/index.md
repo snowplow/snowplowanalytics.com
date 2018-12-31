@@ -5,7 +5,7 @@ title-short: Iglu R11 Capul de bour
 tags: [iglu, json, json schema, registry, schema registry]
 author: Anton
 category: Releases
-permalink: /blog/2018/12/29/iglu-r11-capul-de-bour-released/
+permalink: /blog/2019/01/03/iglu-r11-capul-de-bour-released/
 ---
 
 We are excited to announce the release of Iglu R11 Capul de bour, with long-awaited detailed linter messages and major improvements in Iglu Server and core libraries.
@@ -14,7 +14,8 @@ We are excited to announce the release of Iglu R11 Capul de bour, with long-awai
 2. [Improvements to Iglu Server](#server-improvements)
 3. [Improvements to the core libraries](#core-improvements)
 4. [Upgrading](#upgrading)
-5. [Getting help](#help)
+5. [Roadmap](#roadmap)
+6. [Getting help](#help)
 
 Read on for more information about Release 11 Capul de bour, named after [the series of first postage stamps of Romania][capul-de-bour].
 
@@ -24,42 +25,60 @@ Read on for more information about Release 11 Capul de bour, named after [the se
 
 <h2 id="schema-workflow-simplified">1. Improved linter messages</h2>
 
-Since its inception, igluctl was able to check a static registry for many kinds of inconsistencies in JSON schemas, that cannot be handled by JSON meta schema, such as `minimum` value greater than `maximum` or set of string-specific properties in a field with non-string type.
-However, it was quite cumbersome to find out the problematic place in the JSON Schema, because messages produced by igluctl did not contain any references to the field.
-Since 0.7.0 igluctl produced detailed messages with JSON Pointers to exact place in a JSON Schema.
+Since its inception, igluctl was able to check a static registry for many kinds of inconsistencies in JSON schemas that cannot be handled by [JSON meta schema][json-metaschema], such as `minimum` value greater than `maximum` or set of string-specific properties in a field with non-string type.
+This allowed our users to prevent great amount of issues during enrichment and loading.
+However, it was quite cumbersome to find out the problematic place in the JSON Schema, because messages produced by igluctl did not contain any references to the field or line number.
+Since 0.7.0 igluctl groups problematic issues by their types and adds corresponding [JSON Pointer][json-pointers] to facilitate localization of problematic property.
 
-Working with JSON Schemas within the Snowplow ecosystem can be cumbersome and requires multiple steps:
+Here's an example output for problematic schema with three discovered issues:
 
-1. Lint
-2. Generate DDLs for Redshift, along with JSON Paths files
-3. Push schemas to one or more schema registries
-4. Sync JSON Paths files to one or more Amazon S3 buckets
+```
+WARNING: Schema [com.apple/notification_event/jsonschema/1-0-0] contains 3 following issues:
+1. Following numeric properties are unbounded (add --skip-checks numericMinMax to omit this check):
+ - /properties/notification
+ - /properties/notification/properties/badge
+2. Following optional properties don't allow null type (add --skip-checks optionalNull to omit this check):
+ - /properties/notification     Use "type: null" to indicate a field as optional for properties subtitle,launchImageName,userInfo,sound,badge,attachments
+threadId
+3. Following string properties provide no clues about maximum length (add --skip-checks stringLength to omit this check):
+ - /properties/notification/properties/userInfo/properties/aps/properties/alert
+```
 
-All of these actions are handled by specific igluctl subcommands, one operation at a time.
-
-Although going step-by-step may bring a better understanding of what's going on, it is also easy for human error to creep in, such as forgetting to lint (which can cause serious issues downstream). And of course the manual steps quickly become painfully repetitive and cause friction when working with schemas regularly.
-
-With R10 Tiflis, to address this friction we are introducing a new igluctl subcommand, `static deploy`, to perform the whole schema workflow from a single command.
-
-This new command is powered by a self-describing JSON config file provided by the user, and takes a single argument - the path to this config file:
-
+Apart from JSON Pointers, which were most anticipated feature, we also improved descriptions of issues to make it clear what do they mean and how to fix them.
 
 <h2 id="server-improvements">2. Improvements to Iglu Server</h2>
 
-Preparing a JSON Schema can be a laborious process, taking time and requiring several iterations. A schema author will want to store these work-in-progress schemas somewhere, until they're ready to be used.
+As in last couple of releases, Iglu Server got its fair bit of updates.
+Most important update is new validation semantics, which now is entirely aligned with igluctl due a common backend - Schema DDL library.
 
+In order to validate your JSON Schema using Iglu Server you can invoke curl command like following:
+
+{% highlight "bash" %}
+$ curl -X POST "http://iglu.acme.com/api/validate/jsonschema" 
+    \ -H  "accept: application/json" 
+    \ -H  "Content-Type: application/json" \
+    -d '{"type": "object", "additionalProperties": true}'
+{% endhighlight %}
+
+This should produce a detailed linting output in JSON format, preserving JSON Pointers already mentioned in igluctl section and corresponding messages.
+
+Also, we've improved all output messages by removing redundant `status` property from response's body and standardizing on [ISO 8601][iso-8601] for all date properties (such as `createdAt` and `updatedAt`).
+
+From infrastructure point of view, we embedded building a docker image into release process, so `snowplow-docker-registry.bintray.io/snowplow/iglu-server` image from now on should be available straight after release.
 
 <h2 id="core-improvements">3. Improvements to the core libraries</h2>
 
 Both core libraries, Schema DDL and Iglu Core, have received updates as well.
 
-And finally - we have dropped Scala 2.10 support from all core Iglu libraries. Scala 2.11 is now the minimum Scala version to compile against.
+Among many dependency bumps (such as [circe][circe] to 0.10.1 and Scala to 2.12.8) Schema DDL got new functionality that supports JSON Pointers in igluctl along with more type-safe and lossless API for AST generation.
+
+Also as our company-wide effort, we've finished the internal migrations from [scalaz][scalaz] to [cats][cats] and from [json4s][json4s] to [circe][circe].
 
 <h2 id="upgrading">4. Upgrading</h2>
 
 <h3 id="upgrade-iglu-server">4.1 Iglu Server</h3>
 
-The new Iglu Server release can be downloaded from [Bintray][iglu-server-download] (download will start).
+The new Iglu Server release can be downloaded from [Bintray][iglu-server-download].
 
 Unzip the compressed file and you can launch the server with the following command:
 
@@ -67,46 +86,19 @@ Unzip the compressed file and you can launch the server with the following comma
 $ java -jar $JAR_PATH --config $CONFIG_PATH
 {% endhighlight %}
 
-Alter the `schemas` table in order to make it compatible with the 0.4.0 schema:
-
-{% highlight bash %}
-$ psql \
-    -U $IGLU_DBUSER \
-    -h $IGLU_HOST \
-    -W $IGLU_DBNAME \
-    -c "ALTER TABLE schemas ADD COLUMN "draftnumber" VARCHAR(50) NOT NULL DEFAULT '0';"
-{% endhighlight %}
-
-The only major change comes from the `POST`-using validation endpoints update mentioned above:
-
-* `HOST/api/schemas/validate/{schemaFormat}` - the endpoint to validate if a schema is self-describing
-* `/api/schemas/validate/{vendor}/{name}/{schemaFormat}/{version}` - the endpoint to validate a JSON instance against its schema
-
-Until recently, these endpoints only accepted `GET` requests where schema or instance are appended to the URL.
-
-As of Iglu Server `0.4.0`, these endpoints also accept `POST` requests where schema or instance are sent as form data. An example request for checking if a schema is self-describing would look something like this:
-
-{% highlight bash %}
-$ curl -X POST \
-HOST/api/schemas/validate/jsonschema \
--F 'schema={...}'
-{% endhighlight %}
-
-An example request to validate a JSON instance against its JSON Schema would look like:
-
-{% highlight bash %}
-$ curl -X POST \
-HOST/api/schemas/validate/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0 \
--F 'instance={...}'
-{% endhighlight %}
-
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
-The latest igluctl, version 0.6.0, can be downloaded [from Bintray here][igluctl-download].
+The latest igluctl, version 0.7.0, can be downloaded [from Bintray here][igluctl-download].
 
-This new version doesn't deprecate any behaviors from the previous version, 0.5.0.
+This new version doesn't deprecate any behaviors from the previous version, 0.6.0.
 
-<h2 id="help">5. Getting help</h2>
+<h2 id="roadmap">5. Roadmap</h2>
+
+Our biggest priority for Iglu R12 is functionality backing up our upcoming Redshift table automigration process as per our recently [published RFC][migrations-rfc].
+
+This will include a lot new functionality in core library as well as in Scala Iglu Client.
+
+<h2 id="help">6. Getting help</h2>
 
 For more details on this release, as always do check out the [release notes][release-notes] and the relevant documentation pages:
 
@@ -116,7 +108,17 @@ For more details on this release, as always do check out the [release notes][rel
 If you have any questions or run into any problems, please raise a question in [our Discourse forum][discourse].
 
 [igluctl-wiki]: https://github.com/snowplow/iglu/wiki/Igluctl
-[igluctl-download]: http://dl.bintray.com/snowplow/snowplow-generic/igluctl_0.5.0.zip
+[igluctl-download]: http://dl.bintray.com/snowplow/snowplow-generic/igluctl_0.6.0.zip
+
+[json-metaschema]: https://tools.ietf.org/html/draft-wright-json-schema-00#section-6
+[json-pointers]: https://tools.ietf.org/html/rfc6901
+
+[iso-8601]: https://en.wikipedia.org/wiki/ISO_8601
+
+[circe]: https://circe.github.io/circe/
+[cats]: https://typelevel.org/cats/
+[scalaz]: https://scalaz.github.io/7/
+[json4s]: http://json4s.org/
 
 [draft-schemas-wiki]: https://github.com/snowplow/iglu/wiki/The-draft-schema-service
 
@@ -124,6 +126,8 @@ If you have any questions or run into any problems, please raise a question in [
 [discourse]: http://discourse.snowplowanalytics.com/
 [iglu-server-wiki]: https://github.com/snowplow/iglu/wiki/Iglu-server
 [iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.6.0.zip
+
+[migrations-rfc]: https://discourse.snowplowanalytics.com/t/redshift-automatic-table-migrations-rfc/2555
 
 [capul-de-bour]: https://en.wikipedia.org/wiki/Moldavian_Bull%27s_Heads
 [tiflis-img]: /assets/img/blog/2018/12/iglu-r11-stamp.jpg
