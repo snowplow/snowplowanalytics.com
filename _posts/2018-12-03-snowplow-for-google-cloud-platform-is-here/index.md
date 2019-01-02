@@ -2,7 +2,7 @@
 layout: post
 title: "Snowplow for Google Cloud Platform is here"
 description: Use Snowplow with GCP
-image:
+image: /assets/img/blog/2018/12/snowplow-gcp.jpg
 title-short: Announcing Snowplow for GCP
 tags: [analytics, Google Cloud Platform, GCP, BigQuery, data, Zendesk data, mailchimp data, python analytics, web analytics, ruby analytics, optimizely data]
 author: Anthony
