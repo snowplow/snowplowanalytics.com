@@ -3,6 +3,7 @@ layout: post
 title-short: Snowplow BigQuery Loader released
 title: "Snowplow BigQuery Loader released"
 tags: [bigquery, storage, GCP, real-time]
+image: /assets/img/blog/2018/12/snowplow-gcp.jpg
 author: Anton
 category: Releases
 permalink: /blog/2018/12/03/snowplow-bigquery-loader-0.1.0-released/
