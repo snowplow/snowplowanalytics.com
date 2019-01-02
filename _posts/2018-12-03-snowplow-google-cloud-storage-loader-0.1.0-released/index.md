@@ -2,6 +2,7 @@
 layout: post
 title-short: Snowplow Google Cloud Storage Loader 0.1.0 released
 title: "Snowplow Google Cloud Storage Loader 0.1.0 released"
+image: /assets/img/blog/2018/12/snowplow-gcp.jpg
 tags: [snowplow, real-time, GCP]
 author: Ben
 category: releases
