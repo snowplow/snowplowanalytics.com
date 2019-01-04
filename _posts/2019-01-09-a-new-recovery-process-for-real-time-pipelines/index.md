@@ -231,6 +231,44 @@ Note that the configuration discussed above will need to be base64-encoded.
 
 <h2 id="gcp">4. Snowplow Event Recovery on GCP</h2>
 
+For GCP users, leveraging the data outputted by [the Snowplow Google Cloud Storage Loader][sgcsl],
+recovery will take the shape of a Beam job runnable on Dataflow. It will read bad rows from a GCS
+location specified through a pattern, run the recovery on this data, and store the the recovered
+payloads in a PubSub topic (ideally your PubSub topic containing the raw payloads so that fixed
+payloads can be directly picked up by the enrichment process).
+
+You can run the job using the zip archive, which can be downloaded from Bintray
+[here][bintray-archive]:
+
+{% highlight bash %}
+./bin/snowplow-event-recovery-beam \
+  --runner=DataFlowRunner \
+  --project=project-id \
+  --zone=europe-west2-a \
+  --gcpTempLocation=gs://location/ \
+  --inputDirectory=gs://bad-rows-location/\* \
+  --outputTopic=projects/project/topics/topic \
+  --config=base64-encoded-configuration
+{% endhighlight %}
+
+Or using a Docker container:
+
+{% highlight %}
+docker run \
+  -v $PWD/config:/snowplow/config \ # if running outside GCP
+  -e GOOGLE_APPLICATION_CREDENTIALS=/snowplow/config/credentials.json \ # if running outside GCP
+  snowplow-docker-registry.bintray.io/snowplow/snowplow-event-recovery:0.1.0 \
+  --runner=DataFlowRunner \
+  --project=project-id \
+  --zone=europe-west2-a \
+  --gcpTempLocation=gs://location/ \
+  --inputDirectory=gs://bad-rows-location/\* \
+  --outputTopic=projects/project/topics/topic \
+  --config=base64-encoded-configuration
+{% endhighlight %}
+
+Note that, here too, the configuration discussed above will need to be base64-encoded.
+
 <h2 id="roadmap">5. Roadmap</h2>
 
 Continuing our data quality journey, we will next work towards 
