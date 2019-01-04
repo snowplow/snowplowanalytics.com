@@ -271,7 +271,15 @@ Note that, here too, the configuration discussed above will need to be base64-en
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-Continuing our data quality journey, we will next work towards 
+Continuing our data quality journey, we will next work towards a new bad row format, you can read
+more about this initiative in [our RFC][rfc].
+
+On the Snowplow front, next releases will include:
+
+- [R112 Baalbek][r112] which will aim to improve the batch pipeline
+- [R113][r113] which will focus on the real-time pipeline and incorporate community pull requests
+
+After these two releases, the pipeline team will focus its effort on the new bad row format.
 
 <h2 id="help">6. Getting help</h2>
 
@@ -288,3 +296,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [custom-recovery-scenario]: https://github.com/snowplow-incubator/snowplow-event-recovery#custom-recovery-scenario
 [recovery-testing]: https://github.com/snowplow-incubator/snowplow-event-recovery#testing
 [sgcsl]: https://snowplowanalytics.com/blog/2018/11/13/snowplow-google-cloud-storage-loader-0.1.0-released/
+[rfc]: https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558
+
+[r112]: https://github.com/snowplow/snowplow/milestone/162
+[r113]: https://github.com/snowplow/snowplow/milestone/165
