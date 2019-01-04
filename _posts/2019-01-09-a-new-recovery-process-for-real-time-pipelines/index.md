@@ -86,21 +86,42 @@ to rerun it)
 
 <h3 id="out-of-the-box">2.1 Out of the box recovery scenarios</h3>
 
+For the most common recovery scenarios, it makes sense to support them out of the box and not
+require any coding. From the recoveries we've run in the past, we've compiled a list of recovery
+scenarios that are supported out of the box by Snowplow Event Recovery.
+
+In the table below, you can find what this list is made of, it contains:
+
+- the name of the recovery scenario
+- what the mutation function will do
+- an example use case
+- the parameters to this recovery scenario
+
+| Name | Mutation | Example use case | Parameters |
+|:----:|:--------:|:----------------:|:----------:|
+| `PassThrough` | Does not mutate the payload in any way | A missing schema that was added after the fact | `error` |
+| `ReplaceInQueryString` | Replaces part of the query string according to a regex | Misspecified a schema when using the Iglu webhook | `error`, `toReplace`, `replacement` |
+| `RemoveFromQueryString` | Removes part of the query string according to a regex | Property was wrongfully tracked and is not part of the schema | `error`, `toRemove` |
+| `ReplaceInBase64FieldInQueryString` | Replaces part of a base64 field in the query string according to a regex | Property was sent as a string but should be an numeric | `error`, `base64Field` (`cx` or `ue_px`), `toReplace`, `replacement` |
+| `ReplaceInBody` | Replaces part of the body according to a regex | Misspecified a schema when using the Iglu webhook | `error`, `toReplace`, `replacement` |
+| `RemoveFromBody` | Removes part of the body according to a regex | Property was wrongfully tracked and is not part of the schema | `error`, `toRemove` |
+| `ReplaceInBase64FieldInBody` | Replaces part of a base64 field in the body according to a regex | Property was sent as a string but should be an numeric | `error`, `base64Field` (`cx` or `ue_px`), `toReplace`, `replacement` |
+
+Note that, for every recovery scenario leveraging a regex, it's possible to use capture groups. For
+example, to remove brackets but keep their content we would have a `toReplace` argument containing
+`\\{(.*)\\}` and a `replacement` argument containing `$1` (capture groups are one-based numbered).
+
 <h3 id="custom">2.2 Custom recovery scenarios</h3>
 
 <h3 id="config">2.3 Configuration</h3>
-
-We can then combine
 
 <h2 id="aws">3. Snowplow Event Recovery on AWS</h2>
 
 <h2 id="gcp">4. Snowplow Event Recovery on GCP</h2>
 
-Leveraging the Google Cloud Storage Loader
-
 <h2 id="roadmap">5. Roadmap</h2>
 
-rfc
+Continuing our data quality journey, we will next work towards 
 
 <h2 id="help">6. Getting help</h2>
 
@@ -114,3 +135,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [discourse]: https://discourse.snowplowanalytics.com/
 
 [hadoop-recovery]: https://github.com/snowplow/snowplow/wiki/Hadoop-Event-Recovery
+[custom-recovery-scenario]: https://github.com/snowplow-incubator/snowplow-event-recovery#custom-recovery-scenario
+[recovery-testing]: https://github.com/snowplow-incubator/snowplow-event-recovery#testing
+[sgcsl]: https://snowplowanalytics.com/blog/2018/11/13/snowplow-google-cloud-storage-loader-0.1.0-released/
