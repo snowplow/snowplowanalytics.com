@@ -122,6 +122,79 @@ request!
 
 <h3 id="config">2.3 Configuration</h3>
 
+Once you have identified the different recovery scenarios you will want to run, you can combine
+them in the configuration that we will feed to the recovery job. Here, we make use of each and every
+one of them as a showcase.
+
+{% highlight json %}
+{
+  "schema": "iglu:com.snowplowanalytics.snowplow/recoveries/jsonschema/1-0-0",
+  "data": [
+    # Schema com.acme/my_schema/jsonschema/1-0-0 was added after the fact
+    {
+      "name": "PassThrough",
+      "error": "Could not find schema with key iglu:com.acme/my_schema/jsonschema/1-0-0 in any repository"
+    },
+    # Typo in the schema name when using the Iglu webhook
+    {
+      "name": "ReplaceInQueryString",
+      "error": "Could not find schema with key iglu:com.snowplowanalytics.snowplow/screen_vie/jsonschema/1-0-0 in any repository",
+      "toReplace": "schema=iglu%3Acom.snowplowanalytics.snowplow%2Fscreen_vie%2Fjsonschema%2F1-0-0",
+      "replacement": "schema=iglu%3Acom.snowplowanalytics.snowplow%2Fscreen_view%2Fjsonschema%2F1-0-0"
+    },
+    # Removes illegal curlies in query strings (e.g. templates that haven't been filled)
+    {
+      "name": "RemoveFromQueryString",
+      "error": "Exception extracting name-value pairs from querystring",
+      "toRemove": "\\{.*\\}"
+    },
+    # Replaces a string by an integer in ue_px, it can be reused for ReplaceInBase64FieldInBody
+    {
+      "name": "ReplaceInBase64FieldInQueryString",
+      "error": "instance type (string) does not match any allowed primitive type (allowed: [\"integer\"])\n    level: \"error\"\n    schema: {\"loadingURI\":\"#\",\"pointer\":\"/properties/sessionIndex\"",
+      "base64Field": "ue_px",
+      "toReplace": "\"sessionIndex\":\"(\\d+)\"",
+      # $1 refers to the first capture group
+      "replacement": "\"sessionIndex\":$1"
+    },
+    # Replaces the device created timestamp by a string
+    {
+      "name": "ReplaceInBody",
+      "error": "instance type (integer) does not match any allowed primitive type (allowed: [\"string\"])\n    level: \"error\"\n    schema: {\"loadingURI\":\"#\",\"pointer\":\"/items/properties/dtm\"",
+      "toReplace": "\"dtm\":(\\d+)",
+      "replacement": "\"dtm\":\"$1\""
+    },
+    # Removes a field which shouldn't be there
+    {
+      "name": "RemoveFromBody",
+      "error": "object instance has properties which are not allowed by the schema: [\"test\"]",
+      "toRemove": "\"test\":\".*\",?"
+    },
+    # Same as ReplaceInBase64FieldInQueryString
+    {
+      "name": "ReplaceInBase64FieldInBody",
+      "error": "instance type (string) does not match any allowed primitive type (allowed: [\"integer\"])\n    level: \"error\"\n    schema: {\"loadingURI\":\"#\",\"pointer\":\"/properties/sessionIndex\"",
+      "base64Field": "ue_px",
+      "toReplace": "\"sessionIndex\":\"(\\d+)\"",
+      # $1 refers to the first capture group
+      "replacement": "\"sessionIndex\":$1"
+    },
+    # Our custom recovery scenario, replaces a wrong Iglu webhook path
+    {
+      "name": "ReplaceInPath",
+      "error": "Payload with vendor com.iglu and version v1 not supported",
+      "toReplace": "com.iglu/v1",
+      "replacement": "com.snowplowanalytics.iglu/v1"
+    }
+  ]
+}
+{% endhighlight %}
+
+<h3 id="config">2.4 Testing</h3>
+
+It's possible to test an entire recovery without running it or a custom recovery scenario by
+following [the dedicated guide in our repository][recovery-testing].
+
 <h2 id="aws">3. Snowplow Event Recovery on AWS</h2>
 
 <h2 id="gcp">4. Snowplow Event Recovery on GCP</h2>
