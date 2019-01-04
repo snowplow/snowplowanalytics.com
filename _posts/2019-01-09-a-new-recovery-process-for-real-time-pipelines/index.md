@@ -52,6 +52,38 @@ Snowplow Event Recovery aims to tackle most of these issues and make the data re
 
 <h2 id="csl">2. Recovery scenarios</h2>
 
+Keeping these goals in mind, we started by thinking about what a recovery is, in essence. For us,
+it is a collection of what we've come to call a recovery scenario.
+
+So, what are recovery scenarios? They are modular and composable processing units that will deal
+with a specific case you want to recover from.
+
+As such, recovery scenarios are, at their essence, made up of two things:
+
+- an error filter, which will serve as a router between bad rows and their appropriate recovery
+scenario(s)
+- a mutation function, which will actually "fix" the payload
+
+For example, if we wanted to recover a set of bad rows consisting of:
+
+- Bad rows that were created due to a missing schema
+- Bad rows that were created due to the payload not conforming to its schema
+- Bad rows that were created due to an enrichment failing
+
+We would use a different recovery scenario for each of them, so three in total:
+
+- a first recovery scenario consisting of:
+  - an error filter checking for missing schema errors
+  - a mutate function which does nothing (assuming the schema has been added since the bad rows
+occurred)
+- a second recovery scenario consisting of:
+  - an error filter checking for payloads not conforming to their schema errors
+  - a mutate function which makes the payloads fit their schema
+- a third recovery scenario consisting of:
+  - an error filter checking for a particular enrichment failing errors
+  - a mutate function which does nothing (assuming the enrichment was misconfigured and we just want
+to rerun it)
+
 <h3 id="out-of-the-box">2.1 Out of the box recovery scenarios</h3>
 
 <h3 id="custom">2.2 Custom recovery scenarios</h3>
