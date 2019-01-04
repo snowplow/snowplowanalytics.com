@@ -197,6 +197,38 @@ following [the dedicated guide in our repository][recovery-testing].
 
 <h2 id="aws">3. Snowplow Event Recovery on AWS</h2>
 
+For AWS users, the recovery will take the form of a Spark job which you can run through EMR, for
+example. It will bad rows from an S3 location, run the recovery on this data, and store the
+recovered payloads in another S3 location.
+
+You can run the job using the JAR directly (which is hosted at
+`s3://snowplow-hosted-assets/3-enrich/snowplow-event-recovery/`):
+
+{% highlight bash %}
+spark-submit \
+  --class com.snowplowanalytcs.snowplow.event.recovery.Main \
+  --master master-url \
+  --deploy-mode deploy-mode \
+  snowplow-event-recovery-spark-0.1.0.jar
+  --input s3://bad-rows-location/
+  --output s3://recovered-collector-payloads-location/
+  --config base64-encoded-configuration
+{% endhighlight %}
+
+Or through an EMR step:
+
+{% highlight bash %}
+aws emr add-steps --cluster-id j-XXXXXXXX --steps \
+  Name=snowplow-event-recovery,\
+  Type=CUSTOM_JAR,\
+  Jar=s3://snowplow-hosted-assets/3-enrich/snowplow-event-recovery/snowplow-event-recovery-spark-0.1.0.jar,\
+  MainClass=com.snowplowanalytics.snowplow.event.recovery.Main,\
+  Args=[--input,s3://bad-rows-location/,--output,s3://recovered-collector-payloads-location/,--config,base64-encoded-configuration],\
+  ActionOnFailure=CONTINUE
+{% endhighlight %}
+
+Note that the configuration discussed above will need to be base64-encoded.
+
 <h2 id="gcp">4. Snowplow Event Recovery on GCP</h2>
 
 <h2 id="roadmap">5. Roadmap</h2>
