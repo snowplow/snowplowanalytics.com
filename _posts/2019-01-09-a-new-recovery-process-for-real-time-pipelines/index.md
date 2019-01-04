@@ -113,6 +113,13 @@ example, to remove brackets but keep their content we would have a `toReplace` a
 
 <h3 id="custom">2.2 Custom recovery scenarios</h3>
 
+In addition to these recovery scenarios, we still wanted to make the idea of recovery scenario
+extensible. As such, if the recovery you want to perform is not is not covered by the ones listed
+above, you can define your own by following [the guide in the repository][custom-recovery-scenario].
+
+If you think your recovery scenario will be useful to others, please consider opening a pull
+request!
+
 <h3 id="config">2.3 Configuration</h3>
 
 <h2 id="aws">3. Snowplow Event Recovery on AWS</h2>
