@@ -114,7 +114,7 @@ example, to remove brackets but keep their content we would have a `toReplace` a
 <h3 id="custom">2.2 Custom recovery scenarios</h3>
 
 In addition to these recovery scenarios, we still wanted to make the idea of recovery scenario
-extensible. As such, if the recovery you want to perform is not is not covered by the ones listed
+extensible. As such, if the recovery you want to perform is not covered by the ones listed
 above, you can define your own by following [the guide in the repository][custom-recovery-scenario].
 
 If you think your recovery scenario will be useful to others, please consider opening a pull
@@ -198,7 +198,7 @@ following [the dedicated guide in our repository][recovery-testing].
 <h2 id="aws">3. Snowplow Event Recovery on AWS</h2>
 
 For AWS users, the recovery will take the form of a Spark job which you can run through EMR, for
-example. It will bad rows from an S3 location, run the recovery on this data, and store the
+example. It will read bad rows from an S3 location, run the recovery on this data, and store the
 recovered payloads in another S3 location.
 
 You can run the job using the JAR directly (which is hosted at
@@ -253,7 +253,7 @@ You can run the job using the zip archive, which can be downloaded from Bintray
 
 Or using a Docker container:
 
-{% highlight %}
+{% highlight bash %}
 docker run \
   -v $PWD/config:/snowplow/config \ # if running outside GCP
   -e GOOGLE_APPLICATION_CREDENTIALS=/snowplow/config/credentials.json \ # if running outside GCP
@@ -300,3 +300,5 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [r112]: https://github.com/snowplow/snowplow/milestone/162
 [r113]: https://github.com/snowplow/snowplow/milestone/165
+
+[bintray-archive]: 
