@@ -97,15 +97,61 @@ In the table below, you can find what this list is made of, it contains:
 - an example use case
 - the parameters to this recovery scenario
 
-| Name | Mutation | Example use case | Parameters |
-|:----:|:--------:|:----------------:|:----------:|
-| `PassThrough` | Does not mutate the payload in any way | A missing schema that was added after the fact | `error` |
-| `ReplaceInQueryString` | Replaces part of the query string according to a regex | Misspecified a schema when using the Iglu webhook | `error`, `toReplace`, `replacement` |
-| `RemoveFromQueryString` | Removes part of the query string according to a regex | Property was wrongfully tracked and is not part of the schema | `error`, `toRemove` |
-| `ReplaceInBase64FieldInQueryString` | Replaces part of a base64 field in the query string according to a regex | Property was sent as a string but should be an numeric | `error`, `base64Field` (`cx` or `ue_px`), `toReplace`, `replacement` |
-| `ReplaceInBody` | Replaces part of the body according to a regex | Misspecified a schema when using the Iglu webhook | `error`, `toReplace`, `replacement` |
-| `RemoveFromBody` | Removes part of the body according to a regex | Property was wrongfully tracked and is not part of the schema | `error`, `toRemove` |
-| `ReplaceInBase64FieldInBody` | Replaces part of a base64 field in the body according to a regex | Property was sent as a string but should be an numeric | `error`, `base64Field` (`cx` or `ue_px`), `toReplace`, `replacement` |
+<table class="table-responsive table-bordered table">
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Mutation</th>
+<th style="text-align:center">Example use case</th>
+<th style="text-align:center">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Pass through</td>
+<td style="text-align:center">Does not mutate the payload in any way</td>
+<td style="text-align:center">A missing schema that was added after the fact</td>
+<td style="text-align:center"><code>error</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Replace in query string</td>
+<td style="text-align:center">Replaces part of the query string according to a regex</td>
+<td style="text-align:center">Misspecified a schema when using the Iglu webhook</td>
+<td style="text-align:center"><code>error</code>, <code>toReplace</code>, <code>replacement</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Remove from query string</td>
+<td style="text-align:center">Removes part of the query string according to a regex</td>
+<td style="text-align:center">Property was wrongfully tracked and is not part of the schema</td>
+<td style="text-align:center"><code>error</code>, <code>toRemove</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Replace in base64 field in query string</td>
+<td style="text-align:center">Replaces part of a base64 field in the query string according to a regex</td>
+<td style="text-align:center">Property was sent as a string but should be an numeric</td>
+<td style="text-align:center"><code>error</code>, <code>base64Field</code> (<code>cx</code> or <code>ue_px</code>), <code>toReplace</code>, <code>replacement</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Replace in body</td>
+<td style="text-align:center">Replaces part of the body according to a regex</td>
+<td style="text-align:center">Misspecified a schema when using the Iglu webhook</td>
+<td style="text-align:center"><code>error</code>, <code>toReplace</code>, <code>replacement</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Remove from body</td>
+<td style="text-align:center">Removes part of the body according to a regex</td>
+<td style="text-align:center">Property was wrongfully tracked and is not part of the schema</td>
+<td style="text-align:center"><code>error</code>, <code>toRemove</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Replace in base64 field in body</td>
+<td style="text-align:center">Replaces part of a base64 field in the body according to a regex</td>
+<td style="text-align:center">Property was sent as a string but should be an numeric</td>
+<td style="text-align:center"><code>error</code>, <code>base64Field</code> (<code>cx</code> or <code>ue_px</code>), <code>toReplace</code>, <code>replacement</code></td>
+</tr>
+</tbody>
+</table>
+
 
 Note that, for every recovery scenario leveraging a regex, it's possible to use capture groups. For
 example, to remove brackets but keep their content we would have a `toReplace` argument containing
@@ -297,8 +343,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [recovery-testing]: https://github.com/snowplow-incubator/snowplow-event-recovery#testing
 [sgcsl]: https://snowplowanalytics.com/blog/2018/11/13/snowplow-google-cloud-storage-loader-0.1.0-released/
 [rfc]: https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558
+[bintray-archive]: https://bintray.com/snowplow/snowplow-generic/snowplow-event-recovery
 
 [r112]: https://github.com/snowplow/snowplow/milestone/162
 [r113]: https://github.com/snowplow/snowplow/milestone/165
-
-[bintray-archive]: 
