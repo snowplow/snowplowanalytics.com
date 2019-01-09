@@ -14,6 +14,7 @@ This post focuses on setting up Data Studio visualisations to monitor bad rows o
 
 On GCP, bad rows are streamed to Cloud Storage in real-time - open-source users should set up the [Cloud Storage Loader][cloud-storage-loader], Snowplow Insights customers will have this set up as standard.
 
+Note that creating a Data Studio dashboard will incur cost via the queries it runs against BigQuery - which charges per amount of data scanned after the first TB - [BigQuery Pricing information can be found here](https://cloud.google.com/bigquery/pricing). For most Snowplow users this won't be much of an issue as we don't expect a lot of data to go to bad rows, as long as the tracking setup has been set up and debugged properly. We will also cover strategies to limit table scans in section 2.1 below.
 
 ### 1. Setup - create an external bad rows table
 
