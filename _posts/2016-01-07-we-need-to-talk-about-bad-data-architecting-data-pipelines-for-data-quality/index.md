@@ -24,7 +24,7 @@ We need to talk about bad data. We can't manage an issue unless we identify and 
 3. [Architecting auditable pipelines](#auditing-pipelines)
 4. [Reprocessing data from scratch](#reprocess)
 5. [Tracking data lineage](#lineage)
-6. [Self-describing data](#self-describing-data) 
+6. [Self-describing data](#self-describing-data)
 7. [Intelligent use of queues and auto-scaling](#queues)
 8. [How much confidence do you have in your data pipeline, and the quality of data generated?](#black-box)
 
@@ -51,7 +51,7 @@ If we are going to manage bad data, the first thing we need to do is identify as
 
 In order to identify help us with this exercise, I've included a schematic of the Snowplow data pipeline below. Whilst this is a Snowplow-specific diagram, the general data pipeline stages are broadly in common with many commercial data pipeline products and home-brewed event data pipelines. We can use this diagram as a jumping off point to identify potential sources of bad data in any data pipeline.
 
-![event-data-pipeline-architecture][architecture]
+<div class="bodymovin" data-src="insights-pipeline"></div>
 
 There are two root causes of data quality issues:
 
