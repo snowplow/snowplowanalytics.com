@@ -25,15 +25,7 @@ Read on below the fold for:
 
 It’s possible for two or more Snowplow events to have the same event ID, for example because a duplicate has been introduced at one of the stages in the data processing upstream of the data landing in Snowflake DB. Event duplicates can prove a challenge in any event pipeline - we have previously discussed this issue in detail in [this blog post][duplicate-blog] and on our [Discourse forum][duplicate-discourse].
 
-To mitigate this issue, version 0.4.0 introduces both in-batch deduplication and [DynamoDB][dynamodb]-powered cross-batch deduplication:
-
-* In-batch deduplication groups events with the same `event_id` and `event_fingerprint` in a single batch.
-
-* Cross-batch deduplication works by extracting the ID and fingerprint of an event, as well as `etl_tstamp` which identifies a single batch, then storing these properties in a DynamoDB table. Duplicate events with the same ID and fingerprint that were seen in previous batches are silently dropped from the Snowflake Transformer output.
-
-More details on setting up deduplication in the Snowflake Transformer can be found in the [project's wiki][duplicate-wiki].
-
-Alongside this Snowflake Loader release, we have also released the first version of [Snowplow Events Manifest][events-manifest]. This standalone Scala library contains logic used for cross-batch natural deduplication of Snowplow events, and will be responsible for deduplication in our AWS-based pipelines.
+To mitigate this issue, version 0.4.0 introduces in-batch deduplication, grouping events with the same `event_id` and `event_fingerprint` in a single batch to drop duplicates from the Snowflake Transformer's output. More details on setting up deduplication in the Snowflake Transformer can be found in the [project's wiki][duplicate-wiki].
 
 <h2 id="s3-optimizations">2. S3 optimizations</h2>
 
