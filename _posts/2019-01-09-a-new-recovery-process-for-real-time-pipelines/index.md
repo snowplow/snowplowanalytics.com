@@ -5,14 +5,12 @@ title: "Snowplow Event Recovery 0.1.0 released"
 tags: [snowplow, real-time, GCP, AWS, recovery, bad-rows]
 author: Ben
 category: releases
-permalink: /blog/2019/01/09/snowplow-event-recovery-0.1.0-released/
+permalink: /blog/2019/01/16/snowplow-event-recovery-0.1.0-released/
 ---
 
 We are excited to announce the release of [Snowplow Event Recovery][ser].
 
-The different Snowplow pipelines being all non-lossy, if something goes wrong during, for example,
-schema validation or enrichment the payloads (alongside the errors that happened) are stored into a
-bad rows storage solution, be it a data stream or object storage, instead of being discarded.
+The different Snowplow pipelines being all non-lossy, if something goes wrong during schema validation or enrichment, the payloads (alongside the errors that happened) are stored in a bad rows storage solution, be it a data stream or object storage, instead of being discarded.
 
 The goal of recovery is to fix the payloads contained in these bad rows so that they are ready to be
 processed successfully by a Snowplow enrichment platform.
@@ -26,7 +24,7 @@ Please read on after the fold for:
 2. [Recovery scenarios](#csl)
 3. [Snowplow Event Recovery on AWS](#aws)
 4. [Snowplow Event Recovery on GCP](#gcp)
-5. [Roadmpa](#roadmap)
+5. [Roadmap](#roadmap)
 6. [Getting help](#help)
 
 <!--more-->
@@ -36,18 +34,18 @@ Please read on after the fold for:
 Our current approach to data recovery, [Hadoop Event Recovery][hadoop-recovery], suffers from a few
 issues:
 
-- it's limited to data produced by the batch pipeline
-- you need to code your own recovery almost from scratch in JavaScript
-- you cannot test this JavaScript except by running an actual recovery
-- it doesn't promote reuse: if you run the same recovery twice, you'll need to copy/paste your
+- It's limited to data produced by the batch pipeline
+- You need to code your own recovery almost from scratch in JavaScript
+- You cannot test this JavaScript except by running an actual recovery
+- It doesn't promote reuse: if you run the same recovery twice, you'll need to copy/paste your
 recovery code from one recovery to another
 
 Snowplow Event Recovery aims to tackle most of these issues and make the data recovery process:
 
-- not require any coding for the most common cases
-- extensible when outside the most common cases
-- testable
-- unified across the real-time pipelines (AWS and GCP) and, in the future across all pipelines
+- Not require any coding for the most common cases
+- Extensible when outside the most common cases
+- Testable
+- Unified across the real-time pipelines (AWS and GCP) and, in the future across all pipelines
 (real-time and batch)
 
 <h2 id="csl">2. Recovery scenarios</h2>
@@ -60,9 +58,9 @@ with a specific case you want to recover from.
 
 As such, recovery scenarios are, at their essence, made up of two things:
 
-- an error filter, which will serve as a router between bad rows and their appropriate recovery
+- An error filter, which will serve as a router between bad rows and their appropriate recovery
 scenario(s)
-- a mutation function, which will actually "fix" the payload
+- A mutation function, which will actually "fix" the payload
 
 For example, if we wanted to recover a set of bad rows consisting of:
 
@@ -72,14 +70,14 @@ For example, if we wanted to recover a set of bad rows consisting of:
 
 We would use a different recovery scenario for each of them, so three in total:
 
-- a first recovery scenario consisting of:
+- A first recovery scenario consisting of:
   - an error filter checking for missing schema errors
   - a mutate function which does nothing (assuming the schema has been added since the bad rows
 occurred)
-- a second recovery scenario consisting of:
+- A second recovery scenario consisting of:
   - an error filter checking for payloads not conforming to their schema errors
   - a mutate function which makes the payloads fit their schema
-- a third recovery scenario consisting of:
+- A third recovery scenario consisting of:
   - an error filter checking for a particular enrichment failing errors
   - a mutate function which does nothing (assuming the enrichment was misconfigured and we just want
 to rerun it)
@@ -92,11 +90,12 @@ scenarios that are supported out of the box by Snowplow Event Recovery.
 
 In the table below, you can find what this list is made of, it contains:
 
-- the name of the recovery scenario
-- what the mutation function will do
-- an example use case
-- the parameters to this recovery scenario
-
+- The name of the recovery scenario
+- What the mutation function will do
+- An example use case
+- The parameters to this recovery scenario
+<br>
+<br>
 <table class="table-responsive table-bordered table">
 <thead>
 <tr>
@@ -159,7 +158,7 @@ example, to remove brackets but keep their content we would have a `toReplace` a
 
 <h3 id="custom">2.2 Custom recovery scenarios</h3>
 
-In addition to these recovery scenarios, we still wanted to make the idea of recovery scenario
+In addition to the outlined scenarios, we still wanted to make the idea of  recovery scenarios
 extensible. As such, if the recovery you want to perform is not covered by the ones listed
 above, you can define your own by following [the guide in the repository][custom-recovery-scenario].
 
@@ -279,7 +278,7 @@ Note that the configuration discussed above will need to be base64-encoded.
 
 For GCP users, leveraging the data outputted by [the Snowplow Google Cloud Storage Loader][sgcsl],
 recovery will take the shape of a Beam job runnable on Dataflow. It will read bad rows from a GCS
-location specified through a pattern, run the recovery on this data, and store the the recovered
+location specified through a pattern, run the recovery on this data, and store the recovered
 payloads in a PubSub topic (ideally your PubSub topic containing the raw payloads so that fixed
 payloads can be directly picked up by the enrichment process).
 
@@ -317,10 +316,10 @@ Note that, here too, the configuration discussed above will need to be base64-en
 
 <h2 id="roadmap">5. Roadmap</h2>
 
-Continuing our data quality journey, we will next work towards a new bad row format, you can read
+Continuing our data quality journey, we will next work towards a new bad row format. You can read
 more about this initiative in [our RFC][rfc].
 
-On the Snowplow front, next releases will include:
+On the Snowplow front, the next releases will include:
 
 - [R112 Baalbek][r112] which will aim to improve the batch pipeline
 - [R113][r113] which will focus on the real-time pipeline and incorporate community pull requests
