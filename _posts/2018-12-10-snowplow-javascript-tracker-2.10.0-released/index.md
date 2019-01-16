@@ -5,17 +5,17 @@ title-short: Snowplow JavaScript Tracker 2.10.0
 tags: [snowplow, javascript, global, contexts, guard, error]
 author: Mike
 category: Releases
-permalink: /blog/2018/12/10/snowplow-javascript-tracker-2.10.0-released-with-global-contexts/
+permalink: /blog/2019/01/11/snowplow-javascript-tracker-2.10.0-released-with-global-contexts/
 discourse: true
 ---
 
-We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.10.0][2.10.0-tag] introduces global contexts, a set of powerful tools for working with contexts. Contexts are one of the most important features in Snowplow: they enable companies running Snowplow to track much rich, highly structured data that is easy to work with. In this post we'll quickly review what contexts are, before explaining why the "global contexts" functionality released is so powerful for companies that want to collect rich event-level data.
+We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.10.0][2.10.0-tag] introduces global contexts, a set of powerful tools for working with contexts. Contexts are one of the most important features in Snowplow: they enable companies running Snowplow to track rich, highly structured data that is easy to work with. In this post we'll quickly review what contexts are, before explaining why the "global contexts" functionality released is so powerful for companies that want to collect rich event-level data.
 
 Also included in this release are:
 
-* more context features for link and form tracking,
-* a new option to prevent exceptions from surfacing, and
-* many other under-the-hood improvements, updates, and bugfixes.
+* More context features for link and form tracking,
+* A new option to prevent exceptions from surfacing, and
+* Many other under-the-hood improvements, updates, and bugfixes.
 
 Read on below the fold for:
 
@@ -60,7 +60,7 @@ Each of these contexts or entities might be described by multiple data points. F
 * Salary expectations
 * Location
 
-So when you record an event in Snowplow, you typically want to record data about all the entities or contexts involved in the event, and for each context, capture as much rich data as possible. Contexts make this possible: in the above example "job seeker submits application for job" you might track fire the following:
+So when you record an event in Snowplow, you typically want to record data about all the entities or contexts involved in the event, and for each context, capture as much rich data as possible. Contexts make this possible: in the above example "job seeker submits application for job" you might track the following:
 
 {% highlight javascript %}
 window.snowplow("trackSelfDescribingEvent", {
@@ -98,14 +98,14 @@ window.snowplow("trackSelfDescribingEvent", {
   })
 {% endhighlight %}
 
-It is possible for the company recording the event to send as many self-describing contexts with each event describing each of the contexts or entities involved in the event. (In the above example three contexts are sent with the event.) With each context it is possible to send as many data points as you wish. Typically, contexts will be common across multiple different event types. So the self-describing JSON describing the job seeker would be sent with every event performed by that job seeker, including:
+It is possible for the company recording the event to send as many self-describing contexts with each event that describe each of the contexts or entities involved in that event. (In the above example three contexts are sent with the event.) With each context it is possible to send as many data points as you wish. Typically, contexts will be common across multiple different event types. So the self-describing JSON describing the job seeker would be sent with every event performed by that job seeker, including:
 
-* searching for jobs
-* viewing particular jobs
-* favoriting particular jobs
-* putting together an application
-* submitting that application to a particular job
-* any downstream events associated with interacting with the recruiter during the application process
+* Searching for jobs
+* Viewing particular jobs
+* Favoriting particular jobs
+* Putting together an application
+* Submitting that application to a particular job
+* Any downstream events associated with interacting with the recruiter during the application process
 
 #### 1.1.2 Predefined contexts
 
