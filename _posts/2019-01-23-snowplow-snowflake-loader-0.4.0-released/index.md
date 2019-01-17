@@ -56,7 +56,6 @@ This release introduces plenty of other updates:
 * Sensitive columns in `atomic.events` have been widened to support the [PII Pseudonymization Enrichment][pii], and the `geo_region` column has been bumped to 3 characters due to changes in MaxMind regional codes. Thanks to community member [miike][miike] for contributing the latter feature!
 * A DynamoDB client will now attempt recovery if its temporary session credentials have expired, preventing critical run failures when a job takes more than 6 hours.
 * The Snowflake Loader will now correctly fail if no data is located in the specified staging folder, preventing "blank loads" for complex recovery/historical load scenarios.
-* The Snowflake JDBC driver has been updated to 3.6.22.
 
 <h2 id="upgrading">5. Upgrading</h2>
 
