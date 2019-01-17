@@ -250,4 +250,11 @@
   full_name: Andrzej Soltysik
   url: /blog/authors/andrzej/
   spiel:   |
-      <a href="/blog/authors/miriam/">Andrzej</a> is an engineering intern with Snowplow Analytics, helping us with many different projects including the recent Indicative Relay.
+      <a href="/blog/authors/andrzej/">Andrzej</a> is an engineering intern with Snowplow Analytics, helping us with many different projects including the recent Indicative Relay.
+
+- name: Rostyslav
+  full_name: Rostyslav Zatserkovnyi
+  url: /blog/authors/rostyslav/
+  avatar: /assets/img/team/rostyslav.jpg
+  spiel:   |
+      <a href="/blog/authors/rostyslav/">Rostyslav</a> is a data engineer at Snowplow Analytics. As part of the Graduate Engineering program, he has spent time on several teams including Snowplow Insights, Tech Ops, Solutions Engineering, and Iglu & Loaders.

@@ -5,10 +5,10 @@ title-short: Snowflake Loader 0.4.0
 tags: [snowflake, storage, relational databases]
 author: Rostyslav
 category: Releases
-permalink: /blog/2019/01/23/snowplow-snowflake-loader-0.4.0-released/
+permalink: /blog/2019/01/17/snowplow-snowflake-loader-0.4.0-released/
 ---
 
-We are pleased to announce version 0.4.0 of the [Snowplow Snowflake Loader][snowflake-loader-repo]! This release introduces optional event deduplication, brings significant performance improvements to the Snowflake Transformer, and includes several other updates and bugfixes.
+We are pleased to announce version 0.4.0 of the [Snowplow Snowflake Loader][snowflake-loader-repo]! This release introduces optional event deduplication, brings significant performance improvements to the Snowflake Transformer, and includes several other updates and bug fixes.
 
 Read on below the fold for:
 
