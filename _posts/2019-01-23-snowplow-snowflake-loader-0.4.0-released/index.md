@@ -5,7 +5,7 @@ title-short: Snowflake Loader 0.4.0
 tags: [snowflake, storage, relational databases]
 author: Rostyslav
 category: Releases
-permalink: /blog/2019/01/15/snowplow-snowflake-loader-0.4.0-released/
+permalink: /blog/2019/01/23/snowplow-snowflake-loader-0.4.0-released/
 ---
 
 We are pleased to announce version 0.4.0 of the [Snowplow Snowflake Loader][snowflake-loader-repo]! This release introduces optional event deduplication, brings significant performance improvements to the Snowflake Transformer, and includes several other updates and bugfixes.
@@ -25,7 +25,15 @@ Read on below the fold for:
 
 It’s possible for two or more Snowplow events to have the same event ID, for example because a duplicate has been introduced at one of the stages in the data processing upstream of the data landing in Snowflake DB. Event duplicates can prove a challenge in any event pipeline - we have previously discussed this issue in detail in [this blog post][duplicate-blog] and on our [Discourse forum][duplicate-discourse].
 
-To mitigate this issue, version 0.4.0 introduces in-batch deduplication, grouping events with the same `event_id` and `event_fingerprint` in a single batch to drop duplicates from the Snowflake Transformer's output. More details on setting up deduplication in the Snowflake Transformer can be found in the [project's wiki][duplicate-wiki].
+To mitigate this issue, version 0.4.0 introduces both in-batch deduplication and [DynamoDB][dynamodb]-powered cross-batch deduplication:
+
+* In-batch deduplication groups events with the same `event_id` and `event_fingerprint` in a single batch.
+
+* Cross-batch deduplication works by extracting the ID and fingerprint of an event, as well as `etl_tstamp` which identifies a single batch, then storing these properties in a DynamoDB table. Duplicate events with the same ID and fingerprint that were seen in previous batches are silently dropped from the Snowflake Transformer output. (Note that this feature is experimental as of version 0.4.0 and may not be 100% foolproof.)
+
+More details on setting up deduplication in the Snowflake Transformer can be found in the [project's wiki][duplicate-wiki].
+
+Alongside this Snowflake Loader release, we have also released the first version of [Snowplow Events Manifest][events-manifest]. This standalone Scala library contains logic used for cross-batch natural deduplication of Snowplow events, and will be responsible for deduplication in our AWS-based pipelines.
 
 <h2 id="s3-optimizations">2. S3 optimizations</h2>
 
