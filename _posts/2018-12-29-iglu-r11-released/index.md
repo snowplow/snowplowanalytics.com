@@ -5,12 +5,12 @@ title-short: Iglu R11 Capul de bour
 tags: [iglu, json, json schema, registry, schema registry]
 author: Anton
 category: Releases
-permalink: /blog/2019/01/03/iglu-r11-capul-de-bour-released/
+permalink: /blog/2019/01/23/iglu-r11-capul-de-bour-released/
 ---
 
 We are excited to announce the release of Iglu R11 Capul de bour, with more helpful linter messages and improved functionality in both Iglu Server and the core libraries.
 
-1. [Improved linter messages](#linting)
+1. [Improved linter messages](#schema-workflow-simplified)
 2. [Improvements to Iglu Server](#server-improvements)
 3. [Improvements to the core libraries](#core-improvements)
 4. [Upgrading](#upgrading)
@@ -25,7 +25,7 @@ Read on for more information about Release 11 Capul de bour, named after [the se
 
 <h2 id="schema-workflow-simplified">1. Improved linter messages</h2>
 
-Since its inception, it has been possible to use `igluctl` to check a static schema registry for many kinds of inconsistencies in JSON schemas that cannot be handled by [JSON meta schema][json-metaschema], such as `minimum` value greater than `maximum` or set of string-specific properties in a field with non-string type.
+Since its inception, it has been possible to use `igluctl` to check a static schema registry for many kinds of inconsistencies in JSON schemas that cannot be handled by [JSON meta schema][json-metaschema], such as `minimum` value greater than `maximum` or a set of string-specific properties in a field with non-string type.
 
 However, when users were presented with error messages from the linter, they often found it hard to identify the source fo the error, because messages produced by `igluctl` did not contain any references to the field in the JSON schema, or the line number.
 Now `igluctl` groups problematic issues by their types and adds corresponding [JSON Pointers][json-pointers] to facilitate localization of problematic property.
@@ -44,7 +44,7 @@ threadId
  - /properties/notification/properties/userInfo/properties/aps/properties/alert
 ```
 
-As well as introducing JSON Pointers, we have also improved the descriptions provided of issues to hopefully make it easier to understand what they mean and how to fix them.
+As well as introducing JSON Pointers, we have also improved the issue descriptions provided to hopefully make it easier to understand what they mean and how to fix them.
 
 <h2 id="server-improvements">2. Improvements to Iglu Server</h2>
 
@@ -52,7 +52,7 @@ The most significant update to Iglu Server in this release is the introduction o
 
 Iglu Server exposes a new `validate` API:
 
-{% highlight "bash" %}
+{% highlight bash %}
 $ curl -X POST "http://iglu.acme.com/api/validate/jsonschema"
     \ -H  "accept: application/json"
     \ -H  "Content-Type: application/json" \
@@ -129,4 +129,4 @@ If you have any questions or run into any problems, please raise a question in [
 [migrations-rfc]: https://discourse.snowplowanalytics.com/t/redshift-automatic-table-migrations-rfc/2555
 
 [capul-de-bour]: https://en.wikipedia.org/wiki/Moldavian_Bull%27s_Heads
-[capul-de-boug-img]: /assets/img/blog/2018/12/iglu-r11-stamp.jpg
+[capul-de-bour-img]: /assets/img/blog/2018/12/iglu-r11-stamp.jpg
