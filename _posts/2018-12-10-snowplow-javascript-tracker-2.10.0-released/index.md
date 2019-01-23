@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.10.0
 tags: [snowplow, javascript, global, contexts, guard, error]
 author: Mike
 category: Releases
-permalink: /blog/2019/01/11/snowplow-javascript-tracker-2.10.0-released-with-global-contexts/
+permalink: /blog/2019/01/23/snowplow-javascript-tracker-2.10.0-released-with-global-contexts/
 discourse: true
 ---
 
