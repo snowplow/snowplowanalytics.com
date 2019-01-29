@@ -87,9 +87,13 @@ $ java -jar $JAR_PATH --config $CONFIG_PATH
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
-The latest igluctl, version 0.7.0, can be downloaded [from Bintray here][igluctl-download].
+The latest igluctl, version 
 
-This new version doesn't deprecate any behaviors from the previous version, 0.6.0.
+
+
+, can be downloaded [from Bintray here][igluctl-download].
+
+This new version doesn't deprecate any behaviors from the previous version, 0.5.0.
 
 <h2 id="roadmap">5. Roadmap</h2>
 
@@ -124,7 +128,7 @@ If you have any questions or run into any problems, please raise a question in [
 [release-notes]: https://github.com/snowplow/iglu/releases/tag/r11-capul-de-bour
 [discourse]: http://discourse.snowplowanalytics.com/
 [iglu-server-wiki]: https://github.com/snowplow/iglu/wiki/Iglu-server
-[iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.6.0.zip
+[iglu-server-download]: http://dl.bintray.com/snowplow/snowplow-generic/iglu_server_0.5.0.zip
 
 [migrations-rfc]: https://discourse.snowplowanalytics.com/t/redshift-automatic-table-migrations-rfc/2555
 
