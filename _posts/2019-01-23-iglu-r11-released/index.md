@@ -87,11 +87,7 @@ $ java -jar $JAR_PATH --config $CONFIG_PATH
 
 <h3 id="upgrade-igluctl">4.2 igluctl</h3>
 
-The latest igluctl, version 
-
-
-
-, can be downloaded [from Bintray here][igluctl-download].
+The latest igluctl, version 0.6.0, can be downloaded [from Bintray here][igluctl-download].
 
 This new version doesn't deprecate any behaviors from the previous version, 0.5.0.
 
