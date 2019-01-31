@@ -56,8 +56,7 @@ exclude:
   - README.md
   - Rakefile
   - changelog.md
-  - vagrant
-  - Vagrantfile
+  - Makefile
   - Gemfile
   - Gemfile.lock
   - package.json

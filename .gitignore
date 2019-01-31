@@ -1,10 +1,10 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-.vagrant/
 _site/
 
 /node_modules
 /assets/js/vendors/dist/
 **/.DS_Store
 
+.ruby-version
