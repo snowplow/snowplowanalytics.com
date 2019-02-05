@@ -143,7 +143,7 @@ In the storage target configuration for Redshift, you'll need to do following ch
 2. Remove `sslMode` and add `jdbc` JSON object instead
 3. In case you had `"sslMode": "DISABLE"` - add `"ssl": false` to `jdbc`; if you had `"sslMode": "REQUIRE"` - add `"ssl": true` to `jdbc`
 4. Assign random UUID to `id` property (add it if it didn't exist)
-5. Add `"sslTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
+5. Add `"sshTunnel": null` unless you already have configured SSL tunnel, introduced in [R28][r28-post]
 6. Add `"processingManifest": null` unless you're going to use the processing manifest (to be covered in a future release announcement)
 
 <h3>PostgreSQL</h3>
