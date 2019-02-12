@@ -28,7 +28,7 @@ Previously, the JSON Event Transformer - a module that takes a Snowplow enriched
 - Accessing always existing fields still required redundant error processing logic, e.g. `parsedJson.map("event_id").getOrElse(throw new RuntimeException("event_id is not present in the enriched event")`
 - To get a list of shredded types a separate function, `jsonifyWithInventory`, had to be used.
 
-In 0.4.0, the `EventTransformer` API has been replaced by `Event` - a single typesafe container that contains all 132 members of a [canonical Snowplow event][canonical-event-model]. All fields are automatically converted to appropriate non-String types where possible - for instance, the `event_id` column is represented as a [UUID instance][java-uuid], while timestamps are converted into optional [Instant][java-instant] values, eliminating the need for common string conversions. Contexts and unstructured events are also wrapped in [self-describing data container types][self-describing-type], allowing for advanced operations such as Iglu URI lookups.
+In 0.4.0, the `EventTransformer` API has been replaced by `Event` - a single typesafe container that contains all 132 members of a [canonical Snowplow event][canonical-event-model]. All fields are automatically converted to appropriate non-String types where possible - for instance, the `event_id` column is represented as a [UUID instance][java-uuid], while timestamps are converted into optional [Instant][java-instant] values, eliminating the need for common string conversions. Contexts and self-describing events are also wrapped in [self-describing data container types][self-describing-type], allowing for advanced operations such as Iglu URI lookups.
 
 The case class has the following primary functions:
 
@@ -53,7 +53,7 @@ val events = input
 val dataframe = spark.read.json(events)
 {% endhighlight %}
 
-Here, `event.toJson(true).noSpaces` first converts the `Event` instances to a member of Circe's `Json` AST class using the `toJson` function with its' lossy parameter set to true, meaning that contexts and unstructured event fields will be "flattened", then converts the `Json` into a string using the `noSpaces` method - pretty-printing the JSON to a compact string with no spaces. (Alternatively, `spaces2` and `spaces4` function, or even a custom Circe printer, can be used for a more human-readable output.)
+Here, `event.toJson(true).noSpaces` first converts the `Event` instances to a member of Circe's `Json` AST class using the `toJson` function with its' lossy parameter set to true, meaning that contexts and self describing event fields will be "flattened", then converts the `Json` into a string using the `noSpaces` method - pretty-printing the JSON to a compact string with no spaces. (Alternatively, `spaces2` and `spaces4` function, or even a custom Circe printer, can be used for a more human-readable output.)
 
 Working with individual members of an `Event` is now as simple as accessing a specific field of a case class. For example, the following code can be used to safely access the ID, fingerprint and ETL timestamp of an event, replacing the fingerprint with a random UUID if it doesn't exist and throwing an exception if the timestamp is not set:
 
