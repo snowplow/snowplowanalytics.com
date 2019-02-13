@@ -265,3 +265,10 @@
   avatar: /assets/img/team/rebecca.jpg
   spiel:   |
       <a href="/blog/authors/rebecca/">Rebecca</a> is our head of Customer Success at Snowplow Analytics and works one on one with our customers to ensure they get the maximum value from their Snowplow data.
+
+- name: Segah
+  full_name: Segah A Mir
+  url: /blog/authors/segah/
+  avatar:
+  spiel:   |
+      <a href="/blog/authors/segah/">Segah</a> is a Partner and Consultant at a Seattle-based <a href="https://www.caura.co">Caura & Co.</a> Prior to starting his own firm, he was providing architectural leadership and implementation strategy as a Looker employee and Sr. Lead Consultant.
