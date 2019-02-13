@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2019/02/13/snowplow-scala-analytics-sdk-0.4.0-released/
 ---
 
-We are excited to announce the 0.4.0 release of the [Snowplow Scala Analytics SDK][sdk-repo], a library that provides tools to process and analyze Snowplow enriched events in [Apache Spark][spark], [AWS Lambda][lambda], [Apache Flink][flink], [Scalding][scalding] and other JVM-compatible data processing frameworks. This release reworks the JSON Event Transformer to use a new type-safe API, and introduces several other internal changes.
+We are excited to announce the 0.4.0 release of the [Snowplow Scala Analytics SDK][sdk-repo], a library that provides tools to process and analyze Snowplow enriched events in [Apache Spark][spark], [AWS Lambda][lambda], [Apache Flink][flink], [Scalding][scalding], and other JVM-compatible data processing frameworks. This release reworks the JSON Event Transformer to use a new type-safe API, and introduces several other internal changes.
 
 Read on below the fold for:
 
@@ -22,18 +22,18 @@ Read on below the fold for:
 
 <h2 id="event-api">1. Event API</h2>
 
-Previously, the JSON Event Transformer - a module that takes a Snowplow enriched event and converts it into a JSON ready for further processing - used to return Strings, which represented enriched events turned into JSON objects. While this was a very unopinionated and minimalistic approach, it involved a lot of extra post-processing, namely:
+Previously, the JSON Event Transformer - a module that takes a Snowplow enriched event and converts it into a JSON ready for further processing - used to return Strings, which represented enriched events turned into JSON objects. While this was a non-opinionated and minimalistic approach, it involved a lot of extra post-processing, namely:
 
 - Accessing individual JSON fields required casting the result to an instance of the json4s AST class via unsafe functions such as `parse(result)`.
-- Accessing always existing fields still required redundant error processing logic, e.g. `parsedJson.map("event_id").getOrElse(throw new RuntimeException("event_id is not present in the enriched event")`
-- To get a list of shredded types a separate function, `jsonifyWithInventory`, had to be used.
+- Accessing always existing fields still required redundant error processing logic, e.g. `parsedJson.map("event_id").getOrElse(throw new RuntimeException("event_id is not present in the enriched event")`.
+- Getting a list of shredded types required using an additional, separate function, `jsonifyWithInventory`.
 
-In 0.4.0, the `EventTransformer` API has been replaced by `Event` - a single typesafe container that contains all 132 members of a [canonical Snowplow event][canonical-event-model]. All fields are automatically converted to appropriate non-String types where possible - for instance, the `event_id` column is represented as a [UUID instance][java-uuid], while timestamps are converted into optional [Instant][java-instant] values, eliminating the need for common string conversions. Contexts and self-describing events are also wrapped in [self-describing data container types][self-describing-type], allowing for advanced operations such as Iglu URI lookups.
+In 0.4.0, the `EventTransformer` API has been replaced by `Event` - a single typesafe container that contains all 132 members of a [canonical Snowplow event][canonical-event-model]. All fields are automatically converted to appropriate non-String types where possible; for instance, the `event_id` column is represented as a [UUID instance][java-uuid], while timestamps are converted into optional [Instant][java-instant] values, eliminating the need for common string conversions. Contexts and self-describing events are also wrapped in [self-describing data container types][self-describing-type], allowing for advanced operations such as Iglu URI lookups.
 
 The case class has the following primary functions:
 
 - `Event.parse(line)` - similar to the old `transform` function, this method accepts an enriched Snowplow event in a canonical TSV+JSON format as a string and returns an `Event` instance as a result.
-- `event.toJson(lossy)` - similar to the old `getValidatedJsonEvent` function, it transforms an `Event` into a validated JSON whose keys are the field names corresponding to the EnrichedEvent POJO of the Scala Common Enrich project. If the lossy argument is true, any self-describing events in the fields (unstruct_event, contexts and derived_contexts) are returned in a "shredded" format, e.g. `"unstruct_event_com_acme_1_myField": "value"`. If it is set to false, they are not flattened into underscore-separated top-level fields, using a standard self-describing format instead.
+- `event.toJson(lossy)` - similar to the old `getValidatedJsonEvent` function, it transforms an `Event` into a validated JSON whose keys are the field names corresponding to the EnrichedEvent POJO of the Scala Common Enrich project. If the lossy argument is true, any self-describing events in the fields (unstruct_event, contexts, and derived_contexts) are returned in a "shredded" format, e.g. `"unstruct_event_com_acme_1_myField": "value"`. If it is set to false, they use a standart self-describing format instead of being flattened into underscore-separated top-level fields.
 - `event.inventory` - extracts metadata from the event containing information about the types and Iglu URIs of its shred properties (unstruct_event, contexts and derived_contexts). Unlike version 0.3.0, it no longer requires a `transformWithInventory` call and can be obtained from any `Event` instance.
 - `atomic` - returns the event as a map of keys to Circe JSON values, while dropping inventory fields. This method can be used to modify an event's JSON AST before converting it into a final result.
 - `ordered` - returns the event as a list of key/Circe JSON value pairs. Unlike `atomic`, which has randomized key ordering, this method returns the keys in the order of the canonical event model, and is particularly useful for working with relational databases.
@@ -53,7 +53,7 @@ val events = input
 val dataframe = spark.read.json(events)
 {% endhighlight %}
 
-Here, `event.toJson(true).noSpaces` first converts the `Event` instances to a member of Circe's `Json` AST class using the `toJson` function with its' lossy parameter set to true, meaning that contexts and self describing event fields will be "flattened", then converts the `Json` into a string using the `noSpaces` method - pretty-printing the JSON to a compact string with no spaces. (Alternatively, `spaces2` and `spaces4` function, or even a custom Circe printer, can be used for a more human-readable output.)
+Here, `event.toJson(true).noSpaces` first converts the `Event` instances to a member of Circe's `Json` AST class using the `toJson` function with its lossy parameter set to true (meaning that contexts and self describing event fields will be "flattened"), then converts the `Json` into a string using the `noSpaces` method - pretty-printing the JSON to a compact string with no spaces. (Alternatively, `spaces2` and `spaces4` functions, or even a custom Circe printer, can be used for a more human-readable output.)
 
 Working with individual members of an `Event` is now as simple as accessing a specific field of a case class. For example, the following code can be used to safely access the ID, fingerprint and ETL timestamp of an event, replacing the fingerprint with a random UUID if it doesn't exist and throwing an exception if the timestamp is not set:
 
