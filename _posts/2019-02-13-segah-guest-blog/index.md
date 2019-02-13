@@ -1,14 +1,17 @@
 ---
 layout: post
-title: "After looking at the data of 80 tech companies- what have I learned? Part I"
+title: "Guest post: After looking at the data of 80 tech companies- what have I learned? Part I"
 title-short: What I learned after looking at data of 80 companies
 tags: [analytics, data, big data, data science, business intelligence, data for business]
 image: /assets/img/blog/2019/02/tech-companies.png
 author: Segah
 category: Analytics
-permalink: /blog/2019/02/13/after-looking-at-the-data-of-80-tech-companies-what-have-i-learned/
+permalink: /blog/2019/02/13/guest-post-after-looking-at-the-data-of-80-tech-companies-what-have-i-learned/
 discourse: true
 ---
+
+*This is a guest post by Segah A. Mir, Partner and Consultant at Seattle-based [Caura & Co.][caura]*
+
 
 ![tech companies][companies]
 
@@ -49,4 +52,5 @@ Bottom line, data is important, but it is one of many important factors. We can 
 
 
 [companies]: /assets/img/blog/2019/02/tech-companies.png
+[caura]: https://www.caura.co/
 [lloyd]: http://tomtunguz.com/ab-testing-saas/
