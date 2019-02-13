@@ -29,8 +29,8 @@ BlingBling10 at the English Wikipedia [CC BY-SA 3.0](http://creativecommons.org/
 
 <h2 id="eer">1. EmrEtlRunner improvements</h2>
 
-This release centers around EmrEtlRunner by adding new features whilst trying to make it more robust
-with respect to AWS services at the same time.
+This release is focused on improving EmrEtlRunner by adding new features and to make it
+more robust with respect to AWS services at the same time.
 
 <h3 id="persistent">1.1 Support for persistent EMR clusters</h3>
 
@@ -40,9 +40,9 @@ long-running cluster before spinning up a new one through `--persistent-jobflow-
 
 <h3 id="timeouts">1.2 Recovery from EMR timeouts and S3 internal errors</h3>
 
-In the recent months, we’ve seen a worsening EMR service with more and more timeouts, with this
-release we’re aiming to tackle this issue by retrying in case of timeouts using an exponential
-backoff. We’re adopting the same strategy regarding S3 internal errors.
+In recent months, we’ve observed an increase in reliability issues with Amazon EMR with more and
+more timeouts. With this release we’re aiming to tackle this issue by retrying in case of timeouts
+using an exponential backoff. We’re adopting the same strategy regarding S3 internal errors.
 
 <h3 id="compaction">1.3 Compaction steps for the different jobs' output</h3>
 
@@ -52,8 +52,8 @@ example, a user using 50 different contexts with a shred job running concurrentl
 executors will result in 1000, often very small, files being written concurrently. This is just for
 the Snowplow pipeline and excludes any kind of processing that could happen on your end.
 
-To solve this issue, this release will consolidate (or combine) those small files into bigger ones
-during their transfer from HDFS to S3.
+To solve this issue, this release will consolidate those small files into bigger ones during their
+transfer from HDFS to S3.  This will result in less writes and should mean fewer contention issues.
 
 <h3 id="rename">1.4 Renaming of the EMR steps</h3>
 
@@ -62,7 +62,9 @@ accumulated over the years.
 
 <h2 id="cc">2. Clojure Collector improvement</h2>
 
-We’ve increased the number of files that can be opened concurrently on the Elastic Beanstalk machines running the Clojure Collector from 1024 to 65536.
+We’ve increased the number of files that can be opened concurrently on the Elastic Beanstalk
+machines running the Clojure Collector from 1024 to 65536. This ensures that the collector is never
+throttled on the number of open file handles it can accept.
 
 <h2 id="redshift">3. Redshift (and Postgres) data model improvement</h2>
 
@@ -78,7 +80,7 @@ Thanks to [Mike][miike] from [Snowflake Analytics][sa] for this open source cont
 The latest version of the *EmrEtlRunner* is available from our Bintray
 [here](http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r112_baalbek.zip).
 
-A settings is needed to enable or disable compaction of the output of the shred job discussed above.
+A setting is needed to enable or disable compaction of the output of the shred job discussed above.
 
 {% highlight yaml %}
 aws:
@@ -90,7 +92,7 @@ For a complete example, see our sample [`config.yml`](https://github.com/snowplo
 
 <h3 id="upg-cc">4.2 Upgrading the Clojure Collector</h3>
 
-The new Clojure Collector incorporating the improvement discussed above is available in S3 at:
+The new Clojure Collector is available in S3 at:
 
 {% highlight yaml %}
 s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.1.3-standalone.war
@@ -108,7 +110,7 @@ We've put together migration scripts which are available on GitHub:
 Upcoming Snowplow releases include:
 
 * [R113 [RT] Real-time maintenance][r113-rt], a release focusing on the real-time pipeline with
-plentiy of community contributions
+plenty of community contributions
 
 Stay tuned for announcements of more upcoming Snowplow releases soon!
 
