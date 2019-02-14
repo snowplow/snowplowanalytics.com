@@ -38,6 +38,9 @@ EmrEtlRunner is now able to run steps on a long-running cluster saving up and do
 `--use-persistent-jobflow` argument. Additionally it’s possible to specify the time-to-live of this
 long-running cluster before spinning up a new one through `--persistent-jobflow-duration`.
 
+This feature, together with EmrEtlRunner's stream enrich mode, enables drip-feeding into Redshift,
+to, for example, load your enriched data into Redshift every ten minutes or less.
+
 <h3 id="timeouts">1.2 Recovery from EMR timeouts and S3 internal errors</h3>
 
 In recent months, we’ve observed an increase in reliability issues with Amazon EMR with more and
