@@ -13,42 +13,42 @@ cards:
     - name: Trackers and webhooks
       icon: /assets/img/products/technology/icons/spw-icon-trackers-warehousing.svg
       excerpt: Track events from tanywhere
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: 16 trackers and counting, we cover web, mobile, desktop, server and IoT. This includes iOS, Android and JavaScript trackers, to collect those all-important behavioral signals from your customers. Our webhook support allows third-party software to send their own internal event streams to Snowplow for further processing.
       url: /technology
     - name: Event collectors
       icon: /assets/img/products/technology/icons/spw-icon-event-collectors.svg
       excerpt: Collectors <br>as the pipeline gateway
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Event collectors receive Snowplow events from our trackers and webhooks, reliably storing your events to Amazon S3, Amazon Kinesis or Google Cloud Pub/Sub. Collectors are the gateway into your Snowplow pipeline and our autoscaling tech ensures that traffic spikes never cause you any issues.
       url: /technology
     - name: Data validation
       icon: /assets/img/products/technology/icons/spw-icon-data.svg
       excerpt: Your events<br>are validated upfront
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Garbage in doesn’t have to mean garbage out, Snowplow prevents bad data from breaking your downstream systems by validating your events upfront. You define the structure of the incoming events and validation ensures that only well-structured, usable data comes through the pipeline. Data which fails validation isn’t blocked or thrown away - we preserve it in a bad data store for recovery and reprocessing.
       url: /technology
     - name: Schema registry
       icon: /assets/img/products/technology/icons/spw-icon-schema-realtime-realtime.svg
       excerpt: Store and evolve<br>your data structures
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Snowplow event validation is built on top of our schema registry, a world-leading technology for storing and evolving data structures or schemas. Your schema registry contains the full history of all your event data structures, ready for fast retrieval by the Snowplow pipeline to validate your events in real-time.
       url: /technology
     - name: Data enrichment
       icon: /assets/img/products/technology/icons/spw-icon-data.svg
       excerpt: The richest event data<br>out there
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Snowplow provides the richest event data in the market - we deliver on this promise by widening Snowplow events with additional information. Snowplow supports a range of configurable enrichments like marketing campaign attribution, GeoIP lookup, and Spiders and Bots - as well as fully custom enrichments. A complete overview of our enrichments can be found in our documentation.
       url: /technology
     - name: Real-time applications
       icon: /assets/img/products/technology/icons/spw-icon-schema-realtime-realtime.svg
       excerpt: Real-time event stream,<br>no asterisk
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Snowplow provides a real-time stream of fully enriched event data, with a consistent, predictable structure - plus a set of Analytics SDKs to make it easy for your engineers to consume that event data. This lets you build real-time applications such as content recommendations, fraud detection or real-time dashboards on top of your Snowplow data.
       url: /technology
     - name: Warehousing
       icon: /assets/img/products/technology/icons/spw-icon-trackers-warehousing.svg
       excerpt: Your data in your cloud
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Your event data is stored in your preferred cloud data warehouse, in a format ready for your data team to work with. On AWS, chose from Redshift or Snowflake - or work directly with the data in Amazon S3. On GCP, we load your event data into BigQuery in near-real-time; the pipeline will also back up your data to Cloud Storage.
       url: /technology
     - name: Modeling<br>and Intelligence
       icon: /assets/img/products/technology/icons/spw-icon-trackers-warehousing.svg
       excerpt:
-      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of what your industry looked like five years ago. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. And our implementation engineers can help empower your business analysts or data team to derive maximum insights from your Snowplow data.
+      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of your industry. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. Our Implementation Engineers can help empower your analysts or data team to derive maximum insights from your Snowplow data.
       url: /technology
 big-cards:
     - name: Snowplow on<br>Amazon Web Services 
@@ -123,7 +123,7 @@ big-cards:
                             <span>{{ card.name }}</span>
                             {{ card.content }}
                         </p>
-                        <a href="{{ card.url }}">Learn more about our Services team</a>
+                        <!--<a href="{{ card.url }}">Learn more about our Services team</a>-->
                     </div>
                 </div>
             {% endfor %}
