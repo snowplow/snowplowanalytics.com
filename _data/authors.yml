@@ -258,3 +258,17 @@
   avatar: /assets/img/team/rostyslav.jpg
   spiel:   |
       <a href="/blog/authors/rostyslav/">Rostyslav</a> is a data engineer at Snowplow Analytics. As part of the Graduate Engineering program, he has spent time on several teams including Snowplow Insights, Tech Ops, Solutions Engineering, and Iglu & Loaders.
+
+- name: Rebecca
+  full_name: Rebecca Lane
+  url: /blog/authors/rebecca/
+  avatar: /assets/img/team/rebecca.jpg
+  spiel:   |
+      <a href="/blog/authors/rebecca/">Rebecca</a> is our head of Customer Success at Snowplow Analytics and works one on one with our customers to ensure they get the maximum value from their Snowplow data.
+
+- name: Segah
+  full_name: Segah A Mir
+  url: /blog/authors/segah/
+  avatar: /assets/img/team/segah.jpg
+  spiel:   |
+      <a href="/blog/authors/segah/">Segah</a> is a Partner and Consultant at Seattle-based <a href="https://www.caura.co">Caura & Co.</a> Prior to starting his own firm, he was providing architectural leadership and implementation strategy as a Looker employee and Sr. Lead Consultant.
