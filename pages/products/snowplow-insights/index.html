@@ -1,287 +1,167 @@
 ---
-layout: default
-group: products
-subgroup: snowplow-insights
-title: Snowplow Insights - Data Collection Done Right | Snowplow
+layout: default-revamp
+group: products-insights
+# subgroup: snowplow-insights
+title: Snowplow Product Insights - | Snowplow
 description: Snowplow Insights puts you in control of your data collection. You decide what, when and where! Ask any question to your data and perform any analysis!
 permalink: products/snowplow-insights/
 class: insights
 assets:
-  css: assets/css/products-insights.css
+  css: assets/css/products-insights-revamp.css
+  js: assets/js/products-insights.js
+product-icons:
+    - icon: /assets/img/products/products-insights/icons/spw-icon-ownership.svg
+      name: Ownership
+      content: Your event data pipeline, running in your cloud account for complete control so your Data Protection Officer sleeps easy at night.
+      url: /products-insights
+    - icon: /assets/img/products/products-insights/icons/spw-icon-data-quality.svg
+      name: Data quality
+      content: Upfront event validation and bad data repair and replay mean your Data Engineers never have to worry about bad or missing data.
+      url: /products-insights
+    - icon: /assets/img/products/products-insights/icons/spw-icon-data.svg
+      name: Data richness
+      content: More events, and more data per event so your Data Scientists have the best data to feed your machine learning models.
+      url: /products-insights
+    - icon: /assets/img/products/products-insights/icons/spw-icon-schema-realtime-realtime.svg
+      name: Real-time
+      content: Your entire eventstream, available in real-time so you can act on it right there and then and power your real-time applications. 
+      url: /products-insights
+    - icon: /assets/img/products/products-insights/icons/spw-icon-flexibility.svg
+      name: Flexibility
+      content: Define the data structures that fit your business. No more struggling to fit your business logic to a vendor's rigid view.
+      url: /products-insights
+
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero theme-light bg-success" style="background-image: url({{ BASE_PATH }}/assets/img/products/bg-symbol.png)">
-    <div class="container text-center spacer-30">
-        <h5 class="text-uppercase">Our Products</h5>
-        <h1 class="text-uppercase md-spacer-top-50"><i class="i-logo-type"></i>Insights</h1>
-        <h3>Data collection done right.</h3>
-    </div>
-</section>
-
-<section class="no-gutter-bottom bring-to-top">
-    <div class="container text-center">
-        <div class="col-md-12">
-            <h3>Data collection is the foundation of the data value chain.</h3>
-            <p>Snowplow Insights puts you in control of your data collection. You decide what you want to track. We deliver that data to you, in your own data warehouse, so you can ask any question of your data, perform any analysis, use any analytics tool. We surface your data to you, in real-time, so you can act on it.</p>
-            <p>Set your team free to use data to differentiate.</p>
-        </div>
-        <div class="col-md-12 hidden-xs hidden-sm visible-md visible-lg">
-            <div class="bodymovin" data-src="insights-pipeline"></div>
-
-        </div>
-        <div class="col-md-12 visible-xs visible-sm hidden-md hidden-lg">
-            <div class="bodymovin" data-src="insights-pipeline-vertical"></div>
-
-        </div>
-    </div>
-
-    <div class="container drop-box overlap-bellow">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-        <h4 class="text-uppercase spacer-top-10 md-spacer-top-0">Snowplow insights vs <br/> other well-known solutions</h4>
-            <h5 class=" spacer-top-10 md-spacer-top-0">Download our whitepapers!</h5>
-        <select class="form-control selectpicker" id="form-download" title="Select whitepaper" >
-            <option value="https://go.snowplowanalytics.com/l/571483/2018-09-18/365nx98/571483/125785/Snowplow_VS_Enterprise_Digital_Analytics.pdf">Packaged Analytics Solutions like GA360 and Adobe</option>
-            <option value="https://go.snowplowanalytics.com/l/571483/2018-09-18/365nyn8/571483/125787/Snowplow_VS_SaaS_Data_Warehouse_Providers.pdf">SaaS Data Warehousing providers like Segment</option>
-            <option value="https://go.snowplowanalytics.com/l/571483/2018-09-18/365p1p4/571483/125789/Snowplow_VS_Build_Your_Own_Data_Pipeline.pdf">Build-it-yourself digital analytics stacks</option>
-        </select>
-            <a id="download-btn"href="#" target="_blank" class="btn btn-primary call-to-action">Download</a>
-
-        </div>
-        <img src="{{ BASE_PATH }}/assets/img/products/insights/white-paper.png" class="img-responsive" alt="Snowplow Insights Pipeline">
-
-
-    </div>
-</section>
-
-<section class="bg-primary-lighter text-center data-collection">
-    <h3 class="pad-t-50">Digital data collection is hard.</h3>
-    <h5 class="spacer-bottom-70">In order to do data collection right, we need to understand what makes doing it well so hard.</h5>
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/products-insights/spw-insights-header@3x.png)">
     <div class="container">
-        <div class="col-sm-4 pad-l-30 pad-r-30">
-            <div class="bodymovin pad-b-30" data-src="multiplatform"></div>
-
-            <h4>Multiple platforms</h4>
-            <small>To understand your users, you need to identify and track them across all the platforms and channels you engage with them, consolidate that data and build a single customer view.</small>
+        <div class="row">
+            <div class="col-sm-11">
+                <h1>A data collection platform designed to evolve with your business.</h1>
+            </div>
         </div>
-        <div class="col-sm-4 xs-pad-t-70 pad-l-30 pad-r-30">
-            <div class="bodymovin pad-b-30" data-src="engagement"></div>
-
-
-            <h4>Engagement varies widely</h4>
-            <small>Users don't engage with email, dating services or banking apps in the same way. So we should not expect the data from each to look alike, or even be structured alike.</small>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>Snowplow Insights is the best way to collect rich, granular event data, delivered to your warehouse of choice.</h4>
+            </div>
         </div>
-        <div class="col-sm-4 xs-pad-t-70 pad-l-30 pad-r-30">
-            <div class="bodymovin pad-b-30" data-src="evolve"></div>
-
-            <h4>Constantly evolving</h4>
-            <small>Digital products and services are constantly evolving, and as they do, data collection needs to evolve with it. As we build understanding, the questions we ask of data are constantly evolving, and with it, so must our data collection.</small>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <a href="/request-demo/" class="btn btn-primary call-to-action">Get started</a>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- 
+    Product icons
+ -->
 
-<section id="options" class="bg-grd-success-info" style="background-image: url(/assets/img/products/bg-pattern-wire.png)">
+<section class="section-revamp">
     <div class="container">
-        <div>
-            <h3 class="spacer-bottom-60 text-center theme-light"><b>What are the options?</b></h3>
-
-            <div class="cols well-lg no-gutter same-height xs-same-height-reset sm-same-height-reset no-border">
-
-                <div class="col pad-40 sm-pad-30">
-                    <div class="text-center">
-                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Starter.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
-                        <div class="spacer-top-20">
-                            <h3><b>Startup</b></h3>
-                        </div>
+        <div class="section-revamp-icons-container">
+            {% for icon in page.product-icons %}
+                <div class="section-revamp-icons">
+                    <div>
+                        <img src="{{ BASE_PATH }}{{ icon.icon }}" alt="">
+                        <h4>{{ icon.name }}</h4>
+                        <p>{{ icon.content }}</p>
                     </div>
+                    <!-- <a href="{{ icon.url }}">Learn more</a> -->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-                    <ul class="styled included">
-                        <li>Up to 10M events per month</li>
-                        <li>Standard enrichments</li>
-                        <li>Data loaded into S3 and 1 data warehouse (Redshift or Snowflake DB)</li>
-                    </ul>
 
-                    <div class="price at-bottom at-b-80 text-center">
-                        <p class="no-margin">Starting from</p>
-                        <h3 class="text-info"><b>$1,500 <sup>month</sup></b></h3>
-                        <a href="/request-demo/" class="btn btn-lg btn-primary spacer-top-40">Request a Demo</a>
+<section class="section-revamp section-revamp-animated-img-left">
+    <img src="{{ BASE_PATH }}/assets/img/products/products-insights/spw-console-img.png" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/spw-console-img@2x.png 2x, {{ BASE_PATH }}/assets/img/products-insights/spw-console-img@3x.png 3x"class="section-revamp-animated-img-img"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <h2>
+                    Fully managed, 
+                    <br>
+                    end-to-end data 
+                    <br>
+                    pipeline
+                </h2>
+                <p>
+                    From installation and upgrades to monitoring and autoscaling, we’ve got you covered: you and your  team can focus on your business objectives and leave the upkeep and ongoing maintenance of your data pipeline to the experts that built it.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-revamp section-revamp-animated-img-right">
+    <img src="{{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-hex-green.png" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-hex-green@2x.png 2x, {{ BASE_PATH }}/assets/img/products-insights/spw-illustration-hex-green@3x.png 3x"class="section-revamp-animated-img-img"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>
+                    Our expertise, 
+                    <br>
+                    your infrastructure
+                </h2>
+                <p>
+                    You’ll reap the benefits of our expertise and experience in managing large and complex data infrastructures for 140+ customers just like you.
+                    <br>
+                    We’ll setup your pipeline according to your needs, and we’ll even help you to cut down your cloud costs by optimizing your pipeline setup.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-revamp section-revamp-blue section-revamp-animated-img-left  section-revamp-animated-img-top">
+    <img src="{{ BASE_PATH }}/assets/img/products/products/products-insights/spw-illustration-support.png" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-support@2x.png 2x, {{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-support@3x.png 3x"class="section-revamp-animated-img-img"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <h2>
+                    24/7 support 
+                    <br>
+                    at your disposal
+                </h2>
+                <p>
+                    You’ll have access to our dedicated Support Engineering team 24/7 to help you troubleshoot or fix any issues that may occur.
+                    <br>
+                    We’re experts at debugging and troubleshooting data quality issues so you don’t have to be.
+                </p>
+                <!--<a href="#" class="btn btn-primary btn-lines">Learn more about our support</a>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-revamp section-revamp-testemonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="section-revamp-testemonial-block">
+                    <img src="{{ BASE_PATH }}/assets/img/products/products-insights/Noonlight-logo.svg" alt="" class="section-revamp-testemonial-logo">
+                    <p class="section-revamp-testemonial-content">“With Snowplow’s data pipeline, we’re able to have complete confidence in the decisions we make based on event data. We’re able to answer questions that would have been impossible to track down otherwise.”</p>
+                    <div class="section-revamp-testemonial-person">
+                        <img src="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth.jpg" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@2x.jpg 2x, {{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@3x.jpg 3x">
+                        <p>
+                            Mike Roth
+                            <br>
+                            <span>Sr. Software Engineer</span>
+                        </p>
                     </div>
                 </div>
-
-                <div class="col pad-40 sm-pad-20">
-                    <div class="text-center">
-                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Standard.svg" width="170" height="178" alt="Insights Options Batch" draggable="false">
-                        <div class="spacer-top-20">
-                            <h3><b>Growth</b></h3>
-                        </div>
-                    </div>
-
-                    <ul class="styled included">
-                        <li>Up to 750M events per month</li>
-                        <li>Standard + Premium enrichments</li>
-                        <li>Data loaded into S3 + Kinesis + 1 data warehouse (Redshift or Snowflake DB) + Elastic</li>
-                        <li>Data modelling in data warehouse</li>
-                        <li>Quarterly customer success check-ins</li>
-                        <li>Redash and/or Superset</li>
-                    </ul>
-
-                    <div class="price at-bottom at-b-80 text-center">
-                        <p class="no-margin">Starting from</p>
-                        <h3 class="text-info"><b>$5,000 <sup>month</sup></b></h3>
-                        <a href="/request-demo/" class="btn btn-lg btn-primary spacer-top-40">Request a Demo</a>
-                    </div>
-                </div>
-
-                <div class="col pad-40 sm-pad-20">
-                    <div class="text-center">
-                        <img src="/assets/img/products/insights/Snowplow_Website-Product_Icon_Insights-Enterprise.svg" width="170" height="178" alt="Insights Options Real-time" draggable="false">
-                        <div class="spacer-top-20">
-                            <h3><b>Enterprise</b></h3>
-                        </div>
-                    </div>
-
-                    <ul class="styled included">
-                        <li>Unlimited event volumes</li>
-                        <li>Standard + Premium enrichments</li>
-                        <li>Data loaded into S3 + Kinesis + 1 data warehouse + Elastic</li>
-                        <li>Data modelling in data warehouse or upstream (in-stream)</li>
-                        <li>Dedicated CSM</li>
-                        <li>Custom data processing topologies</li>
-                        <li>Redash and/or Superset</li>
-                    </ul>
-
-                    <div class="price at-bottom at-b-80 text-center">
-                        <p class="no-margin">Contact us for more information:</p>
-                        <a href="/company/contact-us/" class="btn btn-lg btn-primary spacer-top-40">Contact us</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
 </section>
 
 
-
-<section class="no-gutter-bottom spacer-bottom-100">
-    <div class="container">
-        <div class="text-center xs-pad-b-50">
-            <h5 class="text-uppercase spacer-bottom-30">features</h5>
-            <h3>Empower your team to use data to differentiate</h3>
-            <p>Snowplow Insight gives you control over your data, so you are free to do what you want with it.</p>
-        </div>
-
-        <div class="grid js-masonry spacer-top-100 sm-spacer-top-25 xs-spacer-top-10" data-masonry-options='{ "itemSelector": ".grid-item", "gutter": 10 }'>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Take control of your data.</h5>
-                <ul class="styled">
-                    <li>You own your own data and your data pipeline.</li>
-                    <li>Control who you share what data with.</li>
-                    <li>Define your own data structures, enrichment logic and modeling logic.</li>
-                    <li>Decide where you want to surface your data.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-light">
-                <h5 class="text-uppercase">Evolve your data collection with your business.</h5>
-                <ul class="styled">
-                    <li>A systematic approach to evolving your data collection and processing as your business, and the questions you ask of the data, evolve.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Track events from everywhere.</h5>
-                <ul class="styled">
-                    <li>Track events from your own applications on web, mobile, PC, Smart Home, Smart Car and IoT.</li>
-                    <li>Track events from all the different marketing channels you engage your users on, including email, push, call center etc.</li>
-                    <li>Stitch data from each platform together to build a single customer view.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Your data where you need it.</h5>
-                <ul class="styled">
-                    <li>Direct delivery of your data into the different places that enables you to plug in the broadest range of tools and query the data easily, including Amazon Redshift, Kinesis, Elasticsearch and S3.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-light">
-                <h5 class="text-uppercase">Real-time.</h5>
-                <ul class="styled">
-                    <li><strong>All</strong> your data available in seconds</li>
-                    <li>Act on your data in real-time.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Rich.</h5>
-                <ul class="styled">
-                    <li>No limit to the number of data points captured with each event.</li>
-                    <li>Define your own entities and events, with as many data points as you want in each.</li>
-                    <li>Enrich your data with first and third party data, in real-time.</li>
-                    <li>Automatic tracking of common events and contextual data across a large number of platforms and channels.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-dark">
-                <h5 class="text-uppercase">Scalable.</h5>
-                <ul class="styled">
-                    <li>Track and process billions of events per day.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-dark">
-                <h5 class="text-uppercase">Built for analysis.</h5>
-                <ul class="styled">
-                    <li>Highly structured data is easy to query.</li>
-                    <li>Structured approach to schema and metadata management.</li>
-                    <li>Clean separation of the underlying record of events and business logic applied when analyzing those events.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-dark">
-                <h5 class="text-uppercase">Trust your data.</h5>
-                <ul class="styled">
-                    <li>Engineered for high data quality.</li>
-                    <li>Full auditable pipeline.</li>
-                    <li>Systematic data validation and error reporting at all stage in the pipeline.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Analytics experts.</h5>
-                <ul class="styled">
-                    <li>Work with our own Data Analytics and Data Engineering Teams to do more with our technology.</li>
-                    <li>Work with our growing ecosystem of data-sophisticated partners.</li>
-                </ul>
-            </div>
-            <div class="grid-item grid-fill-light">
-                <h5 class="text-uppercase">Be part of our community of Data Sophisticated Companies.</h5>
-                <ul class="styled">
-                    <li>Join an active and growing community of some of the Smartest People in Data, working across thousands of companies running Snowplow technology.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h5 class="text-uppercase">Cost effective.</h5>
-                <ul class="styled">
-                    <li>We are orders of magnitude cheaper than our competitors.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-<section class="jumbotron theme-light no-vertical-gutter height-auto parallax" style="background-image:url({{ BASE_PATH }}/assets/img/customers/case-studies/just-watch/Snowplow_Website-Images_Cases_JustWatch_Hero.jpg)">
-    <div class="container">
-
-        {% include request-demo.html %}
-
-        <div class="spacer-top-100">
-            <h6 class="text-uppercase">Our case Studies</h6>
-            <h3>JustWatch</h3>
-            <h4>How JustWatch uses Snowplow data to drive spectacular growth.</h4>
-            <a href="/customers/justwatch/" class="btn btn-primary spacer-top-70">See Case Study</a>
-        </div>
-    </div>
-</section>
-
-
-
-            {% include testimonials.html id="martin" %}
+{% include request-demo-revamp.html %}
