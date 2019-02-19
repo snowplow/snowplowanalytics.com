@@ -217,6 +217,7 @@ $very-light-blue-two: #e1e6f0;
 	}
 	h4 {
 		color: $charcoal-grey;
+		font-weight: 500;
 		margin: 0 0 20px;
 		@media (max-width: $xs-max) {
 			text-align: center;
@@ -348,7 +349,7 @@ $very-light-blue-two: #e1e6f0;
  */
 :root {
  	--revamp-animated-testemonial-pad: 130px 0;
- 	--revamp-animated-testemonial-logo-w: 75px;
+ 	--revamp-animated-testemonial-logo-w: 164px;
  	--revamp-animated-testemonial-logo-h: 30px;
  	--revamp-animated-testemonial-logo-mg: 0 auto 40px;
  	--revamp-animated-testemonial-content-mg: 0 auto 25px;
@@ -422,6 +423,8 @@ $very-light-blue-two: #e1e6f0;
 	}
 	h5 {
 		text-align: center;
+		color: $charcoal-grey;
+		line-height: 1.5;
 	}
 }
 
