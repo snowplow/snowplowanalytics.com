@@ -100,7 +100,7 @@ You'll now be able to track the following HubSpot events in your Snowplow pipeli
 - Company deletion
 
 Improvements have also been made to the [Marketo](https://www.marketo.com/) and
-[CallRail](https://www.callrail.com/).
+[CallRail](https://www.callrail.com/) integrations.
 
 <h3 id="post">2.2 POST support in the API request enrichment</h3>
 
@@ -129,7 +129,7 @@ cors {
 {% highlight hocon %}
 prometheusMetrics {
   enabled = false
-  durationBuckets = [0.1, 3, 10] # optional buckets by which to group by the `http_request_duration_seconds` metric
+  durationBucketsInSeconds = [0.1, 3, 10] # optional buckets by which to group by the `http_request_duration_seconds` metric
 }
 {% endhighlight %}
 
