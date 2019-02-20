@@ -11,20 +11,30 @@ discourse: true
 
 We are pleased to announce a new release of the [Snowplow Android Tracker][repo].
 
-[Version 1.0.0][release-notes] introduces features to alleviate blocking issues on tracker instantiation and add control over sessions. The release also improves the robustness of foreground and background detection.
+[Version 1.0.0][release-notes] introduces features to alleviate blocking issues on tracker instantiation and add control over sessions. The release also improves the robustness of foreground and background detection. You'll also notice the introduction of our [new documentation site][docs]!
 
 Read on below the fold for:
 
-1. [Async support](#async-support)
-2. [Share `OkHttpClient` instance](#okhttp)
-3. [Session transitions](#session-transitions)
-4. [Updates](#updates)
-5. [Documentation](#docs)
-6. [Getting help](#help)
+1. [New documentation site](#new-docs)
+2. [Async support](#async-support)
+3. [Share `OkHttpClient` instance](#okhttp)
+4. [Session transitions](#session-transitions)
+5. [Updates](#updates)
+6. [Documentation](#docs)
+7. [Getting help](#help)
 
 <!--more-->
 
-<h2 id="async-support">1. Async support</h2>
+<h2 id="new-docs">1. New documentation site</h2>
+
+We've added our mobile trackers to our [new documentation site][docs]. The documentation is divided into easy parts that lay out:
+
+* how to install the tracker
+* quickly start tracking events
+* an outline of how the tracker works
+* details about both basic and advanced methods available on the tracker
+
+<h2 id="async-support">2. Async support</h2>
 
 There are new methods available for loading the tracker asynchronously (since session information is stored in a file, and must be loaded whenever the tracker starts):
 
@@ -48,7 +58,7 @@ Tracker.init(new Tracker
 Tracker.getHasLoadedFromFile()
 {% endhighlight %}
 
-<h2 id="okhttp">2. Share `OkHttpClient` instance</h2>
+<h2 id="okhttp">3. Share `OkHttpClient` instance</h2>
 
 In this release, emitters can be created with a shared `OkHttpClient` instance.
 
@@ -62,13 +72,13 @@ Emitter e2 = new Emitter
         .build();
 {% endhighlight %}
 
-<h2 id="session-transitions">3. Session transitions</h2>
+<h2 id="session-transitions">4. Session transitions</h2>
 
 The tracker now has a builder method `sessionCallbacks()` for supplying session transition `Runnable` callbacks.
 
 These are to be executed whenever there's a transition in the state of the app (from background to foreground or vice versa), as well as whenever there is a session timeout (in the background or foreground).
 
-<h2 id="updates">4. Other changes</h2>
+<h2 id="updates">5. Other changes</h2>
 
 Other updates and fixes include:
 
@@ -86,13 +96,13 @@ Other updates and fixes include:
 
 Many thanks to [Ahmed Khalil][ahmed] for your contributions!
 
-<h2 id="docs">5. Documentation</h2>
+<h2 id="docs">6. Documentation</h2>
 
-You can find the updated [Android Tracker documentation][android-manual] on our wiki.
+As always, information about how to use the tracker can be found in the [Android Tracker documentation][docs].
 
 You can find the full release notes on GitHub as [Snowplow Android Tracker v1.0.0 release][release-notes].
 
-<h2 id="help">6. Getting help</h2>
+<h2 id="help">7. Getting help</h2>
 
 For help on integrating the tracker please have a look at the [setup][android-setup] and [integration][integration] guides.
 
@@ -101,6 +111,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
 [repo]: https://github.com/snowplow/snowplow-android-tracker
+[docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/android-tracker/1.0.0/
 [release-notes]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.0.0
 
 [android-issues]: https://github.com/snowplow/snowplow-android-tracker/issues
@@ -121,9 +132,6 @@ For more details on this release, please check out the [release notes][release-n
 [273]: https://github.com/snowplow/snowplow-android-tracker/issues/273
 [271]: https://github.com/snowplow/snowplow-android-tracker/issues/271
 [268]: https://github.com/snowplow/snowplow-android-tracker/issues/268
-
-[android-setup]: https://github.com/snowplow/snowplow/wiki/Android-Tracker-Setup
-[android-manual]: https://github.com/snowplow/snowplow/wiki/Android-Tracker
 
 [demo-walkthrough]: https://github.com/snowplow/snowplow/wiki/Android-app-walkthrough#walkthrough
 [integration]: https://github.com/snowplow/snowplow/wiki/Android-Integration
