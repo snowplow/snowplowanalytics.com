@@ -5,7 +5,7 @@ title: "Snowplow R112 Baalbek batch pipeline reliability improvements"
 tags: [snowplow, batch]
 author: Ben
 category: Releases
-permalink: /blog/2019/02/06/snowplow-r112-baalbek-batch-pipeline-reliability-improvements/
+permalink: /blog/2019/02/20/snowplow-r112-baalbek-batch-pipeline-reliability-improvements/
 ---
 
 [Snowplow 112 Baalbek][snowplow-release], named after
@@ -71,7 +71,7 @@ throttled on the number of open file handles it can accept.
 
 <h2 id="redshift">3. Redshift (and Postgres) data model improvement</h2>
 
-The `geo_region` column has been bumped to 3 characters in order to accomodate for a change in the
+The `geo_region` column has been bumped to 3 characters in order to accommodate for a change in the
 underlying library the IP lookups enrichment used to fill this column.
 
 Thanks to [Mike][miike] from [Snowflake Analytics][sa] for this open source contribution.
@@ -106,7 +106,7 @@ s3://snowplow-hosted-assets/2-collectors/clojure-collector/clojure-collector-2.1
 We've put together migration scripts which are available on GitHub:
 
 - for Redshift: [migrate_0.10.0_to_0.11.0.sql](https://github.com/snowplow/snowplow/blob/master/4-storage/redshift-storage/sql/migrate_0.10.0_to_0.11.0.sql)
-- for Postgres: [migrate_0.7.0_to_0.7.1.sql](https://github.com/snowplow/snowplow/blob/master/4-storage/postgres-storage/sql/migrate_0.7.0_to_0.7.1.0.sql)
+- for Postgres: [migrate_0.7.0_to_0.7.1.sql](https://github.com/snowplow/snowplow/blob/master/4-storage/postgres-storage/sql/migrate_0.7.0_to_0.7.1.sql)
 
 <h2 id="roadmap">5. Roadmap</h2>
 
