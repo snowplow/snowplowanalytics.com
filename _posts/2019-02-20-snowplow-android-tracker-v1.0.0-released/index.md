@@ -62,7 +62,7 @@ Tracker.getHasLoadedFromFile()
 
 In this release, emitters can be created with a shared `OkHttpClient` instance.
 
-This practice should save resources, since it will allow sharing the `ConnectionPool` and `ThreadPool` of the client.
+This practice is intended to save resources, since it will allow sharing the `ConnectionPool` and `ThreadPool` of the client.
 
 Here's an example of the new `Emitter` builder method `client()`:
 {% highlight java %}
@@ -113,7 +113,7 @@ For more details on this release, please check out the [release notes][release-n
 [repo]: https://github.com/snowplow/snowplow-android-tracker
 [docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/android-tracker/1.0.0/
 [release-notes]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.0.0
-
+[android-setup]: https://github.com/snowplow/snowplow/wiki/Android-Tracker-Setup
 [android-issues]: https://github.com/snowplow/snowplow-android-tracker/issues
 
 [288]: https://github.com/snowplow/snowplow-android-tracker/issues/288
