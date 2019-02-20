@@ -9,7 +9,7 @@ permalink: /blog/2019/02/20/snowplow-ios-tracker-1.0.0-released/
 discourse: true
 ---
 
-We are pleased to announce a new release of the [Snowplow Objective-C Tracker][ios-tracker]. [Version 1.0.0][tracker-100] brings dependency updates, some bug fixes and support for integrating the tracker into your project with Carthage. You'll also notice the introduction of our [new documentation site][docs]!
+We are pleased to announce a new release of the [Snowplow Objective-C Tracker][ios-tracker]. [Version 1.0.0][tracker-100] brings dependency updates, bug fixes and support for integrating the tracker into your project with Carthage. You'll also notice the introduction of our [new documentation site][docs]!
 
 Read on below the fold for:
 
