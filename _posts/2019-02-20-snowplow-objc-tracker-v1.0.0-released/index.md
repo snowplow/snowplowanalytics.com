@@ -9,18 +9,28 @@ permalink: /blog/2019/02/20/snowplow-ios-tracker-1.0.0-released/
 discourse: true
 ---
 
-We are pleased to announce a new release of the [Snowplow Objective-C Tracker][ios-tracker]. [Version 1.0.0][tracker-100] brings dependency updates, some bug fixes and support for integrating the tracker into your project with Carthage.
+We are pleased to announce a new release of the [Snowplow Objective-C Tracker][ios-tracker]. [Version 1.0.0][tracker-100] brings dependency updates, some bug fixes and support for integrating the tracker into your project with Carthage. You'll also notice the introduction of our [new documentation site][docs]!
 
 Read on below the fold for:
 
-1. [Carthage support](#carthage-support)
-2. [Other changes](#updates)
-3. [Upgrading](#upgrade)
-4. [Documentation and help](#doc)
+1. [New documentation site](#new-docs)
+2. [Carthage support](#carthage-support)
+3. [Other changes](#updates)
+4. [Upgrading](#upgrade)
+5. [Documentation and help](#doc)
 
 <!--more-->
 
-<h2 id="carthage-support">1. Carthage support</h2>
+<h2 id="new-docs">1. New documentation site</h2>
+
+We've added our mobile trackers to our [new documentation site][docs]. The documentation is divided into easy parts that lay out:
+
+* how to install the tracker
+* quickly start tracking events
+* an outline of how the tracker works
+* details about both basic and advanced methods available on the tracker
+
+<h2 id="carthage-support">2. Carthage support</h2>
 
 If you are already using Carthage, just add this line to your `Cartfile`:
 
@@ -31,7 +41,7 @@ github "snowplow/snowplow-objc-tracker"
 
 For more information on Carthage, see their website [here](https://github.com/Carthage/Carthage#quick-start).
 
-<h2 id="updates">2. Other changes</h2>
+<h2 id="updates">3. Other changes</h2>
 
 Other updates and fixes include:
 
@@ -50,7 +60,7 @@ Other updates and fixes include:
 
 Many thanks to [Kevin Malek][kevmalek], [Miguel Angel Quinones Garcia][DarthMike], [Sébastien Duperron][sduperron-viadeo], and [Stewart Gleadow][sgleadow] for their contributions!
 
-<h2><a name="upgrading">3. Upgrading</a></h2>
+<h2><a name="upgrading">4. Upgrading</a></h2>
 
 To add the Snowplow Objective-C Tracker as a dependency to your own app, add the following into your `Podfile`:
 
@@ -65,19 +75,17 @@ If you are using Carthage, just add this line to your `Cartfile`:
 github "snowplow/snowplow-objc-tracker"
 {% endhighlight %}
 
-<h2><a name="help">4. Getting help</a></h2>
+<h2><a name="help">5. Getting help</a></h2>
 
 As always, please check out the following links:
 
-* The [technical documentation][tech-docs]
-* The [setup guide][setup-guide]
+* The [technical documentation][docs]
 * The [1.0.0 release notes][tracker-100]
 
 If you have an idea for a new feature or want help getting things set up, please visit [our Discourse forum][discourse]. And [raise an issue][issues] if you spot any bugs!
 
 [objc-repo]: https://github.com/snowplow/snowplow-objc-tracker
-[tech-docs]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker
-[setup-guide]: https://github.com/snowplow/snowplow/wiki/iOS-Tracker-Setup
+[docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/objective-c-tracker/1.0.0/
 [tracker-100]: https://github.com/snowplow/snowplow-objc-tracker/releases/tag/1.0.0
 [issues]: https://github.com/snowplow/snowplow/issues
 [discourse]: http://discourse.snowplowanalytics.com/
