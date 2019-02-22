@@ -54,7 +54,7 @@ published at this endpoint:
 - `http_requests_total`: the total count of requests
 - `http_request_duration_seconds`: the time spent handling requests
 
-Which you'll be able to slice and dice by endpoint, method and/or response code.
+You will be able to slice and dice the metrics by endpoint, method and/or response code.
 
 Additional information will also be available, such as the Java and Scala versions as well as the
 version of the Scala Stream Collector artifact.
@@ -85,7 +85,7 @@ faster `POST` requests: no need to make a preflight request if the result is alr
 <h3 id="hubspot">2.1 HubSpot webhook integration</h3>
 
 [Peter Zhu][misterpig] from [Snowflake Analytics][sa] built the [HubSpot][hubspot] webhook
-integration from scratch for this release, huge props to him!
+integration from scratch for this release. Huge props to Peter!
 
 You'll now be able to track the following HubSpot events in your Snowplow pipeline:
 
@@ -99,13 +99,15 @@ You'll now be able to track the following HubSpot events in your Snowplow pipeli
 - Company change
 - Company deletion
 
-Improvements have also been made to the [Marketo](https://www.marketo.com/) and
+Peter has also made small improvements to the [Marketo](https://www.marketo.com/) and
 [CallRail](https://www.callrail.com/) integrations.
 
 <h3 id="post">2.2 POST support in the API request enrichment</h3>
 
 It is now possible to use `POST` requests to interact with the API leveraged in the API request
 enrichment. Thanks to [LiveIntent][liveintent] for this feature.
+
+This is useful if you have to leverage an API which isn't necessarily RESTful.
 
 <h2 id="upgrading">3. Upgrading</h2>
 
