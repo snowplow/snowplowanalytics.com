@@ -180,6 +180,10 @@ or directly make use of the new Spark Enrich available at:
 
 `s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.17.0.jar`
 
+For the batch pipeline, we've also extended [the timeout recovery introduced in R112](https://snowplowanalytics.com/blog/2019/02/20/snowplow-r112-baalbek-batch-pipeline-reliability-improvements/#timeouts).
+A new version of EmrEtlRunner incorporating those improvements is available from our Bintray
+[here][bintray-eer].
+
 <h2 id="roadmap">4. Roadmap</h2>
 
 Upcoming Snowplow releases include:
@@ -217,5 +221,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [bintray-zip-be]: https://bintray.com/snowplow/snowplow-generic/snowplow-beam-enrich/0.2.0#files
 [bintray-docker-be]: https://bintray.com/snowplow/registry/snowplow%3Abeam-enrich
 [bintray-se]: https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.20.0#files
+[bintray-eer]: http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r113_filitosa.zip
 
 [discourse]: http://discourse.snowplowanalytics.com/
