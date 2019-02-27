@@ -4,7 +4,7 @@
 #  CONSTANTS
 # -----------------------------------------------------------------------------
 
-ruby_v = 2.2.2
+ruby_v = 2.2.5
 bundler_v = 1.16.3
 
 ruby_v_file = .ruby-version
@@ -27,10 +27,10 @@ $(ruby_v_file):
 #  SERVE
 # -----------------------------------------------------------------------------
 
-serve:
+serve: $(ruby_v_file)
 	bundle exec jekyll serve
 
-serve-incremental:
+serve-incremental: $(ruby_v_file)
 	bundle exec jekyll serve --incremental
 
 # -----------------------------------------------------------------------------
