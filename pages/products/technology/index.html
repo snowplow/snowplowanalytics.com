@@ -1,0 +1,168 @@
+---
+layout: default-revamp
+group: technology
+# subgroup: technology
+title: Snowplow Technology - | Snowplow
+description: Snowplow Insights puts you in control of your data collection. You decide what, when and where! Ask any question to your data and perform any analysis!
+permalink: products/technology/
+class: insights
+assets:
+  css: assets/css/technology.css
+  # js: assets/js/products-insights.js
+cards:
+    - name: Trackers & webhooks
+      icon: /assets/img/products/technology/icons/spw-icon-trackers-warehousing.svg
+      excerpt: Track events from anywhere
+      content: 16 trackers and counting, we cover web, mobile, desktop, server and IoT. This includes iOS, Android and JavaScript trackers, to collect those all-important behavioral signals from your customers. Our webhook support allows third-party software to send their own internal event streams to Snowplow for further processing.
+      url: /technology
+    - name: Event collectors
+      icon: /assets/img/products/technology/icons/spw-icon-event-collectors.svg
+      excerpt: Collectors <br>as the pipeline gateway
+      content: Event collectors receive Snowplow events from our trackers and webhooks, reliably storing your events to Amazon S3, Amazon Kinesis or Google Cloud Pub/Sub. Collectors are the gateway into your Snowplow pipeline and our autoscaling tech ensures that traffic spikes never cause you any issues.
+      url: /technology
+    - name: Data validation
+      icon: /assets/img/products/technology/icons/spw_icon_data_validation.svg
+      excerpt: Your events<br>are validated upfront
+      content: Garbage in doesn’t have to mean garbage out, Snowplow prevents bad data from breaking your downstream systems by validating your events upfront. You define the structure of the incoming events and validation ensures that only well-structured, usable data comes through the pipeline. Data which fails validation isn’t blocked or thrown away - we preserve it in a bad data store for recovery and reprocessing.
+      url: /technology
+    - name: Schema registry
+      icon: /assets/img/products/technology/icons/spw_icon_schema_registry.svg
+      excerpt: Store and evolve<br>your data structures
+      content: Snowplow event validation is built on top of our schema registry, a world-leading technology for storing and evolving data structures or schemas. Your schema registry contains the full history of all your event data structures, ready for fast retrieval by the Snowplow pipeline to validate your events in real-time.
+      url: /technology
+    - name: Data enrichment
+      icon: /assets/img/products/technology/icons/spw-icon-data.svg
+      excerpt: The richest event data<br>out there
+      content: Snowplow provides the richest event data in the market - we deliver on this promise by widening Snowplow events with additional information. Snowplow supports a range of configurable enrichments like marketing campaign attribution, GeoIP lookup, and Spiders and Bots - as well as fully custom enrichments. A complete overview of our enrichments can be found in our <a href="http://docs.snowplowanalytics.com/snowplow-insights/enrichments/" target="_blank">documentation</a>.
+      url: /technology
+    - name: Real-time applications
+      icon: /assets/img/products/technology/icons/spw-icon-schema-realtime-realtime.svg
+      excerpt: Real-time event stream,<br>no asterisk
+      content: Snowplow provides a real-time stream of fully enriched event data, with a consistent, predictable structure - plus a set of Analytics SDKs to make it easy for your engineers to consume that event data. This lets you build real-time applications such as content recommendations, fraud detection or real-time dashboards on top of your Snowplow data.
+      url: /technology
+    - name: Warehousing
+      icon: /assets/img/products/technology/icons/spw_icon_warehousing.svg
+      excerpt: Your data in your cloud
+      content: Your event data is stored in your preferred cloud data warehouse, in a format ready for your data team to work with. On AWS, chose from Redshift or Snowflake - or work directly with the data in Amazon S3. On GCP, we load your event data into BigQuery in near-real-time; the pipeline will also back up your data to Cloud Storage.
+      url: /technology
+    - name: Modeling<br>& Intelligence
+      icon: /assets/img/products/technology/icons/spw_icon_modelling_intelligence.svg
+      excerpt: Join, model and<br>act on your data
+      content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of your industry. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. Our Implementation Engineers can help empower your analysts or data team to derive maximum insights from your Snowplow data.
+      url: /technology
+big-cards:
+    - name: Snowplow on<br>Amazon Web Services 
+      pic: /assets/img/products/technology/amazon-webservices-logo.svg
+      content: Snowplow runs native on AWS with a technical architecture that is linearly scalable. We build on top of the AWS services that data and systems engineers know and love - from Kinesis to S3 to Redshift.<br><br>We’re fully integrated into your AWS account so that you can work directly with your event data and your preferred tools.
+      url: /technology
+    - name: Snowplow on<br>Google Cloud Platform
+      pic: /assets/img/products/technology/google-cloud-platform-logo.svg
+      content: Snowplow runs native on GCP, with a technical architecture that is linearly scalable. Snowplow is built on top of GCP’s best-in-class data services - from Cloud Dataflow to BigQuery to Cloud Pub/Sub.<br><br>We’re are fully deployed into your Google Cloud account so there’s nothing standing in-between you and your event streams.
+      url: /technology
+
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/technology/spw-technology-header@2x.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-offset-1">
+                <h1>The best-in-class<br>data collection platform.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>The Snowplow pipeline is architected from the ground up for data quality, so you don’t have to worry about bad or missing data.</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <a href="/request-demo/" class="btn btn-primary call-to-action">Get started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section-revamp section-revamp-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>The Snowplow Pipeline</h2>
+                <h5>Our technology is ideal for data teams who want to manage the collection and warehousing of data across all their platforms and channels, in real-time.</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <img src="{{ BASE_PATH }}/assets/img/products/technology/spw-pipeline-infographic.svg" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section-revamp section-revamp-cards-section">
+    <div class="container">
+        <div class="section-revamp-cards-container">
+            {% for card in page.cards %}
+                <div class="section-revamp-cards">
+                    <div class="section-revamp-cards-main">
+                        <img src="{{ BASE_PATH }}{{ card.icon }}" alt="">
+                        <h4>{{ card.name }}</h4>
+                        <p>{{ card.excerpt }}</p>
+                    </div>
+                    <div class="section-revamp-cards-hover">
+                        <p>
+                            <span>{{ card.name }}</span>
+                            {{ card.content }}
+                        </p>
+                        <!--<a href="{{ card.url }}">Learn more about our Services team</a>-->
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="section-revamp section-revamp-center pad-b-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>Running native inside your cloud account</h2>
+                <p>
+                    Snowplow was designed to run native on your public cloud - first AWS and now GCP. We don’t reinvent the wheel: Snowplow builds on top of the clouds’ own best-in-class data services, like Kinesis and BigQuery.
+                    <br>
+                    <br>
+                    Your security officer can sleep easy: your business-critical event data is never routed through Snowplow or any other third-party’s servers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section-revamp section-revamp-big-cards-section">
+    <div class="container">
+        <div class="section-revamp-big-cards-container">
+            {% for card in page.big-cards %}
+                <div class="section-revamp-big-cards">
+                        <img src="{{ BASE_PATH }}{{ card.pic }}" alt="">
+                        <h4>{{ card.name }}</h4>
+                        <p>{{ card.content }}</p>
+                        <!--<a class="btn btn-lines" href="{{ card.url }}">Learn more</a>-->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% include request-demo-revamp.html %}
