@@ -1,12 +1,12 @@
 ---
 layout: post
 title-short: W3W API request enrichment
-title: "Adding what3words reverse geocoding data to Snowplow enriched events [tutorial]"
-tags: []
+title: "[Tutorial] Adding what3words reverse geocoding data to Snowplow enriched events"
+tags: [analytics, enrichments, api, custom api, web data modeling, data modeling, web analytics]
 author: Dilyan
-image: /assets/img/team/dilyan.jpg
-category:
-permalink: /blog/2019/02/20/w3w-api-request-enrichment/
+image: /assets/img/blog/2019/02/kibana-screenshot.png
+category: Data Modeling
+permalink: /blog/2019/02/27/w3w-api-request-enrichment/
 discourse: true
 ---
 
@@ -16,13 +16,13 @@ In this tutorial, we'll look at how you can use the enrichment to add a 'reverse
 
 ## What is what3words?
 
-[what3words][what3words] has divided the world into a grid of 3m x 3m squares and assigned each one a unique 3 word address. (The main Snowplow London offices for example are at [rise.heavy.last][rise.heavy.last].) The service is especially useful in regions with less well developed postal and addressing systems, as it allows locations to be identified and shared precisely and easily. There's a free mobile app and an online map, and w3w can also be built into any other app, platform or website.
+[what3words][what3words] has divided the world into a grid of 3m x 3m squares and assigned each one a unique 3 word address. (The main Snowplow London offices for example are at [rise.heavy.last][rise.heavy.last].) The service is especially useful in regions with less well developed postal and addressing systems, as it allows locations to be identified and shared precisely and easily. There's a free mobile app and an online map, and w3w can also be built into any other app, platform, or website.
 
-The [reverse geocoding API][reverse-geocoding-api] resolves coordinates, expressed as latitude and longitude to a 3 word address.
+The [reverse geocoding API][reverse-geocoding-api] resolves coordinates, expressed as latitude and longitude, to a 3 word address.
 
 ## Design considerations
 
-Let's start by considering what inputs we'll need, what the API call needs to look like and what the expected output from it will be.
+Let's start by considering what inputs we'll need, what the API call needs to look like, and what the expected output from it will be.
 
 ### Inputs
 
@@ -30,7 +30,7 @@ The reverse geocoding API expects to receive coordinates (a comma separated stri
 
 We will get the latitude and longitude data from the enriched event POJO. You will have to sign up with what3words for an API key.
 
-Additionally, there are come optional requirements, some of which affect the format of the response. The enrichment assumes that the API returns a JSON, so we need to ensure that we set these appropriately. We should set `format=json` and not use the `callback` parameter.
+Additionally, there are some optional requirements, some of which affect the format of the response. The enrichment assumes that the API returns a JSON, so we need to ensure that we set these appropriately. We should set `format=json` and not use the `callback` parameter.
 
 It's up to you if you want to use the `full` or `terse` display option. The schemas in this tutorial assume we're using `display=full`.
 
@@ -102,7 +102,7 @@ $ --name reverse_geocoding_context --no-length \
 $ --output schemas/com.what3words/reverse_geocoding_context/jsonschema/1-0-0
 ```
 
-Schemas derived from a single JSON instance can be too restrictive, which is why we're using the `--no-length` option (to remove min and max bounds for strings). After the schema has been generated, you may want to make it even more permissive. Some common changes include making all string fields nullable (in case there are missing values) and setting `additionalProperties` to `true`, to ensure the events will pass validation if w3w adds new fields to the response.
+Schemas derived from a single JSON instance can be too restrictive, which is why we're using the `--no-length` option to remove min and max bounds for strings. After the schema has been generated, you may want to make it even more permissive. Some common changes include making all string fields nullable (in case there are missing values) and setting `additionalProperties` to `true`, to ensure the events will pass validation if w3w adds new fields to the response.
 
 Here's an example draft created with Schema Guru and then modified by hand:
 
@@ -211,7 +211,7 @@ Here's an example draft created with Schema Guru and then modified by hand:
 }
 ```
 
-You can also use Schema Guru to generate Redshift DDLs and JSONpath files, or -- if you're more familiar with it and / or are working off a schema you wrote from scratch -- you can use [Igluctl][igluctl] to do the same. (If you're using a different storage target, such as BigQuery or Snowflake, you don't need to worry about the DDL: the respective loader apps in the pipeline will figure it out.)
+You can also use Schema Guru to generate Redshift DDLs and JSONpath files, or -- if you're more familiar with it and / or are working off a schema you wrote from scratch -- you can use [Igluctl][igluctl] to do the same. If you're using a different storage target, such as BigQuery or Snowflake, you don't need to worry about the DDL: the respective loader apps in the pipeline will figure it out.
 
 ### Step 3: Write the enrichment configuration
 
@@ -274,13 +274,13 @@ We ultimately want to end up with a file that looks like this:
 Let's look at the different parameters in turn.
 
 #### inputs
-We need two datapoints from the raw event POJO: `geo_latitude` and `geo_longitude`. We assign the values found there to the `lat` and `lng` keys, respectively.
+We need two data points from the raw event POJO: `geo_latitude` and `geo_longitude`. We assign the values found there to the `lat` and `lng` keys, respectively.
 
 #### api
 We then use the `lat` and `lng` keys to refer to the `geo_latitude` and `geo_longitude` values in the API call. The values extracted from the raw event will be substituted in the URI before the `GET` request is submitted.
 
 #### outputs
-The API responds with a JSON, which matches out custom `reverse_geocoding_context` schema, so we take on all of the data from the response, by specifying `"jsonPath": "$"`.
+The API responds with JSON, which matches out custom `reverse_geocoding_context` schema, so we take on all of the data from the response, by specifying `"jsonPath": "$"`.
 
 #### cache
 A heavy-traffic pipeline might generate millions of calls to the specified API endpoint in a very short period of time. We can use this section to set some reasonable limits  for the cache size and 'time to live'.
