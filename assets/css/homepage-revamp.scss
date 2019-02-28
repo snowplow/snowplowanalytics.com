@@ -1,0 +1,41 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * Products Insight
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * STYLES
+ */
+.hero-revamp-center {
+	padding-top: 70px;
+	.btn {
+		margin-top: 80px;
+	}
+}
+
+p.section-revamp-testemonial-content {
+	color: $lightish-purple;
+}
+img.section-revamp-testemonial-logo {
+	width: 241.5px;
+  	height: 93px;
+}
+
