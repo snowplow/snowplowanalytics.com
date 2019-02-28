@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-02-25 07:03:22
+* @Last Modified time: 2019-02-28 07:27:02
 */
 
 /* 
@@ -30,6 +30,16 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: absolute;
+}
+@mixin bg-contain {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+@mixin bg-cover {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
@@ -80,6 +90,9 @@ $very-light-blue-two: #e1e6f0;
 	&-blue {
 		background-color: $ice-blue;
 	}
+	&-bot-0 {
+		padding-bottom: 0 !important;
+	}
 	p {
 		font-size: 16px;
 		color: $gunmetal;
@@ -102,6 +115,15 @@ $very-light-blue-two: #e1e6f0;
 	&:hover {
 		background-color: $blue-purple;
 		color: white;
+	}
+}
+.btn.btn-lines-white {
+	background-color: transparent;
+	color: white;
+	border: white solid 2px;
+	&:hover {
+		background-color: white;
+		color: $blue-purple;
 	}
 }
 
@@ -150,20 +172,14 @@ $very-light-blue-two: #e1e6f0;
  */
 :root {
  	--revamp-hero-pad: 180px 0 100px;
- 	// --revamp-logo-w: 130px;
  	--revamp-logo-mg: 100px 0 0;
  	@media (max-width: $lg-max) {
- 		// --revamp-logo-w: 110px;
  		--revamp-logo-mg: 80px 0 0;
  	}
  	@media (max-width: $md-max) {
- 		// --revamp-logo-w: 90px;
  		--revamp-logo-mg: 60px 0 0;
  	}
- 	@media (max-width: $sm-max) {
- 		// --revamp-hero-pad: 140px 0 80px;
- 		// --revamp-logo-mg: 40px 0 0;
- 	}
+ 	@media (max-width: $sm-max) {}
  	@media (max-width: $xs-max) {
 		--revamp-hero-pad: 120px 0 80px;
 	}
@@ -179,8 +195,14 @@ $very-light-blue-two: #e1e6f0;
 			font-size: 40px;
 		}
 	}
+	h3 {
+		color: $lightish-purple;
+	}
 	h4 {
 		color: $gunmetal;
+	}
+	.btn + .btn {
+		margin-left: 80px;
 	}
 	&-light{
 		h1 {
@@ -931,40 +953,84 @@ $very-light-blue-two: #e1e6f0;
  */
 :root {
 	--revamp-side-by-side-p-mg: 0 0 45px;
-	--revamp-side-by-side-content-w: 55%;
+	--revamp-side-by-side-content-w: 50%;
 	--revamp-side-by-side-logo-w: 38%;
-	--revamp-side-by-side-logo-h: 300px;
+	--revamp-side-by-side-content-mg: 5%;
+	--revamp-side-by-side-content-min-h: 300px;
 	--revamp-side-by-side-block-mt: 200px;
-	// --revamp-case-studies-select-pad: 10px 0;
-	// --revamp-case-studies-select-w: 290px;
-	// --revamp-case-studies-label-mg: 0 auto 80px;
  	@media (max-width: $lg-max) {}
  	@media (max-width: 991px) {}
  	@media (max-width: 767px) {}
- 	@media (max-width: 420px) {} 
+ 	@media (max-width: $xs-max) {
+ 		--revamp-side-by-side-content-w: 100%;
+		--revamp-side-by-side-logo-w: 100%;
+		--revamp-side-by-side-content-mg: 0%;
+		--revamp-side-by-side-logo-h: 300px;
+		--revamp-side-by-side-block-mt: 100px;
+ 	} 
 }
 .revamp-side-by-side {
-	&-section {}
+	&-section {
+		padding-top: 0;
+	}
 	&-block {
-		@include do-flex(row, space-between, center);
+		@include do-flex(row, flex-end, center);
 		margin-top: var(--revamp-side-by-side-block-mt);
+		min-height: var(--revamp-side-by-side-content-min-h);
+		@media (max-width: $xs-max) {
+	 		@include do-flex(column, flex-start, center);
+	 	} 
+		// odd
+		&._invert {
+			justify-content: flex-start;
+		}
 	}
 	&-content {
 		order: 2;
 		flex: 0 1 var(--revamp-side-by-side-content-w);
 		@include do-flex(column, center, flex-end);
+		margin-left: var(--revamp-side-by-side-content-mg);
+		._invert & {
+			order: 1;
+			margin-right: var(--revamp-side-by-side-content-mg);
+			margin-left: 0;
+			@media (max-width: $xs-max) {
+	 			order: 2;
+	 		}
+		}
+		&-wrapper {
+			@media (max-width: $xs-max) {
+			 	text-align: center !important;
+			}
+			._invert & {
+				text-align: right;
+			}
+		}
 		h3 {
 			font-weight: 300;
   			color: $gunmetal;
+  			@media (max-width: $xs-max) {
+		 		text-align: center !important;
+		 	} 
+  			._invert & {
+				text-align: right;
+			}
 		}
 		p, a {
 			&.revamp-side-by-side-content-content {
   				line-height: 1.85;
   				color: $gunmetal;
   				margin: var(--revamp-side-by-side-p-mg);
+  				@media (max-width: $xs-max) {
+			 		text-align: center !important;
+			 	} 
+  				._invert & {
+					text-align: right;	
+				}
 			}
 			&.revamp-side-by-side-content-location {
 				margin: 0 20px 0 0;
+				display: inline-block;
 				svg {
 					width: 12px;
 					height: 16px;
@@ -974,6 +1040,7 @@ $very-light-blue-two: #e1e6f0;
 			&.revamp-side-by-side-content-link {
 				margin: 0;
 				text-decoration: underline;
+				display: inline-block;
 				svg {
 					width: 16px;
 					height: 16px;
@@ -981,26 +1048,27 @@ $very-light-blue-two: #e1e6f0;
 				}
 			}
 		}
-		// odd
-		&._invert {
-			.revamp-side-by-side-content {
-				order: 1;
-			}
-			.revamp-side-by-side-logo {
-				order: 2;
-			}
-			h3, p.evamp-side-by-side-content-content {
-				text-align: right;
-			}
-		}
 	}
 	&-logo {
 		order: 1;
-		flex: 0 1 var(--revamp-side-by-side-content-w);
-		height: var(--revamp-side-by-side-logo-h);
+		flex: 0 1 var(--revamp-side-by-side-logo-w);
+		//height: var(--revamp-side-by-side-logo-h);
 		position: relative;
+		background-image: url(../img/partners/partners-revamp/shape-4-copy-21.svg);
+		@include bg-contain();
+		@media (max-width: $xs-max) {
+	 		min-height: var(--revamp-side-by-side-logo-h);
+	 		margin-bottom: 40px;
+	 	} 
+		._invert & {
+			order: 2;	
+			@media (max-width: $xs-max) {
+	 			order: 1;
+	 		}
+		}
 		img {
 			@include center-center;
+			max-width: 80%;
 		}
 	}
 }
@@ -1009,3 +1077,67 @@ $very-light-blue-two: #e1e6f0;
 
 
 
+/* 
+ * News cards
+ */
+:root {
+	--revamp-news-cards-mg: 20px;
+	--revamp-news-cards-pad: 45px 35px 85px;
+ 	@media (max-width: 991px) {}
+ 	@media (max-width: 767px) {}
+ 	@media (max-width: $xs-max) {
+ 	
+ 	} 
+}
+.revamp-news-cards {
+	&-section {
+		h2 {
+			text-align: center;
+			color: $blue-purple;
+		}
+	}
+	&-container {
+		margin-top: 50px;
+		@include do-flex(row, space-between, flex-start);
+	}
+	&-block {
+		background-color: $ice-blue;
+		padding: var(--revamp-news-cards-pad);
+		margin-bottom: var(--revamp-news-cards-mg); 
+		flex: 0 1 calc(33% - var(--revamp-news-cards-mg)/2);
+		@include do-flex(column, space-between, center);
+		&:hover {
+			box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);
+		}
+		h6 {
+			font-size: 14px;
+  			font-weight: 500;
+  			text-align: center;
+  			color: $blue-purple;
+  			text-transform: uppercase;
+  			margin: 0 0 50px;
+  			width: 100%;
+		}
+		h5 {
+			font-size: 24px;
+  			font-weight: 500;
+  			text-align: center;
+  			color: $gunmetal;
+  			margin: 0 0 25px;
+  			width: 100%;
+		}
+		p {
+			font-size: 16px;
+  			font-weight: 300;
+  			line-height: 1.85;
+  			text-align: center;
+  			color: $gunmetal;
+			margin: 0 0 80px;
+  			width: 100%;
+		}
+		.btn {
+			justify-self: flex-end;
+			margin: 0 auto;
+		}
+	}
+}
