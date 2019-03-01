@@ -26,3 +26,24 @@
  */
 
 
+/* Menu Correction */
+body.customers {
+	header {
+		background: #fff;
+		.navbar, 
+		.navbar-default {
+			border-bottom: 1px solid rgba(182,187,200,0.4);
+			.navbar-brand {
+				color: #50545c;
+			}
+			.navbar-nav > li > a:not(.btn) {
+				color: #50545c;
+			}
+			.navbar-nav > li:hover > a::after,
+			.navbar-nav > li.active > a::after {
+				background-color: #6738B8;
+			}
+		}
+	}
+}
+
