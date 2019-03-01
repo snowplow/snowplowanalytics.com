@@ -204,6 +204,9 @@ $very-light-blue-two: #e1e6f0;
 	}
 	.btn + .btn {
 		margin-left: 80px;
+		@media (max-width: $xs-max) {
+		margin-left: 10px;
+		}
 	}
 	&-light{
 		h1 {
@@ -221,6 +224,9 @@ $very-light-blue-two: #e1e6f0;
 	&-center {
 		h1, h4 {
 			text-align: center;
+		}
+		.btn {
+			font-size: 10px;
 		}
 	}
 	&-logos {
