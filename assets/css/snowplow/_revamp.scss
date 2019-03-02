@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-02-28 22:46:14
+* @Last Modified time: 2019-03-02 11:56:50
 */
 
 /* 
@@ -881,6 +881,7 @@ $very-light-blue-two: #e1e6f0;
 			.revamp-case-studies-back {
 				opacity: 1;
 				z-index: 3;
+				visibility: visible;
 			}
 		}
 	}
@@ -920,6 +921,7 @@ $very-light-blue-two: #e1e6f0;
 		padding: var(--revamp-case-studies-block-pad);
 		opacity: 0;
 		transition: opacity .5s ease-in-out;
+		visibility: hidden;
 		@include do-flex(column, center, center);
 		._logo {
 			width: 50%;
