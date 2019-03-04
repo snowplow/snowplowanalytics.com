@@ -3,16 +3,25 @@
  * COSTUMERS REVAMP 2019
  */
 
-/*var case_studies = [], case_studies_left = '', case_studies_right = '', case_studies_html = '';
-var test_array = [];
-var video_filter = '', videos_array = [];
-var html_;
-var media_pos = 0;*/
-
 var cust_rev_selct = $('#revamp-case-studies-filter'); 
 var cust_rev_cont = $('.revamp-case-studies'); 
 var cust_rev_blck = $('.revamp-case-studies-block'); 
 
+function is_touch_device() {
+  var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+  var mq = function(query) {
+    return window.matchMedia(query).matches;
+  }
+
+  if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+    return true;
+  }
+
+  // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+  // https://git.io/vznFH
+  var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+  return mq(query);
+}
 
 
 $(document).ready(function() {
@@ -55,6 +64,13 @@ $(document).ready(function() {
  			});
  		}
  	});
+
+ 	/**
+ 	 * Correct Hover on mobile devices
+ 	 */
+ 	 cust_rev_blck.click(function(event) {
+ 	 	//console.log( is_touch_device() );
+ 	 });
 
 
 
