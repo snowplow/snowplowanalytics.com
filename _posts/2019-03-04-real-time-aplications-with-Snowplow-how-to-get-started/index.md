@@ -8,19 +8,26 @@ Through doing this, I've noticed that many Snowplow customers/users overlook som
 
 Many of the aspects of the Snowplow Pipeline that take the work out of building real-time use cases are the same well-known aspects that make for powerful, granular and fast analytics.
 
+![pipeline-diagram]
+
 **Data Quality**
+
 The pipeline's validation step ensures that only valid and good quality data is processed - which removes the need for a large scale data quality exercise later on when building a data model or embarking on analysis. This same feature ensures that real-time applications can be built without a worry that data quality will cause something to break. Because all data is validated against a schema, we are guaranteed that all data coming in to our application will be of the format specified in the schema. So no work needs to be done to account for anomalous data coming in, and we are guaranteed a consistent format.
 
 **Data Structures**
-Because Snowplow delivers highly structured data, it's easy to work with this data using code, and we can be guaranteed a consistent structure to the data. This means we spend very little time figuring out how to extract the values we need, and debugging these for anomalous structures. The one step we do need to take to make the data structure easy to work with in code is to transform the pipeline's output of an Enriched TSV format event into a structured object - this work is carried out by the [Snowplow Analytics SDKs](https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK) - and using these will also ensure that our application is compatible with any future changes to data structures.
+
+Because Snowplow delivers highly structured data, it's easy to work with this data using code, and we can be guaranteed a consistent structure to the data. This means we spend very little time figuring out how to extract the values we need, and debugging these for anomalous structures. The one step we do need to take to make the data structure easy to work with in code is to transform the pipeline's output of an Enriched TSV format event into a structured object - this work is carried out by the [Snowplow Analytics SDKs][SDKs] - and using these will also ensure that our application is compatible with any future changes to data structures.
 
 **Modular, custom tracking**
+
 Snowplow tracking design is modular (ie you can track events and attach entities as required), and custom (ie you can define any event as per your requirements), which makes for great analytics because you can define what you collect according to your own specific business requirements, rather than manipulating another structure to suit your needs. Equally, you can track events specifically as required for the input of your application. This allows you to remove a layer of complexity from the application design - rather than having to combine or interpret events in your code and extrapolate meaning, you can design your tracking setup to represent exactly what the simplest possible input to your application would require. Occasionally, this is slightly different from what you might use for analytics - but this is an easy barrier to circumvent by either using additional custom events or attaching additional custom contexts to your events.
 
 **Enrichements**
-Snowplow comes with a set of standard configurable enrichments, and a set of fully custom enrichments (a list of enrichments can be found [here](https://github.com/snowplow/snowplow/wiki/Configurable-enrichments)). Often these can be leveraged to again take a lot of the work out of the application. If sources of traffic are important to the application, the [Campaign Attribution enrichment](https://github.com/snowplow/snowplow/wiki/Campaign-attribution-enrichment) does that work for you. If values need reformatting or extraction from the data (for example where our tracking is restricted in doing so), or some low level computation needs to be done, you can write a custom [Javascript enrichment](https://github.com/snowplow/snowplow/wiki/JavaScript-script-enrichment) to do so. If we need to join data from another source, the [SQL Query](https://github.com/snowplow/snowplow/wiki/SQL-Query-enrichment) or [API Request](https://github.com/snowplow/snowplow/wiki/API-Request-enrichment) enrichments will be of use.
+
+Snowplow comes with a set of standard configurable enrichments, and a set of fully custom enrichments (a list of enrichments can be found [here][enrichments-homepage]). Often these can be leveraged to again take a lot of the work out of the application. If sources of traffic are important to the application, the [Campaign Attribution enrichment][campaign-enrichment] does that work for you. If values need reformatting or extraction from the data (for example where our tracking is restricted in doing so), or some low level computation needs to be done, you can write a custom [Javascript enrichment][js-enrichment] to do so. If we need to join data from another source, the [SQL Query][sql-enrichment] or [API Request][api-enrichment] enrichments will be of use.
 
 **Transparency and control over your data**
+
 Finally, rather than restricting you to a predefined logic on their data, or identifying users, Snowplow exposes all of the available data for you to define your business logic and use as you see fit. This means we can build our application to suit the specific requirements we need. For example, if the timing or order of events occurence is important we have the `derived_tstamp`, `dvce_created_tstamp`, `dvce_sent_tstamp`, `collector_tstamp` and `etl_tstamp` - as well as any timestamps sent with custom events or contexts - we can choose any combination of these to suit the logic we need. Equally we have several different means of identifying users, which can be used across different devices and domains, so we can build the specific identity logic we need for the application to function well.
 
 ### Is it really that simple?
@@ -63,3 +70,18 @@ It's important to note that boiling things down to these simple core principles 
 Real-time actioning is a complicated business no matter how you look at it, and delivering valuable applications is a difficult task. However Snowplow makes building and maintaining applications themselves quite straightforward - essentially, the question of what's possible to build and maintain is removed from the equation - most use cases are possible and can be built and maintained in a straightforward way. The first step to producing applications which deliver real value is following the above steps to establish what the best thing to build is. Once that's done, the task is to ensure that Snowplow has been set up for success, and arrive at the simplest design possible to deliver the most value.
 
 I hope to expand on the design process in a future post, but in the meantime, if you're a Snowplow user and you'd like to flesh out your ideas or want guidance on how to get there, reach out to us for a discussion - our experience in scoping, designing and building applications will likely prove valuable.
+
+
+[pipeline-diagram]: /assets/img/blog/2019/03/pipeline-diagram.png
+
+[SDKs]: https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK
+
+[enrichments-homepage]: https://github.com/snowplow/snowplow/wiki/Configurable-enrichments
+
+[campaign-enrichment]: https://github.com/snowplow/snowplow/wiki/Campaign-attribution-enrichment
+
+[js-enrichment]: https://github.com/snowplow/snowplow/wiki/JavaScript-script-enrichment
+
+[sql-enrichment]: https://github.com/snowplow/snowplow/wiki/SQL-Query-enrichment
+
+[api-enrichment]: https://github.com/snowplow/snowplow/wiki/API-Request-enrichment
