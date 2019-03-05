@@ -226,7 +226,9 @@ $very-light-blue-two: #e1e6f0;
 			text-align: center;
 		}
 		.btn {
+			@media (max-width: $xs-max) {
 			font-size: 10px;
+			} 
 		}
 	}
 	&-logos {
