@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-03-02 11:56:50
+* @Last Modified time: 2019-03-06 06:40:51
 */
 
 /* 
@@ -461,6 +461,36 @@ $very-light-blue-two: #e1e6f0;
 	}
 	&-block {
 		@include do-flex(column, center, center);
+		opacity: 0;
+		display: none;
+		transition: opacity .5s ease-in-out;
+		color: $gunmetal;
+		&._active {
+			opacity: 1;
+			display: flex;
+		}
+	}
+	&-markers {
+		$s: 5px;
+		width: $s;
+		height: $s;
+		border-radius: $s;
+		opacity: .5;
+		cursor: pointer;
+		margin: auto 7.5px;
+		transition: all .25s ease-in-out;
+		background-color: $lightish-purple;
+		&._active {
+			$s: 10px;
+			width: $s;
+			height: $s;
+			border-radius: $s;
+			opacity: 1;
+		}
+		&-container {
+			@include do-flex(row, center, center);
+			margin-top: 40px;
+		}
 	}
 	&-logo {
 		width: var(--revamp-animated-testemonial-logo-w);
@@ -473,8 +503,8 @@ $very-light-blue-two: #e1e6f0;
 		font-weight: 300;
   		line-height: 1.5;
   		text-align: center;
-  		color: $lightish-purple;
-  		margin: var(--revamp-animated-testemonial-content-mg);
+  		color: $gunmetal !important;
+  		margin: var(--revamp-animated-testemonial-content-mg);	
 	}
 	&-person {
 		@include do-flex(row, center, center);
