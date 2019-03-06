@@ -5,7 +5,7 @@ title: "Snowplow R113 Filitosa real-time pipeline improvements"
 tags: [snowplow, real-time, kafka, collector]
 author: Ben
 category: Releases
-permalink: /blog/2019/02/18/snowplow-r113-filitosa-real-time-pipeline-improvements/
+permalink: /blog/2019/03/06/snowplow-r113-filitosa-real-time-pipeline-improvements/
 ---
 
 [Snowplow 113 Filitosa][snowplow-release], named after
@@ -19,7 +19,7 @@ This release is almost entirely made of community contributions, shoutout to all
   - adding [Prometheus][prometheus] support to the Scala Stream Collector
   - making it possible to use POST requests in the API request enrichment
   - and other improvements to the Scala Stream Collector
-- [Peter Zhu][misterpig] and [Mike][miike] from [Snowflake Analytics][sa] for:
+- [Peter Zhu][misterpig] and [Mike][miike] from [Poplin Data][sa] for:
   - the [HubSpot][hubspot] webhook integration
   - and other improvements to the existing webhook integrations and Scala Stream Collector
 - [Sven Pfenning][sven] and [Mirko Prescha][mirko] for the improvements made to our Kafka platform
@@ -76,7 +76,7 @@ For people using [the do not track cookie feature](https://snowplowanalytics.com
 of the Scala Stream Collector, [LiveIntent][liveintent] has improved the feature by letting you
 specify a regex for the cookie value.
 
-[Mike][miike] from [Snowflake Analytics][sa] has introduced a configurable `Access-Control-Max-Age`
+[Mike][miike] from [Poplin Data][sa] has introduced a configurable `Access-Control-Max-Age`
 header which lets clients cache the results of `OPTIONS` request, resulting in fewer requests and
 faster `POST` requests: no need to make a preflight request if the result is already cached.
 
@@ -84,7 +84,7 @@ faster `POST` requests: no need to make a preflight request if the result is alr
 
 <h3 id="hubspot">2.1 HubSpot webhook integration</h3>
 
-[Peter Zhu][misterpig] from [Snowflake Analytics][sa] built the [HubSpot][hubspot] webhook
+[Peter Zhu][misterpig] from [Poplin Data][sa] built the [HubSpot][hubspot] webhook
 integration from scratch for this release. Huge props to Peter!
 
 You'll now be able to track the following HubSpot events in your Snowplow pipeline:
@@ -193,7 +193,7 @@ in [the dedicated RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-f
 
 Stay tuned for announcements of more upcoming Snowplow releases soon!
 
-<h2 id="help">6. Getting help</h2>
+<h2 id="help">5. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
@@ -209,7 +209,7 @@ If you have any questions or run into any problem, please visit [our Discourse f
 [liveintent]: https://liveintent.com/
 [misterpig]: https://github.com/misterpig
 [miike]: https://github.com/miike
-[sa]: https://www.snowflake-analytics.com/
+[sa]: https://poplindata.com/
 [sven]: https://github.com/0xE282B0
 [mirko]: https://github.com/mirkoprescha
 
