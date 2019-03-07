@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-03-06 06:40:51
+* @Last Modified time: 2019-03-07 06:50:57
 */
 
 /* 
@@ -247,12 +247,12 @@ $very-light-blue-two: #e1e6f0;
 				flex: 0 1 100%;
 			}
 			img {
-				//width: var(--revamp-logo-w);
-				width: 50%;
+				/*width: var(--revamp-logo-w);*/
+				/*width: 50%;*/
 				height: auto;
-				margin: var(--revamp-logo-mg);
+				margin: 25px;
 				@media (max-width: $sm-max) {
-					width: 40%;
+					/*width: 40%;*/
 				}
 				&:nth-of-type(4n+1) {
 					justify-self: left;
@@ -468,6 +468,33 @@ $very-light-blue-two: #e1e6f0;
 		&._active {
 			opacity: 1;
 			display: flex;
+		}
+		&-container {
+			position: relative;
+			i.i-arrow-left {
+				@include center-top;
+				left: -15px;
+				cursor: pointer;
+				opacity: .7;
+				z-index: 2;
+				transition: opacity .25s ease-in-out;
+				font-size: 20px;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			i.i-arrow-right {
+				@include center-top;
+				right: -15px;
+				cursor: pointer;
+				opacity: .7;
+				z-index: 2;
+				transition: opacity .25s ease-in-out;
+				font-size: 20px;
+				&:hover {
+					opacity: 1;
+				}
+			}
 		}
 	}
 	&-markers {
@@ -999,8 +1026,6 @@ $very-light-blue-two: #e1e6f0;
 
 
 
-
-
 /* 
  * Case Studies
  */
@@ -1168,7 +1193,7 @@ $very-light-blue-two: #e1e6f0;
 		flex: var(--revamp-news-cards-w);
 		@include do-flex(column, space-between, center);
 		&:hover {
-			box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);
+			/*box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);*/
 		}
 		h6 {
 			font-size: 14px;
