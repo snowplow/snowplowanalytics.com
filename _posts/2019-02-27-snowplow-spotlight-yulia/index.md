@@ -22,7 +22,7 @@ I’m a Support Engineer and part of a team that provides assistance to our Snow
 
 <h2>2. Why did you decide to go into support engineering?</h2>
 
-After I finished university, I decided to go into software engineering first.  I was exited about the number of opportunities, challenges and flexibility this field gives you.  Later, once I’ve started working more closely with my company’s clients, I thought that I’d like to explore this field further and became a support engineer.  I found such an opportunity in Snowplow and it’s been a great experience so far.
+After I finished university, I decided to go into software engineering first.  I was excited about the number of opportunities, challenges and flexibility this field gives you.  Later, once I’ve started working more closely with my company’s clients, I thought that I’d like to explore this field further and became a support engineer.  I found such an opportunity in Snowplow and it’s been a great experience so far.
 
 
 <h2>3. What’s your favorite thing about your job?</h2>
