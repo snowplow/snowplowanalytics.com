@@ -272,3 +272,10 @@
   avatar: /assets/img/team/segah.jpg
   spiel:   |
       <a href="/blog/authors/segah/">Segah</a> is a Partner and Consultant at Seattle-based <a href="https://www.caura.co">Caura & Co.</a> Prior to starting his own firm, he was providing architectural leadership and implementation strategy as a Looker employee and Sr. Lead Consultant.
+
+- name: Archit
+  full_name: Archit Goyal
+  url: /blog/authors/archit/
+  avatar: /assets/img/team/archit.jpg
+  spiel:   |
+      <a href="/blog/authors/archit/">Archit</a> is a Data Strategist at Snowplow Analytics where he roadmaps and delivers data-driven solutions to business problems for our clients.
