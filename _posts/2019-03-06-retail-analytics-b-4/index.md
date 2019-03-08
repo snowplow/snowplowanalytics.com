@@ -10,7 +10,7 @@ permalink: /blog/2019/03/06/snowplow-for-retail-part-4-what-can-we-do-with-data-
 discourse: true
 ---
 
-We recommend you you have read the [first post in this series][part-1] before diving into this one to ensure you have all the context you need!
+We recommend that you have read the [first post in this series][part-1] before diving into this one to ensure you have all the context you need!
 
 Now we’re looking at a data team that is growing and has several analysts and maybe some spare engineering resource as the company is starting to see real value in the analytics you have served to date.
 
@@ -91,9 +91,9 @@ Assuming each family member identifies themselves at some point, you have some s
 - One family member (Josephine) goes on the careers pages often
 - The other family member searches for products often (Joseph)
 
-You can build a simple ranking of frequent behaviour using the event level data. Then, when a session starts and the user doesn’t identify themselves you can guess who they are.
+You can build a simple ranking of frequent behavior using the event level data. Then, when a session starts and the user doesn’t identify themselves you can guess who they are.
 
-- They search for “jobs”: they want to buy jobs, probably Joseph?
+- They search for “hobs”: they want to buy hobs, probably Joseph?
 - Wait, they just searched for “jobs”: Slightly more likely to be Joseph than Josephine
 - They view 6 job pages: pretty sure its Josephine
 
@@ -126,5 +126,3 @@ Read part 5 next: [What can we do with the data when we're well established?][pa
 [sample-indicative]: /assets/img/blog/2019/03/indicative.png
 
 [part-2-stitching]: /blog/2019/03/06/snowplow-for-retail-part-3-what-can-we-do-with-data-when-were-getting-started/#join
-
-[part-5]:
