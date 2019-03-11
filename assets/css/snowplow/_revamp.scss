@@ -247,12 +247,12 @@ $very-light-blue-two: #e1e6f0;
 				flex: 0 1 100%;
 			}
 			img {
-				/*width: var(--revamp-logo-w);*/
-				/*width: 50%;*/
+				width: var(--revamp-logo-w);
+				width: 50%;
 				height: auto;
 				margin: 25px;
 				@media (max-width: $sm-max) {
-					/*width: 40%;*/
+					width: 40%;
 				}
 				&:nth-of-type(4n+1) {
 					justify-self: left;

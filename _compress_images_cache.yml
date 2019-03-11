@@ -1726,6 +1726,9 @@ assets/img/blog/2019/02/neo4j_logo.jpg: neo4j_logo.jpg
 assets/img/blog/2019/02/servers.jpg: servers.jpg
 assets/img/blog/2019/02/tech-companies.png: tech-companies.png
 assets/img/team/segah.jpg: segah.jpg
+assets/img/blog/2019/02/filitosa.jpg: filitosa.jpg
+assets/img/blog/2019/02/kibana-screenshot.png: kibana-screenshot.png
+assets/img/blog/2019/02/baalbek.jpg: baalbek.jpg
 assets/img/products/technology/spw-technology-header@3x.png: spw-technology-header@3x.png
 assets/img/products/products-insights/spw-illustration-support@2x.png: spw-illustration-support@2x.png
 assets/img/products/products-insights/spw-illustration-hex-green@2x.png: spw-illustration-hex-green@2x.png
@@ -1860,7 +1863,6 @@ assets/img/partners/partners-revamp/companies/tasman-partners-logo@3x.png: tasma
 assets/img/partners/partners-revamp/companies/tasman-partners-logo@2x.png: tasman-partners-logo@2x.png
 assets/img/partners/partners-revamp/companies/snowflake-partners-logo@2x.png: snowflake-partners-logo@2x.png
 assets/img/partners/partners-revamp/companies/ispark-partners-logo@2x.png: ispark-partners-logo@2x.png
-assets/img/blog/2019/02/baalbek.jpg: baalbek.jpg
 assets/img/partners/partners-revamp/shape-4-copy-21.svg: shape-4-copy-21.svg
 assets/img/partners/partners-revamp/swp-icon-location.svg: swp-icon-location.svg
 assets/img/partners/partners-revamp/swp-icon-link.svg: swp-icon-link.svg
@@ -1941,3 +1943,29 @@ assets/img/products/products-insights/stewart-duncan.png: stewart-duncan.png
 assets/img/products/products-insights/justwatch-logo.svg: justwatch-logo.svg
 assets/img/products/products-insights/simply-business-logo.svg: simply-business-logo.svg
 assets/img/homepage/homepage-revamp/nordstrom-logo.svg: nordstrom-logo.svg
+assets/img/customers/customers-revamp/companies/strava.svg: strava.svg
+assets/img/customers/customers-revamp/companies/indochino.svg: indochino.svg
+assets/img/customers/customers-revamp/companies/la-presse.svg: la-presse.svg
+assets/img/customers/customers-revamp/companies/headspace.svg: headspace.svg
+assets/img/customers/customers-revamp/companies/economist.svg: economist.svg
+assets/img/customers/customers-revamp/companies/secret-escapes.svg: secret-escapes.svg
+assets/img/customers/customers-revamp/companies/datadog.svg: datadog.svg
+assets/img/customers/customers-revamp/companies/Goeuro.svg: Goeuro.svg
+assets/img/customers/customers-revamp/companies/autotrader.svg: autotrader.svg
+assets/img/customers/customers-revamp/companies/weebly.svg: weebly.svg
+assets/img/blog/2019/02/Yulia.jpg: Yulia.jpg
+assets/img/blog/2019/03/tables.png: tables.png
+assets/img/blog/2019/03/pipeline .png: pipeline .png
+assets/img/blog/2019/03/pipeline.png: pipeline.png
+assets/img/blog/2019/03/entities.png: entities.png
+assets/img/blog/2019/03/events.png: events.png
+assets/img/blog/2019/03/props.png: props.png
+assets/img/blog/2019/03/indicative.png: indicative.png
+assets/img/blog/2019/03/app-data.png: app-data.png
+assets/img/blog/2019/03/tstamp.png: tstamp.png
+assets/img/blog/2019/03/cookie.png: cookie.png
+assets/img/blog/2019/03/model.png: model.png
+assets/img/blog/2019/03/web-data.png: web-data.png
+assets/img/blog/2019/03/value.png: value.png
+assets/img/blog/2019/03/flow.png: flow.png
+assets/img/blog/2019/03/example.jpg: example.jpg
