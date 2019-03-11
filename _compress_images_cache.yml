@@ -102,7 +102,7 @@ assets/img/blog/2014/04/identity-stitching.png: identity-stitching.png
 assets/img/blog/2014/05/snowplow-looker-traffic-pulse-dashboard-top-part.png: snowplow-looker-traffic-pulse-dashboard-top-part.png
 assets/img/blog/2014/05/looker-snowplow-traffic-pulse-dashboard.png: looker-snowplow-traffic-pulse-dashboard.png
 assets/img/blog/2014/05/looker-explorer-screenshot.png: looker-explorer-screenshot.png
-assets/img/blog/2014/02/090-kinesis-architecture.png: 090-kinesis-architecture.png
+assets/img/blog/2014/02/090-kinesis-architecture.png: '090-kinesis-architecture.png'
 assets/img/blog/2014/02/brandon-kinesis.png: brandon-kinesis.png
 assets/img/blog/2014/11/kibana-screenshot-1.png: kibana-screenshot-1.png
 assets/img/blog/2014/11/kibana-screenshot-2.png: kibana-screenshot-2.png
@@ -1863,7 +1863,6 @@ assets/img/partners/partners-revamp/companies/tasman-partners-logo@3x.png: tasma
 assets/img/partners/partners-revamp/companies/tasman-partners-logo@2x.png: tasman-partners-logo@2x.png
 assets/img/partners/partners-revamp/companies/snowflake-partners-logo@2x.png: snowflake-partners-logo@2x.png
 assets/img/partners/partners-revamp/companies/ispark-partners-logo@2x.png: ispark-partners-logo@2x.png
-assets/img/blog/2019/02/baalbek.jpg: baalbek.jpg
 assets/img/partners/partners-revamp/shape-4-copy-21.svg: shape-4-copy-21.svg
 assets/img/partners/partners-revamp/swp-icon-location.svg: swp-icon-location.svg
 assets/img/partners/partners-revamp/swp-icon-link.svg: swp-icon-link.svg
