@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------------------
 
 ruby_v = 2.2.2
-bundler_v = 1.16.3
+bundler_v = 1.16.6
 
 ruby_v_file = .ruby-version
 gemfile = Gemfile
