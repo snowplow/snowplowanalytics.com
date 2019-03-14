@@ -103,8 +103,11 @@ aws glue create-database --database-input '{"Name": "snowplow_data", "Descriptio
 In order to create the table, you will need to use the CLI as creating all the fields (~130) would be too error-prone and tedious using the console.
 
 Use a command like so:
-
-```bash
+{% github_sample_ref knservis/blog_code_samples/blob/master/glue-athena/create_glue_table.sh %}
+{% highlight javascript %} 
+{% github_sample knservis/blog_code_samples/blob/master/glue-athena/create_glue_table.sh 533 553 %}
+{% endhighlight %}
+<!-- ```bash
 aws glue create-table --database-name snowplow_data --table-input '
 {
   "Name": "archive",
@@ -660,7 +663,7 @@ aws glue create-table --database-name snowplow_data --table-input '
   "TableType": "EXTERNAL_TABLE"
 }
 '
-```
+``` -->
 
 After this step you will have the table definition exists that can be used with Glue, Athena and Redshift, however you will need to update the partitions every time the underlying data changes (e.g. new data arrives).
 
