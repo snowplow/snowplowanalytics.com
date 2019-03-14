@@ -113,7 +113,7 @@ Use a command like so:
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_glue_table.sh 0 10 %}
 {% endhighlight %}
 ----
-Full code [here][gh-glue-table]
+*Full code can be found* [here][gh-glue-table]
 {% highlight javascript %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_glue_table.sh 533 555 %}
 {% endhighlight %}
@@ -196,7 +196,7 @@ Finally you will need to create a table definition for the new data using:
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_output_table.sh 0 10 %}
 {% endhighlight %}
 ----
-Full code [here][gh-output-table]
+*Full code can be found* [here][gh-output-table]
 {% highlight javascript %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_output_table.sh 533 555 %}
 {% endhighlight %}
