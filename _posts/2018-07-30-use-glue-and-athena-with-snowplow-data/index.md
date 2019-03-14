@@ -24,19 +24,19 @@ This guide consists of the following sections:
 
 <h2 id="s3-analysis">1. Why analyze Snowplow enriched events in S3?</h2>
 
-Analyzing the data on S3 may be good for a number of reasons. 
+Analyzing the Snowplow data on S3 may be useful in a number of scenarios, for instance:
 
-One common reason is when the data that is needed is no longer on Redshift because the data owner only keeps the most recent data in Redshift (e.g. if the data owner is dropping all but the last month of data to save space).
+1. One common reason is when the data that is needed is no longer on Redshift because the data owner only keeps the most recent data in Redshift (e.g. if the data owner is dropping all but the last month of data to save space).
 
-Another possibility is that the user would like to get a special subset of the data onto S3 and make it available for a specific use.
+2. Another possibility is that the user would like to get a special subset of the data onto S3 and make it available for a specific use.
 
-Yet another motivation, may be to run a very large query on all history without affecting a resource constrained Redshift cluster.
+3. Yet another motivation, may be to run a very large query on all history without affecting a resource constrained Redshift cluster.
 
-In all those examples one or both of the following examples may be useful.
+In all those scenarios one or both of the following examples may be useful.
 
-For instance to get back deleted data from S3 one may use the Redshift Spectrum example to query the archive and even insert the query result into a new table.
+For instance to get back deleted data from S3, one may use the Redshift Spectrum example to query the archive and even insert the query result into a new table.
 
-In the case of the resource constrained Redshift Cluster the data owner may elect to run the query on Athena.
+In the case of the resource constrained Redshift Cluster, the data owner may elect to run the query on Athena.
 
 The [optional parquet step](#optionally-format-shift-to-parquet-using-glue) is there in case you are planning to use the archive often, in which case performance would be important, so a way to create a copy of the archive in [parquet][parquet] is shown. Parquet is an efficient, columnar, Hadoop file format which is ideally suited to that use case.
 
