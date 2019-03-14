@@ -112,7 +112,8 @@ Use a command like so:
 {% highlight bash %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_glue_table.sh 0 10 %}
 {% endhighlight %}
-...
+----
+Full code [here][gh-glue-table]
 {% highlight javascript %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_glue_table.sh 533 555 %}
 {% endhighlight %}
@@ -194,7 +195,8 @@ Finally you will need to create a table definition for the new data using:
 {% highlight bash %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_output_table.sh 0 10 %}
 {% endhighlight %}
-...
+----
+Full code [here][gh-output-table]
 {% highlight javascript %}
 {% github_sample snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_output_table.sh 533 555 %}
 {% endhighlight %}
@@ -374,6 +376,8 @@ If you have any question regarding this guide or you need help with how you coul
 [glue-parquet-4]: /assets/img/blog/2018/07/glue-parquet-4.png
 [glue-parquet-run]: /assets/img/blog/2018/07/glue-parquet-run.png
 
+[gh-glue-table]: https://github.com/snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_glue_table.sh
+[gh-output-table]: https://github.com/snowplow-incubator/blog-code/blob/master/use-glue-and-athena-with-snowplow-data/create_output_table.sh
 [athena-dq-faq]: https://docs.aws.amazon.com/athena/latest/ug/glue-faq.html
 [athena-dq-sbs]: https://docs.aws.amazon.com/athena/latest/ug/glue-upgrade.html
 [unsupported-ddl-in-athena]: https://docs.aws.amazon.com/athena/latest/ug/unsupported-ddl.html
