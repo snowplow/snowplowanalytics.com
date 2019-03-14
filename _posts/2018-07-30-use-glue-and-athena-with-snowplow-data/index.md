@@ -353,7 +353,7 @@ You may of course insert the data into another table in redshift for better perf
 
 So far we have seen how to use AWS Glue and AWS Athena to interact with Snowplow data. We have seen how to create a Glue job that will convert the data to parquet for efficient querying with Redshift and how to query those and create views on an iglu defined event.
 
-We encourage you to experiment with those tools and if they are suitable to your workflow you can consider adding an scheduled or triggered Glue job to perform those tasks as new data come in.
+We encourage you to experiment with those tools and if they are suitable to your workflow you can consider adding an scheduled or triggered Glue job to perform those tasks as new data comes in.
 
 If you have any question regarding this guide or you need help with how you could use your Snowplow events with Athena, Glue and Redshift, please visit [our Discourse forum][discourse].
 
