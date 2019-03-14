@@ -1269,7 +1269,7 @@ aws glue create-table --database-name snowplow_data --table-input '
         "Type": "timestamp"
       }
     ],
-    "Location": "s3://knservis-snpl-workspace/glue-demo/parquet-archive-format-1/",
+    "Location": "s3://your-snowplow-bucket/glue-demo/parquet-archive-format-1/",
     "InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
     "OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
     "Compressed": false,
@@ -1451,6 +1451,7 @@ If you have any question regarding this guide or you need help with how you coul
 [glue-triggers]: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html
 [console-glue-search]: /assets/img/blog/2018/07/console-glue-search.png
 [glue-add-database]: /assets/img/blog/2018/07/glue-add-database.png
+[athena-new-query]: /assets/img/blog/2018/07/athena-new-query.png
 [athena-msck]: /assets/img/blog/2018/07/athena-msck.png
 [athena-msck-result]: /assets/img/blog/2018/07/athena-msck-result.png
 [glue-parquet-1]: /assets/img/blog/2018/07/glue-parquet-1.png
