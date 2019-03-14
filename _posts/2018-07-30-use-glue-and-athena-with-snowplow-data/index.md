@@ -103,6 +103,11 @@ aws glue create-database --database-input '{"Name": "snowplow_data", "Descriptio
 In order to create the table, you will need to use the CLI as creating all the fields (~130) would be too error-prone and tedious using the console.
 
 Use a command like so:
+<style type="text/css">
+.github-sample-reference {
+  background-color: #eee
+}
+</style>
 {% github_sample_ref knservis/blog_code_samples/blob/master/glue-athena/create_glue_table.sh %}
 {% highlight javascript %} 
 {% github_sample knservis/blog_code_samples/blob/master/glue-athena/create_glue_table.sh 533 553 %}
