@@ -69,6 +69,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compress-images
+  - jekyll_github_sample
   # - jekyll-redirect-from
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed
