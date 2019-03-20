@@ -280,3 +280,12 @@
   avatar: /assets/img/team/archit.jpg
   spiel:   |
       <a href="/blog/authors/archit/">Archit</a> is a Data Strategist at Snowplow Analytics where he roadmaps and delivers data-driven solutions to business problems for our clients.
+
+- name: Mike N
+  full_name: Mike Nemirovsky
+  twitter: mikenems
+  linkedin: mikenem
+  url: /blog/authors/miken/
+  avatar: /assets/img/team/mike.jpg
+  spiel:   |
+      <a href="/blog/authors/mike/">Mike</a> is the product manager for Snowplow Insights.

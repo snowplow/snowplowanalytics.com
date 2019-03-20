@@ -8,7 +8,7 @@
                             <p>Want to be part of our team? Visit our <a href="{{ BASE_PATH }}/company/careers/">Careers</a> page.
                             <p>Subscribe to our newsletter for our latest updates:</p>
                         </div>
-                        <iframe src="https://go.snowplowanalytics.com/l/571483/2018-10-23/38fmgpn" width="100%" height="320" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+                        <iframe src="https://go.snowplowanalytics.com/l/571483/2018-10-23/38fmgpn" width="100%" scrolling="no" id="sizetracker"></iframe>
                     </div>
                     <div class="links col-md-8 col-sm-12">
                         <div class="cols">
@@ -28,22 +28,9 @@
                             </div>
                             <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Customers</a></h6>
-                                <ul>
-                                    <li{% include fn/menuClassActive.fn s="justwatch" tag="" %}><a href="{{ BASE_PATH }}/customers/justwatch">JustWatch</a></li>
-                                    <li{% include fn/menuClassActive.fn s="simply-business" tag="" %}><a href="{{ BASE_PATH }}/customers/simply-business">Simply Business</a></li>
-                                    <li{% include fn/menuClassActive.fn s="peak" tag="" %}><a href="{{ BASE_PATH }}/customers/peak">Peak</a></li>
-                                    <li{% include fn/menuClassActive.fn s="Viewbix" tag="" %}><a href="{{ BASE_PATH }}/customers/viewbix">Viewbix</a></li>
-                                    <li{% include fn/menuClassActive.fn s="Picnic" tag="" %}><a href="{{ BASE_PATH }}/customers/picnic">Picnic</a></li>
-                                    <li{% include fn/menuClassActive.fn s="Getninjas" tag="" %}><a href="{{ BASE_PATH }}/customers/getninjas">GetNinjas</a></li>
-                                    <li{% include fn/menuClassActive.fn s="trusted-by" tag="" %}><a href="{{ BASE_PATH }}/customers/trusted-by">Trusted By</a></li>
-                                </ul>
                             </div>
                             <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners" class="mute-link">Partners</a></h6>
-                                <ul>
-                                    <li{% include fn/menuClassActive.fn s="implementation" tag="" %}><a href="{{ BASE_PATH }}/partners/implementation">Implementation Partners</a></li>
-                                    <li{% include fn/menuClassActive.fn s="technology" tag="" %}><a href="{{ BASE_PATH }}/partners/technology">Technology Partners</a></li>
-                                </ul>
                             </div>
                             <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="community" tag="" %}><a href="{{ BASE_PATH }}/community" class="mute-link">Community</a></h6>
@@ -86,6 +73,24 @@
                 submitBtn.style.cursor = 'pointer';
             }
         </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
+        <script type="text/javascript">
+        // Create browser compatible event handler.
+          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+          var eventer = window[eventMethod];
+          var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+          // Listen for a message from the iframe.
+          eventer(messageEvent, function(e) {
+          if (isNaN(e.data)) return;
+ 
+          // replace #sizetracker with what ever what ever iframe id you need
+          document.getElementById('sizetracker').style.height = e.data + 70 + 'px';
+ 
+        }, false);
+        </script>
+
 
         </body>
 </html>
