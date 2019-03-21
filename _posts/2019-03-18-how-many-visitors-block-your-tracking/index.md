@@ -6,7 +6,6 @@ tags: [analytics,privacy, adblock, server-side, tracking, ITP2.1]
 author: Mike N
 category: Analytics
 permalink: /blog/2019/03/18/how-many-visitors-block-your-tracking
-discourse: true
 ---
 
 <h2 id="tldr">tl;dr</h2>
