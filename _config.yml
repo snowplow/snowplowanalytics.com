@@ -39,7 +39,7 @@ share_list:
 
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://snowplowanalytics.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://snowplowanalytics.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: username
 github_username:  username
 
@@ -69,6 +69,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compress-images
+  - jekyll_github_sample
   # - jekyll-redirect-from
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed

@@ -226,6 +226,7 @@
 - name: Kostas
   full_name: Konstantinos Servis
   url: /blog/authors/kostas/
+  avatar: /assets/img/team/konstantinos.jpg
   github: knservis
   spiel: |
       <a href="/blog/authors/kostas/">Konstantinos</a> is a data engineer at Snowplow. You can find him on <a href="http://knserv.is">knserv.is</a>, <a href="https://www.linkedin.com/in/knservis/">LinkedIn</a> or <a href="https://github.com/knservis">GitHub</a>.
@@ -279,3 +280,12 @@
   avatar: /assets/img/team/archit.jpg
   spiel:   |
       <a href="/blog/authors/archit/">Archit</a> is a Data Strategist at Snowplow Analytics where he roadmaps and delivers data-driven solutions to business problems for our clients.
+
+- name: Mike N
+  full_name: Mike Nemirovsky
+  twitter: mikenems
+  linkedin: mikenem
+  url: /blog/authors/miken/
+  avatar: /assets/img/team/mike.jpg
+  spiel:   |
+      <a href="/blog/authors/mike/">Mike</a> is the product manager for Snowplow Insights.

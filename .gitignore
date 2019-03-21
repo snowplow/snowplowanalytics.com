@@ -8,3 +8,5 @@ _site/
 **/.DS_Store
 
 .ruby-version
+.bash_profile
+_compress_images_cache.yml

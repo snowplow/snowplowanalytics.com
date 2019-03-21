@@ -123,7 +123,8 @@ Read part 4 next: [What can we do with data when we're growing?][part-4]
 
 [part-1]: /blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/
 
-[part-4]: /blog/2019/03/06/snowplow-for-retail-part-5-what-can-we-do-with-data-when-were-well-established/
+[part-4]: /blog/2019/03/06/snowplow-for-retail-part-4-what-can-we-do-with-data-when-were-growing/
+
 
 [example]: /assets/img/blog/2019/03/example.jpg
 
