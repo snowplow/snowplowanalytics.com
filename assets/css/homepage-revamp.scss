@@ -34,10 +34,7 @@
 p.section-revamp-testemonial-content {
 	color: $lightish-purple;
 }
-/* img.section-revamp-testemonial-logo {
-	width: 241.5px;
-  	height: 93px;
-} */
+
 .hero-revamp-logos-block {
 	flex: 0 1 20%;
  	@media (max-width: $md-max) {
@@ -48,12 +45,6 @@ p.section-revamp-testemonial-content {
  	}
  	@media (max-width: $xs-max) {
 		flex: 0 1 100%;
-	}
-	img {
-		width: 60%;
-		@media (max-width: $sm-max) {
-			width: 40%;
-		}
 	}
 }
 
