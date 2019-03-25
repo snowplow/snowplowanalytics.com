@@ -1,0 +1,96 @@
+---
+layout: default-revamp
+group: data
+# subgroup: snowplow-insights
+title: Snowplow Flexibility - | Snowplow
+description: Snowplow 
+permalink: data/flexibility/
+class: data-flexibility
+assets:
+  css: assets/css/data-revamp.css
+blocks:
+    - icon: /assets/img/data/insights-flexibility_1.svg
+      title: Your data,<br>your structure 
+      content: You decide what <span>events and entities</span> you want to track and what data points should describe each of those events and entities. Our flexible schema’ing technology allows you to design data structures that reflect your business and use case, not a vendor’s legacy view of your industry. 
+    - icon: /assets/img/data/insights-flexibility_2.svg
+      title: Data easy<br>to consume
+      content: Data is loaded into tidy tables in your data warehouse and real-time event stream in an easy to consume format. This makes it easy for you to work directly with the data, consume it to your favourite BI tool or write real-time applications to consume the data in real-time. 
+    - icon: /assets/img/data/insights-flexibility_3.svg
+      title: Fully auditable
+      content: You have direct access to the data at every stage in the Snowplow data pipeline, enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
+cards:
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: Using Snowplow for marketing data analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.   
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/flexibility-hero.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h5>flexibility</h5>
+                <h1>Free yourself from<br>rigid data structures.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>With Snowplow your event data collection fits your business, not the other way around.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Blocks
+ -->
+
+<section class="section-revamp data-blocks-section">
+    <div class="container">
+        <div class="data-blocks-container">
+            <!-- For invert the items. Do not delete -->
+            <div class="data-blocks-item row" style="display: none; margin-bottom: 0;"></div>
+            <!-- end -->
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h2>{{ block.title }}</h2>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Cards
+ -->
+
+<section class="section-revamp data-cards-section">
+    <div class="container">
+        <div class="data-cards-container">
+            {% for card in page.cards %}
+                <div class="data-cards-item">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

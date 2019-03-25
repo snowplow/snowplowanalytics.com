@@ -1,0 +1,93 @@
+---
+layout: default-revamp
+group: data
+# subgroup: snowplow-insights
+title: Snowplow Real Time - | Snowplow
+description: Snowplow 
+permalink: data/real-time/
+class: real-time
+assets:
+  css: assets/css/data-revamp.css
+blocks:
+    - icon: /assets/img/data/insights-real_time_1.svg
+      title: Act on your data
+      content: You get your complete, granular, highly structured, enriched data to you in real-time directly into your own Kinesis stream, Pub/Sub topic, Elasticsearch cluster and/or BigQuery. Consume that data in real-time to power real-time dashboards and applications such as fraud detection or personalization engines.  
+    - icon: /assets/img/data/insights-real_time_2.svg
+      title: Frequent loading<br>to your data warehouse
+      content: "With Snowplow, we deliver your data into your data warehouse fast: into BigQuery in seconds, and into Redshift and Snowflake DB every 10 minutes. This means no waiting around for numbers to update or reports to be finalized."
+cards:
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: Using Snowplow for marketing data analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.   
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/real-time-hero.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h5>real time data</h5>
+                <h1>Real-time event data,<br>no ifs or buts. </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>With Snowplow you can consume and act on your<br>entire datastream - immediately.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Blocks
+ -->
+
+<section class="section-revamp data-blocks-section">
+    <div class="container">
+        <div class="data-blocks-container">
+            <!-- For invert the items. Do not delete -->
+            <div class="data-blocks-item row" style="display: none;margin-bottom: 0;"></div>
+            <!-- end -->
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h2>{{ block.title }}</h2>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Cards
+ -->
+
+<section class="section-revamp data-cards-section">
+    <div class="container">
+        <div class="data-cards-container">
+            {% for card in page.cards %}
+                <div class="data-cards-item">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

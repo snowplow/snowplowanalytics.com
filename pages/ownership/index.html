@@ -1,0 +1,93 @@
+---
+layout: default-revamp
+group: data
+# subgroup: snowplow-insights
+title: Snowplow Ownership - | Snowplow
+description: Snowplow 
+permalink: data/ownership/
+class: ownership
+assets:
+  css: assets/css/data-revamp.css
+blocks:
+    - icon: /assets/img/data/insights-ownership_1.svg
+      title: Running native<br>in your cloud
+      content: With Snowplow, your complete data collection pipeline runs on your own AWS or GCP account. Your data never leaves your environment. You have complete ownership of that data, and complete control over the pipeline.
+    - icon: /assets/img/data/insights-ownership_3.svg
+      title: Data compliance<br>made easy
+      content: You have complete control over what personal information you collect and where that information lives. That data does not leave your environment and you can decide who has access to it, what they can do with it, and when it is expired. Plus, Snowplow has specific functionality around privacy and GDPR to help keep you compliant. 
+    - icon: /assets/img/data/insights-ownership_2.svg
+      title: Ownership<br>means control
+      content: With Snowplow you have total control over your own data. It means you can decide how frequently you want to run the pipeline, how much latency you want to tolerate and how much you want to spend on your infrastructure each month.
+cards:
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: Using Snowplow for marketing data analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: How server-side tracking fills holes in your data and improves your analytics.
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.   
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/ownership-hero.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h5>ownership</h5>
+                <h1>Take complete control and full ownership of your data.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>Your end-to-end data collection pipeline running<br>in your own AWS or GCP account.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Blocks
+ -->
+
+<section class="section-revamp data-blocks-section">
+    <div class="container">
+        <div class="data-blocks-container">
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h2>{{ block.title }}</h2>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Cards
+ -->
+
+<section class="section-revamp data-cards-section">
+    <div class="container">
+        <div class="data-cards-container">
+            {% for card in page.cards %}
+                <div class="data-cards-item">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
