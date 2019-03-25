@@ -1,0 +1,96 @@
+---
+layout: default-revamp
+group: data
+# subgroup: snowplow-insights
+title: Snowplow Data Richness - | Snowplow
+description: Snowplow 
+permalink: /data-richness/
+class: data-richness
+assets:
+  css: assets/css/data-revamp.css
+blocks:
+    - icon: /assets/img/data/insights-data_richness_1.svg
+      title: More data per event
+      content: Snowplow automatically tracks rich, contextual information with your events. Every web event comes with a standard of 130 data points such as device information, scroll depth, link clicks, referrer and campaign data, etc.. For the full list of built-in data points, see our documentation. 
+    - icon: /assets/img/data/insights-data_richness_2.svg
+      title: Flexible, extendable,<br>limitless data structures
+      content: You can track as many entities and contexts with each event, with as many data points per entity and context as you like. That means you can not only track that a user played a video, but track rich information about the video itself, the player it is played in, the user who pressed play, the location of the player (e.g. web page or app), the location of the user and any other contextual information you desire.
+    - icon: /assets/img/data/insights-data_richness_3.svg
+      title: Events are enriched
+      content: Not all the data that describes an event is available at the moment that event occurs. The Snowplow enrichment module means that additional data points can be added to each event, in real-time, from 1st and 3rd party data sets. A complete overview of our enrichments can be found in our documentation.
+cards:
+    - title: <a href="#">How server-side tracking fills holes in your data and improves your analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: <a href="#">Using Snowplow for marketing data analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: <a href="#">How server-side tracking fills holes in your data and improves your analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data. 
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-richeness-hero.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h5>Data Richness</h5>
+                <h1>More data points,<br>better decisions.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>Snowplow is built to deliver rich, contextual data<br>sets with the level of granularity you need.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Blocks
+ -->
+
+<section class="section-revamp data-blocks-section">
+    <div class="container">
+        <div class="data-blocks-container">
+            <!-- For invert the items. Do not delete -->
+            <div class="data-blocks-item row" style="display: none;margin-bottom: 0;"></div>
+            <!-- end -->
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h2>{{ block.title }}</h2>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Cards
+ -->
+
+<section class="section-revamp data-cards-section">
+    <div class="container">
+        <div class="data-cards-container">
+            {% for card in page.cards %}
+                <div class="data-cards-item">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

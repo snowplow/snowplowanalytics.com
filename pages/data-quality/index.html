@@ -1,0 +1,96 @@
+---
+layout: default-revamp
+group: data
+# subgroup: snowplow-insights
+title: Snowplow Data Quality - | Snowplow
+description: Snowplow 
+permalink: /data-quality/
+class: data-quality
+assets:
+  css: assets/css/data-revamp.css
+blocks:
+    - icon: /assets/img/data/insights-data_quality_1.svg
+      title: Formal validation
+      content: All data collected is validated against its associated data schemas. You can configure schemas to be as strict as you like, making it easy to proactively identify data quality issues e.g. a value being stored in the wrong field.
+    - icon: /assets/img/data/insights-data_quality_2.svg
+      title: Loss-less<br>data pipeline
+      content: No events sent to the Snowplow pipeline are silently “dropped”. If there is an issue processing the data, we surface it with the associated error messages, so you can easily monitor and proactively identify data quality issues as they emerge, rather than after the fact.
+    - icon: /assets/img/data/insights-data_quality_3.svg
+      title: Fully auditable
+      content: You have direct access to the data at every stage in the Snowplow data pipeline, enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
+    - icon: /assets/img/data/insights-data_quality_4.svg
+      title: Recover and reprocess<br>bad data
+      content: It is possible to recover and reprocess bad data, so that data tracking issues do not necessarily need to result in gaps in your data collection.
+cards:
+    - title: <a href="#">How server-side tracking fills holes in your data and improves your analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: <a href="#">Using Snowplow for marketing data analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+    - title: <a href="#">How server-side tracking fills holes in your data and improves your analytics.</a>
+      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.   
+
+---
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h5>data quality</h5>
+                <h1>Say goodbye to contradictory reports. Trust your data.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-offset-1">
+                <h4>Snowplow is architected from the ground up for data quality, so you don’t have to worry about bad or missing data.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Blocks
+ -->
+
+<section class="section-revamp data-blocks-section">
+    <div class="container">
+        <div class="data-blocks-container">
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h2>{{ block.title }}</h2>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 
+    Cards
+ -->
+
+<section class="section-revamp data-cards-section">
+    <div class="container">
+        <div class="data-cards-container">
+            {% for card in page.cards %}
+                <div class="data-cards-item">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
