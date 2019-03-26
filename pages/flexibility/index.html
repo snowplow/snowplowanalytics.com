@@ -20,11 +20,11 @@ blocks:
       content: You have direct access to the data at every stage in the Snowplow data pipeline, enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
 cards:
     - title: <a href="/blog/2016/03/16/introduction-to-event-data-modeling/">An introduction to event data modeling</a>
-      content: Data modeling is an essential step in the Snowplow data pipeline. We find that those companies that are most successful at using Snowplow data are those that actively develop their event data models.
+      content: "If you want to combine behavioral data from the web with other data sets, such as customer data from a CRM system, product data from a merchandising system, or content data from a CMS, it can be incredibly difficult (if not impossible) without a highly experienced developer."
     - title: <a href="/blog/2018/05/25/improving-ab-testing-with-event-data-modeling/">Improving A/B testing with event data modeling</a>
-      content: Conducting an A/B test is significantly more complicated than just randomly assigning users into two groups. To run a truly meaningful experiment, as we’ve pointed out, requires meticulous planning.
+      content: Broadly speaking, there are two approaches to tracking and measuring A/B tests. The first involves defining the metrics in advance that will be compared between the different test groups, and instrumenting dedicated tracking specifically for those metrics based on what segment a user belongs in (test, control, or neither). The second is the event analytics approach.
     - title: <a href="/blog/2017/01/27/how-a-clear-data-taxonomy-drives-insight-and-action/">How a clear data taxonomy drives insight and action</a>
-      content: Insights, that surge of excitement that invades your brain, when suddenly, you comprehend something you didn’t, just a second ago.
+      content: How data is modelled and schema’d, both at data collection time, and at analysis time, makes an enormous difference to how easily insight and value can be derived from that data. In this post, I will explain why data models and schemas matter, and why being able to define your own event data model in Snowplow is a much better approach than squeezing your data into standard schemas.
 
 ---
             <!--
@@ -78,13 +78,20 @@ cards:
 
 <section class="section-revamp data-cards-section">
     <div class="container">
-        <div class="data-cards-container">
-            {% for card in page.cards %}
-                <div class="data-cards-item">
-                    <h4>{{ card.title }}</h4>
-                    <p>{{ card.content }}</p>
-                </div>
-            {% endfor %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>From the Snowplow blog</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="data-cards-container">
+                {% for card in page.cards %}
+                    <div class="data-cards-item">
+                        <h4>{{ card.title }}</h4>
+                        <p>{{ card.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
