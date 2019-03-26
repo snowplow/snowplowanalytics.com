@@ -20,25 +20,38 @@
                                 </ul>
                             </div>
                             <div class="col">
-                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}/services" class="no-interact">Services</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="services" tag="" %}><a href="{{ BASE_PATH }}" class="mute-link">Snowplow USPs</a></h6>
                                 <ul>
-                                    <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
-                                    <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-quality" tag="" %}><a href="{{ BASE_PATH }}/data-quality">Data Quality</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-richness" tag="" %}><a href="{{ BASE_PATH }}/data-richness">Data Richness</a></li>
+                                    <li{% include fn/menuClassActive.fn s="data-ownership" tag="" %}><a href="{{ BASE_PATH }}/ownership">Data Ownership</a></li>
+                                    <li{% include fn/menuClassActive.fn s="flexibility" tag="" %}><a href="{{ BASE_PATH }}/flexibility">Flexibility</a></li>
+                                    <li{% include fn/menuClassActive.fn s="real-time" tag="" %}><a href="{{ BASE_PATH }}/real-time">Real-time</a></li>
                                 </ul>
                             </div>
                             <div class="col">
-                                <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Customers</a></h6>
-                            </div>
-                            <div class="col">
-                                <h6{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners" class="mute-link">Partners</a></h6>
+                                <h6{% include fn/menuClassActive.fn s="customers" tag="" %}><a href="{{ BASE_PATH }}/customers">Resources</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
+                                    <li{% include fn/menuClassActive.fn s="documentation" tag="" %}><a href="http://docs.snowplowanalytics.com/">Documentation</a></li>
+                                </ul>
                             </div>
                             <div class="col">
                                 <h6{% include fn/menuClassActive.fn s="community" tag="" %}><a href="{{ BASE_PATH }}/community" class="mute-link">Community</a></h6>
                                 <ul>
                                     <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
-                                    <li><a href="https://www.meetup.com/topics/snowplow/" target="_blank">MeetUp</a></li>
+                                    <li{% include fn/menuClassActive.fn s="open-source" tag="" %}><a href="{{ BASE_PATH }}/products/open-source">Open Source</a></li>
                                     <li><a href="https://github.com/snowplow" target="_blank">GitHub</a></li>
-                                    <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
+                                    <li><a href="https://www.meetup.com/topics/snowplow/" target="_blank">MeetUp</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6{% include fn/menuClassActive.fn s="community" tag="" %}><a href="{{ BASE_PATH }}/community" class="mute-link">Company</a></h6>
+                                <ul>
+                                    <li{% include fn/menuClassActive.fn s="about-us" tag="" %}><a href="{{ BASE_PATH }}/company/">About us</a></li>
+                                    <li{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners">Partners</a></li>
+                                    <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="{{ BASE_PATH }}/company/careers/">Careers</a></li>
+                                    <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="{{ BASE_PATH }}/company/contact-us/">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
