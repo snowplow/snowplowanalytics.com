@@ -20,11 +20,12 @@ blocks:
       content: Not all the data that describes an event is available at the moment that event occurs. The Snowplow enrichment module means that additional data points can be added to each event, in real-time, from 1st and 3rd party data sets. A complete overview of our enrichments can be found in our documentation.
 cards:
     - title: <a href="/blog/2019/02/05/how-server-side-tracking-fills-holes-in-your-data-and-improves-your-analytics/">How server-side tracking fills holes in your data and improves your analytics</a>
-      content: At Snowplow Analytics, we fundamentally believe that getting data collection right is one of the most important steps for deriving value from data.
+      content: Exclusively using client-side tracking does have limitations. We work with customers who want to do sophisticated digital analytics with their data. Many companies simply aren’t aware of the server-side option, so default to tracking everything client-side which can lead to pretty unusual behavior.
     - title: <a href="/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
-      content: The first step towards solving a problem is admitting one exists. And I have a lot of problems. As marketing professionals, we all do.
+      content: Today in the world of digital marketing, not only do we have the ability to more accurately track the direct performance of a given marketing campaign, we have the responsibility to do so. Marketing success has transformed from a given into a set of complicated, multi-layered questions to which the answers are not always clear.
     - title: '<a href="/blog/2018/02/08/warehousing-google-analytics-data-api-vs-hit-level-data/">Warehousing Google Analytics data: API vs hit-level data</a>'
-      content: Recently, we very excitedly announced that Google Analytics users could use Snowplow to load their data into their own data warehouses in Redshift and Snowflake DB.
+      content: If you want to combine behavioral data from the web with other data sets, such as customer data from a CRM system, product data from a merchandising system, or content data from a CMS, it can be incredibly difficult (if not impossible) without a highly experienced developer.
+
 
 ---
             <!--
@@ -78,13 +79,20 @@ cards:
 
 <section class="section-revamp data-cards-section">
     <div class="container">
-        <div class="data-cards-container">
-            {% for card in page.cards %}
-                <div class="data-cards-item">
-                    <h4>{{ card.title }}</h4>
-                    <p>{{ card.content }}</p>
-                </div>
-            {% endfor %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>From the Snowplow blog</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="data-cards-container">
+                {% for card in page.cards %}
+                    <div class="data-cards-item">
+                        <h4>{{ card.title }}</h4>
+                        <p>{{ card.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>

@@ -23,11 +23,11 @@ blocks:
       content: It is possible to recover and reprocess bad data, so that data tracking issues do not necessarily need to result in gaps in your data collection.
 cards:
     - title: <a href="/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/">We need to talk about bad data</a>
-      content: No one in digital analytics talks about bad data. A lot about working with data is sexy, but managing bad data, i.e. working to improve data quality, is not. 
+      content: No one in digital analytics talks about bad data. A lot about working with data is sexy, but managing bad data, i.e. working to improve data quality, is not. Not only is talking about bad data not sexy, it is really awkward, because it forces us to confront a hard truth.
     - title: <a href="/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/">Debugging bad data in GCP with BigQuery</a>
-      content: One of the key features of the Snowplow pipeline is that it’s architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data.
+      content: One of the key features of the Snowplow pipeline is that it’s architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline. 
     - title: <a href="/blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana/">Debugging bad data in Elasticsearch and Kibana</a>
-      content: "One of the features that makes Snowplow unique is that we actually report bad data: any data that hits the Snowplow pipeline and fails to be processed successfully."
+      content: "One of the features that makes Snowplow unique is that we actually report bad data: any data that hits the Snowplow pipeline and fails to be processed successfully. This is incredibly valuable, because it means you can spot data tracking issues that emerge, quickly, and address them at source."
 
 ---
             <!--
@@ -78,13 +78,20 @@ cards:
 
 <section class="section-revamp data-cards-section">
     <div class="container">
-        <div class="data-cards-container">
-            {% for card in page.cards %}
-                <div class="data-cards-item">
-                    <h4>{{ card.title }}</h4>
-                    <p>{{ card.content }}</p>
-                </div>
-            {% endfor %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>From the Snowplow blog</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="data-cards-container">
+                {% for card in page.cards %}
+                    <div class="data-cards-item">
+                        <h4>{{ card.title }}</h4>
+                        <p>{{ card.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>

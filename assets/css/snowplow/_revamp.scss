@@ -1323,6 +1323,11 @@ $very-light-blue-two: #e1e6f0;
 .data-cards {
 	&-section {
 		background-color: $ice-blue;
+		h2 {
+			text-align: center;
+			color: $blue-purple;
+			margin-bottom: 70px;
+		}
 	}
 	&-container {
 		@include do-flex(row, space-between, flex-start, wrap);
