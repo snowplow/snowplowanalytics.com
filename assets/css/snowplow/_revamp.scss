@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-03-07 06:50:57
+* @Last Modified time: 2019-03-22 07:10:14
 */
 
 /* 
@@ -173,6 +173,7 @@ $very-light-blue-two: #e1e6f0;
 :root {
  	--revamp-hero-pad: 180px 0 100px;
  	--revamp-logo-mg: 100px 0 0;
+ 	--revamp-logo-w: 70%;
  	@media (max-width: $lg-max) {
  		--revamp-logo-mg: 80px 0 0;
  	}
@@ -201,6 +202,15 @@ $very-light-blue-two: #e1e6f0;
 	}
 	h4 {
 		color: $gunmetal;
+	}
+	h5 {
+		font-size: 18px;
+  		font-weight: 500;
+  		letter-spacing: 3.6px;
+  		text-align: left;
+  		color: #ffffff;
+  		margin: 0 0 14px;
+  		text-transform: uppercase;
 	}
 	.btn + .btn {
 		margin-left: 80px;
@@ -248,12 +258,9 @@ $very-light-blue-two: #e1e6f0;
 			}
 			img {
 				width: var(--revamp-logo-w);
-				width: 50%;
 				height: auto;
 				margin: 25px;
-				@media (max-width: $sm-max) {
-					width: 40%;
-				}
+				object-fit: contain;
 				&:nth-of-type(4n+1) {
 					justify-self: left;
 				}
@@ -318,7 +325,8 @@ $very-light-blue-two: #e1e6f0;
 		}
 	}
 	a {
-		margin: var(--revamp-icons-a-mg);
+		margin: 10px 0 0 0;
+		font-size: 16px;
 		text-decoration: underline;
 	}
 }
@@ -1224,6 +1232,123 @@ $very-light-blue-two: #e1e6f0;
 		.btn {
 			justify-self: flex-end;
 			margin: 0 auto;
+		}
+	}
+}
+
+
+
+
+/* 
+ * Data blocks
+ */
+ :root {
+ 	--data-blocks-item-mt: 130px;
+ 	@media (max-width: 767px) {
+ 		--data-blocks-item-mt: 80px;
+ 	}
+ }
+.data-blocks {
+	&-section {} 
+	&-container {}
+	&-item {
+		position: relative;
+		margin-bottom: var(--data-blocks-item-mt);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		h2 {
+			color: $blue-purple;
+		}
+		p {
+			span {
+				font-weight: normal;
+  				color: $blue-purple;
+			}
+		}
+		&-content {
+			@include center-top;
+			.data-blocks-item:nth-of-type(even) & {
+				right: 0;
+			}
+			@media (max-width: 767px) {
+ 				position: relative;
+ 				top: initial;
+ 				transform: initial;
+ 			}
+		}
+		&-pic {
+			margin-left: 50%;
+			img {
+				max-height: 420px;
+				@media (max-width: 767px) {
+ 					max-height: 300px;
+ 				}
+ 				@media (max-width: $xs-max) {
+ 					max-height: 250px;
+ 				} 
+			}
+			.data-blocks-item:nth-of-type(even) & {
+				margin-left: 0;
+			}
+			@media (max-width: 767px) {
+ 				margin-left: 0;
+ 				margin-top: 40px;
+ 				text-align: center;
+ 			}
+		}
+	}
+}
+
+
+
+
+/* 
+ * Data cards
+ */
+ :root {
+ 	--data-cards-item-mg: 30px;
+ 	--data-cards-item-pad: 50px;
+ 	--data-cards-item-count: 3;
+ 	@media (max-width: 991px) {
+ 		--data-cards-item-pad: 35px 25px;
+ 	}
+ 	@media (max-width: 767px) {
+ 		--data-cards-item-pad: 25px 15px;
+ 	}
+ 	@media (max-width: $xs-max) {
+ 		--data-cards-item-pad: 50px;
+ 	} 
+ }
+.data-cards {
+	&-section {
+		background-color: $ice-blue;
+		h2 {
+			text-align: center;
+			color: $blue-purple;
+			margin-bottom: 70px;
+		}
+	}
+	&-container {
+		@include do-flex(row, space-between, flex-start, wrap);
+	}
+	&-item {
+		background-color: white;
+		padding: var(--data-cards-item-pad);
+		flex: 0 1 calc((100% / var(--data-cards-item-count)) - (var(--data-cards-item-mg)/(var(--data-cards-item-count) - 1)));
+		@media (max-width: $xs-max) {
+ 			flex: 0 1 100%;
+ 			margin-bottom: var(--data-cards-item-mg);
+ 			&:last-of-type {
+ 				margin-bottom: 0;
+ 			}
+ 		}
+		h4 {
+			margin: 0 0 40px;
+			color: $lightish-purple;
+		}
+		p {
+			margin: 0;
 		}
 	}
 }
