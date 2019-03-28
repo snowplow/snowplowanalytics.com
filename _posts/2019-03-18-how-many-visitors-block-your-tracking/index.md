@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Quantifying the Impact of Privacy Tech
-title: "How Many of Your Visitors Block Your Snowplow Tracking?"
+title: "How many of your visitors block your Snowplow tracking?"
 tags: [analytics,privacy, adblock, server-side, tracking, ITP2.1]
 author: Mike N
 category: Analytics
@@ -14,7 +14,7 @@ published: true
 
 As a company that focuses on helping businesses collect data in order to better serve their customers, we inevitably get asked about what happens when those customers don’t want to be tracked.
 
-With the usage of Ad-blockers, and in particular privacy filters, on the rise, some of our customers are seeing the effect on their data. This effect is at times perceived as a problem or a threat towards the quality of data collection. 
+With the usage of Ad-blockers, and in particular privacy filters, on the rise, some of our customers are seeing the effect on their data. This effect is at times perceived as a problem or a threat towards the quality of data collection.
 
 In this post I’d like to discuss the nature and scope of how privacy technology impacts data collection as well as propose a couple of options of how to quantify the impact.
 
@@ -27,16 +27,16 @@ When talking about privacy software in relation to Snowplow tracking, we are alm
 
 All of these cases may also be referred to as client-side tracking suppression. The underlying premise being that all of this suppression or blocking is occuring in an environment that a web application or site owner does not control.
 
-It’s important to note here that _not all_ configurations of AdBlock software will block analytics tracking. 
+It’s important to note here that _not all_ configurations of AdBlock software will block analytics tracking.
 
-For the most part, the main goal of ad blockers is to suppress adware. Adware is any software that is designed to display advertisements, and is often also used to track visitors across different advertiser domains. 
+For the most part, the main goal of ad blockers is to suppress adware. Adware is any software that is designed to display advertisements, and is often also used to track visitors across different advertiser domains.
 
 Some ad blockers however do extend their functionality to give users more control over privacy. As adware became increasingly more sophisticated and began tracking users across multiple websites, the response from ad blockers and browsers was to start helping their users better control what data is captured by whom.
 
 
 <h3 id="privacy filters">Privacy Filters</h3>
 
-Privacy filters typically operate based on lists of known data collection scripts and endpoints. 
+Privacy filters typically operate based on lists of known data collection scripts and endpoints.
 
 [AdBlock][adblock] and [uBlock][ublock] Origin are two of the most popular ad blocking plugins, which both use a privacy filter called [EasyPrivacy][easyprivacy]. For AdBlock, it doesn’t seem to be turned on by default, whereas for uBlock it does. The full list of “general tracking systems” that this privacy filter suppresses can be found here: [https://easylist-downloads.adblockplus.org/easyprivacy.txt][easyprivacylist]. Indeed Snowplow’s JavaScript is on the list as well as an entry for common Snowplow collector endpoints.
 
@@ -44,9 +44,9 @@ When a user decides to turn EasyPrivacy on, most standard implementations of the
 
 <h3 id="do-not-track">Do-Not-Track</h3>
 
-Most modern browsers now have a “do not track” feature. This is something that is normally not turned on by default unless in “private browsing mode”. 
+Most modern browsers now have a “do not track” feature. This is something that is normally not turned on by default unless in “private browsing mode”.
 
-This feature is also one that requires you as the website owner to **voluntarily** respect. This feature does not work like the privacy filters explained above, but rather is a choice you need to make for any or all of the data collection you do on your site. 
+This feature is also one that requires you as the website owner to **voluntarily** respect. This feature does not work like the privacy filters explained above, but rather is a choice you need to make for any or all of the data collection you do on your site.
 
 For Snowplow for example it is as simple as setting the ~~~respectDoNotTrack~~~ field of the argument map in your JavaScript initialization to `true`.
 
@@ -59,7 +59,7 @@ Recently, it seems that Safari (and maybe others) are [giving up on do not track
 
 <h3 id="do-not-track">Third Party Cookies and Third Party Contexts</h3>
 
-One other common topic in the discussion of what users/browsers may typically block is the concern over 3rd party cookies. 
+One other common topic in the discussion of what users/browsers may typically block is the concern over 3rd party cookies.
 
 Although it’s less of an issue for most Snowplow users since tracking users via 1st party cookies is the norm, this may come up if you are trying to track users across multiple domains. For example you may have different domains for different geographical regions and you’d like to track users that go from the .co.uk to the .de site as the same user.
 
@@ -69,25 +69,25 @@ While writing this post, [WebKit][webkit] announced the release of the latest it
 
 <h3 id="block all the scripts">Block All the Scripts!</h3>
 
-There is of course the potential that you might have traffic coming to your site that has disabled the use of any scripts and therefore will obviously not load the Snowplow JavaScript. In this case, neither will any other script and the user experience would likely suffer on most modern web pages. 
+There is of course the potential that you might have traffic coming to your site that has disabled the use of any scripts and therefore will obviously not load the Snowplow JavaScript. In this case, neither will any other script and the user experience would likely suffer on most modern web pages.
 
 ![allthescripts-img]
 
 <h3 id="how common is all of this">How common is all of this?</h3>
 
-Although there are articles with stats out there on the rise in adoption of ad blockers [New York Times _2017_][NYT], there aren’t so many on the use of privacy filters. 
+Although there are articles with stats out there on the rise in adoption of ad blockers [New York Times _2017_][NYT], there aren’t so many on the use of privacy filters.
 
 According to Chrome’s web store uBlock (which turns on EasyPrivacy by default) has 10,000,000+ users.
 
 With legislative initiatives like GDPR last summer and others gaining momentum around the world, privacy is likely not going to go away or reduce in size as an issue for both internet users and site owners.
 
-Privacy software will likely continue to expand its scope and capability, and perhaps its popularity as well. 
+Privacy software will likely continue to expand its scope and capability, and perhaps its popularity as well.
 
-While writing this blog post a colleague of mine pointed out a [tweet][tweet] by Jen Simmons, Designer Advocate at Mozilla that claims by summer this year Firefox will by default block “cross-site third-party trackers”. 
+While writing this blog post a colleague of mine pointed out a [tweet][tweet] by Jen Simmons, Designer Advocate at Mozilla that claims by summer this year Firefox will by default block “cross-site third-party trackers”.
 
-Per the list Firefox uses for this, which is maintained by [Disconnect][disconnect], Snowplow is not listed. Maybe because the definition they have as trackers is as such: 
+Per the list Firefox uses for this, which is maintained by [Disconnect][disconnect], Snowplow is not listed. Maybe because the definition they have as trackers is as such:
 
-“Tracking is the collection of data regarding a particular user's activity across multiple websites or applications that aren’t owned by the data collector, and the retention, use or sharing of that data.” 
+“Tracking is the collection of data regarding a particular user's activity across multiple websites or applications that aren’t owned by the data collector, and the retention, use or sharing of that data.”
 
 From that definition it is clear that the focus is not on tracking done by a site or app owner for purposes of internal analytics.
 
@@ -155,7 +155,7 @@ Here’s an example of the code, which is a modified version of some script writ
  <!-- End blocked script pixel tracking -->
 ~~~
 
-Here the script checks if it can access sp.js and if not writes the following into the document: 
+Here the script checks if it can access sp.js and if not writes the following into the document:
 
 ~~~
     if (blocked) {document.getElementById('result').innerHTML = "<div style=\"display: none; visibility: hidden;\"><img src=\"http://{{collector-path}}/i?e=se&aid=console&se_ca=javascript_not_loaded&se_ac=else&se_pr=different&se_la=entirely&p=web&tv=no-js-0.1.0\"></img></div>";
@@ -164,7 +164,7 @@ Here the script checks if it can access sp.js and if not writes the following in
 
 That’s the pixel tracker. I’ve chosen to use some [custom structured event parameters][cses] to send across a category of “javascript_not_loaded” as an example. Of course you could phrase that however you’d like or use different parameters to send in the query string with these page load events.
 
-These will then land in your data warehouse for you to query and get a sense of how many events came through without the JavaScript tracker. 
+These will then land in your data warehouse for you to query and get a sense of how many events came through without the JavaScript tracker.
 
 <h3 id="Have you met our friend Server-side tracking?">Have you met our friend Server-side tracking?</h3>
 
