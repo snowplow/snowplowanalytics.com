@@ -1,11 +1,11 @@
 layout: post
 title-short: "Why your company should own its data"
 title: Guest post: 3 reasons why your company should own its data
-tags: [analytics, ]
+tags: [analytics, data, big data, data science, business intelligence, data for business, data ownership]
 author: Jacob Thomas
 image:
 category: Analytics
-permalink:
+permalink: /blog/2019/04/04/guest-post-3-reasons-why-your-company-should-own-its-data
 discourse: true
 
 
