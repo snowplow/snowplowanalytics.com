@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Quantifying the impact of privacy tech
-title: "How many of your visitors block your snowplow tracking?"
+title: "How many of your visitors block your Snowplow tracking?"
 tags: [analytics, privacy, adblock, server-side, tracking, ITP2.1]
 author: Mike N
 category: Analytics
