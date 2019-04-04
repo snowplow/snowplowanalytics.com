@@ -38,6 +38,7 @@ What happens when you become a paying customer, only to decide five years down t
 Let's consider another commonly-used platform for application instrumentation: [Mixpanel](https://mixpanel.com/). Mixpanel is incredibly easy to set up, initially inexpensive, and adding custom instrumentation is straight-forward. But as your site scales, or you want to add additional features, the cost of service gets rapidly more expensive. Typically, it increases faster than your business revenue. And once again since you won't want to lose a historical set of data about your business by downgrading your service, you are *held hostage by the very data your application generated*.
 
 ##3. Ownership of data gives you competitive advantages you cannot achieve in any other way.
+
 Think about it this way: who has the advantage when your site scales, but the data collection pipeline is owned by another company (and rented by yours)? The answer is simple: not you!
 What happens when you stop paying a third-party service provider?
 ***You lose access, and they keep your data. If they're lucky, you might even forget about the tracking code placed on your site, and continue to ship them data for an extended period of time.***
@@ -51,14 +52,14 @@ What happens when the data your systems produce has valuable insights that can b
 What happens when a nation starts enforcing [new rights for personal data and data privacy, such as the General Data Protection Regulation?](https://www.wired.co.uk/article/what-is-gdpr-uk-eu-legislation-compliance-summary-fines-2018), and you must comply or risk enormous fines?
 ***[You shut off that line of business](https://adexchanger.com/mobile/verve-closes-european-business-thanks-to-gdpr/.***
 Alternatively...
-If you own your data, you have full control.
-
-Which is why your company should be responsible for its own intellectual property, data collection, and data management systems. What's more, you will be able to track activity at a finer granularity, because you own the data!
+If you own your data, you have full control. Which is why your company should be responsible for its own intellectual property, data collection, and data management systems. What's more, you will be able to track activity at a finer granularity, because you own the data!
 
 Want to ensure you comply with General Data Protection Regulation? It's much easier when you control the collection and persistence of personal data, and simply issue a `DELETE FROM some_table WHERE id = 10;` sql statement!
+
 Want to persist terabytes of data in a [99.999999999% durable](https://aws.amazon.com/s3/faqs/) location that is accessible at any time? You can do so with AWS S3 at a whopping price of [$0.023 per GB, per month](https://aws.amazon.com/s3/pricing/). Have more data than that, and want to roll it into long-term cold storage? AWS Glacier exists for exactly that reason, and is priced at a convenient [$0.004 per GB, per month](https://aws.amazon.com/glacier/pricing/). Thanks to Moore's law, data storage gets *less expensive over time*, unlike any third-party data service provider on the market.
 
 ##In Conclusion
+
 To build the most value possible for your organization, realize maximum financial benefits, and retain your competitive advantage, *you need to own your data*. While many third-party data services might be easier to set up initially, your business will ultimately find itself with higher expenditures, less flexibility, a flawed data ownership model and a lot of hassle along the way. To sum up, [*own and manage your own data*.](https://bostata.com/post/why_your_company_should_own_its_own_data/)
 
 
