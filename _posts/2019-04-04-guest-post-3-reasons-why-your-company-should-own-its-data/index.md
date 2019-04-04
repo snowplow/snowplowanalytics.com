@@ -18,10 +18,10 @@ When it comes to your company’s software and infrastructure, it often makes se
 When it comes to software and related infrastructure, businesses get caught in a never-ending cycle of "build vs. buy". Many third-party companies successfully solve challenges such as [managing sales pipelines](https://www.salesforce.com/), [accounting automation](http://www.netsuite.com/), [payment processing](https://stripe.com/), and [internal communication](https://slack.com/). These alternatives to "building it yourself" empower companies to operate faster or more efficiently, and the overall benefit to the customer is net-positive.
 However, there is one critical component of your business you should reconsider leaving with third parties: **your data and supporting data infrastructure.**
 
-![Your data is valuable image](/assets/img/blog/2019/04/Own-Your-Data-Jacob-Thomas.jpg)
-
 In fact, the world’s most progressive companies have this in common: *an obsession with data collection and in-house data ownership*. Why do they invest in building their own data infrastructure to ensure in-house data governance? Simply put, it adds long-term value, offers positive financial implications, and creates competitive advantages.
 Let's take a closer look at the first advantage of data ownership.
+
+![Your data is valuable image](/assets/img/blog/2019/04/Own-Your-Data-Jacob-Thomas.jpg)
 
 ## 1. Add long-term business value through data ownership.
 
