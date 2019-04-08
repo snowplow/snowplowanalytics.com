@@ -30,6 +30,9 @@
                             <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/technology">Technology</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="partners" %}">
+                        <a href="{{ BASE_PATH }}/pricing" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                    </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
                         <a href="{{ BASE_PATH }}/services" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -40,14 +43,14 @@
                     <li class="dropdown{% include fn/menuClassActive.fn s="customers" %}">
                         <a href="{{ BASE_PATH }}/customers" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers</a>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="partners" %}">
-                        <a href="{{ BASE_PATH }}/partners" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners</a>
-                    </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
                         <a href="{{ BASE_PATH }}/company">Company <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="{{ BASE_PATH }}/company/contact-us">Contact Us</a></li>
+                            <li{% include fn/menuClassActive.fn s="company" tag="" %}><a href="{{ BASE_PATH }}/company">About us</a></li>
+                            <li{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners">Partners</a></li>
                             <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="{{ BASE_PATH }}/company/careers">Careers</a></li>
+                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="{{ BASE_PATH 
+                            }}/company/contact-us">Contact Us</a></li>
                         </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="community" %}">

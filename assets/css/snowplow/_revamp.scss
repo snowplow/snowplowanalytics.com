@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-03-22 07:10:14
+* @Last Modified time: 2019-04-07 19:48:21
 */
 
 /* 
@@ -1220,6 +1220,14 @@ $very-light-blue-two: #e1e6f0;
   			margin: 0 0 25px;
   			width: 100%;
 		}
+		h4 {
+			font-size: 30px;
+  			font-weight: normal;
+  			text-align: center;
+  			color: $blue-purple;
+  			margin: 0 0 35px;
+  			width: 100%;
+		}
 		p {
 			font-size: 16px;
   			font-weight: 300;
@@ -1229,9 +1237,26 @@ $very-light-blue-two: #e1e6f0;
 			margin: 0 0 80px;
   			width: 100%;
 		}
+		ul {
+			margin: 0 auto 30px;
+			padding-left: 17px;
+			list-style-image: url(../../assets/img/pricing/check-solid.svg);
+			li {
+				font-size: 16px;
+	  			font-weight: 300;
+	  			line-height: 2.25;
+	  			color: $gunmetal;
+			}
+		}
 		.btn {
 			justify-self: flex-end;
 			margin: 0 auto;
+		}
+		img {
+			height: 130px;
+			width: auto;
+			object-fit: contain;
+			margin-bottom: 25px;
 		}
 	}
 }
@@ -1349,6 +1374,57 @@ $very-light-blue-two: #e1e6f0;
 		}
 		p {
 			margin: 0;
+		}
+	}
+}
+
+
+
+/* 
+ * Checked paragraphs
+ */
+ :root {
+ 	/* --data-cards-item-mg: 30px;
+ 	--data-cards-item-pad: 50px;
+ 	--data-cards-item-count: 3;
+ 	@media (max-width: 991px) {
+ 		--data-cards-item-pad: 35px 25px;
+ 	}
+ 	@media (max-width: 767px) {
+ 		--data-cards-item-pad: 25px 15px;
+ 	}
+ 	@media (max-width: $xs-max) {
+ 		--data-cards-item-pad: 50px;
+ 	}  */
+ }
+.checked-paragraph-revamp {
+	& + .checked-paragraph-revamp {
+		@media (max-width: 767px) {
+ 			margin-top: 40px;
+ 		}
+	}
+	&-section {
+		h2 {
+			text-align: center;
+			color: $blue-purple;
+			margin-bottom: 70px;
+		}
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.85;
+		color: $gunmetal;
+		padding: 0 0 0 30px;
+		&:first-of-type {
+			font-size: 24px;
+  			color: $gunmetal;  			
+  			line-height: 1;
+  			margin: 0 0 25px;
+  			background-image: url(../../assets/img/pricing/check-solid.svg);
+  			background-repeat: no-repeat;
+  			background-size: 19px 14.17px;
+  			background-position: 0 5px;
+
 		}
 	}
 }
