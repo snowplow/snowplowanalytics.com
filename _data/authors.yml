@@ -288,3 +288,12 @@
   avatar: /assets/img/team/mike.jpg
   spiel:   |
       <a href="/blog/authors/mike/">Mike</a> is the product manager for Snowplow Insights.
+
+
+- name: Jacob
+  full_name: Jacob Thomas
+  twitter:
+  url: /blog/authors/jacob/
+  avatar: /assets/img/blog/2019/04/jacob.jpg
+  spiel:   |
+      <a href="/blog/authors/jacob/">Jacob</a> is the lead data engineer at CarGurus, where he helps build and maintain data-centric systems. You can find more articles by Jacob on his own blog <a href="https://bostata.com/">Bostata</a>.
