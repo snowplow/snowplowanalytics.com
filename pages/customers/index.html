@@ -150,7 +150,8 @@ case-studies:
     logo-white-3x: assets/img/customers/customers-revamp/case-studies/gousto-casestudy-logo%403x.png
     logo-white-w: 59%
     text: Gousto uses Snowplow data to boost growth and retention through personalized experiences.
-    url: '#'
+    url: '../assets/pdf/Snowplow-Case-Study-Gousto.pdf'
+    download: true
     img: assets/img/customers/customers-revamp/case-studies/gousto-casestudy-img.png
     img-2x: assets/img/customers/customers-revamp/case-studies/gousto-casestudy-img%402x.png
     img-3x: assets/img/customers/customers-revamp/case-studies/gousto-casestudy-img%403x.png
@@ -308,7 +309,7 @@ case-studies:
             <div class="revamp-case-studies-back">
                <img class="_logo" src="{{ BASE_PATH }}/{{ case-study.logo }}" srcset="{{ BASE_PATH }}/{{ case-study.logo-2x }} 2x, {{ BASE_PATH }}/{{ case-study.logo-3x }} 3x" alt="">
                <p>{{ case-study.text }}</p>
-               <a href="{{ case-study.url }}">Learn more</a>
+               <a href="{{ case-study.url }}" {% if case-study.download %}download{% endif %}>Learn more</a>
             </div>
           </div>
         {% endfor %}
