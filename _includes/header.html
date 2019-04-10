@@ -27,37 +27,25 @@
                         <a href="{{ BASE_PATH }}/products" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Product <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li{% include fn/menuClassActive.fn s="snowplow-insights" tag="" %}><a href="{{ BASE_PATH }}/products/snowplow-insights">Snowplow Insights</a></li>
-                            <li{% include fn/menuClassActive.fn s="snowplow-open-source" tag="" %}><a href="{{ BASE_PATH }}/products/technology">Technology</a></li>
+                            <li{% include fn/menuClassActive.fn s="technology" tag="" %}><a href="{{ BASE_PATH }}/products/technology" class="highlight-menu">Technology</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="services" %}">
-                        <a href="{{ BASE_PATH }}/services" class="dropdown-toggle disabled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li{% include fn/menuClassActive.fn s="data-analytics" tag="" %}><a href="{{ BASE_PATH }}/services/#data-analytics">Data Analytics</a></li>
-                            <li{% include fn/menuClassActive.fn s="data-engineering" tag="" %}><a href="{{ BASE_PATH }}/services/#data-engineering">Data Engineering</a></li>
-                        </ul>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="pricing" %}">
+                        <a href="{{ BASE_PATH }}/pricing" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pricing</a>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="customers" %}">
                         <a href="{{ BASE_PATH }}/customers" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers</a>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="partners" %}">
-                        <a href="{{ BASE_PATH }}/partners" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners</a>
-                    </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="company" %}">
                         <a href="{{ BASE_PATH }}/company">Company <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li{% include fn/menuClassActive.fn s="contact-us" tag="" %}><a href="{{ BASE_PATH }}/company/contact-us">Contact Us</a></li>
+                            <li{% include fn/menuClassActive.fn s="company" tag="" %}><a href="{{ BASE_PATH }}/company">About us</a></li>
+                            <li{% include fn/menuClassActive.fn s="partners" tag="" %}><a href="{{ BASE_PATH }}/partners">Partners</a></li>
                             <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="{{ BASE_PATH }}/company/careers">Careers</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="community" %}">
-                        <a href="{{ BASE_PATH }}/community" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://discourse.snowplowanalytics.com/" target="_blank">Discourse</a></li>
-                            <li><a href="https://www.meetup.com/topics/snowplow/" target="_blank">MeetUp</a></li>
-                            <li><a href="https://github.com/snowplow" target="_blank">GitHub</a></li>
-                            <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
-                        </ul>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="blog" %}">
+                        <a href="{{ BASE_PATH }}/blog" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                     </li>
                 </ul>
 
