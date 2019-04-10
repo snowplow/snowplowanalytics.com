@@ -28,6 +28,12 @@
 				padding-top: 20px;
 				padding-bottom: 20px;
 				font-weight: 400;
+				@media (min-width: $screen-sm-min) {
+					font-size: 18px;
+  					font-weight: normal;
+  					color: #50545c;
+				}
+				
 
 				&:hover,
 				&:focus
