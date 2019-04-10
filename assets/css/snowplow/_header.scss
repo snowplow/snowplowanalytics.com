@@ -108,6 +108,7 @@ header
 					transform: translateX(-50%);
 					right: initial;
 					background-color: $white;
+					overflow: hidden;
 				}
 				/*transform:translateY(-30px);*/
 
@@ -168,6 +169,11 @@ header
 						}
 						background:none;
 						/*pointer-events: none;*/
+					}
+				}
+				&.highlight-menu {
+					@media (min-width: $screen-sm-min){
+						background-color: #f5faff;
 					}
 				}
 			}
