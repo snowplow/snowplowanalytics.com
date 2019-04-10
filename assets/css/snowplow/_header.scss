@@ -108,6 +108,7 @@ header
 					transform: translateX(-50%);
 					right: initial;
 					background-color: $white;
+					overflow: hidden;
 				}
 				/*transform:translateY(-30px);*/
 
@@ -152,6 +153,11 @@ header
 								line-height: 1;
 								color: rgba(80, 84, 92, 0.5);
 							}
+							&.highlight-menu {
+								@media (min-width: $screen-sm-min){
+									background-color: #f5faff;
+								}
+							}
 						}
 					}
 				}
@@ -170,6 +176,7 @@ header
 						/*pointer-events: none;*/
 					}
 				}
+				
 			}
 
 			.dropdown
