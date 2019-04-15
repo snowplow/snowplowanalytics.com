@@ -102,7 +102,7 @@ assets/img/blog/2014/04/identity-stitching.png: identity-stitching.png
 assets/img/blog/2014/05/snowplow-looker-traffic-pulse-dashboard-top-part.png: snowplow-looker-traffic-pulse-dashboard-top-part.png
 assets/img/blog/2014/05/looker-snowplow-traffic-pulse-dashboard.png: looker-snowplow-traffic-pulse-dashboard.png
 assets/img/blog/2014/05/looker-explorer-screenshot.png: looker-explorer-screenshot.png
-assets/img/blog/2014/02/090-kinesis-architecture.png: '090-kinesis-architecture.png'
+assets/img/blog/2014/02/090-kinesis-architecture.png: 090-kinesis-architecture.png
 assets/img/blog/2014/02/brandon-kinesis.png: brandon-kinesis.png
 assets/img/blog/2014/11/kibana-screenshot-1.png: kibana-screenshot-1.png
 assets/img/blog/2014/11/kibana-screenshot-2.png: kibana-screenshot-2.png
@@ -2017,3 +2017,5 @@ assets/img/pricing/check-solid.svg: check-solid.svg
 assets/img/pricing/spw_icon_growth.svg: spw_icon_growth.svg
 assets/img/pricing/spw_icon_enterprise.svg: spw_icon_enterprise.svg
 assets/img/pricing/spw_icon_startup.svg: spw_icon_startup.svg
+assets/img/blog/2019/04/Benjamin-Benoist-Data-Engineer-Snowplow.png: Benjamin-Benoist-Data-Engineer-Snowplow.png
+assets/img/blog/2019/04/Benjamin-Benoist.png: Benjamin-Benoist.png
