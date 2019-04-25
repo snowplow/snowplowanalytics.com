@@ -17,9 +17,9 @@ In addition to my main talk at Data Science Festival on [What makes an effective
 ## Machine learning in real-time: the next frontier
 
 For my Lightning talk I discussed “Machine learning in real-time: the next frontier”:
-
-<iframe src="https://www.slideshare.net/snowplowanalytics/slideshelf" width="760px" height="570px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-
+<br>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/z1ngSek4FUxRZ1" width="760" height="427" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<br>
 The lightning talks were kept strictly to 10 minutes (including questions), so it was an opportunity really just to frame the topic. I find the subject of real-time machine learning, and indeed the broader topic of operationalising ML pipelines, really fascinating; from the questions asked, it looks like others do too.
 
 I hope to return to this topic with some longer-form writing later this year.
