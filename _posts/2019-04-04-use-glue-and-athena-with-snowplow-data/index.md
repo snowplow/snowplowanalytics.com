@@ -5,7 +5,7 @@ title: "Using AWS Glue and AWS Athena with Snowplow data"
 tags: [snowplow, glue, athena, parquet]
 author: Kostas
 category: Other
-permalink: /blog/2018/07/30/use-glue-and-athena-with-snowplow-data/
+permalink: /blog/2019/04/04/use-glue-and-athena-with-snowplow-data/
 ---
 
 This is a guide to interacting with Snowplow enriched events in Amazon S3 with AWS Glue.
