@@ -12,19 +12,23 @@ vertical-tabs-topics:
   - name: Packaged analytics providers
     content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
     link-text: Learn more about how Snowplow differs from other packaged analytics providers.
-    link-url: www.google.com 
-    link-blank: true
+    link-url: 
+    link-blank: 
   - name: Customer data platforms (CDPs)
-    content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
-    link-text: Learn more about how Snowplow differs from other packaged analytics providers.
-    link-url: www.google.com 
+    content: Customer Data Platforms (CDPs) are a new category of tech geared towards marketers that want to run unified campaigns to users across different channels. Some providers, like e.g. Segment, also support collecting event data to power those campaigns and support loading that data into your data warehouse. However, because of the focus on campaigns and sending data to multiple destinations, they’re not as powerful as Snowplow Insights when it comes to delivering that data to your data warehouse. You’ll see fewer events, out-of-the-box, less data points per event and you’ll be stuck with unstructured data that needs to be structured before your data scientists can work with it, and is unpredictable for data engineers who wish to consume the data to power real-time applications.
+    link-text: Learn more about how Snowplow differs from CDPs.
+    link-url:
+    link-blank:
   - name: ETL-as-a-service solutions
-    content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
-    link-text: Learn more about how Snowplow differs from other packaged analytics providers.
-    link-url: www.google.com 
+    content: ETL-as-a-service vendors provide easy ways for companies to move data from 3rd party systems (e.g. Facebook, Adwords, Salesforce) and operational databases (e.g. Postgres, SQL Server) into your data warehouse. Snowplow Insights customers will typically run an ETL-as-a-service vendor like xPlenty or Stitch alongside Snowplow Insights: using Snowplow Insights for the real-time collection of event-level data wherever possible and a ETL-as-a-service provider for those sources that do not support streaming of event-level data.
+    link-text: Learn more about how Snowplow differs from ETLs
+    link-url:
+    link-blank:
   - name: Build your own data pipeline
-    content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
-
+    content: Some companies, serious about building their own data asset, invest heavily in developing their own data collection technology. However, companies consistently underestimate the amount of resources required to build, maintain and evolve their data collection infrastructure. When building it out themselves, time to value can take weeks, if not months, and companies typically bleed business logic into the code, making solutions brittle and very hard to evolve over time. With Snowplow, your pipeline can be running in minutes and will evolve with your business.
+    link-text: Learn more about how Snowplow differs from building your own pipeline
+    link-url:
+    link-blank:
 ---
 
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
@@ -96,9 +100,9 @@ vertical-tabs-topics:
         {% for row in page.vertical-tabs-topics %}
           <div class="vertical-tabs-body {% if forloop.index == 1 %} active {% endif %}" id="ref-{{ forloop.index }}">
             <p>{{ row.content }}</p>
-            {% if row.link-text and row.link-url %}
+            <!-- {% if row.link-text and row.link-url %}
               <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
-            {% endif %}
+            {% endif %} -->
           </div>
         {% endfor %}
       </div>
