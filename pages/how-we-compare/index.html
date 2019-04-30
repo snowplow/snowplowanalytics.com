@@ -12,30 +12,35 @@ vertical-tabs-topics:
   - name: Packaged analytics providers
     content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
     link-text: Learn more about how Snowplow differs from other packaged analytics providers.
-    link-url: 
-    link-blank: 
+    link-url: http://snowplowanalytics.com/how-we-compare
+    link-blank: true 
   - name: Customer data platforms (CDPs)
     content: Customer Data Platforms (CDPs) are a new category of tech geared towards marketers that want to run unified campaigns to users across different channels. Some providers, like e.g. Segment, also support collecting event data to power those campaigns and support loading that data into your data warehouse. However, because of the focus on campaigns and sending data to multiple destinations, they’re not as powerful as Snowplow Insights when it comes to delivering that data to your data warehouse. You’ll see fewer events, out-of-the-box, less data points per event and you’ll be stuck with unstructured data that needs to be structured before your data scientists can work with it, and is unpredictable for data engineers who wish to consume the data to power real-time applications.
     link-text: Learn more about how Snowplow differs from CDPs.
-    link-url:
-    link-blank:
+    link-url: http://snowplowanalytics.com/how-we-compare
+    link-blank: true 
   - name: ETL-as-a-service solutions
-    content: ETL-as-a-service vendors provide easy ways for companies to move data from 3rd party systems (e.g. Facebook, Adwords, Salesforce) and operational databases (e.g. Postgres, SQL Server) into your data warehouse. Snowplow Insights customers will typically run an ETL-as-a-service vendor like xPlenty or Stitch alongside Snowplow Insights: using Snowplow Insights for the real-time collection of event-level data wherever possible and a ETL-as-a-service provider for those sources that do not support streaming of event-level data.
-    link-text: Learn more about how Snowplow differs from ETLs
-    link-url:
-    link-blank:
+    content: "ETL-as-a-service vendors provide easy ways for companies to move data from 3rd party systems (e.g. Facebook, Adwords, Salesforce) and operational databases (e.g. Postgres, SQL Server) into your data warehouse. Snowplow Insights customers will typically run an ETL-as-a-service vendor like xPlenty or Stitch alongside Snowplow Insights: using Snowplow Insights for the real-time collection of event-level data wherever possible and a ETL-as-a-service provider for those sources that do not support streaming of event-level data."
+    link-text: Learn more about how Snowplow differs from ETLs.
+    link-url: http://snowplowanalytics.com/how-we-compare
+    link-blank: true 
   - name: Build your own data pipeline
     content: Some companies, serious about building their own data asset, invest heavily in developing their own data collection technology. However, companies consistently underestimate the amount of resources required to build, maintain and evolve their data collection infrastructure. When building it out themselves, time to value can take weeks, if not months, and companies typically bleed business logic into the code, making solutions brittle and very hard to evolve over time. With Snowplow, your pipeline can be running in minutes and will evolve with your business.
-    link-text: Learn more about how Snowplow differs from building your own pipeline
-    link-url:
-    link-blank:
+    link-text: Learn more about how Snowplow differs from building your own pipeline.
+    link-url: http://snowplowanalytics.com/how-we-compare
+    link-blank: true 
 ---
 
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-11 col-sm-offset-1">
-                <h1>Data Collection:<br>the different approaches</h1>
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1>The different approaches to data collection</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h4>Understanding the different data collection solutions for companies serious about building out their own data asset.</h4>
             </div>
         </div>
     </div>
@@ -47,11 +52,11 @@ vertical-tabs-topics:
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h2>The data collection solutions for companies serious about building out their own data asset.</h2>
+        <h2>Setting the scene</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-11 col-sm-offset-1">
+      <div class="col-sm-8 col-sm-offset-2">
         <h4>More and more companies are investing in developing their own data asset. Typically they’ll want to:</h4>
       </div>
     </div>
