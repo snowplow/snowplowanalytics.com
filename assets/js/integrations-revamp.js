@@ -4,7 +4,6 @@
  var stickers_buttons = ".stickers-buttons";
  var stickers_groups = ".stickers-group";
  var stickers_target;
- var stickers_target_pos;
 
 /**
  * Ready
@@ -15,11 +14,17 @@
  		// Get target
  		stickers_target = $(this).attr('data-ref');
 
- 		// Get target Position
- 		stickers_target_pos = $('#'+stickers_target).offset().top; 
+ 		// Hide or show sections
+ 		if (stickers_target == 0) {
+ 			$('.stickers-group').show();
+ 		} else {
+ 			$('.stickers-group').hide();
+ 			$('#'+stickers_target).show();
+ 		}
 
- 		// Scroll to position
- 		$('html, body').animate({scrollTop: stickers_target_pos - $('nav.navbar').height() - 25}, 600);
+ 		// Change buttons state
+ 		$('.stickers-buttons').removeClass('active');
+ 		$(this).addClass('active');
  	});
 
  });

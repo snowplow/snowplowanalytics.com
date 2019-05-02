@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-04-29 16:23:50
+* @Last Modified time: 2019-05-02 07:11:49
 */
 
 /* 
@@ -126,6 +126,9 @@ $very-light-blue-two: #e1e6f0;
 		color: $blue-purple;
 	}
 }
+#button-login-header-page {
+	margin-right: 10px;
+}
 
 
 /* 
@@ -202,6 +205,7 @@ $very-light-blue-two: #e1e6f0;
 	}
 	h4 {
 		color: $gunmetal;
+		line-height: 1.4;
 	}
 	h5 {
 		font-size: 18px;
@@ -261,6 +265,10 @@ $very-light-blue-two: #e1e6f0;
 				height: auto;
 				margin: 25px;
 				object-fit: contain;
+				.hero-revamp-logos.plus_mg & {
+					// for use when the images have different sizes
+					margin: 40px 25px;
+				}
 				&:nth-of-type(4n+1) {
 					justify-self: left;
 				}
@@ -1395,11 +1403,12 @@ $very-light-blue-two: #e1e6f0;
 		h2 {
 			text-align: center;
 			color: $blue-purple;
-			margin-bottom: 70px;
+			margin-bottom: 32px;
 		}
 		h4 {
 			text-align: center;
 			color: $blue-purple;
+			line-height: 1.4;
 			margin-bottom: 70px;
 		}
 	}
@@ -1442,7 +1451,7 @@ $very-light-blue-two: #e1e6f0;
  */
  :root {
  	--vertical-tabs-header-pad: 25px;
- 	--vertical-tabs-header-h: 170px;
+ 	--vertical-tabs-header-h: 131px;
  	--vertical-tabs-body-pad: 80px;
  	@media (max-width: 991px) {
  		--vertical-tabs-body-pad: 60px;
@@ -1495,6 +1504,7 @@ $very-light-blue-two: #e1e6f0;
 		}
 		&.active, &:hover {
 			background-color: transparent;
+			//background-color: $ice-blue;
 			p {
 				color: $lightish-purple;
 			}
@@ -1508,6 +1518,7 @@ $very-light-blue-two: #e1e6f0;
 		}
 	}
 	&-body{
+		//background-color: $ice-blue;
 		height: 0;
 		visibility: hidden;
 		opacity: 0;
@@ -1559,6 +1570,7 @@ $very-light-blue-two: #e1e6f0;
 	 	} 
 		/////////////////////////////////////
 		padding-top: 0;
+		padding-bottom: 0;
 	}
 	&-buttons {
 		margin: 0 5px;
@@ -1647,6 +1659,7 @@ $very-light-blue-two: #e1e6f0;
 	// Vars
 	/////////////////////////////////////
 	--ml: 50px;
+	margin-top: 120px;
 	@media (max-width: 767px) {
 		--ml: 0; 		
 	}

@@ -7,7 +7,7 @@
  */
 @import "snowplow/_variables";
 @import "snowplow/_revamp";
-
+@import "snowplow/_grid";
 
 /*!
  * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
@@ -26,7 +26,7 @@
  */
 
 /* Menu Correction */
-body.how-we-compare {
+body.integrations {
 	header {
 		background: #fff;
 		.navbar, 
@@ -50,10 +50,7 @@ body.how-we-compare {
 
 
 .hero-revamp {
-	padding-bottom: 290px;
-}
-.hero-revamp + .stickers-section {
-	margin-top: -100px;
+	padding-bottom: 80px;
 }
 .hero-revamp-logos {
 	margin-top: 60px;
