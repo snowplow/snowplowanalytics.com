@@ -27,7 +27,7 @@ integrations-sources:
     items:
       - name: iOS
         icon: /assets/img/integrations/sources/i-os@2x.png
-        icon-h: 54px
+        icon-h: 80.5px
       - name: Android
         icon: /assets/img/integrations/sources/android@3x.png
         icon-h: 55.5px
@@ -156,15 +156,6 @@ integrations-destinations:
       - name: Snowflake
         icon: /assets/img/integrations/destinations/snowflake@3x.png
         icon-h: 66px
-      - name: Marketo
-        icon: /assets/img/integrations/destinations/marketo@3x.png
-        icon-h: 35.5px
-      - name: Zendesk
-        icon: /assets/img/integrations/destinations/zendesk@3x.png
-        icon-h: 87.5px
-      - name: Google Analytics
-        icon: /assets/img/integrations/destinations/google-analytics@3x.jpg
-        icon-h: 54.5px
   - name: Options for data consumption (GCP) 
     items:
       - name: Pub/Sub
@@ -184,69 +175,69 @@ logos:
     img: assets/img/integrations/logos/looker.png
     img-2x: assets/img/integrations/logos/looker@2x.png
     img-3x: assets/img/integrations/logos/looker@3x.png
-    url: '#'  
+    height: 114.5px
   - name: indicative
     img: assets/img/integrations/logos/indicative.png
     img-2x: assets/img/integrations/logos/indicative@2x.png
-    img-3x: assets/img/integrations/logos/indicative@3x.png
-    url: '#'  
+    img-3x: assets/img/integrations/logos/indicative@3x.png  
+    height: 114.5px
   - name: tableau
     img: assets/img/integrations/logos/tableau.png
     img-2x: assets/img/integrations/logos/tableau@2x.png
-    img-3x: assets/img/integrations/logos/tableau@3x.png
-    url: '#'  
+    img-3x: assets/img/integrations/logos/tableau@3x.png 
+    height: 114.5px
   - name: powerbi
     img: assets/img/integrations/logos/powerbi.png
     img-2x: assets/img/integrations/logos/powerbi@2x.png
     img-3x: assets/img/integrations/logos/powerbi@3x.png
-    url: '#'  
+    height: 114.5px 
   - name: redash
     img: assets/img/integrations/logos/redash.png
     img-2x: assets/img/integrations/logos/redash@2x.png
     img-3x: assets/img/integrations/logos/redash@3x.png
-    url: '#'  
+    height: 114.5px
   - name: periscope
     img: assets/img/integrations/logos/periscope.png
     img-2x: assets/img/integrations/logos/periscope@2x.png
     img-3x: assets/img/integrations/logos/periscope@3x.png
-    url: '#'  
+    height: 114.5px
   - name: superset
     img: assets/img/integrations/logos/superset.png
     img-2x: assets/img/integrations/logos/superset@2x.png
     img-3x: assets/img/integrations/logos/superset@3x.png
-    url: '#'  
+    height: 114.5px
   - name: sisense
     img: assets/img/integrations/logos/sisense.png
     img-2x: assets/img/integrations/logos/sisense@2x.png
     img-3x: assets/img/integrations/logos/sisense@3x.png
-    url: '#'  
+    height: 114.5px 
   - name: jupyter
     img: assets/img/integrations/logos/jupyter.png
     img-2x: assets/img/integrations/logos/jupyter@2x.png
     img-3x: assets/img/integrations/logos/jupyter@3x.png
-    url: '#'  
+    height: 114.5px  
   - name: databricks-logo
     img: assets/img/integrations/logos/databricks-logo.png
     img-2x: assets/img/integrations/logos/databricks-logo@2x.png
     img-3x: assets/img/integrations/logos/databricks-logo@3x.png
-    url: '#'  
+    height: 114.5px
   - name: data-quality
     img: assets/img/integrations/logos/data-quality.png
     img-2x: assets/img/integrations/logos/data-quality@2x.png
     img-3x: assets/img/integrations/logos/data-quality@3x.png
-    url: '#'  
+    height: 114.5px 
   - name: qubole
     img: assets/img/integrations/logos/qubole.png
     img-2x: assets/img/integrations/logos/qubole@2x.png
     img-3x: assets/img/integrations/logos/qubole@3x.png
-    url: '#'  
+    height: 114.5px
              
 ---
 
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-11 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1">
                 <h1>Bring your data together</h1>
             </div>
         </div>
@@ -263,7 +254,7 @@ logos:
   <div class="container">
     <div class="row">
       <div class="col-sm-12 stickers-buttons-container">
-        <button class="stickers-buttons btn-outline-primary btn active" data-ref="sources">All</button>
+        <button class="stickers-buttons btn-outline-primary btn active" data-ref="0">All</button>
         <button class="stickers-buttons btn-outline-primary btn" data-ref="sources">Sources</button>
         <button class="stickers-buttons btn-outline-primary btn" data-ref="destinations">Destinations</button>
       </div>
@@ -274,6 +265,35 @@ logos:
       </div>
       
       {% for row in page.integrations-sources %}
+        <div class="col-sm-12 stickers-category-container">
+          <h4>{{ row.name }}</h4>
+          <div class="stickers-item-container">
+            {% for item in row.items %}
+              <div class="stickers-item">
+                <div class="stickers-item-title">
+                  <p>{{ item.name }}</p>
+                </div>
+                <div class="stickers-item-icon">
+                  <img src="{{ item.icon }}" alt="{{ item.name }}" style="height: {{ item.icon-h }}">
+                </div>
+              </div> 
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<section class="section-revamp stickers-section">
+  <div class="container">
+    <div class="row stickers-group" id="destinations">
+      <div class="col-sm-12">
+        <h2>Destinations</h2>
+      </div>
+      
+      {% for row in page.integrations-destinations %}
         <div class="col-sm-12 stickers-category-container">
           <h4>{{ row.name }}</h4>
           <div class="stickers-item-container">
@@ -308,37 +328,6 @@ logos:
   </div>
 </section>
 
-
-<section class="section-revamp stickers-section">
-  <div class="container">
-    <div class="row stickers-group" id="destinations">
-      <div class="col-sm-12">
-        <h2>Destinations</h2>
-      </div>
-      
-      {% for row in page.integrations-destinations %}
-        <div class="col-sm-12 stickers-category-container">
-          <h4>{{ row.name }}</h4>
-          <div class="stickers-item-container">
-            {% for item in row.items %}
-              <div class="stickers-item">
-                <div class="stickers-item-title">
-                  <p>{{ item.name }}</p>
-                </div>
-                <div class="stickers-item-icon">
-                  <img src="{{ item.icon }}" alt="{{ item.name }}" style="height: {{ item.icon-h }}">
-                </div>
-              </div> 
-            {% endfor %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-
-
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
     <div class="container">
         <div class="row">
@@ -349,14 +338,14 @@ logos:
         <div class="row">
             <div class="col-sm-12">
                 <h4>
-                  Snowplow is compatible with any business intelligence tool and analytics provider who integrates with either Snowflake, BigQuery and Redshift.
-                  <br>
-                  Here some of our customers’ favorite tools.
+                  Snowplow is compatible with any business intelligence tool and analytics provider who integrates 
+                  <br> 
+                  with either Snowflake, BigQuery and Redshift. Here some of our customers’ favorite tools.
                 </h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 hero-revamp-logos">
+            <div class="col-sm-12 hero-revamp-logos plus_mg">
                 {% for company in page.logos %}  
                 {% if company.url %} 
                         <a href="{{ company.url }}" class="hero-revamp-logos-block">
@@ -365,7 +354,7 @@ logos:
                         <div class="hero-revamp-logos-block">
                         {% assign close_block = '</div>' %}
                     {% endif %}
-                    <img src="{{ BASE_PATH }}/{{ company.img }}" srcset="{{ BASE_PATH }}/{{ company.img-2x }} 2x, {{ BASE_PATH }}/{{ company.img-3x }} 3x" alt="{{ company.name }}">
+                    <img src="{{ BASE_PATH }}/{{ company.img }}" srcset="{{ BASE_PATH }}/{{ company.img-2x }} 2x, {{ BASE_PATH }}/{{ company.img-3x }} 3x" alt="{{ company.name }}" style="height: {{ company.height  }}">
                     {{ close_block }}
                 {% endfor %}  
             </div>

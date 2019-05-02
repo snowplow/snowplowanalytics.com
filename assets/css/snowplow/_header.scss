@@ -257,6 +257,12 @@ header
 					background: $white;
 					color: $brand-primary;
 				}
+				&-login {
+					background: none;
+					padding: 0;
+					color: #50545c;
+					min-width: 80px;
+				}
 			}
 		}
 	}
