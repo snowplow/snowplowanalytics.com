@@ -17,9 +17,18 @@
  		// Hide or show sections
  		if (stickers_target == 0) {
  			$('.stickers-group').show();
+ 			$('.snowplow-iglu-section').show();
  		} else {
  			$('.stickers-group').hide();
  			$('#'+stickers_target).show();
+ 			if (stickers_target == "sources") {
+ 				$('#destinations').css('margin-top', '80px');
+ 				$('.snowplow-iglu-section').show();
+ 			}
+ 			else {
+ 				$('#destinations').css('margin-top', '-80px');
+ 				$('.snowplow-iglu-section').hide();
+ 			}
  		}
 
  		// Change buttons state
