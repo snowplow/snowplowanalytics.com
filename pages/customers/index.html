@@ -1,13 +1,13 @@
 ---
 layout: default
 group: customers
-title: Our Customers are Smart | Snowplow
-description: Our Customers are diverse but have a lot in common, though. They are smart. They love data. And they want to use data to differentiate. Find out how we helped!
+title: Snowplow Customers | Here’s Why 600,000+ Websites and Apps Run Snowplow
+description: Discover how our customers use Snowplow data to boost growth, improve the customer experience, drive product development and more.
 permalink: /customers/
 class: customers
 assets:
   css: assets/css/customers-revamp.css
-  js: 
+  js:
     - assets/js/costumers-revamp.js
     - assets/js/testemonial-slide-revamp.js
 hero-logos:
@@ -82,13 +82,13 @@ case-studies-filters:
   - Marketplaces
   - Media
   - Mobile
-  - Retail 
+  - Retail
 case-studies:
   - name: Get Ninjas
     filter: Marketplaces
     logo: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo-over.png
     logo-2x: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo-over%402x.png
-    logo-3x: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo-over%403x.png 
+    logo-3x: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo-over%403x.png
     logo-white: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo.png
     logo-white-2x: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo%402x.png
     logo-white-3x: assets/img/customers/customers-revamp/case-studies/getninjas-casestudy-logo%403x.png
@@ -199,8 +199,8 @@ case-studies:
         </div>
         <div class="row">
             <div class="col-sm-12 hero-revamp-logos">
-                {% for company in page.hero-logos %}  
-                {% if company.url %} 
+                {% for company in page.hero-logos %}
+                {% if company.url %}
                         <a href="{{ company.url }}" class="hero-revamp-logos-block">
                         {% assign close_block = '</a>' %}
                     {% else %}
@@ -209,7 +209,7 @@ case-studies:
                     {% endif %}
                     <img src="{{ BASE_PATH }}/{{ company.img }}" srcset="{{ BASE_PATH }}/{{ company.img-2x }} 2x, {{ BASE_PATH }}/{{ company.img-3x }} 3x" alt="{{ company.name }}">
                     {{ close_block }}
-                {% endfor %}  
+                {% endfor %}
             </div>
         </div>
     </div>
