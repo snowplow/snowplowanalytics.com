@@ -5,7 +5,7 @@ title-short: Snowplow Obj-C Tracker 1.1.0
 tags: [snowplow, objc, ios, mobile]
 author: Mike
 category: Releases
-permalink: /blog/2019/04/xx/snowplow-iOS-tracker-1.1.0-released/
+permalink: /blog/2019/05/06/snowplow-iOS-tracker-1.1.0-released/
 discourse: true
 ---
 
@@ -42,7 +42,7 @@ SPScreenView *event = [SPScreenView build:^(id<SPScreenViewBuilder> builder) {
 [tracker_ trackScreenViewEvent:event];
 {% endhighlight %}
 
-The new version of the method takes an additional, optional “type” argument, optional “type” argument, “transitionType” and optional arguments for the previous screen view:
+The new version of the method takes takes an additional, optional “type” argument, “transitionType” and optional arguments for the previous screenview:
 
 {% highlight obj-c %}
 SPScreenView *event = [SPScreenView build:^(id<SPScreenViewBuilder> builder) {
@@ -95,7 +95,7 @@ Screen view events and screen contexts are then automatically tracked and popula
 
 <h2 id="exceptions">2. Crash tracking</h2>
 
-Automatic crash tracking has been added to the new tracker version. This means an `application_error` event is recorded whenever the app crashes: providing valuable data about when an app has crashed, and enabling analysis to identify if particular parts of the app, app versions, hardware versions or user actions are more likely to cause the app to crash, so that issues can be proactively spotted, diagnosed and addressed. 
+Automatic crash tracking has been added to the new tracker version. This means an `application_error` event is recorded whenever the app crashes: providing valuable data about when an app has crashed, and enabling analysis to identify if particular parts of the app, app versions, hardware versions or user actions are more likely to cause the app to crash so issues can be proactively spotted, diagnosed and addressed.
 
 Automatic crash tracking is enabled as follows:
 
