@@ -44,6 +44,12 @@ body.customers {
 				background-color: #6738B8;
 			}
 		}
+		#button-login-header-page {
+			color: $gunmetal;
+			&:hover {
+				color: $blue-purple;
+			}
+		}
 	}
 }
 

@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-05-02 22:29:25
+* @Last Modified time: 2019-05-04 10:43:36
 */
 
 /* 
@@ -140,6 +140,16 @@ $very-light-blue-two: #e1e6f0;
 	vertical-align: middle;
 	&:hover {
 		color: $blue-purple;
+	}
+	body.scrolled & {
+		color: $gunmetal;
+		&:hover {
+			color: $blue-purple;
+		}
+	}
+	@media (max-width: 767px) {
+		display: block;
+   	 	margin: 40px 0 10px;
 	}
 }
 
