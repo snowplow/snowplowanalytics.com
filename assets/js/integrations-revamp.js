@@ -29,6 +29,13 @@
  				$('#destinations').css('margin-top', '-80px');
  				$('.snowplow-iglu-section').hide();
  			}
+ 			if (stickers_target == "destinations") {
+ 				$('.bi-tools-section').show();
+ 			}
+ 			else {
+ 				$('#destinations').css('margin-top', '-80px');
+ 				$('.bi-tools-section').hide();
+ 			}
  		}
 
  		// Change buttons state
