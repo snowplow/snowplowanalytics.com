@@ -43,6 +43,12 @@ body.how-we-compare {
 				background-color: #6738B8;
 			}
 		}
+		#button-login-header-page {
+			color: $gunmetal;
+			&:hover {
+				color: $blue-purple;
+			}
+		}
 	}
 }
 
