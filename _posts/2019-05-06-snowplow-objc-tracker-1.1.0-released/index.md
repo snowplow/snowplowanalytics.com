@@ -142,7 +142,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
 [repo]: https://github.com/snowplow/snowplow-android-tracker
-[docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/ios-tracker/1.1.0/
+[docs]: https://docs.snowplowanalytics.com/open-source/snowplow/trackers/objective-c-tracker/1.1.0/
 [release-notes]: https://github.com/snowplow/snowplow-objc-tracker/releases/tag/1.1.0
 [ios-setup]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/objective-c-tracker/1.1.0/objective-c-tracker/#installation
 [ios-issues]: https://github.com/snowplow/snowplow-objc-tracker/issues
