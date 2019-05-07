@@ -60,7 +60,7 @@ SPScreenView *event = [SPScreenView build:^(id<SPScreenViewBuilder> builder) {
 
 In addition, the “ID” field is automatically set by the tracking SDK and used in the screen context. The previous screen view ID, type and name are automatically recorded by the SDK with the event, making it easier to understand how individual users navigate through the app.
 
-The fields recorded with each screen view event can be viewed [here](https://github.com/snowplow/iglu-central/schemas/com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0).
+The fields recorded with each screen view event can be viewed [here](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0).
 
 ### 1.2 Introducing the screen context
 
