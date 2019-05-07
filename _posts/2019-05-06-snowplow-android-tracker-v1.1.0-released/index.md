@@ -123,7 +123,7 @@ Tracker.init(new Tracker.TrackerBuilder(...)
 
 An [application context](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.mobile/application/jsonschema/1-0-0) is then sent with every event recorded by the tracker.
 
-<h2 id="updates">4. `Updates`</h2>
+<h2 id="updates">4. Updates</h2>
 
 Other updates and fixes include:
 
