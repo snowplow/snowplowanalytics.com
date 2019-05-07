@@ -119,7 +119,7 @@ SPTracker *tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
 }];
 {% endhighlight %}
 
-<h2 id="updates">4. Other changes</h2>
+<h2 id="updates">4. Updates</h2>
 
 Other updates and fixes include:
 
