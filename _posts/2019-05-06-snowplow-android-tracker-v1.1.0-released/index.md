@@ -58,7 +58,7 @@ tracker.track(ScreenView.builder()
 
 In addition, the “ID” field is automatically set by the tracking SDK and is used in the screen context as below. The previous screen view ID, type and name are automatically recorded by the SDK with the event, making it easier when analysing the data to understand how individual users navigate through the app.
 
-The fields recorded with each screen view event can be viewed [here](https://github.com/snowplow/iglu-central/schemas/com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0).
+The fields recorded with each screen view event can be viewed [here](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0).
 
 ### 1.2 Introducing the screen context
 
@@ -123,7 +123,7 @@ Tracker.init(new Tracker.TrackerBuilder(...)
 
 An [application context](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.mobile/application/jsonschema/1-0-0) is then sent with every event recorded by the tracker.
 
-<h2 id="updates">4. Other changes</h2>
+<h2 id="updates">4. `Updates`</h2>
 
 Other updates and fixes include:
 
