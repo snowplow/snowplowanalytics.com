@@ -101,9 +101,9 @@ vertical-tabs-topics:
         {% for row in page.vertical-tabs-topics %}
           <div class="vertical-tabs-body {% if forloop.index == 1 %} active {% endif %}" id="ref-{{ forloop.index }}">
             <p>{{ row.content }}</p>
-            <!-- {% if row.link-text and row.link-url %}
+            {% if row.link-text and row.link-url %}
               <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
-            {% endif %} -->
+            {% endif %}
           </div>
         {% endfor %}
       </div>

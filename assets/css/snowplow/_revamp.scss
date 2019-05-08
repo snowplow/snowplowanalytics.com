@@ -2,7 +2,7 @@
 * @Author: Dygon - Joana Oliveira
 * @Date:   2019-02-13 21:35:33
 * @Last Modified by:   Dygon - Joana Oliveira
-* @Last Modified time: 2019-05-04 10:43:36
+* @Last Modified time: 2019-05-08 06:52:09
 */
 
 /* 
@@ -126,32 +126,7 @@ $very-light-blue-two: #e1e6f0;
 		color: $blue-purple;
 	}
 }
-#button-request-demo-header-page {
-	border: 1px solid $blue-purple;
-}
-#button-login-header-page {
-	color: #fff;
-	line-height: .7em;
-	position: relative;
-	font-size: 14px;
-	font-weight: normal;
-	margin-right: 20px;
-	display: inline-block;
-	vertical-align: middle;
-	&:hover {
-		color: $blue-purple;
-	}
-	body.scrolled & {
-		color: $gunmetal;
-		&:hover {
-			color: $blue-purple;
-		}
-	}
-	@media (max-width: 767px) {
-		display: block;
-   	 	margin: 40px 0 10px;
-	}
-}
+
 
 
 /* 

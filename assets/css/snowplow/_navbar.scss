@@ -55,3 +55,40 @@
 {
 	margin: 0;
 }
+
+
+
+
+
+#button-request-demo-header-page {
+	border: 1px solid #6738b8;
+}
+#button-login-header-page {
+	color: #fff;
+	line-height: .7em;
+	position: relative;
+	font-size: 14px;
+	font-weight: normal;
+	margin-right: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	&:hover {
+		color: #6738b8;
+	}
+	body.scrolled & {
+		color: #50545c;
+		&:hover {
+			color: #6738b8;
+		}
+	}
+	nav.navbar:hover & {
+		color: #50545c;
+		&:hover {
+			color: #6738b8;
+		}
+	}
+	@media (max-width: 767px) {
+		display: block;
+   	 	margin: 40px 0 10px;
+	}
+}
