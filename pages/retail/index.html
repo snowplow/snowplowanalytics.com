@@ -76,11 +76,11 @@ logos:
     img-3x: assets/img/retail/logos/outfittery@3x.png
     height: 24.7px    
 cards:
-    - title: '<a href="/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/">Snowplow for retail: How can I use Snowplow?</a>'
+    - title: '<a href="/blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/">Snowplow for retail: How can I use Snowplow?</a>'
       content: This post is non-technical and is intended to show you how to solve some common problems retailers face every day with Snowplow. This is the first post in a series on the subject, there are 4 more in this series.
-    - title: <a href="/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/">Using Snowplow for marketing data analytics</a>
+    - title: <a href="/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
       content: Marketing success has transformed from a given into a set of complicated, multi-layered questions where the answers are not always clear. Despite the complexity and ambiguity, marketing teams are often expected to provide answers.
-    - title: <a href="/blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana/">A misconception about how personalization drives sales</a>
+    - title: <a href="/blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/">A misconception about how personalization drives sales</a>
       content: "When retailers are looking for a way to drive sales, personalization can look like a quick win: buy a recommendation engine and put more products a customer is likely to buy in front of them, then watch the sales come in. Unfortunately, it’s not quite that easy."
 
 ---
@@ -114,11 +114,11 @@ cards:
         <div class="data-blocks-container">
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
-                    <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                    <div class="col-sm-6 data-blocks-item-content">
+                        <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic">
+                    <div class="col-sm-5 data-blocks-item-pic">
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
@@ -135,11 +135,7 @@ cards:
                 <div class="section-revamp-testemonial-block _active">
                     <h3>Data-driven retailers choose Snowplow</h3>
                     <p class="section-revamp-testemonial-content">
-                      “Snowplow has blown Nordstrom’s minds in speed and range of data, offering complete extensibility of batch and real-time and schemas in hours and seconds, respectively.
-                      <br>
-                      With a small but dedicated team of engineers, we were able to replace our bulky and expensive third-party solution with one custom tailored to our needs and satisfaction.
-                      <br>
-                      There’s simply no going back.”
+                      “Snowplow has blown Nordstrom’s minds in speed and range of data, offering complete extensibility of batch and real-time and schemas in hours and seconds, respectively. With a small but dedicated team of engineers, we were able to replace our bulky and expensive third-party solution with one custom tailored to our needs and satisfaction. There’s simply no going back.”
                     </p>
                     <div class="section-revamp-testemonial-person">
                         <img src="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth.jpg" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@2x.jpg 2x, {{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@3x.jpg 3x">
