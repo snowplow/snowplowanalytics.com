@@ -113,12 +113,12 @@ cards:
     <div class="container">
         <div class="data-blocks-container">
             {% for block in page.blocks %}
-                <div class="data-blocks-item row">
-                    <div class="col-sm-6 data-blocks-item-content">
+                <div class="data-blocks-item row no-margin-bottom">
+                    <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-5 data-blocks-item-pic">
+                    <div class="col-sm-6 data-blocks-item-pic">
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
