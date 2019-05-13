@@ -2,26 +2,26 @@
 layout: default-revamp
 group: retail
 # subgroup: retail
-title: Snowplow Technology | Best-in-Class Data Collection Platform Running in Your Cloud
-description: The Snowplow technology is ideal for data teams who want to manage the collection and warehousing of event data across all their platforms, in real-time.
+title: Snowplow Insights | The Data Collection Platform for Data-Driven Retailers
+description: Data-driven retailers choose Snowplow's data collection infrastructure to build a single customer view across web, mobile, offline and 3rd party platforms.
 permalink: /retail/
 class: insights
 assets:
   css: assets/css/retail.css
 blocks:
-    - icon: /assets/img/retail/retail-1.svg
+    - icon: /assets/img/retail/single-customer@2x.png
       title: Build a single customer view across web, mobile, offline and 3rd party.
       content: With Snowplow you’re able to easily join web, mobile and offline data to create a single customer view. Snowplow offers a range of trackers for web, mobile and server-side events that emit events in the same format so they can be loaded into the same event-level table in your data warehouse. Snowplow’s tech allows you to track offline conversions, enrich events with 3rd party properties and send 3rd party events using Snowplow’s webhooks.
-    - icon: /assets/img/retail/retail-2.svg
+    - icon: /assets/img/retail/measure@2x.png
       title: Correctly measure, attribute and optimize your marketing spend.
       content: Snowplow enables you to track exactly what marketing campaigns individual users engage with and where, and tie that data to downstream user behavior. This means you can calculate the real return on marketing spend based on all the purchases a customer makes over their lifetime, taking into account returns. And having access to the underlying event-level data means you can continually assess which attribution model best suit your business.
-    - icon: /assets/img/retail/retail-3.svg
+    - icon: /assets/img/retail/answers@2x.png
       title: Ask and answer the questions that matter to your business.
       content: Make reports useful again with analytics customized for your business. Eliminate the dashboards analytics vendors think you need and experience the freedom to ask and answer the questions that matter most to your business. With access to your rich, event-level data, you can break down and analyze conversion funnels based on unique sales cycles, multichannel marketing effectiveness and customer retention, to name a few.
-    - icon: /assets/img/retail/retail-4.svg
+    - icon: /assets/img/retail/personalize@2x.png
       title: Take actions on your data in real-time.
       content: With Snowplow you can act on your data in real-time. All the data being loaded into your data warehouse (we load into BigQuery in real-time) is first written to a real-time stream that you can read off to power your real-time applications. You can use your event-level data to build action-driven rule engines to trigger ads, emails, personalise product features or power a fraud detection engine, all in real-time.
-    - icon: /assets/img/retail/retail-5.svg
+    - icon: /assets/img/retail/real-time@2x.png
       title: Personalize and optimize the shopping experience.
       content: Snowplow data is granular, validated up front and highly structured, which makes it a great input for your machine learning models to enable you to, for example, effectively bucket users to optimise conversions and retention.<br>You can use this data to personalise the shopping experience in real-time and assess its effectiveness with A/B tests (using our Optimizely integration) of e.g. pricing, user paths and new product features. 
 logos:
@@ -113,12 +113,12 @@ cards:
     <div class="container">
         <div class="data-blocks-container">
             {% for block in page.blocks %}
-                <div class="data-blocks-item row no-margin-bottom">
+                <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic">
+                    <div class="col-sm-6 data-blocks-item-pic pad-60">
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
