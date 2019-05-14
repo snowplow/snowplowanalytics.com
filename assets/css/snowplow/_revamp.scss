@@ -215,7 +215,7 @@ $very-light-blue-two: #e1e6f0;
   		text-transform: uppercase;
 	}
 	.btn + .btn {
-		margin-left: 80px;
+		margin-left: 30px;
 		@media (max-width: $xs-max) {
 		margin-left: 10px;
 		}
@@ -312,7 +312,7 @@ $very-light-blue-two: #e1e6f0;
 		}
 	}
 	img {
-		width: 100%;
+		/* width: 100%; */
 		height: var(--revamp-icons-img-h);
 		object-fit: contain;
 		margin: var(--revamp-icons-img-mg);
