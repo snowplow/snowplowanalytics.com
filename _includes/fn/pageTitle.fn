@@ -1,1 +1,1 @@
-{% if {{page.group}} == 'blog' %}Blog – {{page.title}}{% elsif {page.title} !=  %}{{page.title}} – {{site.title}}{% else %}{{site.title}} – {{site.tagline}}{% endif %}
+{% if {{page.group}} == 'blog' %}Blog – {{page.title}}{% elsif {page.title} !=  %}{{page.title}}{% else %}{{site.title}} – {{site.tagline}}{% endif %}
