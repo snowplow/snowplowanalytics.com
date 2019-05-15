@@ -16,6 +16,9 @@ Scala Common Enrich:
 2. [New feature: remote HTTP adapter](#remoteAdapter)
 3. [New tutorial: add an enrichment to the pipeline](#tutoEnrichment)
 4. [Other improvements](#improvements)
+5. [Updates for EmrEtlRunner](#eer)
+6. [Roadmap](#roadmap)
+7. [Getting help](#help)
 
 <h2 id="yauaa">1. New enrichment: YAUAA (Yet Another UserAgent Analyzer)</h2>
 
@@ -203,14 +206,28 @@ More info about these fields on [this page](https://SendGrid.com/docs/for-develo
 
 IP lookup enrichment now supports IPs (v4) containing a port.
 
-<h2>5. Getting help</h2>
+<h2 id="eer">5. Updates for EmrEtlRunner</h2>
+
+We are continuing the effort started in R113 to decrease the number of connection issues.
+
+The backoff periods for retries have been increased, so that it's less likely to hit EMR rate limits with multiple pipelines running concurrently.
+
+The calls being made to the EMR API to monitor the jobs have also been updated, so that there is no redundant calls any more.
+
+<h2 id="roadmap">6. Roadmap</h2>
+
+Upcoming Snowplow releases include:
+
+* [R115 New bad row format](https://github.com/snowplow/snowplow/milestone/154), a release which will incorporate the new bad row format discussed
+in [the dedicated RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558).
+
+Stay tuned for announcements of more upcoming Snowplow releases soon!
+
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r114-polonnaruwa
-
-[r114]: https://github.com/snowplow/snowplow/milestone/167
-
 [discourse]: http://discourse.snowplowanalytics.com/
