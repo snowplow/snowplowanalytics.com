@@ -1,33 +1,58 @@
 ---
 layout: post
-title-short: Snowplow R114 enrichments
-title: "Snowplow R114 enrichments"
+title-short: "Snowplow R114 with new adapter, enrichment and other improvements"
+title: "Snowplow R114 released with new adapter, enrichment and other improvements"
 tags: [snowplow, enrichment, release]
 author: Ben B
 category: Releases
 permalink: /blog/2019/05/14/snowplow-r114-polonnaruwa-enrichments/
 ---
 
-[Snowplow 114 Polonnaruwa][snowplow-release], named after
-[the ancient city of Polonnaruwa in Sri Lanka](http://whc.unesco.org/en/list/201), is a release focusing mainly on
-Scala Common Enrich, the library powering all the different enrichment platforms:
-some enrichments have been improved, URL parsing became more relaxed (e.g. support for macros),
-a guide about how to add an enrichment to the pipeline has been added,
-a new enrichment has been added to the pipeline (YAUAA), as well as a new feature giving the possibility
-to use a remote HTTP adapter to validate the payloads (shoutout to [Saeed Zareian](https://github.com/szareiangm) for this feature).
+We are pleased to release [Snowplow 114 Polonnaruwa][snowplow-release], named after
+[the ancient city of Polonnaruwa in Sri Lanka](http://whc.unesco.org/en/list/201). This Snowplow release includes a number of new features and updates, most of which live in
+Scala Common Enrich:
 
 1. [New enrichment: YAUAA (Yet Another UserAgent Analyzer)](#yauaa)
 2. [New feature: remote HTTP adapter](#remoteAdapter)
 3. [New tutorial: add an enrichment to the pipeline](#tutoEnrichment)
-4. [Improvements/fixes](#improvements)
+4. [Other improvements](#improvements)
 
 <h2 id="yauaa">1. New enrichment: YAUAA (Yet Another UserAgent Analyzer)</h2>
 
-This enrichment uses [YAUAA](https://yauaa.basjes.nl/) API to parse and analyze the user agent string of an event
-and extract as many relevant attributes as possible, like for example the device class (Phone, Tablet, etc.).
+Understanding what device a website visitor is using, and what browser and operating system they are running, is incredibly valuable. They can, for example, be used to:
 
-This enrichment doesn't require any API key, it's already integrated directly in the pipeline.
-It only needs to be activated through the configuration:
+* Understand how user engagement varies by device: Are patterns of engagement different for users on the go (on their mobiles), vs tablets and desktop? If so - how does that engagement vary?
+* Identify issues with the user experience on particular devices, operating systems or browsers
+
+Device detection on web is typically done using the useragent string. Prior to this release, Snowplow supported two different user agent enrichments, that each used a different library to derive additional data points about the device events occur on. The [User Agent Utils enrichment](https://github.com/snowplow/snowplow/wiki/user-agent-utils-enrichment) used the [User-agent-utils](https://www.bitwalker.eu/software/user-agent-utils) library to infer the following data points from the useragent string:
+
+* `br_name`
+* `br_family`
+* `br_version`
+* `br_type`
+* `br_renderengine`
+* `os_name`
+* `os_family`
+* `os_manufacturer`
+* `dvce_type`
+* `dvce_ismobile`
+
+The library was deprecated and so we recommended users employ a second [ua-parser](https://github.com/snowplow/snowplow/wiki/ua-parser-enrichment) enrichment, which used the [Browserscope user agent parser](https://github.com/ua-parser/uap-core/) to infer the following fields, all located in the [`ua_parser_context`](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/ua_parser_context/jsonschema/1-0-0):
+
+* `useragent_family`
+* `useragent_major`
+* `useragent_minor`
+* `useragent_patch`
+* `useragent_version`
+* `os_family`
+* `os_minor`
+* `os_patch`
+* `os_patch_minor`
+* `os_version`
+* `device_family`
+
+However, a [number of users spotted issues with the detection of particular devices](https://discourse.snowplowanalytics.com/t/how-to-track-devices-and-or-models/1519) and as a result, we have released another useragent enrichment, this time based on the [YAUAA](https://github.com/nielsbasjes/yauaa) ("Yet another user agent analyzer") library. The YAUAA enrichment can easily be enabled by adding the following config file to your enrichments:
+
 {% highlight json %}
 {
     "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/yauaa_enrichment_config/jsonschema/1-0-0",
@@ -39,31 +64,79 @@ It only needs to be activated through the configuration:
 }
 {% endhighlight %}
 
-The schema of the context added can be found [here](https://github.com/snowplow/iglu-central/blob/master/schemas/nl.basjes/yauaa_context/jsonschema/1-0-0).
+It populates the following fields in the new [YAUAA context](https://github.com/snowplow/iglu-central/blob/master/schemas/nl.basjes/yauaa_context/jsonschema/1-0-0), which includes a raft of new fields:
+
+* `device_class`
+* `device_name`
+* `device_brand`
+* `device_cpu`
+* `device_cpu_bits`
+* `device_firmware_version`
+* `device_version`
+* `operating_system_class`
+* `operating_system_name`
+* `operating_system_name_version`
+* `operating_system_version_build`
+* `layout_engine_class`
+* `layout_engine_name`
+* `layout_engine_version`
+* `layout_engine_version_major`
+* `layout_engine_build`
+* `agent_class`
+* `agent_version`
+* `agent_version_major`
+* `agent_build`
+* `agent_language`
+* `agent_language_code`
+* `agent_information_email`
+* `agent_information_url`
+* `agent_security`
+* `agent_uuid`
+* `webview_app_name`
+* `webview_app_version`
+* `webview_app_version_major`
+* `facebook_carrier`
+* `facebook_device_class`
+* `facebook_device_name`
+* `facebook_device_version`
+* `facebook_fbop`
+* `facebook_fbss`
+* `facebook_operating_system_name`
+* `facebook_operating_system_version`
+* `anonymized`
+* `hacker_attack_vector`
+* `hacker_toolkit`
+* `kobo_affiliate`
+* `kobo_platform_id`
+* `ie_compatibility_version`
+* `ie_compatibility_version_major`
+* `carrier`
+* `gsa_installation_id`
+* `network_type`
+
 More information about this enrichment can be found on the [wiki page](https://github.com/snowplow/snowplow/wiki/YAUAA-enrichment).
+
+Because device detection is so important, we are additionally looking to add a WURFL enrichment in a forthcoming release. We welcome any feedback from users on which fields would be most useful to fetch as part of that enrichment, given the [enormous number](https://www.scientiamobile.com/capabilities/) supported by the WURFL team.
 
 <h2 id="remoteAdapter">2. New feature: remote HTTP adapter</h2>
 
-In the enrichment process, an adapter validates the tracking event sent by a tracker to a collector and formats it, before further processing.
-The pipeline has a predefined list of adapters (e.g. Snowplow events, Mailchimp, Pagerduty, etc.)
-and for each of them the validation step takes place directly inside the pipeline, inside an enrich job.
-With this new feature, it's now possible to send the collector payload to a system external to the pipeline for validation/formatting, thanks to an HTTP request.
+The HTTP adapter provides Snowplow users with the opportunity to extend Snowplow to ingest data from a range of sources and processes without having to tamper with the Snowplow source code itself.
 
-The HTTP request sent to a remote adapter contains the following parameters:
-- `contentType` -> `payload.contentType`
-- `queryString` -> `payload.querystring`
-- `headers` -> `payload.context.headers`
-- `body` -> `payload.body`
+Snowplow has for sometime supported ingesting data from specific sources via adapters. For example, Snowplow users can ingest data from SendGrid via our SendGrid adapter: SendGrid is configured to stream data via a webhook pointing to:
 
-The body of the HTTP response is expexted to be a JSON with either a string field `error` containing the error message if a problem happened
-on the remote adapter, or a field `events` which is a list of `Map[String, String]`, each map being placed in the parameters of a raw event
-(a collector payload can contain several raw events).
+{% highlight bash %}
+https://$YOUR_COLLECTOR_ENDPOINT/com.SendGrid/v3
+{% endhighlight %}
 
-The feature has been added to _Scala Common Enrich_ but can be used only in _stream-enrich_ for now.
+Snowplow uses the fact that the data has landed on the `/com.SendGrid/v3` path to identify that this data needs to be processed by the SendGrid adapter prior to being validated and enriched. Adapters provide an opportunity to convert the data from the format used by the 3rd party webhook into one matching a Snowplow-authored event, so that it can subsequently be processed like any other Snowplow event.
 
-Let's imagine that the remote HTTP adapter that we want to use listens to `http://remote-adapter.com:9090`.
-We want to send him the collector payloads that have `vendor: special-vendor` and `version: v1`.
-To do so, in the configuration file of `stream-enrich` we would need to add:
+With the HTTP adapter, it is possible to configure Snowplow to stream data landing on particular collector paths to an external HTTP endpoint where users can configure their own applications for converting that data into a format suitable for Snowplow to continue to process. (This transformed data is returned in the HTTP response.) This means that any Snowplow user can write their own Snowplow adapter for any source of data they wish. Some example use cases:
+
+1. A company might want to ingest data from their own application which exposes it in a particular format, and not have the opportunity to either update that application to emit the data using a Snowplow Tracker, or update the shape of the data currently emitted into one suitable for ingestion via our standard [Iglu Webhook](https://github.com/snowplow/snowplow/wiki/Iglu-webhook-adapter). This might be the case for a legacy application which is no longer being developed, for example. In this case, a standalone adapter could be written to perform the relevant transformation.
+2. A company might wish to write an adapter for a third party provider but not wish to do so in Scala. In this case, the adapter could be written in any language that suited the author.
+3. A company might wish to ingest data into Snowplow generated by data science models that are typically written in R or Python.
+
+The HTTP adapter is enabled via a configuration like the following to the stream-enrich configuration file:
 
 {% highlight json %}
 remoteAdapters = [
@@ -77,41 +150,56 @@ remoteAdapters = [
 ]
 {% endhighlight %}
 
-An example of code for an HTTP remote adapter can be found [here](https://github.com/snowplow-incubator/remote-adapter-example/).
+In the above example, Snowplow has been configured to forward any payloads that land on the path `/special-vendor/v1` to `http://remote-adapter.com:9090`.
+
+The HTTP request sent to the remote adapter at `http://remote-adapter.com:9090` will contain the following parameters:
+
+- `contentType` -> `payload.contentType`
+- `queryString` -> `payload.querystring`
+- `headers` -> `payload.context.headers`
+- `body` -> `payload.body`
+
+Snowplow expects the body of the HTTP response to be a JSON with a field `events` which is a list of `Map[String, String]`, each map being placed in the parameters of a raw event
+(a collector payload can contain several raw events). In the event that the remote adapter was not able to process the event successfully Snowplow expects the response to contain a string field called `error` containing an error message.
+
+The feature has been added to _Scala Common Enrich_ but can be used only in _stream-enrich_ for now. We plan to add it to _beam-enrich_ shortly, so that GCP users can benefit from it.
+
+This incredibly powerful feature has been contributed by [Saeed Zareian](https://github.com/szareiangm) at The Globe and Mail. Saeed has also very kindly provided an example of code for an HTTP remote adapter  [here](https://github.com/snowplow-incubator/remote-adapter-example/). Many thanks Saeed!
+
 
 <h2 id="tutoEnrichment">3. New tutorial: add an enrichment to the pipeline</h2>
 
-There is now a tutorial that walks a developer through the steps of adding an enrichment to the pipeline.
-This tutorial can be found [here](https://github.com/snowplow/snowplow/tree/master/3-enrich#how-to-add-an-enrichment).
+We've had a number of users express an interest in contributing new enrichments to Snowplow, so have written a tutorial on how to do so. This can be found [here](https://github.com/snowplow/snowplow/tree/master/3-enrich#how-to-add-an-enrichment).
 
-<h2 id="improvements">4. Improvements/fixes</h2>
+<h2 id="improvements">4. Other improvements</h2>
 
-This release improved or fixed different parts of _Scala Common Enrich_.
+<h4>4.1. More relaxed URL parsing</h4>
 
-<h3>4.1. More relaxed URL parsing</h3>
+A number of Snowplow users employ Snowplow tracking on websites that they do not directly control. (For example, this is the case for companies that provide widgets, or analytics for marketing effectiveness.)
 
-URL parsing, used in the enriched jobs, has become more relaxed.
-For example it now supports URLs containing macros like `%%a%%` or `##a##`.
-Such URLs would have caused the events to go to bad rows before, but it's not the case any more.
+For these users, the relatively strict URL parsing employed previously by Snowplow was problematic, because it meant events that occurred on URLs that were strictly speaking invalid (but worked on the web) would fail validation.
 
-<h3>4.2. xForwardedFor</h3>
+In this version of Snowplow that URL parsing has been relaxed. For example it now supports URLs containing macros like `%%a%%` or `##a##`.
 
-If both `X-Forwarded-For` and `Forwarded: for=` are set in the headers, `X-Forwarded-For` now takes priority.
+<h4>4.2. IP address now deduced from `xForwardedFor` where this conflicts with `Forwared: for=`</h4>
 
-<h3>4.3. IAB enrichment</h3>
+In this version of Snowplow, if both `X-Forwarded-For` and `Forwarded: for=` are set in the headers, `X-Forwarded-For` now takes priority.
 
-Waiting for the underlying lib for IAB enrichment to support IPv6, this enrichment is skipped if the IP of the event is v6,
-preventing it to go to bad row.
+<h4>4.3. IAB Bots and Spiders enrichment skipped for IPv6 addresses</h4>
 
-Events coming from Iglu webhook can have an empty user agent, which would fail IAB enrichment and go to bad rows.
-In this case the enrichment is also skipped.
+The library used by Snowplow to interface with the IAB Bots and Spiders enrichment does not support IPv6 addresses. As a result, events recorded against these IP addresses failed validation in previous versions of Snowplow.
 
-<h3>4.4. Sendgrid integration</h3>
+With this version any events recorded against an IPv6 address are not processed using the IAB enrichemnt, so that they are successfully processed by Snowplow. (But lack the additional data points generated by the IAB Bots and Spiders enrichment.)
 
-The optional `marketing_campaign_*` fields are now sent by the pipeline.
-More info about these fields on [this page](https://sendgrid.com/docs/for-developers/tracking-events/event/). 
+We plan to update this behaviour once we rollout support for IPv6 in the IAB Bots and Spiders library.
 
-<h3>4.5. IP lookup enrichment</h3>
+<h4>4.4. SendGrid integration update</h4>
+
+We have updated our SendGrid integration so that the optional `marketing_campaign_*` fields are now captured by the pipeline. (These were added to the SendGrid webhook payloads since we rolled out our initial SendGrid integration.)
+
+More info about these fields on [this page](https://SendGrid.com/docs/for-developers/tracking-events/event/).
+
+<h4>4.5. IP lookup enrichment</h4>
 
 IP lookup enrichment now supports IPs (v4) containing a port.
 
