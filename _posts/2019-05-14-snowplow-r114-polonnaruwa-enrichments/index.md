@@ -1,7 +1,7 @@
 ---
 layout: post
-title-short: Snowplow R114 enrichments
-title: "Snowplow R114 enrichments"
+title-short: Snowplow R114 new user agent enrichment
+title: "Snowplow R114 new user agent enrichment"
 tags: [snowplow, enrichment, release]
 author: Ben B
 category: Releases
@@ -19,7 +19,10 @@ to use a remote HTTP adapter to validate the payloads (shoutout to [Saeed Zareia
 1. [New enrichment: YAUAA (Yet Another UserAgent Analyzer)](#yauaa)
 2. [New feature: remote HTTP adapter](#remoteAdapter)
 3. [New tutorial: add an enrichment to the pipeline](#tutoEnrichment)
-4. [Improvements/fixes](#improvements)
+4. [Improvements/fixes in Scala Common Enrich](#improvements)
+5. [Updates for EmrEtlRunner](#eer)
+6. [Roadmap](#roadmap)
+7. [Getting help](#help)
 
 <h2 id="yauaa">1. New enrichment: YAUAA (Yet Another UserAgent Analyzer)</h2>
 
@@ -55,7 +58,7 @@ The HTTP request sent to a remote adapter contains the following parameters:
 - `headers` -> `payload.context.headers`
 - `body` -> `payload.body`
 
-The body of the HTTP response is expexted to be a JSON with either a string field `error` containing the error message if a problem happened
+The body of the HTTP response is expected to be a JSON with either a string field `error` containing the error message if a problem happened
 on the remote adapter, or a field `events` which is a list of `Map[String, String]`, each map being placed in the parameters of a raw event
 (a collector payload can contain several raw events).
 
@@ -84,7 +87,7 @@ An example of code for an HTTP remote adapter can be found [here](https://github
 There is now a tutorial that walks a developer through the steps of adding an enrichment to the pipeline.
 This tutorial can be found [here](https://github.com/snowplow/snowplow/tree/master/3-enrich#how-to-add-an-enrichment).
 
-<h2 id="improvements">4. Improvements/fixes</h2>
+<h2 id="improvements">4. Improvements/fixes in Scala Common Enrich</h2>
 
 This release improved or fixed different parts of _Scala Common Enrich_.
 
@@ -100,10 +103,10 @@ If both `X-Forwarded-For` and `Forwarded: for=` are set in the headers, `X-Forwa
 
 <h3>4.3. IAB enrichment</h3>
 
-Waiting for the underlying lib for IAB enrichment to support IPv6, this enrichment is skipped if the IP of the event is v6,
-preventing it to go to bad row.
+Waiting for the underlying library for IAB enrichment to support IPv6, this enrichment is skipped if the IP of the event is v6,
+preventing it to go to bad rows.
 
-Events coming from Iglu webhook can have an empty user agent, which would fail IAB enrichment and go to bad rows.
+Events coming from the Iglu webhook can have an empty user agent, which would fail IAB enrichment and go to bad rows.
 In this case the enrichment is also skipped.
 
 <h3>4.4. Sendgrid integration</h3>
@@ -115,14 +118,28 @@ More info about these fields on [this page](https://sendgrid.com/docs/for-develo
 
 IP lookup enrichment now supports IPs (v4) containing a port.
 
-<h2>5. Getting help</h2>
+<h2 id="eer">5. Updates for EmrEtlRunner</h2>
+
+We are continuing the effort started in R113 to decrease the number of connection issues.
+
+The backoff periods for retries have been increased, so that it's less likely to hit EMR rate limits with multiple pipelines running concurrently.
+
+The calls being made to the EMR API to monitor the jobs have also been updated, so that there is no redundant calls any more.
+
+<h2 id="roadmap">6. Roadmap</h2>
+
+Upcoming Snowplow releases include:
+
+* [R115 New bad row format](https://github.com/snowplow/snowplow/milestone/154), a release which will incorporate the new bad row format discussed
+in [the dedicated RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558).
+
+Stay tuned for announcements of more upcoming Snowplow releases soon!
+
+<h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r114-polonnaruwa
-
-[r114]: https://github.com/snowplow/snowplow/milestone/167
-
 [discourse]: http://discourse.snowplowanalytics.com/
