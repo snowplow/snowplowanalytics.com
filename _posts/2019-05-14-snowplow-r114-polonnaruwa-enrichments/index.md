@@ -158,8 +158,7 @@ Snowplow expects the body of the HTTP response to be a JSON with a field `events
 
 The feature has been added to _Scala Common Enrich_ but can be used only in _stream-enrich_ for now. We plan to add it to _beam-enrich_ shortly, so that GCP users can benefit from it.
 
-This incredibly powerful feature has been contributed by [Saeed Zareian](https://github.com/szareiangm) at The Globe and Mail. Saeed has also very kindly provided an example of code for an HTTP remote adapter  [here](https://github.com/snowplow-incubator/remote-adapter-example/). Many thanks Saeed!
-
+This incredibly powerful feature has been contributed by [Donald Matthews](https://github.com/dmatth) and [Saeed Zareian](https://github.com/szareiangm) at The Globe and Mail. They have also very kindly provided an example of code for an HTTP remote adapter [here](https://github.com/snowplow-incubator/remote-adapter-example/). Many thanks Donald and Saeed!
 
 <h2 id="tutoEnrichment">3. New tutorial: add an enrichment to the pipeline</h2>
 
