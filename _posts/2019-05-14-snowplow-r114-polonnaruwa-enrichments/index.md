@@ -17,8 +17,9 @@ Scala Common Enrich:
 3. [New tutorial: add an enrichment to the pipeline](#tutoEnrichment)
 4. [Other improvements](#improvements)
 5. [Updates for EmrEtlRunner](#eer)
-6. [Roadmap](#roadmap)
-7. [Getting help](#help)
+6. [Upgrading](#upgrading)
+7. [Roadmap](#roadmap)
+8. [Getting help](#help)
 
 <h2 id="yauaa">1. New enrichment: YAUAA (Yet Another UserAgent Analyzer)</h2>
 
@@ -56,16 +57,6 @@ The library was deprecated and so we recommended users employ a second [ua-parse
 
 However, a [number of users spotted issues with the detection of particular devices](https://discourse.snowplowanalytics.com/t/how-to-track-devices-and-or-models/1519) and as a result, we have released another useragent enrichment, this time based on the [YAUAA](https://github.com/nielsbasjes/yauaa) ("Yet another user agent analyzer") library. The YAUAA enrichment can easily be enabled by adding the following config file to your enrichments:
 
-{% highlight json %}
-{
-    "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/yauaa_enrichment_config/jsonschema/1-0-0",
-    "data": {
-        "enabled": true,
-        "vendor": "com.snowplowanalytics.snowplow.enrichments",
-        "name": "yauaa_enrichment_config"
-    }
-}
-{% endhighlight %}
 
 It populates the following fields in the new [YAUAA context](https://github.com/snowplow/iglu-central/blob/master/schemas/nl.basjes/yauaa_context/jsonschema/1-0-0), which includes a raft of new fields:
 
@@ -214,7 +205,54 @@ The backoff periods for retries have been increased, so that it's less likely to
 
 The calls being made to the EMR API to monitor the jobs have also been updated, so that there is no redundant calls any more.
 
-<h2 id="roadmap">6. Roadmap</h2>
+<h2 id="upgrading">6. Upgrading</h2>
+
+<h3>6.1. Upgrading your enrichment platform</h3>
+
+If you are a GCP pipeline user, a new Beam Enrich can be found on Bintray:
+- as [a ZIP archive](https://bintray.com/snowplow/snowplow-generic/snowplow-beam-enrich/0.3.0#files)
+- as [a Docker image](https://bintray.com/snowplow/registry/snowplow%3Abeam-enrich)
+
+If you are a Kinesis or Kafka pipeline user, a new Stream Enrich can be found on
+[Bintray](https://bintray.com/snowplow/snowplow-generic/snowplow-stream-enrich/0.21.0#files).
+
+Finally, if you are a batch pipeline user, a new Spark Enrich can be used by setting the new version
+in your EmrEtlRunner configuration:
+
+{% highlight yaml %}
+enrich:
+  version:
+    spark_enrich: 1.18.0 # WAS 1.17.0
+{% endhighlight %}
+
+or directly make use of the new Spark Enrich available at:
+
+`s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.18.0.jar`
+
+For the batch pipeline, we've also extended [the timeout recovery introduced in R112](https://snowplowanalytics.com/blog/2019/02/20/snowplow-r112-baalbek-batch-pipeline-reliability-improvements/#timeouts).
+A new version of EmrEtlRunner incorporating those improvements is available from our Bintray
+[here][bintray-eer].
+
+The new version of EmrEtlRunner aiming at decreasing the number of connection issues is also available in
+[our Bintray](http://dl.bintray.com/snowplow/snowplow-generic/snowplow_emr_r114_polonnaruwa.zip).
+
+<h3>6.2. Using YAUAA enrichment</h3>
+
+***YAUAA enrichment requires an additional 400Mb of memory to run, so be careful when sizing clusters or individual machines.***
+
+To use new YAUAA enrichment, add `yauaa_enrichment_config.json` to the folder with configuration files for enrichments, with the following content:
+{% highlight json %}
+{
+    "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/yauaa_enrichment_config/jsonschema/1-0-0",
+    "data": {
+        "enabled": true,
+        "vendor": "com.snowplowanalytics.snowplow.enrichments",
+        "name": "yauaa_enrichment_config"
+    }
+}
+{% endhighlight %}
+
+<h2 id="roadmap">7. Roadmap</h2>
 
 Upcoming Snowplow releases include:
 
@@ -223,7 +261,7 @@ in [the dedicated RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-f
 
 Stay tuned for announcements of more upcoming Snowplow releases soon!
 
-<h2 id="help">7. Getting help</h2>
+<h2 id="help">8. Getting help</h2>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
