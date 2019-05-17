@@ -51,22 +51,22 @@
 	&-table{
 		margin-top: 20px;
 		width: 100%;
-		h4 {
+		h3 {
 			font-size: 24px;
-			margin: 0 0 10px;
+			margin: 0 0 15px;
 			color: $gunmetal;
 			width: 100%;
 			font-weight: 400;
 		}
-		h3 {
-			font-size: 24px;
-			margin: 0 0 15px;
+		h4 {
+			font-size: 18px;
+			margin: 0 0 10px;
 			color: $blue-purple;
 			width: 100%;
 		}
 		p {
 			margin: 0 0 5px;
-			font-size: 16px;
+			font-size: 14px;
 			color: $gunmetal;
 			line-height: 1.15;
 			width: 100%;
@@ -76,7 +76,7 @@
 		}
 		&-row{
 			width: 100%;
-			padding: 35px 0;
+			padding: 17px 0 11px;
 			border-bottom: solid 1px $gunmetal;
 			margin: 0;
 			@include do-flex(row, flex-start, flex-start, wrap);
@@ -95,7 +95,7 @@
 		 	}
 			&:nth-of-type(1) {
 				width: 40%;
-				padding: 0 5px;
+				padding: 0 5px 0 20px;
 				* {
 					text-align: left;
 				}
@@ -109,10 +109,11 @@
 			border-bottom: solid 1px $blue-purple;
 			p {
 				font-weight: 300;
+				padding-left: 0;
 			}
 		}
 		&-subheader{
-			padding: 30px 0 20px;
+			padding: 20px 0 10px;
 			border-bottom: solid 1px $blue-purple;
 			background-color: transparentize($blue-purple, .97);
 			.pricing-revamp-table-col {
