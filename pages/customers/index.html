@@ -287,16 +287,17 @@ case-studies:
         </div>
     </div>
     <div class="row revamp-case-studies-filter">
-      <label for="revamp-case-studies-filter">
-        <select name="" id="revamp-case-studies-filter" placeholder="Filter by Industry">
-          <option value="0">View all</option>
-          {% assign filters = page.case-studies-filters | sort %}
-          {% for filter in filters %} {{ filter | jsonify }}
-            <option value="{{ filter }}">{{ filter }}</option>
-          }
-          {% endfor %}
-        </select>
-      </label>
+        <div class="fake-dropdown" data-value="0">
+            <input type="checkbox" id="revamp-case-studies-filter">
+            <label for="revamp-case-studies-filter">View all</label>
+            <ul>
+                <li data-value="0">View all</li>
+                {% assign filters = page.case-studies-filters | sort %}
+                {% for filter in filters %} 
+                  <li data-value="{{ filter }}">{{ filter }}</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div class="row">
       <div class="revamp-case-studies">
