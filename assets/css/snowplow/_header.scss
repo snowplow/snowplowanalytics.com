@@ -110,6 +110,17 @@ header
 					background-color: $white;
 					overflow: hidden;
 				}
+				@media only screen
+					and (min-device-width: 768px)
+					and (max-device-width: 1366px)
+					and (-webkit-min-device-pixel-ratio: 2) {
+						width: 100%;
+						border: none;
+						left: initial;
+						right: initial;
+						transform: none;
+						position: relative;
+					}
 				/*transform:translateY(-30px);*/
 
 				/*			&:before
@@ -157,6 +168,12 @@ header
 								@media (min-width: $screen-sm-min){
 									background-color: #f5faff;
 								}
+								@media only screen
+									and (min-device-width: 768px)
+									and (max-device-width: 1366px)
+									and (-webkit-min-device-pixel-ratio: 2) {
+										background-color: transparent;
+									}
 							}
 						}
 					}
@@ -222,6 +239,12 @@ header
 						@media (min-width: $screen-sm-min) {
 							bottom: -14px;
 						}
+						@media only screen
+							and (min-device-width: 768px)
+							and (max-device-width: 1366px)
+							and (-webkit-min-device-pixel-ratio: 2) {
+								bottom: 0;
+							}
 					}
 
 					i
@@ -645,6 +668,7 @@ header
 					}
 
 					display: block;
+					text-align: center;
 
 					> a:not(.btn) {
 						font-size: 20px;

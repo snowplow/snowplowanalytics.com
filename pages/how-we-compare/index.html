@@ -94,12 +94,18 @@ vertical-tabs-topics:
         {% for row in page.vertical-tabs-topics %}
           <div class="vertical-tabs-header {% if forloop.index == 1 %} active {% endif %}" data-ref="ref-{{ forloop.index }}">
             <p>{{ row.name }}</p>
+            <div class="vertical-tabs-body visible-xs-block {% if forloop.index == 1 %} active {% endif %} ref-{{ forloop.index }}">
+              <p>{{ row.content }}</p>
+              {% if row.link-text and row.link-url %}
+                <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>
       <div class="col-sm-8 vertical-tabs-body-container">
         {% for row in page.vertical-tabs-topics %}
-          <div class="vertical-tabs-body {% if forloop.index == 1 %} active {% endif %}" id="ref-{{ forloop.index }}">
+          <div class="vertical-tabs-body hidden-xs {% if forloop.index == 1 %} active {% endif %} ref-{{ forloop.index }}">
             <p>{{ row.content }}</p>
             {% if row.link-text and row.link-url %}
               <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
