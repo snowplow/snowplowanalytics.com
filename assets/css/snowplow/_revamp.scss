@@ -1777,6 +1777,10 @@ $very-light-blue-two: #e1e6f0;
 		--ml: 0; 		
 	}
 	/////////////////////////////////////
+	h2 {
+		color: white;
+		text-align: center;
+	}
 	h3 {
 		margin-left: var(--ml);
 		margin-top: 0;
@@ -1785,6 +1789,11 @@ $very-light-blue-two: #e1e6f0;
 		@media (max-width: 767px) {
 			text-align: center;
 		}
+	}
+	h4 {
+		color: white;
+		text-align: center;
+		line-height: 38px;
 	}
 	p {
 		margin-left: var(--ml);		
