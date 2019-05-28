@@ -1,15 +1,19 @@
 ---
 layout: post
-title: "Interview with the author: Event Streams in Action: Real-time event systems with Kafka and Kinesis"
+title: "Interview with the author: Alex Dean on writing Event Streams in Action"
 tags: [analytics, data, big data, data science, business intelligence, machine learning, AI, data team]
-author: Alex
+author: Lyuba
 image: /assets/img/blog/2019/05/Event-Streams-Action.png
 category: Other
-permalink: /blog/2019/05/27/interview-with-the-author-event-streams-in-action/
+permalink: /blog/2019/05/28/interview-with-the-author-event-streams-in-action/
 discourse: true
 published: true
 ---
 ![Event Streams in Action][Event Streams]
+
+Snowplow’s Co-Founder and CEO Alex Dean recently completed his book Event Streams in Action. The book takes an in-depth look at techniques for aggregating, storing, and processing event streams using the unified log processing pattern. In this interview, Alex shares his insights on how businesses can benefit from ‘event centric’ data processing, his motivation behind writing the book, and more.
+
+*You can get your copy of [Event Streams in Action](https://www.manning.com/books/event-streams-in-action) and 40% off any Manning book by using the code **blsnowplow40.***
 
 ## Tell me about your new book!
 
@@ -95,11 +99,6 @@ And finally, I'd like to thank Jay Kreps for his pioneering work on Apache Kafka
 There are really two key messages to Event Streams in Action. The first is an explicit message: event stream-based approaches can radically transform your organisation if you are willing to explore and embrace them. I believe that the idea of event streams as a central digital nervous system for your business isn’t just marketing hype - certainly we are at an early stage on this journey but it will come to dominate thinking around data capability and even organisational design in the future.
 
 The second message is an implicit or subliminal one: I wanted to make it clear to software engineers and data professionals that data engineering is not some closed guild or mysterious cult. It’s really just a philosophy applied to general software engineering - once you “get” the philosophy and master the associated tools, technologies and patterns, you can start to be productive as a data engineer. I hope that Event Streams in Action helps inspire data-curious technologists and maybe encourages them into the data engineering profession and related data fields.
-
-
-
-
-*You can get your copy of [Event Streams in Action](https://www.manning.com/books/event-streams-in-action) and 40% off any Manning book by using the code **blsnowplow40.***
 
 
 [Event Streams]:/assets/img/blog/2019/05/Event-Streams-Action.png
