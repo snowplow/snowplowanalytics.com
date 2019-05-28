@@ -306,3 +306,11 @@
   avatar: /assets/img/blog/2019/04/Benjamin-Benoist.png
   spiel:   |
       <a href="/blog/authors/benb/">Ben</a> is a data engineer at Snowplow, you can find him on <a href="https://github.com/benjben/">GitHub</a>.
+
+- name: Lyuba
+  full_name: Lyuba Golovina
+  twitter:
+  url: /blog/authors/Lyuba/
+  avatar: /assets/img/blog/2019/05/Lyuba-Golovina.jpeg
+  spiel:   |
+      <a href="/blog/authors/Lyuba/">Lyuba</a> is a Product Marketer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/lyubagolovina/">LinkedIn</a>.
