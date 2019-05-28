@@ -236,7 +236,7 @@ It is worth noting that for most analyses we are not working with just one model
 
 ## Want to learn more?
 
-This will be the first in a new series of blog posts and recipes on event data modeling. Do [get in touch][contact] if you have ideas for things you'd like us to cover, or questions you'd like us to answer.
+This will be the first in a new series of blog posts and recipes on event data modeling. Do [get in touch](https://snowplowanalytics.com/request-demo/) if you have ideas for things you'd like us to cover, or questions you'd like us to answer.
 
 [event-stream-diagram-video-example]: /assets/img/blog/2016/03/event-stream-diagram-video-example.png
 [event-stream-diagram-for-travel-site-example]: /assets/img/blog/2016/03/event-stream-diagram-for-travel-site-example.png

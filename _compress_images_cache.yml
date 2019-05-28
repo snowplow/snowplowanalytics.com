@@ -102,7 +102,7 @@ assets/img/blog/2014/04/identity-stitching.png: identity-stitching.png
 assets/img/blog/2014/05/snowplow-looker-traffic-pulse-dashboard-top-part.png: snowplow-looker-traffic-pulse-dashboard-top-part.png
 assets/img/blog/2014/05/looker-snowplow-traffic-pulse-dashboard.png: looker-snowplow-traffic-pulse-dashboard.png
 assets/img/blog/2014/05/looker-explorer-screenshot.png: looker-explorer-screenshot.png
-assets/img/blog/2014/02/090-kinesis-architecture.png: 090-kinesis-architecture.png
+assets/img/blog/2014/02/090-kinesis-architecture.png: '090-kinesis-architecture.png'
 assets/img/blog/2014/02/brandon-kinesis.png: brandon-kinesis.png
 assets/img/blog/2014/11/kibana-screenshot-1.png: kibana-screenshot-1.png
 assets/img/blog/2014/11/kibana-screenshot-2.png: kibana-screenshot-2.png
@@ -2168,3 +2168,6 @@ assets/img/retail/single-customer@3x.png: single-customer@3x.png
 assets/img/retail/real-time@3x.png: real-time@3x.png
 assets/img/retail/single-customer@2x.png: single-customer@2x.png
 assets/img/retail/answers.png: answers.png
+assets/img/blog/2019/05/Event-Streams-Action.png: Event-Streams-Action.png
+assets/img/blog/2019/05/Lyuba-G.jpeg: Lyuba-G.jpeg
+assets/img/blog/2019/05/Lyuba-Golovina.jpeg: Lyuba-Golovina.jpeg
