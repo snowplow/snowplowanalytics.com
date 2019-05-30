@@ -68,6 +68,8 @@ A reminder that this post is entirely non-technical. It is intended to give you 
 
 So far we haven’t really leveraged the real-time features Snowplow offers. All the data being loaded into your data warehouse is first written to a real-time stream. In a few short steps, you can read off this stream to action the data using an AWS Lambda function or GCP cloud function.
 
+<br>
+
 **Example: automated native ads**
 
 The data analyst defines the rules: users are scored depending on their past and current usage, for example viewing 4 articles and a video in 10 minutes increases this score greatly. These rules can be created by exploring Snowplow’s rich event level data.

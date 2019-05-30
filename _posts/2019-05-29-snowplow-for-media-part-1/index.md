@@ -22,7 +22,9 @@ This post is non-technical and is intended to show you how you could solve these
 2. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
 3. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
 4. [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/)
+
 <br>
+
 Some companies with media content that use Snowplow:
 
 ![Media companies using Snowplow][media companies]

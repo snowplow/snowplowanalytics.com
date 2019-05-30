@@ -24,8 +24,8 @@ Bear in mind there is 1 more post in this series you can read after this one: [W
 [What can we do with the data as our data team grows?](#what-can-we-do-with-the-data-as-our-data-team-grows)
 1. [Advertiser analytics](#1-advertiser-analytics)
 2. [Track critical events server-side](#2-track-critical-events-server-side)
-3. [Track app installs and social media click](#3-track-app-install-and-social-media-clicks)
-4. [Funnels to improve UX and inform paywall decisions](#4-funnels-to-improve-ux-and-inform-your-paywall-decisions)
+3. [Track app installs and social media clicks](#3-track-app-installs-and-social-media-clicks)
+4. [Funnels to improve UX and inform paywall decisions](#4-funnels-to-improve-ux-and-inform-paywall-decisions)
 5. [Further user stitching](#5-further-user-stitching)
 6. [Informed content creation](#6-informed-content-creation)
 
@@ -53,7 +53,7 @@ Now that you are a team with several analysts then you can take this a bit furth
 
 Again, let’s take a non-technical look at how each of these could be achieved with Snowplow. All the ideas mentioned here are things we have seen Snowplow users do.
 
-### 1. Advertiser analytics
+### 1. Advertiser analytics
 
 If you rely on ad revenue rather than subscriptions or donations (or even a mixture of all 3), some key questions can be answered with event level data.
 
@@ -74,16 +74,17 @@ Rather than rewrite what has already been brilliantly covered by our Customer Su
 
 In short, ensure that you are always tracking your mission critical events, such as subscriptions and donations, server-side as this is the most robust way to track these. Doing this also helps maintain good data governance by limiting what information is pushed to the datalayer.
 
-### 3. Track app installs and social media clicks
+### 3. Track app installs and social media clicks
 
 Use Snowplow’s third party integrations to track app installs and social media clicks (as examples). Any third party data can be sent through the Snowplow pipeline so that it lands in your warehouse in the same format as all the other events. This means you can use whatever service you are comfortable with to track social media clicks and send this event to the Snowplow pipeline. A great blog post that goes into more detail on this by Snowplow Co-Founder Yali Sassoon can be found [here](https://snowplowanalytics.com/blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/).
 
-With these events in your data warehouse, you can gain an even better understanding of your user journeys. You can also add this data to your attribution model and refine it further. Remember, you can figure out which user installed the app or clicked on the Facebook link using the third party cookie or IDFA/IDFV as described in the earlier section on how to join mobile and web data.
+With these events in your data warehouse, you can gain an even better understanding of your user journeys. You can also add this data to your attribution model and refine it further. Remember, you can figure out which user installed the app or clicked on the Facebook link using the third party cookie or IDFA/IDFV as described in the earlier section on [how to join mobile and web data](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/#1-stitch-user-data-gain-a-360-view).
 
-
-### 4. Funnels to improve UX and inform paywall decisions
+### 4. Funnels to improve UX and inform paywall decisions
 
 We have written an eBook on the subject of Product Analytics which you can download [here](https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-1). To look specifically at user journeys, most Snowplow Insights customers can take advantage of our [Indicative integration](https://snowplowanalytics.com/blog/2018/09/20/snowplow-indicative-relay-released/) with a free Indicative account. Indicative is one of the best tools out there for understanding how users move through your product. Do get in touch for more information or to [request a demo](https://snowplowanalytics.com/request-demo/)!
+
+<br>
 
 **Example: the signup process**
 
@@ -132,7 +133,7 @@ This is a very simplified example just meant to illustrate what you can do with 
 
 ### 6. Informed content creation
 
-Having already answered some basic questions about what content is most popular in [User engagement on the website](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/#user-engagement-on-the-website) we can start to think about what content is most sought after at what time. This can then inform what content is created.
+Having already answered some basic questions about what content is most popular in [User engagement on the website](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/#2-perform-aggregations-make-your-own-assumptions-to-understand-engagement) we can start to think about what content is most sought after at what time. This can then inform what content is created.
 
 Using your data to drive an understanding of which content is being engaged with by which users means a content roadmap can be built. This allows for highly efficient spend on its creation and means that only the content most likely to encourage engagement and therefore higher ad revenue, higher subscription rates and lower churn will be produced.
 
