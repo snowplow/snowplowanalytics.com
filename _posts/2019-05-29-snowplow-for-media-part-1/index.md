@@ -2,7 +2,7 @@
 layout: post
 title-short: Snowplow for media part 1
 title: "Snowplow for media part 1: how can I use Snowplow?"
-tags: [analytics, data, insights, retail, retail analytics, ecommerce]
+tags: [analytics, data, insights, media, media analytics]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
 category: Analytics
@@ -16,14 +16,13 @@ We have several disparate brands and users have multiple products on the web and
 
 We don’t have a good understanding of how our marketing spend across multiple channels affects subscription or readership. ”
 
-
 This post is non-technical and is intended to show you how you could solve these problems with Snowplow. This is the first post in a series on the subject, there are 4 more in this series which you can read next:
 
-1. What do I track
-2. What can we do with the data, we’re getting started
-3. What can we do with the data, we’re growing
-4. What can we do with the data, we’re well established
-
+1. [What do I track](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
+2. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
+3. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
+4. [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/)
+<br>
 Some companies with media content that use Snowplow:
 
 ![Media companies using Snowplow][media companies]
@@ -74,7 +73,7 @@ To really derive value from Snowplow data, you will need data analysts who can u
 
 ## What do I track?
 
-With Snowplow, you can track entities as well as events. For a longer post on this topic (including an explanation of entities), click [here].
+With Snowplow, you can track entities as well as events. For a longer post on this topic (including an explanation of entities), click [here](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/).
 
 For now, let’s assume you’ve worked with our Implementation Engineering team to set up tracking following our best practises and look at what the data would look like.
 
@@ -118,20 +117,20 @@ Use this wealth of data to drive ROI by:
 
 What you do with the data depends on how developed your data team is. Let’s take a look at 3 degrees of data team maturity. Follow the links to read a full post on how a team of each size in the media sector could consume Snowplow data (note that each post assumes you have read the previous ones):
 
-- [We’re getting started] *Data team: 1 data analyst*
+- [We’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/) *Data team: 1 data analyst*
   - Stitch user journeys across web and mobile
   - Aggregate that data to understand engagement
   - Retention analysis
   - Marketing attribution
 
-- [We’re growing] *Data team: Many data analysts*
+- [We’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/) *Data team: Many data analysts*
   - Track server-side and ingest 3rd party marketing data
   - Funnel analysis and paywall optimisation
   - Advanced user stitching
   - Content production and producer dashboards
   - Advertiser analytics
 
-- [We’re well established] *Data team: Data analysts, engineers and scientists*
+- [We’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/) *Data team: Data analysts, engineers and scientists*
   - Marketing automation
   - Personalisation of the product
   - Recommendation engine
@@ -139,7 +138,7 @@ What you do with the data depends on how developed your data team is. Let’s ta
   - Fraud detection
   - Sentiment analysis
 
-Special thanks to Simon Rumble of [Poplin Data] (https://poplindata.com/) for sharing his expertise in the industry with me to help write the posts linked to above!  
+Special thanks to Simon Rumble of [Poplin Data](https://poplindata.com/) for sharing his expertise in the industry with me to help write the posts linked to above!  
 
 ## Dare I ask, GDPR?
 
@@ -150,7 +149,7 @@ If you are an existing Snowplow Insights customer or are interested in Insights,
 - Fields can be removed from events using custom enrichments if necessary
 - The client data that you capture all lives in your own cloud environment, not Snowplow’s - remember Snowplow is just a piece of software, the hardware is all in your AWS or GCP account
 
-Read next: [What should we track]
+Read next: [What do I track?](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 
 [media companies]: /assets/img/blog/2019/05/media-companies.png
 [pipeline]: /assets/img/blog/2019/03/pipeline.png

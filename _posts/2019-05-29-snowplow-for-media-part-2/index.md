@@ -10,16 +10,16 @@ permalink: /blog/2019/05/29/snowplow-for-media-part-2/
 discourse: true
 ---
 
-We recommend you to read the main post on this topic before diving into this article to ensure you have all the context you need!
+We recommend you read the [main post](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-1/) on this topic before diving into this article to ensure you have all the context you need!
 
 Bear in mind there are 3 more posts in this series that you can read after this one:
-1. What can we do with the data, we’re getting started
-2. What can we do with the data, we’re growing
-3. What can we do with the data, we’re well established  
+1. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
+2. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
+3. [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/)
 
-[What do I track?](what-do-i-track)
-[Great, what events do I track?](great-what-events-do-i-track)
-[What are entities, and which ones do I track?](what-are-entities-and-which-ones-do-i-track)
+- [What do I track?](#what-do-i-track)
+- [Great, what events do I track?](#great-what-events-do-i-track)
+- [What are entities, and which ones do I track?](#what-are-entities-and-which-ones-do-i-track)
 
 ## What do I track?
 
@@ -82,7 +82,7 @@ Some example entities often used by media companies are:
 - Subscription
 - Affiliate
 
-Read next: [What can we do with the data, we’re getting started]
+Read next: [What can we do with the data when we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
 
 [search results]: /assets/img/blog/2019/05/search-result.png
 [event properties 1]: /assets/img/blog/2019/05/entities-1.png
