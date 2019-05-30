@@ -16,14 +16,17 @@ Bear in mind there are 2 more posts in this series you can read after this one:
 1. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
 2. [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/)
 
+<br>
+
 Do also read the post that answers the question: [What do I track?](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 
-[What can we do with the data, we’re getting the data team started?](#what-can-we-do-with-the-data-were-getting-the-data-team-started)
-1. [User engagement on the website](#user-engagement-on-the-website)
-2. [User engagement on mobile](#user-engagement-on-mobile)
-3. [Join web and mobile data](#join-web-and-mobile-data)
-4. [Retention analysis](retention-analysis)
-5. [Marketing attribution](marketing-attribution)
+<br>
+
+[What can we do with the data when we have a small data team?](#what-can-we-do-with-the-data-when-we-have-a-small-data-team)
+1. [Stitch user data: gain a 360° view](#1-stitch-user-data-gain-a-360-view)
+2. [Perform aggregations: make your own assumptions to understand engagement](#2-perform-aggregations-make-your-own-assumptions-to-understand-engagement)
+3. [Retention analysis](#3-retention-analysis)
+4. [Marketing attribution](#4-marketing-attribution)
 
 ## What can we do with the data when we have a small data team?
 
@@ -46,11 +49,11 @@ Snowplow facilitates this by giving you ownership of your event level data and t
 
 Events on the web can be back stitched to even before a user identified themselves as shown below:
 
-![User stitching on web][user-stich-web]
+![User stitching on web][user-stitch-web]
 
 Similarly on mobile (note app installs can be tracked as Snowplow events using Adjust):
 
-![User stitching on mobile][user-stich-mobile]
+![User stitching on mobile][user-stitch-mobile]
 
 Snowplow Co-Founder Yali Sassoon covers the Snowplow approach to user stitching more thoroughly in [this blog post](https://snowplowanalytics.com/blog/2014/04/16/identity-stitching-snowplow-vs-google-universal-analytics-kissmetrics-and-mixpanel/). He then dives into the deeper “how-to” in [this blog post](https://discourse.snowplowanalytics.com/t/identifying-users-identity-stitching/31).
 
@@ -62,7 +65,7 @@ The power of having a table full of *unopinionated* event level data lies in mak
 
 If the analysis you want to perform is on retention you’ll likely aggregate events by session; if it is on donation or subscription behaviour you may aggregate events leading up to a donation or subscription respectively. You can choose what you want to group events by since the tracking you set up is designed by you.
 
-#### 2.1. Event level table
+#### 2.1. Event level table
 
 For simplicity, let’s start off by looking only at a few columns of event level data (as delivered by Snowplow into your data warehouse) sorted by timestamp (raw data in blue). The “Donation” and “Subscription” columns are derived to assign a common value to all events that occur between donation and subscription events respectively (we will aggregate using these values later).
 
@@ -131,13 +134,15 @@ Remember, the model can include micro-conversions too such as shares on social m
 
 The great thing about having the underlying data is that with time, you can update and refine this model as more and more data comes in.
 
+<br>
+
 Read next: [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
 
 [snowplow-data-table]: /assets/img/blog/2019/05/snowplow-data-table.png
-[user-stich-web]: /assets/img/blog/2019/05/user-stich-web.png
-[user-stich-mobile]: /assets/img/blog/2019/05/user-stich-mobile.png
+[user-stitch-web]: /assets/img/blog/2019/05/user-stitch-web.png
+[user-stitch-mobile]: /assets/img/blog/2019/05/user-stitch-mobile.png
 [event-level-table]: /assets/img/blog/2019/05/event-level-table.png
-[conversion-level-table]: /assets/img/blog/2019/05/conversion-label-table.png
+[conversion-level-table]: /assets/img/blog/2019/05/conversion-level-table.png
 [session-level-table]: /assets/img/blog/2019/05/session-level-table.png
 [content-engagement-table]: /assets/img/blog/2019/05/content-engagement-table.png
 [user-level-table]: /assets/img/blog/2019/05/user-level-table.png

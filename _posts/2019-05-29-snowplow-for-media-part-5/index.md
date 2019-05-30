@@ -16,14 +16,18 @@ We recommend you to read the previous posts on this topic before diving into thi
 3. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
 4. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)
 
+<br>
+
 Do read the post that answers the question: [What do I track?](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 
-[What can we do with the data, we’re a well established data team?][#what-can-we-do-with-the-data-were-a-well-established-data-team]
-1. [Set up marketing automation][#set-up-marketing-automation]
-2. [Personalise the product][#personalise-the-product]
-3. [Anomaly detection][#anomaly-detection]
-4. [Fraud detection][#fraud-detection]
-5. [Predict future trends][#predict-future-trends]
+<br>
+
+[What can we do with the data, we’re a well established data team?](#what-can-we-do-with-the-data-were-a-well-established-data-team)
+1. [Set up marketing automation](#1-set-up-marketing-automation)
+2. [Personalise the product](#2-personalise-the-product)
+3. [Anomaly detection](#3-anomaly-detection)
+4. [Fraud detection](#4-fraud-detection)
+5. [Predict future trends](#5-predict-future-trends)
 
 ## What can we do with the data, we’re a well established data team?
 
@@ -65,6 +69,7 @@ A reminder that this post is entirely non-technical. It is intended to give you 
 So far we haven’t really leveraged the real-time features Snowplow offers. All the data being loaded into your data warehouse is first written to a real-time stream. In a few short steps, you can read off this stream to action the data using an AWS Lambda function or GCP cloud function.
 
 **Example: automated native ads**
+
 The data analyst defines the rules: users are scored depending on their past and current usage, for example viewing 4 articles and a video in 10 minutes increases this score greatly. These rules can be created by exploring Snowplow’s rich event level data.
 
 The data engineer writes a function that, when the user reaches a certain score, a native ad can be surfaced to them with relevant content. Snowplow has SDKs that makes this process quite straightforward. Snowplow Co-Founder Yali Sassoon wrote a how to write a real-time app using Snowplow data in [this tutorial](https://discourse.snowplowanalytics.com/t/real-time-reporting-using-aws-lambda-and-dynamodb-a-tutorial-to-compute-the-number-of-players-in-a-game-level-on-the-snowplow-event-stream-1-2/1008).

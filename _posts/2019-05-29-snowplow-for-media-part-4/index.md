@@ -15,14 +15,19 @@ We recommend you to read the previous posts on this topic before diving into thi
 2. [What do I track](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 3. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
 
+<br>
+
 Bear in mind there is 1 more post in this series you can read after this one: [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/).
 
-[What can we do with the data, we’re growing the data team?](#what-can-we-do-with-the-data-were-growing-the-data-team)
-1. [Informed content creation](#informed-content-creation)
-2. [Track conversions server-side](#track-conversions-server-side)
-3. [Track app installs and social media clicks](#track-app-installs-and-social-media-clicks)
-4. [Funnels](#funnels)
-5. [Behavioural user stitching](#behavioural-user-stitching)
+<br>
+
+[What can we do with the data as our data team grows?](#what-can-we-do-with-the-data-as-our-data-team-grows)
+1. [Advertiser analytics](#1-advertiser-analytics)
+2. [Track critical events server-side](#2-track-critical-events-server-side)
+3. [Track app installs and social media click](#3-track-app-install-and-social-media-clicks)
+4. [Funnels to improve UX and inform paywall decisions](#4-funnels-to-improve-ux-and-inform-your-paywall-decisions)
+5. [Further user stitching](#5-further-user-stitching)
+6. [Informed content creation](#6-informed-content-creation)
 
 ## What can we do with the data as our data team grows?
 
@@ -81,6 +86,7 @@ With these events in your data warehouse, you can gain an even better understand
 We have written an eBook on the subject of Product Analytics which you can download [here](https://go.snowplowanalytics.com/l/571483/2018-06-26/2z9m4gd?utm_source=snp-ebook&utm_medium=cta-button-blog&utm_content=product-analytics-series-1). To look specifically at user journeys, most Snowplow Insights customers can take advantage of our [Indicative integration](https://snowplowanalytics.com/blog/2018/09/20/snowplow-indicative-relay-released/) with a free Indicative account. Indicative is one of the best tools out there for understanding how users move through your product. Do get in touch for more information or to [request a demo](https://snowplowanalytics.com/request-demo/)!
 
 **Example: the signup process**
+
 Let’s assume the product manager wants some insights into how users move through the signup process before subscribing. The Snowplow data they would work with may look something like this:
 
 ![A table of the signup flow][signup-flow-table]
@@ -132,8 +138,10 @@ Using your data to drive an understanding of which content is being engaged with
 
 The producers of content can also be served dashboards on how their content performs. This is made easy as you can track a custom property in a content entity which contains a creator_id. Having access to all the event level data means you can simply filter all events for that creator_id and serve the same dashboard to every creator.
 
+<br>
+
 Read next: [What can we do with the data, we’re well established](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-5/)
 
-[signup-flow-table]: /assets/img/blog/2019/05/sign-up-flow-table.png
-[signup-flow-table-2]: /assets/img/blog/2019/05/sign-up-flow-table-2.png
-[indicative-funnel]: assets/img/blog/2019/05/indicative-funnel.png
+[signup-flow-table]: /assets/img/blog/2019/05/signup-flow-table.png
+[signup-flow-table-2]: /assets/img/blog/2019/05/signup-flow-table-2.png
+[indicative-funnel]: /assets/img/blog/2019/05/indicative-funnel.png

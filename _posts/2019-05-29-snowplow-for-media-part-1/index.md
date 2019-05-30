@@ -149,6 +149,8 @@ If you are an existing Snowplow Insights customer or are interested in Insights,
 - Fields can be removed from events using custom enrichments if necessary
 - The client data that you capture all lives in your own cloud environment, not Snowplow’s - remember Snowplow is just a piece of software, the hardware is all in your AWS or GCP account
 
+<br>
+
 Read next: [What do I track?](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 
 [media companies]: /assets/img/blog/2019/05/media-companies.png
