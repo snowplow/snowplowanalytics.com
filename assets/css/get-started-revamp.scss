@@ -119,12 +119,15 @@ main .hero-revamp {
 			p {
 				color: white;
 			}
-			input[type=submit].btn {
+			.btn {
 				border: solid 2px white;
 				&:hover {
 					background-color: white;
 					color: $blue-purple;
 				}
+			}
+			.help-inline {
+				color: white;
 			}
 		}
 		&-front {
@@ -217,7 +220,7 @@ main .hero-revamp {
 			    }
 			}
 			.btn {
-				margin-top: 30px;
+				//margin-top: 30px;
 			}
 			p {
 				margin-bottom: 30px;
