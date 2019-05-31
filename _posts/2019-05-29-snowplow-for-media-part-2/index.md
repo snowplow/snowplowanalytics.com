@@ -84,6 +84,8 @@ Some example entities often used by media companies are:
 - Subscription
 - Affiliate
 
+<br>
+
 Read next: [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)
 
 [search results]: /assets/img/blog/2019/05/search-result.png
