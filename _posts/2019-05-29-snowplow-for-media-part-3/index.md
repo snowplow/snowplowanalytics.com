@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Snowplow for media part 3
-title: "Snowplow for media part 3: what can do with the data when we're getting started?"
+title: "Snowplow for media part 3: what can we do with the data when we're getting started?"
 tags: [analytics, data, insights, media, media analytics]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
@@ -10,7 +10,7 @@ permalink: /blog/2019/05/29/snowplow-for-media-part-3/
 discourse: true
 ---
 
-We recommend you to read the [main post](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-1/) on this topic before diving into this article to ensure you have all the context you need!
+We recommend you read the [main post](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-1/) on this topic before diving into this article to ensure you have all the context you need!
 
 Bear in mind there are 2 more posts in this series you can read after this one:
 1. [What can we do with the data, we’re growing](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-4/)

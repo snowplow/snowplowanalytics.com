@@ -10,7 +10,7 @@ permalink: /blog/2019/05/29/snowplow-for-media-part-5/
 discourse: true
 ---
 
-We recommend you to read the previous posts on this topic before diving into this article to ensure you have all the context you need:
+We recommend you read the previous posts on this topic before diving into this article to ensure you have all the context you need:
 1. [Main post](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-1/)
 2. [What do I track](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-2/)
 3. [What can we do with the data, we’re getting started](https://snowplowanalytics.com/blog/2019/05/29/snowplow-for-media-part-3/)

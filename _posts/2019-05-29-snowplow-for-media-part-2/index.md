@@ -69,7 +69,7 @@ Multiple entities of different, or the same type can be sent with any event. The
 
 1. You want to send multiple entities of the same type with an event. For example, with a search event, you want to send multiple search result entities, one for each search result displayed. Each search result entity can have rich information about that search result such as order, name, vendor, price.
 
-![search results][search results]
+  ![search results][search results]
 
 2. You want to send the same custom information with many events. To standardise how this custom data is captured, you can create one entity and send this with many event types. For example, to know whether a user is a subscriber or not is useful with many events so this can be sent in a user entity with all events.
 
