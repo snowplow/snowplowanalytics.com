@@ -10,11 +10,11 @@ permalink: /blog/2019/05/29/snowplow-for-media-part-1/
 discourse: true
 ---
 
-*“We don’t know where to focus our content creation efforts; which content leads to retention and subscription? which content categories, authors, themes drive high CPMs?
+*“We don’t know where to focus our content creation efforts; which content leads to retention and subscription? which content categories, authors, themes drive high CPMs?*
 
-We have several disparate brands and users have multiple products on the web and in our app so we don’t have a single customer view. This means we can’t effectively group our users based on engagement or monitor how they are retained.
+*We have several disparate brands and users have multiple products on the web and in our app so we don’t have a single customer view. This means we can’t effectively group our users based on engagement or monitor how they are retained.*
 
-We don’t have a good understanding of how our marketing spend across multiple channels affects subscription or readership.”*
+*We don’t have a good understanding of how our marketing spend across multiple channels affects subscription or readership.”*
 
 This post is non-technical and is intended to show you how you could solve these problems with Snowplow. This is the first post in a series on the subject, there are 4 more in this series which you can read next:
 
