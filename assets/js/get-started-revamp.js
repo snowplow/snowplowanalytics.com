@@ -123,7 +123,7 @@
 
 		    var elementRetURL = document.createElement("input");
 		    elementRetURL.name = "retURL";
-		    elementRetURL.value = "https://snowplowanalytics.com/request-demo/thank-you";
+		    elementRetURL.value = "https://snowplowanalytics.com/get-started/thank-you";
 		    elementRetURL.setAttribute("type", "hidden");
 		    form.append(elementRetURL);
 
