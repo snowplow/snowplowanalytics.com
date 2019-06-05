@@ -1,6 +1,7 @@
 /**
  * Vars
  */
+ var thanks_url = 'https://snowplowanalytics.com/get-started/thank-you';
 
 /**
  * Ready
@@ -65,14 +66,14 @@
     	if (first_name.length == 0) {
     		$('#sales-first-name').next('.help-inline').html('Please enter a first name.').show();
     		error_count++;
-    	} //else $('#sales-first-name').next('.help-inline').hide();
+    	} 
 
     	// Last name
     	var last_name = $('#sales-last-name').val(); console.log('last_name', last_name);
     	if (last_name.length == 0) {
     		$('#sales-last-name').next('.help-inline').html('Please enter a last name.').show();
     		error_count++;
-    	} //else $('#sales-last-name').next('.help-inline').hide();
+    	} 
 
     	// Work email
     	var email = $('#sales-work-email').val(); console.log('email', email);
@@ -82,14 +83,14 @@
     	} else if( !isEmail(email) ) {
     		$('#sales-work-email').next('.help-inline').html('Please enter a valid email address.').show();
     		error_count++;
-    	} //else $('#sales-work-email').next('.help-inline').hide();
+    	} 
 
     	// Company
     	var company = $('#sales-company').val(); console.log('company', company);
     	if (company.length == 0) {
     		$('#sales-company').next('.help-inline').html('Please enter a company name.').show();
     		error_count++;
-    	} //else $('#sales-company').next('.help-inline').hide();
+    	} 
 
     	// Type (no validation)
     	var type = $('#sales-type').parent('.fake-dropdown').attr('data-value'); console.log('type', type);
@@ -106,38 +107,33 @@
 		        firstName: first_name,
 		        lastName: last_name,
 		        email: email,
-		        //phone: phone,
+		        phone: '',
 		        company: company,
 		        insights: false,
 		        react: false
 		      }
 		    });
 		    // submit to SF
-		    var form = $('#get-started-sales');
-
-		    var elementOID = document.createElement("input");
-		    elementOID.name = "oid";
-		    elementOID.value = "00D24000000bPI5";
-		    elementOID.setAttribute("type", "hidden");
-		    form.append(elementOID);
+		    var form = document.getElementById("get-started-sales");
 
 		    var elementRetURL = document.createElement("input");
 		    elementRetURL.name = "retURL";
-		    elementRetURL.value = "https://snowplowanalytics.com/request-demo/thank-you";
+		    elementRetURL.value = thanks_url;
 		    elementRetURL.setAttribute("type", "hidden");
 		    form.append(elementRetURL);
 
-		    var elementSC1 = document.createElement("input");
-		    elementSC1.name = "00N2400000HS40P";
-		    elementSC1.value = 42;
-		    elementSC1.setAttribute("type", "hidden");
-		    form.append(elementSC1);
+		    var elementPHONE = document.createElement("input");
+		    elementPHONE.name = "phone";
+		    elementPHONE.value = '';
+		    elementPHONE.setAttribute("type", "hidden");
+		    form.append(elementPHONE);
 
 		    try {
 		        snowplow(function () {
 			        var elementDUID = document.createElement("input");
 			        elementDUID.name = "00N2400000HRtrl";
 			        elementDUID.value = this.snplow5.getDomainUserId();
+			        DUID = this.snplow5.getDomainUserId();
 			        elementDUID.setAttribute("type", "hidden");
 			        form.append(elementDUID);
 		        })
@@ -146,18 +142,15 @@
 		    	console.log(e);
 		    }
 
-      		// document.getElementById("inputLeadSource").setAttribute("name","lead_source");
-      		// document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
-      		// document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
       		document.getElementById("sales-first-name").setAttribute("name","first_name");
       		document.getElementById("sales-last-name").setAttribute("name","last_name");
       		document.getElementById("sales-work-email").setAttribute("name","email");
       		document.getElementById("sales-company").setAttribute("name","company");
-      		// document.getElementById("inputPhone").setAttribute("name", "phone");
 
       		form.method = "POST";
-      		form.action = "http://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
-      		form.submit();
+      		form.action = "https://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
+      		form.submit();      		
+
     	}
 	});
 
@@ -214,25 +207,13 @@
     	if ( error_count == 0) {
     		
 		    // submit to SF
-		    var form = $('#get-started-more');
-
-		    var elementOID = document.createElement("input");
-		    elementOID.name = "oid";
-		    elementOID.value = "00D24000000bPI5";
-		    elementOID.setAttribute("type", "hidden");
-		    form.append(elementOID);
+		    var form = document.getElementById("get-started-more");
 
 		    var elementRetURL = document.createElement("input");
 		    elementRetURL.name = "retURL";
-		    elementRetURL.value = "https://snowplowanalytics.com/request-demo/thank-you";
+		    elementRetURL.value = thanks_url;
 		    elementRetURL.setAttribute("type", "hidden");
 		    form.append(elementRetURL);
-
-		    var elementSC1 = document.createElement("input");
-		    elementSC1.name = "00N2400000HS40P";
-		    elementSC1.value = 42;
-		    elementSC1.setAttribute("type", "hidden");
-		    form.append(elementSC1);
 
 		    try {
 		        snowplow(function () {
@@ -247,14 +228,10 @@
 		    	console.log(e);
 		    }
 
-      		// document.getElementById("inputLeadSource").setAttribute("name","lead_source");
-      		// document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
-      		// document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
-      		document.getElementById("sales-first-name").setAttribute("name","first_name");
-      		document.getElementById("sales-last-name").setAttribute("name","last_name");
-      		document.getElementById("sales-work-email").setAttribute("name","email");
-      		document.getElementById("sales-company").setAttribute("name","company");
-      		// document.getElementById("inputPhone").setAttribute("name", "phone");
+      		document.getElementById("more-first-name").setAttribute("name","first_name");
+      		document.getElementById("more-last-name").setAttribute("name","last_name");
+      		document.getElementById("more-work-email").setAttribute("name","email");
+      		document.getElementById("more-company").setAttribute("name","company");
 
       		form.method = "POST";
       		form.action = "https://go.snowplowanalytics.com/l/571483/2019-05-20/3q8c5vs";
