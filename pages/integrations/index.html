@@ -156,7 +156,7 @@ integrations-destinations:
       - name: Snowflake
         icon: /assets/img/integrations/destinations/snowflake@3x.png
         icon-h: 66px
-  - name: Options for data consumption (GCP) 
+  - name: Options for data consumption (GCP)
     items:
       - name: Pub/Sub
         icon: /assets/img/integrations/destinations/pub-sub@3x.png
@@ -179,18 +179,18 @@ logos:
   - name: indicative
     img: assets/img/integrations/logos/indicative.png
     img-2x: assets/img/integrations/logos/indicative@2x.png
-    img-3x: assets/img/integrations/logos/indicative@3x.png  
+    img-3x: assets/img/integrations/logos/indicative@3x.png
     height: 114.5px
   - name: tableau
     img: assets/img/integrations/logos/tableau.png
     img-2x: assets/img/integrations/logos/tableau@2x.png
-    img-3x: assets/img/integrations/logos/tableau@3x.png 
+    img-3x: assets/img/integrations/logos/tableau@3x.png
     height: 114.5px
   - name: powerbi
     img: assets/img/integrations/logos/powerbi.png
     img-2x: assets/img/integrations/logos/powerbi@2x.png
     img-3x: assets/img/integrations/logos/powerbi@3x.png
-    height: 114.5px 
+    height: 114.5px
   - name: redash
     img: assets/img/integrations/logos/redash.png
     img-2x: assets/img/integrations/logos/redash@2x.png
@@ -210,12 +210,12 @@ logos:
     img: assets/img/integrations/logos/sisense.png
     img-2x: assets/img/integrations/logos/sisense@2x.png
     img-3x: assets/img/integrations/logos/sisense@3x.png
-    height: 114.5px 
+    height: 114.5px
   - name: jupyter
     img: assets/img/integrations/logos/jupyter.png
     img-2x: assets/img/integrations/logos/jupyter@2x.png
     img-3x: assets/img/integrations/logos/jupyter@3x.png
-    height: 114.5px  
+    height: 114.5px
   - name: databricks-logo
     img: assets/img/integrations/logos/databricks-logo.png
     img-2x: assets/img/integrations/logos/databricks-logo@2x.png
@@ -225,13 +225,13 @@ logos:
     img: assets/img/integrations/logos/data-quality.png
     img-2x: assets/img/integrations/logos/data-quality@2x.png
     img-3x: assets/img/integrations/logos/data-quality@3x.png
-    height: 114.5px 
+    height: 114.5px
   - name: qubole
     img: assets/img/integrations/logos/qubole.png
     img-2x: assets/img/integrations/logos/qubole@2x.png
     img-3x: assets/img/integrations/logos/qubole@3x.png
     height: 114.5px
-             
+
 ---
 
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/spw-customers-header@3x.png)">
@@ -263,7 +263,7 @@ logos:
       <div class="col-sm-12">
         <h2>Sources</h2>
       </div>
-      
+
       {% for row in page.integrations-sources %}
         <div class="col-sm-12 stickers-category-container">
           <h4>{{ row.name }}</h4>
@@ -276,11 +276,11 @@ logos:
                 <div class="stickers-item-icon">
                   <img src="{{ item.icon }}" alt="{{ item.name }}" style="height: {{ item.icon-h }}">
                 </div>
-              </div> 
+              </div>
             {% endfor %}
           </div>
         </div>
-      {% endfor %}    
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -289,8 +289,8 @@ logos:
   <div class="container">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
-        <h2>Meet Iglu, our catch-all integrator</h2>
-        <h4>Our Iglu webhook adapter lets you integrate with any service or application that offers an API or webhook.</h4>
+        <h2>Meet our catch-all integrator</h2>
+        <h4>Our webhook adapter lets you integrate with any service or application that offers an API or webhook.</h4>
       </div>
     </div>
   </div>
@@ -302,7 +302,7 @@ logos:
       <div class="col-sm-12">
         <h2>Destinations</h2>
       </div>
-      
+
       {% for row in page.integrations-destinations %}
         <div class="col-sm-12 stickers-category-container">
           <h4>{{ row.name }}</h4>
@@ -315,7 +315,7 @@ logos:
                 <div class="stickers-item-icon">
                   <img src="{{ item.icon }}" alt="{{ item.name }}" style="height: {{ item.icon-h }}">
                 </div>
-              </div> 
+              </div>
             {% endfor %}
           </div>
         </div>
@@ -335,16 +335,16 @@ logos:
         <div class="row">
             <div class="col-sm-12">
                 <h4>
-                  Snowplow is compatible with any business intelligence tool and analytics provider who integrates 
-                  <br> 
+                  Snowplow is compatible with any business intelligence tool and analytics provider who integrates
+                  <br>
                   with either Snowflake, BigQuery and Redshift. Here some of our customers’ favorite tools.
                 </h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 hero-revamp-logos plus_mg">
-                {% for company in page.logos %}  
-                {% if company.url %} 
+                {% for company in page.logos %}
+                {% if company.url %}
                         <a href="{{ company.url }}" class="hero-revamp-logos-block">
                         {% assign close_block = '</a>' %}
                     {% else %}
@@ -353,7 +353,7 @@ logos:
                     {% endif %}
                     <img src="{{ BASE_PATH }}/{{ company.img }}" srcset="{{ BASE_PATH }}/{{ company.img-2x }} 2x, {{ BASE_PATH }}/{{ company.img-3x }} 3x" alt="{{ company.name }}" style="height: {{ company.height  }}">
                     {{ close_block }}
-                {% endfor %}  
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -363,19 +363,3 @@ logos:
 
 
 {% include request-demo-revamp.html %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
