@@ -1,7 +1,7 @@
 /**
  * Vars
  */
- var thanks_url = 'https://snowplowanalytics.com/get-started/thank-you';
+ var thanks_url = 'https://qa.snowplowanalytics.com/get-started/thank-you';
 
 /**
  * Ready
@@ -146,6 +146,7 @@
       		document.getElementById("sales-last-name").setAttribute("name","last_name");
       		document.getElementById("sales-work-email").setAttribute("name","email");
       		document.getElementById("sales-company").setAttribute("name","company");
+      		document.getElementById("sales-message").setAttribute("name","message");
 
       		form.method = "POST";
       		form.action = "https://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
