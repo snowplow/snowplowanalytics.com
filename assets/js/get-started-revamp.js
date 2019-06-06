@@ -1,7 +1,10 @@
 /**
  * Vars
  */
- var thanks_url = 'https://qa.snowplowanalytics.com/get-started/thank-you';
+ var thanks_url_sales = 'https://qa.snowplowanalytics.com/get-started/thank-you-sales';
+ var thanks_url_info = 'https://qa.snowplowanalytics.com/get-started/thank-you-info';
+ 
+ 
 
 /**
  * Ready
@@ -118,7 +121,7 @@
 
 		    var elementRetURL = document.createElement("input");
 		    elementRetURL.name = "retURL";
-		    elementRetURL.value = thanks_url;
+		    elementRetURL.value = thanks_url_sales;
 		    elementRetURL.setAttribute("type", "hidden");
 		    form.append(elementRetURL);
 
@@ -212,7 +215,7 @@
 
 		    var elementRetURL = document.createElement("input");
 		    elementRetURL.name = "retURL";
-		    elementRetURL.value = thanks_url;
+		    elementRetURL.value = thanks_url_info;
 		    elementRetURL.setAttribute("type", "hidden");
 		    form.append(elementRetURL);
 
