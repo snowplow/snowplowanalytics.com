@@ -181,6 +181,7 @@ main .hero-revamp {
 				line-height: 1.5;
 				height: var(--text-h);
 				resize: none;
+				white-space: pre-wrap !important;
 			}
 			.fake-dropdown {
 				width: 100%;
