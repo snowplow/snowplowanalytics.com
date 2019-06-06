@@ -1,8 +1,8 @@
 /**
  * Vars
  */
- var thanks_url_sales = 'https://qa.snowplowanalytics.com/get-started/thank-you-sales';
- var thanks_url_info = 'https://qa.snowplowanalytics.com/get-started/thank-you-info';
+ var thanks_url_sales = 'https://snowplowanalytics.com/get-started/thank-you-sales';
+ var thanks_url_info = 'https://snowplowanalytics.com/get-started/thank-you-info';
  
  
 
