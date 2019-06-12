@@ -1,0 +1,130 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * HOME FILE
+ */
+
+/*
+ * CONFIGURATION
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+
+/*
+ * STYLES
+ */
+
+ /* Menu Correction */
+ body.contactus {
+ 	header {
+ 		background: #fff;
+ 		.navbar,
+ 		.navbar-default {
+ 			border-bottom: 1px solid rgba(182,187,200,0.4);
+ 			.navbar-brand {
+ 				color: #50545c;
+ 			}
+ 			.navbar-nav > li > a:not(.btn) {
+ 				color: #50545c;
+ 			}
+ 			.navbar-nav > li:hover > a::after,
+ 			.navbar-nav > li.active > a::after {
+ 				background-color: #6738B8;
+ 			}
+ 		}
+ 		#button-login-header-page {
+ 			color: $gunmetal;
+ 			&:hover {
+ 				color: $blue-purple;
+ 			}
+ 		}
+ 	}
+ }
+
+
+
+ .section-revamp-cards-section {padding-top: 120px;}
+
+.section-revamp-cards.big{
+
+  flex: .0 1 calc(var(--revamp-big-cards-w) - var(--revamp-big-cards-mg));
+  height: 199px;
+
+  &:first-child{
+    flex: auto;
+    width: 100%;
+    display: block;
+  }
+
+  &:after{
+    display: none;
+  }
+  .section-revamp-cards-hover{
+
+    text-align: center; justify-content: center;
+    span{
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.25;
+      text-align: center;
+      color: #50545c;
+      margin: var(--revamp-cards-h4-mg);
+    }
+    p{
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      margin: 0;
+    }
+
+  }
+}
+.mapouter {width:100%; height: 100%}
+
+form.form {
+  margin: 0px !important;
+  width: 100%;
+  display: block !important;
+}
+
+footer {
+  hr{border-top: 1px solid #34373a}
+  ul li a{ color: #50555c}
+
+.newsletter {
+  max-width:100%;
+  form.form {
+    margin: 0px !important;
+    width: 100%;
+    display: block !important;
+    p.form-field{
+      width: 60%;
+      text-align: left !important;
+      float: left;
+    }
+    p.submit{
+      width: 20%;
+      float: right;
+      text-align: right !important;
+     }
+  }
+}
+}
+.section-revamp-cards-main  p {color:#50545c}
+@media (max-width: 767px){
+  .section-revamp-cards.big{
+    flex: auto !important;
+    width: 100%;
+    display: block;
+  }
+  .section-revamp-cards-section{padding-top: 0px;}
+}
