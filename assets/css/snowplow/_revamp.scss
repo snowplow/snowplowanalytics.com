@@ -477,7 +477,7 @@ $very-light-blue-two: #e1e6f0;
 		@include do-flex(column, center, center);
 		opacity: 0;
 		display: none;
-		/* transition: opacity .5s ease-in-out; */
+		transition: opacity .5s ease-in-out;
 		color: $gunmetal;
 		&._active {
 			opacity: 1;
