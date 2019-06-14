@@ -274,11 +274,11 @@
 		    elementOID.setAttribute("type", "hidden");
 		    form.appendChild(elementOID);
 
-			  var elementSC1 = document.createElement("input");
-			  elementSC1.name = "00N2400000HU7tD";
-			  elementSC1.value = 42;
-			  elementSC1.setAttribute("type", "hidden");
-			  form.appendChild(elementSC1);
+			//  var elementSC1 = document.createElement("input");
+			//  elementSC1.name = "00N2400000HU7tD";
+			//  elementSC1.value = 42;
+			//  elementSC1.setAttribute("type", "hidden");
+			//  form.appendChild(elementSC1);
 			
 
 		    try {
