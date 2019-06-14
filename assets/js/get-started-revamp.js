@@ -149,10 +149,16 @@
 		    form.append(elementJOB);
 
 		    var elementOID = document.createElement("input");
-		    elementOID.name = "oid";
-		    elementOID.value = "00N2400000HU7tD";
-		    elementOID.setAttribute("type", "hidden");
-		    form.appendChild(elementOID);
+                elementOID.name = "oid";
+                elementOID.value = "00D24000000bPI5";
+                elementOID.setAttribute("type", "hidden");
+                form.appendChild(elementOID);
+
+		    var elementSC1 = document.createElement("input");
+	  		elementSC1.name = "00N2400000HS40P";
+	  		elementSC1.value = 42;
+	  		elementSC1.setAttribute("type", "hidden");
+	  		form.appendChild(elementSC1);
 
 		    try {
 		        snowplow(function () {
@@ -179,12 +185,7 @@
 
       		form.method = "POST";
       		form.action = "https://go.snowplowanalytics.com/l/571483/2018-07-24/32cpsvj";
-      		form.submit();     
-
-			
-			
-
-      
+      		form.submit();     			
 
 			
 
@@ -273,12 +274,6 @@
 		    elementOID.value = "00N2400000HRtrl";
 		    elementOID.setAttribute("type", "hidden");
 		    form.appendChild(elementOID);
-
-			//  var elementSC1 = document.createElement("input");
-			//  elementSC1.name = "00N2400000HU7tD";
-			//  elementSC1.value = 42;
-			//  elementSC1.setAttribute("type", "hidden");
-			//  form.appendChild(elementSC1);
 			
 
 		    try {
