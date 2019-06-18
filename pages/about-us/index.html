@@ -1,0 +1,234 @@
+---
+layout: default-revamp
+group: technology
+# subgroup: technology
+title: About Snowplow | The Data Collection Platform for Data Teams
+description: Empowering companies to use data to make better decisions is at the heart of everything we do
+permalink: /about-us/
+class: how-we-compare
+assets:
+  css: assets/css/aboutus.css
+  js: assets/js/company.js
+teams:
+  - name: Alex Dean
+    pos: co-founder & CEO
+    img: /assets/img/team/alex.png
+    content: "Alex is a polymath: a keen technologist with a passion for functional programming, cloud-based architectures and big data technologies, he also has a passion for innovation and organizational change. Prior to co-founding Snowplow, he'd worked in technology roles at OpenX and in the Business Intelligence department at Deloitte, as well as strategy roles at Fathom Partners and Keplar LLP."
+    study: 
+  - name: Yali Sassoon
+    pos: co-founder & CPO
+    img: /assets/img/team/yali.jpg
+    content: "At Snowplow, Yali gets to combine his love of building things with his fascination of the ways in which people use data to reason; something he cultivated when studying his BA in Natural Sciences and MPhil in the History and Philosophy of Science, and further developed as a Strategy & Operations Consultant (at PwC, Bestshore and Keplar LLP) and a Data Analyst at OpenX."
+    study: 
+  - name: Tim Haines
+    pos: COO
+    img: /assets/img/team/tim.jpg
+    content: "Tim started working with Snowplow during his previous role as CIO at Gousto. He spent nearly 4 years there building IT systems to enable the future of food retail. Tim loves everything to do with startups and couldn’t pass on the opportunity to combine his love of data and high growth startups at Snowplow."
+    study:
+  - name: Steve Coppin-Smith
+    pos: Head of Engineering
+    img: /assets/img/team/steve.jpg
+    content: "Steve’s focus is on supporting the Engineering team in making the most of their time and talent, while working with our other teams and the wider community to guide this effort in the best direction. Steve has led engineering teams of different sizes and sectors and his career has included a wide variety of technical delivery roles including engineering, architecture, technical product, performance coaching and account management."
+    study: 
+milestones:
+  - year: 2012
+    content:
+      - Snowplow is launched.
+  - year: 2013
+    content:
+    - Snowplow launches support for loading data into Amazon Redshift.
+  - year: 2014
+    content:
+    - Snowplow schema’ing tech (Iglu) is released.
+    - First full-time team member hired.
+  - year: 2015
+    content:
+    - First Snowplow Meetups held in London, Berlin, San Francisco and Sydney.
+  - year: 2016
+    content:
+    - Launched SDK for building real-time apps on top of Snowplow data.
+    - Meetups held in New York, Amsterdam, Tel Aviv, Budapest and Boston.
+  - year: 2017
+    content:
+    - Reached 100+ Snowplow customers.
+    - First company Away Week’s in Berlin and Prague.
+  - year: 2018
+    content:
+    - Snowplow launches native support on GCP.
+    - A growing team of 35 Snowplowers.
+
+
+---
+
+            <!--
+                MAIN AREA
+            -->
+
+<section class="hero-revamp hero-revamp-light hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/products/technology/spw-technology-header@2x.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1>We’re on a mission to empower <br> companies to use data <br> to make better decisions.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h4>That starts with giving companies control of their data, so that they are free to ask and answer any question of their data. </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="section-revamp section-revamp-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>Our story</h2>
+                <h5>Back in 2012 we became very excited about the possibilities presented <br> by digital event data! </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+At the time, we were assisting companies with how they could use data about how their users behaved,
+on their mobile apps and websites, to inform their digital strategy, product development and marketing. However we kept bumping into limitations: our clients web and mobile data was “stuck” inside Google Analytics or Omniture (subsequently bought by Adobe). We were not able to perform the analysis
+we wanted and it was very difficult, if not impossible, to get the underlying data out of the tools.
+
+            </div>
+        </div>
+
+          <div class="row well-lg no-border">
+      		    <div class="pad-30">At the same time, the growth in open source data processing frameworks like Hadoop, and the emergence of web service vendors like AWS, made us think that maybe there was a way: maybe any company could afford to collect their own digital event data, at scale.</div>
+      	</div>
+
+    </div>
+</section>
+
+
+
+<section class="pad-t-0">
+    <div class="container">
+        <div class="text-center pad-t-50 pab-b-50">
+            <div class="row side-by-side text-left">
+              <div class="col-md-6">
+                  <img src="{{ BASE_PATH }}/assets/img/aboutus/vector-smart-object.png" alt="about us">
+
+              </div>
+                <div class="col-md-6 text-block">
+                  <p>The idea behind Snowplow was to provide a platform to enable any company to collect their granular event data for themselves, in their own cloud account so that data analysts and scientists could free themselves from the constraints imposed by the web analytics vendors.</p>
+                  <p>The idea remains the same today: Snowplow enables you to track any event data; ask any question of that data and use any tool you want to answer it. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/customers/customers-revamp/spw-customers-header@3x.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h3>Snowplow Major Milestones </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 hero-revamp-logos">
+              <div id="timeline">
+
+              {% for item in page.milestones %}
+
+              <div class="row timeline-movement">
+                <div class="timeline-badge">
+                  <img src="/assets/img/aboutus/hexagone.svg" class="hexagone">
+                </div>
+                <div class="col-sm-6  timeline-item year">
+                  <div class="row">
+                    <div class="col-sm-11">
+                      <div class="timeline-panel credits">
+                        <ul class="timeline-panel-ul">
+                          <li><span class="importo">{{item.year}}</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6  timeline-item content">
+                  <div class="row">
+                    <div class="col-sm-offset-1 col-sm-11">
+                      <div class="timeline-panel debits">
+                        <ul class="timeline-panel-ul">
+                          {% for list in item.content %}
+                            <li><span class="causale">{{list}} </span> </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+              {% endfor %}
+
+
+    <!--due -->
+
+  </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team pad-t-50">
+    <div class="container text-center">
+        <div class="row spacer-bottom-60">
+            <div class="col-md-8 col-md-push-2">
+                <h3>Team of teams</h3>
+            </div>
+        </div>
+        <div class="row grid">
+          {% for team in page.teams %}
+          <div class="item col-xs-6 col-sm-4 col-md-3 no-gutter">
+              <img src="{{ BASE_PATH }}{{ team.img }}" width="640" height="640" class="adapt" alt="">
+              <div class="bio">
+                  <article>
+                      <button class="i-close"></button>
+                      <h4><b>{{ team.name }}</b> {{ team.pos }}</h4>
+                      <p>{{ team.content }}</p>
+                      <!-- <p>{{ team.study }}</p> -->
+                  </article>
+              </div>
+          </div>
+
+          {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section-revamp section-revamp-animated-img-right">
+    <img src="{{ BASE_PATH }}/assets/img/aboutus/global.png" srcset="{{ BASE_PATH }}/assets/img/aboutus/global@2x.png 2x, {{ BASE_PATH }}/assets/img/aboutus/global@3x.png 3x"class="section-revamp-animated-img-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>
+                    We’re a global
+                    <br>
+                    company
+                </h2>
+                <p>
+                    We have our base in London, but we operate as a truly global and distributed company.</p> <br>
+                <p> Our team is spread out all over the world and takes advantage of our remote culture to work from anywhere they fancy!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

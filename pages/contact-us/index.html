@@ -1,0 +1,103 @@
+---
+layout: default-revamp
+group: how-we-compare
+title: Contact Snowplow | The Data Collection Platform for Data Teams
+description: Get in touch with Snowplow regarding your sales inquiry, a partnership opportunity or if you have any trouble filling out a form on our website.
+permalink: /contact-us/
+class: contactus
+assets:
+  css: assets/css/contactus.css
+  js: assets/js/how-we-compare-revamp.js
+cards:
+    - name: Sales inquiry
+      excerpt: I’m interested in Snowplow Insights and would like to talk to sales.
+      content: Submit a request to our Sales team <a href="/get-started">here</a>.
+      url: 
+    - name: Customer support
+      excerpt: I’m an existing customer and I’d like to<br>get in touch with Customer Support.
+      content: Email us at<br><a href="mailto:support@snowplowanalytics.com">support@snowplowanalytics.com</a>.
+      url: 
+    - name: Open source user
+      excerpt: I’m an open source user<br>with a question or a request.
+      content: Visit our <a href="https://discourse.snowplowanalytics.com/">Discourse forum</a> to find the<br>answer to your question. 
+      url: 
+    - name: Become a partner
+      excerpt: I’m interested in becoming a Snowplow Partner<br>and would like to introduce my company.
+      content: Email us at<br><a href="partnerships@snowplowanalytics.com">partnerships@snowplowanalytics.com</a>.
+      url: 
+    - name: Website issues
+      excerpt: I’m having trouble filling out a form or<br>want to report a bug on the website.
+      content: Email us at<br><a href="marketing@snowplowanalytics.com">marketing@snowplowanalytics.com</a>.
+      url: 
+---
+
+<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h1>How can we help you? <br> Get in touch today.</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-revamp section-revamp-cards-section ">
+    <div class="container">
+        <div class="section-revamp-cards-container">
+            {% for card in page.cards %}
+                <div class="section-revamp-cards  big">
+                    <div class="section-revamp-cards-main">
+                        <h4>{{ card.name }}</h4>
+                        <p>{{ card.excerpt }}</p>
+                    </div>
+                    <div class="section-revamp-cards-hover">
+                        <p>
+                            <span>{{ card.name }}</span>
+                            {{ card.content }}
+                        </p>
+                        <!--<a href="{{ card.url }}">Learn more about our Services team</a>-->
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row text-center pad-t-20 pad-b-20">
+            <div class="col-md-12">
+              <p>None of the above? Shoot us an email at <a href="mailto:info@snowplowanalytics.com">info@snowplowanalytics.com </a> and we’ll get back to you as soon as possible.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="">
+    <div class="container">
+        <div class="text-center pad-t-50 pab-b-50">
+            <div class="row side-by-side text-left">
+                <div class="col-md-6 text-block">
+                    <h3>Where to find us</h3>
+                    <p>We’re a globally distributed company with<br>Snowplowers in many locations including<br>London, Berlin, New York and Lisbon to name a few.</p>
+                </div>
+                <div class="col-md-6">
+                  <img src="{{ BASE_PATH }}/assets/img/contactus/findus.png" srcset="{{ BASE_PATH }}/assets/img/contactus/findus@2x.png 2x, {{ BASE_PATH }}/assets/img/contactus/findus@3x.png 3x"class="section-revamp-animated-img-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="no-padding no-margin">
+    <div class="container-fluid block-text-img no-gutter bg-primary-lighter sm-pad-t-50">
+        <div class="block-text col-md-6 pad-100 md-pad-70 sm-pad-40 xs-pad-15 pad-b-0">
+            <h3>Our main office, mailing  <br> and billing address </h3>
+            <p class="spacer-bottom-40">The Roma Building, <br>
+                32-38 Scrutton Street <br>
+                EC2A 4RQ London, UK </p>
+            <p class="spacer-bottom-40">
+              Payment queries: <a href="<a href="mailto:ap@snowplowanalytics.com">ap@snowplowanalytics.com</a><br>
+              Billing queries: <a href="<a href="mailto:invoices@snowplowanalytics.com">invoices@snowplowanalytics.com</a>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=32-38%20Scrutton%20St%2C%20Hackney%2C%20London%20EC2A%204RQ%2C%20UK&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+        </div>
+    </div>
+</section>

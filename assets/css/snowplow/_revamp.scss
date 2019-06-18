@@ -769,7 +769,7 @@ $very-light-blue-two: #e1e6f0;
 		background-color: $very-light-blue-two;
 		box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);
 		@include do-flex(column, space-between, center, nowrap);
-		transition: opacity .5s ease-in-out;
+		/* transition: opacity .5s ease-in-out; */
 		p {
 			font-weight: 300;
 			font-size: 14px;
