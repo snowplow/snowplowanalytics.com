@@ -1,112 +1,92 @@
 ---
-layout: default
-group: customers
+layout: default-revamp
+group: technology
+# subgroup: technology
 title: Marketplace Analytics Case Study - GetNinjas | Snowplow
 description: This Case Study shows how we help GetNinjas track every aspect of their customers journey, throughout the customer's lifecycle, across all platforms and channels.
 permalink: /customers/getninjas/
-class: case getninjas
+class: how-we-compare
 assets:
-  css: assets/css/customers-cases.css
-image: /assets/img/customers/case-studies/getninjas/Snowplow_Website-Images_Cases_GetNinjas_Hero.jpg
+  css: assets/css/casestudy.css
+  js: assets/js/company.js
 ---
 
-<section class="hero theme-light parallax" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/Snowplow_Website-Images_Cases_GetNinjas_Hero.jpg)">
-    <div class="container text-center spacer-bottom-30">
-        <h5 class="text-uppercase spacer-bottom-30">Case Study</h5>
-        <h1 class="h2">GetNinjas uses Snowplow to track<br class="visible-lg"> every aspect of their customers journey</h1>
-        <h4>Understanding each stage of their customer journey<br class="visible-lg visible-md"> enables them to deliver a brilliant user experience.</h4>
-    </div>
-</section>
-
-<section class="pad-b-0">
-    <div class="container">
-        <div class="text-center">
-            <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/Snowplow_Website-Images_Cases_GetNinjas_Logo.svg" width="400">
-        </div>
-    </div>
-</section>
-
-<section class="text-center pad-t-50">
-    <div class="container">
-        <h2 class="text-brand-light">Introducing GetNinjas</h2>
-        <p>GetNinjas is a Brazilian platform that connects individuals with professional service providers (“pros”), such as electricians, wedding photographers,
-plumbers, language teachers, and more. It has 500,000 registered profissionals in 300 active cities across Brazil with more than 2,000,000 serve requests each year.</p>
-    </div>
-</section>
-
-<section class="generic-image bg-primary-lighter text-center">
-    <div class="call-to-action">
-        <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/Snowplow_Website-Images_Cases_GetNinjas_Img1.jpg" width="960" height="540" alt="">
-    </div>
-</section>
-
-<section class="bg-primary-lighter text-center pad-t-0">
-    <div class="container">
-        <h5 class="text-uppercase spacer-bottom-30">The challenge</h5>
-        <h2>GetNinjas had aggressive<br class="visible-lg visible-md"> growth ambitions.</h2>
-        <p>They had to deliver an outstanding user experience, both for clients looking for professional service providers, and for the professional service providers themselves. This was essential so that GetNinjas could grow a sustainable community of customers and service providers in each of their cities over time.</p>
-        <p>They also had to make sure they intelligently spent on digital marketing to maintain the right balance of clients and professional service providers in each city as they used digital spend to drive the number of users in each city up.</p>
-    </div>
-</section>
-
-<section class="bg-primary-lighter pad-t-0">
+            <!--
+                MAIN AREA
+            -->
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/spw-case-study-header@2x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 text-md-center text-sm-center text-xs-center">
-                <img src="{{ BASE_PATH }}/assets/img/case_studies/bernardo.jpg" class="img-circle" width="493" height="493" class="" alt="">
+            <div class="col-sm-10">
+                <h1>GetNinjas case study</h1>
             </div>
-            <div class="col-md-6 lg-pad-l-50 sm-pad-l-15 xs-pad-l-15">
-                <div class="text-left">
-                    <h3>The solution.<br>Better data.</h3>
-                    <p>GetNinjas realized that taking control of their data, and having a rich, highly structured data set describing every action that their users took, would provide the foundation for meeting both of their growth challenges.</p>
-                    <p>With Snowplow, it was possible to track, in granular detail, every aspect of their customers journey, throughout the customer's entire lifecycle, across all platforms and channels.</p><br>
-                    <p><q><small>I’m a huge fan of Snowplow!! It’s given us the power and flexibility to collect and analyze data, making smarter product decisions in ways that would be impossible with other tools.</small></q></p>
-                    <p class="text-muted"><i>Bernardo Srulzon, CPO, GetNinjas</i></p>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>How GetNinjas increased conversion rates by 33% with data-driven product development using Snowplow data.</h4>
+            </div>
+        </div>
+        <div class="row"> <div class="col-sm-8"> <a href="/request-demo/" class="btn btn-lines-white btn-primary call-to-action">Download Case Study</a> </div> </div>
+    </div>
+</section>
+
+<section class="casestudy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 well-sm aside no-border">
+              <img src="/assets/img/customers/case-studies/getninjas/vector-smart-object.png"  alt="GetNinjas">
+              <h3>Company</h3>
+              <p>GetNinjas is a Brazilian platform that connects individuals with professional service providers (“pros”), such as electricians, photographers and plumbers.
+It has 500,000 registered professionals in 300 cities and more than 2m service requests each year.</p>
+              <h4><img src="/assets/img/customers/case-studies/getninjas/brifecase.png" alt="icon" class="icon"> Industry</h4>
+              <p>Two-sided marketplace</p>
+              <p><a href="https://go.snowplowanalytics.com/snowplow-case-study-getninjas.pdf" class="btn btn-outline-primary btn-primary call-to-action">Download Case Study</a></p>
+            </div>
+            <div class="col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-1">
+              <h1>Key Results </h1>
+                <ul class="styled">
+                  <li>GetNinjas grew 8.6x since implementing Snowplow in 2015.</li>
+                  <li>2.2x increase in service requests through smarter SEM bidding algorithms on
+                	thousands of daily ad campaigns powered by Snowplow data.</li>
+                  <li>GetNinjas’ product team created a brilliant user experience across all stages
+                	of the user lifecycle.</li>
+                </ul>
+                <h3>The challenge</h3>
+                <p>GetNinjas had limited insight into user behavior across their platforms and needed access to their underlying data set in order to understand user journeys and segment users to deliver a superior experience.</p>
+                <p>What’s more, GetNinjas was acquiring users for both sides of its marketplace, but didn’t have the data it needed to understand supply and demand by category and city. This meant GetNinjas’ marketing team was working with limited visibility resulting in low ROI and missed growth opportunities.</p>
+                <br>
+                <h3>The solution</h3>
+                <p>With Snowplow, GetNinjas gained full access and control over their rich, granular and well-structured data. This enabled GetNinjas to remove internal data silos and create a single view of users across platforms (web, mobile, SMS) and channels (email, chat, call center).</p>
+                <p>As a result, GetNinjas was able to continuously improve their user experience through A/B testing and intelligently optimize SEO and SEM spend to drive user growth.</p>
+
+            </div>
+    </div>
+
+</section>
+
+
+
+
+
+<section class="section-revamp section-revamp-testemonial well-sm no-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="section-revamp-testemonial-block _active">
+                    <p class="section-revamp-testemonial-content">“Snowplow has given us the power and flexibility to collect and analyze data, making smarter product decisions in ways that would be impossible with other tools.”</p>
+                    <div class="section-revamp-testemonial-person">
+                        <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo.png" srcset="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo@2x.png 2x, {{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo@3x.png 3x">
+                        <p>
+                            Bernardo Srulzon
+                            <br>
+                            <span>Chief Product Officer</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="pad-t-0">
-    <div class="container-fluid block-text-img no-gutter">
-        <div class="block-text col-md-6 pad-100 md-pad-100 sm-pad-60 xs-pad-30">
-            <h3>The results have been phenomenal</h2>
-            <p>GetNinjas used the data to power algorithms that programmatically bid for the right users and the right price, deploying their marketing budget as effectively as possible.</p>
-            <p>Now they have grown <span class="h3 text-brand-light">8.6x</span> as a company, had a <span class="h3 text-brand-light">33%</span> lift in conversion rates an <span class="h3 text-brand-light">2.2x</span> increase in service requests.</p>
-        </div>
-        <div class="block-img col-md-6">
-            <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/Snowplow_Website-Images_Cases_GetNinjas_Img3.jpg" width="720" height="610" class="adapt" alt="">
-        </div>
-    </div>
-</section>
 
-
-<section class="pad-t-0">
-    <div class="container spacer-bottom-60 spacer-sm-bottom-90">
-        <div class="col-sm-9 col-md-offset-2">
-            <div class="col-md-7 col-sm-10 col-xs-12 pad-t-10">
-                <p>Want to learn more about this Case Study?</p>
-            </div>
-            <div class="col-sm-2">
-                <a href="https://go.snowplowanalytics.com/snowplow-case-study-getninjas.pdf" class="btn btn-outline-primary">Download Case Study</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="jumbotron theme-light no-vertical-gutter height-auto parallax" style="background-image:url({{ BASE_PATH }}/assets/img/customers/case-studies/just-watch/Snowplow_Website-Images_Cases_JustWatch_Hero.jpg)">
-    <div class="container">
-
-        {% include request-demo.html %}
-
-        <div class="col-md-10 spacer-top-100">
-            <h6 class="text-uppercase">Media</h6>
-            <h3>JustWatch</h3>
-            <h4>JustWatch uses Snowplow to build <br class="visible-md">a differentiated service for advertising movies, <br class="visible-md">driving spectacular growth.</h4>
-            <a href="/customers/justwatch/" class="btn btn-primary spacer-top-70">See Case Study</a>
-        </div>
-    </div>
-</section>
+{% include request-demo-revamp.html %}
