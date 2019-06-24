@@ -1,0 +1,182 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * HOME FILE
+ */
+
+/*
+ * CONFIGURATION
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+
+/*
+ * STYLES
+ */
+
+ /* Menu Correction */
+ body.how-we-compare {
+ 	header {
+ 		background: #fff;
+ 		.navbar,
+ 		.navbar-default {
+ 			border-bottom: 1px solid rgba(182,187,200,0.4);
+ 			.navbar-brand {
+ 				color: #50545c;
+ 			}
+ 			.navbar-nav > li > a:not(.btn) {
+ 				color: #50545c;
+ 			}
+ 			.navbar-nav > li:hover > a::after,
+ 			.navbar-nav > li.active > a::after {
+ 				background-color: #6738B8;
+ 			}
+ 		}
+ 		#button-login-header-page {
+ 			color: $gunmetal;
+ 			&:hover {
+ 				color: $blue-purple;
+ 			}
+ 		}
+ 	}
+ }
+
+
+
+
+
+.casestudy{
+  .aside {
+    img{max-width:100%;}
+    .icon{
+      width: 16px;
+      height: 14px;}
+      h3, h4{margin-bottom: 10px;}
+      h3{font-size: 24px;}
+      h4{font-size: 20px; font-weight: 500}
+      p{font-size: 16px; margin-bottom: 20px;}
+  }
+  ul.styled{
+    li{font-size: 18px; font-weight: 300}
+  }
+
+
+}
+.well-sm {
+    background: #f5f9ff;
+    color: #50545c;
+    font-family: Rubik;
+    line-height: 1.43;
+    letter-spacing: normal;
+    /*padding: 20px;*/
+
+}
+
+.resource {
+  h1{
+    font-size: 36px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+  h2{
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+  }
+}
+
+.resource-aside{
+  .styled{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px 0px;
+
+    .section-nav{
+      li.toc-entry.toc-h1{
+        &:first-child{
+          &:before, > a{
+            display: none;
+          }
+        }
+      }
+      ul{margin-left: 0.6em}
+    }
+    .toc-entry.toc-h2{
+      padding-left: 0px;
+      &:before{
+      display: none;
+    }
+    a{color:#32373e;}
+  }
+    li{
+        font-size: 14px !important;
+        line-height: 1.5em;
+      &:before{
+        float: left;
+        margin-top: 11px;
+        a{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: block;
+          text-indent: initial;
+          line-height: normal;
+
+        }
+      }
+    }
+
+    ul{
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+}
+
+#sidebar{
+			float: left;
+			color: #ce8888;
+			will-change: min-height;
+      padding-left: 0px !important;
+		}
+
+		#sidebar .sidebar__inner{
+			padding: 10px;
+			position: relative;
+			transform: translate(0, 0);
+			transform: translate3d(0, 0, 0);
+			will-change: position, transform;
+      width: 300px;
+      height: 100vh;
+      overflow-y: auto;
+		}
+
+
+
+		.clearfix:after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+
+    .resourcefooter{
+      margin-top: -60px;
+      margin-bottom: 60px;
+    }
