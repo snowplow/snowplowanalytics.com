@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+{% include head.html %}
+
+
+{% include header.html %}
+<section class="casestudy ">
+<div class="container clearfix">
+  <div id="sidebar" class="col-md-3 col-sm-4  aside ">
+    <div class="well-sm no-border sidebar__inner resource-aside">
+      <ul class="styled" >
+                    {% for item in site.resources  %}
+                      <li><a href="{{ item.permalink }}">{{ item.title }}</a>
+                        {% if page.url == item.permalink %}
+                          {% toc %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+    </div>
+  </div>
+  <div id="content" class="col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-1 resource pull-right">
+    {{  content   }}
+  </div>
+</div>
+</section>
+
+
+{% include footer-new.html %}
