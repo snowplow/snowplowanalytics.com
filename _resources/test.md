@@ -30,7 +30,7 @@ You can use one of Snowplow’s 16 trackers in your website, app or server, or m
 
 Snowplow puts you in full control of your data and empowers you to ask an answer any question of your data using whatever tool, method or technology you want.
 
-![get-started](/assets/img/resources/get-started@2x.png)
+![get-started](/assets/img/resources/getting-started/get-started@2x.png)
 
 # CDPs
 

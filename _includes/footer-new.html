@@ -1,4 +1,4 @@
-        <footer id="contacts">
+        <footer id="contacts" class="footernew">
           <div class="resourcefooter">
           {% include request-demo-revamp.html %}
           </div>
@@ -122,6 +122,8 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
+		
+          <script type="text/javascript"  src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js'></script>
         <script type="text/javascript">
         // Create browser compatible event handler.
           var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -150,6 +152,7 @@
           		});
 
               });
+			  $(".left-fixed").niceScroll();
           	</script>
 
         </body>
