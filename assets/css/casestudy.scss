@@ -18,6 +18,7 @@
  */
 @import "snowplow/_variables";
 @import "snowplow/_revamp";
+@import "snowplow/_grid"
 
 /*
  * STYLES
@@ -51,7 +52,12 @@
  }
 
 
+body, p {
+  font-size: 16px;
+  line-height: 27px;
+}
 
+icon { margin-bottom: 4px;}
 
 
 .casestudy{
@@ -63,10 +69,10 @@
       h3, h4{margin-bottom: 10px;}
       h3{font-size: 24px;}
       h4{font-size: 20px; font-weight: 500}
-      p{font-size: 16px; margin-bottom: 20px;}
+      p{font-size: 16px; line-height: 27px; margin-bottom: 20px;}
   }
   ul.styled{
-    li{font-size: 18px; font-weight: 300}
+    li{font-size: 16px; line-height: 27px; font-weight: 300}
   }
 
 
