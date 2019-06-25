@@ -18,7 +18,7 @@
  */
 @import "snowplow/_variables";
 @import "snowplow/_revamp";
-@import "snowplow/_grid"
+@import "snowplow/_grid";
 
 /*
  * STYLES
@@ -57,7 +57,7 @@ body, p {
   line-height: 27px;
 }
 
-icon { margin-bottom: 4px;}
+.icon { margin-bottom: 4px;}
 
 
 .casestudy{
