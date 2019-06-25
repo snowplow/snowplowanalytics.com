@@ -1,104 +1,82 @@
 ---
-layout: default
+layout: default-revamp
 group: customers
-title: Gaming Case Study - Peak | Snowplow
-description: Data is at the heart of the science behind Peak to build award winning games that train cognitive skills! Snowplow is part of that! Read our Gaming Case Study!
+# subgroup: case studies
+title: Snowplow | Peak Case Study
+description: How Snowplow enabled Peak to grow from 1 to 20 million users by giving Peak full control of their data.
 permalink: /customers/peak/
-class: case peak
+class: how-we-compare
 assets:
-  css: assets/css/customers-cases.css
-image: /assets/img/customers/case-studies/Snowplow_Website-Images_Cases_Peak_Img3A.jpg
+  css: assets/css/casestudy.css
+  js: assets/js/company.js
 ---
 
-<section class="hero theme-light parallax" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/peak/Snowplow_Website-Images_Cases_Peak_Hero.jpg)">
-    <div class="container text-center spacer-bottom-30">
-        <h5 class="text-uppercase spacer-bottom-30">Gaming Case Study</h5>
-        <h1 class="h2">How Peak uses Snowplow to build <br class="visible-md">award winning games that <br class="visible-md">train cognitive skills</h1>
-    </div>
-</section>
-
-<section class="pad-b-0">
-    <div class="container">
-        <div class="text-center pad-t-50">
-            <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/peak/peak-logo.svg" width="300">
-        </div>
-    </div>
-</section>
-
-<section class="text-center pad-t-50 xs-pad-b-50 sm-pad-b-100">
-    <div class="container">
-        <h2 class="text-brand-light">“Snowplow is really powerful when you start to hit that growth curve and going upwards: when you see the signs of accelerating growth and you need to start collecting as much event data as possible”</h2>
-        <p class="text-muted"><i>Thomas in’t Veld, Lead Data Scientist</i></p><br>
-        <p>PEAK is a cognitive training platform with a difference: it collaborates with neuroscientists and psychologists at Yale, Cambridge and other universities to build advanced games to exercise mental skills such as memory, mental agility, problem-solving, language and more. It turns your smartphone into a system for brain measurement, brain tracking and brain training.</p>
-    </div>
-</section>
-
-<section class="generic-image bg-primary-lighter text-center">
-    <div class="call-to-action">
-        <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/peak/Snowplow_Website-Infographics_Cases_Peak_Img1.svg" width="960" height="540" alt="">
-    </div>
-</section>
-
-<section class="bg-primary-lighter pad-t-0">
+            <!--
+                MAIN AREA
+            -->
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/spw-case-study-header@2x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 sm-spacer-bottom-50 xs-spacer-bottom-50 lg-pad-r-50">
-                <div class="text-left">
-                    <h2>Data-driven neuroscience</h2>
-                    <p>Data is at the heart of the science behind Peak. Every game is personalised to build players’ skills as efficiently as possible and sophisticated normalisation of scores helps compare your progress to your friends'.</p>
+            <div class="col-sm-10">
+                <h1>Peak case study</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>How Snowplow enabled Peak to grow from 1 to 20 million users by giving Peak full control of their data</h4>
+            </div>
+        </div>
+        <div class="row"> <div class="col-sm-8"> <a href="https://go.snowplowanalytics.com/peak-case-study.pdf" class="btn btn-lines-white btn-primary call-to-action">Download case study</a> </div> </div>
+    </div>
+</section>
 
-                    <p><q><i>Our games are inspired by neuroscientific research. With our academic partners, we are unlocking a new chapter in cognitive research by studying game scores and cognitive learning for millions of users. Snowplow is an integral part of that</i></q></p>
-                    <p class="text-muted"><i>Thomas in’t Veld</i></p>
+<section class="casestudy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 well-sm aside no-border">
+              <img src="/assets/img/customers/case-studies/getninjas/vector-smart-object@2x.png"  alt="GetNinjas" width="60%">
+              <p style="margin-top: 20px;">Peak is a leading cognitive training subscription app built by neuroscientists to help exercise mental skills such as memory, mental agility, problem solving and language. With over 20 million downloads and growing, Peak allows users to track progress from their smartphones.</p>
+              <p style="margin-bottom: 0px; font-weight: 500;" ><img src="/assets/img/customers/case-studies/getninjas/brifecase.png" alt="icon" class="icon"> Industry</p>
+              <p>Lifestyle App</p>
+              <p><a href="https://go.snowplowanalytics.com/peak-case-study.pdf" class="btn btn-outline-primary btn-primary call-to-action">Download case study</a></p>
+            </div>
+            <div class="col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-1 xs-pad-30">
+              <h3>Key results</h3>
+                <ul class="styled">
+                  <li>Peak was able to process dozens of unique data points for millions of users in real-time</li>
+                  <li>Flexible, precise and detailed A/B testing implemented to improve user experience</li>
+                  <li>Peak gained full data ownership for reliable privacy and security compliance</li>
+                </ul>
+                <h3>The challenge</h3>
+                <p>Peak’s main goal was to grow their user base and business. To do this, Peak needed a way to run frequent A/B tests using customizable events and schemas to optimize user experience. Peak also had to reliably process multiple data points on millions of users in real-time. Finally, because Peak collects personal data on millions of users, it needed to ensure data security and compliance with privacy regulations. Peak realized the only way to do this was to fully own and control all of their data.</p>
+                <br>
+                <h3>The solution</h3>
+                <p>Using Snowplow’s flexible schema’ing technology Peak was able to customize and define events to A/B test new features with precision and detail. Snowplow also helped Peak update their data infrastructure to track user-level and event-level data across multiple sources through a single pipeline and consolidated warehouse. With Snowplow, Peak successfully scaled and started to process unique data points on millions of users in real-time, helping it grow from 1M to 20M users.</p>
 
+            </div>
+    </div>
+
+</section>
+
+<section class="section-revamp section-revamp-testemonial well-sm no-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="section-revamp-testemonial-block _active">
+                    <p class="section-revamp-testemonial-content">“Everything happens with data. Snowplow’s event based approach makes it easy to create new events and schemas on the fly.”</p>
+                    <div class="section-revamp-testemonial-person">
+                        <img src="{{ BASE_PATH }}/assets/img/products/products-insights/thomas-veld.png" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/thomas-veld@2x.png 2x, {{ BASE_PATH }}/assets/img/products/products-insights/thomas-veld@3x.png 3x">
+                        <p>
+                            Thomas in’t Veld
+                            <br>
+                            <span>Lead Data Scientist</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 text-md-center text-sm-center text-xs-center">
-                <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/peak/Snowplow_Website-Images_Cases_Peak_Img2.jpg" class="img-circle" width="493" height="493" class="" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="pad-t-0">
-    <div class="container-fluid block-text-img no-gutter">
-        <div class="block-text col-md-6 pad-80 md-pad-50 sm-pad-30 xs-pad-15">
-            <h5 class="text-uppercase">Continuous, data-driven optimization</h5>
-            <h2>Data-driven product development</h2>
-
-            <p><q><i>We make no changes to the app without A/B testing it first. Before we launch a feature we define a methodology for defining the success and failure of that feature. Everything happens with data and Snowplow’s event based approach makes it very easy to create new events, new schemas, on the fly.</i></q><p>
-            <p class="text-muted"><i>Thomas in’t Veld</i></p>
-        </div>
-        <div class="block-img col-md-6">
-            <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/peak/Snowplow_Website-Images_Cases_Peak_Img3A.jpg" width="720" height="610" class="adapt" alt="">
-        </div>
-    </div>
-</section>
-
-<section class="pad-t-0">
-    <div class="container spacer-bottom-60 spacer-sm-bottom-90">
-        <div class="col-sm-9 col-md-offset-2">
-            <div class="col-md-7 col-sm-10 col-xs-12 pad-t-10">
-                <p>Want to learn more about this Case Study?</p>
-            </div>
-            <div class="col-sm-2">
-                <a href="https://go.snowplowanalytics.com/l/571483/2018-09-18/365p7qs/571483/125795/peak.pdf" class="btn btn-outline-primary">Download Case Study</a>
-            </div>
         </div>
     </div>
 </section>
 
 
-
-<section class="jumbotron theme-light no-vertical-gutter height-auto parallax" style="background-image:url({{ BASE_PATH }}/assets/img/customers/case-studies/viewbix/Snowplow_Website-Images_Cases_ViewBix_Hero.jpg)">
-    <div class="container">
-
-        {% include request-demo.html %}
-
-        <div class="spacer-top-100">
-            <h6 class="text-uppercase">Media</h6>
-            <h3>Viewbix</h3>
-            <h4>Viewbix uses Snowplow to help brands <br class="visible-lg visible-md" />create highly engaging video ad campaigns <br class="visible-lg visible-md" />and improve return on advertising spend.</h4>
-            <a href="/customers/viewbix/" class="btn btn-primary spacer-top-70">See Case Study</a>
-        </div>
-    </div>
-</section>
+{% include request-demo-revamp.html %}
