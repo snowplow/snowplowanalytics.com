@@ -91,7 +91,7 @@ body, p {
 
 .resource {
   h1{
-    font-size: 48px;
+    font-size: 48px !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -99,7 +99,7 @@ body, p {
     letter-spacing: normal;
   }
   h2{
-    font-size: 32px;
+    font-size: 32px !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -107,7 +107,7 @@ body, p {
     letter-spacing: normal;
   }  
   h3{
-    font-size: 24px;
+    font-size: 24px !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -115,7 +115,7 @@ body, p {
     letter-spacing: normal;
   }
   h4{
-    font-size: 18px;
+    font-size: 18px !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -235,6 +235,7 @@ body, p {
 
         .section-nav{
           li.toc-entry.toc-h1{
+            padding: 0.4em !important;
             &:first-child{
               &:before, > a{
                 display: none;
@@ -244,12 +245,19 @@ body, p {
           ul{margin-left: 0.6em}
         }
         .toc-entry.toc-h2{
-          padding-left: 0px;
+          padding: 0.4em !important;
           &:before{
           display: none;
-        }
-        a{color:#32373e;}
-      }
+          }
+          a{color:#32373e;}
+          }
+        .toc-entry.toc-h3 {
+          padding: 0.4em !important;
+          &:before{
+          display: none;
+          }
+         }  
+
         li{
             font-size: 14px !important;
             line-height: 1.5em;
@@ -285,7 +293,41 @@ body, p {
         -ms-flex: 1;
         flex: 1;
         margin-left: 350px;
-    }
+        
+          h1{
+            font-size: 48px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+          }
+          h2{
+            font-size: 32px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }  
+          h3{
+            font-size: 24px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }
+          h4{
+            font-size: 18px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }
+
+        }
 
 }
 

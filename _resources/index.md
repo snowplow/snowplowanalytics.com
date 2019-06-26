@@ -161,15 +161,17 @@ These are the actions that correspond with the data in this table:
 8. Joe checks out with two items, the wheel_set and a plow (previously added to basket) and a transaction ID is logged.
 9. An event from the server is also logged with the same transaction ID showing the discounted price ($499.99 + $3499.99) x 0.7 = 2799.99 with 30% off from the coupon.
 10. Sadly, a week later, Joe is unhappy with the plow and returns it. This event is logged in the server with the same transaction ID.
-
+<br>
+<br>
 Let’s take another example where someone is looking to learn more about machines that plow snow (this view should reflect that of a media company).
-
+<br>
+<br>
 
 ![Data](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Data-2.png)
->*Note: remember that only 3 out of 130 out of the box properties are shown here, each event can also come with timestamps, weather, location, device, cookies, marketing campaign and much more. In addition, each custom event and entity can have many many more properties, only a subset are shown here.*
-
->*Warning: The name is shown as an example field to make the blog post more readable, always be cautious collecting PII.*
-
+*Note: remember that only 3 out of 130 out of the box properties are shown here, each event can also come with timestamps, weather, location, device, cookies, marketing campaign and much more. In addition, each custom event and entity can have many many more properties, only a subset are shown here.*
+*Warning: The name is shown as an example field to make the blog post more readable, always be cautious collecting PII.*
+<br>
+<br>
 These are the actions that correspond with the data in this table:
 
 1. Someone goes on their laptop and opens an email sent by you. You know which campaign it was part of and more importantly, the 3rd party cookie of the user that opened it.
@@ -184,9 +186,11 @@ These are the actions that correspond with the data in this table:
 10. Some days later Joe is on their phone, having previously downloaded the app and logged in, to find that article again to show some friends they are with.
 11. Joe and friends watch a Snowstorm video in the related content section of the Snowplow article in the app.
 12. They spot a picture in the same article that they want to send to another friend so they screenshot it. In reality this event occurred offline when Joe and friends were in the metro but the event was sent when the connection was re-established (the timestamp with the event was actually accurate to when the event was created).
-
+<br>
+<br>
 Hopefully you can now begin to see what Snowplow can do. The platform collects and delivers great raw data. What you decide to do with it is in the hands of your Data Team.
-
+<br>
+<br>
 
 ### What can I do with the data?
 The short answer is; whatever you want. Snowplow puts you in full control of your data and empowers you to ask an answer any question of your data using whatever tool, method or technology you want. 
@@ -220,7 +224,10 @@ What you do with the data depends on how developed your data team is. We refer t
 + Fraud and anomaly detection
 + Sentiment analysis
 + Machine learning
-
+<br>
+<br>
+<br>
+<br>
 
 
 
