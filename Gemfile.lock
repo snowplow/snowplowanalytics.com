@@ -47,6 +47,8 @@ GEM
       jekyll (~> 3.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
+    jekyll-toc (0.12.1)
+      nokogiri (~> 1.9)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     jekyll_github_sample (0.3.1)
@@ -58,7 +60,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
+    mini_portile2 (2.4.0)
     minitest (5.11.3)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     progress (3.4.0)
@@ -85,8 +90,9 @@ DEPENDENCIES
   jekyll-compress-images
   jekyll-feed (~> 0.6)
   jekyll-paginate-v2 (~> 1.8.1)
+  jekyll-toc
   jekyll_github_sample
   tzinfo-data
 
 BUNDLED WITH
-   1.16.6
+   2.0.1
