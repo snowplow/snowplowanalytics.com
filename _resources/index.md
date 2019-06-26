@@ -217,6 +217,8 @@ Snowplow users and customers use our technology for a range of things and it rea
 + Understand the customer/user journey 
 + Use the data to power machine learning models and A/B tests
 + Build real-time applications and automations on top of the data
+<br>
+<br>
 
 What you do with the data depends on how developed your data team is. We refer to this as data maturity and usually find our customers in one of three categories:
 
@@ -226,12 +228,16 @@ What you do with the data depends on how developed your data team is. We refer t
 + Basic user stitching
 + Retention analysis
 + Marketing attribution modeling
+<br>
+<br>
 
 2. *We’re growing* - Data team with many data analysts
 + Track events server-side
 + Ingest 3rd party marketing data
 + Advanced user stitching
 + A/B testing and rule-based automations
+<br>
+<br>
 
 3. *We’re well established* - Data team with data analysts, engineers and scientists
 + Real-time marketing automation
