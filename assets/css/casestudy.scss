@@ -61,6 +61,7 @@ body, p {
   margin-bottom: 4px;
 }
 
+
 .casestudy{
   .aside {
     img{max-width:100%;}
@@ -73,7 +74,7 @@ body, p {
       p{font-size: 16px; line-height: 27px; margin: 40px 0px;}
   }
   ul.styled{
-    li{font-size: 16px; line-height: 27px; font-weight: 300}
+    li{font-size: 16px; font-weight: 300}
   }
 
 
@@ -90,7 +91,7 @@ body, p {
 
 .resource {
   h1{
-    font-size: 48px;
+    font-size: 48px !important;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -343,5 +344,6 @@ body, p {
 				position: relative;
 				z-index: 10;
 flex-direction: column;
+
 
 }
