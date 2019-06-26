@@ -4,7 +4,7 @@ title-short: Pride at Snowplow
 title: "Pride at Snowplow"
 author: Nicki
 category: Inside the plow
-permalink: /blog/2019/06/7/pride-at-snowplow/
+permalink: /blog/2019/06/26/pride-at-snowplow/
 discourse: true
 ---
 
@@ -14,7 +14,7 @@ With Pride Month coming to a close, we thought we’d end it by asking our team 
 
 ![The Snowplow team][snowplow-team-pride]
 
-## What does being an LGBT+ ally mean to you?
+## What does being an LGBT+ ally mean to you?
 
 **MN:** Supporting people of any orientation to not only feel comfortable being who they are but also in overcoming ridiculously outdated belief systems that create systemic barriers in all aspects of their lives.
 
@@ -22,8 +22,9 @@ With Pride Month coming to a close, we thought we’d end it by asking our team 
 
 **FD:** It means supporting my LGBT friends and the broader LGBT community. It means supporting LGBT rights and being vocal about it.
 
-**SW:** It means supporting an individual's choice and their ability to be who they are in their everyday lives
-“Recognising that we live in a society where LGBT+ can be celebrated and acknowledged is a beautiful thing! “ - Max D
+**SW:** It means supporting an individual's choice and their ability to be who they are in their everyday lives.
+
+#### *“Recognising that we live in a society where LGBT+ can be celebrated and acknowledged is a beautiful thing!“* - Max D
 
 **MDM:** It means accepting people for exactly who they are, who they love and how they want the world to perceive them. It's about seeing everyone as your equal, we're all human - that's what matters, not how someone identifies.
 
@@ -38,7 +39,8 @@ With Pride Month coming to a close, we thought we’d end it by asking our team 
 **BB:** I think that Pride is one of the best examples of inclusivity that exists, and as a company having inclusivity as a value, it seems quite logical that we should celebrate Pride Month.
 
 **FD:** It shows we care and want to be a part of an important conversation. And it shows new hires and employees alike that Snowplow is a place for everyone, which is so important if we want a diverse and thriving workplace and culture.
-Why is Snowplow’s value of inclusivity important to you?
+
+## Why is Snowplow’s value of inclusivity important to you?
 
 **MJ:** Genuine inclusivity says more than just being inclusive; from my experience a company that is inclusive is also very honest, transparent and down-to-earth. So I see inclusivity not only as an important trait for companies to have, but also as an indicator of other positive traits.
 
@@ -91,7 +93,7 @@ At Snowplow, we believe the best solutions, decisions and creative leaps are mad
 
 Snowplow is dedicated to building and supporting a brilliant, diverse and hugely inclusive team. We don't discriminate against gender, race, religion or belief, disability, age, marital status or sexual orientation. Whatever your background may be, we welcome anyone with talent, drive and emotional intelligence.
 
-! [Snowplow Pride][snowplow-pride]
+![Snowplow Pride][snowplow-pride]
 
-[snowplow-team-pride]: assets/img/blog/2019/06/snowplow-team-pride.png
-[snowplow-pride]: assets/img/blog/2019/06/snowplow-pride.gif
+[snowplow-team-pride]: /assets/img/blog/2019/06/snowplow-team-pride.png
+[snowplow-pride]: /assets/img/blog/2019/06/snowplow-pride.gif
