@@ -1,38 +1,42 @@
 ---
-layout: default
-group: customers
-title: Ad Tech Case Study - Viewbix | Snowplow
-description: Viewbix uses Snowplow's granular and flexible data to help brands create highly engaging video ad campaigns and improve return on advertising spend.
+layout: default-revamp
+group: technology
+# subgroup: technology
+title: Snowplow | Viewbix Case Study
+description: How Viewbix uses Snowplow data to provide customers with cutting-edge insights into their video ad campaigns
 permalink: /customers/viewbix/
-class: case viewbix
+class: how-we-compare
 assets:
-  css: assets/css/customers-cases.css
-image: /assets/img/customers/case-studies/viewbix/Snowplow_Website-Images_Cases_ViewBix_Hero.jpg
+  css: assets/css/casestudy.css
+  js: assets/js/company.js
 ---
 
-<section class="hero theme-light parallax" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/viewbix/Snowplow_Website-Images_Cases_ViewBix_Hero.jpg)">
-    <div class="container text-center spacer-bottom-30">
-        <h5 class="text-uppercase spacer-bottom-30">Ad Tech Case Study</h5>
-        <h1 class="h2">How Viewbix uses Snowplow to help brands create highly engaging video ad campaigns and improve return on advertising spend</h1>
-        <h4>The Viewbix platform makes it easy for brands to build rich, interactive, video ad units. These campaigns drive much higher engagement and response than classic video and display ads, improving the return on advertising spend for brands.</h4>
-    </div>
-</section>
-
-<section class="pad-b-0">
+            <!--
+                MAIN AREA
+            -->
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/customers/case-studies/viewbix/Snowplow-Website-2019-Case-Study-Viewbix_Header-@2x.jpg)">
     <div class="container">
-        <div class="text-center pad-t-50 parallax">
-            <img src="{{ BASE_PATH }}/assets/img/customers/case-studies/viewbix/Snowplow_Website-Images_Cases_ViewBix_Logo.png" width="400">
+        <div class="row">
+            <div class="col-sm-10">
+                <h1>Viewbix case study</h1>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>How Viewbix uses Snowplow data to provide customers with cutting-edge insights into their video ad campaigns.</h4>
+            </div>
+        </div>
+        <div class="row"> <div class="col-sm-6"> <a href="https://go.snowplowanalytics.com/viewbix-snowplow-case-study.pdf" class="btn btn-lines-white btn-primary call-to-action">Download case study</a> </div> </div>
     </div>
 </section>
 
-<section class="text-center pad-t-50">
+<section class="casestudy">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-4 well-sm aside no-border">
-              <img src="/assets/img/customers/viewbix-casestudy-logo@2x.png"  alt="Viewbix">
+              <img src="/assets/img/customers/case-studies/viewbix/Snowplow-Website-2019-Case-Study-viewbix-grey_@2x.png"  alt="Viewbix" width="70%">
               <p>Viewbix is a pioneer in interactive video adverts. Their platform makes it easy for brands to build rich, interactive video ad units that offer consumers the chance to engage directly with an ad by signing up for newsletters, completing surveys, locating stores, posting to social networks, downloading coupons and more.</p>
-              <p style="font-weight: 500;" ><img src="/assets/img/customers/case-studies/brifecase.png" alt="icon" class="icon"> Industry<br>
+              <p><img src="/assets/img/customers/case-studies/getninjas/brifecase.png" alt="icon" class="icon"> <span style="font-weight: 500;">Industry</span><br>
               AdTech</p>
               <p style="margin-bottom: 0px;"><a href="https://go.snowplowanalytics.com/viewbix-snowplow-case-study.pdf" class="btn btn-outline-primary btn-primary call-to-action">Download case study</a></p>
             </div>
@@ -48,3 +52,32 @@ image: /assets/img/customers/case-studies/viewbix/Snowplow_Website-Images_Cases_
                 <br>
                 <h3>The solution</h3>
                 <p>Viewbix decided to build its Insights platform using Snowplow’s scalable data collection infrastructure. As a result, Viewbix gained access to highly granular data about their customers' campaign performance directly in Redshift, which they made available to their customers through an API. Furthermore, Viewbix started to use Snowplow data internally to drive its product roadmap and prioritize features that enabled advertisers to get better outcomes with Viewbix.</p>
+
+            </div>
+    </div>
+
+</section>
+
+
+<section class="section-revamp section-revamp-testemonial well-sm no-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="section-revamp-testemonial-block _active">
+                    <p class="section-revamp-testemonial-content">“With Snowplow data we can show a customer that 95% of actions taken during a video happen between 0:30 and 0:35 seconds. The customer can then learn what works, what doesn’t, and make the needed changes to drive significant increases in KPIs.”</p>
+                    <div class="section-revamp-testemonial-person">
+                        <!--<img src="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo.png" srcset="{{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo@2x.png 2x, {{ BASE_PATH }}/assets/img/customers/case-studies/getninjas/testemonial-img-bernardo@3x.png 3x">-->
+                        <p>
+                            Dani Waxman
+                            <br>
+                            <span>, Product Manager at Viewbix</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include request-demo-revamp.html %}
