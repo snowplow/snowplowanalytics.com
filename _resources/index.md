@@ -31,6 +31,8 @@ Snowplow puts you in full control of your data and empowers you to ask an answer
 
 ## Why would I use Snowplow?
 There are many reasons why we think companies should use Snowplow. We’ve compiled a short-list of what we believe are some of the most compelling reasons:
+<br>
+<br>
 
 1.  All your data lives in your own environment, not Snowplow’s, so you have unlimited access to and full control of all your event-level data
 
@@ -54,10 +56,14 @@ There are many reasons why we think companies should use Snowplow. We’ve compi
 
 ## How do I use Snowplow?
 With Snowplow Insights, we set up and maintain your pipeline. All you need to do is:
+<br>
+<br>
 
 1. Decide what you want to track
 
 2. Build custom models to start actioning off the data
+<br>
+<br>
 
 The only resource you need to begin using Snowplow is some time from a front end developer who can add our tracker code in your website, app and server as necessary. For out-of-the-box tracking, this should only take an hour but for custom tracking this can take up to a day.
 
@@ -81,6 +87,8 @@ Some out of the box events you can track are:
 + Link clicks
 + Form fills
 + Search
+<br>
+<br>
 
 You can track an unlimited number of custom events, each with an unlimited number of custom properties with varying data types. Some examples that could be useful are:
 
@@ -90,6 +98,8 @@ You can track an unlimited number of custom events, each with an unlimited numbe
 + Product return flow
 + Engagement (like, comment, rate, share)
 + Impression
+<br>
+<br>
 
 Remember, all Snowplow events (custom/out-of-the-box/web/mobile) are tracked with the same 130 properties (when they are available/relevant) collecting data on:
 
@@ -106,12 +116,14 @@ Remember, all Snowplow events (custom/out-of-the-box/web/mobile) are tracked wit
 Once you have a list of events you want to track, you can decide on which entities to track. An entity is something that is attached to an event. Each entity describes the environment the event takes place in. 
 
 Multiple entities of different, or the same type can be sent with any event. The two main reasons to use an entity are as follows:
+<br>
+<br>
 
 1. You want to send multiple of the same entity with an event. For example, with a search event, you want to send multiple search result entities, one for each search result displayed. Each search result entity can have rich information about that search result such as order, name, vendor, price.
 <br>
 <br>
 
-![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-1.png)
+    ![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-1.png)
 <br>
 <br>
 
@@ -119,11 +131,11 @@ Multiple entities of different, or the same type can be sent with any event. The
 <br>
 <br>
 
-![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-2.png)
+    ![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-2.png)
 <br>
 <br>
 
-![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-3.png)
+    ![Multiple Entities](/assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-3.png)
 <br>
 <br>
 
@@ -150,6 +162,8 @@ Let’s take an example of someone looking for parts to refurbish their snow plo
 This shows a very simplified user journey as it would appear in your data warehouse. Data from all trackers is loaded into one table, the image above is what a subset of your BigQuery columns may look like. 
 
 These are the actions that correspond with the data in this table:
+<br>
+<br>
 
 1. Someone goes on their laptop and visits the site. We know what site they visited and on which browser.
 2. A few minutes later they register and we know their name is Joe. We know they are the same user as they have the same cookie.
@@ -161,7 +175,8 @@ These are the actions that correspond with the data in this table:
 8. Joe checks out with two items, the wheel_set and a plow (previously added to basket) and a transaction ID is logged.
 9. An event from the server is also logged with the same transaction ID showing the discounted price ($499.99 + $3499.99) x 0.7 = 2799.99 with 30% off from the coupon.
 10. Sadly, a week later, Joe is unhappy with the plow and returns it. This event is logged in the server with the same transaction ID.
-<br>
+
+
 <br>
 Let’s take another example where someone is looking to learn more about machines that plow snow (this view should reflect that of a media company).
 <br>
@@ -186,7 +201,7 @@ These are the actions that correspond with the data in this table:
 10. Some days later Joe is on their phone, having previously downloaded the app and logged in, to find that article again to show some friends they are with.
 11. Joe and friends watch a Snowstorm video in the related content section of the Snowplow article in the app.
 12. They spot a picture in the same article that they want to send to another friend so they screenshot it. In reality this event occurred offline when Joe and friends were in the metro but the event was sent when the connection was re-established (the timestamp with the event was actually accurate to when the event was created).
-<br>
+
 <br>
 Hopefully you can now begin to see what Snowplow can do. The platform collects and delivers great raw data. What you decide to do with it is in the hands of your Data Team.
 <br>
