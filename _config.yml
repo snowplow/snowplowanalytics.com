@@ -47,9 +47,6 @@ github_username:  username
 # Options › http://kramdown.gettalong.org/options.html
 markdown: kramdown
 
-kramdown:
-  parse_block_html: true
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -73,7 +70,6 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-compress-images
   - jekyll_github_sample
-  - jekyll-toc
   # - jekyll-redirect-from
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed
@@ -171,7 +167,3 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
-
-collections:
-  resources:
-    output: true
