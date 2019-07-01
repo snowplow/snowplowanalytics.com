@@ -69,7 +69,7 @@ body, p {
       h3, h4{margin-bottom: 10px;}
       h3{font-size: 24px;}
       h4{font-size: 20px; font-weight: 500}
-      p{font-size: 16px; line-height: 27px; margin-bottom: 20px;}
+      p{font-size: 16px; line-height: 27px; margin: 40px 0px;}
   }
   ul.styled{
     li{font-size: 16px; line-height: 27px; font-weight: 300}
@@ -83,7 +83,6 @@ body, p {
     font-family: Rubik;
     line-height: 1.43;
     letter-spacing: normal;
-    /*padding: 20px;*/
 
 }
 
@@ -186,3 +185,147 @@ body, p {
       margin-top: -60px;
       margin-bottom: 60px;
     }
+
+
+.container.resources{
+    display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				position: relative;
+        margin-top: 70px;
+  .left-fixed
+    {
+      overflow: auto;
+      padding: 30px 20px;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      width: 300px;
+      background-color: #dedede;
+      color: #fff;
+      height: calc(100vh - 70px);
+      overflow-y: scroll;
+      position: fixed;
+      background: #f5f9ff;
+      color: #50545c;
+
+
+      ul.styled{
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin:0px;
+
+        .section-nav{
+          li.toc-entry.toc-h1{
+            padding: 0.4em !important;
+            &:first-child{
+              &:before, > a{
+                display: none;
+              }
+            }
+          }
+          ul{margin-left: 0.6em}
+        }
+        .toc-entry.toc-h2{
+          padding: 0.4em !important;
+          &:before{
+          display: none;
+          }
+          a{color:#32373e;}
+          }
+        .toc-entry.toc-h3 {
+          padding: 0.4em !important;
+          &:before{
+          display: none;
+          }
+         }  
+
+        li{
+            font-size: 14px !important;
+            line-height: 1.5em;
+          &:before{
+            float: left;
+            margin-top: 11px;
+            a{
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: block;
+              text-indent: initial;
+              line-height: normal;
+
+            }
+          }
+        }
+
+        ul{
+          padding: 0px;
+          margin: 0px;
+        }
+      }
+    }
+    .right-scroll{
+      overflow: auto;
+        height: auto;
+        padding: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin-left: 350px;
+        
+          h1{
+            font-size: 48px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+          }
+          h2{
+            font-size: 32px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }  
+          h3{
+            font-size: 24px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }
+          h4{
+            font-size: 18px !important;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+          }
+
+        }
+
+}
+
+.footernew{
+    display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				position: relative;
+				z-index: 10;
+flex-direction: column;
+
+
+}
