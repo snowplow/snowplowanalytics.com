@@ -62,7 +62,8 @@ With Pride Month coming to a close, we thought we’d end it by asking our team 
 
 **NF:** Communication! More often than not when you join a new company, you probably won't know their stance on Pride straight away. You'll have thoughts such as "Is it okay for me to correct my colleagues on my pronouns?", "Can I invite my partner of the same gender to a work event?", "What toilets can I use if I consider myself non-binary?". In a heteronormative world, the majority of people will not need to worry about these things, so we need to make sure that we address these issues and show our support so we can bring our best selves to work without worrying what others may think.
 
-**SCS:** It's easy to state a commitment to providing a self space for the LGBT+ community without providing enough measures to support it. Processes can often feel uninspiring and drab. I think the solution is to make inclusivity part of the year-round mission and serve as an ongoing reminder of our commitment to be so.
+**SCS:** It's easy to state a commitment to providing a safe space for the LGBT+ community without providing enough measures to support it. Processes can often feel uninspiring and drab. I think the solution is to make inclusivity part of the year-round mission and serve as an ongoing reminder of our commitment to be so.
+
 
 #### *“Things can quickly become a taboo if they’re not talked about.”* - Ben B
 
