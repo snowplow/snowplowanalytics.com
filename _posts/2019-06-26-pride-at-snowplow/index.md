@@ -64,7 +64,6 @@ With Pride Month coming to a close, we thought we’d end it by asking our team 
 
 **SCS:** It's easy to state a commitment to providing a safe space for the LGBT+ community without providing enough measures to support it. Processes can often feel uninspiring and drab. I think the solution is to make inclusivity part of the year-round mission and serve as an ongoing reminder of our commitment to be so.
 
-
 #### *“Things can quickly become a taboo if they’re not talked about.”* - Ben B
 
 **MDM:** I think it's important for everyone to be themselves at work so that no one feels they have to hide behind a false persona. Be conscious of language being used/offensive things being said and if anything does get said then to pull that person aside and explain why that isn't ok.
