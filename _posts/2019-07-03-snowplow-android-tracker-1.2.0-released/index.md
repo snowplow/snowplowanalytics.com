@@ -11,13 +11,13 @@ discourse: true
 
 We are pleased to announce the `1.2.0` release of the [Snowplow Android Tracker][repo].
 
-[1.2.0][release-notes] introduces support for global contexts through a set of new functions enabling users to send custom contexts with every event or a set of events based on user provided criteria.
+[1.2.0][release-notes] introduces support for global contexts: introducing a set of new functions enabling users to send custom contexts with every event or a subset of events based on user provided criteria.
 
 Read on for:
 
 1. [Global Contexts](#global-contexts)
 2. [Customizable Emitter timeout](#customizable-emitter-timeout)
-3. [Updates](#updates)
+3. [Other updates](#updates)
 4. [Documentation](#docs)
 5. [Getting help](#help)
 
@@ -25,13 +25,48 @@ Read on for:
 
 <h2 id="global-contexts">1. Global Contexts</h2>
 
-In Snowplow ecosystem, there are 2 types of contexts: predefined and custom. Predefined contexts like screen context have native support via dedicated methods and they are attached to every event automatically. On the other hand, custom contexts are attached to events manually without any convenient way to ease or automize this process. We want to address this issue by a new concept called global contexts. JavaScript Tracker has already introduced the support and today Android Tracker joins the band. Objective-C Tracker will join soon. [JS Tracker 2.10.0 blog post][js-tracker-2.10.0-blog-post] could be checked for a more detailed recap & explanation of contexts and global contexts.
+<h3>1.1 A quick recap on contexts</h3>
 
-### 1.1 Context Primitives
+One of the most powerful features in Snowplow is support for contexts. Contexts are entities that are tracked across multiple events. Examples of contexts include:
+
+* Users
+* Products
+* Screens
+* Applications
+* Devices
+* Location
+* Weather
+
+Contexts have a few features: 
+
+* They typically include a number of data points: for example, a user context might contain data points for the user's name, ID, membership type, Twitter handle etc. The location context might include longitude, latitude, country, region, postcode.
+* They are tracked across multiple events. For example, we might record a user context, screen context, application context, device context, location context or weather context with _every_ event recorded from a mobile application, for example.
+
+With Snowplow:
+
+* There are multiple contexts that are tracked out-of-the-box.
+* Users can define their own contexts. There is no limit to the number of contexts that can be defined, or the number that are attached to every event. This means Snowplow users can track very rich data.
+* Context data is loaded in a consistent way in the data warehouse, making it easy to query. So all the user-level data will be in the same user table, regardless of which event is fired.
+
+<h3>1.2 Introducing "global contexts"</h3>
+
+Until recently devleopers integrating Snowplow tracking had to attach contexts to each event.
+
+With "global contexts", it is now possible for developers to ensure that contexts are automatically attached to all events, or a subset. This presents a number of benefits:
+
+1. It makes it easier for developers to implement Snowplow to track very rich data in an easy way.
+2. It makes the tracking less error-prone - it is not significantly less likely that an event will accidentally be sent without a required context attached.
+3. That in turn makes it easier for analysts and developers consuming the data, because they can be confident to expect certain events from particular platforms to always have the required contexts attached.
+
+Global contexts were introduced in the Javascript tracker in [version 2.10.0][js-tracker-2.10.0-blog-post]. This release of the Android tracker adds Global contexts to Android. We plan to release similar functionality for iOS apps in a forthcoming release of our Objective-C Tracker.
+
+<h3>1.3 Getting started with global contexts</h3>
+
+#### 1.3.1 Context Primitives
 
 Context primitives are simplest forms to represent global contexts and there are 2 forms: Self describing JSON & Context Generator.
 
-#### 1.1.1 Self Describing JSON
+##### 1.3.1.1 Self Describing JSON
 
 Custom contexts have been represented as self describing JSONs so far and they can be used directly as a global context when you’d like a context to be attached to every event.
 
@@ -46,7 +81,7 @@ tracker.addGlobalContext(testCtx);
 
 Have you noticed the first argument of `SelfDescribingJson` above? With this release `SelfDescribingJson` class offers new constructors with a new parameter, `tag`, to be used to identify global contexts. All existing constructors of the class are kept to stay backward compatible.
 
-#### 1.1.2 Context Generator
+##### 1.3.1.2 Context Generator
 
 A context generator is a callback that returns a self describing JSON, representing a context. They are evaluated each time an event is sent, hence they meet the case where we would like to send a context based on event payload.
 
@@ -78,11 +113,11 @@ Let us explain the `generate` method in detail. Signature is `SelfDescribingJson
 - `eventType` : a two letter code that describes the event type, this value is equal to the Snowplow tracker protocol's [field "e"][tracker-protocol-event-type]
 - `eventSchema` : if the event is a self describing event, it is the schema of the event, otherwise it is [the payload data schema][payload-data-schema]
 
-### 1.2 Conditional Context Providers
+#### 1.3.2 Conditional Context Providers
 
 While Context Generator is technically capable of handling what Conditional Context Providers can offer, we want to ease the handling of conditional cases as following.
 
-#### 1.2.1 Filter Provider
+##### 1.3.2.1 Filter Provider
 
 A Filter Provider is used to discriminate between events so we can attach global contexts only to certain events.
 
@@ -112,7 +147,7 @@ Let's look at the signature of `ContextFilter`'s `filter`, `boolean filter(Track
 
 `FilterProvider` also offers another constructor with only difference in the 3rd parameter as following; `List<ContextPrimitive> contextPrimitives`.
 
-#### 1.2.2 RuleSet Provider
+##### 1.3.2.2 RuleSet Provider
 
 A Ruleset Provider is used when you want to attach a global context to certain events based on the schema URI.
 
@@ -134,7 +169,7 @@ The parts of a rule are wildcarded with certain guidelines:
 
 <h2 id="customizable-emitter-timeout">2. Customizable Emitter timeout</h2>
 
-Emitter timeout now can be customized thanks to the contribution by [@antonkazakov][antonkazakov]!
+The emitter timeout now can be customized thanks to the contribution by [@antonkazakov][antonkazakov]!
 
 {% highlight java %}
 Emitter e2 = new Emitter
@@ -143,7 +178,7 @@ Emitter e2 = new Emitter
         .build();
 {% endhighlight %}
 
-<h2 id="updates">3. Updates</h2>
+<h2 id="updates">3. Other updates</h2>
 
 Other updates and fixes include:
 
@@ -157,7 +192,7 @@ You can find the full release notes on GitHub as [Snowplow Android Tracker 1.2.0
 
 <h2 id="help">5. Getting help</h2>
 
-For help on integrating the tracker please have a look at the [setup][android-setup] and [integration][integration] guides.
+For help on integrating the tracker please have a look at the [documentation][docs].
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse]. As always, do raise any bugs in the [Android Tracker's issues][android-issues] on GitHub.
 
