@@ -91,14 +91,10 @@
                         padding: 19px 20px 19px;
                         border:none;
                         background: #FFFFFF;
-                        border: 1px solid #F1F1F1;
+                        border: 1px solid #dcdcdc;
                         -webkit-border-radius: 5px;
                         -moz-border-radius: 5px;
                         border-radius: 5px;
-                        -webkit-box-shadow:0 2px 16px -3px rgba(0,0,0,0.08);
-                        -moz-box-shadow:0 2px 16px -3px rgba(0,0,0,0.08);
-                        box-shadow:0 2px 16px -3px rgba(0,0,0,0.08);
-
                         :focus{
                             border: 1px solid #6738B8;
                             color:#50545c;
@@ -183,66 +179,7 @@
             }
         }
     }
-    & header{
-        .lp-nav{
-            .lp-cta{
-                float:right;
-            }
-        }
-        .navbar-header{
-            width: 100%;
-        }
-        @media (max-width: $screen-xs-max) {
-            .lp-cta{
-                display:none;
-            }
-	    }
-    }
-	& footer {
-        padding-top:30px;
-        padding-bottom:30px;
-        .links{
-            float:right;
-            margin-top:4px;
-            a{
-                margin-left:20px;
-            }
-        }
-        .logo{
-            float:left;
-            a{
-                display:block;
-                width: 250px;
-                height: 40px;
-                background: url(../img/landingpages/data-lakes/snowplow-brand-logo-h-rgb-w@3x.png) no-repeat;
-                text-indent:-9999px;
-                overflow:hidden;
-                background-size:100%;
-            }
-        }
-        p{  
-            float:left;
-            margin:6px 0px 0px 20px;
-        }
-        @media (max-width: $screen-sm-max) {
-            .credits{
-                display:flex;
-                flex-flow: wrap row;
-                justify-content: center;
-            }
-	    }
-        @media (max-width: 484px) {
-            .credits{
-                margin-top:20px;
-            }
-            .left{
-                display:flex;
-                flex-flow: wrap row;
-                justify-content: center;
-                margin-bottom:20px;
-            }
-	    }
-    }
+
 }
 
 
