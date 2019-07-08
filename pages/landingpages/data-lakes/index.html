@@ -6,6 +6,7 @@ permalink: /lp/data-lakes/
 class: data-lakes
 assets:
     css: assets/css/data-lakes.css
+    js: assets/js/data-lakes.js
 ---
 
 <section class="hero-revamp hero-revamp-light hero-revamp-center"
@@ -47,33 +48,27 @@ assets:
                     </ul>
                 </div>
                 <div class="form col-sm-6 col-xs-12">
-                    <form id="pdf-form">
+                    <form id="pdf-form" novalidate>
                         <h3>Get your copy today</h3>
-                        <input class="form-control" type="text" placeholder="First name" />
-                        <input class="form-control" type="text" placeholder="Last name" />
-                        <input class="form-control" type="email" placeholder="Email" />
-                        <input class="form-control" type="text" placeholder="Company" />
-                        <button type="submit" class="btn btn-primary spacer-top-10">Submit</button>
+                        <input id="first_name" class="form-control" type="text" placeholder="First name" />
+                        <input id="last_name" class="form-control" type="text" placeholder="Last name" />
+                        <input id="email" class="form-control" type="email" placeholder="Email" />
+                        <input id="company" class="form-control" type="text" placeholder="Company" />
+                        <button id="form_submit_button" type="submit" class="btn btn-primary spacer-top-10">Submit</button>    
                     </form>
                     <div class="thankyou">
                         <h3>Thank you!</h3>                        
                         <div class="heading">
-                            <p>You’ll see a copy of <b>“Avoid drowning in your data lake”</b> in your inbox shortly. </br> We hope you find it
-                                useful!</p>
-                            <img src="{{ BASE_PATH }}/assets/img/landingpages/data-lakes/pdf@3x.png"
-                                alt="la-presse-canadian-newspaper">
+                            <p>You’ll see a copy of <b>“Avoid drowning in your data lake”</b> in your inbox shortly. We hope you find it useful!</p>
+                            <img src="{{ BASE_PATH }}/assets/img/landingpages/data-lakes/pdf@3x.png" alt="la-presse-canadian-newspaper">
                         </div>
-                        <p>We encourage you to learn more about Snowplow and how you can leverage our data collection platform
-                            for
-                            your
-                            data (lake) projects.</p>
+                        <p>We encourage you to learn more about Snowplow and how you can leverage our data collection platform for your data (lake) projects.</p>
                         <a href="/" class="btn btn-primary call-to-action">Visit Snowplow</a>
                         <a href="/blog/" class="btn btn-lines-white btn-purple btn-primary call-to-action">Blog</a>
                     </div>
                 </div>
                 <div class="testemonial col-sm-10 col-sm-offset-1 col-xs-12">
-                    <img src="{{ BASE_PATH }}/assets/img/landingpages/data-lakes/la-presse-canadian-newspaper@3x.png"
-                        alt="la-presse-canadian-newspaper">
+                    <img src="{{ BASE_PATH }}/assets/img/landingpages/data-lakes/la-presse-canadian-newspaper@3x.png" alt="la-presse-canadian-newspaper">
                     <p>“When we started with data lakes, we looked at all the data you can leverage, the analytics there and what the output from this data could be. This gave us a huge amount more freedom. Snowplow helps us get all those sources of data and put them in the data lakes. Each analyst can then leverage what is in the data.”</p>
                     <p>Romain Thomas, Director of Data <br> Engineering at La Presse</p>
                 </div>
