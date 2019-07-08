@@ -14,6 +14,10 @@ var validateInput = function(kind, value){
 
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
+
+    // Run loader
+    
+
     var url = 'http://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq'
     $.ajax({
         url: url,
@@ -24,7 +28,11 @@ var pardotSubmit = function (data){
     //Callback Directly from our own assets.Pardot does not allow CORS calls. Success and Error scripts - /assets/js/pardot (callback takes res from there)
     window.callback = function (data) {
         //Handle thankyou fadein on success or color every input if pardot error
-        (data.result == 'success') ? $('#pdf-form').hide() && $('.thankyou').fadeIn(700) : $('input').addClass('error')
+        (data.result == 'success') 
+        ? $('#pdf-form').hide() 
+            && $('.thankyou').fadeIn(700)
+        : $('input').addClass('error') 
+            && $('#form_submit_button').removeClass('activate-loader')
     }
 }
 
@@ -43,19 +51,22 @@ var handleSubmit = function(e){
     data.company = $('#company').val()
 
     //Validate fields and color invalid input fields
-    !validateInput('name', data.first_name) && $('#first_name').addClass('error');
-    !validateInput('name', data.last_name) && $('#last_name').addClass('error');
-    !validateInput('email', data.email) && $('#email').addClass('error');
-    !validateInput('company', data.company) && $('#company').addClass('error');
+    !validateInput('name', data.first_name) 
+    && $('#first_name').addClass('error');
+    !validateInput('name', data.last_name) 
+    && $('#last_name').addClass('error');
+    !validateInput('email', data.email) 
+    && $('#email').addClass('error');
+    !validateInput('company', data.company) 
+    && $('#company').addClass('error');
     
     //Submit form if all pass
-    (validateInput('name', data.first_name) &&
-     validateInput('name', data.last_name) &&
-     validateInput('email', data.email) &&
-     validateInput('company', data.company))
-        && pardotSubmit(data)
-
-
+    (validateInput('name', data.first_name) 
+    && validateInput('name', data.last_name) 
+    && validateInput('email', data.email) 
+    && validateInput('company', data.company))
+        && $('#form_submit_button').addClass('activate-loader') 
+        && pardotSubmit(data) 
 }
 
 var form = document.getElementById('pdf-form');

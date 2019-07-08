@@ -73,7 +73,7 @@
                     padding-left:0px;
                     li{
                         font-weight:500;
-                        background: url(../img/landingpages/data-lakes/check-solid.svg) no-repeat left center;
+                        background: url('../img/landingpages/data-lakes/check-solid.svg') no-repeat left center;
                         background-size:30px auto;
                         margin:20px 0px;
                         p{
@@ -108,7 +108,20 @@
                         float:right;
                         padding:20px 60px;
                         font-size:16px;
+                        -webkit-transition: all .3s ease-in-out;
+                        -moz-transition: all .3s ease-in-out;
+                        -o-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
                     }
+                    .activate-loader{
+                        width: 174px;
+                        text-indent:-2999px;
+                        background-image: url('../img/landingpages/data-lakes/loader.svg');
+                        background-size:40px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+
                 }
                 & .thankyou{         
                     display:none;
@@ -121,9 +134,10 @@
                            float:left;
                         }
                         img{
-                            width: 15%;
+                            width: 70px;
                             float:right;
                         }
+                      
                     }           
                     .btn{
                         margin-top:35px;
