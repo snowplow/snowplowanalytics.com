@@ -7,7 +7,7 @@ description: Snowplow Insights empowers data analysts, scientists and engineers 
 permalink: products/snowplow-insights/
 class: insights
 assets:
-  css: assets/css/products-insights-revamp.css
+  css: assets/css/snowplow.css
   js: assets/js/products-insights.js
 product-icons:
     - icon: /assets/img/products/products-insights/icons/spw-icon-ownership.svg
@@ -36,7 +36,7 @@ product-icons:
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/products-insights/spw-insights-header@3x.png)">
+<section class="theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/products-insights/spw-insights-header@2x.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
@@ -44,7 +44,7 @@ product-icons:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 col-offset-1">
+            <div class="col-sm-8 col-offset-1 pad-b-40">
                 <h4>Snowplow Insights is the best way to collect rich, granular event data, delivered to your warehouse of choice.</h4>
             </div>
         </div>
@@ -64,13 +64,14 @@ product-icons:
     <div class="container">
         <div class="section-revamp-icons-container">
             {% for icon in page.product-icons %}
-                <div class="section-revamp-icons">
-                    <div>
-                        <img src="{{ BASE_PATH }}{{ icon.icon }}" alt="">
-                        <h4>{{ icon.name }}</h4>
-                        <p>{{ icon.content }}</p>
-                    </div>
-                    <a href="{{ icon.url }}">Learn more</a>
+                <div class="section-revamp-icons text-center">
+                    <a href="{{ icon.url }}">
+                        <div>
+                            <img src="{{ BASE_PATH }}{{ icon.icon }}" alt="">
+                            <h4>{{ icon.name }}</h4>
+                            <p>{{ icon.content }}</p>
+                        </div>
+                    </a>    
                 </div>
             {% endfor %}
         </div>
@@ -83,15 +84,11 @@ product-icons:
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-6">
-                <h2>
-                    Fully managed,
-                    <br>
-                    end-to-end data
-                    <br>
-                    pipeline
-                </h2>
-                <p>
-                    From installation and upgrades to monitoring and autoscaling, we’ve got you covered: you and your  team can focus on your business objectives and leave the upkeep and ongoing maintenance of your data pipeline to the experts that built it.
+                <h3>
+                    Fully managed, end-to-end data pipeline
+                </h3>
+                <h5>From installation and upgrades to monitoring and autoscaling, we’ve got you covered:</h5>
+                <p>You and your  team can focus on your business objectives and leave the upkeep and ongoing maintenance of your data pipeline to the experts that built it.
                 </p>
             </div>
         </div>
@@ -104,37 +101,27 @@ product-icons:
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>
-                    Our expertise,
-                    <br>
-                    your infrastructure
-                </h2>
-                <p>
-                    You’ll reap the benefits of our expertise and experience in managing large and complex data infrastructures for 140+ customers just like you.
-                    <br>
-                    We’ll setup your pipeline according to your needs, and we’ll even help you to cut down your cloud costs by optimizing your pipeline setup.
-                </p>
+                <h3>
+                    Our expertise, your infrastructure
+                </h3>
+                <h5>You’ll reap the benefits of our expertise and experience in managing large and complex data infrastructures for 140+ customers just like you.</h5>
+                <p>We’ll setup your pipeline according to your needs, and we’ll even help you to cut down your cloud costs by optimizing your pipeline setup.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<section class="section-revamp section-revamp-blue section-revamp-animated-img-left section-revamp-animated-img-top pad-b-60">
+<section class="section-revamp section-revamp-animated-img-left section-revamp-animated-img-top pad-b-60 bg-primary-lighter">
     <img src="{{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-support.png" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-support@2x.png 2x, {{ BASE_PATH }}/assets/img/products/products-insights/spw-illustration-support@3x.png 3x"class="section-revamp-animated-img-img">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-6">
-                <h2>
-                    24/7 support
-                    <br>
-                    at your disposal
-                </h2>
-                <p>
-                    You’ll have access to our dedicated Support Engineering team 24/7 to help you troubleshoot or fix any issues that may occur.
-                    <br>
-                    We’re experts at debugging and troubleshooting data quality issues so you don’t have to be.
-                </p>
+                <h3>
+                    24/7 support at your disposal
+                </h3>
+                <h5>You’ll have access to our dedicated Support Engineering team 24/7 to help you troubleshoot or fix any issues that may occur.</h5>
+                <p>We’re experts at debugging and troubleshooting data quality issues so you don’t have to be.</p>
                 <!--<a href="#" class="btn btn-primary btn-lines">Learn more about our support</a>-->
             </div>
         </div>
@@ -150,7 +137,7 @@ product-icons:
                     <img src="{{ BASE_PATH }}/assets/img/products/products-insights/Noonlight-logo.svg" alt="" class="section-revamp-testemonial-logo">
                     <p class="section-revamp-testemonial-content">“With Snowplow’s data pipeline, we’re able to have complete confidence in the decisions we make based on event data. We’re able to answer questions that would have been impossible to track down otherwise.”</p>
                     <div class="section-revamp-testemonial-person">
-                        <img src="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth.jpg" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@2x.jpg 2x, {{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@3x.jpg 3x">
+                        <!--<img src="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth.jpg" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@2x.jpg 2x, {{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@3x.jpg 3x">-->
                         <p>
                             Mike Roth
                             <br>

@@ -1,0 +1,36 @@
+/* 
+ * Request Demo Revamp
+ */
+
+:root {
+ 	--revamp-slogan-pad: 120px 0;
+ 	--revamp-slogan-button-ml: 80px;
+ 	--revamp-slogan-button-w: 80px;
+ 	@media (max-width: $screen-lg-max) {}
+ 	@media (max-width: $screen-md-max) {}
+ 	@media (max-width: $screen-sm-max) {
+ 		--revamp-slogan-pad: 80px 0;
+ 	}
+ 	@media (max-width: $screen-xs-max) {
+ 		//--revamp-slogan-pad: 80px 0;
+ 	}
+} 
+.section-revamp-slogan {
+	padding: var(--revamp-slogan-pad);
+	background-image: linear-gradient(to left, $tealish, $brand-primary);
+	& > .container {
+		@include do-flex(row, space-between, center, wrap);
+	}
+	h3 {
+		color: white;
+  		margin: auto 0;
+  		flex: 0 1 calc(100% - ( var(--revamp-slogan-button-ml) + var(--revamp-slogan-button-w) ));
+  		@media (max-width: $screen-xs-max) {
+  			flex: 0 1 100%;
+  			margin-bottom: 40px;
+  		}
+	}
+	a.btn {
+		margin: auto;
+	}
+}

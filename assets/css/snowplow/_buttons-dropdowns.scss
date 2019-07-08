@@ -137,6 +137,22 @@ input[type=submit],
 	&.btn-outline-danger {
 		@include btn-outline($brand-danger);
 	}
+
+
+	&.btn-outline-grey{
+		color: $gray-base;
+	    border:1px solid $gray-base;
+	    background-color: transparent;
+
+		&:hover,
+		&:focus,
+		&.active_
+		{
+			color: white;
+			background-color:$gray-base; 
+		}
+	}
+
 }
 
 #submit-btn {

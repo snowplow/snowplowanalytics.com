@@ -1,0 +1,51 @@
+ .hero-revamp {
+	padding: var(--revamp-hero-pad);
+	background-size: cover;
+	&-logos {
+	@include do-flex(row, flex-start, flex-start, wrap);
+	&-block {
+		display: block;
+		flex: 0 1 25%;
+		@include do-flex(row, center, center, wrap);
+	 	@media (max-width: $screen-md-max) {
+	 		flex: 0 1 33.333%;
+	 	}
+	 	@media (max-width: $screen-sm-max) {
+	 		flex: 0 1 50%;
+	 	}
+	 	@media (max-width: $screen-xs-max) {
+			flex: 0 1 100%;
+		}
+		img {
+			width: var(--revamp-logo-w);
+			height: auto;
+			margin: 25px;
+			object-fit: contain;
+			.hero-revamp-logos.plus_mg & {
+				// for use when the images have different sizes
+				margin: 40px 25px;
+			}
+			&:nth-of-type(4n+1) {
+				justify-self: left;
+			}
+			&:nth-of-type(4n) {
+				justify-self: right;
+				}
+			}
+		}
+	}
+}
+
+
+.hero-revamp-logos-block {
+	flex: 0 1 20%;
+ 	@media (max-width: $screen-md-max) {
+ 		flex: 0 1 33.333%;
+ 	}
+ 	@media (max-width: $screen-sm-max) {
+ 		flex: 0 1 50%;
+ 	}
+ 	@media (max-width: $screen-xs-max) {
+		flex: 0 1 100%;
+	}
+}
