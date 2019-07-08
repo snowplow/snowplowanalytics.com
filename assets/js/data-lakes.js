@@ -18,7 +18,7 @@ var pardotSubmit = function (data){
     // Run loader
     
 
-    var url = 'http://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq'
+    var url = 'https://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq'
     $.ajax({
         url: url,
         jsonp: "callback",
