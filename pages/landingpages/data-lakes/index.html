@@ -6,6 +6,7 @@ permalink: /lp/data-lakes/
 class: data-lakes
 assets:
     css: assets/css/data-lakes.css
+    js: assets/js/data-lakes.js
 ---
 
 <section class="hero-revamp hero-revamp-light hero-revamp-center"
@@ -47,13 +48,13 @@ assets:
                     </ul>
                 </div>
                 <div class="form col-sm-6 col-xs-12">
-                    <form id="pdf-form">
+                    <form id="pdf-form" novalidate>
                         <h3>Get your copy today</h3>
-                        <input class="form-control" type="text" placeholder="First name" />
-                        <input class="form-control" type="text" placeholder="Last name" />
-                        <input class="form-control" type="email" placeholder="Email" />
-                        <input class="form-control" type="text" placeholder="Company" />
-                        <button type="submit" class="btn btn-primary spacer-top-10">Submit</button>
+                        <input id="first_name" class="form-control" type="text" placeholder="First name" />
+                        <input id="last_name" class="form-control" type="text" placeholder="Last name" />
+                        <input id="email" class="form-control" type="email" placeholder="Email" />
+                        <input id="company" class="form-control" type="text" placeholder="Company" />
+                        <button type="submit" class="btn btn-primary spacer-top-10">Submit</button>    
                     </form>
                     <div class="thankyou">
                         <h3>Thank you!</h3>                        
