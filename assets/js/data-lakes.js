@@ -15,9 +15,6 @@ var validateInput = function(kind, value){
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
 
-    // Run loader
-    
-
     var url = 'https://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq'
     $.ajax({
         url: url,
@@ -49,6 +46,11 @@ var handleSubmit = function(e){
     data.last_name	 = $('#last_name').val()
     data.email = $('#email').val()
     data.company = $('#company').val()
+    
+    // Snowplow tracker -- Retreive DomainUserId
+    snowplow(function () {
+        data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
+    });
 
     //Validate fields and color invalid input fields
     !validateInput('name', data.first_name) 
