@@ -6,7 +6,7 @@ description: Snowplow integrates with your preferred sources and destinations so
 permalink: /integrations/
 class: integrations
 assets:
-  css: assets/css/integrations-revamp.css
+  css: assets/css/snowplow-white-header.css
   js: assets/js/integrations-revamp.js
 integrations-sources:
   - name: Websites
@@ -221,28 +221,14 @@ logos:
     img-2x: assets/img/integrations/logos/databricks-logo@2x.png
     img-3x: assets/img/integrations/logos/databricks-logo@3x.png
     height: 114.5px
-  - name: data-quality
-    img: assets/img/integrations/logos/data-quality.png
-    img-2x: assets/img/integrations/logos/data-quality@2x.png
-    img-3x: assets/img/integrations/logos/data-quality@3x.png
-    height: 114.5px
-  - name: qubole
-    img: assets/img/integrations/logos/qubole.png
-    img-2x: assets/img/integrations/logos/qubole@2x.png
-    img-3x: assets/img/integrations/logos/qubole@3x.png
-    height: 114.5px
 
 ---
 
-<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/spw-customers-header@3x.png)">
+<section class="hero-revamp text-center spacer-bottom-50" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
                 <h1>Bring your data together</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
                 <h4>Snowplow integrates with your preferred sources and destinations so you can focus on building the applications that matter to your business.</h4>
             </div>
         </div>
@@ -260,13 +246,13 @@ logos:
       </div>
     </div>
     <div class="row stickers-group" id="sources">
-      <div class="col-sm-12">
-        <h2>Sources</h2>
+      <div class="col-sm-12 text-center">
+        <h3>Sources</h3>
       </div>
 
       {% for row in page.integrations-sources %}
         <div class="col-sm-12 stickers-category-container">
-          <h4>{{ row.name }}</h4>
+          <h4 class="spacer-bottom-30">{{ row.name }}</h4>
           <div class="stickers-item-container">
             {% for item in row.items %}
               <div class="stickers-item">
@@ -299,13 +285,13 @@ logos:
 <section class="section-revamp stickers-section">
   <div class="container">
     <div class="row stickers-group" id="destinations">
-      <div class="col-sm-12">
-        <h2>Destinations</h2>
+      <div class="col-sm-12 text-center">
+        <h3>Destinations</h3>
       </div>
 
       {% for row in page.integrations-destinations %}
         <div class="col-sm-12 stickers-category-container">
-          <h4>{{ row.name }}</h4>
+          <h4 class="spacer-bottom-30">{{ row.name }}</h4>
           <div class="stickers-item-container">
             {% for item in row.items %}
               <div class="stickers-item">
@@ -325,24 +311,16 @@ logos:
 </section>
 
 
-<section class="hero-revamp hero-revamp-center bi-tools-section" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
+<section class="hero-revamp" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h3>Explore your data with your favorite intelligence tools</h3>
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h3 class="spacer-bottom-30">Explore your data with your favorite intelligence tools</h3>
+                <h5 class="spacer-bottom-30">Snowplow is compatible with any business intelligence tool and analytics provider who integrates with either Snowflake, BigQuery and Redshift. Here some of our customers’ favorite tools.</h5>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
-                <h4>
-                  Snowplow is compatible with any business intelligence tool and analytics provider who integrates
-                  <br>
-                  with either Snowflake, BigQuery and Redshift. Here some of our customers’ favorite tools.
-                </h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 hero-revamp-logos plus_mg">
+            <div class="col-sm-12 hero-revamp-logos">
                 {% for company in page.logos %}
                 {% if company.url %}
                         <a href="{{ company.url }}" class="hero-revamp-logos-block">

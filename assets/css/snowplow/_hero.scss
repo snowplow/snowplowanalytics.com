@@ -1,3 +1,23 @@
+/* 
+ * Hero Section
+ */
+:root {
+ 	--revamp-hero-pad: 120px 0 120px;
+ 	--revamp-logo-mg: 100px 0 0;
+ 	--revamp-logo-w: 70%;
+ 	@media (max-width: $screen-lg-max) {
+ 		--revamp-logo-mg: 80px 0 0;
+ 	}
+ 	@media (max-width: $screen-md-max) {
+ 		--revamp-logo-mg: 60px 0 0;
+ 	}
+ 	@media (max-width: $screen-sm-max) {}
+ 	@media (max-width: $screen-xs-max) {
+		--revamp-hero-pad: 120px 0 80px;
+	}
+}
+
+
  .hero-revamp {
 	padding: var(--revamp-hero-pad);
 	background-size: cover;

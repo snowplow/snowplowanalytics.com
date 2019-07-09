@@ -1,0 +1,14 @@
+/* 
+ * Checked paragraphs
+*/
+
+
+ul.checked {
+	list-style: none;
+}
+
+li.checked {
+	background: url(../../assets/img/pricing/check-solid.svg) no-repeat left center;
+	padding-left: 30px;
+	margin: 10px 0 10px;
+}
