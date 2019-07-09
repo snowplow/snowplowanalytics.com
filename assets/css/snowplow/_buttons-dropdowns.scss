@@ -16,8 +16,8 @@ button,
 input[type=submit],
 {
 	color: $white;
-	outline:none;
 	font-weight: 400;
+	border: 2px solid $brand-primary;
 	line-height: 1;
 	cursor: pointer;
 	font-size: 14px;
@@ -40,7 +40,7 @@ input[type=submit],
 	&:active.focus,
 	&.active.focus
 	{
-		outline:none;
+		border: 2px solid $brand-primary;
 	}
 
 	&.btn-xs,
@@ -65,7 +65,7 @@ input[type=submit],
 		line-height: 1;
 	}
 
-	&:not(.disabled),
+	/*&:not(.disabled),
 	&:not([disabled]),
 	&:not([class*="outline"])
 	{
@@ -80,7 +80,7 @@ input[type=submit],
 		{
 			border:0;
 		}
-	}
+	}*/
 
 	/*
 	 * BORDER
@@ -89,7 +89,7 @@ input[type=submit],
 	@mixin btn-outline ( $bg, $cl:$white )
 	{
 	    color: $bg;
-	    border:1px solid $bg;
+	    border: 2px solid $bg;
 	    background-color: transparent;
 
 		&:hover,
@@ -102,7 +102,7 @@ input[type=submit],
 
 	&.btn-outline {
 	    color: inherit;
-	    border:1px solid $white;
+	    border: 2px solid $white;
 	    background-color: transparent;
 
 		&:hover,
@@ -141,7 +141,7 @@ input[type=submit],
 
 	&.btn-outline-grey{
 		color: $gray-base;
-	    border:1px solid $gray-base;
+	    border: 2px solid $gray-base;
 	    background-color: transparent;
 
 		&:hover,
@@ -240,3 +240,10 @@ input[type=submit],
 		}
 	}
 }
+
+.large {
+	font-size: 16px;
+	border: none;
+}
+
+
