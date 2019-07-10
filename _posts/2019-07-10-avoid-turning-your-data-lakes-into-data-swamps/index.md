@@ -3,7 +3,7 @@ layout: post
 title-short: Avoid turning your data lakes into data swamps
 title: "Avoid turning your data lakes into data swamps: Focus on data quality, not capture"
 author: Erika
-category: analytics
+category: Analytics
 permalink: /blog/2019/07/10/avoid-turning-your-data-lakes-into-data-swamps/
 discourse: true
 ---
