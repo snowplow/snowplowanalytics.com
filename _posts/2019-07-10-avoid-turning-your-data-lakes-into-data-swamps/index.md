@@ -32,10 +32,14 @@ The trend for some time has been to capture raw data and throw it into data lake
 2. organizational pressure to get business intelligence from - or indeed _do something_ with - the data to make it usable coupled with the challenge of getting value from raw data once it’s already stored
 3. data continues flowing in constantly. A continuous flow is great for tracking insight over time, but if data is not structured in a usable way, insights and answers to business questions can be delayed (what’s the point of real-time data collection in that case?) or lost altogether.
 
- 
+ {% include shortcodes/ebook.html background_class="datalake-landingpage" layout="blog" title="Avoid drowning in your data lake" description="How to improve quality, richness and analytics of your data
+" btnText="Download whitepaper" link="https://www.snowplowanalytics.com/lp/data-lakes/" %}
 
 
 ## Mastering the data lake to surface long-term business value
+
+
+
 
 What this means is that organizations (data-driven and those that aspire to be) need to build a blueprint for managing data collection before they even dip a toe into the data lake. This proactive approach should focus on how data will be structured and data governance before it even comes into the data lake to make it accessible for in-depth analytics and other use cases organization-wide. This may sound like an insurmountable challenge, and that’s partly what keeps many companies from looking at data from a structure-first point of view. Many companies, though, rely on the kind of flexibility that is, ironically, supplied by structure, such as La Presse, a Canadian media company:
 
