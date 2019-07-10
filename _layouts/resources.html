@@ -7,9 +7,9 @@ layout: compress
 {% include header.html %}
 	<div class="container clearfix resources">
 		<div class="left-fixed">
-			 <ul class="styled" >
+			 <ul class="styled" id="toc" data-toggle="toc">
 				{% for item in site.resources  %}
-				  <li><a href="{{ item.permalink }}">{{ item.title }}</a>
+				  <li><a href="{{ item.permalink }}" class="{% if page.url == item.url %} active{% endif %}">{{ item.title }} </a>
 					{% if page.url == item.permalink %}
 					  {% toc %}
 					{% endif %}
@@ -24,5 +24,3 @@ layout: compress
 
 
 {% include footer-new.html %}
-
-
