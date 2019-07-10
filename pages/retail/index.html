@@ -7,7 +7,7 @@ description: Data-driven retailers choose Snowplow's data collection infrastruct
 permalink: /retail/
 class: insights
 assets:
-  css: assets/css/retail.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/retail/single-customer@2x.png
       title: Build a single customer view across web, mobile, offline and 3rd party.
@@ -78,17 +78,20 @@ logos:
 cards:
     - title: '<a href="/blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/">Snowplow for retail: How can I use Snowplow?</a>'
       content: This post is non-technical and is intended to show you how to solve some common problems retailers face every day with Snowplow. This is the first post in a series on the subject, there are 4 more in this series.
+      url: /blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/
     - title: <a href="/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
       content: Marketing success has transformed from a given into a set of complicated, multi-layered questions where the answers are not always clear. Despite the complexity and ambiguity, marketing teams are often expected to provide answers.
+      url: /blog/2018/03/16/using-snowplow-for-marketing-data-analytics/
     - title: <a href="/blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/">A misconception about how personalization drives sales</a>
       content: "When retailers are looking for a way to drive sales, personalization can look like a quick win: buy a recommendation engine and put more products a customer is likely to buy in front of them, then watch the sales come in. Unfortunately, it’s not quite that easy."
+      url: /blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/
 
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.jpg)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-offset-1">
@@ -96,13 +99,13 @@ cards:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 col-offset-1">
+            <div class="col-sm-10 col-offset-1 spacer-bottom-40">
                 <h4>With a best-in-class data collection infrastructure, Snowplow provides the foundation needed for retailers to compete and win with data.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/request-demo/" class="btn btn-lines-white btn-primary call-to-action">Get started</a>
+                <a href="/request-demo/" class="btn btn-outline">Get started</a>
             </div>
         </div>
     </div>
@@ -131,9 +134,9 @@ cards:
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1 spacer-bottom-50">
                 <div class="section-revamp-testemonial-block _active">
-                    <h3>Data-driven retailers choose Snowplow</h3>
+                    <h6 class="xl text-center spacer-bottom-50">Data-driven retailers choose Snowplow</h6>
                     <p class="section-revamp-testemonial-content">
                       “Snowplow has blown Nordstrom’s minds in speed and range of data, offering complete extensibility of batch and real-time feeds and schemas in hours and seconds, respectively. With a small but dedicated team of engineers, we were able to replace our bulky and expensive third-party solution with one custom tailored to our needs and satisfaction. There’s simply no going back.”
                     </p>
@@ -171,8 +174,8 @@ cards:
 <section class="section-revamp data-cards-section pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
@@ -181,6 +184,7 @@ cards:
                     <div class="data-cards-item">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

@@ -12,3 +12,59 @@ li.checked {
 	padding-left: 30px;
 	margin: 10px 0 10px;
 }
+
+/* 
+ * Checked paragraphs
+ */
+ :root {
+ }
+.checked-paragraph-revamp {
+	& + .checked-paragraph-revamp {
+		@media (max-width: 767px) {
+ 			margin-top: 40px;
+ 		}
+	}
+	&-section {
+		h2 {
+			text-align: center;
+			color: $brand-primary;
+			margin-bottom: 32px;
+		}
+		h4 {
+			text-align: center;
+			color: $brand-primary;
+			line-height: 1.4;
+			margin-bottom: 70px;
+		}
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.85;
+		color: $gray-base;
+		padding: 0 0 0 30px;
+		&:first-of-type {
+			font-size: 24px;
+  			color: $gray-base;  			
+  			line-height: 1;
+  			margin: 0 0 25px;
+  			background-image: url(../../assets/img/pricing/check-solid.svg);
+  			background-repeat: no-repeat;
+  			background-size: 19px 14.17px;
+  			background-position: 0 5px;
+		}
+		.checked-paragraph-revamp-optional & {
+			font-size: 16px;
+			line-height: 1.85;
+			margin: 0 0 15px;
+			&.checked {
+				background-image: url(../../assets/img/pricing/check-solid.svg);
+	  			background-repeat: no-repeat;
+	  			background-size: 19px 14.17px;
+	  			background-position: 0 5px;
+			}
+			&.not-checked {
+				background-image: none;
+			}
+		}
+	}
+}

@@ -7,7 +7,7 @@ description: Data-driven media companies choose Snowplow to truly understand how
 permalink: /media/
 class: insights
 assets:
-  css: assets/css/retail.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Stitch-User-Data@2x.png
       title: Stitch user data to gain a 360° view of your users
@@ -78,17 +78,20 @@ logos:
 cards:
     - title: <a href="/blog/2019/05/29/snowplow-for-media-part-1/">Snowplow for media companies part 1</a>
       content: We don’t know where to focus our content creation efforts; which content leads to retention and subscription? which content categories, authors, themes drive high CPMs?” This post is non-technical and is intended to show you how you could solve these problems with Snowplow. This is the first post in a series on the subject, there are 4 more in this series which you can read next.
+      url: /blog/2019/05/29/snowplow-for-media-part-1/
     - title: <a href="/blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/">Customer analytics with Snowplow and Indicative</a>
       content: As analysts of all kinds of data, we have access to so much information about how people engage with us, from our advertising to our websites and digital products. Event level data, being so rich and granular, is particularly well suited to describing these engagements in great detail and helping us piece together how these different data sources tell a singular story.
+      url: /blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/
     - title: <a href="/blog/2019/05/29/snowplow-for-media-part-5/">Snowplow for media companies part 5</a>
       content: With the luxury of having a lot of analysts, we have seen our customers embed analysts in the teams that are the end consumers of the data such as editorial teams - this makes Snowplow data highly effective as these analysts are empowered with Snowplow’s rich event level data. The focus in this section is on unlocking the power of real-time Snowplow data.
+      url: /blog/2019/05/29/snowplow-for-media-part-5/
 
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Background@3x.jpg) no-repeat center bottom">
+<section class="jumbotron theme-light" style="background: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Background@3x.jpg) no-repeat center bottom">
     <div class="container">
         <div class="row">
             <div class="col-sm-11 col-offset-1">
@@ -96,13 +99,13 @@ cards:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-9 col-offset-1">
+            <div class="col-sm-9 col-offset-1 spacer-bottom-40">
                 <h4>With Snowplow, media companies get the event-level data they need to truly understand how their users engage with their content.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/get-started/" class="btn btn-lines-white btn-primary call-to-action">Get started</a>
+                <a href="/get-started/" class="btn btn-outline">Get started</a>
             </div>
         </div>
     </div>
@@ -131,9 +134,9 @@ cards:
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Testimonial@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1 spacer-bottom-50">
                 <div class="section-revamp-testemonial-block _active">
-                    <h3>Data-driven media companies choose Snowplow</h3>
+                    <h6 class="xl text-center spacer-bottom-50">Data-driven media companies choose Snowplow</h6>
                     <p class="section-revamp-testemonial-content">
                       “Snowplow enables us to trigger actions in real time – as soon as events or actions occur on the user side.”
                     </p>
@@ -171,8 +174,8 @@ cards:
 <section class="section-revamp data-cards-section pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
@@ -181,6 +184,7 @@ cards:
                     <div class="data-cards-item">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

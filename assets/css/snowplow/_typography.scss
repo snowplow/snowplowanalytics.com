@@ -20,48 +20,47 @@ h1 {
 	font-weight: 300;
 	line-height: 1.1;
 	margin-bottom: 16px;
-	color: $brand-primary;
+	color: $gray;
 }
 
 h2 {
 	font-size: 48px;
 	font-weight: 300;
 	line-height: 1.3;
-	color: #50545c;		
+	color: $brand-light;		
 }
 
 h3 {
 	font-size: 38px;
 	font-weight: 300;
 	line-height: 1.3;
-	color: #50545c;		
+	color: $gray;
 }
 
 h4 {
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 1.3;
-	color: #50545c;		
+	color: $gray;
 }
 
 h5 {
 	font-size: 21px;
 	font-weight: 300;
 	line-height: 1.3;
-	color: #50545c;		
+	color: $gray;
 }
 
 h6 {
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.3;
-	color: #50545c;
+	color: $brand-light;		
 	text-transform: uppercase;
 }
 
 .xl {
 	font-size: 14px;
-	color: #9e62dd;
 }
 
 
@@ -135,7 +134,7 @@ pre {
 
 a
 {
-	transition:color .3s;
+	/*transition:color .3s;*/
 
 	&:hover
 	{
