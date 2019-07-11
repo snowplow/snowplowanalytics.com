@@ -1,0 +1,30 @@
+/****************************/
+/****** CASE STUDY PAGE *****/
+/****************************/
+
+/* 2 column section on casy study pages */
+
+.casestudy{
+  .aside {
+    img {
+      max-width:70%;
+      }
+    .icon-industry {
+      width: 16px;
+      height: 14px;
+      margin-bottom: 5px;
+      }
+    span {
+      font-weight: 400;
+    }
+  }
+  
+  ul.styled {
+    margin-top: 8px;
+    li {
+      font-size: 16px; 
+      line-height: 27px; 
+      font-weight: 300;
+    }
+  }
+}

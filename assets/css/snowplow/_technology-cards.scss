@@ -115,10 +115,6 @@
 			z-index: 2;
 			opacity: 1;
 		}
-		/*p {
-		font-size: 15px;
-		line-height: 1.5;
-		}*/
 	}
 	&-section {
 		padding: var(--revamp-cards-section-pad);
@@ -165,13 +161,15 @@
 		background-color: $gray-base;
 		color: white;
 		box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);
-		@include do-flex(column, space-between, center, nowrap);
+		@include do-flex(column, flex-start, nowrap);
 		/* transition: opacity .5s ease-in-out; */
 		h4{
 			color: white;
+			margin-bottom: 10px;
 		}
 		p {
 			font-size: 14px;
+			line-height: 1.5;
 		}
 		a {
 			color: $brand-light;
