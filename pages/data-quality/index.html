@@ -7,7 +7,7 @@ description: Snowplow is architected from the ground up for data quality, so you
 permalink: /data-quality/
 class: data-quality
 assets:
-  css: assets/css/data-revamp.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/data/insights-data_quality_1.svg
       title: Formal validation
@@ -34,11 +34,11 @@ cards:
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h5>data quality</h5>
+                <h6 class="xl">data quality</h6>
                 <h1>Say goodbye to contradictory reports. Trust your data.</h1>
             </div>
         </div>
@@ -60,10 +60,10 @@ cards:
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                        <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic">
+                    <div class="col-sm-6 data-blocks-item-pic"> 
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
@@ -76,11 +76,11 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section pad-t-80">
+<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
