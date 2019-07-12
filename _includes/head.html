@@ -82,7 +82,7 @@
     </head>
 
 
-    <body class="snowplow {{ page.class | append: include.class }}">
+    <body class="snowplow {{ page.class | append: include.class }}"  {% if page.layout == 'resources' %} data-spy="scroll" data-target="#toc" {% endif %}>
 
     <div id="loading-overlay">
         <div class="loader"></div>
