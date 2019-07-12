@@ -322,3 +322,12 @@
   avatar: /assets/img/blog/2019/06/nicki.jpg
   spiel:   |
       <a href="/blog/authors/nicki/">Nicki</a> is the Office Manager at Snowplow, you can find her on <a href="https://www.linkedin.com/in/nickifyi/">LinkedIn</a>.
+
+
+- name: Erika
+  full_name: Erika Wolfe
+  twitter:
+  url: /blog/authors/erika/
+  avatar: /assets/img/blog/2019/06/erika-profile-image.jpeg
+  spiel:   |
+      <a href="/blog/authors/erika/">Erika</a> is a Technical Content Writer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/erika-wolfeel/">LinkedIn</a>.
