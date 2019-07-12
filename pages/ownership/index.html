@@ -7,7 +7,7 @@ description: Run your data pipeline end-to-end in your AWS or GCP account for in
 permalink: /ownership/
 class: ownership
 assets:
-  css: assets/css/data-revamp.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/data/insights-ownership_1.svg
       title: Running native<br>in your cloud
@@ -21,21 +21,23 @@ blocks:
 cards:
     - title: <a href="/blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/">GDPR challenges in a multi-platform, multi-device world</a>
       content: In this post, we’ll identify in what situations it is and is not possible to enable a user consent on one platform to determine how that same user’s data is processed when collected from another platform.
+      url: /blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/
     - title: <a href="/blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/">How data ownership makes you a more effective data scientist</a>
       content: Snowplow Analytics helps you become a highly effective data scientist by giving your company ownership of your data back from analytics tools that are limiting you, so you can focus on plying your craft.
+      url: /blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/
     - title: <a href="/blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/">How to manage consent for GDPR, a nuanced approach</a>
       content: Under GDPR, we have to manage the fact that different “pots” of data might be collected for different purposes and ensure that, if combined, the use of the combined data is still consistent with the specific purpose initially consented to during collection.
-
+      url: /blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/ownership-hero.png)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/ownership-hero.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h5>ownership</h5>
+                <h6 class="xl">ownership</h6>
                 <h1>Take complete control and full ownership of your data.</h1>
             </div>
         </div>
@@ -57,7 +59,7 @@ cards:
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                        <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic">
@@ -73,19 +75,20 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section pad-t-80">
+<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
-                    <div class="data-cards-item">
+                    <div class="data-cards-item-white">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

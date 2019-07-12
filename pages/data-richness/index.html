@@ -7,7 +7,7 @@ description: Snowplow is the only data collection platform tracking 130 data poi
 permalink: /data-richness/
 class: data-richness
 assets:
-  css: assets/css/data-revamp.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/data/insights-data_richness_1.svg
       title: More data per event
@@ -21,10 +21,13 @@ blocks:
 cards:
     - title: <a href="/blog/2019/02/05/how-server-side-tracking-fills-holes-in-your-data-and-improves-your-analytics/">How server-side tracking fills holes in your data and improves your analytics</a>
       content: Exclusively using client-side tracking does have limitations. We work with customers who want to do sophisticated digital analytics with their data. Many companies simply aren’t aware of the server-side option, so default to tracking everything client-side which can lead to pretty unusual behavior.
+      url: /blog/2019/02/05/how-server-side-tracking-fills-holes-in-your-data-and-improves-your-analytics/
     - title: <a href="/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
       content: Today in the world of digital marketing, not only do we have the ability to more accurately track the direct performance of a given marketing campaign, we have the responsibility to do so. Marketing success has transformed from a given into a set of complicated, multi-layered questions to which the answers are not always clear.
+      url: /blog/2018/03/16/using-snowplow-for-marketing-data-analytics/
     - title: '<a href="/blog/2018/02/08/warehousing-google-analytics-data-api-vs-hit-level-data/">Warehousing Google Analytics data: API vs hit-level data</a>'
       content: If you want to combine behavioral data from the web with other data sets, such as customer data from a CRM system, product data from a merchandising system, or content data from a CMS, it can be incredibly difficult (if not impossible) without a highly experienced developer.
+      url: /blog/2018/02/08/warehousing-google-analytics-data-api-vs-hit-level-data/
 
 
 ---
@@ -32,11 +35,11 @@ cards:
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-richeness-hero.png)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-richeness-hero.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h5>Data Richness</h5>
+                <h6 class="xl">Data Richness</h6>
                 <h1>More data points,<br>better decisions.</h1>
             </div>
         </div>
@@ -61,7 +64,7 @@ cards:
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                        <h3>{{ block.title }}</h3>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic">
@@ -77,19 +80,20 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section pad-t-80">
+<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
-                    <div class="data-cards-item">
+                    <div class="data-cards-item-white">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>
