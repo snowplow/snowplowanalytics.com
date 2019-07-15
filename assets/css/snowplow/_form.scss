@@ -380,11 +380,11 @@ label,
 		}
 		&.sales {
 			--img-h: 119px;
-			background-color: $brand-primary-light;
+			background-color: $brand-primary;
 			@media (max-width: 767px) {
 				margin-bottom: 20px;
 			}
-			p {
+			h3, h4 {
 				color: white;
 			}
 			.btn {
@@ -419,7 +419,6 @@ label,
 				object-fit: contain;
 			}
 			h3 {
-				color: white;
 				text-align: center;
 			}
 		}
