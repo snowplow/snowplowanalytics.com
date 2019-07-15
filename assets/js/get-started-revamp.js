@@ -180,6 +180,7 @@
       		document.getElementById("sales-company").setAttribute("name","company");
        		document.getElementById("sales-message").setAttribute("name","message");			
       		document.getElementById("sales-type").setAttribute("name","job_title");
+      		document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 			document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
 			document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
 
