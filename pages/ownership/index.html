@@ -11,13 +11,16 @@ assets:
 blocks:
     - icon: /assets/img/data/insights-ownership_1.svg
       title: Running native<br>in your cloud
-      content: With Snowplow, your complete data collection pipeline runs on your own AWS or GCP account. Your data never leaves your environment. You have complete ownership of that data, and complete control over the pipeline.
+      first: With Snowplow, your complete data collection pipeline runs on your own AWS or GCP account.
+      content: Your data never leaves your environment. You have complete ownership of that data, and complete control over the pipeline.
     - icon: /assets/img/data/insights-ownership_3.svg
       title: Data compliance<br>made easy
-      content: You have complete control over what personal information you collect and where that information lives. That data does not leave your environment and you can decide who has access to it, what they can do with it, and when it is expired. Plus, Snowplow has specific functionality around privacy and GDPR to help keep you compliant.
+      first: You have complete control over what personal information you collect and where that information lives.
+      content: That data does not leave your environment and you can decide who has access to it, what they can do with it, and when it is expired. Plus, Snowplow has specific functionality around privacy and GDPR to help keep you compliant.
     - icon: /assets/img/data/insights-ownership_2.svg
       title: Ownership<br>means control
-      content: With Snowplow you have total control over your own data. It means you can decide how frequently you want to run the pipeline, how much latency you want to tolerate and how much you want to spend on your infrastructure each month.
+      first: With Snowplow you have total control over your own data.
+      content: It means you can decide how frequently you want to run the pipeline, how much latency you want to tolerate and how much you want to spend on your infrastructure each month.
 cards:
     - title: <a href="/blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/">GDPR challenges in a multi-platform, multi-device world</a>
       content: In this post, we’ll identify in what situations it is and is not possible to enable a user consent on one platform to determine how that same user’s data is processed when collected from another platform.
@@ -60,6 +63,7 @@ cards:
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
+                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic">

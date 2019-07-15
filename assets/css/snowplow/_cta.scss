@@ -19,7 +19,7 @@
 	padding: var(--revamp-slogan-pad);
 	background-image: linear-gradient(to left, $tealish, $brand-primary);
 	& > .container {
-		@include do-flex(row, space-between, center, wrap);
+		@include do-flex(row, space-between, center, nowrap);
 	}
 	h3 {
 		color: white;

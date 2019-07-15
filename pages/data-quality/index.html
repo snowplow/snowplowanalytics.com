@@ -11,13 +11,16 @@ assets:
 blocks:
     - icon: /assets/img/data/insights-data_quality_1.svg
       title: Formal validation
-      content: All data collected is validated against its associated data schemas. You can configure schemas to be as strict as you like, making it easy to proactively identify data quality issues e.g. a value being stored in the wrong field.
+      first: All data collected is validated against its associated data schemas.
+      content: You can configure schemas to be as strict as you like, making it easy to proactively identify data quality issues e.g. a value being stored in the wrong field.
     - icon: /assets/img/data/insights-data_quality_2.svg
       title: Loss-less<br>data pipeline
-      content: No events sent to the Snowplow pipeline are silently “dropped”. If there is an issue processing the data, we surface it with the associated error messages, so you can easily monitor and proactively identify data quality issues as they emerge, rather than after the fact.
+      first: No events sent to the Snowplow pipeline are silently “dropped”.
+      content: If there is an issue processing the data, we surface it with the associated error messages, so you can easily monitor and proactively identify data quality issues as they emerge, rather than after the fact.
     - icon: /assets/img/data/insights-data_quality_3.svg
       title: Fully auditable
-      content: You have direct access to the data at every stage in the Snowplow data pipeline, enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
+      first: You have direct access to the data at every stage in the Snowplow data pipeline
+      content: Enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
     - icon: /assets/img/data/insights-data_quality_4.svg
       title: Recover and reprocess<br>bad data
       content: It is possible to recover and reprocess bad data, so that data tracking issues do not necessarily need to result in gaps in your data collection.
@@ -64,6 +67,7 @@ cards:
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
+                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic"> 

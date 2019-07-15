@@ -36,7 +36,7 @@ footer {
 
         &:hover,
         &:focus {
-            color: $brand-primary-brighter;
+            color: $tealish;
             text-decoration: none;
         }
     }
@@ -59,7 +59,7 @@ footer {
 
     .active {
         a {
-            color: $gray;
+            color: $tealish;
         }
     }
 
@@ -79,7 +79,7 @@ footer {
         }
 
         a {
-            color: $brand-primary-brighter;
+            color: $tealish;
             font-size: 15px;
         }
     }

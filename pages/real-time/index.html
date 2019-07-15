@@ -7,32 +7,37 @@ description: Power your real-time applications with your high quality, enriched 
 permalink: /real-time/
 class: real-time
 assets:
-  css: assets/css/data-revamp.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/data/insights-real_time_1.svg
       title: Act on your data
-      content: You get your complete, granular, highly structured, enriched data to you in real-time directly into your own Kinesis stream, Pub/Sub topic, Elasticsearch cluster and/or BigQuery. Consume that data in real-time to power real-time dashboards and applications such as fraud detection or personalization engines.
+      first: You get your complete, granular, highly structured, enriched data to you in real-time.
+      content: Directly into your own Kinesis stream, Pub/Sub topic, Elasticsearch cluster and/or BigQuery. Consume that data in real-time to power real-time dashboards and applications such as fraud detection or personalization engines.
     - icon: /assets/img/data/insights-real_time_2.svg
       title: Frequent loading<br>to your data warehouse
-      content: "With Snowplow, we deliver your data into your data warehouse fast: into BigQuery in seconds, and into Redshift and Snowflake DB every 10 minutes. This means no waiting around for numbers to update or reports to be finalized."
+      first: With Snowplow, we deliver your data into your data warehouse fast.
+      content: Into BigQuery in seconds, and into Redshift and Snowflake DB every 10 minutes. This means no waiting around for numbers to update or reports to be finalized.
 cards:
     - title: <a href="/blog/2018/03/23/real-time-data-processing-with-google-analytics-using-snowplow/">Real-time data processing with Google Analytics using Snowplow</a>
       content: If you’re a Google Analytics user, using Snowplow you can now process your complete event stream in real-time. In this post, we’re going to explore some examples of how having real-time processing live on your Google Analytics can unlock new ways to model, consume, and act on your data.
+      url: /blog/2018/03/23/real-time-data-processing-with-google-analytics-using-snowplow/
     - title: <a href="/blog/2018/12/03/snowplow-for-google-cloud-platform-is-here/">Snowplow for Google Cloud Platform is here</a>
       content: Unifying your Snowplow data sources together in BigQuery gives you a high quality, structured data set that’s easy to work with. Having that data available in real-time means you can make product and marketing decisions just as fast. And you can directly import data from your marketing tools like Google Ads.
+      url: /blog/2018/12/03/snowplow-for-google-cloud-platform-is-here/
     - title: <a href="/blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/">A misconception about how retail personalization drives sales</a>
       content: When you implement a personalization strategy, you need to do it in the context of the overall customer experience you’re trying to create. You need to be clear what value personalization is supposed to add for your customers, and then test to make sure it’s having the intended effect.
+      url: /blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/
 
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/real-time-hero.png)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/real-time-hero.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h5>real-time data</h5>
+                <h6 class="xl">real-time data</h6>
                 <h1>Real-time event data,<br>no ifs or buts. </h1>
             </div>
         </div>
@@ -57,7 +62,8 @@ cards:
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                        <h3>{{ block.title }}</h3>
+                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic">
@@ -73,19 +79,20 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section pad-t-80">
+<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
-                    <div class="data-cards-item">
+                    <div class="data-cards-item-white">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

@@ -42,15 +42,15 @@
 	&:after {
 		@include center-top;
 		content: '>';
-		color: $brand-primary;
+		color: white;
 		text-align: center;
 		right: calc( (-1) * var(--revamp-cards-arrow-s) + 1.5*var(--revamp-cards-mg) );
 		width: var(--revamp-cards-arrow-s);
 		height: var(--revamp-cards-arrow-s);
 		line-height: var(--revamp-cards-arrow-s);
-		background-color: white;
+		background-color: $brand-light;
 		border-radius: var(--revamp-cards-arrow-s);
-		border: solid 1px $brand-primary;
+		border: solid 1px $brand-light;
 		z-index: 3;
 		@media (max-width: $screen-xs-max) {
 			@include center-left;

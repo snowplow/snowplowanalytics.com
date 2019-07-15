@@ -1,5 +1,5 @@
 /* 
- * Case Studies
+ * Partners
  */
 :root {
 	--revamp-side-by-side-p-mg: 0 0 45px;
@@ -91,13 +91,34 @@
 				}
 			}
 			&.revamp-side-by-side-content-link {
-				margin: 0;
+				/* margin: 0;
 				text-decoration: underline;
 				display: inline-block;
 				svg {
 					width: 16px;
 					height: 16px;
 					margin: 0 10px 0 0;
+				}*/
+							color: $gray-base;
+				font-size: 14px;
+				font-weight: 500;
+				&:before {
+					margin-right: 8px;
+					display: inline-block;
+					content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Default.svg);
+					height: 15px;
+	   				width: 15px;
+	   				vertical-align: -10%;
+	   				}
+				&:hover {
+					color: $tealish;
+					&:before {
+						display: inline-block;
+						content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Hover.svg);
+						height: 15px;
+	   					width: 15px;
+	   					vertical-align: -10%;
+					}
 				}
 			}
 		}

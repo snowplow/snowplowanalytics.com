@@ -37,6 +37,9 @@
  		}
 		h4 {
 			margin: 0 0 40px;
+			a {
+				color: $gray;
+			}
 		}
 		p {
 			margin: 0 0 40px;
@@ -46,6 +49,7 @@
 			font-size: 14px;
 			font-weight: 500;
 			&:before {
+			    margin-right: 8px;
 				display: inline-block;
 				content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Default.svg);
 				height: 15px;
@@ -77,6 +81,9 @@
  		}
 		h4 {
 			margin: 0 0 40px;
+			a {
+				color: $gray;
+			}
 		}
 		p {
 			margin: 0 0 40px;

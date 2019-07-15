@@ -66,7 +66,7 @@
  * Vertical tabs
  */
  :root {
- 	--vertical-tabs-header-pad: 25px;
+ 	--vertical-tabs-header-pad: 50px;
  	--vertical-tabs-header-h: 131px;
  	--vertical-tabs-body-pad: 80px;
  	@media (max-width: 991px) {
@@ -93,6 +93,7 @@
 	&-container{
 		box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33);
   		background-color: $brand-lighter;
+  		h4 { margin: 0; }
 	}
 	&-header{
 		background-color: white;
@@ -112,39 +113,12 @@
 			padding-right: 30px;
 			text-align: left;
 	 	}
-		& > p {
-			width: 100%;
-			font-size: 20px;
-  			line-height: 1.75;
-  			margin: auto 0;
-  			text-align: center;
-  			color: rgba(80, 84, 92, 0.5);
-  			transition: all .25s ease-in-out;
-  			@media (max-width: $screen-xs-max) {
-		 		line-height: 1.25;
-		 	}
-		 	@media (max-width: 767px) {
-		 		//
-		 		position: relative;
-		 		text-align: left;
-		 		&:after {
-		 			position: absolute;
-		 			top: 11px; 
-		 			content: '';
-		 			right: -15px;
-		 			width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: 5px 5px 0 5px;
-					border-color: rgba(80, 84, 92, 0.5) transparent transparent transparent;
-		 		}
-		 	}
-		}
+		
 		&.active, &:hover {
 			background-color: transparent;
 			//background-color: $brand-lighter;
 			p {
-				color: $brand-light;
+				color: $gray;
 				@media (max-width: 767px) {
 			 		&:after {
 						border-color: $brand-light transparent transparent transparent;
@@ -170,10 +144,28 @@
 		p {
 			margin: 0;
 		}
-		a {
-			text-decoration: underline;
-			margin-top: 40px;
-			display: block;
+		.link {
+			color: $gray-base;
+			font-size: 14px;
+			font-weight: 500;
+			&:before {
+				margin-right: 8px;
+				display: inline-block;
+				content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Default.svg);
+				height: 15px;
+				width: 15px;
+				vertical-align: -10%;
+				}
+			&:hover {
+				color: $tealish;
+				&:before {
+					display: inline-block;
+					content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Hover.svg);
+					height: 15px;
+					width: 15px;
+					vertical-align: -10%;
+				}
+			}
 		}
 		&.active {
 			visibility: visible;

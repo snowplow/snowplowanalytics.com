@@ -12,19 +12,6 @@
 	&-table{
 		margin-top: 20px;
 		width: 100%;
-		/*h3 {
-			font-size: 24px;
-			margin: 0 0 15px;
-			color: $gunmetal;
-			width: 100%;
-			font-weight: 400;
-		}
-		h4 {
-			font-size: 18px;
-			margin: 0 0 10px;
-			color: $blue-purple;
-			width: 100%;
-		} */
 		p {
 			margin: 0 0 5px;
 			font-size: 14px;
@@ -50,7 +37,6 @@
 		}
 		&-col{
 			width: 24%;
-			padding: 0 20px;
 			margin: 0;
 			@include do-flex(column, center, revert, wrap);
 			* {
@@ -62,7 +48,6 @@
 		 	}
 			&:nth-of-type(1) {
 				width: 28%;
-				padding: 0 5px 0 20px;
 				* {
 					text-align: left;
 				}
@@ -99,6 +84,7 @@
 			p {
 				font-size: 14px;
 				font-weight: 300;
+				text-align: right !important;
 			}
 			.pricing-revamp-table-col {
 				width: 100%;

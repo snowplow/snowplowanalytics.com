@@ -240,9 +240,9 @@ logos:
   <div class="container">
     <div class="row">
       <div class="col-sm-12 stickers-buttons-container">
-        <button class="stickers-buttons btn-outline-primary btn active" data-ref="0">All</button>
-        <button class="stickers-buttons btn-outline-primary btn" data-ref="sources">Sources</button>
-        <button class="stickers-buttons btn-outline-primary btn" data-ref="destinations">Destinations</button>
+        <button class="stickers-buttons btn btn-outline-grey active" data-ref="0">All</button>
+        <button class="stickers-buttons btn btn-outline-grey" data-ref="sources">Sources</button>
+        <button class="stickers-buttons btn btn-outline-grey" data-ref="destinations">Destinations</button>
       </div>
     </div>
     <div class="row stickers-group" id="sources">
@@ -252,7 +252,7 @@ logos:
 
       {% for row in page.integrations-sources %}
         <div class="col-sm-12 stickers-category-container">
-          <h4 class="spacer-bottom-30">{{ row.name }}</h4>
+          <h6 class="xl spacer-bottom-30">{{ row.name }}</h6>
           <div class="stickers-item-container">
             {% for item in row.items %}
               <div class="stickers-item">
@@ -291,7 +291,7 @@ logos:
 
       {% for row in page.integrations-destinations %}
         <div class="col-sm-12 stickers-category-container">
-          <h4 class="spacer-bottom-30">{{ row.name }}</h4>
+          <h6 class="xl spacer-bottom-30">{{ row.name }}</h6>
           <div class="stickers-item-container">
             {% for item in row.items %}
               <div class="stickers-item">
