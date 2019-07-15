@@ -37,7 +37,6 @@ cards:
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h6 class="xl">real-time data</h6>
                 <h1>Real-time event data,<br>no ifs or buts. </h1>
             </div>
         </div>
@@ -55,22 +54,27 @@ cards:
 
 <section class="section-revamp data-blocks-section">
     <div class="container">
-        <div class="data-blocks-container">
-            <!-- For invert the items. Do not delete -->
-            <div class="data-blocks-item row" style="display: none;margin-bottom: 0;"></div>
-            <!-- end -->
-            {% for block in page.blocks %}
-                <div class="data-blocks-item row">
-                    <div class="col-sm-5 data-blocks-item-content">
-                        <h3>{{ block.title }}</h3>
-                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
-                        <p>{{ block.content }}</p>
+        <div class="row text-center">
+            <h2 class="spacer-bottom-30">Real-time data</h2>
+        </div>
+        <div class="row">
+            <div class="data-blocks-container">
+                <!-- For invert the items. Do not delete -->
+                <div class="data-blocks-item row" style="display: none;margin-bottom: 0;"></div>
+                <!-- end -->
+                {% for block in page.blocks %}
+                    <div class="data-blocks-item row">
+                        <div class="col-sm-5 data-blocks-item-content">
+                            <h3>{{ block.title }}</h3>
+                            <h5 class="spacer-bottom-30">{{ block.first }}</h5>
+                            <p>{{ block.content }}</p>
+                        </div>
+                        <div class="col-sm-6 data-blocks-item-pic">
+                            <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                        </div>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic">
-                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>

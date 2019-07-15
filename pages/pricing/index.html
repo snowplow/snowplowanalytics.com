@@ -8,6 +8,15 @@ class: Pricing
 assets:
   css: assets/css/snowplow.css
 
+big-cards:
+    - name: Onboarding and training
+      sub-heading: Implementation
+      content: Our team of Data Strategists and Implementation Engineers will help you get the most out of your Snowplow Insights pipeline by translating your analytics roadmap into a Snowplow implementation, including tracking design, data modeling and visualization.
+    - name: Extending the Snowplow pipeline
+      sub-heading: Integrations
+      content: Our team of Data Engineers will work with you to extend the Snowplow pipeline to meet your needs. We’ll build out custom integrations and help you develop real-time data processing applications, such as marketing automations, that consume the Snowplow eventstream.
+
+
 ---
 
 <section class="jumbotron theme-light text-center" style="background-image: url({{ BASE_PATH }}/assets/img/pricing/spw-technology-header@3x.png)">
@@ -70,11 +79,11 @@ assets:
     </div>
 </section>
 
-<section class="pricing-revamp-section">
+<section class="pricing-revamp-section pad-t-0">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <h2>Snowplow Insights feature comparison</h2>
+      <div class="col-sm-12 text-center">
+        <h3>Snowplow Insights feature comparison</h3>
       </div>
     </div>
     <div class="row">
@@ -929,25 +938,26 @@ assets:
   </div>
 </section>
 
-<section class="section-revamp bg-primary-lighter checked-paragraph-revamp-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h3>Additional services</h3>
+<section class="section-revamp section-revamp-big-cards-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h3>Additional services</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="section-revamp-big-cards-container">    
+            {% for card in page.big-cards %}
+                <div class="section-revamp-big-cards">
+                        <h6 class="xl spacer-bottom-40">{{ card.sub-heading }}</h6>
+                        <h4 class="spacer-bottom-40">{{ card.name }}</h4>
+                        <p>{{ card.content }}</p>
+                        <!--<a class="btn btn-lines" href="{{ card.url }}">Learn more</a>-->
+                </div>
+            {% endfor %}
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-5 checked-paragraph-revamp">
-        <p>Onboarding and training</p>
-        <p>Our team of Data Strategists and Implementation Engineers will help you get the most out of your Snowplow Insights pipeline by translating your analytics roadmap into a Snowplow implementation, including tracking design, data modeling and visualization.</p>
-      </div>
-      <div class="col-sm-5 col-sm-offset-2 checked-paragraph-revamp">
-        <p>Extending the Snowplow pipeline</p>
-        <p>Our team of Data Engineers will work with you to extend the Snowplow pipeline to meet your needs. We’ll build out custom integrations and help you develop real-time data processing applications, such as marketing automations, that consume the Snowplow eventstream.</p>
-      </div>
-    </div>
-  </div>
 </section>
-
 
 {% include request-demo-revamp.html %}
