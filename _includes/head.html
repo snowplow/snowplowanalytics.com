@@ -52,51 +52,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-<!-- 
-
-        <style type="text/css">
-            #loading-overlay {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 9999;
-                background: white;
-            }
-            #loading-overlay .loader {
-                border: 6px solid #f3f3f3; /* Light grey */
-                border-top: 6px solid #6738b8; /* Blue */
-                border-radius: 50%;
-                width: 60px;
-                height: 60px;
-                animation: spin 2s linear infinite;
-                margin: 0 auto;
-                margin-top: 45vh;
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-
-            iframe {border:0;}
-        </style> -->
-
         <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
         <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-
 
         {% include gtm/google-tag-manager-script.js %}
     </head>
 
-
     <body class="snowplow {{ page.class | append: include.class }}">
-<!-- 
-    <div id="loading-overlay">
-        <div class="loader"></div>
-    </div> -->
-
-
     {% include gtm/google-tag-manager-noscript.js %}
 
     

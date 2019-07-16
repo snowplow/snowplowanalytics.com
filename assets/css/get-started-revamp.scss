@@ -96,6 +96,9 @@ main .hero-revamp {
 			--w: 100%;
 			--pad: 15px 0 50px;
 		}
+		@media (max-width: 990px) {
+			--h: 850px;
+		}
 		//////////////////////////////////
 		padding: var(--pad);
 		& > .container {
@@ -108,7 +111,7 @@ main .hero-revamp {
 		height: var(--h);
 		background-color: $ice-blue;
 		p {
-			color: $blue-purple;
+			color: #323743;
 		}
 		&.sales {
 			--img-h: 119px;
@@ -118,6 +121,9 @@ main .hero-revamp {
 			}
 			p {
 				color: white;
+			}
+			h4{
+				color:#ffffff;
 			}
 			.btn {
 				border: solid 2px white;
