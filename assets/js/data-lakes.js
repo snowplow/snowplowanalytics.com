@@ -28,10 +28,15 @@ var pardotSubmit = function (data){
         (data.result == 'success') 
         ? $('#pdf-form').hide() 
             && $('.thankyou').fadeIn(700)
+            && dataLayer.push({ 'event': 'lp-datalake-form-success' })
         : $('input').addClass('error') 
             && $('#form_submit_button').removeClass('activate-loader')
     }
 }
+
+// push to GTM
+
+
 
 //Remove any validation when user tries to rewrite the field
 $('input').focus(function(){
