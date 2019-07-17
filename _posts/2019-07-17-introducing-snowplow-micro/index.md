@@ -72,7 +72,8 @@ What does this mean?
 
 ## How can I get started?
 
-Snowplow Micro is available from Dockerhub [here](https://cloud.docker.com/u/snowplow/repository/docker/snowplow/snowplow-micro/general).
+Snowplow Micro is available from Dockerhub [here](https://hub.docker.com/r/snowplow/snowplow-micro).
+
 
 We are in the process of putting together some tutorials to show how to embed it in different test suites.
 
