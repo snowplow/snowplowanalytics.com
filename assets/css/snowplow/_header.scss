@@ -726,23 +726,3 @@ header
 		}
 	}
 }
-
-
-
-// Landingpage Header
-
-    header.lp-header{
-        .lp-nav{
-            .lp-cta{
-                float:right;
-            }
-        }
-        .navbar-header{
-            width: 100%;
-        }
-        @media (max-width: $screen-xs-max) {
-            .lp-cta{
-                display:none;
-            }
-	    }
-    }
