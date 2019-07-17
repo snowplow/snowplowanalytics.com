@@ -4,9 +4,9 @@ group: how-we-compare
 title: Contact Snowplow | The Data Collection Platform for Data Teams
 description: Get in touch with Snowplow regarding your sales inquiry, a partnership opportunity or if you have any trouble filling out a form on our website.
 permalink: /contact-us/
-class: contactus
+class: white-heading
 assets:
-  css: assets/css/contactus.css
+  css: assets/css/snowplow.css
   js: assets/js/how-we-compare-revamp.js
 cards:
     - name: Sales inquiry
@@ -34,14 +34,14 @@ cards:
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h1>How can we help you? <br> Get in touch today.</h1>
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <h2>How can we help you? <br> Get in touch today.</h2>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section-revamp section-revamp-cards-section ">
+<section class="section-revamp section-revamp-cards-section spacer-top-80 ">
     <div class="container">
         <div class="section-revamp-cards-container">
             {% for card in page.cards %}
@@ -50,11 +50,9 @@ cards:
                         <h4>{{ card.name }}</h4>
                         <p>{{ card.excerpt }}</p>
                     </div>
-                    <div class="section-revamp-cards-hover">
-                        <p>
-                            <span>{{ card.name }}</span>
-                            {{ card.content }}
-                        </p>
+                    <div class="section-revamp-cards-hover theme-light">
+                        <h4>{{ card.name }}</h4>
+                        <p>{{ card.content }}</p>
                         <!--<a href="{{ card.url }}">Learn more about our Services team</a>-->
                     </div>
                 </div>

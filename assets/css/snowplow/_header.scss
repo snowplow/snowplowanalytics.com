@@ -90,7 +90,7 @@ header
 				left:0;
 				right:0;
 				border:0;
-				top:62px;
+				top:69px;
 				opacity:0;
 				display:block;
 				border-radius:0;
@@ -218,7 +218,6 @@ header
 				>a:not(.btn)
 				{
 					color: $white;
-					line-height: .7em;
 					position: relative;
 					padding-top: 18px;
 					padding-bottom: 18px;
@@ -237,7 +236,7 @@ header
 						background-color: $white;
 						transform-origin: 0 0;
 						@media (min-width: $screen-sm-min) {
-							bottom: -14px;
+							bottom: -17px;
 						}
 						@media only screen
 							and (min-device-width: 768px)
