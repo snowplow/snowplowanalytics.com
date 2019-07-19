@@ -35,7 +35,7 @@ This was already the case for a standard EMR cluster.
 
 To solve the "cold start" problem for cross-batch deduplication in the RDB Shredder, we had developed the [Event Manifest Populator](https://github.com/snowplow/snowplow/tree/master/5-data-modeling/event-manifest-populator).
 
-It was developped to use events emitted by `spark-enrich` as input, and we now added the possibility to also read events emitted by `stream-enrich`.
+It was developed to use events emitted by `spark-enrich` as the input, but we have now added the possibility to also read events emitted by `stream-enrich`.
 
 <h2 id="upgrading">3. Upgrading</h2>
 
