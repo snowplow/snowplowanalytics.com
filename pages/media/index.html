@@ -7,23 +7,28 @@ description: Data-driven media companies choose Snowplow to truly understand how
 permalink: /media/
 class: insights
 assets:
-  css: assets/css/retail.css
+  css: assets/css/snowplow.css
 blocks:
-    - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Stitch-User-Data@2x.png
+    - icon: /assets/img/media/SPW-Website-Industries-Media-Stitch-User-Data@2x.png
       title: Stitch user data to gain a 360° view of your users
-      content: By having access to your event-level data, tracked with a host of user identifiers, you’re able to gain a holistic view of users’ engagement with content across platforms, devices and domains to build the richest understanding of user behavior. Events on web and mobile can be back-stitched to even before a user identified themselves and you can make use of our third-party integrations to capture e.g. social media clicks. You can also track mission critical events, such as subscriptions, server-side to ensure robustness.
+      first: By having access to your event-level data, tracked with a host of user identifiers, you’re able to gain a holistic view of users’ engagement with content across platforms, devices and domains to build the richest understanding of user behavior.
+      content: Events on web and mobile can be back-stitched to even before a user identified themselves and you can make use of our third-party integrations to capture e.g. social media clicks. You can also track mission critical events, such as subscriptions, server-side to ensure robustness.
     - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Content-Engagement@2x.png
       title: Make your own assumptions to better understand and drive content engagement
-      content: With Snowplow you have the flexibility to design your own tracking and for any engagement that occurs on a piece of content (click, view, like, share, etc.) you can send custom data points about the content itself such as author, personalities mentioned or affiliates. You make your own assumptions about e.g. grouping events, sessionization or attribution logic and if you want to change any of your assumptions in the future, you’re easily able to, e.g. if you change the definition of a session, you can regenerate the session id for all historic data.
+      first: With Snowplow you have the flexibility to design your own tracking and for any engagement that occurs on a piece of content.
+      content: Engagement like click, view, like, share, etc. You can send custom data points about the content itself such as author, personalities mentioned or affiliates. You make your own assumptions about e.g. grouping events, sessionization or attribution logic and if you want to change any of your assumptions in the future, you’re easily able to, e.g. if you change the definition of a session, you can regenerate the session id for all historic data.
     - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Paywall@2x.png
       title: Use your data to inform and optimize your paywall decisions
-      content: Capture unsubscribed users who exhibit traits of high LTV subscribers by using your event-level data for funnel analyses and paywall experiments. Build funnels based on your paywall experiments using our integration with Indicative. A/B test data for different paywall strategies can be pulled into <a href="https://snowplowanalytics.com/blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/">Indicative</a> to inform decisions on what paywall logic to employ. By using data, in real-time, to drive your paywalling decisions you won’t be giving away content for less than it’s worth.
+      first: Capture unsubscribed users who exhibit traits of high LTV subscribers by using your event-level data for funnel analyses and paywall experiments.
+      content: Build funnels based on your paywall experiments using our integration with Indicative. A/B test data for different paywall strategies can be pulled into <a href="https://snowplowanalytics.com/blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/">Indicative</a> to inform decisions on what paywall logic to employ. By using data, in real-time, to drive your paywalling decisions you won’t be giving away content for less than it’s worth.
     - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Content-Advertiser-Analytics@2x.png
       title: Increase ad revenue with better advertiser analytics
-      content: A better understanding of what drives DSP decisions can lead to large gains in ad revenue and is something that can be quite hard to understand with one-size-fits-all analytics solutions. With Snowplow, successful bid data can be tracked as server-side events, or track prebid.js data directly with Snowplow and join bid data to content engagement events in the warehouse. This allows you to understand which user types, content, authors, etc. drive the highest ad bids so you don't leave money on the table by selling the space on your content for too low a cost.
+      first: A better understanding of what drives DSP decisions can lead to large gains in ad revenue and is something that can be quite hard to understand with one-size-fits-all analytics solutions.
+      content: With Snowplow, successful bid data can be tracked as server-side events, or track prebid.js data directly with Snowplow and join bid data to content engagement events in the warehouse. This allows you to understand which user types, content, authors, etc. drive the highest ad bids so you don't leave money on the table by selling the space on your content for too low a cost.
     - icon: /assets/img/media/graphics/SPW-Website-Industries-Media-Real-Time@2x.png
       title: Leverage your data in real-time to recommend content and display ads
-      content: With access to your entire eventstream in real-time you can personalise the user experience to drive engagement, retention and therefore ad revenue. With Snowplow, all the data being loaded into your data warehouse is first written to a real-time stream, which you can read off to action the data using an AWS Lambda function or GCP cloud function. Build real-time applications that are triggered by events in the Snowplow stream to recommend content and to display native ads. 
+      first: With access to your entire eventstream in real-time you can personalise the user experience to drive engagement, retention and therefore ad revenue.
+      content: With Snowplow, all the data being loaded into your data warehouse is first written to a real-time stream, which you can read off to action the data using an AWS Lambda function or GCP cloud function. Build real-time applications that are triggered by events in the Snowplow stream to recommend content and to display native ads. 
 logos:
   - name: the-economist
     img: assets/img/media/logos/theeconomist.png
@@ -77,32 +82,39 @@ logos:
     height: 93px    
 cards:
     - title: <a href="/blog/2019/05/29/snowplow-for-media-part-1/">Snowplow for media companies part 1</a>
+      sub-title: Media
       content: We don’t know where to focus our content creation efforts; which content leads to retention and subscription? which content categories, authors, themes drive high CPMs?” This post is non-technical and is intended to show you how you could solve these problems with Snowplow. This is the first post in a series on the subject, there are 4 more in this series which you can read next.
+      url: /blog/2019/05/29/snowplow-for-media-part-1/
     - title: <a href="/blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/">Customer analytics with Snowplow and Indicative</a>
+      sub-title: Analytics
       content: As analysts of all kinds of data, we have access to so much information about how people engage with us, from our advertising to our websites and digital products. Event level data, being so rich and granular, is particularly well suited to describing these engagements in great detail and helping us piece together how these different data sources tell a singular story.
+      url: /blog/2018/09/20/high-end-customer-analytics-with-snowplow-and-indicative/
     - title: <a href="/blog/2019/05/29/snowplow-for-media-part-5/">Snowplow for media companies part 5</a>
+      sub-title: Media
       content: With the luxury of having a lot of analysts, we have seen our customers embed analysts in the teams that are the end consumers of the data such as editorial teams - this makes Snowplow data highly effective as these analysts are empowered with Snowplow’s rich event level data. The focus in this section is on unlocking the power of real-time Snowplow data.
+      url: /blog/2019/05/29/snowplow-for-media-part-5/
 
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Background@3x.jpg) no-repeat center bottom">
+
+<section class="jumbotron theme-light" style="background: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Background@3x.jpg) no-repeat center bottom">
     <div class="container">
         <div class="row">
-            <div class="col-sm-11 col-offset-1">
-                <h1>The best data collection platform for data-driven media companies.</h1>
+            <div class="col-sm-10 col-offset-1">
+                <h1>The best data collection platform for data-driven media companies</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-9 col-offset-1">
+            <div class="col-sm-9 col-offset-1 spacer-bottom-40">
                 <h4>With Snowplow, media companies get the event-level data they need to truly understand how their users engage with their content.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/get-started/" class="btn btn-lines-white btn-primary call-to-action">Get started</a>
+                <a href="/get-started/" class="btn btn-outline large">Get started</a>
             </div>
         </div>
     </div>
@@ -116,9 +128,10 @@ cards:
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
+                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic pad-60">
+                    <div class="col-sm-6 data-blocks-item-pic pad-60 xs-pad-20">
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
@@ -128,12 +141,12 @@ cards:
 </section>
 
 
-<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/media/graphics/SPW-Website-Industries-Media-Testimonial@3x.png)">
+<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/media/SPW-Website-Industries-Media-Testimonial@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1 spacer-bottom-50">
                 <div class="section-revamp-testemonial-block _active">
-                    <h3>Data-driven media companies choose Snowplow</h3>
+                    <h6 class="xl text-center spacer-bottom-50">Data-driven media companies choose Snowplow</h6>
                     <p class="section-revamp-testemonial-content">
                       “Snowplow enables us to trigger actions in real time – as soon as events or actions occur on the user side.”
                     </p>
@@ -171,16 +184,18 @@ cards:
 <section class="section-revamp data-cards-section pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
                     <div class="data-cards-item">
+                        <h6 class="xl spacer-bottom-30">{{ card.sub-title }}</h6>
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

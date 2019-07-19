@@ -1,0 +1,119 @@
+/* 
+ * Section Testemonial
+ */
+:root {
+ 	--revamp-animated-testemonial-pad: 120px 0;
+ 	--revamp-animated-testemonial-logo-w: 164px;
+ 	--revamp-animated-testemonial-logo-h: 30px;
+ 	--revamp-animated-testemonial-logo-mg: 0 auto 40px;
+ 	--revamp-animated-testemonial-content-mg: 0 auto 25px;
+ 	--revamp-animated-testemonial-pic-s: 52px;
+ 	--revamp-animated-testemonial-pic-ml: 15px;
+ 	--revamp-animated-testemonial-h2-mg: 0 0 100px;
+ 	@media (max-width: $screen-lg-max) {}
+ 	@media (max-width: $screen-md-max) {}
+ 	@media (max-width: $screen-sm-max) {
+ 		--revamp-animated-testemonial-pad: 80px 0;
+ 		--revamp-animated-testemonial-h2-mg: 0 0 80px;
+ 	}
+ 	@media (max-width: $screen-xs-max) {}
+} 
+.section-revamp-testemonial{
+	padding: var(--revamp-animated-testemonial-pad);
+	&-block {
+		@include do-flex(column, center, center);
+		opacity: 0;
+		display: none;
+		transition: opacity .5s ease-in-out;
+		color: $gray-base;
+		&._active {
+			opacity: 1;
+			display: flex;
+		}
+		&-container {
+			position: relative;
+			i.i-arrow-left {
+				@include center-top;
+				left: -15px;
+				cursor: pointer;
+				opacity: .7;
+				z-index: 2;
+				transition: opacity .25s ease-in-out;
+				font-size: 20px;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			i.i-arrow-right {
+				@include center-top;
+				right: -15px;
+				cursor: pointer;
+				opacity: .7;
+				z-index: 2;
+				transition: opacity .25s ease-in-out;
+				font-size: 20px;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&-markers {
+		$s: 5px;
+		width: $s;
+		height: $s;
+		border-radius: $s;
+		opacity: .5;
+		cursor: pointer;
+		margin: auto 7.5px;
+		transition: all .25s ease-in-out;
+		background-color: $brand-primary-light;
+		&._active {
+			$s: 10px;
+			width: $s;
+			height: $s;
+			border-radius: $s;
+			opacity: 1;
+		}
+		&-container {
+			@include do-flex(row, center, center);
+			margin-top: 40px;
+		}
+	}
+	&-logo {
+		width: var(--revamp-animated-testemonial-logo-w);
+		height: var(--revamp-animated-testemonial-logo-h);
+		object-fit: contain;
+		margin: var(--revamp-animated-testemonial-logo-mg);
+	}
+	&-content {
+		font-size: 24px !important;
+		font-weight: 300;
+  		line-height: 1.5;
+  		text-align: center;
+  		color: $gray-base !important;
+  		margin: var(--revamp-animated-testemonial-content-mg);	
+	}
+	&-person {
+		@include do-flex(row, center, center);
+		p {
+			font-size: 14px;
+  			font-weight: normal;
+  			text-align: center;
+  			color: $gray-dark;
+  			margin: auto 0;
+  			line-height: 1.5;
+			span {
+				font-weight: 300;
+			}
+		}
+		img {
+			width: var(--revamp-animated-testemonial-pic-s);
+			height: var(--revamp-animated-testemonial-pic-s);
+			border-radius: var(--revamp-animated-testemonial-pic-s);
+			object-fit: cover;
+			margin: 0 var(--revamp-animated-testemonial-pic-ml) 0 0;
+		}
+	}
+}
+

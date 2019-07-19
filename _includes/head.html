@@ -79,10 +79,11 @@
         <link href="{{ site.JB.atom_path | prepend: site.url }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
         <link href="{{ site.JB.rss_path | prepend: site.url }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://kit.fontawesome.com/befb9e2178.js"></script>
     </head>
 
 
-    <body class="snowplow {{ page.class | append: include.class }}">
+    <body class="snowplow {{ page.class | append: include.class }}"  {% if page.layout == 'resources' %} data-spy="scroll" data-target="#toc" {% endif %}>
 
     <div id="loading-overlay">
         <div class="loader"></div>

@@ -7,35 +7,39 @@ description: Run your data pipeline end-to-end in your AWS or GCP account for in
 permalink: /ownership/
 class: ownership
 assets:
-  css: assets/css/data-revamp.css
+  css: assets/css/snowplow.css
 blocks:
     - icon: /assets/img/data/insights-ownership_1.svg
       title: Running native<br>in your cloud
-      content: With Snowplow, your complete data collection pipeline runs on your own AWS or GCP account. Your data never leaves your environment. You have complete ownership of that data, and complete control over the pipeline.
+      first: With Snowplow, your complete data collection pipeline runs on your own AWS or GCP account.
+      content: Your data never leaves your environment. You have complete ownership of that data, and complete control over the pipeline.
     - icon: /assets/img/data/insights-ownership_3.svg
       title: Data compliance<br>made easy
-      content: You have complete control over what personal information you collect and where that information lives. That data does not leave your environment and you can decide who has access to it, what they can do with it, and when it is expired. Plus, Snowplow has specific functionality around privacy and GDPR to help keep you compliant.
+      first: You have complete control over what personal information you collect and where that information lives.
+      content: That data does not leave your environment and you can decide who has access to it, what they can do with it, and when it is expired. Plus, Snowplow has specific functionality around privacy and GDPR to help keep you compliant.
     - icon: /assets/img/data/insights-ownership_2.svg
       title: Ownership<br>means control
-      content: With Snowplow you have total control over your own data. It means you can decide how frequently you want to run the pipeline, how much latency you want to tolerate and how much you want to spend on your infrastructure each month.
+      first: With Snowplow you have total control over your own data.
+      content: It means you can decide how frequently you want to run the pipeline, how much latency you want to tolerate and how much you want to spend on your infrastructure each month.
 cards:
     - title: <a href="/blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/">GDPR challenges in a multi-platform, multi-device world</a>
       content: In this post, we’ll identify in what situations it is and is not possible to enable a user consent on one platform to determine how that same user’s data is processed when collected from another platform.
+      url: /blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/
     - title: <a href="/blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/">How data ownership makes you a more effective data scientist</a>
       content: Snowplow Analytics helps you become a highly effective data scientist by giving your company ownership of your data back from analytics tools that are limiting you, so you can focus on plying your craft.
+      url: /blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/
     - title: <a href="/blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/">How to manage consent for GDPR, a nuanced approach</a>
       content: Under GDPR, we have to manage the fact that different “pots” of data might be collected for different purposes and ensure that, if combined, the use of the combined data is still consistent with the specific purpose initially consented to during collection.
-
+      url: /blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/ownership-hero.png)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/ownership-hero.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
-                <h5>ownership</h5>
                 <h1>Take complete control and full ownership of your data.</h1>
             </div>
         </div>
@@ -53,11 +57,16 @@ cards:
 
 <section class="section-revamp data-blocks-section">
     <div class="container">
+      <div class="row text-center">
+        <h2 class="spacer-bottom-30">Ownership</h2>
+      </div>
+      <div class="row">
         <div class="data-blocks-container">
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h2>{{ block.title }}</h2>
+                        <h3>{{ block.title }}</h3>
+                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic">
@@ -65,7 +74,8 @@ cards:
                     </div>
                 </div>
             {% endfor %}
-        </div>
+        </div>  
+      </div>
     </div>
 </section>
 
@@ -73,19 +83,20 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section pad-t-80">
+<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>From the Snowplow blog</h2>
+            <div class="col-sm-12 text-center">
+                <h3>From the Snowplow blog</h3>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
-                    <div class="data-cards-item">
+                    <div class="data-cards-item-white">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
+                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

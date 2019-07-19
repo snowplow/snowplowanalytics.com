@@ -1,0 +1,97 @@
+/* 
+ * Section with animated image
+ */
+:root {
+ 	--revamp-animated-img-pad: 100px 0 160px;
+ 	--revamp-animated-img-a-mg: 40px 0 0;
+ 	@media (max-width: $screen-lg-max) {}
+ 	@media (max-width: $screen-md-max) {}
+ 	@media (max-width: $screen-sm-max) {
+ 		--revamp-animated-img-pad: 60px 0;
+ 	}
+ 	@media (max-width: $screen-xs-max) {
+ 		--revamp-animated-img-pad: 40px 0;
+ 	}
+}
+@mixin section-revamp-animated-img {
+	padding: var(--revamp-animated-img-pad);
+	position: relative;
+	img.section-revamp-animated-img-img {
+		width: 45%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		object-fit: contain;
+		@media (max-width: $screen-xs-max) {
+			position: relative;
+			width: calc(100% - 30px);
+			top: initial;
+			left: initial;
+			height: auto;
+			margin: 0 15px 40px;
+		}
+	}
+
+}
+.section-revamp-animated-img-left {
+	@include section-revamp-animated-img;
+	img.section-revamp-animated-img-img {
+		object-position: top left;
+		left: 0;
+	}
+}
+.come-in-left {	
+	/* Mobile fix */
+	@media (max-width: 578px) { 
+				
+	}
+	@media (min-width: 579px) { 
+	/*	-webkit-animation: come-in-left 1.5s ease forwards; */
+	/*	animation: come-in-left 1.5s ease forwards;*/
+	}
+	/* end of Mobile fix */
+}
+@keyframes come-in-left {
+  0%   { 
+  	opacity: 0;
+  	-webkit-transform: translateX(-60%); 
+  }
+  25%   { 
+  	opacity: 0;
+  }
+  100% { 
+  	opacity: 1; 
+  	-webkit-transform: translateX(0%);
+  }
+}
+.section-revamp-animated-img-right {
+	@include section-revamp-animated-img;
+	img.section-revamp-animated-img-img {
+		object-position: top right;
+		right: 0;
+	}
+}
+.come-in-right {	
+	/* Mobile fix */
+	@media (max-width: 578px) { 
+				
+	}
+	@media (min-width: 579px) { 
+	/*	-webkit-animation: come-in-right 1.5s ease forwards; */
+	/*	animation: come-in-right 1.5s ease forwards; */
+	}
+	/* end of Mobile fix */
+}
+@keyframes come-in-right {
+  0%   { 
+  	opacity: 0;
+  	-webkit-transform: translateX(60%); 
+  }
+  25%   { 
+  	opacity: 0;
+  }
+  100% { 
+  	opacity: 1; 
+  	-webkit-transform: translateX(0%);
+  }
+}

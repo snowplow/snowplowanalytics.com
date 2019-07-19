@@ -71,6 +71,7 @@ plugins:
   - jekyll-compress-images
   - jekyll_github_sample
   # - jekyll-redirect-from
+  - jekyll-toc
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed
 feed:
@@ -183,3 +184,7 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
+
+collections:
+  resources:
+    output: true
