@@ -153,6 +153,22 @@ pagination:
 ############################################################
 
 
+uncss:
+  stylesheets:            # a list of stylesheets to be processed; mandatory
+    - /assets/css/snowplow.css
+    - /assets/css/
+  files:                  # html files to consider, globs are supported; default: **/*.html
+    - "**/*.html"
+    - "**/*.htm"
+  compress: true          # compress resulting css with sass; default: false
+  ignore:                 # always keep rules for these selectors; default: none
+    - ".is-loading"
+    - "#titleBar"
+  media:                  # additional media queries to consider; default: undefined
+    - print
+  timeout: 30             # how long to wait for the JS to be loaded; default: undefined
+
+
 # Feed entry limiter
 feed_total: 20
 
