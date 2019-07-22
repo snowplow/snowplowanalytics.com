@@ -7,7 +7,7 @@ description: The Snowplow technology is ideal for data teams who want to manage 
 permalink: products/technology/
 class: insights
 assets:
-  css: assets/css/technology.css
+  css: assets/css/snowplow.css
   # js: assets/js/products-insights.js
 cards:
     - name: Trackers & webhooks
@@ -51,13 +51,13 @@ cards:
       content: Snowplow delivers a data platform which can meaningfully reflect the nature of your business operations, not a vendor’s view of your industry. Snowplow data can easily be joined with other data sets, aggregated and modeled; you can plug the data straight into your favourite business intelligence tools. Our Implementation Engineers can help empower your analysts or data team to derive maximum insights from your Snowplow data.
       url: /technology
 big-cards:
-    - name: Snowplow on<br>Amazon Web Services
+    - name: Snowplow runs native on AWS with a technical architecture that is linearly scalable.
       pic: /assets/img/products/technology/amazon-webservices-logo.svg
-      content: Snowplow runs native on AWS with a technical architecture that is linearly scalable. We build on top of the AWS services that data and systems engineers know and love - from Kinesis to S3 to Redshift.<br><br>We’re fully integrated into your AWS account so that you can work directly with your event data and your preferred tools.
+      content: We build on top of the AWS services that data and systems engineers know and love - from Kinesis to S3 to Redshift.<br>We’re fully integrated into your AWS account so that you can work directly with your event data and your preferred tools.
       url: /technology
-    - name: Snowplow on<br>Google Cloud Platform
+    - name: Snowplow runs native on GCP, with a technical architecture that is linearly scalable.
       pic: /assets/img/products/technology/google-cloud-platform-logo.svg
-      content: Snowplow runs native on GCP, with a technical architecture that is linearly scalable. Snowplow is built on top of GCP’s best-in-class data services - from Cloud Dataflow to BigQuery to Cloud Pub/Sub.<br><br>We’re are fully deployed into your Google Cloud account so there’s nothing standing in-between you and your event streams.
+      content: Snowplow is built on top of GCP’s best-in-class data services - from Cloud Dataflow to BigQuery to Cloud Pub/Sub.<br>We’re are fully deployed into your Google Cloud account so there’s nothing standing in-between you and your event streams.
       url: /technology
 
 
@@ -66,7 +66,7 @@ big-cards:
                 MAIN AREA
             -->
 
-<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/technology/spw-technology-header@2x.jpg)">
+<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/products/technology/spw-technology-header@2x.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-offset-1">
@@ -74,13 +74,13 @@ big-cards:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 col-offset-1">
+            <div class="col-sm-9 col-offset-1 spacer-bottom-40">
                 <h4>The Snowplow pipeline is architected from the ground up for data quality, so you don’t have to worry about bad or missing data.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/request-demo/" class="btn btn-primary call-to-action">Get started</a>
+                <a href="/request-demo/" class="btn btn-primary large">Get started</a>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@ big-cards:
 <section class="section-revamp section-revamp-center">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
                 <h2>The Snowplow Pipeline</h2>
                 <h5>Our technology is ideal for data teams who want to manage the collection and warehousing of data across all their platforms and channels, in real-time.</h5>
             </div>
@@ -117,10 +117,8 @@ big-cards:
                         <p>{{ card.excerpt }}</p>
                     </div>
                     <div class="section-revamp-cards-hover">
-                        <p>
-                            <span>{{ card.name }}</span>
-                            {{ card.content }}
-                        </p>
+                        <h4>{{ card.name }}</h4>
+                        <p>{{ card.content }}</p>
                         <!--<a href="{{ card.url }}">Learn more about our Services team</a>-->
                     </div>
                 </div>
@@ -133,14 +131,10 @@ big-cards:
 <section class="section-revamp section-revamp-center pad-b-60">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h2>Running native inside your cloud account</h2>
-                <p>
-                    Snowplow was designed to run native on your public cloud - first AWS and now GCP. We don’t reinvent the wheel: Snowplow builds on top of the clouds’ own best-in-class data services, like Kinesis and BigQuery.
-                    <br>
-                    <br>
-                    Your security officer can sleep easy: your business-critical event data is never routed through Snowplow or any other third-party’s servers.
-                </p>
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h3>Running native inside your cloud account</h3>
+                <h5 class="spacer-bottom-30">Snowplow was designed to run native on your public cloud - first AWS and now GCP.</h5>
+                <p>We don’t reinvent the wheel: Snowplow builds on top of the clouds’ own best-in-class data services, like Kinesis and BigQuery. Your security officer can sleep easy: your business-critical event data is never routed through Snowplow or other third-party’s servers.</p>
             </div>
         </div>
     </div>
@@ -150,11 +144,12 @@ big-cards:
 
 <section class="section-revamp section-revamp-big-cards-section">
     <div class="container">
-        <div class="section-revamp-big-cards-container">
+        <div class="section-revamp-big-cards-container">    
             {% for card in page.big-cards %}
                 <div class="section-revamp-big-cards">
-                        <img src="{{ BASE_PATH }}{{ card.pic }}" alt="">
-                        <h4>{{ card.name }}</h4>
+                        <h6 class="xl spacer-bottom-80">Snowplow on</h6>
+                        <img src="{{ BASE_PATH }}{{ card.pic }}" alt="" class="spacer-bottom-40">
+                        <h4 class="spacer-bottom-40">{{ card.name }}</h4>
                         <p>{{ card.content }}</p>
                         <!--<a class="btn btn-lines" href="{{ card.url }}">Learn more</a>-->
                 </div>

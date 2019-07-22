@@ -1,0 +1,45 @@
+/* 
+ * Products Icons
+ */
+:root {
+ 	--revamp-icons-ml: 40px;
+ 	--revamp-icons-img-h: 80px;
+ 	--revamp-icons-img-mg: 0 0 25px;
+ 	--revamp-icons-a-mg: 40px 0 0;
+ 	@media (max-width: $screen-lg-max) {}
+ 	@media (max-width: $screen-md-max) {}
+ 	@media (max-width: $screen-sm-max) {}
+ 	@media (max-width: $screen-xs-max) {
+ 		--revamp-icons-ml: 0;
+ 		--revamp-icons-a-mg: 20px auto 0;
+ 	}
+}
+
+.section-revamp-icons {
+	flex: 0 1 calc(30% - var(--revamp-icons-ml));
+	padding: 20px;
+	@include do-flex(column, space-between, center, nowrap);
+	&:hover { box-shadow: 0 0 33px 0 rgba(155, 160, 170, 0.33); }
+	@media (max-width: $screen-xs-max) {
+		flex: 1;
+		margin-bottom: 60px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	&-container {
+		@include do-flex(row, space-between, flex-start, nowrap);
+		@media (max-width: $screen-xs-max) {
+			@include do-flex(column, flex-start, flex-start, wrap);
+		}
+	}
+	img {
+		width: 100%;
+		height: var(--revamp-icons-img-h);
+		object-fit: contain;
+		margin: var(--revamp-icons-img-mg);
+	}
+	a {
+		color: $gray-base;
+	}
+}

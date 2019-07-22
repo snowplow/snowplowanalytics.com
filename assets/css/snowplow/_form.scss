@@ -301,10 +301,6 @@ label,
 }
 
 
-
-
-
-
 /*
  * FORM INLINE HELP
  */
@@ -348,5 +344,152 @@ label,
 	.help-inline,
 	.form-control-feedback {
 		color: darken($brand-success, 15%);
+	}
+}
+
+/* Forms */
+.get-started-form {
+	&-section {
+		//////////////////////////////////
+		// Vars
+		//////////////////////////////////
+		--pad: 15px 0 175px;
+		--w: calc(50% - 7.5px);
+		--h: 680px;
+		--img-h: 107px;
+		--img-mg: 0 auto 35px;
+		--back-pad: 55px 35px;
+		--text-h: 150px;
+		@media (max-width: 767px) {
+			--w: 100%;
+			--pad: 15px 0 50px;
+		}
+		//////////////////////////////////
+		padding: var(--pad);
+		& > .container {
+			@include do-flex(row, space-between, center, wrap);
+		}
+	}
+	&-wrapper {
+		position: relative;
+		width: var(--w);
+		height: var(--h);
+		background-color: $brand-lighter;
+		p {
+			color: $brand-primary-light;
+		}
+		&.sales {
+			--img-h: 119px;
+			background-color: $brand-primary;
+			@media (max-width: 767px) {
+				margin-bottom: 20px;
+			}
+			h3, h4 {
+				color: white;
+			}
+			.btn {
+				border: solid 2px white;
+				background-color: transparent;
+				&:hover {
+					background-color: white;
+					color: $brand-primary-light;
+				}
+			}
+			.help-inline {
+				color: white;
+			}
+		}
+		&-front {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include do-flex(column, center, center);
+			transition: opacity .5s ease-in-out;
+			cursor: pointer;
+			.get-started-form-wrapper.open & {
+				visibility: hidden;
+				opacity: 0;
+			}
+			img {
+				margin: var(--img-mg);
+				height: var(--img-h);
+				width: auto;
+				object-fit: contain;
+			}
+			h3 {
+				text-align: center;
+			}
+		}
+		&-back {
+			width: 100%;
+			height: 100%;
+			padding: var(--back-pad);
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: opacity .5s ease-in-out;
+			visibility: hidden;
+			.get-started-form-wrapper.open & {
+				visibility: visible;
+				opacity: 1;
+			}
+			input[type=text], input[type=email], textarea {
+				background-color: white;
+				border: none;
+			}
+			textarea {
+				line-height: 1.5;
+				height: var(--text-h);
+				resize: none;
+				white-space: pre-wrap !important;
+			}
+			.fake-dropdown {
+				width: 100%;
+    			margin: 0;
+			    border: none;
+			    background-color: white;
+			    border-radius: 5px;
+			    label {
+			    	padding: 18px 16px 16px;
+				    line-height: 1;
+					font-size: 14px;
+					font-weight: 400;
+					color: #999;
+					opacity: 0.54;
+					width: 100% !important;	
+			    }
+			    ul {
+			    	background-color: white;
+			    	margin-top: -4px;
+			    	li {
+			    		padding: 18px 16px 16px;
+					    line-height: 1;
+						font-size: 14px;
+						font-weight: 400;
+						color: $gray;
+						width: 100% !important;
+						&:hover {
+							color: white;
+						}
+			    	}
+			    }
+			    &:after {
+			    	width: 0;
+			    	left: 0;
+					border-width: 7px 4.5px 0 4.5px;
+					border-color: $gray transparent transparent transparent;
+			    }
+			}
+			.btn {
+				//margin-top: 30px;
+			}
+			p {
+				margin-bottom: 30px;
+			}
+
+		}
 	}
 }
