@@ -77,9 +77,9 @@
             </div>
         </footer>
 
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-        <!-- Moved below JS to header to ensure it's loaded before contact-us.js or request-demo.js  -->
-        <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js" defer="defer"></script>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i|Slabo+27px' type='text/css' media='screen' />
+        <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
+        {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
         {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
         {% if page.layout == 'post' %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/assets/js/vendors/prism.js'></script>{% endif %}
 
@@ -91,7 +91,9 @@
             }
         </script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> --> 
+		
+		<script  src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
         <script type="text/javascript">
         // Create browser compatible event handler.
