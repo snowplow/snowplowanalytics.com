@@ -22,6 +22,7 @@ group :jekyll_plugins do
    gem "jekyll-compress-images"
    gem 'jekyll_github_sample'   
    # gem "jekyll-redirect-from", "~> 0.12.1"
+   gem 'jekyll-toc'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
