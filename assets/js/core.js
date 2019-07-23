@@ -47,6 +47,7 @@ if (!window.location.origin) {
         var scrollingTimeOut = 0;
         var body = $('body');
         var header = $('header');
+        var footer = $('footer');
 
 
 
@@ -61,6 +62,7 @@ if (!window.location.origin) {
             acceptButton: true,
             acceptText: 'Continue',
             policyButton: true,
+            effect: 'slide',
             policyText: 'Learn more',
             message: '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3>We use cookies on this website to track how our users are browsing and engaging with it. We use that to figure out how good we are at introducing Snowplow to prospective companies and how well we serve existing users with documentation and other supporting material. <a href="/terms-of-service/">Click here</a> for more information..</div>'
         });
@@ -76,6 +78,12 @@ if (!window.location.origin) {
             cookie.remove();
         }
 
+        // Check if user scrolled to the bottom and change cookie from fixed to static
+        $(window).scroll(function() {
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                $('#cookie').addClass('static-footer');
+            }
+         });
 
 
         /*
