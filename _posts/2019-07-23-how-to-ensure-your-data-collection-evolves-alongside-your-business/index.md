@@ -1,13 +1,17 @@
 ---
 layout: post
-title-short: "How to ensure your data collection evolves with your business"
-title: "How to ensure your data collection evolves with your business"
-description: "What Snowplow Micro is and how you can get started."
+title-short: How to ensure your data collection evolves alongside your business
+title: "How to ensure your data collection evolves alongside your business"
+description: "With Snowplow, you can easily publish, update and validate your tracking so your data collection evolves with your business"
 author: Lyuba
 category: Releases
-permalink: /blog/2019/07/23/how-to-ensure-your-data-collection-evolves-with-your-business
+permalink: /blog/2019/07/23/how-to-ensure-your-data-collection-evolves-alongside-your-business/
 discourse: true
 ---
+
+
+
+
 
 Modern businesses evolve quickly. While twenty years ago it was common to update a website every few years, now modern digital businesses make changes to their websites and applications weekly, or even daily. At the same time, most data-driven businesses would agree that collecting data is an essential part of optimizing the user experience. This creates a data collection challenge: the faster companies evolve their websites and apps, the harder it becomes to reliably collect data that describes the current state of user journeys through those websites and apps. On top of that, digital businesses typically need to extend their tracking over time as they become more analytically sophisticated and ask tougher questions of the data, creating a second driver for evolving their data collection. 
 
