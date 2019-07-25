@@ -135,8 +135,7 @@ main .hero-revamp {
 			.btn {
 				
 				&:hover {
-					background-color: white;
-					color: $blue-purple;
+					opacity:.8;
 				}
 			}
 			.help-inline {

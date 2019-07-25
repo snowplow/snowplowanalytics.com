@@ -120,7 +120,7 @@
 		        email: email,
 		        //phone: phone,
 		        //job_title: (type == '0') ? 'Other' : type,
-		        job_title: typeSales,
+		        // job_title: typeSales,
 		        company: company,
 		        message: message,
 		        insights: false,
@@ -142,11 +142,11 @@
 		    form.append(elementPHONE);
 
 		    
-		    var elementJOB = document.createElement("input");
-		    elementJOB.name = "job_title";
-		    elementJOB.value = typeSales;
-		    elementJOB.setAttribute("type", "hidden");
-		    form.append(elementJOB);
+		    // var elementJOB = document.createElement("input");
+		    // elementJOB.name = "job_title";
+		    // elementJOB.value = typeSales;
+		    // elementJOB.setAttribute("type", "hidden");
+		    // form.append(elementJOB);
 
 		    var elementOID = document.createElement("input");
                 elementOID.name = "oid";
@@ -179,7 +179,7 @@
       		document.getElementById("sales-work-email").setAttribute("name","email");
       		document.getElementById("sales-company").setAttribute("name","company");
        		document.getElementById("sales-message").setAttribute("name","message");			
-      		document.getElementById("sales-type").setAttribute("name","job_title");
+      		// document.getElementById("sales-type").setAttribute("name","job_title");
       		document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 			document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");
 			document.getElementById("inputWebsite").setAttribute("name","00N2400000HS6sg");
