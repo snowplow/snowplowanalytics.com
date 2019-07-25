@@ -116,7 +116,13 @@ main .hero-revamp {
 		}
 		&.sales {
 			--img-h: 119px;
-			background-color: $blue-purple;
+			-webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;
+            -webkit-box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);
+            -moz-box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);
+             box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);   
+			background-color:#ffffff ;
 			@media (max-width: 767px) {
 				margin-bottom: 20px;
 			}
@@ -127,14 +133,16 @@ main .hero-revamp {
 				color:#ffffff;
 			}
 			.btn {
-				border: solid 2px white;
+				
 				&:hover {
 					background-color: white;
 					color: $blue-purple;
 				}
 			}
 			.help-inline {
-				color: white;
+				color:red;
+				display:block !important;
+				height:27px;
 			}
 		}
 		&-front {
@@ -186,10 +194,6 @@ main .hero-revamp {
 			.get-started-form-wrapper.open & {
 				visibility: visible;
 				opacity: 1;
-			}
-			input[type=text], input[type=email], textarea {
-				background-color: white;
-				border: none;
 			}
 			textarea {
 				line-height: 1.5;
@@ -284,6 +288,9 @@ main .hero-revamp {
 		visibility: visible;
 		opacity: 1;
 		min-height:100%;
+	 }
+	 .sumbmit-button-wrapper{
+		 margin-bottom:0px;
 	 }
 }
 

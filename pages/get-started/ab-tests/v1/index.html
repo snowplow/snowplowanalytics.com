@@ -41,7 +41,7 @@ companies:
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <h1>Interested in Snowplow? <br> Request a demo.</h1>
-                <h3>Take complete control of your data with Snowplow.</h3>
+                <h3>Take complete control <br> of your data with Snowplow.</h3>
             </div>
         </div>
     </div>
@@ -63,11 +63,13 @@ companies:
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
+                            <label for="sales-first-name">First name <span style="color:red">*</span></label>
                             <input type="text" class="form-control" id="sales-first-name" aria-describedby="first-name"
                                 placeholder="First name" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="sales-first-name">Last name <span style="color:red">*</span></label>
                             <input type="text" class="form-control" id="sales-last-name" aria-describedby="last-name"
                                 placeholder="Last name" maxlength="40" required>
                             <div class="help-inline"></div>
@@ -75,40 +77,20 @@ companies:
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
+                            <label for="sales-first-name">Email<span style="color:red">*</span></label>
                             <input type="email" class="form-control" id="sales-work-email" aria-describedby="work-email"
                                 placeholder="Work email" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="sales-company" aria-describedby="company"
-                                placeholder="Company" maxlength="40" required>
+                            <label for="sales-first-name">Company<span style="color:red">*</span></label>
+                            <input type="text" class="form-control" id="sales-company" aria-describedby="company" placeholder="Company" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <div class="fake-dropdown" data-value="0">
-                                <input type="checkbox" id="sales-type">
-                                <label for="sales-type" id="sales-type-label">I’m a...</label>
-                                <ul>
-                                    <li data-value="0">Data Analyst</li>
-                                    <li data-value="0">Data Engineer</li>
-                                    <li data-value="0">Data Scientist</li>
-                                    <li data-value="0">Chief Data Officer</li>
-                                    <li data-value="0">Head of Data</li>
-                                    <li data-value="0">BI Manager</li>
-                                    <li data-value="0">Product Manager</li>
-                                    <li data-value="0">Marketing Manager</li>
-                                    <li data-value="0">Other</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
+                            <label for="sales-message">Message</label>
                             <textarea class="form-control" id="sales-message"
                                 placeholder="Anything you'd like to share? (optional)"
                                 maxlength="40"></textarea>
@@ -116,7 +98,7 @@ companies:
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 sumbmit-button-wrapper">
                             <a id="sales-submit" class="btn btn-primary">Submit</a>
                         </div>
                     </div>
