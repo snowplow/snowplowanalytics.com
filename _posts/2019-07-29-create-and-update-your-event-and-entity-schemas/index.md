@@ -9,6 +9,9 @@ permalink: /blog/2019/07/29/create-and-update-your-event-and-entity-schemas/
 discourse: true
 ---
 
+![Schema UI][schema-ui]
+
+
 Schemas are one of the most powerful Snowplow Insights features. To date they have been hard to create and update. Now this can be done easily, directly in the Snowplow UI.
 
 
@@ -55,3 +58,7 @@ Now schemas can be created, tested and published directly in the Snowplow UI, wi
 ## Additional references
 
 Documentation can be found [here](https://docs.snowplowanalytics.com/snowplow-insights/schemas/).
+
+
+
+[schema-ui]: /assets/img/blog/2019/07/Schema-UI.png
