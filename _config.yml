@@ -72,6 +72,7 @@ plugins:
   - jekyll_github_sample
   # - jekyll-redirect-from
   - jekyll-toc
+  - jekyll-autoprefixer
 
 # We already have a feed path.  - https://github.com/jekyll/jekyll-feed
 feed:

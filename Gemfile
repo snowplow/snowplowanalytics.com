@@ -23,6 +23,7 @@ group :jekyll_plugins do
    gem 'jekyll_github_sample'   
    # gem "jekyll-redirect-from", "~> 0.12.1"
    gem 'jekyll-toc'
+   gem 'jekyll-autoprefixer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
