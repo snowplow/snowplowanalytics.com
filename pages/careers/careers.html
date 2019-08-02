@@ -1,0 +1,200 @@
+---
+layout: default
+title: Join the Snowplow Team
+description: Empower Smart People to Differentiate with Data
+permalink: company/careers2/
+class: white-heading
+assets:
+  css: assets/css/careers2.css
+values:
+  - heading: Honesty
+    description: Be honest; always; without exception.
+    background: "#ffffff"
+    imageEnable: "true"    
+    imageSize: ""
+    textPosition: "left"
+    imagePath: assets/img/careers/honesty@3x.jpg
+  - heading: Growth
+    description: Actively seek out opportunities to learn and develop.
+    background: "#f5faff"
+    imageEnable: "true"    
+    imageSize: ""
+    textPosition: "left"
+    imagePath: assets/img/careers/growth@3x.jpg
+  - heading: Ownership
+    description: Take ownership, eagerly.
+    background: "#f5faff"
+    imageEnable: "false"    
+    imageSize: ""
+    textPosition: "left"
+    imagePath: 
+  - heading: Inclusivity
+    description: Take ownership, eagerly.
+    background: "#ffffff"
+    imageEnable: "true"    
+    imageSize: "double"
+    textPosition: "left"
+    imagePath: assets/img/careers/inclusivity@3x.jpg
+  - heading: Empowerment
+    description: "Empower one another, our customers,  and our community, to do amazing things: for themselves."
+    background: "#ffffff"
+    imageEnable: "true"    
+    imageSize: "double"
+    textPosition: "right"
+    imagePath: assets/img/careers/empowerment@3x.jpg
+  - heading: Transparency
+    description: "Be open and transparent about how things are and how decisions have been reached, wherever possible."
+    background: "#f5faff"
+    imageEnable: "false"    
+    imageSize: ""
+    textPosition: "right"
+    imagePath:
+  - heading: Customer-centric
+    description: We are here to empower our customers. They have to be at the heart of everything we do.
+    background: "#f5faff"
+    imageEnable: "true"    
+    imageSize: ""
+    textPosition: "right"
+    imagePath: assets/img/careers/customer@3x.jpg
+  - heading: Technical Excellence
+    description: Master the skills and tools associated with our roles, and apply them appropriately.
+    background: "#ffffff"
+    imageEnable: "true"    
+    imageSize: ""
+    textPosition: "right"
+    imagePath: assets/img/careers/technical@3x.jpg
+---
+
+<section class="hero theme-light bg-success spacer-top-80" style="background-image: url({{ BASE_PATH }}/assets/img/careers/careermain.jpg)">
+    <div class="container text-center spacer-80">
+        
+    </div>
+</section>
+
+<section class="hero-revamp" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">                
+                <h4 class="spacer-bottom-30">Join us on our mission to empower companies to use data for better decision-making in a supportive, transparent and diverse work environment.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-revamp section-revamp-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h2>Our values</h2>
+                <h5>Our values aren’t just words that the founders came up with in isolation. <br> They are the collective thinking of our entire company, which act as our guiding principles. </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 ">
+				<div class="container">	
+					<div class="wrapper">
+						<div class="masonry masonry--h">
+							{% for row in page.values  %}
+								{% if row.textPosition == "left" %}
+									<div class="masonry-brick masonry-brick--h" style="background-color: {{ row.background}}">
+										<div class="pad-30">
+											<h5>{{row.heading}}</h5>
+											<p>{{row.description }}  </p>
+										</div>
+									</div>
+								{% endif %}
+								{% if row.imageEnable == "true" %}
+									<div class="masonry-brick masonry-brick--h  {% if row.imageSize == "double" %}wid50{% endif %}" style="background-color: {{ row.background}}">
+										<img src="{{ BASE_PATH }}/{{ row.imagePath }}" srcset="{{ BASE_PATH }}/{{ row.row.imagePath-2x }} 2x, {{ BASE_PATH }}/{{ row.row.imagePath-3x }} 3x" alt="{{ row.heading }}"class="masonry-img">
+									</div>
+								{% endif %}
+								{% if row.textPosition == "right" %}
+									<div class="masonry-brick masonry-brick--h" style="background-color: {{ row.background}}">
+										<div class="pad-30">
+											<h5>{{row.heading}}</h5>
+											<p>{{row.description }}  </p>
+										</div>
+									</div>
+								{% endif %}
+								
+							{% endfor %}
+							<div class="masonry-brick masonry-brick--h video-left">
+								<div class="pad-30">
+									<h5>What’s it like to work at Snowplow?</h5>
+									<p>Click and find out what our fellow Snowplowers have to say about working at Snowplow.</p>
+								</div>
+							</div>
+							<div class="masonry-brick masonry-brick--h video-value"" style="width: 75%">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z_liZG9N2sM" frameborder="0" allowfullscreen></iframe>
+
+								
+							</div>
+						</div>
+					</div>
+
+					
+				</div>
+				
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero-revamp pad-t-60 pad-b-60" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
+   <div class="container well-lg no-border py-30 bg-transparent">
+    	<h2 class="text-center">Sound like you? Come and join us!</h2>
+		<div id='lever-jobs-container' class="pad-30"></div><script type='text/javascript'>window.leverJobsOptions = {accountName: 'snowplowanalytics', includeCss: true};</script><script type='text/javascript' src='https://andreasmb.github.io/lever-jobs-embed/index.js'></script>
+	</div>
+	<div class="container text-center">	
+		<h3>Can’t see the kind of opportunity you’re looking for?</h3>
+		<p>We’re always interested in hearing from talented, driven and conscientious individuals so please do get in touch with <br> 
+		<a href="mailto:careers@snowplowanalytics.com">careers@snowplowanalytics.com</a>and tell us more about you.</p>
+	</div>
+</section>
+
+<section class="section-revamp v">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center spacer-bottom-50">
+        <h3>Follow us online</h3>
+		<p>See what Snowplowers are up to. </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12   spacer-bottom-50">
+			<div class="container-outter">
+    
+				<div class="col ">
+					<div class="pad-30">
+						 <img src="{{ BASE_PATH }}/assets/img/careers/glassdoor.png" srcset="{{ BASE_PATH }}/assets/img/careers/glassdoor-2x 2x, {{ BASE_PATH }}/assets/img/careers/glassdoor-3x }} 3x" alt="glassdoor">
+						 <p>“Snowplow has a great company culture! As it's a fast-growing startup you get a lot of responsibility, trust and autonomy. “</p>
+						<a href="#">->  See what people are saying</a>
+					 
+					</div>
+				</div>
+				<div class="col">
+					<div class="pad-30">
+						<h4 class="spacer-0">Inside the Plow Blog</h4>
+						<a href="#">Pride at Snowplow</a>
+						<p>At Snowplow, ‘Inclusivity’ and ‘Empowerment’ are two of our core values; we believe it is important to encourage...</p>
+						<a href="#">->  Visit our blog</a>
+					</div>
+				</div>
+				<div class="col insta">
+					 <img src="{{ BASE_PATH }}/assets/img/careers/instragram.jpg" srcset="{{ BASE_PATH }}/assets/img/careers/instragram-2x 2x, {{ BASE_PATH }}/assets/img/careers/instragram-3x }} 3x" alt="instragram">
+					 <div class="insta-link"><a href="@snowplowanalytics"><i class="fa fa-instagram" aria-hidden="true"></i>  @snowplowanalytics</a></div>
+				</div>
+				<div class="col">
+					<div class="pad-30">
+						<h4><i class="fa fa-twitter" aria-hidden="true"></i> @snowplowdata</h4>
+						<p>One of our most significant announcements to date: Snowplow is now available for Google Cloud Platform.</p>
+						<a href="#">#GCP #BigQuery #analytics http://bit.ly/2QvDi5b </a>
+
+					
+					</div>
+				</div>
+			</div>
+    </div>
+    
+  </div>
+</section>
+
+
