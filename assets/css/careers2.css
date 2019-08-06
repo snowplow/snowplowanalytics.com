@@ -1,0 +1,73 @@
+.container-outter {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);	
+	grid-auto-rows: 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+  }
+.container-outter .col {
+  background: #f5faff;
+  position: relative;
+}
+.two-merge {
+	background: blue;
+	grid-column: 1 / span 2;
+	grid-auto-rows: 1fr;
+  }
+.insta-link{position:absolute; top:15px; left:15px;}
+.insta-link a {color:#fff;}
+
+
+
+
+
+
+
+/* Render items as columns */
+.wrapper {
+margin: 2em auto;
+max-width:1170px;
+}
+
+.masonry {
+    display: flex;
+    width: 100%;
+}
+
+.masonry--h {
+    flex-flow: row wrap;
+}
+.masonry-brick--h {
+    width:25%;
+	background:#fff;
+}
+
+.masonry-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.masonry-brick--h:nth-child(even) {
+	background:#f5faff;
+}
+
+.masonry-brick.masonry-brick--h.wid50 {
+    width:50%;
+}
+
+.masonry-brick--h img{max-width:100%;}
+.masonry-brick--h h5{
+	color:#50545c;
+	font-size:24px;
+}
+.masonry-brick--h p{
+	color:#50545c;
+}
+
+.video-left{background:#9e62dd; color:#fff; height:350px;}
+.video-value{background:#9e62dd;height:350px;}
+.video-left h5, .video-left p{color:#fff;}
+
+.py-30{padding-top:30px; padding-bottom:30px;} 
+.bg-transparent{background:transparent}
