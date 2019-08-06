@@ -121,3 +121,25 @@ body.white-heading {
 		}
 	}
 }
+
+a {
+			color: $gray-base;
+			font-size: 14px;
+			font-weight: 500;
+			&:before {
+			    margin-right: 8px;
+				display: inline-block;
+				height: 15px;
+   				width: 15px;
+   				vertical-align: -10%;
+   				}
+			&:hover {
+				color: $tealish;
+				&:before {
+					display: inline-block;
+					height: 15px;
+   					width: 15px;
+   					vertical-align: -10%;
+				}
+			}
+		}
