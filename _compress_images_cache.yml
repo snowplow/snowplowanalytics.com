@@ -1759,9 +1759,6 @@ assets/img/data/insights-data_quality_5.png: insights-data_quality_5.png
 assets/img/careers/twitter-career-image.png: twitter-career-image.png
 assets/img/products/technology/spw-pipeline-infographic-outlined.svg: spw-pipeline-infographic-outlined.svg
 assets/img/products/spw-pipeline-infographic-outlined.svg: spw-pipeline-infographic-outlined.svg
-<<<<<<< HEAD
-assets/img/blog/2019/07/Schema-UI.png: Schema-UI.png
-=======
 assets/img/travel/secret-escapes@3x.png: secret-escapes@3x.png
 assets/img/travel/the_culture_trip@2x.png: the_culture_trip@2x.png
 assets/img/travel/tripaneer@2x.png: tripaneer@2x.png
@@ -1830,4 +1827,4 @@ assets/img/blog/2019/08/simon-rumble.jpeg: simon-rumble.jpeg
 assets/img/blog/2019/08/time-spent/page-ping.png: page-ping.png
 assets/img/blog/2019/08/time-spent/time-spent.png: time-spent.png
 assets/img/blog/2019/08/time-spent/see-data.png: see-data.png
->>>>>>> page/travel
+assets/img/blog/2019/07/Schema-UI.png: Schema-UI.png
