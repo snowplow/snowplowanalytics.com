@@ -71,7 +71,7 @@ pre {
 	.token {
 		&.number {
 	    	color: #b1b1b1;
-	    	user-select:none;
+	    	// user-select:none;
 	    	pointer-events: none;
 	    }
 	}
