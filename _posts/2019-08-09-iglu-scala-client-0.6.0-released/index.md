@@ -89,7 +89,7 @@ Huge thanks to our Summer 2018 intern [Andrzej Sołtysik][andrzej], [Hacktoberfe
 
 This release is planned to be a last one in 0.x series.
 Next release will likely include a relatively small amount of user-facing improvements and will have a 1.0.0 version, marking stability of API.
-Since 1.0.0 we're planning to introduce [MiMa-compatibility checks][mima] to our libraries in order to make update process more reliable.
+From 1.0.0 onwards we plan to introduce [MiMa-compatibility checks][mima] to our libraries in order to make the update process more reliable.
 
 
 <h3 id="help">6. Getting Help</h3>
