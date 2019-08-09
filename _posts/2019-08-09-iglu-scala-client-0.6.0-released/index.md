@@ -69,7 +69,7 @@ The `ResolutionError` data type (subtype of `ClientError`) has two properties to
 
 As it was mentioned before, Iglu Scala Client uses new [JSON Schema validator][networknt-validator] under the hood (which hover can be replaced with any custom one). Despite this validator also targets JSON Schema spec v4, it nevertheless can have incompatibilities with our previous JSON Schema validator. As a result some instances that were considered valid by Iglu Scala Client pre-0.6.0 can now be silently invalidated.
 
-Here's the short list of most widely used Snowplow components we're planning to release with Iglu Client 0.6.0:
+Here's a short list of the most widely used Snowplow components we're planning to release with Iglu Client 0.6.0:
 
 * Stream Enrich 0.22.0 (Snowplow R117)
 * RDB Shredder 0.15.0 (RDB Loader R31)
