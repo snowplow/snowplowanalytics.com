@@ -23,9 +23,9 @@ In the rest of this post we will cover:
 
 <h3 id="api-changes">1. API changes</h3>
 
-Since 0.6.0 Iglu Scala Client exposes a new class called `Client` which consists of two independent entities: `Resolver` and `Validator`.
-`Resolver` is responsible for schema resolution, caching and error handling and `Validator` receives resolved schema with datum user wants to validate and returns the validation report.
-These entities can be used separately or even re-defined by user, but it is recommended to use the `Client` class as an abstraction for most common use case - validation of self-describing entities.
+Iglu Scala Client 0.6.0 exposes a new class called `Client` which consists of two independent entities: `Resolver` and `Validator`.
+`Resolver` is responsible for schema resolution, caching and error handling and `Validator` receives resolved schemas, datum the user wants to validate and returns the validation report.
+These entities can be used separately or even re-defined by the user, but it is recommended to use `Client` class as an abstraction for the most common use case - validation of self-describing entities.
 
 The `Client` class defines only one function:
 
@@ -35,7 +35,7 @@ def check[F[_]: RegistryLookup: Clock: Monad, A](instance: SelfDescribingData[A]
 
 Where:
 
-* `F[_]` is an abstract effect type, requiring a [tagless final][tagless-final] capabilities `RegistryLookup` and `cats.effect.Clock` as well as instance of `cats.Monad` type class. Two most common concrete effect types are cats.effect.IO and Id, all necessary machinery for them provided out-of-box, but user can also define this machinery for ZIO, Monix Task or sophisticated test type
+* `F[_]` is an abstract effect type, requiring a [tagless final][tagless-final] capabilities `RegistryLookup` and `cats.effect.Clock` as well as instance of `cats.Monad` type class. The two most common effect types are `cats.effect.IO` and `Id`, all necessary machinery for them are provided out-of-box, but users can also define this machinery for ZIO, Monix Task or sophisticated test types.
 * `A` is a type of self-describing entity, such as JSON. Since 0.6.0, Iglu Client is based primarily on [circe][circe] `Json` type, but we're trying to leave it generic whenever possible
 * `ClientError` is a possible unsuccessful outcome, either at resolution or validation step. Unlike `ProcessingMessage` from pre-0.6.0 it provides a type-safe and well-structured information about the failure. This type is widely used in upcoming Snowplow [bad rows][bad-rows-rfc]
 
@@ -50,8 +50,8 @@ You can find more usage examples on dedicated [wiki page][iglu-client-docs].
 
 <h3 id="semantic-changes">2. Semantic Changes</h3>
 
-In a batch ETL world, we tried to reduce the load on Iglu Registries by leveraging very simple retry-and-cache algorithm, that was making some configurable amount of attempts before deciding that schema is missing or invalid and caching this failure.
-The only thing that potentially could reset this cached value is cacheTtl property, that would force the resolver to retry no matter whether cached value is success (in case somebody mutated schema) or failure (in case the registry had a long outage).
+In a batch ETL world, we tried to reduce the load on Iglu Registries by leveraging a very simple retry-and-cache algorithm that was making some configurable attempts before deciding whether the schema is missing or invalid and caching this failure. 
+The only thing that potentially could reset this cached value is the cacheTtl property, that would force the resolver to retry whether the cached value was a success (in case somebody mutated schema) or a failure (in case the registry had a long outage).
 
 This approach does not work for RT-first world anymore.
 There's no meaningful amount of attempts that resolver needs to make before considering a schema missing or invalid.
