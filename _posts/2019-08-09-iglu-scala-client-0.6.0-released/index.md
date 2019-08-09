@@ -97,15 +97,6 @@ From 1.0.0 onwards we plan to introduce [MiMa-compatibility checks][mima] to our
 If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
 
 
-
-
-**DISCARDED DRAFTS DELETE AFTER REVIEW**
-
-Iglu Scala Client was initially written in 2014, when Scala ecosystem was drastically different. Many libraries were improved, rewritten or abandoned since then, design approaches evolved and new conventions emerged. Snowplow is among biggest open source Scala users and we want to be a part of the ecosystem, following widely accepted practices and embracing best libraries out there.
-
-One of design approaches emerged since 2014 in Scala ecosystem is [tagless final], a way to write extensible and type-safe DSLs. In a nutshell, tagless final allows developers to abstract over certain _capabilities_, usually related to side-effects and declare functions, depending of them. Callers of such tagless-final function need to provide the capability or depend on it themselves. Different environments can have different requirements, such as ability to execute code in concurrent, distributed or purely functional fashion and end-users could provide different capability-interpreters with these requirements in mind.
-
-
 [batch-deprecation-rfc]: https://discourse.snowplowanalytics.com/t/rfc-making-the-snowplow-pipeline-real-time-end-to-end-and-deprecating-support-for-batch-processing-modules/3018
 [automigrations-rfc]: https://discourse.snowplowanalytics.com/t/redshift-automatic-table-migrations-rfc/2555
 [bad-rows-rfc]: https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558
