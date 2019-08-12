@@ -95,7 +95,7 @@ pre {
 	.token {
 		&.number {
 	    	color: #b1b1b1;
-	    	user-select:none;
+	    	// user-select:none;
 	    	pointer-events: none;
 	    }
 	}
@@ -105,10 +105,13 @@ pre {
 	word-wrap: break-word;
 }
 
+// s
+
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 .text-justify { text-align: justify; }
+
 
 
 @media (max-width: $screen-xs-min)

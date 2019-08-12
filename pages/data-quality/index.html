@@ -25,6 +25,10 @@ blocks:
       title: Recover and reprocess<br>bad data
       first: It is possible to recover and reprocess bad data
       content: Data tracking issues do not necessarily need to result in gaps in your data collection.
+    - icon: /assets/img/data/insights-data_quality_5.png
+      title: Automated testing<br>for your tracking
+      first: Extend your test suites to include your Snowplow tracking
+      content: This will alow you to release new versions of your website, apps or server side applications knowing the new changes won’t break your tracking set up.  
 cards:
     - title: <a href="/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/">We need to talk about bad data</a>
       content: No one in digital analytics talks about bad data. A lot about working with data is sexy, but managing bad data, i.e. working to improve data quality, is not. Not only is talking about bad data not sexy, it is really awkward, because it forces us to confront a hard truth.
@@ -32,9 +36,8 @@ cards:
     - title: <a href="/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/">Debugging bad data in GCP with BigQuery</a>
       content: One of the key features of the Snowplow pipeline is that it’s architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline.
       url: /blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/
-    - title: <a href="/blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana/">Debugging bad data in Elasticsearch and Kibana</a>
-      content: "One of the features that makes Snowplow unique is that we actually report bad data: any data that hits the Snowplow pipeline and fails to be processed successfully. This is incredibly valuable, because it means you can spot data tracking issues that emerge, quickly, and address them at source."
-      url: /blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana/
+    - title: <a href="/blog/2019/07/17/introducing-snowplow-micro/">Introducing Snowplow Micro</a>
+      content: "With Snowplow Micro you can validate your tracker setup as part of your automated test suite. This unique features lets you simulate particular situations, to ensure you receive the data in the format and values you expect. This way, you can release new versions of your website, apps or server side applications knowing you won’t break your tracking."
 
 ---
             <!--
@@ -44,13 +47,14 @@ cards:
 <section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-11">
-                <h1>Say goodbye to contradictory reports. Trust your data.</h1>
+            <div class="c-ol-sm-11">
+                <h5>data quality</h5>
+                <h1>Trust your data.</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <h4>Snowplow is architected from the ground up for data quality, so you don’t have to worry about bad or missing data.</h4>
+                <h4>Snowplow provides you with extensive tooling to support accurate data collection, manage and monitor data quality.</h4>
             </div>
         </div>
     </div>

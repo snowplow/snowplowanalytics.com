@@ -2,174 +2,157 @@
  * CONFIGURATION
  */
 
-@import "../snowplow/_variables";
+ @import "../snowplow/_variables";
 
-/*
- * DEPENDENCIES
- */
+ /*
+  * DEPENDENCIES
+  */
+ 
+ 
+ 
+ /*!
+  * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+  * BLOG FILE
+  */
+ 
+ /*
+  * STYLES
+  */
+
+ 
+ #cookie {
+     @include cfx;
+     color: white;
+     z-index: 999;
+     font-size: 14px;
+     padding: 30px 0;
+     line-height: 1.5em;
+     letter-spacing: 0px;
+     background: $gray-light;
+     border-bottom:1px solid white;
+     position: fixed;
+     bottom: -500px;
+     left: 0px;
+     width: 100%;
+     display:block;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .7s ease-in-out;
+     body.cookie & {
+         display: block;
+         bottom: 0px;
+         left: 0px;
+     }
+ 
+     #cookie-bar {
+         width: 100%;
+         margin: 0 auto;
+         display: block;
+         padding:0 15px;
+         text-align: right;
+         line-height: 1.5em;
+ 
+ 
+         @media (min-width: 1170px) {
+             max-width:1170px;
+         }
+ 
+       
+ 
+         [class^="col-"] {
+             padding:0;
+             text-align:left;
+         }
+ 
+         @media (max-width: $screen-sm-min)
+         {
+             [class^="col-"] {
+                 padding:0;
+             }
+         }
+ 
+         .cookie-title {
+             margin: 12px 0 7px 0;
+             font-size: 22px;
+         }
+ 
+         p {
+             display:none;
+         }
+ 
+         a {
+             color: white;
+             text-decoration: underline;
+         }
+ 
+ 
+         [class^="cb-"] {
+             line-height: 0;
+             font-size: 14px;
+             font-weight: 400;
+             min-width: 114px;
+             text-align: center;
+             padding: 16px 20px;
+             transition: all .3s;
+             display: inline-block;
+             text-decoration: none;
+             border:1px solid white;
+             border-radius:$border-radius-base;
+ 
+             /* CONTINUE BUTTON */
+             &:first-of-type {
+                 background:white;
+                 color:$gray-light;
+ 
+                 &:hover,
+                 &:focus {
+                     color:white;
+                     background:$gray-light;
+                 }
+             }
+ 
+             /* KNOW MORE BUTTON */
+             &:last-of-type {
+                 color: white;
+                 background:none;
+                 margin-top: 5px;
+                 border:1px solid white;
+ 
+                 &:hover,
+                 &:focus {
+                     color:$gray-light;
+                     background:white;
+                 }
+             }
+         }
+ 
+         @media (max-width: $screen-sm-min)
+         {
+             text-align: left;
+ 
+             [class^="cb-"] {
+                 min-width: 0;
+                 padding: 12px;
+                 display: inline-block;
+ 
+                 /* KNOW MORE BUTTON */
+                 &:last-of-type {
+                     margin-top: 10px;
+                     margin-left: 10px;
+                 }
+             }
+         }
+     }
+ }
 
 
+ .static-footer{
+     position: static !important;
+ }
 
-/*!
- * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
- * BLOG FILE
- */
+// Drift bot css
+#drift-widget-container{
+    z-index:998 !important;
 
-/*
- * STYLES
- */
-
-body.cookie {
-
-    main {
-        margin-top: 300px;
-
-        @media (max-width: $screen-sm-min)
-        {
-            margin-top: 260px;
-        }
-
-        @media (min-width: $screen-sm-max)
-        {
-            margin-top: 200px;
-        }
-
-        @media (min-width: $screen-md-max)
-        {
-            margin-top: 140px;
-        }
-    }
-
-    &.blog {
-        main {
-            margin-top: 350px;
-
-            @media (min-width: $screen-sm-min)
-            {
-                margin-top: 320px;
-            }
-        }
-    }
-}
-
-#cookie {
-    @include cfx;
-    color: white;
-    z-index: 999;
-    font-size: 14px;
-    padding: 30px 0;
-    line-height: 1.5em;
-    letter-spacing: 0px;
-    background: $gray-light;
-    border-bottom:1px solid white;
-
-    display:none;
-    body.cookie & {
-        display: block;
-    }
-
-    #cookie-bar {
-        width: 100%;
-        margin: 0 auto;
-        display: block;
-        padding:0 15px;
-        text-align: right;
-        line-height: 1.5em;
-
-        @media (min-width: 768px) {
-            max-width: 750px;
-        }
-
-        @media (min-width: 992px) {
-            max-width: 970px;
-        }
-
-        @media (min-width: 1300px) {
-            max-width: 1170px;
-        }
-
-        [class^="col-"] {
-            padding:0;
-            text-align:left;
-        }
-
-        @media (max-width: $screen-sm-min)
-        {
-            [class^="col-"] {
-                padding:0;
-            }
-        }
-
-        .cookie-title {
-            margin: 0 0 7px 0;
-            font-size: 22px;
-        }
-
-        p {
-            display:none;
-        }
-
-        a {
-            color: white;
-            text-decoration: underline;
-        }
-
-
-        [class^="cb-"] {
-            line-height: 0;
-            font-size: 14px;
-            font-weight: 400;
-            min-width: 114px;
-            text-align: center;
-            padding: 16px 20px;
-            transition: all .3s;
-            display: inline-block;
-            text-decoration: none;
-            border:1px solid white;
-            border-radius:$border-radius-base;
-
-            /* CONTINUE BUTTON */
-            &:first-of-type {
-                background:white;
-                color:$gray-light;
-
-                &:hover,
-                &:focus {
-                    color:white;
-                    background:$gray-light;
-                }
-            }
-
-            /* KNOW MORE BUTTON */
-            &:last-of-type {
-                color: white;
-                background:none;
-                margin-top: 5px;
-                border:1px solid white;
-
-                &:hover,
-                &:focus {
-                    color:$gray-light;
-                    background:white;
-                }
-            }
-        }
-
-        @media (max-width: $screen-sm-min)
-        {
-            text-align: left;
-
-            [class^="cb-"] {
-                min-width: 0;
-                padding: 12px;
-                display: inline-block;
-
-                /* KNOW MORE BUTTON */
-                &:last-of-type {
-                    margin-top: 10px;
-                    margin-left: 10px;
-                }
-            }
-        }
-    }
 }
