@@ -18,7 +18,6 @@
  */
 @import "snowplow/_variables";
 @import "snowplow/_revamp";
-@import "snowplow/_grid";
 
 /*
  * STYLES
@@ -26,38 +25,33 @@
 
  /* Menu Correction */
  body.how-we-compare {
- 	header {
- 		background: #fff;
- 		.navbar,
- 		.navbar-default {
- 			border-bottom: 1px solid rgba(182,187,200,0.4);
- 			.navbar-brand {
- 				color: #50545c;
- 			}
- 			.navbar-nav > li > a:not(.btn) {
- 				color: #50545c;
- 			}
- 			.navbar-nav > li:hover > a::after,
- 			.navbar-nav > li.active > a::after {
- 				background-color: #6738B8;
- 			}
- 		}
- 		#button-login-header-page {
- 			color: $gunmetal;
- 			&:hover {
- 				color: $blue-purple;
- 			}
- 		}
- 	}
+  header {
+    background: #fff;
+    .navbar,
+    .navbar-default {
+      border-bottom: 1px solid rgba(182,187,200,0.4);
+      .navbar-brand {
+        color: #50545c;
+      }
+      .navbar-nav > li > a:not(.btn) {
+        color: #50545c;
+      }
+      .navbar-nav > li:hover > a::after,
+      .navbar-nav > li.active > a::after {
+        background-color: #6738B8;
+      }
+    }
+    #button-login-header-page {
+      color: $gunmetal;
+      &:hover {
+        color: $blue-purple;
+      }
+    }
+  }
  }
 
 
-body, p {
-  font-size: 16px;
-  line-height: 27px;
-}
 
-.icon { margin-bottom: 4px;}
 
 
 .casestudy{
@@ -72,7 +66,7 @@ body, p {
       p{font-size: 16px; line-height: 27px; margin: 40px 0px;}
   }
   ul.styled{
-    li{font-size: 16px; line-height: 27px; font-weight: 300}
+    li{font-size: 16px; font-weight: 300}
   }
 
 
@@ -155,30 +149,30 @@ body, p {
 }
 
 #sidebar{
-			float: left;
-			color: #ce8888;
-			will-change: min-height;
+      float: left;
+      color: #ce8888;
+      will-change: min-height;
       padding-left: 0px !important;
-		}
+    }
 
-		#sidebar .sidebar__inner{
-			padding: 10px;
-			position: relative;
-			transform: translate(0, 0);
-			transform: translate3d(0, 0, 0);
-			will-change: position, transform;
+    #sidebar .sidebar__inner{
+      padding: 10px;
+      position: relative;
+      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
+      will-change: position, transform;
       width: 300px;
       height: 100vh;
       overflow-y: auto;
-		}
+    }
 
 
 
-		.clearfix:after{
-			display: block;
-			content: "";
-			clear: both;
-		}
+    .clearfix:after{
+      display: block;
+      content: "";
+      clear: both;
+    }
 
 
     .resourcefooter{
@@ -186,13 +180,12 @@ body, p {
       margin-bottom: 60px;
     }
 
-
 .container.resources{
     display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				position: relative;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
         margin-top: 70px;
   .left-fixed
     {
@@ -243,6 +236,7 @@ body, p {
         li{
             font-size: 14px !important;
             line-height: 1.5em;
+      a.active{font-weight:600;}
           &:before{
             float: left;
             margin-top: 11px;
@@ -315,16 +309,16 @@ body, p {
 
 .footernew{
     display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-box-align: center;
-				-webkit-box-pack: center;
-				-webkit-justify-content: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
-				position: relative;
-				z-index: 10;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        position: relative;
+        z-index: 10;
 flex-direction: column;
 
 

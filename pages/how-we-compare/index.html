@@ -4,40 +4,40 @@ group: how-we-compare
 title: How we compare - Meet our Implementation and Technology Partners | Snowplow
 description: Work with the smartest people at some of the most innovative companies and drive value from your data.
 permalink: /how-we-compare/
-class: how-we-compare
+class: white-heading
 assets:
-  css: assets/css/how-we-compare-revamp.css
+  css: assets/css/snowplow.css
   js: assets/js/how-we-compare-revamp.js
 vertical-tabs-topics:
   - name: Packaged analytics providers
-    content: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications. Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
-    link-text:  Learn more about how Snowplow differs from packaged analytics providers.
+    first: Packaged analytics providers like Google and Adobe provide powerful tools for analysts and marketers to understand the behavior of users on websites and mobile applications.
+    content: Increasingly, these platforms also support making the underlying data that power their UIs available to you in your data warehouse. However, for these providers the underlying data is a byproduct of the UIs and hence their business logic bleeds into the data. Unlike with Snowplow Insights, you’re stuck with their one-size fits all data structures and data models which may not be appropriate for your business. Lastly, these vendors do not support the evolution of your data collection with your web and mobile apps, making them brittle sources of data.
+    link-text:  How Snowplow differs from packaged analytics providers.
     link-url: https://go.snowplowanalytics.com/snowplow-vs-enterprise_digital_analytics.pdf
     link-blank: true 
   - name: Customer data platforms (CDPs)
-    content: Customer Data Platforms (CDPs) are a new category of tech geared towards marketers that want to run unified campaigns to users across different channels. Some providers, like e.g. Segment, also support collecting event data to power those campaigns and support loading that data into your data warehouse. However, because of the focus on campaigns and sending data to multiple destinations, they’re not as powerful as Snowplow Insights when it comes to delivering that data to your data warehouse. You’ll see fewer events, out-of-the-box, less data points per event and you’ll be stuck with unstructured data that needs to be structured before your data scientists can work with it, and is unpredictable for data engineers who wish to consume the data to power real-time applications.
-    link-text: Learn more about how Snowplow differs from CDPs.
+    first: Customer Data Platforms (CDPs) are a new category of tech geared towards marketers that want to run unified campaigns to users across different channels.
+    content: Some providers, like e.g. Segment, also support collecting event data to power those campaigns and support loading that data into your data warehouse. However, because of the focus on campaigns and sending data to multiple destinations, they’re not as powerful as Snowplow Insights when it comes to delivering that data to your data warehouse. You’ll see fewer events, out-of-the-box, less data points per event and you’ll be stuck with unstructured data that needs to be structured before your data scientists can work with it, and is unpredictable for data engineers who wish to consume the data to power real-time applications.
+    link-text: How Snowplow differs from CDPs.
     link-url: https://go.snowplowanalytics.com/snowplow-vs-saas_data_warehouse_providers.pdf
     link-blank: true 
   - name: ETL-as-a-service solutions
-    content: "ETL-as-a-service vendors provide easy ways for companies to move data from 3rd party systems (e.g. Facebook, Adwords, Salesforce) and operational databases (e.g. Postgres, SQL Server) into your data warehouse. Snowplow Insights customers will typically run an ETL-as-a-service vendor like xPlenty or Stitch alongside Snowplow Insights: using Snowplow Insights for the real-time collection of event-level data wherever possible and a ETL-as-a-service provider for those sources that do not support streaming of event-level data." 
+    first: "ETL-as-a-service vendors provide easy ways for companies to move data from 3rd party systems (e.g. Facebook, Adwords, Salesforce) and operational databases (e.g. Postgres, SQL Server) into your data warehouse."
+    content: "Snowplow Insights customers will typically run an ETL-as-a-service vendor like xPlenty or Stitch alongside Snowplow Insights: using Snowplow Insights for the real-time collection of event-level data wherever possible and a ETL-as-a-service provider for those sources that do not support streaming of event-level data." 
   - name: Build your own data pipeline
-    content: Some companies, serious about building their own data asset, invest heavily in developing their own data collection technology. However, companies consistently underestimate the amount of resources required to build, maintain and evolve their data collection infrastructure. When building it out themselves, time to value can take weeks, if not months, and companies typically bleed business logic into the code, making solutions brittle and very hard to evolve over time. With Snowplow, your pipeline can be running in minutes and will evolve with your business.
-    link-text: Learn more about how Snowplow differs from building your own pipeline.
+    first: Some companies, serious about building their own data asset, invest heavily in developing their own data collection technology. 
+    content: However, companies consistently underestimate the amount of resources required to build, maintain and evolve their data collection infrastructure. When building it out themselves, time to value can take weeks, if not months, and companies typically bleed business logic into the code, making solutions brittle and very hard to evolve over time. With Snowplow, your pipeline can be running in minutes and will evolve with your business.
+    link-text: How Snowplow differs from building your own pipeline.
     link-url: https://go.snowplowanalytics.com/snowplow-vs-build_your-own_data_pipeline.pdf
     link-blank: true 
 ---
 
-<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
+<section class="hero-revamp text-center" style="background-image: url({{ BASE_PATH }}/assets/img/how-we-compare/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h1>The different approaches to data collection</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h4>Understanding the different data collection solutions for companies serious about building out their own data asset.</h4>
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2 class="spacer-bottom-30">The different approaches to data collection</h2>
+                <h5>Understanding the different data collection solutions for companies serious about building out their own data asset.</h5>
             </div>
         </div>
     </div>
@@ -45,34 +45,28 @@ vertical-tabs-topics:
 
 
 
-<section class="section-revamp checked-paragraph-revamp-section checked-paragraph-revamp-optional">
+<section class="section-revamp pad-t-60">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <h2>Setting the scene</h2>
+      <div class="col-sm-12 text-center">
+        <h3>Setting the scene</h3>
+        <h5 class="spacer-bottom-30">More and more companies are investing in developing their own data asset. Typically they want to:</h4>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <h4>More and more companies are investing in developing their own data asset. Typically they’ll want to:</h4>
+      <div class="col-sm-4">
+        <ul class="checked">
+          <li class="checked">Invest in a data warehouse and/or data lake</li>
+          <li class="checked">Centralise all data sources in a data warehouse and/or data lake</li>
+          <li class="checked">Use their event-level data for advanced analytical techniques like machine learning</li>
+          <li class="checked">Access and process data in real-time to power e.g. fraud detection or marketing automations</li>
+        </ul>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 checked-paragraph-revamp">
-        <p class="checked">Invest in a data warehouse and/or data lake</p>
-        <p class="checked">Centralise all data sources in a data warehouse and/or data lake</p>
-        <p class="checked">Use their event-level data for advanced analytical techniques like machine learning</p>
-        <p class="checked">Access and process data in real-time to power e.g. fraud detection or marketing automations</p>
-      </div>
-      <div class="col-sm-6 checked-paragraph-revamp">
-        <p class="not-checked">
-          Snowplow Insights is an event data collection platform that enable companies to do just that.
-          <br>
-          However, it is not the only way that companies can collect event-level data into their data warehouse. 
-          <br>
-          Other technologies, including some digital analytics tools, CDPs and ETL-as-a-service vendors offer alternative ways to collect data from e.g. websites and mobile apps. 
-          <br>
-          Below, we explore the differences between using them and using Snowplow Insights to build your data asset.
+      <div class="col-sm-7 col-sm-offset-1">
+        <h5 class="spacer-bottom-30">Snowplow Insights is an event data collection platform that enable companies to do just that.</h5>
+        <p>However, it is not the only way that companies can collect event-level data into their data warehouse.</p> 
+        <p>Other technologies, including some digital analytics tools, CDPs and ETL-as-a-service vendors offer alternative ways to collect data from e.g. websites and mobile apps.</p>
+        <p>Below, we explore the differences between using them and using Snowplow Insights to build your data asset.
         </p>
       </div>
 
@@ -82,22 +76,24 @@ vertical-tabs-topics:
 
 
 
-<section class="section-revamp vertical-tabs-section pad-t-90">
+<section class="section-revamp vertical-tabs-section pad-t-0">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <h2>How we compare</h2>
+      <div class="col-sm-12 text-center spacer-bottom-50">
+        <h3>How we compare</h3>
       </div>
     </div>
     <div class="row vertical-tabs-container">
       <div class="col-sm-4 vertical-tabs-header-container">
         {% for row in page.vertical-tabs-topics %}
           <div class="vertical-tabs-header {% if forloop.index == 1 %} active {% endif %}" data-ref="ref-{{ forloop.index }}">
-            <p>{{ row.name }}</p>
+            <h4>{{ row.name }}</h4>
             <div class="vertical-tabs-body visible-xs-block {% if forloop.index == 1 %} active {% endif %} ref-{{ forloop.index }}">
-              <p>{{ row.content }}</p>
-              {% if row.link-text and row.link-url %}
-                <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
+              <h5 class="spacer-bottom-30">{{ row.first }}</h5>
+              <p class="spacer-bottom-30">{{ row.content }}</p>
+              <p class="spacer-bottom-10">{{ row.link-text }}</p>
+              {% if row.link-url %}
+                <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" class="link" {% endif %} > Learn more</a>
               {% endif %}
             </div>
           </div>
@@ -106,9 +102,11 @@ vertical-tabs-topics:
       <div class="col-sm-8 vertical-tabs-body-container">
         {% for row in page.vertical-tabs-topics %}
           <div class="vertical-tabs-body hidden-xs {% if forloop.index == 1 %} active {% endif %} ref-{{ forloop.index }}">
-            <p>{{ row.content }}</p>
-            {% if row.link-text and row.link-url %}
-              <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" {% endif %} >{{ row.link-text }}</a>
+            <h5 class="spacer-bottom-30">{{ row.first }}</h5>
+            <p class="spacer-bottom-30">{{ row.content }}</p>
+            <p class="spacer-bottom-10">{{ row.link-text }}</p>
+            {% if row.link-url %}
+              <a href="{{ row.link-url }}" {% if row.link-blank %} target="_blank" class="link" {% endif %}> Learn more</a>
             {% endif %}
           </div>
         {% endfor %}
