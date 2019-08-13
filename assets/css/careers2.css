@@ -71,3 +71,12 @@ max-width:1170px;
 
 .py-30{padding-top:30px; padding-bottom:30px;} 
 .bg-transparent{background:transparent}
+
+@media (max-width: 767px) {
+	.masonry--h {
+		flex-flow: column;
+	}
+	.masonry-brick--h, .masonry-brick.masonry-brick--h.wid50, .masonry-brick.masonry-brick--h.video-value{
+		width:100% !important;
+	}
+}

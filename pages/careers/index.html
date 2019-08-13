@@ -20,7 +20,7 @@ values:
     imageEnable: "true"    
     imageSize: ""
     textPosition: "left"
-    imagePath: assets/img/careers/growth@3x.jpg
+    imagePath: "assets/img/careers/growth@3x.jpg"
   - heading: Ownership
     description: Take ownership, eagerly.
     background: "#f5faff"
@@ -41,7 +41,7 @@ values:
     imageEnable: "true"    
     imageSize: "double"
     textPosition: "right"
-    imagePath: assets/img/careers/empowerment@3x.jpg
+    imagePath: "assets/img/careers/empowerment@3x.jpg"
   - heading: Transparency
     description: "Be open and transparent about how things are and how decisions have been reached, wherever possible."
     background: "#f5faff"
@@ -103,7 +103,7 @@ values:
 								{% endif %}
 								{% if row.imageEnable == "true" %}
 									<div class="masonry-brick masonry-brick--h  {% if row.imageSize == "double" %}wid50{% endif %}" style="background-color: {{ row.background}}">
-										<img src="{{ BASE_PATH }}/{{ row.imagePath }}" srcset="{{ BASE_PATH }}/{{ row.row.imagePath-2x }} 2x, {{ BASE_PATH }}/{{ row.row.imagePath-3x }} 3x" alt="{{ row.heading }}"class="masonry-img">
+										<img src="{{ BASE_PATH }}/{{ row.imagePath }}" alt="{{ row.heading }}" class="masonry-img">
 									</div>
 								{% endif %}
 								{% if row.textPosition == "right" %}
