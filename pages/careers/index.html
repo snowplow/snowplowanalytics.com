@@ -5,7 +5,7 @@ description: Empower Smart People to Differentiate with Data
 permalink: company/careers/
 class: white-heading
 assets:
-  css: assets/css/careers2.css  
+  css: assets/css/snowplow.css  
 values:
   - heading: Honesty
     description: Be honest; always; without exception.
@@ -20,7 +20,7 @@ values:
     imageEnable: "true"    
     imageSize: ""
     textPosition: "left"
-    imagePath: assets/img/careers/growth@3x.jpg
+    imagePath: "assets/img/careers/growth@3x.jpg"
   - heading: Ownership
     description: Take ownership, eagerly.
     background: "#f5faff"
@@ -41,7 +41,7 @@ values:
     imageEnable: "true"    
     imageSize: "double"
     textPosition: "right"
-    imagePath: assets/img/careers/empowerment@3x.jpg
+    imagePath: "assets/img/careers/empowerment@3x.jpg"
   - heading: Transparency
     description: "Be open and transparent about how things are and how decisions have been reached, wherever possible."
     background: "#f5faff"
@@ -70,7 +70,7 @@ values:
     </div>
 </section>
 
-<section class="hero-revamp" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
+<section class="hero-revamp bg-primary-lighter">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">                
@@ -103,7 +103,7 @@ values:
 								{% endif %}
 								{% if row.imageEnable == "true" %}
 									<div class="masonry-brick masonry-brick--h  {% if row.imageSize == "double" %}wid50{% endif %}" style="background-color: {{ row.background}}">
-										<img src="{{ BASE_PATH }}/{{ row.imagePath }}" srcset="{{ BASE_PATH }}/{{ row.row.imagePath-2x }} 2x, {{ BASE_PATH }}/{{ row.row.imagePath-3x }} 3x" alt="{{ row.heading }}"class="masonry-img">
+										<img src="{{ BASE_PATH }}/{{ row.imagePath }}" alt="{{ row.heading }}" class="masonry-img">
 									</div>
 								{% endif %}
 								{% if row.textPosition == "right" %}
@@ -137,10 +137,10 @@ values:
         </div>
     </div>
 </section>
-<section class="hero-revamp pad-t-60 pad-b-60" style="background-image: url({{ BASE_PATH }}/assets/img/integrations/rectangle-1-copy-3@3x.png)">
-   <div class="container well-lg no-border py-30 bg-transparent">
-    	<h2 class="text-center">Sound like you? Come and join us!</h2>
-		<div id='lever-jobs-container' class="pad-30"></div><script type='text/javascript'>window.leverJobsOptions = {accountName: 'snowplowanalytics', includeCss: true};</script><script type='text/javascript' src='https://andreasmb.github.io/lever-jobs-embed/index.js'></script>
+<section class="hero-revamp bg-primary-lighter pad-t-60 pad-b-60">
+   <div class="container no-border bg-primary-lighter">
+    	<h3 class="text-center">Sound like you? Come and join us!</h3>
+		<div id='lever-jobs-container' class="pad-l-100 pad-r-100 pad-t-60 pad-b-100"></div><script type='text/javascript'>window.leverJobsOptions = {accountName: 'snowplowanalytics', includeCss: true};</script><script type='text/javascript' src='https://andreasmb.github.io/lever-jobs-embed/index.js'></script>
 	</div>
 	<div class="container text-center">	
 		<h3>Can’t see the kind of opportunity you’re looking for?</h3>
@@ -160,30 +160,30 @@ values:
     <div class="row">
       <div class="col-sm-12   spacer-bottom-50">
 			<div class="container-outter">    
-				<div class="col ">
+				<div class="col">
 					<div class="pad-30">
-						 <img src="{{ BASE_PATH }}/assets/img/careers/glassdoor.png" srcset="{{ BASE_PATH }}/assets/img/careers/glassdoor-2x 2x, {{ BASE_PATH }}/assets/img/careers/glassdoor-3x }} 3x" alt="glassdoor">
-						 <p>“Snowplow has a great company culture! As it's a fast-growing startup you get a lot of responsibility, trust and autonomy. “</p>
-						<a href="#">->  See what people are saying</a>
+						 <img src="{{ BASE_PATH }}/assets/img/careers/glassdoor@3x.png" alt="glassdoor" width="70%" class="spacer-bottom-30">
+						 <p class="spacer-bottom-30">“Snowplow has a great company culture! As it's a fast-growing startup you get a lot of responsibility, trust and autonomy. “</p>
+						<a href="https://www.glassdoor.co.uk/Reviews/Snowplow-Analytics-Reviews-E1482594.htm" class="link" target="_blank"> See what people are saying</a>
 					 
 					</div>
 				</div>
 				<div class="col">
 					<div class="pad-30">
-						<h4 class="spacer-0">Inside the Plow Blog</h4>
-						<a href="#">Pride at Snowplow</a>
-						<p>At Snowplow, ‘Inclusivity’ and ‘Empowerment’ are two of our core values; we believe it is important to encourage...</p>
-						<a href="#">->  Visit our blog</a>
+						<h4 class="spacer-top-0 spacer-bottom-30">Inside the Plow Blog</h4>
+						<a href="https://snowplowanalytics.com/blog/2019/06/26/pride-at-snowplow/">Pride at Snowplow</a>
+						<p class="spacer-bottom-30">At Snowplow, ‘Inclusivity’ and ‘Empowerment’ are two of our core values; we believe it is important to encourage...</p>
+						<a href="https://snowplowanalytics.com/blog/inside-the-plow/" class="link"> Visit our blog</a>
 					</div>
 				</div>
-				<div class="col insta">
-					 <img src="{{ BASE_PATH }}/assets/img/careers/instragram.jpg" srcset="{{ BASE_PATH }}/assets/img/careers/instragram-2x 2x, {{ BASE_PATH }}/assets/img/careers/instragram-3x }} 3x" alt="instragram">
-					 <div class="insta-link"><a href="@snowplowanalytics"><i class="fa fa-instagram" aria-hidden="true"></i>  @snowplowanalytics</a></div>
+				<div class="col insta" style="background-image: url({{ BASE_PATH }}/assets/img/careers/instragram@3x.jpg); background-size: cover;">
+					   <!-- <img src="{{ BASE_PATH }}/assets/img/careers/instragram@3x.jpg" alt="instragram"> -->
+					   <div class="insta-link spacer-top-5 pad-5"><h4><a href="@snowplowanalytics"><img src="{{ BASE_PATH }}/assets/img/careers/instagram.png" alt="insta">  @snowplowanalytics</a></h4></div>
 				</div>
 				<div class="col">
 					<div class="pad-30">
-						<h4><i class="fa fa-twitter" aria-hidden="true"></i> @snowplowdata</h4>
-						<p>One of our most significant announcements to date: Snowplow is now available for Google Cloud Platform.</p>
+						<h4 class="spacer-top-0 spacer-bottom-30"><img src="{{ BASE_PATH }}/assets/img/careers/twitter.png" alt="insta"> @snowplowdata</h4>
+						<p class="spacer-bottom-30">One of our most significant announcements to date: Snowplow is now available for Google Cloud Platform.</p>
 						<a href="#">#GCP #BigQuery #analytics http://bit.ly/2QvDi5b </a>					
 					</div>
 				</div>
