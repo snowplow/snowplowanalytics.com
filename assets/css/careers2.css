@@ -10,6 +10,7 @@
   background: #f5faff;
   position: relative;
 }
+.container-outter .col h4{font-size:21px;}
 .two-merge {
 	background: blue;
 	grid-column: 1 / span 2;
@@ -79,4 +80,8 @@ max-width:1170px;
 	.masonry-brick--h, .masonry-brick.masonry-brick--h.wid50, .masonry-brick.masonry-brick--h.video-value{
 		width:100% !important;
 	}
+	.video-left{height:245px;}
+	.video-value{min-height:170px; max-height:300px;}
+	.container-outter{display:block; }
+	.container-outter .col{margin-bottom: 20px; }
 }
