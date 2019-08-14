@@ -95,6 +95,9 @@ storage:
     rdb_loader: 0.16.0    # WAS 0.15.0
 {% endhighlight %}
 
+Bear in mind that new minimum required AMI version might now support some old instance types, such as c1.medium or m1.small.
+In that case you need to upgrade your instance type as well.
+
 <h2 id="help">7. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release] on GitHub.
