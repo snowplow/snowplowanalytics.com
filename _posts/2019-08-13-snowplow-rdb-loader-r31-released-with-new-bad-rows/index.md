@@ -79,10 +79,6 @@ Although, this issue manifests itself very rarely and only for synthetic duplica
 
 <h2 id="upgrading">4. Upgrading</h2>
 
-To make use of the new version, you will need to update your EmrEtlRunner configuration, and also the storage target configuration for either Redshift or Postgres.
-
-<h3>EmrEtlRunner</h3>
-
 If you are using EmrEtlRunner, you'll need to update your `config.yml` file:
 
 {% highlight yaml %}
