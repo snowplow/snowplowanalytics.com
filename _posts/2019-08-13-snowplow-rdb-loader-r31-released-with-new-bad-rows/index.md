@@ -35,7 +35,7 @@ The RDB Shredder 0.15.0 can produce following types of bad rows:
 The RDB Shredder usually produces extremely small amount of bad rows or does not produce them at all, because all input data has already been validated and processed by enrich step.
 However, due to change in [Iglu Client validation library][iglu-client-060] we strongly recommend our users to monitor at least `loader_iglu_error` bad rows for at least couple of runs after upgrade
 
-<h2 id="synthetic-duplicates-issue">Synthetic duplicates issue</h2>
+<h2 id="synthetic-duplicates-issue">2. Synthetic duplicates issue</h2>
 
 In [Snowplow R86 Petra][snowplow-r86] we introduced [an in-batch synthetic deduplication][synthetic-deduplication].
 The deduplication generated new event id for events that for some reasons (e.g. due a bug in random number generator) have the same `event_id`, but in fact are different events (have different `event_fingerprint`s).
@@ -70,14 +70,14 @@ SELECT root_tstamp::DATE, count(*) FROM atomic.com_snowplowanalytics_snowplow_du
 
 Although, this issue manifests itself very rarely and only for synthetic duplicates, which are often result of bot activity, not real users, we still consider this anomaly as data quality issue and treat it with all seriouseness.
 
-<h2 id="other">5. Other improvements</h2>
+<h2 id="other">3. Other improvements</h2>
 
 * We bumped Apache Spark to 2.3.2, which means required EMR AMI version now is [5.19][ami-519], [which support M5 and C5 instances][emr-instances]
 * Iglu Scala Client is updated to [0.6.0][iglu-client-060], making JSON validator more restrictive [#141][issue-141]
 * RDB Shredder does not depend on Scala Common Enrich anymore and works on top of [Scala Analytics SDK][analytics-sdk]
 * String values in atomic events truncated according to [`atomic` JSON Schema][atomic] and not hard-coded anymore [#143][issue-143]
 
-<h2 id="upgrading">6. Upgrading</h2>
+<h2 id="upgrading">4. Upgrading</h2>
 
 To make use of the new version, you will need to update your EmrEtlRunner configuration, and also the storage target configuration for either Redshift or Postgres.
 
@@ -98,7 +98,7 @@ storage:
 Bear in mind that new minimum required AMI version might now support some old instance types, such as c1.medium or m1.small.
 In that case you need to upgrade your instance type as well.
 
-<h2 id="help">7. Getting help</h2>
+<h2 id="help">5. Getting help</h2>
 
 For more details on this release, please check out the [release notes][release] on GitHub.
 
