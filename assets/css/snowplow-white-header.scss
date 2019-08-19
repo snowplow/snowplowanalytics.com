@@ -1,0 +1,106 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+/*
+ * DEPENDENCIES
+ */
+
+@import "vendors/common/_bootstrap";
+@import "vendors/common/_bootstrap-select";
+@import "vendors/common/font-awesome/_font-awesome";
+@import "vendors/common/_slick";
+@import "vendors/common/icomoon/_style";
+@import "vendors/common/_jssocials";
+@import "vendors/common/_prism";
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow.github.com)
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "snowplow/_variables";
+
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_grid";
+@import "snowplow/_colors";
+@import "snowplow/_global";
+@import "snowplow/_typography";
+@import "snowplow/_jumbotron-hero";
+@import "snowplow/_well";
+@import "snowplow/_drop-box";
+@import "snowplow/_window";
+@import "snowplow/_quotes";
+@import "snowplow/_buttons-dropdowns";
+@import "snowplow/_form";
+@import "snowplow/_tabs";
+@import "snowplow/_slick";
+@import "snowplow/_side-by-side";
+@import "snowplow/_same-height";
+@import "snowplow/_block-text-img";
+@import "snowplow/_navbar";
+@import "snowplow/_header";
+@import "snowplow/_footer";
+@import "snowplow/_masonry";
+@import "snowplow/_grid-logos";
+@import "snowplow/_map";
+@import "snowplow/_cookie";
+@import "snowplow/_social-share";
+@import "snowplow/_shortcode";
+@import "snowplow/_hero";
+@import "snowplow/_cta";
+@import "snowplow/_integrations";
+@import "snowplow/_checked-paragraph";
+@import "snowplow/_case-studies-grid";
+
+
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * Products Insight
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * STYLES
+ */
+
+/* Menu Correction */
+body.white-heading {
+	header {
+		background: #fff;
+		.navbar, 
+		.navbar-default {
+			border-bottom: 1px solid rgba(182,187,200,0.4);
+			.navbar-brand {
+				color: $gray;
+			}
+			.navbar-nav > li > a:not(.btn) {
+				color: $gray;
+			}
+			.navbar-nav > li:hover > a::after,
+			.navbar-nav > li.active > a::after {
+				background-color: #brand-primary;
+			}
+		}
+		#button-login-header-page {
+			color: $gray-base;
+			&:hover {
+				color: $brand-primary;
+			}
+		}
+	}
+}
+

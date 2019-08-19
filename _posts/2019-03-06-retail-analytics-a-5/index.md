@@ -11,7 +11,7 @@ discourse: true
 ---
 
 
-We recommend you have read the [first post in this series][part-1] before diving into this one to ensure you have all the context you need!
+We recommend you you have read the [first post in this series][part-1] before diving into this one to ensure you have all the context you need!
 
 Senior management love the work of the data team so far:
 
