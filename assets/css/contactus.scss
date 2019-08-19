@@ -52,7 +52,7 @@
 
 
 
- .section-revamp-cards-section {padding-top: 120px;}
+.section-revamp-cards-section {padding-top: 120px;}
 
 .section-revamp-cards.big{
 
@@ -69,14 +69,13 @@
     display: none;
   }
   .section-revamp-cards-hover{
-
     text-align: center; justify-content: center;
-    span{
+    /* span{
       font-size: 24px;
       font-weight: 300;
       line-height: 1.25;
       text-align: center;
-      color: #50545c;
+      color: white;
       margin: var(--revamp-cards-h4-mg);
     }
     p{
@@ -88,7 +87,7 @@
     a{
       font-size: 16px;
       line-height: 1.5;
-    }
+    }*/
   }
 }
 .mapouter {width:100%; height: 100%}

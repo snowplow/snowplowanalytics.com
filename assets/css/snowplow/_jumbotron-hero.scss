@@ -3,43 +3,13 @@
 	margin:0;
 	border-radius:0;
 	position:relative;
-	padding-top: 250px;
-	padding-bottom: 360px;
+	padding-top: 200px;
+	padding-bottom: 200px;
 	padding-left:0!important;
 	padding-right:0!important;
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover;
-
-/*	.text
-	{
-		max-width:50%;
-	}*/
-
-	h1, .h1, h2, .h2
-	{
-		/*font-size: 86px;*/
-		font-size: 60px;
-	}
-
-	h3, .h3
-	{
-		font-size: 48px;
-		font-weight: 500;
-	}
-
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
-	{
-		letter-spacing: 0;
-	}
-
-	.text-block
-	{
-		.parag
-		{
-			line-height: 1.3em;
-		}
-	}
 
 	&.header
 	{
@@ -56,32 +26,33 @@
 		}
 	}
 
-	@media (max-width: $screen-sm-max)
-	{
-		padding-top: 220px;
-
-		h1, .h1, h2, .h2
-		{
-			font-size: 50px;
-		}
+	@media (max-width: $screen-sm-max) {
+		padding-top: 200px;
+	}
+	h1 {
+		font-size: 60px;
+		font-weight: 300;
+		line-height: 1.1;
+		margin-bottom: 16px;
+		color: #ffffff;
+	}
+	h4 {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.3;
 	}
 
 
 	@media (max-width: $screen-xs-max)
 	{
 		padding-top: 170px;
-
-		h1, .h1, h2, .h2
-		{
-			font-size: 40px;
-		}
 	}
 
 
 	@media (max-height: 568px)
 	{
 		padding-top: 90px;
-		padding-bottom:280px;
+		padding-bottom:200px;
 	}
 }
 
@@ -89,8 +60,8 @@
 {
 	border-radius:0;
 	position:relative;
-	padding-top: 250px;
-	padding-bottom: 180px;
+	padding-top: 200px;
+	padding-bottom: 200px;
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover;

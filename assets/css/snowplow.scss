@@ -29,7 +29,14 @@
  * STYLES
  */
 
-@import "snowplow/_grid";
+
+@import "snowplow/_block-text-img";
+@import "snowplow/_blog";
+@import "snowplow/_buttons-dropdowns";
+@import "snowplow/_careers";
+@import "snowplow/_case-studies-grid";
+@import "snowplow/_case-study";
+@import "snowplow/_checked-paragraph";
 @import "snowplow/_colors";
 @import "snowplow/_careers";
 @import "snowplow/_global";
@@ -37,25 +44,41 @@
 @import "snowplow/_jumbotron-hero";
 @import "snowplow/_well";
 @import "snowplow/_drop-box";
-@import "snowplow/_window";
-@import "snowplow/_quotes";
-@import "snowplow/_buttons-dropdowns";
-@import "snowplow/_form";
-@import "snowplow/_tabs";
-@import "snowplow/_slick";
-@import "snowplow/_side-by-side";
-@import "snowplow/_same-height";
-@import "snowplow/_block-text-img";
-@import "snowplow/_navbar";
-@import "snowplow/_header";
 @import "snowplow/_footer";
-@import "snowplow/_masonry";
+@import "snowplow/_form";
+@import "snowplow/_functions";
+@import "snowplow/_global";
 @import "snowplow/_grid-logos";
+@import "snowplow/_grid";
+@import "snowplow/_header";
+@import "snowplow/_hero";
+@import "snowplow/_home";
+@import "snowplow/_image-text";
+@import "snowplow/_integrations";
+@import "snowplow/_jumbotron-hero";
 @import "snowplow/_map";
-@import "snowplow/_cookie";
-@import "snowplow/_social-share";
+@import "snowplow/_masonry";
+@import "snowplow/_navbar";
+@import "snowplow/_news-card";
+@import "snowplow/_partners";
+@import "snowplow/_pricing";
+@import "snowplow/_quotes";
+@import "snowplow/_same-height";
 @import "snowplow/_shortcode";
-
+@import "snowplow/_side-by-side";
+@import "snowplow/_slick";
+@import "snowplow/_snowplow.greenhouse.fonts";
+@import "snowplow/_social-share";
+@import "snowplow/_tabs";
+@import "snowplow/_team";
+@import "snowplow/_technology-cards";
+@import "snowplow/_testimonial";
+@import "snowplow/_timeline";
+@import "snowplow/_typography";
+@import "snowplow/_usp-list";
+@import "snowplow/_variables";
+@import "snowplow/_well";
+@import "snowplow/_window";
 
 
 /*
@@ -71,3 +94,52 @@
  */
 
 @import "snowplow/_blog";
+
+/* Menu Correction */
+body.white-heading {
+	header {
+		background: #fff;
+		.navbar, 
+		.navbar-default {
+			border-bottom: 1px solid rgba(182,187,200,0.4);
+			.navbar-brand {
+				color: $gray;
+			}
+			.navbar-nav > li > a:not(.btn) {
+				color: $gray;
+			}
+			.navbar-nav > li:hover > a::after,
+			.navbar-nav > li.active > a::after {
+				background-color: #brand-primary;
+			}
+		}
+		#button-login-header-page {
+			color: $gray-base;
+			&:hover {
+				color: $brand-primary;
+			}
+		}
+	}
+}
+
+a {
+			color: $gray-base;
+			font-size: 14px;
+			font-weight: 500;
+			&:before {
+			    margin-right: 8px;
+				display: inline-block;
+				height: 15px;
+   				width: 15px;
+   				vertical-align: -10%;
+   				}
+			&:hover {
+				color: $tealish;
+				&:before {
+					display: inline-block;
+					height: 15px;
+   					width: 15px;
+   					vertical-align: -10%;
+				}
+			}
+		}
