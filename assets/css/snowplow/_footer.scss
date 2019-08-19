@@ -36,7 +36,7 @@ footer {
 
         &:hover,
         &:focus {
-            color: $tealish;
+            color: $brand-primary-brighter;
             text-decoration: none;
         }
     }
@@ -59,7 +59,7 @@ footer {
 
     .active {
         a {
-            color: $tealish;
+            color: $gray;
         }
     }
 
@@ -79,7 +79,7 @@ footer {
         }
 
         a {
-            color: $tealish;
+            color: $brand-primary-brighter;
             font-size: 15px;
         }
     }
@@ -297,3 +297,53 @@ footer {
         }
     }
 }
+
+
+// Landingpage footer
+
+
+	footer.lp-footer {
+        padding-top:30px;
+        padding-bottom:30px;
+        .links{
+            float:right;
+            margin-top:4px;
+            a{
+                margin-left:20px;
+            }
+        }
+        .logo{
+            float:left;
+            a{
+                display:block;
+                width: 250px;
+                height: 40px;
+                background: url(../img/landingpages/data-lakes/snowplow-brand-logo-h-rgb-w@3x.png) no-repeat;
+                text-indent:-9999px;
+                overflow:hidden;
+                background-size:100%;
+            }
+        }
+        p{  
+            float:left;
+            margin:6px 0px 0px 20px;
+        }
+        @media (max-width: $screen-sm-max) {
+            .credits{
+                display:flex;
+                flex-flow: wrap row;
+                justify-content: center;
+            }
+	    }
+        @media (max-width: 484px) {
+            .credits{
+                margin-top:20px;
+            }
+            .left{
+                display:flex;
+                flex-flow: wrap row;
+                justify-content: center;
+                margin-bottom:20px;
+            }
+	    }
+    }

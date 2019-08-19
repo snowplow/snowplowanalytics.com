@@ -69,28 +69,3 @@ gulp.task('clean-scripts', function () {
     return gulp.src('assets/js/vendors/dist', {read: false})
         .pipe(clean());
 });
-
-
-
-// -----------------------------------------------------------------------------
-// UnCSS Task
-//
-// Checks the site's usage of Bootstrap and strips unused styles out. Outputs
-// the resulting files in the css/ directory where they will be combined and
-// minified by a separate task.
-//
-// Note: this task requires a local server to be running because it references
-// the actual compiled site to calculate the unused styles.
-// -----------------------------------------------------------------------------
-gulp.task('uncss', 'Removes unused CSS from frameworks', function() {
-  return gulp.src([
-      'node_modules/bootstrap/dist/css/bootstrap.css',
-      'node_modules/bootstrap/dist/css/bootstrap-theme.css'
-    ])
-    .pipe(uncss({
-      html: [
-        'http://localhost:3000/'
-      ]
-    }))
-    .pipe(gulp.dest('css/'));
-});
