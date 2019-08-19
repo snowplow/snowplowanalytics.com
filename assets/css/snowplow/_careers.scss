@@ -36,7 +36,7 @@
    				vertical-align: -10%;
    				}
 			&:hover {
-				color: $tealish;
+				color: #28d1b1;
 				&:before {
 					display: inline-block;
 					content: url(../../assets/img/Snowplow-Website-2019-Icon-Arrow-Right-Hover.svg);
@@ -101,8 +101,8 @@ max-width:1170px;
 	color: #28d1b1;
 }
 
-.video-left{background:#9e62dd; color:#fff; height:350px;}
-.video-value{background:#9e62dd;height:350px;}
+.video-left{background:#9e62dd; color:#fff; height:481px;}
+.video-value{background:#9e62dd;height:481px;}
 .video-left h5, .video-left p{color:#fff;}
  
 .bg-transparent{background:transparent}
@@ -120,3 +120,4 @@ max-width:1170px;
 	.container-outter .col{margin-bottom: 20px; }
 	.lever-job-tag { text-align: left;}
 }
+
