@@ -1,0 +1,55 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * Products Insight
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * STYLES
+ */
+
+
+/* Menu Correction */
+body.customers {
+	header {
+		background: #fff;
+		.navbar, 
+		.navbar-default {
+			border-bottom: 1px solid rgba(182,187,200,0.4);
+			.navbar-brand {
+				color: #50545c;
+			}
+			.navbar-nav > li > a:not(.btn) {
+				color: #50545c;
+			}
+			.navbar-nav > li:hover > a::after,
+			.navbar-nav > li.active > a::after {
+				background-color: #6738B8;
+			}
+		}
+		#button-login-header-page {
+			color: $gunmetal;
+			&:hover {
+				color: $blue-purple;
+			}
+		}
+	}
+}
+

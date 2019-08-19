@@ -11,7 +11,7 @@ redirect_from:
   - /get-started/
 
 assets:
-  css: assets/css/snowplow.css
+  css: assets/css/homepage-revamp.css
 
 product-icons:
     - icon: /assets/img/products/products-insights/icons/spw-icon-ownership.svg
@@ -79,7 +79,7 @@ hero-logos:
 ---
 
 
-<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/homepage/homepage-revamp/spw-homepage-header@2x.jpg)">
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/homepage/homepage-revamp/shape-4-copy-23%403x.png)">
     <div class="container">
         <div class="row">
             <div class="col-sm-11">
@@ -87,14 +87,14 @@ hero-logos:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 col-offset-1 spacer-bottom-40">
+            <div class="col-sm-8 col-offset-1">
                 <h4>For companies who demand high-quality, real-time event data, delivered by a cloud-native data pipeline they fully control.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/request-demo/" class="btn btn-primary large">Get started</a>
-                <a href="/products/snowplow-insights" class="btn btn-outline large" style="margin-left: 10px;">Learn more</a>
+                <a href="/request-demo/" class="btn btn-primary call-to-action">Get started</a>
+                <a href="/products/snowplow-insights" class="btn btn-lines-white btn-primary call-to-action">Learn more</a>
             </div>
         </div>
     </div>
@@ -102,12 +102,12 @@ hero-logos:
 
 
 
-<section class="section-revamp section-revamp-center pad-b-60">
+<section class="section-revamp section-revamp-center section-revamp-bot-0">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 text-center">
+            <div class="col-sm-8 col-sm-offset-2">
                 <h2>The Snowplow Pipeline</h2>
-                <h5>Our technology is ideal for data teams who want to manage the collection and warehousing of data across all their platforms and channels, in real-time.</h5>
+                <p>Our technology is ideal for data teams who want to manage the collection and warehousing of data across all their platforms and channels, in real-time.</p>
             </div>
         </div>
         <div class="row">
@@ -120,19 +120,17 @@ hero-logos:
 
 
 
-<section class="section-revamp pad-t-0">
+<section class="section-revamp">
     <div class="container">
         <div class="section-revamp-icons-container">
             {% for icon in page.product-icons %}
-                <div class="section-revamp-icons text-center">
-                  <a href="{{ icon.url }}">
+                <div class="section-revamp-icons">
                     <div>
                         <img src="{{ BASE_PATH }}{{ icon.icon }}" alt="">
                         <h4>{{ icon.name }}</h4>
                         <p>{{ icon.content }}</p>
                     </div>
-                  </a>  
-                    <!--<a href="{{ icon.url }}">Learn more</a>-->
+                    <a href="{{ icon.url }}">Learn more</a>
                 </div>
             {% endfor %}
         </div>
@@ -142,11 +140,11 @@ hero-logos:
 
 
 
-<section class="hero-revamp" style="background-image: url({{ BASE_PATH }}/assets/img/customers/customers-revamp/spw-customers-header@3x.png)">
+<section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/customers/customers-revamp/spw-customers-header@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 text-center spacer-bottom-50">
-                <h6 class="xl">Data-driven industry leaders choose Snowplow</h6>
+            <div class="col-sm-11 col-sm-offset-1">
+                <h3>Data-driven industry leaders choose Snowplow</h3>
             </div>
         </div>
         <div class="row">
@@ -165,8 +163,8 @@ hero-logos:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 text-center pad-t-40">
-                <a href="/customers" class="btn btn-outline-grey">Learn more about why our customers love Snowplow</a>
+            <div class="col-sm-12 text-center">
+                <a href="/customers" class="btn btn-lines btn-primary call-to-action">Learn more about why our customers love Snowplow</a>
             </div>
         </div>
     </div>
@@ -176,10 +174,10 @@ hero-logos:
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-                <div class="section-revamp-testemonial-block text-center _active">
+                <div class="section-revamp-testemonial-block _active">
                     <img src="{{ BASE_PATH }}/assets/img/homepage/homepage-revamp/autotrader.svg" alt="" class="section-revamp-testemonial-logo">
-                    <h5>“Snowplow provides all of our event data in a data model which we own and can shape to our organisational needs. Snowplow has really helped accelerate our analytics; we can quickly answer questions which would have required a tremendous amount of engineering effort with our previous solution.”</h5>
-                    <div class="section-revamp-testemonial-person pad-t-20">
+                    <p class="section-revamp-testemonial-content">“Snowplow provides all of our event data in a data model which we own and can shape to our organisational needs. Snowplow has really helped accelerate our analytics; we can quickly answer questions which would have required a tremendous amount of engineering effort with our previous solution.”</p>
+                    <div class="section-revamp-testemonial-person">
                         <!--<img src="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth.jpg" srcset="{{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@2x.jpg 2x, {{ BASE_PATH }}/assets/img/products/products-insights/mike-roth@3x.jpg 3x">-->
                         <p>
                             Darren Haken
@@ -197,35 +195,35 @@ hero-logos:
 <section class="section-revamp revamp-news-cards-section pad-t-0">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 text-center">
-                <h3>The latest from the Snowplow team</h3>
+            <div class="col-sm-12">
+                <h2>The latest from the Snowplow team</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 revamp-news-cards-container">
                 <div class="revamp-news-cards-block">
                     <h6>SNOWPLOW FOR GCP</h6>
-                    <h4>BigQuery data in real-time, finally</h4>
+                    <h5>BigQuery data in real-time, finally</h5>
                     <p>
                         Snowplow is now available for Google Cloud Platform. Learn more about the best way to load data into BigQuery.
                     </p>
-                    <a href="https://snowplowanalytics.com/blog/2018/12/03/snowplow-for-google-cloud-platform-is-here/" class="link"> Read the article</a>
+                    <a href="https://snowplowanalytics.com/blog/2018/12/03/snowplow-for-google-cloud-platform-is-here/" class="btn btn-outline-primary call-to-action">Read the article</a>
                 </div>
                 <div class="revamp-news-cards-block">
                     <h6>OUR LATEST CASE STUDY</h6>
-                    <h4>Using SEM for scalable growth</h4>
+                    <h5>Using SEM for scalable growth</h5>
                     <p>
                         Brazilian jobs board GetNinjas used Snowplow to optimize their marketing budget to great results.
                     </p>
-                    <a href="https://snowplowanalytics.com/customers/getninjas/" class="link"> Get the case study</a>
+                    <a href="https://snowplowanalytics.com/customers/getninjas/" class="btn btn-outline-primary call-to-action">Get the case study</a>
                 </div>
                 <div class="revamp-news-cards-block">
                     <h6>HOW TO</h6>
-                    <h4>Debugging bad data in GCP with BigQuery</h4>
+                    <h5>Debugging bad data in GCP with BigQuery</h5>
                     <p>
                         A guide to using BigQuery to explore and diagnose data quality in Google Cloud Platform.
                     </p>
-                    <a href="https://snowplowanalytics.com/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/" class="link"> Learn more</a>
+                    <a href="https://snowplowanalytics.com/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/" class="btn btn-outline-primary call-to-action">Learn more</a>
                 </div>
             </div>
         </div>

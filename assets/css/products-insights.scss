@@ -1,0 +1,204 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_variables";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * HOME FILE
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * STYLES
+ */
+
+body.insights
+{
+	.hero
+	{
+		h1
+		{
+		font-size: 90px;
+		font-size: 5.3vw;
+		letter-spacing: 0;
+
+		i
+		{
+			font-size: 490px;
+			font-size: 30vw;
+			vertical-align: middle;
+			line-height: 0.15em;
+			margin: 0;
+			padding: 0;
+			margin-top: -13px;
+			display: inline-block;
+		}
+
+		@media (min-width:$screen-lg-max)
+		{
+			font-size:90px;
+
+			i
+			{
+				font-size: 490px;
+			}
+		}
+		}
+
+	h2, h3
+	{
+			letter-spacing: 0;
+	}
+	}
+
+	.same-height {
+		width: 100%;
+    	display: table;
+	}
+
+	.data-collection
+	{
+		i.icon
+		{
+			display: block;
+			font-size: 200px;
+			margin-bottom: 40px;
+			color: $brand-success;
+		}
+
+		small
+		{
+			display: block;
+			line-height: 1.5em;
+			color: #323743;
+		}
+	}
+
+
+	.jumbotron
+	{
+		padding-bottom:120px;
+
+		.call-to-action
+		{
+			margin-top: -345px;
+		}
+
+
+		@media screen and (max-width:$screen-md-max)
+		{
+		}
+	}
+
+	#options {
+
+		.well-lg {
+			border: 0;
+		}
+
+		h2 {
+			@media (max-width: $screen-xs-max) {
+				font-size: 36px;
+			}
+		}
+
+		ul.included {
+			>li {
+				font-size: 16px;
+				color: $gray-base;
+
+				&:before
+				{
+					@include fa-icon();
+					content: $fa-var-check;
+					color: $brand-primary-light;
+					font-size: 13px;
+				}
+
+				& + li {
+					margin-top: 15px;
+				}
+			}
+		}
+
+		.col {
+			padding-bottom: 300px;
+
+			& + .col {
+				border-left: 1px solid rgba($gray-lighter, .4);
+			}
+
+			@media (max-width: $screen-md-max)
+			{
+				padding-bottom: 100px;
+
+				& + .col {
+					border-left: 0;
+					border-top: 1px solid rgba($gray-lighter, .4);
+				}
+			}
+		}
+
+		.price {
+			h3 {
+				margin: 16px auto;
+				white-space: nowrap;
+
+				@media (max-width: $screen-xs-max) {
+					font-size: 27px;
+
+					sup {
+						top: 0.5em;
+						font-size: 50%;
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $screen-md-max)
+	{
+	 	.hero
+	 	{
+	 		h1
+	 		{
+				font-size: 14.3vw;
+
+				i
+				{
+	    			font-size: 60vw;
+					display: block;
+				}
+	 		}
+
+			h2, h3
+			{
+			}
+	 	}
+
+	 	
+		.jumbotron
+		{
+			padding-top:40px;
+
+			.call-to-action
+			{
+				margin-top: 0;
+			}
+		}
+	}
+}
+

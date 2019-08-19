@@ -1,0 +1,200 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+@import "snowplow/_grid";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * Products Insight
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * Styles
+ */
+
+.data-lakes {
+    & .hero-revamp{
+        padding-bottom:160px;
+        h1{
+            margin-bottom:15px;
+        }
+        p{
+            margin-top:80px;
+            text-align:center;
+            color:#ffffff;
+            b{
+                font-weight:800;
+            }
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom:140px;
+            p{
+                margin-top:30px;
+            }
+        }
+    }
+    & section.info{
+        padding: 0px 0px 80px 0px;
+        @media (max-width: $screen-sm-max) {
+            padding: 0px 0px 40px 0px;
+        }
+        & .wrapper{
+            margin-top:-90px;
+            padding:80px;
+            box-sizing: border-box;
+            background:#ffffff;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;
+            -webkit-box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);
+            -moz-box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);
+             box-shadow:0 2px 17px 12px rgba(0,0,0,0.08);   
+            h3{
+                margin-top:0px;
+            }
+            & .coverage{
+                ul{
+                    margin-top:30px;
+                    list-style:none;
+                    padding-left:0px;
+                    li{
+                        font-weight:500;
+                        background: url('../img/landingpages/data-lakes/check-solid.svg') no-repeat left center;
+                        background-size:30px auto;
+                        margin:20px 0px;
+                        p{
+                            padding-left:50px;
+                            margin-bottom:0px;
+                        }
+                    }
+                }
+            }
+            & .form{
+                & form{      
+                    input{
+                        font-size:16px;
+                        margin-bottom:20px;
+                        padding: 19px 20px 19px;
+                        border:none;
+                        background: #FFFFFF;
+                        border: 1px solid #dcdcdc;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                        :focus{
+                            border: 1px solid #6738B8;
+                            color:#50545c;
+                        }
+                    }
+                    input.error{
+                        color:#FF8B8B;
+                        border: 1px solid #FF8B8B;
+                    }
+                    button{
+                        float:right;
+                        padding:20px 60px;
+                        font-size:16px;
+                        -webkit-transition: all .3s ease-in-out;
+                        -moz-transition: all .3s ease-in-out;
+                        -o-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+                    }
+                    .activate-loader{
+                        width: 174px;
+                        text-indent:-2999px;
+                        background-image: url('../img/landingpages/data-lakes/loader.svg');
+                        background-size:40px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+
+                }
+                & .thankyou{         
+                    display:none;
+                    & .heading{
+                       width: 100%;
+                       float:left;
+                       margin-bottom:20px;
+                       p{ 
+                           width: 70%;
+                           float:left;
+                        }
+                        img{
+                            width: 70px;
+                            float:right;
+                        }
+                      
+                    }           
+                    .btn{
+                        margin-top:35px;
+                    }
+                    .btn-purple{
+                        color: #6739b8;
+                        border: #6739b8 solid 1px;
+                        margin-left:20px
+                    }
+                }
+            }
+            & .testemonial{
+                display:flex;
+                flex-flow:row wrap;
+                justify-content: center;
+                margin-top:60px;
+                img{
+                    width: 240px;
+                    margin-bottom:40px;
+                }
+                p{
+                    text-align:center;
+                    margin-bottom:20px;
+                }
+                p:last-of-type{
+                    font-style: italic;
+                    font-weight:500;
+                    margin-bottom:0px;
+                }
+            }
+            @media (max-width: $screen-md-max) {
+                padding:40px;
+                h3{
+                    font-size:30px;
+                }
+            }
+            @media (max-width: $screen-sm-max) {
+                .form h3{
+                    margin-top:40px;
+                }
+                -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-radius: 0px;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                > div{
+                    padding:0px;
+                }
+            }
+            @media (max-width: $screen-xs-max) {
+                padding:40px 20px;
+            }
+        }
+    }
+
+}
+
+
+
