@@ -42,7 +42,7 @@
         <meta name="twitter:title" content="{% include fn/pageTitle.fn %}">
         <meta name="twitter:site" content="@snowplowdata">
         <meta name="twitter:description" content="{% include fn/pageDescription.fn %}">
-        <meta name="twitter:image" content="{% include fn/pageImage.fn %}">
+        <meta name="twitter:image" content="{{ site.url }}/{% include fn/pageImage.fn %}">
         {% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}{% endif %}{% endfor %}{% endif %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

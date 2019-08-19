@@ -1,0 +1,51 @@
+        <footer id="contacts" class="lp-footer">
+            <div class="container">
+                <div class="credits col-sm-12 col-xs-12">         
+                    <div class="left">
+                        <div class="logo">
+                            <a href="#">Snowplow Analytics</a>
+                        </div>
+                        <p>© 2019 Snowplow</p>
+                    </div>  
+                    <div class="links">
+                        <a href="{{ BASE_PATH }}/privacy-policy">Privacy Policy</a>
+                        <a href="{{ BASE_PATH }}/terms-of-service">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="cookie" class="bg-primary-darker"></div>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i|Slabo+27px' type='text/css' media='screen' />
+        <link href="{{ BASE_PATH }}/assets/css/snowplow.css" rel="stylesheet" media="screen" type="text/css">
+        {% if page.assets.css %}{% for css in page.assets.css %}<link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">{% endfor %}{% endif %}
+        {% if page.assets.js %}{% for js in page.assets.js %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/{{js}}'></script>{% endfor %}{% endif %}
+        {% if page.layout == 'post' %}<script type="text/javascript" defer="defer" src='{{BASE_PATH}}/assets/js/vendors/prism.js'></script>{% endif %}
+        <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/snowplow.js" defer="defer"></script>
+        <script>
+            function recaptcha_callback() {
+                var submitBtn = document.querySelector('#submit-btn');
+                submitBtn.removeAttribute('disabled');
+                submitBtn.style.cursor = 'pointer';
+            }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
+        <script type="text/javascript">
+        // Create browser compatible event handler.
+          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+          var eventer = window[eventMethod];
+          var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+          // Listen for a message from the iframe.
+          eventer(messageEvent, function(e) {
+          if (isNaN(e.data)) return;
+
+          // replace #sizetracker with what ever what ever iframe id you need
+          document.getElementById('sizetracker').style.height = e.data + 70 + 'px';
+
+        }, false);
+        </script>
+
+
+        </body>
+</html>
