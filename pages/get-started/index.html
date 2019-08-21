@@ -1,6 +1,5 @@
 ---
 layout: default
-group: get-started
 title: Snowplow Insights | Get Started & Speak to Our Team Today
 description: Take control of your data with Snowplow. Get in touch with our team for a product demo or request more information about our product and technology.
 permalink: /get-started/
@@ -41,140 +40,66 @@ companies:
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <h1>Take complete control of your data with Snowplow.</h1>
+                <h1>Interested in Snowplow? <br> Request a demo.</h1>
+                <h3>Take complete control <br> of your data with Snowplow.</h3>
             </div>
         </div>
     </div>
 </section>
 
-
 <section class="get-started-form-section">
     <div class="container">
-        <div class="get-started-form-wrapper sales">
+        <div class="get-started-form-wrapper sales v1">
             <div class="get-started-form-wrapper-front">
                 <img src="{{ BASE_PATH }}/assets/img/get-started/sales@3x.png" alt="Snowplow - Get Started">
                 <p>Let’s talk</p>
             </div>
             <div class="get-started-form-wrapper-back">
                 <form action="" id="get-started-sales" novalidate>
-                    <h4>Let’s talk</h4>
-                    <p>Get in touch with our team about getting started with Snowplow.</p>
+                    <div class="hidden">
+                        <input type="text" class="main-form-input" id="inputLeadSource" value="Website">
+                        <input type="text" class="main-form-input" id="inputLeadSourceWebsite" value="Get Started - v1">
+                        <input type="text" class="request-trial-input" id="inputWebsite" maxlength="255">
+                    </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="sales-first-name" aria-describedby="first-name" placeholder="First name" maxlength="40" required>
+                            <label for="sales-first-name">First name <span style="color:red">*</span></label>
+                            <input type="text" class="form-control" id="sales-first-name" aria-describedby="first-name"
+                                placeholder="First name" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="sales-last-name" aria-describedby="last-name" placeholder="Last name" maxlength="40" required>
+                            <label for="sales-first-name">Last name <span style="color:red">*</span></label>
+                            <input type="text" class="form-control" id="sales-last-name" aria-describedby="last-name"
+                                placeholder="Last name" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="email" class="form-control" id="sales-work-email" aria-describedby="work-email" placeholder="Work email" maxlength="40" required>
+                            <label for="sales-first-name">Email<span style="color:red">*</span></label>
+                            <input type="email" class="form-control" id="sales-work-email" aria-describedby="work-email"
+                                placeholder="Work email" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="sales-first-name">Company<span style="color:red">*</span></label>
                             <input type="text" class="form-control" id="sales-company" aria-describedby="company" placeholder="Company" maxlength="40" required>
                             <div class="help-inline"></div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <div class="fake-dropdown" data-value="0">
-                                <input type="checkbox" id="sales-type">
-                                <label for="sales-type" id="sales-type-label">I’m a...</label>
-                                <ul>
-                                    <li data-value="0">Data Analyst</li>
-                                    <li data-value="0">Data Engineer</li>
-                                    <li data-value="0">Data Scientist</li>
-                                    <li data-value="0">Chief Data Officer</li>
-                                    <li data-value="0">Head of Data</li>
-                                    <li data-value="0">BI Manager</li>
-                                    <li data-value="0">Product Manager</li>
-                                    <li data-value="0">Marketing Manager</li>
-                                    <li data-value="0">Other</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <textarea class="form-control" id="sales-message" placeholder="Anything you'd like to share about your company or use case (optional)" maxlength="40"></textarea>
+                            <label for="sales-message">Message</label>
+                            <textarea class="form-control" id="sales-message"
+                                placeholder="Anything you'd like to share? (optional)"
+                                maxlength="40"></textarea>
                             <div class="help-inline"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 sumbmit-button-wrapper">
                             <a id="sales-submit" class="btn btn-primary">Submit</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="get-started-form-wrapper">
-            <div class="get-started-form-wrapper-front">
-                <img src="{{ BASE_PATH }}/assets/img/get-started/find-out-more@3x.png" alt="Snowplow - Get Started">
-                <p>Find out more <br> about Snowplow</p>
-            </div>
-            <div class="get-started-form-wrapper-back">
-                <form action="" id="get-started-more" novalidate>
-                    <h4>Find out more about Snowplow</h4>
-                    <p>We’ll be sending you four emails about Snowplow, our product and technology so you can learn more about us.</p>
-                    <div class="hidden">
-                        <input type="text" class="main-form-input" id="inputLeadSource" value="Website">
-                        <input type="text" class="main-form-input" id="inputLeadSourceWebsite" value="Get Started">
-                        <input type="text" class="request-trial-input" id="inputWebsite" maxlength="255">
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="more-first-name" aria-describedby="first-name" placeholder="First name" maxlength="40" required>
-                            <div class="help-inline"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="more-last-name" aria-describedby="last-name" placeholder="Last name" maxlength="40" required>
-                            <div class="help-inline"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <input type="email" class="form-control" id="more-work-email" aria-describedby="work-email" placeholder="Work email" maxlength="40" required>
-                            <div class="help-inline"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="more-company" aria-describedby="company" placeholder="Company" maxlength="40" required>
-                            <div class="help-inline"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <div class="fake-dropdown" data-value="0">
-                                <input type="checkbox" id="more-type">
-                                <label for="more-type" id="title-lable">I’m a...</label>
-                                <ul>
-                                    <li data-value="0">Data Analyst</li>
-                                    <li data-value="0">Data Engineer</li>
-                                    <li data-value="0">Data Scientist</li>
-                                    <li data-value="0">Chief Data Officer</li>
-                                    <li data-value="0">Head of Data</li>
-                                    <li data-value="0">BI Manager</li>
-                                    <li data-value="0">Product Manager</li>
-                                    <li data-value="0">Marketing Manager</li>
-                                    <li data-value="0">Other</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <button type="submit" id="more-submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
