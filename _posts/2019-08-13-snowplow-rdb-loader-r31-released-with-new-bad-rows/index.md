@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2019/08/13/snowplow-rdb-loader-r31-released-with-new-bad-rows/
 ---
 
-We are pleased to announce the release of [Snowplow RDB Loader R31][release] which adds a [new format of bad rows][bad-rows-rfc] and fixes a data quality issue with synthetic duplicates in RDB Shredder.
+We are pleased to announce the release of [Snowplow RDB Loader R31][release]. This updates the format of bad rows emitted to a [new format][bad-rows-rfc], as part of a broader piece of work we have been undertaking to improve Snowplow's capabilities around bad row handling, debugging and recovery; and fixes a data quality issue with synthetic duplicates in RDB Shredder.
 
 Please read on after the fold for:
 
@@ -22,42 +22,37 @@ Please read on after the fold for:
 
 <h2 id="new-bad-rows-format">1. New bad rows format</h2>
 
-At the beginning of 2019 we at Snowplow initiated a big effort of redesigning [Snowplow bad rows][bad-rows-rfc].
-The new design supposed to make bad rows easier to monitor, debug and recover by leveraging self-describing JSON format.
+At the beginning of 2019 we at Snowplow initiated a big effort to redesign the [Snowplow bad row format][bad-rows-rfc].
+The purpose of the new  format is to make bad rows easier to query and therefore monitor, debug and recover, by making them much more highly structured. In the new approach, bad rows will be in a self-describing JSON format. 
 
-While primary source of bad rows, the Stream Enrich job is still in QA phase, we're happy to announce that Snowplow RDB Shredder is the first component of Snowplow pipeline supporting the new format of bad rows.
+While primary source of bad rows for Snowplow users is the Stream Enrich job that validates every event being processed by the pipeline, every microservice that makes up a Snowplow pipeline, including the RDB Loader, will emit a bad row if an attempt to process the event (in this case load it into Redshift) unsuccessful. We're happy to announce that Snowplow RDB Shredder is the first component of Snowplow pipeline released supporting the new format of bad rows.
+
 The RDB Shredder 0.15.0 can produce following types of bad rows:
 
-* `iglu:com.snowplowanalytics.snowplow.badrows/loader_parsing_error/jsonschema/1-0-0` - a generic loader error, caused by invalid enriched data
+* `iglu:com.snowplowanalytics.snowplow.badrows/loader_parsing_error/jsonschema/1-0-0` - a generic loader error, caused if the event is not a valid "enriched event"
 * `iglu:com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/1-0-0` - an error raised by Iglu Client
 * `iglu:com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-0` - an unstructured error, raised by one of low-level shredding components, such as DynamoDB outage during cross-batch deduplication
 
-The RDB Shredder usually produces extremely small amount of bad rows or does not produce them at all, because all input data has already been validated and processed by enrich step.
-However, due to change in [Iglu Client validation library][iglu-client-060] we strongly recommend our users to monitor at least `loader_iglu_error` bad rows for at least couple of runs after upgrade
-
 <h2 id="synthetic-duplicates-issue">2. Synthetic duplicates issue</h2>
 
-In [Snowplow R86 Petra][snowplow-r86] we introduced [an in-batch synthetic deduplication][synthetic-deduplication].
-The deduplication generated new event id for events that for some reasons (e.g. due a bug in random number generator) have the same `event_id`, but in fact are different events (have different `event_fingerprint`s).
-As a result, all events in a batch have unique event ids, but at the same time not all events have their original ids.
-Original event ids are preserved in `com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0` context attached only to events where duplicated ids were found.
+In [Snowplow R86 Petra][snowplow-r86] we introduced [an in-batch synthetic deduplication][synthetic-deduplication] step. This step identified rows of data that were distinct (i.e. have different event fingerprints), but that had the same `event_id`: this can occur if for example the Snowplow Javascript is executed in an environment where it cannot generate UUIDs e.g. by a robot scraping the website, for example. Where two events in a batch have the same event ID but different event fingerprints, they are assigned a new event ID to prevent collision, with the original event ID preserved in the `com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0` context that is attached to any event that is mutated in this way.
 
-Recently, we discovered an anomaly in shredded data, where some events, which were clearly synthetic duplicates at the origin, were not "attached" to any context or unstructured event tables.
-Vice versa, some contexts and unstructured events had `root_id`, which did not correspond to any rows in `atomic.events` table, effectively resulting in "orphan events".
+Recently, we discovered an anomaly in shredded data, where some events, which were clearly synthetic duplicates, were not "attached" to any context or unstructured event tables.
+Vice versa, some contexts and unstructured events had `root_id` values which did not correspond to any rows in `atomic.events` table, effectively resulting in "orphaned events".
 
-Turned out the problem lays in how Apache Spark caches parts of its execution DAG.
-After shred job created an event object with new unique `event_id`, it caches this object and proceeds to the next step of creating an object containing all shredded entities with the same id.
-But if for some reasons there were not enough memory to store the initial cached object anymore, it would result in a new event object generation, along with new unique event id.
-But this second event id will be used only in shredded entities as original event is already written to HDFS.
+It turned out that this was caused by an issue with how Apache Spark caches parts of its execution DAG.
+After the shred job created an event object with new unique `event_id`, it caches this object and proceeds to the next step of creating an object containing all shredded entities with the same id.
+But if for some reasons there is not enough memory to store the initial cached object,  a new event object would be generated, along with new unique event id.
+This second event id would only be used only in the shredded entities as original event would already be written to HDFS, resulting in the `event_id` on the row in the events table not matching the `root_id` on the associated shredded tables.
 
-As a result, we could end up with a situation, where original enriched event with id `A` could end up in a shredded bucket with:
+As a result, it was possible to have an event with original event ID A, end up with:
 
 * `event_id` `B` in `atomic.events`
 * `root_id` `C` in all contexts and unstruct event tables
 * `root_id` `D` in `duplicate_1` table (but with `originalEventId` `A` in its column)
 
 This problem manifests itself quite rarely, depending on cluster load (which affects cache utiliztion) and overall amount of synthetic duplicates.
-In our statistics, it happens to ~1% of synthetic duplicates.
+In an analysis of a large number of our customers, we found it occurs to ~1% of synthetic duplicates.
 
 In order to check if your pipeline has been affected, you can count how many rows in `com_snowplowanalytics_snowplow_duplicate_1` don't have a parent in `atomic.events`:
 
@@ -68,16 +63,42 @@ SELECT root_tstamp::DATE, count(*) FROM atomic.com_snowplowanalytics_snowplow_du
   GROUP BY 1 ORDER BY 1
 {% endhighlight %}
 
-Although, this issue manifests itself very rarely and only for synthetic duplicates, which are often result of bot activity, not real users, we still consider this anomaly as data quality issue and treat it with all seriouseness.
+Whilst this issue only impacts a small % of data, and then only synthetic duplicates that are generated by bot activity, we have still treated this issue as a data quality issue and prioritised fully understanding the issue and putting out a fix. 
 
 <h2 id="other">3. Other improvements</h2>
 
-* We bumped Apache Spark to 2.3.2, which means required EMR AMI version now is [5.19][ami-519], [which support M5 and C5 instances][emr-instances]
-* Iglu Scala Client is updated to [0.6.0][iglu-client-060], making JSON validator more restrictive [#141][issue-141]
+* We bumped Apache Spark to 2.3.2, which means required EMR AMI version now is [5.19][ami-519]. This means that [M5 and C5 instances are now supported][emr-instances]
+* Iglu Scala Client has been updated to [0.6.0][iglu-client-060], making the JSON validator stricter [#141][issue-141]
 * RDB Shredder does not depend on Scala Common Enrich anymore and works on top of [Scala Analytics SDK][analytics-sdk]
-* String values in atomic events truncated according to [`atomic` JSON Schema][atomic] and not hard-coded anymore [#143][issue-143]
+* String values in atomic events are truncated according to [`atomic` JSON Schema][atomic] rather than hard-coded values [#143][issue-143]
 
 <h2 id="upgrading">4. Upgrading</h2>
+
+### 4.1 Checks to perform prior to upgrading
+
+The new RDB Loader uses a new version of the [Iglu Client library][iglu-client-060], that itself uses a new library for JSON schema validation. This is stricter than the old library. As a result, a number of issues with schemas that previously wouldn't have prevented RDB Loader from successfully loading events will now cause events to fail to successfully load. We therefore recommend checking the following before performing upgrade.
+
+#### 4.1.1 All schemas have the correct `$schema` value set
+
+All Iglu Schemas are self-describing themselves, and therefore contain a `$schema` property. The property should be set as follows:
+
+{% highlight json %}
+"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+{% endhighlight %}
+
+i.e. the value should always be `http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#`. This is the "meta-schema" that describes the schemas themselves.
+
+The previous version of Iglu Client library was insensitive to the value that this field was set at, so it wasn't uncommon for Snowplow users to create schemas and set alterantive values. (E.g. owing to a misunderstanding about what the property meant, and what that value shoudl be.) 
+
+Please therefore check this value in any schemas in your own Iglu Schema Registry before performing na upgrade, as any mistakes here may cause the corresponding events or contexts to not be loaded into Redshift successfully.
+
+#### 4.1.2 Any string fields that are specified format `uri` have to be full URIs and not simply paths
+
+The jsonschema standard supports a `uri` format for strings.
+
+The previous Iglu Client library would accept paths e.g. `/my/path` as valid URIs. The new library will not, and as a result any fields defined in the schema as a URI but with paths as values will not load into Redshift successfully.
+
+### 4.2 Performing the upgrade
 
 If you are using EmrEtlRunner, you'll need to update your `config.yml` file:
 
@@ -93,6 +114,8 @@ storage:
 
 Bear in mind that new minimum required AMI version might now support some old instance types, such as c1.medium or m1.small.
 In that case you need to upgrade your instance type as well.
+
+Once you have upgraded we recommended closely monitoring the location on S3 where the RDB Loader is configured to write any bad rows, to make sure that none of the issues flagged in 4.2.1 mean that data has failed to load into Redshift as a result of the upgrade.
 
 <h2 id="help">5. Getting help</h2>
 
