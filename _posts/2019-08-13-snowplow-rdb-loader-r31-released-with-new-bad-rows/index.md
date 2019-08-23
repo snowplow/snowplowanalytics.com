@@ -8,7 +8,7 @@ category: Releases
 permalink: /blog/2019/08/13/snowplow-rdb-loader-r31-released-with-new-bad-rows/
 ---
 
-We are pleased to announce the release of [Snowplow RDB Loader R31][release]. This updates the format of bad rows emitted to a [new format][bad-rows-rfc], as part of a broader piece of work we have been undertaking to improve Snowplow's capabilities around bad row handling, debugging and recovery; and fixes a data quality issue with synthetic duplicates in RDB Shredder.
+We are pleased to announce the release of [Snowplow RDB Loader R31][release]. This updates the format of bad rows emitted to a [new format][bad-rows-rfc], as part of a broader piece of work we have been undertaking to improve Snowplow's capabilities around bad row handling, debugging and recovery; and fixes a data quality issue with synthetic duplicates in the RDB Shredder.
 
 Please read on after the fold for:
 
@@ -25,9 +25,9 @@ Please read on after the fold for:
 At the beginning of 2019 we at Snowplow initiated a big effort to redesign the [Snowplow bad row format][bad-rows-rfc].
 The purpose of the new  format is to make bad rows easier to query and therefore monitor, debug and recover, by making them much more highly structured. In the new approach, bad rows will be in a self-describing JSON format. 
 
-While primary source of bad rows for Snowplow users is the Stream Enrich job that validates every event being processed by the pipeline, every microservice that makes up a Snowplow pipeline, including the RDB Loader, will emit a bad row if an attempt to process the event (in this case load it into Redshift) unsuccessful. We're happy to announce that Snowplow RDB Shredder is the first component of Snowplow pipeline released supporting the new format of bad rows.
+While the primary source of bad rows for Snowplow users is the Stream Enrich job that validates every event being processed by the pipeline, every microservice that makes up a Snowplow pipeline, including the RDB Loader, will emit a bad row if an attempt to process the event (in this case load it into Redshift) is unsuccessful. We're happy to announce that Snowplow RDB Shredder is the first component of Snowplow pipeline released supporting the new format of bad rows.
 
-The RDB Shredder 0.15.0 can produce following types of bad rows:
+The RDB Shredder 0.15.0 can produce the following types of bad rows:
 
 * `iglu:com.snowplowanalytics.snowplow.badrows/loader_parsing_error/jsonschema/1-0-0` - a generic loader error, caused if the event is not a valid "enriched event"
 * `iglu:com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/1-0-0` - an error raised by Iglu Client
@@ -38,14 +38,14 @@ The RDB Shredder 0.15.0 can produce following types of bad rows:
 In [Snowplow R86 Petra][snowplow-r86] we introduced [an in-batch synthetic deduplication][synthetic-deduplication] step. This step identified rows of data that were distinct (i.e. have different event fingerprints), but that had the same `event_id`: this can occur if for example the Snowplow Javascript is executed in an environment where it cannot generate UUIDs e.g. by a robot scraping the website, for example. Where two events in a batch have the same event ID but different event fingerprints, they are assigned a new event ID to prevent collision, with the original event ID preserved in the `com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0` context that is attached to any event that is mutated in this way.
 
 Recently, we discovered an anomaly in shredded data, where some events, which were clearly synthetic duplicates, were not "attached" to any context or unstructured event tables.
-Vice versa, some contexts and unstructured events had `root_id` values which did not correspond to any rows in `atomic.events` table, effectively resulting in "orphaned events".
+Vice versa, some contexts and unstructured events had `root_id` values which did not correspond to any rows in the `atomic.events` table, effectively resulting in "orphaned events".
 
 It turned out that this was caused by an issue with how Apache Spark caches parts of its execution DAG.
-After the shred job created an event object with new unique `event_id`, it caches this object and proceeds to the next step of creating an object containing all shredded entities with the same id.
-But if for some reasons there is not enough memory to store the initial cached object,  a new event object would be generated, along with new unique event id.
-This second event id would only be used only in the shredded entities as original event would already be written to HDFS, resulting in the `event_id` on the row in the events table not matching the `root_id` on the associated shredded tables.
+After the shred job creates an event object with a new unique `event_id`, it caches this object and proceeds to the next step of creating an object containing all shredded entities with the same id.
+But if for some reasons there is not enough memory to store the initial cached object,  a new event object would be generated, along with a new unique event id.
+This second event id would only be used only in the shredded entities since the original event would already be written to HDFS, resulting in the `event_id` on the row in the events table not matching the `root_id` on the associated shredded tables.
 
-As a result, it was possible to have an event with original event ID A, end up with:
+As a result, it was possible to have an event with an original event ID of A, end up with:
 
 * `event_id` `B` in `atomic.events`
 * `root_id` `C` in all contexts and unstruct event tables
@@ -67,7 +67,7 @@ Whilst this issue only impacts a small % of data, and then only synthetic duplic
 
 <h2 id="other">3. Other improvements</h2>
 
-* We bumped Apache Spark to 2.3.2, which means required EMR AMI version now is [5.19][ami-519]. This means that [M5 and C5 instances are now supported][emr-instances]
+* We bumped Apache Spark to 2.3.2, which means that the required EMR AMI version is now [5.19][ami-519]. This means that [M5 and C5 instances are now supported][emr-instances]
 * Iglu Scala Client has been updated to [0.6.0][iglu-client-060], making the JSON validator stricter [#141][issue-141]
 * RDB Shredder does not depend on Scala Common Enrich anymore and works on top of [Scala Analytics SDK][analytics-sdk]
 * String values in atomic events are truncated according to [`atomic` JSON Schema][atomic] rather than hard-coded values [#143][issue-143]
@@ -88,9 +88,9 @@ All Iglu Schemas are self-describing themselves, and therefore contain a `$schem
 
 i.e. the value should always be `http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#`. This is the "meta-schema" that describes the schemas themselves.
 
-The previous version of Iglu Client library was insensitive to the value that this field was set at, so it wasn't uncommon for Snowplow users to create schemas and set alterantive values. (E.g. owing to a misunderstanding about what the property meant, and what that value shoudl be.) 
+The previous version of Iglu Client library was insensitive to the value that this field was set at, so it wasn't uncommon for Snowplow users to create schemas and set alternative values. (E.g. owing to a misunderstanding about what the property meant, and what that value should be.) 
 
-Please therefore check this value in any schemas in your own Iglu Schema Registry before performing na upgrade, as any mistakes here may cause the corresponding events or contexts to not be loaded into Redshift successfully.
+Please therefore check this value in any schemas in your own Iglu Schema Registry before performing an upgrade, as any mistakes here may cause the corresponding events or contexts to not be loaded into Redshift successfully.
 
 #### 4.1.2 Any string fields that are specified format `uri` have to be full URIs and not simply paths
 
@@ -112,7 +112,7 @@ storage:
     rdb_loader: 0.16.0    # WAS 0.15.0
 {% endhighlight %}
 
-Bear in mind that new minimum required AMI version might now support some old instance types, such as c1.medium or m1.small.
+Bear in mind that the new minimum required AMI version might now support some old instance types, such as c1.medium or m1.small.
 In that case you need to upgrade your instance type as well.
 
 Once you have upgraded we recommended closely monitoring the location on S3 where the RDB Loader is configured to write any bad rows, to make sure that none of the issues flagged in 4.2.1 mean that data has failed to load into Redshift as a result of the upgrade.
@@ -121,7 +121,7 @@ Once you have upgraded we recommended closely monitoring the location on S3 wher
 
 For more details on this release, please check out the [release notes][release] on GitHub.
 
-If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
+If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
 [bad-rows-rfc]: https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558
 
