@@ -7,28 +7,23 @@ description: Data-driven retailers choose Snowplow's data collection infrastruct
 permalink: /retail/
 class: insights
 assets:
-  css: assets/css/snowplow.css
+  css: assets/css/retail.css
 blocks:
     - icon: /assets/img/retail/single-customer@2x.png
       title: Build a single customer view across web, mobile, offline and 3rd party.
-      first: With Snowplow you’re able to easily join web, mobile and offline data to create a single customer view.
-      content: Snowplow offers a <a href="https://github.com/snowplow/snowplow/wiki/trackers" target="_blank">range of trackers</a> for web, mobile and server-side events that emit events in the same format so they can be loaded into the same event-level table in your data warehouse. Snowplow’s tech allows you to track offline conversions, enrich events with <a href="https://docs.snowplowanalytics.com/snowplow-insights/enrichments/" target="_blank">3rd party properties</a> and send 3rd party events using Snowplow’s <a href="https://github.com/snowplow/snowplow/wiki/Iglu-webhook-adapter" target="_blank">webhooks</a>.
+      content: With Snowplow you’re able to easily join web, mobile and offline data to create a single customer view. Snowplow offers a <a href="https://github.com/snowplow/snowplow/wiki/trackers" target="_blank">range of trackers</a> for web, mobile and server-side events that emit events in the same format so they can be loaded into the same event-level table in your data warehouse. Snowplow’s tech allows you to track offline conversions, enrich events with <a href="https://docs.snowplowanalytics.com/snowplow-insights/enrichments/" target="_blank">3rd party properties</a> and send 3rd party events using Snowplow’s <a href="https://github.com/snowplow/snowplow/wiki/Iglu-webhook-adapter" target="_blank">webhooks</a>.
     - icon: /assets/img/retail/measure@2x.png
       title: Correctly measure, attribute and optimize your marketing spend.
-      first: Snowplow enables you to track exactly what marketing campaigns individual users engage with and where, and tie that data to downstream user behavior.
-      content: This means you can calculate the real return on marketing spend based on all the purchases a customer makes over their lifetime, taking into account returns. And having access to the underlying event-level data means you can continually assess which attribution model best suit your business.
+      content: Snowplow enables you to track exactly what marketing campaigns individual users engage with and where, and tie that data to downstream user behavior. This means you can calculate the real return on marketing spend based on all the purchases a customer makes over their lifetime, taking into account returns. And having access to the underlying event-level data means you can continually assess which attribution model best suit your business.
     - icon: /assets/img/retail/answers@2x.png
       title: Ask and answer the questions that matter to your business.
-      first: Make reports useful again with analytics customized for your business.
-      content: Eliminate the dashboards analytics vendors think you need and experience the freedom to ask and answer the questions that matter most to your business. With access to your rich, event-level data, you can break down and analyze conversion funnels based on unique sales cycles, multichannel marketing effectiveness and customer retention, to name a few.
+      content: Make reports useful again with analytics customized for your business. Eliminate the dashboards analytics vendors think you need and experience the freedom to ask and answer the questions that matter most to your business. With access to your rich, event-level data, you can break down and analyze conversion funnels based on unique sales cycles, multichannel marketing effectiveness and customer retention, to name a few.
     - icon: /assets/img/retail/personalize@2x.png
       title: Take actions on your data in real-time.
-      first: With Snowplow you can act on your data in real-time.
-      content: All the data being loaded into your data warehouse (we load into BigQuery in real-time) is first written to a real-time stream that you can read off to power your real-time applications. You can use your event-level data to build action-driven rule engines to trigger ads, emails, personalise product features or power a fraud detection engine, all in real-time.
+      content: With Snowplow you can act on your data in real-time. All the data being loaded into your data warehouse (we load into BigQuery in real-time) is first written to a real-time stream that you can read off to power your real-time applications. You can use your event-level data to build action-driven rule engines to trigger ads, emails, personalise product features or power a fraud detection engine, all in real-time.
     - icon: /assets/img/retail/real-time@2x.png
       title: Personalize and optimize the shopping experience.
-      first: Snowplow data is granular, validated up front and highly structured.
-      content: This makes it a great input for your machine learning models to enable you to, for example, effectively bucket users to optimise conversions and retention. You can use this data to personalise the shopping experience in real-time and assess its effectiveness with A/B tests (using our Optimizely integration) of e.g. pricing, user paths and new product features. 
+      content: Snowplow data is granular, validated up front and highly structured, which makes it a great input for your machine learning models to enable you to, for example, effectively bucket users to optimise conversions and retention.<br>You can use this data to personalise the shopping experience in real-time and assess its effectiveness with A/B tests (using our Optimizely integration) of e.g. pricing, user paths and new product features. 
 logos:
   - name: de-bijenkorf
     img: assets/img/retail/logos/de-bijenkorf.png
@@ -81,25 +76,19 @@ logos:
     img-3x: assets/img/retail/logos/outfittery@3x.png
     height: 24.7px    
 cards:
-    - title: '<a href="{{ BASE_PATH }}/blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/">Snowplow for retail: How can I use Snowplow?</a>'
-      sub-title: Retail
+    - title: '<a href="/blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/">Snowplow for retail: How can I use Snowplow?</a>'
       content: This post is non-technical and is intended to show you how to solve some common problems retailers face every day with Snowplow. This is the first post in a series on the subject, there are 4 more in this series.
-      url: /blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/
-    - title: <a href="{{ BASE_PATH }}/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
-      sub-title: Marketing
+    - title: <a href="/blog/2018/03/16/using-snowplow-for-marketing-data-analytics/">Using Snowplow for marketing data analytics</a>
       content: Marketing success has transformed from a given into a set of complicated, multi-layered questions where the answers are not always clear. Despite the complexity and ambiguity, marketing teams are often expected to provide answers.
-      url: /blog/2018/03/16/using-snowplow-for-marketing-data-analytics/
-    - title: <a href="{{ BASE_PATH }}/blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/">A misconception about how personalization drives sales</a>
-      sub-title: Personalization
+    - title: <a href="/blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/">A misconception about how personalization drives sales</a>
       content: "When retailers are looking for a way to drive sales, personalization can look like a quick win: buy a recommendation engine and put more products a customer is likely to buy in front of them, then watch the sales come in. Unfortunately, it’s not quite that easy."
-      url: /blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/
 
 ---
             <!--
                 MAIN AREA
             -->
 
-<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.jpg)">
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-offset-1">
@@ -107,13 +96,13 @@ cards:
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-10 col-offset-1 spacer-bottom-40">
+            <div class="col-sm-8 col-offset-1">
                 <h4>With a best-in-class data collection infrastructure, Snowplow provides the foundation needed for retailers to compete and win with data.</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-offset-1">
-                <a href="/request-demo/" class="btn btn-outline large">Get started</a>
+                <a href="/request-demo/" class="btn btn-lines-white btn-primary call-to-action">Get started</a>
             </div>
         </div>
     </div>
@@ -127,7 +116,6 @@ cards:
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
                         <h3>{{ block.title }}</h3>
-                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
                         <p>{{ block.content }}</p>
                     </div>
                     <div class="col-sm-6 data-blocks-item-pic pad-60">
@@ -143,9 +131,9 @@ cards:
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/retail/background@3x.png)">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 spacer-bottom-50">
+            <div class="col-sm-10 col-sm-offset-1">
                 <div class="section-revamp-testemonial-block _active">
-                    <h6 class="xl text-center spacer-bottom-50">Data-driven retailers choose Snowplow</h6>
+                    <h3>Data-driven retailers choose Snowplow</h3>
                     <p class="section-revamp-testemonial-content">
                       “Snowplow has blown Nordstrom’s minds in speed and range of data, offering complete extensibility of batch and real-time feeds and schemas in hours and seconds, respectively. With a small but dedicated team of engineers, we were able to replace our bulky and expensive third-party solution with one custom tailored to our needs and satisfaction. There’s simply no going back.”
                     </p>
@@ -183,18 +171,16 @@ cards:
 <section class="section-revamp data-cards-section pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center">
-                <h3>From the Snowplow blog</h3>
+            <div class="col-sm-12">
+                <h2>From the Snowplow blog</h2>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
                     <div class="data-cards-item">
-                        <h6 class="xl spacer-bottom-30">{{ card.sub-title }}</h6>
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
-                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

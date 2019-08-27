@@ -126,7 +126,9 @@ body.blog {
 
 
 body.post {
-
+    ol {
+        margin-bottom:40px;
+    }
     article {
         .content {
             margin-top: 70px;

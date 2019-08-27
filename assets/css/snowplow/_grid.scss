@@ -230,7 +230,6 @@ section
 .pad-90 { @include pad(90px); }
 .pad-95 { @include pad(95px); }
 .pad-100{ @include pad(100px); }
-.pad-120{ @include pad(120px); }
 .pad-150{ @include pad(150px); }
 .pad-200{ @include pad(200px); }
 
@@ -255,7 +254,6 @@ section
 .pad-t-90 { padding-top:90px; }
 .pad-t-95 { padding-top:95px; }
 .pad-t-100{ padding-top:100px; }
-.pad-t-120{ padding-top:120px; }
 .pad-t-150{ padding-top:150px; }
 .pad-t-200{ padding-top:200px; }
 
@@ -280,7 +278,6 @@ section
 .pad-b-90 { padding-bottom:90px; }
 .pad-b-95 { padding-bottom:95px; }
 .pad-b-100{ padding-bottom:100px; }
-.pad-b-120{ padding-bottom:120px; }
 .pad-b-150{ padding-bottom:150px; }
 .pad-b-200{ padding-bottom:200px; }
 
@@ -305,7 +302,6 @@ section
 .pad-l-90 { padding-left:90px; }
 .pad-l-95 { padding-left:95px; }
 .pad-l-100{ padding-left:100px; }
-.pad-l-120{ padding-left:120px; }
 .pad-l-150{ padding-left:150px; }
 .pad-l-200{ padding-left:200px; }
 
@@ -330,7 +326,6 @@ section
 .pad-r-90 { padding-right:90px; }
 .pad-r-95 { padding-right:95px; }
 .pad-r-100{ padding-right:100px; }
-.pad-r-120{ padding-right:120px; }
 .pad-r-150{ padding-right:150px; }
 .pad-r-200{ padding-right:200px; }
 
@@ -365,6 +360,7 @@ section
 	.lg-pad-90 { @include pad(90px); }
 	.lg-pad-95 { @include pad(95px); }
 	.lg-pad-100{ @include pad(100px); }
+	.lg-pad    { @include pad(30px); }
 
 	.lg-pad-t-0  { padding-top:0; }
 	.lg-pad-t-5  { padding-top:5px; }

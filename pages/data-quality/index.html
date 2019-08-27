@@ -7,35 +7,28 @@ description: Snowplow is architected from the ground up for data quality, so you
 permalink: /data-quality/
 class: data-quality
 assets:
-  css: assets/css/snowplow.css
+  css: assets/css/data-revamp.css
 blocks:
     - icon: /assets/img/data/insights-data_quality_1.svg
       title: Formal validation
-      first: All data collected is validated against its associated data schemas.
-      content: You can configure schemas to be as strict as you like, making it easy to proactively identify data quality issues e.g. a value being stored in the wrong field.
+      content: All data collected is validated against its associated data schemas. You can configure schemas to be as strict as you like, making it easy to proactively identify data quality issues e.g. a value being stored in the wrong field.
     - icon: /assets/img/data/insights-data_quality_2.svg
       title: Loss-less<br>data pipeline
-      first: No events sent to the Snowplow pipeline are silently “dropped”.
-      content: If there is an issue processing the data, we surface it with the associated error messages, so you can easily monitor and proactively identify data quality issues as they emerge, rather than after the fact.
+      content: No events sent to the Snowplow pipeline are silently “dropped”. If there is an issue processing the data, we surface it with the associated error messages, so you can easily monitor and proactively identify data quality issues as they emerge, rather than after the fact.
     - icon: /assets/img/data/insights-data_quality_3.svg
       title: Fully auditable
-      first: You have direct access to the data at every stage in the Snowplow data pipeline
-      content: Enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
+      content: You have direct access to the data at every stage in the Snowplow data pipeline, enabling you to audit the data quality at each stage and validate that no data has been lost or incorrectly transformed.
     - icon: /assets/img/data/insights-data_quality_4.svg
       title: Recover and reprocess<br>bad data
-      first: It is possible to recover and reprocess bad data
-      content: Data tracking issues do not necessarily need to result in gaps in your data collection.
+      content: It is possible to recover and reprocess bad data, so that data tracking issues do not necessarily need to result in gaps in your data collection.
     - icon: /assets/img/data/insights-data_quality_5.png
       title: Automated testing<br>for your tracking
-      first: Extend your test suites to include your Snowplow tracking.
-      content: This allows you to release new versions of your website, apps or server side applications knowing the new changes won’t break your tracking set up.  
+      content: Extend your test suites to include your Snowplow tracking so you can release new versions of your website, apps or server side applications knowing the new changes won’t break your tracking set up.  
 cards:
     - title: <a href="/blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/">We need to talk about bad data</a>
       content: No one in digital analytics talks about bad data. A lot about working with data is sexy, but managing bad data, i.e. working to improve data quality, is not. Not only is talking about bad data not sexy, it is really awkward, because it forces us to confront a hard truth.
-      url: /blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/
     - title: <a href="/blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/">Debugging bad data in GCP with BigQuery</a>
       content: One of the key features of the Snowplow pipeline is that it’s architected to ensure data quality up front - rather than spending a lot of time cleaning and making sense of the data before using it, schemas are defined up front and used to validate data as it comes through the pipeline.
-      url: /blog/2018/12/19/debugging-bad-data-in-gcp-with-bigquery/
     - title: <a href="/blog/2019/07/17/introducing-snowplow-micro/">Introducing Snowplow Micro</a>
       content: "With Snowplow Micro you can validate your tracker setup as part of your automated test suite. This unique features lets you simulate particular situations, to ensure you receive the data in the format and values you expect. This way, you can release new versions of your website, apps or server side applications knowing you won’t break your tracking."
 
@@ -44,7 +37,7 @@ cards:
                 MAIN AREA
             -->
 
-<section class="jumbotron theme-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
+<section class="hero-revamp hero-revamp-light" style="background-image: url({{ BASE_PATH }}/assets/img/data/data-quality-hero.png)">
     <div class="container">
         <div class="row">
             <div class="c-ol-sm-11">
@@ -66,25 +59,19 @@ cards:
 
 <section class="section-revamp data-blocks-section">
     <div class="container">
-      <div class="row text-center">
-        <h2 class="spacer-bottom-30">Data quality</h2>
-      </div>
-      <div class="row">
         <div class="data-blocks-container">
             {% for block in page.blocks %}
                 <div class="data-blocks-item row">
                     <div class="col-sm-5 data-blocks-item-content">
-                        <h3>{{ block.title }}</h3>
-                        <h5 class="spacer-bottom-30">{{ block.first }}</h5>
+                        <h2>{{ block.title }}</h2>
                         <p>{{ block.content }}</p>
                     </div>
-                    <div class="col-sm-6 data-blocks-item-pic"> 
+                    <div class="col-sm-6 data-blocks-item-pic">
                         <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
                     </div>
                 </div>
             {% endfor %}
         </div>
-      </div>
     </div>
 </section>
 
@@ -92,20 +79,19 @@ cards:
     Cards
  -->
 
-<section class="section-revamp data-cards-section bg-primary-lighter pad-t-80">
+<section class="section-revamp data-cards-section pad-t-80">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center">
-                <h3>From the Snowplow blog</h3>
+            <div class="col-sm-12">
+                <h2>From the Snowplow blog</h2>
             </div>
         </div>
         <div class="row">
             <div class="data-cards-container">
                 {% for card in page.cards %}
-                    <div class="data-cards-item-white">
+                    <div class="data-cards-item">
                         <h4>{{ card.title }}</h4>
                         <p>{{ card.content }}</p>
-                        <a class="link" href="{{ BASE_PATH}}{{ card.url }}"> Read article</a>
                     </div>
                 {% endfor %}
             </div>

@@ -1,0 +1,144 @@
+---
+# comment to ensure Jekyll properly reads file.
+---
+
+/*
+ * DEPENDENCIES
+ */
+@import "snowplow/_variables";
+@import "snowplow/_revamp";
+@import "snowplow/_grid";
+
+
+/*!
+ * Snowplow v0.0.1 (https://github.com/snowplow/snowplow.github.com)
+ * Products Insight
+ */
+
+/*
+ * CONFIGURATION
+ */
+
+@import "vendors/common/font-awesome/_variables";
+@import "vendors/common/font-awesome/_mixins";
+
+/*
+ * STYLES
+ */
+
+.hero-revamp {
+	padding-bottom: 290px;
+}
+.revamp-news-cards-section {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.revamp-news-cards-container {
+	margin-top: 0;
+	margin-top: -180px;
+}
+/* 
+ * Pricing table (move this to _revamp.scss to use in other pages)
+ */
+ :root {
+ }
+.pricing-revamp {
+	&-section {
+		h2 {
+			text-align: center;
+		}
+	}
+	&-table{
+		margin-top: 20px;
+		width: 100%;
+		h3 {
+			font-size: 24px;
+			margin: 0 0 15px;
+			color: $gunmetal;
+			width: 100%;
+			font-weight: 400;
+		}
+		h4 {
+			font-size: 18px;
+			margin: 0 0 10px;
+			color: $blue-purple;
+			width: 100%;
+		}
+		p {
+			margin: 0 0 5px;
+			font-size: 14px;
+			color: $gunmetal;
+			line-height: 1.15;
+			width: 100%;
+			span {
+				font-size: 12px;
+			}
+		}
+		&-row{
+			width: 100%;
+			padding: 17px 0 11px;
+			border-bottom: solid 1px $gunmetal;
+			margin: 0;
+			@include do-flex(row, flex-start, flex-start, wrap);
+		}
+		&-col{
+			width: 20%;
+			padding: 0 20px;
+			margin: 0;
+			@include do-flex(column, center, center, wrap);
+			* {
+				text-align: center;
+			}
+			@media (max-width: 767px) {
+		 		width: 50%;
+		 		padding: 0 5px;
+		 	}
+			&:nth-of-type(1) {
+				width: 40%;
+				padding: 0 5px 0 20px;
+				* {
+					text-align: left;
+				}
+				@media (max-width: 767px) {
+		 			width: 50%;
+		 		}
+			}
+		}
+		&-header{
+			padding: 30px 0;
+			border-bottom: solid 1px $blue-purple;
+			p {
+				font-weight: 300;
+				padding-left: 0;
+			}
+		}
+		&-subheader{
+			padding: 20px 0 10px;
+			border-bottom: solid 1px $blue-purple;
+			background-color: transparentize($blue-purple, .97);
+			.pricing-revamp-table-col {
+				width: 100%;
+			}
+		}
+		&-footer{
+			padding: 30px 0;
+			border-bottom: none;
+			.pricing-revamp-table-col {
+				justify-content: flex-start;
+			}
+		}
+		&-subfooter{
+			padding: 25px 0 60px;
+			border-bottom: solid 1px $blue-purple;
+			p {
+				font-size: 14px;
+				font-weight: 300;
+			}
+			.pricing-revamp-table-col {
+				width: 100%;
+			}
+		}
+	}
+} 
+
+
