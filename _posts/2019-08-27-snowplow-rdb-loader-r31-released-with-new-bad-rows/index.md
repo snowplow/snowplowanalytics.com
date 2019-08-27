@@ -5,7 +5,7 @@ title: "Snowplow RDB Loader R31 released"
 tags: [snowplow, shred, redshift, manifest, bad-rows]
 author: Anton
 category: Releases
-permalink: /blog/2019/08/23/snowplow-rdb-loader-r31-released-with-new-bad-rows/
+permalink: /blog/2019/08/27/snowplow-rdb-loader-r31-released-with-new-bad-rows/
 ---
 
 We are pleased to announce the release of [Snowplow RDB Loader R31][release]. This updates the format of bad rows emitted to a [new format][bad-rows-rfc], as part of a broader piece of work we have been undertaking to improve Snowplow's capabilities around bad row handling, debugging and recovery; and fixes a data quality issue with synthetic duplicates in the RDB Shredder.
