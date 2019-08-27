@@ -11,12 +11,12 @@ assets:
   js: assets/js/company.js
 teams:
   - name: Alex Dean
-    pos: co-founder & CEO
+    pos: Co-founder & CEO
     img: /assets/img/team/alex.png
     content: "Alex is a polymath: a keen technologist with a passion for functional programming, cloud-based architectures and big data technologies, he also has a passion for innovation and organizational change. Prior to co-founding Snowplow, he'd worked in technology roles at OpenX and in the Business Intelligence department at Deloitte Consulting, as well as strategy roles at Fathom Partners and Keplar LLP."
     study:
   - name: Yali Sassoon
-    pos: co-founder & CPO
+    pos: Co-founder & CPO
     img: /assets/img/team/yali.jpg
     content: "At Snowplow, Yali gets to combine his love of building things with his fascination of the ways in which people use data to reason; something he cultivated when studying his BA in Natural Sciences and MPhil in the History and Philosophy of Science, and further developed as a Strategy & Operations Consultant (at PwC, Bestshore and Keplar LLP) and a Data Analyst at OpenX."
     study:    
@@ -175,34 +175,30 @@ we wanted and it was very difficult, if not impossible, to get the underlying da
         </div>
     </div>
 </section>
-
-<section class="team pad-t-50">
-    <div class="container text-center">
-        <div class="row spacer-bottom-60">
-            <div class="col-md-8 col-md-push-2">
-                <h3>Meet our Founders</h3>
-            </div>
-        </div>
-        <div class="row grid">
-          {% for team in page.teams %}
-          <div class="item col-xs-6 col-sm-4 col-md-3 no-gutter">
-              <img src="{{ BASE_PATH }}{{ team.img }}" width="640" height="640" class="adapt" alt="">
-              <div class="bio">
-                  <article>
-                      <button class="i-close"></button>
-                      <h4><b>{{ team.name }}</b> {{ team.pos }}</h4>
-                      <p>{{ team.content }}</p>
-                      <!-- <p>{{ team.study }}</p> -->
-                  </article>
-              </div>
+<section class="section-revamp data-blocks-section">
+  <div class="container ">
+      <div class="row spacer-bottom-60 text-center">
+          <div class="col-md-8 col-md-push-2">
+              <h3>Meet our Founders</h3>
           </div>
-
+      </div>
+      <div class="data-blocks-container">
+          {% for team in page.teams %}
+              <div class="data-blocks-item row">
+                  <div class="col-sm-5 data-blocks-item-content team-listing">
+                      <h3>{{ team.name }}</h3>
+                      <strong>{{ team.pos }}</strong>
+                      <p>{{ team.content }}</p>
+                  </div>
+                  <div class="col-sm-6 data-blocks-item-pic pad-60">
+                      <img src="{{ BASE_PATH }}{{ team.img }}" alt="#" />
+                  </div>
+              </div>
           {% endfor %}
-
-
-        </div>
-    </div>
+      </div>
+  </div>
 </section>
+
 
 <section class="section-revamp section-revamp-animated-img-right">
     <img src="{{ BASE_PATH }}/assets/img/aboutus/global.png" srcset="{{ BASE_PATH }}/assets/img/aboutus/global@2x.png 2x, {{ BASE_PATH }}/assets/img/aboutus/global@3x.png 3x"class="section-revamp-animated-img-img">
