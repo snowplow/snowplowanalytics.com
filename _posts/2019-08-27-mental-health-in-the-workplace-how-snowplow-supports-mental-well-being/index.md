@@ -21,7 +21,7 @@ Our inclusive culture at Snowplow means that we are accepted regardless of our g
 
 
 ## Nicki’s story
-
+> In 2018 I was unexpectedly admitted to a psychiatric unit. Although it was voluntary, I knew that it would mean having to take some time off from work. I was very lucky to work for a company who valued my mental health as much as my physical health.
 > Knowing that I had support from my peers gave me one less thing to worry about so I was able to focus on my own recovery.
 > Since being discharged from the unit I still have the occasional blip in my mental health, but because my team know about my history, I don’t feel guilty when I do need to take some time off to focus on myself or work from home from time to time.
 
