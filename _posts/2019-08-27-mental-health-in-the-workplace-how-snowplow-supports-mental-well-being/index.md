@@ -22,9 +22,8 @@ Our inclusive culture at Snowplow means that we are accepted regardless of our g
 
 ## Nicki’s story
 
-Knowing that I had support from my peers gave me one less thing to worry about so I was able to focus on my own recovery. 
-
-Since being discharged from the unit I still have the occasional blip in my mental health, but because my team know about my history, I don’t feel guilty when I do need to take some time off to focus on myself or work from home from time to time.
+> Knowing that I had support from my peers gave me one less thing to worry about so I was able to focus on my own recovery.
+> Since being discharged from the unit I still have the occasional blip in my mental health, but because my team know about my history, I don’t feel guilty when I do need to take some time off to focus on myself or work from home from time to time.
 
 We need to allow ourselves permission to rest; only you can say at which point you’re not well enough to work. If you can’t get out of bed because of your mental health, that’s okay; nobody has the authority to invalidate the way that you feel. The more we talk about mental health, the more we’re able to tear down the stigma behind it. If you can’t talk to your manager just yet, talk to a colleague; if you can’t talk to a colleague just yet, talk to a friend. 
 
