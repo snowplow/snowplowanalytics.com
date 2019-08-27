@@ -61,11 +61,12 @@ exclude:
   - Gemfile.lock
   - package.json
   - node_modules
-  - gulpfile.js
+  - webpack.config.js
 
 
 # Redirect
 plugins:
+  - jekyll-autoprefixer
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compress-images

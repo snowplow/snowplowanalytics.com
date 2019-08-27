@@ -17,8 +17,11 @@ gem "jekyll", "3.5.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+   gem 'jekyll-autoprefixer'
    gem "jekyll-feed", "~> 0.6"
    gem "jekyll-paginate-v2", "~> 1.8.1"
+   # gem "jekyll-feed", "~> 0.12"
+   # gem "jekyll-paginate-v2", git: "https://github.com/sverrirs/jekyll-paginate-v2.git"
 
    gem "jekyll-compress-images"
    gem 'jekyll_github_sample'

@@ -8,8 +8,11 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    autoprefixer-rails (9.6.1.1)
+      execjs
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
+    execjs (2.7.0)
     exifr (1.3.3)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
@@ -38,6 +41,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-autoprefixer (1.0.2)
+      autoprefixer-rails (~> 9.3)
     jekyll-compress-images (1.2)
       image_optim
       image_optim_pack
@@ -82,6 +87,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 3.5.0)
+  jekyll-autoprefixer
   jekyll-compress-images
   jekyll-feed (~> 0.6)
   jekyll-paginate-v2 (~> 1.8.1)
@@ -89,4 +95,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.6
+   1.17.2
