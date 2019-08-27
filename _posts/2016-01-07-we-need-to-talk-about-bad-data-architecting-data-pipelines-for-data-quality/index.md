@@ -1,7 +1,7 @@
 ---
 layout: post
 title: We need to talk about bad data
-tags: [bad data, data pipelines, technical architecture]
+tags: [bad data, bad-rows, data pipelines, technical architecture]
 author: Yali
 category: Inside the Plow
 permalink: /blog/2016/01/07/we-need-to-talk-about-bad-data-architecting-data-pipelines-for-data-quality/

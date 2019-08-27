@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Debugging bad data in Elasticsearch and Kibana - a guide
-tags: [bad data, elasticsearch, kibana]
+tags: [bad data, bad-rows, elasticsearch, kibana]
 author: Yali
 category: Analytics
 permalink: /blog/2016/03/03/guide-to-debugging-bad-data-in-elasticsearch-kibana/
