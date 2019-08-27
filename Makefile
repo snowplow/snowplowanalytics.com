@@ -18,6 +18,7 @@ gemfile_lock = Gemfile.lock
 install: $(ruby_v_file)
 	gem install bundler --version $(bundler_v)
 	bundle install
+	npm install
 
 $(ruby_v_file):
 	rbenv install $(ruby_v) -s
@@ -28,9 +29,11 @@ $(ruby_v_file):
 # -----------------------------------------------------------------------------
 
 serve:
+	NODE_ENV=development webpack
 	bundle exec jekyll serve
 
 serve-incremental:
+	NODE_ENV=development webpack
 	bundle exec jekyll serve --incremental
 
 # -----------------------------------------------------------------------------

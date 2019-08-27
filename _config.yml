@@ -66,6 +66,7 @@ exclude:
 
 # Redirect
 plugins:
+  - jekyll-autoprefixer
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compress-images
