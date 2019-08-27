@@ -1,6 +1,9 @@
 // ---
 // ---
 
+import ES6Samle from './es6-sample';
+new ES6Samle(1,2).test();
+
 require('./vendors/_concat/jquery-3.1.1.min.js');
 require('./vendors/_concat/jquery.cookiebar.js');
 require('./vendors/_concat/bootstrap.min.js');
