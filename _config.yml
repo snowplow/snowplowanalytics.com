@@ -61,7 +61,7 @@ exclude:
   - Gemfile.lock
   - package.json
   - node_modules
-  - gulpfile.js
+  - webpack.config.js
 
 
 # Redirect

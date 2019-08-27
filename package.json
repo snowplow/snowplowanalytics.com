@@ -1,12 +1,12 @@
 {
-  "name": "gulp-boilerplate",
+  "name": "snowplow-build",
   "version": "0.0.1",
-  "description": "Gulp.js file configuration for HTML5 project",
+  "description": "Builds SnowPlow from sources and postprocess",
   "author": {
-    "name": "Screenly",
-    "url": "https://www.screenly.io/"
+    "name": "SnowPlow",
+    "url": "https://www.snowplowanalytics.com/"
   },
-  "license": "GPL-2.0",
+  "license": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/"
@@ -16,24 +16,33 @@
       "Chrome > 20"
     ]
   },
+  "scripts": {
+    "//": "Use 'npm run build' to build and 'npm start' to start Jekyll server",
+    "prestart": "cross-env NODE_ENV=development webpack",
+    "start": "bundler exec jekyll serve",
+    "prebuild": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env JEKYLL_ENV=production bundler exec jekyll build",
+    "prewatch": "cross-env NODE_ENV=development webpack",
+    "watch": "cross-env NODE_ENV=development webpack --watch |  bundle exec jekyll serve --watch --incremental",
+    "watch4": "cross-env NODE_ENV=development webpack --watch |  bundle exec jekyll serve --livereload --incremental"
+  },
   "dependencies": {
-    "graceful-fs": "^4.0.0",
+    "graceful-fs": "^4.2.2",
     "jshint": "^2.10.2",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.15",
     "marked": "^0.7.0",
     "minimatch": "^3.0.2",
     "node-gyp": "^3.6.2"
   },
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-extname": "^0.2.2",
-    "gulp-foreach": "^0.1.0",
-    "gulp-insert": "^0.5.0",
-    "gulp-minify": "^2.1.0",
-    "gulp-rename": "^1.2.2",
-    "read-vinyl-file-stream": "^2.0.3",
-    "vinyl": "^2.1.0"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-merge": "^4.2.1"
   }
 }
