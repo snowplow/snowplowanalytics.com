@@ -4,12 +4,17 @@ rvm:
   - 2.2.2
 
 install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
+  - node -v
   - pip install --user awscli
   - pip install --user s3cmd
+  - bundle install
+  - npm install
 
 script:
-  - bundle install
-  - bundle exec jekyll build
+  - npm run build
 
 deploy:
   - provider: script
