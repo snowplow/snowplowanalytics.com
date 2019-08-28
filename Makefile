@@ -4,8 +4,8 @@
 #  CONSTANTS
 # -----------------------------------------------------------------------------
 
-ruby_v = 2.2.2
-bundler_v = 1.16.6
+ruby_v = 2.6.3
+bundler_v = 1.17.2
 
 ruby_v_file = .ruby-version
 gemfile = Gemfile
@@ -29,11 +29,11 @@ $(ruby_v_file):
 # -----------------------------------------------------------------------------
 
 serve:
-	NODE_ENV=development webpack
+	npm run prewatch
 	bundle exec jekyll serve
 
 serve-incremental:
-	NODE_ENV=development webpack
+	npm run prewatch
 	bundle exec jekyll serve --incremental
 
 # -----------------------------------------------------------------------------
