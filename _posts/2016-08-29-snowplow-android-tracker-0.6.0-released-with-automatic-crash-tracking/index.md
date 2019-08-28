@@ -61,7 +61,8 @@ Once this feature is activated you will see new events similar to the below:
       "threadId": 1,
       "threadName": "main",
       "isFatal": true,
-      "stackTrace": "java.lang.IllegalStateException: IllegalState detected!\\n\\tat com.snowplowanalytics.snowplowtrackerdemo.Demo$2.onClick(Demo.java:129)\\n\\tat android.view.View.performClick(View.java:5198)\\n\\tat android.view.View$PerformClick.run(View.java:21147)\\n\\tat android.os.Handler.handleCallback(Handler.java:739)\\n\\tat android.os.Handler.dispatchMessage(Handler.java:95)\\n\\tat android.os.Looper.loop(Looper.java:148)\\n\\tat android.app.ActivityThread.main(ActivityThread.java:5417)\\n\\tat java.lang.reflect.Method.invoke(Native Method)\\n\\tat com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)\\n\\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)\\n",
+      "stackTrace": "java.lang.IllegalStateException: IllegalState detected!\\n\\tat com.snowplowanalytics.snowplowtrackerdemo.Demo$2.onClick(Demo.java:129)\\n\\tat android.view.View.performClick(View.java:5198)\\n\\tat android.view.View$PerformClick.run(View.java:21147)\\n\\tat android.os.Handler.handleCallback(Handler.java:739)\\n\\tat android.os.Handler.dispatchMessage(Handler.java:95)\\n\\t
+      at android.os.Looper.loop(Looper.java:148)\\n\\tat android.app.ActivityThread.main(ActivityThread.java:5417)\\n\\tat java.lang.reflect.Method.invoke(Native Method)\\n\\tat com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)\\n\\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)\\n",
       "lineNumber": 129,
       "className": "com.snowplowanalytics.snowplowtrackerdemo.Demo$2",
       "message": "IllegalState detected!"
