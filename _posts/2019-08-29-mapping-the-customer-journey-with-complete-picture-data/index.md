@@ -33,7 +33,7 @@ Travel start-up Tripaneer echoed this thinking recently in sharing their Snowplo
 
 
 
- {% include shortcodes/ebook.html background_class="tripaneer-casestudy" layout="blog" title="Tripaneer case study" description="How Tripaneer uses their event-level data to map their multi-channel customer journey" btnText="Download whitepaper" link="https://go.snowplowanalytics.com/tripaneer-snowplow-case-study.pdf" %}
+ {% include shortcodes/ebook.html background_class="tripaneer-casestudy" layout="blog" title="Tripaneer case study" description="How Tripaneer uses their event-level data to map their multi-channel customer journey" btnText="Download case study" link="https://go.snowplowanalytics.com/tripaneer-snowplow-case-study.pdf" %}
 
 
 
