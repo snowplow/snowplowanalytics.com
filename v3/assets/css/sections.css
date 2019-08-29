@@ -393,7 +393,6 @@ article .content .bottom > img{
 
 
 
-
 /* ===============
    SINGLE POST
    =============== */
@@ -546,6 +545,7 @@ section.content .blog-wrap{
     margin-right:20px;
     padding:10px 25px;
     position:relative;
+    margin-bottom:20px;
 }
 
 .post-tags .full a:hover .link-indicator{
@@ -653,8 +653,6 @@ section.content .blog-wrap{
 
 
 
-
-
 /* ===============
    AUTHOR HEADING
    =============== */
@@ -697,3 +695,11 @@ section.author-hero .heading h1{
     margin-bottom:20px;
 }
 
+
+/* ===============
+   CATEGORY SECTION
+   =============== */
+
+   section.category-hero .wrap {
+    background:none;
+}

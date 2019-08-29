@@ -1,54 +1,49 @@
-analytics:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Analytics
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-data-modeling:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Data Modeling
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: "/blog/data-modeling/"
 
-documentation:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: documentation
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-gdrp:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: GDPR
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-inside-the-plow:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Inside the plow
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-meetups:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Meetups
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-other:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Recruitment
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-recruitment:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Releases
+  icon: /v3/assets/img/global/category-icon.svg
+  background: v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-releases:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: Research
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/
 
-research:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
-
-user-stories:
-  name: analytics
-  icon: iconurl
-  background: backgroundurl
+- name: User Stories
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/authors/yali/

@@ -12,10 +12,6 @@ class: blog header-white
 
 
 <main class="blog-v3">
-
-  
-        
-
     <section class="hero-blog">
         <span class="hex-bg"></span>
         <div class="wrap">
@@ -24,21 +20,15 @@ class: blog header-white
                     <p>For companies who demand high-quality, real-time event data, delivered by a cloud-native data pipeline they fully control.</p>
             </div>
             <ul class="list-categories">
-                {% assign categories_list = site.categories %}
-                    {% if categories_list.first[0] == null %}
-                    {% for category in categories_list limit:8 %}
-                        <li class="box-shadow"">
-                            <a href="#{{ category }}">{{ category | capitalize }}</a>
-                        </li> 
-                    {% endfor %}
-                    {% else %}
-                    {% for category in categories_list limit:8 %}
-                        <li class="box-shadow"">
-                            <a href="#{{ category }}">{{ category | capitalize }}</a>
-                        </li> 
-                    {% endfor %}
-                    {% endif %}
-                {% assign categories_list = nil %}
+                {% for category in site.data.categories limit:8 %}
+                <li class="box-shadow"">
+                        <a href="{{ site.url }}{{ category.url }}">
+                            <img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}"/>
+                            <p>{{ category.name }}</p>
+                            <span class="link-indicator alt-cta"></span>
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </section>
@@ -87,7 +77,7 @@ class: blog header-white
                     <h4>Get your exclusive content straight to your mailbox</h4>
                     <p>Sign up to our newsletter now</p>
                     <div class="input-wrap">
-                        <input type="text" name="newsletter" id="newsletter" placeholder="email@company-email.com" />
+                        <input type="text" name="newsletter" id="newsletter" placeholder="example@email.com" />
                         <button class="sec-cta" type="submit" form="newsletter">
                             <img src="{{ BASE_PATH }}/v3/assets/img/global/right-arrow-submit.svg" alt="">
                         </button>

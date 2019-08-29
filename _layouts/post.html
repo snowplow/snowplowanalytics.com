@@ -132,7 +132,7 @@ layout: compress
 									<h4>{{ post.title }}</h4>
 									<div class="bottom">
 										{% for author in site.data.authors %}
-										{% if author.name == page.author %}
+										{% if author.name == post.author %}
 										<div class="author">
 											<img src="{{ author.avatar }}" alt="#" />
 											<p>{{ author.full_name }}</p>
