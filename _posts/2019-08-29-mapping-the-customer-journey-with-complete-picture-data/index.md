@@ -33,7 +33,7 @@ Travel start-up Tripaneer echoed this thinking recently in sharing their Snowplo
 
 
 
- {% include shortcodes/ebook.html background_class="tripaneer-casestudy" layout="blog" title="Tripaneer case study" description="How Tripaneer uses their event-level data to map their multi-channel customer journey" btnText="Download case study" link="https://go.snowplowanalytics.com/tripaneer-snowplow-case-study.pdf" %}
+ {% include shortcodes/ebook.html background_class="tripaneer-casestudy" layout="blog" title="Tripaneer case study" description="How Tripaneer uses their event-level data to map their multi-channel customer journey" btnText="Download case study" link="https://snowplowanalytics.com/customers/tripaneer/" %}
 
 
 
@@ -64,4 +64,4 @@ What makes Snowplow ideal for helping you visualize your entire customer journey
 
  
 
-We talked with Tripaneer about their experience using Snowplow to understand their full customer journey and to work toward a single view of the customer. Download the case study to learn about how they have used Snowplow to map the customer journey and to run multiple real-time marketing and retargeting experiments.
+We talked with Tripaneer about their experience using Snowplow to understand their full customer journey and to work toward a single view of the customer. [Download the case study](https://snowplowanalytics.com/customers/tripaneer/) to learn about how they have used Snowplow to map the customer journey and to run multiple real-time marketing and retargeting experiments.
