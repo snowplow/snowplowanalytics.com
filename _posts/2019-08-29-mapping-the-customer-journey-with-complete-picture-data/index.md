@@ -5,7 +5,7 @@ title: "Mapping the customer journey with complete-picture data to reach the sin
 description: "Finally, travel companies can get an accurate view of the end-to-end customer journey by joining multiple data sources, letting them get closer to the single customer view."
 author: Erika
 category: Analytics
-permalink: /blog/2019/08/0/mapping-the-customer-journey-with-complete-picture-data/
+permalink: /blog/2019/08/29/mapping-the-customer-journey-with-complete-picture-data/
 discourse: true
 ---
 
@@ -31,12 +31,10 @@ Travel start-up Tripaneer echoed this thinking recently in sharing their Snowplo
 *   Key data for creating hyper-personalized experiences 
 *   Insight into customer intent and other predictive measures to drive future customer interactions and business decisions - from what functionality to add to the platform or apps to how products should develop
 
-    ```
-CTA BOX
-H1: Tripaneer case study 
-H2: How Tripaneer uses their event-level data to map their multi-channel customer journey
-CTA: Download case study
-```
+
+## Tripaneer case study 
+### How Tripaneer uses their event-level data to map their multi-channel customer journey
+[Download the case study](https://go.snowplowanalytics.com/tripaneer-snowplow-case-study.pdf)
 
 
 
