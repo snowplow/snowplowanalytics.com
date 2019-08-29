@@ -64,7 +64,7 @@ if (!window.location.origin) {
             policyButton: true,
             effect: 'slide',
             policyText: 'Learn more',
-            message: '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3>We use cookies to track how our users are browsing and engaging with our website to understand and improve the user experience.</div>'
+            message: '<div class="col-sm-10"><h3 class="cookie-title">Snowplow cookie policy</h3><p>We use cookies to track how our users are browsing and engaging with our website to understand and improve the user experience.</p></div>'
         });
 
         var cookie = $('#cookie');

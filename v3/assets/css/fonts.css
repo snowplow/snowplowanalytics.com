@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'karla-bold';
+    src:  url('../fonts/Karla-Bold.ttf') format('ttf')
+          url('../fonts/Karla-Bold.ttf') format('woff')
+}
+
+
+@font-face {
+    font-family: 'karla-italic';
+    font-style: 'italic';
+    src:  url('../fonts/Karla-RegularItalic.ttf') format('ttf'),
+          url('../fonts/Karla-RegularItalic.woff') format('woff')   
+}
+
+@font-face {
+    font-family: 'karla-regular';
+    src:  url('../fonts/Karla-Regular.ttf') format('ttf'),
+          url('../fonts/Karla-Regular.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'rubik-medium';
+    src:  
+        url('../fonts/Rubik-Medium.ttf') format('ttf'),
+        url('../fonts/Rubik-Medium.woff') format('woff')
+}
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

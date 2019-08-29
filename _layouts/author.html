@@ -2,37 +2,70 @@
 layout: compress
 ---
 
-{% include head.html %}
+{% include head.html v3='true' %}
 
-        <main>
-            {% include header.html %}
 
-			<div class="container">
-				<section class="col-md-8 pad-t-0">
-
-					<div class="spacer-bottom-100">
-						{% include blog/author-profile-box.html %}
+<main class="author-v3">
+	{% include header.html %}
+	{% for author in site.data.authors %}
+	{% if author.name == page.author %}
+	<section class="v3 author-hero">
+			<span class="hex-bg"></span>
+			<div class="wrap">
+				<div class="heading">
+					<h5 class="accent">AUTHOR</h5>
+					<img src="{{ author.avatar }}" alt="{{ author.full_name }}"/>
+					<h1>{{ author.full_name }}</h1>
+					<div class="blog-wrap">
+						<p>{{ author.spiel }}</p>
 					</div>
-
-					<div class="posts">
-						{% for post in site.posts %}
-						{% if post.author == page.author %}
-					    <article>
-					        <h4 class="no-margin-bottom spacer-top-50"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-					        <small class="datebox">{{ post.date | date_to_long_string }}</small>
-					    </article>
-						{% endif %}
-      					{% endfor %}
-				    </div>
-				</section>
-
-				<!--
-				    SIDEBAR
-				-->
-				<aside class="col-md-3 col-md-offset-1">
-				    <div>{% include blog/sidebar.html %}</div>
-				</aside>
-            </div>
-        </main>
-
-		{% include footer.html %}
+				</div>
+			</div>
+		</section>
+	{% endif %}
+	{% endfor %}
+	<span class="separator alt-cta"></span>
+	<section class="v3 related-posts">
+		<div class="wrap">
+			<h2>Articles from this author</h2>
+			<div class="articles">
+				{% for post in site.posts %}
+				{% if post.author == page.author %}
+				<article>
+					<a href="{{ post.url }}" class="box-shadow">
+						<div class="featured-image">
+							<img src="{{ BASE_PATH }}/v3/assets/img/global/blog-article-1.png" alt="#">
+							{% if post.pdf %}
+							<div class="pdf-included box-shadow">
+								<img src="{{ BASE_PATH }}/v3/assets/img/global/pdf.svg" alt="#"/>
+								<p class="p-small">included</p>
+							</div>
+							{% endif %}
+						</div> 
+						<div class="content">
+							<div class="heading">
+								<h5>{{post.category}}</h5>
+								<p>{{ post.date | date_to_long_string }}</p>
+							</div>
+							<h4>{{ post.title }}</h4>
+							<div class="bottom">
+								{% for author in site.data.authors %}
+								{% if author.name == page.author %}
+								<div class="author">
+									<img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+									<p class="p-small">{{ author.full_name }}</p>
+								</div>
+								{% endif %}
+								{% endfor %}
+								<img src="{{ BASE_PATH }}/v3/assets/img/global/arrow-right.svg" alt="#"/>
+							</div>
+						</div>                           
+					</a>
+				</article>  
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+</main>
+{% include footer.html %}

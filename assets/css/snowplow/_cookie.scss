@@ -78,12 +78,18 @@
          }
  
          p {
-             display:none;
+             display:block;
+             color:#ffffff !important;
+         }
+         h3{
+             color:#ffffff !important;
          }
  
          a {
              color: white;
              text-decoration: underline;
+             padding: 15px 10px !important;
+             font-size:16px !important;
          }
  
  

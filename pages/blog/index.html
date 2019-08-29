@@ -7,37 +7,107 @@ title: Snowplow | Our latest news and articles
 description: Stay up to date with Snowplow, read our latest news and articles on everything related to data and analytics
 permalink: /blog/
 class: blog header-white
-v3: true
+
 ---
 
-<section class="col-md-9">
-    <div class="content">
-    {% for post in paginator.posts %}
-        <article>
-            <h2 class="no-margin"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <div class="datebox">{{ post.date | date_to_long_string }}{% for author in site.data.authors %}{% if author.name == post.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
-            <div class="text">{{ post.content | strip_html | truncatewords:75 }}</div>
-            <div class="continue">
-                <a href="{{ post.url }}">Continue reading</a>
-            </div>
-        </article>
-    {% endfor %}
-    </div>
-     
-    {% if paginator.total_pages > 1 %}
-    <div class="spacer-top-100">
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="btn btn-primary next">Older</a>
-    {% endif %} {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="btn btn-primary prev">Newer</a>
-    {% endif %}
-    </div>
-    {% endif %}
-</section>
 
-<!--
-    SIDEBAR
--->
-<aside class="col-md-3">
-    <div>{% include blog/sidebar.html %}</div>
-</aside>
+<main class="blog-v3">
+
+  
+        
+
+    <section class="hero-blog">
+        <span class="hex-bg"></span>
+        <div class="wrap">
+            <div class="heading">
+                    <h1>Blog</h1>
+                    <p>For companies who demand high-quality, real-time event data, delivered by a cloud-native data pipeline they fully control.</p>
+            </div>
+            <ul class="list-categories">
+                {% assign categories_list = site.categories %}
+                    {% if categories_list.first[0] == null %}
+                    {% for category in categories_list limit:8 %}
+                        <li class="box-shadow"">
+                            <a href="#{{ category }}">{{ category | capitalize }}</a>
+                        </li> 
+                    {% endfor %}
+                    {% else %}
+                    {% for category in categories_list limit:8 %}
+                        <li class="box-shadow"">
+                            <a href="#{{ category }}">{{ category | capitalize }}</a>
+                        </li> 
+                    {% endfor %}
+                    {% endif %}
+                {% assign categories_list = nil %}
+            </ul>
+        </div>
+    </section>
+    <section class="blog-list-items">
+        <div class="wrap">
+            <h2>Featured</h2>
+            <div class="articles">
+                {% for post in paginator.posts %}
+                <article>
+                    <a href="{{ post.url }}" class="box-shadow">
+                        <div class="featured-image">
+                            <img src="{{ BASE_PATH }}/v3/assets/img/global/blog-article-1.png" alt="#">
+                            {% if post.pdf %}
+                            <div class="pdf-included box-shadow">
+                                <img src="{{ BASE_PATH }}/v3/assets/img/global/pdf.svg" alt="#"/>
+                                <p class="p-small">included</p>
+                            </div>
+                            {% endif %}
+                        </div> 
+                        <div class="content">
+                            <div class="heading">
+                                <h5>{{ post.category }}</h5>
+                                <p>{{ post.date | date_to_long_string }}</p>
+                            </div>
+                            <h4>{{ post.title }}</h4>
+                            <div class="bottom">
+                                {% for author in site.data.authors %}
+                                {% if author.name == post.author %}
+                                <div class="author">
+                                    <img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+                                    <p class="small-p">{{ author.full_name }}</p>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                <img src="{{ BASE_PATH }}/v3/assets/img/global/arrow-right.svg" alt="#"/>
+                            </div>
+                        </div>                           
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+           
+            <div class="newsletter-box">
+                <span class="hex-bg-newsletter"></span>
+                <div class="full">
+                    <h4>Get your exclusive content straight to your mailbox</h4>
+                    <p>Sign up to our newsletter now</p>
+                    <div class="input-wrap">
+                        <input type="text" name="newsletter" id="newsletter" placeholder="email@company-email.com" />
+                        <button class="sec-cta" type="submit" form="newsletter">
+                            <img src="{{ BASE_PATH }}/v3/assets/img/global/right-arrow-submit.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% if paginator.total_pages > 1 %}
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="blog-back-button">
+                <img src="{{ BASE_PATH }}/v3/assets/img/global/arrow-left.svg" alt="#"/>
+                <p>Older Articles</p>
+            </a>
+            {% endif %} 
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="blog-back-button">
+                <img src="{{ BASE_PATH }}/v3/assets/img/global/arrow-right.svg" alt="#"/>
+                <p>Older Articles</p>
+            </a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </section>
+</main>

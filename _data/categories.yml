@@ -1,0 +1,54 @@
+analytics:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+data-modeling:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+documentation:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+gdrp:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+inside-the-plow:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+meetups:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+other:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+recruitment:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+releases:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+research:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl
+
+user-stories:
+  name: analytics
+  icon: iconurl
+  background: backgroundurl

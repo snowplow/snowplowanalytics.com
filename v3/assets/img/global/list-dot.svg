@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Rectangle Copy 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="11.935158%" y1="165.017335%" x2="70.6494364%" y2="-44.3206281%" id="linearGradient-1">
+            <stop stop-color="#28D1B1" offset="0%"></stop>
+            <stop stop-color="#84B0FF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="515" y="3110" width="10" height="10" rx="5"></rect>
+        <filter x="-535.0%" y="-515.0%" width="1170.0%" height="1170.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="14.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.593197409   0 0 0 0 0.923724514   0 0 0 0 1  0 0 0 0 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.325172061">
+        <g id="Blog---Single" transform="translate(-515.000000, -3110.000000)">
+            <g id="Rectangle-Copy-8" transform="translate(520.000000, 3115.000000) rotate(180.000000) translate(-520.000000, -3115.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>
