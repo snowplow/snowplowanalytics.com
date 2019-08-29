@@ -8,18 +8,19 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.5.0"
-
+gem "jekyll", "3.8.6"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
 
+# Outside of group to prevent auto-loading
+gem 'jekyll-autoprefixer'#, '1.0.2'
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem 'jekyll-autoprefixer'
-   gem "jekyll-feed", "~> 0.6"
-   gem "jekyll-paginate-v2", "~> 1.8.1"
+   gem "jekyll-feed", "~> 0.12"
+   gem "jekyll-paginate-v2", "~> 1.8.2"
    # gem "jekyll-feed", "~> 0.12"
    # gem "jekyll-paginate-v2", git: "https://github.com/sverrirs/jekyll-paginate-v2.git"
 

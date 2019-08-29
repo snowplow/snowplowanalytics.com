@@ -1,0 +1,2 @@
+webpack: npm run webpack-watch
+jekyll: bundle exec jekyll serve --watch --incremental

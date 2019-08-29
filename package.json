@@ -21,10 +21,11 @@
     "prestart": "cross-env NODE_ENV=development webpack",
     "start": "bundler exec jekyll serve",
     "prebuild": "cross-env NODE_ENV=production webpack",
-    "build": "cross-env JEKYLL_ENV=production bundler exec jekyll build",
-    "prewatch": "cross-env NODE_ENV=development webpack",
-    "watch": "cross-env NODE_ENV=development webpack --watch |  bundle exec jekyll serve --watch --incremental",
-    "watch4": "cross-env NODE_ENV=development webpack --watch |  bundle exec jekyll serve --livereload --incremental"
+    "build": "cross-env JEKYLL_ENV=production bundler exec jekyll build --incremental",
+    "webpack-watch": "cross-env NODE_ENV=development webpack --watch",
+    "watch": "nf start -j proc-watch",
+    "webpack-livereload": "cross-env NODE_ENV=development webpack --watch",
+    "livereload": "nf start -j proc-livereload"
   },
   "dependencies": {
     "graceful-fs": "^4.2.2",
@@ -40,6 +41,7 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
+    "foreman": "^3.0.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
