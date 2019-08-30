@@ -368,9 +368,10 @@ article {
 			font-size: 13px;
 		}
 
-		svg, img,
+		svg, img
 		{
 			object-fit: contain;
+			font-family: 'object-fit: contain;';
 			max-height: 60vw;
 		}
 	}

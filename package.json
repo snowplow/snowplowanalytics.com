@@ -43,8 +43,9 @@
     "cross-env": "^5.2.0",
     "css-vars-ponyfill": "^2.1.1",
     "foreman": "^3.0.1",
+    "object-fit-images": "^3.2.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.39.2",
+    "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-merge": "^4.2.1"
   }
