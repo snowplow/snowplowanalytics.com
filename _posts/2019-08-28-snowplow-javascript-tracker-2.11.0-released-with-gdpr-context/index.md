@@ -45,7 +45,7 @@ window.snowplow('enableGdprContext',
 );
 {% endhighlight %}
 
-Documentation can be found [here][LINK TO DOCS HERE!!!]
+Documentation can be found [here][gdpr-tracker-docs]
 
 
 <h2 id="deployment">2. New deployment process</h2>
@@ -95,6 +95,7 @@ Finally, if you run into any issues or have any questions, please
 [issues]: https://github.com/snowplow/snowplow-javascript-tracker/issues
 [forums]: https://discourse.snowplowanalytics.com/
 [docs]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker
+[gdpr-tracker-docs]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#316-gdprcontext
 
 [731]: https://github.com/snowplow/snowplow-javascript-tracker/issues/731
 [735]: https://github.com/snowplow/snowplow-javascript-tracker/issues/735
