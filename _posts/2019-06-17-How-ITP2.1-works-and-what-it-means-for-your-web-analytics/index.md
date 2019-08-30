@@ -4,10 +4,11 @@ title: "How ITP 2.1 works and what it means for your web analytics"
 tags: [ITP 2.1, analytics, data, data collection, intelligent tracking, web data]
 author: Lyuba
 image:
-category: Other
+category: Data Insights
 permalink: /blog/2019/06/17/how-ITP2.1-works-what-it-means-for-web-analytics/
 discourse: true
 published: true
+featured: true
 ---
 Big changes are coming to the way businesses collect web data. Browser manufacturers, led by Safari, continue to introduce privacy updates to prevent third parties from tracking users across websites. Although these measures target advertising companies that track users across different websites, they also impact businesses using web analytics to optimize their websites and provide visitors with the best possible experience: especially businesses relying on third-party web analytics tools, including Google Analytics.
 

@@ -5,7 +5,7 @@ title: "Snowplow for media part 2: what do I track?"
 tags: [analytics, data, insights, media, media analytics]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
-category: Analytics
+category: Data Insights
 permalink: /blog/2019/05/29/snowplow-for-media-part-2/
 discourse: true
 ---

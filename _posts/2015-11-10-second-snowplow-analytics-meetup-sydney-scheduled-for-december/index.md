@@ -4,7 +4,7 @@ title: The second Snowplow meetup in Sydney set for December 15
 title-short: Second Sydney meetup announced
 tags: [snowplow, meetup, sydney]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2015/11/10/second-snowplow-analytics-meetup-sydney-scheduled-for-december/
 ---
 

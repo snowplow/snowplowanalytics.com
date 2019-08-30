@@ -24,6 +24,9 @@ main{
         BLOG
    =============== */
 
+.blog-v3{
+    margin-top:120px;
+}
 
 section.hero-blog{
     position:relative;
@@ -35,9 +38,9 @@ section.hero-blog .wrap{
 }
 
 section.hero-blog .heading{
-    width: 370px;
+    width: 600px;
     position:absolute;
-    top:0px;
+    top:15px;
 }
 
 section.hero-blog .heading h1{
@@ -132,11 +135,16 @@ section.blog-list-items .articles{
     display:flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-        -ms-flex-flow: wrap-reverse row;
-            flex-flow: wrap-reverse row;
+    -ms-flex-flow: wrap-reverse row;
+        flex-flow: wrap-reverse row;
     -ms-flex-direction: row;
         flex-direction: row;
 }
+
+section.blog-list-items .articles article{
+    margin-right:20px;
+}
+
 section.blog-list-items .articles article:nth-child(1){
     -webkit-box-ordinal-group: 8;
         -ms-flex-order: 7;
@@ -311,21 +319,36 @@ article .content .bottom > img{
 
 /* === ARTICLES BACK BUTTON === */
 
-.blog-back-button{
+.pagination a{
     display:flex;
     margin-top:40px;
     
 }
-.blog-back-button img{
-    margin-right:20px;
+
+.pagination a img{
     width: 25px;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+.pagination .blog-back-button img{
+    margin-right:20px;
 
-.blog-back-button:hover img{
+}
+
+.pagination .blog-back-button{
+    margin-right:30px;
+}
+
+.pagination a:hover img{
     width:30px;
+}
+
+.pagination a{
+    float:left;
+}
+.pagination .blog-next-button img{
+    margin-left:20px;
 }
 
 
@@ -427,6 +450,7 @@ section.post-hero .post-details{
     justify-content: center;
     position:relative;
     left:10px;
+    margin-bottom:45px;
 }
 
 section.post-hero .post-details > p{
@@ -451,7 +475,7 @@ section.post-hero .featured-image{
     display:block;
     width: 100%;
     max-width:960px;
-    margin:30px auto;
+    margin:0px auto;
     border-radius: 9px;
 }
 
@@ -459,7 +483,7 @@ section.post-hero .featured-image{
 /* === SINGLE BLOGPOST CONTENT MARGINS === */
 
 section.content{
-    margin-top:0px;
+    margin-top:45px;
 }
 section.content .blog-wrap{
     position:relative;
@@ -490,6 +514,11 @@ section.content .blog-wrap{
 .post-content li{
     margin:5px 0px;
 }
+
+.post-content img{
+    margin:15px 0px;
+}
+
 
 .post-content figure{
     margin:20px 0px;
@@ -650,6 +679,12 @@ section.content .blog-wrap{
 .sharing-center a:hover{
     opacity:.4;
 }
+
+/* === DISCOURSE === */
+#discourse-comments{
+    margin-top: 40px;
+}
+
 
 
 

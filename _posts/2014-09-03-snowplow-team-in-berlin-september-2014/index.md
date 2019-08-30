@@ -4,7 +4,7 @@ title: Come and meet the Snowplow team this September in Berlin
 title-short: Meet Snowplow in Berlin
 tags: [snowplow, conference, event, Berlin, Germany, Big Data Beers, DAALA]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2014/09/03/snowplow-team-in-berlin-september-2014/
 ---
 

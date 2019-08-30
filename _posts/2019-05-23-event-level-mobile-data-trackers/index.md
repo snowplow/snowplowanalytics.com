@@ -4,7 +4,7 @@ title: "Making it easy to work with event-level mobile data"
 tags: [iOS, Android, big data, data models, data science, business intelligence, data for business]
 image:
 author: Yali
-category: Data modeling
+category: How to Guides
 permalink: /blog/2019/05/23/making-it-easy-to-work-with-event-level-mobile-data/
 discourse: true
 ---

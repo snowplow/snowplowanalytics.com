@@ -4,7 +4,7 @@ title: Using graph databases to perform pathing analysis - initial experiments w
 title-short: Initial experiments with Neo4J
 tags: [snowplow, neo4j, graph database, path analysis, cypher]
 author: Nick
-category: Analytics
+category: Data Insights
 permalink: /blog/2014/07/31/using-graph-databases-to-perform-pathing-analysis-initial-experimentation-with-neo4j/
 ---
 

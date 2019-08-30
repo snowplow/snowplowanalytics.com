@@ -3,7 +3,7 @@ layout: post
 title: London NoSQL talk on Snowplow
 tags: [snowplow, nosql, london]
 author: Alex
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2014/11/19/london-nosql/
 ---
 

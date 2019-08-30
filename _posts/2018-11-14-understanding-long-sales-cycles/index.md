@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/11/shopping.jpg
 title-short: Understanding long sales cycles
 tags: [analytics, retail, customer analytics, sales cycle, cro]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2018/11/14/long-sales-cycles-dont-have-to-be-trouble/
 discourse: true
 ---

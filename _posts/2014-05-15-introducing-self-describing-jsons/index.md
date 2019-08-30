@@ -3,7 +3,7 @@ layout: post
 title: Introducing self-describing JSONs
 tags: [json, json schema, self-describing, self-correlating, schemaver]
 author: Alex
-category: Research
+category: Data Insights
 permalink: /blog/2014/05/15/introducing-self-describing-jsons/
 ---
 

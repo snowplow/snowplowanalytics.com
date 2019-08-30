@@ -3,7 +3,7 @@ layout: post
 title: Snowplow presentation at the Hadoop User Group London AWS event
 tags: [amazon, redshift, emr, hadoop, architecture]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2013/07/19/snowplow-presentation-to-hadoop-user-group-london-aws-event/
 ---
 

@@ -1,49 +1,34 @@
-- name: Analytics
+- name: Product Features
   icon: /v3/assets/img/global/category-icon.svg
   background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
+  url: /blog/product-features/
 
-- name: Data Modeling
+- name: How to Guides
   icon: /v3/assets/img/global/category-icon.svg
   background: /v3/assets/img/global/category-icon.svg
-  url: "/blog/data-modeling/"
+  url: "/blog/how-to-guides/"
 
-- name: documentation
+- name: Data Insights
   icon: /v3/assets/img/global/category-icon.svg
   background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
+  url: /blog/data-insights/
 
-- name: GDPR
+- name: Data Governance
   icon: /v3/assets/img/global/category-icon.svg
   background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
-
-- name: Inside the plow
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
-
-- name: Meetups
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
-
-- name: Recruitment
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
-
-- name: Releases
-  icon: /v3/assets/img/global/category-icon.svg
-  background: v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
-
-- name: Research
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
+  url: /blog/data-governance/
 
 - name: User Stories
   icon: /v3/assets/img/global/category-icon.svg
   background: /v3/assets/img/global/category-icon.svg
-  url: /blog/authors/yali/
+  url: /blog/user-stories/
+
+- name: Inside the Plow
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/inside-the-plow/
+
+- name: Releases
+  icon: /v3/assets/img/global/category-icon.svg
+  background: /v3/assets/img/global/category-icon.svg
+  url: /blog/releases/

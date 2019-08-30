@@ -7,6 +7,7 @@ author: Lyuba
 category: Releases
 permalink: /blog/2019/07/23/how-to-ensure-your-data-collection-evolves-alongside-your-business/
 discourse: true
+featured: true
 ---
 
 

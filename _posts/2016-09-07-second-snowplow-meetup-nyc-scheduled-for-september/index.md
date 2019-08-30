@@ -4,7 +4,7 @@ title: Second Snowplow Meetup NYC scheduled for September
 title-short: Second Snowplow Meetup NYC scheduled for September
 tags: [meetups, NYC]
 author: Idan
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2016/09/07/second-snowplow-meetup-nyc-scheduled-for-september/
 ---
 

@@ -5,7 +5,7 @@ title-short: Entity resolution with graphs
 tags: [analytics, graph database, neo4j, data modeling]
 image: /assets/img/blog/2019/02/neo4j_logo.jpg
 author: Dilyan
-category: Data Modeling
+category: How to Guides
 permalink: /blog/2019/02/13/resolving-entities-with-graph-databases-using-neo4j/
 discourse: true
 ---

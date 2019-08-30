@@ -4,9 +4,10 @@ title-short: Avoid turning your data lakes into data swamps
 title: "Avoid turning your data lakes into data swamps: Focus on data quality, not capture"
 description: "How to master your data lake to surface long-term business value. Free whitepaper included"
 author: Erika
-category: Analytics
+category: Data Insights
 permalink: /blog/2019/07/10/avoid-turning-your-data-lakes-into-data-swamps/
 discourse: true
+featured: true
 ---
 
 Putting data to work and gathering meaningful insights from it is growing increasingly complex, in large part because there is a near-unfathomable amount of data flowing in from all kinds of sources. This will come as no surprise to anyone, regardless of the industry in which they work, because data has come to be seen as the “holy grail” of business development and improvement as well as the defining factor in many changing and new business models. And data management becomes exceedingly complex. With that in mind, data appears for all intents and purposes to be steering the ship, even in cases where it has not delivered on its promised business value.

@@ -4,7 +4,7 @@ title: Call for data! Support us develop experimental analyses. Have us help you
 title-short: Call for data this winter
 tags: [data]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2013/10/28/call-for-data-this-winter/
 ---
 

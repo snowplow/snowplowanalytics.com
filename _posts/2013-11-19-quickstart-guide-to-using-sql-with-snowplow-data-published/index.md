@@ -4,7 +4,7 @@ title: Quick start guide to learning SQL to query Snowplow data published
 title-short: Quickstart guide to SQL published
 tags: [sql, postgresql, amazon, redshift]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2013/11/19/quickstart-guide-to-using-sql-with-snowplow-data-published/
 ---
 

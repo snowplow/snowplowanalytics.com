@@ -4,7 +4,7 @@ title: Measuring product page performance with Snowplow (Catalog Analytics part 
 title-short: Measuring product page performance with Snowplow
 tags: [snowplow, ecommerce, retail, catalog, catalogue, analytics]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2013/04/12/online-catalog-analytics-with-snowplow/
 ---
 

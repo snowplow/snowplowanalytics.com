@@ -3,7 +3,7 @@ layout: post
 title: Getting started using R for data analysis
 tags: [snowplow, R, data analysis, science]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2013/06/26/getting-started-with-r-for-data-analysis-and-visualization/
 ---
 

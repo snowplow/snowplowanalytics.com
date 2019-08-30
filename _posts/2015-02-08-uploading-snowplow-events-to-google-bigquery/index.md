@@ -3,7 +3,7 @@ layout: post
 title: Uploading Snowplow events to Google BigQuery
 tags: [event, analytics, bigquery]
 author: Andrew
-category: Research
+category: Data Insights
 permalink: /blog/2015/02/08/uploading-snowplow-events-to-google-bigquery/
 ---
 

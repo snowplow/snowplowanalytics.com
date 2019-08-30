@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/05/test-design.jpg
 title-short: Intelligent question-driven product analytics
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2018/05/25/improving-ab-testing-with-event-data-modeling/
 discourse: true
 ---

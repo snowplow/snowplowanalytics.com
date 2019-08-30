@@ -4,7 +4,7 @@ title: A round up of our trip to the Budapest BI Conference last week, and a tha
 title-short: A round up of our trip to the Budapest BI Conference
 tags: [snowplow, analysis, pivot, bi]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2013/11/11/round-up-and-thank-you-for-the-budapest-bi-conference-last-week/
 ---
 

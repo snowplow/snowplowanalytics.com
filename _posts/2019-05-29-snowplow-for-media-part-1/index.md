@@ -5,9 +5,10 @@ title: "Snowplow for media part 1: how can I use Snowplow?"
 tags: [analytics, data, insights, media, media analytics]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
-category: Analytics
+category: Data Insights
 permalink: /blog/2019/05/29/snowplow-for-media-part-1/
 discourse: true
+featured: true
 ---
 
 *“We don’t know where to focus our content creation efforts; which content leads to retention and subscription? which content categories, authors, themes drive high CPMs?*

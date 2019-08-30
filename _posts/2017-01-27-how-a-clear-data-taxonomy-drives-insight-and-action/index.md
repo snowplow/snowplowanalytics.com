@@ -4,7 +4,7 @@ title:  "How a clear data taxonomy drives insight and action"
 subtitle: "Add business context to your event analytics"
 tags: ["analytics", "Google analytics", "strategy tools", "snowplow analytics", "tutorial"]
 author: João
-category: Analytics
+category: Data Insights
 permalink: /blog/2017/01/27/how-a-clear-data-taxonomy-drives-insight-and-action/
 ---
 

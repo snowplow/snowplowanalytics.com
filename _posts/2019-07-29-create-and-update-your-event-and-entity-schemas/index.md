@@ -7,6 +7,7 @@ author: Yali
 category: Releases
 permalink: /blog/2019/07/29/create-and-update-your-event-and-entity-schemas/
 discourse: true
+featured: true
 ---
 
 ![Schema UI][schema-ui]

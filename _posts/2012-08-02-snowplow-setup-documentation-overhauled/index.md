@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The setup guide has been overhauled
-category: Documentation
+category: Data Insights
 tagline: "A tagline! The setup guide has been overhauled tagline(!)"
 tags : [documentation, setup, getting started with Snowplow, tutorial]
 author: Yali
