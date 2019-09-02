@@ -30,7 +30,7 @@
                                 <h5>{{ post.category }}</h5>
                                 <p>{{ post.date | date_to_long_string }}</p>
                             </div>
-                            <h4>{{ post.title | truncatewords:14 }}</h4>
+                            <h4>{{ post.title | truncatewords:11 }}</h4>
                             <div class="bottom">
                                 {% for author in site.data.authors %}
                                 {% if author.name == post.author %}
