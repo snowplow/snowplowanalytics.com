@@ -11,7 +11,7 @@ discourse: true
 
 We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker]. [Version 2.11.0][2.11.0-tag] introduces a method for attaching information about the GDPR basis for processing to all events tracked, as well as changes to the test and deployment process and a bugfix for form focus events.
 
-NB. This release introduces a change to how assets are hosted - rather than hosting the tracker on cloudfront, we now publish the asset to the GitHub release. Users who have previously relied on the cloudfront hosted asset must host the tracker on their own CDN, as is recommended practice. More detail in the [New deployment process](#deployment) and [Upgrading](#upgrade) sections.
+NB. This release introduces a change to how assets are hosted - rather than hosting the tracker on cloudfront, we now publish the asset to the GitHub release. Users who have previously relied on the CloudFront hosted asset must host the tracker on their own CDN, as is recommended practice. More detail in the [New deployment process](#deployment) and [Upgrading](#upgrade) sections.
 
 Read on below the fold for:
 
