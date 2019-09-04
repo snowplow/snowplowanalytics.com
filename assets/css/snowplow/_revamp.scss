@@ -406,7 +406,7 @@ $very-light-blue-two: #e1e6f0;
 	@include section-revamp-animated-img;
 	img.section-revamp-animated-img-img {
 		object-position: top left;
-		font-family: 'object-position: top left;';
+		// font-family: 'object-position: top left;';
 		left: 0;
 	}
 }
@@ -438,7 +438,7 @@ $very-light-blue-two: #e1e6f0;
 	@include section-revamp-animated-img;
 	img.section-revamp-animated-img-img {
 		object-position: top right;
-		font-family: 'object-position: top right;';
+		// font-family: 'object-position: top right;';
 		right: 0;
 	}
 }
@@ -1799,8 +1799,8 @@ $very-light-blue-two: #e1e6f0;
 /* 
  * Stickers
  */
-.stickers {
-	&-section {
+:root {
+	.stickers-section {
 		/////////////////////////////////////
 		// Vars
 		/////////////////////////////////////
@@ -1809,19 +1809,30 @@ $very-light-blue-two: #e1e6f0;
 	 	--sticker-item-w: calc( (100% / var(--sticker-item-count)) - ((var(--sticker-item-count) - 1) * var(--sticker-item-mg))/ var(--sticker-item-count) );
 	 	--sticker-item-h: 170px;
 	 	--sticker-item-title-h: 46px;
-	 	--sticker-item-title-pad: 15px;
+		--sticker-item-title-pad: 15px;
+
 	 	@media (max-width: 991px) {
 	 		--sticker-item-count: 4;
-	 	}
+			.stickers-item {
+				width: calc( (100% / 4) - ((4 - 1) * var(--sticker-item-mg))/ 4 );
+			}
+		}
 	 	@media (max-width: 767px) {
 	 		
 	 	}
 	 	@media (max-width: $xs-max) {
 	 		--sticker-item-count: 3;
-	 	} 
+			.stickers-item {
+				// 3px narrower because of IE stuff
+				width: calc( (100% / 3) - ((3 - 1) * var(--sticker-item-mg))/ 3 - 3px );
+			}
+		}
 		/////////////////////////////////////
 		padding-top: 0;
 	}
+}
+
+.stickers {
 	&-buttons {
 		margin: 0 5px;
 		&.active {
