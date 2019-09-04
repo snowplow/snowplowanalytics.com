@@ -31,7 +31,7 @@ This release introduces the `enableGdprContext` method, which once enabled appen
 
 - GdprBasis (required string enum, must be one of the following values consent, contract, legalObligation, vitalInterests, publicTask, legitimateInterests)
 - documentId (string)
-- documentVersion (string, max 16 charas)
+- documentVersion (string, max 16 chars)
 - documentDescription (string)
 
 It is called as follows:
