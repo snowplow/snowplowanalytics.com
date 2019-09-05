@@ -78,3 +78,4 @@ var handleSubmit = function(e){
 
 var form = document.getElementById('pdf-form');
 form.addEventListener('submit', handleSubmit);
+
