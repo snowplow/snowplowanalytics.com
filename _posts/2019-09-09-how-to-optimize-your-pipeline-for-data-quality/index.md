@@ -24,7 +24,6 @@ To build and maintain trust, teams need data infrastructure that delivers high q
 
 For data to be considered high quality, it must be accurate and complete. When these conditions are met, maintaining trust in that data becomes significantly easier. Let’s take a look at what it means to have accurate and complete data within an organization.
 
-** **
 
 
 ### Accurate data
