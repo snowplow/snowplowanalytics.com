@@ -8,9 +8,9 @@ permalink: /blog/2019/09/09/enable-and-configure-your-enrichments-directly-in-th
 ---
 
 
-## Overview
-
 ![Enrichments](/assets/img/blog/2019/09/snowplow-ui.png) 
+
+## Overview
 
 Enrichments are one of Snowplow’s most powerful features. Not all the data that describes an event is available at the place that event is tracked. Enrichments make it possible to enhance your dataset with additional details by adding first and third-party data points to each event, in real-time, further down the data collection pipeline. 
 
@@ -49,7 +49,15 @@ This new functionality makes setting up enrichments easier and faster, so you ca
 ## Get Started
 
 
-
 *   This functionality will be automatically rolled out for all Snowplow Insights customers  
 *   If you would like early access to this functionality, contact us at product-team@snowplowanalytics.com and we’ll get you up and running
-*   Not a Snowplow Insights customer yet?[ Get in touch with us here to le
+*   Not a Snowplow Insights customer yet?[ Get in touch with us here to learn more](https://snowplowanalytics.com/request-demo/)
+
+ 
+
+
+## Additional references
+
+** **
+
+Documentation can be found[ here](https://docs.snowplowanalytics.com/snowplow-insights/enrichments/).
