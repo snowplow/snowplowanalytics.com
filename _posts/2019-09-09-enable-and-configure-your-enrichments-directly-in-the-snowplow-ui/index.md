@@ -4,7 +4,7 @@ title: Enable and configure your enrichments directly in the Snowplow UI
 title-short: Enable and configure enrichments in the Snowplow UI
 author: Lyuba
 category: Releases
-permalink: /blog/2019/09/09/enable-and-configure-your-enrichments-directly-in-the-snowplow-ui
+permalink: /blog/2019/09/09/enable-and-configure-your-enrichments-directly-in-the-snowplow-ui/
 ---
 
 
