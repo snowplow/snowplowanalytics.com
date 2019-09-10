@@ -56,7 +56,7 @@ The tracker asset is now published as a [Github Release][2.11.0-tag] (the `sp.js
 
 There are additional advantages to doing this:
 
-- Upgrading tracker versions can now be managed more easily by rotating the hosted asset rather than changing client-side tracking code.
+- Upgrading tracker versions can now be managed more easily by rotating the hosted asset rather than changing client-side tracking code (where changes are non-breaking).
 - Some Adblockers designed to block third-party tracking won't allow the javascript to load from an external domain even if it's used for first party tracking - hosting on your own domain resolves this problem.
 
 <h2 id="updates">3. Updates and bug fixes</h2>
