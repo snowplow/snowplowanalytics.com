@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 1.3.0
 tags: [snowplow, android, java, mobile]
 author: Oguzhan
 category: Releases
-permalink: /blog/2019/09/10/snowplow-android-tracker-1.3.0-released/
+permalink: /blog/2019/09/12/snowplow-android-tracker-1.3.0-released/
 discourse: true
 ---
 
