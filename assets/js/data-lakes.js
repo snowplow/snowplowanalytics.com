@@ -3,7 +3,7 @@ var validateInput = function(kind, value){
     value = value ? value.trim() : ''
     switch(kind) {
         case 'name':
-            return (value.length > 1 && /^[a-zA-Z]+$/.test(value))
+            return (value.length > 1)
         case 'email':
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
         case 'company':
