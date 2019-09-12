@@ -18,7 +18,7 @@ With this release, we're building assurance that engineers can set up their trac
 Read on below the fold for:
 
 1. [Integration of Snowplow Micro](#micro-integration)
-2. [Compliance with targeted ads preference](#ad-tracking)
+2. [Compliance with targeted ads preference](#targeted-ads-preference)
 3. [Updates](#updates)
 4. [Documentation](#docs)
 5. [Getting help](#help)
