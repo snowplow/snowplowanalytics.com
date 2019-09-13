@@ -50,7 +50,7 @@ Documentation can be found [here][gdpr-tracker-docs]
 
 <h2 id="deployment">2. New deployment process</h2>
 
-Previously to this release, the javascript tracker was published as a public CloudFront asset that could be called from anywhere - this made it simpler for new users to get started with snowplow tracking. We recommend hosting the tracker themselves in the same CDN as their other assets, tying the availability of the tracker to the availability of the site. This also mitigates any risk of the centralised asset becoming compromised. This has always been our best practice guidance and with this release we have decided to establish a new process which enforces this as policy.
+Previously to this release, the Javascript tracker was published as a public CloudFront asset that could be called from anywhere - this made it simpler for new users to get started with Snowplow tracking. We recommend hosting the tracker themselves in the same CDN as their other assets, tying the availability of the tracker to the availability of the site. This also mitigates any risk of the centralised asset becoming compromised. This has always been our best practice guidance and with this release we have decided to establish a new process which enforces this as policy.
 
 The tracker asset is now published as a [Github Release][2.11.0-tag] (the `sp.js` file) - which can be hosted on your own CDN - we recommend that it is hosted on the same domain in which the tracker is called. Snowplow Insights customers should contact support@snowplowanalytics.com for assistance with the upgrade process.
 
