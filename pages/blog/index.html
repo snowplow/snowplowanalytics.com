@@ -17,15 +17,21 @@ class: blog header-white
                     <p>For companies who demand high-quality, real-time event data, delivered by a cloud-native data pipeline they fully control.</p>
             </div>
             <ul class="list-categories">
-                {% for category in site.data.categories limit:7 %}
-                <li class="box-shadow"">
-                        <a href="{{ site.url }}{{ category.url }}">
-                            <img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}"/>
-                            <p>{{ category.name }}</p>
-                            <span class="link-indicator alt-cta"></span>
-                        </a>
-                    </li>
+                {% for category in site.data.categories limit:8 %}
+                <li class="box-shadow">
+                    <a href="{{ site.url }}{{ category.url }}">
+                        <img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}"/>
+                        <p>{{ category.name }}</p>
+                        <span class="link-indicator alt-cta"></span>
+                    </a>
+                </li>
                 {% endfor %}
+                <li class="box-shadow active">
+                    <a href="{{ site.url }}">
+                        <img src="{{ site.url }}/v3/assets/img/blog/category-icons/featured@2x.png" alt="featured"/>
+                        <p>Featured</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </section>
@@ -38,7 +44,17 @@ class: blog header-white
                 <article>
                     <a href="{{ post.url }}" class="box-shadow">
                         <div class="featured-image">
-                            <img src="{{ BASE_PATH }}/v3/assets/img/global/blog-article-1.png" alt="#">
+                            {% if post.featured-image %}
+                                <img src="{{ BASE_PATH }}{{post.featured-image}}" alt="#">
+                            {% else %}
+                                {% for category in site.data.categories %}
+                                {% if category.name == post.category %}
+                                <div class="category-overlay">
+                                    <img src="{{ site.url }}{{ category.background }}" alt="{{ category.name }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             {% if post.pdf %}
                             <div class="pdf-included box-shadow">
                                 <img src="{{ BASE_PATH }}/v3/assets/img/global/pdf.svg" alt="#"/>

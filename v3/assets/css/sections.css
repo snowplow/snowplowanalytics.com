@@ -25,7 +25,7 @@ main{
    =============== */
 
 .blog-v3{
-    margin-top:120px;
+    margin-top:140px;
 }
 
 section.hero-blog{
@@ -38,7 +38,7 @@ section.hero-blog .wrap{
 }
 
 section.hero-blog .heading{
-    width: 600px;
+    width: 400px;
     position:absolute;
     top:15px;
 }
@@ -64,6 +64,12 @@ section.hero-blog .heading h1{
 
 .list-categories li{
     margin:30px 30px 0px 0px;
+}
+.list-categories li.active{
+    background-image: linear-gradient(16deg, #28D1B1 0%, #84B0FF 100%);
+}
+.list-categories li.active p{
+    color:#ffffff;
 }
 
 .list-categories li a{
@@ -100,11 +106,12 @@ section.hero-blog .heading h1{
 
 .list-categories li a img{
     margin-bottom:10px;
+    height: 45px;
 }
 
 .list-categories .link-indicator{
     width: 50px;
-    height:10px;
+    height:7px;
     position:absolute;
     bottom:0px;
     -webkit-transition: all 500ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
@@ -121,6 +128,8 @@ section.hero-blog .heading h1{
 .list-categories li.active span{
     display:none;
 }
+
+
 
 /* ===ARTICLES LIST=== */
 
@@ -314,6 +323,8 @@ article .content .bottom > img{
             transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); /* custom */
   
 }
+
+
 
 
 
@@ -577,11 +588,11 @@ section.content .blog-wrap{
     margin-bottom:20px;
 }
 
-.post-tags .full a:hover .link-indicator{
+/* .post-tags .full a:hover .link-indicator{
     width:9px;
     height: 30px;
     top:8px;
-}
+} */
 
 .post-tags .link-indicator{
     width: 6px;

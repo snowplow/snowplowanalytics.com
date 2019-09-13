@@ -1,34 +1,34 @@
 - name: Product Features
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/features@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Product.png
   url: /blog/product-features/
 
 - name: How to Guides
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/guides@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Guides.png
   url: "/blog/how-to-guides/"
 
 - name: Data Insights
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/insights@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Insights.png
   url: /blog/data-insights/
 
 - name: Data Governance
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/governance@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Governance.png
   url: /blog/data-governance/
 
 - name: User Stories
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/stories@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Stories.png
   url: /blog/user-stories/
 
 - name: Inside the Plow
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/snowplow@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Plow.png
   url: /blog/inside-the-plow/
 
 - name: Releases
-  icon: /v3/assets/img/global/category-icon.svg
-  background: /v3/assets/img/global/category-icon.svg
+  icon: /v3/assets/img/blog/category-icons/releases@2x.png
+  background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Releases.png
   url: /blog/releases/
