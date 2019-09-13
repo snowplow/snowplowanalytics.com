@@ -11,6 +11,8 @@ permalink: /blog/2019/09/12/snowplow-r116-madara-rider/
 [Snowplow R116 Madara Rider][snowplow-release], named after
 [the early medieval rock relief carved on the Madara Plateau in Bulgaria][madara-rider], adds new features to the Scala Stream Collector that will help users struggling with overzealous ad-blocking and the implications of WebKit's recent ITP changes.
 
+Huge thanks to [Ander Parra][aparra] of [LiveIntent][live-intent] for a contribution that will allow users to configure `Secure`, `HttpOnly` and `SameSite` attributes for the cookie set by the collector.
+
 Please read on after the fold for:
 
 1. [Setting first-party cookies server-side against multiple domains on the same collector](#cookies)
@@ -140,6 +142,8 @@ For more details on this release, please check out the [release notes][snowplow-
 
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
+[live-intent]: https://liveintent.com/
+[aparra]: https://github.com/aparra
 [madara-rider]: https://en.wikipedia.org/wiki/Madara_Rider
 [madara-rider-img]: /assets/img/blog/2019/09/Madara_Rider.jpg
 [itp]: https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/
