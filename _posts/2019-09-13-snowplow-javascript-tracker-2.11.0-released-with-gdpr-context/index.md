@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.11.0
 tags: [snowplow, javascript, gdpr, data rights]
 author: Colm
 category: Releases
-permalink: /blog/2019/08/28/snowplow-javascript-tracker-2.11.0-released-with-gdpr-context/
+permalink: /blog/2019/09/13/snowplow-javascript-tracker-2.11.0-released-with-gdpr-context/
 discourse: true
 ---
 
