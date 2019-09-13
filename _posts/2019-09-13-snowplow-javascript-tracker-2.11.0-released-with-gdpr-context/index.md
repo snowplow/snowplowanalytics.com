@@ -29,7 +29,7 @@ This release introduces the `enableGdprContext` method, which once enabled appen
 
 `enableGdprContext` takes four arguments:
 
-- GdprBasis (required string enum, must be one of the following values consent, contract, legalObligation, vitalInterests, publicTask, legitimateInterests)
+- GdprBasis (required string enum, must be one of the following values: consent, contract, legalObligation, vitalInterests, publicTask, legitimateInterests)
 - documentId (string)
 - documentVersion (string, max 16 chars)
 - documentDescription (string)
@@ -52,7 +52,7 @@ Documentation can be found [here][gdpr-tracker-docs]
 
 Previously to this release, the Javascript tracker was published as a public CloudFront asset that could be called from anywhere - this made it simpler for new users to get started with Snowplow tracking. We recommend hosting the tracker themselves in the same CDN as their other assets, tying the availability of the tracker to the availability of the site. This also mitigates any risk of the centralised asset becoming compromised. This has always been our best practice guidance and with this release we have decided to establish a new process which enforces this as policy.
 
-The tracker asset is now published as a [Github Release][2.11.0-tag] (the `sp.js` file) - which can be hosted on your own CDN - we recommend that it is hosted on the same domain in which the tracker is called. Snowplow Insights customers should contact support@snowplowanalytics.com for assistance with the upgrade process.
+The tracker asset is now published as a [Github Release][2.11.0-tag] (the `sp.js` file) - which can be hosted on your own CDN - we recommend that it is hosted on the same domain in which the tracker is called. Snowplow Insights customers should contact `support@snowplowanalytics.com` for assistance with the upgrade process.
 
 There are additional advantages to doing this:
 
@@ -95,7 +95,7 @@ Finally, if you run into any issues or have any questions, please
 [issues]: https://github.com/snowplow/snowplow-javascript-tracker/issues
 [forums]: https://discourse.snowplowanalytics.com/
 [docs]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker
-[gdpr-tracker-docs]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#316-gdprcontext
+[gdpr-tracker-docs]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#gdpr-context
 
 [731]: https://github.com/snowplow/snowplow-javascript-tracker/issues/731
 [735]: https://github.com/snowplow/snowplow-javascript-tracker/issues/735
