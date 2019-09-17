@@ -7,6 +7,7 @@ author: Anton
 category: Releases
 permalink: /blog/2019/08/27/snowplow-rdb-loader-r31-released-with-new-bad-rows/
 featured: true
+pdf: true
 featured-image: /v3/assets/img/global/blog-article-1.png
 ---
 
