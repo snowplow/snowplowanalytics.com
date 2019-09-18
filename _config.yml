@@ -60,10 +60,15 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - package.json
+  - package-lock.json
   - node_modules
   - webpack.config.js
   - _compress_images_cache.yml
-
+  - proc-livereload
+  - proc-livereload-no-autoprefixer
+  - proc-watch
+  - proc-watch-no-autoprefixer
+  
 
 # Redirect
 plugins:
