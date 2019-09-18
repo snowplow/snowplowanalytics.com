@@ -18,6 +18,7 @@
   },
   "scripts": {
     "//": "Use 'npm run build' to build and 'npm start' to start Jekyll server",
+    "preinstall": "sudo npm install -g cross-env foreman webpack-cli",
     "prestart": "cross-env NODE_ENV=development webpack",
     "start": "bundler exec jekyll serve",
     "prebuild": "cross-env NODE_ENV=production webpack",
@@ -25,7 +26,13 @@
     "webpack-watch": "cross-env NODE_ENV=development webpack --watch",
     "watch": "nf start -j proc-watch",
     "webpack-livereload": "cross-env NODE_ENV=development webpack --watch",
-    "livereload": "nf start -j proc-livereload"
+    "livereload": "nf start -j proc-livereload",
+    "prebuild-no-ap": "cross-env NODE_ENV=production webpack",
+    "build-no-ap": "cross-env JEKYLL_ENV=production bundler exec jekyll build --incremental --config _config-no-autoprefixer.yml",
+    "webpack-watch-no-ap": "cross-env NODE_ENV=development webpack --watch",
+    "watch-no-ap": "nf start -j proc-watch-no-autoprefixer",
+    "webpack-livereload-no-ap": "cross-env NODE_ENV=development webpack --watch",
+    "livereload-no-ap": "nf start -j proc-livereload-no-autoprefixer"
   },
   "dependencies": {
     "graceful-fs": "^4.2.2",
@@ -40,9 +47,7 @@
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^5.2.1",
     "css-vars-ponyfill": "^2.1.1",
-    "foreman": "^3.0.1",
     "object-fit-images": "^3.2.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.3",
