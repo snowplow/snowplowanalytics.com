@@ -37,6 +37,7 @@ Assuming git and **[rbenv][rbenv-install]** installed.
  host> gem install bundler
  host> bundle install
  host> npm install
+ host> npm install -g cross-env foreman webpack-cli
 ```
 
 This will install the required Ruby environment into `rbenv` as well as the required Gems stored within the Gemfile.
@@ -60,6 +61,8 @@ There are two command: ```npm run watch``` and ```npm run livereload```. Both co
 ```npm run livereload``` command updates website in the browser in its own. It refreshes website as soon as Webpack and Jekyll builds website after file changes were detected. It takes some time, and then your opened web page in the browser gets updated.
 
 ## Running Jekyll without autoprefixer
+
+You may want to run Jekyll without AutoPrefixer plugin to improve Jekyll performance.
 
 You can use these commands:
 ```npm run build-no-ap```

@@ -18,7 +18,6 @@
   },
   "scripts": {
     "//": "Use 'npm run build' to build and 'npm start' to start Jekyll server",
-    "preinstall": "sudo npm install -g cross-env foreman webpack-cli",
     "prestart": "cross-env NODE_ENV=development webpack",
     "start": "bundler exec jekyll serve",
     "prebuild": "cross-env NODE_ENV=production webpack",
