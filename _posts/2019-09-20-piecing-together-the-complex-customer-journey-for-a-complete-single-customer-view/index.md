@@ -40,22 +40,3 @@ Starting from wanting to learn the current user journey to calculating conversio
 With Snowplow’s flexible and extendable data collection platform, capturing rich events across web, mobile, email and third-party, Tourlane has been able to begin their own journey of stitching together very different datasets. This includes online data over time alongside offline phone logs and external and internal systems. This has enabled previously nearly impossible data insights, including getting more accurate marketing attribution figures, more complete, holistic views of their customers, the sales funnel and supply and demand and the ability to balance current and future supply and demand needs.
 
 [Download the Tourlane case study](https://snowplowanalytics.com/customers/tourlane/) to find out how Snowplow helped Tourlane achieve a single source of truth and understand their complex customer journey.
-
-
-
-What this means is that organizations (data-driven and those that aspire to be) need to build a blueprint for managing data collection before they even dip a toe into the data lake. This proactive approach should focus on how data will be structured and data governance before it even comes into the data lake to make it accessible for in-depth analytics and other use cases organization-wide. This may sound like an insurmountable challenge, and that’s partly what keeps many companies from looking at data from a structure-first point of view. Many companies, though, rely on the kind of flexibility that is, ironically, supplied by structure, such as La Presse, a Canadian media company:
-
- 
-
-Snowplow customer La Presse has taken this exact “apply schemas to data”, quality-first approach to data strategy, breaking down in-house silos that kept the company and its various teams from getting as much value from their data as they could. By moving from a traditional business intelligence pipeline and data warehousing to the faster-moving agility of data lakes, La Presse was able to eliminate the long data discovery phase that typified the warehouse solution while surfacing relevant data through the data lakes and data shores (an additional data preparation step La Presse built for data storage and easy consumption once data was structured and ready to use for decision making). As data enters the pipeline, data is validated against pre-defined data schemas – so even though the data that moves to their data lake is still essentially “raw”, it is structured and has already been through a level of quality control. At this stage, different business users and stakeholders can access and use the data for advanced analytics, different use cases and more sophisticated data modeling or machine-learning initiatives.
-
-
-
-
-## Data quality differentiates the data lake
-
-Snowplow Analytics has built Snowplow from a data-quality-first perspective, meaning that incoming event data is always validated against schemas, so nothing goes into the data lake without a structure. The emphasis on data quality ensures that users gain the greatest value – faster – when they think critically about data upfront. For example, Snowplow Insights makes it easy to add, validate and publish data schemas directly from your console so users can manage and evolve their data structure over time. What’s more, this helps users surface insights faster, expose data to apply to new use cases, and ultimately deliver on the promise of meaningful, real-time insights.
-
- 
-
-We’ve taken a deeper dive into the data lake topic in a new white paper, “Avoid drowning in your data lake – how to improve quality, richness and analytics of your data”. <b>[Download the paper](https://www.snowplowanalytics.com/lp/data-lakes/)</b> to learn how to make key decisions about data collection and structure, how to manage your data lakes effectively, and how Snowplow can support you in achieving your data-related goals.
