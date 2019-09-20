@@ -45,7 +45,7 @@ class: blog header-white
                     <a href="{{ post.url }}" class="box-shadow">
                         <div class="featured-image">
                             {% if post.featured-image %}
-                                <img src="{{ BASE_PATH }}{{post.featured-image}}" alt="#">
+                                <img src="{{ BASE_PATH }}{{post.thumbnail-image}}" alt="#">
                             {% else %}
                                 {% for category in site.data.categories %}
                                 {% if category.name == post.category %}

@@ -8,7 +8,8 @@ category: Releases
 permalink: /blog/2019/08/27/snowplow-rdb-loader-r31-released-with-new-bad-rows/
 featured: true
 pdf: true
-featured-image: /v3/assets/img/global/blog-article-1.png
+featured-image: /v3/assets/img/global/unsplash.png
+thumbnail-image: /v3/assets/img/global/unsplash-thumbnail.png
 ---
 
 We are pleased to announce the release of [Snowplow RDB Loader R31][release]. This updates the format of bad rows emitted to a [new format][bad-rows-rfc], as part of a broader piece of work we have been undertaking to improve Snowplow's capabilities around bad row handling, debugging and recovery; and fixes a data quality issue with synthetic duplicates in the RDB Shredder.

@@ -241,6 +241,10 @@ article .featured-image img{
     transition: all .5s ease-in-out;
 }
 
+article .category-overlay img{
+    width: 100%;
+}
+
 article .featured-image .pdf-included{
     width: 135px;
     height: 54px;
@@ -666,6 +670,34 @@ section.content .blog-wrap{
     margin-right:0px;
 }
 
+
+
+/* ===  CATEGORY ARTICLE LAYOUT === */
+
+.category-posts article{
+    width: 100%;
+    margin-right: 0px !important;
+}
+
+.category-posts article .featured-image{
+    display:none;
+}
+
+.category-posts article .content .heading{
+    justify-content: flex-start;
+}
+
+.category-posts article .content h3{
+    min-height:auto;
+    margin:0px 0px 15px 0px;
+}
+.category-posts article .content{
+    padding:50px;
+}
+
+
+
+
 /* === SHARING CENTER === */
 
 .sharing-center{
@@ -686,6 +718,9 @@ section.content .blog-wrap{
 .sharing-center a{
     float:left;
     display:block;
+    width: 37px;
+    height: 37px;
+    padding:0px;
     margin-bottom:10px;
     -webkit-transition: all .1s ease-in-out;
     -o-transition: all .1s ease-in-out;
@@ -693,6 +728,36 @@ section.content .blog-wrap{
 }
 .sharing-center a:hover{
     opacity:.4;
+}
+.jssocials-share-link{
+    background: rgba(255, 255, 255, 0);
+}
+
+.jssocials-share-logo{
+    text-indent:-999px;
+    overflow:hidden;
+    width:100%;
+    height:100%;
+}
+
+.sharing-center .fa-facebook{
+    background: url(../img/social-media-icons/facebook.svg) no-repeat;
+}
+
+.sharing-center .fa-linkedin{
+    background: url(../img/social-media-icons/linkedin.svg) no-repeat;
+}
+
+.sharing-center .fa-twitter{
+    background: url(../img/social-media-icons/twitter.svg) no-repeat;
+}
+
+.jssocials-share+.jssocials-share{
+    margin-left:0px;
+}
+.jssocials-share-link:hover, .jssocials-share-link:focus{
+    background: rgba(255, 255, 255, 0);
+    opacity:.7;
 }
 
 /* === DISCOURSE === */

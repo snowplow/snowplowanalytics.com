@@ -49,17 +49,9 @@ layout: compress
 				</div>
 				<!-- content end  -->
 				<div class="sharing-center">
-					<a href="">
-						<img src="{{ BASE_PATH }}/v3/assets/img/global/linkedin.svg" alt="#"/>
-					</a>
-					<a href="#">
-						<img src="{{ BASE_PATH }}/v3/assets/img/global/facebook.svg" alt="#"/>
-					</a>
-					<a href="#">
-						<img src="{{ BASE_PATH }}/v3/assets/img/global/twitter.svg" alt="#"/>   
-					</a>
+					<!-- Load social media share from plugin -->
 				</div>
-				{% if page.tags != empty %}
+				<!-- {% if page.tags != empty %}
 				<div class="post-tags">
 					<h5 class="accent">TAGS</h5>
 					<div class="full">
@@ -71,7 +63,7 @@ layout: compress
 						{% endfor %}
 					</div>
 				</div>
-				{% endif %}
+				{% endif %} -->
 
 				{% if page.discourse == true %}
 				<div id='discourse-comments'></div>
@@ -120,7 +112,7 @@ layout: compress
 							<a href="{{ post.url }}" class="box-shadow">
 								<div class="featured-image">
 									{% if post.featured-image %}
-										<img src="{{ BASE_PATH }}{{post.featured-image}}" alt="#">
+										<img src="{{ BASE_PATH }}{{post.thumbnail-image}}" alt="#">
 									{% else %}
 										{% for category in site.data.categories %}
 										{% if category.name == post.category %}
