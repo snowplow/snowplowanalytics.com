@@ -17,6 +17,15 @@ main{
     z-index:1;
 }
 
+/* Global error input handling  */
+
+input.error{
+    color:#FF8B8B;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
+    box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
+}
+
 
 
 
@@ -376,14 +385,23 @@ article .content .bottom > img{
     right:0px;
     top:0px;
 }
-.newsletter-box h4{
+.newsletter-box h4, .newsletter-box h3{
     margin-bottom:15px;
 }
+
+.newsletter-box p{
+    margin-bottom:20px;
+}
+
 .newsletter-box .full{
     position:relative;
     top:230px;
     right:40px;
     z-index:3;
+}
+
+.newsletter-box .thankyou{
+    display:none
 }
 
 .newsletter-box .input-wrap{
@@ -396,9 +414,21 @@ article .content .bottom > img{
     width: 50px;
     height: 50px;
     position:relative;
-    right:4px;
+    right:7px;
     border-radius: 0 4px 4px 0;
 }
+
+
+
+.newsletter-box .activate-loader{
+    width: 174px;
+    text-indent:-2999px;
+    background-image: url('https://snowplowanalytics.com/assets/img/landingpages/data-lakes/loader.svg');
+    background-size:40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .newsletter-box .input-wrap button:hover img{
     width:20px;
 }
@@ -411,7 +441,7 @@ article .content .bottom > img{
 
 .newsletter-box .input-wrap input{
     width: 230px;
-    height: 50px;    
+    height: 48px;    
     padding:0px 15px;
     border-radius: 4px;
 }
@@ -817,4 +847,25 @@ section.author-hero .heading h1{
 
    section.category-hero .wrap {
     background:none;
+}
+
+
+
+
+/* ===============
+   SC - EBOOK SECTION
+   =============== */
+
+.sc-ebook > div{
+    border-radius:13px;
+}
+
+.sc-ebook h2{
+    margin-top:0px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.sc-ebook a{
+    padding:20px 40px !important;
+    color:#fff;
 }

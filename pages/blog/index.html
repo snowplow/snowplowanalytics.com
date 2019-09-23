@@ -5,6 +5,8 @@ title: Snowplow | Our latest news and articles
 description: Stay up to date with Snowplow, read our latest news and articles on everything related to data and analytics
 permalink: /blog/
 class: blog header-white
+assets:
+    js: v3/assets/js/main.js
 ---
 
 
@@ -73,7 +75,7 @@ class: blog header-white
                                 {% if author.name == post.author %}
                                 <div class="author">
                                     <img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
-                                    <p class="small-p">{{ author.full_name }}</p>
+                                    <p>{{ author.full_name }}</p>
                                 </div>
                                 {% endif %}
                                 {% endfor %}
@@ -88,15 +90,22 @@ class: blog header-white
            
             <div class="newsletter-box">
                 <span class="hex-bg-newsletter"></span>
-                <div class="full">
+                <div class="full" id="nl-form">
                     <h4>Get your exclusive content straight to your mailbox</h4>
                     <p>Sign up to our newsletter now</p>
                     <div class="input-wrap">
-                        <input type="text" name="newsletter" id="newsletter" placeholder="example@email.com" />
-                        <button class="sec-cta" type="submit" form="newsletter">
-                            <img src="{{ BASE_PATH }}/v3/assets/img/global/right-arrow-submit.svg" alt="">
-                        </button>
+                        <form novalidate id="newsletter-form">
+                            <input type="text" name="email" id="email" placeholder="example@email.com" />
+                            <button class="sec-cta" type="submit" id="form_submit_button" form="newsletter-form">
+                                <img src="{{ BASE_PATH }}/v3/assets/img/global/right-arrow-submit.svg" alt="">
+                            </button>
+                        </form>
                     </div>
+                </div>
+                <div class="full thankyou">
+                    <h3>Thank you for signing up!</h3>
+                    <p>We'll make sure you are kept <br> up to date with the latest <br>Snowplow content!</p>
+                    <p class="p-small">We will not share your information with <br> third parties</p>
                 </div>
             </div>
         </div>
