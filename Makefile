@@ -29,11 +29,11 @@ $(ruby_v_file):
 # -----------------------------------------------------------------------------
 
 serve:
-	npm run prewatch
+	npm run watch
 	bundle exec jekyll serve
 
 serve-incremental:
-	npm run prewatch
+	npm run watch
 	bundle exec jekyll serve --incremental
 
 # -----------------------------------------------------------------------------
