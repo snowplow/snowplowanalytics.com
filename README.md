@@ -8,19 +8,70 @@
 
 This repo contains the source code and content for the [Snowplow](https://snowplowanalytics.com) website. The site is built with [Jekyll](https://github.com/mojombo/jekyll) and published to Amazon S3 where it is then served by CloudFront.
 
-## Quickstart
+## Stack Walkthrough
 
-Assuming git and **[rbenv][rbenv-install]** installed:
+This current project's stack consist of NPM, webpack and Jekyll, they are used to build website as static pages and assets.
+
+## NPM
+
+NPM is a modern package-management solution based on NodeJS language. It allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
+
+That way you are free from manually managing JS libraries and their dependencies.
+
+## Webpack
+
+Webpack is used for transpiling JS files to provide ES6 support. It is done with help of babel library. It can be used for providing CSS post-process support, such as auto-prefixer, and many more. But currently Jekyll take care about CSS.
+
+## Jekyll
+
+Jekyll is static web-site generation tool. It generates website from HTML pages and assets into ./_site folder.
+
+## Installation
+
+Assuming git and **[rbenv][rbenv-install]** installed.
 
 ```bash
+ host> rbenv install -s 2.6.3
  host> git clone https://github.com/snowplow/snowplowanalytics.com
  host> cd snowplowanalytics.com
- host> make install
+ host> gem install bundler
+ host> bundle install
+ host> npm install
+ host> npm install -g cross-env foreman webpack-cli
 ```
 
 This will install the required Ruby environment into `rbenv` as well as the required Gems stored within the Gemfile.
 
 __WARNING__: The installation can take up to 10 minutes.
+
+## Website building sequence
+
+To build website, you need both Webpack and Jekyll. Webpack need to be run prior to Jekyll execution as it builds some js assets which are used by Jekyll. Currently all commands are developed as scripts section in the package.json file.
+
+To build website, use command
+```
+npm run build
+```
+Internally it run prebuild script with ```cross-env NODE_ENV=production webpack``` content first. Then it runs ```cross-env JEKYLL_ENV=production bundler exec jekyll build --incremental``` command. At the end you have ./_site with recent website.
+
+## Local website development
+
+There are two command: ```npm run watch``` and ```npm run livereload```. Both commands starts local website that can be accessible on the address ```http://localhost:4000```. Watch command tracks website changes in real-time and updates contents in ./_site folder that is accessible at local website. But you need to refresh browser page manually. 
+
+```npm run livereload``` command updates website in the browser in its own. It refreshes website as soon as Webpack and Jekyll builds website after file changes were detected. It takes some time, and then your opened web page in the browser gets updated.
+
+## Running Jekyll without autoprefixer
+
+You may want to run Jekyll without AutoPrefixer plugin to improve Jekyll performance.
+
+You can use these commands:
+```npm run build-no-ap```
+```npm run watch-no-ap```
+```npm run livereload-no-ap```
+
+## Make (NPM alternative)
+
+Alternatively, instead of using npm scripts, you can use Make commands:
 
 Once installed you are ready to `serve` on your host:
 

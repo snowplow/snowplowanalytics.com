@@ -50,7 +50,9 @@ if (!window.location.origin) {
         var footer = $('footer');
 
 
-
+        // Apply polyfills
+        var objectFitImages = require('object-fit-images');
+        objectFitImages();
 
 
         /**

@@ -68,11 +68,10 @@ exclude:
   - proc-livereload-no-autoprefixer
   - proc-watch
   - proc-watch-no-autoprefixer
-  
+
 
 # Redirect
 plugins:
-  - jekyll-autoprefixer
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compress-images
