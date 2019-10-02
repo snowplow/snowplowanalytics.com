@@ -23,8 +23,6 @@ Read on for more information on R98 Argentomagus, named after [the ancient Roman
 5. [Roadmap](#roadmap)
 6. [Help](#help)
 
-![argentomagus][argentomagus-img]
-
 <h2 id="ts">1. Stream Enrich: better timestamp validation</h2>
 
 Prior to this release both the realtime and batch enrichment processes would let nonsensical
@@ -172,8 +170,6 @@ For more details on this release, please check out the [release notes][release-n
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
-[argentomagus]: https://en.wikipedia.org/wiki/Argentomagus
-[argentomagus-img]: /assets/img/blog/2018/01/argentomagus.jpg
 
 [r93]: https://snowplowanalytics.com/blog/2017/10/03/snowplow-r93-virunum-released-realtime-pipeline-refresh/
 [r97]: https://snowplowanalytics.com/blog/2017/12/18/snowplow-r97-knsossos-released/

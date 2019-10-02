@@ -26,8 +26,6 @@ Read on for more information on R99 Carnac, named after
 6. [Roadmap](#roadmap)
 7. [Help](#help)
 
-![carnac][carnac-img]
-
 <h2 id="why">1. Why integrate Google Analytics into Snowplow?</h2>
 
 Back in May, we put out [an RFC on sending Google Analytics events into Snowplow][rfc]. The central idea
@@ -163,8 +161,6 @@ For more details on this release, please check out the [release notes][release-n
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
-[carnac]: https://en.wikipedia.org/wiki/Carnac_stones
-[carnac-img]: /assets/img/blog/2018/01/carnac.jpg
 [ga-schema-img]: /assets/img/blog/2018/01/ga-schema.jpg
 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r99-carnac

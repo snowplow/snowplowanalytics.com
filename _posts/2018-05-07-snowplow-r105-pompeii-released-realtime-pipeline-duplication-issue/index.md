@@ -26,7 +26,6 @@ Please read on after the fold for:
 4. [Roadmap](#roadmap)
 5. [Help](#help)
 
-![pompeii][pompeii-img]
 
 <h2 id="dupe">1. Fixing the Stream Enrich event duplication issue</h2>
 
@@ -78,9 +77,6 @@ For more details on this release, please check out the [release notes][snowplow-
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r105-pompeii
-
-[pompeii]: https://en.wikipedia.org/wiki/Pompeii
-[pompeii-img]: /assets/img/blog/2018/05/pompeii.jpg
 
 [paestum]: /blog/2018/04/17/snowplow-r103-paestum-released-with-ip-lookups-enrichment-upgrade/
 [neapolis]: /blog/2018/03/21/snowplow-r101-neapolis-with-initial-gcp-support/

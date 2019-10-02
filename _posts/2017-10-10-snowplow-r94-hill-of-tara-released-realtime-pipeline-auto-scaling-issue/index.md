@@ -23,7 +23,6 @@ Please read on after the fold for:
 3. [Roadmap](#roadmap)
 4. [Help](#help)
 
-![hill-of-tara][hill-of-tara-img]
 
 <h2 id="enrich-scaling">1. Fixing the Stream Enrich data loss issue</h2>
 
@@ -58,9 +57,6 @@ For more details on this release, please check out the [release notes][snowplow-
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r94-hill-of-tara
-
-[hill-of-tara]: https://en.wikipedia.org/wiki/Hill_of_Tara
-[hill-of-tara-img]: /assets/img/blog/2017/10/hill_of_tara.jpg
 
 [virunum]: /blog/2017/10/03/snowplow-r93-virunum-released-realtime-pipeline-refresh/
 
