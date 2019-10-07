@@ -26,6 +26,7 @@ Read on for more information on R101 Neapolis, named after
 7. [Help](#help)
 
 ![neapolis][neapolis-img]
+Michele Ponzio [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)
 
 <h2 id="why">1. Why bring Google Cloud Platform support to Snowplow?</h2>
 
