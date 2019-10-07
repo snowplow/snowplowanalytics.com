@@ -15,7 +15,7 @@ var validateInput = function(kind, value){
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
 
-    var url = 'https://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq'
+    var url = pardotUrl;
     $.ajax({
         url: url,
         jsonp: "callback",
@@ -28,20 +28,15 @@ var pardotSubmit = function (data){
         (data.result == 'success') 
         ? $('#pdf-form').hide() 
             && $('.thankyou').fadeIn(700)
-            && dataLayer.push({ 'event': 'lp-datalake-form-success' })
+            // push an event to GTM
+            && dataLayer.push({ 'event': gtmEventName })
         : $('input').addClass('error') 
             && $('#form_submit_button').removeClass('activate-loader')
     }
 }
 
-// push to GTM
 
 
-
-//Remove any validation when user tries to rewrite the field
-$('input').focus(function(){
-    $(this).removeClass('error')
-})
 
 // Validate and Submit
 var handleSubmit = function(e){
@@ -76,5 +71,15 @@ var handleSubmit = function(e){
         && pardotSubmit(data) 
 }
 
+
+// VISUAL HELPERS
+
+//Remove any validation when user tries to rewrite the field
+$('input').focus(function(){
+    $(this).removeClass('error')
+})
+
+
+// BIND FORM WITH HELPER
 var form = document.getElementById('pdf-form');
 form.addEventListener('submit', handleSubmit);
