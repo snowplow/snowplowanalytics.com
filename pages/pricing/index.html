@@ -6,954 +6,133 @@ description: A scalable data infrastructure with product tiers that won’t be b
 permalink: /pricing/
 class: Pricing
 assets:
-  css: assets/css/pricing-revamp.css
-
-
+  css: v3/assets/css/global.css
 ---
 
-<section class="hero-revamp hero-revamp-light hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/pricing/spw-technology-header@3x.png)">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <h1>Looking for a scalable data infrastructure?</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h4>We’ll scale with you as you grow and our product tiers won’t be breaking the bank.</h4>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="section-revamp revamp-news-cards-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 revamp-news-cards-container">
-                <div class="revamp-news-cards-block">
-                    <img src="{{ BASE_PATH }}/assets/img/pricing/spw_icon_startup.svg" alt="">
-                    <h5>Startup</h5>
-                    <quote>Starting at</quote>
-                    <h4>$1,500/mo</h4>
-                    <ul>
-                      <li>10m events/month</li>
-                      <li>Batch pipeline</li>
-                      <li>AWS</li>
-                      <li>Standard onboarding</li>
-                    </ul>
-                    <a class="btn btn-primary call-to-action" href="{{ BASE_PATH }}/request-demo/">Get started</a>
-                </div>
-                <div class="revamp-news-cards-block">
-                    <img src="{{ BASE_PATH }}/assets/img/pricing/spw_icon_growth.svg" alt="">
-                    <h5>Growth</h5>
-                    <quote>Starting at</quote>
-                    <h4>$5,000/mo</h4>
-                    <ul>
-                      <li>250m events/month</li>
-                      <li>Real-time pipeline</li>
-                      <li>AWS or GCP</li>
-                      <li>Tailored onboarding</li>
-                    </ul>
-                    <a class="btn btn-primary call-to-action" href="{{ BASE_PATH }}/request-demo/">Get started</a>
-                </div>
-                <div class="revamp-news-cards-block">
-                    <img src="{{ BASE_PATH }}/assets/img/pricing/spw_icon_enterprise.svg" alt="">
-                    <h5>Enterprise</h5>
-                    <quote>&nbsp;</quote>
-                    <h4>Custom pricing</h4>
-                    <ul>
-                      <li>Custom events/month</li>
-                      <li>Real-time pipeline</li>
-                      <li>AWS and GCP</li>
-                      <li>Custom onboarding</li>
-                    </ul>
-                    <a class="btn btn-primary call-to-action" href="{{ BASE_PATH }}/request-demo/">Get started</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="pricing-revamp-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Snowplow Insights feature comparison</h2>
+<main class="pricing-v3">
+  <section class="sub-hero">
+      <span class="hex-bg"></span>
+      <div class="wrap">
+          <div class="heading">
+              <h5 class="accent">PRICING</h5>
+              <h1>Find the tier that fits your data needs</h1>
+              <div class="blog-wrap">
+                      <p>We’ll scale with you as you grow and our product tiers won’t break the bank.</p>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <!-- Desktop version -->
-        <div class="pricing-revamp-table hidden-xs">
-          <!-- header -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-header">
-            <div class="pricing-revamp-table-col"></div>
-            <div class="pricing-revamp-table-col">
-              <h3>Startup</h3>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h3>Growth</h3>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h3>Enterprise</h3>
-            </div>
-          </div>
-          <!-- product features -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Product features</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Cloud *</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS or GCP</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS and/or GCP</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data warehouses</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>S3, Redshift,<br>Snowflake</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>ElasticSearch,<br>S3, Redshift,<br>Snowflake,<br>BigQuery</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>ElasticSearch,<br>S3, Redshift,<br>Snowflake,<br>BigQuery</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Frequency of loads into data warehouse</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Every 12 hours</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>
-                Every 2 hours
-                <br>
-                <span>(Redshift, Snowflake)</span>
-                <br>
-                <br>
-                Real-time
-                <br>
-                <span>(ElasticSearch, BigQuery)</span>
-              </p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>
-                Every 15 minutes
-                <br>
-                <span>(Redshift, Snowflake)</span>
-                <br>
-                <br>
-                Real-time
-                <br>
-                <span>(ElasticSearch, BigQuery)</span>
-              </p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Real-time streams</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>None</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Kinesis<br>Pub/Sub</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Kinesis<br>Pub/Sub</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data processing</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Batch</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Real-time</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Real-time</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Event volume (per month)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>10 million</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>250 million</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Custom</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data models run as part of the pipeline</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Enrichments</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Standard</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Premium</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Premium</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>SLAs</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Basic</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Custom</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Open source BI tools (Redash/Superset)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Custom pipeline topologies</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row pricing-revamp-table-subfooter">
-            <div class="pricing-revamp-table-col">
-              <p>* Cloud fees are separate. You control how much you want to spend on your infrastructure.</p>
-            </div>
-          </div>
-          <!-- services and support -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Services & Support</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Onboarding</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Standard</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Tailored</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Highly personalised,<br>on-site</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>24/7 technical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Analytical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Customer Success Manager</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Quarterly review</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Monthly review<br>and recommendations</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Monthly educational webinars</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Quarterly product briefings</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes with roadmap<br>input</p>
-            </div>
-          </div>
-          <!-- footer -->
-<!--          <div class="pricing-revamp-table-row pricing-revamp-table-footer">
-            <div class="pricing-revamp-table-col">
-              <h4>Cost</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>$1,500/mo</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>$5,000/mo</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>Custom pricing</h4>
-            </div>
-          </div>
--->
-        </div>
-        <!-- Mobile version: Startup -->
-        <div class="pricing-revamp-table visible-xs">
-          <!-- header -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-header">
-            <div class="pricing-revamp-table-col"></div>
-            <div class="pricing-revamp-table-col">
-              <h3>Startup</h3>
-            </div>
-          </div>
-          <!-- product features -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Product features</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Cloud *</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data warehouses</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>S3, Redshift<br>Snowflake</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Frequency of loads into data warehouse</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Every 12 hours</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Real-time streams</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>None</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data processing</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Batch</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Event volume (per month)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>10 million</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data models run as part of the pipeline</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Enrichments</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Standard</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>SLAs</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Open source BI tools (Redash/Superset)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Custom pipeline topologies</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row pricing-revamp-table-subfooter">
-            <div class="pricing-revamp-table-col">
-              <p>* Cloud fees are separate. You control how much you want to spend on your infrastructure.</p>
-            </div>
-          </div>
-          <!-- services and support -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Services & Support</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Onboarding</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Standard</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>24/7 technical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Analytical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Customer Success Manager</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Monthly educational webinars</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Quarterly product briefings</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-<!-- footer
-          <div class="pricing-revamp-table-row pricing-revamp-table-footer">
-            <div class="pricing-revamp-table-col">
-              <h4>Cost</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>$1,500/mo</h4>
-              <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-primary call-to-action">Get started</a>
-            </div>
-          </div>
--->
-        </div>
-        <!-- Mobile version: Growth -->
-        <div class="pricing-revamp-table visible-xs">
-          <!-- header -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-header">
-            <div class="pricing-revamp-table-col"></div>
-            <div class="pricing-revamp-table-col">
-              <h3>Growth</h3>
-            </div>
-          </div>
-          <!-- product features -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Product features</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Cloud *</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS or GCP</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data warehouses</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>ElasticSearch,<br>S3, Redshift<br>Snowflake<br>BigQuery</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Frequency of loads into data warehouse</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>
-                Every 2 hours
-                <br>
-                <span>(Redshift, Snowflake)</span>
-                <br>
-                <br>
-                Real-time
-                <br>
-                <span>(ElasticSearch, BigQuery)</span>
-              </p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Real-time streams</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Kinesis<br>Pub/Sub</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data processing</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Real-time</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Event volume (per month)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>250 million</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data models run as part of the pipeline</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Enrichments</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Premium</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p></b>SLAs</p></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Basic</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Open source BI tools (Redash/Superset)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Custom pipeline topologies</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row pricing-revamp-table-subfooter">
-            <div class="pricing-revamp-table-col">
-              <p>* Cloud fees are separate. You control how much you want to spend on your infrastructure.</p>
-            </div>
-          </div>
-          <!-- services and support -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Services & Support</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Onboarding</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Tailored</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>24/7 technical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Analytical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>No</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Customer Success Manager</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Quarterly review</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Monthly educational webinars</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Quarterly product briefings</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-<!-- footer
-          <div class="pricing-revamp-table-row pricing-revamp-table-footer">
-            <div class="pricing-revamp-table-col">
-              <h4>Cost</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>$5,000/mo</h4>
-              <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-primary call-to-action">Get started</a>
-            </div>
-          </div>
--->
-        </div>
-        <!-- Mobile version: Enterprise -->
-        <div class="pricing-revamp-table visible-xs">
-          <!-- header -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-header">
-            <div class="pricing-revamp-table-col"></div>
-            <div class="pricing-revamp-table-col">
-              <h3>Enterprise</h3>
-            </div>
-          </div>
-          <!-- product features -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Product features</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Cloud *</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>AWS and/or GCP</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data warehouses</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>ElasticSearch,<br>S3, Redshift<br>Snowflake<br>BigQuery</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Frequency of loads into data warehouse</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>
-                Every 15 minutes
-                <br>
-                <span>(Redshift, Snowflake)</span>
-                <br>
-                <br>
-                Real-time
-                <br>
-                <span>(ElasticSearch, BigQuery)</span>
-              </p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Real-time streams</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Kinesis<br>Pub/Sub</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data processing</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Real-time</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Event volume (per month)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Custom</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Data models run as part of the pipeline</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Enrichments</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Premium</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>SLAs</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Custom</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Open source BI tools (Redash/Superset)</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Custom pipeline topologies</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row pricing-revamp-table-subfooter">
-            <div class="pricing-revamp-table-col">
-              <p>* Cloud fees are separate. You control how much you want to spend on your infrastructure.</p>
-            </div>
-          </div>
-          <!-- services and support -->
-          <div class="pricing-revamp-table-row pricing-revamp-table-subheader">
-            <div class="pricing-revamp-table-col">
-              <h4>Services & Support</h4>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Onboarding</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Highly personalised,<br>on-site</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>24/7 technical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Analytical support</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Customer Success Manager</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Monthly review<br>and recommendations</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Monthly educational webinars</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes</p>
-            </div>
-          </div>
-          <div class="pricing-revamp-table-row">
-            <div class="pricing-revamp-table-col">
-              <p><b>Quarterly product briefings</b></p>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <p>Yes with roadmap<br>input</p>
-            </div>
-          </div>
-<!-- footer
-          <div class="pricing-revamp-table-row pricing-revamp-table-footer">
-            <div class="pricing-revamp-table-col">
-              <h4>Cost</h4>
-            </div>
-            <div class="pricing-revamp-table-col">
-              <h4>Custom pricing</h4>
-              <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-primary call-to-action">Get started</a>
-            </div>
-          </div>
--->
-        </div>
+  </section>
+  <section class="plans">
+      <div class="wrap">
+          <div class="plan">
+              <div class="heading">
+                  <img src="{{ BASE_PATH }}/v3/assets/img/pricing/growth-plan.png" alt="Growth"/>
+                  <div class="description">
+                      <h2>Growth</h2>
+                      <p>For companies who warehouse their customer data, run production reporting on data in their warehouse, or are ready to experiment with real-time use cases.</p>
+                  </div>
+              </div>
+              <div class="features">
+                  <ul>
+                      <li><strong>Unlimited sources</strong></li>
+                      <li>
+                          <p>Data available in:</p>
+                          <ul>
+                              <li>
+                                  <strong>One warehouses: Redshift, BigQuery, SnowflakeDB</strong>
+                              </li>
+                              <li>
+                                  <strong>One streaming targets: Pub/Sub, Kinesis</strong>
+                              </li>
+                              <li>
+                                  <strong>One long term storage targets: S3, GCS</strong>
+                              </li>
+                              <li>
+                                  <strong>Elasticsearch</strong>
+                              </li>
+                          </ul>
+                      </li>
+                      <li><strong>Standard SLAs</strong></li>
+                      <li><strong>Standard enrichments</strong></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="plan box-shadow">
+                  <div class="heading">
+                      <img src="{{ BASE_PATH }}/v3/assets/img/pricing/enterprise-plan.png" alt="Enterprise"/>
+                      <div class="description">
+                          <h2>Enterprise</h2>
+                          <p>For companies running real-time data-driven applications, or who require cross-cloud support, and a pipeline fully customized to their business needs.</p>
+                      </div>
+                  </div>
+                  <div class="features">
+                      <ul>
+                          <li><strong>Unlimited sources</strong></li>
+                          <li>
+                              <p>Data available in:</p>
+                              <ul>
+                                  <li>
+                                      <strong>Multiple warehouses: Redshift, BigQuery, SnowflakeDB</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Multiple streaming targets: Pub/Sub, Kinesis</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Multiple long term storage targets: S3, GCS</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Elasticsearch</strong>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li><strong>Premium SLAs</strong></li>
+                          <li><strong>Premium enrichments</strong></li>
+                          <li><strong>Custom data pipelines</strong></li>
+                          <li><strong>Cross cloud support (AWS, GCP, Azure)</strong></li>
+                          <li><strong>Filter subsets of data from streams into multiple destinations</strong></li>
+                      </ul>
+                  </div>
+              </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-revamp section-revamp-blue checked-paragraph-revamp-section pad-t-90">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Additional services</h2>
+  </section>
+  <section class="tco">
+      <div class="wrap">
+          <div class="heading-subsection-normal">
+              <h2>Snowplow Insights total cost of ownership</h2>
+              <p>All three costs are required to run Snowplow Insights</p>
+          </div>
+          <ul>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Insights</h3>
+                      <p>Collect rich, granular and high-quality data, delivered to your warehouse of choice with a fully managed, end-to-end data pipeline.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">Ongoing</p>
+                  </div>
+              </li>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Kickstarter</h3>
+                      <p>Our Implementation Engineering team will co-design a tracking strategy, co-develop a SQL data model in your warehouse, and provide training on the Snowplow stack.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">One off cost <br>of 5k-20k</p>
+                  </div>
+              </li>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Cloud costs</h3>
+                      <p>Payments are made directly to AWS or GCP, with costs  depending on your required pipeline architecture and retention policies. Get in touch for an estimate of your monthly cloud costs.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">Ongoing</p>
+                  </div>
+              </li>
+          </ul>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-5 checked-paragraph-revamp">
-        <p>Onboarding and training</p>
-        <p>Our team of Data Strategists and Implementation Engineers will help you get the most out of your Snowplow Insights pipeline by translating your analytics roadmap into a Snowplow implementation, including tracking design, data modeling and visualization.</p>
-      </div>
-      <div class="col-sm-5 col-sm-offset-2 checked-paragraph-revamp">
-        <p>Extending the Snowplow pipeline</p>
-        <p>Our team of Data Engineers will work with you to extend the Snowplow pipeline to meet your needs. We’ll build out custom integrations and help you develop real-time data processing applications, such as marketing automations, that consume the Snowplow eventstream.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-{% include request-demo-revamp.html %}
+  </section>
+</main>
