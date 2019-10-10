@@ -461,4 +461,25 @@
         padding-left:20px;
         padding-right:20px;
     }
+    /* ===============
+    TCO - PRICING
+    =============== */
+    section.tco ul li{
+        padding:40px;
+    }
+    section.tco ul li .description{
+        width: 100%;
+    }
+    section.tco ul li .cost{
+        width: 100%;
+        margin-top:30px;
+        text-align:left;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    section.tco ul li .cost p{
+        margin-top:0px;
+    }   
 }
