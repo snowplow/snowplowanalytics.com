@@ -8,3 +8,131 @@ class: Pricing
 assets:
   css: v3/assets/css/global.css
 ---
+
+<main class="pricing-v3">
+  <section class="sub-hero">
+      <span class="hex-bg"></span>
+      <div class="wrap">
+          <div class="heading">
+              <h5 class="accent">PRICING</h5>
+              <h1>Find the tier that fits your data needs</h1>
+              <div class="blog-wrap">
+                      <p>We’ll scale with you as you grow and our product tiers won’t break the bank.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="plans">
+      <div class="wrap">
+          <div class="plan">
+              <div class="heading">
+                  <img src="{{ BASE_PATH }}/v3/assets/img/pricing/growth-plan.png" alt="Growth"/>
+                  <div class="description">
+                      <h2>Growth</h2>
+                      <p>For companies who warehouse their customer data, run production reporting on data in their warehouse, or are ready to experiment with real-time use cases.</p>
+                  </div>
+              </div>
+              <div class="features">
+                  <ul>
+                      <li><strong>Unlimited sources</strong></li>
+                      <li>
+                          <p>Data available in:</p>
+                          <ul>
+                              <li>
+                                  <strong>One warehouses: Redshift, BigQuery, SnowflakeDB</strong>
+                              </li>
+                              <li>
+                                  <strong>One streaming targets: Pub/Sub, Kinesis</strong>
+                              </li>
+                              <li>
+                                  <strong>One long term storage targets: S3, GCS</strong>
+                              </li>
+                              <li>
+                                  <strong>Elasticsearch</strong>
+                              </li>
+                          </ul>
+                      </li>
+                      <li><strong>Standard SLAs</strong></li>
+                      <li><strong>Standard enrichments</strong></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="plan box-shadow">
+                  <div class="heading">
+                      <img src="{{ BASE_PATH }}/v3/assets/img/pricing/enterprise-plan.png" alt="Enterprise"/>
+                      <div class="description">
+                          <h2>Enterprise</h2>
+                          <p>For companies running real-time data-driven applications, or who require cross-cloud support, and a pipeline fully customized to their business needs.</p>
+                      </div>
+                  </div>
+                  <div class="features">
+                      <ul>
+                          <li><strong>Unlimited sources</strong></li>
+                          <li>
+                              <p>Data available in:</p>
+                              <ul>
+                                  <li>
+                                      <strong>Multiple warehouses: Redshift, BigQuery, SnowflakeDB</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Multiple streaming targets: Pub/Sub, Kinesis</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Multiple long term storage targets: S3, GCS</strong>
+                                  </li>
+                                  <li>
+                                      <strong>Elasticsearch</strong>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li><strong>Premium SLAs</strong></li>
+                          <li><strong>Premium enrichments</strong></li>
+                          <li><strong>Custom data pipelines</strong></li>
+                          <li><strong>Cross cloud support (AWS, GCP, Azure)</strong></li>
+                          <li><strong>Filter subsets of data from streams into multiple destinations</strong></li>
+                      </ul>
+                  </div>
+              </div>
+      </div>
+  </section>
+  <section class="tco">
+      <div class="wrap">
+          <div class="heading-subsection-normal">
+              <h2>Snowplow Insights total cost of ownership</h2>
+              <p>All three costs are required to run Snowplow Insights</p>
+          </div>
+          <ul>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Insights</h3>
+                      <p>Collect rich, granular and high-quality data, delivered to your warehouse of choice with a fully managed, end-to-end data pipeline.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">Ongoing</p>
+                  </div>
+              </li>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Kickstarter</h3>
+                      <p>Our Implementation Engineering team will co-design a tracking strategy, co-develop a SQL data model in your warehouse, and provide training on the Snowplow stack.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">One off cost <br>of 5k-20k</p>
+                  </div>
+              </li>
+              <li class="box-shadow">
+                  <div class="description">
+                      <h3>Cloud costs</h3>
+                      <p>Payments are made directly to AWS or GCP, with costs  depending on your required pipeline architecture and retention policies. Get in touch for an estimate of your monthly cloud costs.</p>
+                  </div>
+                  <div class="cost">
+                      <strong>Cost</strong>
+                      <p class="accent-bold">Ongoing</p>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </section>
+</main>

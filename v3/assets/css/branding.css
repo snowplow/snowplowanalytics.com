@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a{
     color:#28D1B1;
 }
 
-.accent, h5{
+.accent, .accent-bold, h5{
     color:#64BBE4;
 }
 
