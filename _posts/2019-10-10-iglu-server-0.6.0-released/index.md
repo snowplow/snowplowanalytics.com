@@ -91,7 +91,7 @@ All other options are optional, a full list can be found in our [setup guide][se
 
 In order to migrate tables you need to run a special `setup` subcommand:
 
-{% highlight "bash" %}
+{% highlight bash %}
 $ ./iglu-server_0.6.0.jar setup --config $IGLU_CONFIG_PATH
 {% endhighlight %}
 
@@ -99,7 +99,7 @@ This should migrate all your schemas and API keys or let you know about consiste
 
 The Iglu Server 0.6.0 is also available on our Docker registry:
 
-{% highlight "bash" %}
+{% highlight bash %}
 $ docker pull snowplow-docker-registry.bintray.io/snowplow/iglu-server:0.6.0
 {% endhighlight %}
 
