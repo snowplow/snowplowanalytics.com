@@ -19,6 +19,10 @@
         <link href="{{ BASE_PATH }}/{{css}}" rel="stylesheet" media="screen" type="text/css">
         {% endfor %}{% endif %}
 
+
+        {% if include.v3 != null %}
+        <link href="{{ BASE_PATH }}/v3/assets/css/global.css" rel="stylesheet" media="screen" type="text/css">
+        {% endif %}
  
         <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/assets/img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="{{ BASE_PATH }}/assets/img/favicon/favicon-32x32.png" sizes="32x32">
