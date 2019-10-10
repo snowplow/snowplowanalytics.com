@@ -87,6 +87,10 @@ header nav li a, .navbar-brand{
     color: #50545c !important;
 }
 
+footer a{
+    color:#28D1B1 !important;
+}
+
 @media screen and (max-width: 808px) {
     h1{
         font-family:'Rubik' !important;
