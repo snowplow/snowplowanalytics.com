@@ -8,6 +8,8 @@ category: Inside the Plow
 permalink: /blog/2019/10/10/world-mental-health-day-at-snowplow/
 ---
 
+![mental-health](/assets/img/blog/2019/10/meantal-health.png) 
+
 
 World Mental Health Day falls on 10th October every year and this year we’ve decided to bring awareness to this important topic by asking our team three questions about mental health.
 
