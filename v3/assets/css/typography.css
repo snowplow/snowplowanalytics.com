@@ -87,7 +87,7 @@ header nav li a, .navbar-brand{
     color: #50545c !important;
 }
 
-footer ul li.active{
+footer ul li.active a{
     color:#28D1B1 !important;
 }
 
