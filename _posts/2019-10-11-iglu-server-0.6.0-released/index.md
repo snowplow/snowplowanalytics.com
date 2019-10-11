@@ -133,5 +133,5 @@ If you have any questions or run into any problems, please [raise an issue][issu
 [issue-23]: https://github.com/snowplow-incubator/iglu-server/issues/23
 [issue-30]: https://github.com/snowplow-incubator/iglu-server/issues/30
 
-[issues]: https://github.com/snowplow/snowplow-incubator/iglu-server/issues
+[issues]: https://github.com/snowplow-incubator/iglu-server/issues
 [talk-to-us]: https://github.com/snowplow/snowplow/wiki/Talk-to-us
