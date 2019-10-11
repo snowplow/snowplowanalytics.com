@@ -5,7 +5,7 @@ title-short: Iglu Server
 tags: [iglu, json, jsonschema, iglu server]
 author: Anton
 category: Releases
-permalink: /blog/2019/10/10/iglu-server-0.6.0-released/
+permalink: /blog/2019/10/11/iglu-server-0.6.0-released/
 ---
 
 We're tremendously excited to announce the new 0.6.0 release of the [Iglu Server][iglu-server], a next-generation of Iglu Registry, providing consistency and migration guarantees to Iglu schemas.
