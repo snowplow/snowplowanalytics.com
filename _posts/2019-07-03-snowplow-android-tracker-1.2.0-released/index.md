@@ -9,6 +9,8 @@ permalink: /blog/2019/07/03/snowplow-android-tracker-1.2.0-released-with-global-
 discourse: true
 ---
 
+**IMPORTANT NOTE: 1.2.0 has a critical bug which causes duplication of natively supported contexts. 1.2.1 release is published to patch this bug. Thanks for the understanding.**
+
 We are pleased to announce the `1.2.0` release of the [Snowplow Android Tracker][repo].
 
 [1.2.0][release-notes] introduces support for global contexts: introducing a set of new functions enabling users to send custom contexts with every event or a subset of events based on user provided criteria.
