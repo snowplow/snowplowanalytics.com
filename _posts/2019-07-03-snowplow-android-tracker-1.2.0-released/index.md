@@ -201,8 +201,8 @@ If you have any questions or run into any problems, please visit [our Discourse 
 For more details on this release, please check out the [release notes][release-notes] on GitHub.
 
 [repo]: https://github.com/snowplow/snowplow-android-tracker
-[docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/android-tracker/1.2.0/
-[release-notes]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.2.0
+[docs]: http://docs.snowplowanalytics.com/open-source/snowplow/trackers/android-tracker/1.2.1/
+[release-notes]: https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.2.1
 [android-setup]: https://github.com/snowplow/snowplow/wiki/Android-Tracker-Setup
 [android-issues]: https://github.com/snowplow/snowplow-android-tracker/issues
 
