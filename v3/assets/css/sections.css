@@ -3,7 +3,7 @@
    =============== */
 
 main{
-    margin:60px 0px;;
+    margin:60px 0px;
 }
 
 .hex-bg{
@@ -17,6 +17,17 @@ main{
     z-index:1;
 }
 
+.hex-3-bg{
+    width: 1150px;
+    height: 1300px;
+    display:block;
+    position:absolute;
+    right:0px;
+    top:0px;
+    background:url("../img/global/3hex-bg.svg") no-repeat;
+    z-index:1;
+}
+
 /* Global error input handling  */
 
 input.error{
@@ -26,7 +37,13 @@ input.error{
     box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
 }
 
+/* Call to action button pre-definition */
 
+.cta{
+    padding:17px 30px;
+    cursor:pointer;
+    min-width:200px;
+}
 
 
 /* ===============
@@ -877,7 +894,7 @@ section.author-hero .heading h1{
    =============== */
 
 
-   section.sub-hero{
+section.sub-hero{
     position:relative;
 }
 section.sub-hero .hex-bg{
@@ -900,6 +917,22 @@ section.sub-hero .heading h1{
 }
 
 
+/* ===============
+   SUB SECTION - NORMAL
+   =============== */
+
+section .heading-subsection-normal{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    text-align:center;
+}
+section .heading-subsection-normal h2{
+    margin-bottom:15px;
+}
+section .heading-subsection-normal p{
+    width: 80%;
+}
 
 
 
@@ -987,21 +1020,6 @@ section.plans .plan .features ul li ul{
 }
 
 
-
-/* ===============
-   SUB SECTION - NORMAL
-   =============== */
-
-section .heading-subsection-normal{
-    display:flex;
-    flex-flow:column wrap;
-    justify-content: center;
-    text-align:center;
-}
-section .heading-subsection-normal h2{
-    margin-bottom:15px;
-}
-
 /* ===============
    TCO - PRICING
    =============== */
@@ -1064,3 +1082,175 @@ section.tco ul li .cost{
 section.tco ul li .cost p{
     margin-top:10px;
 }
+
+
+
+
+/* ========================
+    WRITERS PRORAM - HERO
+   ======================== */
+
+
+section.sub-hero .share-a-story{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:100px 0px;
+}
+
+section.sub-hero .share-a-story .desc{
+    width: 500px;
+}
+
+section.sub-hero .share-a-story .desc h2{
+    margin-bottom:25px;
+}
+
+section.sub-hero .share-a-story .desc p{
+    margin-bottom:15px;
+}
+
+section.sub-hero .share-a-story .desc a{
+    float:left;
+    display:block;
+    margin-top:10px;
+}
+
+section.sub-hero .share-a-story img{
+    width: 600px;
+}
+
+
+
+/* ========================
+    WRITERS PRORAM - HOW
+   ======================== */
+
+
+section.how .wrap > ul{
+    display:flex;
+    flex-flow:row wrap;
+    margin-top:100px;
+    justify-content: space-between;
+}
+
+section.how .wrap > ul > li{
+    width: 45%;
+    margin-bottom:80px;
+} 
+
+section.how .wrap > ul > li .heading{
+    width: 100%;
+    display:flex;
+    flex-flow:row-wrap;
+    align-items: center;
+    margin-bottom:40px;
+}
+
+section.how .wrap > ul > li .heading img{
+    width: auto;
+    height: 150px;
+    margin-right:60px;
+}
+
+section.how .wrap ul li ul li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:15px;
+}
+
+section.how .wrap ul li ul li::before{
+    content: "";
+    display:block;
+    position:absolute;
+    top:7px;
+    left:0px;
+    width: 10px;
+    height: 10px;
+    background:url(../img/global/list-dot.svg) no-repeat;
+    background-size:10px;
+}
+
+
+
+/* ========================
+          MAIN FORM
+   ======================== */
+
+
+section.main-form .hex-3-bg{
+    top:-185px;
+}
+
+section.main-form .wrap{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.main-form .wrap .heading{
+    width: 520px;
+}
+
+section.main-form .wrap .heading h2{
+    margin-bottom:15px;
+}
+section.main-form .wrap .heading p{
+    margin-bottom:15px;
+}
+
+section.main-form .wrap form{
+    width: 520px;
+    padding:60px;
+    box-sizing: border-box;
+}
+
+section.main-form .wrap form > h3{
+    margin-bottom:10px;
+}
+
+section.main-form .wrap form > p{
+    margin-bottom:40px;
+}
+
+section.main-form .wrap form .full{
+    margin-bottom:20px;
+}
+
+
+section.main-form .wrap form .full label{
+    margin-bottom:10px;
+}
+
+section.main-form .wrap form .full input{
+    width:100%;
+    padding:10px 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #e9e9e9;
+    border-radius: 4px;
+    
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+    color: #D5D6D9;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #D5D6D9;
+}
+  
+::placeholder {
+    color: #D5D6D9;
+}
+
+section.main-form .wrap form button{
+    float:right;
+    margin-top:15px;
+}
+

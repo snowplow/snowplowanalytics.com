@@ -91,6 +91,10 @@ footer .active a{
     color:#28D1B1 !important;
 }
 
+.strong{
+    font-weight:700 !important;
+}
+
 @media screen and (max-width: 808px) {
     h1{
         font-family:'Rubik' !important;

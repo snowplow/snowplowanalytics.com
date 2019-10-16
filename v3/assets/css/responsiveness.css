@@ -9,7 +9,9 @@
         width: 960px;
         margin:0px auto;
     }
-
+    section .hex-bg{
+        display:none;
+    }
 
     /* === SINGLE ARTICLE === */
     article{
@@ -82,6 +84,25 @@
         position:static;
     }
 
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story .desc{
+        width: 400px;
+    }
+    section.sub-hero .share-a-story img{
+        width: 500px;
+    }
+    /* ========================
+        MAIN FORM
+    ======================== */
+    section.main-form .wrap .heading{
+        width: 320px;
+    }
+    section.main-form .hex-3-bg{
+        background-size:70%;
+        background-position:right center;
+    }
 }
 
 
@@ -258,6 +279,48 @@
         width: 100% !important;
     }
 
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story{
+        justify-content: center;
+        margin-bottom:0px;
+    }
+    section.sub-hero .share-a-story .desc{
+        order:2;
+        width: 100%;
+        margin-top:40px;
+        display:flex;
+        flex-flow:row wrap;
+        text-align:center;
+        justify-content: center;
+    }
+    section.sub-hero .share-a-story img{
+        order:1;
+        width: 500px;
+    }
+    /* ========================
+        WRITERS PROGRAM - HOW
+    ======================== */
+    section.how .wrap > ul > li .heading{
+        flex-flow:row wrap;
+        text-align:center;
+        justify-content: center;
+    }
+    section.how .wrap > ul > li .heading img{
+        margin-bottom:25px;
+    }
+    /* ========================
+             MAIN FORM
+    ======================== */
+    section.main-form .wrap form{
+        width: 420px;
+        padding:40px;
+    }
+    section.main-form .hex-3-bg{
+        background-size:50%;
+    }
 }
 
 
@@ -272,9 +335,6 @@
     .single-v3{
         overflow:hidden;
     } 
-    section .hex-bg{
-        display:none;
-    }
 
     /* ===Categories=== */
     .list-categories{
@@ -305,6 +365,27 @@
     }
     article .content h4{
         min-height:auto;
+    }
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story{
+        margin-top:50px;
+    }
+    /* ========================
+        MAIN FORM
+    ======================== */
+    section.main-form{
+        margin-top:0px;
+    }
+    section.main-form .wrap .heading{
+        width: 100%;
+    }
+    section.main-form .wrap form{
+        width: 100%;
+        padding:60px;
+        margin-top:40px;
     }
 }
 
@@ -482,4 +563,17 @@
     section.tco ul li .cost p{
         margin-top:0px;
     }   
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.how .wrap > ul > li{
+        width: 100%;
+        margin-bottom:40px;
+    }
+    /* ========================
+           MAIN FORM
+    ======================== */
+    section.main-form .wrap form{
+        padding:40px;
+    }
 }
