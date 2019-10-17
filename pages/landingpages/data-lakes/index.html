@@ -8,7 +8,6 @@ assets:
     css: assets/css/data-lakes.css
     js: 
     - assets/js/lp/lp-helpers.js
-    - assets/js/lp/data-lakes.js
 ---
 
 <section class="hero-revamp hero-revamp-light hero-revamp-center"
@@ -50,14 +49,16 @@ assets:
                     </ul>
                 </div>
                 <div class="form col-sm-6 col-xs-12">
-                    <form id="pdf-form" novalidate>
-                        <h3>Get your copy today</h3>
-                        <input id="first_name" class="form-control" type="text" placeholder="First name" />
-                        <input id="last_name" class="form-control" type="text" placeholder="Last name" />
-                        <input id="email" class="form-control" type="email" placeholder="Email" />
-                        <input id="company" class="form-control" type="text" placeholder="Company" />
-                        <button id="form_submit_button" type="submit" class="btn btn-primary spacer-top-10">Submit</button>    
-                    </form>
+                    <div class="form-wrap">
+                        <form id="main-form" data-pardotUrl="https://go.snowplowanalytics.com/l/571483/2019-07-05/3rzfqqq" data-gtmEventName="lp-datalake-form-success" novalidate>
+                            <h3>Get your copy today</h3>
+                            <input id="first_name" name="first_name" class="form-control" type="text" placeholder="First name" />
+                            <input id="last_name" name="last_name" class="form-control" type="text" placeholder="Last name" />
+                            <input id="email" name="email" class="form-control" type="email" placeholder="Email" />
+                            <input id="company" name="company" class="form-control" type="text" placeholder="Company" />
+                            <button id="form_submit_button" type="submit" class="btn btn-primary spacer-top-10">Submit</button>    
+                        </form>
+                    </div>
                     <div class="thankyou">
                         <h3>Thank you!</h3>                        
                         <div class="heading">

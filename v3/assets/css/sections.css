@@ -31,10 +31,8 @@ main{
 /* Global error input handling  */
 
 input.error{
-    color:#FF8B8B;
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
-    box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
+    color:#FF8B8B !important;
+    border: 1px solid #FF8B8B !important;
 }
 
 /* Call to action button pre-definition */
@@ -43,6 +41,17 @@ input.error{
     padding:17px 30px;
     cursor:pointer;
     min-width:200px;
+}
+
+
+/* Loader on buttons */
+
+.activate-loader{
+    text-indent:-2999px;
+    background-image: url('../img/global/loader.svg');
+    background-size:40px;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 
@@ -1026,6 +1035,7 @@ section.plans .plan .features ul li ul{
 
 section.tco {
     margin-top:120px;
+    margin-bottom:120px;
 }
 
 section.tco ul{
@@ -1036,7 +1046,7 @@ section.tco ul{
 }
 
 section.tco ul li{
-    padding:60px;
+    padding:40px;
     box-sizing: border-box;
     box-shadow: 0 1px 8px 3px rgba(102,102,102,0.06);   
     border-radius: 9px;
@@ -1179,7 +1189,9 @@ section.how .wrap ul li ul li::before{
 /* ========================
           MAIN FORM
    ======================== */
-
+section.main-form{
+    margin-bottom:120px;
+}
 
 section.main-form .hex-3-bg{
     top:-185px;
@@ -1207,13 +1219,16 @@ section.main-form .wrap form{
     width: 520px;
     padding:60px;
     box-sizing: border-box;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
-section.main-form .wrap form > h3{
+section.main-form .wrap form .form-wrap > h3{
     margin-bottom:10px;
 }
 
-section.main-form .wrap form > p{
+section.main-form .wrap form .form-wrap > p{
     margin-bottom:40px;
 }
 
@@ -1252,5 +1267,22 @@ section.main-form .wrap form .full input{
 section.main-form .wrap form button{
     float:right;
     margin-top:15px;
+}
+
+section.main-form form .thankyou{
+    display:none;
+}
+
+section.main-form form .thankyou h3{
+    margin-bottom:15px;
+}
+
+section.main-form form .thankyou p{
+    margin-bottom:40px;
+}
+
+section.main-form form .thankyou img{
+    width: 50%;
+    margin:40px 0px;
 }
 

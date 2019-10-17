@@ -8,6 +8,7 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a{
     /* Overwrite for v2 compatibility */
     background-image: -o-linear-gradient(74deg, #6738B8 0%, #6738B8 100%);
     background-image: linear-gradient(16deg, #6738B8 0%, #6738B8 100%);
+    background-color:#6738B8 !important;
     -webkit-box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43);
             box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43);
     border-radius: 4px;

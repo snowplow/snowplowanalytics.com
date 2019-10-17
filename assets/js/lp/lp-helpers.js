@@ -2,12 +2,10 @@
 var validateInput = function(kind, value){
     value = value ? value.trim() : ''
     switch(kind) {
-        case 'name':
+        case 'not_empty':
             return (value.length > 1 )
         case 'email':
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
-        case 'company':
-            return (value.length > 1)
     }
 }
 
@@ -15,7 +13,7 @@ var validateInput = function(kind, value){
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
 
-    var url = pardotUrl;
+    var url = $("#main-form").attr("data-pardotUrl");
     $.ajax({
         url: url,
         jsonp: "callback",
@@ -26,10 +24,10 @@ var pardotSubmit = function (data){
     window.callback = function (data) {
         //Handle thankyou fadein on success or color every input if pardot error
         (data.result == 'success') 
-        ? $('#pdf-form').hide() 
+        ? $('.form-wrap').hide() 
             && $('.thankyou').fadeIn(700)
             // push an event to GTM
-            && dataLayer.push({ 'event': gtmEventName })
+            && dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
         : $('input').addClass('error') 
             && $('#form_submit_button').removeClass('activate-loader')
     }
@@ -42,33 +40,30 @@ var pardotSubmit = function (data){
 var handleSubmit = function(e){
     e.preventDefault();
     var data = {};
-    data.first_name	 = $('#first_name').val()
-    data.last_name	 = $('#last_name').val()
-    data.email = $('#email').val()
-    data.company = $('#company').val()
+    var pass = 1;
     
-    // Snowplow tracker -- Retreive DomainUserId
+    // Populate DUID
     snowplow(function () {
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
 
-    //Validate fields and color invalid input fields
-    !validateInput('name', data.first_name) 
-    && $('#first_name').addClass('error');
-    !validateInput('name', data.last_name) 
-    && $('#last_name').addClass('error');
-    !validateInput('email', data.email) 
-    && $('#email').addClass('error');
-    !validateInput('company', data.company) 
-    && $('#company').addClass('error');
-    
-    //Submit form if all pass
-    (validateInput('name', data.first_name) 
-    && validateInput('name', data.last_name) 
-    && validateInput('email', data.email) 
-    && validateInput('company', data.company))
-        && $('#form_submit_button').addClass('activate-loader') 
-        && pardotSubmit(data) 
+    $("#main-form input").each(function(){
+        // Validate input fields
+        switch(this.name){
+            case 'email':
+                !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
+            default:
+                !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
+        }
+        // Populate data with input values
+        data[this.name] =  this.value;
+    });
+    console.log(data);
+    console.log(pass);
+    // If validation passes - run api call
+    pass && $('#form_submit_button').addClass('activate-loader') 
+         && pardotSubmit(data)
+  
 }
 
 
@@ -81,5 +76,6 @@ $('input').focus(function(){
 
 
 // BIND FORM WITH HELPER
-var form = document.getElementById('pdf-form');
+
+var form = document.getElementById('main-form');
 form.addEventListener('submit', handleSubmit);
