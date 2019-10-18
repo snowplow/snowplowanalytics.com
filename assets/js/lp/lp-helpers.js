@@ -79,3 +79,13 @@ $('input').focus(function(){
 
 var form = document.getElementById('main-form');
 form.addEventListener('submit', handleSubmit);
+
+
+
+// Temp solution - Scroll on writers program TODO
+
+$("#writers-cta").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#main-form").offset().top -100
+    }, 1000);
+});
