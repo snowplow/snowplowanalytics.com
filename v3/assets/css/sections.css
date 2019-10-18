@@ -54,6 +54,13 @@ input.error{
     background-position: center center;
 }
 
+/* Cookie bar adjustments v3 */
+
+#cookie-bar a{
+    padding:5px 20px !important;
+}
+
+
 
 /* ===============
         BLOG
