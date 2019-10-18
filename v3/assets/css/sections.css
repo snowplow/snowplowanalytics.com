@@ -945,6 +945,7 @@ section .heading-subsection-normal{
 }
 section .heading-subsection-normal h2{
     margin-bottom:15px;
+    width: 100%;
 }
 section .heading-subsection-normal p{
     width: 80%;
