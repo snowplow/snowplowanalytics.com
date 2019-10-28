@@ -5,7 +5,7 @@ description: The Snowplow technology is ideal for data teams who want to manage 
 permalink: /resources/getting-started/
 class: how-we-compare
 assets:
-  css: assets/css/snowplow.css
+  css: assets/css/casestudy.css
   js:
 toc: true
 ---

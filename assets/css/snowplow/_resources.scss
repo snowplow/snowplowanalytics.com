@@ -1,9 +1,9 @@
 .container.resources{
     display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				position: relative;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                position: relative;
         margin-top: 70px;
   .left-fixed
     {
@@ -102,17 +102,16 @@
 
 .footernew{
     display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-box-align: center;
-				-webkit-box-pack: center;
-				-webkit-justify-content: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
-				position: relative;
-				z-index: 10;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                position: relative;
+                z-index: 10;
 flex-direction: column;
-
-
 }
+

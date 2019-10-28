@@ -5,7 +5,7 @@ description: Understanding the differences between Snowplow and packaged analyti
 permalink: /resources/snowplow-vs-packaged-analytics-providers/
 class: how-we-compare
 assets:
-  css: assets/css/snowplow.css
+  css: assets/css/casestudy.css
   js:
 toc: true
 ---

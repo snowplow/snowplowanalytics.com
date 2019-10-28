@@ -5,7 +5,7 @@ description: Understanding the differences between Snowplow and CDPs for buildin
 permalink: /resources/snowplow-vs-cdps/
 class: how-we-compare
 assets:
-  css: assets/css/resources.css
+  css: assets/css/casestudy.css
   js: assets/js/float-panel.js
 toc: true
 ---
