@@ -2,7 +2,7 @@
 layout: post
 title-short: Avoid turning your data lakes into data swamps
 title: "Avoid turning your data lakes into data swamps: Focus on data quality, not capture"
-description: "How to master your data lake to surface long-term business value. Free whitepaper included"
+description: "How to master your data lake to surface long-term business value. Free white paper included"
 author: Erika
 category: Analytics
 permalink: /blog/2019/07/10/avoid-turning-your-data-lakes-into-data-swamps/
@@ -34,7 +34,7 @@ The trend for some time has been to capture raw data and throw it into data lake
 3. data continues flowing in constantly. A continuous flow is great for tracking insight over time, but if data is not structured in a usable way, insights and answers to business questions can be delayed (what’s the point of real-time data collection in that case?) or lost altogether.
 
  {% include shortcodes/ebook.html background_class="datalake-landingpage" layout="blog" title="Avoid drowning in your data lake" description="How to improve quality, richness and analytics of your data
-" btnText="Download whitepaper" link="https://www.snowplowanalytics.com/lp/data-lakes/" %}
+" btnText="Download the white paper" link="https://www.snowplowanalytics.com/lp/data-lakes/" %}
 
 
 ## Mastering the data lake to surface long-term business value

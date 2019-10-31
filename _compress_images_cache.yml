@@ -1960,3 +1960,7 @@ assets/img/integrations/sources/adjust.png: adjust.png
 assets/img/integrations/logos/dataform_logo.png: dataform_logo.png
 assets/img/integrations/logos/dataform_logo@2x.png: dataform_logo@2x.png
 assets/img/integrations/logos/dataform_logo@3x.png: dataform_logo@3x.png
+assets/img/common/snowplow-pipeline-diagram-v2.png: snowplow-pipeline-diagram-v2.png
+assets/img/integrations/sources/reactjs.png: reactjs.png
+assets/img/integrations/sources/azure-event-hub.png: azure-event-hub.png
+assets/img/integrations/destinations/azure-event-hub.png: azure-event-hub.png
