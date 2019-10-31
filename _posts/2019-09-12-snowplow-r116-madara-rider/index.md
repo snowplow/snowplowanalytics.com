@@ -64,7 +64,7 @@ If you specify a main domain in the list, all subdomains on it will be matched. 
 
 As well as ITP2.1 (Safari) and Firefox's new default expiration rules for client-side cookies, both browsers have been limiting the capabilities of cookies set in a third-party context. Most recently, Chrome stepped up its own effort in that direction, saying it will require websites to specify whether cookies are first or third-party.
 
-From version `0.16.0` we are providing users with ways to control several additional attributes for the `Set-Cookie` response header sent by the collector: `Secure`, `HttpOnly` and `SameSite`. See below in the <a href="upgrading">Upgrading</a> section for details on how to configure them.
+From version `0.16.0` we are providing users with ways to control several additional attributes for the `Set-Cookie` response header sent by the collector: `Secure`, `HttpOnly` and `SameSite`. See below in the [Upgrading](#upgrading) section for details on how to configure them.
 
 <h2 id="paths">3. Custom request paths</h2>
 
@@ -74,7 +74,7 @@ We firmly believe that data subjects's rights must be protected and we are provi
 
 The request paths we use have traditionally been intrinsically tied to how the collector (and downstream processes) work. With version `0.16.0` we are giving users of the Scala Stream Collector the option to map their own custom paths to the ones used under the hood. That way, users will be able, for example, to send requests to a path like `/sp/track`.
 
-The path can be changed when initialising the JavaScript tracker, as explained [here][post-path]. See below in the <a href="upgrading">Upgrading</a> section for details on how to configure the mappings in the collector.
+The path can be changed when initialising the JavaScript tracker, as explained [here][post-path]. See below in the [Upgrading](#upgrading) section for details on how to configure the mappings in the collector.
 
 <h2 id="cache">4. Cache-Control headers</h2>
 
