@@ -22,7 +22,45 @@ The `bad row` release has been renamed to R118 - check [roadmap](#roadmap) for m
 
 ## TLS port binding and certificate
 
-> to be filled
+### TLS/SSL Certificate termination
+As an additional security measure it is now possible to terminate TLS/SSL connection directly within `scala-stream-collector` using a battle-tested [lightben/ssl-config](https://lightbend.github.io/ssl-config/index.html).
+We introduce several new configuration parameters in order to fit most workflows and configurations.
+There are two configuration sections that can be overriden in order to achieve the expected workflow: `collector.ssl` and `ssl-config`.
+The former is a high-level section that allows:
+`collector.ssl.enable` - turn on ssl termination
+`collector.ssl.redirect` - whether automatic upgrade from http to https should be performed
+`collector.ssl.port` - port on which TLS/SSL server should be started
+The latter allows for low-level TLS/SSL configuration exposed by [lightbend/ssl-config](https://lightbend.github.io/ssl-config/index.html).
+​
+For example to start up an ssl-enabled, auto-upgrade server, following config can be used:
+```hocon
+ssl {
+  enable = true
+  redirect = true
+  port = 443
+}
+```
+However, this configuration will use environment-defined JVM-attached certificates. In order to override the default behaviour and use a custom certificate, the low-level section can be defined as:
+```hocon
+ssl-config {
+  keyManager = {
+    stores = [
+      {type = "PKCS12", classpath = false, path = ${CERT_FILE}, password = "pass" }
+    ]
+  }
+}
+```
+​
+### Default redirect endpoint disabling
+Another simple, but important security improvement is a possibility to disable the default event submission redirect. This allows users to disable the default endpoint in favour of custom user-defined url. 
+For example, following configuration will only allow redirects for custom-defined `/com.acme/redirect-me` endpoint, whereas the default `/r/tp2` will not be available.
+```hocon
+enableDefaultRedirect = false
+paths {
+  "/com.acme/redirect-me" = "/r/tp2"
+}
+```
+Note, that for backwards-compatibility, the endpoint is still exposed by default.
 
 ## Referer parser refreshment
 
