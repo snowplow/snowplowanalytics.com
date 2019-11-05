@@ -5,7 +5,7 @@ title: "Introducing the Snowplow Writers Program"
 description: "Share your Snowplow and data analytics use cases and experiences."
 author: Erika
 category: Inside the Plow
-permalink: /blog/2019/10/18/introducing-the-snowplow-writers-program/
+permalink: /blog/2019/11/05/introducing-the-snowplow-writers-program/
 ---
 
 Snowplow’s user and customer base is diverse and knowledgeable and always teaching us new things. Snowplow users provide an endless source of innovation and ingenuity when they tell us about how they implement Snowplow as part of their data analytics solution. We also hear from the majority of customers that one thing that they’d appreciate is learning about other people’s experiences with Snowplow and how they tackle data analytics and engineering challenges overall. 
