@@ -22,8 +22,6 @@ Could this be you? We’re looking for users with firsthand experience with impl
 
 You’ll be:
 
-
-
 *   Keen to tell the story of how you brought your data stack together (and how Snowplow contributes)
 *   Interested in the technical aspects of Snowplow 
 *   Able to relate how Snowplow impacted your business
