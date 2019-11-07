@@ -92,10 +92,11 @@ All other options are optional, a full list can be found in our [setup guide][se
 In order to migrate tables you need to run a special `setup` subcommand:
 
 {% highlight bash %}
-$ ./iglu-server_0.6.0.jar setup --config $IGLU_CONFIG_PATH
+$ ./iglu-server_0.6.0.jar setup --config $IGLU_CONFIG_PATH --migrate 0.5.0
 {% endhighlight %}
 
 This should migrate all your schemas and API keys or let you know about consistency issues that have to be fixed.
+Withou `--migrate` option it will just create empty tables with new schema.
 
 The Iglu Server 0.6.0 is also available on our Docker registry:
 
