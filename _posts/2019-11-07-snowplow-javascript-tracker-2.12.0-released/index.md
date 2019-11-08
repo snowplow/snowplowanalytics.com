@@ -25,7 +25,7 @@ Read on below the fold for:
 
 <h2 id="micro-tests">1. New test suite powered by Snowplow Micro</h2>
 
-This release introduces a new test suite into the Snowplow JavaScript Tracker which is powered by Snowplow Micro. The new tests will automatically fail a build if a test fails, this allows us to prevent builds of the JavaScript Tracker from being published if any test from the test suite fails.
+This release introduces a new test suite into the Snowplow JavaScript Tracker which is powered by Snowplow Micro. Failing tests will automatically fail a build, preventing builds of the JavaScript Tracker from being published if they do not meet the requirements.
 
 Snowplow Micro is a very small Snowplow Pipeline which can be initialised before running tests and then used to validate that data collection has occurred correctly. You can read more about Snowplow Micro in our earlier [blog post][snowplow-micro-post].
 
@@ -41,7 +41,7 @@ In this release we also focused on ensuring our use of Local Storage is robust a
 
 2. We also fixed an issue in the local storage queue that the Snowplow JavaScript Tracker utilises to cache events before they are sent to the collector in a batch or to be queued if the event fails to send (for example, due to connectivity issues). Before this release, there was no upper limit on the size of the queue and this could impact the performance of the web application if it also relies on Local Storage. Most browsers only allow 5MB of Local Storage per site, so allowing control of limiting the Snowplow JavaScript Tracker use of local storage allows web developers to better decide how they wish to utilise their Local Storage limits (Github [#764][764]).
 
-    NB. In the event the queue becomes full (due to connectivity issues, ad blockers or collector outages) events will be dropped. This is a change in behvaiour from previous releases, which would have only dropped events when Local Storage was full for a site, however we expect with the default value of 1000 that dropped events are unlikely to occur.
+    NB. In the event the queue becomes full (due to connectivity issues or ad blockers blocking requests) events will be dropped. This is a change in behaviour from previous releases, which would have only dropped events when Local Storage was full for a site, however we expect with the default value of 1000 that dropped events are unlikely to occur.
 
 The default limit is set to 1000 events in the queue, but it can be configured with the `maxLocalStorageQueueSize` argument when initialising the tracker. This functionality can be disabled by setting the `maxLocalStorageQueueSize` to `0`, however this is not recommended if the site containing the Snowplow JavaScript Tracker also relies on Local Storage.
 
