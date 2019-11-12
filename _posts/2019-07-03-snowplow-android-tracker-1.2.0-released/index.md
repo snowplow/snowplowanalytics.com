@@ -158,7 +158,7 @@ Here is the constructor signature: `RuleSetProvider(String tag, RuleSet ruleSet,
 - `ruleSet` : A `RuleSet` object
 - `contextPrimitive` : the context primitive to be attached in case event schema is allowed per `ruleSet`
 
-`RuleSet` stores allowed and rejected URIs. Here is the signature of its' constructor: `RuleSet(String accept, String reject)` . Plural version is also available.
+`RuleSet` stores allowed and rejected URIs. Here is the signature of its constructor: `RuleSet(String accept, String reject)` . Plural version is also available.
 
 `accept` and `reject` are strings very similar to Iglu URIs with the exception that a wildcard can be used in an allowed fashion to refer to all applying cases.
 
