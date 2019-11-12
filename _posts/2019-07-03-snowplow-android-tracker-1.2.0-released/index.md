@@ -66,7 +66,7 @@ Global contexts were introduced in the Javascript tracker in [version 2.10.0][js
 
 #### 1.3.1 Context Primitives
 
-Context primitives are simplest forms to represent global contexts and there are 2 forms: Self describing JSON & Context Generator.
+Context primitives are the simplest forms to represent global contexts and there are 2 forms: Self describing JSON & Context Generator.
 
 ##### 1.3.1.1 Self Describing JSON
 
