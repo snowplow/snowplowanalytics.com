@@ -13,7 +13,7 @@ discourse: true
 
 We are pleased to announce the `1.2.0` release of the [Snowplow Android Tracker][repo].
 
-[1.2.0][release-notes] introduces support for global contexts: introducing a set of new functions enabling users to send custom contexts with every event or a subset of events based on user provided criteria.
+[1.2.0][release-notes] introduces support for global contexts: a set of new functions enabling users to send custom contexts with every event or a subset of events based on user provided criteria.
 
 Read on for:
 
