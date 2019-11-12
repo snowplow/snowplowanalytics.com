@@ -52,7 +52,7 @@ With Snowplow:
 
 <h3>1.2 Introducing "global contexts"</h3>
 
-Until recently devleopers integrating Snowplow tracking had to attach contexts to each event.
+Until recently developers integrating Snowplow tracking had to attach contexts to each event.
 
 With "global contexts", it is now possible for developers to ensure that contexts are automatically attached to all events, or a subset. This presents a number of benefits:
 
