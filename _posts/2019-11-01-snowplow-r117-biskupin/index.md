@@ -10,7 +10,7 @@ permalink: /blog/2019/11/01/snowplow-r117-biskupin/
 
 Snowplow release R117 is named after [Biskupin](https://en.wikipedia.org/wiki/Biskupin), which is "an archaeological site and a life-size model of a late Bronze Age fortified settlement in north-central Poland that also serves as a archaeological open-air museum".
 
-This release focuses on delivering small, but necessary improvements to Snowplow ecosystem:
+This release focuses on delivering small, but important improvements to Snowplow ecosystem:
 
 1. [TLS port binding and certificate](#tls-port-binding-and-certificate)
 2. [Referer parser refreshment](#referer-parser-refreshment)
@@ -23,8 +23,8 @@ The `bad row` release has been renamed to R118 - check [roadmap](#roadmap) for m
 ## TLS port binding and certificate
 
 ### TLS/SSL Certificate termination
-As an additional security measure it is now possible to terminate TLS/SSL connection directly within `scala-stream-collector` using a battle-tested [lightben/ssl-config](https://lightbend.github.io/ssl-config/index.html).
-We introduce several new configuration parameters in order to fit most workflows and configurations.
+As an additional security measure it is now possible to terminate TLS/SSL connection directly within `scala-stream-collector` using a battle-tested [lightbend/ssl-config](https://lightbend.github.io/ssl-config/index.html).
+We have introduced several new configuration parameters in order to accommodate different workflows and configurations.
 There are two configuration sections that can be overriden in order to achieve the expected workflow: `collector.ssl` and `ssl-config`.
 The former is a high-level section that allows:
 `collector.ssl.enable` - turn on ssl termination
@@ -33,7 +33,7 @@ The former is a high-level section that allows:
 The latter allows for low-level TLS/SSL configuration exposed by [lightbend/ssl-config](https://lightbend.github.io/ssl-config/index.html).
 ​
 For example to start up an ssl-enabled, auto-upgrade server, following config can be used:
-```hocon
+```json
 ssl {
   enable = true
   redirect = true
@@ -41,7 +41,7 @@ ssl {
 }
 ```
 However, this configuration will use environment-defined JVM-attached certificates. In order to override the default behaviour and use a custom certificate, the low-level section can be defined as:
-```hocon
+```json
 ssl-config {
   keyManager = {
     stores = [
@@ -54,7 +54,7 @@ ssl-config {
 ### Default redirect endpoint disabling
 Another simple, but important security improvement is a possibility to disable the default event submission redirect. This allows users to disable the default endpoint in favour of custom user-defined url. 
 For example, following configuration will only allow redirects for custom-defined `/com.acme/redirect-me` endpoint, whereas the default `/r/tp2` will not be available.
-```hocon
+```json
 enableDefaultRedirect = false
 paths {
   "/com.acme/redirect-me" = "/r/tp2"
