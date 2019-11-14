@@ -102,9 +102,17 @@ From this version, besides `MD5`, new hashing algorithms are supported:
 
 ## Support to the spot market for core instances
 
-Credits for this contribution goes to [miike](https://github.com/miike).
+EmrEtlRunner now supports [EC2 spot instances][spot-instances], which can significantly reduce cost of EMR cluster by making sure the optimal instance is used.
 
-> to be filled
+In order to enable spot instances, add a `core_instance_bid` setting to your `config.yml` file. This setting specifies a bid for an hour of EC2 spot instance in USD.
+
+```
+aws:
+  emr:
+    jobflow:
+      core_instance_bid: 0.3
+```
+
 
 # Updated components:
 
@@ -135,3 +143,5 @@ Stay tuned for announcements of more upcoming Snowplow releases soon!
 For more details on this release, please check out the [release notes](https://github.com/snowplow/snowplow/releases/r117-biskupin) on GitHub.
 
 If you have any questions or run into any problem, please visit [our Discourse forum](https://discourse.snowplowanalytics.com/).
+
+[spot-instances]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html
