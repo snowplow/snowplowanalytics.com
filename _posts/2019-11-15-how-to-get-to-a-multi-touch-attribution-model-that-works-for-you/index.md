@@ -5,7 +5,7 @@ title: "How to get to a multi-touch attribution model that works for you"
 description: "Multi-touch attribution is alive and well. Complete, quality, first-party data are key to true multi-touch attribution accuracy"
 author: Erika
 category: Analytics
-permalink: /blog/2019/10/21/how-to-get-to-a-multi-touch-attribution-model-that-works-for-you/
+permalink: /blog/2019/11/15/how-to-get-to-a-multi-touch-attribution-model-that-works-for-you/
 ---
 
 
