@@ -9,8 +9,6 @@ permalink: /blog/2017/12/01/dont-be-a-hammer/
 description: "Reframing your thinking to be a data-driven marketing professional"
 ---
 
-![hammer-nail][hammer]
-
 I had a professor back in college who started class with an exercise that forever altered my way of thinking. The class was on design thinking and how we could apply it to creative problem solving (and vice versa). The first day we met, the students trickled into the classroom and selected seats at round tables, each with a pile of blank name tags and a rainbow of colored markers. It was all very standard: arrive, sit down, put your name on a sticker, and wait for class to start. Like perfectly programmed robots, we arrived, settled in, and labeled ourselves. The professor arrived and introduced himself before diving in.
 
 He asked each of us who considered ourselves to be creative to stand at the front of the room. Once there, he asked, “If you’re creative, why did you only write your names on your name tags?” While we didn’t have an answer for him, he had one for us. We (humans, not just students) are creatures of patterns, the professor explained, and the patterns that we recognize and understand are how we see the world. Because of this, our thoughts and actions are defined by these patterns. Regardless of how creative we were, we were operating on auto-pilot: walk into classroom, pick a seat, see name tag, write name. The process was so automatic, we didn't even realize we weren't thinking about what we were (or weren't) doing.
