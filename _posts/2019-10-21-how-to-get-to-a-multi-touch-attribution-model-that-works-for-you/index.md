@@ -17,8 +17,6 @@ Even more essential and urgent in getting to true multi-touch attribution, and r
 
 Apart from getting insight for decision-making and accurately attributing your marketing initiatives, breaking down your data silos is the path to moving to a single source of truth model. That is, consolidate all your data in a single warehouse from which you can join all the sources together. Not only does this approach remove some of the organizational inefficiencies and bottlenecks as you cultivate more sophisticated data analytics strategies, it also makes data available for multiple uses across your business. 
 
- 
-![data-modeling](/assets/img/blog/2019/10/data-modeling.jpg) 
 
 ## Why do attribution?
 
