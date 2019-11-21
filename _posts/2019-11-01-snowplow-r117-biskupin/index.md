@@ -18,19 +18,23 @@ This release focuses on delivering small, but important improvements to Snowplow
 4. [Additional event fingerprint hashing methods (SHA1, SHA256, SHA384, SHA512)](#additional-event-fingerprint-hashing-methods)
 5. [Support to the spot market for core instances](#support-to-the-spot-market-for-core-instances)
 
-The `bad row` release has been renamed to R118 - check [roadmap](#roadmap) for more details.
+<!--more-->
+
+The bad row release has been renamed to R118 - check [roadmap](#roadmap) for more details.
 
 ## TLS port binding and certificate
 
 ### TLS/SSL Certificate termination
-As an additional security measure it is now possible to terminate TLS/SSL connection directly within `scala-stream-collector` using a battle-tested [lightbend/ssl-config](https://lightbend.github.io/ssl-config/index.html).
+As an additional security measure it is now possible to terminate TLS/SSL connection directly within `scala-stream-collector` using a battle-tested [Lightbend SSL Config](https://lightbend.github.io/ssl-config/index.html).
 We have introduced several new configuration parameters in order to accommodate different workflows and configurations.
 There are two configuration sections that can be overriden in order to achieve the expected workflow: `collector.ssl` and `ssl-config`.
+
 The former is a high-level section that allows:
-`collector.ssl.enable` - turn on ssl termination
-`collector.ssl.redirect` - whether automatic upgrade from http to https should be performed
-`collector.ssl.port` - port on which TLS/SSL server should be started
-The latter allows for low-level TLS/SSL configuration exposed by [lightbend/ssl-config](https://lightbend.github.io/ssl-config/index.html).
+- `collector.ssl.enable` - turn on ssl termination
+- `collector.ssl.redirect` - whether automatic upgrade from http to https should be performed
+- `collector.ssl.port` - port on which TLS/SSL server should be started
+
+The latter allows for low-level TLS/SSL configuration exposed by [Lightbend SSL Config](https://lightbend.github.io/ssl-config/index.html).
 ​
 For example to start up an ssl-enabled, auto-upgrade server, following config can be used:
 ```json
@@ -93,7 +97,7 @@ The IPv6 anonymization changes are backwards compatible. The `anonOctets` param 
 
 Credits for this contribution goes to [miike](https://github.com/miike).
 
-From this version, besides `MD5`, new hashing algorithms are supported:
+From this version, besides MD5, new hashing algorithms are supported:
 
 * SHA1
 * SHA256
@@ -127,7 +131,7 @@ Includes changes: [Referer-parser](#referer-parser-refreshment), [IPv6 anonymiza
 Includes changes: [Support to the spot market for core instances](#support-to-the-spot-market-for-core-instances)
 
 ## Other components
-`EmrEtlRunner`, `Beam Enrich` and `Stream Enrich` includes new `Scala Common Enrich`
+Beam Enrich, Stream Enrich and Spark Enrich includes new `Scala Common Enrich`
 
 ## Roadmap
 
