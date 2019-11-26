@@ -20,8 +20,6 @@ This release focuses on delivering small, but important improvements to Snowplow
 
 <!--more-->
 
-The bad row release has been renamed to R118 - check [roadmap](#roadmap) for more details.
-
 ## TLS port binding and certificate
 
 ### TLS/SSL Certificate termination
@@ -68,13 +66,13 @@ Note, that for backwards-compatibility, the endpoint is still exposed by default
 
 ## Referer parser refreshment
 
-Referer parser is a library that contains list of possible referrer hosts. We keep maintenance of `0.3.x` branch with backporting new identified hosts into old `0.3.0` version. Several new hosts were identified and added to the [`referer.yml`](https://s3-eu-west-1.amazonaws.com/snowplow-hosted-assets/third-party/referer-parser/referers-latest.yml)
+Referer parser is a library that contains a list of possible referer hosts. We keep maintenance of `0.3.x` branch with backporting new identified hosts into old `0.3.0` version. Several new hosts were identified and added to the [`referer.yml`](https://s3-eu-west-1.amazonaws.com/snowplow-hosted-assets/third-party/referer-parser/referers-latest.yml)
 
 ## IPv6 anonymization
 
-This release adds support for anonymization of IPv6 addresses. `anonSegments` parameter is added to enrichment configuration. It describes how many segments should be anonymized. Some examples might be found in our test scenarios in `AnonIpEnrichmentSpec` in `3-enrich/scala-common-enrich/src/test/scala/com.snowplowanalytics.snowplow.enrich.common/enrichments/registry/AnonIpEnrichmentSpec.scala`.
+This release adds support for anonymization of IPv6 addresses. `anonSegments` parameter is added to enrichment configuration. It describes how many segments should be anonymized.
 
-The schema has been updated to version `1-0-1`:
+The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
 ```json
 {
@@ -104,13 +102,15 @@ From this version, besides MD5, new hashing algorithms are supported:
 * SHA384
 * SHA512
 
+The schema for the configuration of the enrichment has been updated to version `1-0-1`.
+
 ## Support to the spot market for core instances
 
 EmrEtlRunner now supports [EC2 spot instances][spot-instances], which can significantly reduce cost of EMR cluster by making sure the optimal instance is used.
 
 In order to enable spot instances, add a `core_instance_bid` setting to your `config.yml` file. This setting specifies a bid for an hour of EC2 spot instance in USD.
 
-```
+```yaml
 aws:
   emr:
     jobflow:
@@ -118,20 +118,78 @@ aws:
 ```
 
 
-# Updated components:
+# Upgrading
 
-## Scala Stream Collector
-Includes changes: [TLS port binding](#tls-port-binding-and-certificate)
+## TLS port binding and certificate
 
-## Scala Common Enrich
-Includes changes: [Referer-parser](#referer-parser-refreshment), [IPv6 anonymization](#ipv6-anonymization) and [additional fingerpring hashing methods](#additional-event-fingerprint-hashing-methods)
+For example to start up an ssl-enabled, auto-upgrade server, following config can be used, collector configuration should contain:
+```json
+ssl {
+  enable = true
+  redirect = true
+  port = 443
+}
+```
+However, this configuration will use environment-defined JVM-attached certificates. In order to override the default behaviour and use a custom certificate, the low-level section can be defined as (akka config section):
+```json
+ssl-config {
+  keyManager = {
+    stores = [
+      {type = "PKCS12", classpath = false, path = ${CERT_FILE}, password = "pass" }
+    ]
+  }
+}
+```
 
-## EmrEtlRunner
+## IPv6 anonymization
 
-Includes changes: [Support to the spot market for core instances](#support-to-the-spot-market-for-core-instances)
+The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
-## Other components
-Beam Enrich, Stream Enrich and Spark Enrich includes new `Scala Common Enrich`
+```json
+{
+	"schema": "iglu:com.snowplowanalytics.snowplow/anon_ip/jsonschema/1-0-1",
+	"data": {
+		"name": "anon_ip",
+		"vendor": "com.snowplowanalytics.snowplow",
+		"enabled": true,
+		"parameters": {
+			"anonOctets": 1,
+			"anonSegments": 1
+		}
+	}
+}
+```
+
+## Additional event fingerprint hashing methods
+
+The schema for the configuration of the enrichment has been updated to version `1-0-1`:
+
+```json
+{
+  "schema": "iglu:com.snowplowanalytics.snowplow/event_fingerprint_config/jsonschema/1-0-1",
+  "data": {
+    "name": "event_fingerprint_config",
+    "vendor": "com.snowplowanalytics.snowplow",
+    "enabled": true,
+    "parameters": {
+      "excludeParameters": ["cv", "eid", "nuid", "stm"],
+      "hashAlgorithm": "SHA1"
+    }
+  }
+}
+```
+
+## Support to the spot market for core instances
+
+In order to enable spot instances, add a `core_instance_bid` setting to your `config.yml` file. This setting specifies a bid for an hour of EC2 spot instance in USD.
+
+```yaml
+aws:
+  emr:
+    jobflow:
+      core_instance_bid: 0.3
+```
+
 
 ## Roadmap
 
