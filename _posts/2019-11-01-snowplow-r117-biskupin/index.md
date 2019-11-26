@@ -122,6 +122,8 @@ aws:
 
 ## TLS port binding and certificate
 
+A new version of the Scala Stream Collector can be found on [our Docker Hub repository](https://hub.docker.com/r/snowplow/scala-stream-collector-kinesis/tags) under `0.17.0` tag.
+
 For example to start up an ssl-enabled, auto-upgrade server, following config can be used, collector configuration should contain:
 ```json
 ssl {
@@ -143,6 +145,8 @@ ssl-config {
 
 ## IPv6 anonymization
 
+A new version of the Snowplow Common Enrich can be found on [Maven repository](https://mvnrepository.com/artifact/com.snowplowanalytics/snowplow-common-enrich_2.11/0.38.0)
+
 The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
 ```json
@@ -161,6 +165,9 @@ The schema for the configuration of the enrichment has been updated to version `
 ```
 
 ## Additional event fingerprint hashing methods
+
+A new version of the Snowplow Common Enrich can be found on [Maven repository](https://mvnrepository.com/artifact/com.snowplowanalytics/snowplow-common-enrich_2.11/0.38.0)
+
 
 The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
@@ -181,6 +188,8 @@ The schema for the configuration of the enrichment has been updated to version `
 
 ## Support to the spot market for core instances
 
+A new version of the EmrEtl Runner can be found on [our Bintray repository](https://bintray.com/snowplow/snowplow-generic/snowplow) under `r117-biskupin` version.
+
 In order to enable spot instances, add a `core_instance_bid` setting to your `config.yml` file. This setting specifies a bid for an hour of EC2 spot instance in USD.
 
 ```yaml
@@ -190,6 +199,23 @@ aws:
       core_instance_bid: 0.3
 ```
 
+## Beam Enrich 
+
+A new version of the Beam Enrich can be found on [our Docker Hub repository](https://hub.docker.com/r/snowplow/beam-enrich/tags) under `0.4.0` tag.
+
+It contains newest Snowplow Common Enrich.
+
+## Stream Enrich 
+
+A new version of the Stream Enrich can be found on [our Docker Hub repository](https://hub.docker.com/r/snowplow/stream-enrich-kinesis/tags) under `0.22.0` tag.
+
+It contains newest Snowplow Common Enrich.
+
+## Spark Enrich
+
+A new version of the Spark Enrich can be found on [our hosted assets](d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
+
+It contains newest Snowplow Common Enrich.
 
 ## Roadmap
 
