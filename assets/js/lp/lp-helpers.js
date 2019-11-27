@@ -58,8 +58,6 @@ var handleSubmit = function(e){
         // Populate data with input values
         data[this.name] =  this.value;
     });
-    console.log(data);
-    console.log(pass);
     // If validation passes - run api call
     pass && $('#form_submit_button').addClass('activate-loader') 
          && pardotSubmit(data)

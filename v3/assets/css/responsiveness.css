@@ -72,17 +72,7 @@
     /* ===============
     PLANS - PRICING
     =============== */
-    section.plans .plan .heading{
-        flex-flow:row wrap;
-        justify-content: center;
-    }
-    section.plans .plan .heading img{
-        margin-bottom:40px;
-    }
-    section.plans .plan .heading .description{
-        margin-left:0px;
-        position:static;
-    }
+
 
     /* ========================
         WRITERS PRORAM - HOW
@@ -214,9 +204,6 @@
     /* ===============
     PLANS - PRICING
     =============== */
-    section.plans{
-        margin-top:80px;
-    }
 
 }
 
@@ -455,12 +442,7 @@
     /* ===============
     PLANS - PRICING
     =============== */
-    section.plans{
-        margin-top:20px;
-    }
-    section.plans .plan{
-        width: 100%;
-    }
+  
 }
 
 
@@ -545,24 +527,7 @@
     /* ===============
     TCO - PRICING
     =============== */
-    section.tco ul li{
-        padding:40px;
-    }
-    section.tco ul li .description{
-        width: 100%;
-    }
-    section.tco ul li .cost{
-        width: 100%;
-        margin-top:30px;
-        text-align:left;
-        display:flex;
-        flex-flow:row wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    section.tco ul li .cost p{
-        margin-top:0px;
-    }   
+
     /* ========================
         WRITERS PRORAM - HOW
     ======================== */

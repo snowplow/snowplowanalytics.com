@@ -72,6 +72,17 @@ em{
     font-size:16px !important;
 }
 
+.accent-bold-normal{
+    font-family:'Rubik' !important;
+    font-weight:500;
+    font-size:18px !important;
+}
+
+span.accent{
+    font-family:'Rubik' !important;
+    font-weight:500;
+}
+
 
 
 footer p{

@@ -20,6 +20,10 @@ section{
     width: 100%;
 }
 
+.half{
+    width: 50%;
+}
+
 .separator{
     display:block;
     width: 50px;
