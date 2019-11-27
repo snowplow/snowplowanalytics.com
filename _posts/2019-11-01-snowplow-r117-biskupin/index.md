@@ -213,7 +213,17 @@ It contains newest Snowplow Common Enrich.
 
 ## Spark Enrich
 
-A new version of the Spark Enrich can be found on [our hosted assets](d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
+A new version of the Spark Enrich can be used by setting it in your EmrEtlRunner configuration:
+
+```yaml
+enrich:
+  version:
+    spark_enrich: 1.19.0
+```
+
+or directly make use of the new Spark Enrich available at:
+
+[s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.18.0.jar](d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
 
 It contains newest Snowplow Common Enrich.
 
