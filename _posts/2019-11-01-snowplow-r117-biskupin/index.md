@@ -213,6 +213,8 @@ It contains the newest Snowplow Common Enrich.
 
 ## Spark Enrich
 
+Batch pipelines hasn't been extensively tested as part of our plans to focus on real-time and deprecate batch processing.
+
 A new version of the Spark Enrich can be used by setting it in your EmrEtlRunner configuration:
 
 ```yaml
