@@ -47,7 +47,7 @@ var handleSubmit = function(e){
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
 
-    $("#main-form input").each(function(){
+    $('#main-form :input, #main-form textarea').each(function(){
         // Validate input fields
         switch(this.name){
             case 'email':
@@ -58,6 +58,7 @@ var handleSubmit = function(e){
         // Populate data with input values
         data[this.name] =  this.value;
     });
+
     // If validation passes - run api call
     pass && $('#form_submit_button').addClass('activate-loader') 
          && pardotSubmit(data)
