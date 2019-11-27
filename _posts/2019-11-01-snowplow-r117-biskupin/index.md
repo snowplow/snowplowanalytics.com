@@ -203,13 +203,13 @@ aws:
 
 A new version of the Beam Enrich can be found on [our Docker Hub repository](https://hub.docker.com/r/snowplow/beam-enrich/tags) under `0.4.0` tag.
 
-It contains newest Snowplow Common Enrich.
+It contains the newest Snowplow Common Enrich.
 
 ## Stream Enrich 
 
 A new version of the Stream Enrich can be found on [our Docker Hub repository](https://hub.docker.com/r/snowplow/stream-enrich-kinesis/tags) under `0.22.0` tag.
 
-It contains newest Snowplow Common Enrich.
+It contains the newest Snowplow Common Enrich.
 
 ## Spark Enrich
 
@@ -225,7 +225,7 @@ or directly make use of the new Spark Enrich available at:
 
 [s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.18.0.jar](d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
 
-It contains newest Snowplow Common Enrich.
+It contains the newest Snowplow Common Enrich.
 
 ## Roadmap
 
