@@ -5,7 +5,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: { snowplow: './assets/js/snowplow.js' },
+  entry: { 
+    snowplow: './assets/js/snowplow.js',
+    main: './v3/assets/js/main.js' 
+ },
   output: {
     path: path.resolve(__dirname, 'assets/js/dist'),
     filename: '[name].js'
