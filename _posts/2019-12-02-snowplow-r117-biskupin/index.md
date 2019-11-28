@@ -5,7 +5,7 @@ title: "Snowplow R117 release"
 tags: [snowplow, release]
 author: Łukasz Indykiewicz
 category: Releases
-permalink: /blog/2019/11/01/snowplow-r117-biskupin/
+permalink: /blog/2019/12/02/snowplow-r117-biskupin/
 ---
 
 Snowplow release R117 is named after [Biskupin](https://en.wikipedia.org/wiki/Biskupin), which is "an archaeological site and a life-size model of a late Bronze Age fortified settlement in north-central Poland that also serves as a archaeological open-air museum".
@@ -15,8 +15,11 @@ This release focuses on delivering small, but important improvements to Snowplow
 1. [TLS port binding and certificate](#tls-port-binding-and-certificate)
 2. [Referer parser refreshment](#referer-parser-refreshment)
 3. [IPv6 anonymization](#ipv6-anonymization)
-4. [Additional event fingerprint hashing methods (SHA1, SHA256, SHA384, SHA512)](#additional-event-fingerprint-hashing-methods)
+4. [Additional event fingerprint hashing methods](#additional-event-fingerprint-hashing-methods)
 5. [Support to the spot market for core instances](#support-to-the-spot-market-for-core-instances)
+6. [Upgrading](#upgrading)
+7. [Roadmap](#roadmap)
+8. [Getting help](#getting-help)
 
 <!--more-->
 
@@ -73,21 +76,6 @@ Referer parser is a library that contains a list of possible referer hosts. We k
 This release adds support for anonymization of IPv6 addresses. `anonSegments` parameter is added to enrichment configuration. It describes how many segments should be anonymized.
 
 The schema for the configuration of the enrichment has been updated to version `1-0-1`:
-
-```json
-{
-	"schema": "iglu:com.snowplowanalytics.snowplow/anon_ip/jsonschema/1-0-1",
-	"data": {
-		"name": "anon_ip",
-		"vendor": "com.snowplowanalytics.snowplow",
-		"enabled": true,
-		"parameters": {
-			"anonOctets": 1,
-			"anonSegments": 1
-		}
-	}
-}
-```
 
 The IPv6 anonymization changes are backwards compatible. The `anonOctets` param will be read and useed also for IPv6 in case of missing `anonSegments`. To fully use IPv6 anonymization it's better to use the new schema (version `1-0-1`, which has `anonSegments` param). The new code can be used with `1-0-0` schema version also.
 
@@ -166,9 +154,6 @@ The schema for the configuration of the enrichment has been updated to version `
 
 ## Additional event fingerprint hashing methods
 
-A new version of the Snowplow Common Enrich can be found on [Maven repository](https://mvnrepository.com/artifact/com.snowplowanalytics/snowplow-common-enrich_2.11/0.38.0)
-
-
 The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
 ```json
@@ -188,7 +173,7 @@ The schema for the configuration of the enrichment has been updated to version `
 
 ## Support to the spot market for core instances
 
-A new version of the EmrEtl Runner can be found on [our Bintray repository](https://bintray.com/snowplow/snowplow-generic/snowplow) under `r117-biskupin` version.
+A new version of the EmrEtlRunner can be found on [our Bintray repository](https://bintray.com/snowplow/snowplow-generic/snowplow) under `r117-biskupin` version.
 
 In order to enable spot instances, add a `core_instance_bid` setting to your `config.yml` file. This setting specifies a bid for an hour of EC2 spot instance in USD.
 
@@ -213,7 +198,7 @@ It contains the newest Snowplow Common Enrich.
 
 ## Spark Enrich
 
-Batch pipelines hasn't been extensively tested as part of our plans to focus on real-time and deprecate batch processing.
+Batch pipelines hasn't been extensively tested as part of our plans to focus on real-time and deprecate batch processing. For more information check the [RFC](https://discourse.snowplowanalytics.com/t/rfc-making-the-snowplow-pipeline-real-time-end-to-end-and-deprecating-support-for-batch-processing-modules/3018)
 
 A new version of the Spark Enrich can be used by setting it in your EmrEtlRunner configuration:
 
