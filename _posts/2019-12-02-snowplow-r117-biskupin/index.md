@@ -36,26 +36,7 @@ The former is a high-level section that allows:
 - `collector.ssl.port` - port on which TLS/SSL server should be started
 
 The latter allows for low-level TLS/SSL configuration exposed by [Lightbend SSL Config](https://lightbend.github.io/ssl-config/index.html).
-​
-For example to start up an ssl-enabled, auto-upgrade server, following config can be used:
-```json
-ssl {
-  enable = true
-  redirect = true
-  port = 443
-}
-```
-However, this configuration will use environment-defined JVM-attached certificates. In order to override the default behaviour and use a custom certificate, the low-level section can be defined as:
-```json
-ssl-config {
-  keyManager = {
-    stores = [
-      {type = "PKCS12", classpath = false, path = ${CERT_FILE}, password = "pass" }
-    ]
-  }
-}
-```
-​
+
 ### Default redirect endpoint disabling
 Another simple, but important security improvement is a possibility to disable the default event submission redirect. This allows users to disable the default endpoint in favour of custom user-defined url. 
 For example, following configuration will only allow redirects for custom-defined `/com.acme/redirect-me` endpoint, whereas the default `/r/tp2` will not be available.
