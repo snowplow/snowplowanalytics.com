@@ -1016,13 +1016,20 @@ section.plans .left ul li .explanation{
 }
 
 section.plans .left ul li .explanation p{
-    position:absolute;
     display:none;
+    width: 300px;
+    position:absolute;
+    top:-35px;
+    z-index:5;
+    padding:20px;
+    box-sizing: border-box;
+    text-align:left;
 }
 
 
 section.plans .plans-wrap{
     width: 990px;
+    border-radius:9px;
 }
 
 section.plans .plans-wrap .plan{
@@ -1369,4 +1376,12 @@ section.pricing-form .wrap form .form-wrap{
     display:flex;
     flex-flow: row wrap;
     justify-content: space-between;
+}
+
+
+section.pricing-form .thankyou{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    text-align:center;
 }

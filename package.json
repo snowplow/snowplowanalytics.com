@@ -39,7 +39,8 @@
     "lodash": "^4.17.15",
     "marked": "^0.7.0",
     "minimatch": "^3.0.2",
-    "node-gyp": "^3.6.2"
+    "node-gyp": "^3.6.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

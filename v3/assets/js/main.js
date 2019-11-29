@@ -47,18 +47,21 @@ var handleSubmit = function(e){
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
 
-    $('#main-form :input, #main-form textarea').each(function(){
+    $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
+        console.log(this.name)
         switch(this.name){
             case 'email':
                 !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
+            
             default:
-                !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
+                if(this.name != 'message'){
+                    !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
+                }
         }
         // Populate data with input values
         data[this.name] =  this.value;
     });
-
     // If validation passes - run api call
     pass && $('#form_submit_button').addClass('activate-loader') 
          && pardotSubmit(data)
@@ -88,3 +91,42 @@ $("#writers-cta").click(function() {
         scrollTop: $("#main-form").offset().top -100
     }, 1000);
 });
+
+// Pricing page initialize only if present
+
+if($(".pricing-slider")[0]){
+    $(".pricing-slider").slick({
+
+        // normal options...
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+       
+      
+        // the magic
+        responsive: [
+            {
+            breakpoint: 810,
+            settings: {
+              slidesToShow: 1,
+              dots: false,
+              initialSlide:1
+            }
+      
+          }]
+      });
+}
+
+// Pricing page add functionality to hints
+
+
+$('.questionmark').click(function(e){
+    $('.questionmark').next().hide(100);
+    $(this).next().show(100);
+    e.stopPropagation();
+})
+
+$('body').click(function(){
+    $('.questionmark').next().hide(100);
+});
+
