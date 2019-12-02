@@ -5,7 +5,7 @@ title: "Data Science Festival: What makes an effective data team?"
 tags: [analytics, data, big data, data science, business intelligence, machine learning, AI, data team]
 author: Alex
 image:
-category: Inside the plow
+category: Inside the Plow
 permalink: /blog/2019/04/24/data-science-festival-what-makes-an-effective-data-team/
 discourse: true
 published: true

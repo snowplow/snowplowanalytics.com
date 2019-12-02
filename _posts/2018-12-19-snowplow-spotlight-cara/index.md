@@ -2,7 +2,7 @@
 layout: post
 title-short: Spotlight Cara Baestlein
 title: "Snowplow Spotlight Cara Baestlein"
-tags: [analytics, snowplow team, snowplow, startups, company culture, inside the plow]
+tags: [analytics, snowplow team, snowplow, startups, company culture, Inside the Plow]
 author: Miriam
 image: /assets/img/blog/2018/12/Cara_02.jpg
 category: Inside the Plow

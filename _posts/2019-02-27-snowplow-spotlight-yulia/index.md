@@ -2,7 +2,7 @@
 layout: post
 title-short: Spotlight Yulia Golova
 title: "Snowplow Spotlight: Yulia Golova"
-tags: [analytics, snowplow team, snowplow, startups, company culture, inside the plow]
+tags: [analytics, snowplow team, snowplow, startups, company culture, Inside the Plow]
 author: Miriam
 image: /assets/img/blog/2019/02/Yulia.jpg
 category: Inside the Plow
