@@ -614,6 +614,12 @@
    section.pricing-form .wrap form .form-wrap .half{
        width: 100%;
    }
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+    section.benefits ul li img{
+        height: 260px;
+    }
 }
 
 
@@ -756,6 +762,7 @@
     =============== */
     section.benefits ul li img{
         width: 250px;
+        height: 220px;
     }
     section.benefits ul li > div{
         width: 100%;
