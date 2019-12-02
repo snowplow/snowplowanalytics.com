@@ -1025,6 +1025,9 @@ section.plans .left ul li .explanation p{
     box-sizing: border-box;
     text-align:left;
 }
+section.plans .left ul li .explanation p a{
+    font-size:16px !important;
+}
 
 
 section.plans .plans-wrap{
