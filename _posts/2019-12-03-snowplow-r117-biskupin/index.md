@@ -5,7 +5,7 @@ title: "Snowplow R117 release"
 tags: [snowplow, release]
 author: Łukasz Indykiewicz
 category: Releases
-permalink: /blog/2019/12/02/snowplow-r117-biskupin/
+permalink: /blog/2019/12/03/snowplow-r117-biskupin/
 ---
 
 Snowplow release R117 is named after [Biskupin](https://en.wikipedia.org/wiki/Biskupin), which is "an archaeological site and a life-size model of a late Bronze Age fortified settlement in north-central Poland that also serves as a archaeological open-air museum".
