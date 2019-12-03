@@ -206,7 +206,7 @@ Stay tuned for announcements of more upcoming Snowplow releases soon!
 
 ## Getting help
 
-For more details on this release, please check out the [release notes](https://github.com/snowplow/snowplow/releases/r117-biskupin) on GitHub.
+For more details on this release, please check out the [release notes](https://github.com/snowplow/snowplow/releases/tag/r117-biskupin) on GitHub.
 
 If you have any questions or run into any problem, please visit [our Discourse forum](https://discourse.snowplowanalytics.com/).
 
