@@ -1960,6 +1960,7 @@ assets/img/integrations/sources/adjust.png: adjust.png
 assets/img/integrations/logos/dataform_logo.png: dataform_logo.png
 assets/img/integrations/logos/dataform_logo@2x.png: dataform_logo@2x.png
 assets/img/integrations/logos/dataform_logo@3x.png: dataform_logo@3x.png
+<<<<<<< HEAD
 assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Data-2.png: SPW-Website-Resources-Getting-Started-Data-2.png
 assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Data-1.png: SPW-Website-Resources-Getting-Started-Data-1.png
 assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-1.png: SPW-Website-Resources-Getting-Started-Entities-1.png
@@ -1968,3 +1969,14 @@ assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entit
 assets/img/resources/getting-started/SPW-Website-Resources-Getting-Started-Entities-3.png: SPW-Website-Resources-Getting-Started-Entities-3.png
 assets/img/resources/getting-started/get-started@3x.png: get-started@3x.png
 assets/img/resources/getting-started/get-started@2x.png: get-started@2x.png
+=======
+assets/img/landingpages/multi-cloud/multi-cloud-bg.png: multi-cloud-bg.png
+assets/img/landingpages/multi-cloud/multi-cloud-bg@2x.png: multi-cloud-bg@2x.png
+assets/img/landingpages/multi-cloud/multi-cloud-bg@3x.png: multi-cloud-bg@3x.png
+assets/img/landingpages/multi-cloud/gartner-logo.png: gartner-logo.png
+assets/img/common/snowplow-pipeline-diagram-v2.png: snowplow-pipeline-diagram-v2.png
+assets/img/integrations/sources/reactjs.png: reactjs.png
+assets/img/integrations/sources/azure-event-hub.png: azure-event-hub.png
+assets/img/integrations/destinations/azure-event-hub.png: azure-event-hub.png
+assets/img/team/paul.jpg: paul.jpg
+>>>>>>> master

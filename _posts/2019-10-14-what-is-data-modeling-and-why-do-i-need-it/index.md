@@ -35,7 +35,7 @@ Why is modeling the data important? For one thing, data is only as valuable as w
 
  
 
- {% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Data modeling 101 guide" description="Learn how and why to model and democratize your data with data modeling" btnText="Download whitepaper" link="https://www.snowplowanalytics.com/lp/data-modeling/" %}
+ {% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Data modeling 101 guide" description="Learn how and why to model and democratize your data with data modeling" btnText="Download the white paper" link="https://www.snowplowanalytics.com/lp/data-modeling/" %}
 
 
 ## How to get started with data modeling
