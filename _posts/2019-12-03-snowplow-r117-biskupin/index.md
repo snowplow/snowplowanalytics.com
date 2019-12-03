@@ -56,7 +56,7 @@ Referer parser is a library that contains a list of possible referer hosts. We k
 
 This release adds support for anonymization of IPv6 addresses. `anonSegments` parameter is added to enrichment configuration. It describes how many segments should be anonymized.
 
-The schema for the configuration of the enrichment has been updated to version `1-0-1`:
+The schema for the configuration of the enrichment has been updated to version `1-0-1`.
 
 The IPv6 anonymization changes are backwards compatible. The `anonOctets` param will be read and useed also for IPv6 in case of missing `anonSegments`. To fully use IPv6 anonymization it's better to use the new schema (version `1-0-1`, which has `anonSegments` param). The new code can be used with `1-0-0` schema version also.
 
