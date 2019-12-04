@@ -114,7 +114,7 @@ ssl-config {
 
 ## IPv6 anonymization
 
-A new version of the Snowplow Common Enrich can be found on [Maven repository](https://mvnrepository.com/artifact/com.snowplowanalytics/snowplow-common-enrich_2.11/0.38.0)
+A new version of the Snowplow Common Enrich (0.38.0) can be found on [Maven repository](https://search.maven.org/artifact/com.snowplowanalytics/snowplow-common-enrich_2.11)
 
 The schema for the configuration of the enrichment has been updated to version `1-0-1`:
 
