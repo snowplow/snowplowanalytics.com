@@ -4,7 +4,7 @@ title-short: Snowplow Event Recovery 0.1.0 released
 title: "Snowplow Event Recovery 0.1.0 released"
 tags: [snowplow, real-time, GCP, AWS, recovery, bad-rows]
 author: Ben
-category: releases
+category: Releases
 permalink: /blog/2019/01/16/snowplow-event-recovery-0.1.0-released/
 ---
 

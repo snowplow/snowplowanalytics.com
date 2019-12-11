@@ -2,10 +2,16 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+
+const TerserPlugin = require('terser-webpack-plugin');
+
 
 module.exports = {
-  entry: { snowplow: './assets/js/snowplow.js' },
+  entry: { 
+    snowplow: './assets/js/snowplow.js',
+    main: './v3/assets/js/main.js' 
+ },
   output: {
     path: path.resolve(__dirname, 'assets/js/dist'),
     filename: '[name].js'
@@ -40,8 +46,11 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin({
-        sourceMap: true
-    })],
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
   },
 }
