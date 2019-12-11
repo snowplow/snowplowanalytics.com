@@ -2,7 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+
+const TerserPlugin = require('terser-webpack-plugin');
+
 
 module.exports = {
   entry: { 
@@ -43,8 +46,11 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin({
-        sourceMap: true
-    })],
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
   },
 }
