@@ -618,7 +618,7 @@
     BENEFITS - PRICING
     =============== */
     section.benefits ul li img{
-        height: 260px;
+        height: auto;
     }
 }
 
@@ -762,7 +762,7 @@
     =============== */
     section.benefits ul li img{
         width: 250px;
-        height: 220px;
+        height: auto;
     }
     section.benefits ul li > div{
         width: 100%;
