@@ -39,8 +39,7 @@
                                 <div class="heading">
                                     <p>{{ post.date | date_to_long_string }}</p>
                                 </div>
-                                <h3>{{ post.title | truncatewords:14 }}</h3>
-                                <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+                                <h4>{{ post.title | truncatewords:14 }}</h4>
                                 <div class="bottom">
                                     {% for author in site.data.authors %}
                                     {% if author.name == post.author %}

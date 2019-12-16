@@ -387,6 +387,7 @@ article .content .bottom > img{
     position:relative;
     width: 25px;
     right:20px;
+    top:3px;
     -webkit-transition: all 500ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
     -webkit-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
          -o-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
@@ -500,6 +501,7 @@ article .content .bottom > img{
     width: 230px;
     height: 48px;    
     padding:0px 15px;
+    border: 1px solid #e9e9e9;
     border-radius: 4px;
 }
 
@@ -759,16 +761,31 @@ section.content .blog-wrap{
 
 
 
+
+
 /* ===  CATEGORY ARTICLE LAYOUT === */
 
 .category-posts{
     margin-top:0px;
 }
 
-.category-posts article{
-    width: 100%;
-    margin-right: 0px !important;
+.category-posts .articles{
+    margin-top:0px;
 }
+
+
+
+.category-posts .articles article{
+    width: 100%;
+    margin-right: 20px;
+    margin-right:0px;
+}
+
+.category-posts article .content h4{
+    min-height:auto;
+}
+
+
 
 .category-posts article .featured-image{
     display:none;
@@ -786,7 +803,16 @@ section.content .blog-wrap{
     padding:50px;
 }
 
+/*  ===  AUTHOR POSTS MARGINS  ===  */
 
+.author-posts .articles{
+    margin-top:35px;
+}
+
+.author-posts .articles article .heading{
+    display:flex;
+    justify-content: space-between;
+}
 
 
 /* === SHARING CENTER === */

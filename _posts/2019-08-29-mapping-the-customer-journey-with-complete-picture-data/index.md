@@ -7,6 +7,9 @@ author: Erika
 category: Analytics
 permalink: /blog/2019/08/29/mapping-the-customer-journey-with-complete-picture-data/
 discourse: true
+featured: true
+featured-image: /v3/assets/img/global/unsplash.png
+thumbnail-image: /v3/assets/img/global/unsplash-thumbnail.png
 ---
 
 

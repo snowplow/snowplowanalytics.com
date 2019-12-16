@@ -25,7 +25,7 @@ layout: compress
 	{% endif %}
 	{% endfor %}
 	<span class="separator alt-cta"></span>
-	<section class="v3 related-posts">
+	<section class="v3 related-posts category-posts author-posts">
 		<div class="wrap">
 			<h2>Articles from this author</h2>
 			<div class="articles">
@@ -33,15 +33,6 @@ layout: compress
 				{% if post.author == page.author %}
 				<article>
 					<a href="{{ post.url }}" class="box-shadow">
-						<div class="featured-image">
-							<img src="{{ BASE_PATH }}/v3/assets/img/global/blog-article-1.png" alt="#">
-							{% if post.pdf %}
-							<div class="pdf-included box-shadow">
-								<img src="{{ BASE_PATH }}/v3/assets/img/global/pdf.svg" alt="#"/>
-								<p class="p-small">included</p>
-							</div>
-							{% endif %}
-						</div> 
 						<div class="content">
 							<div class="heading">
 								<h5>{{post.category}}</h5>
