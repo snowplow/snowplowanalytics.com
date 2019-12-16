@@ -3,7 +3,7 @@
    =============== */
 
 main{
-    margin:60px 0px;;
+    margin:60px 0px;
 }
 
 .hex-bg{
@@ -17,16 +17,73 @@ main{
     z-index:1;
 }
 
+.hex-3-bg{
+    width: 1150px;
+    height: 1300px;
+    display:block;
+    position:absolute;
+    right:0px;
+    top:0px;
+    background:url("../img/global/3hex-bg.svg") no-repeat;
+    z-index:1;
+}
+
 /* Global error input handling  */
 
 input.error{
-    color:#FF8B8B;
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
-    box-shadow: 0px 0px 4px 0px rgba(255,139,139,0.71);
+    color:#FF8B8B !important;
+    border: 1px solid #FF8B8B !important;
+}
+
+/* Call to action button pre-definition */
+
+.cta{
+    padding:17px 30px;
+    cursor:pointer;
+    min-width:200px;
+    max-height:60px;
 }
 
 
+/* Loader on buttons */
+
+.activate-loader{
+    text-indent:-2999px;
+    background-image: url('../img/global/loader.svg');
+    background-size:40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Cookie bar adjustments v3 */
+
+#cookie-bar a{
+    padding:5px 20px !important;
+}
+
+
+/* Setup icons */
+
+.yes-icon{
+    display:block;
+    background:url(../img/global/yes.svg) no-repeat;
+    width: 20px;
+    height: 15px;
+}
+.no-icon{
+    display:block;
+    background:url(../img/global/no.svg) no-repeat;
+    width: 15px;
+    height: 15px;
+}
+
+.questionmark{
+    display:block;
+    background:url(../img/global/questionmark.svg) no-repeat;
+    background-size:100%;
+    width: 23px;
+    height:23px;
+}
 
 
 /* ===============
@@ -868,4 +925,463 @@ section.author-hero .heading h1{
 .sc-ebook a{
     padding:20px 40px !important;
     color:#fff;
+}
+
+
+
+/* ===============
+   SUB HEADING - ALL PAGES
+   =============== */
+
+
+section.sub-hero{
+    position:relative;
+}
+section.sub-hero .hex-bg{
+    top:50px;
+}
+
+section.sub-hero .wrap{
+    padding-top: 50px;
+    background:url("../img/global/hero-bg.svg") no-repeat;
+    background-position:right top;
+    min-height:300px;
+}
+
+section.sub-hero .heading{
+    text-align:center;
+}
+
+section.sub-hero .heading h1{
+    margin:40px 0px 15px 0px;
+}
+
+
+/* ===============
+   SUB SECTION - NORMAL
+   =============== */
+
+section .heading-subsection-normal{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    text-align:center;
+}
+section .heading-subsection-normal h2{
+    margin-bottom:15px;
+    width: 100%;
+}
+section .heading-subsection-normal p{
+    width: 80%;
+}
+
+
+
+/* ===============
+   PRICING - PLANS
+=============== */
+
+section.plans{
+    margin-top:40px;
+}
+
+section.plans .wrap{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+section.plans .left{
+    width: 150px;
+    margin-top:341px;
+}
+
+section.plans .left ul li{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+section.plans .left ul li p{
+    text-align:right;
+    width: 100%;
+}
+
+section.plans .left ul li .explanation{
+    position:absolute;
+    right: -35px;
+    top: 30px;
+}
+
+section.plans .left ul li .explanation p{
+    display:none;
+    width: 300px;
+    position:absolute;
+    top:-35px;
+    z-index:5;
+    padding:20px;
+    box-sizing: border-box;
+    text-align:left;
+}
+section.plans .left ul li .explanation p a{
+    font-size:16px !important;
+}
+
+
+section.plans .plans-wrap{
+    width: 990px;
+    border-radius:9px;
+}
+
+section.plans .plans-wrap .plan{
+    float:left;
+    width: 33%;
+    padding:0px 40px 20px 40px;
+    box-sizing: border-box;
+}
+
+section.plans .plans-wrap .plan:nth-of-type(1){
+    border-top-left-radius: 9px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 9px;
+}
+section.plans .plans-wrap .plan:nth-of-type(2){
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+section.plans .plans-wrap .plan:nth-of-type(3){
+    border-top-left-radius: 0px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 0px;
+}
+
+section.plans .plans-wrap .plan .heading{
+    height:280px;
+    margin:40px 0px 20px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+
+section.plans .plans-wrap .plan .heading img{
+    height: 100px;
+}
+
+section.plans .plans-wrap .plan .description{
+    text-align:center;
+}
+section.plans .plans-wrap .plan .description h3{
+    margin-bottom:10px;
+}
+
+section.plans .plans-wrap .plan .features{
+    text-align:center;
+}
+section.plans .plans-wrap .plan .features li{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+section.plans .plans-wrap .plan .features li strong{
+    color:#46D4BE;
+}
+
+/* ===============
+   BENEFITS - PRICING
+   =============== */
+
+
+section.benefits ul{
+    margin-top:40px;
+}
+
+section.benefits ul li{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    margin-bottom:25px;
+    display:flex;
+    align-items: center;
+}
+
+section.benefits ul li img{
+    height: 350px;
+}
+
+section.benefits ul li > div{
+    width: 640px;
+}
+
+section.benefits ul li > div h3{
+    margin-bottom:20px;
+}
+
+section.benefits ul li:nth-of-type(2) div{
+
+    text-align:right;
+}
+
+/* ========================
+    WRITERS PRORAM - HERO
+   ======================== */
+
+
+section.sub-hero .share-a-story{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:100px 0px;
+}
+
+section.sub-hero .share-a-story .desc{
+    width: 500px;
+}
+
+section.sub-hero .share-a-story .desc h2{
+    margin-bottom:25px;
+}
+
+section.sub-hero .share-a-story .desc p{
+    margin-bottom:15px;
+}
+
+section.sub-hero .share-a-story .desc a{
+    float:left;
+    display:block;
+    margin-top:10px;
+}
+
+section.sub-hero .share-a-story img{
+    width: 600px;
+}
+
+
+
+/* ========================
+    WRITERS PRORAM - HOW
+   ======================== */
+
+
+section.how .wrap > ul{
+    display:flex;
+    flex-flow:row wrap;
+    margin-top:100px;
+    justify-content: space-between;
+}
+
+section.how .wrap > ul > li{
+    width: 45%;
+    margin-bottom:80px;
+} 
+
+section.how .wrap > ul > li .heading{
+    width: 100%;
+    display:flex;
+    flex-flow:row-wrap;
+    align-items: center;
+    margin-bottom:40px;
+}
+
+section.how .wrap > ul > li .heading img{
+    width: auto;
+    height: 150px;
+    margin-right:60px;
+}
+
+section.how .wrap ul li ul li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:15px;
+}
+
+section.how .wrap ul li ul li::before{
+    content: "";
+    display:block;
+    position:absolute;
+    top:7px;
+    left:0px;
+    width: 10px;
+    height: 10px;
+    background:url(../img/global/list-dot.svg) no-repeat;
+    background-size:10px;
+}
+
+
+
+/* ========================
+          MAIN FORM
+   ======================== */
+section.main-form{
+    margin-bottom:120px;
+}
+
+section.main-form .hex-3-bg{
+    top:-185px;
+}
+
+section.main-form .wrap{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.main-form .wrap .heading{
+    width: 520px;
+}
+
+section.main-form .wrap .heading h2{
+    margin-bottom:15px;
+}
+section.main-form .wrap .heading p{
+    margin-bottom:15px;
+}
+
+section.main-form .wrap form{
+    width: 520px;
+    padding:60px;
+    box-sizing: border-box;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+section.main-form .wrap form .form-wrap > h3{
+    margin-bottom:10px;
+}
+
+section.main-form .wrap form .form-wrap > p{
+    margin-bottom:40px;
+}
+
+section.main-form .wrap form .full{
+    margin-bottom:20px;
+}
+
+section.main-form .wrap form .half{
+    margin-bottom:20px;
+}
+
+section.main-form .wrap form  label{
+    margin-bottom:10px;
+}
+
+section.main-form .wrap form  input,section.main-form .wrap form textarea{
+    width:100%;
+    padding:10px 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #e9e9e9;
+    border-radius: 4px;
+    
+}
+
+section.main-form .wrap form textarea{
+    max-width: 100%;
+    max-height:600px;
+    min-height:120px;
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+    color: #D5D6D9;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #D5D6D9;
+}
+  
+::placeholder {
+    color: #D5D6D9;
+}
+
+section.main-form .wrap form button{
+    float:right;
+    margin-top:15px;
+}
+
+section.main-form form .thankyou{
+    display:none;
+}
+
+section.main-form form .thankyou h3{
+    margin-bottom:15px;
+}
+
+section.main-form form .thankyou p{
+    margin-bottom:40px;
+}
+
+section.main-form form .thankyou img{
+    width: 50%;
+    margin:40px 0px;
+}
+
+
+
+/* ========================
+          PRICING FORM
+   ======================== */
+
+section.pricing-form .hex-3-bg{
+    top:-5px;
+}
+
+
+section.pricing-form .wrap{
+    justify-content: center;
+}
+
+section.pricing-form .wrap .heading{
+    width: 100%;
+    text-align:center;
+    padding:0% 20%;
+    box-sizing: border-box;
+}
+
+section.pricing-form .wrap form{
+    margin-top:60px;
+    width: 960px;
+}
+
+section.pricing-form .wrap form .form-wrap .half{
+    width: 47%;
+    box-sizing: border-box;
+}
+section.pricing-form .wrap form .form-wrap > div{
+    margin-bottom:40px;
+}
+
+section.pricing-form .wrap form .form-wrap > p{
+    margin-bottom:60px;
+}
+
+section.pricing-form .wrap form .form-wrap > .p-small{
+    width: 60%;
+    margin: 20px 0px 0px 0px;
+}
+
+
+section.pricing-form .wrap form .form-wrap{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+section.pricing-form .thankyou{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    text-align:center;
 }

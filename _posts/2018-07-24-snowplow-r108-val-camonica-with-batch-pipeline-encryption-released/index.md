@@ -210,8 +210,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r108-val-camonica
 
-[val-camonica]: https://en.wikipedia.org/wiki/Rock_Drawings_in_Valcamonica
-[val-camonica-img]: /assets/img/blog/2018/06/val_camonica.jpg
 
 [discourse]: http://discourse.snowplowanalytics.com/
 

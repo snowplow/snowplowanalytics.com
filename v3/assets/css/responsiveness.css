@@ -9,7 +9,9 @@
         width: 960px;
         margin:0px auto;
     }
-
+    section .hex-bg{
+        display:none;
+    }
 
     /* === SINGLE ARTICLE === */
     article{
@@ -67,6 +69,52 @@
         margin-bottom:20px;
     }
 
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 820px;
+    }
+    section.plans .plans-wrap .plan{
+        width: 33%;
+    }
+
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+
+    section.benefits ul li > div{
+        width: 530px;
+    }
+
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story .desc{
+        width: 400px;
+    }
+    section.sub-hero .share-a-story img{
+        width: 500px;
+    }
+    /* ========================
+        MAIN FORM
+    ======================== */
+    section.main-form .wrap .heading{
+        width: 320px;
+    }
+    section.main-form .hex-3-bg{
+        background-size:70%;
+        background-position:right center;
+    }
+
+
+    /* ========================
+          PRICING FORM
+   ======================== */
+   section.pricing-form .wrap .heading{
+       width: 100%;
+   }
 }
 
 
@@ -175,7 +223,29 @@
         width: 100% !important;
     }
     
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 700px;
+    }
+    section.plans .plans-wrap .plan{
+        padding:0px 20px 0px 20px;
+    }
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
 
+    section.benefits ul li > div{
+        width: 430px;
+    }
+
+    /* ========================
+          PRICING FORM
+   ======================== */
+    section.pricing-form .wrap form .form-wrap > .p-small br{
+        display:none;
+    }
 }
 
 
@@ -237,6 +307,81 @@
         width: 100% !important;
     }
 
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story{
+        justify-content: center;
+        margin-bottom:0px;
+    }
+    section.sub-hero .share-a-story .desc{
+        order:2;
+        width: 100%;
+        margin-top:40px;
+        display:flex;
+        flex-flow:row wrap;
+        text-align:center;
+        justify-content: center;
+    }
+    section.sub-hero .share-a-story img{
+        order:1;
+        width: 500px;
+    }
+    /* ========================
+        WRITERS PROGRAM - HOW
+    ======================== */
+    section.how .wrap > ul > li .heading{
+        flex-flow:row wrap;
+        text-align:center;
+        justify-content: center;
+    }
+    section.how .wrap > ul > li .heading img{
+        margin-bottom:25px;
+    }
+    /* ========================
+             MAIN FORM
+    ======================== */
+    section.main-form .wrap form{
+        width: 420px;
+        padding:40px;
+    }
+    section.main-form .hex-3-bg{
+        background-size:50%;
+    }
+
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 570px;
+    }
+    section.plans .plans-wrap .plan .features{
+        margin-top:90px;
+    }
+    section.plans .left{
+        margin-top:410px;
+    }
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+
+    section.benefits ul li > div{
+        width: 430px;
+    }
+    section.benefits ul li img{
+        height: 240px;
+        margin-top:75px;
+    }
+    section.benefits ul li{
+        margin-bottom:20px;
+    }
+    /* ========================
+          PRICING FORM
+   ======================== */
+   section.pricing-form .wrap form{
+       width: 100%;
+   }
 }
 
 
@@ -251,9 +396,6 @@
     .single-v3{
         overflow:hidden;
     } 
-    section .hex-bg{
-        display:none;
-    }
 
     /* ===Categories=== */
     .list-categories{
@@ -285,6 +427,110 @@
     article .content h4{
         min-height:auto;
     }
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.sub-hero .share-a-story{
+        margin-top:50px;
+    }
+    /* ========================
+        MAIN FORM
+    ======================== */
+    section.main-form{
+        margin-top:0px;
+    }
+    section.main-form .wrap .heading{
+        width: 100%;
+    }
+    section.main-form .wrap form{
+        width: 100%;
+        padding:60px;
+        margin-top:40px;
+    }
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 400px;
+    }
+    section.plans .plans-wrap .plan{
+        box-shadow:none;
+    }
+    section.plans .plans-wrap .plan .heading{
+        height: 230px;
+    }
+    section.plans .plans-wrap .plan .features{
+        margin-top:0px;
+    }
+    section.plans .left{
+        margin-top:291px;
+    }
+    /* Slick slider */
+
+    .slick-arrow{
+        position:absolute;
+        width:20px;
+        height: 40px;
+        text-indent:-999px;
+        overflow:hidden;
+        background-color:#ffffff !important;
+        top:70px;
+        z-index:5;
+        background-size:100% !important;
+    }
+    .slick-next{
+        right:40px;
+        background: url(../img/pricing/slider-arrow-right.svg) no-repeat center center;
+        
+    }
+    .slick-prev{
+        left:40px;
+        background: url(../img/pricing/slider-arrow-left.svg) no-repeat center center;
+    }
+    
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+    section.benefits ul li:nth-of-type(2){
+        flex-direction:column-reverse;
+    }
+    section.benefits ul li:nth-of-type(2) img{
+        margin:0px auto;
+        margin-top:75px;
+    }
+    section.benefits ul li:nth-of-type(2) div{
+        margin:0px auto;
+    }
+
+    section.benefits ul li img{
+        width: 300px;
+        height:auto;
+    }
+    section.benefits ul li div{
+        margin-top:40px !important;
+        text-align:center !important;
+    }
+    /* ========================
+          PRICING FORM
+   ======================== */
+    section.pricing-form{
+        margin-top:60px;
+    }
+    section.pricing-form .wrap .heading{
+        padding:0% 5%;
+    }
+    section.pricing-form .wrap form .form-wrap > .p-small{
+        width: 100%;
+        margin-top:-10px;
+        text-align:center;
+    }
+    section.main-form .wrap form button{
+        display:block;
+        margin:0px auto;
+        margin-top:20px;
+    }
+    
 }
 
 @media screen and (max-width: 740px) {
@@ -314,8 +560,6 @@
     .sharing-center a{
         margin:0px 10px;
     }
-
-
 
 
     section.post-hero .post-details .category{
@@ -352,6 +596,30 @@
     .related-posts .articles article{
         margin-right:0px !important;
     }
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 275px;
+    }
+    section.plans .plans-wrap .plan .heading{
+        height: 250px;
+    }
+    section.plans .left{
+        margin-top:311px;
+    }
+    /* ========================
+          PRICING FORM
+   ======================== */
+   section.pricing-form .wrap form .form-wrap .half{
+       width: 100%;
+   }
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+    section.benefits ul li img{
+        height: auto;
+    }
 }
 
 
@@ -359,6 +627,9 @@
 @media screen and (max-width: 520px) {
     .wrap{
         width: 100%;
+        padding-left:20px;
+        padding-right:20px;
+        box-sizing: border-box;
     }
     .blog-wrap{
         width: 100%;
@@ -430,4 +701,83 @@
         padding-left:20px;
         padding-right:20px;
     }
+
+
+    /* ========================
+        WRITERS PRORAM - HOW
+    ======================== */
+    section.how .wrap > ul > li{
+        width: 100%;
+        margin-bottom:40px;
+    }
+    /* ========================
+           MAIN FORM
+    ======================== */
+    section.main-form .wrap form{
+        padding:40px;
+    }
+
+    /* ===============
+    PLANS - PRICING
+    =============== */
+    section.plans .plans-wrap{
+        width: 100%;
+    }
+    section.plans .left{
+        width:100%; 
+        margin-top:295px;
+        position:absolute;
+        top:0px;
+        left:0px;
+        z-index:3;
+    }
+    section.plans .left ul li{
+        height: 120px;
+        flex-flow:column wrap;
+    }
+    section.plans .left ul li .explanation{
+        display:none;
+    }
+    section.plans .left ul li p{
+        text-align:center;
+    }
+    section.plans .left ul li p br{
+        display:none;
+    }
+    section.plans .plans-wrap .plan .heading{
+        height: 280px;
+    }
+    section.plans .plans-wrap .plan .features li{
+        height: 120px;
+    }
+    .slick-slider .slick-track, .slick-slider .slick-list{
+        z-index:4;
+    }
+    section.plans .plans-wrap .plan{
+        background:none;
+    }
+
+    /* ===============
+    BENEFITS - PRICING
+    =============== */
+    section.benefits ul li img{
+        width: 250px;
+        height: auto;
+    }
+    section.benefits ul li > div{
+        width: 100%;
+    }
+    .pricing-v3 section.benefits{
+        margin-top:-20px;
+    }
+
+    /* ========================
+          PRICING FORM
+   ======================== */
+   section.main-form .wrap form{
+       padding:40px 20px;
+   }
+   section.pricing-form{
+       margin-bottom:60px;
+   }
 }

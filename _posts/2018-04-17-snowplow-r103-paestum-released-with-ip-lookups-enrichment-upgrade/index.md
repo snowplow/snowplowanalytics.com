@@ -28,7 +28,6 @@ Read on for more information on R103 Paestum, named after [the ancient city in i
 6. [Roadmap](#roadmap)
 7. [Help](#help)
 
-![paestum][paestum-img]
 
 <h2 id="ip-lookups">1. Upgrading the IP Lookups Enrichment</h2>
 
@@ -172,8 +171,6 @@ For more details on this release, please check out the [release notes][release-n
 
 If you have any questions or run into any problems, please visit [our Discourse forum][discourse].
 
-[paestum]: https://en.wikipedia.org/wiki/Paestum
-[paestum-img]: /assets/img/blog/2018/04/paestum.jpg
 
 [release-notes]: https://github.com/snowplow/snowplow/releases/tag/r103-paestum
 [discourse]: http://discourse.snowplowanalytics.com/

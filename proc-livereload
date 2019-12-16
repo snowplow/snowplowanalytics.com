@@ -1,0 +1,2 @@
+webpack: npm run webpack-livereload
+jekyll: bundle exec jekyll serve --livereload --incremental --verbose

@@ -341,3 +341,21 @@
   avatar: /assets/img/blog/2019/08/simon-rumble.jpeg
   spiel:   |
       Simon Rumble started his career as an IT journalist in the 1990s, reporting on the Internet when it was still quite unknown. He discovered web analytics and was hooked on the ability to get deeper understanding of what worked for audiences. Simon was one of the first Snowplow users when it was released in 2012 and got very excited by the possibilities of analytics data you could own and control yourself. He is working on a book introducing Snowplow to a wider audience.
+
+
+
+- name: Alex & Jason 
+  full_name: Alex Beskin & Jason Bellinger 
+  twitter:
+  url: /blog/authors/alex-jason/
+  avatar: /assets/img/blog/2019/09/animoto.jpeg
+  spiel:   |
+      Alex Beskin has been leading the Analytics team at Animoto since 2013. His primary focus is scaling business and maximizing revenue via product innovation and acquisition funnel optimization. You can find him on <a href="https://www.linkedin.com/in/alex-beskin-6aaa692/">LinkedIn</a>.
+      <br><br> Jason Bellinger has been working with data at Animoto for 2 years and has been in the New York City start-up world for nearly 8 years. His focus is on building data models and running business intelligence systems that encompass large amounts of data. You can find him on <a href="https://www.linkedin.com/in/jason-bellinger-80217043/">LinkedIn</a>.
+
+- name: Paul
+  full_name: Paul Boocock
+  url: /blog/authors/paul/
+  avatar: /assets/img/team/paul.jpg
+  spiel:   |
+      <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.

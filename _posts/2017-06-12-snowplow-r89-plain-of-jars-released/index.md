@@ -22,7 +22,7 @@ Read on for more information on R89 Plain of Jars, named after [an archeological
 7. [Roadmap](#roadmap)
 8. [Getting help](#help)
 
-![plain-of-jars][plain-of-jars-img]
+
 
 <!--more-->
 
@@ -141,8 +141,6 @@ For more details on this release, please check out the [release notes][snowplow-
 
 If you have any questions or run into any problems, please [raise an issue][issues] or get in touch with us through [the usual channels][talk-to-us].
 
-[plain-of-jars]: https://en.wikipedia.org/wiki/Plain_of_Jars
-[plain-of-jars-img]: /assets/img/blog/2017/06/plain-of-jars.jpg
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r89-plain-of-jars
 

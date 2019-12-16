@@ -32,9 +32,7 @@ Please read on after the fold for:
 6. [Roadmap](#roadmap)
 7. [Help](#help)
 
-![lambaesis][lambaesis-img]
-<br>
-Lambese - M. Gasmi / CC-BY 2.5
+
 
 <h2 id="se">1. Enrichment process updates</h2>
 
@@ -360,9 +358,6 @@ For more details on this release, please check out the [release notes][snowplow-
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r109-lambaesis
-
-[lambaesis]: https://en.wikipedia.org/wiki/Lambaesis
-[lambaesis-img]: /assets/img/blog/2018/08/lambaesis.jpg
 
 
 [simply-business]: https://www.simplybusiness.co.uk/

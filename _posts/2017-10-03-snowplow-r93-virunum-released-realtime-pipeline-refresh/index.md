@@ -30,7 +30,6 @@ Austria][virunum], please read on after the fold:
 9. [Roadmap](#roadmap)
 10. [Help](#help)
 
-![virunum][virunum-img]
 
 <h2 id="cookie-bounce">1. Scala Stream Collector: detecting blocked third-party cookies through cookie bounce</h2>
 
@@ -239,8 +238,6 @@ If you have any questions or run into any problem, please visit [our Discourse f
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r93-virunum
 
-[virunum]: https://en.wikipedia.org/wiki/Virunum
-[virunum-img]: /assets/img/blog/2017/09/virunum.jpg
 
 [r94]: https://github.com/snowplow/snowplow/milestone/147
 [r95]: https://github.com/snowplow/snowplow/milestone/103

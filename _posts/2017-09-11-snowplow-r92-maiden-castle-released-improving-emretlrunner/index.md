@@ -27,7 +27,7 @@ If you'd like to know more about R92 Maiden Castle, named after [the Iron Age hi
 7. [Roadmap](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#roadmap)
 8. [Help](/blog/2017/09/11/snowplow-r92-maiden-castle-released-improving-emretlrunner#help)
 
-![maiden-castle][maiden-castle-img]
+
 
 <h2 id="shredded-data">1. Fixing the skip shred bug</h2>
 
@@ -111,8 +111,7 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r92-maiden-castle
 
-[maiden-castle]: https://en.wikipedia.org/wiki/Maiden_Castle,_Dorset
-[maiden-castle-img]: /assets/img/blog/2017/09/maiden_castle.jpg
+
 
 [stonehenge]: /blog/2017/08/17/snowplow-r91-stonehenge-released-with-important-bug-fix
 [lascaux]: /blog/2017/07/26/snowplow-r90-lascaux-released-moving-database-loading-into-emr

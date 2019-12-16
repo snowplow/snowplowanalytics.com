@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="21px" viewBox="0 0 25 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Group 13 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pricing--v2---modified" transform="translate(-525.000000, -816.000000)">
+            <g id="Group-13-Copy" transform="translate(526.000000, 815.000000)">
+                <path d="M12.5,0.577350269 L20.4592921,5.17264973 C21.0780943,5.52991532 21.4592921,6.19016936 21.4592921,6.90470054 L21.4592921,16.0952995 C21.4592921,16.8098306 21.0780943,17.4700847 20.4592921,17.8273503 L12.5,22.4226497 C11.8811978,22.7799153 11.1188022,22.7799153 10.5,22.4226497 L2.54070786,17.8273503 C1.9219057,17.4700847 1.54070786,16.8098306 1.54070786,16.0952995 L1.54070786,6.90470054 C1.54070786,6.19016936 1.9219057,5.52991532 2.54070786,5.17264973 L10.5,0.577350269 C11.1188022,0.220084679 11.8811978,0.220084679 12.5,0.577350269 Z" id="Polygon" stroke="#64BBE4" transform="translate(11.500000, 11.500000) rotate(90.000000) translate(-11.500000, -11.500000) "></path>
+                <text id="?" font-family="Rubik-Medium, Rubik" font-size="12" font-weight="400" fill="#64BBE4">
+                    <tspan x="8" y="16">?</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

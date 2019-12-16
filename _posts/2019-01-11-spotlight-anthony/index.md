@@ -2,7 +2,7 @@
 layout: post
 title-short: Spotlight Anthony Mandelli
 title: "Snowplow Spotlight Anthony Mandelli"
-tags: [analytics, snowplow team, snowplow, startups, company culture, inside the plow]
+tags: [analytics, snowplow team, snowplow, startups, company culture, Inside the Plow]
 author: Miriam
 image: /assets/img/team/Anthony.jpg
 category: Inside the Plow

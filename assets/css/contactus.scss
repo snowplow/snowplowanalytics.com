@@ -56,7 +56,10 @@
 
 .section-revamp-cards.big{
 
-  flex: .0 1 calc(var(--revamp-big-cards-w) - var(--revamp-big-cards-mg));
+  // flex: .0 1 calc(var(--revamp-big-cards-w) - var(--revamp-big-cards-mg));
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: calc(var(--revamp-big-cards-w) - var(--revamp-big-cards-mg));
   height: 199px;
 
   &:first-child{

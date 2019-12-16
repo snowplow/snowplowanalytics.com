@@ -26,7 +26,6 @@ If you'd like to know more about R91 Stonehenge, named after
 5. [Roadmap](#roadmap)
 6. [Help](#help)
 
-![stonehenge][stonehenge-img]
 
 <!--more-->
 
@@ -236,8 +235,6 @@ If you have any questions or run into any problems, please visit [our Discourse 
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r91-stonehenge
 
-[stonehenge]: https://en.wikipedia.org/wiki/Stonehenge
-[stonehenge-img]: /assets/img/blog/2017/08/stonehenge.jpg
 
 [sluice]: https://github.com/snowplow/sluice
 [df-runner]: https://github.com/snowplow/dataflow-runner

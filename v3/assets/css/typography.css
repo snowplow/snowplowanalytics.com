@@ -1,73 +1,115 @@
+
 h1{
-    font-family:'rubik-medium' !important;
+    font-family:'Rubik' !important;
+    font-weight:500;
     font-size:44px !important;
     line-height:59px !important;
 }
 
 h2{
-    font-family:'rubik-medium' !important;
+    font-family:'Rubik' !important;
+    font-weight:500;
     font-size:30px !important;
     line-height:44px !important;
 }
 
 
 h3{
-    font-family:'rubik-medium' !important;
+    font-family:'Rubik' !important;
+    font-weight:500;
     font-size:24px !important;
     line-height:34px !important;
 }
 
 
 h4{
-    font-family:'rubik-medium' !important;
+    font-family:'Rubik' !important;
     font-size:22px !important;
     line-height:32px !important;
 }
 
 
 h5{
-    font-family:'rubik-medium' !important;
+    font-family:'Rubik' !important;
     font-size:16px !important;
     line-height:22px !important;
 }
 
 
 a,strong, a > p{
-    font-family:'karla-bold' !important;
+    font-family:'Karla' !important;
+    font-weight:700;
     font-size:18px !important;
     line-height:25px !important;
     text-decoration:none!important; 
 }
 
 p,input,textarea,button,label,li,b{
-    font-family:'karla-regular' !important;
+    font-family:'Karla' !important;
+    font-weight:400;
     font-size:18px !important;
     line-height:25px !important;
 }
 
 em{
-    font-family:'karla-italic' !important;
+    font-family:'Karla' !important;
+    font-weight:400;
+    font-style: italic;
     font-size:20px !important;
     line-height:28px !important;
 }
 
 .p-small{
-    font-family:'karla-regular' !important;
+    font-family:'Karla' !important;
+    font-weight: 400;
     font-size:16px !important;
     line-height:23px !important; 
 }
 
+.accent-bold{
+    font-family:'Rubik' !important;
+    font-weight:500;
+    font-size:16px !important;
+}
+
+.accent-bold-normal{
+    font-family:'Rubik' !important;
+    font-weight:500;
+    font-size:18px !important;
+}
+
+span.accent{
+    font-family:'Rubik' !important;
+    font-weight:500;
+}
+
+
 
 footer p{
-    font-size:14px !important;
+    font-size:13px !important;
 }
 footer a, .dropdown-menu a{
     font-size:16px !important;
 }
+footer .brand p{
+    margin-top:0px !important;
+}
+header nav li a, .navbar-brand{
+    color: #50545c !important;
+}
+
+footer .active a{
+    color:#28D1B1 !important;
+}
+
+.strong{
+    font-weight:700 !important;
+}
 
 @media screen and (max-width: 808px) {
     h1{
-        font-family:'rubik-medium' !important;
+        font-family:'Rubik' !important;
+        font-weight: 500;
         font-size:35px !important;
         line-height:45px !important;
     }
