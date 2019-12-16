@@ -359,3 +359,11 @@
   avatar: /assets/img/team/paul.jpg
   spiel:   |
       <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
+
+
+- name: Lukas
+  full_name:  Łukasz Indykiewicz
+  url: /blog/authors/lukas/
+  avatar: /assets/img/blog/2019/12/lukas.jpeg
+  spiel:   |
+      Łukasz Indykiewicz is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
