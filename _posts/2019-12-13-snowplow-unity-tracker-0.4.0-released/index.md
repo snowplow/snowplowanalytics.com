@@ -12,7 +12,7 @@ discourse: false
 We are pleased to announce a new release of the [Snowplow Unity Tracker][unity-tracker]. [Version 0.4.0][0.4.0-tag] brings a big update to the Unity Tracker by moving to .NET Standard 2.0 for Unity 2018.1+.
 It also moves to using a new Event Storage system, powered by LiteDB, for better cross platform support (including Android arm64 devices) and lastly it also brings a new Demo game built in Unity 2018.4.
 
-Read on below the fold for:
+Read on below for:
 
 1. [Updates to .NET Standard 2.0](#update-netstandard)
 2. [Improvements to Event Storage](#event-storage-improvements)
