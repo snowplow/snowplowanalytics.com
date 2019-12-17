@@ -5,7 +5,7 @@ title-short: Snowplow Unity Tracker 0.4.0
 tags: [snowplow, unity, netstandard, tracker, gaming, games, dotnet]
 author: Paul
 category: Releases
-permalink: /blog/2019/12/16/snowplow-unity-tracker-0.4.0-released/
+permalink: /blog/2019/12/17/snowplow-unity-tracker-0.4.0-released/
 discourse: false
 ---
 
