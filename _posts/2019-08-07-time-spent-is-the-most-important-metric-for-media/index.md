@@ -8,6 +8,8 @@ category: Data Insights
 permalink: /blog/2019/08/07/time-spent-is-the-most-important-metric-for-media/
 discourse: true
 featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Time_Broken.jpg
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Time_Broken-mini.jpg
 ---
 
 **_The actual product media companies sell is the engagement and attention of their audience yet the way it’s commonly measured is completely broken. Let’s look at the problem of measuring attention, ways to solve it and explore some examples of media companies doing it well._**

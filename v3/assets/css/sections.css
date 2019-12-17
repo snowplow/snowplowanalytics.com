@@ -578,7 +578,7 @@ section.post-hero .post-details .author p, section.post-hero .post-details .cate
 section.post-hero .featured-image{
     display:block;
     width: 100%;
-    max-width:960px;
+    max-width:720px;
     margin:0px auto;
     border-radius: 9px;
 }

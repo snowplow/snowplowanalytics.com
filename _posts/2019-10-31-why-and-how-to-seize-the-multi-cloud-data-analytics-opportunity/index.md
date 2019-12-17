@@ -4,7 +4,7 @@ title-short: "Why and how to seize the multi-cloud data analytics opportunity"
 title: "Why and how to seize the multi-cloud data analytics opportunity?"
 description: "The shift to multi-cloud strategies and how to seize the multi-cloud data analytics opportunity"
 author: Erika
-category: Other
+category: Data insights
 permalink: /blog/2019/10/31/why-and-how-to-seize-the-multi-cloud-data-analytics-opportunity/
 ---
 

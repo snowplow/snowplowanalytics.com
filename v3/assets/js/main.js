@@ -80,6 +80,7 @@ $('input').focus(function(){
 // BIND FORM WITH HELPER
 
 var form = document.getElementById('main-form');
+console.log(form.length);
 form.addEventListener('submit', handleSubmit);
 
 

@@ -1,15 +1,15 @@
 ---
 layout: post
 title-short: Mapping the customer journey with complete-picture data
-title: "Mapping the customer journey with complete-picture data to reach the single customer view"
+title: "Mapping the customer journey with complete-picture data"
 description: "Finally, travel companies can get an accurate view of the end-to-end customer journey by joining multiple data sources, letting them get closer to the single customer view."
 author: Erika
-category: Analytics
+category: Data insights
 permalink: /blog/2019/08/29/mapping-the-customer-journey-with-complete-picture-data/
 discourse: true
 featured: true
-featured-image: /v3/assets/img/global/unsplash.png
-thumbnail-image: /v3/assets/img/global/unsplash-thumbnail.png
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey.jpg
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey-mini.jpg
 ---
 
 
