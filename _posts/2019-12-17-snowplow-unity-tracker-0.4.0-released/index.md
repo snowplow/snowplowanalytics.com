@@ -10,9 +10,9 @@ discourse: false
 ---
 
 We are pleased to announce a new release of the [Snowplow Unity Tracker][unity-tracker]. [Version 0.4.0][0.4.0-tag] brings a big update to the Unity Tracker by moving to .NET Standard 2.0 for Unity 2018.1+.
-It also moves to using a new Event Storage system, powered by LiteDB, for better cross platform support (including Android arm64 devices) and lastly it also brings a new Demo game built in Unity 2018.4.
+It also moves to using a new Event Storage system, powered by LiteDB, for better cross platform support (including Android arm64 devices) and lastly it also brings a new Demo game built in Unity 2018.4 to help test the tracker.
 
-Read on below the fold for:
+Read on below for:
 
 1. [Updates to .NET Standard 2.0](#update-netstandard)
 2. [Improvements to Event Storage](#event-storage-improvements)
@@ -42,15 +42,13 @@ var emitter = new AsyncEmitter(collectorUrl, HttpProtocol.HTTPS, HttpMethod.POST
 {% endhighlight %}
 
 <h2 id="new-demo-app">3. New Demo Unity Game</h2>
-We've also created a new Demo Game that has been built with Unity 2018.4. This has allowed the new .NET Standard version of the Snowplow Unity Tracker to be included within the Demo Game as well as some aspects of the Demo game, such as the User Interface, to use the latest Unity features.
+We've also created a new demo game that has been built with Unity 2018.4. By updating our demo game to Unity 2018.4, we are able to show how to integrate the new .NET Standard version of the Snowplow Unity Tracker into a game. The game also includes a number of examples of using the Unity Tracker, such as firing tracking events during gameplay and adding custom contexts to those events.
 
 ![demo](/assets/img/blog/2019/12/unitydemo.png)
 
-You can open `SnowplowTracker.Demo` in Unity 2018.4 by cloning the Unity Tracker repository and then play and track events to your hearts content!
+To play the demo game and start collecting Snowplow events, open `SnowplowTracker.Demo` in Unity 2018.4 by cloning the [Unity Tracker repository][unity-tracker]. Once `SnowplowTracker.Demo` is open in Unity, start the game by opening the `MainMenuScene.scene` in the Unity Editor and pressing Play. Entering your collector URL on the menu screen will allow tracking of events into your collector. Alternatively, build and run the game on Windows, macOS, Linux, iOS or Android with keyboard and touch controls.
 
-Start the game by opening the `MainMenuScene.scene` in the Unity Editor and press Play. You can enter your collector URL on the menu screen if you wish to track events into your collector. Alternatively, you can also build and run the game on Windows, macOS, Linux, iOS or Android with keyboard and touch controls.
-
-The Demo Application also includes example code on how to set up the Unity Tracker, included within the `TrackerManager.cs` and `GameplayManager.cs` scripts.
+Example code on how to set up and use the Unity Tracker is included within the `TrackerManager.cs` and `GameplayManager.cs` scripts.
 
 <h2 id="updates">4. Updates and bug fixes</h2>
 
