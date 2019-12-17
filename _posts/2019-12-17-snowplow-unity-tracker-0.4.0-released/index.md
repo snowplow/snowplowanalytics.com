@@ -10,7 +10,7 @@ discourse: false
 ---
 
 We are pleased to announce a new release of the [Snowplow Unity Tracker][unity-tracker]. [Version 0.4.0][0.4.0-tag] brings a big update to the Unity Tracker by moving to .NET Standard 2.0 for Unity 2018.1+.
-It also moves to using a new Event Storage system, powered by LiteDB, for better cross platform support (including Android arm64 devices) and lastly it also brings a new Demo game built in Unity 2018.4 to help test the tracker.
+It also moves to using a new Event Storage system, powered by LiteDB, for better cross platform support (including Android arm64 devices) and lastly it also brings a new demo game built in Unity 2018.4 to help test the tracker.
 
 Read on below for:
 
@@ -38,7 +38,7 @@ This change requires new dlls to be deployed along with version 0.4.0 of the Uni
 Additionally, we have also exposed a new IStore interface when initialising the Emitter object. This will allow users of the Unity Tracker to either alter the construction of the EventStore object, as shown below, or by creating an implementation of the IStore interface that fits the needs of the application.
 
 {% highlight csharp %}
-var emitter = new AsyncEmitter(collectorUrl, HttpProtocol.HTTPS, HttpMethod.POST, 1, 52000L, 52000L, new EventStore("filename.db", true));
+var emitter = new AsyncEmitter(collectorUrl, HttpProtocol.HTTPS, HttpMethod.POST, 500, 52000L, 52000L, new EventStore("filename.db", true));
 {% endhighlight %}
 
 <h2 id="new-demo-app">3. New Demo Unity Game</h2>
@@ -87,7 +87,7 @@ The [v0.4.0 release page][0.4.0-tag] on GitHub has the full list of changes made
 
 Finally, if you run into any issues or have any questions, please [raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
 
-[unity-tracker]: https://github.com/snowplow/snowplow-untiy-tracker
+[unity-tracker]: https://github.com/snowplow/snowplow-unity-tracker
 [0.4.0-tag]: https://github.com/snowplow/snowplow-unity-tracker/releases/tag/0.4.0
 [readme-testing]: https://github.com/snowplow/snowplow-unity-tracker#testing-framework
 [setup]: https://github.com/snowplow/snowplow/wiki/Unity-Tracker-Setup
