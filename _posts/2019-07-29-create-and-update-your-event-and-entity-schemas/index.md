@@ -4,7 +4,7 @@ title-short: Create and update your event and entity schemas
 title: "Create and update your event and entity schemas quickly and easily in the Snowplow UI"
 description: "With Snowplow, you can easily publish, update and validate your tracking so your data collection evolves with your business"
 author: Yali
-category: Releases
+category: Product features
 permalink: /blog/2019/07/29/create-and-update-your-event-and-entity-schemas/
 discourse: true
 featured: true

@@ -4,7 +4,7 @@ title-short: How to ensure your data collection evolves alongside your business
 title: "How to ensure your data collection evolves alongside your business"
 description: "With Snowplow, you can easily publish, update and validate your tracking so your data collection evolves with your business"
 author: Lyuba
-category: Releases
+category: Product features
 permalink: /blog/2019/07/23/how-to-ensure-your-data-collection-evolves-alongside-your-business/
 discourse: true
 ---
