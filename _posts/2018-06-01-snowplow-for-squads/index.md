@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/06/squad.jpg
 title-short: Organizing your data stack for optimal use
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Data Insights
+category: Data insights
 permalink: /blog/2018/06/01/the-right-data-infrastructure-to-support-successful-squads/
 discourse: true
 ---

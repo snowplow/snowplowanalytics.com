@@ -3,7 +3,7 @@ layout: post
 title: Issue with Elastic Beanstalk Tomcat container for Clojure Collector users - diagnosis and resolution
 tags: [clojure collector,  tomcat, elastic beanstalk, container]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2015/07/31/issue-with-elastic-beanstalk-tomcat-container-used-by-clojure-collector/
 ---
 

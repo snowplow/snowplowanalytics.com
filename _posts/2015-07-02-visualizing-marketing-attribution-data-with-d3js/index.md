@@ -5,7 +5,7 @@ description: How to visualize marketing attribution data and drive insights
 image: /assets/img/blog/2015/06/annotated-journey-example.png
 tags: [data, marketing, attribution, data visualization, data pipeline, javascript, d3]
 author: Justine
-category: Data Insights
+category: Data insights
 permalink: /blog/2015/07/02/visualizing-marketing-attribution-data-with-d3js/
 ---
 

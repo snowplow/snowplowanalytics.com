@@ -3,7 +3,7 @@ layout: post
 title: Reflections on Saturday's Measurecamp
 tags: [snowplow, measure, measurecamp, keywords, audience segmentation, server side tracking]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/02/18/ideas-coming-out-of-februarys-measurecamp/
 ---
 

@@ -4,7 +4,7 @@ title: "How ITP 2.1 works and what it means for your web analytics"
 tags: [ITP 2.1, analytics, data, data collection, intelligent tracking, web data]
 author: Lyuba
 image:
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/06/17/how-ITP2.1-works-what-it-means-for-web-analytics/
 discourse: true
 published: true

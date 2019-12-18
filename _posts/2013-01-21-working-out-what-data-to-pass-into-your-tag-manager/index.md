@@ -3,7 +3,7 @@ layout: post
 title: What data should you be passing into your tag manager?
 tags: [tag management, datalayer, universal variable, google tag manager, open tag, qubit]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/01/21/working-out-what-data-to-pass-into-your-tag-manager/
 ---
 

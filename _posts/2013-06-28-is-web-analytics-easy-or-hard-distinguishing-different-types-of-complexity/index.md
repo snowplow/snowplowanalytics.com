@@ -4,7 +4,7 @@ title: Is web analytics easy or hard? Distinguishing different types of complexi
 title-short: Is web analytics easy or hard?
 tags: [webanalytics, complexity, data processing, data model]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/06/28/is-web-analytics-easy-or-hard-distinguishing-different-types-of-complexity/
 ---
 

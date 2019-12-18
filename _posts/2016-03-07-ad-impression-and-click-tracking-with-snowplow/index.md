@@ -4,7 +4,7 @@ title: Ad impression and click tracking with Snowplow
 title-short: Ad impression and click tracking with Snowplow
 tags: [ad impression, ad click, click tracking, display ad]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2016/03/07/ad-impression-and-click-tracking-with-snowplow/
 ---
 

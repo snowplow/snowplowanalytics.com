@@ -4,7 +4,7 @@ title-short: Time spent is the most important metric for media
 title: "Time spent is the most important metric for media, here’s how to get it right"
 description: "We look at how first-generation analytics tools fall short of accurately measuring the time spent metric and how Snowplow Insights gets it right."
 author: Simon
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/08/07/time-spent-is-the-most-important-metric-for-media/
 discourse: true
 featured: true

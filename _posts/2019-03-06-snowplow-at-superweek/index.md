@@ -5,7 +5,7 @@ title: "Snowplow at Superweek: machine learning and actioning data"
 tags: [analytics, data, insights, superweek, digital analytics, machine learning]
 author: Archit
 image:
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/03/06/snowplow-at-superweek-machine-learning-and-actioning-data/
 discourse: true
 ---

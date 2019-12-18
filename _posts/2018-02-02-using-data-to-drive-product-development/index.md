@@ -6,7 +6,7 @@ description: How people and company culture play a bigger role than technology i
 image: /assets/img/blog/2018/02/development_loop.jpg
 tags: [analytics, product analytics, digital products]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2018/02/02/data-driven-product-development-is-more-about-process-culture-and-people-than-technology/
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Funnel analysis with Snowplow (Platform analytics part 1)
 tags: [snowplow, platform analytics, funnel]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/04/23/performing-funnel-analysis-with-snowplow/
 ---
 

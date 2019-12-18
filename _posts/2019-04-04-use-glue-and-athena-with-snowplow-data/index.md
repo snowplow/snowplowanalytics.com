@@ -4,7 +4,7 @@ title-short: Glue and Athena with Snowplow
 title: "Using AWS Glue and AWS Athena with Snowplow data"
 tags: [snowplow, glue, athena, parquet]
 author: Kostas
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/04/04/use-glue-and-athena-with-snowplow-data/
 ---
 
