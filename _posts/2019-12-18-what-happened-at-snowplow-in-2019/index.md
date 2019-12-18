@@ -3,7 +3,7 @@ layout: post
 title-short: "What happened at Snowplow in 2019"
 title: "What happened at Snowplow in 2019 – our year wrapped up"
 description: "A summary of our key milestones in 2019"
-author: Simon
+author: SimonP
 category: Inside the plow
 permalink: /blog/2019/12/18/what-happened-at-snowplow-in-2019/
 ---
