@@ -675,9 +675,19 @@
     /* ===============
         BLOG
     =============== */  
-
+    .blog-v3{
+        margin-top:100px;
+    }
     .blog-back-button{
         margin-left:20px;
+    }
+
+    section.post-hero{
+        margin-top:0px;
+    }
+
+    section.post-hero .wrap{
+        min-height:240px;
     }
     
     section.post-hero .featured-image{
