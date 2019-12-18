@@ -3,7 +3,7 @@ layout: post
 title: Building robust data pipelines in Scala - Session at Scala eXchange, December 2014
 tags: [snowplow, scala, scala exchange, scalaz, validation, error handling]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/12/17/scala-exchange-building-robust-data-pipelines-in-scala/
 ---
 

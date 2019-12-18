@@ -6,7 +6,7 @@ description: A closer look at how Snowplow can help drive mobile game developmen
 image: /assets/img/blog/2017/03/thomas-int-veld_peak_photo2.jpg
 tags: [snowplow, user stories, neuroscience, product development, games, gaming, training]
 author: Giuseppe
-category: User Stories
+category: User stories
 permalink: /blog/2017/03/03/how-peak-uses-snowplow-to-drive-product-development-and-neuroscience/
 classification:
    department: all

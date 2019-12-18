@@ -3,7 +3,7 @@ layout: post
 title: Snowplow reaches 202 stars on GitHub
 tags: [snowplow, github, scala]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/01/20/snowplow-hits-202-stars/
 ---
 

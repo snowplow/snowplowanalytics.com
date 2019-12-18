@@ -3,7 +3,7 @@ layout: post
 title: Building robust data pipelines that cope with AWS outages and other major catastrophes
 tags: [technical architecture, aws]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/02/10/building-robust-data-pipelines-that-cope-with-aws-outages-and-other-catastrophes/
 ---
 

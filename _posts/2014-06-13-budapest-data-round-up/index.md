@@ -3,7 +3,7 @@ layout: post
 title: Budapest Data round-up
 tags: [snowplow, budapest, hungary, big data, hadoop, kinesis]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/06/13/budapest-data-round-up/
 ---
 

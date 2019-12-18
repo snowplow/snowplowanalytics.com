@@ -4,7 +4,7 @@ title: Loading JSON data into Redshift - the challenges of quering JSON data, an
 title-short: Loading JSON data into Redshift
 tags: [json, redshift, unstructured, data pipeline, hive, serde]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/11/20/loading-json-data-into-redshift/
 ---
 

@@ -4,7 +4,7 @@ title: "How RJ Metrics measure content engagement with Snowplow: a case study"
 title-short: How RJMetrics measure content engagement with Snowplow
 tags: [case study, mode analytics, content marketing, measuring engagement]
 author: Yali
-category: User Stories
+category: User stories
 permalink: /blog/2016/02/16/rj-metrics-case-study-measuring-content-engagement-with-snowplow-event-tracking/
 ---
 

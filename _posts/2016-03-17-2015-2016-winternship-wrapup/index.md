@@ -3,7 +3,7 @@ layout: post
 title: 2015-2016 winternship wrap-up
 tags: [snowplow, intern, winter, wintern, internship]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/03/17/2015-2016-winternship-wrapup/
 ---
 

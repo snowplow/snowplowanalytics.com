@@ -3,7 +3,7 @@ layout: post
 title: "Snowplow away week in Berlin"
 tags: ["meetup", "Berlin", "Contentful", "GoEuro", "JustWatch", "Incuda", "Kafka"]
 author: Giuseppe
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/02/20/snowplow-away-week-in-berlin/
 classification:
    department: all

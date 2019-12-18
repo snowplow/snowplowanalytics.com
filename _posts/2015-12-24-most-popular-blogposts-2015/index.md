@@ -2,7 +2,7 @@
 layout: post
 title: "Looking back on 2015: Most read blogposts"
 author: Christophe
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/12/24/most-popular-blogposts-2015/
 ---
 

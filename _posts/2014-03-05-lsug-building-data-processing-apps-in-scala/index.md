@@ -4,7 +4,7 @@ title: LSUG talk - Building data processing apps in Scala, the Snowplow experien
 title-short: LSUG - Building data processing apps in Scala
 tags: [lsug, scala, snowplow, scalding, kinesis, redshift]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/03/05/lsug-building-data-processing-apps-in-scala/
 ---
 

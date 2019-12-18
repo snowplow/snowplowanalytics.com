@@ -6,7 +6,7 @@ image:
 title-short: Adam Greco joins board
 tags: [analytics, Adam Greco, Omniture, Adobe Analytics, Snowplow team]
 author: Anthony
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2018/09/07/industry-leader-adam-greco-joins-snowplow-analytics-advisory-board/
 discourse: true
 ---

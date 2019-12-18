@@ -4,7 +4,7 @@ title: "Orchestrating batch processing pipelines with cron and make"
 title-short: "Orchestrating batch processing pipelines with cron and make"
 tags: [cron, make, orchestration, pipeline, etl]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/10/13/orchestrating-batch-processing-pipelines-with-cron-and-make/
 ---
 

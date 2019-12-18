@@ -3,7 +3,7 @@ layout: post
 title: "Snowplow Meetup London Number 4: a roundup"
 tags: ["meetup", "Gousto", "Busuu"]
 author: Giuseppe
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/02/15/snowplow-meetup-london-number-4/
 classification:
    department: all

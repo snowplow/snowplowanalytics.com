@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/07/snowplow-nyc.jpg
 title-short: Snowplow Meetup
 tags: [analytics, meetups, real time]
 author: Anthony
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2018/07/19/snowplow-returns-to-new-york-city-with-datadog-and-capital-one/
 discourse: true
 ---
