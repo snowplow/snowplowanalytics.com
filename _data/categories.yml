@@ -1,29 +1,29 @@
-- name: Product Features
+- name: Product features
   icon: /v3/assets/img/blog/category-icons/features@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Product.png
   url: /blog/product-features/
 
-- name: How to Guides
+- name: How to guides
   icon: /v3/assets/img/blog/category-icons/guides@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Guides.png
   url: "/blog/how-to-guides/"
 
-- name: Data Insights
+- name: Data insights
   icon: /v3/assets/img/blog/category-icons/insights@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Insights.png
   url: /blog/data-insights/
 
-- name: Data Governance
+- name: Data governance
   icon: /v3/assets/img/blog/category-icons/governance@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Governance.png
   url: /blog/data-governance/
 
-- name: User Stories
+- name: User stories
   icon: /v3/assets/img/blog/category-icons/stories@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Stories.png
   url: /blog/user-stories/
 
-- name: Inside the Plow
+- name: Inside the plow
   icon: /v3/assets/img/blog/category-icons/snowplow@2x.png
   background: /v3/assets/img/blog/category-background/SP_Blog_Fallback_Img_Plow.png
   url: /blog/inside-the-plow/

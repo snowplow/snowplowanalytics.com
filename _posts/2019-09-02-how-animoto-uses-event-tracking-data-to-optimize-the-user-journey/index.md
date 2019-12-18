@@ -2,7 +2,7 @@
 layout: post
 title: How Animoto uses event tracking data to understand and optimize the user journey
 title-short: How Animoto uses event trackiong data
-author: Alex & Jason
+author: Alex-Jason
 category: User stories
 permalink: /blog/2019/09/02/how-animoto-uses-event-tracking-data-to-optimize-the-user-journey/
 ---
