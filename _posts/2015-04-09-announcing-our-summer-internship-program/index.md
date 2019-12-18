@@ -3,7 +3,7 @@ layout: post
 title: Announcing our summer open source internship program
 tags: [snowplow, intern, summer, internship]
 author: Alex
-category: Recruitment
+category: Inside the Plow
 permalink: /blog/2015/04/09/announcing-our-summer-internship-program/
 ---
 

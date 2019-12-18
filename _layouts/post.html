@@ -3,69 +3,160 @@ layout: compress
 ---
 
 
-{% include head.html class='blog post header-white' %}
+{% include head.html class='blog post header-white' v3='true' %}
 
-        <main>
-            {% include header.html %}
+<main class="single-v3">
+		{% include header.html %}
+		<section class="post-hero">
+			<span class="hex-bg"></span>
+			<div class="wrap">
+				<div class="heading">
+					<h5 class="accent">BLOG POST</h5>
+					<h1>{{ page.title }}</h1>
+				</div>
+				<span class="separator alt-cta"></span>
+				<div class="post-details">
+					{% for author in site.data.authors %}
+					{% if author.name == page.author %}
+					<div class="author">
+						<a class="alt-link" href="{{ site.url }}/blog/authors/{{ author.name }}/">
+							<img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+							<p>{{ author.full_name }}</p>
+						</a>
+					</div>	
+					{% endif %}
+					{% endfor %}
 
-			<div class="container">
-				<section class="col-md-8">
-				    <article>
-				        <h1>{{ page.title }}</h1>
-				        <div class="row">
-				        	<div class="col-xs-12 col-sm-6 datebox">{{ page.date | date_to_long_string }}{% for author in site.data.authors %}{% if author.name == page.author %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;<a href="{{ author.url }}">{{ author.full_name }}</a>{% endif %}{% endfor %}</div>
-				        	<div class="col-xs-12 col-sm-6 text-right text-sm-left text-xs-left">
-					        	<div class="social">
-					        		<span class="social-label">Share</span>
-					        		<div class="social-buttons"></div>
-					        	</div>
-				        	</div>
-				        </div>
-				        <div class="content">{{ content }}</div>
-				    </article>
+					<p>{{ page.date | date_to_long_string }}</p>
 
-					<div class="post-footer">
-						<div class="row spacer-bottom-20">
-							<div class="col-xs-12 col-sm-12">
-								{% if page.discourse == true %}
-								
-								<div id='discourse-comments'></div>
+					{% if page.category != empty %}
+					<div class="category">
+						<img src="{{ BASE_PATH }}/v3/assets/img/global/category-icon.svg" alt="#" />
+						<p>{{ page.category }}</p>
+					</div>
+					{% endif %}
+				</div>
+				{% if page.featured-image %}
+				<img class="featured-image" src="{{ BASE_PATH }}{{ page.featured-image }}" alt="#">
+				{% endif %}
+			</div>
+		</section>
+			<!-- End wrap -->
+		<section class="content">
+			<div class="blog-wrap">
+				<div class="post-content full">
+					{{ content }}
+				</div>
+				<!-- content end  -->
+				<div class="sharing-center">
+					<!-- Load social media share from plugin -->
+				</div>
+				<!-- {% if page.tags != empty %}
+				<div class="post-tags">
+					<h5 class="accent">TAGS</h5>
+					<div class="full">
+						{% for tag in page.tags %}
+						<a class="box-shadow"> 
+								<span class="link-indicator alt-cta"></span>
+								<p>{{tag}}</p>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+				{% endif %} -->
 
-								<script type="text/javascript">
-								  DiscourseEmbed = { discourseUrl: 'https://discourse.snowplowanalytics.com/',
-								                     discourseEmbedUrl: 'https://snowplowanalytics.com{{ page.permalink }}' }; 
+				{% if page.discourse == true %}
+				<div id='discourse-comments'></div>
+				<script type="text/javascript">
+				  DiscourseEmbed = { discourseUrl: 'https://discourse.snowplowanalytics.com/',
+									 discourseEmbedUrl: 'https://snowplowanalytics.com{{ page.permalink }}' }; 
 
-								  (function() {
-								    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-								    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-								    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-								  })();
-								</script>
+				  (function() {
+					var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+					d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+				  })();
+				</script>
+				{% endif %}
 
-								{% endif %}
-							</div>
+				{% for author in site.data.authors %}
+				{% if author.name == page.author %}
+				<div class="post-written-by">
+						<h5 class="accent">WRITTEN BY</h5>
+						<div class="author">
+							<a class="alt-link" href="{{ site.url }}/blog/authors/{{ author.name }}/">
+								<img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+								<p>{{ author.full_name }}</p>
+							</a>
 						</div>
-						<div class="row spacer-bottom-20">
-							<div class="col-md-8">
-					        	<div class="social">
-					        		<span class="social-label">Share</span>
-					        		<div class="social-buttons"></div>
-					        	</div>
-					        </div>
-						</div>
-						<div class="spacer-top-50">
-							{% include blog/author-profile-box.html %}
+						<div class="details">
+							<p>{{ author.spiel }}</p>
 						</div>
 					</div>
-				</section>
+				{% endif %}
+				{% endfor %}
 
-				<!--
-				    SIDEBAR
-				-->
-				<aside class="col-md-3 col-md-offset-1">
-				    <div>{% include blog/sidebar.html %}</div>
-				</aside>
-            </div>
-        </main>
+				</div>
+			</section>
+
+		  {% unless page.category == null %}
+		  {% capture pageCategory %}{{ page.category }}{% endcapture %}
+		  {% unless site.categories[pageCategory].size == 1 %}
+			<section class="related-posts">
+				<div class="wrap">
+					<h2>Related articles</h2>
+					<div class="articles">
+						{% for post in site.categories[pageCategory] limit:4 %}
+						{% unless post.title == page.title %}
+						<article>
+							<a href="{{ post.url }}" class="box-shadow">
+								<div class="featured-image">
+									{% if post.featured-image %}
+										<img src="{{ BASE_PATH }}{{post.thumbnail-image}}" alt="#">
+									{% else %}
+										{% for category in site.data.categories %}
+										{% if category.name == post.category %}
+										<div class="category-overlay">
+											<img src="{{ site.url }}{{ category.background }}" alt="{{ category.name }}">
+										</div>
+										{% endif %}
+										{% endfor %}
+									{% endif %}
+									{% if post.pdf %}
+									<div class="pdf-included box-shadow">
+										<img src="{{ BASE_PATH }}/v3/assets/img/global/pdf.svg" alt="#"/>
+										<p class="p-small">included</p>
+									</div>
+									{% endif %}
+								</div> 
+								<div class="content">
+									<div class="heading">
+										<h5>{{ post.category }}</h5>
+										<p>{{ post.date | date_to_long_string }}</p>
+									</div>
+									<h4>{{ post.title | truncatewords:14 }}</h4>
+									<div class="bottom">
+										{% for author in site.data.authors %}
+										{% if author.name == post.author %}
+										<div class="author">
+											<img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+											<p class="small-p">{{ author.full_name }}</p>
+										</div>
+										{% endif %}
+										{% endfor %}
+										<img src="{{ BASE_PATH }}/v3/assets/img/global/arrow-right.svg" alt="#"/>
+									</div>
+								</div>                           
+							</a>
+						</article>
+						{% endunless %}
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			{% endunless %}
+			{% endunless %}
+	</main>
 
 		{% include footer.html %}
+

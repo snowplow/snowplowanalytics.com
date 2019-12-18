@@ -4,10 +4,13 @@ title: "How ITP 2.1 works and what it means for your web analytics"
 tags: [ITP 2.1, analytics, data, data collection, intelligent tracking, web data]
 author: Lyuba
 image:
-category: Other
+category: Data Insights
 permalink: /blog/2019/06/17/how-ITP2.1-works-what-it-means-for-web-analytics/
 discourse: true
 published: true
+featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-How_ITP_Works.jpg
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-How_ITP_Works-mini.jpg
 ---
 Big changes are coming to the way businesses collect web data. Browser manufacturers, led by Safari, continue to introduce privacy updates to prevent third parties from tracking users across websites. Although these measures target advertising companies that track users across different websites, they also impact businesses using web analytics to optimize their websites and provide visitors with the best possible experience: especially businesses relying on third-party web analytics tools, including Google Analytics.
 
@@ -70,17 +73,17 @@ Needless to say, this presents a huge challenge for any business relying on a th
 
 For example, say a retailer uses a marketing attribution tool to track and report on advertising campaigns:
 
-* If the user clicks an ad, and makes a purchase within seven days, the web analytics system will be able to spot that it is the same user who clicked the ad and then made the purchase, and correctly attribute the transaction to that ad campaign.
+*If the user clicks an ad, and makes a purchase within seven days, the web analytics system will be able to spot that it is the same user who clicked the ad and then made the purchase, and correctly attribute the transaction to that ad campaign.
 
-* On the other hand, say the user clicks on the ad and makes the purchase after eight days. Since the cookie was purged the day before, the user will look like a new user, and the web analytics system will not be able to spot that it is the same user who clicked the ad eight days ago. This means the ad campaign will not be correctly attributed to the transaction.
+*On the other hand, say the user clicks on the ad and makes the purchase after eight days. Since the cookie was purged the day before, the user will look like a new user, and the web analytics system will not be able to spot that it is the same user who clicked the ad eight days ago. This means the ad campaign will not be correctly attributed to the transaction.
 
 Here are a few additional ways ITP 2.1 impacts a business’s web analytics strategy by significantly decreasing the effectiveness of third-party data collection solutions:
 
-1. Returning users become “new” again after seven days, making data less reliable and user journey mapping more difficult
+1.Returning users become “new” again after seven days, making data less reliable and user journey mapping more difficult
 
-2. Businesses lose insight into user behavior over an extended period of time
+2.Businesses lose insight into user behavior over an extended period of time
 
-3. With only a seven-day window for A/B testing, results might be inconclusive or inaccurate
+3.With only a seven-day window for A/B testing, results might be inconclusive or inaccurate
 
 Understandably, data-driven companies relying on analytics will struggle the most since nearly all web analytics depend on cookies set by JavaScript, including Google Analytics, Heap and Segment. Even though a [number of technical workarounds to ITP already exist](https://www.simoahava.com/analytics/itp-2-1-and-web-analytics/), browsers, including Safari, Chrome and Firefox, will continue to patch loopholes, making any third-party data collection platforms unreliable as a long-term solution.
 

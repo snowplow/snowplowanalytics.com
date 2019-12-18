@@ -3,7 +3,7 @@ layout: post
 title: Announcing our winter open source internship program
 tags: [snowplow, intern, wintern, internship]
 author: Alex
-category: Recruitment
+category: Inside the Plow
 permalink: /blog/2013/10/07/announcing-our-winter-open-source-internship-program/
 ---
 

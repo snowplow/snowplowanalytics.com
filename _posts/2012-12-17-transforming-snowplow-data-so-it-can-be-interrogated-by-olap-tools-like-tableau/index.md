@@ -4,7 +4,7 @@ title: Transforming Snowplow data so that it can be interrogataed in BI / OLAP t
 title-short: Transforming Snowplow data
 tags: [snowplow, olap, tableau, pentaho, qlikview, microstrategy, star schema, columnar database]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2012/12/17/transforming-snowplow-data-so-it-can-be-interrogated-by-olap-tools-like-tableau/
 ---
 

@@ -344,8 +344,8 @@
 
 
 
-- name: Alex & Jason 
-  full_name: Alex Beskin & Jason Bellinger 
+- name: Alex-Jason
+  full_name: Alex B & Jason B
   twitter:
   url: /blog/authors/alex-jason/
   avatar: /assets/img/blog/2019/09/animoto.jpeg
@@ -359,3 +359,16 @@
   avatar: /assets/img/team/paul.jpg
   spiel:   |
       <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
+
+
+- name: Lukas
+  full_name:  Łukasz Indykiewicz
+  url: /blog/authors/lukas/
+  avatar: /assets/img/blog/2019/12/lukas.jpeg
+  spiel:   |
+      Luke is a software engineer at Snowplow. You can find him on <a href="https://github.com/lukeindykiewicz">GitHub</a>, <a href="https://twitter.com/lukeindykiewicz">Twitter</a> and <a href="https://pl.linkedin.com/in/lukaszindykiewicz">LinkedIn</a>. 
+
+
+
+
+      

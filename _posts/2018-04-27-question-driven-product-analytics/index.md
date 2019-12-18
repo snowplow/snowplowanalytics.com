@@ -6,7 +6,7 @@ description: How asking the right questions can lead to product improvements
 image: /assets/img/blog/2018/04/retained-users.png
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2018/04/27/getting-the-most-out-of-product-analytics-with-intelligent-questions/
 discourse: true
 ---

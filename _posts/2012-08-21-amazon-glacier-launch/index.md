@@ -3,7 +3,7 @@ layout: post
 title: Amazon announces Glacier - lowers the cost of running Snowplow
 title-short: Amazon announces Glacier
 author: Alex
-category: Other
+category: Data Insights
 tags: [amazon glacier]
 permalink: /blog/2012/08/21/amazon-glacier-launch/
 ---

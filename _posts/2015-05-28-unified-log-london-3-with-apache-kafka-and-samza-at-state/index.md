@@ -3,7 +3,7 @@ layout: post
 title: "Unified Log London 3 with Apache Kafka and Samza at State"
 tags: [unified log, meetup, kafka, samza, state]
 author: Alex
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2015/05/28/unified-log-london-3-with-apache-kafka-and-samza-at-state/
 ---
 

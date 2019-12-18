@@ -5,7 +5,7 @@ title-short: What I learned after looking at data of 80 companies
 tags: [analytics, data, big data, data science, business intelligence, data for business]
 image: /assets/img/blog/2019/02/tech-companies.png
 author: Segah
-category: Analytics
+category: Data Insights
 permalink: /blog/2019/02/13/guest-post-after-looking-at-the-data-of-80-tech-companies-what-have-i-learned/
 discourse: true
 ---

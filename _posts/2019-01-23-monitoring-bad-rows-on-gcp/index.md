@@ -4,7 +4,7 @@ title-short: Real-time Bad row Monitoring in Data Studio (GCP)
 title: "Monitoring Bad Rows on GCP Using BigQuery and Data Studio"
 tags: [snowplow, real-time, GCP, bad-rows]
 author: Colm
-category: Analytics
+category: Data Insights
 image: /assets/img/blog/2019/01/dashboard.jpg
 permalink: /blog/2019/01/23/monitoring-bad-rows-on-gcp-using-bigquery-and-data-studio/
 ---

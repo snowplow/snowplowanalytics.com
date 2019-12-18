@@ -4,7 +4,7 @@ title-short: Snowplow at GDC
 title: "Snowplow at GDC: why gaming companies don’t need to build their own event data pipeline"
 tags: [snowplow, analytics, data, gaming, games, gdc, aws, codecombat]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2017/04/18/snowplow-at-gdc/
 classification:
    department: product, analyst

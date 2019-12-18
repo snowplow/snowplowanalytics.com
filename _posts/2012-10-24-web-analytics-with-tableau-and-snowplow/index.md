@@ -3,7 +3,7 @@ layout: post
 title: Performing web analytics on Snowplow data using Tableau - a video demo
 tags: [ecommerce, tableau, demo, video]
 author: Yali
-category: Analytics
+category: Data Insights
 permalink: /blog/2012/10/24/web-analytics-with-tableau-and-snowplow/
 ---
 

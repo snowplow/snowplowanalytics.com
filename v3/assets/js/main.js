@@ -2,12 +2,10 @@
 var validateInput = function(kind, value){
     value = value ? value.trim() : ''
     switch(kind) {
-        case 'name':
-            return (value.length > 1)
+        case 'not_empty':
+            return (value.length > 1 )
         case 'email':
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
-        case 'company':
-            return (value.length > 1)
     }
 }
 
@@ -15,7 +13,7 @@ var validateInput = function(kind, value){
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
 
-    var url = 'https://go.snowplowanalytics.com/l/571483/2019-09-17/3s1twb6'
+    var url = $("#main-form").attr("data-pardotUrl");
     $.ajax({
         url: url,
         jsonp: "callback",
@@ -26,42 +24,110 @@ var pardotSubmit = function (data){
     window.callback = function (data) {
         //Handle thankyou fadein on success or color every input if pardot error
         (data.result == 'success') 
-        ? $('#nl-form').hide() 
+        ? $('.form-wrap').hide() 
             && $('.thankyou').fadeIn(700)
-            && dataLayer.push({ 'event': 'newsletter' })
+            // push an event to GTM
+            && dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
         : $('input').addClass('error') 
             && $('#form_submit_button').removeClass('activate-loader')
     }
 }
 
-// push to GTM
 
+
+
+// Validate and Submit
+var handleSubmit = function(e){
+    e.preventDefault();
+    var data = {};
+    var pass = 1;
+    
+    // Populate DUID
+    snowplow(function () {
+        data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
+    });
+
+    $('#main-form input, #main-form textarea').each(function(){
+        // Validate input fields
+        console.log(this.name)
+        switch(this.name){
+            case 'email':
+                !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
+            
+            default:
+                if(this.name != 'message'){
+                    !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
+                }
+        }
+        // Populate data with input values
+        data[this.name] =  this.value;
+    });
+    // If validation passes - run api call
+    pass && $('#form_submit_button').addClass('activate-loader') 
+         && pardotSubmit(data)
+  
+}
+
+
+// VISUAL HELPERS
 
 //Remove any validation when user tries to rewrite the field
 $('input').focus(function(){
     $(this).removeClass('error')
 })
 
-// Validate and Submit
-var handleSubmit = function(e){
-    e.preventDefault();
-    var data = {};
-    data.email = $('#email').val()
-    
-    // Snowplow tracker -- Retreive DomainUserId
-    snowplow(function () {
-        data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
-    });
 
-    //Validate email and color invalid input field
-    !validateInput('email', data.email) 
-    && $('#email').addClass('error');
-    
-    //Submit form if all pass
-    (validateInput('email', data.email))
-        && $('#form_submit_button').addClass('activate-loader') 
-        && pardotSubmit(data) 
+// BIND FORM WITH HELPER
+
+var form = document.getElementById('main-form');
+console.log(form.length);
+form.addEventListener('submit', handleSubmit);
+
+
+
+// Temp solution - Scroll on writers program TODO
+
+$("#writers-cta").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#main-form").offset().top -100
+    }, 1000);
+});
+
+// Pricing page initialize only if present
+
+if($(".pricing-slider")[0]){
+    $(".pricing-slider").slick({
+
+        // normal options...
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+       
+      
+        // the magic
+        responsive: [
+            {
+            breakpoint: 810,
+            settings: {
+              slidesToShow: 1,
+              dots: false,
+              initialSlide:1
+            }
+      
+          }]
+      });
 }
 
-var form = document.getElementById('newsletter-form');
-form.addEventListener('submit', handleSubmit);
+// Pricing page add functionality to hints
+
+
+$('.questionmark').click(function(e){
+    $('.questionmark').next().hide(100);
+    $(this).next().show(100);
+    e.stopPropagation();
+})
+
+$('body').click(function(){
+    $('.questionmark').next().hide(100);
+});
+

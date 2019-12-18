@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/10/balance.jpg
 title-short: Customer acquisition for two-sided markets
 tags: [analytics, marketplace, two sided market, customer acquisition, cro]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2018/10/31/building-reliable-scalable-customer-acquisition-for-marketplaces/
 discourse: true
 ---

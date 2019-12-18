@@ -6,7 +6,7 @@ image: /assets/img/blog/2019/02/will.png
 title-short: Why you should own your own data
 tags: [analytics, data, data ownership, data stack, data pipeline]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/
 discourse: true
 ---

@@ -4,7 +4,7 @@ title: Unified Log Processing is now available from Manning Early Access
 title-short: Unified Log Processing available as MEAP
 tags: [snowplow, unified log, kafka, kinesis, manning, meap, event processing]
 author: Alex
-category: Other
+category: Data Insights
 permalink: /blog/2014/07/31/unified-log-processing-available-as-meap/
 ---
 

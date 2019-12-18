@@ -4,7 +4,7 @@ title: "The Crunch Practical Big Data Conference Budapest was awesome - thank yo
 title-short: Crunchconf Budapest recap
 tags: [conference, crunch, Prezi, UStream, Budapest, big data]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2015/11/09/crunch-practical-big-data-conference-budapest-was-awesome/
 ---
 

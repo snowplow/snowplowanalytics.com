@@ -4,7 +4,7 @@ title: The third Snowplow Meetup London was all about Real-Time!
 title-short: Snowplow London Meetup 3 - all about Real-Time!
 tags: [meetups, London, Memrise, Simply Business, real-time]
 author: Idan
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2016/09/23/snowplow-meetup-london-3-was-all-about-real-time/
 ---
 

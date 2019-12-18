@@ -4,7 +4,7 @@ title-short: "The Snowplow Data Maturity Model"
 title: "The Snowplow Data Maturity Model"
 description: "This article shares our perspective on data maturity, and the five distinct stages we’ve identified in the journey."
 author: Lyuba
-category: Other
+category: Data insights
 permalink: /blog/2019/10/03/the-snowplow-data-maturity-model/
 ---
 

@@ -4,7 +4,7 @@ title: Introduction to Snowplow - Talk at Big Data and Data Science Israel
 title-short: Talk at Big Data and Data Science Israel
 tags: [snowplow, big data, data science, israel, tel aviv, meetup]
 author: Alex
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2014/03/24/introduction-to-snowplow-big-data-and-data-science-israel/
 ---
 

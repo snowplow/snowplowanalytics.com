@@ -4,7 +4,7 @@ title: "Using Snowplow to solve business problems at our latest London Meetup"
 title-short: Latest Snowplow London Meetup
 tags: [analytics, meetups, Snowplow Meetup]
 author: Anthony
-category: Analytics
+category: Data Insights
 permalink: /blog/2018/04/13/using-snowplow-to-solve-business-problems-at-our-latest-london-meetup/
 discourse: true
 ---

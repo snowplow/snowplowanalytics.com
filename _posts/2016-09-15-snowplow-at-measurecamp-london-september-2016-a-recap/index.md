@@ -4,7 +4,7 @@ title: Snowplow at Measurecamp London September 2016 - a recap
 title-short: Measurecamp London recap
 tags: [meetups, london, measurecamp]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2016/09/15/snowplow-at-measurecamp-london-september-2016-a-recap/
 ---
 

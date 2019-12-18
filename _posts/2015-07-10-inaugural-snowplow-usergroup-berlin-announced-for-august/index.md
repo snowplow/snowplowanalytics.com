@@ -3,7 +3,7 @@ layout: post
 title: The inaugural Snowplow meetup in Berlin event to take place on August 11
 tags: [snowplow, meetup, berlin, data modeling, measuring tv advertising, attribution]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2015/07/10/inaugural-snowplow-usergroup-berlin-announced-for-august/
 image: http://snowplowanalytics.com/assets/img/blog/2015/07/berlin.jpg
 ---

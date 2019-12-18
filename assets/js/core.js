@@ -326,10 +326,10 @@ if (!window.location.origin) {
         /**
          * BLOG SOCIAL ICONS
          */
-        $(".social-buttons").jsSocials({
+        $(".sharing-center").jsSocials({
             showLabel: false,
             showCount: false,
-            shares: ["facebook", "twitter", "linkedin", "googleplus"]
+            shares: ["facebook", "twitter", "linkedin"]
         });
 
 

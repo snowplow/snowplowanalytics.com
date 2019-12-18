@@ -4,7 +4,7 @@ title: "GDPR compliance in digital analytics and how we want to help"
 title-short: GDPR compliance
 tags: [company culture, management]
 author: Anthony
-category: GDPR
+category: Data Governance
 permalink: /blog/2017/12/14/gdpr-compliance-in-digital-analytics-and-how-we-want-to-help/
 description: "How we want to help companies navigate GDPR compliance in digital analytics"
 discourse: true

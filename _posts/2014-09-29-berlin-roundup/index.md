@@ -3,7 +3,7 @@ layout: post
 title: Berlin trip round-up
 tags: [snowplow, berlin, big data beers, daala, co-up]
 author: Alex
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2014/09/29/berlin-roundup/
 ---
 

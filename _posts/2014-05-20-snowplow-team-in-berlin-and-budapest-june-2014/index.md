@@ -4,7 +4,7 @@ title: The Snowplow team will be in Berlin and Budapest in June - get in touch i
 title-short: Snowplow team in Berlin and Budapest
 tags: [snowplow, Germany, Hungary, Berlin, Budapest, conference, Digital Analytics Hub, Budapest Datawarehousing Forum]
 author: Yali
-category: Meetups
+category: Inside the Plow
 permalink: /blog/2014/05/20/snowplow-team-in-berlin-and-budapest-june-2014/
 ---
 

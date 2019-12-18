@@ -4,7 +4,7 @@ title-short: How real-time data enables personalization and engagement
 title: "How real-time data enables personalization and engagement"
 description: "Real-time event data is powering media companies to automate, optimize and personalize complex marketing actions and personalization"
 author: Erika
-category: Analytics
+category: Data insights
 permalink: /blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/
 discourse: false
 ---
