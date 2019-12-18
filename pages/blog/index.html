@@ -21,7 +21,7 @@ assets:
             <ul class="list-categories">
                 {% for category in site.data.categories limit:8 %}
                 <li class="box-shadow">
-                    <a href="{{ site.url }}{{ category.url }}">
+                    <a href="{{ category.url }}">
                         <img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}"/>
                         <p>{{ category.name }}</p>
                         <span class="link-indicator alt-cta"></span>
