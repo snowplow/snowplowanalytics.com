@@ -5,7 +5,7 @@ title: "Snowplow for media part 3: what can we do with the data when we're getti
 tags: [analytics, data, insights, media, media analytics]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/05/29/snowplow-for-media-part-3/
 discourse: true
 ---

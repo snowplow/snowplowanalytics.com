@@ -4,7 +4,7 @@ title: "Real-time data processing with Google Analytics using Snowplow"
 title-short: Google Analytics data in real-time
 tags: [analytics, Google Analytics, real-time data processing]
 author: Anthony
-category: Data Insights
+category: Data insights
 permalink: /blog/2018/03/23/real-time-data-processing-with-google-analytics-using-snowplow/
 discourse: true
 ---

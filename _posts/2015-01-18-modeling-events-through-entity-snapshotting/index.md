@@ -3,7 +3,7 @@ layout: post
 title: Modeling events through entity snapshotting
 tags: [event, analytics, grammar, model, entities]
 author: Alex
-category: Data Insights
+category: Data insights
 permalink: /blog/2015/01/18/modeling-events-through-entity-snapshotting/
 ---
 

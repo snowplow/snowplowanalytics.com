@@ -4,7 +4,7 @@ title: "Product analytics part one, data and digital products"
 title-short: Snowplow product analytics part one
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Data Insights
+category: Data insights
 permalink: /blog/2018/01/19/product-analytics-part-one-data-and-digital-products/
 ---
 

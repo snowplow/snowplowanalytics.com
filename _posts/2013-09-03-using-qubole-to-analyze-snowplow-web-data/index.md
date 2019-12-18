@@ -3,7 +3,7 @@ layout: post
 title: Using Qubole to crunch your Snowplow web data using Apache Hive
 tags: [qubole, hive, emr]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/09/03/using-qubole-to-analyze-snowplow-web-data/
 ---
 

@@ -6,7 +6,7 @@ description: See how event data can give you better level analytics
 image: /assets/img/blog/2017/04/codecombat_screenshot_1.png
 tags: [snowplow, games, gaming, analytics, product, product manager, codecombat]
 author: Colm
-category: Data Insights
+category: Data insights
 permalink: /blog/2017/04/12/how-to-develop-better-games-with-level-analytics/
 classification:
    department: product

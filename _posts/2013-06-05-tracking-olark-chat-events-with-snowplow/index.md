@@ -5,7 +5,7 @@ tags: [snowplow, olark, structured event tracking]
 description: Tracking Olark events
 image: /assets/img/blog/2013/06/olark/olark-logo.png
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/06/05/tracking-olark-chat-events-with-snowplow/
 ---
 

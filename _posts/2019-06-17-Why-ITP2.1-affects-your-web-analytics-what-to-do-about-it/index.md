@@ -4,7 +4,7 @@ title: "Why ITP 2.1 affects your web analytics and what to do about it"
 tags: [ITP 2.1, analytics, data, data collection, intelligent tracking, web data]
 author: Lyuba
 image:
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/06/17/why-ITP2.1-affects-web-analytics-what-to-do-about-it/
 discourse: true
 published: true

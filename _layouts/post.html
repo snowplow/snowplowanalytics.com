@@ -7,11 +7,11 @@ layout: compress
 
 <main class="single-v3">
 		{% include header.html %}
-		<section class="post-hero">
+		<section class="post-hero sub-hero">
 			<span class="hex-bg"></span>
 			<div class="wrap">
 				<div class="heading">
-					<h5 class="accent">BLOG POST</h5>
+					<span class="accent">BLOG POST</span>
 					<h1>{{ page.title }}</h1>
 				</div>
 				<span class="separator alt-cta"></span>
@@ -31,7 +31,11 @@ layout: compress
 
 					{% if page.category != empty %}
 					<div class="category">
-						<img src="{{ BASE_PATH }}/v3/assets/img/global/category-icon.svg" alt="#" />
+						{% for category in site.data.categories %}
+						{% if category.name == page.category %}
+						<img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}">
+						{% endif %}
+						{% endfor %}
 						<p>{{ page.category }}</p>
 					</div>
 					{% endif %}

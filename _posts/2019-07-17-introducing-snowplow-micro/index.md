@@ -1,7 +1,7 @@
 ---
 layout: post
 title-short: Introducing Snowplow Micro
-title: "Introducing Snowplow Micro: Now you can validate your tracker setup as part of your automated test suite"
+title: "Introducing Snowplow Micro: Validate your tracker setup in your automated test suite"
 description: "What Snowplow Micro is and how you can get started."
 author: Yali
 category: Product features

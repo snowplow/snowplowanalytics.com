@@ -4,7 +4,7 @@ title: Using the new SQL views to perform cohort analysis with ChartIO
 title-short: Cohort analysis with ChartIO
 tags: [cohort analysis, chartio]
 author: Yali
-category: Data Insights
+category: Data insights
 permalink: /blog/2013/10/22/cohort-analysis-with-using-new-sql-recipes-and-chartio/
 ---
 
