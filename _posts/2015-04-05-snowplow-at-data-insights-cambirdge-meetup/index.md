@@ -3,7 +3,7 @@ layout: post
 title: Snowplow at the Data Insights meetup in Cambridge
 tags: [snowplow, schemas, data modeling, event data, talks]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/04/05/snowplow-at-data-insights-cambirdge-meetup/
 ---
 

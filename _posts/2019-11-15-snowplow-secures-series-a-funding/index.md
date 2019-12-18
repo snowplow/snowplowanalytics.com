@@ -4,7 +4,7 @@ title-short: "Snowplow secures £4m Series A funding to expand real-time data pi
 title: "Snowplow secures £4m Series A funding to expand real-time data pipeline capabilities"
 description: "Snowplow raises Series A funding from MMC Ventures to expand data pipeline capabilities and empower data teams globally"
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/11/15/snowplow-secures-series-a-funding/
 ---
 

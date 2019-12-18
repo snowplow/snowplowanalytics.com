@@ -5,7 +5,7 @@ title: "Data Science Festival: Machine learning in real-time: the next frontier"
 tags: [analytics, data, big data, data science, business intelligence, machine learning, AI, data team]
 author: Alex
 image:
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/04/24/data-science-festival-machine-learning-in-real-time/
 discourse: true
 published: true

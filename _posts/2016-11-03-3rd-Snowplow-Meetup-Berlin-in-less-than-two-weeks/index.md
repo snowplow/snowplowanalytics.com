@@ -4,7 +4,7 @@ title: 3rd Snowplow Meetup Berlin in less than two weeks!
 title-short: 3rd Snowplow Meetup Berlin in less than two weeks!
 tags: [meetups, Berlin, JustWatch, Incuda]
 author: Idan
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/11/03/3rd-Snowplow-Meetup-Berlin-in-less-than-two-weeks/
 ---
 

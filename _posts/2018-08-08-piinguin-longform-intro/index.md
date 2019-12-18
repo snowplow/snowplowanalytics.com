@@ -6,7 +6,7 @@ image:
 title-short: Working with PII and Snowplow
 tags: [analytics, GDPR, data governance]
 author: Anthony
-category: Data Governance
+category: Data governance
 permalink: /blog/2018/08/08/self-describing-data-becomes-self-policing-data/
 discourse: true
 ---

@@ -4,7 +4,7 @@ title: The inaugural Snowplow Meetup New York is a wrap!
 title-short: The inaugural Snowplow Meetup New York is a wrap!
 tags: [meetups, New York, oyster.com, viewbix]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/04/20/the-inaugural-snowplow-meetup-new-york-is-a-wrap/
 ---
 

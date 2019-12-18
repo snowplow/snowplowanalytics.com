@@ -4,7 +4,7 @@ title: The first Graduate Data Science Initiative event in London
 title-short: Graduate Data Science Initiative in London
 tags: [events, graduate, data science]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/12/04/snowplow-at-the-graduate-data-science-initiative/
 ---
 

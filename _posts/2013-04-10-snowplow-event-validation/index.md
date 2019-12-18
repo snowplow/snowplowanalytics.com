@@ -4,7 +4,7 @@ title: Towards high-fidelity web analytics - introducing Snowplow's innovative n
 title-short: Snowplow event validation
 tags: [snowplow, data, event, validation]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/04/10/snowplow-event-validation/
 ---
 

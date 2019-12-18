@@ -4,7 +4,7 @@ title: The Snowplow Meetup New York Number 2 - a recap
 title-short: "Snowplow Meetup NYC #2"
 tags: [snowplow, meetup, hadoop, new york, nyc, animoto, canary, product analytics]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/10/27/snowplow-meetup-new-york-number-2-a-recap/
 ---
 

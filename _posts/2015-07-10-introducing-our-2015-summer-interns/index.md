@@ -3,7 +3,7 @@ layout: post
 title: Introducing our 2015 Snowplow summer interns
 tags: [snowplow, intern, summer, internship]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/07/10/introducing-our-2015-summer-interns/
 ---
 

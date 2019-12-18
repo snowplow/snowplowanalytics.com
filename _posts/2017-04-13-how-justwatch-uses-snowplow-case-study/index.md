@@ -6,7 +6,7 @@ description: How JustWatch uses snowplow data to drive growth
 image: /assets/img/blog/2017/04/dominik-raute-photo.png
 tags: [snowplow, analytics, media, advertising, adtech, justwatch, data, movie, film, studio, video]
 author: Giuseppe
-category: User Stories
+category: User stories
 permalink: /blog/2017/04/13/how-justwatch-uses-snowplow-case-study/
 classification:
    department: marketer, analyst

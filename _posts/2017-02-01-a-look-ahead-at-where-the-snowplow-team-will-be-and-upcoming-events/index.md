@@ -3,7 +3,7 @@ layout: post
 title: "A look ahead at where the Snowplow team will be and upcoming events"
 tags: ["meetup", "Gousto", "Busuu", "Game Developers Conference", "Sigfig", "CodeCombat", "deBijenkorf", "MeasureCamp"]
 author: Giuseppe
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/02/01/a-look-ahead-at-where-the-snowplow-team-will-be-and-upcoming-events/
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: The first Snowplow meetup in San Francisco announced!
 tags: [snowplow, meetup, san francisco, tilt]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/09/04/inaugural-snowplow-meetup-san-francisco-announced/
 ---
 

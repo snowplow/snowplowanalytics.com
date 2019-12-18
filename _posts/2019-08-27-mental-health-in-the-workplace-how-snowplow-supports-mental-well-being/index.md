@@ -4,7 +4,7 @@ title: "Mental health in the workplace: how Snowplow supports mental well-being"
 title-short: Mental health in the workplace
 description: "Speaking openly and treating mental health the same as we do physical health is the first step to a more inclusive workplace."
 author: Nicki
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/08/27/mental-health-in-the-workplace-how-snowplow-supports-mental-well-being/
 ---
 

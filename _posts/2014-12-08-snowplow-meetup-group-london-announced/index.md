@@ -3,7 +3,7 @@ layout: post
 title: Snowplow meetups announced in London and Sydney
 tags: [snowplow, meetup]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/12/08/snowplow-meetup-group-london-announced/
 ---
 

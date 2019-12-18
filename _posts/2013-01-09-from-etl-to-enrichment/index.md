@@ -3,7 +3,7 @@ layout: post
 title: The Snowplow development roadmap for the ETL step - from ETL to enrichment
 title-short: From ETL to enrichment
 tags: [etl, enrichment, data processing, data pipelines]
-category: Inside the Plow
+category: Inside the plow
 author: yali
 permalink: /blog/2013/01/09/from-etl-to-enrichment/
 ---

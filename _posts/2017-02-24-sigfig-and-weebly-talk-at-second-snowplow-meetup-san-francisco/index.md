@@ -4,7 +4,7 @@ title-short: Sigfig and Weebly talk at second Snowplow Meetup San Francisco
 title: "Sigfig and Weebly talk at second Snowplow Meetup San Francisco"
 tags: [snowplow, user stories, marketing analytics, product analytics, funnels, evolving data pipelines]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/02/24/sigfig-and-weebly-talk-at-second-snowplow-meetup-san-francisco/
 ---
 

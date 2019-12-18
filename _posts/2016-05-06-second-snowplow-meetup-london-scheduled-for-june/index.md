@@ -4,7 +4,7 @@ title: The second Snowplow Meetup London scheduled for June
 title-short: Second Snowplow Meetup London scheduled for June
 tags: [meetups, London]
 author: Idan
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/05/06/second-snowplow-meetup-london-scheduled-for-june/
 ---
 

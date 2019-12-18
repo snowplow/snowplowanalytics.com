@@ -5,7 +5,7 @@ title-short: Page views as a graph
 tags: [analytics, graph database, data modeling]
 image: /assets/img/blog/2018/07/page_view_series.png
 author: Dilyan
-category: How to Guides
+category: How to guides
 permalink: /blog/2018/08/13/modelling-page-view-events-as-a-graph/
 discourse: true
 ---

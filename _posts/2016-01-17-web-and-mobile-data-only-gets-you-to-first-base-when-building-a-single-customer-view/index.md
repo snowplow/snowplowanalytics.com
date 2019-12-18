@@ -4,7 +4,7 @@ title-short: Web and mobile data only gets you to first base when building a sin
 title: Web and mobile data only gets you to first base when building a single customer view
 tags: [event data, single customer view, multi-channel marketing, customer journey mapping, optimizing customer journeys, email marketing, push messaging, display advertising, call center analytics]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2016/01/17/web-and-mobile-data-only-gets-you-to-first-base-when-building-a-single-customer-view/
 ---
 

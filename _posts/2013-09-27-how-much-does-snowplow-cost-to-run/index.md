@@ -4,7 +4,7 @@ title: How much does Snowplow cost to run?
 title-short: How much does Snowplow cost to run
 tags: [snowplow, total cost of ownership]
 author: Yali
-category: Inside the Plow  
+category: Inside the plow  
 permalink: /blog/2013/09/27/how-much-does-snowplow-cost-to-run/
 ---
 

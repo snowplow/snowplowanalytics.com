@@ -4,7 +4,7 @@ title-short: First  Snowplow Sao Paulo meetup
 title: "Insights from the first Snowplow meetup in Brazil"
 tags: [snowplow, analytics, data, Getninjas, Creditas]
 author: Bernardo
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/05/03/insights-from-the-first-snowplow-meetup-in-brazil/
 classification:
    department: data engineering, analyst

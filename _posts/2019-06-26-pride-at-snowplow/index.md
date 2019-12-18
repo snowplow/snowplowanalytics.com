@@ -3,7 +3,7 @@ layout: post
 title-short: Pride at Snowplow
 title: "Pride at Snowplow"
 author: Nicki
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/06/26/pride-at-snowplow/
 discourse: true
 ---
