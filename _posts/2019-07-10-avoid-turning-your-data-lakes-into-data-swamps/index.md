@@ -4,7 +4,7 @@ title-short: Avoid turning your data lakes into data swamps
 title: "Avoid turning your data lakes into data swamps: Focus on data quality, not capture"
 description: "How to master your data lake to surface long-term business value. Free white paper included"
 author: Erika
-category: Data Insights
+category: Data insights
 permalink: /blog/2019/07/10/avoid-turning-your-data-lakes-into-data-swamps/
 discourse: true
 featured: true

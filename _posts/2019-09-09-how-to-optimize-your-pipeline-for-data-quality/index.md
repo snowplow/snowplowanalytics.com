@@ -4,7 +4,7 @@ title: How to optimize your pipeline for data quality
 title-short: How to optimize your pipeline for data quality
 description: This article explores two key data quality issues that arise in a business, and how data teams can improve the quality of their data.
 author: Lyuba
-category: Data insights
+category: How to guides
 permalink: /blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline.jpg

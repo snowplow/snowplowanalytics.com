@@ -4,7 +4,7 @@ title-short: Avoid turning your data lakes into data swamps
 title: "Piecing together the complex customer journey for a complete single customer view"
 description: "How travel startup Tourlane uses Snowplow to centralize and stitch together multiple data sources"
 author: Erika
-category: Data insights
+category: User stories
 permalink: /blog/2019/09/20/piecing-together-the-complex-customer-journey-for-a-complete-single-customer-view/
 discourse: true
 ---

@@ -5,7 +5,7 @@ title: "Snowplow for retail part 1: how can I use Snowplow?"
 tags: [analytics, data, insights, retail, retail analytics, ecommerce]
 author: Archit
 image: /assets/img/blog/2019/03/pipeline.png
-category: Data Insights
+category: How to guides
 permalink: /blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/
 discourse: true
 featured: true
