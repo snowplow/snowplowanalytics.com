@@ -121,7 +121,7 @@ layout: compress
 										{% for category in site.data.categories %}
 										{% if category.name == post.category %}
 										<div class="category-overlay">
-											<img src="{{ site.url }}{{ category.background }}" alt="{{ category.name }}">
+											<img src="{{ BASE_PATH }}{{ category.background }}" alt="{{ category.name }}">
 										</div>
 										{% endif %}
 										{% endfor %}
