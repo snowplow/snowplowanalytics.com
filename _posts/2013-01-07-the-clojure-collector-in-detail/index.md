@@ -3,7 +3,7 @@ layout: post
 title: Understanding the thinking behind the Clojure Collector, and mapping out its development going forwards
 title-short: The Clojure Collector in detail
 tags: [snowplow, clojure collector, clojure, third party cookies, amazon elastic beanstalk]
-category: Inside the Plow
+category: Inside the plow
 author: yali
 permalink: /blog/2013/01/07/the-clojure-collector-in-detail/
 ---

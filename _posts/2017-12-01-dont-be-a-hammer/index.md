@@ -4,7 +4,7 @@ title: "Don't be a hammer"
 title-short: Hammer
 tags: [data analytics, data management]
 author: Anthony
-category: Other
+category: Data insights
 permalink: /blog/2017/12/01/dont-be-a-hammer/
 description: "Reframing your thinking to be a data-driven marketing professional"
 ---

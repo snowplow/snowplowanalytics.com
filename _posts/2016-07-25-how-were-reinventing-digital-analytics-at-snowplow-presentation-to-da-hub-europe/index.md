@@ -4,7 +4,7 @@ title: "How we're reinventing digital analytics at Snowplow: presentation to the
 title-short: "How we're reinventing digital analytics at Snowplow"
 tags: [digital analytics, web analytics, event analytics]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/07/25/how-were-reinventing-digital-analytics-at-snowplow-presentation-to-da-hub-europe/
 ---
 

@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/08/Rebecca_02.jpg
 title-short: Snowplow Spotlight Recca
 tags: [analytics, snowplow team, startups, company culture]
 author: Miriam
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2018/08/17/snowplow-spotlight-rebecca-lane/
 discourse: true
 ---

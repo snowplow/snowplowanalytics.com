@@ -3,7 +3,7 @@ layout: post
 title: 'Data modeling in Spark (Part 1): Running SQL queries on DataFrames in Spark SQL'
 title-short: 'Data modeling in Spark (Part 1)'
 author: Christophe
-category: Data Modeling
+category: How to guides
 permalink: /blog/2015/12/02/data-modeling-in-spark-exploring-spark-sql/
 ---
 

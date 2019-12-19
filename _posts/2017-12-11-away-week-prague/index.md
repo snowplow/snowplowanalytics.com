@@ -4,7 +4,7 @@ title: "The importance of face-to-face for remote teams"
 title-short: Face to face
 tags: [company culture, management]
 author: Anthony
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/12/11/the-importance-of-face-to-face-for-remote-teams/
 description: "The role of team retreats for distributed companies"
 ---

@@ -4,7 +4,7 @@ title-short: "What is data modeling and why do I need it?"
 title: "What is data modeling and why do I need it?"
 description: "How and why to model and democratize your data with data modeling"
 author: Erika
-category: Other
+category: Data insights
 permalink: /blog/2019/10/14/what-is-data-modeling-and-why-do-i-need-it/
 ---
 

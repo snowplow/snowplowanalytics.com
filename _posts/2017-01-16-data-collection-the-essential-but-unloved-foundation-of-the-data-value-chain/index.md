@@ -4,7 +4,7 @@ title: "Data collection: the essential, but unloved, foundation of the data valu
 image: /assets/img/blog/2017/01/Big-Data-Landscape-2016-v18-FINAL.png
 tags: [good data, data collection, technical architecture]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/01/16/data-collection-the-essential-but-unloved-foundation-of-the-data-value-chain/
 ---
 

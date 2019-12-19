@@ -5,7 +5,7 @@ title: "[Tutorial] Adding what3words reverse geocoding data to Snowplow enriched
 tags: [analytics, enrichments, api, custom api, web data modeling, data modeling, web analytics]
 author: Dilyan
 image: /assets/img/blog/2019/02/kibana-screenshot.png
-category: Data Modeling
+category: How to guides
 permalink: /blog/2019/02/27/w3w-api-request-enrichment/
 discourse: true
 ---

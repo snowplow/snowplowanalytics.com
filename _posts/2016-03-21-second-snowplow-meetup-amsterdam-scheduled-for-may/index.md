@@ -4,7 +4,7 @@ title: The second Snowplow Meetup Amsterdam scheduled for May
 title-short: Second Snowplow Meetup Amsterdam scheduled for May
 tags: [meetups, Amsterdam]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/03/21/second-snowplow-meetup-amsterdam-scheduled-for-may/
 ---
 

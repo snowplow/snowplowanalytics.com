@@ -4,7 +4,7 @@ title-short: "Introducing the Snowplow Writers Program"
 title: "Introducing the Snowplow Writers Program"
 description: "Share your Snowplow and data analytics use cases and experiences."
 author: Erika
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/11/05/introducing-the-snowplow-writers-program/
 ---
 

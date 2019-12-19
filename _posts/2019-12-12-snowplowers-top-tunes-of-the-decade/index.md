@@ -4,7 +4,7 @@ title-short: "Snowplowers’ Top Tunes of the Decade"
 title: "Snowplowers’ Top Tunes of the Decade"
 description: "We asked our team what songs truly shaped their decade."
 author: Nicki
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/12/12/snowplowers-top-tunes-of-the-decade/
 ---
 

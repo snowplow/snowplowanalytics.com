@@ -6,7 +6,7 @@ image: /assets/img/team/josh.jpg
 title-short: Snowplow Spotlight Josh
 tags: [analytics, snowplow team, snowplow, startups, company culture, Inside the Plow]
 author: Miriam
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2018/09/28/snowplow-spotlight-josh-beemster/
 discourse: true
 ---

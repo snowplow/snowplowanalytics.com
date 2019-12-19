@@ -4,7 +4,7 @@ title: The inaugural Snowplow Meetup Boston is a wrap!
 title-short: The inaugural Snowplow Meetup Boston is a wrap!
 tags: [meetups, Boston, Carbonite, CustomMade]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/04/21/the-inaugural-snowplow-meetup-boston-is-a-wrap/
 ---
 

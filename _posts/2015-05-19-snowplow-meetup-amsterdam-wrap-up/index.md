@@ -3,7 +3,7 @@ layout: post
 title: "The inaugural Snowplow meetup in Amsterdam is a wrap!"
 tags: [snowplow, meetup]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2015/05/19/snowplow-meetup-amsterdam-wrap-up/
 ---
 

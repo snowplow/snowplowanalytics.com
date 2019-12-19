@@ -3,7 +3,7 @@ layout: post
 title: Unpicking the Snowplow data pipeline and how it drives AWS costs
 tags: [total cost of ownership, cloud services]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/07/09/understanding-how-different-parts-of-the-Snowplow-data-pipeline-drive-AWS-costs/
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: The inaugural Snowplow meetup in San Francisco is a wrap!
 tags: [snowplow, meetup, san francisco, aws, stumbleupon, tilt, chefsfeed]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2015/10/22/snowplow-meetup-san-francisco-is-a-wrap/
 ---
 

@@ -5,7 +5,7 @@ title: "How server-side tracking fills holes in your data and improves your anal
 tags: [analytics, server-side, tracking, data science]
 author: Rebecca
 image:
-category: Analytics
+category: Data insights
 permalink: /blog/2019/02/05/how-server-side-tracking-fills-holes-in-your-data-and-improves-your-analytics/
 discourse: true
 ---

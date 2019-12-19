@@ -3,7 +3,7 @@ layout: post
 title: Our video introduction of Snowplow to code_n
 tags: [code_n]
 author: Yali
-category: Other
+category: Data insights
 permalink: /blog/2013/10/28/yali-and-alex-introduce-snowplow-to-code-n/
 ---
 

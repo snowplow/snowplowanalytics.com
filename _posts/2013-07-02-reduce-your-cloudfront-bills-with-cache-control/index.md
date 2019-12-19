@@ -3,7 +3,7 @@ layout: post
 title: Reduce your Cloudfront costs with cache control
 tags: [amazon, cloudfront, cdn, cache control]
 author: Yali
-category: Other
+category: Data insights
 permalink: /blog/2013/07/02/reduce-your-cloudfront-bills-with-cache-control/
 ---
 

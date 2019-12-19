@@ -5,7 +5,7 @@ title: "Snowplow Spotlight Benjamin Benoist"
 tags: [analytics, snowplow team, snowplow, startups, company culture, data engineer, Inside the Plow]
 author: Miriam
 image: /assets/img/blog/2019/04/benjamin-benoist.jpg
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/04/16/snowplow-spotlight-ben-benoist/
 discourse: true
 ---

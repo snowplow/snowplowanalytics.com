@@ -3,7 +3,7 @@ layout: post
 title: Joshua Beemster is a Snowplower!
 tags: [josh beemster, joshua beemster, data engineer, hiring]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/02/19/joshua-beemster-is-a-snowplower/
 ---
 

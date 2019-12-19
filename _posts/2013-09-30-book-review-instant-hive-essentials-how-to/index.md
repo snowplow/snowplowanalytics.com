@@ -3,7 +3,7 @@ layout: post
 title: Book review - Apache Hive Essentials How-to
 tags: [hive, book]
 author: Yali
-category: Analytics
+category: Data insights
 permalink: /blog/2013/09/30/book-review-instant-hive-essentials-how-to/
 ---
 

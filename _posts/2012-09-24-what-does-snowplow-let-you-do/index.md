@@ -3,7 +3,7 @@ layout: post
 title: Why set your data free?
 tags: [data, analysis, web analytics, joining data]
 author: Yali
-category: Analytics
+category: Data insights
 permalink: /blog/2012/09/24/what-does-snowplow-let-you-do/
 ---
 At Saturday's [Measure Camp] [measurecamp], I had the chance to introduce Snowplow to a large number of some incredibly thoughtful and insightful people in the web analytics industry.

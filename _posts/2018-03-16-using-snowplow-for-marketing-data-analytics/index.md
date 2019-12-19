@@ -4,7 +4,7 @@ title: "Using Snowplow for marketing data analytics"
 title-short: Snowplow for marketers
 tags: [analytics, marketing, web analytics]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2018/03/16/using-snowplow-for-marketing-data-analytics/
 discourse: true
 ---

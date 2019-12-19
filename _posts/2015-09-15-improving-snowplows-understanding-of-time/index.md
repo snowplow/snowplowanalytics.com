@@ -4,7 +4,7 @@ title: "Improving Snowplow's understanding of time"
 title-short: "Improving Snowplow's understanding of time"
 tags: [snowplow, time, ts, tstamp, event]
 author: Alex
-category: Research
+category: Data insights
 permalink: /blog/2015/09/15/improving-snowplows-understanding-of-time/
 ---
 

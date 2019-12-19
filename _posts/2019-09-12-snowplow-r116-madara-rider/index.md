@@ -3,7 +3,7 @@ layout: post
 title-short: "Snowplow R116 adds new features to the Scala Stream Collector"
 title: "Snowplow R116 adds new features to the Scala Stream Collector"
 tags: [snowplow, scalastreamcollector, release]
-author: Dilyan Damyanov
+author: Dilyan
 category: Releases
 permalink: /blog/2019/09/12/snowplow-r116-madara-rider/
 ---
