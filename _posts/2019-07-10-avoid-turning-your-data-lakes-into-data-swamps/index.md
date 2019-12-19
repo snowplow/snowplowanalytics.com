@@ -10,6 +10,7 @@ discourse: true
 featured: true
 pdf: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Data_Lakes_Data_Swamps.jpg
+image: /assets/img/blog/featured/SP-Blog-Post-Data_Lakes_Data_Swamps.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Data_Lakes_Data_Swamps-mini.jpg
 ---
 

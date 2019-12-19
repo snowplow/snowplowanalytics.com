@@ -8,6 +8,7 @@ category: How to guides
 permalink: /blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline.jpg
+image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline-mini.jpg
 ---
 

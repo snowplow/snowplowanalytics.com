@@ -9,6 +9,7 @@ permalink: /blog/2019/07/29/create-and-update-your-event-and-entity-schemas/
 discourse: true
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Create_Optimize_Schemas.jpg
+image: /assets/img/blog/featured/SP-Blog-Post-Create_Optimize_Schemas.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Create_Optimize_Schemas-mini.jpg
 ---
 
