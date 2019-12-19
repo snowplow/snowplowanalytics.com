@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-
 const TerserPlugin = require('terser-webpack-plugin');
 
 
@@ -37,14 +35,6 @@ module.exports = {
       },
     ]
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"]
-      }
-    ]
-  }
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
