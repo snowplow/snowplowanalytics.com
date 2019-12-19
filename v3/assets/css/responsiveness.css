@@ -720,6 +720,14 @@
         width: 100%;
         margin-bottom:40px;
     }
+    section.how .wrap > ul > li .heading img{
+        margin-right:0px;
+    }
+
+    section.how .wrap > ul >li .heading h3{
+        width: 100%;
+    }
+
     /* ========================
            MAIN FORM
     ======================== */
