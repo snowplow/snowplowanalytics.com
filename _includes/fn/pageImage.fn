@@ -1,1 +1,7 @@
-{% if {{page.image}} !=  %}{{page.image}}{% else %}{{site.image}}{% endif %}
+{% if {{page.image}} !=  %}
+{{page.image}}
+{% elsif {{page.featured-image}} != %}
+{{page.featured-image}}
+{% else %}
+{{site.image}}
+{% endif %}
