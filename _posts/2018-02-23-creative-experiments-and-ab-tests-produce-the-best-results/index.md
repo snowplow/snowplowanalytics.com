@@ -4,7 +4,7 @@ title: "Creative experiments and A/B tests produce the best results"
 title-short: Creative experiments are better
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2018/02/23/creative-experiments-and-ab-tests-produce-the-best-results/
 ---
 

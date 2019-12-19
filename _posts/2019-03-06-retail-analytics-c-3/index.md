@@ -5,7 +5,7 @@ title: "Snowplow for retail part 3: what can we do with data when we're getting 
 tags: [analytics, data, insights, retail, retail analytics, ecommerce]
 author: Archit
 image: /assets/img/blog/2019/03/example.jpg
-category: Analytics
+category: How to guides
 permalink: /blog/2019/03/06/snowplow-for-retail-part-3-what-can-we-do-with-data-when-were-getting-started/
 discourse: true
 ---

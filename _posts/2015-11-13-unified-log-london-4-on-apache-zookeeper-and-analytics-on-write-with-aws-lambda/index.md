@@ -4,7 +4,7 @@ title: "Unified Log London 4 on Apache ZooKeeper and analytics on write with AWS
 title-short: Unified Log London 4
 tags: [unified log, zookeeper, zk, lambda, aws lambda, ulp, event streams]
 author: Alex
-category: Meetups
+category: Inside the plow
 permalink: /blog/2015/11/13/unified-log-london-4-on-apache-zookeeper-and-analytics-on-write-with-aws-lambda/
 ---
 

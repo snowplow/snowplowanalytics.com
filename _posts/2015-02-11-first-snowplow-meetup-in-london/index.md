@@ -3,7 +3,7 @@ layout: post
 title: Inaugural Snowplow meetup London - a recap
 tags: [event, analytics, bigquery]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2015/02/11/first-snowplow-meetup-in-london/
 ---
 

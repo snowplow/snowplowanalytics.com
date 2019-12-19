@@ -6,7 +6,7 @@ image:
 title-short: Announcing Snowplow for GCP
 tags: [analytics, retail analytics, retail personalization, personalization, sales]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2019/01/23/a-misconception-about-how-retail-personalization-drives-sales/
 discourse: true
 ---

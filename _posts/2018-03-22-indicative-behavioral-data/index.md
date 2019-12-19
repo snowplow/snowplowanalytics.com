@@ -4,7 +4,7 @@ title: "Analyzing behavioral data with Indicative and Snowplow"
 title-short: Behavioral data with Indicative and Snowplow
 tags: [analytics, marketing, behavioral data]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2018/03/22/analyzing-behavioral-data-with-indicative-and-snowplow/
 discourse: true
 ---

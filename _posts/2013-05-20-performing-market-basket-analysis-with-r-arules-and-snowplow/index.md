@@ -3,7 +3,7 @@ layout: post
 title: Performing market basket analysis on web analytics data with R
 tags: [market basket analysis, affinity analysis, R, product recommendation]
 author: Yali
-category: Analytics
+category: Data insights
 permalink: /blog/2013/05/20/performing-market-basket-analysis-with-r-arules-and-snowplow/
 ---
 

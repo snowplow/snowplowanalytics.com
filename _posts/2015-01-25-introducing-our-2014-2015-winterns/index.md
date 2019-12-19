@@ -3,7 +3,7 @@ layout: post
 title: Introducing our 2014-2015 Snowplow winterns
 tags: [snowplow, intern, winter, wintern, internship]
 author: Alex
-category: Recruitment
+category: Inside the plow
 permalink: /blog/2015/01/25/introducing-our-2014-2015-winterns/
 ---
 

@@ -4,7 +4,7 @@ title-short: Third Snowplow Amsterdam meetup
 title: "Snowplow Meetup Amsterdam #3 was all about personalisation across the customer journey"
 tags: [snowplow, analytics, data, de Bijenkorf, Greenhouse Group, omnichannel, personalisation, customer journey]
 author: Idan
-category: Meetups
+category: Inside the plow
 permalink: /blog/2017/05/08/snowplow-meetup-amsterdam-3-was-all-about-personalisation-across-the-customer-journey/
 classification:
    department: marketing, analyst

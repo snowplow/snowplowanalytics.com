@@ -3,7 +3,7 @@ layout: post
 title: Building first and last touch attribution models in Redshift SQL
 tags: [data modeling, attribution, first touch, last touch]
 author: Yali
-category: Analytics
+category: Data insights
 permalink: /blog/2016/02/22/building-first-and-last-touch-attribution-models-in-redshift-sql/
 ---
 

@@ -4,7 +4,7 @@ title: Introducing Looker - a fresh approach to Business Intelligence that works
 title-short: Introducing Looker
 tags: [events, business intelligence, looker, lookml]
 author: Yali
-category: Analytics
+category: Data insights
 permalink: /blog/2013/12/10/introducing-looker-a-fresh-approach-to-bi-on-snowplow-data/
 ---
 ![Looker-screenshot] [looker-screenshot]

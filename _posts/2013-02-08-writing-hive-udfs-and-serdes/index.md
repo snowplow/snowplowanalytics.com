@@ -3,7 +3,7 @@ layout: post
 title: Writing Hive UDFs - a tutorial
 tags: [hive, udf, serde, java, hadoop]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/02/08/writing-hive-udfs-and-serdes/
 ---
 

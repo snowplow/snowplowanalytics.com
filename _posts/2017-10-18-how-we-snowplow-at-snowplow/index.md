@@ -4,7 +4,7 @@ title: "How we Snowplow at Snowplow"
 title-short: Snowplow at Snowplow
 tags: [snowplow, data analytics, data management]
 author: Anthony
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2017/10/18/how-we-snowplow-at-snowplow/
 description: "How we use Snowplow data here at Snowplow Analytics"
 ---

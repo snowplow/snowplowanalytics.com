@@ -3,7 +3,7 @@ layout: post
 title: Anton Parkhomenko is a Snowplower!
 tags: [anton parkhomenko, data engineer, hiring]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/12/25/anton-parkhomenko-is-a-snowplower/
 ---
 

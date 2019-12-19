@@ -3,7 +3,7 @@ layout: post
 title: Snowplow Meetups set for New York and Boston this spring!
 tags: [meetup, case study, user stories, Custom Made, Carbonite, Oyster Travel, Animoto]
 author: Yali
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/01/27/snowplow-team-in-new-york-and-boston-this-spring/
 ---
 

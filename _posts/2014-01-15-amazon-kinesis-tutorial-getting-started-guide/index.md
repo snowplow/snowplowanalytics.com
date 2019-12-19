@@ -3,7 +3,7 @@ layout: post
 title: Amazon Kinesis tutorial - a getting started guide
 tags: [amazon, kinesis, tutorial]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/01/15/amazon-kinesis-tutorial-getting-started-guide/
 ---
 

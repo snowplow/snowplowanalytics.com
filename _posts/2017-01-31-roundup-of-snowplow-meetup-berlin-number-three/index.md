@@ -3,7 +3,7 @@ layout: post
 title: "Roundup of Snowplow Meetup Berlin Number 3"
 tags: ["meetup", "JustWatch", "Incuda", "user journey", "video advertising", "Sauna"]
 author: Giuseppe
-category: Meetups
+category: Inside the plow
 permalink: /blog/2017/01/31/roundup-of-snowplow-meetup-berlin-number-three/
 ---
 

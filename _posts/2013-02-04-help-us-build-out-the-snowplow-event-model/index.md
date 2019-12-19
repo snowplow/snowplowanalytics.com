@@ -3,7 +3,7 @@ layout: post
 title: Help us build out the Snowplow Event Model
 tags: [snowplow, event model, data model, data schema, structured, unstructured]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/02/04/help-us-build-out-the-snowplow-event-model/
 ---
 

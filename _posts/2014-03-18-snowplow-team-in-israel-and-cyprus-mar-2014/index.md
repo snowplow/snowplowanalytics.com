@@ -4,7 +4,7 @@ title: The Snowplow team will be in Israel and Cyprus in March - get in touch if
 title-short: Snowplow team in Israel and Cyprus
 tags: [snowplow, cyprus, israel, tel aviv, nicosia, lefkosia]
 author: Alex
-category: Other
+category: Data insights
 permalink: /blog/2014/03/18/snowplow-team-in-israel-and-cyprus-mar-2014/
 ---
 

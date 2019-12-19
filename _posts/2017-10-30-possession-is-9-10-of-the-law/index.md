@@ -4,7 +4,7 @@ title: "Possession is 9/10 of the Law"
 title-short: Data Ownership
 tags: [data analytics, data management]
 author: Anthony
-category: Other
+category: Data insights
 permalink: /blog/2017/10/30/possession-is-9-10-of-the-law/
 description: "The Importance of Data Ownership"
 ---

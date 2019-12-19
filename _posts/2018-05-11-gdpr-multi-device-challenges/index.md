@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/05/devices.jpg
 title-short: Compliant identity stitching with GDPR
 tags: [analytics, consent, GDPR]
 author: Anthony
-category: GDPR
+category: Data governance
 permalink: /blog/2018/05/11/gdpr-challenges-in-a-multi-platform-multi-device-world/
 discourse: true
 ---

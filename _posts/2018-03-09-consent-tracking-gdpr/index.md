@@ -6,7 +6,7 @@ description: The finer points of collecting data under consent management
 image: /assets/img/blog/2018/03/choice.jpg
 tags: [analytics, consent, GDPR]
 author: Anthony
-category: GDPR
+category: Data governance
 permalink: /blog/2018/03/09/how-to-manage-consent-for-gdpr-a-nuanced-approach/
 discourse: true
 ---

@@ -3,7 +3,7 @@ layout: post
 title: Introducing self-describing Thrift
 tags: [thrift, schema, iglu, model]
 author: Fred
-category: Research
+category: Data insights
 permalink: /blog/2014/12/16/introducing-self-describing-thrift/
 ---
 

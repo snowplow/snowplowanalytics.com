@@ -4,7 +4,7 @@ title-short: "How ITP 2.3 expands on ITP 2.1 and 2.2"
 title: "How ITP 2.3 expands on ITP 2.1 and 2.2 and what it means for your web analytics"
 description: "ITP 2.3 closes tracking loopholes but first-party, server-side-set tracking is the light at the end of the tunnel"
 author: Erika
-category: Other
+category: Data insights
 permalink: /blog/2019/12/16/how-itp-2.3-expands-on-itp-2.1-and-2.2-and-what-it-means-for-your-web-analytics/
 ---
 

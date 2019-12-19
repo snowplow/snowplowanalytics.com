@@ -4,7 +4,7 @@ title: Third Snowplow Meetup London scheduled for September
 title-short: Third Snowplow Meetup London scheduled for September
 tags: [meetups, London]
 author: Idan
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/09/02/third-snowplow-meetup-london-scheduled-for-september/
 ---
 

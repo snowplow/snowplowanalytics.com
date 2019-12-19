@@ -3,7 +3,7 @@ layout: post
 title: JSON schemas for Redshift datatypes
 tags: [redshift, jsonschema, json]
 author: Fred
-category: Analytics
+category: Data insights
 permalink: /blog/2015/02/12/redshift-jsonschema-types/
 ---
 

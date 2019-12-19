@@ -3,7 +3,7 @@ layout: post
 title: Can graph databases enable whole new classes of event analytics?
 tags: [snowplow, neo4j, graph database, path analysis]
 author: Nick
-category: Analytics
+category: Data insights
 permalink: /blog/2014/07/28/explorations-in-analyzing-web-event-data-in-graph-databases/
 ---
 
