@@ -89,7 +89,9 @@ layout: compress
 						<h5 class="accent">WRITTEN BY</h5>
 						<div class="author">
 							<a class="alt-link" href="{{ BASE_PATH }}/blog/authors/{{ author.name }}/">
+								{% if author.avatar %}
 								<img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+								{% endif %}
 								<p>{{ author.full_name }}</p>
 							</a>
 						</div>

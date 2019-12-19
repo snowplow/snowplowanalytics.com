@@ -46,10 +46,8 @@ var handleSubmit = function(e){
     snowplow(function () {
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
-
     $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
-        console.log(this.name)
         switch(this.name){
             case 'email':
                 !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
@@ -81,7 +79,6 @@ $('input').focus(function(){
 
 var form = document.getElementById('main-form');
 form && form.addEventListener('submit', handleSubmit);
-
 
 
 // Temp solution - Scroll on writers program TODO

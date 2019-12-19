@@ -462,13 +462,13 @@ article .content .bottom > img{
     display:none
 }
 
-.newsletter-box .input-wrap{
+.newsletter-box .form-wrap{
     margin-top:10px;
     position:relative;
 }
 
 
-.newsletter-box .input-wrap button{
+.newsletter-box .form-wrap button{
     width: 50px;
     height: 50px;
     position:relative;
@@ -487,17 +487,17 @@ article .content .bottom > img{
     background-position: center center;
 }
 
-.newsletter-box .input-wrap button:hover img{
+.newsletter-box .form-wrap button:hover img{
     width:20px;
 }
-.newsletter-box .input-wrap button img{
+.newsletter-box .form-wrap button img{
     width: 15px;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 
-.newsletter-box .input-wrap input{
+.newsletter-box .form-wrap input{
     width: 230px;
     height: 48px;    
     padding:0px 15px;

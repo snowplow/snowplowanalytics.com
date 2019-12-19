@@ -44,7 +44,9 @@
                                     {% for author in site.data.authors %}
                                     {% if author.name == post.author %}
                                     <div class="author">
+                                        {% if author.avatar %}
                                         <img src="{{ author.avatar }}" alt="{{ author.full_name }}" />
+                                        {% endif %}
                                         <p class="small-p">{{ author.full_name }}</p>
                                     </div>
                                     {% endif %}
