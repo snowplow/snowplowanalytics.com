@@ -9,6 +9,7 @@ permalink: /blog/2019/08/29/mapping-the-customer-journey-with-complete-picture-d
 discourse: true
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey.jpg
+image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey-mini.jpg
 ---
 

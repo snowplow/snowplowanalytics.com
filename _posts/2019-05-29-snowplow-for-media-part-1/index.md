@@ -10,6 +10,7 @@ permalink: /blog/2019/05/29/snowplow-for-media-part-1/
 discourse: true
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Snowplow_for_Media.jpg
+image: /assets/img/blog/featured/SP-Blog-Post-Snowplow_for_Media.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Snowplow_for_Media-mini.jpg
 ---
 
