@@ -361,6 +361,16 @@
       <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
 
 
+
+- name: SimonP
+  full_name: Simon Pickerill
+  url: /blog/authors/simonp/
+  avatar: /assets/img/blog/2019/12/simonp.jpg
+  spiel:   |
+      Simon is a Content Marketer at Snowplow. You can find him on <a href="https://twitter.com/sipickerill">Twitter</a> and <a href="https://www.linkedin.com/in/spickerill/">LinkedIn</a>.
+
+
+
 - name: Lukas
   full_name:  Łukasz Indykiewicz
   url: /blog/authors/lukas/
