@@ -10,7 +10,6 @@ discourse: true
 published: true
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-How_ITP_Works.jpg
-image: /assets/img/blog/featured/SP-Blog-Post-How_ITP_Works.jpg
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-How_ITP_Works-mini.jpg
 ---
 Big changes are coming to the way businesses collect web data. Browser manufacturers, led by Safari, continue to introduce privacy updates to prevent third parties from tracking users across websites. Although these measures target advertising companies that track users across different websites, they also impact businesses using web analytics to optimize their websites and provide visitors with the best possible experience: especially businesses relying on third-party web analytics tools, including Google Analytics.

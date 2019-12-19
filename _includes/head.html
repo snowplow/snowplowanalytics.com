@@ -39,7 +39,7 @@
 
         <meta property="og:site_name" content="Snowplow">
         <meta property="og:title" content="{% include fn/pageTitle.fn %}">
-        <meta property="og:image" content="{% include fn/pageImage.fn %}">
+        <meta property="og:image" content="{{ BASE_PATH }}{% include fn/pageImage.fn %}">
         <meta property="og:url" content="{{ page.url | prepend: site.url }}">
         <meta property="og:type" content="{% if page.author %}article{% else %}website{% endif %}">
         <meta property="og:description" content="{% include fn/pageDescription.fn %}">
