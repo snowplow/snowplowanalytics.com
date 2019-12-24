@@ -3,7 +3,7 @@ layout: post
 title-short: "Snowplow R114 with new adapter, enrichment and other improvements"
 title: "Snowplow R114 released with new adapter, enrichment and other improvements"
 tags: [snowplow, enrichment, release]
-author: Ben Benoist
+author: Benjamin
 category: Releases
 permalink: /blog/2019/05/20/snowplow-r114-polonnaruwa-enrichments/
 ---

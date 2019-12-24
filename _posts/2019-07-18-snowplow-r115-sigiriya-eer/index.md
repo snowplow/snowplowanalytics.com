@@ -3,7 +3,7 @@ layout: post
 title-short: "Snowplow R115 with minor updates to EmrEtlRunner and Event Manifest Populator"
 title: "Snowplow R115 with minor updates to EmrEtlRunner and Event Manifest Populator"
 tags: [snowplow, emretlrunner, release]
-author: Ben Benoist
+author: Benjamin
 category: Releases
 permalink: /blog/2019/07/18/snowplow-r115-sigiriya-emretlrunner/
 ---
