@@ -108,6 +108,8 @@ footer .active a{
     font-weight:700 !important;
 }
 
+
+
 @media screen and (max-width: 808px) {
     h1{
         font-family:'Rubik' !important;
@@ -115,4 +117,11 @@ footer .active a{
         font-size:35px !important;
         line-height:45px !important;
     }
+}
+
+
+/* SECTION OVERWRITES */
+
+section.other ul li a p{
+    font-weight:400 !important;
 }

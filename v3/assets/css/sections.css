@@ -17,6 +17,18 @@ main{
     z-index:1;
 }
 
+.hex-bg-left-2x{
+    width: 520px;
+    height: 900px;
+    display:block;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background:url("../img/global/left-2hex-bg.png") no-repeat;
+    background-size:100%;
+    z-index:1;
+}
+
 .hex-3-bg{
     width: 1150px;
     height: 1300px;
@@ -25,6 +37,16 @@ main{
     right:0px;
     top:0px;
     background:url("../img/global/3hex-bg.svg") no-repeat;
+    z-index:1;
+}
+.hex-3-bg-small{
+    width: 736px;
+    height: 1289px;
+    display:block;
+    position:absolute;
+    right:0px;
+    top:0px;
+    background:url("../img/global/hex-3-bg-small.svg") no-repeat;
     z-index:1;
 }
 
@@ -1247,7 +1269,18 @@ section.how .wrap ul li ul li::before{
     background-size:10px;
 }
 
+/* ========================
+    SNOWPLOW FOR WEB - HOW
+   ======================== */
 
+section.how-web .wrap ul li p{
+    margin-left:80px
+}
+section.how-web .wrap > ul > li .heading img{
+    width: 200px;
+    height:200px;
+    margin-right:35px;
+}
 
 /* ========================
           MAIN FORM
@@ -1415,4 +1448,254 @@ section.pricing-form .thankyou{
     flex-flow:row wrap;
     justify-content: center;
     text-align:center;
+}
+
+
+
+/* ========================
+          TESTEMONIAL
+   ======================== */
+
+section.testemonial{
+    z-index:2;
+}
+
+section.testemonial .single{
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align:center;
+}
+
+section.testemonial .single img{
+    align-self:center;
+    margin-bottom:20px;
+}
+
+section.testemonial .single em{
+    max-width:660px;
+    margin:10px 0px 30px 0px;
+    align-self:center;
+}
+
+
+/* ========================
+        CLIENTS BANNER
+   ======================== */
+
+
+section.testemonial .clients-banner{
+    width: 100%;
+    position:relative;
+    margin:40px 0px;
+    min-height:270px;
+    z-index:3;
+    
+}
+
+section.testemonial .clients-banner ul{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position:absolute;
+    right:170px;
+    top:68px;
+    width:100%; 
+    max-width:1200px;
+}
+
+section.testemonial .clients-banner ul li img{
+    align-self: center;
+}
+section.testemonial .clients-banner ul li{
+    padding:40px 0px 30px 0px;;
+}
+
+section.testemonial .clients-banner  .snowplow-banner{
+    display:block;
+    width: 200px;
+    height: 250px;
+    background:url('../img/global/sp-powered.png') no-repeat;
+    background-size:100%;
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:4;
+}
+
+
+
+
+
+/* ===============
+  SUB HEADING - WEB
+   =============== */
+
+.web-v3 .heading .full{
+    margin-top:60px;
+}
+
+
+/* ===============
+   OTHER - WEB
+   =============== */
+
+
+
+section.other .hex-3-bg-small{
+    top:-200px;
+}
+
+section.other ul{
+    display:flex;
+    margin:80px 0px;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+
+section.other ul li{
+    width: 380px;
+    margin:0px 10px;
+}
+
+section.other ul li a{
+    display:block;
+    width: 100%;
+    min-height:300px;
+    padding:40px 40px 50px 40px;
+    box-sizing: border-box;
+}
+
+section.other ul li a p{
+    margin:30px 0px 20px 0px;
+    min-height:150px;
+}
+
+
+section.other ul li a img{
+    float:right;
+    position:relative;
+    right:20px;
+    -webkit-transition: all 500ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+    -webkit-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
+         -o-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
+            transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); /* custom */
+}
+
+
+section.other ul li a:hover img{
+  right:0px;
+}
+
+
+/* ===============
+   READ-MORE-CTA
+   =============== */
+
+
+.read-more-cta{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width: 100%;
+    z-index:4;
+}
+
+.read-more-cta .left{
+    max-width:630px;
+}
+
+.read-more-cta .left p{
+    margin-top:15px;
+}
+
+.read-more-cta .right{
+    max-width:350px;
+}
+.read-more-cta .right > p{
+    float:right;
+    margin-bottom:15px;
+}
+
+.read-more-cta .right a{
+    display:flex;
+    float:right;
+    flex-flow:row wrap;
+}
+
+.read-more-cta .right a p{
+    margin-right:10px;
+}
+
+
+/* ===============
+   MAIN-CALL-TO-ACTION-BANNER
+   =============== */
+
+.main-call-to-action-banner .full{
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content: space-between;
+    padding:40px;
+    box-sizing: border-box;
+    
+}
+.main-call-to-action-banner .full .left{
+    max-width:750px;
+}
+.main-call-to-action-banner .full .left p{
+    margin-top:10px;
+}
+.main-call-to-action-banner .full .right{
+    max-width:200px;
+}
+
+
+
+/* ===============
+   LANGUAGES - WEB
+   =============== */
+
+section.languages{
+    margin-top:200px;
+}
+
+section.languages .row{
+    width: 100%;
+    margin-top:100px;
+}
+
+section.languages .row h3{
+    width: 100%;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+section.languages .row ul{
+    width: 100%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.languages .row ul li{
+    margin:0px 80px;
+}
+
+section.languages .row ul li:first-of-type{
+    margin-left:0px;
+}
+section.languages .row ul li:last-of-type{
+    margin-right:0px;
+}
+
+section.languages .row ul li img{
+    align-self: center;
+}
+
+section.languages .row:last-of-type{
+    margin-bottom:120px;
 }
