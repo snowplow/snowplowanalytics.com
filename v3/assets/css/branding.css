@@ -30,8 +30,8 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a{
     /* background-image: -o-linear-gradient(74deg, #28D1B1 0%, #84B0FF 100%);
     background-image: linear-gradient(16deg, #28D1B1 0%, #84B0FF 100%); */
     /* Overwrite for v2 compatibility */
-    background-image: -o-linear-gradient(74deg, #28D1B1 0%, #28D1B1 100%);
-    background-image: linear-gradient(16deg, #28D1B1 0%, #28D1B1 100%);
+    background-image: -o-linear-gradient(74deg, #45C6CA 0%, #45C6CA 100%);
+    background-image: linear-gradient(16deg, #45C6CA 0%, #45C6CA 100%);
     background-color:#45C6CA !important;
     /* -webkit-box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00);
     box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00); */
