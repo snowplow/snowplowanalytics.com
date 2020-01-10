@@ -2,10 +2,10 @@
 layout: post
 title-short: "Snowplow R118 with new bad row format"
 title: "Snowplow R118 beta release with new bad row format"
-tags: [snowplow, enrichment, release]
+tags: [snowplow, enrichment, bad-rows, release]
 author: Benjamin Benoist
 category: Releases
-permalink: /blog/2019/12/24/snowplow-release-r118-badrows/
+permalink: /blog/2020/01/13/snowplow-release-r118-badrows/
 ---
 
 We are excited to release [Snowplow R118 Morgantina][snowplow-release], named after the
@@ -15,12 +15,16 @@ This Snowplow beta release includes the long-awaited new bad row format. We have
 
 In addition, this release also includes important refactoring in the libraries that we use (e.g. `cats` instead of `scalaz` and `circe` instead of`json4s`),
 a bump of [Beam](https://beam.apache.org/) version to 2.11.0,
+an [updated](https://snowplowanalytics.com/blog/2019/08/09/iglu-scala-client-0.6.0-released/) [Iglu Client](https://github.com/snowplow/iglu-scala-client)
+with different validator and fixed caching mechanism,
 as well as an improvement to the referer parser enrichment.
 
 [Scala Stream Collector](https://github.com/snowplow/snowplow/tree/master/2-collectors/scala-stream-collector)
-and the enrich jobs versions ([Stream Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/stream-enrich),
-[Beam Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/beam-enrich),
-and [Spark Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/spark-enrich)) are bumped to `1.0.0`.
+and the enrich jobs versions ([Stream Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/stream-enrich) and
+[Beam Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/beam-enrich)) are bumped to `1.0.0`.
+
+As introduced in the [RFC](https://discourse.snowplowanalytics.com/t/rfc-making-the-snowplow-pipeline-real-time-end-to-end-and-deprecating-support-for-batch-processing-modules/3018),
+we stop supporting Spark from this release, in favor of streaming.
 
 1. [Beta release](#betarelease)
 2. [New bad row format](#badrows)
@@ -33,7 +37,7 @@ and [Spark Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/spa
 
 This release represents a major upgrade of the core Snowplow technology. We are currently testing this tech internally - no small feat because of the size and scope of the release. Whilst we are running those tests, we have decided to make the code available to open source users to test themselves: we would welcome any feedback on the new functionality, which we hope to release in production in [R119](#roadmap).
 
-If you are an open source users who would like to test this new functionality, We would be happy to provide a high-priority OSS support during this testing phase (covering setup, debug, recovery or other aspects). We are committed to iterating our release candidates for R119 rapidly.
+If you are an open source users who would like to test this new functionality, we would be happy to provide a high-priority OSS support during this testing phase (covering setup, debug, recovery or other aspects). We are committed to iterating our release candidates for R119 rapidly.
 
 <h1 id="badrows">2. New bad row format</h1>
 
@@ -71,6 +75,8 @@ and 10MB for [PubSub](https://cloud.google.com/pubsub/) on GCP).
 In such scenario, the payload can’t be stored in its entirety, and a size violation bad row is emitted.
 For example this could be the case if a big image is sent via a form.
 
+This type of bad row is generally unrecoverable.
+
 <h2>2.4. Bad rows emitted by the enrich jobs</h2>
 
 ### 2.4.1. [Collector payload format violation](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/collector_payload_format_violation/jsonschema/1-0-0)
@@ -105,7 +111,7 @@ To be processed successfully, there need to be corresponding schemas for these e
 In addition, it is  possible to add additional information to any event recorded in Snowplow through the use of [custom entities contexts](https://github.com/snowplow/snowplow/wiki/Custom-contexts),
 again by using self-describing JSONs.
 
-As part of the processing of each event, every self-describing JSON (either event or context) is validated against its schema. All Snowplow Whenever the self-describing JSON is not valid for one of these 2 cases, a schema violation bad row is emitted.
+As part of the processing of each event, every self-describing JSON (either event or context) is validated against its schema. Whenever the self-describing JSON is not valid for one of these 2 cases, a schema violation bad row is emitted.
 
 ### 2.4.5. [Enrichment failure](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/1-0-0)
 
@@ -186,8 +192,10 @@ The upgrading guide can be found on our [wiki page](https://github.com/snowplow/
 
 <h1 id="roadmap">5. Roadmap</h1>
 
-While R118 contains updated versions of components emitting bad rows (Scala Stream Collector and enrich jobs),
-R119 will complete the ecosystem with the update of the components processing these bad rows:
+While R118 contains release candidates of the components emitting the new bad rows (Scala Stream Collector and enrich jobs),
+R119 will have the final versions of these components, after further testing from our side and fron the OSS community.
+
+Along with R119, new releases of the components processing these bad rows will complete the ecosystem:
 - [S3 loader](https://github.com/snowplow/snowplow-s3-loader) and [GCS loader](https://github.com/snowplow-incubator/snowplow-google-cloud-storage-loader)
 will partition the bad rows on disk according to their type.
 - [ES loader](https://github.com/snowplow/snowplow-elasticsearch-loader) will contain a lot of refactoring and a better indexing of the bad rows.
@@ -202,6 +210,7 @@ Stay tuned for announcements of more upcoming Snowplow releases soon!
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
 If you have any questions or run into any problem, please visit [our Discourse forum][discourse].
+Open source users will receive high-priority support for components of this release.
 
 [snowplow-release]: https://github.com/snowplow/snowplow/releases/r118-morgantina
 [discourse]: http://discourse.snowplowanalytics.com/
