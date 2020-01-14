@@ -20,7 +20,7 @@
 
 header .navbar .navbar-nav .btn, header .navbar-default .navbar-nav .btn{
     max-width: 110px !important;
-    padding:8px 0px !important;
+    padding:11px 0px !important;
     font-size:16px !important;
 }
 .navbar-right a:first-of-type{
