@@ -11,7 +11,7 @@ discourse: false
 
 We are pleased to announce a new release of the [Snowplow Java Tracker][java-tracker]. [Version 0.9.0][0.9.0-tag] brings some important updates including bumping OkHttp to OkHttp3 version 4 and improving support for a number of Snowplow event timestamps. We’ve also made improvements to the logging within the tracker and fixed a couple of outstanding bugs.
 
-NB. With this release we’ve also moved to publishing our releases on Bintray (https://bintray.com/snowplow/snowplow-maven/ or [jcenter][jcenter]). This will require updating the repository in your build configuration to get the latest releases. See the [Upgrading](#upgrade) section for more information.
+NB. With this release we’ve also moved to publishing our releases on Bintray ([snowplow-maven][bintray] or [jcenter][jcenter]). This will require updating the repository in your build configuration to get the latest releases. See the [Upgrading](#upgrade) section for more information.
 
 Read on below the fold for:
 
