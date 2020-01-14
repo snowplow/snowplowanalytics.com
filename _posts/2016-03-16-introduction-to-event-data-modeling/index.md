@@ -14,7 +14,7 @@ Data modeling is an essential step in the Snowplow data pipeline. We find that t
 
 'Event data modeling' is a very new discipline and as a result, there's not a lot of literature out there to help analysts and data scientists getting started modeling event data. This blog post is a first step to addressing that lack. In it, we'll explain what event data modeling is, and give enough of an overview that it should start to become clear why it is so important, and why it is not straightforward.
 
-![lego building][lego-building]
+ {% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Data modeling 101 guide" description="Learn how and why to model and democratize your data with data modeling" btnText="Download the white paper" link="https://www.snowplowanalytics.com/lp/data-modeling/" %}
 
 Read on to learn
 
