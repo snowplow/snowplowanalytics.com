@@ -3,7 +3,7 @@ layout: post
 title: "Google Cloud Loader 0.2.0 released"
 title-short: Google Cloud Loader 0.2.0
 tags: [snowplow, gcs, gcp, loader]
-author: Ben
+author: Peel
 category: Releases
 permalink: /blog/2020/01/14/gcs-loader-0.2.0-released/
 ---
