@@ -5,7 +5,7 @@ title-short: Snowplow Java Tracker 0.9.0
 tags: [snowplow, java, tracker]
 author: Paul
 category: Releases
-permalink: /blog/2019/12/24/snowplow-java-tracker-0.9.0-released/
+permalink: /blog/2020/01/14/snowplow-java-tracker-0.9.0-released/
 discourse: false
 ---
 
