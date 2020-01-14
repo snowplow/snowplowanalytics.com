@@ -2,7 +2,7 @@
         GLOBAL
    =============== */
 
-main{
+   main{
     margin:60px 0px;
 }
 
@@ -60,10 +60,13 @@ input.error{
 /* Call to action button pre-definition */
 
 .cta{
-    padding:17px 30px;
+    padding:17px 30px; 
     cursor:pointer;
     min-width:200px;
     max-height:60px;
+    /* TODO : REMOVE AFTER COMPELTE MIGRATION */
+    font-size:16px !important;
+    padding:14px 30px; 
 }
 
 
@@ -418,7 +421,9 @@ article .content .bottom > img{
 }
 
 
-
+article .content .highlighter-rouge{
+    background:#e8f8ff
+}
 
 
 /* === ARTICLES BACK BUTTON === */
@@ -1712,7 +1717,7 @@ section.languages .row ul li:last-of-type{
 
 section.languages .row ul li .full{
     display:flex;
-    min-height:100px;
+    min-height:110px;
     flex-flow:row wrap;
     justify-content: center;
     align-items: center;
