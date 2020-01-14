@@ -3,9 +3,9 @@ layout: post
 title: "Google Cloud Loader 0.2.0 released"
 title-short: Google Cloud Loader 0.2.0
 tags: [snowplow, gcs, gcp, loader]
-author: Ben
+author: Peel
 category: Releases
-permalink: /blog/2019/12/11/gcs-loader-0.2.0-released/
+permalink: /blog/2020/01/14/gcs-loader-0.2.0-released/
 ---
 
 We are pleased to announce [version 0.2.0][release-020] of Google Cloud Storage loader that allows you to get more performance when using default settings.
