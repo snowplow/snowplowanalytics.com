@@ -6,7 +6,7 @@ tags: [snowplow, looker, event analytics, web analytics]
 description: Snowplow and Looker partnership
 image: /assets/img/blog/2014/03/snowplow-looker.png
 author: Yali
-category: Integration
+category: Data insights
 permalink: /blog/2014/03/19/snowplow-and-looker-announce-formal-partnership/
 ---
 

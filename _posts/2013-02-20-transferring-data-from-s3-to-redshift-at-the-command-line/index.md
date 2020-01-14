@@ -3,7 +3,7 @@ layout: post
 title: Bulk loading data from Amazon S3 into Redshift at the command line
 tags: [Redshift, ETL]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/02/20/transferring-data-from-s3-to-redshift-at-the-command-line/
 ---
 

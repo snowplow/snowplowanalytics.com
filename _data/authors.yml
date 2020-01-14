@@ -281,7 +281,7 @@
   spiel:   |
       <a href="/blog/authors/archit/">Archit</a> is a Data Strategist at Snowplow Analytics where he roadmaps and delivers data-driven solutions to business problems for our clients.
 
-- name: Mike N
+- name: MikeN
   full_name: Mike Nemirovsky
   twitter: mikenems
   url: /blog/authors/miken/
@@ -310,10 +310,10 @@
 - name: Lyuba
   full_name: Lyuba Golovina
   twitter:
-  url: /blog/authors/Lyuba/
+  url: /blog/authors/lyuba/
   avatar: /assets/img/blog/2019/05/Lyuba-Golovina.jpeg
   spiel:   |
-      <a href="/blog/authors/Lyuba/">Lyuba</a> is a Product Marketer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/lyubagolovina/">LinkedIn</a>.
+      <a href="/blog/authors/lyuba/">Lyuba</a> is a Product Marketer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/lyubagolovina/">LinkedIn</a>.
 
 - name: Nicki
   full_name: Nicki Faulkner
@@ -344,8 +344,8 @@
 
 
 
-- name: Alex & Jason 
-  full_name: Alex Beskin & Jason Bellinger 
+- name: Alex-Jason
+  full_name: Alex B & Jason B
   twitter:
   url: /blog/authors/alex-jason/
   avatar: /assets/img/blog/2019/09/animoto.jpeg
@@ -366,3 +366,17 @@
   avatar: /assets/img/team/peel.jpg
   spiel:   |
       <a href="/blog/authors/peel/">Peel</a> is a Data Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/piotr-limanowski/">LinkedIn</a>.
+
+- name: SimonP
+  full_name: Simon Pickerill
+  url: /blog/authors/simonp/
+  avatar: /assets/img/blog/2019/12/simonp.jpg
+  spiel:   |
+      Simon is a Content Marketer at Snowplow. You can find him on <a href="https://twitter.com/sipickerill">Twitter</a> and <a href="https://www.linkedin.com/in/spickerill/">LinkedIn</a>.
+
+- name: Lukas
+  full_name:  Łukasz Indykiewicz
+  url: /blog/authors/lukas/
+  avatar: /assets/img/blog/2019/12/lukas.jpeg
+  spiel:   |
+      Luke is a software engineer at Snowplow. You can find him on <a href="https://github.com/lukeindykiewicz">GitHub</a>, <a href="https://twitter.com/lukeindykiewicz">Twitter</a> and <a href="https://pl.linkedin.com/in/lukaszindykiewicz">LinkedIn</a>. 

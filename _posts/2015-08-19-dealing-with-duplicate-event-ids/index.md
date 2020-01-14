@@ -4,7 +4,7 @@ title: Dealing with duplicate event IDs
 title-short: Dealing with duplicate event IDs
 tags: [analytics, data modeling, events]
 author: Christophe
-category: Analytics
+category: Data insights
 permalink: /blog/2015/08/19/dealing-with-duplicate-event-ids/
 ---
 

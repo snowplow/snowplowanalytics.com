@@ -39,7 +39,7 @@
 
         <meta property="og:site_name" content="Snowplow">
         <meta property="og:title" content="{% include fn/pageTitle.fn %}">
-        <meta property="og:image" content="{% include fn/pageImage.fn %}">
+        <meta property="og:image" content="https://snowplowanalytics.com{% include fn/pageImage.fn %}">
         <meta property="og:url" content="{{ page.url | prepend: site.url }}">
         <meta property="og:type" content="{% if page.author %}article{% else %}website{% endif %}">
         <meta property="og:description" content="{% include fn/pageDescription.fn %}">
@@ -49,7 +49,7 @@
         <meta name="twitter:title" content="{% include fn/pageTitle.fn %}">
         <meta name="twitter:site" content="@snowplowdata">
         <meta name="twitter:description" content="{% include fn/pageDescription.fn %}">
-        <meta name="twitter:image" content="{{ site.url }}/{% include fn/pageImage.fn %}">
+        <meta name="twitter:image" content="https://snowplowanalytics.com{% include fn/pageImage.fn %}">
         {% if page.author %}{% for author in site.data.authors %}{% if author.name == page.author %}{% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}{% endif %}{% endfor %}{% endif %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

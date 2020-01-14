@@ -3,7 +3,7 @@ layout: post
 title: "How Simply Business is using real-time data to better engage and serve its customers with Snowplow"
 tags: ["user story", "Simply Business", "real-time"]
 author: Giuseppe
-category: User Stories
+category: User stories
 permalink: /blog/2017/01/24/how-simply-business-is-using-real-time-data-to-better-engage-and-serve-its-customers-with-Snowplow/
 ---
 

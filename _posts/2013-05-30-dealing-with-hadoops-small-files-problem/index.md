@@ -3,7 +3,7 @@ layout: post
 title: Dealing with Hadoop's small files problem
 tags: [hadoop, small-file, hdfs, s3distcopy]
 author: Alex
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2013/05/30/dealing-with-hadoops-small-files-problem/
 ---
 

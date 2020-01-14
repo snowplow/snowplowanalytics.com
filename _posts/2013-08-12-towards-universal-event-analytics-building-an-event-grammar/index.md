@@ -4,7 +4,7 @@ title: Towards universal event analytics - building an event grammar
 title-short: Building an event grammar
 tags: [event, analytics, grammar, model]
 author: Alex
-category: Research
+category: Data insights
 permalink: /blog/2013/08/12/towards-universal-event-analytics-building-an-event-grammar/
 ---
 

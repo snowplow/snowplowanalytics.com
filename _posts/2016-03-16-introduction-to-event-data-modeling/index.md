@@ -6,7 +6,7 @@ image: /assets/img/blog/2016/03/lego-building.jpg
 title-short: An introduction to event data modeling
 tags: [data modeling, event data, sql]
 author: Yali
-category: Data Modeling
+category: How to guides
 permalink: /blog/2016/03/16/introduction-to-event-data-modeling/
 ---
 

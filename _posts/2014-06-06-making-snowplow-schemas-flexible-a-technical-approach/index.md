@@ -4,7 +4,7 @@ title: Making Snowplow schemas flexible - our technical approach
 title-short: Making Snowplow schemas flexible
 tags: [snowplow, schema, schema evolution, structured data, event analytics, data warehousing]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2014/06/06/making-snowplow-schemas-flexible-a-technical-approach/
 ---
 

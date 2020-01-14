@@ -4,7 +4,7 @@ title: Asynchronous micro-services and Crunch Budapest 2016
 title-short: Asynchronous micro-services and Crunch
 tags: [snowplow, async, asynchronous, micro-service, unified log, kafka, kinesis, crunch, budapest, hungary]
 author: Alex
-category: Meetups
+category: Inside the plow
 permalink: /blog/2016/10/30/asynchronous-micro-services-and-crunch-budapest-2016/
 ---
 

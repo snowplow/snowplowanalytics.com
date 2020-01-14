@@ -3,7 +3,7 @@ layout: post
 title: Christophe Bogaert is a Snowplower!
 tags: [snowplow, analytics, data science]
 author: Yali
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2015/04/20/introducing-christophe-our-first-data-scientist/
 ---
 

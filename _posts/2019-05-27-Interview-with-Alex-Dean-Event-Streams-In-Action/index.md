@@ -4,7 +4,7 @@ title: "Interview with the author: Alex Dean on writing Event Streams in Action"
 tags: [analytics, data, big data, data science, business intelligence, machine learning, AI, data team]
 author: Lyuba
 image: /assets/img/blog/2019/05/Event-Streams-Action.png
-category: Other
+category: Data insights
 permalink: /blog/2019/05/28/interview-with-the-author-event-streams-in-action/
 discourse: true
 published: true

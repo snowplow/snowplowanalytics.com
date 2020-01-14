@@ -6,7 +6,7 @@ tags: [eventstream, events, unified, log, analytics, data warehouse]
 description: Learn about the evolution of how businesses use data
 image: /assets/img/blog/2014/01/classic-era.png
 author: Alex
-category: Research
+category: Data insights
 permalink: /blog/2014/01/20/the-three-eras-of-business-data-processing/
 ---
 

@@ -4,7 +4,7 @@ title: Introducing SchemaVer for semantic versioning of schemas
 title-short: Introducing SchemaVer
 tags: [version, versioning, schema, semver, schemaver]
 author: Alex
-category: Research
+category: Data insights
 permalink: /blog/2014/05/13/introducing-schemaver-for-semantic-versioning-of-schemas/
 ---
 

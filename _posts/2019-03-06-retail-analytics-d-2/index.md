@@ -5,7 +5,7 @@ title: "Snowplow for retail part 2: what data do I track?"
 tags: [analytics, data, insights, retail, retail analytics, ecommerce]
 author: Archit
 image: /assets/img/blog/2019/03/entities.png
-category: Analytics
+category: How to guides
 permalink: /blog/2019/03/06/snowplow-for-retail-part-1-what-data-do-I-track/
 discourse: true
 ---

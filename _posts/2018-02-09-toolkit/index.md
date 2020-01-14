@@ -4,7 +4,7 @@ title: "The product analyst toolkit"
 title-short: Snowplow product analytics part four
 tags: [analytics, product analytics, digital products]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2018/02/09/the-product-analyst-toolkit/
 ---
 

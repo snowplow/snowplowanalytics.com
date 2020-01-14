@@ -6,7 +6,7 @@ image: /assets/img/blog/2018/08/sp-helsinki.jpg
 title-short: Upcoming Snowplow Analytics events
 tags: [analytics, meetups, real time]
 author: Anthony
-category: Meetups
+category: Inside the plow
 permalink: /blog/2018/08/02/on-snowplow-meetups-conferences-and-events-in-september-2018/
 discourse: true
 ---

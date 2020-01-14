@@ -3,7 +3,7 @@ layout: post
 title: Using ChartIO to visualise and interrogate Snowplow data
 title-short: Using ChartIO to visualise Snowplow data
 tags: [chartio, analytics, data visualization, query]
-category: Analytics
+category: Data insights
 author: yali
 permalink: /blog/2013/01/08/using-chartio-to-visualise-and-interrogate-snowplow-data/
 ---

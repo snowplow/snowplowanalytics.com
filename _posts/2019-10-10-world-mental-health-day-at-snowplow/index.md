@@ -4,7 +4,7 @@ title-short: "World Mental Health Day at Snowplow"
 title: "World Mental Health Day at Snowplow"
 description: "For World Mental Health Day 2019, we asked our team what mental health meant to them."
 author: Nicki
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2019/10/10/world-mental-health-day-at-snowplow/
 ---
 

@@ -5,7 +5,7 @@ title-short: Warehousing Google Analytics data
 description: The different ways of interacting with Google Analytics data
 tags: [analytics, Google Analytics, data warehousing]
 author: Anthony
-category: Analytics
+category: Data insights
 permalink: /blog/2018/02/08/warehousing-google-analytics-data-api-vs-hit-level-data/
 ---
 

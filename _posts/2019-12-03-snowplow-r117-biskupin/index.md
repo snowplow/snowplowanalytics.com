@@ -3,7 +3,7 @@ layout: post
 title-short: "Snowplow R117 release"
 title: "Snowplow R117 release"
 tags: [snowplow, release]
-author: Łukasz Indykiewicz
+author: Lukas
 category: Releases
 permalink: /blog/2019/12/03/snowplow-r117-biskupin/
 ---

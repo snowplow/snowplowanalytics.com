@@ -3,7 +3,7 @@ layout: post
 title: Span Conference and Why your company needs a Unified Log
 tags: [snowplow, span, span conference, london, unified log]
 author: Alex
-category: Meetups
+category: Inside the plow
 permalink: /blog/2014/11/02/span-conference/
 ---
 

@@ -4,7 +4,7 @@ title: "Acing your interview with Snowplow"
 title-short: Interviewing with Snowplow Analytics
 tags: [analytics, interviewing, startups]
 author: Miriam
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2018/02/16/acing-your-interview-with-snowplow/
 ---
 
