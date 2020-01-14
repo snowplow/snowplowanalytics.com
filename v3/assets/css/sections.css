@@ -1283,7 +1283,7 @@ section.how-web .wrap ul li p{
 }
 section.how-web .wrap > ul > li .heading img{
     width: 200px;
-    height:200px;
+    height:auto;
     margin-right:35px;
 }
 
@@ -1662,9 +1662,7 @@ section.other ul li a:hover img{
    LANGUAGES - WEB
    =============== */
 
-section.languages{
-    margin-top:200px;
-}
+
 
 section.languages .row{
     width: 100%;
@@ -1673,7 +1671,7 @@ section.languages .row{
 
 section.languages .row h3{
     width: 100%;
-    text-align:center;
+    text-align:left;
     margin-bottom:50px;
 }
 
@@ -1687,6 +1685,17 @@ section.languages .row ul{
 
 section.languages .row ul li{
     margin:0px 80px;
+    max-width:220px;
+    width: 100%;
+}
+
+section.language .row ul li p{
+    width: 100%;
+    padding:10px;
+    box-sizing: border-box;
+    display:block;
+    border-radius: 4px 4px 0px 0px;
+    background:#DDE7FF;
 }
 
 section.languages .row ul li:first-of-type{
