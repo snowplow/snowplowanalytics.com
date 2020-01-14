@@ -382,3 +382,9 @@
 
 
       
+- name: Peel
+  full_name: Piotr Limanowski
+  url: /blog/authors/peel/
+  avatar: /assets/img/team/peel.jpg
+  spiel:   |
+      <a href="/blog/authors/peel/">Peel</a> is a Data Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/piotr-limanowski/">LinkedIn</a>.
