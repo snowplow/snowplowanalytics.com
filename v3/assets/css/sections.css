@@ -1284,7 +1284,7 @@ section.how-web .wrap ul li p{
     margin-left:80px
 }
 section.how-web .wrap > ul > li .heading img{
-    width: 200px;
+    width: auto;
     height:200px;
     margin-right:35px;
 }
@@ -1664,9 +1664,7 @@ section.other ul li a:hover img{
    LANGUAGES - WEB
    =============== */
 
-section.languages{
-    margin-top:200px;
-}
+
 
 section.languages .row{
     width: 100%;
@@ -1675,7 +1673,7 @@ section.languages .row{
 
 section.languages .row h3{
     width: 100%;
-    text-align:center;
+    text-align:left;
     margin-bottom:50px;
 }
 
@@ -1683,12 +1681,28 @@ section.languages .row ul{
     width: 100%;
     display:flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 section.languages .row ul li{
-    margin:0px 80px;
+    margin-right:20px;
+    max-width:220px;
+    width: 100%;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.languages .row ul li p{
+    display:block;
+    width: 100%;
+    padding:10px 20px;
+    box-sizing: border-box;    
+    border-radius: 4px 4px 0px 0px;
+    background:#F6F8FF;
+    font-weight:700;
+    color:#838BA0;
 }
 
 section.languages .row ul li:first-of-type{
@@ -1696,6 +1710,14 @@ section.languages .row ul li:first-of-type{
 }
 section.languages .row ul li:last-of-type{
     margin-right:0px;
+}
+
+section.languages .row ul li .full{
+    display:flex;
+    min-height:100px;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 section.languages .row ul li img{
