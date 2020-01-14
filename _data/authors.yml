@@ -281,7 +281,7 @@
   spiel:   |
       <a href="/blog/authors/archit/">Archit</a> is a Data Strategist at Snowplow Analytics where he roadmaps and delivers data-driven solutions to business problems for our clients.
 
-- name: Mike N
+- name: MikeN
   full_name: Mike Nemirovsky
   twitter: mikenems
   url: /blog/authors/miken/
@@ -310,10 +310,10 @@
 - name: Lyuba
   full_name: Lyuba Golovina
   twitter:
-  url: /blog/authors/Lyuba/
+  url: /blog/authors/lyuba/
   avatar: /assets/img/blog/2019/05/Lyuba-Golovina.jpeg
   spiel:   |
-      <a href="/blog/authors/Lyuba/">Lyuba</a> is a Product Marketer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/lyubagolovina/">LinkedIn</a>.
+      <a href="/blog/authors/lyuba/">Lyuba</a> is a Product Marketer at Snowplow, you can find her on <a href="https://www.linkedin.com/in/lyubagolovina/">LinkedIn</a>.
 
 - name: Nicki
   full_name: Nicki Faulkner
@@ -359,6 +359,16 @@
   avatar: /assets/img/team/paul.jpg
   spiel:   |
       <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
+
+
+
+- name: SimonP
+  full_name: Simon Pickerill
+  url: /blog/authors/simonp/
+  avatar: /assets/img/blog/2019/12/simonp.jpg
+  spiel:   |
+      Simon is a Content Marketer at Snowplow. You can find him on <a href="https://twitter.com/sipickerill">Twitter</a> and <a href="https://www.linkedin.com/in/spickerill/">LinkedIn</a>.
+
 
 
 - name: Lukas
