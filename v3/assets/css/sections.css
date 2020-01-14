@@ -396,7 +396,9 @@ article .content .bottom > img{
 }
 
 
-
+article .content .highlighter-rouge{
+    background:#e8f8ff
+}
 
 
 /* === ARTICLES BACK BUTTON === */
