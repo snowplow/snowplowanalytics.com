@@ -360,7 +360,12 @@
   spiel:   |
       <a href="/blog/authors/paul/">Paul</a> is a Solutions Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/pboocock/">LinkedIn</a>.
 
-
+- name: Peel
+  full_name: Piotr Limanowski
+  url: /blog/authors/peel/
+  avatar: /assets/img/team/peel.jpg
+  spiel:   |
+      <a href="/blog/authors/peel/">Peel</a> is a Data Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/piotr-limanowski/">LinkedIn</a>.
 
 - name: SimonP
   full_name: Simon Pickerill
@@ -369,22 +374,9 @@
   spiel:   |
       Simon is a Content Marketer at Snowplow. You can find him on <a href="https://twitter.com/sipickerill">Twitter</a> and <a href="https://www.linkedin.com/in/spickerill/">LinkedIn</a>.
 
-
-
 - name: Lukas
   full_name:  Łukasz Indykiewicz
   url: /blog/authors/lukas/
   avatar: /assets/img/blog/2019/12/lukas.jpeg
   spiel:   |
       Luke is a software engineer at Snowplow. You can find him on <a href="https://github.com/lukeindykiewicz">GitHub</a>, <a href="https://twitter.com/lukeindykiewicz">Twitter</a> and <a href="https://pl.linkedin.com/in/lukaszindykiewicz">LinkedIn</a>. 
-
-
-
-
-      
-- name: Peel
-  full_name: Piotr Limanowski
-  url: /blog/authors/peel/
-  avatar: /assets/img/team/peel.jpg
-  spiel:   |
-      <a href="/blog/authors/peel/">Peel</a> is a Data Engineer at Snowplow</a>. You can find him on <a href="https://www.linkedin.com/in/piotr-limanowski/">LinkedIn</a>.
