@@ -1739,3 +1739,17 @@ section.languages .row ul li img{
 section.languages .row:last-of-type{
     margin-bottom:120px;
 }
+
+
+
+
+/* OVERRIDES */
+
+header .navbar .navbar-nav .btn, header .navbar-default .navbar-nav .btn{
+    max-width: 110px !important;
+    padding:8px 0px !important;
+    font-size:16px !important;
+}
+.navbar-right a:first-of-type{
+    margin-top:10px !important;
+}
