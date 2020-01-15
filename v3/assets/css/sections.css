@@ -2,7 +2,7 @@
         GLOBAL
    =============== */
 
-main{
+   main{
     margin:60px 0px;
 }
 
@@ -17,6 +17,18 @@ main{
     z-index:1;
 }
 
+.hex-bg-left-2x{
+    width: 520px;
+    height: 900px;
+    display:block;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background:url("../img/global/left-2hex-bg.png") no-repeat;
+    background-size:100%;
+    z-index:1;
+}
+
 .hex-3-bg{
     width: 1150px;
     height: 1300px;
@@ -25,6 +37,16 @@ main{
     right:0px;
     top:0px;
     background:url("../img/global/3hex-bg.svg") no-repeat;
+    z-index:1;
+}
+.hex-3-bg-small{
+    width: 736px;
+    height: 1289px;
+    display:block;
+    position:absolute;
+    right:0px;
+    top:0px;
+    background:url("../img/global/hex-3-bg-small.svg") no-repeat;
     z-index:1;
 }
 
@@ -38,10 +60,13 @@ input.error{
 /* Call to action button pre-definition */
 
 .cta{
-    padding:17px 30px;
+    padding:17px 30px; 
     cursor:pointer;
     min-width:200px;
     max-height:60px;
+    /* TODO : REMOVE AFTER COMPELTE MIGRATION */
+    font-size:16px !important;
+    padding:16px 30px; 
 }
 
 
@@ -991,20 +1016,20 @@ section.sub-hero .heading h1{
 
 
 /* ===============
-   SUB SECTION - NORMAL
+   SUB SECTION - center
    =============== */
 
-section .heading-subsection-normal{
+section .heading-subsection-center{
     display:flex;
     flex-flow:row wrap;
     justify-content: center;
     text-align:center;
 }
-section .heading-subsection-normal h2{
+section .heading-subsection-center h2{
     margin-bottom:15px;
     width: 100%;
 }
-section .heading-subsection-normal p{
+section .heading-subsection-center p{
     width: 80%;
 }
 
@@ -1138,27 +1163,32 @@ section.benefits ul{
 section.benefits ul li{
     display:flex;
     flex-flow:row wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin-bottom:25px;
     display:flex;
     align-items: center;
 }
 
 section.benefits ul li img{
-    height: 350px;
+    height: 325px;
 }
 
 section.benefits ul li > div{
     width: 640px;
+    margin-left:80px;
 }
 
 section.benefits ul li > div h3{
     margin-bottom:20px;
 }
+section.benefits ul li:nth-of-type(2){
+    justify-content: flex-end;
+}
 
 section.benefits ul li:nth-of-type(2) div{
-
-    text-align:right;
+    margin-left:0px;
+    margin-right:80px;
+    text-align:left;
 }
 
 /* ========================
@@ -1249,7 +1279,18 @@ section.how .wrap ul li ul li::before{
     background-size:10px;
 }
 
+/* ========================
+    SNOWPLOW FOR WEB - HOW
+   ======================== */
 
+section.how-web .wrap ul li p{
+    margin-left:80px
+}
+section.how-web .wrap > ul > li .heading img{
+    width: auto;
+    height:200px;
+    margin-right:35px;
+}
 
 /* ========================
           MAIN FORM
@@ -1417,4 +1458,293 @@ section.pricing-form .thankyou{
     flex-flow:row wrap;
     justify-content: center;
     text-align:center;
+}
+
+
+
+/* ========================
+          TESTEMONIAL
+   ======================== */
+
+section.testemonial{
+    z-index:2;
+}
+
+section.testemonial .single{
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align:center;
+}
+
+section.testemonial .single img{
+    align-self:center;
+    margin-bottom:20px;
+}
+
+section.testemonial .single em{
+    max-width:660px;
+    margin:10px 0px 30px 0px;
+    align-self:center;
+}
+
+
+/* ========================
+        CLIENTS BANNER
+   ======================== */
+
+
+section.testemonial .clients-banner{
+    width: 100%;
+    position:relative;
+    margin:40px 0px 0px 0px;
+    min-height:270px;
+    z-index:3;
+    
+}
+
+section.testemonial .clients-banner .small-clients-slider{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position:absolute;
+    right:170px;
+    top:68px;
+    width:100%; 
+    max-width:1200px;
+    min-height: 0;
+    min-width: 0;
+}
+
+section.testemonial .clients-banner .slick-track{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.testemonial .clients-banner .small-clients-slider img{
+    align-self: center;
+}
+section.testemonial .clients-banner .small-clients-slider .item{
+    padding:40px 0px 30px 0px;
+    min-height: 0;
+    min-width: 0;
+}
+
+section.testemonial .clients-banner  .snowplow-banner{
+    display:block;
+    width: 200px;
+    height: 250px;
+    background:url('../img/global/sp-powered.png') no-repeat;
+    background-size:100%;
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:4;
+}
+
+
+
+
+
+/* ===============
+  SUB HEADING - WEB
+   =============== */
+
+.web-v3 .heading .full{
+    margin-top:40px;
+}
+
+
+/* ===============
+   OTHER - WEB
+   =============== */
+
+section.other .hex-3-bg-small{
+    top:-200px;
+}
+
+section.other ul{
+    display:flex;
+    margin:80px 0px;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+section.other ul li{
+    width: 380px;
+}
+
+section.other ul li a{
+    display:block;
+    width: 100%;
+    min-height:300px;
+    padding:40px 40px 50px 40px;
+    box-sizing: border-box;
+}
+
+section.other ul li a p{
+    margin:30px 0px 20px 0px;
+    min-height:150px;
+}
+
+
+section.other ul li a img{
+    float:right;
+    position:relative;
+    right:20px;
+    -webkit-transition: all 500ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+    -webkit-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
+         -o-transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); 
+            transition: all 500ms cubic-bezier(1.000, -0.600, 0.000, 1.320); /* custom */
+}
+
+
+section.other ul li a:hover img{
+  right:0px;
+}
+
+
+/* ===============
+   READ-MORE-CTA
+   =============== */
+
+
+.read-more-cta{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width: 100%;
+    z-index:4;
+}
+
+.read-more-cta .left{
+    max-width:630px;
+}
+
+.read-more-cta .left p{
+    margin-top:15px;
+}
+
+.read-more-cta .right{
+    max-width:350px;
+}
+.read-more-cta .right > p{
+    float:right;
+    margin-bottom:15px;
+}
+
+.read-more-cta .right a{
+    display:flex;
+    float:right;
+    flex-flow:row wrap;
+}
+
+.read-more-cta .right a p{
+    margin-right:10px;
+}
+
+
+/* ===============
+   PIPELINE-SHOWCASE
+   =============== */
+
+section.pipeline-showcase .full{
+    margin-top:80px;
+    margin-bottom:100px;
+}
+
+/* ===============
+   MAIN-CALL-TO-ACTION-BANNER
+   =============== */
+
+.main-call-to-action-banner .full{
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content: space-between;
+    padding:40px;
+    box-sizing: border-box;
+    
+}
+.main-call-to-action-banner .full .left{
+    max-width:750px;
+}
+.main-call-to-action-banner .full .left p{
+    margin-top:10px;
+}
+.main-call-to-action-banner .full .right{
+    max-width:200px;
+}
+
+
+
+/* ===============
+   LANGUAGES - WEB
+   =============== */
+
+
+
+section.languages .row{
+    width: 100%;
+    margin-top:80px;
+}
+
+section.languages .row h3{
+    width: 100%;
+    text-align:left;
+    margin-bottom:50px;
+}
+
+section.languages .row ul{
+    width: 100%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+section.languages .row ul li{
+    display:flex;
+    width: 100%;
+    max-width:220px;
+    margin:0px 20px 20px 0px;
+    flex-flow:column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.languages .row ul li p{
+    display:block;
+    width: 100%;
+    padding:10px 20px;
+    box-sizing: border-box;    
+    border-radius: 4px 4px 0px 0px;
+    background:#F6F8FF;
+    font-weight:700;
+    color:#838BA0;
+}
+
+section.languages .row ul li:nth-of-type(5n + 1){
+    margin-left:0px;
+}
+section.languages .row ul li:nth-of-type(5n){
+    margin-right:0px;
+}
+
+section.languages .row ul li .full{
+    display:flex;
+    min-height:110px;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.languages .row ul li img{
+    align-self: center;
+}
+
+section.languages .row:last-of-type{
+    margin-bottom:120px;
 }

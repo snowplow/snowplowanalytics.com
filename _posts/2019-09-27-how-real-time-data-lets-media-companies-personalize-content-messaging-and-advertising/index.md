@@ -1,12 +1,11 @@
 ---
 layout: post
-title-short: How real-time data enables personalization and engagement
+title-short: "How real-time data enables personalization and engagement"
 title: "How real-time data enables personalization and engagement"
 description: "Real-time event data is powering media companies to automate, optimize and personalize complex marketing actions and personalization"
 author: Erika
-category: Data insights
+category: User stories
 permalink: /blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/
-discourse: false
 ---
 
 It would not be an overstatement to claim that real-time insight has changed the media industry. Moving from a traditional print environment in which media companies had static subscriber data and did not face cutthroat advertising competition to a completely digital, 24/7 information cycle driven by the onslaught of free content and granular targeting in advertising, it’s an entirely new paradigm. While this digital shift posed many challenges in terms of profitability and business models, some media companies embraced the change and saw the opportunity born of this complex but data-saturated moment. 

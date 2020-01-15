@@ -1,11 +1,56 @@
+@media screen and (max-width: 1375px) {
+    
 
+    /* ===============
+       SMALL CLIENT BANNER
+     =============== */
+    section.testemonial .clients-banner .small-clients-slider{
+        max-width:1000px;
+        
+    }
+    /* SAFARI BUG FIX SLICK SLIDER  */
+    @media not all and (min-resolution:.001dpcm) { 
+        @media {
+            section.testemonial .clients-banner .slick-track{
+                display:block;
+            }
+            section.testemonial .clients-banner .small-clients-slider .item{
+                min-height:134px;
+            }
+        }
+    }
+    section.testemonial .clients-banner .small-clients-slider .slick-prev{
+        display:none !important;
+    }
+    section.testemonial .clients-banner .small-clients-slider .slick-next{
+        position:absolute;
+        right:-40px;
+        top:26px;
+        z-index:5;
+        background:url(../img/global/small-slider-arrow.png) no-repeat;
+        background-size:100%;
+        width: 80px;
+        height: 80px;
+        text-indent: -9999px;
+        overflow:hidden;
+    }   
+    section.testemonial .clients-banner .small-clients-slider .item{
+        display:flex;
+        justify-content: center;
+    }
+    section.testemonial .clients-banner .small-clients-slider .item{
+        padding:40px 0px;
+    }
+    
+
+}
 
 @media screen and (max-width: 1240px) {
     .wrap{
         width: 1025px;
     }
     
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 960px;
         margin:0px auto;
     }
@@ -56,9 +101,9 @@
     SINGLE POST
    =============== */
    .single-v3 article{
-    width: 32%;
-    margin-bottom:20px;
-}
+        width: 32%;
+        margin-bottom:20px;
+    }
 
 
     /* ===============
@@ -115,6 +160,25 @@
    section.pricing-form .wrap .heading{
        width: 100%;
    }
+    /* ===============
+    LANGUAGES - WEB
+    =============== */
+    section.languages .row ul li{
+        max-width:180px;
+    }
+
+    /* ===============
+   OTHER - WEB
+   =============== */
+   section.other ul li{
+       max-width:32%;
+   }
+    /* ===============
+       SMALL CLIENT BANNER
+    =============== */
+     section.testemonial .clients-banner .small-clients-slider{
+        max-width:800px;
+    }
 }
 
 
@@ -132,7 +196,7 @@
         width: 900px;
     }
     
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 900px;
     }
 
@@ -246,13 +310,20 @@
     section.pricing-form .wrap form .form-wrap > .p-small br{
         display:none;
     }
+    /* ===============
+    LANGUAGES - WEB
+    =============== */
+    section.languages .row ul li:nth-of-type(5n){
+        margin-right:20px;
+    }
+
 }
 
 
 
 @media screen and (max-width: 1035px) {
     
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 768px;
     }
 
@@ -262,7 +333,7 @@
     .wrap{
         width:768px;
     }
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 680px;;
     }
 
@@ -335,9 +406,15 @@
         flex-flow:row wrap;
         text-align:center;
         justify-content: center;
+        margin-bottom:15px;
     }
     section.how .wrap > ul > li .heading img{
         margin-bottom:25px;
+        margin-right:0px;
+    }
+    section.how .wrap > ul > li p{
+        margin-left:0px;
+        text-align: center;
     }
     /* ========================
              MAIN FORM
@@ -382,6 +459,26 @@
    section.pricing-form .wrap form{
        width: 100%;
    }
+    /* ===============
+    LANGUAGES - WEB
+    =============== */
+
+    section.languages .row ul li{
+        margin-right:14px;
+    }
+    section.languages .row ul li:nth-of-type(4n + 1){
+        margin-right:14px;
+    }
+    section.languages .row ul li:nth-of-type(4n){
+        margin-right:0px;
+    }
+    /* ===============
+       SMALL CLIENT BANNER
+     =============== */
+     section.testemonial .clients-banner .small-clients-slider{
+        max-width:600px;
+        
+    }
 }
 
 
@@ -389,7 +486,7 @@
     .wrap{
         width:600px;
     }
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 580px;
     }
 
@@ -468,7 +565,7 @@
     }
     /* Slick slider */
 
-    .slick-arrow{
+    section.plans .slick-arrow{
         position:absolute;
         width:20px;
         height: 40px;
@@ -479,12 +576,12 @@
         z-index:5;
         background-size:100% !important;
     }
-    .slick-next{
+    section.plans .slick-next{
         right:40px;
         background: url(../img/pricing/slider-arrow-right.svg) no-repeat center center;
         
     }
-    .slick-prev{
+    section.plans .slick-prev{
         left:40px;
         background: url(../img/pricing/slider-arrow-left.svg) no-repeat center center;
     }
@@ -506,10 +603,13 @@
     section.benefits ul li img{
         width: 300px;
         height:auto;
+        margin:0px auto;
     }
     section.benefits ul li div{
         margin-top:40px !important;
         text-align:center !important;
+        margin-left:0px;
+        width: 100%;
     }
     /* ========================
           PRICING FORM
@@ -530,11 +630,57 @@
         margin:0px auto;
         margin-top:20px;
     }
-    
+    /* ===============
+    LANGUAGES - WEB
+    =============== */
+    section.languages .row h3{
+        text-align: center;
+    }
+    section.languages .row{
+        margin-left:0px;
+        margin-right:0px;
+    }
+    section.languages .row ul li{
+        margin-right:20px;
+        max-width:186px;
+    }
+    section.languages .row ul li:nth-of-type(4n + 1){
+        margin-right:20px;
+    }
+    section.languages .row ul li:nth-of-type(4n){
+        margin-right:20px;
+    }
+    section.languages .row ul li:nth-of-type(3n + 1){
+        margin-right:20px;
+    }
+    section.languages .row ul li:nth-of-type(3n){
+        margin-right:0px;
+    }
+    /* ===============
+    OTHER - WEB
+    =============== */
+    section.other ul li{
+        max-width:100%;
+        width: 100%;
+        margin-bottom:20px;
+    }
+    section.other ul li a p{
+        min-height:auto;
+    }
+    section.other ul li a{
+        min-height:auto;
+    }
+    /* ===============
+       SMALL CLIENT BANNER
+    =============== */
+     section.testemonial .clients-banner .small-clients-slider{
+        max-width:450px;
+        
+    }
 }
 
 @media screen and (max-width: 740px) {
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 480px;
     }
 
@@ -620,6 +766,43 @@
     section.benefits ul li img{
         height: auto;
     }
+        /* ===============
+    LANGUAGES - WEB
+    =============== */
+    section.languages .row ul{
+        display:block;
+    }
+    section.languages .row ul li{
+        max-width:48%;
+        float:left;
+        margin-right:0px !important;
+    }
+    section.languages .row ul li:nth-last-of-type(2n){
+        float:right;
+    }
+    /* ===============
+       SMALL CLIENT BANNER
+    =============== */
+    section.testemonial{
+        overflow:hidden;
+    }
+    section.testemonial .clients-banner .small-clients-slider{
+        width: 100%;
+        position:static;
+        max-width:100%;
+        padding:40px 0px;
+        margin-bottom:20px;
+        box-sizing: border-box;
+    }
+    section.testemonial .clients-banner .snowplow-banner{
+        display:none;
+    }
+    section.testemonial .clients-banner .small-clients-slider .item{
+        padding:20px;
+    }
+    .hex-bg-left-2x{
+        width: 320px;
+    }
 }
 
 
@@ -631,7 +814,7 @@
         padding-right:20px;
         box-sizing: border-box;
     }
-    .blog-wrap{
+    .blog-wrap, .sub-heading-smaller-wrap{
         width: 100%;
     }
 
@@ -798,4 +981,12 @@
    section.pricing-form{
        margin-bottom:60px;
    }
+    /* ===============
+       SMALL CLIENT BANNER
+    =============== */
+    section.testemonial .clients-banner .small-clients-slider .item{
+        width: 100%;
+    }
+
+    
 }

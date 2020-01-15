@@ -114,6 +114,47 @@ if($(".pricing-slider")[0]){
       });
 }
 
+// Small clients wrapper  initialize only if present
+
+if($(".small-clients-slider")[0]){
+    if (window.matchMedia("(max-width: 1375px)").matches) {
+        $(".small-clients-slider").slick({
+            // normal options...
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            initialSlide:1,
+            dots: false,
+            // the magic
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 940,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: "unslick"
+                }
+            ]
+        });
+    }  
+}
+
+
 // Pricing page add functionality to hints
 
 
