@@ -23,8 +23,8 @@ as well as an improvement to the referer parser enrichment.
 and the enrich jobs versions ([Stream Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/stream-enrich) and
 [Beam Enrich](https://github.com/snowplow/snowplow/tree/master/3-enrich/beam-enrich)) are bumped to `1.0.0`.
 
-As introduced in the [RFC](https://discourse.snowplowanalytics.com/t/rfc-making-the-snowplow-pipeline-real-time-end-to-end-and-deprecating-support-for-batch-processing-modules/3018),
-we stop supporting Spark from this release, in favor of streaming.
+As introduced in the [RFC on batch deprecation](https://discourse.snowplowanalytics.com/t/rfc-making-the-snowplow-pipeline-real-time-end-to-end-and-deprecating-support-for-batch-processing-modules/3018),
+we are no longer adding new features to Spark from this release. This release, and all subsequent, will focus on our streaming solution.
 
 1. [Beta release](#betarelease)
 2. [New bad row format](#badrows)
@@ -37,13 +37,13 @@ we stop supporting Spark from this release, in favor of streaming.
 
 This release represents a major upgrade of the core Snowplow technology. We are currently testing this tech internally - no small feat because of the size and scope of the release. Whilst we are running those tests, we have decided to make the code available to open source users to test themselves: we would welcome any feedback on the new functionality, which we hope to release in production in [R119](#roadmap).
 
-If you are an open source users who would like to test this new functionality, we would be happy to provide a high-priority OSS support during this testing phase (covering setup, debug, recovery or other aspects). We are committed to iterating our release candidates for R119 rapidly.
+If you are an open source user who would like to test this new functionality, we would be happy to provide a high-priority OSS support during this testing phase (covering setup, debug, recovery or other aspects). We are committed to iterating our release candidates for R119 rapidly.
 
 <h1 id="badrows">2. New bad row format</h1>
 
 <h2>2.1. Why update the bad row format?</h2>
 
-The Snowplow pipeline has always been non-lossy: when there is an issue processing an event, rather than silently discard the event, it is saved as a "bad row" - opening up the possibility to monitor the number of bad rows, inspect them, fix them and reprocess them.
+The Snowplow pipeline has always been non-lossy: when there is an issue processing an event, rather than silently discard the event, it is saved as a "bad row" . This is only half the challenge! Snowplow also gives the ability to monitor the number of bad rows, inspect them, fix them and reprocess them to complete your data set.
 
 The previous format for these bad rows (generic JSON) was not straightforward to use. Specifically:
 
@@ -54,7 +54,7 @@ The previous format for these bad rows (generic JSON) was not straightforward to
   3. identify the source of the error so that it can be quickly fixed e.g. is it an issue with a specific mobile app?
 
 
-In an effort to address these issues, we decided to rethink the format from the ground up. More background on that thinking can be found on the [RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558).
+To address these issues, we have reworked the format from the ground up. More background on that thinking can be found on the [RFC](https://discourse.snowplowanalytics.com/t/a-new-bad-row-format/2558).
 
 <h2>2.2. New bad row format</h2>
 
