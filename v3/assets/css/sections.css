@@ -1016,20 +1016,20 @@ section.sub-hero .heading h1{
 
 
 /* ===============
-   SUB SECTION - NORMAL
+   SUB SECTION - center
    =============== */
 
-section .heading-subsection-normal{
+section .heading-subsection-center{
     display:flex;
     flex-flow:row wrap;
     justify-content: center;
     text-align:center;
 }
-section .heading-subsection-normal h2{
+section .heading-subsection-center h2{
     margin-bottom:15px;
     width: 100%;
 }
-section .heading-subsection-normal p{
+section .heading-subsection-center p{
     width: 80%;
 }
 
@@ -1497,13 +1497,13 @@ section.testemonial .single em{
 section.testemonial .clients-banner{
     width: 100%;
     position:relative;
-    margin:40px 0px 0px 0px;;
+    margin:40px 0px 0px 0px;
     min-height:270px;
     z-index:3;
     
 }
 
-section.testemonial .clients-banner ul{
+section.testemonial .clients-banner .small-clients-slider{
     display:flex;
     flex-flow:row wrap;
     justify-content: space-evenly;
@@ -1513,13 +1513,24 @@ section.testemonial .clients-banner ul{
     top:68px;
     width:100%; 
     max-width:1200px;
+    min-height: 0;
+    min-width: 0;
 }
 
-section.testemonial .clients-banner ul li img{
+section.testemonial .clients-banner .slick-track{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.testemonial .clients-banner .small-clients-slider img{
     align-self: center;
 }
-section.testemonial .clients-banner ul li{
-    padding:40px 0px 30px 0px;;
+section.testemonial .clients-banner .small-clients-slider .item{
+    padding:40px 0px 30px 0px;
+    min-height: 0;
+    min-width: 0;
 }
 
 section.testemonial .clients-banner  .snowplow-banner{
@@ -1550,8 +1561,6 @@ section.testemonial .clients-banner  .snowplow-banner{
 /* ===============
    OTHER - WEB
    =============== */
-
-
 
 section.other .hex-3-bg-small{
     top:-200px;
@@ -1697,10 +1706,10 @@ section.languages .row ul{
 }
 
 section.languages .row ul li{
-    margin-right:20px;
-    max-width:220px;
-    width: 100%;
     display:flex;
+    width: 100%;
+    max-width:220px;
+    margin:0px 20px 20px 0px;
     flex-flow:column wrap;
     justify-content: space-between;
     align-items: center;
@@ -1717,10 +1726,10 @@ section.languages .row ul li p{
     color:#838BA0;
 }
 
-section.languages .row ul li:first-of-type{
+section.languages .row ul li:nth-of-type(5n + 1){
     margin-left:0px;
 }
-section.languages .row ul li:last-of-type{
+section.languages .row ul li:nth-of-type(5n){
     margin-right:0px;
 }
 
