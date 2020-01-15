@@ -783,11 +783,15 @@
     /* ===============
        SMALL CLIENT BANNER
     =============== */
+    section.testemonial{
+        overflow:hidden;
+    }
     section.testemonial .clients-banner .small-clients-slider{
         width: 100%;
         position:static;
         max-width:100%;
-        padding:40px 0px;;
+        padding:40px 0px;
+        margin-bottom:20px;
         box-sizing: border-box;
     }
     section.testemonial .clients-banner .snowplow-banner{
@@ -795,6 +799,9 @@
     }
     section.testemonial .clients-banner .small-clients-slider .item{
         padding:20px;
+    }
+    .hex-bg-left-2x{
+        width: 320px;
     }
 }
 
@@ -980,4 +987,6 @@
     section.testemonial .clients-banner .small-clients-slider .item{
         width: 100%;
     }
+
+    
 }
