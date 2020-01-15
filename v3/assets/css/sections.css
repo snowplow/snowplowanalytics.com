@@ -1188,7 +1188,7 @@ section.benefits ul li:nth-of-type(2){
 section.benefits ul li:nth-of-type(2) div{
     margin-left:0px;
     margin-right:80px;
-    text-align:right;
+    text-align:left;
 }
 
 /* ========================
