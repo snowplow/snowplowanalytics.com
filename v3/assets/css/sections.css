@@ -783,6 +783,10 @@ section.content .blog-wrap{
     display:none;
 }
 
+.category-posts .articles article:nth-of-type(4){
+    display:block;
+}
+
 .related-posts .articles article:nth-of-type(3n){
     margin-right:0px;
 }
