@@ -5,7 +5,7 @@ title: "Snowplow R118 beta release with new bad row format"
 tags: [snowplow, enrichment, bad-rows, release]
 author: Benjamin Benoist
 category: Releases
-permalink: /blog/2020/01/13/snowplow-release-r118-badrows/
+permalink: /blog/2020/01/16/snowplow-release-r118-badrows/
 ---
 
 We are excited to release [Snowplow R118 Morgantina][snowplow-release], named after the
