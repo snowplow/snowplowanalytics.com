@@ -1,0 +1,27 @@
+---
+layout: compress
+---
+{% include head.html %}
+
+
+{% include header.html %}
+	<div class="container clearfix resources">
+		<div class="left-fixed">
+			 <ul class="styled" >
+				{% for item in site.resources  %}
+				  <li><a href="{{ item.permalink }}">{{ item.title }}</a>
+					{% if page.url == item.permalink %}
+					  {% toc %}
+					{% endif %}
+				  </li>
+				{% endfor %}
+			  </ul>
+		</div>
+		<div class="right-scroll">
+			{{  content   }}
+		</div>
+	</div>
+
+{% include request-demo-revamp.html %}
+{% include footer-new.html %}
+
