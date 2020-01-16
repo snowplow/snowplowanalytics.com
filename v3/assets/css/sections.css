@@ -647,6 +647,10 @@ section.content .blog-wrap{
     margin:5px 0px;
 }
 
+.post-content li ol, .post-content li ul{
+    margin-left:20px;
+}
+
 .post-content img{
     margin:15px 0px;
 }
