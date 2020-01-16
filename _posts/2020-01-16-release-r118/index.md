@@ -132,11 +132,7 @@ It can also be emitted if the size of another kind of bad row is too big for the
 
 <h2>2.5. Working with bad rows in Scala</h2>
 
-<<<<<<< HEAD
-Scala library [snowplow-badrows](https://github.com/snowplow-incubator/snowplow-badrows/tree/release/0.1.0/) contains all the case classes
-=======
 Scala library [snowplow-badrows](https://github.com/snowplow-incubator/snowplow-badrows) contains all the case classes
->>>>>>> b11cb34b001d9f1c569ef8c4e61ce2d5fff8a8cb
 defining the new bad rows and makes it easier to work with them. By using the same version of the library that the application producing bad rows,
 we can be sure that there won't be any incompatibility when processing them.
 
