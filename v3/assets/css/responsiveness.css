@@ -19,28 +19,10 @@
             }
         }
     }
-    section.testemonial .clients-banner .small-clients-slider .slick-prev{
-        display:none !important;
-    }
+
     section.testemonial .clients-banner .small-clients-slider .slick-next{
-        position:absolute;
-        right:-40px;
-        top:26px;
-        z-index:5;
-        background:url(../img/global/small-slider-arrow.png) no-repeat;
-        background-size:100%;
-        width: 80px;
-        height: 80px;
-        text-indent: -9999px;
-        overflow:hidden;
-    }   
-    section.testemonial .clients-banner .small-clients-slider .item{
-        display:flex;
-        justify-content: center;
-    }
-    section.testemonial .clients-banner .small-clients-slider .item{
-        padding:40px 0px;
-    }
+        display:block !important;
+    } 
     
 
 }
@@ -446,7 +428,7 @@
     section.benefits ul li > div{
         width: 430px;
     }
-    section.benefits ul li img{
+    section.benefits ul li > img{
         height: 240px;
         margin-top:75px;
     }
@@ -592,25 +574,34 @@
     section.benefits ul li:nth-of-type(2){
         flex-direction:column-reverse;
     }
-    section.benefits ul li:nth-of-type(2) img{
+    section.benefits ul li:nth-of-type(2) > img{
         margin:0px auto;
         margin-top:75px;
     }
-    section.benefits ul li:nth-of-type(2) div{
+    section.benefits ul li:nth-of-type(2) > div{
         margin:0px auto;
     }
 
-    section.benefits ul li img{
+    section.benefits ul li > img{
         width: 300px;
         height:auto;
         margin:0px auto;
     }
-    section.benefits ul li div{
+    section.benefits ul li > div{
         margin-top:40px !important;
         text-align:center !important;
         margin-left:0px;
         width: 100%;
     }
+
+    section.benefits .tools-slider{
+        width: 100%;
+        margin-bottom:80px;
+    }
+    section.benefits .tools-slider .slick-next{
+        right:-20px;
+    }
+
     /* ========================
           PRICING FORM
    ======================== */
@@ -763,7 +754,7 @@
     /* ===============
     BENEFITS - PRICING
     =============== */
-    section.benefits ul li img{
+    section.benefits ul li > img{
         height: auto;
     }
         /* ===============
@@ -961,7 +952,7 @@
     /* ===============
     BENEFITS - PRICING
     =============== */
-    section.benefits ul li img{
+    section.benefits ul li > img{
         width: 250px;
         height: auto;
     }
@@ -970,6 +961,10 @@
     }
     .pricing-v3 section.benefits{
         margin-top:-20px;
+    }
+
+    section.benefits .tools-slider .item{
+        justify-content: center;
     }
 
     /* ========================

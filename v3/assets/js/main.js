@@ -93,14 +93,9 @@ $("#writers-cta").click(function() {
 
 if($(".pricing-slider")[0]){
     $(".pricing-slider").slick({
-
-        // normal options...
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-       
-      
-        // the magic
         responsive: [
             {
             breakpoint: 810,
@@ -114,45 +109,100 @@ if($(".pricing-slider")[0]){
       });
 }
 
-// Small clients wrapper  initialize only if present
 
-if($(".small-clients-slider")[0]){
-    if (window.matchMedia("(max-width: 1375px)").matches) {
-        $(".small-clients-slider").slick({
-            // normal options...
-            infinite: true,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            initialSlide:1,
-            dots: false,
-            // the magic
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4
-                    }
-                },
-                {
-                    breakpoint: 940,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 640,
-                    settings: "unslick"
+
+if($(".tools-slider")[0]){
+    $(".tools-slider").slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1240,
+                settings: {
+                slidesToShow: 2,
                 }
-            ]
-        });
-    }  
+            },
+            {
+                breakpoint: 810,
+                settings: {
+                slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 520,
+                settings: {
+                slidesToShow: 1,
+                }
+            },
+        ]
+      });
 }
+
+
+// Small clients wrapper  initialize only if present
+// TODO: Convert to ES6 after WP MIG
+
+
+// First init
+
+function initSmallClientSlider(){
+    var sliderProps = {
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        initialSlide:1,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 940,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: "unslick"
+            }
+        ]
+    }
+    if($(".small-clients-slider")[0]){
+        if (window.matchMedia("(max-width: 1375px)").matches) {
+            $(".small-clients-slider").slick(sliderProps);
+        }else{
+            $('.small-clients-slider').slick('unslick');
+        }
+    }
+}
+
+
+// Handle window resize
+$(window).resize(function(){
+    initSmallClientSlider();
+});
+// Handle initial slider activation
+$(document).ready(function(){
+    initSmallClientSlider();
+})
 
 
 // Pricing page add functionality to hints
