@@ -162,7 +162,7 @@ pagination:
 
 
 # Feed entry limiter
-feed_total: 20
+# feed_total: 20
 
 
 #Minify HTML
