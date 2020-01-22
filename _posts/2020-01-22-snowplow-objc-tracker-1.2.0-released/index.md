@@ -5,7 +5,7 @@ title-short: Snowplow Obj-C Tracker 0.9.0
 tags: [snowplow, objc, tracker]
 author: Alex Benini
 category: Releases
-permalink: /blog/2020/01/21/snowplow-objc-tracker-1.2.0-released/
+permalink: /blog/2020/01/22/snowplow-objc-tracker-1.2.0-released/
 discourse: false
 ---
 
