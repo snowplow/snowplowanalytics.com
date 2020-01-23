@@ -11,7 +11,7 @@ discourse: false
 
 We are pleased to announce a new release of the [Snowplow Obj-C Tracker][objc-tracker].
 
-On [Version 1.2.0][1.2.0-tag] we fixed few rare but annoying bugs but the big news is the support of WatchOS. Added with the contribution from [Leo Mehlig][leoasana] who updated the tracker for the watchOS. It's a great add to our tracker making it more complete and multipurpose.
+On [Version 1.2.0][1.2.0-tag] we fixed few a rare and annoying bugs, but the big news is the support for watchOS. It has been added with the contribution from [Leo Mehlig][leoasana] who updated the tracker watchOS making it more complete and multi-purposeful.
 
 Read on below for:
 
@@ -26,9 +26,8 @@ Read on below for:
 
 <h2 id="watchos">1. watchOS support</h2>
 
-The important news of this version is the support of watchOS ([#465][465]) as the new platform supported on our tracker. A big thanks goes to [Leo Mehlig][leoasana] who has contributed updating the tracker to work properly on Apple Watch.
-Since the day Apple Watch has been released, it has gained importance firmly keeping the leadership of the smartwatch market. Its success forces the developers who are building Apple Watch apps to understand how to best engage the audience with apps so different from a classic smartphone app. The data tracked on the watch can provide a full picture about how the users use the watch, enabling developers and designers into the hard job of extracting the full power from the watch apps.
-The watchOS was the missing platform in our tracker. We already support iOS, macOS and tvOS.
+The important news of this version is the support of the watchOS platform on our tracker ([#465][465]). A big thanks goes to [Leo Mehlig][leoasana] who has contributed updating the tracker so it works properly on the Apple Watch.
+Since the day Apple Watch was released, it has firmly kept its leadership position within the smartwatch market. Its success forces developers who are building Apple Watch apps to understand how to best engage an audience that behaves so differently than on a classic smartphone app. The data tracked on the watch can provide a full picture about how the users use the watch, enabling developers and designers to do the hard job of extracting the full power from the watch apps. The watchOS was the missing platform in our tracker. We already support iOS, macOS and tvOS.
 
 The tracker can be instanced and configured like the tracker in the iOS app. It can be done in the ExtensionDelegate of the watch app or in an InterfaceController if it's a single screen app. There are no differencies in the way you can use it.
 
@@ -37,9 +36,7 @@ Note: The current solution is in alpha version.
 
 <h2 id="platform">2. Overriding of the platform parameter</h2>
 
-Events sent by the tracker are often associates to parameters that are common across different event types.
-Differently by the Objc tracker, in the Android tracker the device platform parameter has always been overridable. Obj-C tracker set the platform internally with no way to setup it on tracker configuration.
-This version makes coherent the behaviour of the device platform parameter between the two trackers ([#476][476]).
+Events sent by the tracker are often associates to parameters that are common across different event types. Different from the Objc tracker, in the Android tracker the device platform parameter has always been overridable. Obj-C tracker sets the platform internally with no way to set it up upon tracker configuration. This version makes the behaviour of the device platform parameter between the two trackers more coherent ([#476][476]).
 
 On Obj-C tracker the parameter 'p' (platform) is set to `mob` when running on a mobile phone and to `pc` when running on desktop. However, there are cases where the developer wants to specify the platform differently by the [default options][common_parameters].
 
@@ -55,7 +52,7 @@ It resets the parameter `p` (platform) to the new value.
 
 <h2 id="reachability">3. Removed Reachability.swift dependency</h2>
 
-We removed Reachability.swift framework because it's a dependency that could be cause of issues during the integration of our tracker in an app with other third party libraries ([#437][437]).
+We removed the Reachability.swift framework because it is a dependency that could cause issues during the integration of our tracker in an app with other third party libraries ([#437][437]).
 
 If you use Carthage as dependency manager:
 
@@ -74,11 +71,11 @@ Removing the Reachability we simplified the configuration of the tracker solving
 - Screen context not updated when autotracking is disabled ([#431][431]).
 - Fixed valueForKey error in autotracking for screenviews ([#428][428]).
 
-Fix a longtime issues related to screen autotracking where we improved the management of the _snowplowId_ property in a ViewController.
+They fix a longtime issues related to screen autotracking where we improved the management of the snowplowId property in a ViewController.
 
 - Ensured addDictionaryToPayload enumeration over immutable dictionary [#480][480]
 
-Thanks to [Matt Robinson][mattrobmattrob] for his contribute into fixing this bug that was cause of crashes of the app on particular circumstances.
+Thanks to [Matt Robinson][mattrobmattrob] for his contribution in fixing this bug that was causing app crashes in particular circumstances.
 
 
 <h2 id="documentation">5. Documentation</h2>
