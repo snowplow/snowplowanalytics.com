@@ -5,7 +5,7 @@ title-short: Snowplow Obj-C Tracker 0.9.0
 tags: [snowplow, objc, tracker]
 author: Alex Benini
 category: Releases
-permalink: /blog/2020/01/22/snowplow-objc-tracker-1.2.0-released/
+permalink: /blog/2020/01/24/snowplow-objc-tracker-1.2.0-released/
 discourse: false
 ---
 
@@ -34,7 +34,7 @@ The tracker can be instanced and configured like the tracker in the iOS app. It 
 
 <h2 id="platform">2. Overriding of the platform parameter</h2>
 
-Events sent by the tracker are often associated to parameters that are common across different event types. Different from the Objc tracker, in the Android tracker the device platform parameter has always been overridable. Obj-C tracker sets the platform internally with no way to set it up upon tracker configuration. This version makes the behaviour of the device platform parameter between the two trackers more consistent ([#476][476]).
+Events sent by the tracker are often associated to parameters that are common across different event types. In contrast with the Obj-C tracker, in the Android tracker the device platform parameter has always been overridable. Obj-C tracker sets the platform internally with no way to set it up upon tracker configuration. This version makes the behaviour of the device platform parameter between the two trackers more consistent ([#476][476]).
 
 On Obj-C tracker the parameter 'p' (platform) is set to `mob` when running on a mobile phone and to `pc` when running on desktop. However, there are cases where the developer wants to specify the platform differently by the [default options][common_parameters].
 

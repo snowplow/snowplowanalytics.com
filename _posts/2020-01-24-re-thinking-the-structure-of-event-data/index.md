@@ -5,7 +5,7 @@ title: "Re-thinking the structure of event data"
 description: "How to structure event data to maintain data meaning, data quality and data governance to derive maximum business value."
 author: Cara Baestlein
 category: Data insights
-permalink: /blog/2020/01/22/re-thinking-the-structure-of-event-data/
+permalink: /blog/2020/01/24/re-thinking-the-structure-of-event-data/
 ---
 
 
