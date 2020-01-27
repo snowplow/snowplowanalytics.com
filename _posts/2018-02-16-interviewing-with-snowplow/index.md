@@ -48,7 +48,7 @@ This interview will be conducted by one of our Co-Founders (Alex or Yali dependi
 <h2 id="final notes">A few things about coming in to see us</h2>
 
 - What should I wear? We’re a relaxed office and most of us wear jeans/t-shirts but we want you to feel at ease (as much as you can in an interview) so wear whatever you feel comfortable in.
-- How do I find the office? We can be a little tricky to find. Our address is The Roma Building, 32-38 Scrutton Street, London, EC2A 4RQ and we’re the last building on the right hand side. If you get lost, give us a call and we’ll direct you!
+- How do I find the office? We can be a little tricky to find. Our address is Floor 6, 17 Bevis Marks, EC3A 7LN. If you get lost, give us a call and we’ll direct you!
 - What do I do once I get there? When you get here, ring the buzzer and you’ll find yourself in a small waiting area. Let them know you’re here to see Snowplow and we’ll come down to meet you.
 
 <h2 id="tips">Practical interviewing tips</h2>
