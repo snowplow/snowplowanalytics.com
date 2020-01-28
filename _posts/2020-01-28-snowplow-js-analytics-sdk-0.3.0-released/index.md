@@ -9,7 +9,7 @@ permalink: /blog/2020/01/28/snowplow-js-analytics-sdk-0.3.0-released/
 discourse: false
 ---
 
-We are pleased to announce a new release of the [Snowplow Javascript and Typescript Analytics SDK][js-analytics-sdk]. [Version 0.3.0][0.3.0-tag] brings some major improvements to the build process, support for ECMAScript Modules and a couple of bugfixes!
+We are pleased to announce a new release of the [Snowplow Javascript and Typescript Analytics SDK][js-analytics-sdk]. [Version 0.3.0][0.3.0-tag] brings some major improvements to the build process, support for ECMAScript Modules and a couple of bug fixes!
 
 The Snowplow Analytics SDKs provide the ability to work with Snowplow Enriched events. They are particularly well suited to use in AWS Lambdas or with Apache Spark. We currently offer the JavaScript and TypeScript SDK as well as Scala, Python and .NET Analytics SDKs. You can read more about the Analytics SDKs along with more use cases for them [here on our Wiki][docs].
 
