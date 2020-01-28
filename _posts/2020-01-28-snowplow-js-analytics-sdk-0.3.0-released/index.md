@@ -53,7 +53,7 @@ In addition to the build updates, two outstanding issues have been solved:
 
 <h2 id="upgrade">4. Upgrading</h2>
 
-The Snowplow JavaScript and TypeScript Analytics SDK is available on NPM and can be installed with NPM:
+The Snowplow JavaScript and TypeScript Analytics SDK is available on NPM. Snowplow Insights and Open Source users can install it with NPM:
 
 `npm install --save snowplow-analytics-sdk`
 
