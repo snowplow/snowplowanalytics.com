@@ -32,6 +32,58 @@ Read on below for:
 
 <h2 id="edge-analytics">1. Edge Analytics with activity tracking callback</h2>
 
+[Activity Tracking][activity-tracking] is a popular feature of the Snowplow JavaScript tracker, however to achieve accurate page activity timing it is useful to configure the JavaScript tracker to send "Page Ping" events to the Snowplow collector quite frequently. Often the tracker is configured to send an event every 10 seconds allowing page acitivty timing to be accurate to 10 seconds. The side effect of increased accuracy is potentially a significant increase in activity related page ping events being tracked and sent to the Snowplow collector.
+
+Version 2.13.0 of the JavaScript tracker introduces a new edge analytics feature that will allow the page ping events to be collected and aggregated in the browser before being sent to the collector in a single event. This requires some additional work on the part of the site maintainer as there are many ways you may choose to aggregate and send this information to the Snowplow collector.
+
+To achieve this, the JavaScript tracker now exposes a new callback method called `enableActivityTrackingCallback`. This allows you to specify your own callback function, meaning that each time a page ping event would normally be sent to the Snowplow collector instead your callback function will be executed with the page activity information.
+
+Below is a complete example of utilising this new functionality to aggregate page acitivty information and send the event just before the page unloads:
+
+{% highlight javascript %}
+window.snowplow('newTracker', 'sp', '<<collectorUrl>>', {
+    appId: 'my-app-id',
+    eventMethod: 'beacon',
+    contexts: {
+        webPage: true,
+        performanceTiming: true
+    }
+});
+var aggregatedEvent = {
+    pageViewId: null,
+    minXOffset: 0,
+    maxXOffset: 0,
+    minYOffset: 0,
+    maxYOffset: 0,
+    numEvents: 0
+};
+window.snowplow('enableActivityTrackingCallback', 10, 10, function (event) {
+    aggregatedEvent = {
+        pageViewId: event.pageViewId,
+        minXOffset: aggregatedEvent.minXOffset < event.minXOffset ? aggregatedEvent.minXOffset : event.minXOffset,
+        maxYOffset: aggregatedEvent.maxYOffset > event.maxYOffset ? aggregatedEvent.maxYOffset : event.maxYOffset,
+        minYOffset: aggregatedEvent.minYOffset < event.minYOffset ? aggregatedEvent.minYOffset : event.minYOffset,
+        maxYOffset: aggregatedEvent.maxYOffset > event.maxYOffset ? aggregatedEvent.maxYOffset : event.maxYOffset,
+        numEvents: aggregatedEvent.numEvents + 1
+    };
+});
+window.addEventListener('unload', function() {
+    window.snowplow('trackSelfDescribingEvent', {
+        schema: 'iglu:com.acme_company/page_unload/jsonschema/1-0-0',
+        data: {
+            minXOffset: aggregatedEvent.minXOffset,
+            maxXOffset: aggregatedEvent.maxXOffset,
+            minYOffset: aggregatedEvent.minYOffset,
+            maxYOffset: aggregatedEvent.maxYOffset,
+            activeSeconds: aggregatedEvent.numEvents * 10
+        }
+    });
+});
+window.snowplow('trackPageView');
+{% endhighlight %}
+
+Note: For this technique of sending on page unload to work reliably, we recommend initialising the Snowplow tracker with `eventMethod: 'beacon'` or `stateStorageStrategy: 'cookieAndLocalStorage'` (if navigating to a page that also contains the JS Tracker). This technique will not work for Single Page Applications (SPA), where you would need to send the aggregated event to the Snowplow collector on navigation within your application.
+
 <h2 id="activity-reset">2. Resetting page activity on page view event</h2>
 
 <h2 id="beacon-improvements">3. Improving Beacon API support</h2>
@@ -84,6 +136,7 @@ Finally, if you run into any issues or have any questions, please
 [js-tracker]: https://github.com/snowplow/snowplow-javascript-tracker
 [2.13.0-tag]: https://github.com/snowplow/snowplow-javascript-tracker/releases/tag/2.13.0
 [js-tracker-2.11.0-post]: /blog/2019/09/13/snowplow-javascript-tracker-2.11.0-released-with-gdpr-context/#deployment
+[activity-tracking]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#pagepings
 [setup]: https://github.com/snowplow/snowplow/wiki/Javascript-tracker-setup
 [issues]: https://github.com/snowplow/snowplow-javascript-tracker/issues
 [forums]: https://discourse.snowplowanalytics.com/
