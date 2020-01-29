@@ -1,104 +1,63 @@
 ---
 layout: post
-title: "Snowplow JS Analytics SDK 0.3.0 released"
-title-short: Snowplow JS Analytics SDK 0.3.0
-tags: [snowplow, javascript, typescript, analytics, lambda, sdk, tracker]
-author: Paul
-category: Releases
-permalink: /blog/2020/01/28/snowplow-js-analytics-sdk-0.3.0-released/
+title: "A finger on the pulse of customer data"
+description: "Owning their data and taking charge of tracking led to the creation of a data analytics single source of truth, letting PEBMED fuel their products with insight."
+author: Erika
+category: User stories
+permalink: /blog/2020/01/29/a-finger-on-the-pulse-of-customer-data/
 discourse: false
 ---
 
-We are pleased to announce a new release of the [Snowplow Javascript and Typescript Analytics SDK][js-analytics-sdk]. [Version 0.3.0][0.3.0-tag] brings some major improvements to the build process, support for ECMAScript Modules and a couple of bug fixes!
 
-The Snowplow Analytics SDKs provide the ability to work with Snowplow Enriched events. They are particularly well suited to use in AWS Lambdas or with Apache Spark. We currently offer the JavaScript and TypeScript SDK as well as Scala, Python and .NET Analytics SDKs. You can read more about the Analytics SDKs along with more use cases for them [here on our Wiki][docs].
+What happens when medical students graduate and venture out into the real world and start treating patients? The MD founders of PEBMED in Brazil learned firsthand that classroom learning is not always enough for in-the-moment practical application. In response, they decided to build their own app that lets medical students and healthcare professionals make better decisions in daily practice using the curated content. Built on an app-based content platform consisting of Whitebook and Nursebook, and a web news portal, Portal PEBMED, the content is designed to aid doctors with clinical decision-making. 
 
-We have to thank [Michael Dokolin][dokmic] for this huge contribution! All of the changes you see below have been done by Michael and we're extremely grateful for his hard work.
+But how did the founders know what kind of content to create and how to organize it? How did they know what was being used and what was popular? How did they learn what users needed? 
 
-Read on below for:
 
-1. [Support for ECMAScript Modules](#modules)
-2. [Build Improvements](#build)
-3. [Updates and bug fixes](#updates)
-4. [Upgrading](#upgrade)
-5. [Documentation and help](#doc)
+## PEBMED’s challenge
 
-<!--more-->
+To understand the complete user journey, PEBMED knew that they needed to look at user behavior at the most granular level possible. They wanted to understand the end-to-end and often changing user journey completely. This understanding would: 
 
-<h2 id="modules">1. Support for ECMAScript Modules</h2>
 
-Due to the build improvements made in this release, we are now able to offer this SDK in both UMD and ES module formats. When installing the SDKs via NPM, you will now be able to utilise either version depending on your applications configuration. The two options are defined in [package.json][packagejson-module] so this will work automatically in your application after upgrading.
 
-<h2 id="build">2. Build Improvements</h2>
+*   inform content development
+*   inform subscription-generating and retention strategies
+*   identify problem spots in the acquisition and conversion funnels 
 
-To achieve support for ECMAScript Modules as well as improving the general development experience within this SDK, a number of updates have been made. This SDK has been migrated to [rollupjs][rollupjs] for module bundling as well as having eslint and prettier added. The full list of new improvements are:
+Clearly, finding this insight was a job for data analytics — but where to begin? 
 
-- Upgrade development dependencies ([#23][23]).
-- Migrate to rollup ([#22][22]).
-- Migrate to the Airbnb style guide ([#21][21]).
-- Add code linting as a build step ([#27][27]).
-- Migrate to the automated builds ([#20][20]).
-- Refactor unit-tests ([#28][28]).
-- Remove non-LTS Node.js versions from Travis CI configuration ([#19][19]).
-- Enable TypeScript strict mode ([#15][15]).
-- Migrate to eslint ([#18][18]).
-- Migrate to prettier ([#17][17]).
+At first, the PEBMED team sampled a variety of analytics solutions to get to the fastest answers. This worked at first but eventually led to duplicate data, duplicate work, inconsistencies in naming and terminology conventions and general lack of cohesion in how data was handled. This was not a sustainable approach to data analytics, which drove PEBMED to find a better solution that would grow with their need for data-driven decision-making and more sophisticated data uses.
 
-<h2 id="updates">3. Updates and bug fixes</h2>
 
-In addition to the build updates, two outstanding issues have been solved:
+## Growing up: Adopting Snowplow Insights as a solution
 
-- Add dashes support in the schema organization name ([#12][12]).
-- Rename refr_device_tstamp to refr_dvce_tstamp ([#13][13]).
+PEBMED’s co-founder and CTO was adamant that the solution PEBMED adopted must provide:
 
-<h2 id="upgrade">4. Upgrading</h2>
 
-The Snowplow JavaScript and TypeScript Analytics SDK is available on NPM. Snowplow Insights and Open Source users can install it with NPM:
 
-`npm install --save snowplow-analytics-sdk`
+*   Data and infrastructure ownership to gain unopinionated data
+*   The ability to flexibly customize data tracking
+*   Collect and centralize data in a single source of truth
 
-If you think you might be using an earlier version, you can check with:
+They knew these factors would sort out the data analytics challenges they were facing and help unlock knowledge about their users. 
 
-`npm outdated`
+PEBMED discovered that Snowplow allows for complete ownership of data and infrastructure and would allow for custom data modeling that would ensure that PEBMED didn’t have to buy into pre-built assumptions that many third-party analytics solutions bring to bear. Instead Snowplow freed PEBMED to start asking the questions they wanted of their data and start working in a methodical, streamlined, consistent way with their data.
 
-If you are already using an earlier version, you can update your package.json to the latest version with:
 
-`npm install --save snowplow-analytics-sdk@latest`
+> **“We spent much of 2018 looking at analytics solutions. Most things we tried could not answer the business questions we had, such as user attributes at the time of taking an action. With Snowplow, we realized that all the things we had been doing manually could be done by Snowplow right out of the box. With the product and expert support we’ve received, PEBMED has really moved forward with our data endeavors.”** - **_Pedro Gemal Lanzieri, CTO, PEBMED_**
 
-<h2 id="doc">5. Documentation and help</h2>
 
-Check out the JavaScript and TypeScript Analytics SDK's documentation:
+ {% include shortcodes/ebook.html background_class="tripaneer-casestudy" layout="blog" title="PEBMED case study" description="How PEBMED’s data ownership led to in-depth custom data modeling for complete user journey" btnText="Download case study" link="https://snowplowanalytics.com/customers/pebmed/" %}
 
-* The [setup guide][setup]
-* The [API][api]
-* The [Snowplow Analytics SDK documentation][docs]
 
-The [v0.3.0 release page][0.3.0-tag] on GitHub has the full list of changes made in this version.
 
-Finally, if you run into any issues or have any questions, please
-[raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
+## What PEBMED was able to do
 
-[js-analytics-sdk]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk
-[0.3.0-tag]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/releases/tag/0.3.0
-[packagejson-module]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/blob/master/package.json#L20
-[rollupjs]: https://rollupjs.org/
-[setup]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/tree/0.3.0#install
-[api]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk#api
-[issues]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues
-[forums]: https://discourse.snowplowanalytics.com/
-[docs]: https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK
 
-[12]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/12
-[13]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/13
-[15]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/15
-[17]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/17
-[18]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/18
-[19]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/19
-[20]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/20
-[21]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/21
-[22]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/22
-[23]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/23
-[27]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/27
-[28]: https://github.com/snowplow-incubator/snowplow-js-analytics-sdk/issues/28
 
-[dokmic]: https://github.com/dokmic
+*   **Own data; own infrastructure** - Ownership helps to enable the flexibility and transparency required to reach deeper, richer insights while freeing PEBMED from the perils of black-box solutions and vendor lock-in.
+*   **Flexibility to track everything** - Snowplow enables tracking of custom-defined events across all platforms, products and brands in a single format. PEBMED found this custom tracking essential in getting in-depth insights into user behavior and content consumption. 
+*   **Reaching a single source of truth** - Snowplow powers a centralized, single source of truth, giving PEBMED what they need to make data-driven decisions drawn from their custom data models rather than on a gut feeling… and get to the answers to questions they would not have been able to answer before -- faster. 
+*   **Build custom data models** - PEBMED uses the raw, unopinionated data they get from Snowplow to build custom models that reflect the use cases that truly interested them: mapping what their users are actually doing in their products and with their content. 
+
+PEBMED shared much more detail about how they have used Snowplow to understand their user journey, build very specific custom data models and how this informs their marketing and content development efforts. **Download the case study** to learn more.
