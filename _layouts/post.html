@@ -33,10 +33,13 @@ layout: compress
 					<div class="category">
 						{% for category in site.data.categories %}
 						{% if category.name == page.category %}
+						<a class="alt-link" href="{{ BASE_PATH }}{{ category.url }}">
 						<img src="{{ site.url }}{{ category.icon }}" alt="{{ category.name }}">
+						<p>{{ page.category }}</p>
+						</a>
 						{% endif %}
 						{% endfor %}
-						<p>{{ page.category }}</p>
+						
 					</div>
 					{% endif %}
 				</div>
