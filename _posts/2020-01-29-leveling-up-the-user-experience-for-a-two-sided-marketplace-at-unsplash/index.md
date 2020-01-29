@@ -35,7 +35,9 @@ Unsplash chose Snowplow to
 
 A crucial part of Unsplash’s offering is their API technology that integrates with hundreds of tools such as Medium, Trello and Square. Using Snowplow, Unsplash was able to capture events from all their sources in a consistent format, making it possible to centralize data sets from across the entire Unsplash ecosystem. 
 
-_“With Snowplow, we discovered that we own the data, which isn’t formatted in a way that forces you to a specific use case — it’s free and open so you can do what you want with it. We collect the data, use it to build a BI dashboard and connect it to the product to help our contributors” — _Timothy Carbone, Data Engineer, Unsplash
+
+> **“With Snowplow, we discovered that we own the data, which isn’t formatted in a way that forces you to a specific use case — it’s free and open so you can do what you want with it. We collect the data, use it to build a BI dashboard and connect it to the product to help our contributors”** - **_Timothy Carbone, Data Engineer, Unsplash_**
+
 
 
 ## Serving both sides of the marketplace 
