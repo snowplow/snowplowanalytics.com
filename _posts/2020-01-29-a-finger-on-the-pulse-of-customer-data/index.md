@@ -60,4 +60,7 @@ PEBMED discovered that Snowplow allows for complete ownership of data and infras
 *   **Reaching a single source of truth** - Snowplow powers a centralized, single source of truth, giving PEBMED what they need to make data-driven decisions drawn from their custom data models rather than on a gut feeling… and get to the answers to questions they would not have been able to answer before -- faster. 
 *   **Build custom data models** - PEBMED uses the raw, unopinionated data they get from Snowplow to build custom models that reflect the use cases that truly interested them: mapping what their users are actually doing in their products and with their content. 
 
-PEBMED shared much more detail about how they have used Snowplow to understand their user journey, build very specific custom data models and how this informs their marketing and content development efforts. **Download the case study** to learn more.
+PEBMED shared much more detail about how they have used Snowplow to understand their user journey, build very specific custom data models and how this informs their marketing and content development efforts. **[Download the case study](https://snowplowanalytics.com/customers/pebmed/)** to learn more.
+
+
+
