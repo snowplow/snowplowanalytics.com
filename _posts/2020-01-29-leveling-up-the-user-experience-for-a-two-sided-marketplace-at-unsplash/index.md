@@ -48,7 +48,7 @@ With Snowplow, Unsplash was able to tailor their tracking strategy to get better
 
 But rather than keeping insights to themselves, Unsplash was able to aggregate this search data into mini-dashboards that could be served back to contributors. This helps contributors see how their images are performing, where they are most downloaded, what searches they appear in, and how they can maximize their exposure. Since Unsplash managed to centralize their data across platforms, they have even been able to feature ‘trending topics’ in their community newsletter, so contributors can take advantage of the hottest search requests. 
 
-_”Snowplow is really at the center of a lot of things we do on the product, whether it’s to improve the experience for consumers or to improve the experience for contributors by delivering stats on and insights into how they can be more impactful.” — _Timothy Carbone, Data Engineer, Unsplash
+> **“Snowplow is really at the center of a lot of things we do on the product, whether it’s to improve the experience for consumers or to improve the experience for contributors by delivering stats on and insights into how they can be more impactful.”** - **_Timothy Carbone, Data Engineer, Unsplash_**
 
 
 ## The future with Snowplow
