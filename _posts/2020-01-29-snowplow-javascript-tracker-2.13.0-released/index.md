@@ -123,17 +123,17 @@ window.snowplow(function() {
 
 <h2 id="user-fingerprint">5. Removing user fingerprinting</h2>
 
-User fingerprinting has rarely been a reliable tracking mechanism, and often generates both confusion those those trying to understand the data and worry for those who are being fingerprinted.
+We have taken the decision to remove all fingerprinting functionality from the Javascript tracker. We have done this for a couple of reasons:
 
-With 2.13.0 we have made a decision to remove all fingerprinting capabilities from our JavaScript tracker. The API methods still exist to ensure errors do no occur if upgrading but you will see warnings in the Developer Console of the browser and the User Fingerprint field of an event will no longer be populated. The fingerprinting API methods will be entirely removed in version 3.0.0.
+1. There are a growing number of tools that provide visitors on the web with more control of their privacy and what data they share. Today, fingerprinting technology is largely used as a way to circumvent these controls, which we do not believe is right.
+2. The fingerprinting functionality that was offered in the Javascript tracker was never effective. It used a very naive approach that was contributed many years ago, and was not a robust way to identify individual devices, even when used in conjunction with other data points like IP address.
+3. The presence of fingerprinting technology may lead to trackers being blocked, disadvantaging companies who are using the Snowplow technology who are being responsible and transparent with visitors to the website about what data they are collecting and how they are using it.
+
+With this release all fingerprinting capabilities have been removed from the JavaScript tracker. The API methods still exist to ensure errors do not occur if upgrading but you will see warnings in the Developer Console of the browser and the User Fingerprint field of an event will no longer be populated. The fingerprinting API methods will be entirely removed in version 3.0.0.
 
 There are a couple of core concerns that have led us to the decision to remove fingerprinting:
 
-- User Fingerprinting is unreliable and often doesn't work as intended
-- We don't wish to encourage the use of fingerprints as tracking technologies - their use is opaque to end users
-- The presence of fingerprinting technologies in trackers can lead to them being blocked
-
-Additionally, we have also removed the Augur Identity automatic context which utilised finger printing to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
+As part of this effort we have  removed the Augur Identity automatic context which utilised finger printing to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
 
 <h2 id="updates">6. Updates and bug fixes</h2>
 
