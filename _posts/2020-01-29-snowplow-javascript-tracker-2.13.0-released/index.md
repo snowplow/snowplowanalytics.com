@@ -11,9 +11,9 @@ discourse: false
 
 We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js-tracker].
 
-[Version 2.13.0][2.13.0-tag] introduces the first example of edge analytics within our JavaScript tracker, through a new callback function it is now possible to recieve the activity tracking (page ping) events in the browser and perform analysis of them in the browser, for example aggregating them into a single event. You'll find an example of how do to this further down this post.
+[Version 2.13.0][2.13.0-tag] introduces the first example of edge analytics within our JavaScript tracker. Through a new callback function it is now possible to recieve the activity tracking (page ping) events in the browser and perform analysis of them in the browser, for example aggregating them into a single event. You'll find an example of how do to this further down this post.
 
-This release also improves support for Single Page Applications (SPA) by resetting the activity tracking timers when a Page View event is fired. We've also improved Beacon API reliability, particularly within Safari, and added improved error handling in the tracker initialisation callback method. We've also taken the opportunity with this release to remove all user fingerprinting technology within the JavaScript tracker.
+This release also improves support for Single Page Applications (SPA) by resetting the activity tracking timers when a page view event is fired. We've also improved Beacon API reliability, particularly within Safari, and added improved error handling in the tracker initialisation callback method. We've also taken the opportunity with this release to remove all user fingerprinting technology within the JavaScript tracker.
 
 NB. This release continues with the change we introduced with v2.11.0 to how assets are hosted - rather than hosting the tracker on CloudFront, we now publish the asset to the GitHub release. Users who have previously relied on the CloudFront hosted asset must host the tracker on their own CDN, as is recommended practice. More detail can be found in our [v2.11.0 release post][js-tracker-2.11.0-post].
 
@@ -32,13 +32,13 @@ Read on below for:
 
 <h2 id="edge-analytics">1. Edge Analytics with activity tracking callback</h2>
 
-[Activity Tracking][activity-tracking] is a popular feature of the Snowplow JavaScript tracker, however to achieve accurate page activity timing it is useful to configure the JavaScript tracker to send "Page Ping" events to the Snowplow collector quite frequently. Often the tracker is configured to send an event every 10 seconds allowing page acitivty timing to be accurate to 10 seconds. The side effect of increased accuracy is potentially a significant increase in activity related page ping events being tracked and sent to the Snowplow collector.
+[Activity Tracking][activity-tracking] is a popular feature of the Snowplow JavaScript tracker, however to achieve accurate activity timing it is common to configure the JavaScript tracker to send page ping events to the Snowplow collector quite frequently. Often the tracker is configured to send an event every 10 seconds, allowing acitivty timing to be accurate to 10 seconds. The side effect of increased accuracy, and activity tracking in general, is potentially a significant increase in events being sent to the Snowplow collector.
 
 Version 2.13.0 of the JavaScript tracker introduces a new edge analytics feature that will allow the page ping events to be collected and aggregated in the browser before being sent to the collector in a single event. This requires some additional work on the part of the site maintainer as there are many ways you may choose to aggregate and send this information to the Snowplow collector.
 
-To achieve this, the JavaScript tracker now exposes a new callback method called `enableActivityTrackingCallback`. This allows you to specify your own callback function, meaning that each time a page ping event would normally be sent to the Snowplow collector instead your callback function will be executed with the page activity information.
+To achieve this, the JavaScript tracker now exposes a new function called `enableActivityTrackingCallback`. Using this callback means that each time a page ping event would normally be sent to the Snowplow collector instead your callback function will be executed with the page activity information.
 
-Below is a complete example of utilising this new functionality to aggregate page acitivty information and send the event just before the page unloads:
+Below is a complete example of utilising this new functionality to aggregate page acitivty information and send the event as the page unloads:
 
 {% highlight javascript %}
 window.snowplow('newTracker', 'sp', '<<collectorUrl>>', {
@@ -82,31 +82,68 @@ window.addEventListener('unload', function() {
 window.snowplow('trackPageView');
 {% endhighlight %}
 
-Note: For this technique of sending on page unload to work reliably, we recommend initialising the Snowplow tracker with `eventMethod: 'beacon'` or `stateStorageStrategy: 'cookieAndLocalStorage'` (if navigating to a page that also contains the JS Tracker). This technique will not work for Single Page Applications (SPA), where you would need to send the aggregated event to the Snowplow collector on navigation within your application.
+Note: For this technique of sending on page unload to work reliably, we recommend initialising the Snowplow tracker with `eventMethod: 'beacon'` and/or `stateStorageStrategy: 'cookieAndLocalStorage'` (if navigating to a page that also contains the JS Tracker). Using the page unload technique will not work for Single Page Applications (SPA), you would need to send the aggregated event to the Snowplow collector on navigation within your application.
 
 <h2 id="activity-reset">2. Resetting page activity on page view event</h2>
 
+In previous releases, the activity tracking feature begins timing page ping events when the first page view event is tracked. This works well if each new page reloads the Snowplow JavaScript tracker. Single Page Applications (SPA) are becoming more common which causes activity tracking to not fire at expected intervals as the timing doesn't reset on subsequent page views.
+
+As an example of this behaviour, lets say you are using the JavaScript tracker on a Single Page Application and you have your activity tracking configured to send a page ping every 10 seconds. If a second page view event is created when you are 5 seconds into the first page view, then the activity tracking will still fire 10 seconds after the first page view rather than the expected 10 seconds after the second page view. This means you get a page ping event sent only 5 seconds into the second page view.
+
+With version 2.13.0, when a second (or third, etc) page view is tracked, the activity tracking timing will reset as though this is a brand new reload of the tracker. Using the same example above, this means if a second page view event is created when you are 5 seconds into the first page view, then the activity tracking will fire 10 seconds after the second page view; 15 seconds after the first page view.
+
 <h2 id="beacon-improvements">3. Improving Beacon API support</h2>
+
+The Beacon API functionality that was fully introduced in [version 2.10.2][2.10.0-blog] of the JavaScript tracker has proved a useful as a way of ensuring events are sent more reliably, as the sending of events is passed to the browser to handle asynchronously. This means events are sent even in the cases when the page is closed.
+
+Unfortauntely, this is quite a immature API and browser support has been hit and miss. We have received reports of the Beacon API not performing as expected on Chromium based browsers (Chrome, Opera, Edge) and Safari. With regards to Chromium browsers, this is a [known bug in Chromium][chrome-beacon-bug] that prevents Beacon from working however the JavaScript tracker successfully falls back to sending events as standard Post requests. This bug has very recently been fixed in Chromium and is now available in Chrome Canary, we expect to see this fix make it into Chrome Stable in a couple of months which will allow users to see the benefits of Beacon in Chrome too.
+
+With this release we have taken the opportunity to improve the reliability of Beacon in Safari, where we have observed differences in events between Post and Beacon being around 6 to 10% less events when Beacon is used. With this release, we are now always sending the first event using Post. This ensures that Safari correctly sends the required preflight request to ensure that the Beacon API works. With this fix in place, we have seen the difference come down to around 0.5%, often seeing more events for implementations using Beacon as we would expect.
 
 <h2 id="tracker-callback">4. Improved error handling in tracker callback</h2>
 
+When initialising a tracker, there is an option to specify a callback function on tracker initialisation. If an error occurs in this function then it will prevent the tracker initialisation from completing, stopping any events from sending. We now gracefully handle exceptions that occur within this callback method and allow the tracker to continue to send events.
+
+We will now handle errors such as the one in the example below:
+
 {% highlight javascript %}
-snowplow("newTracker", "sp", "<collector-url>", {
+window.snowplow("newTracker", "sp", "<collector-url>", {
     appId: "<app-id>",
     eventMethod: "post",
     contexts: {
-        webPage: true,
-        performanceTiming: true
+        webPage: true
     }
+});
+
+window.snowplow(function() {
+    var sp = this.sp;
+    sp.thisWillError(); //Function doesn't exist
 });
 {% endhighlight %}
 
 <h2 id="user-fingerprint">5. Removing user fingerprinting</h2>
 
+User fingerprinting has rarely been a reliable tracking mechanism, and often generates both confusion those those trying to understand the data and worry for those who are being fingerprinted.
+
+With 2.13.0 we have made a decision to remove all fingerprinting capabilities from our JavaScript tracker. The API methods still exist to ensure errors do no occur if upgrading but you will see warnings in the Developer Console of the browser and the User Fingerprint field of an event will no longer be populated. The fingerprinting API methods will be entirely removed in version 3.0.0.
+
+There are a couple of core concerns that have led us to the decision to remove fingerprinting:
+
+- User Fingerprinting is unreliable and often doesn't work as intended
+- We don't wish to encourage the use of fingerprints as tracking technologies - their use is opaque to end users
+- The presence of fingerprinting technologies in trackers can lead to them being blocked
+
+Additionally, we have also removed the Augur Identity automatic context which utilised finger printing to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
+
 <h2 id="updates">6. Updates and bug fixes</h2>
 
-Other updates and bugfixes included in this release:
+Changelog of updates and bugfixes included in this release:
 
+- Add activity tracking callback mechanism ([#765][765])
+- Reset activity on page view ([#750][750])
+- Remove user_fingerprint ([#549][549])
+- Handle errors in tracker callback ([#784][784])
+- Update beacon support to handle "gotchas" ([#716][716])
 - Change setup process to use Docker ([#782][782])
 - Fix al.optimizely.get is not a function error ([#619][619])
 - Further harden the Optimizely integrations ([#654][654])
@@ -136,12 +173,19 @@ Finally, if you run into any issues or have any questions, please
 [js-tracker]: https://github.com/snowplow/snowplow-javascript-tracker
 [2.13.0-tag]: https://github.com/snowplow/snowplow-javascript-tracker/releases/tag/2.13.0
 [js-tracker-2.11.0-post]: /blog/2019/09/13/snowplow-javascript-tracker-2.11.0-released-with-gdpr-context/#deployment
+[2.10.0-blog]: https://snowplowanalytics.com/blog/2019/01/23/snowplow-javascript-tracker-2.10.0-released-with-global-contexts/#beacon-api
 [activity-tracking]: https://github.com/snowplow/snowplow/wiki/2-Specific-event-tracking-with-the-Javascript-tracker#pagepings
+[chrome-beacon-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=724929
 [setup]: https://github.com/snowplow/snowplow/wiki/Javascript-tracker-setup
 [issues]: https://github.com/snowplow/snowplow-javascript-tracker/issues
 [forums]: https://discourse.snowplowanalytics.com/
 [docs]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker
 
+[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/765
+[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/750
+[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/549
+[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/784
+[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/716
 [782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/782
 [619]: https://github.com/snowplow/snowplow-javascript-tracker/issues/619
 [654]: https://github.com/snowplow/snowplow-javascript-tracker/issues/654
