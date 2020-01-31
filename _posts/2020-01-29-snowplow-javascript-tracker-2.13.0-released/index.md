@@ -32,13 +32,13 @@ Read on below for:
 
 <h2 id="edge-analytics">1. Edge Analytics with activity tracking callback</h2>
 
-[Activity Tracking][activity-tracking] is a popular feature of the Snowplow JavaScript tracker, however to achieve accurate activity timing it is common to configure the JavaScript tracker to send page ping events to the Snowplow collector quite frequently. Often the tracker is configured to send an event every 10 seconds, allowing acitivty timing to be accurate to 10 seconds. The side effect of increased accuracy, and activity tracking in general, is potentially a significant increase in events being sent to the Snowplow collector.
+[Activity Tracking][activity-tracking] is a popular feature of the Snowplow JavaScript tracker, however to achieve accurate activity timing it is common to configure the JavaScript tracker to send page ping events to the Snowplow collector quite frequently. Often the tracker is configured to send an event every 10 seconds, allowing activity timing to be accurate to 10 seconds. The side effect of increased accuracy, and activity tracking in general, is potentially a significant increase in events being sent to the Snowplow collector.
 
 Version 2.13.0 of the JavaScript tracker introduces a new edge analytics feature that will allow the page ping events to be collected and aggregated in the browser before being sent to the collector in a single event. This requires some additional work on the part of the site maintainer as there are many ways you may choose to aggregate and send this information to the Snowplow collector.
 
 To achieve this, the JavaScript tracker now exposes a new function called `enableActivityTrackingCallback`. Using this callback means that each time a page ping event would normally be sent to the Snowplow collector instead your callback function will be executed with the page activity information.
 
-Below is a complete example of utilising this new functionality to aggregate page acitivty information and send the event as the page unloads:
+Below is a complete example of utilising this new functionality to aggregate page activity information and send the event as the page unloads:
 
 {% highlight javascript %}
 window.snowplow('newTracker', 'sp', '<<collectorUrl>>', {
@@ -94,9 +94,9 @@ With version 2.13.0, when a second (or third, etc) page view is tracked, the act
 
 <h2 id="beacon-improvements">3. Improving Beacon API support</h2>
 
-The Beacon API functionality that was fully introduced in [version 2.10.2][2.10.0-blog] of the JavaScript tracker has proved a useful as a way of ensuring events are sent more reliably, as the sending of events is passed to the browser to handle asynchronously. This means events are sent even in the cases when the page is closed.
+The Beacon API functionality that was fully introduced in [version 2.10.2][2.10.0-blog] of the JavaScript tracker has proved useful as a way of ensuring events are sent more reliably, as the sending of events is passed to the browser to handle asynchronously. This means events are sent even in the cases when the page is closed.
 
-Unfortauntely, this is quite a immature API and browser support has been hit and miss. We have received reports of the Beacon API not performing as expected on Chromium based browsers (Chrome, Opera, Edge) and Safari. With regards to Chromium browsers, this is a [known bug in Chromium][chrome-beacon-bug] that prevents Beacon from working however the JavaScript tracker successfully falls back to sending events as standard Post requests. This bug has very recently been fixed in Chromium and is now available in Chrome Canary, we expect to see this fix make it into Chrome Stable in a couple of months which will allow users to see the benefits of Beacon in Chrome too.
+Unfortunately, this is quite an immature API and browser support has been hit and miss. We have received reports of the Beacon API not performing as expected on Chromium based browsers (Chrome, Opera, Edge) and Safari. With regards to Chromium browsers, this is a [known bug in Chromium][chrome-beacon-bug] that prevents Beacon from working however the JavaScript tracker successfully falls back to sending events as standard Post requests. This bug has very recently been fixed in Chromium and is now available in Chrome Canary, we expect to see this fix make it into Chrome Stable in a couple of months which will allow users to see the benefits of Beacon in Chrome too.
 
 With this release we have taken the opportunity to improve the reliability of Beacon in Safari, where we have observed differences in events between Post and Beacon being around 6 to 10% less events when Beacon is used. With this release, we are now always sending the first event using Post. This ensures that Safari correctly sends the required preflight request to ensure that the Beacon API works. With this fix in place, we have seen the difference come down to around 0.5%, often seeing more events for implementations using Beacon as we would expect.
 
@@ -133,7 +133,7 @@ With this release all fingerprinting capabilities have been removed from the Jav
 
 There are a couple of core concerns that have led us to the decision to remove fingerprinting:
 
-As part of this effort we have  removed the Augur Identity automatic context which utilised finger printing to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
+As part of this effort we have removed the Augur Identity automatic context which utilised fingerprinting to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
 
 <h2 id="updates">6. Updates and bug fixes</h2>
 
@@ -154,7 +154,7 @@ Changelog of updates and bugfixes included in this release:
 
 The tracker is available as a published asset in the [2.13.0 Github release][2.13.0-tag]:
 
-To upgrade, host the 2.13.0 version of `sp.js` asset on a CDN, and load the tracker from there.
+To upgrade, Snowplow Insights and Open Source users should host the 2.13.0 version of `sp.js` asset on a CDN, and load the tracker from there.
 
 There are no breaking API changes introduced with this release, although as mentioned above User Fingerprints will no longer track with any events and the default behaviour on Page View events has changed to reset activity timers.
 
