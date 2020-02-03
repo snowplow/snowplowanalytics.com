@@ -16,9 +16,19 @@ If you are already familiar with the SameSite update, you can jump straight to [
 
 ### What a SameSite cookie is
 
+Cookies are a mechanism that allows a websites state or data to be stored in a users browsers. However, in their currently implementation they are often implemented in a way that has the potential to leak information. Browsers are starting to change their defaults to ensure privacy first cookies.
 
+SameSite is a new cookie attribute that browsers understand but what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part. Any domain that is on the `snowplowanalytics.com` site will be classed as on the same site.
 
-### What it means for your website
+When a cookie is referred to SameSite, this means the SameSite attribute is speficied on the cookie. If we consider the two concepts in the previous paragraph, we can start to understand that the `SameSite` attribute represents a method of controlling whether a cookie is sent with requests to the site or not. Lets take a look at an example:
+
+If a server sets the following cookie on `collector.snowplowanalytics.com`:
+
+`sp=1234; Max-Age=31557600; Secure`
+
+Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to any `snowplowanalytics.com` domains. However, this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` site.
+
+### What this change means for your website
 
 Setting a cookies SameSite property to Lax by default has a couple of consequences:-
 
