@@ -43,7 +43,7 @@ var handleSubmit = function(e){
     var pass = 1;
     
     // Populate DUID
-    snowplow(function () {
+    window.snowplow && window.snowplow(function () {
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
     $('#main-form input, #main-form textarea').each(function(){
