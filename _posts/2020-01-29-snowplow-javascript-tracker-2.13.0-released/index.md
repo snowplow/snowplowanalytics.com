@@ -181,11 +181,11 @@ Finally, if you run into any issues or have any questions, please
 [forums]: https://discourse.snowplowanalytics.com/
 [docs]: https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker
 
-[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/765
-[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/750
-[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/549
-[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/784
-[782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/716
+[765]: https://github.com/snowplow/snowplow-javascript-tracker/issues/765
+[750]: https://github.com/snowplow/snowplow-javascript-tracker/issues/750
+[549]: https://github.com/snowplow/snowplow-javascript-tracker/issues/549
+[784]: https://github.com/snowplow/snowplow-javascript-tracker/issues/784
+[716]: https://github.com/snowplow/snowplow-javascript-tracker/issues/716
 [782]: https://github.com/snowplow/snowplow-javascript-tracker/issues/782
 [619]: https://github.com/snowplow/snowplow-javascript-tracker/issues/619
 [654]: https://github.com/snowplow/snowplow-javascript-tracker/issues/654
