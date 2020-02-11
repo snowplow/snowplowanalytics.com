@@ -131,8 +131,6 @@ We have taken the decision to remove all fingerprinting functionality from the J
 
 With this release all fingerprinting capabilities have been removed from the JavaScript tracker. The API methods still exist to ensure errors do not occur if upgrading but you will see warnings in the Developer Console of the browser and the User Fingerprint field of an event will no longer be populated. The fingerprinting API methods will be entirely removed in version 3.0.0.
 
-There are a couple of core concerns that have led us to the decision to remove fingerprinting:
-
 As part of this effort we have removed the Augur Identity automatic context which utilised fingerprinting to identify users. If you were using this context and wish to continue, we suggest you manually attach the Augur Identity context using the trackers global contexts feature to maintain existing behaviour.
 
 <h2 id="updates">6. Updates and bug fixes</h2>
