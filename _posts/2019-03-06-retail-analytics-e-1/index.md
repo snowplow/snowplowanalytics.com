@@ -10,7 +10,7 @@ permalink: /blog/2019/03/06/snowplow-for-retail-part-1-how-can-I-use-snowplow/
 discourse: true
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Snowplow_for_Retail.jpg
-thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-Snowplow_for_Retail-mini.jpg
+thumbnail-image: /assets/img/blog/featured/Thumb-Snowplow-for-Retail.png
 ---
 
 "We have several disparate brands and users have multiple touch points (web, app, over the phone and in store) before purchasing and we don’t have a single customer view. This means we can’t effectively group our users.

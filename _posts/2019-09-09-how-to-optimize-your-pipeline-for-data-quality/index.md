@@ -8,7 +8,7 @@ category: How to guides
 permalink: /blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline.jpg
-thumbnail-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline-mini.jpg
+thumbnail-image: /assets/img/blog/featured/Thumb-How-Optimize-Pipeline.png
 ---
 
 Data-informed businesses rely on customer data. It powers their products, provides valuable insights and drives new ideas. However, as a business expands its data collection, it also becomes more vulnerable to data quality issues. Poor quality data, such as inaccurate, missing or inconsistent data, provides a bad foundation for decision making and can no longer be used to uphold arguments or support ideas based on that data. And once trust in the data is lost, the data, data team, and any data infrastructure loses its value as well. 
