@@ -10,15 +10,21 @@ permalink: /blog/2020/01/30/demystifying-samesite-cookie-update/
 
 ## What the SameSite Cookie update entails
 
-You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome in February 2020 and that these changes have the potential to cause issues for your analytics. In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In this post we're going to see how these changes could affect your site and what you can do about it.
+You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome starting from 17th February 2020 and that these changes have the potential to cause issues for your analytics. In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
 
 <!--more-->
 
 If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means).
 
-### What a SameSite cookie is
+### What is a Secure cookie
 
 Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are starting to change their defaults to ensure privacy first cookies.
+
+A Secure cookie is one which can only be transmitted over a secure connection (HTTPS). This helps to ensure that the cookie is transmitted in a secure manner when requests are being made to the web server, this is particularly important when storing sensitive, authenticate or identification data inside cookies.
+
+To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie.
+
+### What a SameSite cookie is
 
 SameSite is a new(-ish) cookie attribute that browsers understand but what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the same site.
 
@@ -30,20 +36,23 @@ If a server sets the following cookie on `collector.snowplowanalytics.com`:
 
 Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` site, because perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
 
-### What is a Secure cookie
-
-
-
 ### What this change means for your website
 
 Setting a cookie's `SameSite` attribute to `Lax` by default has a couple of consequences:-
 
-- Requests that are sent to domains that are not the same as the parent domain (the one in the address bar) will not have these cookies included in requests.
+- Requests that are sent to domains that are not the same as the parent domain (the one in the address bar) will not have these cookies included in requests (cross-site requests).
 - A substantial amount of cookies that are out there do not specify the SameSite attribute at all so they will suddenly start behaving differently.
 
 It is quite likely that this isn't an issue for many sites, as a sites backend services will operate on the same domain as the front end; meaning the cookies will continue to be sent with the new `SameSite=Lax` default. However, if you are sending requests to a different domain and these cookies are important then this is where your issues will begin. For instance, some third party login services or embedded content may be setting cookies that are required for authentication. Later in this post we will describe how you can check if your site is affected.
 
-One type of request that is likely going to be affected by this are third party tracking provider requests. The providers will often be running on a different domain and may not be including the `SameSite` attribute on cookies. This means any tracking that relies on these cookies has the potential to stop working. _You may need to take action to ensure cross-site tracking contains to work in Chrome 80._
+Requiring `SameSite=None` cookies to require `Secure` also has a couple of consequences:-
+
+- If the cookie is being transmitted cross-site and the server does not accept secure connections (HTTPS) then the cookie can no longer be sent.
+- There are some old browsers which are not compatible with `SameSite=None; Secure` cookies, the Chromium team have [published a list](https://www.chromium.org/updates/same-site/incompatible-clients).
+
+Most websites are already operating on secure (HTTPS) connections which means that the `Secure` attribute doesn't pose much worry, but it is worth ensuring communication with any third party servers is being done securely if the site is still accessible on insecure (HTTP) connections. Due to the older, incompatible browsers you may experience data usually contained within cookies from these browsers not working as expected. In the case of Snowplow, this will mean new `network_userid`s will be generated for requests from these incompatible browsers and will skew user counts that are relying solely on the `network_userid`.
+
+One type of request that is likely going to be affected by these two changes are third party tracking provider requests. The providers will often be running on a different domain and may not be including the `SameSite` attribute on cookies. This means any tracking that relies on these cookies has the potential to stop working. _You may need to take action to ensure cross-site tracking contains to work in Chrome 80._
 
 ### Why it is happening now
 
@@ -63,7 +72,7 @@ Many analytics tools will send events to a third party domain. However there are
 
 #### Tracking with first party cookies
 
-The SameSite cookie updates doesn't have any effect if you are tracking users via a first party domain, as this means the cookies are stored in a first party context too. The new default of SameSite=Lax will have no effect on the first party cookies and they will continue to be sent. 
+The SameSite cookie updates doesn't have any effect if you are tracking users via a first party domain, as this means the cookies are stored in a first party context too. The new default of SameSite=Lax will have no effect on the first party cookies and they will continue to be sent.
 
 In a Snowplow context, this means that your network_userid will work as it has always done. Tracking with first party cookies is our recommended practice, particularly as the end of the road is in sight for third party cookies in light of ITP changes in Safari and further restrictions by other browsers.
 
