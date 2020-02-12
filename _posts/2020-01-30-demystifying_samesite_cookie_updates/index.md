@@ -24,7 +24,7 @@ A Secure cookie is one which can only be transmitted over a secure connection (H
 
 To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie.
 
-### What a SameSite cookie is
+### What is a SameSite cookie
 
 SameSite is a new(-ish) cookie attribute that browsers understand but what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the same site.
 
@@ -32,7 +32,9 @@ When a cookie is referred to SameSite, this means the SameSite attribute is spef
 
 If a server sets the following cookie on `collector.snowplowanalytics.com`:
 
-`sp=1234; Max-Age=31557600; Secure`
+```
+sp=1234; Max-Age=31557600; Secure
+```
 
 Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` site, because perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
 
@@ -86,19 +88,19 @@ For any cookies that need to be sent to a third party domain, you need to ensure
 
 Before thinking about taking steps to fix any third party cookies, it is worth considering if there is the option of moving to first party cookies by utilising running the vendor services on the same domain as your site. Where this is possible, it will not only solve any issues faced by the `SameSite` changes but will also ensure cookies will continue to work further into the future. Many browser vendors are also taking steps to prevent third party cookies working at all, see our [blog posts about ITP in Safari](https://snowplowanalytics.com/blog/2019/12/16/how-itp-2.3-expands-on-itp-2.1-and-2.2-and-what-it-means-for-your-web-analytics/) for more information.
 
-#### Snowplow Insights
+#### As a Snowplow Insights customer
 
 Snowplow Insights customers don't need to do anything with their collector configuration. The Snowplow team has already configured collectors to return the `network_userid` cookie with the `SameSite=None` and `Secure` attributes. It is worth checking that your tracking is being sent to a secure (HTTPS) endpoint as the new `Secure` attribute will lead to the cookie not being sent with insecure requests.
 
 Where possible, running the Snowplow collector on the same domain as the site allows for the `network_userid` cookie to be set as a first party cookie. With the release of R116, the Snowplow collector allows for multiple domains to be configured which we discuss in more detail in our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookies). Please contact Support if you wish to configure this for your collector.
 
-#### Snowplow Open Source
+#### As a Snowplow Open Source user
 
 The Scala Stream Collector can be configured to return the `network_userid` with the `SameSite=None` and `Secure` attributes by modifying the collector configuration. This feature was released in R116 and was announced in our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookie-attr). The steps required to upgrade and the new configuration settings can also be found in the same [release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#upgrading). As mentioned above, running the collector on the same domain as the site allows for the `network_userid` cookie to be set as a first party cookie. Our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookies) details how to achieve this.
 
 For Open Source users of the Clojure or Cloudfront collectors, these have been deprecated and are not capable of setting the `SameSite` or `Secure` attributes. You should look into our [Upgrade guide](https://discourse.snowplowanalytics.com/t/aws-batch-pipeline-to-real-time-pipeline-upgrade-guide/3470) to find out how to move from a Batch to a Realtime pipeline.
 
-### Useful liks
+### Useful links
 
 - [SameSite cookies explained](https://web.dev/samesite-cookies-explained/)
 - [How to implement SameSite cookies](https://web.dev/samesite-cookie-recipes/)
