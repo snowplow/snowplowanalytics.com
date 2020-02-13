@@ -24,7 +24,7 @@ A Secure cookie is one which can only be transmitted over a secure connection (H
 
 To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie, like so:
 
-```
+```http
 sp=1234; Max-Age=31557600; Secure
 ```
 
@@ -36,7 +36,7 @@ When a cookie is referred to SameSite, this means the SameSite attribute is spef
 
 If a server sets the following cookie on `collector.snowplowanalytics.com`:
 
-```
+```http
 sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure
 ```
 
