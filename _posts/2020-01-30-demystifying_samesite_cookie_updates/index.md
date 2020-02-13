@@ -1,11 +1,11 @@
 ---
 layout: post
-title-short: Demystifying the SameSite Cookie update
-title: "Demystifying the SameSite Cookie update: Understand what the SameSite cookie update means and how it will affect you"
-description: "What the SameSite Cookie update entail and what you need to do about it"
+title-short: Understanding the SameSite Cookie update
+title: "Understanding the SameSite Cookie update: what the SameSite cookie update means and how it will affect you"
+description: "What the SameSite Cookie update entails and what you need to do about it"
 author: Paul
 category: Data insights
-permalink: /blog/2020/01/30/demystifying-samesite-cookie-update/
+permalink: /blog/2020/01/30/understanding-the-samesite-cookie-update/
 ---
 
 ## What the SameSite Cookie update entails
@@ -16,15 +16,19 @@ If you are already familiar with the SameSite cookies and the update, you can ju
 
 <!--more-->
 
-### What is a Secure cookie
+### Secure cookies
 
 Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are starting to change their defaults to ensure privacy first cookies.
 
 A Secure cookie is one which can only be transmitted over a secure connection (HTTPS). This helps to ensure that the cookie is transmitted in a secure manner when requests are being made to the web server, this is particularly important when storing sensitive, authenticate or identification data inside cookies.
 
-To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie.
+To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie, like so:
 
-### What is a SameSite cookie
+```
+sp=1234; Max-Age=31557600; Secure
+```
+
+### SameSite cookies
 
 SameSite is a new(-ish) cookie attribute that browsers understand but what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the same site.
 
@@ -33,10 +37,24 @@ When a cookie is referred to SameSite, this means the SameSite attribute is spef
 If a server sets the following cookie on `collector.snowplowanalytics.com`:
 
 ```
-sp=1234; Max-Age=31557600; Secure
+sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure
 ```
 
-Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` site, because perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
+Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, currently this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
+
+To restrict the sites which the cookie can be sent to there are three options for the SameSite attribute: `None`, `Lax` and `Strict`. To keep things simple, lets focus on the values related to this change: `None` and `Lax`.
+
+```http
+sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=None
+```
+
+`SameSite=None` will allow the cookie to be sent with all requests to `snowplowanalytics.com` no matter what the parent domain is (the url in the address bar).
+
+```http
+sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=Lax
+```
+
+`SameSite=Lax` is the new default that this update brings and will prevent the cookie being sent with requests to `snowplowanalytics.com` if they are not from a `snowplowanalytics.com` domain.
 
 ### What this change means for your website
 
