@@ -11,9 +11,13 @@
 		{% for post in site.posts limit:site.feed_total %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
-				{% if post.author.name %}
-					<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
-				{% endif %}        
+				{% for author in site.data.authors %}
+				{% if post.author == author.name %}
+					<author>{{ author.full_name | xml_escape }}</author>
+				{% endif %}
+				{% endfor %}     
+				         
+         <category>{{ post.category }}</category> 
 				{% if post.excerpt %}
 					<description>{{ post.excerpt | xml_escape }}</description>
 				{% else %}
@@ -26,3 +30,6 @@
 		{% endfor %}
 	</channel>
 </rss>
+
+
+
