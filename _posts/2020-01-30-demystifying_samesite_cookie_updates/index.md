@@ -12,9 +12,9 @@ permalink: /blog/2020/01/30/demystifying-samesite-cookie-update/
 
 You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome starting from 17th February 2020 and that these changes have the potential to cause issues for your analytics. In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
 
-<!--more-->
-
 If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means).
+
+<!--more-->
 
 ### What is a Secure cookie
 
@@ -76,11 +76,15 @@ Many analytics tools will send events to a third party domain. However there are
 
 The SameSite cookie updates doesn't have any effect if you are tracking users via a first party domain, as this means the cookies are stored in a first party context too. The new default of SameSite=Lax will have no effect on the first party cookies and they will continue to be sent.
 
-In a Snowplow context, this means that your network_userid will work as it has always done. Tracking with first party cookies is our recommended practice, particularly as the end of the road is in sight for third party cookies in light of ITP changes in Safari and further restrictions by other browsers.
+In a Snowplow context, this means that your `network_userid` will work as it has always done. Tracking with first party cookies is our recommended practice, particularly as the end of the road is in sight for third party cookies in light of ITP changes in Safari and further restrictions by other browsers.
 
 #### Tracking with third party cookies
 
+Chrome 79 contains a number two flags which can be toggled to see if the SameSite updates will cause issues for a site. With Chrome 79, navigate to `chrome://flags` and enable `#same-site-by-default-cookies` and `#cookies-without-same-site-must-be-secure`. Restart the browser.
 
+Test your sites, with a focus on anything involving multiple domains or cross-site content. In particular you will want to pay attention to any analytics that involves tracking data stored inside cookies. If your site or tracking stops working as expected, turn each of the flags off one at a time (restarting the browser each time) to find out with setting is causing the issue.
+
+In a Snowplow context, you will want to check if your `network_userid` is tracking as expected. If the SameSite updates are causing issues for your configuratino, you should notice `network_userid`s being regenerated on every event that tracks for the same user (identified by `domain_userid` or `user_id`).
 
 ### What you need to do about it
 
