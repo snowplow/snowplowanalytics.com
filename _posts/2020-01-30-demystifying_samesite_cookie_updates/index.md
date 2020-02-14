@@ -102,7 +102,7 @@ Chrome 79 contains two flags which can be toggled to see if the SameSite updates
 
 Test your sites, with a focus on anything involving multiple domains or cross-site content. In particular you will want to pay attention to any analytics that involves tracking data stored inside cookies. If your site or tracking stops working as expected, turn each of the flags off one at a time (restarting the browser each time) to find out with setting is causing the issue.
 
-In a Snowplow context, you will want to check if your `network_userid` is tracking as expected. If the SameSite updates are causing issues for your configuratino, you should notice `network_userid`s being regenerated on every event that tracks for the same user (identified by `domain_userid` or `user_id`).
+In a Snowplow context, you will want to check if your `network_userid` is tracking as expected. If the SameSite updates are causing issues for your configuration, you should notice `network_userid`s being regenerated on every event that tracks for the same user (identified by `domain_userid` or `user_id`).
 
 ### What you need to do about it
 
