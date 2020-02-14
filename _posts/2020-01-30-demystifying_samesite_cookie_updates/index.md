@@ -2,7 +2,7 @@
 layout: post
 title-short: Understanding the SameSite Cookie update
 title: "Understanding the SameSite Cookie update: what the SameSite cookie update means and how it will affect you"
-description: "What the SameSite Cookie update entails and what you need to do about it"
+description: "What the SameSite Cookie update entails and what you can to do about it"
 author: Paul
 category: Data insights
 permalink: /blog/2020/01/30/understanding-the-samesite-cookie-update/
@@ -10,15 +10,17 @@ permalink: /blog/2020/01/30/understanding-the-samesite-cookie-update/
 
 ## What the SameSite Cookie update entails
 
-You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome starting from 17th February 2020 and that these changes have the potential to cause issues for your analytics. In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
+You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome starting from 17th February 2020 and that these changes have the potential to cause issues for your analytics.
 
-If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means).
+Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are now starting to change their defaults to ensure privacy first cookies.
+
+In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
+
+If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means-for-your-tracking).
 
 <!--more-->
 
 ### Secure cookies
-
-Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are starting to change their defaults to ensure privacy first cookies.
 
 A Secure cookie is one which can only be transmitted over a secure connection (HTTPS). This helps to ensure that the cookie is transmitted in a secure manner when requests are being made to the web server, this is particularly important when storing sensitive, authenticate or identification data inside cookies.
 
@@ -80,7 +82,7 @@ The new default is designed to better protect everyone's privacy online, as well
 
 There has been a proposal which is refered to as [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) that was published last year and this is one of the first steps towards that. It is expected that other browsers will also take this, or similar, steps toward handling cookies in this way.
 
-<h3 id="what-it-means">What it means for your tracking</h3>
+### What it means for your tracking
 
 If you are relying on cookies to identify users then this may stop working for users who browse sites with Chrome (and other Chromium based browsers). If the cookie that has been stored does not contain the `SameSite=None` attribute then the cookie will not be sent in any requests to the third party server.
 
