@@ -56,7 +56,7 @@ sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=None
 sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=Lax
 ```
 
-`SameSite=Lax` is the new default that this update brings and will prevent the cookie being sent with requests to `snowplowanalytics.com` if they are not from a `snowplowanalytics.com` domain.
+`SameSite=Lax` is the new default that this update brings and will prevent the cookie being sent with requests to `snowplowanalytics.com` if they are not from a `snowplowanalytics.com` domain. For completeness, it's also worth mentioning that `SameSite=Lax` means that cookies will be sent with "top level" navigation requests from 3rd party contexts, only `SameSite=Strict` will block all cookies from 3rd party contexts. See the [useful links](#useful-links) for more information on the intricacies between `Lax` and `Strict`.
 
 ### What this change means for your website
 
