@@ -98,7 +98,7 @@ In a Snowplow context, this means that your `network_userid` will work as it has
 
 #### Tracking with third party cookies
 
-Chrome 79 contains a number two flags which can be toggled to see if the SameSite updates will cause issues for a site. With Chrome 79, navigate to `chrome://flags` and enable `#same-site-by-default-cookies` and `#cookies-without-same-site-must-be-secure`. Restart the browser.
+Chrome 79 contains two flags which can be toggled to see if the SameSite updates will cause issues for a site. With Chrome 79, navigate to `chrome://flags` and enable `#same-site-by-default-cookies` and `#cookies-without-same-site-must-be-secure`. Restart the browser.
 
 Test your sites, with a focus on anything involving multiple domains or cross-site content. In particular you will want to pay attention to any analytics that involves tracking data stored inside cookies. If your site or tracking stops working as expected, turn each of the flags off one at a time (restarting the browser each time) to find out with setting is causing the issue.
 
