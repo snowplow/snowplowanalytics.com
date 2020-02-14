@@ -65,7 +65,7 @@ Setting a cookie's `SameSite` attribute to `Lax` by default has a couple of cons
 
 It is quite likely that this isn't an issue for many sites, as a sites backend services will operate on the same domain as the front end; meaning the cookies will continue to be sent with the new `SameSite=Lax` default. However, if you are sending requests to a different domain and these cookies are important then this is where your issues will begin. For instance, some third party login services or embedded content may be setting cookies that are required for authentication. Later in this post we will describe how you can check if your site is affected.
 
-Requiring `SameSite=None` cookies to require `Secure` also has a couple of consequences:-
+Requiring `SameSite=None` cookies to require `Secure` also has a couple of consequences:
 
 - If the cookie is being transmitted cross-site and the server does not accept secure connections (HTTPS) then the cookie can no longer be sent.
 - There are some old browsers which are not compatible with `SameSite=None; Secure` cookies, the Chromium team have [published a list](https://www.chromium.org/updates/same-site/incompatible-clients).
