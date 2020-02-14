@@ -30,7 +30,7 @@ sp=1234; Max-Age=31557600; Secure
 
 ### SameSite cookies
 
-SameSite is a new(-ish) cookie attribute that browsers understand but what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the same site.
+SameSite is a comparatively new cookie attribute that browsers understand and Chrome at least is about to depend on. But what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the _same site_.
 
 When a cookie is referred to SameSite, this means the SameSite attribute is speficied on the cookie. If we consider the two concepts in the previous paragraph, we can start to understand that the `SameSite` attribute represents a method of controlling whether a cookie is sent with requests to the site or not. Lets take a look at an example:
 
