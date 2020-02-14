@@ -42,7 +42,7 @@ sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure
 
 Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, currently this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
 
-To restrict the sites which the cookie can be sent to there are three options for the SameSite attribute: `None`, `Lax` and `Strict`. To keep things simple, lets focus on the values related to this change: `None` and `Lax`.
+To restrict the sites which the cookie can be sent to there are three options for the SameSite attribute: `None`, `Lax` and `Strict`. To keep things simple, let's focus on the values related to this change: `None` and `Lax`.
 
 ```http
 sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=None
