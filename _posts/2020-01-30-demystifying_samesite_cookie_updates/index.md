@@ -72,7 +72,7 @@ Requiring `SameSite=None` cookies to require `Secure` also has a couple of conse
 
 Most websites are already operating on secure (HTTPS) connections which means that the `Secure` attribute doesn't pose much worry, but it is worth ensuring communication with any third party servers is being done securely if the site is still accessible on insecure (HTTP) connections. Due to the older, incompatible browsers you may experience data usually contained within cookies from these browsers not working as expected. In the case of Snowplow, this will mean new `network_userid`s will be generated for requests from these incompatible browsers and will skew user counts that are relying solely on the `network_userid`.
 
-One type of request that is likely going to be affected by these two changes are third party tracking provider requests. The providers will often be running on a different domain and may not be including the `SameSite` attribute on cookies. This means any tracking that relies on these cookies has the potential to stop working. _You may need to take action to ensure cross-site tracking contains to work in Chrome 80._
+One type of request that is likely going to be affected by these two changes are third party tracking provider requests. The providers will often be running on a different domain and may not be including the `SameSite` attribute on cookies. This means any tracking that relies on these cookies has the potential to stop working. _You may need to take action to ensure cross-site tracking continues to work in Chrome 80._
 
 ### Why it is happening now
 
