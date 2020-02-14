@@ -46,9 +46,9 @@ sp=1234; Max-Age=31557600; Secure
 
 ### SameSite cookies
 
-SameSite is a comparatively new cookie attribute that browsers understand and Chrome at least is about to depend on. But what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the _same site_.
+SameSite is a comparatively new cookie attribute that browsers understand and Chrome, at least, is about to depend on. But what do we mean when we say SameSite? Let's first consider the `Site` part. A site is defined as the domain suffix (e.g. .com, .co.uk, .net, etc) and the section before it. So in the case of this page, the full domain is `www.snowplowanalytics.com` but the site is `snowplowanalytics.com`. Now for the `Same` part; any domain that is on the `snowplowanalytics.com` site will be classed as on the _same site_.
 
-When a cookie is referred to SameSite, this means the SameSite attribute is speficied on the cookie. If we consider the two concepts in the previous paragraph, we can start to understand that the `SameSite` attribute represents a method of controlling whether a cookie is sent with requests to the site or not. Lets take a look at an example:
+If a cookie uses the `SameSite` attribute, then this cookie can control whether it should be sent with requests from a site or not. Lets take a look at an example.
 
 If a server sets the following cookie on `collector.snowplowanalytics.com`:
 
@@ -98,13 +98,13 @@ There has been a proposal which is referred to as [Incrementally Better Cookies]
 
 ### What it means for your tracking
 
-If you are relying on cookies to identify users then this may stop working for users who browse sites with Chrome (and other Chromium based browsers). If the cookie that has been stored does not contain the `SameSite=None` attribute then the cookie will not be sent in any requests to the third party server.
+If you are relying on cookies to identify users then this may stop working for users who browse sites with Chrome (and other Chromium based browsers). If the cookie that has been stored does not contain the `SameSite=None` attribute then the cookie will not be sent in any requests to the third party web server.
 
 ### How to check if you are affected
 
-There are two types of requests that we generally talk about, first party and third party. A first party request is one that is sent to the same domain that the website is being served from (i.e. the same as the domain visible in the browsers address bar). Whereas a third party request is one which is sent to a domain that is different from the one visible in the browsers address bar.
+As mentioned earlier, a site can make a request to a web server as either a first party and third party. A first party request is one that is sent to the same domain that the website is being served from (i.e. the same as the domain visible in the browsers address bar). Whereas a third party request is one which is sent to a domain that is different from the one visible in the browsers address bar.
 
-Many analytics tools will send events to a third party domain. However there are some analytics tools, such as Snowplow, that allow you to track events to the same top level domain that the site is being served from. This has the benefit that any cookies that are sent from the server to be stored on in the browser will be deemed as first party cookies.
+Many analytics tools will send events to a third party web server running on a third party domain. However there are some analytics tools, such as Snowplow, that allow you to track events to the same top level domain that the site is being served from. This has the benefit that any cookies that are sent from the server to be stored on in the browser will be deemed as first party cookies.
 
 #### Tracking with first party cookies
 
