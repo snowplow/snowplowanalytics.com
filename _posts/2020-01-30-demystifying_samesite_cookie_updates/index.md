@@ -75,7 +75,7 @@ sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=Lax
 Setting a cookie's `SameSite` attribute to `Lax` by default has a couple of consequences for cookies set in a third party context:
 
 - Requests that are sent to domains that are not the same as the parent domain (the one in the address bar) will not have these cookies included in requests (cross-site requests).
-- A substantial amount of cookies that are out there do not specify the SameSite attribute at all so they will suddenly start behaving differently.
+- A substantial amount of cookies that are out there do not specify the SameSite attribute at all so they will suddenly start behaving differently, unless updated.
 
 It is quite likely that this isn't an issue for many sites, as a sites backend services will operate on the same domain as the front end; meaning the cookies will continue to be sent with the new `SameSite=Lax` default. However, if you are sending requests to a different domain and these cookies are important then this is where your issues will begin. For instance, some third party login services or embedded content may be setting cookies that are required for authentication. Later in this post we will describe how you can check if your site is affected.
 
