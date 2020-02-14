@@ -10,11 +10,9 @@ permalink: /blog/2020/01/30/understanding-the-samesite-cookie-update/
 
 ## What the SameSite Cookie update entails
 
-You may have heard about the upcoming changes that are being made to how cookies are going to work in Chrome starting from 17th February 2020 and that these changes have the potential to cause issues for your analytics.
+Changes are being made to how cookies are going to work in Chrome starting from 17th February 2020 that have the potential to cause issues for your analytics. Cookies have long been a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are now starting to change their defaults to ensure privacy first cookies.
 
-Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are now starting to change their defaults to ensure privacy first cookies.
-
-In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax`. By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
+In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax`. By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break analytics that are achieved through any third party tracking. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site, in particular your analytics, and what you can do about it.
 
 If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means-for-your-tracking).
 
