@@ -22,7 +22,7 @@ Cookies are a mechanism that allows a website's state or data to be stored in a 
 
 A Secure cookie is one which can only be transmitted over a secure connection (HTTPS). This helps to ensure that the cookie is transmitted in a secure manner when requests are being made to the web server, this is particularly important when storing sensitive, authenticate or identification data inside cookies.
 
-To ensure a cookie is only availble to be sent over secure connections, the 'Secure' attribute should be specified on the cookie, like so:
+To ensure a cookie is only available to be sent over secure connections, the 'Secure' attribute should be specified on the cookie, like so:
 
 ```http
 sp=1234; Max-Age=31557600; Secure
