@@ -114,7 +114,7 @@ Before thinking about taking steps to fix any third party cookies, it is worth c
 
 #### As a Snowplow Insights customer
 
-Snowplow Insights customers don't need to do anything with their collector configuration. The Snowplow team has already configured collectors to return the `network_userid` cookie with the `SameSite=None` and `Secure` attributes. It is worth checking that your tracking is being sent to a secure (HTTPS) endpoint as the new `Secure` attribute will lead to the cookie not being sent with insecure requests.
+Snowplow Insights customers don't need to do anything with their collector configuration. The Snowplow team has already configured collectors to return the `network_userid` cookie with the `SameSite=None` and `Secure` attributes. It is worth checking that your tracking is being sent to a secure (HTTPS) endpoint as the new `Secure` attribute will lead to the cookie not being sent with unsecured requests.
 
 Where possible, running the Snowplow collector on the same domain as the site allows for the `network_userid` cookie to be set as a first party cookie. With the release of R116, the Snowplow collector allows for multiple domains to be configured which we discuss in more detail in our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookies). Please contact Support if you wish to configure this for your collector.
 
