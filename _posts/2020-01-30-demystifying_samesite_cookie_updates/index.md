@@ -106,7 +106,7 @@ In a Snowplow context, you will want to check if your `network_userid` is tracki
 
 ### What you need to do about it
 
-For any cookies that need to be sent to a third party domain, you need to ensure that the cookie contains the `SameSite=None` and `Secure` attributes. This is going to depend on the vendor or software you are using that is making use of these cookies. In the case of Snowplow, the Snowplow Collector can be configured to return the cookie containing the `network_userid` field with the `SameSite=None` and `Secure` attribtues.
+For any cookies that need to be sent to a third party domain, you need to ensure that the cookie contains the `SameSite=None` and `Secure` attributes. This is going to depend on the vendor or software you are using that is making use of these cookies. In the case of Snowplow, the Snowplow Collector can be configured to return the cookie containing the `network_userid` field with the `SameSite=None` and `Secure` attributes.
 
 Before thinking about taking steps to fix any third party cookies, it is worth considering if there is the option of moving to first party cookies by utilising running the vendor services on the same domain as your site. Where this is possible, it will not only solve any issues faced by the `SameSite` changes but will also ensure cookies will continue to work further into the future. Many browser vendors are also taking steps to prevent third party cookies working at all, see our [blog posts about ITP in Safari](https://snowplowanalytics.com/blog/2019/12/16/how-itp-2.3-expands-on-itp-2.1-and-2.2-and-what-it-means-for-your-web-analytics/) for more information.
 
