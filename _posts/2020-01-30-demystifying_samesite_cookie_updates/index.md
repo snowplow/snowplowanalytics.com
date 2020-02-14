@@ -78,7 +78,7 @@ One type of request that is likely going to be affected by these two changes are
 
 The new default is designed to better protect everyone's privacy online, as well as offering sites that are delivering cookies an avenue to explicitly label them so that they are never sent in any cross-site requests. By changing the `SameSite` attribute to `Lax` by default, the Chromium team are ensuring that third party services must label their cookies in a way that will allow them to be sent cross-site.
 
-There has been a proposal which is refered to as [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) that was published last year and this is one of the first steps towards that. It is expected that other browsers will also take this, or similar, steps toward handling cookies in this way.
+There has been a proposal which is referred to as [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) that was published last year and this is one of the first steps towards that. It is expected that other browsers will also take this, or similar, steps toward handling cookies in this way.
 
 <h3 id="what-it-means">What it means for your tracking</h3>
 
