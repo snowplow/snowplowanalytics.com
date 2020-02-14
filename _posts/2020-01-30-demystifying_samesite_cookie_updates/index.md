@@ -14,11 +14,25 @@ You may have heard about the upcoming changes that are being made to how cookies
 
 Cookies are a mechanism that allows a website's state or data to be stored in a user's browser. However, in their current implementation they are often implemented in a way that has the potential to leak information. Browsers are now starting to change their defaults to ensure privacy first cookies.
 
-In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax` (Except for POST requests where the cookies will still be included to reduce the chance of sites breaking). By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
+In September 2019, the [Chromium team announced](https://www.chromium.org/updates/same-site) that starting in Chrome 80 any cookies that do not specify the SameSite attribute will be treated as if they were `SameSite=Lax`. By changing the default behaviour of a cookie that does not specify the SameSite attribute has the potential to break both fundamental aspects of a website as well as any third party tracking that may be in place. In addition to this change, any cookies which specify `SameSite=None` so they can be transmitted cross-site, must also specify the `Secure` attribute or they will be ignored. In this post we're going to see how these changes could affect your site and what you can do about it.
 
 If you are already familiar with the SameSite cookies and the update, you can jump straight to [what this means for your tracking and your Snowplow collector](#what-it-means-for-your-tracking).
 
 <!--more-->
+
+### First Party Context vs Third Party Context
+
+During this article, we will make reference to first and third party contexts. It is important to appreciate what we mean when we describe something in this way, as the SameSite update is causes particular impact when running tracking in a third party context. When we use these terms, we are describing the context of the web server that is receiving requests from a site, if they are running on the same domain then they are first party; if not then they are third party. This is not just an important concept for the SameSite update but also for ITP in Safari, you can read more about [ITP in detail in our other blog posts](https://snowplowanalytics.com/blog/2019/05/28/how-ITP2.1-works-what-it-means-for-web-analytics/).
+
+Let's look at a couple of examples:
+
+#### First Party
+
+User A visits site `snowplowanalytics.com`. If the Snowplow collector is set up on `collector.snowplowanalytics.com`, then this is a first party context.
+
+#### Third Party
+
+User A visits site `snowplowanalytics.com`. If the Snowplow collector is set up on `collector.snplow.net`, then this is a third party context.
 
 ### Secure cookies
 
@@ -42,7 +56,7 @@ If a server sets the following cookie on `collector.snowplowanalytics.com`:
 sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure
 ```
 
-Then all requests that are made to `snowplowanalytics.com` will have this cookie attached. So if you are on `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain. However, currently this cookie will also be sent if requests are made from another site entirely to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site.
+Then all requests that are sent to `snowplowanalytics.com` will have this cookie attached. So if you are visiting `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain, including requests to `collector.snowplowanalytics.com`. However, currently this cookie will also be sent if requests are made from different site (i.e. where `snowplowanalytics.com` is not in the address bar) to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site, such as a Snowplow collector at `collector.snowplowanalytics.com`.
 
 To restrict the sites which the cookie can be sent to there are three options for the SameSite attribute: `None`, `Lax` and `Strict`. To keep things simple, let's focus on the values related to this change: `None` and `Lax`.
 
@@ -129,3 +143,4 @@ For Open Source users of the Clojure or Cloudfront collectors, these have been d
 - [SameSite cookies explained](https://web.dev/samesite-cookies-explained/)
 - [How to implement SameSite cookies](https://web.dev/samesite-cookie-recipes/)
 - [Chromium progress on SameSite updates](https://www.chromium.org/updates/same-site)
+- [How ITP 2.1 works and what it means for your web analytics](https://snowplowanalytics.com/blog/2019/05/28/how-ITP2.1-works-what-it-means-for-web-analytics/)
