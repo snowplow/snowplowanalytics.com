@@ -58,7 +58,7 @@ sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure; SameSite=Lax
 
 ### What this change means for your website
 
-Setting a cookie's `SameSite` attribute to `Lax` by default has a couple of consequences:-
+Setting a cookie's `SameSite` attribute to `Lax` by default has a couple of consequences:
 
 - Requests that are sent to domains that are not the same as the parent domain (the one in the address bar) will not have these cookies included in requests (cross-site requests).
 - A substantial amount of cookies that are out there do not specify the SameSite attribute at all so they will suddenly start behaving differently.
