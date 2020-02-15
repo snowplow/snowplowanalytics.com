@@ -54,7 +54,7 @@ If a server sets the following cookie on `collector.snowplowanalytics.com`:
 sp=1234; Domain=snowplowanalytics.com; Max-Age=31557600; Secure
 ```
 
-Then all requests that are sent to `snowplowanalytics.com` will have this cookie attached. So if you are visiting `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain, including requests to `collector.snowplowanalytics.com`. However, currently this cookie will also be sent if requests are made from different site (i.e. where `snowplowanalytics.com` is not in the address bar) to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site, such as a Snowplow collector at `collector.snowplowanalytics.com`.
+Then all requests that are sent to `snowplowanalytics.com` will have this cookie attached. So if you are visiting `blog.snowplowanalytics.com` then this cookie will be sent to all requests to a `snowplowanalytics.com` domain, including requests to `collector.snowplowanalytics.com`. However, currently this cookie will also be sent if requests are made from a different site (i.e. where `snowplowanalytics.com` is not in the address bar) to a `snowplowanalytics.com` domain, perhaps they are running some software that makes requests to something hosted on the `snowplowanalytics.com` site, such as a Snowplow collector at `collector.snowplowanalytics.com`.
 
 To restrict the sites which the cookie can be sent to there are three options for the SameSite attribute: `None`, `Lax` and `Strict`. To keep things simple, let's focus on the values related to this change: `None` and `Lax`.
 
