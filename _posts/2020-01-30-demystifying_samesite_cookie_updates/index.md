@@ -20,7 +20,7 @@ If you are already familiar with the SameSite cookies and the update, you can ju
 
 ### First Party Context vs Third Party Context
 
-During this article, we will make reference to first and third party contexts. It is important to appreciate what we mean when we describe something in this way, as the SameSite update is causes particular impact when running tracking in a third party context. When we use these terms, we are describing the context of the web server that is receiving requests from a site, if they are running on the same domain then they are first party; if not then they are third party. This is not just an important concept for the SameSite update but also for ITP in Safari, you can read more about [ITP in detail in our other blog posts](https://snowplowanalytics.com/blog/2019/05/28/how-ITP2.1-works-what-it-means-for-web-analytics/).
+During this article, we will make reference to first and third party contexts. It is important to appreciate what we mean when we describe something in this way, as the SameSite update causes particular impact when running tracking in a third party context. When we use these terms, we are describing the context of the web server that is receiving requests from a site, if they are running on the same domain then they are first party; if not then they are third party. This is not just an important concept for the SameSite update but also for ITP in Safari, you can read more about [ITP in detail in our other blog posts](https://snowplowanalytics.com/blog/2019/05/28/how-ITP2.1-works-what-it-means-for-web-analytics/).
 
 Let's look at a couple of examples:
 
