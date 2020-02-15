@@ -134,7 +134,7 @@ Where possible, running the Snowplow collector on the same domain as the site al
 
 The Scala Stream Collector can be configured to return the `network_userid` with the `SameSite=None` and `Secure` attributes by modifying the collector configuration. This feature was released in R116 and was announced in our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookie-attr). The steps required to upgrade and the new configuration settings can also be found in the same [release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#upgrading). As mentioned above, running the collector on the same domain as the site allows for the `network_userid` cookie to be set as a first party cookie. Our [R116 release post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/#cookies) details how to achieve this.
 
-For Open Source users of the Clojure or Cloudfront collectors, these have been deprecated and are not capable of setting the `SameSite` or `Secure` attributes. You should look into our [Upgrade guide](https://discourse.snowplowanalytics.com/t/aws-batch-pipeline-to-real-time-pipeline-upgrade-guide/3470) to find out how to move from a Batch to a Realtime pipeline.
+For Open Source users of the Clojure or Cloudfront collectors, these have been deprecated and are not capable of setting the `SameSite` or `Secure` attributes. You should look into our [Upgrade guide](https://discourse.snowplowanalytics.com/t/aws-batch-pipeline-to-real-time-pipeline-upgrade-guide/3470) to find out how to move from a batch to a real-time pipeline.
 
 ### Useful links
 
