@@ -420,12 +420,11 @@ article .content .bottom > img{
   
 }
 
-
-
 .highlighter-rouge{
-    background:#e8f8ff
+    background:#e8f8ff;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 13px;
 }
-
 
 /* === ARTICLES BACK BUTTON === */
 
