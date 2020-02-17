@@ -1,11 +1,11 @@
 ---
 layout: post
 title-short: Understanding the SameSite Cookie update
-title: "Understanding the SameSite Cookie update: what the SameSite cookie update means and how it will affect you"
+title: "Understanding the SameSite Cookie update"
 description: "What the SameSite Cookie update entails and what you can to do about it"
 author: Paul
 category: Data insights
-permalink: /blog/2020/01/30/understanding-the-samesite-cookie-update/
+permalink: /blog/2020/02/17/understanding-the-samesite-cookie-update/
 ---
 
 ## What the SameSite Cookie update entails
