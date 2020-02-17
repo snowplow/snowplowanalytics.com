@@ -11,18 +11,9 @@
 		{% for post in site.posts limit:site.feed_total %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
-				{% for author in site.data.authors %}
-				{% if post.author == author.name %}
-					<author>{{ author.full_name | xml_escape }}</author>
-				{% endif %}
-				{% endfor %}     
-				         
-         <category>{{ post.category }}</category> 
-				{% if post.excerpt %}
-					<description>{{ post.excerpt | xml_escape }}</description>
-				{% else %}
-					<description>{{ post.content | xml_escape }}</description>
-				{% endif %}
+				{% for author in site.data.authors %}{% if post.author == author.name %}<author>{{ author.full_name | xml_escape }}</author>{% endif %}{% endfor %}
+         		<category>{{ post.category }}</category> 
+				<description>{{ post.content | xml_escape }}</description>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<link>{{ site.url }}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>

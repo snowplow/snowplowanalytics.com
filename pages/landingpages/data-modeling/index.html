@@ -4,11 +4,28 @@ group: landingpage
 title: "Data modeling 101"
 description: "Learn how to turn your raw data into easy-to-consume data sets"
 permalink: /lp/data-modeling/
-class: data-lakes
+class: data-lakes data-modeling
 assets:
     css: assets/css/data-lakes.css
     js:
     - assets/js/dist/main.js
+blocks:
+    - icon: /v3/assets/img/mobile/benefits/SP_Mobile-Offline_Users.png
+      title: Data point for data modelling - maybe what is data modeling
+      content: With Snowplow you’re able to easily join web, mobile and offline data to create a single customer view. Snowplow offers a <a href="https://github.com/snowplow/snowplow/wiki/trackers" target="_blank">range of trackers</a> for web, mobile and server-side events that emit events in the same format so they can be loaded into the same event-level table in your data warehouse. Snowplow’s tech allows you to track offline conversions, enrich events with <a href="https://docs.snowplowanalytics.com/snowplow-insights/enrichments/" target="_blank">3rd party properties</a> and send 3rd party events using Snowplow’s <a href="https://github.com/snowplow/snowplow/wiki/Iglu-webhook-adapter" target="_blank">webhooks</a>.
+    - icon: /v3/assets/img/mobile/benefits/SP_Mobile-Empower_Teams.png
+      title: How we maybe benefit from data modeling? how to approach it?
+      content: Snowplow enables you to track exactly what marketing campaigns individual users engage with and where, and tie that data to downstream user behavior. This means you can calculate the real return on marketing spend based on all the purchases a customer makes over their lifetime, taking into account returns. And having access to the underlying event-level data means you can continually assess which attribution model best suit your business.
+    - icon: /v3/assets/img/mobile/benefits/SP_Mobile-Increase_Visibility.png
+      title: Any other relavant keyword that pops in data modeling
+      content: Make reports useful again with analytics customized for your business. Eliminate the dashboards analytics vendors think you need and experience the freedom to ask and answer the questions that matter most to your business. With access to your rich, event-level data, you can break down and analyze conversion funnels based on unique sales cycles, multichannel marketing effectiveness and customer retention, to name a few.
+cards:
+    - title: <h4>The concept of raw vs modeled data</h4>
+      content: "When it comes to best practices around data management, Snowplow and our users take the following approach: your raw event stream should be immutable while your modeled data is mutable."
+    - title: <h4>Decide on your business logic</h4>
+      content: "A big part of data modeling is applying your business logic to your unopinionated data."
+    - title: <h4>Data modeling examples</h4>
+      content: "There are many ways to model your data to make it easier to query and use, and at the end of the day, the way you’ll model it will depend on your business logic and analysis use cases" 
 ---
 
 <section class="hero-revamp hero-revamp-light hero-revamp-center"
@@ -27,12 +44,12 @@ assets:
         </div>
     </div>
 </section>
-<section class="info">
+<section class="info" style="padding-bottom:0px">
     <div class="container">
         <div class="row">
             <div class="wrapper col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0">
                 <div class="coverage col-sm-6 col-xs-12">
-                    <h3>What's covered</h3>
+                    <h3 id="form-heading">What's covered</h3>
                     <p>In this white paper, we’ll explore the basics of how data modeling works, why it matters, share a few data modeling examples and highlight the top tools for building and implementing data models.</p>
                     <ul>
                         <li>
@@ -77,3 +94,50 @@ assets:
         </div>
     </div>
 </section>
+<section class="section-revamp data-blocks-section" style="padding-top:60px">
+    <div class="container">
+        <div class="data-blocks-container">
+            {% for block in page.blocks %}
+                <div class="data-blocks-item row">
+                    <div class="col-sm-5 data-blocks-item-content">
+                        <h3>{{ block.title }}</h3>
+                        <p>{{ block.content }}</p>
+                    </div>
+                    <div class="col-sm-6 data-blocks-item-pic ">
+                        <img src="{{ BASE_PATH }}{{ block.icon }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section-revamp data-cards-section pad-t-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Excerpt from the PDF</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="data-cards-container">
+                {% for card in page.cards %}
+                    <div class="data-cards-item">
+                        <h4>{{ card.title }}</h4>
+                        <p>{{ card.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-revamp section-revamp-slogan">
+    <div class="container">
+        <h3>
+            Grab your data modeling whitepaper for free now
+            <br>
+        </h3>
+        <a href="#form-heading" class="btn btn-primary call-to-action">Download</a>
+    </div>
+  </section>
+  
