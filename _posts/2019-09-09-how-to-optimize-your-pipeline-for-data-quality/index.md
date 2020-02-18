@@ -17,7 +17,7 @@ When this happens, stakeholders no longer let data guide decision making, and th
 
 To build and maintain trust, teams need data infrastructure that delivers high quality data, and when necessary, be able to demonstrate the data’s quality to others in the organization. This article explores two key data quality issues that arise in a business, and how data teams can improve the quality of their data.
 
- 
+ {% include shortcodes/ebook.html background_class="data-quality-landingpage" layout="blog" title="A guide to better data quality" description="Find out how you can collect complete and accurate data in this free white paper." btnText="Download white paper" link="https://snowplowanalytics.com/lp/data-quality/" %}
 
 
 ## What does high quality data look like?
