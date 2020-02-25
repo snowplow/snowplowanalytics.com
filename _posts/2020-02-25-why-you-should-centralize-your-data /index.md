@@ -5,7 +5,7 @@ title: "Why you should centralize your data "
 description: "A centralized data platform gets you closer to a single source of truth"
 author: Erika
 category: Data governance
-permalink: /blog/2020/02/24/why-you-should-centralize-your-data/
+permalink: /blog/2020/02/25/why-you-should-centralize-your-data/
 ---
 
 ## Making the case for the centralized data platform
