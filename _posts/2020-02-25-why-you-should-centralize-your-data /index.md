@@ -1,144 +1,100 @@
 ---
 layout: post
-title-short: Why you should centralize your data
-title: "Why you should centralize your data "
-description: "A centralized data platform gets you closer to a single source of truth"
+title-short: Why data collection is key to your data strategy - part one
+title: "Why data collection is key to your data strategy - part one"
+description: "How you collect data forms the foundation of your data strategy "
 author: Erika
 category: Data governance
-permalink: /blog/2020/02/25/why-you-should-centralize-your-data/
+permalink: /blog/2020/02/25/why-data-collection-is-key-to-your-data-strategy-part-one/
 ---
 
-## Making the case for the centralized data platform
+_The first in a two-part blog series on data collection, and how, done properly, it forms the foundation of your data strategy_.
 
-Building trust in data comes down to making the same data available to everyone within an organization to create a single source of truth. If everybody isn’t working from the same blueprint, how can you build trust in your data? Trust in data is an oft-cited problem at the enterprise level; a [2018 KPMG study](https://home.kpmg/content/dam/kpmg/xx/pdf/2018/01/guardians-of-trust.pdf) found that only 35% of executives have a high level of trust in their organization’s data, and 25% actively distrust their data. The rapidly changing face of technology and a plethora of competing, and sometimes confusing, solutions adds to this distrust. 
+How do you actually get all the data that populates your data platform and feeds your analytics use cases? That’s right — you have to collect your data somehow. It is becoming increasingly important to pay attention to and make active decisions about _how_ your data is collected. Why? Because the data collection process itself may determine a lot about the data quality you end up with, how much you can do with the data you collect, and how accurate the predictions and insights you make are. 
 
-Getting to a place of trust is cultural, organizational and technical. It requires breaking down silos and elevating the importance of data. It also requires deciding how data will be managed, leading you to ask a series of questions about governance and tools. Some of these questions include: how will you approach data collection and storage? What practices will help govern data quality, accessibility and usability? What kind of data team structure will you put in place; who will be responsible for what? How will you socialize data, making sure that different teams can access, analyze and visualize the data they need? 
+Once upon a time, _no one_ talked about how they collected data, or acknowledged the importance of the data collection process. As use cases have grown more sophisticated, and organizations have begun to understand the importance of owning their data and controlling for data quality, once-ignored data gathering practices are becoming - or should be - a focal point for steering data strategy.  
 
-In this post, we will discuss why and how building a centralized data platform answers many of these questions and helps you:
+We’ve been [beating the data collection drum](https://snowplowanalytics.com/blog/2017/01/16/data-collection-the-essential-but-unloved-foundation-of-the-data-value-chain/) for a long time, and while keeping the rhythm going has at times been difficult, the beat is starting to be heard more widely.
 
- 
 
+## Why data collection matters
 
+You wouldn’t start a military campaign by marching untrained troops into battle, would you? No. The same is true of analytics; you can’t run an analytics function without a data strategy. Analyst firm [Forrester argues that up to 73% of data goes unused for analytics](https://www.inc.com/jeff-barrett/misusing-data-could-be-costing-your-business-heres-how.html); this is arguably because the data strategy is not clear, and data is being collected en masse without clarity as to why it’s collected or how it might be used. Most kinds of organizations need a strategy, underpinned by administrative, logistical and resource planning directives. Your data strategy is not that different. 
 
-*   Understand what centralized data infrastructure is
-*   Centralize thinking - consider how you collect and where you put your data, and understand why this matters
-*   Break down silos and why
-*   Develop a data-oriented culture 
-*   Build trust in your data
-*   Get closer to achieving your full data potential
+Achieving your business goals and strategic aims, and in fact determining these aims, is driven by the data you have, want to have -- and how you collect that data. In essence, you are “training” your data collection process(es) and the organization as a whole to understand that the foundation of data strategy depends on doing data right, which starts with how data is collected. 
 
 
-## What do we mean by centralized data platform?
+### Own your data 
 
-Before we get started, what do we mean by “centralized data platform”? A centralized data platform is more a concept than a product. It’s not to be confused, for example, with something like a customer data platform (CDP), which you may also use, but is not what this article is about. When we discuss centralizing data, we refer to a **centralized data infrastructure for collecting, processing and storing data**. Putting together the right data stack to unify multiple sources of data and establish a shared methodology is a common challenge among many of our customers in making data accessible to and usable for everyone across their company. Whether evaluating tools and making decisions about how to pull this data together from a technical standpoint, or trying to break down siloed organizational structures, centralizing your data is the first step toward creating the sought-after single source of truth.
+Regardless of how many data sources, types of data and data collection tools you use, one of the fundamentals of your approach to data collection is [owning your own data](https://snowplowanalytics.com/blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/). If data is as valuable as you (and we) think it is, and is both an asset and a competitive advantage, data ownership, and the way you collect and process it, is essential. Taking control of your data is one of the best ways to make sure you not only own the data but have the freedom and flexibility to process and use data to derive business value from it. 
 
-Centralizing the data not only ensures cross-functional access but also elevates the data to the level of value it actually represents. If data is truly an enterprise’s most valuable asset, its collection, storage and accessibility should be treated as key considerations.
+Owning your complete, raw data and deciding how to process it (e.g., for example, selecting the data pipeline that lets you collect and process data the way you want to) means that you have flexibility over how and what data you ingest, where you store your data, and the use cases you can apply -- and indeed questions you can ask of the data -- both now and in the future. Owning the end-to-end data collection process and underlying infrastructure clears the way to:
 
 
-## Centralized platform thinking
 
-Centralizing data aids in developing a cohesive data strategy: you know where all the data is, you have clear oversight into compliance and privacy, you gain insight into how and whether the data is being used and how you might make the data consumption experience better and more accessible. More broadly, you have a clear picture of how, from where and why that data has been collected. You facilitate this with the mechanics of collecting your data and deciding where it will live. A centralized data platform simplifies the path to a single source of truth, and fundamentally gives you a way to empower people to put the power of data to use.
+*   collecting whatever data you want in the format you want within your own infrastructure; deciding what you want your data to look like
+*   traceability and auditability of your data through your pipeline back to when it was created
+*   better oversight and compliance with data governance regulations, such as GDPR and CCPA; companies are required to take more responsibility for the data they collect, and show accountability and justification for why and how they store user data and what they do with it.  
+*   enabling first-party data collection and tracking; because you are collecting data from your own properties, you avoid the problems many third-party analytics tools encounter as browser makers crack down on third-party tracking
+*   accessing your raw, unopinionated data for custom data modeling, usability across use cases and the ability to return to the data to query with new questions or audits
+*   flexibility to plug data into any environment or tool and freedom from supplier lock-in and their product roadmap and feature changes
+*   ensuring data quality, i.e., accuracy and completeness, not just collecting aggregated data samples or pre-determined forms of data, to be able to ask more complex questions.
 
-Usually your centralized data infrastructure will be a combination of solutions that work seamlessly together to collect, process and store your data. Your approach to this will depend on your needs, but it’s fair to say that the terrain is complex enough that simplifying the data ecosystem should be a priority.
 
-“Centralized platform thinking” takes into account a number of factors that highlight the importance of owning your data, including:
+### Get high-quality data you can rely on
 
+Most companies have at least some of their own data, but there’s only so far they will be able to go with it because it lacks the level of quality required for advanced applications. Going beyond basic reporting and analysis, actionable insights come from data assets that can deliver accuracy and completeness. In addition to forming the basis for business decision making, high-quality data is essential for more sophisticated and real-time data initiatives, such as personalization, fraud detection, and machine-learning and AI applications. 
 
 
-*   the exponentially expanding number of data sources and channels from which you want to collect data, such as web, mobile/devices, on and offline, phone, CRM, ad data, etc.
-*   breaking down silos to move from each team having its own tool for data collection and visualization to a centralized single source of truth that enables joining these many data sources together
-*   the requirement from regulatory, compliance and privacy perspectives to have clear justifications for and oversight into the reasons for and methods of data collection and storage 
-*   the evolving analytics landscape and more advanced, cross-functional use cases - the need to democratize access to data, which requires flexibility, scalability and the freedom to pick and choose the technologies and tools that fit your data needs at any given time 
+#### How do we define data quality?
 
-With a centralized data proposition, you control exactly what is ingested, what is stored, how and where, and retain the flexibility and freedom to make changes to the solutions that make up your platform when and as needed. 
+What is [data quality](https://snowplowanalytics.com/blog/2020/02/12/what-is-data-quality-and-why-is-it-important/)? At the most basic level, good data is reliable. Reliable data can be trusted to perform data analysis and make informed decisions. 
 
+Drilling down into what “reliable” means, we’ve defined the foundations of [“data quality” as “accurate” and “complete”](https://snowplowanalytics.com/blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/). 
 
-### Real-world centralized data platform
 
-Some use cases, such as many [two-sided marketplaces](https://snowplowanalytics.com/blog/2020/01/29/leveling-up-the-user-experience-for-a-two-sided-marketplace-at-unsplash/), have many moving parts and different data systems running in isolated pockets, making deriving a clear, full picture of what happened, when and to whom, difficult. 
 
-One example we’ve seen is a two-sided marketplace running a consumer website and web apps for retailers. Tracking across consumer and retailer tools was inconsistent and siloed, employing different analytics solutions based on what different teams thought was best for their use cases. 
+*   **Accurate data**. Accurate data must reflect an accurate account of what has happened. For example, if the data suggests that a user viewed item A, we need to be sure that the user was, in fact, looking at A. Data precision also fits under this umbrella; that is, precise data will indicate, for example, that a user viewed an article for two minutes and 10 seconds -- it will not just be rounded down to two minutes. Accuracy helps data analysts easily understand and work with the data, leading to more accurate insights based on that data.
+*   **Complete data**. Complete data should deliver a complete picture of events that occurred from a complete data set without missing data. Whether event tracking failed or an event failed to be tracked in the first place, or new tracking restrictions begin to limit the data flowing in, ensuring complete data has always been -- and continues to grow increasingly -- difficult.
 
-When this customer decided that they wanted to evolve from their homegrown data pipeline to develop a centralized data platform, they needed to examine and make decisions about their data infrastructure. Driven by a fundamental desire to centralize to scale and democratize data, build efficiencies and furnish the company with a “system of record” rather than fragmented, inconsistent data, they identified key must-haves:
+The data-quality gap often arises because data has not been collected properly in the first place. To get good, high-quality data, the first step is putting in place the processes and systems that generate, collect and store good data. In the past, we’ve compared the importance of good data to building a solid foundation for a house. But it’s also similar to the military (or any high-performing team) analogy we made earlier. Good data must guide the strategy, but to build the strategy, you also need to know what resources you’re working with. Your data collection process will treat unstructured data much like the untrained army we referenced earlier: you need to provide the structure to make sense of and direct the actions of the data (or the army or team).
 
 
+### Make data understandable and easy to work with
 
-*   Flexibility to grow and evolve, e.g. customizable tracking and collecting all event-level data across all data sources
-*   Scalability of technology to serve growing business needs, use cases and changing demands, e.g. moving from on-premise to cloud infrastructure 
-*   Freedom, transparency and lack of lock-in to choose and integrate selected pipeline, warehousing, and other solutions. For example, choosing to own and run the data pipeline and warehousing on one cloud platform (e.g., GCP and BigQuery), while using another cloud provider for other purposes
-*   Data and infrastructure ownership 
+Making data understandable and easy to work with requires understanding the context in which data exists in order to make sense of it. 
 
-Once they successfully developed their centralized data platform, they were able to achieve overarching data goals, such as:
+Good data does not exist without surrounding contextual information, which in data collection often refers to metadata generated when the data itself is collected. Imagine that we’ve collected event data to try to understand a user journey. We can’t fully understand the journey without understanding the events as they relate to each other. This context should also be factored into data collection. 
 
+In addition to the points outlined above, part of why data collection is important is the ability to ensure ease of use. Can you plug your collected data into different analytics tools for analysis? Can you avoid time-consuming, onerous data preparation and cleaning work, i.e. time wasted for data teams? Easy-to-use data is structured data. Can you take steps upfront to define your data collection to ensure that downstream data analysis can be done? If data isn’t easy to work with, what is the likelihood of its being used? These are the questions you should ask if you want to evaluate the true quality of your data. 
 
 
-*   Creating a single source of truth/system of record for data
-*   Making data available as a company-wide, self-serve asset through BI tools, such as Looker
-*   Empowering internal data consumers to make data-informed decisions
-*   Building a path to greater data literacy across the company
+## Business strategies and planning for good data collection
 
 
-## Why break down silos? 
+### Develop a data collection plan
 
-Simplifying and centralizing data is one big step toward breaking down inaccessibility silos and solving the “data all over the place” problem. Frequently cited challenges associated with silos are both technical and organizational. They include difficulties managing data and ensuring data consistency, difficulties gaining access to or socializing data, getting past organizational structures that don’t encourage cooperation. Being able to unpartition data by harmonizing its collection and processing and then distribute/democratize that newly unified data, you can start to realize the unlimited possibilities of your centralized approach.
+Before you start to gather data, there are key planning considerations to feed into a good data strategy. These include
 
 
-### Unlimited possibilities of centralized data
 
-The move to centralized data isn’t only about avoiding inefficient, opaque data silos and compliance and privacy problems. It, first and foremost, helps accomplish what most companies expect of their data: to tell a compelling story, to justify a business decision or strategy, to attribute marketing spend, or understand the full user/customer journey from a single source of truth. Centralized data means that the whole organization works from the same blueprint, avoiding discrepancies that easily arise from disparate data and different tools. For example, marketing and product reporting on the same metrics is done with the same data. 
+*   understanding before you start to collect data what questions you want to answer 
+*   determining the type and amount of data needed to answer these questions, whether it exists or needs to be collected
+*   determining how the data will be collected and from where/what data sources
 
-But it’s also about the future, and being able to harness the right data for more advanced use cases. When data is siloed, limited, or untrustworthy, it’s impossible to expand the scope of applications that can be developed. Possibly more importantly, when the data infrastructure itself inhibits innovation and growth, there is no scaling beyond current use cases. As most businesses are moving in this data-driven direction, where data - sometimes real-time data - will inform development, a centralized data flow will unchain vast possibilities, paving the way forward. 
+This plan will vary, of course, but it is important to align these considerations before you start data collection. You may be tempted to ingest every kind of data you can, dump it in a data lake, and sort it out later. But this is not only time-consuming and ineffective, it runs afoul of best practices in the use of data and is precisely the kind of behavior that has led to mistrust. First and foremost, be thoughtful and judicious about what data you collect and your methods of data storage. 
 
-> **“In every Tourlane team there is a need to understand the customer journey. To get there, we need to understand the whole data flow and have it centralized. We needed a high-quality, reliable single source of truth that every team at Tourlane could come to to get and build what they need.”** - **_Kevin James Parks, Data Engineer, Tourlane_**
 
-Most organizations citing data as key to their growth agree that centralizing data collection creates the path to a single source of truth that cross-organizational teams can rely on to enable cross-functional, diverse use cases and understand their user journeys more thoroughly.
+## Precision data collection: The foundation of your data strategy
 
+Developing a successful data strategy relies on the wisdom to understand that data collection should be as precise an operation as possible. Your organization’s data is one of its most valuable resources, and it depends on [retaining customer trust](https://techcrunch.com/2019/10/10/your-mass-consumer-data-collection-is-destroying-consumer-trust/) and fostering good customer experiences. Thus “precision data usage”, as enabled by responsible data collection methods and data management, will bring far greater long-term value to your business. 
 
 
-## Centralizing data to unify your culture
+    _“It means striving to collect only the consumer data that you really need to give equal or greater value back to your customer — and protecting it. It means no more selling, sharing and buying user data. It means being transparent about your marketing practices._
 
-Many data challenges are related to organizational, possibly historical, and/or cultural issues. They are often human problems. Organizational and cultural change is the linchpin for breaking down many human-oriented barriers to data use. Removing them lets you:
 
+    _Doing so will take your focus off data collection for the sake of data collection and put that focus where it belongs — on understanding your customer’s needs, delivering them more and more value and regaining their trust and respect.” -from [TechCrunch, “Your Mass Consumer Data Collection is Destroying Consumer Trust”](https://techcrunch.com/2019/10/10/your-mass-consumer-data-collection-is-destroying-consumer-trust/)_
 
+The ability to collect and define once but reuse to meet future needs turns your data into a multi-purpose and sustainable asset that fits into a long-term data strategy rather than an ad hoc commodity with a limited shelf life. As challenges to data use and compliant interaction with users’ personal information amass, we want to help you look comprehensively at your data collection to support your sustainable data strategy. 
 
-*   enable cross-organizational access to consistent, single source of truth data
-*   empower a self-serve data culture
-*   ensure data trust, quality and value while relieving burdens to data teams
-*   develop a data-oriented culture while improving user experience
-
- 
-
-A siloed approach to data, its use and consistency, and the tools teams use to work with data ties everyone’s hands. The fundamental action of centralizing data helps to socialize and democratize data to expand a company-wide data mindset and build trust in data across the company and its culture. This ultimately leads to enabling a self-serve culture that gives teams across an organization access to data from the same origin, and helping them to use it by making available different tools, such as Looker for the marketing team and Indicative for the product team.
-
-
-> **“With Snowplow we are focused on extracting and centralizing data from everywhere, ensuring data quality to be able to stitch everything we need together to get a complete picture. That has required developing a tracking and data mindset in the company from scratch.”** - **_Kevin James Parks, Data Engineer, Tourlane_**
-
-
-## Trust: Data quality is the beating heart of centralizing data 
-
-At the heart of the whole data endeavor is trust. It doesn’t really matter if you centralize your data infrastructure and democratize access to data company-wide if you don’t have confidence and trust in the data feeding your data strategies and data-powered activities. Happily, you can also adopt a data quality focus as a part of your move to a centralized data game plan.
-
- 
-
-We talk a lot about [data quality](https://snowplowanalytics.com/lp/data-quality/) and how to achieve it. Why? Time and again we see that the quality of data you collect and put into action influences what comes out. [Incomplete, inaccurate and sloppy data](https://snowplowanalytics.com/blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/) not only makes the work of data analysts more difficult but clearly also messes up analyses, leads to misleading, incorrect, and possibly expensive conclusions and decision-making, erodes value and, ultimately, trust in data teams and the data itself. [How you collect your data](https://snowplowanalytics.com/blog/2017/01/16/data-collection-the-essential-but-unloved-foundation-of-the-data-value-chain/), and prioritizing the importance of this function, is at the heart of achieving data quality; centralizing and making that consistent, high-quality data transparent and accessible across departments contributes to fostering the trust required. 
-
-Analyst firm [Gartner](https://blogs.gartner.com/smarterwithgartner/how-to-stop-data-quality-undermining-your-business/) has also claimed that poor data quality has led companies to direct, significant financial loss - an annual average of up to 15 million USD. Less calculable losses - such as the value of trust in data teams and the work they perform, the tools the company has invested in - deeply affect the level of trust in data, coinciding with many businesses’ operations putting resources and focus on advanced, data-intensive use cases, i.e., the exact wrong time for your trust in data to plummet. 
-
-
-> **“The Snowplow initiative at PEBMED gave us the greatest value in that we could finally track all of our products and events in one place, consistently, and centralize this in a Snowplow-enabled single source of truth, saving effort on the data collection front and ensuring quality on the analytics end.”** - **_Pedro Gemal Lanzieri, CTO, PEBMED_**
-
-
-## Achieve your full data potential 
-
-We believe that a centralized data platform is fundamental to accessing a single source of truth that will allow you to better understand your users’ journeys and behaviors, to tap into more advanced and compelling analytics use cases and to secure your continued competitive advantage.
-
-According to the Snowplow philosophy on data collection, taking a modern and future-proof approach to centralized data should:
-
-
-
-*   ease the collection and unification/centralization of your data 
-*   allow you to own and control your data, which will form the foundation of a flexible data layer that delivers consistent, clean data across systems, tools and teams
-*   enable flexibility and extensibility so your data stack can evolve with your data and business strategies
-*   give you more robust control over data governance and compliance issues, in terms of understanding how and why your data is collected, how it is handled and stored
-
-Taking advantage of the benefits of centralized data, you can achieve the full potential of your data, gain efficiency from streamlined, consistent data, and move squarely into experimental and future-oriented applications, like AI and machine learning.
+In the second part of this blog series, we will dive deeper into the hands-on work of defining and building your dedicated data collection process. This first post aimed to lay the groundwork for understanding the strategic business imperative of doing data collection right, and in the next we will look at what you need to do to get there. As we alluded to earlier in this article, not every analytics solution manages data collection in the same way. We will outline what we believe to be a best-practice approach (which is the Snowplow approach) and explain the steps for putting processes and systems in place that will keep the rhythm of your data collection in step with your data strategy.
