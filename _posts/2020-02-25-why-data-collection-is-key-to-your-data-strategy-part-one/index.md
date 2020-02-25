@@ -1,143 +1,100 @@
 ---
 layout: post
-title-short: Why run a multi-cloud data pipeline?
-title: "Why run a multi-cloud data pipeline?"
-description: "Find out why you should run a multi-cloud pipeline"
+title-short: Why data collection is key to your data strategy - part one
+title: "Why data collection is key to your data strategy - part one"
+description: "How you collect data forms the foundation of your data strategy "
 author: Erika
-category: How to guides
-permalink: /blog/2020/02/25/why-run-a-multi-cloud-data-pipeline/
+category: Data governance
+permalink: /blog/2020/02/25/why-data-collection-is-key-to-your-data-strategy-part-one/
 ---
 
-Who doesn’t love having freedom of choice, and even better - being able to choose more than one thing? If you’re given a choice between chocolate or vanilla, or instead, you actually can have a little bit of both, what’s going to appeal to you more? 
+_The first in a two-part blog series on data collection, and how, done properly, it forms the foundation of your data strategy_.
 
-You have your preferences, and your reasons for those preferences. If you’re thinking about owning and running your own data pipeline, for example, there’s surely a choice-driven, flexibility-loving maverick in you who demands vanilla, chocolate and some unknown third flavor. 
+How do you actually get all the data that populates your data platform and feeds your analytics use cases? That’s right — you have to collect your data somehow. It is becoming increasingly important to pay attention to and make active decisions about _how_ your data is collected. Why? Because the data collection process itself may determine a lot about the data quality you end up with, how much you can do with the data you collect, and how accurate the predictions and insights you make are. 
 
-This call for choice and flexibility is at least in part how we have ended up living in a multi-cloud world. Most enterprises (about 84% according to a [Flexera State of the Cloud survey](https://www.flexera.com/blog/cloud/2019/02/cloud-computing-trends-2019-state-of-the-cloud-survey/)) leverage multiple cloud services to gain competitive advantage and differentiate their offerings. We’ve discussed this shift before, covering the “[why adopt a multi-cloud strategy](https://snowplowanalytics.com/blog/2019/10/31/why-and-how-to-seize-the-multi-cloud-data-analytics-opportunity/)”. Everything from ensuring uptime and robustness to shifting workloads to capture maximum efficiency, cost savings or avoiding vendor lock-in, there are a lot of good reasons for running your infrastructure across clouds. 
+Once upon a time, _no one_ talked about how they collected data, or acknowledged the importance of the data collection process. As use cases have grown more sophisticated, and organizations have begun to understand the importance of owning their data and controlling for data quality, once-ignored data gathering practices are becoming - or should be - a focal point for steering data strategy.  
 
-The multi-cloud world goes well beyond the initial promise of commodity cloud storage and compute power and enables a host of differentiated services. Multi-cloud helps achieve more advanced use cases higher in the stack, letting you move between clouds to get the best of each cloud service without disruption.
+We’ve been [beating the data collection drum](https://snowplowanalytics.com/blog/2017/01/16/data-collection-the-essential-but-unloved-foundation-of-the-data-value-chain/) for a long time, and while keeping the rhythm going has at times been difficult, the beat is starting to be heard more widely.
 
-In the data analytics space specifically, multi-cloud strategies allow for adopting best-in-breed features and differentiators among the major cloud platforms. But at a more granular level, why would a company want to run a multi-cloud data pipeline?
 
+## Why data collection matters
 
-{% include shortcodes/ebook.html background_class="multi-cloud-landingpage" layout="blog" title="Multi-cloud for data analytics white paper" description="Find out how to seize the multi-cloud data analytics opportunity" btnText="Download the white paper" link="https://www.snowplowanalytics.com/lp/multi-cloud/" %}
+You wouldn’t start a military campaign by marching untrained troops into battle, would you? No. The same is true of analytics; you can’t run an analytics function without a data strategy. Analyst firm [Forrester argues that up to 73% of data goes unused for analytics](https://www.inc.com/jeff-barrett/misusing-data-could-be-costing-your-business-heres-how.html); this is arguably because the data strategy is not clear, and data is being collected en masse without clarity as to why it’s collected or how it might be used. Most kinds of organizations need a strategy, underpinned by administrative, logistical and resource planning directives. Your data strategy is not that different. 
 
+Achieving your business goals and strategic aims, and in fact determining these aims, is driven by the data you have, want to have -- and how you collect that data. In essence, you are “training” your data collection process(es) and the organization as a whole to understand that the foundation of data strategy depends on doing data right, which starts with how data is collected. 
 
-## Why would you want to run a multi-cloud data pipeline?
 
-In larger, data-sophisticated organizations, there are often complex requirements for handling data. For example, there will sometimes be a need to: 
+### Own your data 
 
+Regardless of how many data sources, types of data and data collection tools you use, one of the fundamentals of your approach to data collection is [owning your own data](https://snowplowanalytics.com/blog/2019/02/05/how-data-ownership-makes-you-a-more-effective-data-scientist/). If data is as valuable as you (and we) think it is, and is both an asset and a competitive advantage, data ownership, and the way you collect and process it, is essential. Taking control of your data is one of the best ways to make sure you not only own the data but have the freedom and flexibility to process and use data to derive business value from it. 
 
+Owning your complete, raw data and deciding how to process it (e.g., for example, selecting the data pipeline that lets you collect and process data the way you want to) means that you have flexibility over how and what data you ingest, where you store your data, and the use cases you can apply -- and indeed questions you can ask of the data -- both now and in the future. Owning the end-to-end data collection process and underlying infrastructure clears the way to:
 
-*   deliver different subsets of the customer data to different teams, 
-    *   in different applications
-    *   In different formats,
-    *   all with different services level requirements or specifications
 
-You can see how it already starts to get a bit messy. Some examples of these needs in practice could include: 
 
+*   collecting whatever data you want in the format you want within your own infrastructure; deciding what you want your data to look like
+*   traceability and auditability of your data through your pipeline back to when it was created
+*   better oversight and compliance with data governance regulations, such as GDPR and CCPA; companies are required to take more responsibility for the data they collect, and show accountability and justification for why and how they store user data and what they do with it.  
+*   enabling first-party data collection and tracking; because you are collecting data from your own properties, you avoid the problems many third-party analytics tools encounter as browser makers crack down on third-party tracking
+*   accessing your raw, unopinionated data for custom data modeling, usability across use cases and the ability to return to the data to query with new questions or audits
+*   flexibility to plug data into any environment or tool and freedom from supplier lock-in and their product roadmap and feature changes
+*   ensuring data quality, i.e., accuracy and completeness, not just collecting aggregated data samples or pre-determined forms of data, to be able to ask more complex questions.
 
 
-*   An organization wanting a subset of the data delivered at very low latency to deliver high-priority, low-latency reporting, e.g. a newspaper that optimizes its homepage during the day. This might mean streaming a subset of the data into Elasticsearch, or loading a subset of the data into BigQuery, where recomputing data models on a small set of data is computationally efficient; or, running a real-time computation on a subset of the data in-stream and delivering the output to Elasticsearch, DynamoDB or Druid.
-*   A particular team might want a subset of the data available as a feed to power a real-time application or to syndicate with a customer or partner.
-*   A team might want to prototype a new application on a subset of the data before publishing it to production.
-*   Customer or product teams might require access to data collected from customers to improve their experience, and will need more of the customer data than a marketing team, who are only allowed to access data for those users who have opted-in for marketing purposes.
+### Get high-quality data you can rely on
 
-Looking at the breadth of these different use cases, it is not only clear that there’s a certain degree of complexity, but also these different endpoints may well be located in _different clouds_. For example, customer data may live in a BigQuery (GCP) data warehouse, with a data lake in S3 (AWS). 
+Most companies have at least some of their own data, but there’s only so far they will be able to go with it because it lacks the level of quality required for advanced applications. Going beyond basic reporting and analysis, actionable insights come from data assets that can deliver accuracy and completeness. In addition to forming the basis for business decision making, high-quality data is essential for more sophisticated and real-time data initiatives, such as personalization, fraud detection, and machine-learning and AI applications. 
 
-Historically, it has been challenging to break down barriers between different clouds. It has been next to impossible to share data across clouds, creating immediate “cloud silos”. A multi-cloud data pipeline could enable data sharing/streaming on top of the cloud infrastructure to enable the primary function behind the multi-cloud promise: to load destinations on different clouds. Different reasoning powers these decisions:
 
+#### How do we define data quality?
 
+What is [data quality](https://snowplowanalytics.com/blog/2020/02/12/what-is-data-quality-and-why-is-it-important/)? At the most basic level, good data is reliable. Reliable data can be trusted to perform data analysis and make informed decisions. 
 
-*   Taking advantage of cloud-specific tooling
-*   Restrictions on what cloud services you can use for specific purposes
-*   Cost considerations/incentives
+Drilling down into what “reliable” means, we’ve defined the foundations of [“data quality” as “accurate” and “complete”](https://snowplowanalytics.com/blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/). 
 
-Let’s take a closer look at each of these points. 
 
 
-### Benefits of cloud-specific tooling
+*   **Accurate data**. Accurate data must reflect an accurate account of what has happened. For example, if the data suggests that a user viewed item A, we need to be sure that the user was, in fact, looking at A. Data precision also fits under this umbrella; that is, precise data will indicate, for example, that a user viewed an article for two minutes and 10 seconds -- it will not just be rounded down to two minutes. Accuracy helps data analysts easily understand and work with the data, leading to more accurate insights based on that data.
+*   **Complete data**. Complete data should deliver a complete picture of events that occurred from a complete data set without missing data. Whether event tracking failed or an event failed to be tracked in the first place, or new tracking restrictions begin to limit the data flowing in, ensuring complete data has always been -- and continues to grow increasingly -- difficult.
 
-We’ve already highlighted that cloud computing has evolved beyond commoditized offerings, and the major cloud providers (AWS, GCP and Azure) compete on the differentiated tooling they each provide. The ability to pick and choose among these services according to your needs and use them in parallel can be quite compelling. Some examples:
+The data-quality gap often arises because data has not been collected properly in the first place. To get good, high-quality data, the first step is putting in place the processes and systems that generate, collect and store good data. In the past, we’ve compared the importance of good data to building a solid foundation for a house. But it’s also similar to the military (or any high-performing team) analogy we made earlier. Good data must guide the strategy, but to build the strategy, you also need to know what resources you’re working with. Your data collection process will treat unstructured data much like the untrained army we referenced earlier: you need to provide the structure to make sense of and direct the actions of the data (or the army or team).
 
 
-#### AWS
+### Make data understandable and easy to work with
 
+Making data understandable and easy to work with requires understanding the context in which data exists in order to make sense of it. 
 
+Good data does not exist without surrounding contextual information, which in data collection often refers to metadata generated when the data itself is collected. Imagine that we’ve collected event data to try to understand a user journey. We can’t fully understand the journey without understanding the events as they relate to each other. This context should also be factored into data collection. 
 
-*   S3 is well-regarded for data lakes. There are many options available for computing on data stored in S3, including AWS services, such as Athena, EMR, Redshift Spectrum, as well as non-AWS services, such as Databricks and Qubole. 
-*   Real-time processing options are available, such as Lambda + Dynamo and Kinesis Analytics.
+In addition to the points outlined above, part of why data collection is important is the ability to ensure ease of use. Can you plug your collected data into different analytics tools for analysis? Can you avoid time-consuming, onerous data preparation and cleaning work, i.e. time wasted for data teams? Easy-to-use data is structured data. Can you take steps upfront to define your data collection to ensure that downstream data analysis can be done? If data isn’t easy to work with, what is the likelihood of its being used? These are the questions you should ask if you want to evaluate the true quality of your data. 
 
 
-#### GCP
+## Business strategies and planning for good data collection
 
 
+### Develop a data collection plan
 
-*   GCP’s popular BigQuery cloud data warehousing technology enables large-scale storage with built-in ML.
-*   Google’s Cloud Dataflow is a platform for writing real-time batch and stream data processing jobs consistently.
-*   AI Platform enables the building of AI applications that run on GCP and on-premise.
+Before you start to gather data, there are key planning considerations to feed into a good data strategy. These include
 
 
-#### Azure
 
+*   understanding before you start to collect data what questions you want to answer 
+*   determining the type and amount of data needed to answer these questions, whether it exists or needs to be collected
+*   determining how the data will be collected and from where/what data sources
 
+This plan will vary, of course, but it is important to align these considerations before you start data collection. You may be tempted to ingest every kind of data you can, dump it in a data lake, and sort it out later. But this is not only time-consuming and ineffective, it runs afoul of best practices in the use of data and is precisely the kind of behavior that has led to mistrust. First and foremost, be thoughtful and judicious about what data you collect and your methods of data storage. 
 
-*   Microsoft provides analytics tooling that integrates well with Excel and SQL Server.
-*   Event Hubs for big data streaming and event ingestion.
-*   Data Lake Analytics offers advantages over S3, such as support for broader SQL syntax when querying the data lake and enables on-demand, pay-per-job analytics.
-*   Azure Stream Analytics makes it easy to run SQL on streaming data and visualize the output.
 
+## Precision data collection: The foundation of your data strategy
 
-### Restrictions or reservations about specific cloud use 
+Developing a successful data strategy relies on the wisdom to understand that data collection should be as precise an operation as possible. Your organization’s data is one of its most valuable resources, and it depends on [retaining customer trust](https://techcrunch.com/2019/10/10/your-mass-consumer-data-collection-is-destroying-consumer-trust/) and fostering good customer experiences. Thus “precision data usage”, as enabled by responsible data collection methods and data management, will bring far greater long-term value to your business. 
 
-There may be reasons why a particular company or team needs to use a particular cloud, or why they are restricted from or wary about using certain cloud providers or services. For example:
 
+    _“It means striving to collect only the consumer data that you really need to give equal or greater value back to your customer — and protecting it. It means no more selling, sharing and buying user data. It means being transparent about your marketing practices._
 
 
-*   Certain companies are not allowed to use AWS, but are allowed to use Azure, for example
-*   Retailers may look for alternatives to AWS because they compete with Amazon
-*   Media companies may look for alternatives to GCP because they compete with Google
-*   Multi-cloud setups can mean minimizing exposure to a particular cloud, e.g. using AWS just to prepare data but then do the heavy lifting in, e.g. Azure
+    _Doing so will take your focus off data collection for the sake of data collection and put that focus where it belongs — on understanding your customer’s needs, delivering them more and more value and regaining their trust and respect.” -from [TechCrunch, “Your Mass Consumer Data Collection is Destroying Consumer Trust”](https://techcrunch.com/2019/10/10/your-mass-consumer-data-collection-is-destroying-consumer-trust/)_
 
+The ability to collect and define once but reuse to meet future needs turns your data into a multi-purpose and sustainable asset that fits into a long-term data strategy rather than an ad hoc commodity with a limited shelf life. As challenges to data use and compliant interaction with users’ personal information amass, we want to help you look comprehensively at your data collection to support your sustainable data strategy. 
 
-### Cost considerations and incentives 
-
-Cost considerations are always a factor, and choosing one cloud for one purpose, and another cloud for a different purpose may have cost implications. For example:
-
-
-
-*   Third-party endpoints may charge by volume of data sent, making it useful to remove events that aren’t relevant.
-*   Storage targets often charge based on compute required to run a query, or are very expensive for storing large data sets.
-*   Real-time applications have costs that scale up with the volume of processed data.
-
-Reducing data processing to the subset of data that matters most can make it more cost effective than handling the full data set. 
-
-On the other side of the same coin, some cloud providers incentivize use of their platform, e.g. Microsoft offers Azure credits to help grow market share; all three major platforms offer varying levels of marketing support and “credits” to incentivize use and might influence the decision to go for a multi-cloud option.
-
-
-## Should you build-your-own multi-cloud pipeline?
-
-The idea of building your own multi-cloud data pipeline is probably tempting. Cloud technologies have made such undertakings much easier than in the past. Still, some of the aforementioned barriers to multi-cloud exist, including:
-
-
-
-*   **Maintenance**: Do you have the technology in hand to be able to stream data from one cloud to another? Can you maintain and ensure uptime of these streams and of the pipeline itself? 
-*   **Talent**: Building a multi-cloud data pipeline is one thing, but maintaining it is another. The scarcity of data ops talent in the multi-cloud space may stand in the way of building and keeping up a robust multi-cloud pipeline yourself. Do you have the in-house expertise to move data seamlessly and securely across cloud platforms?
-
-Given the challenges of building and maintaining your multi-cloud pipeline yourself weighed against the potential rewards, it might be time to consider another way that lets you retain control and choice, but removes maintenance and talent from the equation. 
-
-
-## Why go for a Snowplow multi-cloud data pipeline?
-
-With the Snowplow multi-cloud pipeline, you get the flexibility to create the pipeline you want with none of the hassle. You can run Snowplow across different clouds in real-time, enabling you to adopt a multi-cloud strategy with access to data and analytics tools across all three clouds: AWS, GCP and Azure. 
-
-**Choose and use**: Leverage best-in-class data warehousing, data discovery, analytics and ML tools from AWS, GCP and Azure to meet each team's unique requirements.
-
-**Get the best of all worlds**: With a global business footprint, cloud services work best when in close geographic proximity to end users. Extend your reach to cloud locations outside of dominant (AWS) locations.
-
-**Break up to speed up**: It is easier to deliver very low latency data and computed metrics if the volumes of data are smaller; breaking the workload up according to needs can provide latency reduction.
-
-**Avoid vendor lock-in**: Free your infrastructure and cloud services from single-cloud silos and cloud provider lock-in.
-
-**Focus on your data, not the pipeline**: With SLAs, 24x7 support, and a focus on data quality, Snowplow will manage your custom multi-cloud pipeline.
-
-Run as private SaaS, i.e., SaaS in a private cloud), a Snowplow multi-cloud data pipeline lets you “build” your own custom pipelines to get exactly the data you want, in the format you want, to the destination you want, while freeing you from having to maintain the multi-cloud service yourself. Snowplow supports you in shifting your data seamlessly across clouds in real time and load the data to your destination of choice.
+In the second part of this blog series, we will dive deeper into the hands-on work of defining and building your dedicated data collection process. This first post aimed to lay the groundwork for understanding the strategic business imperative of doing data collection right, and in the next we will look at what you need to do to get there. As we alluded to earlier in this article, not every analytics solution manages data collection in the same way. We will outline what we believe to be a best-practice approach (which is the Snowplow approach) and explain the steps for putting processes and systems in place that will keep the rhythm of your data collection in step with your data strategy.
