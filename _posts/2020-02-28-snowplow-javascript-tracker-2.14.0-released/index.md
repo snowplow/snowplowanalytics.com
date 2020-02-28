@@ -27,7 +27,7 @@ The JavaScript tracker will, by default, utilise cookies to store an identifer a
 
 Cookies are used in the default tracker configuration and are also used if `stateStorageStrategy` is set to `cookieAndLocalStorage` (default) or `cookie`. If using `localStorage` or `none` then this update has no impact.
 
-With the recent changes in Chrome 80 with regards to the SameSite cookie attribute, [see our blog post][samesite-cookie-update], it has become important in cetain scenarios to be able to control the attributes on your cookies that are set by the JavaScript tracker.
+With the recent changes in Chrome 80 with regards to the SameSite cookie attribute, [see our blog post][samesite-cookie-update], it has become important in certain scenarios to be able to control the attributes on your cookies that are set by the JavaScript tracker.
 
 ### New Default values
 
