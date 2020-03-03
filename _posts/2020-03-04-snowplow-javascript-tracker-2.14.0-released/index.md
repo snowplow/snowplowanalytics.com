@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.14.0
 tags: [snowplow, javascript, tracker]
 author: Paul
 category: Releases
-permalink: /blog/2019/02/28/snowplow-javascript-tracker-2.14.0-released/
+permalink: /blog/2020/03/04/snowplow-javascript-tracker-2.14.0-released/
 discourse: false
 ---
 
