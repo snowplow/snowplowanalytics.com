@@ -96,3 +96,6 @@ Developing a successful data strategy relies on the wisdom to understand that da
 The ability to collect and define once but reuse to meet future needs turns your data into a multi-purpose and sustainable asset that fits into a long-term data strategy rather than an ad hoc commodity with a limited shelf life. As challenges to data use and compliant interaction with users’ personal information amass, we want to help you look comprehensively at your data collection to support your sustainable data strategy. 
 
 In the second part of this blog series, we will dive deeper into the hands-on work of defining and building your dedicated data collection process. This first post aimed to lay the groundwork for understanding the strategic business imperative of doing data collection right, and in the next we will look at what you need to do to get there. As we alluded to earlier in this article, not every analytics solution manages data collection in the same way. We will outline what we believe to be a best-practice approach (which is the Snowplow approach) and explain the steps for putting processes and systems in place that will keep the rhythm of your data collection in step with your data strategy.
+
+
+
