@@ -10,9 +10,9 @@ discourse: false
 ---
 
 We are pleased to announce a new release of the [Snowplow Android Tracker][android-tracker].
-[Version 1.4.0][1.4.0-tag] introduces support for GDPR contexts and tracker diagnostic useful for the troubleshooting in case of unexpected tracker behaviour.
+[Version 1.4.0][1.4.0-tag] introduces support for GDPR contexts and tracker diagnostics, useful for troubleshooting cases of unexpected tracker behaviour.
 
-Also included in this release, a fix to stop IAB enrichment from considering Android tracker events as spider-generated events.
+Also included in this release, a fix to stop the IAB enrichment from considering Android tracker events as spider-generated events.
 
 Read on below for:
 
@@ -58,7 +58,7 @@ Tracker.instance().enableGdprContext(
 
 <h2 id="diagnostic">2. Diagnostic feature for internal error tracking</h2>
 
-The tracker is constantly tested with different platforms and versions but there are rare situations where an error can be reported. The tracker can manage the situation avoiding crashes of the app and assuring that the events are not lost. However, it can report errors to the collector as `diagnostic_error` events.
+The tracker is constantly tested with different platforms and versions but there are rare situations where an error can be reported. The tracker manages errors internally, avoiding crashes of the app and assuring that the events are not lost. However, it can now report errors to a Snowplow collector as `diagnostic_error` events.
 
 To activate this feature you only need to enable `trackerDiagnostic` ([#343][343]):
 
@@ -71,8 +71,8 @@ TrackerBuilder trackerBuilder =
 Tracker.init(trackerBuilder);
 {% endhighlight %}
 
-It will automatically report any internal tracker error. These will be fundamental for the troubleshooting of unexpected behaviour of the tracker.
-The sequence of those events can be sent to the Snowplow support team for analysis in order to spot tracker issues or the source of unexpected behaviour in advance.
+It will automatically report any internal tracker error to the configured Snowplow collector. These will be fundamental for the troubleshooting unexpected behaviour of the tracker.
+For Snowplow Insights customers, the sequence of tracker diagnostic events can be sent to the Snowplow support team for analysis in order to spot tracker issues or the source of unexpected behaviour.
 
 “unstruct_event_com_snowplowanalytics_snowplow_diagnostic_error_1”: {
       “className”: “Tracker”,
@@ -105,9 +105,9 @@ Tracker.init(trackerBuilder);
 
 <h2 id="custompath">4. Make POST path of Emitter configurable</h2>
 
-This is a feature already introduced in the Obj-C tracker at the version 1.1.0, but never released on Android ([#319][319]).
+This is a feature already introduced in the Obj-C tracker as of version 1.1.0, and is now available in the Android tracker ([#319][319]).
 With the new version there is a new `customPostPath` parameter that makes the Emitter configurable.
-It lets to specify a custom path for POST requests useful when the user wants to use a proxy for receiving the events.
+It allows specifying a custom path for POST requests, this is useful when the user wants to use a proxy for receiving the events.
 
 {% highlight java %}
 Emitter emitter =
@@ -129,16 +129,16 @@ Tracker.init(trackerBuilder);
 
 - Bump target Android API to 29 ([#357][357])
 
-We updated the library and the demo app to be fully compatible with Android 10 (API 29). It doesn't introduce any incompatibility with old versions and minimum Android OS version supported still the Android 4.0 (API 14).
+We updated the library and the demo app to be fully compatible with Android 10 (API 29). It doesn't introduce any incompatibility with old versions and minimum Android OS version supported still Android 4.0 (API 14).
 
 - Cannot unset user id from subject ([#353][353])
 
-This bug causes issues when a parameter not required is set to null. In particular it has been reported that the `uid` parameter couldn't be cleared from the Subject once it was set the first time. Now, setting it to `null` clears the parameter.
+This bug causes issues when a parameter that is not required is set to null. In particular it has been reported that the `uid` parameter couldn't be cleared from the Subject once it was set the first time. Now, setting it to `null` clears the parameter.
 
 - The method `Util.getEventId` is deprecated
 
 It is a utility function in the `Util` class able to generate random UUID. It has been renamed to `getUUIDString`.
-The method `getEventId` will be removed in the 2.0 release.
+The method `getEventId` will be removed in the future v2.0 release.
 
 
 
@@ -167,4 +167,3 @@ For help on integrating the tracker please have a look at the setup guide. If yo
 [357]: https://github.com/snowplow/snowplow-android-tracker/issues/357
 [319]: https://github.com/snowplow/snowplow-android-tracker/issues/319
 [353]: https://github.com/snowplow/snowplow-android-tracker/issues/353
-
