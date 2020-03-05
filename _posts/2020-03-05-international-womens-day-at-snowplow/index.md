@@ -4,7 +4,7 @@ title-short:  International Women’s Day at Snowplow
 title: "International Women’s Day at Snowplow"
 description: "We’re putting a spotlight on the talented women of Snowplow"
 author: Nicki
-category: Inside the Plow
+category: Inside the plow
 permalink: /blog/2020/03/05/international-womens-day-at-snowplow/
 ---
 March 8th marks International Women’s Day 2020. At Snowplow, we’re celebrating by putting a spotlight on the talented, passionate and driven women that we have the pleasure of working alongside. 
