@@ -18,7 +18,7 @@ Read on below for:
 
 1. [Tracking GDPR basis for processing with the GDPR context](#gdpr)
 2. [Diagnostic feature for internal error tracking](#diagnostic)
-3. [Fix for IAB enrichment filtering](#iab)
+3. [Fix for IAB enrichment identification](#iab)
 4. [Make POST path of Emitter configurable](#custompath)
 5. [Updates and bug fixes](#updates)
 6. [Documentation](#documentation)
@@ -80,7 +80,7 @@ For Snowplow Insights customers, the sequence of tracker diagnostic events can b
 }
 
 
-<h2 id="iab">3. Fix for IAB enrichment filtering</h2>
+<h2 id="iab">3. Fix for IAB enrichment identification</h2>
 
 As reported [here](https://discourse.snowplowanalytics.com/t/warning-iab-enrichment-treats-android-tracker-events-as-spider-generated/2482) the IAB enrichment incorrectly treats events sent by the Android tracker as spider-generated. This is due to the fact that the default User Agent used by the Android tracker, which is the one of the underlying library used to make HTTP calls (okHttp), is part of the IAB blacklist.
 
