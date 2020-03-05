@@ -5,7 +5,7 @@ title-short: Snowplow JavaScript Tracker 2.14.0
 tags: [snowplow, javascript, tracker]
 author: Paul
 category: Releases
-permalink: /blog/2020/03/04/snowplow-javascript-tracker-2.14.0-released/
+permalink: /blog/2020/03/05/snowplow-javascript-tracker-2.14.0-released/
 discourse: false
 ---
 
@@ -15,9 +15,9 @@ We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js
 
 Read on below for:
 
-1. [Configuring SameSite and Secure cookies](#1.-configuring-samesite-and-secure-cookies)
-2. [Upgrading](#2.-upgrading)
-3. [Documentation and help](#3.-documentation-and-help)
+1. [Configuring SameSite and Secure cookies](#1-configuring-samesite-and-secure-cookies)
+2. [Upgrading](#2-upgrading)
+3. [Documentation and help](#3-documentation-and-help)
 
 <!--more-->
 
@@ -75,7 +75,7 @@ The tracker is available as a published asset in the [2.14.0 Github release][2.1
 
 To upgrade, Snowplow Insights and Open Source users should host the 2.14.0 version of `sp.js` asset on a CDN, and load the tracker from there.
 
-There are no breaking API changes introduced with this release, although to comply with Chrome's latest SameSite update the defaults for cookies attributes set by the tracker are now different as mentioned [above](#1.-configuring-samesite-and-secure-cookies). Previous behaviour can be achieved by using the options specified in [Maintaining existing behaviour](#maintaining-existing-behaviour).
+There are no breaking API changes introduced with this release, although to comply with Chrome's latest SameSite update the defaults for cookies attributes set by the tracker are now different as mentioned [above](#1-configuring-samesite-and-secure-cookies). Previous behaviour can be achieved by using the options specified in [Maintaining existing behaviour](#maintaining-existing-behaviour).
 
 ## 3. Documentation and help
 
