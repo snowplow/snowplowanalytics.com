@@ -6,7 +6,6 @@ description: This article explores two key data quality issues that arise in a b
 author: Lyuba
 category: How to guides
 permalink: /blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/
-featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-How_Optimize_Pipeline.jpg
 thumbnail-image: /assets/img/blog/featured/Thumb-How-Optimize-Pipeline.png
 ---

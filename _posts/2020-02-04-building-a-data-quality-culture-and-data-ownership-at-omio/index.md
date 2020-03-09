@@ -6,7 +6,11 @@ author: Erika
 category: User stories
 permalink: /blog/2020/02/04/building-a-data-quality-culture-and-data-ownership-at-omio/
 discourse: false
+featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Omio.png
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Thumb-Omio.png
 ---
+
 
 When we discuss data quality, we apply the words “complete” and “accurate” to define it. A fundamental step to reaching data quality is being able to own and control your own data. Across industries, companies are finding that the demand for data is increasing to power more complex applications. The more complex the demand, the more important data quality becomes. 
 

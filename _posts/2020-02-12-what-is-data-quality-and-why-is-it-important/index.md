@@ -6,6 +6,9 @@ author: Erika
 category: Data governance
 permalink: /blog/2020/02/12/what-is-data-quality-and-why-is-it-important/
 discourse: false
+featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Data-Quality.png
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Thumb-Data-Quality-Important.png
 ---
 
 

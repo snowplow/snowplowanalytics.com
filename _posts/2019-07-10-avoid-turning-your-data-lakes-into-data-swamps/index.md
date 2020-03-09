@@ -7,7 +7,6 @@ author: Erika
 category: Data insights
 permalink: /blog/2019/07/10/avoid-turning-your-data-lakes-into-data-swamps/
 discourse: true
-featured: true
 pdf: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Data_Lakes_Data_Swamps.jpg
 thumbnail-image: /assets/img/blog/featured/Thumb-Data-Lake-Swamps.png
