@@ -12,7 +12,7 @@ discourse: false
 We are pleased to announce a new release of the [Snowplow Android Tracker][android-tracker].
 [Version 1.4.0][1.4.0-tag] introduces support for GDPR contexts and tracker diagnostics, useful for troubleshooting cases of unexpected tracker behaviour.
 
-Also included in this release, a fix to stop the IAB enrichment from considering Android tracker events as spider-generated events.
+Also included in this release is a fix to stop the IAB enrichment from considering Android tracker events as spider-generated events.
 
 Read on below for:
 
@@ -58,7 +58,7 @@ Tracker.instance().enableGdprContext(
 
 <h2 id="diagnostic">2. Diagnostic feature for internal error tracking</h2>
 
-The tracker is constantly tested with different platforms and versions but there are rare situations where an error can be reported. The tracker manages errors internally, avoiding crashes of the app and assuring that the events are not lost. However, it can now report errors to a Snowplow collector as `diagnostic_error` events.
+The tracker is constantly tested with different platforms and versions but there are rare situations where an error can be reported. The tracker manages errors internally, avoiding crashes of the app and assuring that the events are not lost. Now, the tracker can also report errors to a Snowplow collector as `diagnostic_error` events.
 
 To activate this feature you only need to enable `trackerDiagnostic` ([#343][343]):
 
@@ -71,7 +71,7 @@ TrackerBuilder trackerBuilder =
 Tracker.init(trackerBuilder);
 {% endhighlight %}
 
-It will automatically report any internal tracker error to the configured Snowplow collector. These will be fundamental for the troubleshooting unexpected behaviour of the tracker.
+It will automatically report any internal tracker errors to the configured Snowplow collector. These will be fundamental for troubleshooting unexpected behaviour of the tracker.
 For Snowplow Insights customers, the sequence of tracker diagnostic events can be sent to the Snowplow support team for analysis in order to spot tracker issues or the source of unexpected behaviour.
 
 “unstruct_event_com_snowplowanalytics_snowplow_diagnostic_error_1”: {
@@ -82,9 +82,9 @@ For Snowplow Insights customers, the sequence of tracker diagnostic events can b
 
 <h2 id="iab">3. Fix for IAB enrichment identification</h2>
 
-As reported [here](https://discourse.snowplowanalytics.com/t/warning-iab-enrichment-treats-android-tracker-events-as-spider-generated/2482) the IAB enrichment incorrectly treats events sent by the Android tracker as spider-generated. This is due to the fact that the default User Agent used by the Android tracker, which is the one of the underlying library used to make HTTP calls (okHttp), is part of the IAB blacklist.
+As reported [here](https://discourse.snowplowanalytics.com/t/warning-iab-enrichment-treats-android-tracker-events-as-spider-generated/2482) the IAB enrichment incorrectly treats events sent by the Android tracker as spider-generated. The Android Tracker uses the okHttp library. The default User Agent of that library is in the IAB blacklist, which caused the Android tracker to be seen as spider-generator.
 
-The new Android tracker set a different default User Agent that is not filtered out by the IAB enrichment ([#359][359]). It's always possible to customize the User Agent used by the Android tracker setting the User Agent of the tracker's Subject: `setUserAgent`.
+The new Android tracker sets a different default User Agent that is not filtered out by the IAB enrichment ([#359][359]). It's always possible to customize the User Agent used by the Android tracker by setting the User Agent of the tracker's Subject: `setUserAgent`.
 
 {% highlight java %}
 Subject subject =
@@ -129,7 +129,7 @@ Tracker.init(trackerBuilder);
 
 - Bump target Android API to 29 ([#357][357])
 
-We updated the library and the demo app to be fully compatible with Android 10 (API 29). It doesn't introduce any incompatibility with old versions and minimum Android OS version supported still Android 4.0 (API 14).
+We updated the library and the demo app to be fully compatible with Android 10 (API 29). It doesn't introduce any incompatibility with old versions and the minimum Android OS version supported is still Android 4.0 (API 14).
 
 - Cannot unset user id from subject ([#353][353])
 
