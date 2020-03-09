@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Nasty, brutish and short:  </br> The life of the modern CDO"
+title: "Nasty, brutish and short: The life of the modern CDO"
 description: "How can organizations be better prepared to give CDOs the freedom and responsibility to drive data technologies, teams and culture?"
 author: Ian Thomas
 category: User stories
