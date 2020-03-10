@@ -5,7 +5,7 @@ title-short: Snowplow Android Tracker 1.4.0
 tags: [snowplow, android, tracker]
 author: Alex Benini
 category: Releases
-permalink: /blog/2020/03/05/snowplow-android-tracker-1.4.0-released/
+permalink: /blog/2020/03/10/snowplow-android-tracker-1.4.0-released/
 discourse: false
 ---
 
