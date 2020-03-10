@@ -95,4 +95,10 @@ Omio may eventually transition to a fully distributed structure where each team 
 
 ## How Snowplow helps data teams (of all shapes and sizes)
 
-Whether you already have a thriving data function or you’re looking to expand your data team, here’s how Snowplow can help you power your data journey to success. 
+Whether you already have a thriving data function or you’re looking to expand your data team, here’s how Snowplow can help you power your data journey to success.
+
+
+* **Unified data collection:** Snowplow enables you to unify your data collection strategy and establish a shared tracking methodology across the business. 
+* **Data quality you can trust**: With complete, accurate data from Snowplow, your data team has access to high-quality data they can rely on. 
+* **Empowered data consumers:** Snowplow helps you to empower your data consumers such as analysts and data scientists with clean, well-structured data that’s ready for use. 
+* **Freedom and flexibility:** Snowplow gives you complete freedom to collect and model your data on your terms, with no vendor lock-in or prescribed rules. That means you can manage your data delivery in a way that makes the most sense for your business.
