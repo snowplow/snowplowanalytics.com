@@ -4,7 +4,7 @@ title: "How do you structure your data team?"
 title-short: "How do you structure your data team?"
 description: "A rundown of different ways to structure the data team, with examples from Snowplow customers"
 author: SimonP
-category:  How to guides
+category:  User stories
 permalink: /blog/2020/03/10/how-do-you-structure-your-data-team/
 discourse: false
 ---
