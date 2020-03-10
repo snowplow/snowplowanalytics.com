@@ -654,6 +654,22 @@ section.content .blog-wrap{
 .post-content img{
     margin:15px 0px;
 }
+.post-content table{
+    margin:30px 0px;
+}
+
+.post-content th{
+    background: #F5F7FF;
+}
+
+.post-content th, .post-content td{
+    padding: 15px 20px;
+    border: 1px solid #eae9e9;
+    border-radius: 4px;
+}
+.post-content td{
+    padding: 10px 20px;
+}
 
 
 .post-content figure{

@@ -22,7 +22,7 @@ h3{
 }
 
 
-h4{
+h4,th{
     font-family:'Rubik' !important;
     font-size:22px !important;
     line-height:32px !important;
@@ -40,10 +40,17 @@ h5{
 
 a,strong, a > p{
     font-family:'Karla' !important;
-    font-weight:700;
+    font-weight:700 !important;
     font-size:18px !important;
     line-height:25px !important;
     text-decoration:none!important; 
+}
+blockquote strong{
+    font-weight:400 !important;
+}
+
+blockquote strong em{
+    font-weight:600 !important;
 }
 
 p,input,textarea,button,label,li,b{
@@ -61,7 +68,7 @@ em{
     line-height:28px !important;
 }
 
-.p-small{
+.p-small, td{
     font-family:'Karla' !important;
     font-weight: 400;
     font-size:16px !important;
