@@ -4,7 +4,7 @@ title: "Why data collection is key to your data strategy - Part two"
 title-short: "Why data collection is key to your data strategy - Part two"
 description: "Part two in a series on data collection and how it forms the foundation of your data strategy"
 author: Erika
-category:  How to guides
+category:  Data governance
 permalink: /blog/2020/03/10/why-data-collection-is-key-to-your-data-strategy-part-two/
 discourse: false
 ---
