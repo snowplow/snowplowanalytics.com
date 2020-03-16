@@ -22,7 +22,7 @@ In search of what makes up an ‘ideal’ data team composition, and the optimal
 
 ## Example data team structures
 
-Each company has its own, individual data requirements and a unique approach to organizing the data team. Examples of data team structures that we see among often Snowplow customers include the centralized team, a distributed model and a structure of multiple data teams. 
+Each company has its own, individual data requirements and a unique approach to organizing the data team. Examples of data team structures that we see often among Snowplow customers include the centralized team, a distributed model and a structure of multiple data teams. 
 
 **The centralized data team** is arguably the most straightforward team structure to implement and a go-to for companies who are taking the first steps to become a data-informed organization. This model can lead to a central data ‘platform’ that can serve the rest of the business, enabling data professionals to work towards their own key projects. 
 
