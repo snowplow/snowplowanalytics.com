@@ -717,6 +717,7 @@
     }
     section.testemonial-wrap {
         background: url(../img/global/testemonial-bg-wrap.svg) top left no-repeat;
+    }
 }
 
 @media screen and (max-width: 740px) {
