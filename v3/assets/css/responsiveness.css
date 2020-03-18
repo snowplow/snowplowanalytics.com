@@ -298,7 +298,15 @@
     section.languages .row ul li:nth-of-type(5n){
         margin-right:20px;
     }
-
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.how-row-by-three ul li{
+        width: 250px;
+    }
+    section.main-call-to-action-banner .left{
+        margin-bottom:40px;
+    }
 }
 
 
@@ -460,6 +468,24 @@
      section.testemonial .clients-banner .small-clients-slider{
         max-width:600px;
         
+    }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 40px;
+    }
+
+    /* CTA banner section */
+    
+    section.main-call-to-action-banner .left{
+        width: 100%;
+        margin-bottom:40px;
+    }
+
+    /* How row by three */
+    section.how-row-by-three ul li{
+        width: 220px;
     }
 }
 
@@ -668,13 +694,41 @@
         max-width:450px;
         
     }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 20px;
+    }
+    /* How row by three */
+    section.how-row-by-three ul li{
+        width: 100%;
+        margin-bottom:40px;
+    }
+    section.how-row-by-three ul li:last-of-type{
+        margin-bottom:0px;
+    }
+    
+
+    /* Testemonial-wrap */
+    section.testemonial-wrap{
+        padding-top:40px;
+        padding-bottom:0px;
+    }
+    section.testemonial-wrap {
+        background: url(../img/global/testemonial-bg-wrap.svg) top left no-repeat;
 }
 
 @media screen and (max-width: 740px) {
     .blog-wrap, .sub-heading-smaller-wrap{
         width: 480px;
     }
-
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 5px;
+    }
 }
 
 
@@ -793,6 +847,12 @@
     }
     .hex-bg-left-2x{
         width: 320px;
+    }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap {
+        justify-content: space-around;
     }
 }
 
@@ -983,5 +1043,17 @@
         width: 100%;
     }
 
-    
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+
+    .get-started-v3 .main-form{
+        padding-top:60px;
+    }
+    .get-started-v3 .form-submit .heading h1{
+        text-align:center;
+    }
+    .get-started-v3 .form-submit .heading p{
+        text-align:center;
+    }
 }
