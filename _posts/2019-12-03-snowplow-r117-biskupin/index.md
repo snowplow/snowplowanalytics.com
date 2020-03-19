@@ -191,7 +191,7 @@ enrich:
 
 or directly make use of the new Spark Enrich available at:
 
-[s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.18.0.jar](https://d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
+[s3://snowplow-hosted-assets/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar](https://d2io1hx8u877l0.cloudfront.net/3-enrich/spark-enrich/snowplow-spark-enrich-1.19.0.jar).
 
 It contains the newest Snowplow Common Enrich.
 
