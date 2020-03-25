@@ -5,11 +5,10 @@ title-short: "What are Snowplow events and entities and what makes them so power
 description: "This article explains what events and entities are, and how they allow you to set up your data collection for better data quality, data richness and flexibility so you can derive more value and insights from your data"
 author: Lyuba
 category:  Product features
-permalink: /blog/2020/03/23/what-are-snowplow-events-and-entities-and-what-makes-them-so-powerful/
+permalink: /blog/2020/03/25/what-are-snowplow-events-and-entities-and-what-makes-them-so-powerful/
 discourse: false
 ---
 
-# What are Snowplow events and entities and what makes them so powerful
 
 Events and entities are one of Snowplow’s most unique features. They are a key reason why Snowplow is able to deliver incredibly rich, granular and flexible data. However, Snowplow events and entities differ from the way other vendors collect and organize data which means the concept can be confusing at first. This article explains what events and entities are, and how they allow you to set up your data collection for better data quality, data richness and flexibility so you can derive more value and insights from your data.
 
@@ -50,8 +49,6 @@ You can collect out-of-the-box entities, and entities can have their own propert
 Another useful property of entities, is that multiple entities of the same or different types can be appended to a single event. For example, if a user navigates to your blog and clicks on an article, entities collected with this event might include user information such as a user identifier or the device the user was on when they clicked on the blog. Since the user is likely to carry out other events, such as submitting a form, entities offer an easy way to attach the same entity data across those events. This offers a convenient way to define common entities once, then use those definitions across all your events where those entities are relevant. As a result, a single event can have hundreds of properties; 130 out-of-the-box properties, properties of the custom event, and properties of the entities appended to the event (whether custom or automatic).
 
 For example, in the diagram below a media website can track events to understand video viewership, with entities to provide additional information around when the video was added, the title of the video and what the video is about. Then, you can easily attach the same entity definition to other relevant events instead of having to manually build it each time.
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Explaining-Events0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 ![Events and entities - media example](/assets/img/blog/2020/03/events-entities-media.png)
