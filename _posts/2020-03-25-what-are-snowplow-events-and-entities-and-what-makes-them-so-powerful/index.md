@@ -18,6 +18,7 @@ Events and entities are one of Snowplow’s most unique features. They are a key
 Events and entities describe your users’ behavior and actions. One of your first steps when setting up Snowplow is to define upfront what data you want to collect and what that data will look like. Defining your data structure through events and entities makes it possible to collect granular data shaped to your business and use cases, as well as improve the quality of your data. Let’s take a look at events and entities in more detail.
 
 
+
 ### Events
 
 Similar to other vendors, Snowplow defines an event as anything that can be observed at a particular point in time. This can range from a link click, to commenting on a post or submitting a form. For example, if a user navigates to your website, and clicks on a blog post link, that link click would be recorded as an event.
