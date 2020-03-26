@@ -12,7 +12,7 @@ var validateInput = function(kind, value){
 
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
-
+    console.log('goes here');
     var url = $("#main-form").attr("data-pardotUrl");
     $.ajax({
         url: url,
@@ -27,6 +27,7 @@ var pardotSubmit = function (data){
         ? $('.form-wrap').hide() 
             && $('.thankyou').fadeIn(700)
             // push an event to GTM
+            && console.log('tries to fade in the thank you')
             && dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
         : $('input').addClass('error') 
             && $('#form_submit_button').removeClass('activate-loader')
