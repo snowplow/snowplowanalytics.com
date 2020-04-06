@@ -21,7 +21,7 @@ Read on below for:
 1. [Overview of the change](#1-Overview-of-the-change)
 2. [New failed event format error types](#2-The-new-failed-events-format)
 3. [Using the new format in Mini](#3-Using-the-new-format-in-Snowplow-Mini)
-4. [Additional changes](#4-Additional-changes-in-this-release)]
+4. [Additional changes](#4-Additional-changes-in-this-release)
 5. [Upgrading](#5-Upgrading)
 
 
@@ -64,9 +64,9 @@ With the new format, errors are split out into type (Collector Payload Format, A
 
 By separating failed events into type, it is possible to narrow down where in the pipeline an issue is occurring. For further documentation on each error type see [here](https://docs.snowplowanalytics.com/docs/managing-data-quality/understanding-failed-events/). Below are brief descriptions:
 
-**Schema Violation **- likely the most common for purposes of debugging tracking issues, this event failure will occur if a schema can not be found or if the event or entity does not conform to the schema definition.
+**Schema Violation**- likely the most common for purposes of debugging tracking issues, this event failure will occur if a schema can not be found or if the event or entity does not conform to the schema definition.
 
-**Collector Payload Format **- when the payload sent to the collector is not formatted as expected.
+**Collector Payload Format**- when the payload sent to the collector is not formatted as expected.
 
 **Adaptor** - mostly associated with events sent from Webhooks, an adapter failure is emitted. If there is an unexpected change in the format like a missing field for example.
 
@@ -74,7 +74,7 @@ By separating failed events into type, it is possible to narrow down where in th
 
 **Size Violation** - emitted when the size of the enriched event is too big.
 
-**Enrichment failure **- these failures would occur due to improper configuration of an enrichment.
+**Enrichment failure**- these failures would occur due to improper configuration of an enrichment.
 
 
 ## 3. Using the new format in Snowplow Mini
@@ -103,7 +103,7 @@ In contrast, below is an example of a schema validation error in the Kibana Disc
 
 Looking at the failure messages, the structured `data.failure.messages` gives us the `schemaKey` so we know which schema the event is trying to validate against, in this case the `call_complete` schema. Below that in the `dataReports` object we can see specific validation failure messages like missing but required properties and type errors.
 
-Additionally with the availability of properties such as app_id (application ID) or v_tracker (tracker version) it would be possible to create real-time dashboards in Kibana of failed events by application: \
+Additionally with the availability of properties such as app_id (application ID) or v_tracker (tracker version) it would be possible to create real-time dashboards in Kibana of failed events by application: 
 
 ![alt_text](/assets/img/blog/2020/04/kibana-dash.png "Example of a Kibana dashboard")
 
@@ -125,6 +125,6 @@ For Snowplow Insights customers we will update your mini automatically and let y
 
 For Snowplow Open Source users you can find the setup guides [here](https://docs.snowplowanalytics.com/docs/open-source-components-and-applications/snowplow-mini/snowplow-mini-0-8-0/). 
 
-***nb** - IgluCtl 0.7.0 is required for migrating schema to this new version of Mini. Also, the swagger UI has been removed from this release. 
+**nb** - IgluCtl 0.7.0 is required for migrating schema to this new version of Mini. Also, the swagger UI has been removed from this release. 
 
 While the [full pipeline release](https://snowplowanalytics.com/blog/2020/01/16/snowplow-release-r118-badrows/) with this new format is currently in Beta, this new mini release gives a significant preview ahead of the production release.
