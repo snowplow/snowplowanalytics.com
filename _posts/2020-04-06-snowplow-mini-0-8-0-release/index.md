@@ -83,7 +83,7 @@ To bring to life how different the new format is, let's look at a common example
 
 Here’s what a failed event looks like in Kibana in the old format:
 
-![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/old-format.png "Old format of failed events")
+![alt_text](/assets/img/blog/2020/04/old-format.png "Old format of failed events")
 
 
 Note that:
@@ -98,14 +98,14 @@ Note that:
 
 In contrast, below is an example of a schema validation error in the Kibana Discover view with the new structured format:
 
-![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/new-format.png "Highly structured new format of failed events")
+![alt_text](/assets/img/blog/2020/04/new-format.png "Highly structured new format of failed events")
 
 
 Looking at the failure messages, the structured `data.failure.messages` gives us the `schemaKey` so we know which schema the event is trying to validate against, in this case the `call_complete` schema. Below that in the `dataReports` object we can see specific validation failure messages like missing but required properties and type errors.
 
 Additionally with the availability of properties such as app_id (application ID) or v_tracker (tracker version) it would be possible to create real-time dashboards in Kibana of failed events by application: \
 
-![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/kibana-dash.png "Example of a Kibana dashboard")
+![alt_text](/assets/img/blog/2020/04/kibana-dash.png "Example of a Kibana dashboard")
 
 
 
