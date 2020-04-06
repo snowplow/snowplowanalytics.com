@@ -6,7 +6,7 @@ tags: [snowplow, mini, failed events]
 description: "This release of Snowplow mini comes with the latest onboard components that emit failed events by type of error."
 author: MikeN
 category: Releases
-permalink: /blog/2020/04/08/snowplow-mini-0-8-0-release/
+permalink: /blog/2020/04/06/snowplow-mini-0-8-0-release/
 discourse: false
 ---
 
