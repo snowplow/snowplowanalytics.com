@@ -18,14 +18,14 @@ Read on below for:
 
 
 
-1. Overview of the change
-2. Error types
-3. Working with the new format in the Elasticsearch Kibana interface
-4. Additional changes in version 0.8.0
-5. Upgrading
+1. [Overview of the change](#1-Overview-of-the-change)
+2. [New failed event format error types](#2-The-new-failed-events-format)
+3. [Using the new format in Mini](#3-Using-the-new-format-in-Snowplow-Mini)
+4. [Additional changes](#4-Additional-changes-in-this-release)]
+5. [Upgrading](#5-Upgrading)
 
 
-## Details on the new format of failed events
+## 1. Overview of the change
 
 Snowplow Minis are smaller versions of a full Snowplow pipeline. Typically used for testing changes to your data collection and processing in a safe ‘staging’ environment before making changes to your production pipeline. 
 
@@ -37,12 +37,7 @@ In both cases, Snowplow Mini enables you to test the update in a sandbox environ
 
 You can then see the events land in either a ‘good’ or a ‘bad’ index on the onboard Elasticsearch instance via the Kibana dashboard:
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/mini-00.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/mini-00.png "image_tooltip")
+![alt_text](/assets/img/blog/2020/04/kibana-index.png "Choosing an index in Kibana")
 
 
 Events that land in the good index in Elasticsearch represent the events that would move on to being loaded into your storage target of choice (i.e. your data warehouse like Redshift or BigQuery) on a production pipeline. Conversely, events that land in the bad index would load into storage such as Amazon S3 or Google Cloud Storage. The aim of course is to address any errors that are causing events to land in the bad index.
@@ -60,7 +55,7 @@ Events that land in the good index in Elasticsearch represent the events that wo
 The new format for failed events has been designed to make answering the above questions easy.
 
 
-### The new failed events format
+### 2. The new failed events format
 
 With the new format, errors are split out into type (Collector Payload Format, Adaptor, Tracker Protocol, Size Violation, Validation, Enrichment). These types follow along the main “stages” of data processing in Snowplow pipelines, namely: collection, validation and enrichment.
 
@@ -82,18 +77,13 @@ By separating failed events into type, it is possible to narrow down where in th
 **Enrichment failure **- these failures would occur due to improper configuration of an enrichment.
 
 
-## Using the new format in Snowplow Mini
+## 3. Using the new format in Snowplow Mini
 
 To bring to life how different the new format is, let's look at a common example: an event failing validation against its schema. The old format looks as follows: 
 
 Here’s what a failed event looks like in Kibana in the old format:
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/mini-01.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/mini-01.png "image_tooltip")
+![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/old-format.png "Old format of failed events")
 
 
 Note that:
@@ -108,23 +98,14 @@ Note that:
 
 In contrast, below is an example of a schema validation error in the Kibana Discover view with the new structured format:
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/mini-02.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/mini-02.png "image_tooltip")
+![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/new-format.png "Highly structured new format of failed events")
 
 
 Looking at the failure messages, the structured `data.failure.messages` gives us the `schemaKey` so we know which schema the event is trying to validate against, in this case the `call_complete` schema. Below that in the `dataReports` object we can see specific validation failure messages like missing but required properties and type errors.
 
 Additionally with the availability of properties such as app_id (application ID) or v_tracker (tracker version) it would be possible to create real-time dashboards in Kibana of failed events by application: \
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/mini-03.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/mini-03.png "image_tooltip")
+![alt_text](snowplowanalytics.com/assets/img/blog/2020/04/kibana-dash.png "Example of a Kibana dashboard")
 
 
 
@@ -138,7 +119,7 @@ In this release we've not just updated the format of the failed events. We have 
 *   There is also a resolved issue of Postgres not starting after a breaking change was released in a patch of a docker library used to create the Sn. 
 
 
-## Upgrading
+## 5. Upgrading
 
 For Snowplow Insights customers we will update your mini automatically and let you know when it’s ready. 
 
