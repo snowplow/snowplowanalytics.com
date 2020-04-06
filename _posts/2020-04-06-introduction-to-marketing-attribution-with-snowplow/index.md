@@ -8,19 +8,18 @@ permalink: /blog/2020/04/06/introduction-to-marketing-attribution-with-snowplow/
 discourse: false
 ---
 
+Building out a comprehensive marketing strategy across all channels and platforms, each with varied and complex user journeys, is difficult. Evaluating the effectiveness of your marketing spend and calculating it’s ROI however should not be. 
 
-When you construct a marketing strategy and plan campaigns and tactics to fit within the strategy and achieve your goals, one of the biggest pain points you probably run into is properly accounting for how effective these efforts are. You've invested time and marketing budget into your strategy, but how can you optimize your marketing spend in a multi-touch world, with varied and increasingly complex user journeys, without understanding what works? Marketing attribution helps avoid wasted marketing budget and gets you back on track with properly optimizing marketing spend. 
-
-Many commercial solutions exist that try to tell you how much value your marketing campaigns have created. Two issues that emerge with these solutions are: 
-
+Understanding how your marketing spend is contributing to conversions and sales is crucial in enabling you to continually adapt your strategy to changing customer preferences and the market environment. Many commercial solutions exist to help you understand how your marketing campaigns are performing. However, there are two main issues with many of these solutions: 
 
 
-*   Siloed tools: These solutions are siloed. For example, Facebook gives you an overview of your performance, but it is only that channel in isolation
-*   Holistic tools: These solutions are often one-size-fits-all black boxes that remove your flexibility and control
 
-Snowplow's approach is about putting ownership of your attribution model in your hands, so you can decide your attribution logic and more accurately attribute spend and revenue across different touchpoints.
+*   They are silo-ed. For example, Facebook gives you an overview of your performance on their platform, but it is difficult to compare that to performance of other channels.
+*   They are one-size-fits-all black boxes that remove flexibility and control. For example, Google Analytics attribution can only attribute one channel to each session.
 
-To get you started, we've put together a quick introduction to marketing attribution using Snowplow, focusing on: 
+Snowplow puts you in control of your attributing marketing spend to outcomes. You decide what data goes into your attribution model, you decide what counts as a marketing touch or a conversion across all your channels and platforms, you decide what attribution mechanism you want to use, and you decide how this information is displayed to the various stakeholders in your business.
+
+To get you started, we've put together a quick introduction to marketing attribution on web using Snowplow, focusing on: 
 
 
 
@@ -29,7 +28,7 @@ To get you started, we've put together a quick introduction to marketing attribu
 *   Adding marketing costs (with a Google ads example)
 
 
-# Capturing where users come from
+## Capturing where users come from
 
 Out of the box, the Snowplow JavaScript tracker captures both the page URL and the referrer URL. The [campaign attribution enrichment](https://docs.snowplowanalytics.com/snowplow-insights/enrichments/campaign-attribution-enrichment/) can then parse out any marketing parameters that are present in the page URL, as well as click IDs from Google or other search engines. By default, it looks for the `utm_` fields, but other marketing parameters can be specified as well. The[ referrer parser enrichment](https://docs.snowplowanalytics.com/snowplow-insights/enrichments/referrer-parser-enrichment/) will also classify the referrer. Together, these two enrichments populate the following fields in atomic.events: 
 
@@ -45,10 +44,10 @@ Out of the box, the Snowplow JavaScript tracker captures both the page URL and t
 | mkt_clickid    |    |
 
 
-More information on these fields can be found in Snowplow’s [canonical event model](https://github.com/snowplow/snowplow/wiki/canonical-event-model#221-web-specific-fields). 
+More information on these fields can be found in Snowplow’s [canonical event model](https://github.com/snowplow/snowplow/wiki/canonical-event-model#221-web-specific-fields).
 
 
-# Modeling sessions
+## Modeling sessions
 
 The Snowplow JavaScript tracker also captures a session ID with each event, the `domain_sessionid`, as well as a session index. The session cookie is set against the same domain as the `domain_userid` cookie (a first-party cookie set against the domain the tracking is on). By default, it expires after 30 minutes of inactivity, but a different interval can be picked in the [tracker initialization](https://github.com/snowplow/snowplow/wiki/1-General-parameters-for-the-Javascript-tracker#session-cookie-duration) (i.e. `sessionCookieTimeout: 3600` ).
 
@@ -58,10 +57,11 @@ The session ID is used to model sessions in Snowplow’s [web data model](https:
 
 ![Model Structure](/assets/img/blog/2020/04/model-structure.png)
 
-In the session table, the marketing and referrer information of the first page view in that session is saved. This can be used to attribute conversions in a given session to a specific marketing channel. 
+
+In the session table, the marketing and referrer information of the first page view in that session is saved. This can be used to attribute conversions in a given session to a specific marketing channel.
 
 
-# Adding marketing costs (Google Ads example)
+## Adding marketing costs (Google Ads example)
 
 If marketing costs are pulled into the data warehouse (using an ETL tool such as [Stitch](https://www.stitchdata.com/)), they can be added to the sessions table based on the marketing parameters. For example, if the Google click and keyword performance reports are available, the average cost per click can be added to sessions that originated from a paid Google search using the marketing click ID: 
 
@@ -110,11 +110,14 @@ aw_avg_cpc,
 
 
 
+## Next steps
+
+Once you have developed an understanding of what channels drive customers to your digital products, you can proceed with defining what activities you want to attribute - whether its newsletter signups, pdf downloads, product purchases, subscriptions, etc. This information can also be added to sessions as additional metrics, or flags. The resulting table can then be used as the basis for your various attribution models.
+
+
 ## Marketing attribution with Snowplow
 
-Data is driving more high-stakes decisions across companies and industries, and marketing attribution is no exception. As your user journeys grow more complex, it becomes less likely that siloed or one-size-fits-all commercial tools will deliver what you need to attribute and optimize your marketing spend accurately. Attributing credit to different events in the journey provides evidence of what is and isn't working, but without being able to take charge of your data to choose the attribution model(s) that reflect your customers' journeys (and their touchpoints), you cannot truly understand the real return on your investment. With Snowplow, you have that flexibility.
-
-
+Data is driving more high-stakes decisions across companies and industries, and marketing strategies are no exception. As your channel mix and user journeys grow more complex, it becomes less likely that silo-ed or one-size-fits-all commercial tools will deliver what you need to attribute and optimize your marketing spend accurately. Attributing credit to different events in the journey provides evidence of what is and isn't working, but without being able to take charge of your data to choose the attribution logic that reflects your customers' journeys (and their touchpoints), you cannot truly understand the real return on your investment. With Snowplow, you have that flexibility and control.
 
 
 
