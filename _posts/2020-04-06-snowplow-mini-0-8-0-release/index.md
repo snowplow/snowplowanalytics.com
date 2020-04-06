@@ -18,11 +18,11 @@ Read on below for:
 
 
 
-1. [Overview of the change](#1-Overview-of-the-change)
-2. [New failed event format error types](#2-The-new-failed-events-format)
-3. [Using the new format in Mini](#3-Using-the-new-format-in-Snowplow-Mini)
-4. [Additional changes](#4-Additional-changes-in-this-release)
-5. [Upgrading](#5-Upgrading)
+1. [Overview of the change](#1-overview-of-the-change)
+2. [New failed event format error types](#2-the-new-failed-events-format)
+3. [Using the new format in Mini](#3-using-the-new-format-in-snowplow-mini)
+4. [Additional changes](#additional-changes-in-this-release)
+5. [Upgrading](#5-upgrading)
 
 
 ## 1. Overview of the change
