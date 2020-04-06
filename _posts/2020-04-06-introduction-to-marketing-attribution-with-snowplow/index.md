@@ -14,8 +14,8 @@ Understanding how your marketing spend is contributing to conversions and sales 
 
 
 
-*   They are silo-ed. For example, Facebook gives you an overview of your performance on their platform, but it is difficult to compare that to performance of other channels.
-*   They are one-size-fits-all black boxes that remove flexibility and control. For example, Google Analytics attribution can only attribute one channel to each session.
+*   They are **silo-ed**. For example, Facebook gives you an overview of your performance on their platform, but it is difficult to compare that to performance of other channels.
+*   They are **one-size-fits-all black boxes** that remove flexibility and control. For example, Google Analytics attribution can only attribute one channel to each session.
 
 Snowplow puts you in control of your attributing marketing spend to outcomes. You decide what data goes into your attribution model, you decide what counts as a marketing touch or a conversion across all your channels and platforms, you decide what attribution mechanism you want to use, and you decide how this information is displayed to the various stakeholders in your business.
 
@@ -117,7 +117,7 @@ Once you have developed an understanding of what channels drive customers to you
 
 ## Marketing attribution with Snowplow
 
-Data is driving more high-stakes decisions across companies and industries, and marketing strategies are no exception. As your channel mix and user journeys grow more complex, it becomes less likely that silo-ed or one-size-fits-all commercial tools will deliver what you need to attribute and optimize your marketing spend accurately. Attributing credit to different events in the journey provides evidence of what is and isn't working, but without being able to take charge of your data to choose the attribution logic that reflects your customers' journeys (and their touchpoints), you cannot truly understand the real return on your investment. With Snowplow, you have that flexibility and control.
+**Data is driving more high-stakes decisions across companies and industries, and marketing strategies are no exception. As your channel mix and user journeys grow more complex, it becomes less likely that silo-ed or one-size-fits-all commercial tools will deliver what you need to attribute and optimize your marketing spend accurately. Attributing credit to different events in the journey provides evidence of what is and isn't working, but without being able to take charge of your data to choose the attribution logic that reflects your customers' journeys (and their touchpoints), you cannot truly understand the real return on your investment. With Snowplow, you have that flexibility and control.**
 
 
 
