@@ -3,7 +3,7 @@ layout: post
 title: "Why I Believe in Snowplow"
 description: "Matthew Tod joins the Snowplow Analytics Board of Directors and shares what fuels his belief in Snowplow"
 author: Matthew Tod
-category:  Data insights
+category:  Inside the plow
 permalink: /blog/2020/04/06/why-i-believe-in-snowplow/
 discourse: false
 ---
