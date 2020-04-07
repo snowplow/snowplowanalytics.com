@@ -161,6 +161,19 @@
      section.testemonial .clients-banner .small-clients-slider{
         max-width:800px;
     }
+
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+    .webinar .form-submit .wrap > .left{
+        width: 470px;
+    }
+
+    /* SECTION SPEAKERS  */
+    section.speakers .item .desc{
+        width: 300px;
+    }
 }
 
 
@@ -298,6 +311,39 @@
     section.languages .row ul li:nth-of-type(5n){
         margin-right:20px;
     }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.how-row-by-three ul li{
+        width: 250px;
+    }
+    section.main-call-to-action-banner .left{
+        margin-bottom:40px;
+    }
+
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+    .webinar .form-submit .wrap > .right{
+        width: 400px;
+    }
+    section.main-form .wrap form{
+        padding-left:40px;
+        padding-right:40px;
+        width: 400px;
+    }
+
+    /* SECTION DATA-ANNOUNCEMENT */
+    section.date-announcement .item{
+        width: 100%;
+        margin-left:0px;
+        margin-top:20px;
+    }
+    section.date-announcement .item:first-of-type{
+        margin-top:0px;
+    }
+
 
 }
 
@@ -460,6 +506,47 @@
      section.testemonial .clients-banner .small-clients-slider{
         max-width:600px;
         
+    }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 40px;
+    }
+
+    /* CTA banner section */
+    
+    section.main-call-to-action-banner .left{
+        width: 100%;
+        margin-bottom:40px;
+    }
+
+    /* How row by three */
+    section.how-row-by-three ul li{
+        width: 220px;
+    }
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+    .webinar .form-submit .wrap > .left{
+        width: 415px;
+    }
+    .webinar .form-submit .wrap > .right{
+        width: 320px;
+    }
+    section.main-form .wrap form{
+        width: 320px;
+    }
+
+    /* WEBINAR - FORM */
+    .webinar section.main-form .wrap form button{
+        width: 100%;
+    }
+
+    /* SECTION SPEAKERS  */
+    section.speakers .item .desc{
+        margin-left:10px;
+        width: 280px;
     }
 }
 
@@ -668,13 +755,71 @@
         max-width:450px;
         
     }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 20px;
+    }
+    /* How row by three */
+    section.how-row-by-three ul li{
+        width: 100%;
+        margin-bottom:40px;
+    }
+    section.how-row-by-three ul li:last-of-type{
+        margin-bottom:0px;
+    }
+    
+
+    /* Testemonial-wrap */
+    section.testemonial-wrap{
+        padding-top:40px;
+        padding-bottom:0px;
+    }
+    section.testemonial-wrap {
+        background: url(../img/global/testemonial-bg-wrap.svg) top left no-repeat;
+    }
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+   .webinar section.main-form .hex-3-bg{
+        display:none;
+    }  
+   .webinar .form-submit .wrap > .left{
+        width: 100%;
+    }
+    .webinar .form-submit .wrap > .right{
+        width:  100%;
+    }
+    /* WEBINAR - FORM */
+    .webinar section.main-form .wrap form button{
+        width: 200px;
+    }
+    /* SECTION - SPEAKERS */
+    section.speakers .item .desc{
+        margin-left:20px;
+        width:450px;
+    }
+    /* SECTION DATE-ANNOUNCEMENT  */
+    section.date-announcement{
+        justify-content: space-evenly;
+    }
+    section.date-announcement .item{
+        width: auto;
+        margin-top:0px;
+    }
 }
 
 @media screen and (max-width: 740px) {
     .blog-wrap, .sub-heading-smaller-wrap{
         width: 480px;
     }
-
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap .item{
+        margin:20px 5px;
+    }
 }
 
 
@@ -793,6 +938,29 @@
     }
     .hex-bg-left-2x{
         width: 320px;
+    }
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+    section.logo-banner .wrap {
+        justify-content: space-around;
+    }
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+    /* SECTION - SPEAKERS */
+    section.speakers .item .desc{
+        margin-left:20px;
+        width:340px;
+    }
+    /* SECTION DATE-ANNOUNCEMENT  */
+    section.date-announcement{
+        justify-content: flex-start;
+    }
+    section.date-announcement .item{
+        width: 100%;
+        margin-top:20px;
     }
 }
 
@@ -983,5 +1151,80 @@
         width: 100%;
     }
 
-    
+    /* ===============
+    GET-STARTED-V3 
+    =============== */
+
+    .get-started-v3 .main-form{
+        padding-top:60px;
+    }
+    .get-started-v3 .form-submit .heading h1{
+        text-align:center;
+    }
+    .get-started-v3 .form-submit .heading p{
+        text-align:center;
+    }
+
+    /* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+   /* SECTION - HEADING */
+   .webinar section.main-form .wrap .heading h1{
+       padding-left:0px;
+       text-align:center;
+    }
+    .webinar section.main-form .wrap .heading{
+        text-align:center;
+    }
+
+    /* SECTION - SMALL-DESCRIPTION */
+
+    section.small-description{
+        text-align:center;
+    }
+
+    /* SECTION - SPEAKERS */
+
+    section.speakers h2{
+        text-align:center;
+    }
+    section.speakers .item{
+        justify-content: center;
+    }
+    section.speakers .item .desc{
+        margin-left:0px;
+        width:100%;
+        text-align:center;
+    }
+
+    /* SECTION DATE-ANNOUNCEMENT  */
+
+    section.date-announcement{
+        justify-content: flex-start;
+    }
+    section.date-announcement .item{
+        width: 100%;
+        margin-top:20px;
+    }   
+
+    /* SECTION LIST-INCLUDED */
+
+    section.list-included h2{
+        text-align:center;
+    }
+
+}
+
+
+
+@media screen and (max-width: 360px) {
+    /* ===============
+        WEBINAR - Section alignments
+    =============== */
+
+    /* SECTION DATE-ANNOUNCEMENT  */
+    section.date-announcement {
+        padding:40px 20px;
+    } 
 }

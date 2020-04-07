@@ -7,7 +7,6 @@ author: Simon
 category: Data insights
 permalink: /blog/2019/08/07/time-spent-is-the-most-important-metric-for-media/
 discourse: true
-featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Time_Broken.jpg
 thumbnail-image: /assets/img/blog/featured/Thumb-Time-Broken.png
 ---

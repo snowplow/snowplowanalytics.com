@@ -6,6 +6,9 @@ description: "How to structure event data to maintain data meaning, data quality
 author: Cara Baestlein
 category: Data insights
 permalink: /blog/2020/01/24/re-thinking-the-structure-of-event-data/
+featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Rethink.png
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Thumb-Rethink.png
 ---
 
 

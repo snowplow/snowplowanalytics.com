@@ -6,7 +6,11 @@ author: SimonP
 category: User stories
 permalink: /blog/2020/01/29/leveling-up-the-user-experience-for-a-two-sided-marketplace-at-unsplash/
 discourse: false
+featured: true
+featured-image: /assets/img/blog/featured/SP-Blog-Post-Unsplash.png
+thumbnail-image: /assets/img/blog/featured/SP-Blog-Thumb-Unsplash.png
 ---
+
 
 Improving the user experience is hard work. It involves an ongoing discovery process, sometimes with multiple customer interviews and internal product meetings. It also requires sorting through reams of behavioral data to identify pain points and uncover customer challenges. And that’s before you can even use your findings to improve the experience for your users. But what about when you have two distinct types of users doing entirely different things? 
 

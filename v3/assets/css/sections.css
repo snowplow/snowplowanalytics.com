@@ -420,12 +420,11 @@ article .content .bottom > img{
   
 }
 
-
-
 .highlighter-rouge{
-    background:#e8f8ff
+    background:#e8f8ff;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 13px;
 }
-
 
 /* === ARTICLES BACK BUTTON === */
 
@@ -639,13 +638,25 @@ section.content .blog-wrap{
 
 .post-content ul{
     margin:25px 0px;
-    list-style-type: circle;
-    list-style-position: inside;
-    list-style-image: url(../img/global/list-dot.svg);
+}
+
+
+.post-content li:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position:absolute;
+    left:0px;
+    top:8px;
+    background:url(../img/global/list-dot.svg) no-repeat;
+
 }
 
 .post-content li{
     margin:5px 0px;
+    padding-left:20px;
+    box-sizing: border-box;
+    position:relative;
 }
 
 .post-content li ol, .post-content li ul{
@@ -654,6 +665,22 @@ section.content .blog-wrap{
 
 .post-content img{
     margin:15px 0px;
+}
+.post-content table{
+    margin:30px 0px;
+}
+
+.post-content th{
+    background: #F5F7FF;
+}
+
+.post-content th, .post-content td{
+    padding: 15px 20px;
+    border: 1px solid #eae9e9;
+    border-radius: 4px;
+}
+.post-content td{
+    padding: 10px 20px;
 }
 
 
@@ -1721,6 +1748,11 @@ section.pipeline-showcase .full{
    MAIN-CALL-TO-ACTION-BANNER
    =============== */
 
+.main-call-to-action-banner{
+    background-image: linear-gradient(217deg, #44CEB1 0%, #5973B6 53%, #653CB9 94%);
+    padding:40px 0px;
+}
+
 .main-call-to-action-banner .full{
     display:flex;
     flex-flow:row wrap;
@@ -1733,8 +1765,12 @@ section.pipeline-showcase .full{
 .main-call-to-action-banner .full .left{
     max-width:750px;
 }
+.main-call-to-action-banner .full .left h2{
+    color:#ffffff;
+}
 .main-call-to-action-banner .full .left p{
     margin-top:10px;
+    color:#ffffff;
 }
 .main-call-to-action-banner .full .right{
     max-width:200px;
@@ -1808,4 +1844,219 @@ section.languages .row ul li img{
 
 section.languages .row:last-of-type{
     margin-bottom:120px;
+}
+
+
+/* ===============
+   GET-STARTED-LP
+   =============== */
+
+.get-started main{
+    margin-bottom:0px;
+}
+
+
+/* Hero Section Get started */
+
+.get-started-v3 .main-form{
+    padding:100px 0px;
+    margin:40px 0px 0px 0px;
+    background: url(../img/get-started/get-started-hero.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.get-started header{
+    background: #FFFFFF;
+    box-shadow: 0 5px 11px 5px rgba(102,102,102,0.06);
+}
+
+.get-started header .navbar-right{
+    display:none;
+}
+
+
+.get-started-v3 .main-form .form-wrap h2{
+    text-align:center;
+    padding-bottom:30px;
+}
+
+
+/* #Logo banner */
+
+section.logo-banner{
+    margin-top:0px;
+    padding:40px 0px;
+}
+
+section.logo-banner .wrap{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+section.logo-banner .wrap .item{
+    display:flex;
+    align-items: center;
+}
+
+
+
+
+/* SECTION how-row-by-three */
+
+section.how-row-by-three ul{
+    display:flex;
+    margin:80px 0px;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+section.how-row-by-three ul li{
+    width: 300px;
+    text-align:center;
+}
+
+section.how-row-by-three ul li img{
+    height: 200px;
+    margin-bottom:20px;
+    width: auto;
+}
+section.how-row-by-three ul li p{
+    margin-top:10px;
+}
+
+
+/* Customer testemonial modification .get-started-v3 */
+
+
+section.testemonial-wrap{
+    background:url(../img/global/testemonial-bg-wrap.svg) no-repeat center top;
+    padding:140px 0px 60px 0px;;
+}
+
+
+
+
+/* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+
+.webinar section.main-form .hex-3-bg{
+    top:100px;
+    background-size: 80%;
+    background-position: right top;
+}  
+
+
+.webinar section.main-form .wrap{
+    align-items: unset;
+}
+
+.webinar section.main-form{
+    margin-bottom:80px;
+}
+
+.webinar .form-submit .wrap > .left{
+    width: 620px;
+}
+
+.webinar .form-submit .wrap > .left section{
+    margin-top:60px;
+}
+
+/* Section Webinar heading  */
+
+.webinar section.main-form .wrap .heading{
+    width: 100%;
+
+}
+
+.webinar section.main-form .wrap .heading h1{
+    margin-top:20px;
+}
+
+.webinar section.main-form .wrap .heading p{
+    margin-top:20px;
+}
+
+
+/* Section Webinar Speakers */
+
+section.speakers h2{
+    margin-bottom:50px;
+}
+
+section.speakers .item{
+    width: 100%;
+    margin-bottom:25px;
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+}
+
+section.speakers .item .desc{
+    width: 460px;
+    margin-left:30px;
+}
+
+section.speakers .item .desc h4{
+    margin-bottom:10px;
+}
+
+section.speakers .item:last-of-type{
+    margin-bottom:0px;
+}
+
+section.speakers .item .profile{
+    width: 115px;
+    height: 115px;
+    border-radius: 255px;
+    overflow:hidden;
+}
+
+section.list-included h2{
+    margin-bottom:30px;
+}
+
+/* SECTION - date-announcement */
+
+section.date-announcement{
+    display:flex;
+    flex-flow: row wrap;
+    margin: 60px 0px 40px 0px;
+    padding:40px;
+    box-sizing: border-box;
+}
+
+section.date-announcement .item{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left:40px;
+}
+
+section.date-announcement .item:first-of-type{
+    margin-left:0px;
+}
+
+
+section.date-announcement .item .desc{
+    margin-left:20px;
+}
+
+
+/* SECTION - WEBINAR FORM ADJUSTMENTS */
+
+.webinar section.main-form .wrap form {
+    padding-bottom:130px;
+}
+
+.webinar section.main-form .wrap form .form-wrap > h3{
+    text-align:center;
+    margin-bottom:40px;
 }

@@ -88,11 +88,10 @@
     	} 
 
     	// phone
-    	//var phone = $('#sales-phone').val(); 
-    	//if (phone.length == 0) {
-    	//	$('#sales-phone').next('.help-inline').html('Please enter a phone number.').show();
-    	//	error_count++;
-    	//} 
+    	var phone = $('#sales-phone').val(); 
+    	// if (phone.length == 0) {
+    	// 	$('#sales-phone').next('.help-inline').html('Please enter a phone number.').show();
+    	// } 
 		
     	// Company
     	var company = $('#sales-company').val(); 
@@ -118,7 +117,7 @@
 		        firstName: first_name,
 		        lastName: last_name,
 		        email: email,
-		        //phone: phone,
+		        phone: phone,
 		        //job_title: (type == '0') ? 'Other' : type,
 		        // job_title: typeSales,
 		        company: company,
@@ -179,6 +178,7 @@
       		document.getElementById("sales-work-email").setAttribute("name","email");
       		document.getElementById("sales-company").setAttribute("name","company");
        		document.getElementById("sales-message").setAttribute("name","message");			
+       		document.getElementById("sales-phone").setAttribute("name","phone");			
       		// document.getElementById("sales-type").setAttribute("name","job_title");
       		document.getElementById("inputLeadSource").setAttribute("name","lead_source");
 			document.getElementById("inputLeadSourceWebsite").setAttribute("name","00N2400000JSExF");

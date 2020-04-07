@@ -6,7 +6,6 @@ description: "Finally, travel companies can get an accurate view of the end-to-e
 author: Erika
 category: User stories
 permalink: /blog/2019/08/29/mapping-the-customer-journey-with-complete-picture-data/
-featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Mapping_Customer_Journey.jpg
 thumbnail-image: /assets/img/blog/featured/Thumb-Customer-Touchpoint.png
 ---
