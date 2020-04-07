@@ -638,13 +638,25 @@ section.content .blog-wrap{
 
 .post-content ul{
     margin:25px 0px;
-    list-style-type: circle;
-    list-style-position: inside;
-    list-style-image: url(../img/global/list-dot.svg);
+}
+
+
+.post-content li:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position:absolute;
+    left:0px;
+    top:8px;
+    background:url(../img/global/list-dot.svg) no-repeat;
+
 }
 
 .post-content li{
     margin:5px 0px;
+    padding-left:20px;
+    box-sizing: border-box;
+    position:relative;
 }
 
 .post-content li ol, .post-content li ul{
@@ -1925,3 +1937,126 @@ section.testemonial-wrap{
     padding:140px 0px 60px 0px;;
 }
 
+
+
+
+/* ===============
+        WEBINAR - Section alignments
+   =============== */
+
+
+.webinar section.main-form .hex-3-bg{
+    top:100px;
+    background-size: 80%;
+    background-position: right top;
+}  
+
+
+.webinar section.main-form .wrap{
+    align-items: unset;
+}
+
+.webinar section.main-form{
+    margin-bottom:80px;
+}
+
+.webinar .form-submit .wrap > .left{
+    width: 620px;
+}
+
+.webinar .form-submit .wrap > .left section{
+    margin-top:60px;
+}
+
+/* Section Webinar heading  */
+
+.webinar section.main-form .wrap .heading{
+    width: 100%;
+
+}
+
+.webinar section.main-form .wrap .heading h1{
+    margin-top:20px;
+}
+
+.webinar section.main-form .wrap .heading p{
+    margin-top:20px;
+}
+
+
+/* Section Webinar Speakers */
+
+section.speakers h2{
+    margin-bottom:50px;
+}
+
+section.speakers .item{
+    width: 100%;
+    margin-bottom:25px;
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+}
+
+section.speakers .item .desc{
+    width: 460px;
+    margin-left:30px;
+}
+
+section.speakers .item .desc h4{
+    margin-bottom:10px;
+}
+
+section.speakers .item:last-of-type{
+    margin-bottom:0px;
+}
+
+section.speakers .item .profile{
+    width: 115px;
+    height: 115px;
+    border-radius: 255px;
+    overflow:hidden;
+}
+
+section.list-included h2{
+    margin-bottom:30px;
+}
+
+/* SECTION - date-announcement */
+
+section.date-announcement{
+    display:flex;
+    flex-flow: row wrap;
+    margin: 60px 0px 40px 0px;
+    padding:40px;
+    box-sizing: border-box;
+}
+
+section.date-announcement .item{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left:40px;
+}
+
+section.date-announcement .item:first-of-type{
+    margin-left:0px;
+}
+
+
+section.date-announcement .item .desc{
+    margin-left:20px;
+}
+
+
+/* SECTION - WEBINAR FORM ADJUSTMENTS */
+
+.webinar section.main-form .wrap form {
+    padding-bottom:130px;
+}
+
+.webinar section.main-form .wrap form .form-wrap > h3{
+    text-align:center;
+    margin-bottom:40px;
+}
