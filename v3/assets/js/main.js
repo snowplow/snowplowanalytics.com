@@ -3,7 +3,7 @@ var validateInput = function(kind, value){
     value = value ? value.trim() : ''
     switch(kind) {
         case 'not_empty':
-            return (value.length > 1 )
+            return (value.length > 1)
         case 'email':
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
     }
@@ -53,12 +53,13 @@ var handleSubmit = function(e){
                 !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
             
             default:
-                if(this.name != 'message'){
+                if(this.name == 'first_name'){
                     !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
                 }
         }
         // Populate data with input values
         data[this.name] =  this.value;
+        
     });
     // If validation passes - run api call
     pass && $('#form_submit_button').addClass('activate-loader') 
