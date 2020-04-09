@@ -60,6 +60,20 @@ There are two command: ```npm run watch``` and ```npm run livereload```. Both co
 
 ```npm run livereload``` command updates website in the browser in its own. It refreshes website as soon as Webpack and Jekyll builds website after file changes were detected. It takes some time, and then your opened web page in the browser gets updated.
 
+If you want to publish an article, please use 
+
+```bash
+ npm run start
+```
+
+or 
+
+```bash
+ npm run watch
+```
+
+This will allow jekyll to completely rebuild categories and new blog articles.
+
 ## Running Jekyll without autoprefixer
 
 You may want to run Jekyll without AutoPrefixer plugin to improve Jekyll performance.
