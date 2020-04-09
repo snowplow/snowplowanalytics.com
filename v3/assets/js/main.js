@@ -48,18 +48,15 @@ var handleSubmit = function(e){
     });
     $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
-        switch(this.name){
-            case 'email':
-                !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
-            
-            default:
-                if(this.name == 'first_name'){
-                    !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
-                }
+        if(this.name == 'email'){
+            !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
+        }
+
+        if(this.name == 'first_name'){
+            !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
         }
         // Populate data with input values
         data[this.name] =  this.value;
-        
     });
     // If validation passes - run api call
     pass && $('#form_submit_button').addClass('activate-loader') 
