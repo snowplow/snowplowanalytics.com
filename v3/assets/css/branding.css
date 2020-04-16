@@ -82,3 +82,13 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a,table,td,th,tr{
 #button-login-header-page{
     color: #50545c !important;
 }
+
+
+/* ABM Landing pages heading text color */
+.abm section.sub-hero .wrap h1{
+    color:#ffffff;
+}
+
+.abm section.sub-hero .wrap .accent{
+    color:#ffffff;
+}
