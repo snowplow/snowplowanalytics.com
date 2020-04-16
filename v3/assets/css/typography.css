@@ -115,6 +115,11 @@ footer .active a{
     font-weight:700 !important;
 }
 
+section.testemonial .single em{
+    font-size:26px !important;
+    line-height:34px !important;
+}
+
 
 
 @media screen and (max-width: 808px) {

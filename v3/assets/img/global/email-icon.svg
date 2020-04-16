@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="22px" viewBox="0 0 29 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>mail</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Landingpage---v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ABM-Landing-Page---Media" transform="translate(-367.000000, -4748.000000)" fill="#45C6CA" fill-rule="nonzero">
+            <g id="Group-21" transform="translate(362.000000, 3926.000000)">
+                <g id="Form-section" transform="translate(0.000000, 404.000000)">
+                    <g id="Group-15" transform="translate(5.000000, 418.000000)">
+                        <g id="mail">
+                            <path d="M26.4511719,0 L2.54882812,0 C1.14516016,0 0,1.13926154 0,2.53846154 L0,19.4615385 C0,20.856 1.1400625,22 2.54882812,22 L26.4511719,22 C27.8513281,22 29,20.8645744 29,19.4615385 L29,2.53846154 C29,1.144 27.8599375,0 26.4511719,0 Z M26.099207,1.69230769 L14.5540352,13.1905795 L2.90900586,1.69230769 L26.099207,1.69230769 Z M1.69921875,19.1111179 L1.69921875,2.88081538 L9.88259961,10.9610205 L1.69921875,19.1111179 Z M2.90073633,20.3076923 L11.0892715,12.1524615 L13.9585156,14.9854974 C14.2906562,15.3134667 14.8266465,15.3123949 15.1574277,14.9829026 L17.9550781,12.1966308 L26.0992637,20.3076923 L2.90073633,20.3076923 Z M27.3007812,19.1110615 L19.1565957,11 L27.3007812,2.88888205 L27.3007812,19.1110615 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

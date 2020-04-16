@@ -2060,3 +2060,223 @@ section.date-announcement .item .desc{
     text-align:center;
     margin-bottom:40px;
 }
+
+
+/* ABM LANDING PAGE ADJUSTMENTS */
+.abm navbar{
+    background: none !important;
+}
+
+.abm .navbar-brand{
+    color:#fff !important;
+}
+.scrolled .navbar-brand{
+    color:#505461 !important;
+}
+.abm section.sub-hero{
+        background: url(../img/abm/natgeo/abm-natgeo-header.png) no-repeat top; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-top:-60px;
+}
+.abm section.sub-hero .full{
+    display:flex;
+    justify-content: center;
+}
+.abm section.sub-hero .wrap{
+    padding: 120px 0px;
+}
+
+.abm section.sub-hero .wrap h1{
+    margin-top:20px;
+}
+
+
+.abm section.sub-hero .full img{
+    max-width: 530px;
+}
+
+.abm section.sub-hero .wrap{
+    background:none;
+}
+
+.abm header.lp-header .lp-nav .lp-cta{
+    padding: 16px 20px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    font-size:16px !important;
+}
+
+.abm header .navbar>.container .navbar-brand, header .navbar>.container-fluid .navbar-brand{
+    margin-top:5px;
+}
+
+/* SECTION - CUSTOMERS-SIMPLE */
+section.customers-simple .hex-bg-left-2x{
+    width: 398px;
+    height: 703px;
+    top:-73px;
+}
+section.customers-simple .wrap{
+    padding:60px 0px;
+}
+section.customers-simple .full{
+    max-width:900px;
+    margin-bottom:20px;
+    margin:0px auto;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+}
+section.customers-simple .full img{
+    margin:20px 30px;
+}
+
+section.customers-simple .heading-subsection-center{
+    margin-bottom:80px;
+}
+
+/* SECTION - ABM MAIN-FORM */
+
+.abm .main-form .hex-3-bg{
+    max-height: 1031px;
+    width: 900px;
+    top: -268px;
+}
+
+/* SECTION - ABM MAIN-FORM  - ACCOUNT-BOX */
+
+.main-form .account-box .desc{
+    display:flex;
+    flex-flow:row wrap;
+    margin-top:40px;
+    align-items: center;
+}
+
+.main-form .account-box .desc .img{
+    border-radius:255px;
+    width: 145px;
+    height: 145px;
+    overflow:hidden;
+    margin-right:25px;
+}
+.main-form .account-box .desc .img img{
+    width: 100%;
+    height:auto;
+}
+
+.main-form .account-box .desc .text{
+    width: 200px;
+}
+
+.main-form .account-box .contact-details{
+    margin-top:30px;
+}
+
+.main-form .account-box .contact-details div{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom:15px;
+}
+.main-form .account-box .contact-details div img{
+    margin-right:15px;
+}
+.main-form .account-box .contact-details div p{
+    margin-bottom:0px;
+}
+.main-form .account-box .contact-details .location img{
+    margin-right:21px;
+}
+/* SECTION - CONTENT-BLOCK */
+
+section.content-block .top-border{
+    overflow:hidden;
+    border-radius: 9px 9px 0px 0px;
+}
+section.content-block .bottom-border{
+    overflow:hidden;
+    border-radius: 0px 0px 9px 9px;
+}
+section.content-block .quote{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+}
+section.content-block .quote .left{
+    width: 50%;
+    background:#F5F7FF;
+    padding:40px;
+    box-sizing: border-box;
+    height: 300px;
+}
+section.content-block .quote .left img{
+    margin:40px 0px 20px 0px;
+}
+section.content-block .quote > img{
+    width: 50%;
+    min-height:300px;
+}
+
+
+/* SECTION - EXPLORE */
+
+section.content-block .explore{
+    display:flex;
+    flex-flow:row wrap;
+} 
+section.content-block .explore > div {
+    display:flex;
+    flex-flow:row wrap;
+    width: 50%;
+    height: 300px;
+} 
+section.content-block .explore .half-quote .desc{
+    width: 50%;
+    padding:25px;
+    box-sizing: border-box;
+    position:relative;
+} 
+section.content-block .explore .half-quote .desc h4{
+    margin-bottom:20px;
+}
+section.content-block .explore .half-quote .desc .full{
+    padding:25px;
+    box-sizing: border-box;
+    position:absolute;
+    bottom:25px;
+    left:0px;
+    width: 100%;
+}
+section.content-block .explore .half-quote > img{
+    width: 50%;
+} 
+
+section.content-block .explore > a{
+    width: 50%;
+}
+
+section.content-block .explore article{
+    margin:0px;
+    width: 100%;
+}
+
+section.content-block .explore article{
+    display:flex;
+    flex-flow:row wrap;
+}
+section.content-block .explore article .content{
+    width: 50%;
+}
+section.content-block .explore article > img{
+    width: 50%;
+}
+
+section.content-block .explore article .content h4{
+    margin-top:15px !important;
+    min-height:150px;
+}
