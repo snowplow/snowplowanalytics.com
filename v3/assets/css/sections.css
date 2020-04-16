@@ -2107,6 +2107,7 @@ section.date-announcement .item .desc{
     font-weight: 600 !important;
     line-height: 1 !important;
     font-size:16px !important;
+    margin-top:3px;
 }
 
 .abm header .navbar>.container .navbar-brand, header .navbar>.container-fluid .navbar-brand{
@@ -2123,7 +2124,6 @@ section.customers-simple .wrap{
     padding:60px 0px;
 }
 section.customers-simple .full{
-    max-width:900px;
     margin-bottom:20px;
     margin:0px auto;
     display:flex;
@@ -2259,7 +2259,9 @@ section.content-block .explore .half-quote > img{
 section.content-block .explore > a{
     width: 50%;
 }
-
+section.content-block .explore > a:hover .bottom > img{
+    right:0px;
+}
 section.content-block .explore article{
     margin:0px;
     width: 100%;
