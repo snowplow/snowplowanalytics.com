@@ -1351,7 +1351,7 @@
    }
    section.content-block .explore article .content{
        padding:20px 0px;
-       w100%;
+       width: 100%;
    }
    section.content-block .explore .half-quote .desc{
        padding:20px 0px;
