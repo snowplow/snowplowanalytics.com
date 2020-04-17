@@ -2181,7 +2181,9 @@ section.customers-simple .heading-subsection-center{
 .main-form .account-box .desc .text{
     width: 200px;
 }
-
+.main-form .account-box .desc .text p{
+    margin-bottom:0px;
+}
 .main-form .account-box .contact-details{
     margin-top:30px;
 }
