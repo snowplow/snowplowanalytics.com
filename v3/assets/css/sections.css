@@ -2062,8 +2062,14 @@ section.date-announcement .item .desc{
 }
 
 
-/* ABM LANDING PAGE ADJUSTMENTS */
-.abm navbar{
+/* ===============
+    ABM LANDING PAGE
+=============== */
+
+.abm .lp-header{
+    display:none;
+}
+.abm .navbar{
     background: none !important;
 }
 
@@ -2093,8 +2099,12 @@ section.date-announcement .item .desc{
     margin-top:20px;
 }
 
-
+.abm section.sub-hero .full{
+    padding:0px 20px;
+    box-sizing: border-box;
+}
 .abm section.sub-hero .full img{
+    width: 100%;
     max-width: 530px;
 }
 

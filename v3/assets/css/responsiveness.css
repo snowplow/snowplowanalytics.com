@@ -174,6 +174,13 @@
     section.speakers .item .desc{
         width: 300px;
     }
+    /* ===============
+        ABM LANDING PAGE
+   =============== */
+
+    .abm section.main-form .wrap .heading{
+        width: 400px;
+    }
 }
 
 
@@ -344,7 +351,87 @@
         margin-top:0px;
     }
 
+    /* ABM LANDINGPAGE AJUSTMENTS */
+    
 
+    /* SECTION - CONTENT-BLOCK */
+    section.content-block .wrap{
+        max-width:500px;
+    }
+    section.content-block .quote{
+        flex-flow:column-reverse;
+        width: 100%;
+    }
+    section.content-block .quote .left{
+        width: 100%;
+        height:auto;
+    }
+    section.content-block .quote > img{
+        width: 100%;
+        min-height:auto;
+    }
+    section.content-block .quote .left img{
+        margin-top:0px;
+    }
+    
+    section.content-block .top-border,section.content-block .bottom-border{
+        border-radius:0px;
+    }
+
+    section.content-block .quote{
+        margin-bottom:40px;
+    }
+
+    section.content-block .explore > div{
+        width: 100%;
+    }
+    section.content-block .explore > a{
+        width: 100%;
+        margin-bottom:40px;
+    }
+    section.content-block .explore .half-quote{
+        height:auto;
+        margin-bottom:40px;
+    }
+    section.content-block .explore .half-quote > img{
+        width: 150px;
+        height: 150px;
+    }
+    section.content-block .explore .half-quote .desc{
+        width: 70%;
+        padding:10px;
+    }
+    section.content-block .explore .half-quote .desc .full{
+        display:none;
+    }
+    section.content-block .explore article .content {
+        width: 70%;
+        padding:10px;
+    }
+    section.content-block .explore article > img{
+        width: 30%;
+        min-height:auto;
+    }
+    section.content-block .explore article{
+        width: 100% !important;
+    }
+    section.content-block .explore article .content h4{
+        min-height:auto;
+        margin-top:10px !important;
+    }
+    article .content .bottom{
+        margin-top:10px;
+    }
+    article .content .bottom > img{
+        right:25px;
+    }
+    /* SECTION CUSTOMERS-SIMPLE */
+    section.customers-simple .wrap{
+        padding:0px;
+    }
+    section.customers-simple .hex-bg-left-2x{
+        top:45px;
+    }
 }
 
 
@@ -808,6 +895,19 @@
         width: auto;
         margin-top:0px;
     }
+    /* ===============
+        ABM LANDING PAGE
+   =============== */
+   
+
+   /* FORM SECTION */
+   .abm section.main-form .wrap .heading{
+       width: 100%;
+       margin-top:80px;
+   }
+   .abm section.main-form .wrap .heading br{
+       display:none;
+   }
 }
 
 @media screen and (max-width: 740px) {
@@ -962,6 +1062,16 @@
         width: 100%;
         margin-top:20px;
     }
+    /* ===============
+        ABM LANDING PAGE
+   =============== */
+
+   section.content-block .explore .half-quote .desc{
+       width: 320px;
+   }
+   section.content-block .explore article .content{
+       width: 320px;
+   }
 }
 
 
@@ -1214,6 +1324,74 @@
         text-align:center;
     }
 
+    /* ===============
+        ABM LANDING PAGE
+   =============== */
+
+   section.content-block{
+       margin-top:40px;
+   }
+   section.content-block .explore .half-quote .desc{
+       width: 100%;
+   }
+   section.content-block .explore .half-quote{
+       flex-flow:column-reverse
+   }
+   section.content-block .explore .half-quote > img{
+       width: 100%;
+       height:auto;
+   }
+   section.content-block .explore article{
+       flex-flow:column-reverse;
+   }
+   section.content-block .explore article > img{
+       width: 100%;
+       height:auto;
+       max-height: 600px; !important;
+   }
+   section.content-block .explore article .content{
+       padding:20px 0px;
+       w100%;
+   }
+   section.content-block .explore .half-quote .desc{
+       padding:20px 0px;
+   }
+   .abm customers-simple{
+       margin-top:0px;
+   }
+   /* SECTION CUSTOMERS-SIMPLE */
+   section.customers-simple .hex-bg-left-2x{
+       display:none;
+   }
+   .abm section.customers-simple .heading-subsection-center{
+       margin-bottom:20px;
+   }
+   .abm section.customers-simple{
+       margin-top:20px;
+   }
+
+   /* SECTION EXPLORE */
+   .abm .explore .post-content ul{
+       margin-bottom:0px;
+   }
+   /* FORM ACCOUNT BOX */
+   .main-form .account-box .contact-details div p {
+        margin-bottom: 0px;
+        font-size: 16px !important;
+        width: 230px;
+    }
+    .main-form .account-box .desc{
+        justify-content: center;
+    }
+    .main-form .account-box .desc .img{
+        margin-right:0px;
+    }
+    .main-form .account-box .desc .text{
+        text-align:center;
+    }
+    .abm section.main-form .wrap .heading{
+        text-align:center;
+    }
 }
 
 
