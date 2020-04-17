@@ -21,17 +21,17 @@ This release introduces breaking changes to how data is tracked - users are enco
 
 Read on below the fold for:
 
-1. [Aggregating Page Views](#page-view-agg)
-  1.1 [Page Ping Tracking](#page-pings)
-  1.2 [Web Page Entity](#wp-entity)
-  1.3 [Modeling Considerations](#modeling-pvs)
-2. [Mapping User Journeys](#user-journeys)
-  2.1 [AMP ID Entity](#amp-id-entity)
-  2.2 [AMP Linker](#amp-linker)
-  2.3 [Modeling Considerations](#modeling-users)
-3. [Custom Events](#custom-events)
-4. [Custom Entities](#custom-entities)
-5. [Changes to existing behaviour](#change-existing)
+- 1. [Aggregating Page Views](#page-view-agg)
+  - 1.1 [Page Ping Tracking](#page-pings)
+  - 1.2 [Web Page Entity](#wp-entity)
+  - 1.3 [Modeling Considerations](#modeling-pvs)
+- 2. [Mapping User Journeys](#user-journeys)
+  - 2.1 [AMP ID Entity](#amp-id-entity)
+  - 2.2 [AMP Linker](#amp-linker)
+  - 2.3 [Modeling Considerations](#modeling-users)
+- 3. [Custom Events](#custom-events)
+- 4. [Custom Entities](#custom-entities)
+- 5. [Changes to existing behaviour](#change-existing)
 
 
 <!--more-->
@@ -60,7 +60,7 @@ Note that the value provided is the AMP-provided [Page View ID 64](https://githu
 
 Therefore, aggregating on this value alone will not produce the same results as the javascript tracker page view id.
 
-<h3 id="modeling-considerations"> 1.3 Modeling Considerations</h3>
+<h3 id="modeling-pvs"> 1.3 Modeling Considerations</h3>
 
 The data provided on AMP differs from that of the Javascript tracker, and thus should be modeled differently.
 
@@ -175,47 +175,12 @@ The previous instrumentation used the canonical url, which didn't contain the qu
 AMP offers only one means of recording a timestamp, which is not likely to conform to the time of sending events. The device created timestamp is now used instead of device sent.
 
 
-
-Other updates and bugfixes include:
-
-- Core: Send focus_form 'type' field as 'elementType' ([#731][731])
-- Update Sauce Connect version ([#735][735])
-- Ensure that the intended version is deployed ([#739][739])
-
-<h2 id="upgrade">4. Upgrading</h2>
-
-The tracker is available as a published asset in the [2.11.0 Github release][2.11.0-tag]:
-
-To upgrade, host the `sp.js` asset in a CDN, and call the tracker from there.
-
-There are no breaking API changes introduced with this release.
-
-<h2 id="doc">5. Documentation and help</h2>
-
-Check out the JavaScript Tracker's documentation:
-
-* The [setup guide][setup]
-* The [full API documentation][docs]
-
-The [v2.11.0 release page][2.11.0-tag] on GitHub has the full list of changes made
-in this version.
-
-Finally, if you run into any issues or have any questions, please
-[raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
-
-[amp-tracker-docs]:
+[amp-tracker-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/
 [amp-ping-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/#page-pings
-
 [amp-ping-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_page_ping/jsonschema/1-0-0
-
 [amp-var-subs]: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
-
 [cust-events-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/?preview_id=1788&preview_nonce=b0ddfb27ea&preview=true#custom-events
-
 [cust-entities]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/?preview_id=1788&preview_nonce=b0ddfb27ea&preview=true#customcontexts
-
 [amp-wp-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_web_page/jsonschema/1-0-0
-
 [amp-id-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_id/jsonschema/1-0-0
-
 [cd-linker]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/
