@@ -1347,7 +1347,7 @@
    section.content-block .explore article > img{
        width: 100%;
        height:auto;
-       max-height: 600px; !important;
+       max-height: 600px !important;
    }
    section.content-block .explore article .content{
        padding:20px 0px;
