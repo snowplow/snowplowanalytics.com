@@ -41,18 +41,24 @@ var handleSubmit = function(e){
     e.preventDefault();
     var data = {};
     var pass = 1;
-    
+
+    // Default values for form validation
+    var fieldsToValidate = ['email','first_name'];
+
     // Populate DUID
     window.snowplow && window.snowplow(function () {
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
+
+    // Change the validation array if the page is pricing page
+    $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
+
     $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
         if(this.name == 'email'){
             !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
         }
-
-        if(this.name == 'first_name'){
+        if($.inArray(this.name, fieldsToValidate) !== -1){
             !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
         }
         // Populate data with input values
