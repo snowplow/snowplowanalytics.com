@@ -2080,12 +2080,19 @@ section.date-announcement .item .desc{
     color:#505461 !important;
 }
 .abm section.sub-hero{
-        background: url(../img/abm/natgeo/abm-natgeo-header.png) no-repeat top; 
+        margin-top:-60px;
+        background: url(../img/abm/natgeo/abm-natgeo-header.png) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        margin-top:-60px;
+}
+
+.abm section.cbs-hero{
+    background: url(../img/abm/cbs/abm-cbs-header.png) no-repeat center center;
+}
+.abm section.global-hero{
+    background: url(../img/abm/global/abm-global-header.png) no-repeat center center;
 }
 .abm section.sub-hero .full{
     display:flex;
@@ -2107,6 +2114,8 @@ section.date-announcement .item .desc{
     width: 100%;
     max-width: 530px;
 }
+
+
 
 .abm section.sub-hero .wrap{
     background:none;
@@ -2232,6 +2241,7 @@ section.content-block .quote .left img{
 section.content-block .quote > img{
     width: 50%;
     min-height:300px;
+    object-fit:cover;
 }
 
 
@@ -2246,6 +2256,7 @@ section.content-block .explore > div {
     flex-flow:row wrap;
     width: 50%;
     height: 300px;
+    object-fit:cover;
 } 
 section.content-block .explore .half-quote .desc{
     width: 50%;
@@ -2266,6 +2277,7 @@ section.content-block .explore .half-quote .desc .full{
 }
 section.content-block .explore .half-quote > img{
     width: 50%;
+    object-fit:cover;
 } 
 
 section.content-block .explore > a{
@@ -2288,6 +2300,7 @@ section.content-block .explore article .content{
 }
 section.content-block .explore article > img{
     width: 50%;
+    object-fit:cover;
 }
 
 section.content-block .explore article .content h4{
