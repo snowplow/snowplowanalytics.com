@@ -10,7 +10,7 @@ discourse: false
 ---
 
 We are pleased to announce a new release of the [Snowplow iOS Tracker][objc-tracker].
-[Version 1.3.0][1.3.0-tag] it's an important release that introduces Global Contexts, GDPR contexts and support of Swift Package Manager thanks to the contribute of [@vauxhall][contributor]. Swift Package Maanger completes the list of supported dependency managers, which already includes Cocoapods and Carthage. 
+[Version 1.3.0][1.3.0-tag] is an important release that introduces Global Contexts, GDPR contexts and support for the Swift Package Manager thanks to the contribution of [@vauxhall][contributor]. Swift Package Maanger completes the list of supported dependency managers, which already includes Cocoapods and Carthage. 
 
 Read on below for:
 
@@ -30,23 +30,23 @@ We are happy to announce the integration of Global Contexts feature in the iOS t
 
 <h3>1.1 A quick recap on contexts</h3>
 
-Contexts are entities tracked across multiple events. They are particularly important as they can add value to the event tracking multiple informations accordingly with a related schema. The schema can specify the kind of data tracked with the context. Tipical contexts are: session, geolocation, page and screen views, device informations, user details.
+Contexts are entities tracked across multiple events. They are particularly important as they add value to the event through tracking extra information accord to a related schema. The schema will specify the kind of data tracked with the context. Typical contexts are: session, geolocation, page and screen views, device informations, user details.
 
-Some of the contexts are tracked out-of-the-box but it's possible to add some custom contexts tracking other domain specific data. There is no limit to the number of contexts attached to the events.
-Obviously, not all the contexts suit every event. Some of the contexts can make sense only on specific events and it's up to the developer handling these cases.
+Some of the contexts are tracked out-of-the-box but it's possible to add custom context tracking to other domain specific events. There is no limit to the number of contexts attached to the events.
+Not all contexts suit every event. Some of the contexts only make sense on specific events and it's up to the developer to handle these cases.
 
 <h3>1.2 Introducing Global Contexts</h3>
 
-Until now the developer needed to programmatically attach custom contexts to each specific event. The _global contexts_ feature helps the developer making this operation declarative.
-The developer can declare which contexts have to be attached to which events and the tracker will take care to attach the contexts to the events when needed as declared by the developer.
+Prior to this release, developers needed to programmatically attach custom contexts to each specific event. The _global contexts_ feature helps the developer making this operation declarative.
+The developer can declare which contexts have to be attached to which events and the tracker will take care of attaching the contexts to the events when required as declared by the developer.
 
-* It makes it easier for developers to implement Snowplow to track very rich data in an easy way.
-* It makes the tracking less error-prone - it is not significantly less likely that an event will accidentally be sent without a required context attached.
+* It makes it easier for developers to implement very rich data tracking with Snowplow.
+* It makes the tracking less error-prone - it is less likely that an event will accidentally be sent without a required context attached.
 * That in turn makes it easier for analysts and developers consuming the data, because they can be confident to expect certain events from particular platforms to always have the required contexts attached.
 
 <h3>1.3 Getting started with Global Contexts</h3>
 
-As explained above, the _global contexts_ are particularly helpful when the developer wants to associated specific contexts to all the events or a subset of them, rather than adding the contexts manually to each event tracked.
+As explained above, the _global contexts_ are particularly helpful when the developer wants to associate specific contexts to all the events or a subset of them, rather than adding the contexts manually to each event tracked.
 This can be done at tracker setup declaring the contexts generator and the suitable subset of events.
 
 {% highlight objc %}
@@ -66,7 +66,7 @@ SPTracker *tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
 }];
 {% endhighlight %}
 
-The methods `setGlobalContextGenerators:` can be used to set up the generators able to create contexts. For each context generator is associated a tag string.
+The method `setGlobalContextGenerators:` can be used to set up the generators which are able to create contexts. Each context generator is associated a tag string.
 The tag string can be used to remove a generator at runtime using the method `removeGlobalContext`.
 
 {% highlight objc %}
@@ -99,8 +99,8 @@ SPGlobalContext *staticGC = [[SPGlobalContext alloc] initWithStaticContexts:@[
 <h5>Context Generator Callback</h5>
 
 A context generator callback returns an array of self describing JSONs, representing contexts.
-They are evaluated each time an event is sent, hence they meet the case where we would like to send a context based on event informations.
-`SPInspectableEvent` is an interface that expose internal data of the event processed: event name, schema and payload.
+They are evaluated each time an event is sent, hence they meet the case where we would like to send a context based on event information.
+`SPInspectableEvent` is an interface that exposes internal data of the event processed: event name, schema and payload.
 
 {% highlight objc %}
 SPGlobalContext *blockGC = [[SPGlobalContext alloc] initWithGenerator:^NSArray<SPSelfDescribingJson *> *(id<SPInspectableEvent> event) {
@@ -114,8 +114,8 @@ SPGlobalContext *blockGC = [[SPGlobalContext alloc] initWithGenerator:^NSArray<S
 
 <h4>1.3.2 Conditional Context Providers</h4>
 
-The previous approaches considered the generation of contexts associated to every events.
-However, there are cases where the contexts have to be applied to certain events only. 
+The previous examples described the generation of contexts that are associated to every event.
+However, there are cases where the contexts should only be applied to certain events. 
 
 <h5>Filter Callback</h5>
 
@@ -158,15 +158,15 @@ They follow the same five-part format as an Iglu URI:
 protocol:vendor/event_name/format/version
 {% endhighlight %}
 
-with the exception that a wildcard can be used in an allowed fashion to refer to all applying cases.
+with the exception that a wildcard can be used to refer to all cases.
 
 The parts of a rule are wildcarded with certain guidelines:
 
 * asterisks cannot be used for the protocol (i.e. schemas always start with `iglu:`).
 
-* version matching must be specified like so: *-*-*, where any part of the versioning can be defined, e.g. 1-*-*, but only sequential parts are to be wildcarded, e.g. 1-*-1 is invalid but 1-*-* is valid.</li><li>at least two parts parts: `com.acme.*` is valid, while `com.*` is not.
+* version matching must be specified like so: *-*-*, where any part of the versioning can be defined, e.g. 1-*-*, but only sequential parts can be wildcarded, e.g. 1-*-1 is invalid but 1-*-* is valid.</li><li>at least two parts parts: `com.acme.*` is valid, while `com.*` is not.
 
-* vendors cannot be defined with non-wildcarded parts between wildcarded parts: com.acme.*.marketing.* is invalid, while com.acme.*.\https://zoom.us/j/779696786* is valid.
+* vendors cannot be defined with non-wildcarded parts between wildcarded parts: com.acme.*.marketing.* is invalid, while com.acme.*.* is valid.
 
 <h5>Context Generator</h5>
 
@@ -192,7 +192,7 @@ In case the logic for filter and generator callbacks are too complex, it's possi
 @end
 {% endhighlight %}
 
-In this case the logic about filtering and generation is encapsulated behind a context generator class.
+In this case the logic for filtering and generation is encapsulated behind a context generator class.
 
 {% highlight objc %}
 @interface GlobalContextGenerator: NSObject <SPContextGenerator>
@@ -234,7 +234,7 @@ It takes the following arguments:
 |        `documentVersion` | Version of the document        | No            | String   |
 | `documentDescription` | Description of the document | No            | String   |
 
-The required basisForProcessing accepts only the following literals: `consent`, `contract`, `legal_obligation`, `vital_interests`, `public_task`, `legitimate_interests` - in accordance with the [five legal bases for processing](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/)
+The required basisForProcessing accepts only the following literals: `consent`, `contract`, `legal_obligation`, `vital_interests`, `public_task`, `legitimate_interests` - in accordance with the [five legal bases for processing](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/).
 
 The GDPR context is enabled by calling the `setGdprContextWithBasis:documentId:documentVersion:documentDescription:` method of the tracker builder or by calling the `enableGdprContextWithBasis:documentId:documentVersion:documentDescription:` method once the tracker has been initialised.
 
@@ -253,25 +253,25 @@ SPTracker *tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
 
 <h2 id="spm">3. Swift Package Manager support</h2>
 
-The Swift Package Manager is the official Apple's dependency manager designed for Swift libraries. Since Xcode 11 SPM is compatible with the iOS build system contributing to enlarge the mobile developers interst around this new dependency manager that will compete against the largely longtime used Cocoapods and Carthage.
-Thanks to the important contribute of [@vauxall][contributor] we have introduced the support of Swift Package Manager for our iOS tracker ([#474][474]). At the moment it supports only the iOS platform due to some limitations that we will resolve in the future releases, but it still is a great adding for our mobile tracker and a great contribute from our active community.
+The Swift Package Manager is the official Apple dependency manager designed for Swift libraries. Since Xcode 11, SPM is compatible with the iOS build system.
+Thanks to the important contribution from [@vauxall][contributor], we have introduced the support of Swift Package Manager for our iOS tracker ([#474][474]). At the moment it supports only the iOS platform due to some limitations that we will resolve in future releases, but it is a great option for adding our mobile tracker and a great contribution from our active community.
 
 To install Snowplow Tracker with SPM:
-1. in your Xcode select File > Swift Packages > Add Package Dependency
-2. set the repository: https://github.com/snowplow/snowplow-objc-tracker
-3. add the modules to your project's targets on General tab > _Frameworks, Libraries & Embedded Content_ section
+1. In Xcode, select File > Swift Packages > Add Package Dependency
+2. Add the repository of: https://github.com/snowplow/snowplow-objc-tracker
+3. Add the modules to your project's targets in the General tab > _Frameworks, Libraries & Embedded Content_ section
  
 <h2 id="deprecated">4. Deprecated methods</h2>
 
 On this release we marked few methods as deprecated:
 
-- SPEvent - `eventId`: This shouldn't be used as it can cause ambiguity about event duplication. That will be set only by the tracker. If your code set its own eventId we suggest to record your custom event ID in a custom context associated to all the events.
+- SPEvent - `eventId`: This shouldn't be used as it can cause ambiguity about event duplication. This property will be set only by the tracker. If your code sets its own eventId we suggest to record your custom event ID in a custom context associated to all the events.
 
-- SPEvent - `timestamp`: In future major versions we will remove the ability to override the timestamp of the event. That will be set only by the tracker. A custom timestamp can be eventually added using a different method or parameter in a future release.
+- SPEvent - `timestamp`: In a future major version we will remove the ability to override the timestamp of the event. That will be set only by the tracker. A custom timestamp can be eventually added using a different method or parameter in a future release.
 
 - SPEvent - `addDefaultParamsToPayload:`: This shouldn't be used as it's an internal method used by the tracker and it can be subject of future changes. 
 
-Other few methods can be set as deprecated because mostly related to internal logic of the tracker. We strongly suggest to avoid use of methods marked deprecated as they will be substituted or removed in the next major version.
+Other methods have also been marked as deprecated because they are related to internal logic of the tracker. We strongly suggest avoiding the use of these methods marked deprecated as they will be substituted or removed in the next major version.
 
 
 <h2 id="updates">5. Updates and bug fixes</h2>
