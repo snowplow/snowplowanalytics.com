@@ -263,7 +263,7 @@ To install Snowplow Tracker with SPM:
  
 <h2 id="deprecated">4. Deprecated methods</h2>
 
-On this release we marked few methods as deprecated:
+In this release we've marked a few methods as deprecated:
 
 - SPEvent - `eventId`: This shouldn't be used as it can cause ambiguity about event duplication. This property will be set only by the tracker. If your code sets its own eventId we suggest to record your custom event ID in a custom context associated to all the events.
 
