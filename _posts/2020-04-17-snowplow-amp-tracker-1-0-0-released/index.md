@@ -38,7 +38,7 @@ Read on below the fold for:
 
 <h2 id="page-view-agg">1. Aggregating Page Views</h2>
 
-Page ping tracking and the AMP web page context have now been added to the AMP tracker, to enable users to track and aggregate page views, along a similar vein to tracking in a traditional web environment.
+Page ping tracking and the AMP web page context have now been added to the AMP tracker, to enable users to track and aggregate page views, along a similar vein to doing so using the Snowplow Javascript Tracker.
 
 <h3 id="page-pings"> 1.1 Page Ping Tracking</h3>
 
@@ -77,7 +77,7 @@ User identification using AMP is now significantly improved, and functionality h
 
 The AMP ID entity is a new feature to Snowplow tracking, with a specific purpose of making it easier to identify users on the AMP platform, and across AMP and non-AMP pages. By default, the AMP ID entity will be attached to all events, against the [AMP ID schema][amp-id-schema].
 
-This will contain the ampClientId (the consistent identifier for users on the AMP platform), the `user_id` if set, and the `domain_userid`.
+This will contain the ampClientId (the consistent identifier for users on the AMP platform), the `user_id` if set, and the `domain_userid`, if provided by the Javascript tracker's cross-domain linker. (The AMP tracker does not generate a domain_userid).
 
 The `domain_userid` can be made available to the AMP tracker when a user moves from a javascript tracker page to an AMP page, by enabling the javascript tracker's [cross-domain tracking][cd-linker] feature. The javascript tracker will attach the domain userid to the querystring, and the AMP tracker will automatically retrieve it and attempt to retain it across pages.
 
@@ -85,7 +85,7 @@ Note that while the AMP tracker attempts to retain the domain userid across page
 
 <h3 id="amp-linker"> 2.2 AMP Linker</h3>
 
-The AMP tracker now offers the ability to attach the AMP client ID to the querystring, in order to identify users moving from an AMP page to a non-AMP page. This is enabled bby ensuring that the AMP linker is enabled for any destination domains required:
+The AMP tracker now offers the ability to attach the AMP client ID to the querystring, in order to identify users moving from an AMP page to a non-AMP page. This is enabled by ensuring that the AMP linker is enabled for any destination domains required:
 
 {% highlight html %}
 ...
@@ -106,7 +106,7 @@ The value attached to the querystring by the AMP linker will look something like
 
 This value will only be present for the first page the user lands on after leaving the AMP page.
 
-If a `domain_userid` is found by the AMP tracker, it is not guaranteed to be attached to every event. Therefore, a good strategy for modeling user identification on both sides is to create a mapping table of dmoain_userid to amp-id, and join this to the rest of the data to attribute users.
+If a `domain_userid` is found by the AMP tracker, it is not guaranteed to be attached to every event. Therefore, a good strategy for modeling user identification on both sides is to create a mapping table of domain_userid to amp-id, and join this to the rest of the data to attribute users.
 
 
 <h2 id="custom-events">3. Custom Events</h2>
@@ -152,7 +152,7 @@ Custom entities can be attached to any event by assigning a full self-describing
   "customContexts":  "{\"schema\":\"iglu:com.acme/first_context/jsonschema/1-0-0\",\"data\":{\"someKey\":\"someValue\"}},{\"schema\":\"iglu:com.acme/second_context/jsonschema/1-0-0\",\"data\":{\"someOtherKey\":\"someOtherValue\"}}"
 {% endhighlight %}
 
-Note that custom entities may be assigned gloablly (ie, for the entire tracking configuration rather than per-trigger) - however once one is assigned globally, more may not be added individually per-trigger.
+Note that custom entities may be assigned globally (ie, for the entire tracking configuration rather than per-trigger) - however once one is assigned globally, more may not be added individually per-trigger.
 
 
 Documentation can be found [here][cust-entities]
