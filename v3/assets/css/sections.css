@@ -2094,12 +2094,31 @@ section.date-announcement .item .desc{
 .abm section.global-hero{
     background: url(../img/abm/global/abm-global-header.png) no-repeat center center;
 }
+
+.abm section.cup-hero{
+    background: url(../img/abm/cup/abm-cup-header.png) no-repeat center center;
+}
+
+.abm section.disney-hero{
+    background: url(../img/abm/disney/abm-disney-header.png) no-repeat center -700px;
+}
+.abm section.elsevier-hero{
+    background: url(../img/abm/elsevier/abm-elsevier-header.png) no-repeat center center;
+}
+.abm section.warnermedia-hero{
+    background: url(../img/abm/warnermedia/abm-warnermedia-header.png) no-repeat center center;
+}
+
+.abm section.buzzfeed-hero{
+    background: url(../img/abm/buzzfeed/abm-buzzfeed-header.png) no-repeat center center;
+}
+
 .abm section.sub-hero .full{
     display:flex;
     justify-content: center;
 }
 .abm section.sub-hero .wrap{
-    padding: 120px 0px;
+    padding: 160px 0px;
 }
 
 .abm section.sub-hero .wrap h1{
