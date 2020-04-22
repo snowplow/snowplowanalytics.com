@@ -2113,6 +2113,21 @@ section.date-announcement .item .desc{
     background: url(../img/abm/buzzfeed/abm-buzzfeed-header.png) no-repeat center center;
 }
 
+
+.abm section.schibsted-hero{
+    background: url(../img/abm/schibsted/abm-schibsted-header.png) no-repeat center center;
+}
+
+
+.abm section.telegraph-hero{
+    background: url(../img/abm/telegraph/abm-telegraph-header.png) no-repeat 0px -544px;
+}
+
+.abm section.dailymail-hero{
+    background: url(../img/abm/dailymail/abm-dailymail-header.png) no-repeat center center;
+}
+
+
 .abm section.sub-hero .full{
     display:flex;
     justify-content: center;
