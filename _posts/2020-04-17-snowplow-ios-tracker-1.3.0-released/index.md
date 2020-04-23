@@ -5,12 +5,12 @@ title-short: Snowplow iOS Tracker 1.3.0
 tags: [snowplow, objc, ios, tracker]
 author: Alex Benini
 category: Releases
-permalink: /blog/2020/04/17/snowplow-ios-tracker-1.3.0-released/
+permalink: /blog/2020/04/24/snowplow-ios-tracker-1.3.0-released/
 discourse: false
 ---
 
 We are pleased to announce a new release of the [Snowplow iOS Tracker][objc-tracker].
-[Version 1.3.0][1.3.0-tag] is an important release that introduces Global Contexts, GDPR contexts and support for the Swift Package Manager thanks to the contribution of [@vauxhall][contributor]. Swift Package Maanger completes the list of supported dependency managers, which already includes Cocoapods and Carthage. 
+[Version 1.3.0][1.3.0-tag] is an important release that introduces Global Contexts, GDPR contexts and support for the Swift Package Manager thanks to the contribution of [@vauxhall][contributor]. Swift Package Manager completes the list of supported dependency managers, which already includes Cocoapods and Carthage. 
 
 Read on below for:
 
@@ -26,18 +26,18 @@ Read on below for:
 
 <h2 id="gc">1. Global Contexts</h2>
 
-We are happy to announce the integration of Global Contexts feature in the iOS tracker ([#357][357]).
+We are happy to announce the integration of the Global Contexts feature in the iOS tracker ([#357][357]).
 
 <h3>1.1 A quick recap on contexts</h3>
 
-Contexts are entities tracked across multiple events. They are particularly important as they add value to the event through tracking extra information accord to a related schema. The schema will specify the kind of data tracked with the context. Typical contexts are: session, geolocation, page and screen views, device informations, user details.
+Contexts are entities tracked across multiple events. They are particularly important as they add value to the event through tracking extra information according to a related schema. The schema will specify the kind of data tracked with the context. Typical contexts are: session, geolocation, page and screen views, device informations, user details.
 
 Some of the contexts are tracked out-of-the-box but it's possible to add custom context tracking to other domain specific events. There is no limit to the number of contexts attached to the events.
 Not all contexts suit every event. Some of the contexts only make sense on specific events and it's up to the developer to handle these cases.
 
 <h3>1.2 Introducing Global Contexts</h3>
 
-Prior to this release, developers needed to programmatically attach custom contexts to each specific event. The _global contexts_ feature helps the developer making this operation declarative.
+Prior to this release, developers needed to programmatically attach custom contexts to each specific event. The _global contexts_ feature helps the developer by making this operation declarative.
 The developer can declare which contexts have to be attached to which events and the tracker will take care of attaching the contexts to the events when required as declared by the developer.
 
 * It makes it easier for developers to implement very rich data tracking with Snowplow.
@@ -164,7 +164,7 @@ The parts of a rule are wildcarded with certain guidelines:
 
 * asterisks cannot be used for the protocol (i.e. schemas always start with `iglu:`).
 
-* version matching must be specified like so: *-*-*, where any part of the versioning can be defined, e.g. 1-*-*, but only sequential parts can be wildcarded, e.g. 1-*-1 is invalid but 1-*-* is valid.</li><li>at least two parts parts: `com.acme.*` is valid, while `com.*` is not.
+* version matching must be specified like so: *-*-*, where any part of the versioning can be defined, e.g. 1-*-*, but only sequential parts can be wildcarded, e.g. 1-*-1 is invalid but 1-*-* is valid.</li><li>at least two parts: `com.acme.*` is valid, while `com.*` is not.
 
 * vendors cannot be defined with non-wildcarded parts between wildcarded parts: com.acme.*.marketing.* is invalid, while com.acme.*.* is valid.
 
@@ -178,7 +178,7 @@ In case the logic for filter and generator callbacks are too complex, it's possi
 /*!
  @brief Takes event information and decide if the context needs to be generated.
  @param event informations about the event to process.
- @return weather the context has to be generated.
+ @return whether the context has to be generated.
  */
 - (BOOL)filterFromEvent:(id<SPInspectableEvent>)event;
 
@@ -269,7 +269,7 @@ In this release we've marked a few methods as deprecated:
 
 - SPEvent - `timestamp`: In a future major version we will remove the ability to override the timestamp of the event. That will be set only by the tracker. A custom timestamp can be eventually added using a different method or parameter in a future release.
 
-- SPEvent - `addDefaultParamsToPayload:`: This shouldn't be used as it's an internal method used by the tracker and it can be subject of future changes. 
+- SPEvent - `addDefaultParamsToPayload:`: This shouldn't be used as it's an internal method used by the tracker and it can be subject to future changes. 
 
 Other methods have also been marked as deprecated because they are related to internal logic of the tracker. We strongly suggest avoiding the use of these methods marked deprecated as they will be substituted or removed in the next major version.
 
