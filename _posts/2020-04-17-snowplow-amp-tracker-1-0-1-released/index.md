@@ -42,13 +42,13 @@ Page ping tracking and the AMP web page context have now been added to the AMP t
 
 <h3 id="page-pings"> 1.1 Page Ping Tracking</h3>
 
-Page ping tracking has now been introduced to the AMP tracker. These operate differently to those of then Javascript tracker, because of differences between the environments. Page pings may be enabled using the [ampPagePing][amp-ping-docs] request in your trigger.
+Page ping tracking has now been introduced to the AMP tracker. These operate differently to those of the Javascript tracker, because of differences between the environments. Page pings may be enabled using the [ampPagePing][amp-ping-docs] request in your trigger.
 
-Once enabled, page ping events will be sent as an AMP-specific page ping event, agains the [AMP page ping schema][amp-ping-schema]. This will contain the following data, as defined in the [AMP documentation for variable substitutions][amp-var-subs]: scrollLeft, scrollWidth, viewportWidth, scrollTop, scrollHeight, viewportHeight, totalEngagedTime.
+Once enabled, page ping events will be sent as an AMP-specific page ping event, against the [AMP page ping schema][amp-ping-schema]. This will contain the following data, as defined in the [AMP documentation for variable substitutions][amp-var-subs]: scrollLeft, scrollWidth, viewportWidth, scrollTop, scrollHeight, viewportHeight, totalEngagedTime.
 
 Scroll percentage and engaged time metrics can be calculated by aggregating on these values. Additionally, this method can be used in combination with the new AMP web page entity to aggregate to a page view level.
 
-Documentation can be found [here][amp-ping-docs]
+Documentation can be found [in the page ping section of the AMP tracker docs][amp-ping-docs]
 
 <h3 id="wp-entity"> 1.2 Web Page Entity</h3>
 
@@ -58,7 +58,7 @@ Note that the value provided is the AMP-provided [Page View ID 64](https://githu
 
 > Provides a string that is intended to be random with a high entropy and likely to be unique per URL, user and day.
 
-Therefore, aggregating on this value alone will not produce the same results as the javascript tracker page view id.
+Since the javascript tracker's page view id is globally unique, aggregating on this value alone will not produce the same results - it must be combined with url, amp client id, and date for aggregation.
 
 <h3 id="modeling-pvs"> 1.3 Modeling Considerations</h3>
 
@@ -69,17 +69,17 @@ The scrollLeft and scrollTop fields provide the amount of scroll from the leftmo
 The AMP Page View ID value provided is not unique to an instance of a page view, but rather is unique when combined with the URL, date, and AMP client ID, so data should be aggregated by the concatenation of these values, rather than the ID alone.
 
 
-<h2 id="user-journeys">1. Mapping User Journeys</h2>
+<h2 id="user-journeys">2. Mapping User Journeys</h2>
 
-User identification using AMP is now significantly improved, and functionality has been introduced to allow users to track users across AMP and traditional web pages. The AMP ID entity facilitates identifying users who move from traditional pages to AMP, the AMP linker is now used to map users from AMP to traditional pages, and the AMP client ID is now attached to all events as distinct from other user ids.
+User identification using AMP is now significantly improved, and functionality has been introduced to allow easier identification of users across AMP and traditional web pages. The AMP ID entity facilitates identifying users who move from traditional pages to AMP, the AMP linker is now used to map users from AMP to traditional pages, and the AMP client ID is now attached to all events as distinct from other user ids.
 
 <h3 id="amp-id-entity"> 2.1 AMP ID Entity</h3>
 
 The AMP ID entity is a new feature to Snowplow tracking, with a specific purpose of making it easier to identify users on the AMP platform, and across AMP and non-AMP pages. By default, the AMP ID entity will be attached to all events, against the [AMP ID schema][amp-id-schema].
 
-This will contain the ampClientId (the consistent identifier for users on the AMP platform), the `user_id` if set, and the `domain_userid`, if provided by the Javascript tracker's cross-domain linker. (The AMP tracker does not generate a domain_userid).
+This will contain the ampClientId (the consistent identifier for users on the AMP platform), the `user_id` if set, and the `domain_userid`, if provided by the Javascript tracker's cross-domain linker. (The AMP tracker does not generate a `domain_userid`).
 
-The `domain_userid` can be made available to the AMP tracker when a user moves from a javascript tracker page to an AMP page, by enabling the javascript tracker's [cross-domain tracking][cd-linker] feature. The javascript tracker will attach the domain userid to the querystring, and the AMP tracker will automatically retrieve it and attempt to retain it across pages.
+The `domain_userid` can be made available to the AMP tracker when a user moves from a javascript tracker page to an AMP page, by enabling the javascript tracker's [cross-domain tracking][cd-linker] feature. The javascript tracker will attach the `domain_userid` to the querystring, and the AMP tracker will automatically retrieve it and attempt to retain it across pages.
 
 Note that while the AMP tracker attempts to retain the domain userid across pages and sessions, the AMP platform does not offer any means to guarantee that this can be done in all cases - so the user identification strategy here is based on having the value attached to at least one event, rather than all events.
 
@@ -141,7 +141,7 @@ Custom events are sent by instrumenting the selfDescribingEvent request in a tri
 </amp-analytics>
 {% endhighlight %}
 
-Documentation can be found [here][cust-events-docs]
+Documentation can be found [in the custom event section of the AMP tracker docs][cust-events-docs]
 
 <h2 id="custom-entities">4. Custom Entities</h2>
 
