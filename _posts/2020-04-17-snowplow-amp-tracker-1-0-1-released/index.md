@@ -111,7 +111,7 @@ If a `domain_userid` is found by the AMP tracker, it is not guaranteed to be att
 
 <h2 id="custom-events">3. Custom Events</h2>
 
-Custom events and entities can now be tracked using the AMP tracker.
+Custom events and entities can now be tracked using the AMP tracker - read more about the general topic of custom tracking with Snowplow in [the documentation].
 
 Custom events are sent by instrumenting the selfDescribingEvent request in a trigger, and passing customEventSchemaVendor, customEventSchemaName, customEventSchemaVersion, customEventSchemaData to it as variables - where customEventSchemaData is an escaped JSON string, as follows:
 
