@@ -88,3 +88,26 @@ $('#raw-set-data-toggle').click(function(){
 $('#product-form-toggle').click(function(){
     $('#product-form').slideToggle();
 })
+
+
+
+// Add top horizontal bar to raw data table. 
+// Get width of the raw table and apply it to the empty div with scrollbar
+
+
+var tableSize = $('.raw-data-css table').width();
+$('.top-scrollbar').width(tableSize);
+
+
+// Bind the wrapper scrolls
+
+$(function(){
+    $(".top-scroller-target").scroll(function(){
+        $(".raw-data-css")
+            .scrollLeft($(".top-scroller-target").scrollLeft());
+    });
+    $(".raw-data-css").scroll(function(){
+        $(".top-scroller-target")
+            .scrollLeft($(".raw-data-css").scrollLeft());
+    });
+});
