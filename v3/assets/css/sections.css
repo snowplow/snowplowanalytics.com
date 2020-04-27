@@ -2377,7 +2377,7 @@ section.data-description p{
 }
 
 section.data-description h4{
-    padding:40px 0px 20px;
+    padding:0px 0px 20px;
 }
 
 
@@ -2414,9 +2414,8 @@ section.data-set{
 
 section.data-set .box-shadow{
     box-sizing: border-box;
-    padding:40px 0px 40px 40px;
-    
-
+    padding:40px;
+    position:relative;
 }
 section.data-set .box-shadow .full{
     position:relative;
@@ -2434,103 +2433,109 @@ section.data-set .box-shadow .full{
     background-image: linear-gradient(209deg, #DFE1FF 0%, #F3FDFF 100%);
     box-shadow: inset 0 1px 9px 0 rgba(0,0,0,0.09);
 }
+
+section.data-set .fade-to-white{
+    display:block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    width: 80px;
+    height:100%;
+    background: url(../img/explore-data/fade-to-white.png) repeat center center;
+    z-index:10;
+}
+
 section.no-bg{
     background-image:none;
     box-shadow:none;
     padding:0px 40px;
 }
 
-section.data-set .box-shadow .full::-webkit-scrollbar-track{
+section.data-set .box-shadow .full::-webkit-scrollbar-track, .explore-v3 .modal-body::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.13);
     background-color: #ffffff;
     border-radius: 9px 0px 0px 9px;
 }
 
-section.data-set .box-shadow .full::-webkit-scrollbar{
+section.data-set .box-shadow .full::-webkit-scrollbar, .explore-v3 .modal-body::-webkit-scrollbar{
     width: 2px;
     background-color: #ffffff;
     border-radius: 9px 0px 0px 9px;
 }
 
-section.data-set .box-shadow .full::-webkit-scrollbar-thumb{
+section.data-set .box-shadow .full::-webkit-scrollbar-thumb, .explore-v3 .modal-body::-webkit-scrollbar-thumb{
     background-color: #64BBE4;
     border-radius: 9px;
 }
 
-section.data-set .box-shadow .full table{
+section.data-set table{
     padding:20px;
 }
 
 
 
-section.data-set .box-shadow .full table tr th{
+section.data-set table tr th{
     padding:10px 20px;
     font-size:16px !important;
     margin-right:40px;
 }
 
-section.data-set .box-shadow .full table tr td{
+section.data-set table tr td{
     padding: 10px 20px;
     margin-right:40px;
+    cursor:default;
 }
 
-section.data-set .box-shadow .full table tr td:last-of-type,section.data-set .box-shadow .full table tr th:last-of-type{
+section.data-set table tr td:last-of-type,section.data-set table tr th:last-of-type{
     margin-right:0px;
 }
 
-section.data-set .box-shadow .full table tr:nth-of-type(odd){
+section.data-set table tr:nth-of-type(odd){
     background: #F1F1F1;
 }
 
-section.data-set .box-shadow .full table thead tr:first-of-type th:nth-of-type(odd){
+section.data-set table thead tr:first-of-type th:nth-of-type(odd){
     background:#EBE0FF;
 }
 
-section.data-set .box-shadow .full table thead tr:first-of-type th:nth-of-type(even){
+section.data-set table thead tr:first-of-type th:nth-of-type(even){
     background:#A5EDDD;
 }
 
-section.data-set .box-shadow .full table thead tr:first-of-type th{
+section.data-set table thead tr:first-of-type th{
     text-transform: uppercase;
 }
-section.data-set .box-shadow .full table thead tr:first-of-type th a{
+section.data-set table thead tr:first-of-type th button{
     text-decoration: underline !important;
     font-weight:300 !important;
     text-transform: lowercase;
-}
-
-
-section.data-set .box-shadow .full ul{
-    display:flex;
-    flex-flow:row;
-    width: 100%;
-    position:absolute;
-    top:0px;
-    lefT:0px;
-}
-
-section.data-set .box-shadow .full li{
-    display:flex;
-    flex-flow:row;
-    align-items: center;
-    padding:12px 20px 10px 20px;
-}
-
-
-section.data-set .box-shadow .full li p{
-    margin-top:-1px;
-    margin-left:20px;
-}
-
-section.data-set .box-shadow .full li p a{
-    text-decoration:underline !important;
-    color:#323742;
+    padding:0px;
+    background:none;
+    color:#323743;
 }
 
 
 
 
+/* TOOLTIP CSS */
 
+.tooltip,.tooltip-inner{
+    max-width:400px;
+    overflow-wrap: break-word;
+    background-color: #64BBE4;
+    color:#ffffff;
+    padding:6px 10px;
+    border-radius:4px;
+    text-align:left;
+    line-height:20px;
+}
+.tooltip-arrow{
+    display:none;
+}
+.tooltip.in{opacity:1;}
+
+
+/* EXPLORE SECTION part-2-list */
 
 
 .explore-v3 .part-2-list{
@@ -2541,18 +2546,65 @@ section.data-set .box-shadow .full li p a{
     margin:40px 0px;
 }
 
+.explore-v3 .part-2-list #raw-set-data{
+    display:none;
+}
+
+.explore-v3 .part-2-list #raw-set-data-toggle{
+    margin-bottom:20px;
+}
+
+.explore-v3 #product-form{
+    display:none;
+}
 
 /* SECTION - EXPLORE DEMO REQUEST FORM  */
 
-.explore-form section.main-form{
+.explore-v3 section.main-form h2{
+    text-align:left;
+    width: 100%;
+}
+.explore-v3 section.main-form .wrap form{
+    width: 100%;
+    padding-bottom:20px;
+}
+.explore-v3 section.page-1-form{
+    margin-top:0px;
+}
+
+.explore-v3 section.page-1-form form{
     margin-top:0px;
 }
 
 
-.explore-form section.pricing-form .wrap form{
-    margin-top:0px;
+.explore-v3 section.main-form .wrap form .full h3{
+    margin-bottom:40px;
 }
 
-.explore-form section.pricing-form .form-wrap .full{
-    margin-bottom:0px
+/* EXPLORE MODAL CHANGES */
+
+.explore-v3 .modal-dialog{
+    margin:150px auto;
+    width:800px;
+}
+
+.explore-v3 .modal-body{
+    overflow-x:scroll;
+}
+
+.explore-v3 .modal-dialog section{
+    margin:0px;
+}
+
+
+.explore-v3 .modal-dialog section.data-set table thead tr:first-of-type th:nth-of-type(odd){
+    background:#fff;
+}
+
+.explore-v3 .modal-dialog section.data-set table thead tr:first-of-type th:nth-of-type(even){
+    background:#fff;
+}
+
+.explore-v3 .modal-dialog section.data-set table thead tr:first-of-type th{
+    text-transform: none;
 }

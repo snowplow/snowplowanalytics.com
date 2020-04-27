@@ -908,6 +908,33 @@
    .abm section.main-form .wrap .heading br{
        display:none;
    }
+
+
+    /* ===============
+    EXPLORE PAGES
+    =============== */
+
+    .explore-v3 section .wrap > h2{
+        text-align:left;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .explore-v3 section.data-description{
+        margin-top:30px;
+    }
+    section.data-description h4{
+        margin-bottom:0px;
+    }
+    .explore-v3 section.sub-hero .heading h1{
+        padding-left:0px;
+        padding-right:0px;   
+    }
+    .explore-v3 .pagination .blog-back-button{
+        margin-left:0px;
+    }
+    .explore-v3 .modal-dialog{
+        width: 320px;
+    }
 }
 
 @media screen and (max-width: 740px) {

@@ -69,3 +69,22 @@
 //     $('#content').html(table.render(data.content))
 // });
 
+// Add tooltip to table td
+$(function () {
+    $('table td').tooltip({
+        placement: "top",
+        container: 'body',
+        delay: { "show": 30, "hide": 10 }   
+    })
+})
+
+
+// Toggle the raw-data table in explore-snowplow-data-part-2 page
+$('#raw-set-data-toggle').click(function(){
+    $('#raw-set-data').slideToggle();
+})
+
+// Toggle submit form in explore-snowplow-data-part-1 page
+$('#product-form-toggle').click(function(){
+    $('#product-form').slideToggle();
+})

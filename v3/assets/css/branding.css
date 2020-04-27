@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a,table,td,th,tr{
     border-radius: 4px;
 }
 
-.sec-cta a p, .sec-cta p{
+.sec-cta a p, .sec-cta p, .sec-cta{
     color:#ffffff !important;
 }
 

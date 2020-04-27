@@ -6,9 +6,11 @@ description: We’re going to demonstrate the granular events and data points th
 permalink: /explore-snowplow-data-part-1/
 class: Pricing
 assets:
-  css: 
-  - v3/assets/css/global.css
-  - v3/assets/js/main.js
+    css: 
+    - v3/assets/css/global.css
+    js: 
+    - v3/assets/js/main.js
+    - v3/assets/js/explore.js
 ---
 <style>
     #om-huuqipfylfhre6gwy6kv{
@@ -22,8 +24,7 @@ assets:
           <div class="heading">
               <span class="accent">EXPLORE SNOWPLOW DATA - PART 1</span>
               <h1>Clean, granular raw data ready for your analysis.</h1>
-                <p>In the table below you can explore some of the granular events Snowplow's web tracker gives you, with all the data points it captures out of the box. The JavaScript tracker is just one of our twenty trackers, all of which structure data in the same way. </p>
-                <p>Specifically, you can take a look at a sample of users' interactions across the Snowplow marketing website, documentation site and the Snowplow Insights console. </p> 
+                <p>In the table below you can explore some of the granular events Snowplow's web tracker gives you, with all the data points it captures out of the box. The JavaScript tracker is just one of our twenty trackers, all of which structure data in the same way. Specifically, you can take a look at a sample of users' interactions across the Snowplow marketing website, documentation site and the Snowplow Insights console.</p> 
           </div>
       </div>
   </section>
@@ -42,7 +43,7 @@ assets:
               </li>
               <li>
                   <img src="{{ BASE_PATH }}/v3/assets/img/explore-data/explore-platforms.png" alt="platforms"/>
-                  <p>Three platofrms</p>
+                  <p>Three platforms</p>
               </li>
               <li>
                   <img src="{{ BASE_PATH }}/v3/assets/img/explore-data/explore-devices.png" alt="devices"/>
@@ -57,26 +58,27 @@ assets:
   </section>
   <section class="data-set data-set-bg">
     <div class="box-shadow">
+        <span class="fade-to-white"></span>
         <div class="full raw-data-css">
             <table>
                 <thead>
                     <tr>
-                        <th colspan="7">Core</p></th>
-                        <th colspan="6">Timestamps (<a href="#">view column details</a>)</th>
-                        <th colspan="5">User (<a href="#">view column details</a>)</th>
-                        <th colspan="2">Session (<a href="#">view column details</a>)</th>
-                        <th colspan="7">Event (<a href="#">view column details</a>)</th>
-                        <th colspan="3">Event specific fields (<a href="#">view column details</a>)</th>
-                        <th colspan="2">Application (<a href="#">view column details</a>)</th>
-                        <th colspan="8">Useragent (<a href="#">view column details</a>)</th>
-                        <th colspan="8">Location (<a href="#">view column details</a>)</th>
-                        <th colspan="7">Marketing (<a href="#">view column details</a>)</th>
-                        <th colspan="10">Page (<a href="#">view column details</a>)</th>
-                        <th colspan="10">Referer (<a href="#">view column details</a>)</th>
-                        <th colspan="2">Cross domain referer (<a href="#">view column details</a>)</th>
-                        <th colspan="6">Visibility (<a href="#">view column details</a>)</th>
-                        <th colspan="4">Scroll depth (<a href="#">view column details</a>)</th>
-                        <th colspan="4">Meta data (<a href="#">view column details</a>)</th>
+                        <th colspan="7">Core (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#core-data">view column details</button>)</th>
+                        <th colspan="6">Timestamps (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timestamps-data">view column details</button>)</th>
+                        <th colspan="5">User (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#user-data">view column details</button>)</th>
+                        <th colspan="2">Session (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#session-data">view column details</button>)</th>
+                        <th colspan="7">Event (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-data">view column details</button>)</th>
+                        <th colspan="3">Event specific fields (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-specific-data">view column details</button>)</th>
+                        <th colspan="2">Application (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#application-data">view column details</button>)</th>
+                        <th colspan="8">Useragent (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#useragent-data">view column details</button>)</th>
+                        <th colspan="8">Location (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#location-data">view column details</button>)</th>
+                        <th colspan="7">Marketing (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#marketing-data">view column details</button>)</th>
+                        <th colspan="10">Page (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#page-data">view column details</button>)</th>
+                        <th colspan="10">Referer (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#referer-data">view column details</button>)</th>
+                        <th colspan="2">Cross domain referer (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cross-domain-referer-data">view column details</button>)</th>
+                        <th colspan="6">Visibility (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#visibility-data">view column details</button>)</th>
+                        <th colspan="4">Scroll depth (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scroll-depth-data">view column details</button>)</th>
+                        <th colspan="4">Meta data (<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#meta-data">view column details</button>)</th>
                     </tr>
                     <tr>
                         <th>derived_tstamp</th>
@@ -2859,7 +2861,7 @@ assets:
   </section>
 <section class="list-included">
     <div class="wrap">
-        <h2>Imagine the possibilities with raw data</h2>
+        <h2>Imagine the possibilities with access to raw data</h2>
         <div class="post-content">
             <p>This raw data can be transformed, aggregated and modeled into any number of interesting reports from fairly standard reporting like sessions to more complex analyses around attribution or engagement. And because the raw data is stored in your warehouse, it can be modeled multiple times to serve multiple teams; one data source of truth addressing multiple use cases.</p>
             <p>And there are many more reasons Snowplow Insights is a leading data collection platform for companies that want to do data right:</p>
@@ -2876,9 +2878,1015 @@ assets:
     <div class="wrap">
         <h2>See how we model raw data into actionable insights</h2>
         <div class="full cta-links">
-            <a href="{{ BASE_PATH }}/explore-snowplow-data/demo-request/" class="cta main-cta-bg">Book a pipeline demo</a>
-            <a href="{{ BASE_PATH }}/explore-snowplow-data-part-2/" class="cta sec-cta"><p>Explore modeled data</p></a>
+            <a id="product-form-toggle" class="cta main-cta-bg">Book a pipeline demo</a>
+            <a href="{{ BASE_PATH }}/explore-snowplow-data-part-2/" class="cta sec-cta">Explore modeled data</a>
         </div>
     </div>
 </section>
+<section id="product-form" class="form-submit main-form pricing-form page-1-form">
+    <div class="wrap">
+        <form class="box-shadow" id="main-form" data-pardotUrl="https://go.snowplowanalytics.com/l/571483/2020-04-27/3s6h3j8" data-gtmEventName="product-demo-request-form-success" novalidate>
+          <div class="full">
+            <h3>Book a pipeline demo with our Product team</h3>
+          </div>
+          <input type="hidden" name="lead_source" id="lead_source" value="Website">
+          <input type="hidden" name="00N2400000JSExF" id="00N2400000JSExF" value="Explore Data Page">
+          <div class="form-wrap">
+              <div class="half">
+                <label for="first-name">First name<span style="color:red">*</span></label>
+                <input type="text" name="first_name" id="first-name" placeholder="Enter your first name"/>
+              </div>
+              <div class="half">
+                <label for="last-name">Last name<span style="color:red">*</span></label>
+                <input type="text" name="last_name" id="last-name" placeholder="Enter your last name"/>
+              </div>
+              <div class="half">
+                <label for="email">Work email<span style="color:red">*</span></label>
+                <input type="text" name="email" id="email" placeholder="Enter your business email"/>
+              </div>
+              <div class="half">
+                <label for="company">Company<span style="color:red">*</span></label>
+                <input type="text" name="company" id="company" placeholder="Enter your company name"/>
+              </div>
+              <div class="full">
+                <button class="cta main-cta-bg" id="form_submit_button" type="submit">Submit</button>
+              </div>
+          </div>
+          <div class="thankyou">
+              <img src="{{ BASE_PATH }}/v3/assets/img/global/thank-you-image.png" alt="Thank you"/>
+              <h3>Thank you for your interest in Snowplow.</h3>                        
+              <p>We will be in touch with you soon.</p>
+          </div>
+        </form>
+    </div>
+</section>
+    <!-- MODALS -->
+    <!-- START SINGLE MODAL -->
+    <div class="modal fade" id="core-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="core-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>derived_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>collector_tstamp - (dvce_sent_tstamp - dvce_created_tstamp) </td>
+                                    <td>2020-04-01T10:00:08.061</td>
+                                </tr>
+                                <tr>
+                                    <td>event_name</td>
+                                    <td>text</td>
+                                    <td>Event name</td>
+                                    <td>page_view</td>
+                                </tr>
+                                <tr>
+                                    <td>domain_userid</td>
+                                    <td>text</td>
+                                    <td>First party client-side cookie ID</td>
+                                    <td>be5016ad-c6ef-442d-aa18-1e1e2f69ba43</td>
+                                </tr>
+                                <tr>
+                                    <td>domain_sessionidx</td>
+                                    <td>int</td>
+                                    <td>Session index (indexed based on the domain_userid)</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_city</td>
+                                    <td>text</td>
+                                    <td>City (based on the user's IP address)</td>
+                                    <td>San Francisco</td>
+                                </tr>
+                                <tr>
+                                    <td>app_id</td>
+                                    <td>text</td>
+                                    <td>Application ID</td>
+                                    <td>docs</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlpath</td>
+                                    <td>text</td>
+                                    <td>Path to page</td>
+                                    <td>/products/snowplow-insights/</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="timestamps-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="timestamps-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>derived_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>collector_tstamp - (dvce_sent_tstamp - dvce_created_tstamp) </td>
+                                    <td>2020-04-01T10:00:08.061</td>
+                                </tr>
+                                <tr>
+                                    <td>dvce_created_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>The time the event was recorded on the client device </td>
+                                    <td>2020-04-01T10:00:08.026</td>
+                                </tr>
+                                <tr>
+                                    <td>dvce_sent_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>The time the event was sent by the client device </td>
+                                    <td>2020-04-01T10:00:08.028</td>
+                                </tr>
+                                <tr>
+                                    <td>collector_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>The time the event recorded by the collector </td>
+                                    <td>2020-04-01T10:00:08.063</td>
+                                </tr>
+                                <tr>
+                                    <td>etl_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>The time the event was enriched</td>
+                                    <td>2020-04-01T10:00:08.332</td>
+                                </tr>
+                                <tr>
+                                    <td>true_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>Optional user-set "true timestamp" for the event (will also overwrite the derived_tstamp)</td>
+                                    <td>2020-04-01T10:00:00.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="user-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="user-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user_id</td>
+                                    <td>text</td>
+                                    <td>Optional custom user ID</td>
+                                    <td>example-user@company.com</td>
+                                </tr>
+                                <tr>
+                                    <td>domain_userid</td>
+                                    <td>text</td>
+                                    <td>First party client-side cookie ID</td>
+                                    <td>be5016ad-c6ef-442d-aa18-1e1e2f69ba43</td>
+                                </tr>
+                                <tr>
+                                    <td>network_userid</td>
+                                    <td>text</td>
+                                    <td>First party server-side cookie ID</td>
+                                    <td>28172b1a-96aa-4fe2-a4e3-16c6cc222bcc</td>
+                                </tr>
+                                <tr>
+                                    <td>user_ipaddress</td>
+                                    <td>text</td>
+                                    <td>User IP address</td>
+                                    <td>192.171.81.XX</td>
+                                </tr>
+                                <tr>
+                                    <td>user_fingerprint</td>
+                                    <td>text</td>
+                                    <td>User fingerprint generated from a configurable set of user identifiers</td>
+                                    <td>76d5cf8dfb94371b9a29393bdc651966</td>
+                                </tr>
+                            </tbody>
+                        </table> 
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="session-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="session-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>domain_sessionid</td>
+                                    <td>text</td>
+                                    <td>Session ID (configurable, reset after 30 minutes of inactivity by default)</td>
+                                    <td>289d6851-77ca-45ad-a611-c3ad8a495012</td>
+                                </tr>
+                                <tr>
+                                    <td>domain_sessionidx</td>
+                                    <td>int</td>
+                                    <td>Session index (indexed based on the domain_userid)</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="event-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="event-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event_id</td>
+                                    <td>text</td>
+                                    <td>UUID for each event</td>
+                                    <td>25322a4d-14c4-41e9-a180-48d25ac91c4c</td>
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>text</td>
+                                    <td>Type of event recorded</td>
+                                    <td>page_view</td>
+                                </tr>
+                                <tr>
+                                    <td>event_name</td>
+                                    <td>text</td>
+                                    <td>Event name</td>
+                                    <td>page_view</td>
+                                </tr>
+                                <tr>
+                                    <td>event_vendor</td>
+                                    <td>text</td>
+                                    <td>Who defined the event</td>
+                                    <td>com.snowplowanalytics.snowplow</td>
+                                </tr>
+                                <tr>
+                                    <td>event_format</td>
+                                    <td>text</td>
+                                    <td>Format for event</td>
+                                    <td>jsonschema</td>
+                                </tr>
+                                <tr>
+                                    <td>event_version</td>
+                                    <td>text</td>
+                                    <td>Version of event</td>
+                                    <td>1-0-0</td>
+                                </tr>
+                                <tr>
+                                    <td>event_fingerprint</td>
+                                    <td>text</td>
+                                    <td>Hash generated from a configurable set of event fields</td>
+                                    <td>45c824fc852e1693ddf43cf1ce6e5389</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="event-specific-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="event-specific-fields-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>link_click_event</td>
+                                    <td>JSON</td>
+                                    <td>Link-click specific properties</td>
+                                    <td>{"targetUrl":"https://snowplowanalytics.com/request-demo/",
+                                        "elementId":"button-request-demo-header-page",
+                                        "elementClasses":["btn","btn-primary","call-to-action"],"elementTarget":NULL}</td>
+                                </tr>
+                                <tr>
+                                    <td>focus_form_event</td>
+                                    <td>JSON</td>
+                                    <td>Form-specific properties</td>
+                                    <td>{"formId":"get-started-sales", "elementId":"sales-first-name", "nodeName":"INPUT",
+                                        "elementClasses":["form-control"], "value":NULL, "type":"text"}</td>
+                                </tr>
+                                <tr>
+                                    <td>change_form_event</td>
+                                    <td>JSON</td>
+                                    <td>Form-specific properties</td>
+                                    <td>{"formId":"get-started-sales", "elementId":"sales-first-name", "nodeName":"INPUT",
+                                        "elementClasses":["form-control"], "value":"example_first_name", "type":"text"}</td>
+                                </tr>
+                            </tbody>
+                        </table>                       
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="application-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="application-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>app_id</td>
+                                    <td>text</td>
+                                    <td>Application ID</td>
+                                    <td>docs</td>
+                                </tr>
+                                <tr>
+                                    <td>platform</td>
+                                    <td>text</td>
+                                    <td>Platform</td>
+                                    <td>web</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="useragent-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="useragent-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>useragent</td>
+                                    <td>text</td>
+                                    <td>Useragent string</td>
+                                    <td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko)
+                                        Chrome/80.0.3987.163 Safari/537.37</td>
+                                </tr>
+                                <tr>
+                                    <td>useragent_parser_context</td>
+                                    <td>JSON</td>
+                                    <td>Fields parsed from the useragent</td>
+                                    <td>{"useragent_family":"Chrome", "useragent_major":"80", "useragent_minor":"0", "useragent_patch":"3987",
+                                        "useragent_version":"Chrome 80.0.3987", "os_family":"Mac OS X", "os_major":"10", "os_minor":"12",
+                                        "os_patch":"6", "os_patch_minor":NULL, "os_version":"Mac OS X 10.12.6", "device_family":"Other"}</td>
+                                </tr>
+                                <tr>
+                                    <td>yauaa_context</td>
+                                    <td>JSON</td>
+                                    <td>Fields parsed from the useragent based on the YAUAA library</td>
+                                    <td>{ "agentClass": "Browser", "agentName": "Chrome", "agentNameVersion": "Chrome 80.0.3987.163",
+                                        "agentNameVersionMajor": "Chrome 80", "agentVersion": "80.0.3987.163", "agentVersionMajor": "80",
+                                        "deviceBrand": "Apple", "deviceClass": "Desktop", "deviceCpu": "Intel", "deviceName": "Apple Macintosh",
+                                        "layoutEngineClass": "Browser", "layoutEngineName": "Blink", "layoutEngineNameVersion": "Blink 80.0",
+                                        "layoutEngineNameVersionMajor": "Blink 80", "layoutEngineVersion": "80.0", "layoutEngineVersionMajor":
+                                        "80", "operatingSystemClass": "Desktop", "operatingSystemName": "Mac OS X",
+                                        "operatingSystemNameVersion": "Mac OS X 10.12.6", "operatingSystemVersion": "10.12.6" } </td>
+                                </tr>
+                                <tr>
+                                    <td>iab_bot_context</td>
+                                    <td>JSON</td>
+                                    <td>Bot detection based on the IP address and useragent and the IAB bots and spiders list</td>
+                                    <td> { "category": "BROWSER", "primaryImpact": "NONE", "reason": "PASSED_ALL", "spiderOrRobot": false }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>br_lang</td>
+                                    <td>text</td>
+                                    <td>Language the browser is set to</td>
+                                    <td>en-US</td>
+                                </tr>
+                                <tr>
+                                    <td>br_cookies</td>
+                                    <td>boolean</td>
+                                    <td>Whether cookies are enabled</td>
+                                    <td>TRUE</td>
+                                </tr>
+                                <tr>
+                                    <td>br_colordepth</td>
+                                    <td>int</td>
+                                    <td>Bit depth of the browser color palette</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <td>doc_charset</td>
+                                    <td>text</td>
+                                    <td>Page’s character encoding </td>
+                                    <td>UTF-8</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="location-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="location-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>geo_country</td>
+                                    <td>text</td>
+                                    <td>ISO 3166-1 country code (based on the user's IP address)</td>
+                                    <td>US</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_region</td>
+                                    <td>text</td>
+                                    <td>ISO-3166-2 country region code (based on the user's IP address)</td>
+                                    <td>CA</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_region_name</td>
+                                    <td>text</td>
+                                    <td>Region name (based on the user's IP address)</td>
+                                    <td>California</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_city</td>
+                                    <td>text</td>
+                                    <td>City (based on the user's IP address)</td>
+                                    <td>San Francisco</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_zipcode</td>
+                                    <td>text</td>
+                                    <td>Zipcode (based on the user's IP address)</td>
+                                    <td>94102</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_latitude</td>
+                                    <td>text</td>
+                                    <td>Visitor location latitude (based on the user's IP address)</td>
+                                    <td>37.78</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_longitude</td>
+                                    <td>text</td>
+                                    <td>Visitor location longitude (based on the user's IP address)</td>
+                                    <td>-122.42</td>
+                                </tr>
+                                <tr>
+                                    <td>geo_timezone</td>
+                                    <td>text</td>
+                                    <td>Visitor timezone name (based on the user's IP address)</td>
+                                    <td>America/Los_Angeles</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="marketing-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="marketing-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>mkt_medium</td>
+                                    <td>text</td>
+                                    <td>Type of traffic source (from marketing parameters in the url)</td>
+                                    <td>paid-search</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_source</td>
+                                    <td>text</td>
+                                    <td>Company or website the traffic came from (from marketing parameters in the url)</td>
+                                    <td>google</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_term</td>
+                                    <td>text</td>
+                                    <td>Keywords associated with the referrer</td>
+                                    <td>"granular behavioural data"</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_content</td>
+                                    <td>text</td>
+                                    <td>Content or ID of the ad (from marketing parameters in the url)</td>
+                                    <td>13894723</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_campaign</td>
+                                    <td>text</td>
+                                    <td>Campaign ID (from marketing parameters in the url)</td>
+                                    <td>data-quality</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_network</td>
+                                    <td>text</td>
+                                    <td>Ad network the click ID belongs to (from marketing parameters in the url)</td>
+                                    <td>DoubleClick</td>
+                                </tr>
+                                <tr>
+                                    <td>mkt_clickid</td>
+                                    <td>text</td>
+                                    <td>Click ID such as gclid (from marketing parameters in the url)</td>
+                                    <td>EAIaIQobChMIwPu5t4qs1AIVAQAAAB0BAAAAEAAYACAAEgJVzfD_BwE</td>
+                                </tr>
+                            </tbody>
+                        </table>                      
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="page-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="page-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>page_view_id</td>
+                                    <td>text</td>
+                                    <td>UUID for each page view (used to link events on a page view together)</td>
+                                    <td>08e14838-2c28-4529-acc4-ad9638847383</td>
+                                </tr>
+                                <tr>
+                                    <td>page_url</td>
+                                    <td>text</td>
+                                    <td>Page url</td>
+                                    <td>https://snowplowanalytics.com/products/snowplow-insights/</td>
+                                </tr>
+                                <tr>
+                                    <td>page_title</td>
+                                    <td>text</td>
+                                    <td>Page title</td>
+                                    <td>Snowplow Insights | A Data Collection Platform Designed to Evolve With Your Business</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlscheme</td>
+                                    <td>text</td>
+                                    <td>Scheme or protocol</td>
+                                    <td>https</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlport</td>
+                                    <td>int</td>
+                                    <td>Port if specified, 80 if not</td>
+                                    <td>443</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlhost</td>
+                                    <td>text</td>
+                                    <td>Host or domain</td>
+                                    <td>snowplowanalytics.com</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlpath</td>
+                                    <td>text</td>
+                                    <td>Path to page</td>
+                                    <td>/products/snowplow-insights/</td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlquery</td>
+                                    <td>text</td>
+                                    <td>Querystring</td>
+                                    <td>utm_campaign=data-quality&utm_source=google&utm_medium=paid-search&gclid=EAIaIQobChMIwPu5t4qs1AIVAQAAAB0BAAAAEAAYACAAEgJVzfD_BwE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>page_urlfragment</td>
+                                    <td>text</td>
+                                    <td>Fragment or anchor</td>
+                                    <td>1-choose-and-configure-a-webhook</td>
+                                </tr>
+                                <tr>
+                                    <td>performance_timing_context</td>
+                                    <td>JSON</td>
+                                    <td>Performance timing metrics based on the navigation timing API</td>
+                                    <td>{ "connectEnd": 1585737147159, "connectStart": 1585737145103, "domComplete": 1585737151907,
+                                        "domContentLoadedEventEnd": 1585737150320, "domContentLoadedEventStart": 1585737150320,
+                                        "domInteractive": 1585737148638, "domLoading": 1585737148413, "domainLookupEnd": 1585737145084,
+                                        "domainLookupStart": 1585737145084, "fetchStart": 1585737145084, "loadEventEnd": 1585737151909,
+                                        "loadEventStart": 1585737151907, "navigationStart": 1585737145084, "redirectEnd": 0, "redirectStart": 0,
+                                        "requestStart": 1585737147160, "responseEnd": 1585737148626, "responseStart": 1585737148402,
+                                        "secureConnectionStart": 1585737146708, "unloadEventEnd": 0, "unloadEventStart": 0 }</td>
+                                </tr>
+                            </tbody>
+                        </table>       
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="referer-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="referer-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>page_referrer</td>
+                                    <td>text</td>
+                                    <td>Referer url</td>
+                                    <td>https://snowplowanalytics.com/</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlscheme</td>
+                                    <td>text</td>
+                                    <td>Referer scheme or protocol</td>
+                                    <td>https</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlport</td>
+                                    <td>int</td>
+                                    <td>Referer port if specified, 80 if not</td>
+                                    <td>443</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlhost</td>
+                                    <td>text</td>
+                                    <td>Referer host or domain</td>
+                                    <td>snowplowanalytics.com</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlpath</td>
+                                    <td>text</td>
+                                    <td>Referer page path</td>
+                                    <td>/</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlquery</td>
+                                    <td>text</td>
+                                    <td>Referer querystring</td>
+                                    <td>q=snowplow+documentation</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_urlfragment</td>
+                                    <td>text</td>
+                                    <td>Referer fragment or anchor</td>
+                                    <td>#the-typical-architecture-of-a-snowplow-pipeline</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_medium</td>
+                                    <td>text</td>
+                                    <td>Type of referer</td>
+                                    <td>internal</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_source</td>
+                                    <td>text</td>
+                                    <td>Name of referer if recognised</td>
+                                    <td>Google</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_term</td>
+                                    <td>text</td>
+                                    <td>Keywords if source is a search engine</td>
+                                    <td>"modeling Snowplow data"</td>
+                                </tr>
+                            </tbody>
+                        </table>                     
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="cross-domain-referer-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="cross-domain-referer-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>refr_domain_userid</td>
+                                    <td>text</td>
+                                    <td>Snowplow domain_userid of the referring website</td>
+                                    <td>7e7ece2d-f008-4e99-8cc1-2382f76d4f83</td>
+                                </tr>
+                                <tr>
+                                    <td>refr_dvce_tstamp</td>
+                                    <td>timestamp</td>
+                                    <td>Time the domain_userid was attached to the inbound link</td>
+                                    <td>2020-04-01T10:00:00.505</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- END MODAL -->
+        <!-- START SINGLE MODAL -->
+        <div class="modal fade" id="visibility-data" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="data-set">
+                        <table id="visibility-modal">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>br_viewwidth</td>
+                                    <td>int</td>
+                                    <td>Viewport width in pixels</td>
+                                    <td>1678</td>
+                                </tr>
+                                <tr>
+                                    <td>br_viewheight</td>
+                                    <td>int</td>
+                                    <td>Viewport height in pixels</td>
+                                    <td>892</td>
+                                </tr>
+                                <tr>
+                                    <td>dvce_screenwidth</td>
+                                    <td>int</td>
+                                    <td>Screen width in pixels</td>
+                                    <td>1680</td>
+                                </tr>
+                                <tr>
+                                    <td>dvce_screenheight</td>
+                                    <td>int</td>
+                                    <td>Screen height in pixels</td>
+                                    <td>1050</td>
+                                </tr>
+                                <tr>
+                                    <td>doc_width</td>
+                                    <td>int</td>
+                                    <td>The page's width in pixels</td>
+                                    <td>1678</td>
+                                </tr>
+                                <tr>
+                                    <td>doc_height</td>
+                                    <td>int</td>
+                                    <td>The page's height in pixels</td>
+                                    <td>4672</td>
+                                </tr>
+                            </tbody>
+                        </table>                      
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+    <!-- START SINGLE MODAL -->
+    <div class="modal fade" id="scroll-depth-data" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <section class="data-set">
+                    <table id="scroll-depth-modal">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>pp_xoffset_min</td>
+                                <td>int</td>
+                                <td>Minimum page x offset in the last ping period</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>pp_xoffset_max</td>
+                                <td>int</td>
+                                <td>Maximum page x offset in the last ping period</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>pp_yoffset_min</td>
+                                <td>int</td>
+                                <td>Minimum page y offset in the last ping period</td>
+                                <td>563</td>
+                            </tr>
+                            <tr>
+                                <td>pp_yoffset_max</td>
+                                <td>int</td>
+                                <td>Maximum page y offset in the last ping period</td>
+                                <td>1198</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL -->
+    <!-- START SINGLE MODAL -->
+    <div class="modal fade" id="meta-data" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <section class="data-set">
+                    <table id="meta-data-modal">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>v_tracker</td>
+                                <td>text</td>
+                                <td>Tracker version</td>
+                                <td>js-2.14.0</td>
+                            </tr>
+                            <tr>
+                                <td>name_tracker</td>
+                                <td>text</td>
+                                <td>Tracker namespace</td>
+                                <td>snplow</td>
+                            </tr>
+                            <tr>
+                                <td>v_collector</td>
+                                <td>text</td>
+                                <td>Collector version</td>
+                                <td>ssc-0.17.0-kinesis</td>
+                            </tr>
+                            <tr>
+                                <td>v_etl</td>
+                                <td>text</td>
+                                <td>Enricher version</td>
+                                <td>stream-enrich-0.22.0-common-0.38.0</td>
+                            </tr>
+                        </tbody>
+                    </table>                   
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL -->
 </main>
