@@ -85,9 +85,23 @@ $('#raw-set-data-toggle').click(function(){
 })
 
 // Toggle submit form in explore-snowplow-data-part-1 page
+var isProductFormToggled = 0
 $('#product-form-toggle').click(function(){
-    $('#product-form').slideToggle();
-})
+    isProductFormToggled = 1;
+
+    if(isProductFormToggled){
+        $('#product-form').slideToggle();
+        setTimeout(function(){ 
+            console.log('vo timeout')
+            $('html, body').animate({
+                scrollTop: ($('#product-form-toggle').offset().top -200)
+            },500);
+         }, 300);
+    }else{
+        console.log('veke kliknato')
+        $('#product-form').slideToggle();
+    }
+});
 
 
 
