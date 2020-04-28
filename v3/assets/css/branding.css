@@ -35,10 +35,10 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a,table,td,th,tr{
     background-color:#45C6CA !important;
     /* -webkit-box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00);
     box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00); */
-    border-radius: 9px;
+    border-radius: 4px;
 }
 
-.sec-cta a p, .sec-cta p{
+.sec-cta a p, .sec-cta p, .sec-cta{
     color:#ffffff !important;
 }
 
