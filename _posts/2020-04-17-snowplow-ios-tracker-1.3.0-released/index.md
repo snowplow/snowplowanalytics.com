@@ -5,7 +5,7 @@ title-short: Snowplow iOS Tracker 1.3.0
 tags: [snowplow, objc, ios, tracker]
 author: Alex Benini
 category: Releases
-permalink: /blog/2020/04/24/snowplow-ios-tracker-1.3.0-released/
+permalink: /blog/2020/04/28/snowplow-ios-tracker-1.3.0-released/
 discourse: false
 ---
 
