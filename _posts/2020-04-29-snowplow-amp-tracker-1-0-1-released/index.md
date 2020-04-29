@@ -21,7 +21,7 @@ It also overhauls some of the existing functionality, to resolve some issues inv
 
 This release introduces breaking changes to how data is tracked - users are encouraged to migrate to the latest version of the AMP tracker as soon as possible.
 
-Read on below the fold for: 
+Read on below the fold for:
 
 1. [Aggregating Page Views](#page-view-agg)
     * [Page Ping Tracking](#page-pings)
@@ -94,7 +94,7 @@ The AMP tracker now offers the ability to attach the AMP client ID to the querys
 "linkers": {
   "enabled": true,
   "proxyOnly": false,
-  "destinationDomains": ["ampdomain"]
+  "destinationDomains": ["destdomain"]
 },
 ...
 {% endhighlight %}
@@ -113,7 +113,7 @@ If a `domain_userid` is found by the AMP tracker, it is not guaranteed to be att
 
 <h2 id="custom-events">3. Custom Events</h2>
 
-Custom events and entities can now be tracked using the AMP tracker - read more about the general topic of custom tracking with Snowplow in [the documentation].
+Custom events and entities can now be tracked using the AMP tracker - read more about the general topic of custom tracking with Snowplow in [the documentation][cust-events-docs].
 
 Custom events are sent by instrumenting the selfDescribingEvent request in a trigger, and passing customEventSchemaVendor, customEventSchemaName, customEventSchemaVersion, customEventSchemaData to it as variables - where customEventSchemaData is an escaped JSON string, as follows:
 
@@ -157,7 +157,7 @@ Custom entities can be attached to any event by assigning a full self-describing
 Note that custom entities may be assigned globally (ie, for the entire tracking configuration rather than per-trigger) - however once one is assigned globally, more may not be added individually per-trigger.
 
 
-Documentation can be found [here][cust-entities]
+Documentation can be found [in the custom entities section of the docs][cust-entities]
 
 <h2 id="change-existing">4. Changes to Existing Behaviour</h2>
 
@@ -181,8 +181,8 @@ AMP offers only one means of recording a timestamp, which is not likely to confo
 [amp-ping-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/#page-pings
 [amp-ping-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_page_ping/jsonschema/1-0-0
 [amp-var-subs]: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
-[cust-events-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/?preview_id=1788&preview_nonce=b0ddfb27ea&preview=true#custom-events
-[cust-entities]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/?preview_id=1788&preview_nonce=b0ddfb27ea&preview=true#customcontexts
+[cust-events-docs]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/#custom-events
+[cust-entities]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/google-amp-1-0-0-2/#customcontexts
 [amp-wp-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_web_page/jsonschema/1-0-0
 [amp-id-schema]: https://github.com/snowplow/iglu-central/blob/master/schemas/dev.amp.snowplow/amp_id/jsonschema/1-0-0
 [cd-linker]: https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/
