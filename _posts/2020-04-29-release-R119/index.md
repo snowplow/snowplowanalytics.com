@@ -24,8 +24,7 @@ In this post:
 2. [No more monorepo](#monorepo)
 3. [Other changes](#other)
 4. [Upgrading](#upgrading)
-5. [Roadmap](#roadmap)
-6. [Getting help](#help)
+5. [Getting help](#help)
 
 <h2 id="badrows-ga">1. Production release of the new failed events format</h2>
 
@@ -91,13 +90,6 @@ For Snowplow Insights customers, there is nothing you need to do. We will be in 
 
 The upgrade guide for open source users can be found on our [wiki page](https://github.com/snowplow/snowplow/wiki/Upgrade-Guide#r119).
 
-<h1 id="roadmap">5. Roadmap</h1>
-
-Some of the work that is coming up:
-
-* Event Recovery 0.2.0
-* RDB Loader Update
-* BQ Loader Update 
 
 <h1 id="help">6. Getting help</h1>
 
