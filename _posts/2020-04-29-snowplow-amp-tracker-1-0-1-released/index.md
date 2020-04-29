@@ -21,7 +21,7 @@ It also overhauls some of the existing functionality, to resolve some issues inv
 
 This release introduces breaking changes to how data is tracked - users are encouraged to migrate to the latest version of the AMP tracker as soon as possible.
 
-Read on below the fold for:
+Read on below the fold for: 
 
 1. [Aggregating Page Views](#page-view-agg)
     * [Page Ping Tracking](#page-pings)
