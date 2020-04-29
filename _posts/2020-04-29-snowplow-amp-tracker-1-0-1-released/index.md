@@ -1,10 +1,12 @@
 ---
+layout: post
 title-short: Snowplow AMP tracker 1.0.1
 title: "Snowplow AMP tracker 1.0.1 released: Significant upgrade including custom events and entities"
 description: Significant upgrade of the AMP tracker, including lots of new features.
-author: Colm O Griobhtha
+author: Colm
 category: Releases
-permalink: /blog/2020/04/17/snowplow-amp-tracker-1.0.1-released/
+permalink: /blog/2020/04/29/snowplow-amp-tracker-1.0.1-released/
+discourse: false
 ---
 
 We are delighted to announce a new release of the [Snowplow AMP Tracker][amp-tracker-docs]. Version 1.0 of the tracker introduces a host of new functionality to Snowplow tracking on the AMP platform:
