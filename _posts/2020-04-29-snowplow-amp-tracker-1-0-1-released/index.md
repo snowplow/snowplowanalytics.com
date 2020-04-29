@@ -23,17 +23,17 @@ This release introduces breaking changes to how data is tracked - users are enco
 
 Read on below the fold for:
 
-- 1. [Aggregating Page Views](#page-view-agg)
-  - 1.1 [Page Ping Tracking](#page-pings)
-  - 1.2 [Web Page Entity](#wp-entity)
-  - 1.3 [Modeling Considerations](#modeling-pvs)
-- 2. [Mapping User Journeys](#user-journeys)
-  - 2.1 [AMP ID Entity](#amp-id-entity)
-  - 2.2 [AMP Linker](#amp-linker)
-  - 2.3 [Modeling Considerations](#modeling-users)
-- 3. [Custom Events](#custom-events)
-- 4. [Custom Entities](#custom-entities)
-- 5. [Changes to existing behaviour](#change-existing)
+1. [Aggregating Page Views](#page-view-agg)
+    * [Page Ping Tracking](#page-pings)
+    * [Web Page Entity](#wp-entity)
+    * [Modeling Considerations](#modeling-pvs)
+2. [Mapping User Journeys](#user-journeys)
+    * [AMP ID Entity](#amp-id-entity)
+    * [AMP Linker](#amp-linker)
+    * [Modeling Considerations](#modeling-users)
+3. [Custom Events](#custom-events)
+4. [Custom Entities](#custom-entities)
+5. [Changes to existing behaviour](#change-existing)
 
 
 <!--more-->
@@ -104,7 +104,7 @@ This will add a querystring parameter ‘linker=’ to the destination url, whic
 
 <h3 id="modeling-users"> 2.3 Modeling Considerations</h3>
 
-The value attached to the querystring by the AMP linker will look something like this: `?linker=1*1c1wx43*amp_id*amp-a1b23cDEfGhIjkl4mnoPqr`. To extract the AMP ID, this must be parsed, and the value immediately following the `amp_id*` string must be extracted.
+The value attached to the querystring by the AMP linker will look something like this:   `?linker=1*1c1wx43*amp_id*amp-a1b23cDEfGhIjkl4mnoPqr`. To extract the AMP ID, this must be parsed, and the value immediately following the `amp_id*` string must be extracted.
 
 This value will only be present for the first page the user lands on after leaving the AMP page.
 
@@ -149,7 +149,7 @@ Documentation can be found [in the custom event section of the AMP tracker docs]
 
 Custom entities can be attached to any event by assigning a full self-describing json - as an escaped json string - to a variable named `customContexts`. A singular entity may be passed, or more than one may be used if separated by a comma. For example:
 
-{% highlight html %}
+{% highlight JSON %}
 "vars": {
   "customContexts":  "{\"schema\":\"iglu:com.acme/first_context/jsonschema/1-0-0\",\"data\":{\"someKey\":\"someValue\"}},{\"schema\":\"iglu:com.acme/second_context/jsonschema/1-0-0\",\"data\":{\"someOtherKey\":\"someOtherValue\"}}"
 {% endhighlight %}
