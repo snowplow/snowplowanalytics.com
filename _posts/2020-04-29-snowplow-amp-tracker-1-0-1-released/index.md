@@ -94,7 +94,7 @@ The AMP tracker now offers the ability to attach the AMP client ID to the querys
 "linkers": {
   "enabled": true,
   "proxyOnly": false,
-  "destinationDomains": ["ampdomain"]
+  "destinationDomains": ["destdomain"]
 },
 ...
 {% endhighlight %}
