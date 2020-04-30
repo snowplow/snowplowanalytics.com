@@ -937,6 +937,19 @@
         padding:20px;
         box-sizing: border-box;
     }
+    /* ===============
+        PAST WEBINAR
+    =============== */
+    section.past-webinar .past-webinar-banner .wrap img{
+        margin: 0px 0px 20px 0px;
+    }
+    section.past-webinar .past-webinar-banner .wrap .desc{
+        text-align: center;
+        padding:0px 20px;
+    }
+    section.past-webinar .past-webinar-banner .wrap .desc h4{
+        padding-bottom:10px;
+    }
 }
 
 @media screen and (max-width: 740px) {

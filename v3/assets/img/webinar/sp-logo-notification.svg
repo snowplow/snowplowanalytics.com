@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="47px" viewBox="0 0 68 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>spw-icon-data</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Landingpage---v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Webinar-Landing-Page---Past-webinar" transform="translate(-612.000000, -126.000000)" stroke-width="1.5">
+            <g id="Group-13" transform="translate(0.000000, 76.000000)">
+                <g id="Group-12" transform="translate(613.000000, 41.000000)">
+                    <g id="spw-icon-data" transform="translate(0.000000, 10.000000)">
+                        <path d="M19,5.5 L4,5.5" id="XMLID_13_" stroke="#9E62DD" stroke-dasharray="10,6,0,8,8,28"></path>
+                        <path d="M0,31.5 L15,31.5" id="XMLID_12_" stroke="#9E62DD"></path>
+                        <path d="M4,18.5 L20,18.5" id="XMLID_11_" stroke="#6738B8"></path>
+                        <path d="M19,38.5 L7,38.5" id="XMLID_10_" stroke="#6738B8" stroke-dasharray="10,6,0,8,8,28"></path>
+                        <g id="XMLID_8_" transform="translate(14.000000, 0.000000)" stroke="#6738B8">
+                            <path d="M37.271619,44.9700636 C38.396517,44.8960104 39.4464218,44.3035851 40.1213605,43.3408939 L51.3703401,24.0870703 C51.8952925,23.0503259 51.8952925,21.8654752 51.3703401,20.902784 L40.1213605,1.6489604 C39.521415,0.686269216 38.4715102,0.0938438733 37.271619,0.0197907054 L14.7736599,0.0197907054 C13.6487619,0.0938438733 12.5988571,0.686269216 11.9989116,1.6489604 L0.749931973,20.902784 C0.224979592,21.9395284 0.224979592,23.1243791 0.749931973,24.0870703 L11.9989116,43.3408939 C12.5988571,44.3035851 13.6487619,44.8960104 14.8486531,44.9700636 L37.271619,44.9700636 Z" id="XMLID_9_"></path>
+                        </g>
+                        <polyline id="XMLID_7_" stroke="#6738B8" points="42.0761905 0 34 13.8151815 39.3333333 23 50 23 58 9.18481848"></polyline>
+                        <polyline id="XMLID_6_" stroke="#6738B8" points="42.0761905 45 34 31.1848185 39.3333333 22 50 22 58 35.8151815"></polyline>
+                        <polyline id="XMLID_5_" stroke="#6738B8" points="19 32 34 32 39 23 34 14 19 14"></polyline>
+                        <path d="M51.3406273,45 C52.4784829,44.9258649 53.5404814,44.3327842 54.2231947,43.369028 L65.6017505,24.0939044 C66.1327498,23.0560132 66.1327498,21.8698517 65.6017505,20.9060956 L54.2231947,1.63097199 C53.6163384,0.667215815 52.5543399,0.0741350906 51.3406273,0 L28.5835157,0 C27.4456601,0.0741350906 26.3836616,0.667215815 25.7768053,1.63097199 L14.3982495,20.9060956 C13.8672502,21.9439868 13.8672502,23.1301483 14.3982495,24.0939044 L25.7768053,43.369028 C26.3836616,44.3327842 27.4456601,44.9258649 28.6593727,45 L51.3406273,45 Z" id="XMLID_4_" stroke="#6738B8"></path>
+                        <polygon id="XMLID_3_" stroke="#6738B8" points="45 32 50 23 45 14 35 14 30 23 35 32"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

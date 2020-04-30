@@ -1946,7 +1946,7 @@ section.testemonial-wrap{
 
 
 .webinar section.main-form .hex-3-bg{
-    top:100px;
+    top:210px;
     background-size: 80%;
     background-position: right top;
 }  
@@ -2075,6 +2075,27 @@ section.date-announcement .item .desc{
     margin-bottom:40px;
 }
 
+
+/* ===============
+       PAST WEBINAR   
+=============== */
+
+section.past-webinar .main-cta-bg{
+    background:#F88298 !important;
+}
+
+section.past-webinar .past-webinar-banner{
+    background-image: linear-gradient(209deg, #F3FDFF 0%, #DFE1FF 100%);
+}
+section.past-webinar .past-webinar-banner .wrap{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    padding:60px 0px;
+}
+section.past-webinar .past-webinar-banner .wrap img{
+    margin-right:10px;
+}
 
 /* ===============
     ABM LANDING PAGE
