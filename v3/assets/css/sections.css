@@ -2542,6 +2542,9 @@ section.data-set table thead tr:first-of-type th button{
 }
 .tooltip.in{opacity:1;}
 
+.tooltip.show p {
+    text-align:left;
+  }
 
 /* EXPLORE SECTION part-2-list */
 
