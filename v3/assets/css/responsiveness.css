@@ -933,7 +933,22 @@
         margin-left:0px;
     }
     .explore-v3 .modal-dialog{
-        width: 320px;
+        width: 100%;
+        padding:20px;
+        box-sizing: border-box;
+    }
+    /* ===============
+        PAST WEBINAR
+    =============== */
+    section.past-webinar .past-webinar-banner .wrap img{
+        margin: 0px 0px 20px 0px;
+    }
+    section.past-webinar .past-webinar-banner .wrap .desc{
+        text-align: center;
+        padding:0px 20px;
+    }
+    section.past-webinar .past-webinar-banner .wrap .desc h4{
+        padding-bottom:10px;
     }
 }
 
@@ -1098,6 +1113,18 @@
    }
    section.content-block .explore article .content{
        width: 320px;
+   }
+    /* ===============
+        EXPLORE SECTION PAGES
+   =============== */
+   section.data-description ul{
+       justify-content: center;
+   }
+   section.data-description ul li{
+       margin:20px;
+   }
+   section.list-included .cta-links a:last-of-type{
+       margin-top:20px;
    }
 }
 
@@ -1397,10 +1424,66 @@
        margin-top:20px;
    }
 
-   /* SECTION EXPLORE */
-   .abm .explore .post-content ul{
+
+    /* ===============
+        EXPLORE SECTION PAGES
+   =============== */
+    .abm .explore .post-content ul{
        margin-bottom:0px;
-   }
+    }  
+    section.list-included .cta-links a{
+        width: 100%;
+        text-align:center;
+        box-sizing: border-box;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .data-set-bg, .explore-v3 .part-2-list section.data-set{
+        padding:40px 0px 20px 20px;
+    }
+    .explore-v3 .part-2-list section.data-set{
+        margin-top:0px;
+    }
+    section.data-set .box-shadow .full:first-of-type{
+        margin:0px 0px 20px 0px;
+    }
+    section.part-2-list .box-shadow .full:first-of-type{
+        margin:0px;
+        padding-bottom:20px;
+    }
+    section.data-description ul{
+        margin-bottom:0px;
+    }
+    section.data-description ul li{
+        width: 50%;
+        margin:20px 0px;
+    }
+    section.data-description ul li p{
+        text-align:center;
+    }
+    section.data-set .box-shadow{
+        padding:20px 0px 20px 20px;
+    }
+    section.data-description h4{
+        padding-bottom:0px;
+    }
+    .explore-v3 .list-included, section.data-set, .explore-v3 section.sub-hero{
+        margin-top:40px;
+    }
+    section.list-included .cta-links{
+        margin-bottom:40px;
+    }
+    .explore-v3 .pagination .blog-back-button{
+        margin-top:0px;
+    }
+    .explore-v3 .pagination{
+        margin:0px;
+    }
+    section.data-set .fade-to-white{
+        width: 40px;
+        background: url(../img/explore-data/fade-to-white-small.png) repeat center center;
+    }
+    
    /* FORM ACCOUNT BOX */
    .main-form .account-box .contact-details div p {
         margin-bottom: 0px;

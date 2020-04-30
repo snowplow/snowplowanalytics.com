@@ -1946,7 +1946,7 @@ section.testemonial-wrap{
 
 
 .webinar section.main-form .hex-3-bg{
-    top:100px;
+    top:210px;
     background-size: 80%;
     background-position: right top;
 }  
@@ -2075,6 +2075,27 @@ section.date-announcement .item .desc{
     margin-bottom:40px;
 }
 
+
+/* ===============
+       PAST WEBINAR   
+=============== */
+
+section.past-webinar .main-cta-bg{
+    background:#F88298 !important;
+}
+
+section.past-webinar .past-webinar-banner{
+    background-image: linear-gradient(209deg, #F3FDFF 0%, #DFE1FF 100%);
+}
+section.past-webinar .past-webinar-banner .wrap{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    padding:60px 0px;
+}
+section.past-webinar .past-webinar-banner .wrap img{
+    margin-right:10px;
+}
 
 /* ===============
     ABM LANDING PAGE
@@ -2542,6 +2563,9 @@ section.data-set table thead tr:first-of-type th button{
 }
 .tooltip.in{opacity:1;}
 
+.tooltip.show p {
+    text-align:left;
+  }
 
 /* EXPLORE SECTION part-2-list */
 
@@ -2612,4 +2636,36 @@ section.data-set table thead tr:first-of-type th button{
 
 .explore-v3 .modal-dialog section.data-set table thead tr:first-of-type th{
     text-transform: none;
+}
+
+
+
+/* ========================
+        EXPLORE DATA
+   ======================== */
+
+section.video-embed {
+    margin-top:20px;
+}
+
+section.video-embed .wrap {
+    position: relative;
+    padding-bottom: 45%; /* 16:9 */
+    height: 0;
+}
+
+section.video-embed .wrap iframe {
+    position: absolute;
+    border-radius:9px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.watch section.sub-hero .heading h4 {
+    margin:40px 0px 15px 0px
+}
+.watch section.sub-hero .heading h1{
+    margin:0px 0px 30px 0px;
 }
