@@ -91,7 +91,7 @@ For Snowplow Insights customers, there is nothing you need to do. We will be in 
 The upgrade guide for open source users can be found on our [wiki page](https://github.com/snowplow/snowplow/wiki/Upgrade-Guide#r119).
 
 
-<h1 id="help">6. Getting help</h1>
+<h1 id="help">5. Getting help</h1>
 
 For more details on this release, please check out the [release notes][snowplow-release] on GitHub.
 
