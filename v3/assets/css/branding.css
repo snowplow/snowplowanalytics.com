@@ -9,8 +9,8 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a,table,td,th,tr{
     background-image: -o-linear-gradient(74deg, #6738B8 0%, #6738B8 100%);
     background-image: linear-gradient(16deg, #6738B8 0%, #6738B8 100%);
     background-color:#6738B8 !important;
-    -webkit-box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43);
-            box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43);
+    /* -webkit-box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43);
+            box-shadow: 0 2px 14px 1px rgba(189,151,255,0.43); */
     border-radius: 4px;
     color:#ffffff;
     -webkit-transition: all .1s ease-in-out;
@@ -35,10 +35,10 @@ h1,h2,h3,h4,h5,h6,p,a,em,strong,span,div,a,table,td,th,tr{
     background-color:#45C6CA !important;
     /* -webkit-box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00);
     box-shadow: 0 2px 29px 6px rgba(151,236,255,0.00); */
-    border-radius: 9px;
+    border-radius: 4px;
 }
 
-.sec-cta a p, .sec-cta p{
+.sec-cta a p, .sec-cta p, .sec-cta{
     color:#ffffff !important;
 }
 
