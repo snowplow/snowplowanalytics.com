@@ -2560,7 +2560,7 @@ section.no-bg{
 }
 
 section.data-set .box-shadow .full::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.13);
+    box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.13);
     background-color: #ffffff;
     border-radius: 9px 0px 0px 9px;
 }
