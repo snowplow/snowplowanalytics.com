@@ -699,6 +699,10 @@ section.content .blog-wrap{
     opacity:.4;
 }
 
+.post-content .full .main-cta-bg{
+    color:#fff !important;
+}
+
 .post-content blockquote{
     background: url('../img/global/quote.svg') no-repeat left center;
     margin:20px 0px;
@@ -2512,9 +2516,17 @@ section.data-set{
     z-index:3;
 }
 
+section.data-set em{
+    font-size:16px !important;
+    margin-bottom:40px;
+    padding-right:20px;
+}
+
+
 section.data-set .box-shadow{
     box-sizing: border-box;
     padding:40px;
+    overflow:hidden;
     position:relative;
 }
 section.data-set .box-shadow .full{
@@ -2620,6 +2632,8 @@ section.data-set table thead tr:first-of-type th button{
     padding:0px;
     background:none;
     color:#323743;
+    position:relative;
+    top:-1px;
 }
 
 

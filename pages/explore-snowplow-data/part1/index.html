@@ -57,6 +57,7 @@ assets:
       </div>
   </section>
   <section class="data-set data-set-bg">
+    <em class="mobile-only"><strong>Hint:</strong> You can browse the columns of the table below by swiping. </br> For a better experience turn your phone horizontally, or visit this page on a desktop.</em>
     <div class="box-shadow">
         <span class="fade-to-white"></span>
         <div class="full top-scroller-target">
@@ -2858,6 +2859,10 @@ assets:
                     <li>It’s guaranteed to be high quality - Snowplow’s validation ensures the data in your warehouse doesn’t require cleansing before analysis</li>
                     <li>It will be complete - by hosting the pipeline on your infrastructure you can be sure tracking is not blocked by adblockers or browser tracking prevention methods</li>
                 </ul>
+                <div class="full cta-links">
+                    <a id="download-raw-xls" href="https://go.snowplowanalytics.com/l/571483/2020-05-05/3s6lptd/571483/219941/explore_snowplow_data.xlsx" class="cta main-cta-bg">Download the sample data (xls)</a>
+                    <a href="{{ BASE_PATH }}/explore-snowplow-data-part-2/" class="cta sec-cta">See how we’d model this data</a>
+                </div>
             </div>
         </div>
     </section>
@@ -2869,10 +2874,10 @@ assets:
             <p>This raw data can be transformed, aggregated and modeled into any number of interesting reports from fairly standard reporting like sessions to more complex analyses around attribution or engagement. And because the raw data is stored in your warehouse, it can be modeled multiple times to serve multiple teams; one data source of truth addressing multiple use cases.</p>
             <p>And there are many more reasons Snowplow Insights is a leading data collection platform for companies that want to do data right:</p>
             <ul>
-                <li>Custom data structures - collect data that is structured to suit your business, don’t be forced into a pre-defined structure</li>
-                <li>Validation - only high-quality, well-structured data makes it through to your warehouse, everything else can be re-processed</li>
-                <li>First-party data - hosted in your infrastructure so browser measures like ITP won’t block your tracking</li>
-                <li>Full ownership - you own your infrastructure, you own your raw data and you own your data model</li>
+                <li>Custom data structures - <a href="{{ BASE_PATH }}/blog/2020/01/24/re-thinking-the-structure-of-event-data/">collect data that is structured to suit your business</a>, don’t be forced into a pre-defined structure</li>
+                <li>Validation - <a href="{{ BASE_PATH }}/blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/">only high-quality, well-structured data makes it through to your warehouse</a>, everything else can be re-processed</li>
+                <li>First-party data - hosted in your infrastructure so browser <a href="{{ BASE_PATH }}/blog/2019/05/28/how-ITP2.1-works-what-it-means-for-web-analytics/">measures like ITP won’t block your tracking</a></li>
+                <li>Full ownership - you own your infrastructure, <a href="{{ BASE_PATH }}/blog/2019/04/04/guest-post-3-reasons-why-your-company-should-own-its-data/">you own your raw data and you own your data model</a></li>
             </ul>
         </div>
     </div>
@@ -2881,7 +2886,7 @@ assets:
     <div class="wrap">
         <h2>See how we model raw data into actionable insights</h2>
         <div class="full cta-links">
-            <a id="product-form-toggle" class="cta main-cta-bg">Book a pipeline demo</a>
+            <a id="product-form-toggle" class="cta main-cta-bg">Try it out yourself</a>
             <a href="{{ BASE_PATH }}/explore-snowplow-data-part-2/" class="cta sec-cta">Explore modeled data</a>
         </div>
     </div>
@@ -2894,7 +2899,7 @@ assets:
           <input type="hidden" name="00N2400000JSExF" id="00N2400000JSExF" value="Explore Data Page">
           <div class="form-wrap">
               <div class="full">
-                <h3>Book a pipeline demo with our Product team</h3>
+                <h3>Book a demo with our Product team to see the data in action</h3>
               </div>
               <div class="half">
                 <label for="first-name">First name<span style="color:red">*</span></label>

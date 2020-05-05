@@ -37,3 +37,19 @@ header .navbar .navbar-nav .btn, header .navbar-default .navbar-nav .btn{
         margin-top:0px !important;
     }
 }
+
+
+
+/* ===============
+       Exceptions
+   =============== */
+.mobile-only{
+    display:none;
+}
+
+
+@media screen and (max-width: 520px) {
+    .mobile-only{
+        display:block;
+    }
+}
