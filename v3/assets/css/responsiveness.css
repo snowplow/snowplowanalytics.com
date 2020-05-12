@@ -181,6 +181,12 @@
     .abm section.main-form .wrap .heading{
         width: 400px;
     }
+    /* ===============
+       WEBINAR LISTING
+   =============== */
+   section.webinar-listing ul li .right > a{
+       min-width: 210px;
+   }
 }
 
 
@@ -432,6 +438,26 @@
     section.customers-simple .hex-bg-left-2x{
         top:45px;
     }
+    /* ===============
+       WEBINAR LISTING
+   =============== */
+    section.webinar-listing ul li .right{
+        position:relative;
+    }
+    section.webinar-listing ul li .right > a{
+        position:absolute;
+        right:40px;
+        top:20px;
+    }
+    section.webinar-listing ul li .right > a {
+        min-width: auto;
+    }
+    section.webinar-listing ul li .right .desc .item img{
+        margin-right:10px;
+    }
+    section.webinar-listing ul li .right .desc .item{
+        margin-right:15px;
+    }
 }
 
 
@@ -635,6 +661,57 @@
         margin-left:10px;
         width: 280px;
     }
+    /* ===============
+       WEBINAR LISTING
+   =============== */
+   .webinar-list section.webinar-listing{
+       margin-top:60px;
+   }
+
+   .webinar-list section .heading-subsection-left p{
+       width: 100%;
+   }
+    section.webinar-listing ul{
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-between;
+    }
+    section.webinar-listing ul li{
+        flex-flow: column;
+        width: 366px;
+    }
+    section.webinar-listing ul li > img{
+        width: 100%;
+    }
+    section.webinar-listing ul li .right{
+        padding:20px;
+    }
+    section.webinar-listing ul li .right > a{
+        position:static;
+        width: 100%;
+        text-align: center;
+    }
+    section.webinar-listing ul li .right .desc .details{
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-between;
+    }
+    section.webinar-listing ul li .right .desc .item{
+        margin-right:0px;
+    }
+    section.webinar-listing ul li .right .desc .item img{
+        margin-right:10px;
+    }
+    section.webinar-listing ul li .right .desc{
+        margin-left:0px;
+    }
+    section.webinar-listing ul li .right{
+        flex-flow:column;
+    }
+    section.webinar-listing ul li .right h3{
+        margin:20px 0px;
+    }
+
 }
 
 
@@ -950,6 +1027,24 @@
     section.past-webinar .past-webinar-banner .wrap .desc h4{
         padding-bottom:10px;
     }
+    /* ===============
+       WEBINAR LISTING
+   =============== */
+   section.webinar-listing ul li{
+       width: 100%;
+   }
+   section .heading-subsection-left p{
+       width: 100%;
+   }
+   section.webinar-listing ul li .right{
+       padding:40px;
+   }
+   section.webinar-listing ul li .right .desc .details{
+       justify-content: left;
+   }
+   section.webinar-listing ul li .right .desc .details .item{
+       margin-right:15px;
+   }
 }
 
 @media screen and (max-width: 740px) {
@@ -1502,6 +1597,26 @@
     .abm section.main-form .wrap .heading{
         text-align:center;
     }
+    /* ===============
+       WEBINAR LISTING
+   =============== */
+   section.webinar-listing ul li .right{
+       padding:20px;
+   }
+   section.webinar-listing ul li .right .desc .details{
+       flex-flow:column;
+       justify-content: center;
+   }
+   section.webinar-listing ul li .right .desc .details .item:last-of-type{
+       margin-top:15px;
+   }
+   section.webinar-listing ul li .right h3{
+       text-align:center;
+   }
+   section.webinar-listing ul li .right .desc .item{
+       justify-content: center;
+   }
+
 }
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "What are Snowplow events and entities and what makes them so powerful"
-title-short: "What are Snowplow events and entities and what makes them so powerful"
+title: "How Snowplow collects events and entities and what makes this so powerful"
+title-short: "How Snowplow collects events and entities and what makes this so powerful"
 description: "This article explains what events and entities are, and how they allow you to set up your data collection for better data quality, data richness and flexibility so you can derive more value and insights from your data"
 author: Lyuba
 category:  Product features
@@ -10,12 +10,12 @@ discourse: false
 ---
 
 
-Events and entities are one of Snowplow’s most unique features. They are a key reason why Snowplow is able to deliver incredibly rich, granular and flexible data. However, Snowplow events and entities differ from the way other vendors collect and organize data which means the concept can be confusing at first. This article explains what events and entities are, and how they allow you to set up your data collection for better data quality, data richness and flexibility so you can derive more value and insights from your data.
+The way Snowplow structures events and entities is one of Snowplow’s most unique features. It is a key reason why Snowplow is able to deliver incredibly rich, granular and flexible data. However, the way Snowplow collects and defines events and entities differs from other vendors, which means the concept can be confusing at first. This article explains what events and entities are, and how Snowplow allows you to set up your data collection for better data quality, data richness and flexibility so you can derive more value and insights from your data.
 
 
 ## What are events and entities?
 
-Events and entities describe your users’ behavior and actions. One of your first steps when setting up Snowplow is to define upfront what data you want to collect and what that data will look like. Defining your data structure through events and entities makes it possible to collect granular data shaped to your business and use cases, as well as improve the quality of your data. Let’s take a look at events and entities in more detail.
+Events and entities describe your users’ behavior and actions. One of your first steps when setting up Snowplow is to define upfront what data you want to collect and what that data will look like. Defining custom data structures for events and entities makes it possible to collect granular data shaped to your business and use cases, as well as improve the quality of your data. Let’s take a look at events and entities in more detail.
 
 
 
@@ -57,7 +57,8 @@ For example, in the diagram below a media website can track events to understand
 
 ### Using schemas to define your events and entities
 
-To derive maximum business value from your data, it is important to have data quality, data meaning and data governance “built in” to your data collection. Events and entities make this possible because they are defined through a set of self-describing schemas. This means each schema is set up with information on who created the event and entity, what they are about, what format the custom properties are in, and the schema version. As a result, schemas allow you to:
+To derive maximum business value from your data, it is important to have data quality, data meaning and data governance “built in” to your data collection. At Snowplow, we ask customers to define events and entities upfront using a set of self-describing schemas. This means each schema is set up with information on who created the event and entity, what they are about, what format the custom properties are in, and the schema version. As a result, schemas allow you to:
+
 
 *   Control what data is collected, and who can access it for better data governance.
 *   Validate your data against the schemas, to ensure data accuracy.
@@ -70,7 +71,7 @@ In short, schemas make it possible to set up your tracking in a durable and scal
 
 ## What makes events and entities so powerful?
 
-Now that you have a better understanding of what events and entities are, and how they are defined, you can begin to see why collecting and organizing data in this way is so effective. Let’s dive into some of the reasons behind what makes events and entities so powerful.
+Now that you have a better understanding of how Snowplow works with events and entities, and users can define them, you can begin to see why collecting and organizing data in this way is so effective. Let’s dive into some of the reasons behind what makes events and entities so powerful.
 
 
 ### Better data quality
@@ -82,7 +83,8 @@ As described above, all the data sent into the Snowplow pipeline is ‘validated
 
 ### Richer and more granular data
 
-What sets events and entities apart from the way other vendors collect data, is their level of richness and granularity. As you already know, each event and entity is by default collected with at [130 properties](https://github.com/snowplow/snowplow/wiki/canonical-event-model#common), and you can track as many entities with each event, with as many data points per entity as you like.
+
+What sets Snowplow apart from the way other vendors collect data, is the level of richness and granularity we provide with each event and entity. As you already know, each event and entity is by default collected with at [130 properties](https://github.com/snowplow/snowplow/wiki/canonical-event-model#common), and you can track as many entities with each event, with as many data points per entity as you like.
 
 Richer data means companies have access to much more granular insights into user behavior and preferences, which provides valuable data for a range of use cases, from customer journey optimisation to marketing attribution and operational reporting.
 
@@ -99,6 +101,6 @@ More specifically, each line in the Snowplow events table represents a single ev
 
 ## Summary
 
-Although working with events, entities and schemas requires putting in time and effort to define your tracking upfront, the result is a much more robust data strategy optimized for getting the most value and insights out of your data.
+Although defining events and entities through schemas requires putting in time and effort into your tracking upfront, the result is a much more robust data strategy optimized for getting the most value and insights out of your data.
 
 If you are interested in learning more about events and entities, or how we work with our customers to design and implement a customized data collection strategy, get in touch with us [here](https://snowplowanalytics.com/get-started/).

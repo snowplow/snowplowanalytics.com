@@ -6,6 +6,10 @@ author: Cara Baestlein
 category:  How to guides
 permalink: /blog/2020/04/06/introduction-to-marketing-attribution-with-snowplow/
 discourse: false
+custom-cta-title: 'Explore Snowplow data'  
+custom-cta-sub-title: 'Explore a sample of the granular event-level data Snowplow loads directly into your data warehouse, and see how it can be modeled to deliver actionable insights.'  
+custom-cta-link: explore-snowplow-data-part-1/
+custom-cta-link-text: Start now
 ---
 
 Building out a comprehensive marketing strategy across all channels and platforms, each with varied and complex user journeys, is difficult. Evaluating the effectiveness of your marketing spend and calculating it’s ROI however should not be. 

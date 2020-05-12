@@ -43,7 +43,7 @@ section{
 }
 
 header .call-to-action{
-    margin-top:10px;
+    margin-top:4px;
     padding: 12px 0px !important;
 }
 
@@ -53,8 +53,9 @@ header .navbar-header{
 header .navbar-bottom{
     padding-top:3px;
 }
-
-
+header .navbar .navbar-nav, header .navbar-default .navbar-nav{
+    margin-top:2px;
+}
 
 /* ===============
         FOOTER
@@ -70,3 +71,5 @@ footer{
 footer p {
     color:#ffffff;
 }
+
+

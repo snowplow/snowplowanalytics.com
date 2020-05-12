@@ -699,6 +699,10 @@ section.content .blog-wrap{
     opacity:.4;
 }
 
+.post-content .full .main-cta-bg{
+    color:#fff !important;
+}
+
 .post-content blockquote{
     background: url('../img/global/quote.svg') no-repeat left center;
     margin:20px 0px;
@@ -1069,6 +1073,23 @@ section .heading-subsection-center p{
     width: 80%;
 }
 
+/* ===============
+   SUB SECTION - LEFT ALIGN
+   =============== */
+
+section .heading-subsection-left{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: left;
+    text-align:left;
+}
+section .heading-subsection-left h2{
+    margin-bottom:15px;
+    width: 100%;
+}
+section .heading-subsection-left p{
+    width: 80%;
+}
 
 
 /* ===============
@@ -1938,10 +1959,72 @@ section.testemonial-wrap{
 }
 
 
+/* ========================
+       WEBINAR LIST
+   ======================== */
 
+.webinar-list  section.webinar-listing{
+     margin-top:0px;
+ }
+.webinar-list  section.past-webinars{
+    margin-top:100px;
+}
+
+section.webinar-listing ul{
+    margin:30px 0px 60px 0px;
+}
+section.webinar-listing ul li{
+    display:flex;
+    flex-flow:row;
+    margin-bottom:30px;
+    border-radius:9px;
+    overflow:hidden;
+}
+
+
+section.webinar-listing ul li > img{
+    width: 300px;
+}
+section.webinar-listing ul li .right{
+    width: 100%;
+    display:flex;
+    flex-flow:row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+section.webinar-listing ul li .right .desc{
+    display:flex;
+    flex-flow:column;
+    max-width:570px;
+}
+section.webinar-listing ul li .right .desc .details{
+    display:flex;
+    flex-flow:row;
+}
+
+section.webinar-listing ul li .right .desc .item img{
+    width: 25px;
+    margin-right:15px;
+}
+section.webinar-listing ul li .right .desc .item{
+    display:flex;
+    flex-flow:row;
+    margin-right:25px;
+}
+
+section.webinar-listing ul li .right h3{
+    margin-top:25px;
+}
+
+section.past-webinars ul li .right > .main-cta-bg{
+        background:#F88298 !important;
+}
 
 /* ===============
-        WEBINAR - Section alignments
+       SINGLE WEBINAR - Section alignments
    =============== */
 
 
@@ -2433,9 +2516,17 @@ section.data-set{
     z-index:3;
 }
 
+section.data-set em{
+    font-size:16px !important;
+    margin-bottom:40px;
+    padding-right:20px;
+}
+
+
 section.data-set .box-shadow{
     box-sizing: border-box;
     padding:40px;
+    overflow:hidden;
     position:relative;
 }
 section.data-set .box-shadow .full{
@@ -2481,7 +2572,7 @@ section.no-bg{
 }
 
 section.data-set .box-shadow .full::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.13);
+    box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.13);
     background-color: #ffffff;
     border-radius: 9px 0px 0px 9px;
 }
@@ -2541,6 +2632,8 @@ section.data-set table thead tr:first-of-type th button{
     padding:0px;
     background:none;
     color:#323743;
+    position:relative;
+    top:-1px;
 }
 
 
@@ -2669,3 +2762,4 @@ section.video-embed .wrap iframe {
 .watch section.sub-hero .heading h1{
     margin:0px 0px 30px 0px;
 }
+
