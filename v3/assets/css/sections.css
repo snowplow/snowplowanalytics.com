@@ -2050,6 +2050,24 @@ section.past-webinars ul li .right > .main-cta-bg{
 .webinar .form-submit .wrap > .left section{
     margin-top:60px;
 }
+.webinar .form-submit .wrap > .right{
+    width: 520px;
+}
+.webinar .fixate{
+    position:fixed;
+    top:115px;
+}
+.webinar .static-bottom-form{
+    position:absolute;
+    bottom:0px;
+}
+
+.webinar .form-submit .wrap > .right .submit-button{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: flex-end;
+    margin-bottom:0px;
+}
 
 /* Section Webinar heading  */
 
@@ -2149,9 +2167,7 @@ section.date-announcement .item .desc{
 
 /* SECTION - WEBINAR FORM ADJUSTMENTS */
 
-.webinar section.main-form .wrap form {
-    padding-bottom:130px;
-}
+
 
 .webinar section.main-form .wrap form .form-wrap > h3{
     text-align:center;
