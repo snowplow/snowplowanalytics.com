@@ -21,7 +21,7 @@ credit: _2001: A Space Odyssey_
 In this post:
 
 1. [Production release of the new failed events format](#badrows-ga)
-2. [No more monorepo](#monorepo)
+2. [Change to how we release open source assets](#monorepo)
 3. [Other changes](#other)
 4. [Upgrading](#upgrading)
 5. [Getting help](#help)
@@ -44,7 +44,7 @@ In order to make R119 production-ready we also wanted to make sure that new func
 
 Hence the Event Recovery job 0.2.0 will be announced soon, which leverages all benefits of the new format.
 
-<h2 id="monorepo">2. Change in Snowplow Open Source</h2>
+<h2 id="monorepo">2. Change to how we release open source assets</h2>
 
 Historically, most of Snowplow's Open Source estate was hosted by a single [GitHub monorepository][monorepo].
 This repository holds the whole history of changes back to inception in 2012.
