@@ -2775,15 +2775,17 @@ section.data-set table thead tr:first-of-type th button{
    ======================== */
 
 section.video-embed {
-    margin-top:20px;
+    margin-top:0px;
 }
 
 section.video-embed .wrap {
     position: relative;
-    padding-bottom: 45%; /* 16:9 */
+    padding-bottom: 35%; /* 16:9 */
     height: 0;
 }
-
+section.video-embed .wrap:last-of-type{
+    padding-bottom:60px;
+}
 section.video-embed .wrap iframe {
     position: absolute;
     border-radius:9px;
@@ -2799,4 +2801,3 @@ section.video-embed .wrap iframe {
 .watch section.sub-hero .heading h1{
     margin:0px 0px 30px 0px;
 }
-
