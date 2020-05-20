@@ -3,7 +3,7 @@ layout: post
 title: "What happens to your data during a traffic spike"
 description: "In this article we cover what happens during a traffic spike, potential consequences, and Snowplow’s approach to dealing with data surges so you don’t lose valuable data."
 author: Lyuba
-category: Data Insights
+category: Data insights
 permalink: /blog/2020/05/20/what-happens-to-your-data-during-a-traffic-spike/
 ---
 
