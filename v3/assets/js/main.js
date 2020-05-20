@@ -151,6 +151,32 @@ if($(".tools-slider")[0]){
 }
 
 
+
+// Webinar listing initialize only if present
+
+if($(".webinar-slide")[0]){
+    $(".webinar-slide").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: false,
+        arrows : false,
+        adaptiveHeight: true
+      });
+}
+
+// Allow sliding for buttons and handler active state
+function slickGoToWebinarPage(slide){
+    // slide to destination
+    $('.webinar-slide').slick('slickGoTo', slide) 
+    // toggle classes between two elements
+    $('.webinar-list .list-categories li').each(function(i){
+        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+    });
+} 
+
+
 // Small clients wrapper  initialize only if present
 // TODO: Convert to ES6 after WP MIG
 

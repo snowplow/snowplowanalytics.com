@@ -170,6 +170,10 @@
         width: 470px;
     }
 
+    section.webinar-listing ul li .right > .desc > p{
+        padding-right:20px;
+    }
+
     /* SECTION SPEAKERS  */
     section.speakers .item .desc{
         width: 300px;
@@ -668,6 +672,12 @@
        margin-top:60px;
    }
 
+    .webinar-list  .list-categories li{
+    margin-right:20px;
+    }
+    .webinar-list  .list-categories li:last-of-type{
+        margin-right:0px;
+    }
    .webinar-list section .heading-subsection-left p{
        width: 100%;
    }
@@ -709,9 +719,12 @@
         flex-flow:column;
     }
     section.webinar-listing ul li .right h3{
-        margin:20px 0px;
+        margin:20px 0px 10px 0px;
     }
 
+    section.webinar-listing ul li .right > .desc > p{
+        padding-bottom: 20px;
+    }
 }
 
 
@@ -1427,6 +1440,8 @@
     /* ===============
         WEBINAR - Section alignments
    =============== */
+
+
 
    /* SECTION - HEADING */
    .webinar section.main-form .wrap .heading h1{

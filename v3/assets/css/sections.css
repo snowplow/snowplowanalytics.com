@@ -2000,6 +2000,9 @@ section.webinar-listing ul li .right .desc{
     flex-flow:column;
     max-width:570px;
 }
+section.webinar-listing ul li .right a{
+    text-align:center;
+}
 section.webinar-listing ul li .right .desc .details{
     display:flex;
     flex-flow:row;
@@ -2016,11 +2019,29 @@ section.webinar-listing ul li .right .desc .item{
 }
 
 section.webinar-listing ul li .right h3{
-    margin-top:25px;
+    margin-top:20px;
+    margin-bottom:10px;
 }
 
 section.past-webinars ul li .right > .main-cta-bg{
         background:#F88298 !important;
+}
+
+.webinar-slide{
+    margin-top:60px;
+}
+
+.webinar-list .list-categories{
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.webinar-list .list-categories li{
+    margin-top:0px;
+}
+
+.webinar-list .list-categories li a{
+    height: 60px;
+    cursor: pointer;
 }
 
 /* ===============
