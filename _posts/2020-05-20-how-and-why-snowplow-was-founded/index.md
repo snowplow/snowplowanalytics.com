@@ -75,7 +75,7 @@ Building a business was not front of mind for Yali and Alex at the time. It was 
 
 At first, as Yali recalls, the response was muted – “we published loads of stuff in those days and most of our stuff was ignored!”. But steadily data engineers caught on, especially the ‘data MacGyvers’ of the time, the one-person data-teams who were beginning to experiment with different tools to make data work for their companies. 
 
-The early versions of Snowplow were not for everyone. It was tricky to set up, but it struck a chord with the ‘macgyvers’ who had the right combination of engineering experience and analytics savvy to put the data to use. This gave Yali and Alex an idea – to supply customers with their own Snowplow pipelines as a managed service, deployed in their clients’ own cloud environment. It would offer the best of both worlds, enabling data teams a chance to own and control their data, without having to spend months building their own infrastructure. The service ultimately became known as [Snowplow Insights](https://snowplowanalytics.com/products/snowplow-insights/).
+The early versions of Snowplow were not for everyone. It was tricky to set up, but it struck a chord with the ‘MacGyvers’ who had the right combination of engineering experience and analytics savvy to put the data to use. This gave Yali and Alex an idea – to supply customers with their own Snowplow pipelines as a managed service, deployed in their clients’ own cloud environment. It would offer the best of both worlds, enabling data teams a chance to own and control their data, without having to spend months building their own infrastructure. The service ultimately became known as [Snowplow Insights](https://snowplowanalytics.com/products/snowplow-insights/).
 
 By the time Amazon launched the data warehouse, Redshift, Snowplow’s open source community was beginning to flourish and contributions were coming in from Snowplow enthusiasts. With a growing number of customers signing up to Insights, Alex and Yali were able to work on developing Snowplow full time and eventually hire their first employee. 
 
@@ -92,7 +92,7 @@ The industry shifted towards data ownership, as more companies committed to buil
 
 Other changes were incremental. Snowplow expanded beyond web analytics to capture data from mobile, desktop and IoT sources with over 16 different trackers.  Snowplow became available to run natively in Google Cloud Platform and pioneered a schema registry system called [Iglu](https://github.com/snowplow/iglu) (an open source project in its own right) to ensure consistent data structures, Snowplow enabled data teams not only to collect data, but also to handle the wider challenges of data delivery. These features would prove vital for data professionals who were using data to power diverse and intricate use cases.
 
-> **“We still champion the data macgyvers, it’s just the macgyvers have grown up!  ”** - **_Alex_**
+> **“We still champion the data MacGyvers, it’s just the MacGyvers have grown up!  ”** - **_Alex_**
 
 
 
