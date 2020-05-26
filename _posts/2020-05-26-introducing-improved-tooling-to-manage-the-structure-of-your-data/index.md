@@ -77,7 +77,6 @@ While being able to manage data structures in the console offers a simple and ea
 
 This release also introduces an officially supported Data Structures API. Now your team has the flexibility to manage your data structures programmatically and integrate workflows with other systems. The API is designed to provide the same workflow points as the console around getting, editing, validating and publishing schema.
 
-[You can read the API tool docs here.](http://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures-via-the-api/‎)
 
 
 ### Continuous Integration tool
@@ -88,7 +87,6 @@ The new CI tool helps your teams prevent tracking failures from “Schema Not Fo
 
 This is published as a Github action, and available as a JDK install for other CI providers.
 
-[You can read the CI tool docs here.](http://docs.snowplowanalytics.com/docs/managing-data-quality/using-the-data-structures-ci-tool-for-data-quality)
 
 
 ## Get started
