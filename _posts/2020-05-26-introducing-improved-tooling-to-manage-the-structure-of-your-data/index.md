@@ -40,7 +40,7 @@ This release brings a number of significant improvements and benefits to Snowplo
 ![change_type.png](/assets/img/blog/2020/05/change_type.png)
 
 
-    _Now you can specify if your data structure describes an event or entity, and filter by type of data structure._
+_Now you can specify if your data structure describes an event or entity, and filter by type of data structure._
 
 *   It is now possible to hide data structures you are no longer using, making it easier to manage and organize your interface. If necessary, you can view a list of hidden data structures and reinstate them as needed.
 
@@ -49,7 +49,7 @@ This release brings a number of significant improvements and benefits to Snowplo
 
 
 
-    _You can now keep your interface tidy by hiding data structures you no longer require._
+_You can now keep your interface tidy by hiding data structures you no longer require._
 
 *   An improved and more structured workflow for versioning. When you publish edits to a data structure, you can now select the version from a list of options to help you maintain consistency within your data structure versioning. 
 
@@ -57,7 +57,7 @@ This release brings a number of significant improvements and benefits to Snowplo
 
 
 
-The workflow for versioning your data structures is now more structured and helps prevent errors.
+_The workflow for versioning your data structures is now more structured and helps prevent errors._
 
 
 
@@ -66,7 +66,7 @@ The workflow for versioning your data structures is now more structured and help
 ![change_notes](/assets/img/blog/2020/05/change_notes.png)
 
 
-Keep your team on the same page with change notes.
+_Keep your team on the same page with change notes._
 
 [You can find more information on how to manage your data structures in the console here.](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures/)
 
