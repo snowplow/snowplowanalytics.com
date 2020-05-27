@@ -626,6 +626,10 @@ section.content .blog-wrap{
     margin:10px 0px;
 }
 
+.single-v3 .post-content p{
+    margin:24px 0px;
+}
+
 .post-content h1,.post-content h2,.post-content h3,.post-content h4{
     margin:40px 0px 10px 0px;
 }
@@ -641,7 +645,7 @@ section.content .blog-wrap{
 }
 
 
-.post-content li:before {
+.post-content ul li:before {
     content: '';
     width: 10px;
     height: 10px;
@@ -653,10 +657,14 @@ section.content .blog-wrap{
 }
 
 .post-content li{
-    margin:5px 0px;
+    margin:10px 0px;
     padding-left:20px;
     box-sizing: border-box;
     position:relative;
+}
+
+.post-content > ol li{
+    padding-left:0px;
 }
 
 .post-content li ol, .post-content li ul{

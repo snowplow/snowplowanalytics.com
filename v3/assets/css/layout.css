@@ -16,6 +16,10 @@ section{
     margin:0px auto;
 }
 
+.single-v3 .blog-wrap{
+    max-width: 800px;
+}
+
 .full{
     width: 100%;
 }
