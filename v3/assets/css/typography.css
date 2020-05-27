@@ -45,6 +45,9 @@ a,strong, a > p{
     line-height:25px !important;
     text-decoration:none!important; 
 }
+.single-v3 .post-content p{
+    line-height:28px;
+}
 blockquote strong{
     font-weight:400 !important;
 }

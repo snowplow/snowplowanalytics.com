@@ -626,6 +626,10 @@ section.content .blog-wrap{
     margin:10px 0px;
 }
 
+.single-v3 .post-content p{
+    margin:24px 0px;
+}
+
 .post-content h1,.post-content h2,.post-content h3,.post-content h4{
     margin:40px 0px 10px 0px;
 }
