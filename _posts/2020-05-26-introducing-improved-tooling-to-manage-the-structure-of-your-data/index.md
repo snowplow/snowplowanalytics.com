@@ -81,7 +81,7 @@ While being able to manage data structures in the console offers a simple and ea
 
 This release also introduces an officially supported Data Structures API. Now your team has the flexibility to manage your data structures programmatically and integrate workflows with other systems. The API is designed to provide the same workflow points as the console around getting, editing, validating and publishing schema.
 
-[Read the API docs](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures/)
+[Read the API docs](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures-via-the-api/)
 
 ## Continuous Integration tool
 
