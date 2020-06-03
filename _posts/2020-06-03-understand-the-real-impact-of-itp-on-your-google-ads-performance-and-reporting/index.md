@@ -33,7 +33,7 @@ The second thing we need when comparing the two methods is data. After a quick e
 
 The results were striking. After graphing each method’s daily ad revenue, it is clear when Google Analytics began to miss attributable revenue events. And therefore, it is clear when ITP 2.3 was rolled out en masse. 
 
-## Theresults: Divergence in reported attributable daily ad revenue
+## The results: Divergence in reported attributable daily ad revenue
 
 In the graph below, the blue dotted line represents daily attributable revenue from our client’s custom Snowplow web analytics solution, and the red dotted line represents daily attributable revenue from Google Analytics. Because the daily numbers are noisy, we applied centered, moving-average trendlines to the data to gain clarity, which are represented by the solid blue and red lines. 
 
