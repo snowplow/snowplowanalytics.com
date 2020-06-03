@@ -14,7 +14,7 @@ Packaged analytics providers such as Adobe or Google Analytics (GA) provide powe
 
 
 <br>
-{% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Understand how we compare:" description="Learn more about how Snowplow differs from packaged analytics providers" btnText="Download" link="https://go.snowplowanalytics.com/snowplow-vs-enterprise_digital_analytics.pdf/" %}  
+{% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Understand how we compare:" description="Learn more about how Snowplow differs from packaged analytics providers" btnText="Download" link="https://go.snowplowanalytics.com/snowplow-vs-enterprise_digital_analytics.pdf" %}  
 
 
 
