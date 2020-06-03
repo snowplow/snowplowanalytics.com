@@ -73,6 +73,7 @@ When making edits and deploying changes to Production you can now add change not
 
 Keep your team on the same page with change notes.
 
+[Find more information on how to manage your data structures in the console](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures/)
 
 ## Data Structures API
 
@@ -80,6 +81,7 @@ While being able to manage data structures in the console offers a simple and ea
 
 This release also introduces an officially supported Data Structures API. Now your team has the flexibility to manage your data structures programmatically and integrate workflows with other systems. The API is designed to provide the same workflow points as the console around getting, editing, validating and publishing schema.
 
+[Read the API docs](https://docs.snowplowanalytics.com/docs/understanding-tracking-design/managing-data-structures/)
 
 ## Continuous Integration tool
 
@@ -89,6 +91,7 @@ The new CI tool helps your teams prevent tracking failures from “Schema Not Fo
 
 This is published as a Github action, and available as a JDK install for other CI providers.
 
+[Read the CI tool docs](https://docs.snowplowanalytics.com/docs/managing-data-quality/using-the-data-structures-ci-tool-for-data-quality/)
 
 ## Get started
 
