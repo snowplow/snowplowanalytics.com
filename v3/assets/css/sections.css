@@ -1074,7 +1074,7 @@ section .heading-subsection-center{
     text-align:center;
 }
 section .heading-subsection-center h2{
-    margin-bottom:15px;
+    margin-bottom:20px;
     width: 100%;
 }
 section .heading-subsection-center p{
@@ -1584,7 +1584,7 @@ section.testemonial .single img{
 
 section.testemonial .single em{
     max-width:660px;
-    margin:10px 0px 30px 0px;
+    margin:15px 0px 30px 0px;
     align-self:center;
 }
 
