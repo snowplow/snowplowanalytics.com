@@ -1239,6 +1239,7 @@
 
 
 @media screen and (max-width: 520px) {
+    
     .wrap{
         width: 100%;
         padding-left:20px;
@@ -1253,6 +1254,18 @@
         box-sizing: border-box;
         padding-left:20px;
         padding-right:20px;
+    }
+
+
+    /* HEADER HERO SECTTION BUTTONS */
+
+    .web-v3 .heading .full{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .web-v3 .heading .full a:last-of-type{
+        margin-top:10px !important;
     }
 
      /* ===Categories=== */
