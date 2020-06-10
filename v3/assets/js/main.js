@@ -166,7 +166,10 @@ if($(".webinar-slide")[0]){
       });
 }
 
+// Small clients wrapper  initialize only if present
+// TODO: Convert to ES6 after WP MIG
 // Allow sliding for buttons and handler active state
+
 function slickGoToWebinarPage(slide){
     // slide to destination
     $('.webinar-slide').slick('slickGoTo', slide) 
@@ -177,8 +180,35 @@ function slickGoToWebinarPage(slide){
 } 
 
 
-// Small clients wrapper  initialize only if present
-// TODO: Convert to ES6 after WP MIG
+// Watch webinar - multi series 
+
+if($(".single-webinar-slider")[0]){
+    $(".single-webinar-slider").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: false,
+        arrows : false,
+        adaptiveHeight: true
+        
+      });
+}
+
+// TODO - Make it capable to support more than 2 button active state management.
+// Allow sliding for buttons and handler active state
+
+function sliceGoToSingleWebinarSlide(slide){
+    // slide to destination
+    $('.single-webinar-slider').slick('slickGoTo', slide) 
+    // toggle classes between two elements
+    $('.single-webinar-list .list-categories li').each(function(i){
+        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+    });
+} 
+
+
+
 
 
 // First init

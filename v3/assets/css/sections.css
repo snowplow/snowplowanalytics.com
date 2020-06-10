@@ -2043,19 +2043,21 @@ section.past-webinars ul li .right > .main-cta-bg{
         background:#F88298 !important;
 }
 
-.webinar-slide{
+.webinar-slide, .single-webinar-slider{
     margin-top:60px;
+    z-index:10;
+    position:relative;
 }
 
-.webinar-list .list-categories{
+.webinar-list .list-categories, .single-webinar-list .list-categories{
     flex-flow: row wrap;
     justify-content: center;
 }
-.webinar-list .list-categories li{
+.webinar-list .list-categories li, .single-webinar-list .list-categories li{
     margin-top:0px;
 }
 
-.webinar-list .list-categories li a{
+.webinar-list .list-categories li a, .single-webinar-list .list-categories li a{
     height: 60px;
     cursor: pointer;
 }
@@ -2796,7 +2798,7 @@ section.video-embed {
 
 section.video-embed .wrap {
     position: relative;
-    padding-bottom: 35%; /* 16:9 */
+    padding-bottom: 40%; /* 16:9 */
     height: 0;
 }
 section.video-embed .wrap:last-of-type{
