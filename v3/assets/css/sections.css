@@ -1255,7 +1255,15 @@ section.benefits ul li:nth-of-type(2) > div{
     margin-right:80px;
     text-align:left;
 }
-
+section.benefits ul li .showcase-links{
+    margin-top:20px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+}
+section.benefits ul li .showcase-links a{
+     margin:0px 20px 0px 0px;
+}
 
 /* BENEFITS SMALL TOOLS SLIDER   */
 
