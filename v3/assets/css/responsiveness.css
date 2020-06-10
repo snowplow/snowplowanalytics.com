@@ -483,8 +483,19 @@
     }
 
     /* ===============
+        SUB HERO
+    =============== */
+
+    section.sub-hero .heading h1 br{
+        display:none   
+    }
+
+
+    /* ===============
         BLOG
     =============== */
+
+    
     section.hero-blog .heading p{
         width: 80%;
     }
@@ -593,10 +604,12 @@
     }
     section.benefits ul li > img{
         height: 240px;
-        margin-top:75px;
+        margin-top:0px;
     }
     section.benefits ul li{
-        margin-bottom:20px;
+        margin-bottom:60px;
+        display:flex;
+        align-items: center;
     }
     /* ========================
           PRICING FORM
@@ -865,7 +878,10 @@
     section.benefits .tools-slider .slick-next{
         right:-20px;
     }
-
+    
+    section.benefits ul li .showcase-links{
+        justify-content: center;
+    }
     /* ========================
           PRICING FORM
    ======================== */
@@ -1405,6 +1421,9 @@
     /* ===============
     BENEFITS - PRICING
     =============== */
+    section.benefits ul li {
+        margin-bottom:40px;
+    }
     section.benefits ul li > img{
         width: 250px;
         height: auto;
@@ -1418,6 +1437,10 @@
 
     section.benefits .tools-slider .item{
         justify-content: center;
+    }
+
+    section.benefits ul li .showcase-links a{
+        margin-top:10px;
     }
 
     /* ========================
