@@ -55,7 +55,7 @@ What’s more, because the _time spent_ metric in first-generation analytics too
 At the end of the day, advertisers and editors want engaged audiences so their messages are in front of them for a long time.
 
 
-## Use _page pings_ to measure time spent accurately
+## Use "page pings" to measure time spent accurately
 
 
 ![Page Ping][page-ping]

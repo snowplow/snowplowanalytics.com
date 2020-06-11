@@ -3,7 +3,7 @@ var validateInput = function(kind, value){
     value = value ? value.trim() : ''
     switch(kind) {
         case 'not_empty':
-            return (value.length > 1 )
+            return (value.length > 1)
         case 'email':
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
     }
@@ -41,21 +41,25 @@ var handleSubmit = function(e){
     e.preventDefault();
     var data = {};
     var pass = 1;
-    
+
+    // Default values for form validation
+    var fieldsToValidate = ['email','first_name'];
+
     // Populate DUID
     window.snowplow && window.snowplow(function () {
         data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
     });
+
+    // Change the validation array if the page is pricing page
+    $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page' || $('#00N2400000JSExF').val() == 'Explore Data Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
+    
     $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
-        switch(this.name){
-            case 'email':
-                !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
-            
-            default:
-                if(this.name != 'message'){
-                    !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
-                }
+        if(this.name == 'email'){
+            !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
+        }
+        if($.inArray(this.name, fieldsToValidate) !== -1){
+            !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
         }
         // Populate data with input values
         data[this.name] =  this.value;
@@ -147,8 +151,64 @@ if($(".tools-slider")[0]){
 }
 
 
+
+// Webinar listing initialize only if present
+
+if($(".webinar-slide")[0]){
+    $(".webinar-slide").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: false,
+        arrows : false,
+        adaptiveHeight: true
+      });
+}
+
 // Small clients wrapper  initialize only if present
 // TODO: Convert to ES6 after WP MIG
+// Allow sliding for buttons and handler active state
+
+function slickGoToWebinarPage(slide){
+    // slide to destination
+    $('.webinar-slide').slick('slickGoTo', slide) 
+    // toggle classes between two elements
+    $('.webinar-list .list-categories li').each(function(i){
+        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+    });
+} 
+
+
+// Watch webinar - multi series 
+
+if($(".single-webinar-slider")[0]){
+    $(".single-webinar-slider").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: false,
+        arrows : false,
+        adaptiveHeight: true
+        
+      });
+}
+
+// TODO - Make it capable to support more than 2 button active state management.
+// Allow sliding for buttons and handler active state
+
+function sliceGoToSingleWebinarSlide(slide){
+    // slide to destination
+    $('.single-webinar-slider').slick('slickGoTo', slide) 
+    // toggle classes between two elements
+    $('.single-webinar-list .list-categories li').each(function(i){
+        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+    });
+} 
+
+
+
 
 
 // First init

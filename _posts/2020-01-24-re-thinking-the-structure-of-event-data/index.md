@@ -9,6 +9,10 @@ permalink: /blog/2020/01/24/re-thinking-the-structure-of-event-data/
 featured: true
 featured-image: /assets/img/blog/featured/SP-Blog-Post-Rethink.png
 thumbnail-image: /assets/img/blog/featured/SP-Blog-Thumb-Rethink.png
+custom-cta-title: 'Explore Snowplow data'   
+custom-cta-sub-title: 'Explore a sample of the granular event-level data Snowplow loads directly into your data warehouse, and see how it can be modeled to deliver actionable insights.'  
+custom-cta-link: explore-snowplow-data-part-1/
+custom-cta-link-text: Start now
 ---
 
 

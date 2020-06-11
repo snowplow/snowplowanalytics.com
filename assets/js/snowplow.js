@@ -21,6 +21,7 @@ require('./vendors/_concat/slick.min.js');
 require('./vendors/_concat/masonry.pkgd.min.js');
 require('./vendors/_concat/jssocials.min.js');
 require('./core.js');
+require('./newsletter.js');
 
 // {% include_relative vendors/_concat/jquery-3.1.1.min.js %}
 // {% include_relative vendors/_concat/jquery.cookiebar.js %}

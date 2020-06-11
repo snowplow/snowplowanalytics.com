@@ -8,7 +8,24 @@
                             <p>Want to be part of our team? Visit our <a href="{{ BASE_PATH }}/company/careers/">Careers</a> page.
                             <p>Subscribe to our newsletter for our latest updates:</p>
                         </div>
-                        <iframe src="https://go.snowplowanalytics.com/l/571483/2018-10-23/38fmgpn" width="100%" scrolling="no" id="sizetracker"></iframe>
+                        <form id="newsletter-footer-form" data-pardotUrl="https://go.snowplowanalytics.com/l/571483/2020-05-26/3s75dcl" data-gtmEventName="footer-newsletter-success" novalidate>
+                            <div class="form-wrap">
+                                <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                                <input type="hidden" name="00N2400000JSExF" id="00N2400000JSExF" value="Footer-Newsletter">
+                                    <div class="full">
+                                        <input type="text" name="newsletter-email" id="newsletter-email" placeholder="Insert your email"/>
+                                    </div>                                
+                                    <div class="full submit-button">
+                                        <button class="cta main-cta-bg" id="form_submit_button" type="submit">Submit</button>
+                                    </div>
+                            </div>
+                            <div class="full">
+                                <div class="thankyou">
+                                    <img src="{{ BASE_PATH }}/v3/assets/img/global/thank-you-image-white.png" alt="Thank you"/>                       
+                                    <p>Thank you for signing up!</p>
+                                    </div>
+                            </div>
+                        </form>                        
                     </div>
                     <div class="links col-md-8 col-sm-12">
                         <div class="cols">
@@ -37,6 +54,7 @@
                                 <ul>
                                     <li{% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog">Blog</a></li>
                                     <li{% include fn/menuClassActive.fn s="documentation" tag="" %}><a href="http://docs.snowplowanalytics.com/">Documentation</a></li>
+                                    <li{% include fn/menuClassActive.fn s="events" tag="" %}><a href="{{ BASE_PATH }}/events">Events</a></li>
                                 </ul>
                             </div>
                             <div class="col">

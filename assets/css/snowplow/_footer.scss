@@ -73,7 +73,7 @@ footer {
         p {
             margin: 0;
             line-height: 1em;
-
+            color:#ffffff;
             &+p {
                 margin-top: 10px;
             }
@@ -347,4 +347,61 @@ footer {
                 margin-bottom:20px;
             }
 	    }
+    }
+
+    #newsletter-footer-form .full{
+        width: 100%;
+        display:flex;
+        justify-content: left;
+    }
+    #newsletter-footer-form input{
+        width: 100%;
+        max-width:330px;
+        background:#323743;
+        border:1px solid #323743;
+        color:#fff;
+        font-size:14px;
+        border-radius:5px;
+        padding:10px 20px;
+        box-sizing: border-box;
+        outline:none;
+    }
+    #newsletter-footer-form input.error{
+        color:red;
+        
+    }
+    #newsletter-footer-form button{
+        margin-top:20px;
+        background:#6538B8;
+        color:#fff;
+        float:right;
+    }
+    #newsletter-footer-form .thankyou{
+        width: 100%;
+        display:flex;
+        flex-flow:row;
+        align-items: center;
+        display:none;
+    }
+    #newsletter-footer-form .thankyou img{
+        width: 60px;
+    }
+    #newsletter-footer-form .thankyou p{
+        font-size:18px;
+        margin-left:20px;
+        margin-bottom:0px;
+        color:#ffffff;
+    }
+    #newsletter-footer-form .activate-loader{
+        width:115px;
+        text-indent:-2999px;
+        background-image: url('https://snowplowanalytics.com/assets/img/landingpages/data-lakes/loader.svg');
+        background-size:40px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    @media screen and (max-width: 991px) {
+        #newsletter-footer-form .full{
+            justify-content: center;
+        }
     }

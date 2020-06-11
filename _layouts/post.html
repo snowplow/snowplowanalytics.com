@@ -110,13 +110,23 @@ layout: compress
 			<section class="main-call-to-action-banner">
 				<div class="wrap">
 				  <div class="full">
+					{% if page.custom-cta-title %}
 					<div class="left">
-					  <h2>Snowplow empowers you and your team so you can focus on your data journey.</h2>
-					  <p>Power your data journey with Snowplow.</p>
+					  <h2>{{page.custom-cta-title}}</h2>
+					  <p>{{page.custom-cta-sub-title}}</p>
 					</div>
 					<div class="right">
-					  <a href="{{ BASE_PATH }}/get-started/"" class="cta main-cta-bg">Get started</a>
+					  <a href="{{ BASE_PATH }}/{{page.custom-cta-link}}" class="cta main-cta-bg">{{page.custom-cta-link-text}}</a>
 					</div>
+					{% else %}
+					<div class="left">
+						<h2>Snowplow empowers you and your team so you can focus on your data journey.</h2>
+						<p>Power your data journey with Snowplow.</p>
+					  </div>
+					  <div class="right">
+						<a href="{{ BASE_PATH }}/get-started/" class="cta main-cta-bg">Get started</a>
+					  </div>					  
+					{% endif %}
 				  </div>
 				</div>
 			</section>

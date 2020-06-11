@@ -39,10 +39,10 @@ hero-logos:
       img: assets/img/customers/customers-revamp/companies/theeconomist-logo-grey.png
       img-2x: assets/img/customers/customers-revamp/companies/theeconomist-logo-grey%402x.png
       img-3x: assets/img/customers/customers-revamp/companies/theeconomist-logo-grey%403x.png
-    - name: GoEuro
-      img: assets/img/customers/customers-revamp/companies/goeuro-logo-grey.png
-      img-2x: assets/img/customers/customers-revamp/companies/goeuro-logo-grey%402x.png
-      img-3x: assets/img/customers/customers-revamp/companies/goeuro-logo-grey%403x.png
+    - name: Omio
+      img: assets/img/customers/customers-revamp/companies/omio-logo-grey.png
+      img-2x: assets/img/customers/customers-revamp/companies/omio-logo-grey%402x.png
+      img-3x: assets/img/customers/customers-revamp/companies/omio-logo-grey%403x.png
     - name: Data Dog
       img: assets/img/customers/customers-revamp/companies/datadog-logo-grey.png
       img-2x: assets/img/customers/customers-revamp/companies/datadog-logo-grey%402x.png
@@ -102,7 +102,7 @@ hero-logos:
 
 
 
-<section class="section-revamp section-revamp-center section-revamp-bot-0">
+<section class="section-revamp sub-heading-homepage-pipeline section-revamp-center section-revamp-bot-0">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
@@ -120,7 +120,7 @@ hero-logos:
 
 
 
-<section class="section-revamp">
+<section class="section-revamp snowplow-points">
     <div class="container">
         <div class="section-revamp-icons-container">
             {% for icon in page.product-icons %}
@@ -137,7 +137,22 @@ hero-logos:
     </div>
 </section>
 
-
+<section class="section-revamp explore-data-section section-revamp-animated-img-left">
+    <img src="{{ BASE_PATH }}/assets/img/homepage/homepage-revamp/showcase-raw-data.png" srcset="{{ BASE_PATH }}/assets/img/homepage/homepage-revamp/showcase-raw-data.png 2x, {{ BASE_PATH }}/assets/img/homepage/homepage-revamp/showcase-raw-data.png 3x"class="section-revamp-animated-img-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <h2>
+                    Explore Snowplow data
+                </h2>
+                <p>
+                    Explore a sample of the granular event-level data Snowplow loads directly into your data warehouse, and see how it can be modeled to deliver actionable insights.
+                </p>
+                <a href="{{ BASE_PATH }}/explore-snowplow-data-part-1/" class="btn btn-primary call-to-action">Explore Snowplow data</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section class="hero-revamp hero-revamp-center" style="background-image: url({{ BASE_PATH }}/assets/img/customers/customers-revamp/spw-customers-header@3x.png)">

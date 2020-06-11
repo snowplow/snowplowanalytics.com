@@ -30,6 +30,7 @@
                             <li{% include fn/menuClassActive.fn s="technology" tag="" %}><a href="{{ BASE_PATH }}/products/technology" class="highlight-menu">Technology</a></li>
                             <li{% include fn/menuClassActive.fn s="integrations" tag="" %}><a href="{{ BASE_PATH }}/integrations" class="highlight-menu">Integrations</a></li>
                             <li{% include fn/menuClassActive.fn s="how-we-compare" tag="" %}><a href="{{ BASE_PATH }}/how-we-compare" class="highlight-menu">How we compare</a></li>
+                            <li{% include fn/menuClassActive.fn s="explore-snowplow-data" tag="" %}><a href="{{ BASE_PATH }}/explore-snowplow-data-part-1/" class="highlight-menu">Explore Snowplow data</a></li>
                         </ul>
                     </li>
                     <li class="dropdown{% include fn/menuClassActive.fn s="industries" %}">
@@ -37,8 +38,10 @@
                         <ul class="dropdown-menu">
                             <li{% include fn/menuClassActive.fn s="Web" tag="" %}><a href="{{ BASE_PATH }}/web">Web</a></li>
                             <li{% include fn/menuClassActive.fn s="Mobile" tag="" %}><a href="{{ BASE_PATH }}/mobile">Mobile</a></li>
-                            <li{% include fn/menuClassActive.fn s="Media" tag="" %}><a href="{{ BASE_PATH }}/media" class="highlight-menu">Media</a></li>
-                            <li{% include fn/menuClassActive.fn s="Retail" tag="" %}><a href="{{ BASE_PATH }}/retail" class="highlight-menu">Retail</a></li>
+                            <li{% include fn/menuClassActive.fn s="Server" tag="" %}><a href="{{ BASE_PATH }}/server-side-tracking">Server-side</a></li>
+                            <li{% include fn/menuClassActive.fn s="UCV" tag="" %}><a href="{{ BASE_PATH }}/unified-customer-view">Unified customer view</a></li>
+                            <li{% include fn/menuClassActive.fn s="Media &amp; Entertainment" tag="" %}><a href="{{ BASE_PATH }}/media" class="highlight-menu">Media &amp; Entertainment</a></li>
+                            <li{% include fn/menuClassActive.fn s="Ecommerce" tag="" %}><a href="{{ BASE_PATH }}/retail" class="highlight-menu">Ecommerce</a></li>
                             <li{% include fn/menuClassActive.fn s="Travel" tag="" %}><a href="{{ BASE_PATH }}/travel" class="highlight-menu">Travel</a></li>
                         </ul>
                     </li>
@@ -56,10 +59,14 @@
                             <li{% include fn/menuClassActive.fn s="careers" tag="" %}><a href="{{ BASE_PATH }}/company/careers">Careers</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown{% include fn/menuClassActive.fn s="blog" %}">
-                        <a href="{{ BASE_PATH }}/blog" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <li class="dropdown{% include fn/menuClassActive.fn s="products" %}">
+                        <a href="" class="dropdown-toggle disabled mute-link" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li {% include fn/menuClassActive.fn s="blog" tag="" %}><a href="{{ BASE_PATH }}/blog/">Blog</a></li>
+                            <li {% include fn/menuClassActive.fn s="events" tag="" %}><a href="{{ BASE_PATH }}/events/">Events</a></li>
+                        </ul>
                     </li>
-                </ul>
+                </ul> 
                 <div class="nav navbar-nav navbar-right hidden-sm hidden-md">
                     <a href="http://console.snowplowanalytics.com/" id="button-login-header-page">Log in</a>
                     <a href="{{ BASE_PATH }}/request-demo/" class="btn btn-primary call-to-action" id="button-request-demo-header-page">Get started</a>
