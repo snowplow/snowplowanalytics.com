@@ -670,6 +670,9 @@ section.content .blog-wrap{
 .post-content li ol, .post-content li ul{
     margin-left:20px;
 }
+.post-content li ol li:before, .post-content li ul li:before{
+    left:-20px;
+}
 
 .post-content img{
     margin:15px 0px;
