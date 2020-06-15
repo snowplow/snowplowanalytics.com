@@ -315,6 +315,12 @@
     section.benefits ul li > div{
         width: 430px;
     }
+    section.benefits ul li:nth-of-type(even) > div{
+        margin-left:0px;
+    }
+    section.benefits ul li{
+        justify-content: center;
+    }
 
     /* ========================
           PRICING FORM

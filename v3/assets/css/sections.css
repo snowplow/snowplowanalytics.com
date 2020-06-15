@@ -1245,6 +1245,9 @@ section.benefits ul li > div{
     width: 640px;
     margin-left:80px;
 }
+section.benefits ul li:nth-of-type(even) > div{
+    margin-right:80px;
+}
 
 section.benefits ul li > div h3{
     margin-bottom:20px;
