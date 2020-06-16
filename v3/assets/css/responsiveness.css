@@ -854,14 +854,14 @@
     /* ===============
     BENEFITS - PRICING
     =============== */
-    section.benefits ul li:nth-of-type(2){
+    section.benefits ul li:nth-of-type(even){
         flex-direction:column-reverse;
     }
-    section.benefits ul li:nth-of-type(2) > img{
+    section.benefits ul li:nth-of-type(even) > img{
         margin:0px auto;
         margin-top:75px;
     }
-    section.benefits ul li:nth-of-type(2) > div{
+    section.benefits ul li:nth-of-type(even) > div{
         margin:0px auto;
     }
 

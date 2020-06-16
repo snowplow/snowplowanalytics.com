@@ -1249,11 +1249,11 @@ section.benefits ul li:nth-of-type(even) > div{
 section.benefits ul li > div h3{
     margin-bottom:20px;
 }
-section.benefits ul li:nth-of-type(2){
+section.benefits ul li:nth-of-type(even){
     justify-content: flex-end;
 }
 
-section.benefits ul li:nth-of-type(2) > div{
+section.benefits ul li:nth-of-type(even) > div{
     margin-left:0px;
     margin-right:80px;
     text-align:left;
