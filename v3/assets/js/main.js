@@ -201,12 +201,13 @@ if($(".single-webinar-slider")[0]){
 function sliceGoToSingleWebinarSlide(slide){
     // slide to destination
     $('.single-webinar-slider').slick('slickGoTo', slide) 
-    // toggle classes between two elements
-    $('.single-webinar-list .list-categories li').each(function(i){
-        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
-    });
 } 
 
+$('.single-webinar-list .list-categories li').click(function(){
+    sliceGoToSingleWebinarSlide($(this).attr("data-slide"))
+    $('.single-webinar-list .list-categories li').removeClass('active')
+    $(this).addClass('active')
+})
 
 
 
