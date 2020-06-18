@@ -2218,9 +2218,6 @@ section.date-announcement .item .desc{
 
 
 /* Section Webinar - LP Gartner */
-section.report-background-gartner{
-    
-}
 
 
 section.report-background-gartner{
@@ -2248,6 +2245,7 @@ section.report-background-gartner img{
     align-items: left;
     margin-right:auto;
     margin-top:20px;
+    height: 29px;
 }
 
 /* SECTION - WEBINAR FORM ADJUSTMENTS */

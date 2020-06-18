@@ -22,6 +22,14 @@ var pardotSubmit = function (data){
     });
     //Callback Directly from our own assets.Pardot does not allow CORS calls. Success and Error scripts - /assets/js/pardot (callback takes res from there)
     window.callback = function (data) {
+
+        // Handle Gartner LP exception
+        if(data.result == 'success' && $('#00N2400000JSExF').val() == 'LP-dataOps-Gartner'){
+            dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
+            window.location.replace(`${window.location.href}thank-you/`)
+            return;
+        }
+       
         //Handle thankyou fadein on success or color every input if pardot error
         (data.result == 'success') 
         ? $('.form-wrap').hide() 
