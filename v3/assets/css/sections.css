@@ -729,6 +729,11 @@ section.content .blog-wrap{
     line-height:25px;
 }
 
+.post-content .image-text-description em{
+    font-size:15px !important;
+    width: 100%;
+}
+
 
 /* === SINGLE BLOGPOST TAGS === */
 

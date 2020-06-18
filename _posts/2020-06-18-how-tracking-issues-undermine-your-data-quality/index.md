@@ -92,7 +92,7 @@ We do this by offering a near real-time user interface that provides customers w
 What’s more, you see a breakdown of tracking issues by type and platform, so it is easy to identify the number of issues, which app the issue originated in and the actual underlying issue, so the correct action can be taken to resolve the issue with the appropriate team. 
 
 ![data quality](/assets/img/blog/2020/06/data-quality-ui.png)
-*Monitor data quality in near real time from the Snowplow Insights console*  
+<span class="image-text-description">*Monitor data quality in near real time from the Snowplow Insights console* </span>
 
 By using these tools in combination, you can minimize the amount of invalid, missing or incomplete data your pipeline generates, which means your team will have higher quality data to power their use cases.
 
