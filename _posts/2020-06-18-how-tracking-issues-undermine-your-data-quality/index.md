@@ -3,7 +3,7 @@ layout: post
 title: "How tracking issues undermine your data quality"
 description: "Many factors determine how successfully you’re able to power real-time applications, improve the user experience and inform critical product decisions."
 author: Lyuba
-category: Data Insights
+category: Data insights
 permalink: /blog/2020/06/18/how-tracking-issues-undermine-your-data-quality/
 ---
 
