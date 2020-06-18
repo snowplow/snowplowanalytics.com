@@ -64,7 +64,7 @@ When tracking is broken, it can lead to incomplete data, which means data consum
 
 It is a good idea to have a strategy in place to prevent tracking issues from happening in the first place, however, eliminating them altogether is unlikely. The next best option is to pinpoint [data quality ](https://snowplowanalytics.com/blog/2019/09/09/how-to-optimize-your-pipeline-for-data-quality/)and fix issues as soon as possible. 
 
-At Snowplow, our approach is to provide tooling to make it easier for developers to implement correct tracking, and prevent incorrect tracking from making it through to production. However, we also know that not all tracking problems can be avoided, which is why we offer a suite of tools customers can use to identify tracking issues that make it through to production as soon as possible so they can be fixed..
+At Snowplow, our approach is to provide tooling to make it easier for developers to implement correct tracking, and prevent incorrect tracking from making it through to production. However, we also know that not all tracking problems can be avoided, which is why we offer a suite of tools customers can use to identify tracking issues that make it through to production as soon as possible so they can be fixed.
 
 
 ### How Snowplow supports correct tracking implementation
@@ -82,7 +82,7 @@ However, even with both Snowplow Micro and Snowplow Mini, it is still possible f
 
 
 
-![data quality](/assets/img/blog/2020/06/data-quality-ui.png)
+
 
 
 Even if an engineer tests their tracking implementation, they are unlikely to test the whole solution. That’s why at Snowplow we use monitoring to pick up on these regression issues and spot broken tracking, ideally pre-production. But even if the issues are not caught pre-production, they can still be reported and recovered post production.
@@ -90,6 +90,9 @@ Even if an engineer tests their tracking implementation, they are unlikely to te
 We do this by offering a near real-time user interface that provides customers with a "data quality score" indicating the percentage of data that fails to be processed in the production pipeline because of tracking issues.
 
 What’s more, you see a breakdown of tracking issues by type and platform, so it is easy to identify the number of issues, which app the issue originated in and the actual underlying issue, so the correct action can be taken to resolve the issue with the appropriate team. 
+
+![data quality](/assets/img/blog/2020/06/data-quality-ui.png)
+*Monitor data quality in near real time from the Snowplow Insights console*  
 
 By using these tools in combination, you can minimize the amount of invalid, missing or incomplete data your pipeline generates, which means your team will have higher quality data to power their use cases.
 
