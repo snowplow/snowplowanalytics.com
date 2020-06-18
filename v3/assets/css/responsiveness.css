@@ -315,6 +315,12 @@
     section.benefits ul li > div{
         width: 430px;
     }
+    section.benefits ul li:nth-of-type(even) > div{
+        margin-left:0px;
+    }
+    section.benefits ul li{
+        justify-content: center;
+    }
 
     /* ========================
           PRICING FORM
@@ -522,7 +528,7 @@
     }
 
     .list-categories li{
-        margin-right:0px;
+        margin: 0px;
     }
     .list-categories{
         justify-content: space-between;
@@ -738,6 +744,18 @@
     section.webinar-listing ul li .right > .desc > p{
         padding-bottom: 20px;
     }
+
+    /* ===============
+       WEBINAR WATCH
+   =============== */
+   .webinar-list .list-categories li, .single-webinar-list .list-categories li{
+       margin:10px;
+       
+   }
+   .webinar-list .list-categories li, .single-webinar-list .list-categories li a{
+    max-width:100px;
+   }
+   
 }
 
 
@@ -848,14 +866,14 @@
     /* ===============
     BENEFITS - PRICING
     =============== */
-    section.benefits ul li:nth-of-type(2){
+    section.benefits ul li:nth-of-type(even){
         flex-direction:column-reverse;
     }
-    section.benefits ul li:nth-of-type(2) > img{
+    section.benefits ul li:nth-of-type(even) > img{
         margin:0px auto;
         margin-top:75px;
     }
-    section.benefits ul li:nth-of-type(2) > div{
+    section.benefits ul li:nth-of-type(even) > div{
         margin:0px auto;
     }
 
@@ -1523,6 +1541,27 @@
     section.list-included h2{
         text-align:center;
     }
+
+
+
+    /* ===============
+       WEBINAR WATCH
+   =============== */
+
+        
+    .single-webinar-list .list-categories li a{
+        max-width:80px !important;
+    }
+    section.video-embed .wrap iframe{
+        width: 90%;
+        left:5%;
+        box-sizing: border-box;
+    }
+    .single-webinar-list .list-categories li{
+        max-width:80px;
+        margin:5px;
+    }
+
 
     /* ===============
         ABM LANDING PAGE

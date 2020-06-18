@@ -670,6 +670,9 @@ section.content .blog-wrap{
 .post-content li ol, .post-content li ul{
     margin-left:20px;
 }
+.post-content li ol li:before, .post-content li ul li:before{
+    left:-20px;
+}
 
 .post-content img{
     margin:15px 0px;
@@ -727,6 +730,11 @@ section.content .blog-wrap{
     font-family:'karla-bold';
     font-size:18px;
     line-height:25px;
+}
+
+.post-content .image-text-description em{
+    font-size:15px !important;
+    width: 100%;
 }
 
 
@@ -1242,15 +1250,18 @@ section.benefits ul li > div{
     width: 640px;
     margin-left:80px;
 }
+section.benefits ul li:nth-of-type(even) > div{
+    margin-right:80px;
+}
 
 section.benefits ul li > div h3{
     margin-bottom:20px;
 }
-section.benefits ul li:nth-of-type(2){
+section.benefits ul li:nth-of-type(even){
     justify-content: flex-end;
 }
 
-section.benefits ul li:nth-of-type(2) > div{
+section.benefits ul li:nth-of-type(even) > div{
     margin-left:0px;
     margin-right:80px;
     text-align:left;
