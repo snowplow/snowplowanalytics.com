@@ -22,6 +22,14 @@ var pardotSubmit = function (data){
     });
     //Callback Directly from our own assets.Pardot does not allow CORS calls. Success and Error scripts - /assets/js/pardot (callback takes res from there)
     window.callback = function (data) {
+
+        // Handle Gartner LP exception
+        if(data.result == 'success' && $('#00N2400000JSExF').val() == 'LP-dataOps-Gartner'){
+            dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
+            window.location.replace(`${window.location.href}thank-you/`)
+            return;
+        }
+       
         //Handle thankyou fadein on success or color every input if pardot error
         (data.result == 'success') 
         ? $('.form-wrap').hide() 
@@ -51,7 +59,15 @@ var handleSubmit = function(e){
     });
 
     // Change the validation array if the page is pricing page
+    
+    // If pricing page & Explore data page form -> validate Email, Name, Last Name, Company.
     $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page' || $('#00N2400000JSExF').val() == 'Explore Data Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
+    
+    // If LP-dataOps-Gartner data page form -> validate Email, Name, Last Name, Company and role.
+    $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'LP-dataOps-Gartner')  ? fieldsToValidate = ['email','first_name','last_name','company','role'] : '';
+    
+
+    // $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page' || $('#00N2400000JSExF').val() == 'Explore Data Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
     
     $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
