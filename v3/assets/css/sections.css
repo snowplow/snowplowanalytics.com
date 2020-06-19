@@ -2095,11 +2095,17 @@ section.past-webinars ul li .right > .main-cta-bg{
 
 .webinar .form-submit .wrap > .left{
     width: 620px;
+    margin-top:30px;
 }
 
 .webinar .form-submit .wrap > .left section{
+    margin-top:30px;
+}
+
+.webinar .form-submit .wrap .left section.sub-hero-left{
     margin-top:60px;
 }
+
 .webinar .form-submit .wrap > .right{
     width: 520px;
 }
@@ -2214,6 +2220,38 @@ section.date-announcement .item .desc{
     margin-left:20px;
 }
 
+
+
+/* Section Webinar - LP Gartner */
+
+
+section.report-background-gartner{
+    display:flex;
+    flex-flow: column;
+    justify-content: left;
+    margin-bottom:40px;
+    padding:40px;
+    box-sizing: border-box;
+    background:url('../img/landingpages/introducing-dataops-into-your-data-management-discipline-gartner/gartner-dataops-background.png') no-repeat center center;
+    background-size:125%;
+}
+
+section.report-background-gartner h5{
+    color:#fff;
+    margin-left:auto;
+    float:right;
+}
+
+section.report-background-gartner h3{
+    margin-top:30px;
+    color:#fff;
+}
+section.report-background-gartner img{
+    align-items: left;
+    margin-right:auto;
+    margin-top:20px;
+    height: 29px;
+}
 
 /* SECTION - WEBINAR FORM ADJUSTMENTS */
 
