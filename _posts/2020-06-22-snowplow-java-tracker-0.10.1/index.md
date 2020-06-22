@@ -113,9 +113,9 @@ By updating the Java Tracker to handle sending events asynchronously, we have al
 
 <h2 id="upgrade">6. Upgrading</h2>
 
-The tracker is available on [Snowplow's Bintray Maven Repository](https://bintray.com/snowplow/snowplow-maven/snowplow-java-tracker) and [jcenter](https://bintray.com/bintray/jcenter?filterByPkgName=snowplow-java-tracker).
+Since version 0.9.0, the Java Tracker is available on [Maven Central](https://search.maven.org/artifact/com.snowplowanalytics/snowplow-java-tracker). It is also available via [Snowplow's Bintray Maven Repository](https://bintray.com/snowplow/snowplow-maven/snowplow-java-tracker).
 
-To upgrade, alter the repository url in your project to `https://bintray.com/snowplow/snowplow-maven/` and change the version to `0.10.1`.
+To upgrade, use the following URL `https://bintray.com/snowplow/snowplow-maven/` and change the version to `0.10.1`.
 Further details and examples for Maven, Gradle and sbt can be found in our [setup guide](https://github.com/snowplow/snowplow/wiki/Java-Tracker-Setup#3-setup).
 
 <h2 id="doc">7. Documentation and help</h2>
@@ -129,4 +129,3 @@ The [v0.10.1](https://github.com/snowplow/snowplow-java-tracker/releases/tag/0.1
 
 Finally, if you run into any issues or have any questions, please
 [raise an issue](https://github.com/snowplow/snowplow-java-tracker/issues) or get in touch with us via [our Discourse forums](https://discourse.snowplowanalytics.com/).
-
