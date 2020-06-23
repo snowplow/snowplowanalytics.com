@@ -30,11 +30,9 @@ Read on below for:
 We have moved the payload construction into background threads, and considerably reduced the work done on the thread which calls the `Tracker.track()` method. Specifically, the number of threads can be controlled when creating the Emitter. On top of the `threadCount`, this creates an additional thread which is for the consumer of the buffer.
 
 {% highlight java %}
-```
 Emitter batch = BatchEmitter.builder()
         .threadCount(20) // Default is 50
         .build();
-```
 {% endhighlight %}
 
 More information on this can be found in the [Emitter documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/java-tracker/emitter/).
@@ -44,11 +42,9 @@ More information on this can be found in the [Emitter documentation](https://doc
 You no longer need to create a `HttpClientAdapter` and inject it into the Emitter when using the Emitter builders. By default, the Java Tracker will create a `OkHttpClientAdapter` with the default `OkHttpClient` parameters. Of course, you can still pass in an `OkHttpClientAdapter` or `ApacheHttpClientAdapter` with custom settings if you wish to.
 
 {% highlight java %}
-```
 Emitter batch = BatchEmitter.builder()
         .httpClientAdapter( {{ An Adapter }} )
         .build();
-```
 {% endhighlight %}
 
 <h2 id="gradle">3. Support for Gradle Feature Variants</h2>
@@ -58,7 +54,6 @@ The Java Tracker has two optional dependencies, depending on the `HttpClientAdap
 <h3>OkHttp Support</h3>
 
 {% highlight java %}
-```
 dependencies {
     implementation 'com.snowplowanalytics:snowplow-java-tracker:0.10.1'
     implementation ('com.snowplowanalytics:snowplow-java-tracker:0.10.1') {
@@ -67,13 +62,11 @@ dependencies {
         }
     }
 }
-```
 {% endhighlight %}
 
 <h3>ApacheHttp Support</h3>
 
 {% highlight java %}
-```
 dependencies {
     implementation 'com.snowplowanalytics:snowplow-java-tracker:0.10.1'
     implementation ('com.snowplowanalytics:snowplow-java-tracker:0.10.1') {
@@ -82,7 +75,6 @@ dependencies {
         }
     }
 }
-```
 {% endhighlight %}
 
 More information on the Gradle setup can be found in the [documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/java-tracker/setup/#Gradle). You can also read more about Gradle Feature Gradients [here](https://docs.gradle.org/6.5/userguide/feature_variants.html).
