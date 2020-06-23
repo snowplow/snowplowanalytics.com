@@ -3,9 +3,9 @@ layout: post
 title: "Snowplow Java Tracker 0.10.1 (and 0.10.0) released"
 title-short: Snowplow Java Tracker 0.10.1
 tags: [snowplow, java, tracker]
-author: Paul Boocock
+author: Paul
 category: Releases
-permalink: /blog/2020/06/22/snowplow-java-tracker-0.10.1-released/
+permalink: /blog/2020/06/23/snowplow-java-tracker-0.10.1-released/
 discourse: false
 ---
 
