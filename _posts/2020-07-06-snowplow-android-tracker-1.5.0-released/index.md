@@ -26,12 +26,11 @@ Read on below for:
 In previous versions, the event objects created by the user already contained the `event_id` and `dvce_created_tstamp`. If an event object is then tracked multiple times, i.e. 
 
 {% highlight java %}
-let e = SPScreenView.build {
-                $0.setName("screen1")
-                $0.setTransitionType("trans1")
-}
-tracker.track(e)
-tracker.track(e)
+ScreenView event = ScreenView.builder()
+                .name("screen1")
+                .build();
+tracker.track(event);
+tracker.track(event);
 {% endhighlight %}
 
 this will lead to multiple events with the same event ID and device created timestamp being sent to the collector [GitHub issue #390](https://github.com/snowplow/snowplow-android-tracker/issues/390). Version 1.5.0 moves the assignment of event ID and device created timestamp into the event processing, so that the event object no longer contains them. This means you can now track the same event object multiple times, and each event will have a unique event ID. 
@@ -39,9 +38,9 @@ this will lead to multiple events with the same event ID and device created time
 
 <h2 id="diagnostic">2. Report errors in background threads</h2>
 
-In version 1.4.0, `trackerDiagnostic` events where introduced. While the tracker always manages errors internally (avoiding crashes of the app and assuring that no events are lost), this new method enables the tracker to report errors to a Snowplow collector as `diagnostic_error` events. From 1.5.0, we now also report errors that happen in background threads [GitHub issue #394](https://github.com/snowplow/snowplow-android-tracker/issues/394). Therefore, the tracker can now report errors that occur during tracking and sending of events to the collector.
+In version 1.4.0, `trackerDiagnostic` events were introduced. While the tracker always manages errors internally (avoiding crashes of the app and assuring that no events are lost), this new method enables the tracker to report errors to a Snowplow collector as `diagnostic_error` events. From 1.5.0, we now also report errors that happen in background threads [GitHub issue #394](https://github.com/snowplow/snowplow-android-tracker/issues/394). Therefore, the tracker can now report errors that occur during tracking and sending of events to the collector.
 
-As long as error tracking is enabled, the errors occuring in background threads will be sent: 
+As long as diagnostic tracking is enabled, the errors occuring in background threads will be sent: 
 
 {% highlight java %}
 TrackerBuilder trackerBuilder =
