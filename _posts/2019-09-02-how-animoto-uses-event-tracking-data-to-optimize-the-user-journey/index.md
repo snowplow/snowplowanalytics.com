@@ -68,7 +68,7 @@ There are two services Animoto uses for A/B testing:
 1. Optimizely
 2. LaunchDarkly
 
-Optimizely has its own internal dashboard that reports on metrics related to the experiments, but it is another “black box” and there is no way for us to corroborate the results of the different experiments. Since Optimizely data is logged with each Snowplow event in a context table, we can use it to accurately determine what users are doing within each experiment. 
+Optimizely has its own internal dashboard that reports on metrics related to the  a <a target="_blank" href="https://www.optimizely.com/optimization-glossary/feature-test/">experiments</a>, but it is another “black box” and there is no way for us to corroborate the results of the different experiments. Since Optimizely data is logged with each Snowplow event in a context table, we can use it to accurately determine what users are doing within each experiment. 
 
 LaunchDarkly is similar to Optimizely, but was implemented by our Engineering team as a feature flag management system for testing. While it doesn’t have its own reporting interface, we can control which features a user can or cannot see, and this data is logged in a Snowplow context table. In doing so, we can determine what actions users are taking while within an “experiment”. 
 
