@@ -4,7 +4,7 @@ title: "What is data latency and how to measure it"
 description: "What is data latency, why data teams should have transparency into latency metrics, and Snowplow’s approach to data latency reporting."
 author: Lyuba
 category: Data insights
-permalink: /blog/2020/07/13/what-is-data-latency-and-how-to-measure-it/
+permalink: /blog/2020/07/14/what-is-data-latency-and-how-to-measure-it/
 discourse: false
 ---
 
@@ -14,14 +14,14 @@ Data latency has turned into a key metric for data teams. It is becoming increas
 In this article we’ll explore what data latency is, why data teams should have transparency into latency metrics, and Snowplow’s approach to data latency reporting.
 
 
-# What is data latency? 
+## What is data latency? 
 
 Data latency is the time it takes for your data to become available in your database or data warehouse after an event occurs. Typically, data latency is measured in seconds or milliseconds, and ideally you measure latency from the moment an event occurs to the point where the data describing that event becomes available for querying or processing. 
 
 Not all use cases require low-latency data; higher latency is acceptable for use cases that don’t require real-time data, such as generating quarterly sales reports. However, more sophisticated use cases such as fraud detection or recommendation engines run on real-time or near real-time data, which makes low-latency a higher priority for data teams building out these types of products.
 
 
-# Data latency: why is it important?
+## Data latency: why is it important?
 
  
 
@@ -46,7 +46,7 @@ Each of these use cases benefit from having the data available faster, because r
 However, getting access to latency metrics is not always easy or straightforward, and most data delivery platforms do not provide access to this data. Nevertheless, there are a few approaches you can take to gather insights into your current data latency. 
 
 
-# How to measure data latency
+## How to measure data latency
 
  
 
@@ -55,7 +55,7 @@ One way to measure and report on your data latency is to see how recent most of 
 On the other hand, the most straightforward metric would be the time it takes the data to get processed and written to the storage target in question. If a business has access to this data, it could surface how fast behavioral data loads into the database or warehouse, report on the latency with greater certainty, and have more transparency into the accuracy of their data products. 
 
 
-# Snowplow’s approach to data latency
+## Snowplow’s approach to data latency
 
  
 
@@ -72,7 +72,7 @@ At Snowplow, one of our key values is transparency, which includes giving custom
 
 
 *   Measures the min, max and average lag in each time period making it possible to track the performance of the pipeline over time and how the lag has changed due to traffic volatility.
-*   Publish the data to Google Cloud Console’s Operations (formerly Stackdriver) and Cloudwatch, so it is available to our clients as well as our team.
+*   Publishes the data to Google Cloud’s Operations (formerly Stackdriver) and Cloudwatch, so it is available to customers as well as our team.
 
      
 
