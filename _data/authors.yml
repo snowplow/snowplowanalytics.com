@@ -379,7 +379,7 @@
   url: /blog/authors/lukas/
   avatar: /assets/img/blog/2019/12/lukas.jpeg
   spiel:   |
-      Luke is a software engineer at Snowplow. You can find him on <a href="https://github.com/lukeindykiewicz">GitHub</a>, <a href="https://twitter.com/lukeindykiewicz">Twitter</a> and <a href="https://pl.linkedin.com/in/lukaszindykiewicz">LinkedIn</a>. 
+      Luke is a software engineer at Snowplow. You can find him on <a href="https://github.com/lukeindykiewicz">GitHub</a>, <a href="https://twitter.com/lukeindykiewicz">Twitter</a> and <a href="https://pl.linkedin.com/in/lukaszindykiewicz">LinkedIn</a>.
 
 
 - name: Alex Benini
@@ -387,7 +387,7 @@
   url: /blog/authors/alex-benini/
   avatar: /assets/img/blog/2020/01/alexb.png
   spiel:   |
-      Alex is a Solutions Engineer at Snowplow. You can find him on <a href="https://www.linkedin.com/in/alexbenini/">LinkedIn</a>. 
+      Alex is a Solutions Engineer at Snowplow. You can find him on <a href="https://www.linkedin.com/in/alexbenini/">LinkedIn</a>.
 
 
 - name: Cara Baestlein
@@ -395,7 +395,7 @@
   url: /blog/authors/cara-baestlein/
   avatar: /assets/img/blog/2020/01/cara-baestlein.png
   spiel:   |
-     Cara is a Product Manager at Snowplow, focused on our trackers and data models. You can find her on <a href="https://www.linkedin.com/in/cara-baestlein/">LinkedIn</a> and <a href="https://twitter.com/CaraBaestlein">Twitter</a>. 
+     Cara is a Product Manager at Snowplow, focused on our trackers and data models. You can find her on <a href="https://www.linkedin.com/in/cara-baestlein/">LinkedIn</a> and <a href="https://twitter.com/CaraBaestlein">Twitter</a>.
 
 
 - name: Ian Thomas
@@ -403,7 +403,7 @@
   url: /blog/authors/ian-thomas/
   avatar: /assets/img/blog/2020/03/ian.png
   spiel:   |
-      Ian Thomas is a twenty-year veteran of the Data and Analytics industry. He cofounded one of the industry's first Web Analytics firms in London, and has held senior data leadership roles for Microsoft and Publicis Groupe, dealing with some of the world's largest and most complex datasets. He now acts as a "Chief Data Officer at large", helping companies build a world-class data organisation that can bridge the gap between data and the people who need to use it. He writes about the challenges of effective data practice at <a href="http://www.liesdamnedlies.com">www.liesdamnedlies.com</a>, and is a regular speaker at industry conferences. 
+      Ian Thomas is a twenty-year veteran of the Data and Analytics industry. He cofounded one of the industry's first Web Analytics firms in London, and has held senior data leadership roles for Microsoft and Publicis Groupe, dealing with some of the world's largest and most complex datasets. He now acts as a "Chief Data Officer at large", helping companies build a world-class data organisation that can bridge the gap between data and the people who need to use it. He writes about the challenges of effective data practice at <a href="http://www.liesdamnedlies.com">www.liesdamnedlies.com</a>, and is a regular speaker at industry conferences.
 
 
 - name: Matthew Tod
@@ -420,7 +420,7 @@
   url: /blog/authors/franciska-dethlefsen/
   avatar: /assets/img/blog/2020/05/franciska.jpeg
   spiel:   |
-      Franciska is the Head of Demand Gen at Snowplow. You can find her on <a href="https://www.linkedin.com/in/franciskadethlefsen/">LinkedIn</a>.  
+      Franciska is the Head of Demand Gen at Snowplow. You can find her on <a href="https://www.linkedin.com/in/franciskadethlefsen/">LinkedIn</a>.
 
 
 
@@ -439,5 +439,9 @@
   spiel:   |
       Mitra Muehlman works on the web conversion and data science team at <a href="https://www.bigtreeonline.com/">Big Tree</a>, a full service, digital marketing and analytics agency.
 
-      
-      
+- name: Steve
+  full_name:  Steve Coppin-Smith
+  url: /blog/authors/steve/
+  avatar: /assets/img/team/steve.jpg
+  spiel:   |
+      Steve is VP Engineering at Snowplow. You can find him on <a href="https://www.linkedin.com/in/steve-coppin-smith/">LinkedIn</a>.
