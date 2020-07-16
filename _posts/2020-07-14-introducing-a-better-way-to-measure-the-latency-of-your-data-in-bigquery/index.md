@@ -21,24 +21,27 @@ As an Insights Customer, the metric will be pre-configured and available in Metr
 
 As an open source user, you will need to create the metric yourself by following the steps below. 
 
-## Creating the custom logs-based metric
+### Creating the custom logs-based metric
 
 For an overview of logs-based metrics, you can refer to the GCP documentation [here](https://cloud.google.com/logging/docs/logs-based-metrics). We suggest creating a [distribution metric](https://cloud.google.com/logging/docs/logs-based-metrics/distribution-metrics) as follows: 
 
 
+<ol>
+    <li>
+        <p>Navigate to the Logs Viewer section on Google Cloud Console, and enter your query (as demonstrated below) to return the log entries that you want to create a metric from: </p>
+        <img src="{{ BASE_PATH }}/assets/img/blog/2020/07/gcp.png" />
+    </li>
+    <li>
+        <p>You will then be able to create your custom metric by clicking on ‘Create metric’.  This will bring up a Metrics Editor where you will need to enter the field name and an ‘Extraction regular expression’ as below in order to extract the value of the metric from the logs:</p>
+        <p style="text-align:center;"><img style="width:500px;" src="{{ BASE_PATH }}/assets/img/blog/2020/07/metric-editor.png" /></p> 
+    </li>
+    <li>
+        <p>This metric can then be consumed from the Metrics Explorer section and fine tuned via the Aggregation settings</p>
+    </li>
+</ol>
 
-1.Navigate to the Logs Viewer section on Google Cloud Console, and enter your query (as demonstrated below) to return the log entries that you want to create a metric from: 
-![gcp](/assets/img/blog/2020/07/gcp.png)
 
-
-2.You will then be able to create your custom metric by clicking on ‘Create metric’.  This will bring up a Metrics Editor where you will need to enter the field name and an ‘Extraction regular expression’ as below in order to extract the value of the metric from the logs:
-![metric-editor](/assets/img/blog/2020/07/metric-editor.png)
-
-
-3.This metric can then be consumed from the Metrics Explorer section and fine tuned via the Aggregation settings
-
-
-## Applying the aggregation settings
+### Applying the aggregation settings
 
 Since the purpose of Google Clouds Operations is to report on high volumes of data that come in at unpredictable intervals, you will need to choose how to display the data by setting the aggregation fields. A more detailed description of these settings can be found [here](https://cloud.google.com/monitoring/api/v3/aggregation), but we recommend the following: 
 
