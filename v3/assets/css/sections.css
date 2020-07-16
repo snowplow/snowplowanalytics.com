@@ -637,7 +637,7 @@ section.content .blog-wrap{
 .post-content ol{
     margin:15px 0px;
     list-style-type: decimal;
-    list-style-position: inside;
+    list-style-position: inherit;
 }
 
 .post-content ul{
