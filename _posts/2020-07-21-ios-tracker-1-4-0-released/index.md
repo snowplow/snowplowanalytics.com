@@ -76,7 +76,12 @@ SPScreenView *event = [SPScreenView build:^(id builder) {
 Version 1.4.0 also comes with support for the `true_tstamp` [GitHub issue #276](https://github.com/snowplow/snowplow-objc-tracker/issues/276), an optional timestamp that can be manually set like so:  
 
 {% highlight objc %}
-
+SPScreenView *event = [SPScreenView build:^(id builder) {
+    ...
+    // set true timestamp in seconds.
+    [builder setTrueTimestamp:@([[NSDate date] timeIntervalSince1970])];
+    ...
+}];
 {% endhighlight %}
 
 This support was made possible by adding compatibility for the Snowplow `payload_data` schema [version 1.0.4](https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4). 
