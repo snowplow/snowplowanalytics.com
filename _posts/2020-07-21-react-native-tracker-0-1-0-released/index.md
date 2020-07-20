@@ -14,9 +14,9 @@ We are pleased to announce the first production-ready release of the [Snowplow R
 Read on below for:
 
 1. [Key features](#features)
-2. [Changes since the alpha release](#changes)
-3. [Quickstart guide](#quickstart)
-4. [Feedback and next steps](#feedback)
+2. [Quickstart guide](#quickstart)
+3. [Feedback and next steps](#feedback)
+4. [Changes since the alpha release](#alpha)
 5. [Documentation](#documentation)
 6. [Getting help](#help)
 
@@ -35,24 +35,7 @@ This first production-ready release of the Snowplow React Native tracker has the
 - Setting subject data: The subject can be set using the `setSubjectData()` method.
 
 
-<h2 id="changes">2. Changes since the alpha release</h2>
-
-At this point we would like to extend a huge thank you to everyone who has used the [alpha versions](https://discourse.snowplowanalytics.com/t/react-native-tracker-0-1-0-alpha-16/3786) so far, and has provided their feedback, issues and contributions. We look forward to continued customer and community engagement on this tracker, see the section on [feedback and next steps](#feedback) for more information on how to get involved!
-
-Version 0.1.0 contains some breaking changes compared to the alpha release, specifically:
-
-- All track methods now take only two arguments: a JSON of key-value pairs, and an optional array of context SD-JSONs.
-
-- Several parameters of the `initialize()` method have been renamed to avoid the prefix `‘set’`. This is an established convention in the native trackers and normally indicates a standalone method rather than a configuration option.
-
-- The defaults for `initialize()` parameters have changed to reflect the minimal recommended configuration.
-
-- The `autoScreenView` option has been removed from the `initialize()` method. This feature was experimental and does not behave consistently. We are keen to scope out how to instrument this kind of feature in a way that is more React Native friendly. Ideas are welcome - feel free to open a discourse topic on the subject.
-
-- Parameters have been removed from the `trackScreenView()` method. Specifically, the option to manually set the screen ID and previous screen information have been removed. These are automatically managed internally by the tracker, and manually setting them can lead to inconsistent behaviour.
-
-
-<h2 id="quickstart">3. Quickstart guide</h2>
+<h2 id="quickstart">2. Quickstart guide</h2>
 
 To install the tracker: 
 
@@ -77,11 +60,27 @@ trackScreenViewEvent({screenName: 'myScreenName'})
 For a full list of all the tracker initialization options, including automatic sessionization and lifecycle events, please see the [Snowplow React Native Tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/react-native-tracker/#configuration). 
 
 
-<h2 id="feedback">4. Feedback and next steps</h2>
+<h2 id="feedback">3. Feedback and next steps</h2>
 
 As this is an early release tracker, we welcome feedback and and of course contributions! Please feel free to open topics with ideas in our [Discourse forum](https://discourse.snowplowanalytics.com/), and add issues and bug reports to the [repository](https://github.com/snowplow-incubator/snowplow-react-native-tracker/issues).
 
 The next release will include the introduction of automated testing. PRs are still welcome, but due to the time investment required for thorough manual testing, they may not be reviewed and merged until we have those tests in place. If in doubt, open an issue or a discourse post to ask about your contribution. Important contributions, especially bugfixes, will be prioritised.
+
+<h2 id="alpha">4. Changes since the alpha release</h2>
+
+We released an initial alpha version of this tracker back in August 2019, and with the help from our customers and community (providing their feedback, issues and contributions) have not only improved the alpha since then, but have now been able to release this production-ready version. We look forward to continued customer and community engagement on this tracker, see the section on [feedback and next steps](#feedback) for more information on how to get involved!
+
+Version 0.1.0 contains some breaking changes compared to the alpha release, specifically:
+
+- All track methods now take only two arguments: a JSON of key-value pairs, and an optional array of context SD-JSONs.
+
+- Several parameters of the `initialize()` method have been renamed to avoid the prefix `‘set’`. This is an established convention in the native trackers and normally indicates a standalone method rather than a configuration option.
+
+- The defaults for `initialize()` parameters have changed to reflect the minimal recommended configuration.
+
+- The `autoScreenView` option has been removed from the `initialize()` method. This feature was experimental and does not behave consistently. We are keen to scope out how to instrument this kind of feature in a way that is more React Native friendly. Ideas are welcome - feel free to open a discourse topic on the subject.
+
+- Parameters have been removed from the `trackScreenView()` method. Specifically, the option to manually set the screen ID and previous screen information have been removed. These are automatically managed internally by the tracker, and manually setting them can lead to inconsistent behaviour.
 
 <h2 id="documentation">5. Documentation</h2>
 
