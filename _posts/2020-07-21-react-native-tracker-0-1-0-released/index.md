@@ -68,7 +68,7 @@ The next release will include the introduction of automated testing. PRs are sti
 
 <h2 id="alpha">4. Changes since the alpha release</h2>
 
-We released an initial alpha version of this tracker back in August 2019, and with the help from our customers and community (providing their feedback, issues and contributions) have not only improved the alpha since then, but have now been able to release this production-ready version. We look forward to continued customer and community engagement on this tracker, see the section on [feedback and next steps](#feedback) for more information on how to get involved!
+We released an initial alpha version of this tracker back in August 2019, and with the help from our customers and community (providing their feedback, issues and contributions) have not only improved the alpha since then, but have now been able to release this production-ready version. We look forward to continued customer and community engagement on this tracker, see the previous section on feedback and next steps for more information on how to get involved!
 
 Version 0.1.0 contains some breaking changes compared to the alpha release, specifically:
 
