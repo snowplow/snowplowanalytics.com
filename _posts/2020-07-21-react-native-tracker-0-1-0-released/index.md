@@ -62,9 +62,9 @@ For a full list of all the tracker initialization options, including automatic s
 
 <h2 id="feedback">3. Feedback and next steps</h2>
 
-As this is an early release tracker, we welcome feedback and and of course contributions! Please feel free to open topics with ideas in our [Discourse forum](https://discourse.snowplowanalytics.com/), and add issues and bug reports to the [repository](https://github.com/snowplow-incubator/snowplow-react-native-tracker/issues).
+As this is an early release tracker, we welcome feedback and of course contributions! Please feel free to open topics with ideas in our [Discourse forum](https://discourse.snowplowanalytics.com/), and add issues and bug reports to the [repository](https://github.com/snowplow-incubator/snowplow-react-native-tracker/issues). 
 
-The next release will include the introduction of automated testing. PRs are still welcome, but due to the time investment required for thorough manual testing, they may not be reviewed and merged until we have those tests in place. If in doubt, open an issue or a discourse post to ask about your contribution. Important contributions, especially bugfixes, will be prioritised.
+For contributions, check out our guidelines [here](https://github.com/snowplow-incubator/snowplow-react-native-tracker/blob/master/CONTRIBUTING.md). Our next release will likely focus on additional testing capabilities over new features, however important contributions, especially bugfixes, will be prioritised. If in doubt, open an issue or a discourse post to ask about your contribution.
 
 <h2 id="alpha">4. Changes since the alpha release</h2>
 
