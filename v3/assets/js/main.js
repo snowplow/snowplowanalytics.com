@@ -9,7 +9,6 @@ var validateInput = function(kind, value){
     }
 }
 
-
 //Submit JSONP call to Pardot
 var pardotSubmit = function (data){
 
@@ -26,7 +25,7 @@ var pardotSubmit = function (data){
         // Handle Gartner LP exception
         if(data.result == 'success' && $('#00N2400000JSExF').val() == 'LP-dataOps-Gartner'){
             dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
-            window.location.replace(`${window.location.href}thank-you/`)
+            window.location.replace(`${window.location.pathname}thank-you/`)
             return;
         }
        
