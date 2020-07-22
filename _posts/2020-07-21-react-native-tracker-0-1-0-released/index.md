@@ -39,13 +39,13 @@ This first production-ready release of the Snowplow React Native tracker has the
 
 To install the tracker: 
 
-```
+{% highlight console %}
 npm install @snowplow/react-native-tracker
-```
+{% endhighlight %}
 
 To initialize the tracker and track a screen view:
 
-```
+{% highlight javascript %}
 import Tracker from '@snowplow/react-native-tracker';
 
 initialize({
@@ -55,7 +55,7 @@ initialize({
 });
 
 trackScreenViewEvent({screenName: 'myScreenName'})
-```
+{% endhighlight %}
 
 For a full list of all the tracker initialization options, including automatic sessionization and lifecycle events, please see the [Snowplow React Native Tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/react-native-tracker/#configuration). 
 
