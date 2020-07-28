@@ -23,13 +23,11 @@ $('#product-form-toggle').click(function(){
     if(isProductFormToggled){
         $('#product-form').slideToggle();
         setTimeout(function(){ 
-            console.log('vo timeout')
             $('html, body').animate({
                 scrollTop: ($('#product-form-toggle').offset().top -200)
             },500);
          }, 300);
     }else{
-        console.log('veke kliknato')
         $('#product-form').slideToggle();
     }
 });

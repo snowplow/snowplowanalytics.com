@@ -1,91 +1,73 @@
-//Small input field validator
-var validateInput = function(kind, value){
-    value = value ? value.trim() : ''
-    switch(kind) {
-        case 'not_empty':
-            return (value.length > 1)
-        case 'email':
-          return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
-    }
-}
-
-
-//Submit JSONP call to Pardot
-var pardotSubmit = function (data){
-
-    var url = $("#main-form").attr("data-pardotUrl");
-    $.ajax({
-        url: url,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: data
-    });
-    //Callback Directly from our own assets.Pardot does not allow CORS calls. Success and Error scripts - /assets/js/pardot (callback takes res from there)
-    window.callback = function (data) {
-
-        // Handle Gartner LP exception
-        if(data.result == 'success' && $('#00N2400000JSExF').val() == 'LP-dataOps-Gartner'){
-            dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
-            window.location.replace(`${window.location.href}thank-you/`)
-            return;
+const form = {
+    isValidInput: (type, value) => {
+        if (value){
+            value = value.trim()
         }
+        switch(type) {
+            case 'not_empty':
+                return (value.length > 1)
+            case 'email':
+              return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value);
+        }
+    },
+    handleSubmit: e => {
+        e.preventDefault();
+        const formLocation = $('#00N2400000JSExF');
+        let pass = 1;
+        let fieldsToValidate = ['email','first_name','last_name','company'];
+        let data = {
+            duid: _userDuid
+        };  
        
-        //Handle thankyou fadein on success or color every input if pardot error
-        (data.result == 'success') 
-        ? $('.form-wrap').hide() 
-            && $('.thankyou').fadeIn(700)
-            // push an event to GTM
-            && dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
-        : $('input').addClass('error') 
-            && $('#form_submit_button').removeClass('activate-loader')
-    }
-}
+        // Webinars custom validation 
+        fieldsToValidate =  $("#main-form").attr("data-gtmEventName").split('-')[0] == 'webinar' ? fieldsToValidate = ['email','first_name'] : fieldsToValidate;
+        
+        // Lp gartner custom validation
+        fieldsToValidate = formLocation && formLocation.val() == 'LP-dataOps-Gartner' ? fieldsToValidate = ['email','first_name','last_name','company','role'] : fieldsToValidate;
 
-
-
-
-// Validate and Submit
-var handleSubmit = function(e){
-    e.preventDefault();
-    var data = {};
-    var pass = 1;
-
-    // Default values for form validation
-    var fieldsToValidate = ['email','first_name'];
-
-    // Populate DUID
-    window.snowplow && window.snowplow(function () {
-        data['00N2400000HRtrl'] = this.snplow5.getDomainUserId();
-    });
-
-    // Change the validation array if the page is pricing page
-    
-    // If pricing page & Explore data page form -> validate Email, Name, Last Name, Company.
-    $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page' || $('#00N2400000JSExF').val() == 'Explore Data Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
-    
-    // If LP-dataOps-Gartner data page form -> validate Email, Name, Last Name, Company and role.
-    $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'LP-dataOps-Gartner')  ? fieldsToValidate = ['email','first_name','last_name','company','role'] : '';
-    
-
-    // $('#00N2400000JSExF') && ($('#00N2400000JSExF').val() == 'Pricing Page' || $('#00N2400000JSExF').val() == 'Explore Data Page') ? fieldsToValidate = ['email','first_name','last_name','company'] : '';
-    
-    $('#main-form input, #main-form textarea').each(function(){
         // Validate input fields
-        if(this.name == 'email'){
-            !validateInput('email', this.value) && $(this).addClass('error') ? pass = 0 : '';
-        }
-        if($.inArray(this.name, fieldsToValidate) !== -1){
-            !validateInput('not_empty', this.value) && $(this).addClass('error') ? pass = 0 : '';
-        }
-        // Populate data with input values
-        data[this.name] =  this.value;
-    });
-    // If validation passes - run api call
-    pass && $('#form_submit_button').addClass('activate-loader') 
-         && pardotSubmit(data)
-  
-}
+        $('#main-form input, #main-form textarea').each(function(){                    
+            if($.inArray(this.name, fieldsToValidate) !== -1){
+                pass = (this.name == 'email') && !form.isValidInput('email',this.value) && $(this).addClass('error')
+                || !(this.name == 'email') && !form.isValidInput('not_empty',this.value) && $(this).addClass('error')
+                ? pass = 0 : pass;
 
+                data[this.name] =  this.value 
+            }
+        });
+        pass && $('#form_submit_button').addClass('activate-loader') 
+             && form.pardotSubmit(data)
+    },
+    pardotSubmit: data => {
+        var url = $("#main-form").attr("data-pardotUrl");
+        $.ajax({
+            url: url,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: data
+        });
+        //Callback Directly from our own assets.Pardot does not allow CORS calls. Success and Error scripts - /assets/js/pardot (callback takes res from there)
+        window.callback = function (data) {
+    
+            // Handle Gartner LP exception
+            if(data.result == 'success' && $('#00N2400000JSExF').val() == 'LP-dataOps-Gartner'){
+                dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
+                window.location.replace(`${window.location.href}thank-you/`)
+                return;
+            }
+           
+            //Handle thankyou fadein on success or color every input if pardot error
+            (data.result == 'success') 
+            ? $('.form-wrap').hide() 
+                && $('.thankyou').fadeIn(700)
+                // push an event to GTM
+                && dataLayer.push({ 'event': $("#main-form").attr("data-gtmEventName") })
+            : $('input').addClass('error') 
+                && $('#form_submit_button').removeClass('activate-loader')
+        }
+    }
+    
+}
 
 // VISUAL HELPERS
 
@@ -94,11 +76,10 @@ $('input').focus(function(){
     $(this).removeClass('error')
 })
 
+// BIND FORM
 
-// BIND FORM WITH HELPER
-
-var form = document.getElementById('main-form');
-form && form.addEventListener('submit', handleSubmit);
+var mainForm = document.getElementById('main-form');
+mainForm && mainForm.addEventListener('submit', form.handleSubmit);
 
 
 // Temp solution - Scroll on writers program TODO
