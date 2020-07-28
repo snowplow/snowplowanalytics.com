@@ -1,7 +1,7 @@
 ---
 layout: post
-Title: "How DataOps can meet the challenges of managing behavioral data"
-Description: "Solving key logistical problems in data management with DataOps"
+title: "How DataOps can meet the challenges of managing behavioral data"
+description: "Solving key logistical problems in data management with DataOps"
 author: Yali
 category: Data governance
 permalink: /blog/2020/07/28/how-dataops-can-meet-the-challenges-of-managing-behavioral-data/
