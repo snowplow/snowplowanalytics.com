@@ -103,10 +103,8 @@ But what if you could keep the advantages of a self-built pipeline without havin
 It doesn't have to be a binary choice between build vs buy. For those who want to own their data infrastructure without having to self-build, there is a third way. Snowplow Insights offers you a fully managed data pipeline, set up and hosted for you in your cloud environment of choice. 
 
 
-### Snowplow vs build your own pipeline
-
  
- {% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Free white paper" description="Discover how you can leverage all the advantages of DIY infrastructure without having to self-build." btnText="Download White paper" link="https://go.snowplowanalytics.com/snowplow-vs-build_your-own_data_pipeline.pdf" %}
+ {% include shortcodes/ebook.html background_class="data-modeling-landingpage" layout="blog" title="Snowplow vs build your own pipeline" description="Discover how you can leverage all the advantages of DIY infrastructure without having to self-build." btnText="Download white paper" link="https://go.snowplowanalytics.com/snowplow-vs-build_your-own_data_pipeline.pdf" %}
 
 
 With Snowplow, you own all your data and data infrastructure, just as if you had built the pipeline yourself, while our dedicated team maintains, monitors and upgrades your infrastructure on your behalf. You’ll also get 24/7 support and advice on how best to scale and adapt your data infrastructure as your business evolves.
@@ -164,4 +162,5 @@ Compared: Snowplow vs self-build
 </table>
 
 
-For more information on Snowplow, please get in touch. 
+For more information on Snowplow, please [get in touch](https://snowplowanalytics.com/get-started/). 
+
