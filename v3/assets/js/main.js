@@ -16,7 +16,7 @@ const form = {
         let pass = 1;
         let fieldsToValidate = ['email','first_name','last_name','company'];
         let data = {
-            duid: _userDuid
+            "00N2400000HRtrl" : _userDuid
         };  
        
         // Webinars custom validation 
