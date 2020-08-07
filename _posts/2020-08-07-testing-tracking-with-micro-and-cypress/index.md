@@ -178,7 +178,7 @@ The tracking setup implemented for this demo app simply consists of:
 
 1. PageView tracking.
 2. Activity tracking.
-3. Form tracking with blacklisting.
+3. Form tracking with blocklisting.
 4. Tracking of the custom events `cart_action` and` purchase`.
 5. Custom `product_entity`. Product entities will be attached to the appropriate custom events.
 6. Adding the predefined webPage context to all events.
@@ -277,7 +277,7 @@ The `cy.noBadEvents()` command used in the first test above is a custom command 
 
 _Extra example:_
 
-How to ensure that blacklisted form fields are not being tracked: We need to assert for all form tracking events (`focus_form`, `change_form` and `submit_form`).
+How to ensure that blocklisted form fields are not being tracked: We need to assert for all form tracking events (`focus_form`, `change_form` and `submit_form`).
 
 
 
