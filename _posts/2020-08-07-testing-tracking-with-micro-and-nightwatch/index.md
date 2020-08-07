@@ -170,6 +170,7 @@ Note: These 3 assertions should be used consecutively when testing an event like
         browser
             .resetMicro();
     }
+  }
 {% endhighlight %}
 
 
