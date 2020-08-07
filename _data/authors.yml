@@ -445,3 +445,22 @@
   avatar: /assets/img/team/steve.jpg
   spiel:   |
       Steve is VP Engineering at Snowplow. You can find him on <a href="https://www.linkedin.com/in/steve-coppin-smith/">LinkedIn</a>.
+
+
+- name: Ada Tzereme
+  full_name:  Ada Tzereme
+  url: /blog/authors/ada-tzereme/
+  avatar: /assets/img/team/ada.jpg
+  spiel:   |
+      Ada Tzereme is a Data Engineering intern at Snowplow. You can find her on <a href="https://github.com/adatzer/">GitHub</a>.
+
+      
+- name: Emily Youngs
+  full_name:  Emily Youngs
+  url: /blog/authors/emily-youngs/
+  avatar: /assets/img/team/emily.png
+  spiel:   |
+      Emily is interning with Snowplow this summer as a Data Engineer, and this blog showcases the results of her first project. You can find her on <a href="https://www.linkedin.com/in/emily-youngs-071aa877/">LinkedIn</a>.
+
+
+
