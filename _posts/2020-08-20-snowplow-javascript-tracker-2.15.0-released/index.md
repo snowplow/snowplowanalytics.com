@@ -41,7 +41,7 @@ anonymousTracking: { withSessionTracking: true },
 stateStorageStrategy: 'cookieAndLocalStorage'
 ```
 
-If using the anonymous session tracking, the session key in local storage will also contain a salt which is used for stitching together the sessions. This value is never sent to the collector.
+If using the anonymous session tracking, the session information is stored in a cookie or local storage, depending on the `stateStorageStrategy`, but no user identifiers are used that exist beyond the users current session.
 
 More information on how to instrument anonymous tracking can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/#Anonymous_Tracking_2150). 
 
