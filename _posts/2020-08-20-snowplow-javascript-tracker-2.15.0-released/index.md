@@ -50,7 +50,7 @@ You may wish to toggle this functionality on or off during a page visit, for exa
 
 ## 2. Client Hints
 
-Chrome announced that the User Agent will be frozen from Chromium 84 onwards, and will be replaced by "Client Hints" ([Github issue](https://github.com/snowplow/snowplow-javascript-tracker/issues/816)). Client Hints offer useful information to understand browser usage without the potential to infringe on a users privacy as is often the case with the User Agent string. 
+The Chrome team have announced that the User Agent will be frozen [from Chromium 85 onwards](https://groups.google.com/a/chromium.org/g/blink-dev/c/-2JIRNMWJ7s/m/yHe4tQNLCgAJ?pli=1), and will be replaced by "Client Hints" ([Explainer: Reducing User-Agent Granularity](https://github.com/WICG/ua-client-hints)). Client Hints offer useful information to understand browser usage without the potential to infringe on a users privacy as is often the case with the User Agent string. 
 
 Version 2.15.0 of the Snowplow JavaScript tracker comes with support for these Client Hints. If enabled in the tracker initialization, a custom context will be sent with each event.
 
