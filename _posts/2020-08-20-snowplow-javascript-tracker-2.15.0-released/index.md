@@ -45,7 +45,7 @@ If using the anonymous session tracking, the session information is stored in a 
 
 More information on how to instrument anonymous tracking can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/#Anonymous_Tracking_2150). 
 
-You may wish to toggle this functionality on or off during a page visit, for example when a user accepts a cookie banner you may not want to disable anonymous tracking, or when a user logs in to your site. Information on how to instrument this can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/other-parameters-2/#Toggling_Anonymous_Tracking_2150).
+You may wish to toggle this functionality on or off during a page visit, for example when a user accepts a cookie banner you may want to disable anonymous tracking, or when a user logs in to your site. Information on how to instrument this can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/other-parameters-2/#Toggling_Anonymous_Tracking_2150).
 
 
 ## 2. Client Hints
