@@ -25,6 +25,10 @@ const form = {
         // Lp gartner custom validation
         fieldsToValidate = formLocation && formLocation.val() == 'LP-dataOps-Gartner' ? fieldsToValidate = ['email','first_name','last_name','company','role'] : fieldsToValidate;
 
+
+        // Heap - Iteratively - Snowplow webinar
+         fieldsToValidate = formLocation && formLocation.val() == 'Webinar#7' ? fieldsToValidate = ['email','first_name','last_name','company','role'] : fieldsToValidate;
+
         // Validate input fields
         $('#main-form input, #main-form textarea').each(function(){                    
             if($.inArray(this.name, fieldsToValidate) !== -1){
