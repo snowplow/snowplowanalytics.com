@@ -191,6 +191,13 @@
    section.webinar-listing ul li .right > a{
        min-width: 210px;
    }
+   /* ===============
+      HEAP WEBINAR
+    =============== */
+    section.list-speaker-companies ul .content{
+        width:335px !important;
+    }
+
 }
 
 
@@ -467,6 +474,15 @@
     }
     section.webinar-listing ul li .right .desc .item{
         margin-right:15px;
+    }
+       /* ===============
+      HEAP WEBINAR
+    =============== */
+    section.list-speaker-companies ul .content{
+        width:280px !important;
+    }
+    section.list-speaker-companies ul .theme-heap .content a::after{
+        display:none;
     }
 }
 
@@ -755,7 +771,30 @@
    .webinar-list .list-categories li, .single-webinar-list .list-categories li a{
     max-width:100px;
    }
-   
+
+
+    /* ===============
+      HEAP WEBINAR
+    =============== */
+    
+    section.list-speaker-companies{
+        margin-top:0px;
+    }
+    section.list-speaker-companies ul{
+        flex-flow:column;
+        justify-content: center;
+    }
+    section.list-speaker-companies ul li{
+        margin-bottom:50px;
+        display:flex;
+        justify-content: center;
+    }
+    section.list-speaker-companies ul li .content{
+        width:400px !important;
+    }
+    section.list-speaker-companies ul .bg{
+        display:none;
+    }
 }
 
 
@@ -1706,6 +1745,23 @@
    section.webinar-listing ul li .right .desc .item{
        justify-content: center;
    }
+    /* ===============
+      HEAP WEBINAR
+    =============== */
+    
+    section.list-speaker-companies{
+        margin-top:40px;
+    }
+    section.list-speaker-companies ul li{
+        padding:0px 20px;
+        box-sizing: border-box;
+    }
+    section.list-speaker-companies ul li .content{
+        width: 100% !important;
+    }
+    section.list-speaker-companies ul .theme-snowplow .content .full img{
+        width: 100%;
+    }
 
 }
 
