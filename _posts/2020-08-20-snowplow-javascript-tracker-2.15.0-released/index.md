@@ -29,24 +29,27 @@ The Snowplow technology is built from the ground up for maximum flexibility and 
 
 Recommended configurations when using anonymousTracking:
 
-```
-anonymousTracking: true,
-stateStorageStrategy: 'cookieAndLocalStorage'
+```json
+{
+    anonymousTracking: true,
+    stateStorageStrategy: 'cookieAndLocalStorage' //allows for event buffering
+}
 ```
 
 or
 
-```
-anonymousTracking: { withSessionTracking: true },
-stateStorageStrategy: 'cookieAndLocalStorage'
+```json
+{
+    anonymousTracking: { withSessionTracking: true },
+    stateStorageStrategy: 'cookieAndLocalStorage'
+}
 ```
 
-If using the anonymous session tracking, the session information is stored in a cookie or local storage, depending on the `stateStorageStrategy`, but no user identifiers are used that exist beyond the users current session.
+If using the anonymous session tracking, the session information is stored in a cookie or local storage, depending on the `stateStorageStrategy`, but no user identifiers are used that exist beyond the users current session. By using a stateStorageStrategy of `cookieAndLocalStorage` or `localStorage` the event buffering technology in the tracker can continue working. If you wish to configure the JavaScript Tracker to not use any browser storage then you should use `stateStorageStrategy: 'none'`.
 
 More information on how to instrument anonymous tracking can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/#Anonymous_Tracking_2150). 
 
-You may wish to toggle this functionality on or off during a page visit, for example when a user accepts a cookie banner you may want to disable anonymous tracking, or when a user logs in to your site. Information on how to instrument this can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/other-parameters-2/#Toggling_Anonymous_Tracking_2150).
-
+You may wish to toggle this functionality on or off during a page visit, for example when a user accepts a cookie banner you may want to disable anonymous tracking, or when a user logs in to your site. Information on how to instrument this can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/other-parameters-2/#Toggling_Anonymous_Tracking_2150). You should also update the `stateStorageStrategy` when disabling anonymous tracking, by passing a parameter to `disableAnonymousTracking` method, so that event buffering and user tracking can start to work if your `stateStorageStrategy` was initially set to `none`.
 
 ## 2. Client Hints
 
@@ -56,20 +59,23 @@ Version 2.15.0 of the Snowplow JavaScript tracker comes with support for these C
 
 Specifically, the context be enabled in two ways:
 
-```
-clientHints: true
+```json
+{
+    clientHints: true
+}
 ```
 
 This will capture the “basic” client hints.
 
-```
-clientHints: { includeHighEntropy: true }
+```json
+{
+    clientHints: { includeHighEntropy: true }
+}
 ```
 
 This will capture the “basic” client hints as well as hints that are deemed “High Entropy” and could be used to fingerprint users. Browsers may choose to prompt the user before making this data available.
 
 More information on Client Hints can be found in the [technical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/#clientHints_context_2150).
-
 
 ## 3. Other features and bug fixes
 
@@ -81,7 +87,6 @@ This tracker also comes with a few other minor features and bug fixes:
 * Metric GET failure no longer blocks queue executing ([Github issue #769](https://github.com/snowplow/snowplow-javascript-tracker/issues/769)); this was an external contribution from `IArny`, thank you very much!
 * Ability to set connection timeout (for slow 3G) ([Github issue #642](https://github.com/snowplow/snowplow-javascript-tracker/issues/642)); more information can be found in the [techical documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/general-parameters/initializing-a-tracker-2/#Set_connection_timeout_2150).
 * Change initial page ping to fire at minimum visit length when less than heart beat delay ([Github issue #803](https://github.com/snowplow/snowplow-javascript-tracker/issues/803)); this was an external contribution from `abiswas-tgam`, thank you very much!
-
 
 ## 4. Upgrading
 
