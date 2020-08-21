@@ -2475,19 +2475,6 @@ section.list-speaker-companies ul .theme-heap .content a{
     position:relative;
 }
 
-
-
-section.list-speaker-companies ul .theme-heap .content a::after{
-    display:block;
-    content: ' ';
-    width:22px;
-    height:6px;
-    background:url(../img/webinar/heap-iteratively/heap-arrow.svg) no-repeat;
-    position:absolute;
-    right:0px;
-    top:9px;
-}
-
 section.list-speaker-companies ul .theme-heap .content h4, section.list-speaker-companies ul .theme-heap .content p{
     color:#ffffff;
 }
