@@ -67,6 +67,7 @@ input.error{
     /* TODO : REMOVE AFTER COMPELTE MIGRATION */
     font-size:16px !important;
     padding:16px 30px; 
+    text-align: center;
 }
 
 
@@ -2780,6 +2781,10 @@ section.content-block .explore article .content h4{
 }
 .explore-v3 section.data-description{
     margin-top:0px;
+}
+
+.explore-v3 section.list-included .cta-links a {
+    text-align:center;
 }
 
 section.data-description p{

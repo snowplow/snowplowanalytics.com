@@ -12,6 +12,7 @@ const form = {
     },
     handleSubmit: e => {
         e.preventDefault();
+        _userDuid = _userDuid ? _userDuid : '';
         const formLocation = $('#00N2400000JSExF');
         let pass = 1;
         let fieldsToValidate = ['email','first_name','last_name','company'];
