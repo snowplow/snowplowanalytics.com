@@ -12,14 +12,15 @@ const form = {
     },
     handleSubmit: e => {
         e.preventDefault();
-        _userDuid = _userDuid ? _userDuid : '';
+        if(window._userDuid === undefined){
+            window._userDuid = '';
+        }
         const formLocation = $('#00N2400000JSExF');
         let pass = 1;
         let fieldsToValidate = ['email','first_name','last_name','company'];
         let data = {
-            "00N2400000HRtrl" : _userDuid
+            "00N2400000HRtrl" : window._userDuid
         };  
-       
         // Webinars custom validation 
         fieldsToValidate =  $("#main-form").attr("data-gtmEventName").split('-')[0] == 'webinar' ? fieldsToValidate = ['email','first_name'] : fieldsToValidate;
         
