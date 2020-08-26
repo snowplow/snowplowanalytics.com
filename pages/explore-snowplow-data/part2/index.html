@@ -3604,49 +3604,57 @@ assets:
             </div>
           </div>
     </section>
-    <section class="form-submit main-form pricing-form">
-        <div class="wrap">
-            <h2>Interested in seeing Snowplow data in action? </h2>
-            <form class="box-shadow" id="main-form" data-pardotUrl="https://go.snowplowanalytics.com/l/571483/2020-04-27/3s6h3j8" data-gtmEventName="product-demo-request-form-success" novalidate>
-              <input type="hidden" name="lead_source" id="lead_source" value="Website">
-              <input type="hidden" name="00N2400000JSExF" id="00N2400000JSExF" value="Explore Data Page">
-              <div class="form-wrap">
-                <div class="full">
-                    <h3>Register your interest in a free trial experience</h3>
-                    <p style="margin-top:10px; margin-bottom:5px;">We're in the process of developing a self-serve trial experience of Snowplow. If you're keen to be a part of a beta testing program - register your interest below.</p>
-                    <p>Alternatively, if you’d just like to learn more about Snowplow then <a href="{{ BASE_PATH }}/get-started/">book a product demo.</a></p>
-                  </div>
-                  <div class="half">
-                    <label for="first-name">First name<span style="color:red">*</span></label>
-                    <input type="text" name="first_name" id="first-name" placeholder="Enter your first name"/>
-                  </div>
-                  <div class="half">
-                    <label for="last-name">Last name<span style="color:red">*</span></label>
-                    <input type="text" name="last_name" id="last-name" placeholder="Enter your last name"/>
-                  </div>
-                  <div class="half">
-                    <label for="email">Work email<span style="color:red">*</span></label>
-                    <input type="text" name="email" id="email" placeholder="Enter your business email"/>
-                  </div>
-                  <div class="half">
-                    <label for="company">Company<span style="color:red">*</span></label>
-                    <input type="text" name="company" id="company" placeholder="Enter your company name"/>
-                  </div>
-                  <div class="half">
-                    <p class="p-small">The information you provide here will only be used to contact you about a Snowplow demo with our Product team.</p>
-                  </div>
-                  <div class="half">
-                    <button class="cta main-cta-bg" id="form_submit_button" type="submit">Submit</button>
-                  </div>
-              </div>
-              <div class="thankyou">
-                  <img src="{{ BASE_PATH }}/v3/assets/img/global/thank-you-image.png" alt="Thank you"/>
-                  <h3>Thank you for your interest in Snowplow.</h3>                        
-                  <p>We will be in touch with you soon.</p>
-              </div>
-            </form>
+    <section class="list-included">
+    <div class="wrap">
+        <h2>Interested in seeing Snowplow data in action?</h2>
+        <div class="full cta-links">
+            <a id="product-form-toggle" class="cta main-cta-bg">Try it out</a>
+            <a href="{{ BASE_PATH }}/get-started/" class="cta main-cta-bg">Book a demo</a>
         </div>
-    </section>
+    </div>
+</section>
+<section id="product-form" class="form-submit main-form pricing-form page-1-form">
+    <div class="wrap">
+        <form class="box-shadow" id="main-form" data-pardotUrl="https://go.snowplowanalytics.com/l/571483/2020-04-27/3s6h3j8" data-gtmEventName="product-demo-request-form-success" novalidate>
+            <input type="hidden" name="lead_source" id="lead_source" value="Website">
+            <input type="hidden" name="00N2400000JSExF" id="00N2400000JSExF" value="Explore Data Page">
+          <div class="form-wrap">
+              <div class="full">
+                <h3>Register your interest in a free trial experience</h3>
+                <p style="margin-top:10px; margin-bottom:5px;">We're in the process of developing a self-serve trial experience of Snowplow. If you're keen to be a part of a beta testing program - register your interest below.</p>
+                <p>Alternatively, if you’d just like to learn more about Snowplow then <a href="{{ BASE_PATH }}/get-started/">book a product demo.</a></p>
+              </div>
+              <div class="half">
+                <label for="first-name">First name<span style="color:red">*</span></label>
+                <input type="text" name="first_name" id="first-name" placeholder="Enter your first name"/>
+              </div>
+              <div class="half">
+                <label for="last-name">Last name<span style="color:red">*</span></label>
+                <input type="text" name="last_name" id="last-name" placeholder="Enter your last name"/>
+              </div>
+              <div class="half">
+                <label for="email">Work email<span style="color:red">*</span></label>
+                <input type="text" name="email" id="email" placeholder="Enter your business email"/>
+              </div>
+              <div class="half">
+                <label for="company">Company<span style="color:red">*</span></label>
+                <input type="text" name="company" id="company" placeholder="Enter your company name"/>
+              </div>
+              <div class="half">
+                <p class="p-small">The information you provide here will only be used to contact you about a Snowplow demo with our Product team.</p>
+              </div>
+              <div class="half">
+                <button class="cta main-cta-bg" id="form_submit_button" type="submit">Submit</button>
+              </div>
+          </div>
+          <div class="thankyou">
+              <img src="{{ BASE_PATH }}/v3/assets/img/global/thank-you-image.png" alt="Thank you"/>
+              <h3>Thank you for your interest in Snowplow.</h3>                        
+              <p>We will be in touch with you soon.</p>
+          </div>
+        </form>
+    </div>
+</section>
     <!-- MODALS -->
     <!-- START SINGLE MODAL -->
     <div class="modal fade" id="core-data" tabindex="-1" role="dialog"
