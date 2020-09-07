@@ -27,19 +27,19 @@ These changes, alongside the [increasing use of Ad Blockers](https://www.statist
 *   Longer-tail attribution will become increasingly difficult as attributing interactions over a longer period of time to the same user becomes more difficult
 
 
-### How might my tracking be affected?
+<h2 id="impact"> How might my tracking be affected? </h2>
 
 If you are collecting data through event tracking on the web there are a number of ways that these changes could affect your data collection:
 
 
-#### Default instrumentations of Snowplow could be blocked by AdBlock and tracking prevention
+### Default instrumentations of Snowplow could be blocked by AdBlock and tracking prevention
 
 The Snowplow pipeline makes an endpoint available that your data is streamed into and we know that this endpoint, along with other aspects of default Snowplow tracking instrumentations, is targeted by some ad-blocking providers, including the [disconnect.me list](https://disconnect.me/trackerprotection) which Firefox ETP uses to block tracking.
 
 Ad-blockers primarily try to target third party tracking, e.g. Facebook spying on users across other sites, instead of legitimate tracking from companies who are looking to learn from data and improve the experience they offer. However, data collection for both purposes happens with similar technologies and so all approaches get blocked.
 
 
-#### The usefulness of client-side cookies is limited
+### The usefulness of client-side cookies is limited
 
 With the increasingly short expiration windows on third-party and first-party cookies that are set on the client-side, analysing user journeys across any significant time window becomes challenging. Setting cookies on the client-side will deliver data that offers limited insight.
 
@@ -50,7 +50,7 @@ For example, understanding that a user first visited your site from a social cam
 The Snowplow collector sets a server-side cookie with a set of associated attributes which can provide you the benefits of first-party, server-side tracking if your pipeline is correctly configured.
 
 
-#### Cookie attributes will impact the reliability of tracking
+### Cookie attributes will impact the reliability of tracking
 
 Browsers are introducing rules about how they treat cookies based on the attributes of those cookies, Chromium-based browsers are paving the way with this effort.
 
@@ -59,19 +59,19 @@ This means that the values of attributes like sameSite, httpOnly and secure have
 We go into detail on [what each attribute means in a previous post](https://snowplowanalytics.com/blog/2020/02/17/understanding-the-samesite-cookie-update/). 
 
 
-### How can I collect more accurate and complete data?
+## How can I collect more accurate and complete data?
 
 Snowplow has configuration options that help you to collect complete and accurate behavioral data. 
 
 
-#### Firstly, here's how you can check your current configuration
+<h3 id="config">Firstly, here's how you can check your current configuration </h3>
 
 Insights Console gives you a quick and easy way to review how your pipeline is configured. Simply [login to console](https://console.snowplowanalytics.com/), find the pipeline you'd like to check the configuration for and navigate to Pipeline configuration.
 
 ![Pipeline configuration screenshot](/assets/img/blog/2020/09/pipelineconfig.png)
 
 
-#### Configure custom collector endpoints to track first-party
+### Configure custom collector endpoints to track first-party
 
 We recommend setting your collector to track from a first-party domain so it can set a first-party server-side cookie; these cookies are unaffected by prevention methods such as ITP and ETP.
 
@@ -81,6 +81,8 @@ For first-party tracking to work, you’ll also need to set a cookie domain for 
 
 You can check how your domains are configured by visiting _Pipeline Configuration_ in Insights Console and checking the settings for _Domains_.
 
+![Config screen domains](/assets/img/blog/2020/09/config-screen-domains.png)
+
 If you need to set up a new collector domain, you will need to:
 
 
@@ -89,14 +91,16 @@ If you need to set up a new collector domain, you will need to:
 *   Ensure the domain has an SSL certificate attached to it
 *   Ensure you have a cookie domain that matches the primary domain of your collector endpoint e.g. acme.com
 
-[Explore collector domains in our documentation](https://docs.snowplowanalytics.com/)
 
 
-#### Configure custom collector paths to avoid tracking being blocked
+
+### Configure custom collector paths to avoid tracking being blocked
 
 You'll want to set custom request paths to avoid your tracking being blocked by tracking prevention measures and ad-blockers.
 
 You can check whether you have set custom POST paths by visiting _Pipeline configuration_ and checking the settings for _Tracking request paths_.
+
+![Custom collector paths](/assets/img/blog/2020/09/config-screen-paths.png)
 
 If you need to set up a new request path, you will need to:
 
@@ -108,22 +112,24 @@ If you need to set up a new request path, you will need to:
 If you are using the Iglu webhook to track events, you can also set a custom path for this tracking.
 
 
-#### Configure your cookie attributes to meet privacy standards 
+### Configure your cookie attributes to meet privacy standards 
 
 To ensure cookies are set properly on different browsers you'll want to set the right attributes against your cookies.
 
 You can check how your cookies attributes are currently set by visiting _Pipeline configuration_ and checking the settings for _Cookie attributes_.
 
+![Configure cookie](/assets/img/blog/2020/09/config-screen-cookies.png)
+
 If you need to set up a change your cookie attributes, you will need to:
 
 
 
-*   work out what settings you'd like for each attribute - you can refer to our step-by-step decision guides to help make these decisions ([guide for Snowplow Insights customers](https://spdocsstaging.wpengine.com/wp-content/uploads/2020/09/Cookie-config-calculator-Insights.pdf) / [guide for Open Source users](https://spdocsstaging.wpengine.com/wp-content/uploads/2020/09/Cookie-config-calculator-Open-Source.pdf))
+*   work out what settings you'd like for each attribute - you can refer to our step-by-step decision guides to help make these decisions ([guide for Snowplow Insights customers](https://docs.snowplowanalytics.com/wp-content/uploads/2020/09/Cookie-config-calculator-Insights.pdf) / [guide for Open Source users](https://docs.snowplowanalytics.com/wp-content/uploads/2020/09/Cookie-config-calculator-Open-Source.pdf))
 *   update your cookie attribute settings in the collector configuration
 *   update your cookie attribute settings in the Javascript Tracker initialization
 
 
-### In conclusion...
+## In conclusion...
 
 For companies that want to perform reliable first party tracking on their own websites, reliable tracking is possible, but it requires more work to setup your Snowplow infrastructure, especially with respect to cookies. 
 
