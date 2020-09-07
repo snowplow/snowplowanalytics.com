@@ -21,7 +21,7 @@ Understanding how your marketing spend is contributing to conversions and sales 
 *   They are **silo-ed**. For example, Facebook gives you an overview of your performance on their platform, but it is difficult to compare that to performance of other channels.
 *   They are **one-size-fits-all black boxes** that remove flexibility and control. For example, Google Analytics attribution can only attribute one channel to each session.
 
-Snowplow puts you in control of your attributing marketing spend to outcomes. You decide what data goes into your attribution model, you decide what counts as a marketing touch or a conversion across all your channels and platforms, you decide what attribution mechanism you want to use, and you decide how this information is displayed to the various stakeholders in your business.
+Snowplow puts you in control of how you attribute outcomes to marketing spend. You decide what data goes into your attribution model, you decide what counts as a marketing touch or a conversion across all your channels and platforms, you decide what attribution mechanism you want to use, and you decide how this information is displayed to the various stakeholders in your business.
 
 To get you started, we've put together a quick introduction to marketing attribution on web using Snowplow, focusing on: 
 

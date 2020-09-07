@@ -424,7 +424,7 @@ article .content .bottom > img{
 .highlighter-rouge{
     background:#e8f8ff;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 13px;
+    font-size: inherit;
 }
 
 /* === ARTICLES BACK BUTTON === */
@@ -634,6 +634,7 @@ section.content .blog-wrap{
 .post-content h1,.post-content h2,.post-content h3,.post-content h4{
     margin:40px 0px 10px 0px;
 }
+
 
 .post-content ol{
     margin:15px 0px;
