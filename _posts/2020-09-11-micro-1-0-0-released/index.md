@@ -23,7 +23,6 @@ Snowplow Micro is a very small version of a full Snowplow data collection pipeli
 
 For examples of how to use Snowplow Micro, take a look at the 'How to' guides for [Cypress](https://snowplowanalytics.com/blog/2020/08/07/testing-tracking-with-micro-and-cypress/) and [Nightwatch](https://snowplowanalytics.com/blog/2020/08/07/testing-tracking-with-micro-and-nightwatch/) as well as the [examples repository](https://github.com/snowplow-incubator/snowplow-micro-examples#snowplow-micro-examples). 
 
-...
 
 Read on below for:
 
