@@ -71,7 +71,7 @@ Specifically, the `derived_tstamp` adjusts the `dvce_sent_tstamp` using the `col
 
 This tracker version switches from using the deprecated 'request' library to the 'got' library ([GitHub issue #61](https://github.com/snowplow/snowplow-nodejs-tracker/issues/61)) for the emitter. This change comes with some additional emitter configuration options which you can find in the [NodeJS tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/node-js-tracker-0-4-0/initialization/#configure-emitter).
 
-Please note that `got` only works on NodeJS applications and does not have browser support. If the `got` library isn’t suitable for your project you can create your own emitter. For moe information, please take a look at the documentation for [creating your own emitter](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/node-js-tracker-0-4-0/initialization/#create-your-own-emitter).
+Please note that `got` only works on NodeJS applications and does not have browser support. If the `got` library isn’t suitable for your project you can create your own emitter. For more information, please take a look at the documentation for [creating your own emitter](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/node-js-tracker-0-4-0/initialization/#create-your-own-emitter).
 
 
 <h2 id="breaking-changes">5. Breaking changes</h2>
