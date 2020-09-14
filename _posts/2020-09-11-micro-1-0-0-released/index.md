@@ -65,8 +65,9 @@ In version 1.0.0, each `GoodEvent` now contains the following four fields:
 * `contexts`: the contexts attached to the event
 
 __The format of the configuration file has changed__
+Micro's configuration file has been brought up to date to match version 1.0.1 of the [Snowplow stream collector](https://github.com/snowplow/stream-collector/tree/1.0.1).  Several new configuration options are present in the newest file format, as described [in a previous blog post](https://snowplowanalytics.com/blog/2019/09/12/snowplow-r116-madara-rider/), some of which a required fields.
 
-In the configuration file, variables that were previously camel case now use hyphens. For example, `crossDomain` [here](https://github.com/snowplow-incubator/snowplow-micro/blob/micro-0.1.0/example/micro.conf#L34) has become `cross-domain` [here](https://github.com/snowplow-incubator/snowplow-micro/blob/master/example/micro.conf#L41). Therefore, when switching from Snowplow Micro version 0.1.0 to 1.0.0 we recommend you copy the latest example config from the GitHub repository.
+When switching from Snowplow Micro version 0.1.0 to 1.0.0, the easiest way to upgrade your configuration is to download [the latest example](https://github.com/snowplow-incubator/snowplow-micro/blob/micro-1.0.0/example/micro.conf) from the GitHub repository.  Alternatively, if you are already using a recent version of the stream collector, you might choose to copy over that configuration to match your settings in production.
 
 
 <h2 id="updates">3. Other updates and bug fixes</h2>
