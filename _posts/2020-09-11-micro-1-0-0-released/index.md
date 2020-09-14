@@ -3,7 +3,7 @@ layout: post
 title: "Snowplow Micro 1.0.0 released"
 title-short: Snowplow Micro 1.0.0
 tags: [snowplow, micro]
-author: Ian
+author: Ian Streeter
 category: Releases
 permalink: /blog/2020/09/11/snowplow-micro-1-0-0-released/
 discourse: false

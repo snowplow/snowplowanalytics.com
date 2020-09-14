@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    console.log(window.location.pathname)
+    // console.log(window.location.pathname)
     const elOffset = $('#main-form').offset().top;
     
     $(window).scroll(function(){

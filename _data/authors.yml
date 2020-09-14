@@ -462,7 +462,17 @@
   spiel:   |
       Emily Youngs is a Data Engineering intern at Snowplow. She recently graduated from the University of Glasgow studying a combined honours degree of Computing Science and Business Management BSc. You can find her on <a href="https://www.linkedin.com/in/emily-youngs-071aa877/">LinkedIn</a>.
 
+- name: Trent
+  full_name:  Trent Kalisch-Smith
+  url: /blog/authors/trent-kalisch-smith/
+  avatar: /assets/img/team/trent.png
+  spiel:   |
+      Trent is a Sales Engineer helping enterprises understand Snowplow and get the most out of it. You can find him on <a href="https://www.linkedin.com/in/trentks/">LinkedIn</a>.
 
 
-
-
+- name: Ian Streeter
+  full_name:  Ian Streeter
+  url: /blog/authors/ian-streeter/
+  avatar: /assets/img/team/ianstreeter.png
+  spiel:   |
+      Ian is a software engineer at Snowplow.
