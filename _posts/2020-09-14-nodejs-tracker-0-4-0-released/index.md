@@ -11,7 +11,7 @@ discourse: false
 
 We are pleased to announce a new release of the [Snowplow NodeJS Tracker](https://github.com/snowplow/snowplow-nodejs-tracker).
 
-[Version 0.4.0](https://github.com/snowplow/snowplow-nodejs-tracker/releases/tag/0.4.0) adds support for the `dvce_created_tstamp` as well as the setting of the `domain_userid` and the `network_userid` (Snowplow's client- and server-side cookie IDs). It also switches the `emitter` from 'request' to 'got', bumps the `snowplow-tracker-core` library and adds TypeScript support alongside further under the hood improvements and bugfixes. All of these updates mean there are two breaking API changes:
+[Version 0.4.0](https://github.com/snowplow/snowplow-nodejs-tracker/releases/tag/0.4.0) adds support for the `dvce_sent_tstamp` as well as the setting of the `domain_userid` and the `network_userid` (Snowplow's client- and server-side cookie IDs). It also switches the `emitter` from 'request' to 'got', bumps the `snowplow-tracker-core` library and adds TypeScript support alongside further under the hood improvements and bugfixes. All of these updates mean there are two breaking API changes:
 
 * The `emitter` has been replaced with the `gotEmitter`, which continues to offer the same functionality but also includes a number of new features.
 * If you are using `trackEcommerceTransaction` and passing in an array of items, you should now switch to using `trackEcommerceTransactionWithItems`.
@@ -19,7 +19,7 @@ We are pleased to announce a new release of the [Snowplow NodeJS Tracker](https:
 Read on below for more detail on:
 
 1. [Adding the domain_userid and the network_userid](#add-ids)
-2. [Support for the dvce_created_tstamp](#support-dvce-tstamp)
+2. [Support for the dvce_sent_tstamp](#support-dvce-tstamp)
 3. [Switching to the got Emitter](#got-emitter)
 4. [Breaking changes](#breaking-changes)
 5. [Other features and bug fixes](#features-and-bugfixes)
@@ -43,15 +43,15 @@ setNetworkUserId();
 Examples of how to use these can be found in the [NodeJS tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/node-js-tracker-0-4-0/configuration/#set-domain-user-id).
 
 
-<h2 id="support-dvce-tstamp">2. Support for the dvce_created_tstamp</h2>
+<h2 id="support-dvce-tstamp">2. Support for the dvce_sent_tstamp</h2>
 
-The NodeJS tracker now also supports the `dvce_created_tstamp` ([GitHub issue #27](https://github.com/snowplow/snowplow-nodejs-tracker/issues/27)). This timestamp most precisely captures when the event occured on the device, and is used to calculate the `derived_tstamp` as follows:
+The NodeJS tracker now also supports the `dvce_sent_tstamp` ([GitHub issue #27](https://github.com/snowplow/snowplow-nodejs-tracker/issues/27)). This timestamp most precisely captures when the event occured on the device, and is used to calculate the `derived_tstamp` as follows:
 
 ```
 derived_tstamp = collector_tstamp - (dvce_sent_tstamp - dvce_created_tstamp)
 ```
 
-Specifically, the `derived_tstamp` adjusts the `dvce_created_tstamp` using the `collector_tstamp` to account for inaccurate device clocks. We recommend this is the timestamp you use in your analysis.
+Specifically, the `derived_tstamp` adjusts the `dvce_sent_tstamp` using the `collector_tstamp` to account for inaccurate device clocks. We recommend this is the timestamp you use in your analysis.
 
 
 <h2 id="got-emitter">3. Switching to the got Emitter</h2>
