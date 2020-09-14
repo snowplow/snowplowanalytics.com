@@ -11,7 +11,7 @@ discourse: false
 
 We are pleased to announce a new release of the [Snowplow NodeJS Tracker](https://github.com/snowplow/snowplow-nodejs-tracker).
 
-[Version 0.4.0](https://github.com/snowplow/snowplow-nodejs-tracker/releases/tag/0.4.0) significantly improves the developer experience through various updates and XXX. It also adds support for the `dvce_sent_tstamp` as well as the setting of the `domain_userid` and the `network_userid` (Snowplow's client- and server-side cookie IDs). Finally, it switches the `emitter` from 'request' to 'got' alongside a bugfix. All of these updates mean there are two breaking API changes:
+[Version 0.4.0](https://github.com/snowplow/snowplow-nodejs-tracker/releases/tag/0.4.0) significantly improves the developer experience through various updates. It also adds support for the `dvce_sent_tstamp` as well as the setting of the `domain_userid` and the `network_userid` (Snowplow's client- and server-side cookie IDs). Finally, it switches the `emitter` from 'request' to 'got' alongside a bugfix. All of these updates mean there are two breaking API changes:
 
 * The `emitter` has been replaced with the `gotEmitter`, which continues to offer the same functionality but also includes a number of new features.
 * If you are using `trackEcommerceTransaction` and passing in an array of items, you should now switch to using `trackEcommerceTransactionWithItems`.
