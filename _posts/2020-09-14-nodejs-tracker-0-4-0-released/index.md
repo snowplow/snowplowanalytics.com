@@ -29,7 +29,7 @@ Read on below for more detail on:
 
 <!--more-->
 
-<h2 id="add-ids">1. Improving the developer experience</h2>
+<h2 id="dev-experience">1. Improving the developer experience</h2>
 
 NodeJS tracker v0.4.0 improves the developer experience when using the NodeJS tracker and Snowplow Tracker Core functions in both JavaScript and TypeScript applications. Specifically, the following updates have been made:
 
