@@ -8,7 +8,7 @@ permalink: /blog/2020/09/17/2020/accessing-snowplow-data-in-real-time-aws/
 discourse: false
 ---
 Taking action on event data in real time is a popular feature of Snowplow. We have customers using this to power use cases including:
-*   __Retail:__ If someone fills up their shopping cart and then leaves, they can receive a notification with an enticement to check out. 
+*   __Retail:__ If someone fills up their shopping cart and then leaves, they can receive a notification with an enticement to come back and check out. 
 *   __Customer support:__ Providing support staff with informaiton on where a user is stuck at the same time as they call the support line. 
 *   __Machine Learning:__ Feeding algorithms with data in real time for decision making
 
@@ -40,11 +40,6 @@ Name: lambda_function_payload
 Runtime: Python 3
 Permissions: Use existing role, and select the role you made in the previous step
 ![Screenshot](img/create_function.png)
-
-
-## Add a trigger to connect it to the good kinesis stream
-
-![Screenshot](img/kinesis_setup.png)
 
 ## Create the Python script
 Copy this Python script to a file locally. In my case, it's called lambda_function_payload.py and is inside a subdirectory called lambda_function_payload. This subdirectory is important for the next step. 
@@ -100,6 +95,13 @@ cd ..
 Upload the zip file to lambda in the AWS Console. Since the dependency is a couple of mb, we won't be able to see and edit the code in AWS. 
 ![Screenshot](img/upload_zip.png)
 
+Set up the basic settings to point to the handler in the Python script. The handler is the entry point into the code where execution will begin. The handler is formated as`name_of_python_file.name_of_handler_function`. The `.py` is not included.
+![Screenshot](img/basic_settings.png)
+
+## Add a trigger to connect it to the good kinesis stream
+Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently.
+![Screenshot](img/kinesis_setup.png)
+
 ## Test and confirm events are being processed
 Send some events into your Snowplow and give them a couple seconds to process. Click on monitoring on the lambda fuction page and scroll down to CloudWatch logs. You should see some entries appearing. 
 ![Screenshot](img/monitoring.png)
@@ -109,7 +111,7 @@ Looking at the logs, you should see something like this appearing. What you see 
 ![Screenshot](img/log_details.png)
 
 # Okay, what next? 
-Now that you have data coming out of the real time stream. Here are some other articles with ideas on what you can do with it
+Now that you have data coming out of the real time stream. Here are some articles with ideas on what you can do with it
 *   [How real-time data enables personalization and engagement](https://snowplowanalytics.com/blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/)
 https://snowplowanalytics.com/blog/2019/03/06/
 *   [Snowplow for retail part 5](snowplow-for-retail-part-5-what-can-we-do-with-data-when-were-well-established/)
