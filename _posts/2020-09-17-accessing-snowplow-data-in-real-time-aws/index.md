@@ -12,7 +12,7 @@ Taking action on event data in real time is a popular feature of Snowplow. We ha
 *   __Customer support:__ Providing support staff with informaiton on where a user is stuck at the same time as they call the support line. 
 *   __Machine Learning:__ Feeding algorithms with data in real time for decision making
 
-Once you have snowplow set up, it only takes a couple steps to start reading data from the real time stream. This guide will show you how to achieve this in AWS using a python Lambda function. 
+Once you have snowplow set up, it only takes a couple steps to start reading data from the real time stream. This guide will show you how to achieve this in AWS using a Python Lambda function. 
 
 
 # Tutorial
@@ -20,7 +20,7 @@ This is a really simple tutorial of reading from the real time stream. What we'r
 ![Screenshot](img/snowplow-pipeline-diagram-v2.png)
 
 ## Prerequisites
-If you haven't got a snowplow pipeline set up in AWS using Kinesis streams this next part is not going to make much sense. If you don't know how to get started, [get in touch!](https://snowplowanalytics.com/get-started/). 
+If you haven't got a snowplow pipeline set up in AWS using Kinesis streams this next part is not going to make much sense. If you're unsure [check out here to get started!](https://snowplowanalytics.com/get-started/). 
 
 ## Set up IAM in AWS
 For this tutorial your lambda function needs a role with permission to do the following: 
@@ -35,13 +35,19 @@ For this tutorial your lambda function needs a role with permission to do the fo
 ```
 
 ## Create the lambda function
+Create a new Lambda function and give it the following properties: 
+Name: lambda_function_payload
+Runtime: Python 3
+Permissions: Use existing role, and select the role you made in the previous step
 ![Screenshot](img/create_function.png)
 
+
 ## Add a trigger to connect it to the good kinesis stream
+
 ![Screenshot](img/kinesis_setup.png)
 
-## Create the python script
-Copy this python script to a file, in my case, it's called lambda_function_payload.py and is inside a subdirectory called lambda_function_payload. This subdirectory is important for the next step. 
+## Create the Python script
+Copy this Python script to a file locally. In my case, it's called lambda_function_payload.py and is inside a subdirectory called lambda_function_payload. This subdirectory is important for the next step. 
 
 ```python
 import snowplow_analytics_sdk.event_transformer
@@ -79,8 +85,8 @@ def lambda_handler(event, context):
     return
 ```
 
-## Package and upload the python script
-Package a zip file for lambda with the following script. Note that this is being run on a subdirectry with the python app called lambda_function_payload. The python fuction above is written in python 3 and we need to install the [Snowplow Python SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file. 
+## Package and upload the Python script
+Package a zip file for lambda with the following script. Copy it to a new file and place it in the directory above the python script. Note that this is being run on a subdirectry with the Python app called lambda_function_payload.py. The Python fuction above is written in Python 3 the script will install the [Snowplow Python SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file.
 
 ```bash
 #!/bin/bash
@@ -91,7 +97,7 @@ zip -r ../lambda_function_payload.zip .
 cd ..
 ```
 
-Upload the zip file to lambda 
+Upload the zip file to lambda in the AWS Console. Since the dependency is a couple of mb, we won't be able to see and edit the code in AWS. 
 ![Screenshot](img/upload_zip.png)
 
 ## Test and confirm events are being processed
@@ -104,5 +110,8 @@ Looking at the logs, you should see something like this appearing. What you see 
 
 # Okay, what next? 
 Now that you have data coming out of the real time stream. Here are some other articles with ideas on what you can do with it
+*   [How real-time data enables personalization and engagement](https://snowplowanalytics.com/blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/)
+https://snowplowanalytics.com/blog/2019/03/06/
+*   [Snowplow for retail part 5](snowplow-for-retail-part-5-what-can-we-do-with-data-when-were-well-established/)
 
 If you want to learn more about what you can achieve wth Snowplow, [get in touch today!](https://snowplowanalytics.com/get-started/)
