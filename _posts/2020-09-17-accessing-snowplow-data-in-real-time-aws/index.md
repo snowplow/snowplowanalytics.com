@@ -17,7 +17,7 @@ Once you have snowplow set up, it only takes a couple steps to start reading dat
 
 # Tutorial
 This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is received by the Good Kinesis stream, transform the data into JSON with the Snowplow SDK and log the output to CloudWatch. Data that is received on the Good Kinesis stream has passed through the validation and enrichment steps in this diagram. 
-![Screenshot](img/snowplow-pipeline-diagram-v2.png)
+![Screenshot](img/snowplow-pipeline-diagram-v2.png =250x)
 
 ## Prerequisites
 If you haven't got a snowplow pipeline set up in AWS using Kinesis streams this next part is not going to make much sense. If you're unsure [check out here to get started!](https://snowplowanalytics.com/get-started/). 
@@ -39,7 +39,7 @@ Create a new Lambda function and give it the following properties:
 Name: lambda_function_payload
 Runtime: Python 3
 Permissions: Use existing role, and select the role you made in the previous step
-![Screenshot](img/create_function.png)
+![Screenshot](img/create_function.png =250x)
 
 ## Create the Python script
 Copy this Python script to a file locally. In my case, it's called lambda_function_payload.py and is inside a subdirectory called lambda_function_payload. This subdirectory is important for the next step. 
@@ -93,22 +93,22 @@ cd ..
 ```
 
 Upload the zip file to lambda in the AWS Console. Since the dependency is a couple of mb, we won't be able to see and edit the code in AWS. 
-![Screenshot](img/upload_zip.png)
+![Screenshot](img/upload_zip.png =250x)
 
 Set up the basic settings to point to the handler in the Python script. The handler is the entry point into the code where execution will begin. The handler is formated as`name_of_python_file.name_of_handler_function`. The `.py` is not included.
-![Screenshot](img/basic_settings.png)
+![Screenshot](img/basic_settings.png =250x)
 
 ## Add a trigger to connect it to the good kinesis stream
 Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently.
-![Screenshot](img/kinesis_setup.png)
+![Screenshot](img/kinesis_setup.png =250x)
 
 ## Test and confirm events are being processed
 Send some events into your Snowplow and give them a couple seconds to process. Click on monitoring on the lambda fuction page and scroll down to CloudWatch logs. You should see some entries appearing. 
-![Screenshot](img/monitoring.png)
-![Screenshot](img/logs.png)
+![Screenshot](img/monitoring.png =250x)
+![Screenshot](img/logs.png =250x)
 
 Looking at the logs, you should see something like this appearing. What you see here is the entire event's data in JSON format ready to be used.
-![Screenshot](img/log_details.png)
+![Screenshot](img/log_details.png =250x)
 
 # Okay, what next? 
 Now that you have data coming out of the real time stream. Here are some articles with ideas on what you can do with it
