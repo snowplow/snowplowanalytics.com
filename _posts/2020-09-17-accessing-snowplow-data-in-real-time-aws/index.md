@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Accessing snowplow data in real time on AWS"
-description: "Find out how to use AWS Lambda to retrieve data from Snowplow's Kinesis stream and make real-time decisions"
+description: "Find out how to use AWS Lambda to retrieve events from Snowplow in real time"
 author: Trent Kalisch-Smith
 category: How to guides
 permalink: /blog/2020/09/17/2020/accessing-snowplow-data-in-real-time-aws/
@@ -16,7 +16,7 @@ Once you have snowplow set up, it only takes a couple steps to start reading dat
 
 
 # Tutorial
-This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is received by the Good Kinesis stream, transform the data into JSON with the Snowplow SDK and log the output to CloudWatch. Data that is received on the Good Kinesis stream has passed through the validation and enrichment steps in this diagram. 
+This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is received by the enriched Kinesis event-stream, transform the data into JSON with the Snowplow SDK and log the output to CloudWatch. Data that is received from the event-stream has passed through the validation and enrichment steps in this diagram. 
 ![Screenshot](img/snowplow-pipeline-diagram-v2.png)
 
 ## Prerequisites
@@ -98,7 +98,7 @@ Upload the zip file to lambda in the AWS Console. Since the dependency is a coup
 Set up the basic settings to point to the handler in the Python script. The handler is the entry point into the code where execution will begin. The handler is formated as`name_of_python_file.name_of_handler_function`. The `.py` is not included.
 ![Screenshot](img/basic_settings.png)
 
-## Add a trigger to connect it to the good kinesis stream
+## Add a trigger to connect it to the enriched kinesis stream
 Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently. 
 ![Screenshot](img/kinesis_setup.png)
 
