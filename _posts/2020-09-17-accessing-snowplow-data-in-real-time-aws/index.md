@@ -8,18 +8,18 @@ permalink: /blog/2020/09/17/2020/accessing-snowplow-data-in-real-time-aws/
 discourse: false
 ---
 Taking action on event data in real time is a popular feature of Snowplow. We have customers using this to power use cases including:
-*   __Retail:__ Fuel dynamic pricing, product and content recommendations to improve sales and revenue. 
+*   __Retail:__ Fueling dynamic pricing, product and content recommendations to improve sales and revenue. 
 *   __Customer support:__ Providing support staff with informaiton on where a user is stuck and what help articles they have recently viewed at the time they call the support line.
 *   __Machine Learning:__ Feeding algorithms with data in real time for decision making
-*   __Security:__ Fraud detection and anomaly detection 
+*   __Security:__ Enabling fraud detection and anomaly detection in financial transactions
 
-First a quick recap of what is Snowplow. Snowplow provides a fully managed data pipeline in your own cloud account. It collects user's behavioural data from your products into a unified stream and passes iit into your data warehouse.
+First a quick recap of what is Snowplow. Snowplow provides a fully managed data pipeline in your own cloud account. It collects user's behavioural data from your products into a unified stream, and passes it into your data warehouse.
 
 Once you have snowplow set up, it only takes a couple steps to start reading data from the real time stream. This guide will show you how to quickly achieve this in AWS using a Python Lambda function. It's important to note that this can also be [achieved on GCP](https://docs.snowplowanalytics.com/docs/setup-snowplow-on-gcp/) and with our [SDKs in other languages](https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK#snowplow-analytics-sdks). 
 
 
 # Tutorial
-This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is written to the good enriched Kinesis events stream, transform the data into JSON with the Snowplow Python Analytics SDK and log the output to CloudWatch. Data that is written to the event stream has passed through the validation and enrichment steps in this diagram. 
+This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is written to the good enriched Kinesis events stream, transform the data into JSON with the Snowplow Python Analytics SDK and log the output to CloudWatch. Data that is written to the event stream has passed through the [validation and enrichment steps](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/architecture-overview-aws/) in the diagram below. 
 ![Screenshot](img/snowplow-pipeline-diagram-v2.png)
 
 ## 1. Prerequisites
@@ -59,12 +59,14 @@ def decode_records(update):
     if "Records" in update:
         for record in update["Records"]:
             if "kinesis" in record and "data" in record['kinesis']:
+                # decode base64 data in each record and append to the list
                 decoded_data = base64.b64decode(record['kinesis']['data']).decode('utf-8')
                 data.append(decoded_data)
     return data
 
 # Entry point for the lambda function
 def lambda_handler(event, context):
+    # Uncomment this line to show the raw batch of events
     # print("Received event: " + json.dumps(event, indent=2)) 
 
     # Decode received batch of records from Base64 to TSV
@@ -113,7 +115,7 @@ Send some events into your Snowplow and give them a couple seconds to process. C
 Looking at the logs, you should see something like this. What you see here is the entire event's data in JSON format. You have now succesfully read from the real time stream and are ready to process your events!
 ![Screenshot](img/log_details.png)
 
-# Okay, what next? 
+# Okay, what next?
 Now that you have control over data coming out of the real time stream. Here are some articles with ideas on what you can do with it:
 *   [How real-time data enables personalization and engagement](https://snowplowanalytics.com/blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/)
 *   [Snowplow for retail part 5](https://snowplowanalytics.com/blog/2019/03/06/snowplow-for-retail-part-5-what-can-we-do-with-data-when-were-well-established/)
