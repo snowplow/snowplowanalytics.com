@@ -1,28 +1,31 @@
 ---
 layout: post
 title: "Accessing snowplow data in real time on AWS"
-description: "Find out how to use AWS Lambda to retrieve events from Snowplow in real time"
+description: "Find out how to take actions in real time based on behavioural event data using AWS Lambda"
 author: Trent Kalisch-Smith
 category: How to guides
 permalink: /blog/2020/09/17/2020/accessing-snowplow-data-in-real-time-aws/
 discourse: false
 ---
 Taking action on event data in real time is a popular feature of Snowplow. We have customers using this to power use cases including:
-*   __Retail:__ If someone fills up their shopping cart and then leaves, they can receive a notification with an enticement to come back and check out. 
-*   __Customer support:__ Providing support staff with informaiton on where a user is stuck at the same time as they call the support line. 
+*   __Retail:__ Fuel dynamic pricing, product and content recommendations to improve sales and revenue. 
+*   __Customer support:__ Providing support staff with informaiton on where a user is stuck and what help articles they have recently viewed at the time they call the support line.
 *   __Machine Learning:__ Feeding algorithms with data in real time for decision making
+*   __Security:__ Fraud detection and anomaly detection 
+
+First a quick recap of what is Snowplow. Snowplow provides a fully managed data pipeline in your own cloud account. It collects user's behavioural data from your products into a unified stream and passes iit into your data warehouse.
 
 Once you have snowplow set up, it only takes a couple steps to start reading data from the real time stream. This guide will show you how to quickly achieve this in AWS using a Python Lambda function.
 
 
 # Tutorial
-This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is received by the enriched Kinesis event-stream, transform the data into JSON with the Snowplow SDK and log the output to CloudWatch. Data that is received from the event-stream has passed through the validation and enrichment steps in this diagram. 
+This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is written to the good enriched Kinesis events stream, transform the data into JSON with the Snowplow SDK and log the output to CloudWatch. Data that is written to the event stream has passed through the validation and enrichment steps in this diagram. 
 ![Screenshot](img/snowplow-pipeline-diagram-v2.png)
 
-## Prerequisites
+## 1. Prerequisites
 If you haven't got a snowplow pipeline set up in AWS using Kinesis streams this next part is not going to make much sense. If you're unsure [check out here to get started on open source](https://docs.snowplowanalytics.com/docs/setup-snowplow-on-aws/) or [here to contact us about our managed solution](http://snowplowanalytics.com/get-started/)
 
-## Set up IAM in AWS
+## 2. Set up IAM in AWS
 For this tutorial your lambda function needs a role with permission to do the following: 
 ```
 "kinesis:GetRecords",
@@ -34,14 +37,14 @@ For this tutorial your lambda function needs a role with permission to do the fo
 "logs:PutLogEvents"
 ```
 
-## Create the lambda function
+## 3. Create the lambda function
 Create a new Lambda function and give it the following properties: 
 Name: lambda_function_payload
 Runtime: Python 3
 Permissions: Use existing role, and select the role you made in the previous step
 ![Screenshot](img/create_function.png)
 
-## Create the Python script
+## 4. Create the Python script
 Copy this Python script to a file locally. In my case, it's called lambda_function_payload.py and is inside a subdirectory called lambda_function_payload. This subdirectory is important for the next step. 
 
 ```python
@@ -80,8 +83,8 @@ def lambda_handler(event, context):
     return
 ```
 
-## Package and upload the Python script
-Package a zip file for lambda with the following script. Copy it to a new file and place it in the directory above the python script. Note that this is being run on a subdirectry with the Python app called lambda_function_payload.py. The Python fuction above is written in Python 3 the script below will install the [Snowplow Python SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file.
+## 5. Package and upload the Python script
+Package a zip file for lambda with the following script. Copy it to a new file and place it in the directory above the python script. Note that this is being run on a subdirectry with the Python app called lambda_function_payload.py. The Python fuction above is written in Python 3 the script below will install the [Snowplow Python Analytics SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file.
 
 ```bash
 #!/bin/bash
@@ -98,11 +101,11 @@ Upload the zip file to lambda in the AWS Console. Since the dependency is a coup
 Set up the basic settings to point to the handler in the Python script. The handler is the entry point into the code where execution will begin. The handler is formated as`name_of_python_file.name_of_handler_function`. The `.py` is not included.
 ![Screenshot](img/basic_settings.png)
 
-## Add a trigger to connect it to the enriched kinesis stream
+## 6. Add a trigger to connect it to the enriched kinesis stream
 Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently. 
 ![Screenshot](img/kinesis_setup.png)
 
-## Test and confirm events are being processed
+## 7. Test and confirm events are being processed
 Send some events into your Snowplow and give them a couple seconds to process. Click on monitoring on the lambda fuction page and scroll down to CloudWatch logs. You should see some entries appearing. 
 ![Screenshot](img/monitoring.png)
 ![Screenshot](img/logs.png)
