@@ -38,10 +38,10 @@ For this tutorial your lambda function needs a role with permission to do the fo
 ```
 
 ## 3. Create the lambda function
-Create a new Lambda function and give it the following properties: 
-Name: lambda_function_payload
-Runtime: Python 3
-Permissions: Use existing role, and select the role you made in the previous step
+Create a new Lambda function by clicking `Create Function` and give it the following properties: 
+* Name: lambda_function_payload
+* Runtime: Python 3
+* Permissions: Use existing role, and select the role you made in the previous step
 ![Screenshot](img/create_function.png)
 
 ## 4. Create the Python script
@@ -69,12 +69,12 @@ def lambda_handler(event, context):
     # Uncomment this line to show the raw batch of events
     # print("Received event: " + json.dumps(event, indent=2)) 
 
-    # Decode received batch of records from Base64 to TSV
+    # Decode received batch of records from Base64 to Snowplow TSV
     records = decode_records(event)
 
     for record in records:
         try:
-            # Transform record from TSV to JSON
+            # Transform record from Snowplow TSV to JSON
             print(snowplow_analytics_sdk.event_transformer.transform(record))
             print("Succesfully retrieved and transformed event")
         except snowplow_analytics_sdk.snowplow_event_transformation_exception.SnowplowEventTransformationException as e:
