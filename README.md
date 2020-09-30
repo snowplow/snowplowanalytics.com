@@ -4,25 +4,25 @@
 |  [Develop][branch-develop] | https://next.snowplowanalytics.com        | [![Build Status][travis-image-develop]][travis] |
 |  [QA][branch-qa]           | https://qa.snowplowanalytics.com          | [![Build Status][travis-image-qa]][travis]      |
 
-## What is *snowplowanalytics.com*?
+## What is about *snowplowanalytics.com*?
 
 This repo contains the source code and content for the [Snowplow](https://snowplowanalytics.com) website. The site is built with [Jekyll](https://github.com/mojombo/jekyll) and published to Amazon S3 where it is then served by CloudFront.
 
-## Stack Walkthrough
+## What is about Stack Walkthrough
 
 This current project's stack consist of NPM, webpack and Jekyll, they are used to build website as static pages and assets.
 
-## NPM
+## What is about NPM
 
 NPM is a modern package-management solution based on NodeJS language. It allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
 
 That way you are free from manually managing JS libraries and their dependencies.
 
-## Webpack
+## What is about Webpack
 
 Webpack is used for transpiling JS files to provide ES6 support. It is done with help of babel library. It can be used for providing CSS post-process support, such as auto-prefixer, and many more. But currently Jekyll take care about CSS.
 
-## Jekyll
+## What is about Jekyll
 
 Jekyll is static web-site generation tool. It generates website from HTML pages and assets into ./_site folder.
 
