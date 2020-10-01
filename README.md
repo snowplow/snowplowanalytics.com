@@ -12,9 +12,9 @@ This repo contains the source code and content for the [Snowplow](https://snowpl
 
 This current project's stack consist of NPM, webpack and Jekyll, they are used to build website as static pages and assets.
 
-## NPM
+## NPM [Node Packaging Manager]
 
-NPM is a modern package-management solution based on NodeJS language. It allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
+NPM, short for Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of open-source Node. js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. It allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
 
 That way you are free from manually managing JS libraries and their dependencies.
 
