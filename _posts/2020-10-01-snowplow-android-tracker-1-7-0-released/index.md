@@ -30,7 +30,7 @@ Before v1.7.0 the session was configured using three parameters:
 * `backgroundTimeout`: number of seconds of inactivity needed to reset the session (when the app has been suspended)
 * `checkInterval`: number of seconds between a session checking
 
-However, there was an issue where a short session timeout could cause more sessions to expire more than once. Version 1.7.0 updates the session management as follows:
+However, there was an issue where a short session timeout could cause sessions to expire more than once. Version 1.7.0 updates the session management as follows:
 
 * We have removed the `checkInterval` parameter as the session checking is no longer based on a timer.
 * The session expiration is checked only when an event reaches the tracker. Doing that ensures new sessions are always caused by events being tracked, and they can't be renewed without being associated to a specific event. Also, the events are always associated to the correct session as the session is checked event by event.
