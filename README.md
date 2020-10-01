@@ -6,15 +6,15 @@
 
 ## What is *snowplowanalytics.com*?
 
-This repo contains the source code and content for the [Snowplow](https://snowplowanalytics.com) website. The site is built with [Jekyll](https://github.com/mojombo/jekyll) and published to Amazon S3 where it is then served by CloudFront.
+This repo contains the source code and content for the [Snowplow](https://snowplowanalytics.com) website. The site is built with [Jekyll](https://github.com/mojombo/jekyll) and published to Amazon S3, where it is then served by CloudFront.
 
 ## Stack Walkthrough
 
-This current project's stack consist of NPM, webpack and Jekyll, they are used to build website as static pages and assets.
+This current project's stack consist of NPM, webpack and Jekyll. They are used to build website as static pages and assets.
 
 ## NPM
 
-NPM is a modern package-management solution based on NodeJS language. It allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
+NPM is a modern package-management solution based on NodeJS language which allows to install and manage versioned packages. Instead of adding packages into assets/js/vendors folder, NPM adds them into ./node_modules folder. Then you can use ES6 command "import", or common "require". ES6 way becomes more often used these days.
 
 That way you are free from manually managing JS libraries and their dependencies.
 
@@ -131,7 +131,7 @@ NOTE: If your feature does not pass QA or extends over multiple updates to maste
 
 ### Working on blog posts?
 
-All new blogs to be added to the website must also be branched from master.  The workflow should be as follows:
+All new blogs to be added to the website must also be branched from master. The workflow should be as follows:
 
 1. Create new branch from master called: `blog/name-of-your-blog-post`
 2. Work on blog post and ensure it compiles correctly locally
@@ -162,7 +162,7 @@ Any features that are seen to be broken or needing more work will be removed fro
 
 ### Production website
 
-Once QA on staging has been completed we will merge the staging branch to master.  After this point we can begin the next sprint.
+Once QA on staging has been completed we will merge the staging branch to master. After this point we can begin the next sprint.
 
 Any features that did not make the cut will need to be reset so that they are up-to-date with the latest master.
 
