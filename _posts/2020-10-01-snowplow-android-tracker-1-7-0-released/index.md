@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Snowplow Android Tracker 1.7.0 released"
+title: "Snowplow Android Tracker 1.7.0 and 1.7.1 released"
 title-short: Snowplow Android Tracker 1.7.0
 tags: [snowplow, android, tracker]
 author: Alex Benini
@@ -9,7 +9,7 @@ permalink: /blog/2020/10/01/snowplow-android-tracker-1.7.0-released/
 discourse: false
 ---
 
-We are pleased to announce [Snowplow Android Tracker](https://github.com/snowplow/snowplow-android-tracker) 1.7.0. [Version 1.7.0]((https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.0)) refactors the session management to make it more resilient.
+We are pleased to announce [Snowplow Android Tracker](https://github.com/snowplow/snowplow-android-tracker) 1.7.0 and 1.7.1. [Version 1.7.0]((https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.0)) refactors the session management to make it more resilient. [Version 1.7.1]((https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.1)) fixes a bug where the `Emitter` instances its own `OkHttpClient` even when a different instance is passed as parameter in the builder.
 
 Read on below for:
 
@@ -24,7 +24,7 @@ Read on below for:
 
 Sessions expire when no events have been tracked for the amount of time defined in the timeout. When a session expires, the session ID is updated and the session index is incremented. There are two possibilities for timeouts since a session can timeout in the foreground (while the app is visible) or in the background (when the app has been suspended, but not closed). Furthermore, when the app crashes or is killed by the user the session also always resets.
 
-Before v1.7.0 the session was configured using three parameters:
+Before v1.7.x the session was configured using three parameters:
 
 * `foregroundTimeout`: number of seconds of inactivity needed to reset the session (while the app is visible)
 * `backgroundTimeout`: number of seconds of inactivity needed to reset the session (when the app has been suspended)
@@ -41,13 +41,14 @@ More information can be found in [GitHub issue #366](https://github.com/snowplow
 <h2 id="updates">2. Updates and bug fixes</h2>
 
 * Session `storageMechanism` is marked `SQLITE` but it's not ([GitHub issue #347](https://github.com/snowplow/snowplow-android-tracker/issues/347))
+* Cannot provide `OkHttpClient` when setting up Emitter ([GitHub issue #414](https://github.com/snowplow/snowplow-android-tracker/issues/414))
 
 
 <h2 id="documentation">3. Documentation</h2>
 
 As always, information about how to use the tracker can be found in the [Android Tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/android-tracker/android-1-7-0/).
 
-You can find the full release notes on GitHub as [Snowplow Android Tracker v1.7.0 release](https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.0).
+You can find the full release notes on GitHub as [Snowplow Android Tracker v1.7.0 release](https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.0) and [Snowplow Android Tracker v1.7.1 release](https://github.com/snowplow/snowplow-android-tracker/releases/tag/1.7.1).
 
 
 <h2 id="help">4. Getting help</h2>

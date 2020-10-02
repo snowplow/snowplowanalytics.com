@@ -16,9 +16,10 @@ We are pleased to announce a new release of the [Snowplow JavaScript Tracker][js
 Read on below for:
 
 1. [Switching build tooling](#1-switching-build-tooling)
-2. [Other features and bug fixes](#2-other-features-and-bugfixes)
-3. [Upgrading](#3-upgrading)
-4. [Documentation and help](#4-documentation-and-help)
+2. [Update Snowplow Micro to v1](#2-update-snowplow-micro-to-v1)
+3. [Other features and bug fixes](#3-other-features-and-bugfixes)
+4. [Upgrading](#4-upgrading)
+5. [Documentation and help](#5-documentation-and-help)
 
 <!--more-->
 
@@ -26,22 +27,31 @@ Read on below for:
 
 As originally suggested by `bernardosrulzon`, we have switched to using the Closure Compiler ([GitHub issue #583](https://github.com/snowplow/snowplow-javascript-tracker/issues/583)). We have also switched to using rollup.js and gulp ([GitHub issue #752](https://github.com/snowplow/snowplow-javascript-tracker/issues/752)). Together, these two updates reduce the `sp.js` filesize by 30%. 
 
-## 2. Other features and bug fixes
+
+## 2. Update Snowplow Micro to v1
+
+We have recently release v1.0.0 of Snowplow Micro, a very small version of a full Snowplow data collection pipeline that it can be launched by a test suite to include tracking in automated tests. You can read more about it in the [release post](https://snowplowanalytics.com/blog/2020/09/11/snowplow-micro-1-0-0-released/). 
+
+While we built Snowplow Micro to enable our users to better test their Snowplow tracking, we also use it to test our tracker releases. Version 2.16.0 of the JavaScript tracker switches to using Snowplow Micro 1.0.0 for testing ([GitHub issue #837](https://github.com/snowplow/snowplow-javascript-tracker/issues/837)).
+
+
+## 3. Other features and bug fixes
 
 This tracker also comes with a few other under the hood improvements:
 
 * Switch to Github Actions ([GitHub issue #844](https://github.com/snowplow/snowplow-javascript-tracker/issues/844))
 * Add license banner to rollup builds ([GitHub issue #845](https://github.com/snowplow/snowplow-javascript-tracker/issues/845))
 * Bump snowplow-tracker-core to 0.9.2 ([GitHub issue #841](https://github.com/snowplow/snowplow-javascript-tracker/issues/841))
-* Update Snowplow Micro to v1 ([GitHub issue #837](https://github.com/snowplow/snowplow-javascript-tracker/issues/837))
 
-## 3. Upgrading
 
-The tracker is available as a published asset in the [2.16.0 Github release][2.16.0-tag]:
+## 4. Upgrading
 
-To upgrade, Snowplow Insights and Open Source users should host the 2.16.0 version of `sp.js` asset on a CDN, and load the tracker from there.
+The tracker is available as a published asset in the [2.16.0 Github release][2.16.0-tag]. To upgrade, Snowplow Insights and Open Source users should host the 2.16.0 version of `sp.js` asset on a CDN, and load the tracker from there.
 
-## 4. Documentation and help
+To quickly test new releases, the Snowplow JavaScript Tracker is now available on the jsDelivr CDN. We continue to recommend hosting `sp.js` yourself, however if you wish to test this release you can do so by using [the assets on jsDelivr](https://www.jsdelivr.com/package/gh/snowplow/sp-js-assets?version=2.16.0).
+
+
+## 5. Documentation and help
 
 Check out the JavaScript Tracker's documentation:
 
@@ -54,6 +64,7 @@ Check out the JavaScript Tracker's documentation:
 The [v2.16.0 release page][2.16.0-tag] on GitHub has the full list of changes made in this version.
 
 Finally, if you run into any issues or have any questions, please [raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
+
 
 [js-tracker]: https://github.com/snowplow/snowplow-javascript-tracker
 [2.16.0-tag]: https://github.com/snowplow/snowplow-javascript-tracker/releases/tag/2.16.0
