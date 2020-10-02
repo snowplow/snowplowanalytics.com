@@ -30,9 +30,9 @@ As originally suggested by `bernardosrulzon`, we have switched to using the Clos
 
 ## 2. Update Snowplow Micro to v1
 
-We have recently release v1.0.0 of Snowplow Micro, a very small version of a full Snowplow data collection pipeline that it can be launched by a test suite to include tracking in automated tests. You can read more about it in the [release post](https://snowplowanalytics.com/blog/2020/09/11/snowplow-micro-1-0-0-released/). 
+We have recently released v1.0.0 of Snowplow Micro, a very small version of a full Snowplow data collection pipeline that it can be launched by a test suite to include tracking in automated tests. You can read more about it in the [release post](https://snowplowanalytics.com/blog/2020/09/11/snowplow-micro-1-0-0-released/). 
 
-While we built Snowplow Micro to enable our users to better test their Snowplow tracking, we also use it to test our tracker releases. Version 2.16.0 of the JavaScript tracker switches to using Snowplow Micro 1.0.0 for testing ([GitHub issue #837](https://github.com/snowplow/snowplow-javascript-tracker/issues/837)).
+While we built Snowplow Micro to enable our users to better test their Snowplow tracking, we also use it to test our tracker releases. Version 2.16.0 of the JavaScript tracker switches to using Snowplow Micro v1.0.0 for testing ([GitHub issue #837](https://github.com/snowplow/snowplow-javascript-tracker/issues/837)).
 
 
 ## 3. Other features and bug fixes
