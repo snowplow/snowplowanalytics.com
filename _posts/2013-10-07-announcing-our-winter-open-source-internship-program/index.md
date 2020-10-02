@@ -7,7 +7,7 @@ category: Inside the plow
 permalink: /blog/2013/10/07/announcing-our-winter-open-source-internship-program/
 ---
 
-Applications for the new Snowplow Analytics open source internship program are now open! At Snowplow we are passionate about enterprise-strength open-source technology, and we are hugely excited to be offering paid internships for open source hackers this winter.
+pplications for the new Snowplow Analytics open source internship program are now open! At Snowplow we are passionate about enterprise-strength open-source technology, and we are hugely excited to be offering paid internships for open-source hackers this winter.
 
 Snowplow Analytics is looking for one or two open source interns this winter (December through February), for 3-6 week paid internships. Our "winterns" will work directly on and contribute to data engineering projects within the [Snowplow open source stack] [snowplow-repos]. We have lots of ideas for cool projects to do around Snowplow - and if you have any suggestions of your own, we would love to hear them!
 
@@ -15,9 +15,9 @@ Snowplow Analytics is looking for one or two open source interns this winter (De
 
 <!--more-->
 
-A Snowplow wintern loves coding, enjoys experimenting with new technologies and is happiest working "in the open" on community/team projects. In terms of programming languages: most of our stack is in Scala, Ruby, JavaScript and Clojure, but we also have code written in R, Java, C, SQL and Lua - in fact, whatever languages you like working in, we can probably find something interesting for you to do. We should stress that almost all of our work revolves around data engineering - you won't be involved in front-end/web development during your winternship, unless you want to of course!
+A Snowplow winter loves coding, enjoys experimenting with new technologies, and is happiest working "in the open" on community/team projects. In terms of programming languages: most of our stack is in Scala, Ruby, JavaScript, and Clojure, but we also have code written in R, Java, C, SQL, and Lua - in fact, whatever languages you like working in, we can probably find something interesting for you to do. We should stress that almost all of our work revolves around data engineering - you won't be involved in front-end/web development during your winternship, unless you want to of course!
+We won't filter based on your life stage, professional qualifications, or (prior) employment status - you just have to be available to work full time (Monday-Friday, 8 hours a day) for between 3 and 6 weeks this winter. We will consider candidates who can work from our London office, and additionally, remote candidates who are UTC +/- 5 hours maximum. We need to restrict the timezones like this to maintain some quality shared office hours between our interns and the London office - we'll be seeing you on HipChat!
 
-We won't filter based on your life stage, professional qualifications or (prior) employment status - you just have to be available to work full time (Monday-Friday, 8 hours a day) for between 3 and 6 weeks this winter. We will consider candidates who can work from our London office, and additionally remote candidates who are UTC +/- 5 hours maximum. We need to restrict the timezones like this to maintain some quality shared office hours between our interns and the London office - we'll be seeing you on HipChat!
 
 These are paid internships - pay is negotiable and will be based on location and travel costs.
 
