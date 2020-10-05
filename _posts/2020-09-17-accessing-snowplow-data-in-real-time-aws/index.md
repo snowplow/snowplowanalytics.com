@@ -13,7 +13,7 @@ Taking action on event data in real time is a popular feature of Snowplow. We ha
 *   __Machine Learning:__ Feeding algorithms with data in real time for decision making
 *   __Security:__ Enabling fraud detection and anomaly detection in financial transactions
 
-First a quick recap of what is Snowplow. Snowplow provides a fully managed data pipeline in your own cloud account. It collects user's behavioural data from your products into a unified stream, and passes it into your data warehouse.
+First a quick Snowplow recap. Snowplow provides a fully managed data pipeline in your own cloud account. It collects user's behavioural data from your products into a unified stream, and passes it into your data warehouse.
 
 Once you have snowplow set up, it only takes a couple steps to start reading data from the real time stream. This guide will show you how to quickly achieve this in AWS using a Python Lambda function. It's important to note that this can also be [achieved on GCP](https://docs.snowplowanalytics.com/docs/setup-snowplow-on-gcp/) and with our [SDKs in other languages](https://github.com/snowplow/snowplow/wiki/Snowplow-Analytics-SDK#snowplow-analytics-sdks). 
 
