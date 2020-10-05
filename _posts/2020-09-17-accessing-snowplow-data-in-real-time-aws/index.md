@@ -65,6 +65,7 @@ def decode_records(update):
     return data
 
 # Entry point for the lambda function
+# Output from the print statments can be found in cloudwatch
 def lambda_handler(event, context):
     # Uncomment this line to show the raw batch of events
     # print("Received event: " + json.dumps(event, indent=2)) 
@@ -86,7 +87,7 @@ def lambda_handler(event, context):
 ```
 
 ## 5. Package and upload the Python script
-Package a zip file for lambda with the following script. Copy it to a new file and place it in the directory above the python script. Note that this is being run on a subdirectry with the Python app called lambda_function_payload.py. The Python fuction above is written in Python 3 the script below will install the [Snowplow Python Analytics SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file.
+Package a zip file for lambda with the following script. Copy it to a new file and place it in the directory above the python script. Note that this is being run on a subdirectry with the Python app called lambda_function_payload.py. The Python fuction above is written in Python 3 the script below will install the [Snowplow Python Analytics SDK](https://github.com/snowplow/snowplow/wiki/Python-Analytics-SDK-Setup) in the directory so that it is included in the zip file. You could also consider creating a virtual environment using pipenv or virtualenv rather than installing the Analytics SDK globally.
 
 ```bash
 #!/bin/bash
@@ -119,5 +120,6 @@ Looking at the logs, you should see something like this. What you see here is th
 Now that you have control over data coming out of the real time stream. Here are some articles with ideas on what you can do with it:
 *   [How real-time data enables personalization and engagement](https://snowplowanalytics.com/blog/2019/09/27/how-real-time-data-lets-media-companies-personalize-content-messaging-and-advertising/)
 *   [Snowplow for retail part 5](https://snowplowanalytics.com/blog/2019/03/06/snowplow-for-retail-part-5-what-can-we-do-with-data-when-were-well-established/)
+*   [Code Combat - A more advanced example of using AWS Lambda functions](https://discourse.snowplowanalytics.com/t/real-time-reporting-using-aws-lambda-and-dynamodb-a-tutorial-to-compute-the-number-of-players-in-a-game-level-on-the-snowplow-event-stream-1-2/1008)
 
 If you want to learn more about what you can achieve wth Snowplow, [get in touch today!](https://snowplowanalytics.com/get-started/)
