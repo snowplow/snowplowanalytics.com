@@ -19,7 +19,8 @@ Once you have snowplow set up, it only takes a couple steps to start reading dat
 
 
 # Tutorial
-This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is written to the good enriched Kinesis events stream, transform the data into JSON with the Snowplow Python Analytics SDK and log the output to CloudWatch. Data that is written to the event stream has passed through the [validation and enrichment steps](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/architecture-overview-aws/) in the diagram below. 
+This is a really simple tutorial of reading from the real time stream. What we're going to do is set up a lambda function to trigger when data is written to the good enriched Kinesis events stream, transform the data into JSON with the Snowplow Python Analytics SDK and log the output to CloudWatch. Data that is written to the event stream has passed through the [validation and enrichment steps](https://docs.snowplowanalytics.com/docs/understanding-your-pipeline/architecture-overview-aws/) in the diagram below.  
+
 ![Screenshot](img/snowplow-pipeline-diagram-v2.png)
 
 ## 1. Prerequisites
