@@ -116,7 +116,8 @@ Send some events into your Snowplow pipeline and give them a couple seconds to p
 ![Screenshot](img/monitoring.png)
 ![Screenshot](img/logs.png)
 
-Looking at the logs, you should see something like this. What you see here is the entire event's data in JSON format. You have now succesfully read from the real time stream and are ready to process your events!
+Looking at the logs, you should see something like this. What you see here is the entire event's data in JSON format. You have now succesfully read from the real time stream and are ready to process your events!  
+
 ![Screenshot](img/log_details.png)
 
 # Okay, what next?
