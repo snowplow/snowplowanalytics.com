@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Snowplow JavaScript Tracker 2.16.1 released"
-title-short: Snowplow JavaScript Tracker 2.16.1
+title: "Snowplow JavaScript Tracker 2.16.0 and 2.16.1 released"
+title-short: Snowplow JavaScript Tracker 2.16.0 and 2.16.1
 tags: [snowplow, javascript, tracker]
 author: Paul
 category: Releases
@@ -57,7 +57,7 @@ Check out the JavaScript Tracker's documentation:
 * The documentation on the [Google Tag Manager custom template][gtm-template]
 * The documentation on the [Analytics npm package][npm-package]
 
-The [v2.16.0 release page][2.16.0-tag] and [v2.16.1 release page][2.16.1-tag] on GitHub has the full list of changes made in this version.
+The [v2.16.0 release page][2.16.0-tag] and [v2.16.1 release page][2.16.1-tag] on GitHub have the full list of changes made in these versions.
 
 Finally, if you run into any issues or have any questions, please [raise an issue][issues] or get in touch with us via [our Discourse forums][forums].
 
