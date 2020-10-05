@@ -99,7 +99,8 @@ zip -r ../lambda_function_payload.zip .
 cd ..
 ```
 
-Upload the zip file to lambda in the AWS Console. Since the dependency is a couple of mb, we won't be able to see and edit the code in AWS. 
+Upload the zip file to lambda in the AWS Console. Since the dependency is a couple of mb, we won't be able to see and edit the code in AWS.  
+
 ![Screenshot](img/upload_zip.png)
 
 Set up the basic settings to point to the handler in the Python script. The handler is the entry point into the code where execution will begin. The handler is formated as`name_of_python_file.name_of_handler_function`. The `.py` is not included.
