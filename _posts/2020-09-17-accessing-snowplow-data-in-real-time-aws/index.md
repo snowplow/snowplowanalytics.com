@@ -42,7 +42,8 @@ For this tutorial your lambda function needs a role with permission to do the fo
 Create a new Lambda function by clicking `Create Function` and give it the following properties: 
 * Name: lambda_function_payload
 * Runtime: Python 3
-* Permissions: Use existing role, and select the role you made in the previous step
+* Permissions: Use existing role, and select the role you made in the previous step  
+
 ![Screenshot](img/create_function.png)
 
 ## 4. Create the Python script
