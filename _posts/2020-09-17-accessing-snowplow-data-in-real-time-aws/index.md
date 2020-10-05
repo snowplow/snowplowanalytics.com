@@ -110,7 +110,8 @@ Set up your trigger based on the screenshot below. The default values will be fi
 ![Screenshot](img/kinesis_setup.png)
 
 ## 7. Test and confirm events are being processed
-Send some events into your Snowplow and give them a couple seconds to process. Click on monitoring on the lambda fuction page and scroll down to CloudWatch logs. You should see some entries appearing. 
+Send some events into your Snowplow pipeline and give them a couple seconds to process. Click on monitoring on the lambda fuction page and scroll down to CloudWatch logs. You should see some entries appearing.  
+
 ![Screenshot](img/monitoring.png)
 ![Screenshot](img/logs.png)
 
