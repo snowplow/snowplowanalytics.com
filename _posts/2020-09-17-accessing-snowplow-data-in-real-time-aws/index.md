@@ -104,7 +104,8 @@ Set up the basic settings to point to the handler in the Python script. The hand
 ![Screenshot](img/basic_settings.png)
 
 ## 6. Add a trigger to connect it to the enriched kinesis stream
-Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently. 
+Set up your trigger based on the screenshot below. The default values will be fine but note that your Kinesis stream will be named differently. For your production workloads, you may wish to use different batch sizes and utilise retries but this will vary depending on your use case.  
+
 ![Screenshot](img/kinesis_setup.png)
 
 ## 7. Test and confirm events are being processed
