@@ -69,7 +69,7 @@ The `SPEmitter` API is still the same, so the `EventStore` and the `NetworkConne
 
 - Crash connected with method writeSessionToFile in SPSession ([GitHub issue #515](https://github.com/snowplow/snowplow-objc-tracker/issues/515))
 
-<h2 id="documentation">3. Documentation</h2>
+<h2 id="documentation">4. Documentation</h2>
 
 As always, information about how to use the tracker can be found in the [iOS Tracker documentation](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/objective-c-tracker/ios-tracker-1-5-0/).
 
