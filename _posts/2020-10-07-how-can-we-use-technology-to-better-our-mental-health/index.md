@@ -3,7 +3,7 @@ layout: post
 title: "How can we use technology to better our mental health?"
 description: "We take a look at how technology can be used to better our mental health." 
 author: Nicki
-category: Data insights
+category: Inside the plow
 permalink: /blog/2020/10/07/how-can-we-use-technology-to-better-our-mental-health/
 discourse: false
 ---
