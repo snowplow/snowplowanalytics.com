@@ -101,7 +101,7 @@ Prior to loading the data to your warehouse, each event is checked to see if it 
 
 
 
-*   If you are using a 3rd party data collection vendor such as GA – validate client side
+*   If you are using a 3<sup>rd</sup> party data collection vendor such as GA – validate client side
 *   If you have 1<sup>st</sup> party data collection such as a home-built pipeline or Snowplow – validate in the data collection pipeline, prior to warehouse loading
 
 Either method means the structure of data in the warehouse is controlled strictly by those consuming it.
