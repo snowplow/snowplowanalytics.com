@@ -25,7 +25,8 @@ To explore why these two issues occur, it’s important to look at how most comp
 
 
 
-![Event Dictionary](/assets/img/blog/2020/10/event-dictionary.png)
+<img style="max-width:600px !important" src="{{ BASE_PATH }}/assets/img/blog/2020/10/event-dictionary.png" alt="event-dictionary"/>
+
 
 
 For this to work well, the creator/owner of the unenforced event dictionary must clearly communicate the design intent. For example, that a search event should fire with these properties on search results being displayed - rather than the search button being clicked. The design intent must be made clear to both key stakeholders: the front-end developers and the data consumers.
@@ -45,8 +46,7 @@ This results in long Slack threads with both sets of stakeholders asking what ro
 Create one central source of truth – a ruleset for what data is allowed to load to the warehouse. This ruleset is created by a designer in a standard format (e.g. JSON schema) and can therefore be universally interpreted (human and machine readable) and maintained long after their departure. 
 
 
-![central-source-of-truth](/assets/img/blog/2020/10/central-source-of-truth.png)
-
+<img style="max-width:600px !important" src="{{ BASE_PATH }}/assets/img/blog/2020/10/central-source-of-truth.png" alt="central-source-of-truth"/>
 
 
 Going back to the two sets of stakeholders:
@@ -60,7 +60,7 @@ No one needs to communicate design intent using their own tracking conventions a
 
 
 
- {% include shortcodes/ebook.html background_class="data-privacy-landingpage" layout="blog" title="SNOWPLOW WEBINAR" description="Watch a recording of the complete webinar on how to break down communication barriers with a universal language: The art and science of designing your tracking" btnText="Watch now" link="https://snowplowanalytics.com/webinars/the-art-and-science-of-designing-your-tracking/watch/" %}
+ {% include shortcodes/ebook.html background_class="data-privacy-landingpage" layout="blog" title="SNOWPLOW WEBINAR" description="Watch a recording of the complete webinar on how to break down communication barriers with a universal language: The art and science of designing your tracking" btnText="Watch now" link="https://snowplowanalytics.com/webinars/the-art-and-science-of-designing-your-tracking/" %}
 
 
 ## What this could look like in practice
@@ -101,7 +101,7 @@ Prior to loading the data to your warehouse, each event is checked to see if it 
 
 
 
-*   If you are using a 3<sup>rd</sup> party data collection vendor such as GA – validate client side
+*   If you are using a 3rd party data collection vendor such as GA – validate client side
 *   If you have 1<sup>st</sup> party data collection such as a home-built pipeline or Snowplow – validate in the data collection pipeline, prior to warehouse loading
 
 Either method means the structure of data in the warehouse is controlled strictly by those consuming it.

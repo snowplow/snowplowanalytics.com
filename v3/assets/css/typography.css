@@ -140,3 +140,7 @@ section.testemonial .single em{
 section.other ul li a p{
     font-weight:400 !important;
 }
+
+sup{
+    font-size:13px;
+}
