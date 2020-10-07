@@ -5,7 +5,7 @@ title-short: Snowplow Postgres Loader 0.1.0
 tags: [postgres, shred, relational databases, storage]
 author: Anton
 category: Releases
-permalink: /blog/2020/10/06/snowplow-postgres-loader-0.1.0/
+permalink: /blog/2020/10/07/snowplow-postgres-loader-0.1.0/
 ---
 
 For several years we were getting requests from the OSS community to add PostgreSQL support to Snowplow.
