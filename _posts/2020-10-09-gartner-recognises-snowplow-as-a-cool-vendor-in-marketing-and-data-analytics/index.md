@@ -8,6 +8,8 @@ permalink: /blog/2020/10/09/gartner-recognises-snowplow-as-a-cool-vendor-in-mark
 discourse: false
 ---
 
+![Gartner Cool Vendor 2020](/assets/img/blog/2020/10/Gartner_CV_2020_RGB.png)
+
 We are delighted to announce that Gartner has recognised Snowplow as a cool vendor in Marketing and Data Analytics.  
 
 To be defined as a Cool Vendor by Gartner, a company must be considered innovative or transformative for products, services or initiatives.  The criteria by which a vendor is defined as “cool” are:
@@ -38,4 +40,4 @@ If you’re looking to power your data journey with Snowplow, please get in touc
 
 The GARTNER COOL VENDOR badge is a trademark and service mark of Gartner, Inc., and/or its affiliates, and is used herein with permission. All rights reserved. Gartner does not endorse any vendor, product or service depicted in its research publications, and does not advise technology users to select only those vendors with the highest ratings or other designation. Gartner research publications consist of the opinions of Gartner’s Research & Advisory organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for a particular purpose. 
 
-![Gartner Cool Vendor 2020](/assets/img/blog/2020/10/Gartner_CV_2020_RGB.png)
+
