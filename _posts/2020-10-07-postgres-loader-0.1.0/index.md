@@ -19,7 +19,7 @@ In this post:
 4. [Setup](#setup)
 5. [Getting help](#help)
 
-<h2 id="why">1. Why Postgres</h2>
+<h2 id="why">1. Why PostgreSQL</h2>
 
 [PostgreSQL][postgresql] is one of top 5 database engines as of mid 2020.
 It is almost the standard de-facto among OLTP relational databases with an enormous amount of extensions and tools that can turn it into anything from [time-series database][timescale] to a [monstrous multi-node cluster with analytical workloads][citus].

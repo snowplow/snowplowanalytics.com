@@ -476,3 +476,11 @@
   avatar: /assets/img/team/ianstreeter.png
   spiel:   |
       Ian is a software engineer at Snowplow.
+
+
+- name: Chrissie Jamieson
+  full_name:  Chrissie Jamieson
+  url: /blog/authors/chrissie-jamieson/
+  avatar: /assets/img/team/chrissie-jamieson.jpeg
+  spiel:   |
+      Chrissie Jamieson is VP, Marketing for Snowplow Analytics.  You can find her on <a href="https://www.linkedin.com/in/chrissie-jamieson/?originalSubdomain=uk">LinkedIn</a> and <a href="https://twitter.com/chrissiejf?lang=en">Twitter</a>
