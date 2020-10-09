@@ -6,9 +6,12 @@ author: Chrissie Jamieson
 category: Inside the plow
 permalink: /blog/2020/10/09/gartner-recognises-snowplow-as-a-cool-vendor-in-marketing-and-data-analytics/
 discourse: false
+featured: true
+featured-image: /assets/img/blog/featured/Thumb-gartner.png
+thumbnail-image: /assets/img/blog/featured/Thumb-gartner.png
 ---
 
-![Gartner Cool Vendor 2020](/assets/img/blog/2020/10/Gartner_CV_2020_RGB.png)
+
 
 We are delighted to announce that Gartner has recognised Snowplow as a cool vendor in Marketing and Data Analytics.  
 
