@@ -14,17 +14,66 @@ title : Atom Feed
         <email>{{ site.author.email }}</email>
     </author>
     {% for post in site.posts limit:site.feed_total %}
-    <entry>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <updated>{{ post.date | date_to_rfc822 }}</updated>
-        <link href="{{ site.production_url }}{{ post.url }}" />
-        <title>{{ post.title | xml_escape }}</title>
-        <id>{{ site.production_url }}/{{ post.id }}</id>    
-        {% if post.excerpt %}
-            <description>{{ post.excerpt | xml_escape }}</description>
-        {% else %}
-            <description>{{ post.content | xml_escape }}</description>
-        {% endif %}
-    </entry>
+			<item>
+				<title>{{ post.title | xml_escape }}</title>
+				{% for author in site.data.authors %}
+				{% if post.author == author.name %}
+				{% assign handle = author.full_name| xml_escape %}
+					{% case handle %}
+						{% when "Nicki Faulkner" %}
+							<dc:creator><![CDATA[nickifaulkner]]></dc:creator>
+						{% when "Yali Sassoon" %}
+							<dc:creator><![CDATA[yalisassoon]]></dc:creator>
+						{% when "Paul Boocock" %}
+							<dc:creator><![CDATA[paulboocock]]></dc:creator>
+						{% when "Ian Streeter" %}
+							<dc:creator><![CDATA[ianstreeter]]></dc:creator>
+						{% when "Cara Baestlein" %}
+							<dc:creator><![CDATA[carabaestlein]]></dc:creator>
+						{% when "Mike Jongbloet" %}
+							<dc:creator><![CDATA[mikejongbloet]]></dc:creator>
+						{% when "Ada Tzereme" %}
+							<dc:creator><![CDATA[adatzereme]]></dc:creator>
+						{% when "Colm O Griobhtha" %}
+							<dc:creator><![CDATA[colmgriobhtha]]></dc:creator>
+						{% when "Steve Coppin-Smith" %}
+							<dc:creator><![CDATA[stevesmith]]></dc:creator>
+						{% when "Lyuba Golovina" %}
+							<dc:creator><![CDATA[lyubagolovina]]></dc:creator>
+						{% when "Dilyan Damyanov" %}
+							<dc:creator><![CDATA[dilyandamyanov]]></dc:creator>
+						{% when "Mitra, Big Tree" %}
+							<dc:creator><![CDATA[mitrabigtree]]></dc:creator>
+						{% when "Alex Dean" %}
+							<dc:creator><![CDATA[alexdean]]></dc:creator>
+						{% when "Mike Nemirovsky" %}
+							<dc:creator><![CDATA[mikenemirovsky]]></dc:creator>
+						{% when "Benjamin Benoist" %}
+							<dc:creator><![CDATA[benjaminbenoist]]></dc:creator>
+						{% when "Archit Goyal" %}
+							<dc:creator><![CDATA[architgoyal]]></dc:creator>
+						{% when "Nicholas Ung" %}
+							<dc:creator><![CDATA[nicholasung]]></dc:creator>
+						{% when "Joshua Beemster" %}
+							<dc:creator><![CDATA[joshbeemster]]></dc:creator>
+					  {% else %}
+					     <dc:creator><![CDATA[snowplowteam]]></dc:creator>
+					{% endcase %}
+
+				{% endif %}
+				{% endfor %}
+
+				<category domain="category" nicename="{{ post.category|downcase|replace: " ", "-" }}"><![CDATA[{{ post.category }}]]></category>
+				<description></description>
+
+				<excerpt:encoded><![CDATA[{{ post.excerpt|strip_html|truncatewords: 20, "..." }}]]></excerpt:encoded>
+				<content>{{ post.content|xml_escape  }}</content>
+				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+				<link>{{ site.url }}{{ post.url }}</link>
+				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+				<wp:post_type><![CDATA[post]]></wp:post_type>
+				<wp:status><![CDATA[publish]]></wp:status>
+			</item>
     {% endfor %}
 </feed>
+
